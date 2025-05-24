@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
@@ -12,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
@@ -20,6 +22,7 @@ import bartworks.common.loaders.ItemRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -119,6 +122,11 @@ public class FluidSolidifierRecipes implements Runnable {
                 .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(1000L))
                 .itemOutputs(ItemList.GlassQuarkContainment.get(1)).eut(TierEU.RECIPE_UEV).duration(5 * SECONDS)
                 .addTo(fluidSolidifierRecipes);
+        if (Botania.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L))
+                    .itemOutputs(BlockList.Gaia.getIS(1)).fluidInputs(MaterialsBotania.GaiaSpirit.getMolten(1296L))
+                    .duration(2 * SECONDS).eut(TierEU.RECIPE_IV).addTo(fluidSolidifierRecipes);
+        }
 
         if (TinkerConstruct.isModLoaded()) {
 

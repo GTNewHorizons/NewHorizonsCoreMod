@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
@@ -174,6 +175,17 @@ public class CompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(OpenComputers.ID, "item", 9L, 96))
                     .itemOutputs(getModItem(OpenComputers.ID, "chameliumBlock", 1L, 0)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
+        }
+        if (Botania.isModLoaded()) {
+            // Mana Pearl Block
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 9L, 1))
+                    .itemOutputs(BlockList.ManaPearl.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
+            // Mana Powder Block
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 9L, 23))
+                    .itemOutputs(BlockList.ManaPowder.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
+            // Pixie Dust Block
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 9L, 8))
+                    .itemOutputs(BlockList.PixieDust.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
         }
 
         if (IndustrialCraft2.isModLoaded()) {

@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -14,6 +15,8 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
@@ -122,6 +125,24 @@ public class ForgeHammerRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3))
                     .itemOutputs(CustomItemList.PrimordialPearlFragment.get(3L)).duration(16 * TICKS)
                     .eut(TierEU.RECIPE_IV).addTo(hammerRecipes);
+        }
+        if (Botania.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(BlockList.Gaia.getIS(1))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 32L, 5))
+                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("prismaticacid"), 1152)).duration(16 * TICKS)
+                    .eut(TierEU.RECIPE_LuV).addTo(hammerRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(BlockList.ManaPearl.getIS(1))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 9L, 1)).duration(16 * TICKS)
+                    .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(BlockList.ManaPowder.getIS(1))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 9L, 23)).duration(16 * TICKS)
+                    .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(BlockList.PixieDust.getIS(1))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 9L, 8)).duration(16 * TICKS)
+                    .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
         }
 
         // Raw optical chip
