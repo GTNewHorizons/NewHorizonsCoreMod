@@ -470,15 +470,6 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 16L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 16L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L),
                         GTUtility.getIntegratedCircuit(24))
