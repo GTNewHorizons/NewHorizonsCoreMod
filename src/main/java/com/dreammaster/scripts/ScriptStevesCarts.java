@@ -47,6 +47,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -188,7 +189,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0, missing),
                 null,
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null,
                 "ringWood",
                 "stickWood",
@@ -227,7 +228,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 37, missing),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
