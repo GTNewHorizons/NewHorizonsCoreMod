@@ -19,7 +19,7 @@ import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.BUCKETS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
-import static gregtech.api.util.GTRecipeBuilder.QUARTER_INGOT;
+import static gregtech.api.util.GTRecipeBuilder.QUARTER_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.SCANNING;
@@ -323,7 +323,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         NHItemList.HeavyDutyNoseConeTier4.getIS(),
                         new ItemStack(baseItem, 4, 15),
                         getIntegratedCircuit(4))
-                .fluidInputs(Materials.Neutronium.getMolten(QUARTER_INGOT)).itemOutputs(new ItemStack(baseItem, 1, 16))
+                .fluidInputs(Materials.Neutronium.getMolten(QUARTER_INGOTS)).itemOutputs(new ItemStack(baseItem, 1, 16))
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

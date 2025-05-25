@@ -48,6 +48,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -503,7 +504,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "dustLapis");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemTreetap", 1, 0, missing),
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "screwWood",
                 "craftingToolScrewdriver",
                 "pipeMediumWood",
@@ -563,7 +564,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolSaw",
                 "plateAnyRubber",
                 "plateAnyRubber",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "plateAnyRubber",
                 "plateAnyRubber",
                 "plateAnyRubber",
@@ -1055,7 +1056,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         'b',
                         getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, wildcard, missing),
                         'c',
-                        "craftingToolSoftHammer",
+                        ToolDictNames.craftingToolSoftMallet.name(),
                         'd',
                         getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing)));
         GameRegistry.addRecipe(
@@ -1069,7 +1070,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         'b',
                         getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, wildcard, missing),
                         'c',
-                        "craftingToolSoftHammer",
+                        ToolDictNames.craftingToolSoftMallet.name(),
                         'd',
                         getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing)));
         GameRegistry.addRecipe(
@@ -1083,7 +1084,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         'b',
                         getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, wildcard, missing),
                         'c',
-                        "craftingToolSoftHammer",
+                        ToolDictNames.craftingToolSoftMallet.name(),
                         'd',
                         getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing)));
         GameRegistry.addRecipe(
@@ -1097,7 +1098,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         'b',
                         getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, wildcard, missing),
                         'c',
-                        "craftingToolSoftHammer",
+                        ToolDictNames.craftingToolSoftMallet.name(),
                         'd',
                         getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing)));
 
