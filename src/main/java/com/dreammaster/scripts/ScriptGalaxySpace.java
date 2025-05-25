@@ -41,7 +41,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -278,7 +277,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(ItemList.UltraHighStrengthConcrete.get(9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(1), ItemList.NtNanofibers.get(4))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(4), ItemList.NtNanofibers.get(4))
                 .itemOutputs(ItemList.UHTResistantMesh.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
@@ -728,8 +727,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmashovel", 1, 100),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { "FCh", "DPD", "WBW", 'F', ToolDictNames.craftingToolFile, 'C',
-                        getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                new Object[] { "fCh", "DPD", "WBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'P',
                         new ItemStack(GCItems.flagPole), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B',
                         new ItemStack(GCItems.battery, 1, W) });

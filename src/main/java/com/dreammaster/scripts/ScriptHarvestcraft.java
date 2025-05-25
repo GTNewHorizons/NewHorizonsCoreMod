@@ -35,6 +35,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.MetaGeneratedTool01;
@@ -671,7 +672,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing),
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 CustomItemList.WetTofu.get(1L));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),

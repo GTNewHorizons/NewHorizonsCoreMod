@@ -1533,6 +1533,9 @@ kosh.research_page.RUNEDTABLET=Your desire get to the boss? DO IT !!!
 tc.research_name.CRIMSONRITES=Crimson Rites
 tc.research_text.CRIMSONRITES=Unlocking the Unknown
 tc.research_page.CRIMSONRITES=You have seen glimpses of powerful magic users. You think you might have found a way to unlock their secrets.
+tc.research_name.INCENSECRUCIBLE=Incense Crucible
+tc.research_text.INCENSECRUCIBLE=[BM] Doesn't make you smell good IRL
+tc.research_page.INCENSECRUCIBLE=Because somehow, smelling good makes you bleed more.
 
 # Tinker's Construct manual contents
 item.tconstruct.manual.common.recipes=Recipes
@@ -1760,6 +1763,9 @@ block.ore.gravel.zinc.name=Zinc Gravel Ore
 
 dreamcraft.mobsinfocompat.limitedropcount=Drops only %s times per person
 dreamcraft.gui.quitmessage=Are you sure you want to exit the game?
+dreamcraft.gui.quitmessage.yes=Yes
+dreamcraft.gui.quitmessage.no=No
+dreamcraft.gui.quitmessage.never=Don't Show Again!
 
 dreamcraft.welcome.welcome=Welcome to Gregtech: New Horizons
 dreamcraft.welcome.questbook=The Quest Book has a shortcut key, check your keybindings.
