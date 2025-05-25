@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -1258,6 +1259,24 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing),
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier4Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier4Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier5Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier5Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier6Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier6Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier7Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier7Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, 0, missing),
+                getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, wildcard, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing));
