@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -45,6 +44,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
@@ -112,7 +112,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "part.tie", 1, 0, missing),
                 getModItem(Railcraft.ID, "part.tie", 1, 0, missing),
                 null,
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null);
         addShapedRecipe(
                 getModItem(Railcraft.ID, "part.railbed", 1, 1, missing),
@@ -2015,9 +2015,6 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 9, missing)).duration(10 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
-        Module_CustomFuels.registerCustomFuelValue(
-                getModItem(Railcraft.ID, "fluid.creosote.bucket", 1, 0, missing),
-                (short) 6400);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 5, 0, missing),

@@ -22,7 +22,7 @@ import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
 import static tectech.thing.CustomItemList.DATApipe;
 import static tectech.thing.CustomItemList.Machine_Multi_DataBank;
-import static tectech.thing.CustomItemList.Machine_Multi_Switch;
+import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.dataInAss_Hatch;
 import static tectech.thing.CustomItemList.dataInAss_Wireless_Hatch;
 import static tectech.thing.CustomItemList.dataIn_Hatch;
@@ -206,7 +206,7 @@ public class AssemblingLineRecipes implements Runnable {
                         // Regular slave connector
                         dataIn_Hatch.get(1),
                         // Network Switch With QoS
-                        Machine_Multi_Switch.get(1),
+                        Machine_Multi_Switch_Adv.get(1),
                         // Data pipe
                         DATApipe.get(64),
                         // Internet card
@@ -237,7 +237,7 @@ public class AssemblingLineRecipes implements Runnable {
                         // Regular master connector
                         dataOut_Hatch.get(1),
                         // Network Switch With QoS
-                        Machine_Multi_Switch.get(1),
+                        Machine_Multi_Switch_Adv.get(1),
                         // Data pipe
                         DATApipe.get(64),
                         // Internet card
@@ -1036,7 +1036,7 @@ public class AssemblingLineRecipes implements Runnable {
                             Materials.Americium.getPlasma(2880L),
                             Materials.Enderium.getMolten(5760L))
                     .itemOutputs(GTModHandler.getModItem(GraviSuite.ID, "relocator", 1, 26)).eut(TierEU.RECIPE_UV)
-                    .duration(50 * MINUTES).addTo(AssemblyLine);
+                    .duration(3 * MINUTES).addTo(AssemblyLine);
         }
 
         // Electromagnets
@@ -1632,7 +1632,7 @@ public class AssemblingLineRecipes implements Runnable {
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UEV);
 
-        // Antimatter Forge
+        // Antimatter Forge - Antimatter Sequencer - SSASS
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 ItemRefer.Naquadah_Fuel_Refinery.get(1),
                 512000,
@@ -1653,10 +1653,10 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsUEVplus.TranscendentMetal.getMolten(9216),
                         MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(10000) },
                 ItemRefer.AntimatterForge.get(1),
-                1800 * SECONDS,
-                (int) TierEU.RECIPE_UIV);
+                6 * MINUTES,
+                (int) TierEU.RECIPE_UMV);
 
-        // Antimatter Generator
+        // Antimatter Generator - SLAM
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 ItemRefer.Large_Naquadah_Reactor.get(1),
                 512000,
@@ -1678,8 +1678,8 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsUEVplus.TranscendentMetal.getMolten(9216),
                         Materials.SuperconductorUMVBase.getMolten(9216) },
                 ItemRefer.AntimatterGenerator.get(1),
-                1800 * SECONDS,
-                (int) TierEU.RECIPE_UIV);
+                6 * MINUTES,
+                (int) TierEU.RECIPE_UMV);
 
         // Antimatter Hatch
         TTRecipeAdder.addResearchableAssemblylineRecipe(

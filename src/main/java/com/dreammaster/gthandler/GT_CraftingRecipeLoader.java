@@ -28,6 +28,8 @@ import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
 import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 import net.minecraft.init.Blocks;
@@ -36,6 +38,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.main.NHItems;
@@ -59,6 +62,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.GTProxy;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
 import gtneioreplugin.util.DimensionHelper;
 import ic2.core.Ic2Items;
@@ -594,12 +598,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         OrePrefixes.frameGt.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_MV, 'V',
                         OrePrefixes.rotor.get(Materials.Aluminium), 'S', ItemList.Component_Filter });
 
-        GTModHandler.addCraftingRecipe(
-                ItemList.Casing_Firebricks.get(1L),
-                tBitMask,
-                new Object[] { "BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C',
-                        OrePrefixes.dust.get(Materials.Gypsum), 'W', ItemBucketList.Concrete.get(1) });
-
         // Air filter multi blocks
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Vent_T1.get(1L),
@@ -666,9 +664,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 CustomItemList.WoodenCasing.get(1L),
                 bits,
-                new Object[] { "SSS", "UCU", "SDS", 'S', OrePrefixes.slab.get(Materials.Wood), 'D',
-                        ToolDictNames.craftingToolScrewdriver, 'U', OrePrefixes.screw.get(Materials.Iron), 'C',
-                        OrePrefixes.frameGt.get(Materials.Wood) });
+                new Object[] { "SSS", "UCU", "SdS", 'S', OrePrefixes.slab.get(Materials.Wood), 'U',
+                        OrePrefixes.screw.get(Materials.Iron), 'C', OrePrefixes.frameGt.get(Materials.Wood) });
         // For making gendustry upgrades
         GTModHandler.addCraftingRecipe(
                 CustomItemList.IndustryFrame.get(1L),
@@ -877,38 +874,37 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 CustomItemList.RawOrbTier1.get(1L),
                 bits,
-                new Object[] { "XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Aluminium), 'T',
-                        ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.AnnealedCopper),
-                        'O', CustomItemList.ReinforcedGlassLense.get(1L) });
+                new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Aluminium), 'P',
+                        OrePrefixes.plate.get(Materials.AnnealedCopper), 'O',
+                        CustomItemList.ReinforcedGlassLense.get(1L) });
         GTModHandler.addCraftingRecipe(
                 CustomItemList.RawOrbTier2.get(1L),
                 bits,
-                new Object[] { "XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.StainlessSteel), 'T',
-                        ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.RoseGold), 'O',
-                        CustomItemList.ReinforcedGlassLense.get(1L) });
+                new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.StainlessSteel), 'P',
+                        OrePrefixes.plate.get(Materials.RoseGold), 'O', CustomItemList.ReinforcedGlassLense.get(1L) });
         GTModHandler.addCraftingRecipe(
                 CustomItemList.RawOrbTier3.get(1L),
                 bits,
-                new Object[] { "XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Titanium), 'T',
-                        ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.PulsatingIron), 'O',
+                new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Titanium), 'P',
+                        OrePrefixes.plate.get(Materials.PulsatingIron), 'O',
                         CustomItemList.ReinforcedGlassLense.get(1L) });
         GTModHandler.addCraftingRecipe(
                 CustomItemList.RawOrbTier4.get(1L),
                 bits,
-                new Object[] { "XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.TungstenSteel), 'T',
-                        ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.EnergeticAlloy),
-                        'O', CustomItemList.ReinforcedGlassLense.get(1L) });
+                new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.TungstenSteel), 'P',
+                        OrePrefixes.plate.get(Materials.EnergeticAlloy), 'O',
+                        CustomItemList.ReinforcedGlassLense.get(1L) });
         GTModHandler.addCraftingRecipe(
                 CustomItemList.RawOrbTier5.get(1L),
                 bits,
-                new Object[] { "XTX", "POP", "PPP", 'X', WerkstoffLoader.LuVTierMaterial.get(screw), 'T',
-                        ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.FierySteel), 'O',
+                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.LuVTierMaterial.get(screw), 'P',
+                        OrePrefixes.plate.get(Materials.FierySteel), 'O',
                         CustomItemList.ReinforcedGlassLense.get(1L) });
         GTModHandler.addCraftingRecipe(
                 CustomItemList.RawOrbTier6.get(1L),
                 bits,
-                new Object[] { "XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Iridium), 'T',
-                        ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.Plutonium241), 'O',
+                new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Iridium), 'P',
+                        OrePrefixes.plate.get(Materials.Plutonium241), 'O',
                         CustomItemList.ReinforcedGlassLense.get(1L) });
 
         // ===================================================================================================
@@ -1158,8 +1154,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         if (OpenComputers.isModLoaded()) GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(OpenComputers.ID, "wrench", 1, 0),
                 GTProxy.tBits,
-                new Object[] { "IWI", "ICI", " I ", 'W', ToolDictNames.craftingToolWrench, 'I',
-                        OrePrefixes.ingot.get(Materials.Iron), 'C',
+                new Object[] { "IwI", "ICI", " I ", 'I', OrePrefixes.ingot.get(Materials.Iron), 'C',
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1, 24) });
 
         if (OpenPrinters.isModLoaded()) GTModHandler.addCraftingRecipe(
@@ -1168,32 +1163,36 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "PGP", " P ", 'P', new ItemStack(Items.paper, 1, 0), 'G',
                         new ItemStack(Items.slime_ball, 1, 0) });
 
-        GTModHandler.addCraftingRecipe(
-                ItemBucketList.Concrete.get(1),
-                bits4,
-                new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
-                        OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
-                        OrePrefixes.dust.get(Materials.QuartzSand), 'W', new ItemStack(Items.water_bucket, 1, 0), 'B',
-                        new ItemStack(Items.bucket, 1, 0) });
-        GTModHandler.addCraftingRecipe(
-                new ItemStack(Items.clay_ball, 3, 0),
-                GTProxy.tBits,
-                new Object[] { "CCC", "CBC", "CCC", 'C', OrePrefixes.dustSmall.get(Materials.Clay), 'B',
-                        new ItemStack(Items.water_bucket, 1, 0) });
+        List<ItemStack> waterBuckets = new ArrayList<>();
+        waterBuckets.add(new ItemStack(Items.water_bucket, 1, 0));
+        List<ItemStack> concreteBuckets = new ArrayList<>();
+        concreteBuckets.add(ItemBucketList.Concrete.get(1));
         if (IguanaTweaksTinkerConstruct.isModLoaded()) {
+            waterBuckets.add(GTModHandler.getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0));
+            concreteBuckets.add(new ItemStack(IguanaProxy.clayBucketConcrete, 1));
+        }
+        for (ItemStack concreteBucket : concreteBuckets) {
             GTModHandler.addCraftingRecipe(
-                    ItemBucketList.Concrete.get(1),
-                    bits4,
-                    new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
-                            OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
-                            OrePrefixes.dust.get(Materials.QuartzSand), 'W',
-                            GTModHandler.getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0), 'B',
-                            new ItemStack(Items.bucket, 1, 0) });
+                    ItemList.Casing_Firebricks.get(1L),
+                    tBitMask,
+                    new Object[] { "BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C',
+                            OrePrefixes.dust.get(Materials.Gypsum), 'W', concreteBucket });
+        }
+        for (ItemStack waterBucket : waterBuckets) {
+            for (ItemStack concreteBucket : concreteBuckets) {
+                ItemStack emptyBucket = concreteBucket.getItem().getContainerItem(concreteBucket);
+                GTModHandler.addCraftingRecipe(
+                        concreteBucket,
+                        bits4,
+                        new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
+                                OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
+                                OrePrefixes.dust.get(Materials.QuartzSand), 'W', waterBucket, 'B', emptyBucket });
+            }
             GTModHandler.addCraftingRecipe(
                     new ItemStack(Items.clay_ball, 3, 0),
                     GTProxy.tBits,
                     new Object[] { "CCC", "CBC", "CCC", 'C', OrePrefixes.dustSmall.get(Materials.Clay), 'B',
-                            GTModHandler.getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0) });
+                            waterBucket });
         }
 
         if (Forestry.isModLoaded()) {
@@ -1234,12 +1233,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     CustomItemList.RawSDHCAlloy.get(1L),
                     bits,
-                    new Object[] { "SRS", "TCD", "SHS", 'S', OrePrefixes.screw.get(Materials.StainlessSteel), 'R',
-                            ToolDictNames.craftingToolScrewdriver, 'T',
+                    new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.StainlessSteel), 'T',
                             GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1L, 0), 'D',
                             GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1L, 0), 'C',
-                            GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedCoal", 1L, 0), 'H',
-                            ToolDictNames.craftingToolHardHammer });
+                            GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedCoal", 1L, 0) });
             // fuel canisters
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(GalaxySpace.ID, "item.ModuleSmallCanister", 1L, 0),
@@ -1249,37 +1246,31 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1L, 0),
                     bits,
-                    new Object[] { "SRS", "TCD", "SHS", 'S', OrePrefixes.screw.get(Materials.StainlessSteel), 'R',
-                            ToolDictNames.craftingToolScrewdriver, 'T',
+                    new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.StainlessSteel), 'T',
                             GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1L, 0), 'D',
                             GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1L, 0), 'C',
-                            GTModHandler.getModItem(GalaxySpace.ID, "item.ModuleSmallCanister", 1L, 0), 'H',
-                            ToolDictNames.craftingToolHardHammer });
+                            GTModHandler.getModItem(GalaxySpace.ID, "item.ModuleSmallCanister", 1L, 0) });
             GTModHandler.addCraftingRecipe(
                     CustomItemList.MediumFuelCanister.get(1L),
                     bits,
-                    new Object[] { "SRS", "TCD", "SHS", 'S', OrePrefixes.screw.get(Materials.Titanium), 'R',
-                            ToolDictNames.craftingToolScrewdriver, 'T',
+                    new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.Titanium), 'T',
                             CustomItemList.TitaniumDualCompressedPlates.get(1), 'D',
                             CustomItemList.DeshDualCompressedPlates.get(1), 'C',
-                            GTModHandler.getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1L, 0), 'H',
-                            ToolDictNames.craftingToolHardHammer });
+                            GTModHandler.getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1L, 0) });
             GTModHandler.addCraftingRecipe(
                     CustomItemList.LargeFuelCanister.get(1L),
                     bits,
-                    new Object[] { "SRS", "TCD", "SHS", 'S', OrePrefixes.screw.get(Materials.Chrome), 'R',
-                            ToolDictNames.craftingToolScrewdriver, 'T',
+                    new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.Chrome), 'T',
                             CustomItemList.QuantinumDualCompressedPlates.get(1), 'D',
                             CustomItemList.IceDualCompressedPlates.get(1), 'C',
-                            CustomItemList.MediumFuelCanister.get(1), 'H', ToolDictNames.craftingToolHardHammer });
+                            CustomItemList.MediumFuelCanister.get(1) });
             GTModHandler.addCraftingRecipe(
                     CustomItemList.ExtraLargeFuelCanister.get(1L),
                     bits,
-                    new Object[] { "SRS", "TCD", "SHS", 'S', OrePrefixes.screw.get(Materials.Iridium), 'R',
-                            ToolDictNames.craftingToolScrewdriver, 'T',
+                    new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.Iridium), 'T',
                             CustomItemList.MytrylDualCompressedPlates.get(1), 'D',
                             CustomItemList.MysteriousCrystalDualCompressedPlates.get(1), 'C',
-                            CustomItemList.LargeFuelCanister.get(1), 'H', ToolDictNames.craftingToolHardHammer });
+                            CustomItemList.LargeFuelCanister.get(1) });
             // engines
 
             GTModHandler.addCraftingRecipe(
@@ -1315,70 +1306,60 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(GalacticraftCore.ID, "item.noseCone", 1L, 0),
                     bits,
-                    new Object[] { "SNH", "CPC", "PPP", 'N', GTModHandler
+                    new Object[] { "dNh", "CPC", "PPP", 'N', GTModHandler
                             .getModItem(ProjectRedIllumination.ID, "projectred.illumination.cagelamp2.inv", 1L, 14),
                             'P', GTModHandler.getModItem(GalacticraftCore.ID, "item.heavyPlating", 1L, 0), 'C',
-                            OrePrefixes.screw.get(Materials.StainlessSteel), 'S', ToolDictNames.craftingToolScrewdriver,
-                            'H', ToolDictNames.craftingToolHardHammer });
+                            OrePrefixes.screw.get(Materials.StainlessSteel) });
 
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(GalacticraftMars.ID, "item.heavyNoseCone", 1L, 0),
                     bits,
-                    new Object[] { "SNH", "CPC", "PPP", 'N',
+                    new Object[] { "dNh", "CPC", "PPP", 'N',
 
                             GTModHandler.getModItem(GalacticraftCore.ID, "item.noseCone", 1L, 0), 'P',
                             GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0), 'C',
-                            OrePrefixes.screw.get(Materials.Titanium), 'S', ToolDictNames.craftingToolScrewdriver, 'H',
-                            ToolDictNames.craftingToolHardHammer });
+                            OrePrefixes.screw.get(Materials.Titanium) });
 
             GTModHandler.addCraftingRecipe(
                     CustomItemList.HeavyDutyNoseConeTier3.get(1L),
                     bits,
-                    new Object[] { "SNH", "CPC", "PPP", 'N',
+                    new Object[] { "dNh", "CPC", "PPP", 'N',
                             GTModHandler.getModItem(GalacticraftMars.ID, "item.heavyNoseCone", 1L, 0), 'P',
                             CustomItemList.HeavyDutyPlateTier5.get(1), 'C',
-                            OrePrefixes.screw.get(Materials.TungstenSteel), 'S', ToolDictNames.craftingToolScrewdriver,
-                            'H', ToolDictNames.craftingToolHardHammer });
+                            OrePrefixes.screw.get(Materials.TungstenSteel) });
             GTModHandler.addCraftingRecipe(
                     CustomItemList.HeavyDutyNoseConeTier4.get(1L),
                     bits,
-                    new Object[] { "SNH", "CPC", "PPP", 'N', CustomItemList.HeavyDutyNoseConeTier3.get(1), 'P',
+                    new Object[] { "dNh", "CPC", "PPP", 'N', CustomItemList.HeavyDutyNoseConeTier3.get(1), 'P',
                             CustomItemList.HeavyDutyPlateTier7.get(1), 'C',
-                            OrePrefixes.screw.get(Materials.NaquadahAlloy), 'S', ToolDictNames.craftingToolScrewdriver,
-                            'H', ToolDictNames.craftingToolHardHammer });
+                            OrePrefixes.screw.get(Materials.NaquadahAlloy) });
             // rocket fins
 
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(GalacticraftCore.ID, "item.rocketFins", 1L, 0),
                     bits,
-                    new Object[] { "HPF", "QPQ", "QSQ", 'P',
+                    new Object[] { "hPf", "QPQ", "QsQ", 'P',
                             GTModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1L, 9), 'Q',
-                            GTModHandler.getModItem(GalacticraftCore.ID, "item.heavyPlating", 1L, 0), 'S',
-                            ToolDictNames.craftingToolSaw, 'F', ToolDictNames.craftingToolFile, 'H',
-                            ToolDictNames.craftingToolHardHammer });
+                            GTModHandler.getModItem(GalacticraftCore.ID, "item.heavyPlating", 1L, 0) });
 
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 2),
                     bits,
-                    new Object[] { "HPF", "QPQ", "QSQ", 'P',
+                    new Object[] { "hPf", "QPQ", "QsQ", 'P',
                             GTModHandler.getModItem(GalacticraftMars.ID, "item.null", 1L, 3), 'Q',
-                            GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0), 'S',
-                            ToolDictNames.craftingToolSaw, 'F', ToolDictNames.craftingToolFile, 'H',
-                            ToolDictNames.craftingToolHardHammer });
+                            GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0) });
             GTModHandler.addCraftingRecipe(
                     CustomItemList.HeavyDutyRocketFinsTier3.get(1L),
                     bits,
-                    new Object[] { "HPF", "QPQ", "QSQ", 'P', CustomItemList.HeavyDutyPlateTier4.get(1), 'Q',
+                    new Object[] { "hPf", "QPQ", "QSQ", 'P', CustomItemList.HeavyDutyPlateTier4.get(1), 'Q',
                             CustomItemList.HeavyDutyPlateTier5.get(1), 'S',
-                            GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1L, 0), 'F',
-                            ToolDictNames.craftingToolFile, 'H', ToolDictNames.craftingToolHardHammer });
+                            GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1L, 0) });
             GTModHandler.addCraftingRecipe(
                     CustomItemList.HeavyDutyRocketFinsTier4.get(1L),
                     bits,
-                    new Object[] { "HPF", "QPQ", "QSQ", 'P', CustomItemList.HeavyDutyPlateTier6.get(1), 'Q',
+                    new Object[] { "hPf", "QPQ", "QSQ", 'P', CustomItemList.HeavyDutyPlateTier6.get(1), 'Q',
                             CustomItemList.HeavyDutyPlateTier7.get(1), 'S',
-                            GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1L, 0), 'F',
-                            ToolDictNames.craftingToolFile, 'H', ToolDictNames.craftingToolHardHammer });
+                            GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1L, 0) });
             // booster
 
             GTModHandler.addCraftingRecipe(
@@ -1761,13 +1742,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(ZTones.ID, "minicharcoal", 7L, 0),
                     bits,
-                    new Object[] { "T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C',
-                            OrePrefixes.dust.get(Materials.Charcoal) });
+                    new Object[] { "r  ", "C  ", "   ", 'C', OrePrefixes.dust.get(Materials.Charcoal) });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(ZTones.ID, "minicoal", 7L, 0),
                     bits,
-                    new Object[] { "T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C',
-                            OrePrefixes.dust.get(Materials.Coal) });
+                    new Object[] { "r  ", "C  ", "   ", 'C', OrePrefixes.dust.get(Materials.Coal) });
         }
 
         if (Chisel.isModLoaded()) {
@@ -1785,262 +1764,198 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             // Add Casting Forms for Molds
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormPlate.getIS(),
-                    new Object[] { " HF", " C ", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " hf", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormCasing.getIS(),
-                    new Object[] { " H ", " CF", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " h ", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormGear.getIS(),
-                    new Object[] { " H ", " C ", "  F", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " h ", " C ", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormBottle.getIS(),
-                    new Object[] { " H ", " C ", " F ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " h ", " C ", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormIngot.getIS(),
-                    new Object[] { " H ", " C ", "F  ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " h ", " C ", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormBall.getIS(),
-                    new Object[] { " H ", "FC ", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " h ", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormBlock.getIS(),
-                    new Object[] { "FH ", " C ", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "fh ", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormNuggets.getIS(),
-                    new Object[] { "  H", " CF", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  h", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormBuns.getIS(),
-                    new Object[] { "  H", " C ", "  F", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  h", " C ", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormBread.getIS(),
-                    new Object[] { "  H", " C ", " F ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  h", " C ", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormBaguette.getIS(),
-                    new Object[] { "  H", " C ", "F  ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  h", " C ", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormCylinder.getIS(),
-                    new Object[] { "  H", "FC ", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  h", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormAnvil.getIS(),
-                    new Object[] { "F H", " C ", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "f h", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormName.getIS(),
-                    new Object[] { " FH", " C ", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " fh", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormArrowHead.getIS(),
-                    new Object[] { "   ", " CH", "  F", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Ch", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormSmallGear.getIS(),
-                    new Object[] { "   ", " CH", " F ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Ch", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormStick.getIS(),
-                    new Object[] { "   ", " CH", "F  ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Ch", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormBolt.getIS(),
-                    new Object[] { "   ", "FCH", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", "fCh", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormRound.getIS(),
-                    new Object[] { "F  ", " CH", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "f  ", " Ch", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormScrew.getIS(),
-                    new Object[] { " F ", " CH", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " f ", " Ch", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormRing.getIS(),
-                    new Object[] { "  F", " CH", "   ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  f", " Ch", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormStickLong.getIS(),
-                    new Object[] { "   ", " C ", " FH", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " C ", " fh", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormRotor.getIS(),
-                    new Object[] { "   ", " C ", "F H", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " C ", "f h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormTurbineBlade.getIS(),
-                    new Object[] { "   ", "FC ", "  H", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", "fC ", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormBoots.getIS(),
-                    new Object[] { "F  ", " C ", "  H", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "f  ", " C ", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormChestplate.getIS(),
-                    new Object[] { " F ", " C ", "  H", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " f ", " C ", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormHelmet.getIS(),
-                    new Object[] { "  F", " C ", "  H", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  f", " C ", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormLeggings.getIS(),
-                    new Object[] { "   ", " CF", "  H", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Cf", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MarshmallowFormMold.getIS(),
-                    new Object[] { "   ", " C ", "FH ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " C ", "fh ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormPipeTiny.getIS(),
-                    new Object[] { "   ", "FC ", " H ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", "fC ", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormPipeSmall.getIS(),
-                    new Object[] { "F  ", " C ", " H ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "f  ", " C ", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormPipeMedium.getIS(),
-                    new Object[] { " F ", " C ", " H ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " f ", " C ", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormPipeLarge.getIS(),
-                    new Object[] { "  F", " C ", " H ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  f", " C ", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormPipeHuge.getIS(),
-                    new Object[] { "   ", " CF", " H ", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Cf", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MoldFormDrillHead.getIS(),
-                    new Object[] { "   ", " C ", " HF", 'H', ToolDictNames.craftingToolHardHammer, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " C ", " hf", 'C', aBlankCast });
 
             // Add Casting Forms for Shapes
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapePlate.getIS(),
-                    new Object[] { " WF", " C ", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " xf", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeRod.getIS(),
-                    new Object[] { " W ", " CF", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " x ", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeBolt.getIS(),
-                    new Object[] { " W ", " C ", "  F", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " x ", " C ", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeCell.getIS(),
-                    new Object[] { " W ", " C ", " F ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " x ", " C ", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeRing.getIS(),
-                    new Object[] { " W ", " C ", "F  ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " x ", " C ", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeIngot.getIS(),
-                    new Object[] { " W ", "FC ", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " x ", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeWire.getIS(),
-                    new Object[] { "FW ", " C ", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "fx ", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeCasing.getIS(),
-                    new Object[] { "  W", " CF", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  x", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeTinyPipe.getIS(),
-                    new Object[] { "  W", " C ", "  F", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  x", " C ", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeSmallPipe.getIS(),
-                    new Object[] { "  W", " C ", " F ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  x", " C ", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeNormalPipe.getIS(),
-                    new Object[] { "  W", " C ", "F  ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  x", " C ", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeLargePipe.getIS(),
-                    new Object[] { "  W", "FC ", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  x", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeHugePipe.getIS(),
-                    new Object[] { "F W", " C ", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "f x", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeBlock.getIS(),
-                    new Object[] { " FW", " C ", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " fx", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeSwordBlade.getIS(),
-                    new Object[] { "   ", " CW", "  F", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Cx", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapePickaxeHead.getIS(),
-                    new Object[] { "   ", " CW", " F ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Cx", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeShovelHead.getIS(),
-                    new Object[] { "   ", " CW", "F  ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Cx", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeAxeHead.getIS(),
-                    new Object[] { "   ", "FCW", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", "fCx", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeHoeHead.getIS(),
-                    new Object[] { "F  ", " CW", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "f  ", " Cx", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeHammerHead.getIS(),
-                    new Object[] { " F ", " CW", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " f ", " Cx", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeFileHead.getIS(),
-                    new Object[] { "  F", " CW", "   ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  f", " Cx", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeSawBlade.getIS(),
-                    new Object[] { "   ", " C ", " FW", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " C ", " fx", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeGear.getIS(),
-                    new Object[] { "   ", " C ", "F W", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " C ", "f x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeBottle.getIS(),
-                    new Object[] { "   ", "FC ", "  W", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", "fC ", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeBoat.getIS(),
-                    new Object[] { "F  ", " C ", "  W", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "f  ", " C ", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeRotor.getIS(),
-                    new Object[] { " F ", " C ", "  W", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " f ", " C ", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeTurbineBlade.getIS(),
-                    new Object[] { "  F", " C ", "  W", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "  f", " C ", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeSmallGear.getIS(),
-                    new Object[] { "   ", " CF", "  W", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { "   ", " Cf", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeDrillHead.getIS(),
-                    new Object[] { " F ", " C ", " W ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
-                            ToolDictNames.craftingToolFile, 'C', aBlankCast });
+                    new Object[] { " f ", " C ", " x ", 'C', aBlankCast });
 
             // Add Clay Casts
             ItemStack aBlankClayCast = GTModHandler.getModItem(TinkerConstruct.ID, "blankPattern", 1, 3);
@@ -2051,61 +1966,61 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 0),
-                    new Object[] { "CW ", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "Ck ", "   ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 1),
-                    new Object[] { "C W", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "C k", "   ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 2),
-                    new Object[] { "C  ", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "C  ", "k  ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 3),
-                    new Object[] { "C  ", " W ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "C  ", " k ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 4),
-                    new Object[] { "C  ", "  W", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "C  ", "  k", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 5),
-                    new Object[] { "C  ", "   ", "W  ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "C  ", "   ", "k  ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 6),
-                    new Object[] { "C  ", "   ", " W ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "C  ", "   ", " k ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 7),
-                    new Object[] { "C  ", "   ", "  W", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "C  ", "   ", "  k", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 8),
-                    new Object[] { "WC ", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "kC ", "   ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 9),
-                    new Object[] { " CW", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { " Ck", "   ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 10),
-                    new Object[] { " C ", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { " C ", "k  ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 11),
-                    new Object[] { " C ", " W ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { " C ", " k ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 12),
-                    new Object[] { " C ", "  W", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { " C ", "  k", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 13),
-                    new Object[] { " C ", "   ", "W  ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { " C ", "   ", "k  ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 22),
-                    new Object[] { " C ", "   ", " W ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { " C ", "   ", " k ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 25),
-                    new Object[] { " C ", "   ", "  W", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { " C ", "   ", "  k", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 26),
-                    new Object[] { "W C", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "k C", "   ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 27),
-                    new Object[] { " WC", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { " kC", "   ", "   ", 'C', aBlankClayCast });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(TinkerConstruct.ID, "Clay Cast", 1, 3),
-                    new Object[] { "  C", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "  C", "k  ", "   ", 'C', aBlankClayCast });
         }
 
         // Add storage component recipes to pre-apply cache upgrades
@@ -2200,6 +2115,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         // Bus and Hatch Conversion
         // Input bus to Output bus
+        GTModHandler.addShapelessCraftingRecipe(
+                GregtechItemList.Hatch_Output_Bus_Steam.get(1),
+                bits,
+                new Object[] { GregtechItemList.Hatch_Input_Bus_Steam.get(1), ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_ULV.get(1),
@@ -2252,6 +2171,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { ItemList.Hatch_Input_Bus_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // Output bus to Input bus
+        GTModHandler.addShapelessCraftingRecipe(
+                GregtechItemList.Hatch_Input_Bus_Steam.get(1),
+                bits,
+                new Object[] { GregtechItemList.Hatch_Output_Bus_Steam.get(1),
+                        ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_ULV.get(1),
