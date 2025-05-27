@@ -4394,7 +4394,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Naquadria, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Netherite, 1L),
                         MaterialsAlloy.PIKYONIUM.getFoil(2),
                         GTOreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
@@ -4420,7 +4420,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Netherite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 4L),
                         MaterialsAlloy.CINOBITE.getFoil(2),
                         GTOreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
