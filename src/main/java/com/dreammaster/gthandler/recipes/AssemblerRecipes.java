@@ -9337,7 +9337,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.NaquadahAlloy, 8L),
-                        ItemList.Naquarite_Universal_Insulator_Foil.get(8L),
+                        CustomItemList.MicaInsulatorFoil.get(36L),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Coil_NaquadahAlloy.get(1L)).fluidInputs(Materials.Naquadah.getMolten(144L))
                 .duration(45 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
@@ -9345,7 +9345,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Trinium, 8L),
-                        ItemList.Naquarite_Universal_Insulator_Foil.get(10L),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(6L),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Coil_Trinium.get(1L)).fluidInputs(Materials.NaquadahAlloy.getMolten(144L))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
@@ -9353,7 +9353,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.ElectrumFlux, 8L),
-                        ItemList.Naquarite_Universal_Insulator_Foil.get(12L),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(8L),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Coil_ElectrumFlux.get(1L)).fluidInputs(Materials.Trinium.getMolten(144L))
                 .duration(55 * SECONDS).eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
@@ -9361,7 +9361,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.DraconiumAwakened, 8L),
-                        ItemList.Naquarite_Universal_Insulator_Foil.get(14L),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(10L),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Coil_AwakenedDraconium.get(1L))
                 .fluidInputs(Materials.ElectrumFlux.getMolten(144L)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
