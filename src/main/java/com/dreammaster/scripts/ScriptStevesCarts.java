@@ -1323,8 +1323,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 ItemList.Electric_Motor_LV.get(1L),
                 "plateSteel",
                 GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Tin, 1L),
-                "plateSteel"
-        );
+                "plateSteel");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 118, missing),
                 "plateAluminium",
@@ -1335,8 +1334,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 ItemList.Electric_Motor_MV.get(1L),
                 "plateAluminium",
                 GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Copper, 1L),
-                "plateAluminium"
-        );
+                "plateAluminium");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 119, missing),
                 "plateStainlessSteel",
@@ -1347,8 +1345,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 ItemList.Electric_Motor_HV.get(1L),
                 "plateStainlessSteel",
                 GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 1L),
-                "plateStainlessSteel"
-        );
+                "plateStainlessSteel");
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing),
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Reinforced, 1L));
