@@ -54,6 +54,11 @@ public class AchievementHandler {
         }
     }
 
+    public static void cleanup() {
+        LAST_DAMAGE.clear();
+        LAST_DEATHCOUNT.clear();
+    }
+
     @SubscribeEvent
     public void onEntityUpdate(PlayerTickEvent event) {
         if (event.side == Side.CLIENT || event.phase == Phase.START) {
