@@ -149,8 +149,8 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 1, missing));
         TCHelper.removeArcaneRecipe(
                 createItemStack(ElectroMagicTools.ID, "ElectricGogglesRevealing", 1, 164, "{charge:10.0d}", missing));
-        TCHelper.removeArcaneRecipe(
-                createItemStack(ElectroMagicTools.ID, "ElectricGogglesRevealing", 1, 164, "{charge:10.0d}", missing));
+        TCHelper.removeInfusionRecipe(
+                createItemStack(ElectroMagicTools.ID, "itemArmorQuantumChestplate", 1, 26, "{charge:10.0d}", missing));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "NanosuitGogglesRevealing", 1, 26, "{charge:10.0d}", missing));
         TCHelper.removeInfusionRecipe(
