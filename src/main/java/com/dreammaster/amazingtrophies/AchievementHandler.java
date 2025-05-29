@@ -10,7 +10,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.stats.StatBase;
 import net.minecraft.stats.StatList;
+import net.minecraft.stats.StatisticsFile;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+
+import com.dreammaster.main.MainRegistry;
 
 import WayofTime.alchemicalWizardry.ModItems;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -39,6 +42,7 @@ public class AchievementHandler {
     private static int numberPotions = 0;
 
     public static void init() {
+        // func_151177_a = getOneShotStat
         infinityArmorAchievement = StatList.func_151177_a("infinity_armor");
         omegaArmorAchievement = StatList.func_151177_a("omega_armor");
         damageAchievement = StatList.func_151177_a("10k_damage");
@@ -60,15 +64,29 @@ public class AchievementHandler {
     }
 
     @SubscribeEvent
-    public void onEntityUpdate(PlayerTickEvent event) {
+    public void onPlayerTick(PlayerTickEvent event) {
         if (event.side == Side.CLIENT || event.phase == Phase.START) {
             return;
         }
 
         EntityPlayer player = event.player;
         UUID uuid = player.getUniqueID();
-        int currentDeathCount = FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager()
-                .func_152602_a(player).writeStat(StatList.deathsStat);
+
+        // func_152602_a = getPlayerStatsFile
+        StatisticsFile statFile = FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager()
+                .func_152602_a(player);
+
+        if (statFile == null) {
+            MainRegistry.Logger.warn(
+                    String.format(
+                            "Failed to get statistics file for player %s (UUID: %s) during PlayerTickEvent.",
+                            player.getCommandSenderName(),
+                            uuid));
+            return;
+        }
+
+        // writeStat returns the stat's current value
+        int currentDeathCount = statFile.writeStat(StatList.deathsStat);
         Float lastDamage = LAST_DAMAGE.get(uuid);
         if (lastDamage != null && lastDamage >= 10000.0f && LAST_DEATHCOUNT.get(uuid) == currentDeathCount) {
             player.triggerAchievement(damageAchievement);
@@ -122,13 +140,27 @@ public class AchievementHandler {
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST, receiveCanceled = true)
-    public void onLivingHurt(LivingAttackEvent event) {
+    public void onLivingAttack(LivingAttackEvent event) {
         if (!(event.entityLiving instanceof EntityPlayer player)) {
             return;
         }
         UUID uuid = player.getUniqueID();
-        int deathCount = FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager()
-                .func_152602_a(player).writeStat(StatList.deathsStat);
+
+        // func_152602_a = getPlayerStatsFile
+        StatisticsFile statFile = FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager()
+                .func_152602_a(player);
+
+        if (statFile == null) {
+            MainRegistry.Logger.warn(
+                    String.format(
+                            "Failed to get statistics file for player %s (UUID: %s) during LivingAttackEvent.",
+                            player.getCommandSenderName(),
+                            uuid));
+            return;
+        }
+
+        // writeStat returns the stat's current value
+        int deathCount = statFile.writeStat(StatList.deathsStat);
         float amount = event.source instanceof DamageSourceInfinitySword ? Float.POSITIVE_INFINITY : event.ammount;
         LAST_DEATHCOUNT.put(uuid, deathCount);
         LAST_DAMAGE.put(uuid, amount);
