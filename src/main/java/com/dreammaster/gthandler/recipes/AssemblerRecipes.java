@@ -4673,7 +4673,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_LV.get(1L),
-                        ItemList.Casing_Turbine.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T1.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, 1L),
                         ItemList.Electric_Motor_LV.get(2L),
                         ItemList.Electric_Pump_LV.get(1L),
@@ -4686,7 +4686,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_LV.get(1L),
-                        ItemList.Casing_Turbine.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T1.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, 1L),
                         ItemList.Electric_Motor_LV.get(2L),
                         ItemList.Electric_Pump_LV.get(1L),
@@ -4698,7 +4698,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_LV.get(1L),
-                        ItemList.Casing_Turbine.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T1.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, 1L),
                         ItemList.Electric_Motor_LV.get(2L),
                         ItemList.Electric_Pump_LV.get(1L),
