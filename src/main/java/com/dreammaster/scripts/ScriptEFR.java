@@ -515,14 +515,6 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "mangrove_roots", 16, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "mud", 16, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "muddy_mangrove_roots", 16, 0, missing))
-                .duration(20 * SECONDS).eut(28).addTo(formingPressRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 8L),
                         GTOreDictUnificator.get(OrePrefixes.round, Materials.Steel, 8L),
                         GTUtility.getIntegratedCircuit(1))
