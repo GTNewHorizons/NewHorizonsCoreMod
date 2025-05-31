@@ -882,7 +882,7 @@ public class ScriptEFR implements IScriptLoader {
                 -6,
                 6,
                 3,
-                getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)).setParents("ENDERPOUCHE").setConcealed()
+                getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)).setParents("HUNGRYCHEST").setConcealed()
                         .setRound().setPages(new ResearchPage("EtFuturumRequiem.research_page.SHULKER.1"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
