@@ -2923,28 +2923,6 @@ public class AssemblerRecipes implements Runnable {
                     .addTo(assemblerRecipes);
         }
 
-        // 16A Zpm to LuV transformer
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.VanadiumGallium, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
-                        ItemList.Transformer_ZPM_LuV.get(1),
-                        ItemList.Casing_Coil_TungstenSteel.get(1))
-                .itemOutputs(GregtechItemList.Transformer_HA_ZPM_LuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
-
-        // 64A Zpm To LuV transformer
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.VanadiumGallium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
-                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
-                        GregtechItemList.Transformer_HA_ZPM_LuV.get(1),
-                        ItemList.Electric_Pump_LV.get(1))
-                .fluidInputs(Materials.Lubricant.getFluid(2000)).itemOutputs(ItemList.WetTransformer_ZPM_LuV.get(1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-
         // Hastelloy-X Structural Block
         GTValues.RA.stdBuilder()
                 .itemInputs(
