@@ -89,6 +89,7 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
@@ -142,6 +143,7 @@ public class MainRegistry {
     public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
+    private static boolean handleAchievements;
 
     public static void AddLoginError(String pMessage) {
         if (Module_AdminErrorLogs != null) {
@@ -524,6 +526,7 @@ public class MainRegistry {
             AchievementHandler handler = new AchievementHandler();
             MinecraftForge.EVENT_BUS.register(handler);
             FMLCommonHandler.instance().bus().register(handler);
+            handleAchievements = true;
         }
     }
 
@@ -569,6 +572,13 @@ public class MainRegistry {
         }
         if (YAMCore.isDebug()) {
             pEvent.registerServerCommand(new AllPurposeDebugCommand());
+        }
+    }
+
+    @Mod.EventHandler
+    public void serverUnload(FMLServerStoppingEvent event) {
+        if (handleAchievements) {
+            AchievementHandler.cleanup();
         }
     }
 }
