@@ -1313,6 +1313,39 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateIron",
                 "plateIron",
                 "plateIron");
+        addShapedRecipe(
+                getModItem(StevesCarts2.ID, "CartModule", 1, 117, missing),
+                "plateSteel",
+                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
+                "plateSteel",
+                ItemList.Electric_Motor_LV.get(1L),
+                "gearSteel",
+                ItemList.Electric_Motor_LV.get(1L),
+                "plateSteel",
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Tin, 1L),
+                "plateSteel");
+        addShapedRecipe(
+                getModItem(StevesCarts2.ID, "CartModule", 1, 118, missing),
+                "plateAluminium",
+                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
+                "plateAluminium",
+                ItemList.Electric_Motor_MV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Reinforced, 1L),
+                ItemList.Electric_Motor_MV.get(1L),
+                "plateAluminium",
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Copper, 1L),
+                "plateAluminium");
+        addShapedRecipe(
+                getModItem(StevesCarts2.ID, "CartModule", 1, 119, missing),
+                "plateStainlessSteel",
+                "circuitAdvanced",
+                "plateStainlessSteel",
+                ItemList.Electric_Motor_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Galgadorian, 1L),
+                ItemList.Electric_Motor_HV.get(1L),
+                "plateStainlessSteel",
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 1L),
+                "plateStainlessSteel");
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing),
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Reinforced, 1L));
