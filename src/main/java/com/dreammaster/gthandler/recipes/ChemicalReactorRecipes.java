@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Roquesit;
 import static goodgenerator.items.GGMaterial.indiumPhosphate;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
@@ -331,6 +332,14 @@ public class ChemicalReactorRecipes implements Runnable {
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(Botania.ID, "cocoon", 1L, 0),
+                            GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
+                    .itemOutputs(CustomItemList.TheBigEgg.get(1L))
+                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
+                    .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+
         }
 
         if (Gendustry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
@@ -397,6 +406,18 @@ public class ChemicalReactorRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "diamondApple", 1L, 0))
                     .fluidInputs(Materials.Blaze.getMolten(144)).duration(3 * MINUTES).eut(TierEU.RECIPE_HV)
                     .addTo(UniversalChemical);
+
+        }
+
+        if (Botania.isModLoaded()) {
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(Botania.ID, "manaBottle", 1L, 0),
+                            GTModHandler.getModItem(HardcoreEnderExpansion.ID, "essence", 1L, 0))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 1L, 15))
+                    .fluidInputs(FluidRegistry.getFluidStack("liquidair", 1000)).duration(1 * MINUTES)
+                    .eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
         }
 

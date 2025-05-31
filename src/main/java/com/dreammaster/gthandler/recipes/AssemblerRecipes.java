@@ -4,7 +4,59 @@ import static bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
 import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
 import static gregtech.api.enums.GTValues.L;
 import static gregtech.api.enums.GTValues.W;
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AE2FluidCraft;
+import static gregtech.api.enums.Mods.AE2Stuff;
+import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.BuildCraftCore;
+import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.BuildCraftTransport;
+import static gregtech.api.enums.Mods.Chisel;
+import static gregtech.api.enums.Mods.Computronics;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EnhancedLootBags;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.ExtraBees;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.FloodLights;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.ForgeMicroblocks;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.IronChests;
+import static gregtech.api.enums.Mods.IronTanks;
+import static gregtech.api.enums.Mods.JABBA;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.Natura;
+import static gregtech.api.enums.Mods.NaturesCompass;
+import static gregtech.api.enums.Mods.OpenBlocks;
+import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.OpenGlasses;
+import static gregtech.api.enums.Mods.OpenModularTurrets;
+import static gregtech.api.enums.Mods.OpenPrinters;
+import static gregtech.api.enums.Mods.OpenSecurity;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.StevesCarts2;
+import static gregtech.api.enums.Mods.StorageDrawers;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.VisualProspecting;
+import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -52,6 +104,7 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
@@ -2786,6 +2839,90 @@ public class AssemblerRecipes implements Runnable {
 
         }
 
+        if (Botania.isModLoaded()) {
+
+            // Hand of Ender
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(Botania.ID, "enderEyeBlock", 1L, 0),
+                            GTModHandler.getModItem(Witchery.ID, "witchhand", 1L, 0),
+                            GTModHandler.getModItem(Botania.ID, "manaResource", 5L, 22),
+                            GTModHandler.getModItem(Botania.ID, "manaBeacon", 1L, 5),
+                            new ItemStack(Blocks.ender_chest, 1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "enderHand", 1L, 0))
+                    .fluidInputs(MaterialsBotania.Terrasteel.getMolten(1296)).duration(12 * SECONDS + 10 * TICKS)
+                    .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+            // Botania seeds grass
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 3, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 0, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 4, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 1, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 5, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 2, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 6, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 3, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 7, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 4, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 8, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 5, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "altGrass", 2, 0, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 1, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 2, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 3, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 4, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 5, missing),
+                            getModItem(Botania.ID, "overgrowthSeed", 1, 0, missing),
+                            getModItem(Botania.ID, "worldSeed", 1, 0, missing),
+                            GTUtility.getIntegratedCircuit(10))
+                    .itemOutputs(getModItem(Botania.ID, "enchantedSoil", 12, 0, missing)).duration(50 * SECONDS)
+                    .eut(240).addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Items.wheat, 16),
+                            new ItemStack(Items.wheat_seeds, 1),
+                            getModItem(Botania.ID, "fertilizer", 1, 0, missing),
+                            GTUtility.getIntegratedCircuit(10))
+                    .itemOutputs(new ItemStack(Blocks.tallgrass, 16, 1)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+        }
+
         // Hastelloy-X Structural Block
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -4859,7 +4996,7 @@ public class AssemblerRecipes implements Runnable {
                         GGMaterial.extremelyUnstableNaquadah.get(OrePrefixes.bolt, 4),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
                         ItemList.Gravistar.get(1L),
-                        GTModHandler.getModItem(EnderIO.ID, "itemFrankenSkull", 1L, 5),
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1L, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 2),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "itemBasicCapacitor", 1L, 6))
@@ -4870,7 +5007,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTModHandler.getModItem(EnderIO.ID, "itemBasicCapacitor", 1L, 5),
                         ItemList.Gravistar.get(1L),
-                        GTModHandler.getModItem(EnderIO.ID, "itemFrankenSkull", 1L, 5),
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1L, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 2))
                 .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "itemBasicCapacitor", 1L, 6))
                 .fluidInputs(Materials.Neutronium.getMolten(1152)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)

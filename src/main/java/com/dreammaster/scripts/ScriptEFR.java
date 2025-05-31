@@ -1,15 +1,48 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AE2Stuff;
+import static gregtech.api.enums.Mods.AdventureBackpack;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.ElectroMagicTools;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.PamsHarvestTheNether;
+import static gregtech.api.enums.Mods.StevesCarts2;
+import static gregtech.api.enums.Mods.TaintedMagic;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TinkersGregworks;
+import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.WitchingGadgets;
+import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
+import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
-import static gregtech.api.util.GTRecipeBuilder.*;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
 import java.util.Arrays;
@@ -23,6 +56,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.chisel.ChiselHelper;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -34,6 +68,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -416,8 +451,104 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing));
 
         GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 15),
+                getModItem(EtFuturumRequiem.ID, "black_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 14),
+                getModItem(EtFuturumRequiem.ID, "red_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 13),
+                getModItem(EtFuturumRequiem.ID, "green_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 12),
+                getModItem(EtFuturumRequiem.ID, "brown_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 3),
+                getModItem(EtFuturumRequiem.ID, "light_blue_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 4),
+                getModItem(EtFuturumRequiem.ID, "yellow_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 5),
+                getModItem(EtFuturumRequiem.ID, "lime_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 6),
+                getModItem(EtFuturumRequiem.ID, "pink_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 0),
+                getModItem(EtFuturumRequiem.ID, "white_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 7),
+                getModItem(EtFuturumRequiem.ID, "gray_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 8),
+                getModItem(EtFuturumRequiem.ID, "light_gray_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 9),
+                getModItem(EtFuturumRequiem.ID, "cyan_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 10),
+                getModItem(EtFuturumRequiem.ID, "purple_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 11),
+                getModItem(EtFuturumRequiem.ID, "blue_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 2),
+                getModItem(EtFuturumRequiem.ID, "magenta_glazed_terracotta", 1, 0, missing));
+        GTModHandler.addSmeltingRecipe(
+                new ItemStack(Blocks.stained_hardened_clay, 1, 1),
+                getModItem(EtFuturumRequiem.ID, "orange_glazed_terracotta", 1, 0, missing));
+
+        GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
                 getModItem(EtFuturumRequiem.ID, "smooth_quartz", 1, 0, missing));
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 0), ItemList.Shape_Extruder_Block.get(0L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 0, missing)).duration(6 * SECONDS)
+                .eut(80).addTo(extruderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 2), ItemList.Shape_Extruder_Block.get(0L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 2, missing)).duration(6 * SECONDS)
+                .eut(80).addTo(extruderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log2, 1, 0), ItemList.Shape_Extruder_Block.get(0L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 0, missing)).duration(6 * SECONDS)
+                .eut(80).addTo(extruderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log2, 1, 1), ItemList.Shape_Extruder_Block.get(0L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 1, missing)).duration(6 * SECONDS)
+                .eut(80).addTo(extruderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 1), ItemList.Shape_Extruder_Block.get(0L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 1, missing)).duration(6 * SECONDS)
+                .eut(80).addTo(extruderRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 0, missing),
+                        ItemList.Shape_Extruder_Block.get(0L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2, missing)).duration(6 * SECONDS).eut(80)
+                .addTo(extruderRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.round, Materials.Steel, 8L),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "chain", 16, 0, missing)).duration(20 * SECONDS).eut(28)
+                .addTo(formingPressRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 2L),
+                        new ItemStack(Blocks.red_flower, 1, 0),
+                        getModItem(MagicBees.ID, "miscResources", 1, 4, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(28).addTo(formingPressRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TaintedMagic.ID, "BlockWarpwoodLeaves", 4, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "nether_wart", 4, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1, missing)).duration(20 * SECONDS)
+                .eut(28).addTo(formingPressRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
@@ -432,6 +563,21 @@ public class ScriptEFR implements IScriptLoader {
                         new ItemStack(Blocks.furnace, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "amethyst_block", 64, 0, missing),
+                        getModItem(AE2Stuff.ID, "Grower", 6, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 6, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 6, 7, missing),
+                        getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0, missing),
+                        getModItem(BloodMagic.ID, "enhancedFillingAgent", 1, 0, missing),
+                        getModItem(Botania.ID, "rune", 1, 9, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 10, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 32, 6, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.crystallinepinkslime"), 4320))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "budding_amethyst", 6, 0, missing)).duration(50 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(Minecraft.ID, "leather", 1, 0, missing),
@@ -503,6 +649,10 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "old_gravel", 8L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.grass, 64), new ItemStack(Items.wooden_shovel, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "grass_path", 64L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.getIntegratedCircuit(21),
@@ -540,6 +690,18 @@ public class ScriptEFR implements IScriptLoader {
         ChiselHelper.addVariationFromStack("EFRHoneyBlock", getModItem(BiomesOPlenty.ID, "honeyBlock", 1L));
         ChiselHelper.addVariationFromStack("EFRHoneyBlock", getModItem(EtFuturumRequiem.ID, "honey_block", 1L));
 
+        ChiselHelper.addVariationFromStack(
+                "EFRAmethystBlock",
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Amethyst, 1L));
+        ChiselHelper.addVariationFromStack("EFRAmethystBlock", getModItem(EtFuturumRequiem.ID, "amethyst_block", 1L));
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.glass, 2),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 4L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "tinted_glass", 2L)).duration(20 * SECONDS).eut(15)
+                .addTo(alloySmelterRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 2L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
@@ -555,6 +717,58 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "leaves", 1, 1, missing))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "pink_petals", 4, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0, missing))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 9L)).duration(8 * SECONDS)
+                .eut(2).addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 3L)).duration(8 * SECONDS)
+                .eut(2).addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0, missing))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 9L)).duration(13 * SECONDS)
+                .eut(4).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 13L),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 2880)).duration(2 * MINUTES)
+                .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing), GTUtility.getIntegratedCircuit(16))
@@ -587,6 +801,21 @@ public class ScriptEFR implements IScriptLoader {
                         new FluidStack(FluidRegistry.getFluid("ender"), 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing))
+                .itemOutputs(NHItemList.TuffDust.getIS(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.getIS(36))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.VolcanicAsh, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Pumice, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GraniteBlack, 4L))
+                .outputChances(5000, 2000, 1000, 750, 500, 250).duration(2 * MINUTES)
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
+                .addTo(centrifugeRecipes);
+
         new ResearchItem(
                 "UNDYINGTOTEM",
                 "NEWHORIZONS",
@@ -597,7 +826,8 @@ public class ScriptEFR implements IScriptLoader {
                 -7,
                 3,
                 getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing)).setParents("GREENHEART")
-                        .setConcealed().setRound().setPages(new ResearchPage("TConstruct.research_page.UNDYINGTOTEM.1"))
+                        .setConcealed().setRound()
+                        .setPages(new ResearchPage("EtFuturumRequiem.research_page.UNDYINGTOTEM.1"))
                         .registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "UNDYINGTOTEM",
@@ -626,6 +856,380 @@ public class ScriptEFR implements IScriptLoader {
                                 TCHelper.findInfusionRecipe(
                                         getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing)))));
         ThaumcraftApi.addWarpToResearch("UNDYINGTOTEM", 3);
+        // Shulker
+        new ResearchItem(
+                "SHULKER",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
+                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
+                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("corpus"), 3),
+                -6,
+                6,
+                3,
+                getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)).setParents("HUNGRYCHEST").setConcealed()
+                        .setRound().setPages(new ResearchPage("EtFuturumRequiem.research_page.SHULKER.1"))
+                        .registerResearchItem();
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
+                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
+                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                'c',
+                GTOreDictUnificator.get("plateLivingwood", 1),
+                'd',
+                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing));
+        TCHelper.addResearchPage(
+                "SHULKER",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)))));
+
+        // Netherite gear
+        new ResearchItem(
+                "NetheriteArmour",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
+                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
+                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("ignis"), 3),
+                6,
+                6,
+                3,
+                getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing)).setParents("ELDRITCHMINOR")
+                        .setConcealed().setRound()
+                        .setPages(new ResearchPage("EtFuturumRequiem.research_page.NetheriteArmour.1"))
+                        .registerResearchItem();
+        // Helmet
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_helmet", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(Botania.ID, "manaweaveHelm", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        // Chestplate
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_chestplate", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(Botania.ID, "manaweaveChest", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        // Leggins
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_leggings", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(Botania.ID, "manaweaveLegs", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        // Boots
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_boots", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(Botania.ID, "manaweaveBoots", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        // Pickaxe
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_pickaxe", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(Botania.ID, "manasteelPick", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        // Hoe
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_hoe", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(PamsHarvestTheNether.ID, "Quartz Hoe", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        // Shovel
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_spade", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(Botania.ID, "manasteelShovel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        // Sword
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_sword", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(Botania.ID, "manasteelSword", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        // Axe
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "NetheriteArmour",
+                getModItem(EtFuturumRequiem.ID, "netherite_axe", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                'd',
+                getModItem(Botania.ID, "manasteelAxe", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_helmet", 1, 0, missing)))));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_chestplate", 1, 0, missing)))));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_leggings", 1, 0, missing)))));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_boots", 1, 0, missing)))));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_pickaxe", 1, 0, missing)))));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_hoe", 1, 0, missing)))));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_spade", 1, 0, missing)))));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_sword", 1, 0, missing)))));
+        TCHelper.addResearchPage(
+                "NetheriteArmour",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "netherite_axe", 1, 0, missing)))));
+        ThaumcraftApi.addWarpToResearch("NetheriteArmour", 3);
+        // Elytra
+        new ResearchItem(
+                "ELYTRA",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("lucrum"), 12)
+                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
+                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("tempestas"), 3),
+                -4,
+                6,
+                3,
+                getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing)).setParents("FeatherWings").setConcealed()
+                        .setPages(new ResearchPage("EtFuturumRequiem.research_page.ELYTRA.1")).registerResearchItem();
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "ELYTRA",
+                getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing),
+                15,
+                new AspectList().add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("praecantatio"), 150)
+                        .add(Aspect.getAspect("motus"), 150).add(Aspect.getAspect("tempestas"), 200)
+                        .add(Aspect.getAspect("praecantatio"), 200),
+                getModItem(WitchingGadgets.ID, "item.WG_Kama", 1, 4, missing),
+                new ItemStack[] { getModItem(EnderIO.ID, "itemGliderWing", 1, 1, missing),
+                        GregtechItemList.MagicFeather.get(1),
+                        getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing),
+                        getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
+                        getModItem(Botania.ID, "manaBeacon", 1, 10, missing),
+                        getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
+                        getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing),
+                        GregtechItemList.MagicFeather.get(1), });
+        TCHelper.addResearchPage(
+                "ELYTRA",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findInfusionRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing)))));
 
     }
 }
