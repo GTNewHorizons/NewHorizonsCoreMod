@@ -5,13 +5,10 @@ import static bartworks.common.loaders.RadioHatchMaterialLoader.radioHatchMateri
 import static gregtech.api.util.GTRecipeConstants.MASS;
 import static gregtech.api.util.GTRecipeConstants.SIEVERT;
 
-import net.minecraft.item.ItemStack;
-
 import gregtech.api.enums.GTValues;
 import gregtech.api.util.recipe.Sievert;
 import gtPlusPlus.core.material.Material;
 import gtPlusPlus.core.material.MaterialsElements;
-import gtPlusPlus.core.util.minecraft.ItemUtils;
 
 public class BW_RadHatchMaterial {
 
