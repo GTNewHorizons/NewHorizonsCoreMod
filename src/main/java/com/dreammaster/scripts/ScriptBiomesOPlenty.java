@@ -335,6 +335,10 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing), GTUtility.getIntegratedCircuit(11))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing)).eut(30).duration(15 * SECONDS)
                 .addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(Botania.ID, "manaResource", 1, 8, missing), GTUtility.getIntegratedCircuit(11))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11, missing)).eut(30).duration(15 * SECONDS)
+                .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing)).eut(30).duration(15 * SECONDS)
                 .addTo(compressorRecipes);
