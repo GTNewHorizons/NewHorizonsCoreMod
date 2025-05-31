@@ -13,7 +13,9 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
+import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
@@ -27,7 +29,9 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeConstants.DISSOLUTION_TANK_RATIO;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
+import static gtnhlanth.api.recipe.LanthanidesRecipeMaps.dissolutionTankRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -338,6 +342,194 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing)).eut(30).duration(15 * SECONDS)
                 .addTo(compressorRecipes);
+
+        // BOP renovable flora
+
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 1, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 5, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 2, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 7, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 3, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 4, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 4, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 4, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 5, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 6, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 6, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 0, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 7, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 2, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 8, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 15, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 9, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 1, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 10, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 3, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 0, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 1, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 11, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 5, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 12, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 12, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 13, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "foliage", 16, 13, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 14, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 8, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 15, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "plants", 16, 5, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Botania.ID, "virus", 16, 0, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 13, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Witchery.ID, "ingredient", 64, 78, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 7, missing)).eut(TierEU.RECIPE_HV)
+                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Witchery.ID, "ingredient", 16, 21, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 8, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 800),
+                        FluidRegistry.getFluidStack("fluiddeath", 800))
+                .itemInputs(getModItem(Witchery.ID, "ingredient", 16, 22, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "plants", 16, 15, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 8000),
+                        FluidRegistry.getFluidStack("fluiddeath", 8000))
+                .itemInputs(getModItem(ThaumicBases.ID, "goldenOakSapling", 1, 2, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 3960))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 2, missing)).eut(TierEU.RECIPE_EV).duration(80)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 8000),
+                        FluidRegistry.getFluidStack("fluiddeath", 8000))
+                .itemInputs(getModItem(ThaumicBases.ID, "goldenOakSapling", 1, 3, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 3960))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 11, missing)).eut(TierEU.RECIPE_EV).duration(80)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 200),
+                        FluidRegistry.getFluidStack("fluiddeath", 200))
+                .itemInputs(getModItem(ThaumicBases.ID, "rainbowCactus", 1, 0, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 144))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "plants", 1, 12, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
 
     }
 }
