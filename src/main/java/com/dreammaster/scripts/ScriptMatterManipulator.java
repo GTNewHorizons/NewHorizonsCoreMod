@@ -8,9 +8,11 @@ import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MatterManipulator;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
 import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GTRecipeConstants.SCANNING;
@@ -19,16 +21,19 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.recursive_pineapple.matter_manipulator.common.items.MMItemList;
 
 import appeng.api.AEApi;
+import appeng.api.util.AEColor;
 import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeMaps;
@@ -37,9 +42,11 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.material.MaterialsAlloy;
+import gtPlusPlus.core.material.MaterialsElements;
 import tectech.recipe.TTRecipeAdder;
 import tectech.thing.CustomItemList;
 
+@SuppressWarnings("deprecation")
 public class ScriptMatterManipulator implements IScriptLoader {
 
     @Override
@@ -59,6 +66,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
         addMK2Recipes();
         addMK3Recipe();
         addUplinkRecipes();
+        addUpgradeRecipes();
     }
 
     private static void addMK0Recipes() {
@@ -67,7 +75,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .itemInputs(
                         GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.StainlessSteel, 8),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1), // energy crystal
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, WILDCARD), // energy crystal
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 12),
                         new Object[] { OrePrefixes.circuit.get(Materials.HV), 2 },
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 16))
@@ -464,5 +472,81 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 MMItemList.UplinkController.get(1),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UV);
+    }
+
+    private static void addUpgradeRecipes() {
+        // Blank Manipulator Upgrade
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 16),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 8),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(L * 8)).itemOutputs(MMItemList.UpgradeBlank.get(1))
+                .eut(TierEU.RECIPE_HV).duration(10 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+
+        // Excavation Manipulator Upgrade
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MMItemList.UpgradeBlank.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Thaumium, 8),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 8),
+                        getModItem(Thaumcraft.ID, "FocusExcavation"), // excavation focus
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 0), // greatwood wand
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15)) // primal charm
+                .fluidInputs(Materials.Shadow.getMolten(L * 8)).itemOutputs(MMItemList.UpgradePrototypeMining.get(1))
+                .eut(TierEU.RECIPE_HV).duration(10 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+
+        // :derangedgregger:
+        ItemStack jarredNode = getModItem(Thaumcraft.ID, "BlockJarNodeItem"); // node in a jar
+        jarredNode.setStackDisplayName(EnumChatFormatting.RESET + "Any " + jarredNode.getDisplayName());
+
+        // Auxiliary Teleporter Manipulator Upgrade
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MMItemList.UpgradeBlank.get(1),
+                        ItemList.Field_Generator_HV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
+                        getModItem(ThaumicTinkerer.ID, "focusDislocation"), // dislocation focus
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 2),
+                        jarredNode,
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Thaumium, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Thaumium, 32))
+                .fluidInputs(Materials.Void.getMolten(L * 8)).itemOutputs(MMItemList.UpgradeSpeed.get(1))
+                .eut(TierEU.RECIPE_HV).duration(10 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+
+        // Adaptive Wiring Harness Manipulator Upgrade
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MMItemList.UpgradeBlank.get(1),
+                        getModItem(Mods.Automagy.ID, "crystalBrain", 1, 4), // crystalline brain: order
+                        getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100), // blank golem animation core
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Thaumium, 8),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Mercury, 32),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.wireFine, Materials.Titaniumonabariumdecacoppereikosaoxid, 64))
+                .fluidInputs(Materials.Void.getMolten(L * 8)).itemOutputs(MMItemList.UpgradePowerEff.get(1))
+                .eut(TierEU.RECIPE_HV).duration(10 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+
+        // Energy Tunnel Manipulator Upgrade
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                AEApi.instance().definitions().parts().p2PTunnelGregtech().maybeStack(1).get(),
+                256000,
+                2048,
+                (int) TierEU.RECIPE_UV,
+                8,
+                new Object[] { MMItemList.UpgradeBlank.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                        AEApi.instance().definitions().parts().cableDense().stack(AEColor.Transparent, 16),
+                        AEApi.instance().definitions().parts().p2PTunnelGregtech().maybeStack(4).get(),
+                        CustomItemList.Machine_Multi_Transformer.get(1),
+                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlate(8), ItemList.Circuit_Chip_QPIC.get(4),
+                        CustomItemList.LASERpipe.get(64), ItemList.Reactor_Coolant_Sp_6.get(1), },
+                new FluidStack[] { MaterialsAlloy.INDALLOY_140.getFluidStack(144 * 64),
+                        Materials.CosmicNeutronium.getMolten(144 * 32), Materials.SuperCoolant.getFluid(256_000), },
+                MMItemList.UpgradePowerP2P.get(1),
+                10 * SECONDS,
+                (int) TierEU.RECIPE_UEV);
     }
 }
