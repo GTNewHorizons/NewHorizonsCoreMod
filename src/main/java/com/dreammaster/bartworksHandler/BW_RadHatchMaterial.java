@@ -13,7 +13,6 @@ import gtPlusPlus.core.material.MaterialsElements;
 public class BW_RadHatchMaterial {
 
     public static void runRadHatchAdder() {
-        ;
 
         for (Material material : Material.mMaterialMap) {
             if (material == null || material.vRadiationLevel <= 0) {
