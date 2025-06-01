@@ -344,10 +344,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
         if (Gendustry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            CustomItemList.TheBigEgg.get(1L),
-                            GTModHandler.getModItem(IndustrialCraft2.ID, "itemUran238", 64L, 0))
+            GTValues.RA.stdBuilder().itemInputs(CustomItemList.TheBigEgg.get(1L), ItemList.IC2_Uranium_238.get(64))
                     .itemOutputs(CustomItemList.MutatedEgg.get(1L))
                     .fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(256).addTo(UniversalChemical);
