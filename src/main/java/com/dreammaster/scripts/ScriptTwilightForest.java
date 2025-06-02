@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TwilightForest;
@@ -470,5 +471,13 @@ public class ScriptTwilightForest implements IScriptLoader {
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeWaterLily", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 3));
+
+        ThaumcraftApi.addCrucibleRecipe(
+                "ThaumiumReinforcedWings",
+                getModItem(TwilightForest.ID, "item.tfFeather", 1, 0, missing),
+                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 13, missing),
+                new AspectList().add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("tenebrae"), 4)
+                        .add(Aspect.getAspect("tempus"), 4));
+
     }
 }
