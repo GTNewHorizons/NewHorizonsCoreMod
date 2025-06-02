@@ -592,7 +592,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .fluidInputs(FluidRegistry.getFluidStack("blood", 1000), FluidRegistry.getFluidStack("netherair", 100))
-                .fluidOutputs(FluidRegistry.getFluidStack("hell_blood", 900)).duration(20 * SECONDS)
+                .fluidOutputs(FluidRegistry.getFluidStack("hell_blood", 1000)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
 
         if (Forestry.isModLoaded()) {
