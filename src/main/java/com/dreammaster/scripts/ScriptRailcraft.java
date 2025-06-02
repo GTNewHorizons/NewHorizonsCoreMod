@@ -20,6 +20,7 @@ import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -1955,6 +1956,8 @@ public class ScriptRailcraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
 
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 7, missing))
+                .itemOutputs(Materials.Marble.getDust(1)).duration(8 * SECONDS).eut(4).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
