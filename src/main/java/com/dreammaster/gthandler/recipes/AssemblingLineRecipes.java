@@ -1,10 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Californium;
+import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.GTValues.L;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GraviSuite;
@@ -1108,24 +1110,26 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Compressor controllers
         {
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Machine_Multi_IndustrialCompressor.get(1))
-                    .metadata(SCANNING, new Scanning(1 * MINUTES + 20 * SECONDS, TierEU.RECIPE_LuV))
-                    .itemInputs(
-                            ItemList.Machine_Multi_IndustrialCompressor.get(4),
-                            ItemList.Heating_Duct_Casing.get(4L),
-                            ItemList.Coolant_Duct_Casing.get(4L),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Netherite, 4),
-                            ItemList.Electric_Piston_ZPM.get(16),
-                            ItemList.Robot_Arm_ZPM.get(4),
-                            ItemList.Electric_Pump_ZPM.get(4),
-                            new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 })
-                    .itemOutputs(ItemList.Machine_Multi_HIPCompressor.get(1))
-                    .fluidInputs(
-                            GGMaterial.incoloy903.getMolten(256 * 144),
-                            Materials.NaquadahEnriched.getMolten(64 * 144),
-                            Materials.LiquidAir.getFluid(16000),
-                            Materials.Lubricant.getFluid(16000))
-                    .duration(120 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
+            if (EtFuturumRequiem.isModLoaded()) {
+                GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Machine_Multi_IndustrialCompressor.get(1))
+                        .metadata(SCANNING, new Scanning(1 * MINUTES + 20 * SECONDS, TierEU.RECIPE_LuV))
+                        .itemInputs(
+                                ItemList.Machine_Multi_IndustrialCompressor.get(4),
+                                ItemList.Heating_Duct_Casing.get(4L),
+                                ItemList.Coolant_Duct_Casing.get(4L),
+                                getModItem(EtFuturumRequiem.ID, "netherite_block", 4, missing),
+                                ItemList.Electric_Piston_ZPM.get(16),
+                                ItemList.Robot_Arm_ZPM.get(4),
+                                ItemList.Electric_Pump_ZPM.get(4),
+                                new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 })
+                        .itemOutputs(ItemList.Machine_Multi_HIPCompressor.get(1))
+                        .fluidInputs(
+                                GGMaterial.incoloy903.getMolten(256 * 144),
+                                Materials.NaquadahEnriched.getMolten(64 * 144),
+                                Materials.LiquidAir.getFluid(16000),
+                                Materials.Lubricant.getFluid(16000))
+                        .duration(120 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
+            }
 
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(Avaritia.ID, "Singularity", 1L, 0))
                     .metadata(SCANNING, new Scanning(3 * MINUTES, TierEU.RECIPE_UEV))
