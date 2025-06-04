@@ -193,7 +193,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 64L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 16L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 16L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 16L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 16L),
+                        ItemList.Radiation_Proof_Prismatic_Naquadah_Composite_Sheet.get(16L))
                 .fluidInputs(new FluidStack(solderIndalloy, (32 * 144)), Materials.Lead.getMolten(64 * 144L))
                 .itemOutputs(new ItemStack(Loaders.advancedRadiationProtectionPlate, 4, 0))
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
