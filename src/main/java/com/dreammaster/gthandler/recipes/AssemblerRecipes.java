@@ -2733,7 +2733,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Trinium, 6),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.NaquadahAlloy, 16),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Netherite, 16),
                         ItemList.UV_Coil.get(2))
                 .fluidInputs(Materials.Osmiridium.getMolten(4 * 144))
                 .itemOutputs(ItemList.BlockPlasmaHeatingCasing.get(1)).eut(TierEU.RECIPE_ZPM).duration(10 * SECONDS)
@@ -2966,7 +2966,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_RadiationProof.get(1),
                         new ItemStack(advancedRadiationProtectionPlate, 8),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.PrismaticNaquadah, 1),
                         GTUtility.getIntegratedCircuit(16))
                 .fluidInputs(Materials.UUMatter.getFluid(64000L))
                 .itemOutputs(ItemList.Background_Radiation_Casing.get(1)).duration(10).eut(TierEU.RECIPE_UIV)

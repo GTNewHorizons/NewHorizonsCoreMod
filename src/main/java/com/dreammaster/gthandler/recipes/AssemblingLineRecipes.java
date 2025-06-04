@@ -1114,7 +1114,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Machine_Multi_IndustrialCompressor.get(4),
                             ItemList.Heating_Duct_Casing.get(4L),
                             ItemList.Coolant_Duct_Casing.get(4L),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Naquadria, 4),
+                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Netherite, 4),
                             ItemList.Electric_Piston_ZPM.get(16),
                             ItemList.Robot_Arm_ZPM.get(4),
                             ItemList.Electric_Pump_ZPM.get(4),
