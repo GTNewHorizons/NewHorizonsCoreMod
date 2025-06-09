@@ -24,6 +24,7 @@ import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.ProjectRedExploration;
 import static gregtech.api.enums.Mods.ProjectRedFabrication;
+import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.ProjectRedTransmission;
 import static gregtech.api.enums.Mods.ProjectRedTransportation;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -2904,6 +2905,39 @@ public class ScriptProjectRed implements IScriptLoader {
                                     8,
                                     missing))
                     .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+            //OR Gate
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(ProjectRedIntegration.ID, "integration.gate", 1, 0, missing))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(30)
+                    .addTo(circuitAssemblerRecipes);
+
+            //NOR Gate
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(getModItem(ProjectRedIntegration.ID, "integration.gate", 1, 1, missing))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(30)
+                    .addTo(circuitAssemblerRecipes);
+            //NOT Gate
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 5, missing),
+                            GTUtility.getIntegratedCircuit(3))
+                    .itemOutputs(getModItem(ProjectRedIntegration.ID, "integration.gate", 1, 1, missing))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(30)
+                    .addTo(circuitAssemblerRecipes);
         }
     }
 
