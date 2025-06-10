@@ -24,8 +24,8 @@ dependencies {
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.8.1:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.3.7-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:ForestryMC:4.10.10:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:MatterManipulator:0.0.29-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:ForestryMC:4.10.11:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:MatterManipulator:0.0.30-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.6.2:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.2-GTNH:dev")
     //compileOnly("com.github.Roadhog360:Et-Futurum-Requiem:2.6.2:dev") { transitive = false }
