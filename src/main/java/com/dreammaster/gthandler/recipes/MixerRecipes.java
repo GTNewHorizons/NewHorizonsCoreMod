@@ -43,6 +43,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.fluids.GTPPFluids;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
 
@@ -999,6 +1000,12 @@ public class MixerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(Materials.AstralSilver.getDust(3)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(mixerRecipes);
+
+        // Chamber Centrifuge Tier2 Fluid
+        GTValues.RA.stdBuilder().itemInputs(Materials.CosmicNeutronium.getDust(4), Materials.Glowstone.getNanite(2))
+                .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), MaterialsUEVplus.LumipodExtract.getFluid(1000))
+                .fluidOutputs(MaterialsUEVplus.BiolcatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)
+                .eut(TierEU.UHV).addTo(mixerNonCellRecipes);
 
         if (PamsHarvestCraft.isModLoaded()) {
 
