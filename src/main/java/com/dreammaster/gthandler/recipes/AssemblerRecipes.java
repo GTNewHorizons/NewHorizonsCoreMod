@@ -10981,5 +10981,17 @@ public class AssemblerRecipes implements Runnable {
         GTModHandler.addShapelessCraftingRecipe(
                 Machine_Multi_Switch.get(1),
                 new Object[] { Machine_Multi_Switch_Adv.get(1) });
+
+        // Decay Warehouse
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_RadiationProof.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
+                        ItemList.Conveyor_Module_EV.get(2),
+                        ItemList.Robot_Arm_EV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lead, 4),
+                        ItemList.Cover_Screen.get(1))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(144 * 8)).itemOutputs(ItemList.DecayWarehouse.get(1))
+                .duration(30 * SECONDS).eut((int) TierEU.RECIPE_EV).addTo(assemblerRecipes);
     }
 }
