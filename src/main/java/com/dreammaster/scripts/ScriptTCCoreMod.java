@@ -24,6 +24,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.STACKS;
 import static gregtech.api.util.GTRecipeConstants.DEFC_CASING_TIER;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.electrolyzerNonCellRecipes;
 import static kubatech.loaders.DEFCRecipes.fusionCraftingRecipes;
@@ -1296,8 +1297,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         MaterialsElements.getInstance().RHODIUM.getDust(64),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 64, 6, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 64))
-                .fluidInputs(Materials.Thaumium.getMolten(64 * 144))
-                .fluidOutputs(Materials.HellishMetal.getMolten(256 * 144)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
+                .fluidInputs(Materials.Thaumium.getMolten(STACKS))
+                .fluidOutputs(Materials.HellishMetal.getMolten(4 * STACKS)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                 .metadata(DEFC_CASING_TIER, 1).addTo(fusionCraftingRecipes);
 
     }
