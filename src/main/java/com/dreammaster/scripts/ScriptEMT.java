@@ -28,6 +28,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
@@ -148,8 +149,8 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 1, missing));
         TCHelper.removeArcaneRecipe(
                 createItemStack(ElectroMagicTools.ID, "ElectricGogglesRevealing", 1, 164, "{charge:10.0d}", missing));
-        TCHelper.removeArcaneRecipe(
-                createItemStack(ElectroMagicTools.ID, "ElectricGogglesRevealing", 1, 164, "{charge:10.0d}", missing));
+        TCHelper.removeInfusionRecipe(
+                createItemStack(ElectroMagicTools.ID, "itemArmorQuantumChestplate", 1, 26, "{charge:10.0d}", missing));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "NanosuitGogglesRevealing", 1, 26, "{charge:10.0d}", missing));
         TCHelper.removeInfusionRecipe(
@@ -216,7 +217,7 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 0,
                 1,
-                com.dreammaster.item.ItemList.EMT.getIS()).setAutoUnlock().setSpecial()
+                NHItemList.EMT.getIS()).setAutoUnlock().setSpecial()
                         .setPages(new ResearchPage("tc.research_page.ElectricMagicTools")).registerResearchItem();
         TCHelper.removeResearch("Diamond Chainsaw");
         new ResearchItem(

@@ -3,7 +3,9 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.AvaritiaAddons;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.UniversalSingularities;
@@ -24,7 +26,9 @@ import net.minecraft.item.ItemStack;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.Config;
+import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import fox.spiteful.avaritia.items.LudicrousItems;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -34,6 +38,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import vazkii.botania.common.item.ModItems;
+import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
 public class ScriptAvaritiaAddons implements IScriptLoader {
 
@@ -48,6 +54,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 AppliedEnergistics2.ID,
                 AvaritiaAddons.ID,
                 EternalSingularity.ID,
+                ForbiddenMagic.ID,
                 GregTech.ID,
                 Avaritia.ID,
                 IronChests.ID,
@@ -124,7 +131,78 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 ItemList.Quantum_Chest_IV.get(1L),
                 'h',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60));
-
+        // Asgardandelion
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                ItemBlockSpecialFlower.ofType("asgardandelion"),
+                "RXDXGXEXM",
+                "X009i900X",
+                "d0957490n",
+                "X0iAZai0X",
+                "T098B690r",
+                "X109i901X",
+                "t1102011H",
+                "X0112110X",
+                "eXK131SXm",
+                'R',
+                getModItem(Botania.ID, "corporeaSpark", 1, 1),
+                'D',
+                getModItem(Botania.ID, "rune", 1, 10),
+                'G',
+                getModItem(Botania.ID, "rune", 1, 9),
+                'E',
+                getModItem(Botania.ID, "rune", 1, 11),
+                'M',
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 11),
+                'd',
+                getModItem(Botania.ID, "rune", 1, 12),
+                'n',
+                getModItem(Botania.ID, "rune", 1, 13),
+                'T',
+                getModItem(Botania.ID, "rune", 1, 14),
+                'r',
+                getModItem(Botania.ID, "rune", 1, 15),
+                't',
+                getModItem(Botania.ID, "rune", 1, 3),
+                'H',
+                getModItem(Botania.ID, "rune", 1, 6),
+                'e',
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 7),
+                'K',
+                getModItem(Botania.ID, "rune", 1, 5),
+                'X',
+                getModItem(Botania.ID, "bifrostPermPane", 1, 0),
+                '3',
+                new ItemStack(ModItems.blackLotus, 1, 1),
+                'S',
+                getModItem(Botania.ID, "rune", 1, 4),
+                'm',
+                getModItem(Botania.ID, "lightRelay", 1, 1),
+                'Z',
+                new ItemStack(LudicrousBlocks.infinitato),
+                '1',
+                new ItemStack(LudicrousItems.resource, 1, 3), // Neutronium nugget
+                '2',
+                "blockCosmicNeutronium",
+                'i',
+                "plateInfinity",
+                'A',
+                "gemExquisiteBotaniaDragonstone",
+                'a',
+                "gemExquisiteManaDiamond",
+                'B',
+                "plateGaiaSpirit",
+                '4',
+                "plateLivingwood",
+                '5',
+                "plateLivingrock",
+                '6',
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5),
+                '7',
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 3),
+                '8',
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2),
+                '9',
+                "nuggetInfinity");
         // Infinity Egg (Witchery)
         if (Config.witch) {
 

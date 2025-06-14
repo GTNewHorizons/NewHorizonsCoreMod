@@ -1,33 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodArsenal;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.BuildCraftFactory;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.ElectroMagicTools;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EnderStorage;
-import static gregtech.api.enums.Mods.EnderZoo;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.IronChests;
-import static gregtech.api.enums.Mods.IronTanks;
-import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicBases;
-import static gregtech.api.enums.Mods.ThaumicTinkerer;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -44,11 +17,13 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
+import WayofTime.alchemicalWizardry.api.bindingRegistry.UnbindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
@@ -79,9 +54,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 Thaumcraft.ID,
                 Witchery.ID,
                 ExtraUtilities.ID,
+                Botania.ID,
                 EnderIO.ID,
                 TinkerConstruct.ID,
-                MineAndBladeBattleGear2.ID,
                 Railcraft.ID,
                 IndustrialCraft2.ID,
                 BuildCraftFactory.ID,
@@ -626,7 +601,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 "plateAluminium",
                 'e',
-                getModItem(MineAndBladeBattleGear2.ID, "dagger.diamond", 1, 0, missing),
+                getModItem(Botania.ID, "enderDagger", 1, 0, missing),
                 'f',
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
                 'g',
@@ -3584,6 +3559,46 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("RODBLOODWOODSTAFF", 7);
         TCHelper.refreshResearchPages("CAP_blood_iron");
         TCHelper.refreshResearchPages("ROD_blood_wood");
+        new ResearchItem(
+                "INCENSECRUCIBLE",
+                "BLOODMAGIC",
+                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("victus"), 18)
+                        .add(Aspect.getAspect("potentia"), 6),
+                6,
+                -2,
+                3,
+                getModItem(BloodMagic.ID, "blockCrucible", 1, 0, missing)).setParents("SACRIFICIALKNIFE").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.INCENSECRUCIBLE")).registerResearchItem();
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "INCENSECRUCIBLE",
+                getModItem(BloodMagic.ID, "blockCrucible", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aer"), 15)
+                        .add(Aspect.getAspect("ordo"), 15),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "plateAluminium",
+                'b',
+                getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
+                'c',
+                "plateAluminium",
+                'd',
+                "plateAluminium",
+                'e',
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
+                'f',
+                "plateAluminium",
+                'g',
+                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                'h',
+                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                'i',
+                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing));
+        TCHelper.addResearchPage(
+                "INCENSECRUCIBLE",
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockCrucible", 1, 0, missing))));
+        ThaumcraftApi.addWarpToResearch("INCENSECRUCIBLE", 2);
     }
 
     private void orbRecipes() {
@@ -3693,7 +3708,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "transcendentBloodOrb", 1, 0, missing)));
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
-                        com.dreammaster.item.ItemList.Blaster.getIS(1),
+                        NHItemList.Blaster.getIS(1),
                         "abc",
                         "def",
                         "ghi",
@@ -4289,30 +4304,6 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing)));
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
-                        getModItem(BloodMagic.ID, "blockCrucible", 1, 0, missing),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'a',
-                        "plateAluminium",
-                        'b',
-                        getModItem(BloodMagic.ID, "apprenticeBloodOrb", 1, 0, missing),
-                        'c',
-                        "plateAluminium",
-                        'd',
-                        "plateAluminium",
-                        'e',
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
-                        'f',
-                        "plateAluminium",
-                        'g',
-                        getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
-                        'h',
-                        getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
-                        'i',
-                        getModItem(Minecraft.ID, "stone_slab", 1, 0, missing)));
-        GameRegistry.addRecipe(
-                new ShapedBloodOrbRecipe(
                         getModItem(BloodMagic.ID, "blockConduit", 1, 0, missing),
                         "abc",
                         "def",
@@ -4678,9 +4669,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "boundShovel", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing));
-        BindingRegistry.registerRecipe(
-                getModItem(BloodMagic.ID, "energyBlaster", 1, 0, missing),
-                com.dreammaster.item.ItemList.Blaster.getIS(1));
+        BindingRegistry
+                .registerRecipe(getModItem(BloodMagic.ID, "energyBlaster", 1, 0, missing), NHItemList.Blaster.getIS(1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 1L));
@@ -4690,6 +4680,10 @@ public class ScriptBloodMagic implements IScriptLoader {
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.Quartzite, 1L));
+
+        UnbindingRegistry.unbindingRecipes.clear();
+        UnbindingRegistry.addAllUnbindingRecipesFromBinding();
+
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "largeBloodStoneBrick", 4, 0, missing),
                 25,
@@ -4949,8 +4943,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "blankSpell", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
-                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
-                        CustomItemList.EngravedDiamondCrystalChip.get(1L) },
+                        NHItemList.EngravedGoldChip.getIS(1), CustomItemList.EngravedDiamondCrystalChip.get(1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2, 15, missing),

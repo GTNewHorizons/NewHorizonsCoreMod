@@ -1,13 +1,16 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.mixerNonCellRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,10 +18,13 @@ import java.util.List;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.item.NHItemList;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -203,6 +209,12 @@ public class ScriptTwilightForest implements IScriptLoader {
                         getModItem(TwilightForest.ID, "item.trophy", 0, 3, missing))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing))
                 .duration(1 * MINUTES + 15 * SECONDS).eut(4096).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0, missing), NHItemList.StonePlate.getIS(16))
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0, missing))
+                .fluidInputs(Materials.Helium_3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
 
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFRoots", 1, 0, missing),
@@ -459,5 +471,13 @@ public class ScriptTwilightForest implements IScriptLoader {
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeWaterLily", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 3));
+
+        ThaumcraftApi.addCrucibleRecipe(
+                "ThaumiumReinforcedWings",
+                getModItem(TwilightForest.ID, "item.tfFeather", 1, 0, missing),
+                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 13, missing),
+                new AspectList().add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("tenebrae"), 4)
+                        .add(Aspect.getAspect("tempus"), 4));
+
     }
 }

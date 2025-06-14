@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -19,6 +20,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -50,6 +52,7 @@ public class ScriptWitchery implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 Witchery.ID,
                 Thaumcraft.ID,
                 IndustrialCraft2.ID,
@@ -265,8 +268,8 @@ public class ScriptWitchery implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(2 * SECONDS + 10 * TICKS).eut(24)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "clay_ball", 4, 0, missing), ItemList.Shape_Mold_Bottle.get(0L))
-                .itemOutputs(getModItem(Witchery.ID, "ingredient", 4, 26, missing)).duration(20 * SECONDS).eut(30)
+                .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0, missing), ItemList.Shape_Mold_Bottle.get(0L))
+                .itemOutputs(getModItem(Witchery.ID, "ingredient", 1, 26, missing)).duration(5 * SECONDS).eut(30)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -292,6 +295,23 @@ public class ScriptWitchery implements IScriptLoader {
                 2,
                 getModItem(Witchery.ID, "ingredient", 1, 153, missing))
                         .setPages(new ResearchPage("Witchery.research_page.ANOINTINGPASTE.1")).registerResearchItem();
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "ANOINTINGPASTE",
+                getModItem(Witchery.ID, "cauldron", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("ignis"), 2)
+                        .add(Aspect.getAspect("terra"), 2),
+                "aba",
+                "aca",
+                "aaa",
+                'b',
+                getModItem(Witchery.ID, "ingredient", 1, 153, missing),
+                'c',
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing));
+        TCHelper.addResearchPage(
+                "ANOINTINGPASTE",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "cauldron", 1, 0, missing)))));
         new ResearchItem(
                 "OVEN",
                 "WITCHERY",
@@ -328,7 +348,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'g',
                 getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0, missing),
                 'h',
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 'i',
                 getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0, missing));
         TCHelper.addResearchPage(

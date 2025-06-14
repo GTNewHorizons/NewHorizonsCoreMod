@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -12,16 +13,23 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +45,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -52,8 +61,11 @@ public class ScriptEnderIO implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 EnderIO.ID,
+                Thaumcraft.ID,
+                ThaumicExploration.ID,
                 AppliedEnergistics2.ID,
                 Avaritia.ID,
+                Botania.ID,
                 Backpack.ID,
                 BartWorks.ID,
                 BuildCraftFactory.ID,
@@ -1739,6 +1751,19 @@ public class ScriptEnderIO implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
+                .fluidInputs(Materials.Silicone.getMolten(144)).duration(15 * SECONDS).eut(64).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
+                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144)).duration(15 * SECONDS).eut(64)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         getModItem(EnderIO.ID, "blockFusedQuartz", 3, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.round, Materials.Soularium, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemSoulVessel", 1, 0, missing)).duration(10 * SECONDS).eut(48)
@@ -1749,7 +1774,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1809,6 +1834,13 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing))
                 .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1L, 0),
+                        GTModHandler.getModItem(MagicBees.ID, "wax", 4L, 1))
+                .itemOutputs(getModItem(EnderIO.ID, "blockEndermanSkull", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000)).duration(15 * SECONDS).eut(256)
+                .addTo(UniversalChemical);
 
         // Vibrant Capacitor Bank
         ItemStack vibrantCapacitor = createItemStack(
@@ -1858,5 +1890,23 @@ public class ScriptEnderIO implements IScriptLoader {
                         GregtechItemList.Battery_RE_EV_Lithium.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
+
+        // Bulk crystals
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 64))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 64, 5, missing))
+                .fluidInputs(Materials.PulsatingIron.getMolten(8192)).duration(2 * MINUTES).eut(TierEU.RECIPE_IV)
+                .addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Emerald, 64))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 64, 6, missing))
+                .fluidInputs(Materials.VibrantAlloy.getMolten(8192)).duration(2 * MINUTES).eut(TierEU.RECIPE_IV)
+                .addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ManyullynCrystal.get(16L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 16, 10, missing))
+                .fluidInputs(Materials.Enderium.getMolten(2048)).duration(1 * MINUTES).eut(4096)
+                .addTo(autoclaveRecipes);
+
     }
 }

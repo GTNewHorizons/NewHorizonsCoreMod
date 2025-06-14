@@ -3,7 +3,10 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -15,6 +18,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptAdvancedSolarPanel implements IScriptLoader {
@@ -37,7 +41,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "advanced_solar_helmet", 1, 0, missing),
                 "craftingToolWrench",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
+                ItemList.Machine_LV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "circuitAdvanced",
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, wildcard, missing),
@@ -48,7 +52,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, 0, missing),
                 "craftingToolWrench",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
+                ItemList.Machine_MV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "circuitMaster",
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, wildcard, missing),
@@ -61,9 +65,9 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 "craftingToolWrench",
                 "circuitUltimate",
                 "craftingToolScrewdriver",
-                "craftingSolarPanelHV",
+                ItemList.Machine_HV_SolarPanel.get(1),
                 getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, wildcard, missing),
-                "craftingSolarPanelHV",
+                ItemList.Machine_HV_SolarPanel.get(1),
                 "cableGt04VanadiumGallium",
                 ItemList.Transformer_IV_EV.get(1L),
                 "cableGt04VanadiumGallium");
@@ -92,7 +96,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Cover_SolarPanel_LV.get(1L),
                 "craftingToolCrowbar",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
+                ItemList.Machine_LV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "craftingToolWrench",
                 "craftingToolHardHammer",
@@ -100,7 +104,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Cover_SolarPanel_MV.get(1L),
                 "craftingToolCrowbar",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
+                ItemList.Machine_MV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "craftingToolWrench",
                 "craftingToolHardHammer",
@@ -108,7 +112,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Cover_SolarPanel_HV.get(1L),
                 "craftingToolCrowbar",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 2, missing),
+                ItemList.Machine_HV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "craftingToolWrench",
                 "craftingToolHardHammer",
@@ -116,7 +120,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Cover_SolarPanel_EV.get(1L),
                 "craftingToolCrowbar",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 3, missing),
+                ItemList.Machine_EV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "craftingToolWrench",
                 "craftingToolHardHammer",
@@ -146,6 +150,37 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 3, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(122880).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing))
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9, 9, missing))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 32L),
+                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 64, 0, missing))
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 1, missing))
+                .duration(40 * SECONDS).eut(245760).addTo(alloySmelterRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 1, missing),
+                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 3, missing))
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 4, missing))
+                .duration(80 * SECONDS).eut(983040).addTo(alloySmelterRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing),
+                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing))
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 16, 3, missing))
+                .fluidInputs(Materials.Sunnarium.getMolten(2304L)).duration(2 * MINUTES).eut(TierEU.RECIPE_ZPM)
+                .addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 64L))
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing))
+                .fluidInputs(Materials.Sunnarium.getMolten(9216L)).duration(2 * MINUTES).eut(TierEU.RECIPE_ZPM)
+                .addTo(autoclaveRecipes);
 
     }
 }

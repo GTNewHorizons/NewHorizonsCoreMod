@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 
 public class ScriptBiblioCraft implements IScriptLoader {
@@ -615,7 +616,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "wireFineGold",
                 "wireFineGold",
                 "lensGlass",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "wireFineGold",
                 null,
                 "wireFineGold",
@@ -627,7 +628,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "wireFineSteel",
                 "wireFineSteel",
                 "plateLead",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "wireFineSteel",
                 "roundLead",
                 null,
@@ -764,6 +765,17 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     "plateIron",
                     "blockIron",
                     "plateIron");
+            addShapedRecipe(
+                    Pedestals[i],
+                    null,
+                    null,
+                    null,
+                    "plateIron",
+                    "ringIron",
+                    "plateIron",
+                    "slabStone",
+                    cwool16[i],
+                    "slabStone");
             if (i < 7) {
                 addShapedRecipe(
                         FClockB[i],
@@ -831,17 +843,6 @@ public class ScriptBiblioCraft implements IScriptLoader {
                         "stickWood",
                         "stickWood",
                         "stickWood");
-                addShapedRecipe(
-                        Pedestals[i],
-                        null,
-                        null,
-                        null,
-                        "plateIron",
-                        "ringIron",
-                        "plateIron",
-                        "slabStone",
-                        cwool16[i],
-                        "slabStone");
                 addShapedRecipe(
                         LableB[i],
                         "stickWood",

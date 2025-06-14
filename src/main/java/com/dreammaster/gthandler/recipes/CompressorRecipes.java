@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
@@ -33,6 +34,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -41,7 +43,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.block.ModBlocks;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class CompressorRecipes implements Runnable {
@@ -152,11 +154,10 @@ public class CompressorRecipes implements Runnable {
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.BioBall.get(1L))
-                .itemOutputs(com.dreammaster.item.ItemList.CompressedBioBall.getIS(1)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(NHItemList.CompressedBioBall.getIS(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BioOrganicMesh.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.BioCarbonPlate.getIS(1)).duration(15 * SECONDS).eut(2)
-                .addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.getIS(1))
+                .itemOutputs(NHItemList.BioCarbonPlate.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
@@ -174,6 +175,17 @@ public class CompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(OpenComputers.ID, "item", 9L, 96))
                     .itemOutputs(getModItem(OpenComputers.ID, "chameliumBlock", 1L, 0)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
+        }
+        if (Botania.isModLoaded()) {
+            // Mana Pearl Block
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 9L, 1))
+                    .itemOutputs(BlockList.ManaPearl.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
+            // Mana Powder Block
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 9L, 23))
+                    .itemOutputs(BlockList.ManaPowder.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
+            // Pixie Dust Block
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 9L, 8))
+                    .itemOutputs(BlockList.PixieDust.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
         }
 
         if (IndustrialCraft2.isModLoaded()) {
@@ -298,12 +310,12 @@ public class CompressorRecipes implements Runnable {
     private void makeGTPlusPlusRecipes() {
         // Compressed Glowstone
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glowstone, 9))
-                .itemOutputs(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 6)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(GregtechItemList.CompressedGlowstone.get(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
         // Double Compressed Glowstone
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(ModBlocks.blockCompressedObsidian, 9, 6))
-                .itemOutputs(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 7)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(GregtechItemList.CompressedGlowstone.get(9))
+                .itemOutputs(GregtechItemList.DoubleCompressedGlowstone.get(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
     }
 

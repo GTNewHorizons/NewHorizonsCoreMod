@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Roquesit;
 import static goodgenerator.items.GGMaterial.indiumPhosphate;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
@@ -25,6 +26,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -60,15 +62,13 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(3))
-                .fluidInputs(Materials.Water.getFluid(3000)).fluidOutputs(Materials.Hydrogen.getGas(1000))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
+                .itemOutputs(NHItemList.PotassiumHydroxideDust.getIS(3)).fluidInputs(Materials.Water.getFluid(3000))
+                .fluidOutputs(Materials.Hydrogen.getGas(1000)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(UniversalChemical);
         // Rock Salt
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(),
-                        GTUtility.getIntegratedCircuit(2))
+                .itemInputs(NHItemList.PotassiumHydroxideDust.getIS(), GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
@@ -332,6 +332,14 @@ public class ChemicalReactorRecipes implements Runnable {
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(Botania.ID, "cocoon", 1L, 0),
+                            GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
+                    .itemOutputs(CustomItemList.TheBigEgg.get(1L))
+                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
+                    .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+
         }
 
         if (Gendustry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
@@ -401,6 +409,18 @@ public class ChemicalReactorRecipes implements Runnable {
 
         }
 
+        if (Botania.isModLoaded()) {
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(Botania.ID, "manaBottle", 1L, 0),
+                            GTModHandler.getModItem(HardcoreEnderExpansion.ID, "essence", 1L, 0))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 1L, 15))
+                    .fluidInputs(FluidRegistry.getFluidStack("liquidair", 1000)).duration(1 * MINUTES)
+                    .eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+
+        }
+
     }
 
     public static void singleBlockOnly() {
@@ -463,15 +483,6 @@ public class ChemicalReactorRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 16L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 16L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L),
                         GTUtility.getIntegratedCircuit(24))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
@@ -561,14 +572,14 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        com.dreammaster.item.ItemList.RawPicoWafer.getIS(),
+                        NHItemList.RawPicoWafer.getIS(),
                         Materials.MysteriousCrystal.getDust(2),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.InfinityCatalyst, 1L).copy()
                                 .splitStack(0),
-                        com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.PicoWafer.getIS())
-                .fluidInputs(Materials.Neutronium.getMolten(144L)).duration(2 * MINUTES + 30 * SECONDS)
-                .eut((GTValues.V[9] - (GTValues.V[9] / 10))).addTo(multiblockChemicalReactorRecipes);
+                        NHItemList.TCetiESeaweedExtract.getIS(1))
+                .itemOutputs(NHItemList.PicoWafer.getIS()).fluidInputs(Materials.Neutronium.getMolten(144L))
+                .duration(2 * MINUTES + 30 * SECONDS).eut((GTValues.V[9] - (GTValues.V[9] / 10)))
+                .addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -578,6 +589,11 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
                 .fluidInputs(Materials.Water.getFluid(16000L)).fluidOutputs(Materials.Hydrogen.getGas(48000L))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .fluidInputs(FluidRegistry.getFluidStack("blood", 1000), FluidRegistry.getFluidStack("netherair", 100))
+                .fluidOutputs(FluidRegistry.getFluidStack("hell_blood", 1000)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
 
         if (Forestry.isModLoaded()) {
             GTValues.RA.stdBuilder()

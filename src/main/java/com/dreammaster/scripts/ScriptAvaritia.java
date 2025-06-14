@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EternalSingularity;
@@ -21,6 +22,7 @@ import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.UniversalSingularities;
+import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
@@ -85,6 +87,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 Avaritia.ID,
                 BloodArsenal.ID,
                 BloodMagic.ID,
+                Botania.ID,
                 DraconicEvolution.ID,
                 ElectroMagicTools.ID,
                 EternalSingularity.ID,
@@ -100,7 +103,8 @@ public class ScriptAvaritia implements IScriptLoader {
                 Thaumcraft.ID,
                 ThaumicBases.ID,
                 Gadomancy.ID,
-                TaintedMagic.ID);
+                TaintedMagic.ID,
+                WitchingGadgets.ID);
     }
 
     @Override
@@ -366,7 +370,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'e',
                 getModItem(UniversalSingularities.ID, "universal.projectRed.singularity", 1, 0, missing),
                 'f',
-                getModItem(UniversalSingularities.ID, "universal.tinkersConstruct.singularity", 1, 0, missing),
+                getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 32, missing),
                 'g',
                 getModItem(UniversalSingularities.ID, "universal.tinkersConstruct.singularity", 1, 1, missing),
                 'h',
@@ -408,9 +412,9 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(EternalSingularity.ID, "combined_singularity", 1, 6, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Orb_Armok", 1, 0, missing),
-                "---aaa---",
+                "---aia---",
                 "--ababa--",
-                "--aacaa--",
+                "--jacaj--",
                 "-dababad-",
                 "ddeafagdd",
                 "-dddhddd-",
@@ -432,7 +436,11 @@ public class ScriptAvaritia implements IScriptLoader {
                 'g',
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'h',
-                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId));
+                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId),
+                'i',
+                getModItem(Botania.ID, "blackHoleTalisman", 1, 0, missing),
+                'j',
+                getModItem(BloodMagic.ID, "sigilOfElementalAffinity", 1, 0, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Sword", 1, 0, missing),
@@ -442,7 +450,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 "----aea--",
                 "-f-aga---",
                 "--fha----",
-                "--if-----",
+                "--kf-----",
                 "-i--f----",
                 "j--------",
                 'a',
@@ -458,7 +466,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0, missing),
                 'd',
-                getModItem(IndustrialCraft2.ID, "itemNanoSaber", 1, wildcard, missing),
+                createItemStack(ElectroMagicTools.ID, "SuperchargedMjolnir", 1, 1, "{charge:2000000.0d}", missing),
                 'e',
                 getModItem(ThaumicTinkerer.ID, "ichorSwordGem", 1, wildcard, missing),
                 'f',
@@ -470,17 +478,13 @@ public class ScriptAvaritia implements IScriptLoader {
                 'i',
                 "blockCosmicNeutronium",
                 'j',
-                getModItem(Avaritia.ID, "Resource", 1, 5, missing));
+                getModItem(Avaritia.ID, "Resource", 1, 5, missing),
+                'k',
+                getModItem(Botania.ID, "starSword", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                createItemStack(
-                        Avaritia.ID,
-                        "Infinity_Pickaxe",
-                        1,
-                        0,
-                        "{ench:[0:{lvl:10s,id:35s}],hammer:0b}",
-                        missing),
+                createItemStack(Avaritia.ID, "Infinity_Pickaxe", 1, 0, "{ench:[0:{lvl:10s,id:35s}]}", missing),
                 "-aaaaaaa-",
-                "abbcdebba",
+                "ablcdemba",
                 "aa-fgh-aa",
                 "----i----",
                 "----i----",
@@ -509,13 +513,17 @@ public class ScriptAvaritia implements IScriptLoader {
                 'j',
                 getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
                 'k',
-                getModItem(Avaritia.ID, "Resource", 1, 5, missing));
+                getModItem(Avaritia.ID, "Resource", 1, 5, missing),
+                'l',
+                createItemStack(Botania.ID, "terraPick", 1, 0, "{mana:2147483421,tipped:1b}", missing),
+                'm',
+                getModItem(ForbiddenMagic.ID, "MorphPickaxe", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                createItemStack(Avaritia.ID, "Infinity_Shovel", 1, 0, "{destroyer:0b}", missing),
+                getModItem(Avaritia.ID, "Infinity_Shovel", 1, 0, missing),
                 "------aaa",
                 "-----abca",
-                "------dea",
-                "-----f-a-",
+                "-----kdea",
+                "-----fla-",
                 "----f----",
                 "---f-----",
                 "-gf------",
@@ -540,22 +548,26 @@ public class ScriptAvaritia implements IScriptLoader {
                 'i',
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
                 'j',
-                getModItem(Avaritia.ID, "Resource", 1, 5, missing));
+                getModItem(Avaritia.ID, "Resource", 1, 5, missing),
+                'k',
+                getModItem(Botania.ID, "elementiumShovel", 1, 0, missing),
+                'l',
+                getModItem(ForbiddenMagic.ID, "TaintShovel", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 createItemStack(Thaumcraft.ID, "WandCasting", 1, 9000, "{cap:\"matrix\",rod:\"infinity\"}", missing),
                 "--a------",
-                "-aba-----",
+                "-oba-----",
                 "acdef----",
                 "-aegeh---",
                 "--iegej--",
                 "---kegea-",
                 "----ledma",
-                "-----aba-",
+                "-----abo-",
                 "------a--",
                 'a',
                 "plateInfinity",
                 'b',
-                getModItem(ThaumicTinkerer.ID, "blockTalisman", 1, 0, missing),
+                getModItem(ThaumicTinkerer.ID, "placementMirror", 1, 0, missing),
                 'c',
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'd',
@@ -583,11 +595,13 @@ public class ScriptAvaritia implements IScriptLoader {
                 'l',
                 getModItem(BloodMagic.ID, "earthScribeTool", 1, 0, missing),
                 'm',
-                getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing));
+                getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
+                'o',
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Axe", 1, 0, missing),
-                "-a-------",
-                "abaaa----",
+                "-aaa-----",
+                "abjka----",
                 "acda-----",
                 "-ae------",
                 "--e------",
@@ -610,15 +624,19 @@ public class ScriptAvaritia implements IScriptLoader {
                 'g',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
                 'h',
-                getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing));
+                getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
+                'j',
+                getModItem(Botania.ID, "terraAxe", 1, 0, missing),
+                'k',
+                getModItem(WitchingGadgets.ID, "item.WG_PrimordialAxe", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Bow", 1, 0, missing),
                 "---aab---",
                 "--a-c----",
                 "-a--c----",
-                "a---c----",
+                "a---cg---",
                 "d---ef---",
-                "a---c----",
+                "a---ch---",
                 "-a--c----",
                 "--a-c----",
                 "---aab---",
@@ -632,6 +650,10 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
                 'e',
                 getModItem(DraconicEvolution.ID, "draconicBow", 1, 0, missing),
+                'g',
+                getModItem(Botania.ID, "crystalBow", 1, 0),
+                'h',
+                getModItem(GalaxySpace.ID, "item.QuantBow", 1, 0),
                 'f',
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -660,7 +682,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'g',
                 getModItem(DraconicEvolution.ID, "draconicHelm", 1, 0, missing),
                 'h',
-                getModItem(BloodMagic.ID, "sanguineHelmet", 1, 0, missing),
+                getModItem(Botania.ID, "terrasteelHelmReveal", 1, 0, missing),
                 'i',
                 getModItem(GalaxySpace.ID, "item.spacesuit_helmetglasses", 1, 0, missing),
                 'j',
@@ -691,7 +713,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'e',
                 getModItem(ThaumicTinkerer.ID, "ichorclothChestGem", 1, wildcard, missing),
                 'f',
-                getModItem(BloodMagic.ID, "sanguineRobe", 1, 0, missing),
+                getModItem(Botania.ID, "terrasteelChest", 1, 0, missing),
                 'g',
                 getModItem(GalaxySpace.ID, "item.spacesuit_jetplate", 1, 0, missing),
                 'h',
@@ -706,8 +728,8 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Pants", 1, 0, missing),
-                "aaaaaaaaa",
-                "abcdefgha",
+                "aaaaeaaaa",
+                "abcdmfgha",
                 "aiiijiiia",
                 "aiaakaaia",
                 "aia---aia",
@@ -738,7 +760,9 @@ public class ScriptAvaritia implements IScriptLoader {
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
                 'l',
-                getModItem(Avaritia.ID, "big_pearl", 1, 0, missing));
+                getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
+                'm',
+                getModItem(Botania.ID, "terrasteelLegs", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Shoes", 1, 0, missing),
                 "---------",
@@ -765,7 +789,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'g',
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
                 'h',
-                getModItem(BloodMagic.ID, "sanguineBoots", 1, 0, missing),
+                getModItem(Botania.ID, "terrasteelBoots", 1, 0, missing),
                 'i',
                 getModItem(GalaxySpace.ID, "item.spacesuit_gravityboots", 1, 0, missing),
                 'j',

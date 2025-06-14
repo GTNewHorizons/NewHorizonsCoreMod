@@ -241,6 +241,10 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     GTUtility.copyAmountUnsafe(62, GTOreDictUnificator.get(OrePrefixes.block, Materials.Europium, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 30))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder().itemInputsUnsafe(
+                    GTUtility.copyAmountUnsafe(1824, GTOreDictUnificator.get(OrePrefixes.block, Materials.RoseGold, 1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 32))
+                    .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             if (DraconicEvolution.isModLoaded()) {
                 GTValues.RA.stdBuilder()
                         .itemInputsUnsafe(
@@ -335,14 +339,6 @@ public class NeutroniumCompressorRecipes implements Runnable {
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             }
             if (TinkerConstruct.isModLoaded()) {
-                GTValues.RA.stdBuilder()
-                        .itemInputsUnsafe(
-                                GTUtility.copyAmountUnsafe(
-                                        1824,
-                                        GTOreDictUnificator.get(OrePrefixes.block, Materials.AluminiumBrass, 1)))
-                        .itemOutputs(
-                                getModItem(UniversalSingularities.ID, "universal.tinkersConstruct.singularity", 1, 0))
-                        .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
                 GTValues.RA.stdBuilder()
                         .itemInputsUnsafe(
                                 GTUtility.copyAmountUnsafe(

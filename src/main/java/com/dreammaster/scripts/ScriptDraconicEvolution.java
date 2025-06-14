@@ -3,16 +3,21 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
+import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
@@ -22,14 +27,17 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gtPlusPlus.core.recipe.common.CI.bits;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -37,6 +45,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.tools.TinkerTools;
 
@@ -50,6 +59,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 DraconicEvolution.ID,
                 AvaritiaAddons.ID,
                 BloodArsenal.ID,
@@ -83,7 +93,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 "plateObsidian",
                 getModItem(EnderIO.ID, "blockCapBank", 1, 1, missing),
                 "plateObsidian",
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 getModItem(AvaritiaAddons.ID, "CompressedChest", 1, 0, missing),
                 ItemList.Cover_Crafting.get(1L),
                 "plateObsidian",
@@ -366,7 +376,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
                 'd',
-                com.dreammaster.item.ItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
+                NHItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
                 'e',
                 getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 1, 1, missing),
                 'f',
@@ -786,7 +796,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDraconiumAwakened",
                 'c',
-                com.dreammaster.item.ItemList.EngravedManyullynCrystalChip.getIS(1),
+                NHItemList.EngravedManyullynCrystalChip.getIS(1),
                 'd',
                 getModItem(DraconicEvolution.ID, "draconiumFluxCapacitor", 1, 1, missing),
                 'e',
@@ -1224,6 +1234,23 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 3),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 11),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 13),
+                        getModItem(OpenComputers.ID, "hologram2", 1, 0, missing),
+                        createItemStack(
+                                ExtraUtilities.ID,
+                                "microblocks",
+                                1,
+                                3,
+                                "{mat:\"tile.extrautils:decorativeBlock1_5\"}",
+                                missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 10000))
+                .itemOutputs(getModItem(DraconicEvolution.ID, "earth", 1, 0, missing)).duration(6 * SECONDS).eut(200)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infusedObsidian", 1, 0, missing))
@@ -1244,6 +1271,14 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0, missing))
                 .duration(3 * SECONDS + 4 * TICKS).eut(16).addTo(packagerRecipes);
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(DraconicEvolution.ID, "dislocatorInhibitor", 1, 0, missing),
+                bits,
+                new Object[] { "PSP", "BMB", "PSP", 'P', "plateSteelMagnetic", 'S',
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6, missing), 'B',
+                        getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), 'M',
+                        getModItem(DraconicEvolution.ID, "magnet", 1, 0, missing) });
 
     }
 }

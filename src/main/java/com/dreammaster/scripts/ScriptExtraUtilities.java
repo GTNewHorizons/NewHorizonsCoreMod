@@ -41,6 +41,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
@@ -53,8 +54,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.block.ModBlocks;
-import gtPlusPlus.core.item.ModItems;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -688,17 +688,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 0, missing),
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 2, missing));
         addShapedRecipe(
-                getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing),
-                "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                "craftingToolSaw",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                "chestWood",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                null,
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                null);
-        addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "chestMini", 1, 0, missing),
                 "craftingToolHardHammer",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
@@ -925,7 +914,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'g',
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing),
                         'h',
-                        getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 11, missing),
+                        ItemList.OreDrill2.get(1L),
                         'i',
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing)));
         EnderConstructorRecipesHandler.registerRecipe(
@@ -1026,7 +1015,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12, missing)));
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
-                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 5),
+                        GregtechItemList.InvertedObsidian.get(1),
                         "abc",
                         "def",
                         "ghi",
@@ -1188,12 +1177,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11, missing)).duration(20 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint", 1, 0, missing),
@@ -1428,17 +1411,15 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         missing),
                 new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iridium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L),
-                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
+                        NHItemList.EngravedGoldChip.getIS(1),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                        new ItemStack(ModItems.itemMagicFeather),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing), GregtechItemList.MagicFeather.get(1),
                         getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
                         getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        new ItemStack(ModItems.itemMagicFeather),
+                        getModItem(Minecraft.ID, "nether_star", 1, 0, missing), GregtechItemList.MagicFeather.get(1),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
+                        NHItemList.EngravedGoldChip.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",

@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
@@ -39,12 +40,14 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -58,6 +61,7 @@ public class ScriptStevesCarts implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 StevesCarts2.ID,
                 ProjectRedExploration.ID,
                 Backpack.ID,
@@ -185,7 +189,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0, missing),
                 null,
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null,
                 "ringWood",
                 "stickWood",
@@ -224,7 +228,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 37, missing),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
@@ -283,7 +287,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "blockSteel",
                 getModItem(StevesCarts2.ID, "CartModule", 1, 42, missing),
-                com.dreammaster.item.ItemList.DiamondDrillTip.getIS(1),
+                NHItemList.DiamondDrillTip.getIS(1),
                 CustomItemList.SteelBars.get(1L),
                 "screwSteel",
                 "craftingToolHardHammer");
@@ -1309,6 +1313,39 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateIron",
                 "plateIron",
                 "plateIron");
+        addShapedRecipe(
+                getModItem(StevesCarts2.ID, "CartModule", 1, 117, missing),
+                "plateSteel",
+                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
+                "plateSteel",
+                ItemList.Electric_Motor_LV.get(1L),
+                "gearSteel",
+                ItemList.Electric_Motor_LV.get(1L),
+                "plateSteel",
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Tin, 1L),
+                "plateSteel");
+        addShapedRecipe(
+                getModItem(StevesCarts2.ID, "CartModule", 1, 118, missing),
+                "plateAluminium",
+                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
+                "plateAluminium",
+                ItemList.Electric_Motor_MV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Reinforced, 1L),
+                ItemList.Electric_Motor_MV.get(1L),
+                "plateAluminium",
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Copper, 1L),
+                "plateAluminium");
+        addShapedRecipe(
+                getModItem(StevesCarts2.ID, "CartModule", 1, 119, missing),
+                "plateStainlessSteel",
+                "circuitAdvanced",
+                "plateStainlessSteel",
+                ItemList.Electric_Motor_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Galgadorian, 1L),
+                ItemList.Electric_Motor_HV.get(1L),
+                "plateStainlessSteel",
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 1L),
+                "plateStainlessSteel");
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing),
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Reinforced, 1L));
@@ -1789,7 +1826,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                        getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 91, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
@@ -1930,15 +1967,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS).eut(30)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(5 * SECONDS).eut(30)
                 .addTo(cutterRecipes);

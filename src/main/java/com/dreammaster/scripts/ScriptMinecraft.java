@@ -4,7 +4,9 @@ import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
+import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
@@ -21,6 +23,7 @@ import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -29,7 +32,6 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
@@ -38,11 +40,13 @@ import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gtPlusPlus.core.recipe.common.CI.bits;
 import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -52,6 +56,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -2162,23 +2167,30 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        new ItemStack(Blocks.dirt, 16),
+                        getModItem(Botania.ID, "grassSeeds", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(new ItemStack(Blocks.grass, 16)).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.dirt, 16),
+                        getModItem(Botania.ID, "grassSeeds", 1, 1, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(new ItemStack(Blocks.dirt, 16, 2)).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.dirt, 16),
+                        getModItem(Botania.ID, "grassSeeds", 1, 2, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(new ItemStack(Blocks.mycelium, 16)).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         CustomItemList.ArtificialLeather.get(4L),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).duration(5 * SECONDS).eut(24)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_MV).specialValue(1000).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_MV).specialValue(1000).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
                 .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
@@ -2305,7 +2317,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing),
                 null,
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null,
                 null,
                 "slimeball",
@@ -2484,7 +2496,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwWood",
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 "stickWood",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "stickWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "ladder", 4, 0, missing),
@@ -2495,7 +2507,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwAnyIron",
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 "stickWood",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "stickWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "ladder", 8, 0, missing),
@@ -2506,7 +2518,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwSteel",
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 "stickWood",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "stickWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "fence", 1, 0, missing),
@@ -4228,7 +4240,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "pumpkin_seeds", 2, 0, missing),
                 getModItem(Minecraft.ID, "pumpkin", 1, 0, missing),
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 getModItem(Minecraft.ID, "pumpkin", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "melon_seeds", 1, 0, missing),
@@ -4237,7 +4249,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "melon_seeds", 1, 0, missing),
                 getModItem(Minecraft.ID, "melon", 1, 0, missing),
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 getModItem(Minecraft.ID, "melon", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "melon", 6, 0, missing),
@@ -4291,17 +4303,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 null,
                 "craftingToolScrewdriver",
                 null);
-        addShapedRecipe(
-                getModItem(Minecraft.ID, "map", 1, 0, missing),
-                "paperEmpty",
-                "paperEmpty",
-                "paperEmpty",
-                "paperEmpty",
-                getModItem(Minecraft.ID, "compass", 1, 0, missing),
-                "paperEmpty",
-                "paperEmpty",
-                "paperEmpty",
-                "paperEmpty");
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "dye", 3, 15, missing),
                 getModItem(Minecraft.ID, "bone", 1, 0, missing),
@@ -4403,7 +4404,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "plankWood",
                 "plankWood",
                 "fenceWood",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "fenceWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "fishing_rod", 1, 0, missing),
@@ -4999,5 +5000,12 @@ public class ScriptMinecraft implements IScriptLoader {
                 null,
                 null,
                 null);
+        GTModHandler.addCraftingRecipe(
+                new ItemStack(Blocks.ender_chest, 1),
+                bits,
+                new Object[] { "ABA", "ACA", "ADA", 'A', "plateObsidian", 'B', "plateDenseEnderium", 'C',
+                        GTModHandler.getModItem(EnderStorage.ID, "enderChest", 1L, 0), 'D',
+                        GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45) });
+
     }
 }

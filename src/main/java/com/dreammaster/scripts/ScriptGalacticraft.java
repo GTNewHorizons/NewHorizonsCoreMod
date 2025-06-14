@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -43,6 +44,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import codechicken.nei.PositionedStack;
 import cpw.mods.fml.common.Optional;
@@ -50,8 +52,10 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
@@ -59,7 +63,6 @@ import gregtech.api.util.GTUtility;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import micdoodle8.mods.galacticraft.api.world.SpaceStationType;
-import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.core.nei.BuggyRecipeHandler;
@@ -1257,6 +1260,24 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing),
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, wildcard, missing));
         addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier4Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier4Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier5Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier5Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier6Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier6Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier7Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier7Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, 0, missing),
+                getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, wildcard, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing));
         addShapelessRecipe(
@@ -1317,28 +1338,32 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(16L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
-                .duration(1 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(1 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
-                .duration(1 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(1 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
-                .duration(1 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(1 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
-                .duration(1 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(1 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
@@ -1346,7 +1371,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
-                .duration(2 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(2 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
@@ -1354,7 +1380,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
-                .duration(2 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(2 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
@@ -1362,7 +1389,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
-                .duration(2 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(2 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
@@ -1370,7 +1398,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
-                .duration(2 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(2 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(37L),
@@ -1378,7 +1407,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(32L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(3 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(3 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(37L),
@@ -1386,7 +1416,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(32L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(3 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(3 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(37L),
@@ -1394,7 +1425,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(32L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(3 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(3 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(37L),
@@ -1402,7 +1434,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(32L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(3 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(3 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 0, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT4.get(12L),
@@ -1410,7 +1443,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy2.get(16L),
                         ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 8000))
-                .duration(4 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(4 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 1, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT4.get(12L),
@@ -1418,7 +1452,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy2.get(16L),
                         ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 8000))
-                .duration(4 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(4 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 2, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT4.get(12L),
@@ -1426,7 +1461,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy2.get(16L),
                         ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 8000))
-                .duration(4 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(4 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 3, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT4.get(12L),
@@ -1434,7 +1470,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy2.get(16L),
                         ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 8000))
-                .duration(4 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(4 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 0, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT5.get(64L),
@@ -1442,7 +1479,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(64L),
                         ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 10000))
-                .duration(5 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(5 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 1, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT5.get(64L),
@@ -1450,7 +1488,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(64L),
                         ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 10000))
-                .duration(5 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(5 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 2, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT5.get(64L),
@@ -1458,7 +1497,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(64L),
                         ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 10000))
-                .duration(5 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(5 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 3, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT5.get(64L),
@@ -1466,7 +1506,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(64L),
                         ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 10000))
-                .duration(5 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(5 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 0, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT6.get(12L),
@@ -1474,7 +1515,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT4.get(16L),
                         ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 12000))
-                .duration(6 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(6 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 1, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT6.get(12L),
@@ -1482,7 +1524,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT4.get(16L),
                         ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 12000))
-                .duration(6 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(6 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 2, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT6.get(12L),
@@ -1490,7 +1533,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT4.get(16L),
                         ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 12000))
-                .duration(6 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(6 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 3, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT6.get(12L),
@@ -1498,7 +1542,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT4.get(16L),
                         ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 12000))
-                .duration(6 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(6 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier7Rocket", 1, 0, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT7.get(64L),
@@ -1506,7 +1551,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT5.get(64L),
                         CustomItemList.HeavyDutyAlloyIngotT5.get(50L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 14000))
-                .duration(7 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(7 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier7Rocket", 1, 1, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT7.get(64L),
@@ -1514,7 +1560,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT5.get(64L),
                         CustomItemList.HeavyDutyAlloyIngotT5.get(50L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 14000))
-                .duration(7 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(7 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier7Rocket", 1, 2, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT7.get(64L),
@@ -1522,7 +1569,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT5.get(64L),
                         CustomItemList.HeavyDutyAlloyIngotT5.get(50L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 14000))
-                .duration(7 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(7 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier7Rocket", 1, 3, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT7.get(64L),
@@ -1530,7 +1578,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT5.get(64L),
                         CustomItemList.HeavyDutyAlloyIngotT5.get(50L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 14000))
-                .duration(7 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(7 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 0, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT8.get(18L),
@@ -1538,7 +1587,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT7.get(53L),
                         CustomItemList.HeavyDutyAlloyIngotT6.get(20L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 16000))
-                .duration(8 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(8 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 1, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT8.get(18L),
@@ -1546,7 +1596,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT7.get(53L),
                         CustomItemList.HeavyDutyAlloyIngotT6.get(20L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 16000))
-                .duration(8 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(8 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 2, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT8.get(18L),
@@ -1554,7 +1605,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT7.get(53L),
                         CustomItemList.HeavyDutyAlloyIngotT6.get(20L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 16000))
-                .duration(8 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(8 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 3, missing))
                 .itemOutputs(
                         CustomItemList.HeavyDutyAlloyIngotT8.get(18L),
@@ -1562,7 +1614,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         CustomItemList.HeavyDutyAlloyIngotT7.get(53L),
                         CustomItemList.HeavyDutyAlloyIngotT6.get(20L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 16000))
-                .duration(8 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(8 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
@@ -1570,7 +1623,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
-                .duration(2 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(2 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
@@ -1578,7 +1632,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
-                .duration(2 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(2 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
@@ -1586,7 +1641,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
-                .duration(2 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(2 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemAstroMiner", 1, 0, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(3L),
@@ -1594,7 +1650,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(3L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 10L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(3 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(3 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
@@ -1602,7 +1659,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 21L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(1 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(1 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
@@ -1610,7 +1668,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 28L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(1 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(1 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
@@ -1618,7 +1677,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 35L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(1 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(1 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
@@ -1626,7 +1686,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 42L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
-                .duration(1 * MINUTES).eut(30).addTo(arcFurnaceRecipes);
+                .duration(1 * MINUTES).eut(30).recipeCategory(RecipeCategories.arcFurnaceRecycling)
+                .addTo(arcFurnaceRecipes);
     }
 
     private void assemblerRecipes() {
@@ -2741,41 +2802,41 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.CeresStoneDust.getIS(2),
+                        NHItemList.CeresStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.IoStoneDust.getIS(2),
+                        NHItemList.IoStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 1)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.EnceladusStoneDust.getIS(2),
+                        NHItemList.EnceladusStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.ProteusStoneDust.getIS(2),
+                        NHItemList.ProteusStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 3)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.PlutoStoneDust.getIS(2),
+                        NHItemList.PlutoStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 4)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
     }
 
-    @Optional.Method(modid = "GalacticraftCore")
+    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
     private static void spaceStationRecipes() {
         final HashMap<Object, Integer> inputMap = new HashMap<>();
         inputMap.put(new ItemStack(GCBlocks.basicBlock, 1, 4), 231);
@@ -2786,7 +2847,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new SpaceStationType(ConfigManagerCore.idDimensionOverworldOrbit, 0, new SpaceStationRecipe(inputMap)));
     }
 
-    @Optional.Method(modid = "GalacticraftCore")
+    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
     private static void buggyRecipes() {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
@@ -2838,7 +2899,7 @@ public class ScriptGalacticraft implements IScriptLoader {
             input3.put(
                     3,
                     new PositionedStack(
-                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 100),
+                            getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 100),
                             62 - x,
                             73 - y));
         }
@@ -2951,15 +3012,15 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(GCItems.buggy, 1, 3), 143 - x, 64 - y));
     }
 
-    @Optional.Method(modid = "GalacticraftCore")
+    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
     private static void cargoRecipes() {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
         input.put(1, new ItemStack(GCItems.basicItem, 1, 14));
         if (GalaxySpace.isModLoaded()) {
-            input.put(2, getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 101));
+            input.put(2, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 101));
             for (int i = 3; i <= 5; i++) {
-                input.put(i, getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1));
+                input.put(i, getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1));
             }
         }
         input.put(7, new ItemStack(GCItems.partNoseCone));
@@ -2991,22 +3052,22 @@ public class ScriptGalacticraft implements IScriptLoader {
         if (GalaxySpace.isModLoaded()) {
             input3.add(
                     new PositionedStack(
-                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 101),
+                            getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 101),
                             134 - x,
                             28 - y));
             input3.add(
                     new PositionedStack(
-                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
+                            getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1),
                             116 - x,
                             19 - y));
             input3.add(
                     new PositionedStack(
-                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
+                            getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1),
                             152 - x,
                             19 - y));
             input3.add(
                     new PositionedStack(
-                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
+                            getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1),
                             116 - x,
                             37 - y));
         }
@@ -3042,7 +3103,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(MarsItems.spaceship, 1, 13), 134 - x, 73 - y));
     }
 
-    @Optional.Method(modid = "GalacticraftCore")
+    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
     private static void astroMinerRecipes() {
         final HashMap<Integer, ItemStack> input = new HashMap<>();
         for (int i = 1; i <= 8; i++) {
@@ -3057,7 +3118,7 @@ public class ScriptGalacticraft implements IScriptLoader {
             input.put(i, new ItemStack(AsteroidsItems.orionDrive));
         }
         if (GalaxySpace.isModLoaded()) {
-            input.put(18, getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 102));
+            input.put(18, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 102));
         }
         input.put(19, new ItemStack(GCItems.basicItem, 1, 14));
         input.put(20, new ItemStack(GCItems.basicItem, 1, 14));
@@ -3068,8 +3129,8 @@ public class ScriptGalacticraft implements IScriptLoader {
         input.put(25, RecipeUtil.getChestItemStack(1, 1));
         input.put(26, new ItemStack(AsteroidsItems.basicItem, 1, 8));
         input.put(27, new ItemStack(AsteroidBlocks.beamReceiver));
-        input.put(28, getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603));
-        input.put(29, getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603));
+        input.put(28, ItemList.Electric_Motor_EV.get(1));
+        input.put(29, ItemList.Electric_Motor_EV.get(1));
         GalacticraftRegistry
                 .addAstroMinerRecipe(new NasaWorkbenchRecipe(new ItemStack(AsteroidsItems.astroMiner, 1, 0), input));
 
@@ -3099,7 +3160,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         if (GalaxySpace.isModLoaded()) {
             input3.add(
                     new PositionedStack(
-                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 102),
+                            getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 102),
                             62 - x,
                             37 - y));
         }
@@ -3112,10 +3173,8 @@ public class ScriptGalacticraft implements IScriptLoader {
         input3.add(new PositionedStack(RecipeUtil.getChestItemStack(1, 1), 98 - x, 55 - y));
         input3.add(new PositionedStack(new ItemStack(AsteroidsItems.basicItem, 1, 8), 44 - x, 73 - y));
         input3.add(new PositionedStack(new ItemStack(AsteroidBlocks.beamReceiver), 62 - x, 73 - y));
-        input3.add(
-                new PositionedStack(getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603), 80 - x, 73 - y));
-        input3.add(
-                new PositionedStack(getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603), 98 - x, 73 - y));
+        input3.add(new PositionedStack(ItemList.Electric_Motor_EV.get(1), 80 - x, 73 - y));
+        input3.add(new PositionedStack(ItemList.Electric_Motor_EV.get(1), 98 - x, 73 - y));
         instance.registerAstroMinerRecipe(
                 input3,
                 new PositionedStack(new ItemStack(AsteroidsItems.astroMiner), 143 - x, 55 - y));

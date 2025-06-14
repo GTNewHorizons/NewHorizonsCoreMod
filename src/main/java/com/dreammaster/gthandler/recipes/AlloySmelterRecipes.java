@@ -3,7 +3,6 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -13,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -151,12 +151,12 @@ public class AlloySmelterRecipes implements Runnable {
                 .itemInputs(
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemPartIridium", 2L),
                         ItemList.Shape_Mold_Casing.get(0))
-                .itemOutputs(com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS().splitStack(3))
-                .duration(60 * SECONDS).eut(256).addTo(alloySmelterRecipes);
+                .itemOutputs(NHItemList.IridiumAlloyItemCasing.getIS().splitStack(3)).duration(60 * SECONDS).eut(256)
+                .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard), new ItemStack(Items.clay_ball))
-                .itemOutputs(com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2)).duration(10 * SECONDS)
-                .eut(8).addTo(alloySmelterRecipes);
+                .itemOutputs(NHItemList.CokeOvenBrick.getIS().splitStack(2)).duration(10 * SECONDS).eut(8)
+                .addTo(alloySmelterRecipes);
 
         if (EnderIO.isModLoaded()) {
             // EnderIO Fused Quartz and Glass
@@ -225,17 +225,6 @@ public class AlloySmelterRecipes implements Runnable {
 
             }
         }
-
-        if (TinkerConstruct.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 14)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).addTo(alloySmelterRecipes);
-
-        }
-
     }
 
 }

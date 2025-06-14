@@ -7,19 +7,21 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.I18n;
+import net.minecraft.util.StatCollector;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import com.dreammaster.client.util.IconLoader;
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.lib.Refstrings;
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 
 @Mixin(Minecraft.class)
-public class MixinMinecraft_ConfirmExit {
+public abstract class MixinMinecraft_ConfirmExit {
 
     @Unique
     private boolean dreamcraft$isCloseRequested;
@@ -27,40 +29,56 @@ public class MixinMinecraft_ConfirmExit {
     @Unique
     private boolean dreamcraft$waitingDialogQuit;
 
-    @ModifyExpressionValue(
-            method = "runGameLoop",
-            at = @At(value = "INVOKE", target = "Lorg/lwjgl/opengl/Display;isCloseRequested()Z", remap = false))
-    private boolean dreamcraft$confirmGameShutdown(boolean isCloseRequested) {
-        if (!DreamCoreMod.showConfirmExitWindow) {
-            return isCloseRequested;
+    @Shadow
+    public abstract void shutdown();
+
+    @Inject(method = "shutdown", at = @At(value = "HEAD"), cancellable = true)
+    private void dreamcraft$confirmGameShutdown(CallbackInfo ci) {
+        if (!DreamCoreMod.showConfirmExitWindow || this.dreamcraft$isCloseRequested) {
+            return;
         }
-        if (this.dreamcraft$isCloseRequested) {
-            return true;
-        }
-        if (dreamcraft$waitingDialogQuit) return false;
-        if (isCloseRequested) {
-            dreamcraft$waitingDialogQuit = true;
+        if (!this.dreamcraft$waitingDialogQuit) {
+            this.dreamcraft$waitingDialogQuit = true;
             new Thread(() -> {
                 final JFrame frame = new JFrame();
                 frame.setAlwaysOnTop(true);
                 final URL resource = IconLoader.class.getClassLoader()
                         .getResource("assets/dreamcraft/textures/icon/GTNH_42x42.png");
                 final ImageIcon imageIcon = resource == null ? null : new ImageIcon(resource);
-                final int result = JOptionPane.showConfirmDialog(
+                final Object[] options = new String[] {
+                        dreamcraft$translateOrDefault("dreamcraft.gui.quitmessage.yes", "Yes"),
+                        dreamcraft$translateOrDefault("dreamcraft.gui.quitmessage.no", "No"),
+                        dreamcraft$translateOrDefault("dreamcraft.gui.quitmessage.never", "Don't Show Again!") };
+                final int result = JOptionPane.showOptionDialog(
                         frame,
-                        I18n.format("dreamcraft.gui.quitmessage"),
+                        // When FML encounters an error, the only way to close the window is through the close button,
+                        // which will show this message, unfortunately at this point, no localisations will have been
+                        // loaded, so we add a hardcoded fallback message here.
+                        dreamcraft$translateOrDefault(
+                                "dreamcraft.gui.quitmessage",
+                                "Are you sure you want to exit the game?"),
                         Refstrings.NAME,
-                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.YES_NO_CANCEL_OPTION,
                         JOptionPane.QUESTION_MESSAGE,
-                        imageIcon);
+                        imageIcon,
+                        options,
+                        null);
                 if (result == JOptionPane.YES_OPTION) {
                     this.dreamcraft$isCloseRequested = true;
+                    this.shutdown();
+                } else if (result == JOptionPane.CANCEL_OPTION) {
+                    this.dreamcraft$isCloseRequested = true;
+                    DreamCoreMod.disableShowConfirmExitWindow();
+                    this.shutdown();
                 }
-                dreamcraft$waitingDialogQuit = false;
+                this.dreamcraft$waitingDialogQuit = false;
             }).start();
-            return false;
         }
-        return false;
+        ci.cancel();
     }
 
+    @Unique
+    private static String dreamcraft$translateOrDefault(String key, String defaultValue) {
+        return StatCollector.canTranslate(key) ? StatCollector.translateToLocal(key) : defaultValue;
+    }
 }
