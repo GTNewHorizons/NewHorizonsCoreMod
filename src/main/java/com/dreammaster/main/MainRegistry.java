@@ -63,7 +63,6 @@ import com.dreammaster.modbabychest.TileEntityBabyChest;
 import com.dreammaster.modctt.CustomToolTipsHandler;
 import com.dreammaster.modcustomdrops.CustomDropsHandler;
 import com.dreammaster.modcustomfuels.CustomFuelsHandler;
-import com.dreammaster.modfixes.GTpp.GregTechPlusPlusAbandonedAspectsFix;
 import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
@@ -295,11 +294,6 @@ public class MainRegistry {
         }
 
         BacteriaRegistry = new BacteriaRegistry();
-
-        Logger.debug("LOAD abandoned GT++ Aspects");
-        if (Thaumcraft.isModLoaded()) {
-            new GregTechPlusPlusAbandonedAspectsFix();
-        }
 
         if (Witchery.isModLoaded()) {
             new WitcheryPlugin();
