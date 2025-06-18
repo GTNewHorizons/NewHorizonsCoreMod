@@ -294,12 +294,12 @@ public class ScriptSGCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Amber, 16L),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 64L),
                         GTModHandler.getModItem(DraconicEvolution.ID, "chaosFragment", 8L),
-                        GTModHandler.getModItem(SGCraft.ID, "naquadah", 2L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 2L),
                         GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L,3)
                 )
                 .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 1000, 250)
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("plasma.astraltitanium"), 144))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("molten.titanium"), 144))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("plasma.celestialtungsten"), 144))
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("molten.tungsten"), 144))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .addTo(plasmaArcFurnaceRecipes);
 
