@@ -285,18 +285,19 @@ public class ScriptSGCraft implements IScriptLoader {
         // Zero Point Module recycling
 
         GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.ZPM)
+                .itemInputs(ItemList.ZPM.get(1))
                 .itemOutputs(
-                        GTModHandler.getModItem(DraconicEvolution.ID, "chaosFragment", 8L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Dilithium, 32L),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Amber, 16L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahAlloy, 8L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.DraconiumAwakened, 32L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 32L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Dilithium, 32L),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Amber, 16L),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 64L),
+                        GTModHandler.getModItem(DraconicEvolution.ID, "chaosFragment", 8L),
                         GTModHandler.getModItem(SGCraft.ID, "naquadah", 2L),
                         GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L,3)
                 )
+                .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 1000, 250)
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("plasma.astraltitanium"), 144))
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("molten.titanium"), 144))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
