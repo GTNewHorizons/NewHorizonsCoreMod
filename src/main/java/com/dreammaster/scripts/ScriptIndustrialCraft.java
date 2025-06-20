@@ -1500,20 +1500,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemUran238", 6, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlutonium", 3, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMOX", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(20 * SECONDS).eut(256)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemUran238", 6, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemUran235small", 3, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemUran", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(20 * SECONDS).eut(120)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lead, 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing))
