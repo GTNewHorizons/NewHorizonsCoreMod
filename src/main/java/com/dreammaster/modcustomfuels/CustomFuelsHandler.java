@@ -98,19 +98,24 @@ public class CustomFuelsHandler implements IFuelHandler {
 
     @Override
     public int getBurnTime(ItemStack pIS) {
-        ItemStack stack;
-        if (pIS.stackTagCompound == null) stack = pIS;
-        else {
-            stack = pIS.copy();
-            stack.stackTagCompound = null;
+        ItemStack stack = null;
+        try {
+            if (pIS.stackTagCompound == null) stack = pIS;
+            else {
+                stack = pIS.copy();
+                stack.stackTagCompound = null;
+            }
+
+            Short fuelValue = customFuelToValueMap.get(GTUtility.ItemId.createNoCopy(stack));
+            if (fuelValue != null) return fuelValue;
+        } catch (Exception e) {
+            _mLogger.error(
+                    "Something went wrong while getting GTUtility.ItemId customFuelToValueMap. REPORT IT TO ISSUE TRACKER!");
+            _mLogger.error(stack != null ? stack.toString() : "null item");
+            e.printStackTrace();
         }
 
-        Short fuelValue = customFuelToValueMap.get(GTUtility.ItemId.createNoCopy(stack));
-        if (fuelValue != null) return fuelValue;
-
         try {
-            int tReturnValue = 0;
-
             CustomFuels.FuelItem tFI = _mCustomFuels.FindFuelValue(pIS);
             if (tFI != null) {
                 return tFI.getBurnTime();
@@ -118,7 +123,7 @@ public class CustomFuelsHandler implements IFuelHandler {
                 return 0;
             }
         } catch (Exception e) {
-            _mLogger.error("Something went wrong");
+            _mLogger.error("Something went wrong while getting custom fuels value");
             e.printStackTrace();
             return 0;
         }
