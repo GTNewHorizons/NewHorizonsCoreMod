@@ -118,7 +118,8 @@ import gregtech.common.items.MetaGeneratedItem01;
                 + "after:EnderIO;"
                 + "after:HardcoreEnderExpansion;"
                 + "after:Thaumcraft;"
-                + "after:amazingtrophies")
+                + "after:amazingtrophies;"
+                + "after:backhand@[1.6.9,);")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
