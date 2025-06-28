@@ -81,7 +81,6 @@ import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -145,8 +144,6 @@ public class MainRegistry {
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
     private static boolean handleAchievements;
-
-    public static boolean isBackhandLoaded = false;
 
     public static void AddLoginError(String pMessage) {
         if (Module_AdminErrorLogs != null) {
@@ -316,10 +313,6 @@ public class MainRegistry {
         if (TinkerConstruct.isModLoaded()) {
             TiCoLoader.doPreInitialization();
             GregTechAPI.sAfterGTPreload.add(SmelteryFluidTypes::registerGregtechFluidTypes);
-        }
-
-        if (Loader.isModLoaded("backhand")) {
-            isBackhandLoaded = true;
         }
     }
 
