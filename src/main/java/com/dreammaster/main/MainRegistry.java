@@ -81,6 +81,7 @@ import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -118,7 +119,8 @@ import gregtech.common.items.MetaGeneratedItem01;
                 + "after:EnderIO;"
                 + "after:HardcoreEnderExpansion;"
                 + "after:Thaumcraft;"
-                + "after:amazingtrophies")
+                + "after:amazingtrophies;"
+                + "after:backhand@[1.6.9,);")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -143,6 +145,8 @@ public class MainRegistry {
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
     private static boolean handleAchievements;
+
+    public static boolean isBackhandLoaded = false;
 
     public static void AddLoginError(String pMessage) {
         if (Module_AdminErrorLogs != null) {
@@ -312,6 +316,10 @@ public class MainRegistry {
         if (TinkerConstruct.isModLoaded()) {
             TiCoLoader.doPreInitialization();
             GregTechAPI.sAfterGTPreload.add(SmelteryFluidTypes::registerGregtechFluidTypes);
+        }
+
+        if (Loader.isModLoaded("backhand")) {
+            isBackhandLoaded = true;
         }
     }
 

@@ -28,6 +28,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:MatterManipulator:0.0.31-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.6.3:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.2-GTNH:dev")
+    compileOnly("com.github.GTNewHorizons:Backhand:1.6.24:dev") { transitive = false }
     //compileOnly("com.github.Roadhog360:Et-Futurum-Requiem:2.6.2:dev") { transitive = false }
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
