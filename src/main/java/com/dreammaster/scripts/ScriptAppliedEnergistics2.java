@@ -1857,6 +1857,18 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateNetherQuartz",
                 "gemNetherQuartz",
                 "craftingToolFile");
+        // Throughput monitor
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 410, missing),
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing), // ME Storage Monitor
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing), // ME Level Emitter
+                "screwCertusQuartz",
+                "plateNetherQuartz",
+                "plateNetherQuartz",
+                "plateNetherQuartz");
         // Creative Energy Anchor
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 690, missing),
@@ -2144,6 +2156,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        // ME Throughput Monitor
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 3))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 410, missing))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
