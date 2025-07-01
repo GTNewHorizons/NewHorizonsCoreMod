@@ -1004,7 +1004,7 @@ public class MixerRecipes implements Runnable {
         // Chamber Centrifuge Tier2 Fluid
         GTValues.RA.stdBuilder().itemInputs(Materials.CosmicNeutronium.getDust(4), Materials.Glowstone.getNanite(2))
                 .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), MaterialsUEVplus.LumipodExtract.getFluid(1000))
-                .fluidOutputs(MaterialsUEVplus.BiolcatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)
+                .fluidOutputs(MaterialsUEVplus.BiocatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)
                 .eut(TierEU.UHV).addTo(mixerNonCellRecipes);
 
         if (PamsHarvestCraft.isModLoaded()) {
