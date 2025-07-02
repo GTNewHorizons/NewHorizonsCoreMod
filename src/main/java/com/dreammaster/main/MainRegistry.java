@@ -155,7 +155,7 @@ public class MainRegistry {
      * Returns true on a client
      */
     public static boolean isClient() {
-        return proxy instanceof ClientProxy;
+        return proxy.isClient();
     }
 
     /**
