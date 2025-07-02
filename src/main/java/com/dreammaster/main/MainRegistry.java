@@ -151,6 +151,20 @@ public class MainRegistry {
         }
     }
 
+    /**
+     * Returns true on a client
+     */
+    public static boolean isClient() {
+        return proxy.isClient();
+    }
+
+    /**
+     * Returns true on a dedicated server
+     */
+    public static boolean isServer() {
+        return !isClient();
+    }
+
     public MainRegistry() {
         if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
     }
