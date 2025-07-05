@@ -1,7 +1,6 @@
 package com.dreammaster.mantle;
 
 import java.util.Objects;
-import java.util.stream.Stream;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
@@ -30,7 +29,8 @@ final class MantleBookLoader implements BookLoader {
 
     @VisibleForTesting
     MantleBookLoader(BookDataStoreProxy bookDataStoreProxy, BookDataReader bookDataReader) {
-        Stream.of(bookDataStoreProxy, bookDataReader).forEach(Objects::requireNonNull);
+        Objects.requireNonNull(bookDataStoreProxy);
+        Objects.requireNonNull(bookDataReader);
         this.bookDataStoreProxy = bookDataStoreProxy;
         this.bookDataReader = bookDataReader;
         this.data = new BookData();
