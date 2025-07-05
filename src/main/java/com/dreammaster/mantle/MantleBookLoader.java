@@ -6,11 +6,10 @@ import java.util.stream.Stream;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 
+import com.dreammaster.main.MainRegistry;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 
-import gregtech.GTMod;
-import gregtech.api.interfaces.internal.IGTMod;
 import mantle.books.BookData;
 
 /**
@@ -22,20 +21,18 @@ final class MantleBookLoader implements BookLoader {
     private static final BookDataStoreProxy BOOK_DATA_STORE_PROXY = BookDataStoreProxy.getInstance();
     private final BookDataStoreProxy bookDataStoreProxy;
     private final BookData data;
-    private final IGTMod sideChecker;
     private final BookDataReader bookDataReader;
 
     static BookLoader readBook(String unlocalizedName, String modId, String xmlDocumentPath) {
-        return new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER, GTMod.gregtechproxy)
+        return new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER)
                 .setRequiredData(unlocalizedName, modId, xmlDocumentPath);
     }
 
     @VisibleForTesting
-    MantleBookLoader(BookDataStoreProxy bookDataStoreProxy, BookDataReader bookDataReader, IGTMod sideChecker) {
-        Stream.of(bookDataStoreProxy, bookDataReader, sideChecker).forEach(Objects::requireNonNull);
+    MantleBookLoader(BookDataStoreProxy bookDataStoreProxy, BookDataReader bookDataReader) {
+        Stream.of(bookDataStoreProxy, bookDataReader).forEach(Objects::requireNonNull);
         this.bookDataStoreProxy = bookDataStoreProxy;
         this.bookDataReader = bookDataReader;
-        this.sideChecker = sideChecker;
         this.data = new BookData();
     }
 
@@ -46,7 +43,7 @@ final class MantleBookLoader implements BookLoader {
         Objects.requireNonNull(xmlDocumentPath);
         this.data.unlocalizedName = unlocalizedName;
         this.data.modID = modId;
-        if (sideChecker.isClientSide()) {
+        if (MainRegistry.isClient()) {
             data.doc = bookDataReader.readBook(xmlDocumentPath);
         }
         return this;
