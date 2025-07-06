@@ -24,6 +24,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.w3c.dom.Document;
 
+import com.dreammaster.main.CommonProxy;
 import com.dreammaster.main.MainRegistry;
 
 import mantle.books.BookData;
@@ -43,6 +44,9 @@ class MantleBookLoaderTest {
     BookDataReader BOOK_DATA_READER;
 
     @Mock
+    CommonProxy proxy;
+
+    @Mock
     Document DOCUMENT;
 
     @Captor
@@ -52,6 +56,7 @@ class MantleBookLoaderTest {
 
     @BeforeEach
     void BeforeEach() {
+        MainRegistry.proxy = proxy;
         fixture = new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER);
     }
 
