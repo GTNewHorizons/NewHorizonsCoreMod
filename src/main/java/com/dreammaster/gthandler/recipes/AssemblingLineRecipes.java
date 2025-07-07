@@ -1,10 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Californium;
+import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.GTValues.L;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GraviSuite;
@@ -449,11 +451,9 @@ public class AssemblingLineRecipes implements Runnable {
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
-                new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4), CustomItemList.MicaInsulatorFoil.get(64),
-                        CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
-                        tectech.thing.CustomItemList.eM_Coil.get(4), CustomItemList.MicaInsulatorFoil.get(64),
-                        CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
-                        CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
+                new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(24),
+                        tectech.thing.CustomItemList.eM_Coil.get(4) },
                 new FluidStack[] { Materials.RadoxPolymer.getMolten(3_456), Materials.SuperCoolant.getFluid(16_000),
                         new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
                 ItemList.DysonSwarmControlPrimary.get(4),
@@ -467,11 +467,9 @@ public class AssemblingLineRecipes implements Runnable {
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
-                new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4), CustomItemList.MicaInsulatorFoil.get(64),
-                        CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
-                        ItemList.Casing_Coil_AwakenedDraconium.get(4), CustomItemList.MicaInsulatorFoil.get(64),
-                        CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
-                        CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
+                new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(24),
+                        ItemList.Casing_Coil_AwakenedDraconium.get(4) },
                 new FluidStack[] { Materials.RadoxPolymer.getMolten(3_240), Materials.SuperCoolant.getFluid(16_000),
                         new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
                 ItemList.DysonSwarmControlSecondary.get(4),
@@ -1113,24 +1111,26 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Compressor controllers
         {
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Machine_Multi_IndustrialCompressor.get(1))
-                    .metadata(SCANNING, new Scanning(1 * MINUTES + 20 * SECONDS, TierEU.RECIPE_LuV))
-                    .itemInputs(
-                            ItemList.Machine_Multi_IndustrialCompressor.get(4),
-                            ItemList.Heating_Duct_Casing.get(4L),
-                            ItemList.Coolant_Duct_Casing.get(4L),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Naquadria, 4),
-                            ItemList.Electric_Piston_ZPM.get(16),
-                            ItemList.Robot_Arm_ZPM.get(4),
-                            ItemList.Electric_Pump_ZPM.get(4),
-                            new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 })
-                    .itemOutputs(ItemList.Machine_Multi_HIPCompressor.get(1))
-                    .fluidInputs(
-                            GGMaterial.incoloy903.getMolten(256 * 144),
-                            Materials.NaquadahEnriched.getMolten(64 * 144),
-                            Materials.LiquidAir.getFluid(16000),
-                            Materials.Lubricant.getFluid(16000))
-                    .duration(120 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
+            if (EtFuturumRequiem.isModLoaded()) {
+                GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Machine_Multi_IndustrialCompressor.get(1))
+                        .metadata(SCANNING, new Scanning(1 * MINUTES + 20 * SECONDS, TierEU.RECIPE_LuV))
+                        .itemInputs(
+                                ItemList.Machine_Multi_IndustrialCompressor.get(4),
+                                ItemList.Heating_Duct_Casing.get(4L),
+                                ItemList.Coolant_Duct_Casing.get(4L),
+                                getModItem(EtFuturumRequiem.ID, "netherite_block", 4, missing),
+                                ItemList.Electric_Piston_ZPM.get(16),
+                                ItemList.Robot_Arm_ZPM.get(4),
+                                ItemList.Electric_Pump_ZPM.get(4),
+                                new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 })
+                        .itemOutputs(ItemList.Machine_Multi_HIPCompressor.get(1))
+                        .fluidInputs(
+                                GGMaterial.incoloy903.getMolten(256 * 144),
+                                Materials.NaquadahEnriched.getMolten(64 * 144),
+                                Materials.LiquidAir.getFluid(16000),
+                                Materials.Lubricant.getFluid(16000))
+                        .duration(120 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
+            }
 
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(Avaritia.ID, "Singularity", 1L, 0))
                     .metadata(SCANNING, new Scanning(3 * MINUTES, TierEU.RECIPE_UEV))
@@ -1287,8 +1287,8 @@ public class AssemblingLineRecipes implements Runnable {
                             tectech.thing.CustomItemList.eM_energyMulti64_UV.get(1),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 8),
                             GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Neutronium, 4),
-                            GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Osmiridium, 4),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 8),
+                            GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Netherite, 4),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Netherite, 8),
                             ItemList.Electric_Motor_UV.get(4),
                             ItemList.Electric_Pump_UV.get(4),
                             new Object[] { OrePrefixes.circuit.get(Materials.ZPM), 16 },

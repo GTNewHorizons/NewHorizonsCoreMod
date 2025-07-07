@@ -26,7 +26,6 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 import forestry.api.recipes.RecipeManagers;
 import forestry.core.recipes.ShapedRecipeCustom;
 import forestry.factory.recipes.CarpenterRecipe;
-import gregtech.GTMod;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
@@ -406,7 +405,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).duration(30 * SECONDS).eut(30720)
                         .disabled().hidden().addTo(assemblerRecipes));
 
-        if (GTMod.gregtechproxy.isServerSide() && CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
+        if (MainRegistry.isServer() && CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
             stamps(true);
             coins.forEach(r -> {
                 r.mEnabled = true;
@@ -423,12 +422,14 @@ public class ScriptZZClientOnly implements IScriptLoader {
     @SuppressWarnings("unused")
     @SubscribeEvent
     public void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent pEvent) {
-        if (pEvent.player instanceof EntityPlayerMP) {
-            if (GTMod.gregtechproxy.isClientSide()) // We are on single player
-                MainRegistry.NW.sendTo(
-                        new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsEnabled),
-                        (EntityPlayerMP) pEvent.player);
-            else MainRegistry.NW.sendTo(
+        if (MainRegistry.isClient()) {
+            // this runs on the server thread of a client
+            // -> we are playing single player
+            MainRegistry.NW.sendTo(
+                    new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsEnabled),
+                    (EntityPlayerMP) pEvent.player);
+        } else {
+            MainRegistry.NW.sendTo(
                     new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled),
                     (EntityPlayerMP) pEvent.player);
         }

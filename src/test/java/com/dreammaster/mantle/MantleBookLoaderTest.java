@@ -24,7 +24,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.w3c.dom.Document;
 
-import gregtech.api.interfaces.internal.IGTMod;
+import com.dreammaster.main.CommonProxy;
+import com.dreammaster.main.MainRegistry;
+
 import mantle.books.BookData;
 
 @ExtendWith(MockitoExtension.class)
@@ -42,7 +44,7 @@ class MantleBookLoaderTest {
     BookDataReader BOOK_DATA_READER;
 
     @Mock
-    IGTMod SIDE_CHECKER;
+    CommonProxy proxy;
 
     @Mock
     Document DOCUMENT;
@@ -54,7 +56,8 @@ class MantleBookLoaderTest {
 
     @BeforeEach
     void BeforeEach() {
-        fixture = new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER, SIDE_CHECKER);
+        MainRegistry.proxy = proxy;
+        fixture = new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER);
     }
 
     private void buildBookAndAddToBookDataStore(Stream<Consumer<BookLoader>> bookBuilderOperation) {
@@ -65,28 +68,21 @@ class MantleBookLoaderTest {
 
     @Test
     void instanciateWithNullBookDataStoreProxy() {
-        ThrowingCallable code = () -> new MantleBookLoader(null, BOOK_DATA_READER, SIDE_CHECKER);
+        ThrowingCallable code = () -> new MantleBookLoader(null, BOOK_DATA_READER);
 
         assertThatThrownBy(code).isInstanceOf(NullPointerException.class);
     }
 
     @Test
     void instanciateWithNullBookDataReader() {
-        ThrowingCallable code = () -> new MantleBookLoader(BOOK_DATA_STORE_PROXY, null, SIDE_CHECKER);
-
-        assertThatThrownBy(code).isInstanceOf(NullPointerException.class);
-    }
-
-    @Test
-    void instanciateWithNullSideChecker() {
-        ThrowingCallable code = () -> new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER, null);
+        ThrowingCallable code = () -> new MantleBookLoader(BOOK_DATA_STORE_PROXY, null);
 
         assertThatThrownBy(code).isInstanceOf(NullPointerException.class);
     }
 
     @Test
     void instanciateProperly() {
-        ThrowingCallable code = () -> new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER, SIDE_CHECKER);
+        ThrowingCallable code = () -> new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER);
 
         assertThatCode(code).doesNotThrowAnyException();
     }
@@ -104,7 +100,7 @@ class MantleBookLoaderTest {
 
     @Test
     void addToBookDataStoreWithDefaultsServerside() {
-        when(SIDE_CHECKER.isClientSide()).thenReturn(false);
+        when(MainRegistry.isClient()).thenReturn(false);
 
         buildBookAndAddToBookDataStore(Stream.empty());
 
@@ -120,7 +116,7 @@ class MantleBookLoaderTest {
 
     @Test
     void addToBookDataStoreWithDefaultsClientside() {
-        when(SIDE_CHECKER.isClientSide()).thenReturn(true);
+        when(MainRegistry.isClient()).thenReturn(true);
         when(BOOK_DATA_READER.readBook(PATH)).thenReturn(DOCUMENT);
 
         buildBookAndAddToBookDataStore(Stream.empty());

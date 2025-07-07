@@ -2242,7 +2242,7 @@ public class ScriptMinecraft implements IScriptLoader {
     }
 
     private void craftingRecipes() {
-        addShapelessRecipe(
+        addShapedRecipe(
                 getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
                 getModItem(Minecraft.ID, "flint", 1, 0, missing),
                 getModItem(Minecraft.ID, "flint", 1, 0, missing),

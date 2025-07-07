@@ -63,7 +63,6 @@ import com.dreammaster.modbabychest.TileEntityBabyChest;
 import com.dreammaster.modctt.CustomToolTipsHandler;
 import com.dreammaster.modcustomdrops.CustomDropsHandler;
 import com.dreammaster.modcustomfuels.CustomFuelsHandler;
-import com.dreammaster.modfixes.GTpp.GregTechPlusPlusAbandonedAspectsFix;
 import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
@@ -119,7 +118,8 @@ import gregtech.common.items.MetaGeneratedItem01;
                 + "after:EnderIO;"
                 + "after:HardcoreEnderExpansion;"
                 + "after:Thaumcraft;"
-                + "after:amazingtrophies")
+                + "after:amazingtrophies;"
+                + "after:backhand@[1.6.9,);")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -149,6 +149,20 @@ public class MainRegistry {
         if (Module_AdminErrorLogs != null) {
             Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
         }
+    }
+
+    /**
+     * Returns true on a client
+     */
+    public static boolean isClient() {
+        return proxy.isClient();
+    }
+
+    /**
+     * Returns true on a dedicated server
+     */
+    public static boolean isServer() {
+        return !isClient();
     }
 
     public MainRegistry() {
@@ -295,11 +309,6 @@ public class MainRegistry {
         }
 
         BacteriaRegistry = new BacteriaRegistry();
-
-        Logger.debug("LOAD abandoned GT++ Aspects");
-        if (Thaumcraft.isModLoaded()) {
-            new GregTechPlusPlusAbandonedAspectsFix();
-        }
 
         if (Witchery.isModLoaded()) {
             new WitcheryPlugin();
