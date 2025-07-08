@@ -51,7 +51,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
     Object[] stamps = null;
     ArrayList<GTRecipe> coins = new ArrayList<>();
 
-    @Optional.Method(modid = Mods.Names.FORESTRY)
+    @Optional.Method(modid = Mods.ModIDs.FORESTRY)
     void stamps(boolean enabled) {
         if (stamps == null) {
             stamps = new CarpenterRecipe[] {
