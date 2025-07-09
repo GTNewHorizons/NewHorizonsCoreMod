@@ -31,6 +31,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
@@ -126,6 +127,73 @@ public class ScriptEFR implements IScriptLoader {
             addShapelessRecipe(
                     createItemStack(Thaumcraft.ID, "blockWoodenDevice", 1, 8, "{color:" + i + "b}", missing),
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
+        }
+
+        // Slabs
+
+        final String[] slabInputs = { "red_sandstone:0", "red_sandstone:2", "purpur_block:0", "stone:0",
+                "mossy_cobblestone:0", "stonebrick:1", "sandstone:2", "smooth_red_sandstone:0", "smooth_quartz:0",
+                "red_netherbrick:0", "end_bricks:0", "cobbled_deepslate:0", "polished_deepslate:0",
+                "deepslate_bricks:0", "deepslate_bricks:2", "tuff:0", "tuff:1", "tuff:2", "copper_block:4",
+                "copper_block:5", "copper_block:6", "copper_block:7", "copper_block:12", "copper_block:13",
+                "copper_block:14", "copper_block:15", "blackstone:0", "blackstone:1", "blackstone:2", "wood_planks:3" };
+        final String[] slabOutputs = { "red_sandstone_slab:0", "red_sandstone_slab:1", "purpur_slab:0", "stone_slab:0",
+                "stone_slab:1", "stone_slab:2", "stone_slab:3", "smooth_red_sandstone_slab:0", "smooth_quartz_slab:0",
+                "red_netherbrick_slab:0", "end_brick_slab:0", "deepslate_slab:0", "deepslate_slab:1",
+                "deepslate_brick_slab:0", "deepslate_brick_slab:1", "tuff_slab:0", "tuff_slab:1", "tuff_slab:2",
+                "cut_copper_slab:0", "cut_copper_slab:1", "cut_copper_slab:2", "cut_copper_slab:3", "cut_copper_slab:4",
+                "cut_copper_slab:5", "cut_copper_slab:6", "cut_copper_slab:7", "blackstone_slab:0", "blackstone_slab:1",
+                "blackstone_slab:2", "wood_slab:3" };
+        for (int i = 0; i < slabInputs.length; i++) {
+            String[] inParts = slabInputs[i].split(":");
+            String[] outParts = slabOutputs[i].split(":");
+
+            String inName = inParts[0];
+            int inMeta = Integer.parseInt(inParts[1]);
+
+            String outName = outParts[0];
+            int outMeta = Integer.parseInt(outParts[1]);
+
+            if (inName.equals("stone") || inName.equals("mossy_cobblestone")
+                    || inName.equals("stonebrick")
+                    || inName.equals("sandstone")) {
+                GTModHandler.addCraftingRecipe(
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
+                        bits,
+                        new Object[] { "BA ", "   ", "   ", 'A',
+                                GTModHandler.getModItem(Minecraft.ID, inName, 1L, inMeta), 'B', "craftingToolSaw" });
+                GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
+                        .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
+                        .addTo(cutterRecipes);
+                GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
+                        .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 4)).duration(50 * TICKS).eut(4)
+                        .addTo(cutterRecipes);
+                GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
+                        .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
+                        .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
+            } else {
+                GTModHandler.addCraftingRecipe(
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
+                        bits,
+                        new Object[] { "BA ", "   ", "   ", 'A',
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
+                                "craftingToolSaw" });
+                GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
+                        .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
+                        .addTo(cutterRecipes);
+                GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
+                        .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 4)).duration(50 * TICKS).eut(4)
+                        .addTo(cutterRecipes);
+                GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
+                        .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
+                        .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
+            }
         }
 
         // Barrels
