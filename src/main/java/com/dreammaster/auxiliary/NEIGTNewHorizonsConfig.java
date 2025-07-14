@@ -30,6 +30,7 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         API.hideItem(new ItemStack(GregTechAPI.sDroneRender));
         API.hideItem(new ItemStack(GregTechAPI.sWormholeRender));
         API.hideItem(new ItemStack(GregTechAPI.sBlackholeRender));
+        API.hideItem(new ItemStack(GregTechAPI.nanoForgeRender));
         API.hideItem(new ItemStack(TTCasingsContainer.eyeOfHarmonyRenderBlock));
         API.hideItem(new ItemStack(TTCasingsContainer.forgeOfGodsRenderBlock));
 
