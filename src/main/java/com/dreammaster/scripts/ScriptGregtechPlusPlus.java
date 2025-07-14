@@ -118,7 +118,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         addForestryRecipes();
     }
 
-    @Optional.Method(modid = Mods.Names.FORESTRY)
+    @Optional.Method(modid = Mods.ModIDs.FORESTRY)
     private void addForestryRecipes() {
 
         // Arborist Frame

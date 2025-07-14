@@ -8,7 +8,7 @@ import gregtech.api.enums.Mods;
 public class BlockHarvestToolFix {
 
     public static void fixBOPHarvestTools() {
-        Block flesh = GameRegistry.findBlock(Mods.Names.BIOMES_O_PLENTY, "flesh");
+        Block flesh = GameRegistry.findBlock(Mods.ModIDs.BIOMES_O_PLENTY, "flesh");
         if (flesh != null) {
             flesh.setHarvestLevel("shovel", 0);
         }
