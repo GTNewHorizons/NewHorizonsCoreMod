@@ -2836,7 +2836,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
     private static void spaceStationRecipes() {
         final HashMap<Object, Integer> inputMap = new HashMap<>();
         inputMap.put(new ItemStack(GCBlocks.basicBlock, 1, 4), 231);
@@ -2847,7 +2847,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new SpaceStationType(ConfigManagerCore.idDimensionOverworldOrbit, 0, new SpaceStationRecipe(inputMap)));
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
     private static void buggyRecipes() {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
@@ -3012,7 +3012,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(GCItems.buggy, 1, 3), 143 - x, 64 - y));
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
     private static void cargoRecipes() {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
@@ -3103,7 +3103,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(MarsItems.spaceship, 1, 13), 134 - x, 73 - y));
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
     private static void astroMinerRecipes() {
         final HashMap<Integer, ItemStack> input = new HashMap<>();
         for (int i = 1; i <= 8; i++) {
