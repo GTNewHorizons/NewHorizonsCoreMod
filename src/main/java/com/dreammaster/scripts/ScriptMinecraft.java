@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
 import static gregtech.api.enums.Mods.EnderStorage;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
@@ -1462,31 +1463,37 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_Spruce.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_spruce", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_Birch.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_birch", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_Jungle.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_jungle", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_Acacia.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_acacia", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_DarkOak.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_dark_oak", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        ItemList.Plank_Cherry_EFR.get(1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1582,6 +1589,12 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         ItemList.Plank_Oak.get(2L),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
+                .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
+                .eut(8).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Plank_Oak.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -4583,7 +4596,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_spruce", 3, 0, missing),
                 ItemList.Plank_Spruce.get(1L),
                 ItemList.Plank_Spruce.get(1L),
                 ItemList.Plank_Spruce.get(1L),
@@ -4594,7 +4607,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_birch", 3, 0, missing),
                 ItemList.Plank_Birch.get(1L),
                 ItemList.Plank_Birch.get(1L),
                 ItemList.Plank_Birch.get(1L),
@@ -4605,7 +4618,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_jungle", 3, 0, missing),
                 ItemList.Plank_Jungle.get(1L),
                 ItemList.Plank_Jungle.get(1L),
                 ItemList.Plank_Jungle.get(1L),
@@ -4616,7 +4629,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_acacia", 3, 0, missing),
                 ItemList.Plank_Acacia.get(1L),
                 ItemList.Plank_Acacia.get(1L),
                 ItemList.Plank_Acacia.get(1L),
@@ -4627,13 +4640,24 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_dark_oak", 3, 0, missing),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
+                null,
+                "stickWood",
+                null);
+        addShapedRecipe(
+                getModItem(EtFuturumRequiem.ID, "cherry_sign", 3, 0, missing),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
                 null,
                 "stickWood",
                 null);
