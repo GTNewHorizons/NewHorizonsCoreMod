@@ -101,10 +101,6 @@ public class ForgeHammerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.getIS(1))
                 .itemOutputs(NHItemList.BioOrganicMesh.getIS(1)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-
         if (TinkerConstruct.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 3L, 2)).duration(1 * SECONDS)
