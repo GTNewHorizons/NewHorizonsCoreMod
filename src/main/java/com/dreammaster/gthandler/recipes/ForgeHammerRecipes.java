@@ -1,8 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
