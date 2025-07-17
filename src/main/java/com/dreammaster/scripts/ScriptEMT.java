@@ -185,7 +185,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "Mjolnir", 1, 0, missing));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "SuperchargedMjolnir", 1, 26, "{charge:10.0d}", missing));
-        TCHelper.removeArcaneRecipe(getModItem(IndustrialCraft2.ID, "itemUran235small", 7, 0, missing));
+        TCHelper.removeArcaneRecipe(ItemList.IC2_Uranium_235_Small.get(7));
         TCHelper.removeCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15, missing));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "coal", 16, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "glowstone", 1, 0, missing));
@@ -193,7 +193,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "gold_ingot", 2, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "diamond", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "ShieldFocus", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem(IndustrialCraft2.ID, "itemUran238", 2, 0, missing));
+        TCHelper.removeInfusionRecipe(ItemList.IC2_Uranium_238.get(2));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "ShieldBlock", 6, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "EnergyBallFocus", 1, 0, missing));
@@ -2230,20 +2230,19 @@ public class ScriptEMT implements IScriptLoader {
                 5,
                 -4,
                 3,
-                getModItem(IndustrialCraft2.ID, "itemUran235small", 1, 0, missing))
-                        .setParentsHidden("ElectricMagicTools").setParents("RESEARCH").setConcealed().setRound()
-                        .setPages(new ResearchPage("tc.research_page.TinyUranium")).registerResearchItem();
+                ItemList.IC2_Uranium_235_Small.get(1)).setParentsHidden("ElectricMagicTools").setParents("RESEARCH")
+                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.TinyUranium"))
+                        .registerResearchItem();
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "TinyUranium",
-                getModItem(IndustrialCraft2.ID, "itemUran235small", 7, 0, missing),
+                ItemList.IC2_Uranium_235_Small.get(7),
                 new AspectList().add(Aspect.getAspect("aer"), 7).add(Aspect.getAspect("ignis"), 7)
                         .add(Aspect.getAspect("aqua"), 7).add(Aspect.getAspect("terra"), 7)
                         .add(Aspect.getAspect("ordo"), 7).add(Aspect.getAspect("perditio"), 7),
-                getModItem(IndustrialCraft2.ID, "itemUran238", 1, 0, missing));
+                ItemList.IC2_Uranium_238.get(1));
         TCHelper.addResearchPage(
                 "TinyUranium",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(IndustrialCraft2.ID, "itemUran235small", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.IC2_Uranium_235_Small.get(1))));
         TCHelper.orphanResearch("UU-Matter Infusion");
         TCHelper.removeResearch("UU-Matter Infusion");
         new ResearchItem(
@@ -2357,7 +2356,7 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("aqua"), 8)
                         .add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("ignis"), 8)
                         .add(Aspect.getAspect("perditio"), 8).add(Aspect.getAspect("ordo"), 16),
-                getModItem(IndustrialCraft2.ID, "itemUran238", 1, 0, missing),
+                ItemList.IC2_Uranium_238.get(1),
                 new ItemStack[] { getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15, missing), });
         TCHelper.addResearchPage(
@@ -2457,7 +2456,7 @@ public class ScriptEMT implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Minecraft.ID, "diamond", 1, 0, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                getModItem(IndustrialCraft2.ID, "itemUran238", 2, 0, missing),
+                ItemList.IC2_Uranium_238.get(2),
                 15,
                 new AspectList().add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("aqua"), 24)
                         .add(Aspect.getAspect("terra"), 48).add(Aspect.getAspect("ignis"), 24)
@@ -2473,8 +2472,7 @@ public class ScriptEMT implements IScriptLoader {
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15, missing), });
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(IndustrialCraft2.ID, "itemUran238", 1, 0, missing))));
+                new ResearchPage(TCHelper.findInfusionRecipe(ItemList.IC2_Uranium_238.get(1))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 getModItem(IndustrialCraft2.ID, "itemOreIridium", 2, 0, missing),
@@ -2482,7 +2480,7 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("aqua"), 32)
                         .add(Aspect.getAspect("terra"), 64).add(Aspect.getAspect("ignis"), 32)
                         .add(Aspect.getAspect("perditio"), 32).add(Aspect.getAspect("ordo"), 64),
-                getModItem(IndustrialCraft2.ID, "itemUran238", 1, 0, missing),
+                ItemList.IC2_Uranium_238.get(1),
                 new ItemStack[] { getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15, missing),
