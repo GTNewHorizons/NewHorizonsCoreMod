@@ -262,8 +262,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
                         MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getBolt(8))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderUEV, 144))
-                .requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS).eut(TierEU.RECIPE_UEV)
-                .addTo(circuitAssemblerRecipes);
+                .requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS).eut(2457600).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
