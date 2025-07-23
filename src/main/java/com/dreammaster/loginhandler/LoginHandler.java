@@ -17,7 +17,7 @@ public class LoginHandler {
     // spotless:off
     @SubscribeEvent
     public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
-        final String WIKI_LINK = "https://gtnh.miraheze.org/wiki/";
+        final String WIKI_LINK = "https://wiki.gtnewhorizons.com/wiki/";
         final String ISSUE_TRACKER_LINK = "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/issues";
         final String DISCORD_LINK = "https://discord.gg/gtnh";
         final String WELCOME       = StatCollector.translateToLocal("dreamcraft.welcome.welcome");
