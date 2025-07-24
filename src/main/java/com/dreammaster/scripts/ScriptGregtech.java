@@ -1047,7 +1047,7 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Iron, 6L),
-                        getModItem(IndustrialCraft2.ID, "itemPlutonium", 3, 0, missing))
+                        ItemList.IC2_Plutonium.get(3))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(1 * MINUTES).eut(120)
                 .addTo(assemblerRecipes);
