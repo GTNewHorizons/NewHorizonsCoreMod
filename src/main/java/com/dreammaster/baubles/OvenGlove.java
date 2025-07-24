@@ -35,6 +35,8 @@ import eu.usrv.yamcore.client.Notification;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.iface.IExtendedModItem;
 import gregtech.api.damagesources.GTDamageSources.DamageSourceHotItem;
+import gregtech.api.enums.Mods;
+import xonin.backhand.api.core.BackhandUtils;
 
 public final class OvenGlove extends Item implements IBauble, IExtendedModItem<OvenGlove> {
 
@@ -223,7 +225,16 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
 
             InventoryBaubles baubles = PlayerHandler.getPlayerBaubles(player);
             ItemStack cause = ((DamageSourceHotItem) event.source).getDamagingStack();
-            if (cause != player.getHeldItem()) return; // We cancel damage only for held items!
+
+            // We cancel damage only for held items!
+            boolean cancelled = cause == player.getHeldItem();
+            if (!cancelled && Mods.Backhand.isModLoaded()) {
+                if (cause == BackhandUtils.getOffhandItem(player)) {
+                    cancelled = true;
+                }
+            }
+
+            if (!cancelled) return;
 
             ItemStack ring1 = baubles.stackList[1];
             ItemStack ring2 = baubles.stackList[2];

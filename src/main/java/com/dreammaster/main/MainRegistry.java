@@ -118,7 +118,8 @@ import gregtech.common.items.MetaGeneratedItem01;
                 + "after:EnderIO;"
                 + "after:HardcoreEnderExpansion;"
                 + "after:Thaumcraft;"
-                + "after:amazingtrophies")
+                + "after:amazingtrophies;"
+                + "after:backhand@[1.6.9,);")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -148,6 +149,20 @@ public class MainRegistry {
         if (Module_AdminErrorLogs != null) {
             Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
         }
+    }
+
+    /**
+     * Returns true on a client
+     */
+    public static boolean isClient() {
+        return proxy.isClient();
+    }
+
+    /**
+     * Returns true on a dedicated server
+     */
+    public static boolean isServer() {
+        return !isClient();
     }
 
     public MainRegistry() {
