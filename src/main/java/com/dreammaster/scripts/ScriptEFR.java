@@ -293,6 +293,41 @@ public class ScriptEFR implements IScriptLoader {
                     .eut(4).addTo(cutterRecipes);
         }
 
+        // Boats & Boats w/ Chests
+
+        final ItemStack[] boatSlabType = { getModItem(Minecraft.ID, "wooden_slab", 1L, 0),
+                getModItem(Minecraft.ID, "wooden_slab", 1L, 1), getModItem(Minecraft.ID, "wooden_slab", 1L, 2),
+                getModItem(Minecraft.ID, "wooden_slab", 1L, 3), getModItem(Minecraft.ID, "wooden_slab", 1L, 4),
+                getModItem(Minecraft.ID, "wooden_slab", 1L, 5), getModItem(EtFuturumRequiem.ID, "wood_slab", 1L, 3),
+                getModItem(BiomesOPlenty.ID, "planks", 1L, 10) };
+        final ItemStack[] boatPlankType = { ItemList.Plank_Oak.get(1L), ItemList.Plank_Spruce.get(1L),
+                ItemList.Plank_Birch.get(1L), ItemList.Plank_Jungle.get(1L), ItemList.Plank_Acacia.get(1L),
+                ItemList.Plank_DarkOak.get(1L), ItemList.Plank_Cherry_EFR.get(1L),
+                getModItem(BiomesOPlenty.ID, "bamboo", 1L) };
+        final ItemStack[] boatType = { getModItem(Minecraft.ID, "boat", 1L),
+                getModItem(EtFuturumRequiem.ID, "spruce_boat", 1L), getModItem(EtFuturumRequiem.ID, "birch_boat", 1L),
+                getModItem(EtFuturumRequiem.ID, "jungle_boat", 1L), getModItem(EtFuturumRequiem.ID, "acacia_boat", 1L),
+                getModItem(EtFuturumRequiem.ID, "dark_oak_boat", 1L),
+                getModItem(EtFuturumRequiem.ID, "cherry_boat", 1L),
+                getModItem(EtFuturumRequiem.ID, "bamboo_raft", 1L) };
+        final String[] boatChestType = { "oak_chest_boat", "spruce_chest_boat", "birch_chest_boat", "jungle_chest_boat",
+                "acacia_chest_boat", "dark_oak_chest_boat", "cherry_chest_boat", "bamboo_chest_raft" };
+
+        for (int i = 0; i < boatSlabType.length; i++) {
+
+            GTModHandler.addCraftingRecipe(
+                    boatType[i],
+                    bits,
+                    new Object[] { "A A", "ABA", "CCC", 'A', boatPlankType[i], 'B', "craftingToolKnife", 'C',
+                            boatSlabType[i] });
+            GTModHandler.addCraftingRecipe(
+                    GTModHandler.getModItem(EtFuturumRequiem.ID, boatChestType[i], 1L),
+                    bits,
+                    new Object[] { " A ", "BCB", " D ", 'A', "craftingToolScrewdriver", 'B',
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L), 'C', "chestWood", 'D',
+                            boatType[i] });
+        }
+
         // Barrels
 
         GTModHandler.addCraftingRecipe(
