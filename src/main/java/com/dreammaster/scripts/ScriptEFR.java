@@ -158,7 +158,7 @@ public class ScriptEFR implements IScriptLoader {
                     || inName.equals("stonebrick")
                     || inName.equals("sandstone")) {
                 GTModHandler.addCraftingRecipe(
-                        GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
                         bits,
                         new Object[] { "BA ", "   ", "   ", 'A',
                                 GTModHandler.getModItem(Minecraft.ID, inName, 1L, inMeta), 'B', "craftingToolSaw" });
@@ -175,12 +175,21 @@ public class ScriptEFR implements IScriptLoader {
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
                         .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
             } else {
-                GTModHandler.addCraftingRecipe(
-                        GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
-                        bits,
-                        new Object[] { "BA ", "   ", "   ", 'A',
-                                GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
-                                "craftingToolSaw" });
+                if (inName.equals("wood_planks")) {
+                    GTModHandler.addCraftingRecipe(
+                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
+                            bits,
+                            new Object[] { "BA ", "   ", "   ", 'A',
+                                    GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
+                                    "craftingToolSaw" });
+                } else {
+                    GTModHandler.addCraftingRecipe(
+                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
+                            bits,
+                            new Object[] { "BA ", "   ", "   ", 'A',
+                                    GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
+                                    "craftingToolSaw" });
+                }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
