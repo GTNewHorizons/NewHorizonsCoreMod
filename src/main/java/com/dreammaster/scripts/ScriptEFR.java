@@ -196,6 +196,93 @@ public class ScriptEFR implements IScriptLoader {
             }
         }
 
+        // Pressure Plates
+
+        final ItemStack[] pressurePlateInputs = { ItemList.Plank_Spruce.get(2), ItemList.Plank_Birch.get(2),
+                ItemList.Plank_Jungle.get(2), ItemList.Plank_Acacia.get(2), ItemList.Plank_DarkOak.get(2),
+                ItemList.Plank_Cherry_EFR.get(2) };
+        final String[] pressurePlateOutputs = { "pressure_plate_spruce", "pressure_plate_birch",
+                "pressure_plate_jungle", "pressure_plate_acacia", "pressure_plate_dark_oak", "cherry_pressure_plate" };
+        for (int i = 0; i < pressurePlateInputs.length; i++) {
+
+            ItemStack inParts = pressurePlateInputs[i];
+            String outParts = pressurePlateOutputs[i];
+
+            GTModHandler.addCraftingRecipe(
+                    getModItem(EtFuturumRequiem.ID, outParts, 2L, 0, missing),
+                    bits,
+                    new Object[] { "ABA", "CDC", "AEA", 'A', "screwWood", 'B', "craftingToolHardHammer", 'C', inParts,
+                            'D', "springAnyIron", 'E', "craftingToolScrewdriver" });
+            GTValues.RA.stdBuilder()
+                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS).eut(8)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS).eut(8)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS).eut(8)
+                    .addTo(assemblerRecipes);
+        }
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2L, 0, missing),
+                bits,
+                new Object[] { "ABA", "CDC", "AEA", 'A', "screwIron", 'B', "craftingToolHardHammer", 'C',
+                        getModItem(EtFuturumRequiem.ID, "blackstone_slab", 1L, 1, missing), 'D', "springAnyIron", 'E',
+                        "craftingToolScrewdriver" });
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
+                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
+                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
+                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
+
+        // Buttons
+
+        final String[] buttonInputs = { "pressure_plate_spruce", "pressure_plate_birch", "pressure_plate_jungle",
+                "pressure_plate_acacia", "pressure_plate_dark_oak", "cherry_pressure_plate",
+                "polished_blackstone_pressure_plate" };
+        final String[] buttonOutputs = { "button_spruce", "button_birch", "button_jungle", "button_acacia",
+                "button_dark_oak", "cherry_button", "polished_blackstone_button" };
+        for (int i = 0; i < buttonInputs.length; i++) {
+
+            String inParts = buttonInputs[i];
+            String outParts = buttonOutputs[i];
+
+            GTModHandler.addCraftingRecipe(
+                    GTModHandler.getModItem(EtFuturumRequiem.ID, outParts, 2),
+                    bits,
+                    new Object[] { "BA ", "   ", "   ", 'A', GTModHandler.getModItem(EtFuturumRequiem.ID, inParts, 1L),
+                            'B', "craftingToolSaw" });
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
+                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
+                    .addTo(cutterRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
+                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 4)).duration(50 * TICKS).eut(4)
+                    .addTo(cutterRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
+                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3)).duration(50 * TICKS)
+                    .eut(4).addTo(cutterRecipes);
+        }
+
         // Barrels
 
         GTModHandler.addCraftingRecipe(
