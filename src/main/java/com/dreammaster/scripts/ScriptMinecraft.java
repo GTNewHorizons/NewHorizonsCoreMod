@@ -1599,14 +1599,20 @@ public class ScriptMinecraft implements IScriptLoader {
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
+                .eut(8).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -2436,9 +2442,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwIron",
                 "craftingToolHardHammer",
                 "screwIron",
-                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "stone_slab", 1, 0, missing),
                 "springAnyIron",
-                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "stone_slab", 1, 0, missing),
                 "screwIron",
                 "craftingToolScrewdriver",
                 "screwIron");
