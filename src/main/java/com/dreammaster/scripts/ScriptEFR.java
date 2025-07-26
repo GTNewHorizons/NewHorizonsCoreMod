@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
+import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
@@ -821,7 +822,7 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         GTUtility.getIntegratedCircuit(21),
                         new ItemStack(Blocks.stone_slab, 1),
-                        new ItemStack(Items.stick, 5),
+                        getModItem(Forestry.ID, "oakStick", 5L),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 3L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "wooden_armorstand", 1L)).duration(5 * SECONDS)
