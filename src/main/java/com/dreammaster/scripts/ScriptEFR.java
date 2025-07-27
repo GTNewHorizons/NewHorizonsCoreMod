@@ -28,9 +28,11 @@ import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
+import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
@@ -56,6 +58,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+
+import org.jetbrains.annotations.NotNull;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
@@ -100,6 +104,8 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(ExtraUtilities.ID, "budoff", 1, 0), 'D',
                         GTModHandler.getModItem(Minecraft.ID, "comparator", 1, 0), 'E', "gearGtSmallAnyIron" });
 
+        // Cherry Trapdoors
+
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 1L),
                 bits,
@@ -113,13 +119,29 @@ public class ScriptEFR implements IScriptLoader {
                 new Object[] { "ABA", "BCB", "ABA", 'A',
                         GTModHandler.getModItem(EtFuturumRequiem.ID, "wood_slab", 1L, 3), 'B', "stickWood", 'C',
                         "screwIron" });
-
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 3L),
                 bits,
                 new Object[] { "ABA", "BCB", "ABA", 'A',
                         GTModHandler.getModItem(EtFuturumRequiem.ID, "wood_slab", 1L, 3), 'B', "stickWood", 'C',
                         "screwSteel" });
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "wood_slab", 4, 3),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 4L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.iron"), 16)).duration(30 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "wood_slab", 4, 3),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 6L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.steel"), 16)).duration(30 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
+
+        // Banners
+
         for (int i = 0; i < 16; i++) {
             addShapelessRecipe(
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i),
@@ -204,6 +226,77 @@ public class ScriptEFR implements IScriptLoader {
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
                         .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
             }
+        }
+
+        // Regular Copper Trapdoors
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1L, 0, missing),
+                bits,
+                new Object[] { "ABA", "BCB", "DBE", 'A', "screwCopper", 'B',
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L), 'C', "trapdoorWood", 'D',
+                        "craftingToolSaw", 'E', "craftingToolScrewdriver" });
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 4L),
+                        getModItem(Minecraft.ID, "trapdoor", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1L, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // Regular Copper Doors
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "copper_door", 1L, 0, missing),
+                bits,
+                new Object[] { "ABC", "ADE", "AAF", 'A', "plateCopper", 'B', "itemCasingCopper", 'C',
+                        "craftingToolHardHammer", 'D', "screwCopper", 'E', "ringCopper", 'F',
+                        "craftingToolScrewdriver" });
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Copper, 1L))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_door", 1L, 0, missing)).duration(20 * SECONDS)
+                .eut(8).addTo(assemblerRecipes);
+
+        // Unwaxing Recipes
+
+        final String[] waxedParts = { /* slabs */"cut_copper_slab:4", "cut_copper_slab:5", "cut_copper_slab:6",
+                "cut_copper_slab:7", /* trapdoors */"waxed_copper_trapdoor:0", "waxed_exposed_copper_trapdoor:0",
+                "waxed_weathered_copper_trapdoor:0", "waxed_oxidized_copper_trapdoor:0",
+                /* doors */"waxed_copper_door:0", "waxed_exposed_copper_door:0", "waxed_weathered_copper_door:0",
+                "waxed_oxidized_copper_door:0", /* blocks */"copper_block:8", "copper_block:9", "copper_block:10",
+                "copper_block:11", /* cutCopper */"copper_block:12", "copper_block:13", "copper_block:14",
+                "copper_block:15", /* chiseledCopper */"chiseled_copper:4", "chiseled_copper:5", "chiseled_copper:6",
+                "chiseled_copper:7", /* copperGrate */"copper_grate:4", "copper_grate:5", "copper_grate:6",
+                "copper_grate:7", /* copperBulb */"copper_bulb:8", "copper_bulb:9", "copper_bulb:10",
+                "copper_bulb:11" };
+        final String[] unwaxedParts = { /* slabs */"cut_copper_slab:0", "cut_copper_slab:1", "cut_copper_slab:2",
+                "cut_copper_slab:3", /* trapdoors */"copper_trapdoor:0", "exposed_copper_trapdoor:0",
+                "weathered_copper_trapdoor:0", "oxidized_copper_trapdoor:0", /* doors */"copper_door:0",
+                "exposed_copper_door:0", "weathered_copper_door:0", "oxidized_copper_door:0",
+                /* blocks */"copper_block:0", "copper_block:1", "copper_block:2", "copper_block:3",
+                /* cutCopper */"copper_block:4", "copper_block:5", "copper_block:6", "copper_block:7",
+                /* chiseledCopper */"chiseled_copper:0", "chiseled_copper:1", "chiseled_copper:2", "chiseled_copper:3",
+                /* copperGrate */"copper_grate:0", "copper_grate:1", "copper_grate:2", "copper_grate:3",
+                /* copperBulb */"copper_bulb:0", "copper_bulb:1", "copper_bulb:2", "copper_bulb:3" };
+
+        for (int i = 0; i < waxedParts.length; i++) {
+            String[] waxed = waxedParts[i].split(":");
+            String[] unwaxed = unwaxedParts[i].split(":");
+
+            String inName = waxed[0];
+            int inMeta = Integer.parseInt(waxed[1]);
+
+            String outName = unwaxed[0];
+            int outMeta = Integer.parseInt(unwaxed[1]);
+
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
+                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
+                    .addTo(multiblockChemicalReactorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
+                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
+                    .addTo(chemicalReactorRecipes);
         }
 
         // Pressure Plates
@@ -1431,5 +1524,63 @@ public class ScriptEFR implements IScriptLoader {
                                 TCHelper.findInfusionRecipe(
                                         getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing)))));
 
+        // Recipe Function Calls
+        addOxidizedCopperDoors();
+        addOxidizedCopperTrapdoors();
+        addOxidizedCopperBlocks();
+    }
+
+    // Oxidation Functions
+
+    private static void addCopperOxidationRecipes(@NotNull ItemStack lessOxidized, @NotNull ItemStack moreOxidized) {
+        GTValues.RA.stdBuilder().itemInputs(lessOxidized).itemOutputs(moreOxidized)
+                .fluidInputs(Materials.Oxygen.getGas(1000L), Materials.CarbonDioxide.getGas(2000L))
+                .duration(20 * SECONDS).eut(30).addTo(multiblockChemicalReactorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(lessOxidized, Materials.CarbonDioxide.getCells(2))
+                .itemOutputs(moreOxidized, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 2L, 0))
+                .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(20 * SECONDS).eut(30)
+                .addTo(chemicalReactorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(lessOxidized, Materials.Oxygen.getCells(1))
+                .itemOutputs(moreOxidized, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1L, 0))
+                .fluidInputs(Materials.CarbonDioxide.getGas(2000L)).duration(20 * SECONDS).eut(30)
+                .addTo(chemicalReactorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(moreOxidized).itemOutputs(lessOxidized)
+                .fluidInputs(Materials.Hydrogen.getGas(2000L)).duration(20 * SECONDS).eut(120).addTo(arcFurnaceRecipes);
+    }
+
+    private static void addOxidizedCopperTrapdoors() {
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1L),
+                getModItem(EtFuturumRequiem.ID, "exposed_copper_trapdoor", 1L));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "exposed_copper_trapdoor", 1L),
+                getModItem(EtFuturumRequiem.ID, "weathered_copper_trapdoor", 1L));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "weathered_copper_trapdoor", 1L),
+                getModItem(EtFuturumRequiem.ID, "oxidized_copper_trapdoor", 1L));
+    }
+
+    private static void addOxidizedCopperDoors() {
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_door", 1L),
+                getModItem(EtFuturumRequiem.ID, "exposed_copper_door", 1L));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "exposed_copper_door", 1L),
+                getModItem(EtFuturumRequiem.ID, "weathered_copper_door", 1L));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "weathered_copper_door", 1L),
+                getModItem(EtFuturumRequiem.ID, "oxidized_copper_door", 1L));
+    }
+
+    private static void addOxidizedCopperBlocks() {
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 0),
+                getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 1));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 1),
+                getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 2));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 2),
+                getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 3));
     }
 }
