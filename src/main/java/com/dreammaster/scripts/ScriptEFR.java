@@ -100,6 +100,8 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(ExtraUtilities.ID, "budoff", 1, 0), 'D',
                         GTModHandler.getModItem(Minecraft.ID, "comparator", 1, 0), 'E', "gearGtSmallAnyIron" });
 
+        // Cherry Trapdoors
+
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 1L),
                 bits,
@@ -113,13 +115,29 @@ public class ScriptEFR implements IScriptLoader {
                 new Object[] { "ABA", "BCB", "ABA", 'A',
                         GTModHandler.getModItem(EtFuturumRequiem.ID, "wood_slab", 1L, 3), 'B', "stickWood", 'C',
                         "screwIron" });
-
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 3L),
                 bits,
                 new Object[] { "ABA", "BCB", "ABA", 'A',
                         GTModHandler.getModItem(EtFuturumRequiem.ID, "wood_slab", 1L, 3), 'B', "stickWood", 'C',
                         "screwSteel" });
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "wood_slab", 4, 3),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 4L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.iron"), 16)).duration(30 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "wood_slab", 4, 3),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 6L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.steel"), 16)).duration(30 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
+
+        // Banners
+
         for (int i = 0; i < 16; i++) {
             addShapelessRecipe(
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i),
@@ -205,6 +223,43 @@ public class ScriptEFR implements IScriptLoader {
                         .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
             }
         }
+
+        // Regular Copper Trapdoors
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1L, 0, missing),
+                bits,
+                new Object[] { "ABA", "BCB", "DBE", 'A', "screwCopper", 'B',
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L), 'C', "trapdoorWood", 'D',
+                        "craftingToolSaw", 'E', "craftingToolScrewdriver" });
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 4L),
+                        getModItem(Minecraft.ID, "trapdoor", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1L, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // Trapdoor Oxidation
+
+        // Regular Copper Doors
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "copper_door", 1L, 0, missing),
+                bits,
+                new Object[] { "ABC", "ADE", "AAF", 'A', "plateCopper", 'B', "itemCasingCopper", 'C',
+                        "craftingToolHardHammer", 'D', "screwCopper", 'E', "ringCopper", 'F',
+                        "craftingToolScrewdriver" });
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Copper, 1L))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_door", 1L, 0, missing)).duration(20 * SECONDS)
+                .eut(8).addTo(assemblerRecipes);
+
+        // Copper Door Oxidation
+
+        // Copper Block Oxidation
+
+        // Wax Removal
 
         // Pressure Plates
 
