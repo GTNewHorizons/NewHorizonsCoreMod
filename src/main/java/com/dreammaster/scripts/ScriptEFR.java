@@ -1534,18 +1534,22 @@ public class ScriptEFR implements IScriptLoader {
 
     private static void addCopperOxidationRecipes(@NotNull ItemStack lessOxidized, @NotNull ItemStack moreOxidized) {
         GTValues.RA.stdBuilder().itemInputs(lessOxidized).itemOutputs(moreOxidized)
-                .fluidInputs(Materials.Oxygen.getGas(1000L), Materials.CarbonDioxide.getGas(2000L))
-                .duration(20 * SECONDS).eut(30).addTo(multiblockChemicalReactorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(lessOxidized, Materials.CarbonDioxide.getCells(2))
+                .fluidInputs(Materials.Oxygen.getGas(50), Materials.CarbonDioxide.getGas(100)).duration(20 * SECONDS)
+                .eut(30).addTo(multiblockChemicalReactorRecipes);
+
+        // x20 to keep the same ratio as the LCR
+        ItemStack singleBlockInput = GTUtility.copyAmount(20, lessOxidized);
+
+        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, Materials.CarbonDioxide.getCells(2))
                 .itemOutputs(moreOxidized, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 2L, 0))
                 .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(20 * SECONDS).eut(30)
                 .addTo(chemicalReactorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(lessOxidized, Materials.Oxygen.getCells(1))
+        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, Materials.Oxygen.getCells(1))
                 .itemOutputs(moreOxidized, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1L, 0))
                 .fluidInputs(Materials.CarbonDioxide.getGas(2000L)).duration(20 * SECONDS).eut(30)
                 .addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder().itemInputs(moreOxidized).itemOutputs(lessOxidized)
-                .fluidInputs(Materials.Hydrogen.getGas(2000L)).duration(20 * SECONDS).eut(120).addTo(arcFurnaceRecipes);
+                .fluidInputs(Materials.Hydrogen.getGas(100)).duration(20 * SECONDS).eut(120).addTo(arcFurnaceRecipes);
     }
 
     private static void addOxidizedCopperTrapdoors() {
