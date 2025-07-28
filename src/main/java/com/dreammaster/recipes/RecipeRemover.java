@@ -1517,17 +1517,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemScanner", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemPlutonium", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemUran235small", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemUran235", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemLathingTool", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTurningBlanksWood", 1, 209715, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTurningBlanks", 1, 349525, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemPlutoniumSmall", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemMOX", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemUran", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing));
