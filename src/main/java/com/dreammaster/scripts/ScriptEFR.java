@@ -104,6 +104,33 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(ExtraUtilities.ID, "budoff", 1, 0), 'D',
                         GTModHandler.getModItem(Minecraft.ID, "comparator", 1, 0), 'E', "gearGtSmallAnyIron" });
 
+        // Cherry Planks
+        addShapelessRecipe(
+                getModItem(EtFuturumRequiem.ID, "wood_planks", 2, 3),
+                getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0));
+        addShapelessRecipe(
+                getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0),
+                "craftingToolSaw");
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
+                .itemOutputs(
+                        getModItem(EtFuturumRequiem.ID, "wood_planks", 6, 3),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(10 * SECONDS).eut(8)
+                .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
+                .itemOutputs(
+                        getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 5)).duration(20 * SECONDS).eut(8)
+                .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
+                .itemOutputs(
+                        getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3)).duration(20 * SECONDS)
+                .eut(8).addTo(cutterRecipes);
+
         // Cherry Trapdoors
 
         GTModHandler.addCraftingRecipe(
@@ -297,6 +324,27 @@ public class ScriptEFR implements IScriptLoader {
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
                     .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
                     .addTo(chemicalReactorRecipes);
+        }
+
+        // // Tipped Arrows
+
+        final int[] potionArrowMetas = { 8193, 8225, 8257, 8194, 8226, 8258, 8227, 8259, 8196, 8228, 8260, 8261, 8229,
+                8230, 8262, 8231, 8263, 8232, 8264, 8201, 8233, 8265, 8234, 8266, 8235, 8267, 8268, 8236, 8237, 8269,
+                8238, 8270 };
+
+        for (int meta : potionArrowMetas) {
+            GTModHandler.addCraftingRecipe(
+                    getModItem(EtFuturumRequiem.ID, "tipped_arrow", 8L, meta),
+                    bits,
+                    new Object[] { "AAA", "ABA", "AAA", 'A', getModItem(Minecraft.ID, "arrow", 1L), 'B',
+                            getModItem(EtFuturumRequiem.ID, "lingering_potion", 1L, meta) });
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTUtility.getIntegratedCircuit(1),
+                            getModItem(Minecraft.ID, "arrow", 12L, 0),
+                            getModItem(EtFuturumRequiem.ID, "lingering_potion", 1L, meta))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "tipped_arrow", 12L, meta)).duration(10 * SECONDS)
+                    .eut(128).addTo(assemblerRecipes);
         }
 
         // Pressure Plates
