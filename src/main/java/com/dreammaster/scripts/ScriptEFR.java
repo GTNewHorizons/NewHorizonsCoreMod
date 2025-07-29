@@ -110,8 +110,8 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0));
         addShapelessRecipe(
                 getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0),
-                "craftingToolSaw");
+                "craftingToolSaw",
+                getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0));
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
                 .itemOutputs(
                         getModItem(EtFuturumRequiem.ID, "wood_planks", 6, 3),
