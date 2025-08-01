@@ -1967,6 +1967,11 @@ public class ScriptEFR implements IScriptLoader {
                 ItemStack stack = inv.getStackInSlot(i);
                 if (stack != null && shulkerMatches(stack, requiredShulker)) {
                     NBTTagCompound inTag = stack.getTagCompound();
+
+                    if (inTag != null && inTag.hasKey("Items")) {
+                        tag.setTag("Items", inTag.getTag("Items"));
+                    }
+
                     int type = (inTag != null && inTag.hasKey("Type")) ? inTag.getByte("Type") : 0;
                     tag.setByte("Type", (byte) type);
 
