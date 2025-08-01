@@ -55,10 +55,14 @@ import java.util.Objects;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -67,6 +71,7 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -160,14 +165,14 @@ public class ScriptEFR implements IScriptLoader {
                 "red_netherbrick:0", "end_bricks:0", "cobbled_deepslate:0", "polished_deepslate:0",
                 "deepslate_bricks:0", "deepslate_bricks:2", "tuff:0", "tuff:1", "tuff:2", "copper_block:4",
                 "copper_block:5", "copper_block:6", "copper_block:7", "copper_block:12", "copper_block:13",
-                "copper_block:14", "copper_block:15", "blackstone:0", "blackstone:1", "blackstone:2", "wood_planks:3" };
+                "copper_block:14", "copper_block:15", "blackstone:0", "blackstone:1", "blackstone:2" };
         final String[] slabOutputs = { "red_sandstone_slab:0", "red_sandstone_slab:1", "purpur_slab:0", "stone_slab:0",
                 "stone_slab:1", "stone_slab:2", "stone_slab:3", "smooth_red_sandstone_slab:0", "smooth_quartz_slab:0",
                 "red_netherbrick_slab:0", "end_brick_slab:0", "deepslate_slab:0", "deepslate_slab:1",
                 "deepslate_brick_slab:0", "deepslate_brick_slab:1", "tuff_slab:0", "tuff_slab:1", "tuff_slab:2",
                 "cut_copper_slab:0", "cut_copper_slab:1", "cut_copper_slab:2", "cut_copper_slab:3", "cut_copper_slab:4",
                 "cut_copper_slab:5", "cut_copper_slab:6", "cut_copper_slab:7", "blackstone_slab:0", "blackstone_slab:1",
-                "blackstone_slab:2", "wood_slab:3" };
+                "blackstone_slab:2" };
         for (int i = 0; i < slabInputs.length; i++) {
             String[] inParts = slabInputs[i].split(":");
             String[] outParts = slabOutputs[i].split(":");
@@ -1457,6 +1462,32 @@ public class ScriptEFR implements IScriptLoader {
                                             getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, i, missing)))));
         }
 
+        // Shulker Dye / Undye Recipes
+
+        final String[] dyeInputs = { "dyeWhite", "dyeOrange", "dyeMagenta", "dyeLightBlue", "dyeYellow", "dyeLime",
+                "dyePink", "dyeGray", "dyeLightGray", "dyeCyan", "dyePurple", "dyeBlue", "dyeBrown", "dyeGreen",
+                "dyeRed", "dyeBlack" };
+
+        for (int k = 0; k < 8; k++) {
+            for (int j = 0; j < 16; j++) {
+                for (int i = 0; i < 17; i++) {
+                    GameRegistry.addRecipe(
+                            new ShulkerNBTRecipe(getShulkerBox(j + 1, k), getShulkerBox(i, k), dyeInputs[j]));
+                }
+            }
+        }
+        for (int k = 0; k < 8; k++) {
+            for (int i = 0; i < 17; i++) {
+                GameRegistry.addRecipe(new ShulkerNBTRecipe(getShulkerBox(0, k), getShulkerBox(i, k)));
+            }
+        }
+
+        // Fake Shulker Dye Recipes
+
+        for (int j = 0; j < 16; j++) {
+            addShapelessRecipe(getShulkerBox(j + 1, 0), getShulkerBox(0, 0), dyeInputs[j]);
+        }
+
         // Netherite gear
         new ResearchItem(
                 "NetheriteArmour",
@@ -1859,13 +1890,105 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 3));
     }
 
-    //Shulker Box NBT Grabbing Function
+    // Shulker Box NBT Grabbing Function
+
     public static ItemStack getShulkerBox(int color, int type) {
         ItemStack stack = getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing);
         NBTTagCompound tag = new NBTTagCompound();
         if (color > 0) tag.setByte("Color", (byte) color);
-        if (type > 0) tag.setByte("Type", (byte) type);
+        tag.setByte("Type", (byte) type);
         stack.setTagCompound(tag);
         return stack;
+    }
+
+    // Shulker Box NBT Crafting Preservation Function
+
+    public class ShulkerNBTRecipe implements IRecipe {
+
+        private final ItemStack output;
+        private final ItemStack requiredShulker;
+        private final String dye; // Nullable: if null, acts as "wash" recipe
+
+        public ShulkerNBTRecipe(ItemStack output, ItemStack requiredShulker, String dye) {
+            this.output = output;
+            this.requiredShulker = requiredShulker;
+            this.dye = dye; // if null, acts as 1-input recipe
+        }
+
+        public ShulkerNBTRecipe(ItemStack output, ItemStack requiredShulker) {
+            this(output, requiredShulker, null); // 1-input wash recipe
+        }
+
+        @Override
+        public boolean matches(InventoryCrafting inv, World world) {
+            boolean foundShulker = false;
+            boolean foundDye = (dye == null); // True for 1-input recipes
+            for (int i = 0; i < inv.getSizeInventory(); i++) {
+                ItemStack stack = inv.getStackInSlot(i);
+                if (stack == null) continue;
+                if (!foundShulker && shulkerMatches(stack, requiredShulker)) {
+                    foundShulker = true;
+                } else if (dye != null && !foundDye && isOreDict(stack, dye)) {
+                    foundDye = true;
+                }
+            }
+            return foundShulker && foundDye;
+        }
+
+        private boolean shulkerMatches(ItemStack stack, ItemStack required) {
+            if (stack.getItem() != required.getItem()) return false;
+            if (stack.getItemDamage() != required.getItemDamage()) return false;
+
+            NBTTagCompound actual = stack.getTagCompound();
+            NBTTagCompound expected = required.getTagCompound();
+
+            int actualColor = (actual != null && actual.hasKey("Color")) ? actual.getByte("Color") : 0;
+            int expectedColor = (expected != null && expected.hasKey("Color")) ? expected.getByte("Color") : 0;
+
+            int actualType = (actual != null && actual.hasKey("Type")) ? actual.getByte("Type") : 0;
+            int expectedType = (expected != null && expected.hasKey("Type")) ? expected.getByte("Type") : 0;
+
+            return actualColor == expectedColor && actualType == expectedType;
+        }
+
+        private boolean isOreDict(ItemStack stack, String oredict) {
+            for (ItemStack ore : OreDictionary.getOres(oredict)) {
+                if (OreDictionary.itemMatches(ore, stack, false)) return true;
+            }
+            return false;
+        }
+
+        @Override
+        public ItemStack getCraftingResult(InventoryCrafting inv) {
+            ItemStack result = output.copy();
+            NBTTagCompound tag = result.hasTagCompound() ? result.getTagCompound() : new NBTTagCompound();
+
+            for (int i = 0; i < inv.getSizeInventory(); i++) {
+                ItemStack stack = inv.getStackInSlot(i);
+                if (stack != null && shulkerMatches(stack, requiredShulker)) {
+                    NBTTagCompound inTag = stack.getTagCompound();
+                    int type = (inTag != null && inTag.hasKey("Type")) ? inTag.getByte("Type") : 0;
+                    tag.setByte("Type", (byte) type);
+
+                    int color = (result.hasTagCompound() && result.getTagCompound().hasKey("Color"))
+                            ? result.getTagCompound().getByte("Color")
+                            : 0;
+                    tag.setByte("Color", (byte) color);
+                    break;
+                }
+            }
+            result.setTagCompound(tag);
+            return result;
+        }
+
+        @Override
+        public int getRecipeSize() {
+            return dye == null ? 1 : 2;
+        }
+
+        @Override
+        public ItemStack getRecipeOutput() {
+            return output;
+        }
     }
 }
