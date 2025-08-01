@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TravellersGear;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
@@ -77,6 +78,7 @@ import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
+import com.dreammaster.travellersgear.TGConverter;
 import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
@@ -516,6 +518,8 @@ public class MainRegistry {
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
         if (TinkerConstruct.isModLoaded()) TiCoLoader.doPostInitialization();
+
+        if (!TravellersGear.isModLoaded()) TGConverter.doPostInitialization();
     }
 
     @Mod.EventHandler
