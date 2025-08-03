@@ -1841,12 +1841,6 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 4, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L))
                 .duration(1 * MINUTES + 15 * SECONDS).eut(120).specialValue(1500).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 1L))
-                .duration(1 * MINUTES).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 2L))
-                .duration(1 * MINUTES).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
     }
 
     private void cannerRecipes() {
