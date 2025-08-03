@@ -142,6 +142,10 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 .registerOre(OrePrefixes.bars, Materials.TungstenSteel, NHItemList.TungstenSteelBars.getIS());
 
         GTOreDictUnificator.registerOre(
+                OrePrefixes.rawOre,
+                Materials.MeteoricIron,
+                GTModHandler.getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1L));
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.ore,
                 Materials.Desh,
                 GTModHandler.getModItem(GalacticraftMars.ID, "tile.mars", 1L, 2));
