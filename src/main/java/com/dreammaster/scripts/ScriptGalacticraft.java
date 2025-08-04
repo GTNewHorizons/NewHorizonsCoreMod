@@ -1240,7 +1240,11 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "wireFineSteel");
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing),
-                getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, wildcard, missing));
+                "rawOreMeteoricIron");
+        addShapelessRecipe(
+                getModItem(GalacticraftCore.ID, "item.null", 3, 0, missing),
+                "rawOreMeteoricIron",
+                "craftingToolSaw");
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, wildcard, missing));
