@@ -28,6 +28,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -37,6 +38,9 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -47,6 +51,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -1913,6 +1918,32 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 76, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.americium", 1440)).duration(30 * SECONDS).eut(30720)
                 .addTo(assemblerRecipes);
+        // Qol Recipes
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glowstone_dust, 30),
+                        new ItemStack(Blocks.diamond_block, 10),
+                        getModItem(StevesCarts2.ID, "ModuleComponents", 30, 45, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 20, 46, missing))
+                .fluidInputs(Materials.Reinforced.getFluid(2880)).duration(10 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(StevesCarts2.ID, "ModuleComponents", 4, 20, missing),
+                        getModItem(StevesCarts2.ID, "ModuleComponents", 12, 19, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 20, 21, missing))
+                .fluidInputs(Materials.Iron.getFluid(2880)).duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.magma_cream, 8),
+                        new ItemStack(Items.fermented_spider_eye, 8),
+                        new ItemStack(Items.ghast_tear, 8),
+                        new ItemStack(Items.ender_eye, 4),
+                        GTUtility.getIntegratedCircuit(24))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 45, missing))
+                .fluidInputs(Materials.Glowstone.getFluid(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(multiblockChemicalReactorRecipes);
+        //
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing)).duration(50 * SECONDS)
                 .eut(120).specialValue(1700).addTo(blastFurnaceRecipes);
