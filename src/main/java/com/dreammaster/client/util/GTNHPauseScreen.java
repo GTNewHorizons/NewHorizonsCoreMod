@@ -12,6 +12,7 @@ import net.minecraftforge.client.event.GuiScreenEvent;
 
 import org.lwjgl.opengl.GL11;
 
+import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.gtnewhorizon.gtnhlib.util.FilesUtil;
 
@@ -70,9 +71,9 @@ public class GTNHPauseScreen {
     public void onActionPerformed(GuiScreenEvent.ActionPerformedEvent.Post event) {
         if (!(event.gui instanceof GuiIngameMenu)) return;
         if (event.button.id == BUG_BUTTON_ID) {
-            gtnh$openUrl("https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/issues");
+            gtnh$openUrl(Refstrings.ISSUE_TRACKER_LINK);
         } else if (event.button.id == WIKI_BUTTON_ID) {
-            gtnh$openUrl("https://wiki.gtnewhorizons.com/wiki/Main_Page");
+            gtnh$openUrl(Refstrings.WIKI_LINK);
         }
     }
 

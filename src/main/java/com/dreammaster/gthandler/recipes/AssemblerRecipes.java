@@ -10780,7 +10780,7 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.ocParts", 1L, 2))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-                // Particel Card
+                // Particle Card
 
                 GTValues.RA.stdBuilder()
                         .itemInputs(
@@ -10816,7 +10816,7 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.ocParts", 1L, 5))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-                // Self Destruction Card
+                // Self Destructing Card
 
                 GTValues.RA.stdBuilder()
                         .itemInputs(
@@ -10954,6 +10954,19 @@ public class AssemblerRecipes implements Runnable {
                                 GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L),
                                 GTUtility.getIntegratedCircuit(1))
                         .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.dockingUpgrade", 1L, 0))
+                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                        .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                // Portable Tape Drive
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                GTModHandler.getModItem(Computronics.ID, "computronics.tape", 1L, 1),
+                                ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
+                                ItemList.Circuit_Parts_TransistorSMD.get(2L),
+                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2L),
+                                GTUtility.getIntegratedCircuit(1))
+                        .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.portableTapeDrive", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
             }

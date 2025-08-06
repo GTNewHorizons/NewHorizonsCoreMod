@@ -22,6 +22,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class AlloySmelterRecipes implements Runnable {
 
@@ -153,6 +154,19 @@ public class AlloySmelterRecipes implements Runnable {
                         ItemList.Shape_Mold_Casing.get(0))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.getIS().splitStack(3)).duration(60 * SECONDS).eut(256)
                 .addTo(alloySmelterRecipes);
+
+        // GT++ Recipes
+        ItemStack[] tumbagaInputs = { Materials.Gold.getDust(7), // 0
+                Materials.Gold.getIngots(7), // 1
+                Materials.Copper.getDust(3), // 2
+                Materials.Copper.getIngots(3) // 3
+        };
+        int[][] tumbagaCombos = { { 0, 2 }, { 0, 3 }, { 1, 2 }, { 1, 3 } };
+        for (int[] pair : tumbagaCombos) {
+            GTValues.RA.stdBuilder().itemInputs(tumbagaInputs[pair[0]], tumbagaInputs[pair[1]])
+                    .itemOutputs(MaterialsAlloy.TUMBAGA.getIngot(10)).duration(15 * SECONDS).eut(30)
+                    .addTo(alloySmelterRecipes);
+        }
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard), new ItemStack(Items.clay_ball))
                 .itemOutputs(NHItemList.CokeOvenBrick.getIS().splitStack(2)).duration(10 * SECONDS).eut(8)

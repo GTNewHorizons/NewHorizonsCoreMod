@@ -121,7 +121,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.StainlessSteel, 4),
                         getModItem(Thaumcraft.ID, "FocusTrade", 1), // equal trade focus
-                        ItemList.Field_Generator_MV.get(1),
+                        ItemList.Field_Generator_LV.get(1),
                         ItemList.Electric_Piston_HV.get(2),
                         ItemList.Electric_Motor_HV.get(2))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(L * 4)).itemOutputs(MMItemList.Lens0.get(1))

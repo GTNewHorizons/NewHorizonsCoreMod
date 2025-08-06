@@ -308,6 +308,8 @@ public class LaserEngraverRecipes implements Runnable {
             makeFloppy("Digger", "dig", 3, 9);
             makeFloppy("Mazer", "maze", 14, 10);
             makeFloppy("OpenIRC (IRC Client)", "irc", 12, 11);
+            makeFloppy("Taper", "tape", 15, 12);
+            makeFloppy("Exploder", "explode", 1, 13);
             // eeprom with lua bios
             makeLuaBios();
         }

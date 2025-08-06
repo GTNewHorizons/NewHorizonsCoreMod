@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TravellersGear;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
@@ -77,6 +78,7 @@ import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
+import com.dreammaster.travellersgear.TGConverter;
 import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
@@ -118,7 +120,8 @@ import gregtech.common.items.MetaGeneratedItem01;
                 + "after:EnderIO;"
                 + "after:HardcoreEnderExpansion;"
                 + "after:Thaumcraft;"
-                + "after:amazingtrophies")
+                + "after:amazingtrophies;"
+                + "after:backhand@[1.6.9,);")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -148,6 +151,20 @@ public class MainRegistry {
         if (Module_AdminErrorLogs != null) {
             Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
         }
+    }
+
+    /**
+     * Returns true on a client
+     */
+    public static boolean isClient() {
+        return proxy.isClient();
+    }
+
+    /**
+     * Returns true on a dedicated server
+     */
+    public static boolean isServer() {
+        return !isClient();
     }
 
     public MainRegistry() {
@@ -501,6 +518,8 @@ public class MainRegistry {
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
         if (TinkerConstruct.isModLoaded()) TiCoLoader.doPostInitialization();
+
+        if (!TravellersGear.isModLoaded()) TGConverter.doPostInitialization();
     }
 
     @Mod.EventHandler
