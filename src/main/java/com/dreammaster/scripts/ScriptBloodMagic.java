@@ -1601,7 +1601,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'f',
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
                 'h',
-                "gemDiamond");
+                getModItem(Botania.ID, "manaResource", 1, 2, missing));
         TCHelper.addResearchPage(
                 "WEAKORB",
                 new ResearchPage(TCHelper.findArcaneRecipe(CustomItemList.WeakOrb.get(1L))));
@@ -3091,7 +3091,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("cognitio"), 8),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
-                        getModItem(Minecraft.ID, "cookie", 1, 0, missing),
+                        getModItem(Botania.ID, "manaCookie", 1, 0, missing),
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
                         getModItem(Minecraft.ID, "sugar", 1, 0, missing),
