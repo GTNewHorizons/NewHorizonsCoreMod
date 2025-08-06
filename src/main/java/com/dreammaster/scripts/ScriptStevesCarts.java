@@ -1925,14 +1925,14 @@ public class ScriptStevesCarts implements IScriptLoader {
                         new ItemStack(Blocks.diamond_block, 10),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 30, 45, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 20, 46, missing))
-                .fluidInputs(Materials.Reinforced.getFluid(2880)).duration(10 * SECONDS).eut(30)
+                .fluidInputs(Materials.Reinforced.getMolten(2880)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 20, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 12, 19, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 20, 21, missing))
-                .fluidInputs(Materials.Iron.getFluid(2880)).duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Iron.getMolten(2880)).duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.magma_cream, 8),
@@ -1941,7 +1941,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                         new ItemStack(Items.ender_eye, 4),
                         GTUtility.getIntegratedCircuit(24))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 45, missing))
-                .fluidInputs(Materials.Glowstone.getFluid(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Glowstone.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(multiblockChemicalReactorRecipes);
         //
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21, missing))
