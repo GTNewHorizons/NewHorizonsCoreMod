@@ -504,7 +504,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 .eut(TierEU.RECIPE_UEV).addTo(GTRecipeConstants.AssemblyLine);
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_AMUN_RA)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_AMUN_RA)
     private static void setMothershipRecipe() {
         final HashMap<Object, Integer> recipe = new HashMap<>();
 

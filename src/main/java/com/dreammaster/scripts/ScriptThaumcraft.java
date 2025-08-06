@@ -6150,25 +6150,25 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 1)
                         .add(Aspect.getAspect("sano"), 1).add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemUran", 1, 0, missing),
+                ItemList.IC2_Uranium_Fuel.get(1),
                 new AspectList().add(Aspect.getAspect("vitreus"), 14).add(Aspect.getAspect("gelum"), 6)
                         .add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("permutatio"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemMOX", 1, 0, missing),
+                ItemList.IC2_MOX_Fuel.get(1),
                 new AspectList().add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("metallum"), 3)
                         .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("vitreus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemPlutonium", 1, 0, missing),
+                ItemList.IC2_Plutonium.get(1),
                 new AspectList().add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("metallum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemPlutoniumSmall", 1, 0, missing),
+                ItemList.IC2_Plutonium_Small.get(1),
                 new AspectList().add(Aspect.getAspect("metallum"), 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("potentia"), 3)
                         .add(Aspect.getAspect("machina"), 2).add(Aspect.getAspect("vitreus"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemUran235", 1, 0, missing),
+                ItemList.IC2_Uranium_235_Small.get(1),
                 new AspectList().add(Aspect.getAspect("metallum"), 3).add(Aspect.getAspect("radio"), 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0, missing),

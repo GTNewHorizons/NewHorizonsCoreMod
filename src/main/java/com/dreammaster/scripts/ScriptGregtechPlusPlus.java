@@ -58,40 +58,6 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapedRecipe(
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                "craftingToolFile",
-                null,
-                null,
-                null,
-                MaterialsAlloy.TUMBAGA.getIngot(1),
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                MaterialsAlloy.TUMBAGA.getFrameBox(2),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                "craftingToolWrench",
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getRod(1));
-        addShapedRecipe(
-                MaterialsAlloy.TUMBAGA.getGear(1),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getPlate(1),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getPlate(1),
-                "craftingToolWrench",
-                MaterialsAlloy.TUMBAGA.getPlate(1),
-                MaterialsAlloy.TUMBAGA.getRod(1),
-                MaterialsAlloy.TUMBAGA.getPlate(1),
-                MaterialsAlloy.TUMBAGA.getRod(1));
-
         // Fish Trap
         addShapedRecipe(
                 GregtechItemList.FishTrap.get(1),
@@ -118,7 +84,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         addForestryRecipes();
     }
 
-    @Optional.Method(modid = Mods.Names.FORESTRY)
+    @Optional.Method(modid = Mods.ModIDs.FORESTRY)
     private void addForestryRecipes() {
 
         // Arborist Frame
