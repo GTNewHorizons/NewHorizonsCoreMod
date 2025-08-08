@@ -55,9 +55,14 @@ import java.util.Objects;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -66,6 +71,7 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -186,14 +192,14 @@ public class ScriptEFR implements IScriptLoader {
                 "red_netherbrick:0", "end_bricks:0", "cobbled_deepslate:0", "polished_deepslate:0",
                 "deepslate_bricks:0", "deepslate_bricks:2", "tuff:0", "tuff:1", "tuff:2", "copper_block:4",
                 "copper_block:5", "copper_block:6", "copper_block:7", "copper_block:12", "copper_block:13",
-                "copper_block:14", "copper_block:15", "blackstone:0", "blackstone:1", "blackstone:2", "wood_planks:3" };
+                "copper_block:14", "copper_block:15", "blackstone:0", "blackstone:1", "blackstone:2" };
         final String[] slabOutputs = { "red_sandstone_slab:0", "red_sandstone_slab:1", "purpur_slab:0", "stone_slab:0",
                 "stone_slab:1", "stone_slab:2", "stone_slab:3", "smooth_red_sandstone_slab:0", "smooth_quartz_slab:0",
                 "red_netherbrick_slab:0", "end_brick_slab:0", "deepslate_slab:0", "deepslate_slab:1",
                 "deepslate_brick_slab:0", "deepslate_brick_slab:1", "tuff_slab:0", "tuff_slab:1", "tuff_slab:2",
                 "cut_copper_slab:0", "cut_copper_slab:1", "cut_copper_slab:2", "cut_copper_slab:3", "cut_copper_slab:4",
                 "cut_copper_slab:5", "cut_copper_slab:6", "cut_copper_slab:7", "blackstone_slab:0", "blackstone_slab:1",
-                "blackstone_slab:2", "wood_slab:3" };
+                "blackstone_slab:2" };
         for (int i = 0; i < slabInputs.length; i++) {
             String[] inParts = slabInputs[i].split(":");
             String[] outParts = slabOutputs[i].split(":");
@@ -1157,6 +1163,8 @@ public class ScriptEFR implements IScriptLoader {
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
+        // Totem of Undying
+
         new ResearchItem(
                 "UNDYINGTOTEM",
                 "NEWHORIZONS",
@@ -1197,7 +1205,9 @@ public class ScriptEFR implements IScriptLoader {
                                 TCHelper.findInfusionRecipe(
                                         getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing)))));
         ThaumcraftApi.addWarpToResearch("UNDYINGTOTEM", 3);
-        // Shulker
+
+        // Shulker Boxes
+
         new ResearchItem(
                 "SHULKER",
                 "NEWHORIZONS",
@@ -1210,9 +1220,10 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)).setParents("HUNGRYCHEST").setConcealed()
                         .setRound().setPages(new ResearchPage("EtFuturumRequiem.research_page.SHULKER.1"))
                         .registerResearchItem();
+
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
-                getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing),
+                getShulkerBox(0, 0), // Regular
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
@@ -1227,12 +1238,303 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing));
-        TCHelper.addResearchPage(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
-                new ResearchPage(
-                        Objects.requireNonNull(
-                                TCHelper.findArcaneRecipe(
-                                        getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)))));
+                getShulkerBox(0, 1), // Iron
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                'c',
+                GTOreDictUnificator.get("plateLivingwood", 1),
+                'd',
+                getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getShulkerBox(0, 2), // Gold
+                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
+                        .add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("aqua"), 25)
+                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                'c',
+                GTOreDictUnificator.get("plateLivingwood", 1),
+                'd',
+                getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getShulkerBox(0, 3), // Diamond
+                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
+                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
+                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                'c',
+                GTOreDictUnificator.get("plateLivingrock", 1),
+                'd',
+                getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getShulkerBox(0, 4), // Copper
+                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
+                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
+                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                'c',
+                GTOreDictUnificator.get("plateLivingwood", 1),
+                'd',
+                getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getShulkerBox(0, 5), // Silver
+                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("ignis"), 20)
+                        .add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("aqua"), 20)
+                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                'c',
+                GTOreDictUnificator.get("plateLivingwood", 1),
+                'd',
+                getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getShulkerBox(0, 6), // Crystal
+                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
+                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
+                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                'c',
+                GTOreDictUnificator.get("plateReinforcedGlass", 1),
+                'd',
+                getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getShulkerBox(0, 7), // Obsidian
+                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
+                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
+                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                'c',
+                GTOreDictUnificator.get("plateLivingrock", 1),
+                'd',
+                getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0, missing));
+
+        // Shulker Box Upgrades
+
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 1, missing), // Vanilla to Copper
+                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
+                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
+                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                " a ",
+                "bab",
+                " a ",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 0, missing), // Vanilla to Iron
+                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
+                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
+                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                " a ",
+                "bab",
+                " a ",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 6, missing), // Copper to Iron
+                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
+                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
+                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                " a ",
+                "bcb",
+                " a ",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'c',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 7, missing), // Copper to Silver
+                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
+                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
+                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                " a ",
+                "bcb",
+                " a ",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'c',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 2, missing), // Iron to Gold
+                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
+                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
+                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                " a ",
+                "bcb",
+                " a ",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'c',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 8, missing), // Silver to Gold
+                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
+                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
+                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                " a ",
+                "bcb",
+                " a ",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'c',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 3, missing), // Gold to Diamond
+                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
+                        .add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("aqua"), 25)
+                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                " a ",
+                "bcb",
+                " a ",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'c',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 5, missing), // Diamond to Crystal
+                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
+                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
+                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                " a ",
+                "bcb",
+                " a ",
+                'a',
+                GTOreDictUnificator.get("plateReinforcedGlass", 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'c',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SHULKER",
+                getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 4, missing), // Diamond to Obsidian
+                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
+                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
+                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                " a ",
+                "bcb",
+                " a ",
+                'a',
+                GTOreDictUnificator.get("plateDenseObsidian", 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'c',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1));
+
+        // Shulker Research Pages
+
+        int[] shulkerPageOrder = { 0, 4, 1, 5, 2, 3, 6, 7 };
+        for (int i : shulkerPageOrder) {
+            TCHelper.addResearchPage(
+                    "SHULKER",
+                    new ResearchPage(Objects.requireNonNull(TCHelper.findArcaneRecipe(getShulkerBox(0, i), false))));
+        }
+        int[] shulkerUpgradePageOrder = { 1, 0, 6, 7, 2, 8, 3, 5, 4 };
+        for (int i : shulkerUpgradePageOrder) {
+            TCHelper.addResearchPage(
+                    "SHULKER",
+                    new ResearchPage(
+                            Objects.requireNonNull(
+                                    TCHelper.findArcaneRecipe(
+                                            getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, i, missing)))));
+        }
+
+        // Shulker Dye / Undye Recipes
+
+        final String[] dyeInputs = { "dyeWhite", "dyeOrange", "dyeMagenta", "dyeLightBlue", "dyeYellow", "dyeLime",
+                "dyePink", "dyeGray", "dyeLightGray", "dyeCyan", "dyePurple", "dyeBlue", "dyeBrown", "dyeGreen",
+                "dyeRed", "dyeBlack" };
+
+        for (int k = 0; k < 8; k++) {
+            for (int j = 0; j < 16; j++) {
+                for (int i = 0; i < 17; i++) {
+                    GameRegistry.addRecipe(
+                            new ShulkerNBTRecipe(getShulkerBox(j + 1, k), getShulkerBox(i, k), dyeInputs[j]));
+                }
+            }
+        }
+        for (int k = 0; k < 8; k++) {
+            for (int i = 0; i < 17; i++) {
+                GameRegistry.addRecipe(new ShulkerNBTRecipe(getShulkerBox(0, k), getShulkerBox(i, k)));
+            }
+        }
+
+        // Fake Shulker Dye Recipes
+
+        for (int j = 0; j < 16; j++) {
+            addShapelessRecipe(getShulkerBox(j + 1, 0), getShulkerBox(0, 0), dyeInputs[j]);
+        }
 
         // Netherite gear
         new ResearchItem(
@@ -1634,5 +1936,112 @@ public class ScriptEFR implements IScriptLoader {
         addCopperOxidationRecipes(
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 2),
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 3));
+    }
+
+    // Shulker Box NBT Grabbing Function
+
+    public static ItemStack getShulkerBox(int color, int type) {
+        ItemStack stack = getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing);
+        NBTTagCompound tag = new NBTTagCompound();
+        if (color > 0) tag.setByte("Color", (byte) color);
+        tag.setByte("Type", (byte) type);
+        stack.setTagCompound(tag);
+        return stack;
+    }
+
+    // Shulker Box NBT Crafting Preservation Function
+
+    public class ShulkerNBTRecipe implements IRecipe {
+
+        private final ItemStack output;
+        private final ItemStack requiredShulker;
+        private final String dye; // Nullable: if null, acts as "wash" recipe
+
+        public ShulkerNBTRecipe(ItemStack output, ItemStack requiredShulker, String dye) {
+            this.output = output;
+            this.requiredShulker = requiredShulker;
+            this.dye = dye; // if null, acts as 1-input recipe
+        }
+
+        public ShulkerNBTRecipe(ItemStack output, ItemStack requiredShulker) {
+            this(output, requiredShulker, null); // 1-input wash recipe
+        }
+
+        @Override
+        public boolean matches(InventoryCrafting inv, World world) {
+            boolean foundShulker = false;
+            boolean foundDye = (dye == null); // True for 1-input recipes
+            for (int i = 0; i < inv.getSizeInventory(); i++) {
+                ItemStack stack = inv.getStackInSlot(i);
+                if (stack == null) continue;
+                if (!foundShulker && shulkerMatches(stack, requiredShulker)) {
+                    foundShulker = true;
+                } else if (dye != null && !foundDye && isOreDict(stack, dye)) {
+                    foundDye = true;
+                }
+            }
+            return foundShulker && foundDye;
+        }
+
+        private boolean shulkerMatches(ItemStack stack, ItemStack required) {
+            if (stack.getItem() != required.getItem()) return false;
+            if (stack.getItemDamage() != required.getItemDamage()) return false;
+
+            NBTTagCompound actual = stack.getTagCompound();
+            NBTTagCompound expected = required.getTagCompound();
+
+            int actualColor = (actual != null && actual.hasKey("Color")) ? actual.getByte("Color") : 0;
+            int expectedColor = (expected != null && expected.hasKey("Color")) ? expected.getByte("Color") : 0;
+
+            int actualType = (actual != null && actual.hasKey("Type")) ? actual.getByte("Type") : 0;
+            int expectedType = (expected != null && expected.hasKey("Type")) ? expected.getByte("Type") : 0;
+
+            return actualColor == expectedColor && actualType == expectedType;
+        }
+
+        private boolean isOreDict(ItemStack stack, String oredict) {
+            for (ItemStack ore : OreDictionary.getOres(oredict)) {
+                if (OreDictionary.itemMatches(ore, stack, false)) return true;
+            }
+            return false;
+        }
+
+        @Override
+        public ItemStack getCraftingResult(InventoryCrafting inv) {
+            ItemStack result = output.copy();
+            NBTTagCompound tag = result.hasTagCompound() ? result.getTagCompound() : new NBTTagCompound();
+
+            for (int i = 0; i < inv.getSizeInventory(); i++) {
+                ItemStack stack = inv.getStackInSlot(i);
+                if (stack != null && shulkerMatches(stack, requiredShulker)) {
+                    NBTTagCompound inTag = stack.getTagCompound();
+
+                    if (inTag != null && inTag.hasKey("Items")) {
+                        tag.setTag("Items", inTag.getTag("Items"));
+                    }
+
+                    int type = (inTag != null && inTag.hasKey("Type")) ? inTag.getByte("Type") : 0;
+                    tag.setByte("Type", (byte) type);
+
+                    int color = (result.hasTagCompound() && result.getTagCompound().hasKey("Color"))
+                            ? result.getTagCompound().getByte("Color")
+                            : 0;
+                    tag.setByte("Color", (byte) color);
+                    break;
+                }
+            }
+            result.setTagCompound(tag);
+            return result;
+        }
+
+        @Override
+        public int getRecipeSize() {
+            return dye == null ? 1 : 2;
+        }
+
+        @Override
+        public ItemStack getRecipeOutput() {
+            return output;
+        }
     }
 }

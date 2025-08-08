@@ -344,6 +344,9 @@ public class RecipeRemover {
             for (int i = 0; i < 9; i++) {
                 removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, i));
             }
+            for (int i = 0; i < 16; i++) {
+                removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "shulker_box", 1, i));
+            }
             for (int i = 0; i < 11; i++) {
                 removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, i));
             }
