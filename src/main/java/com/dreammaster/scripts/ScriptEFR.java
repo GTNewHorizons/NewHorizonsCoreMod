@@ -1113,18 +1113,17 @@ public class ScriptEFR implements IScriptLoader {
         OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.getIS(1));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "deepslate", 1, 0, missing))
-            .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
-            .itemOutputs(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 9L),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetalMixture, 9L),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 4L),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 4L),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Basalt, 4L))
-            .duration(2 * MINUTES).eut(TierEU.RECIPE_MV)
-            .addTo(centrifugeRecipes);
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetalMixture, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Basalt, 4L))
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
 
