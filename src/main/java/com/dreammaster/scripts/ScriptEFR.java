@@ -1131,7 +1131,7 @@ public class ScriptEFR implements IScriptLoader {
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
-      
+
         // Totem of Undying
         new ResearchItem(
                 "UNDYINGTOTEM",
