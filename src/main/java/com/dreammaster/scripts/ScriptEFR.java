@@ -1179,9 +1179,9 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
-                "aba",
+                "abe",
                 "cdc",
-                "aba",
+                "eba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1189,16 +1189,18 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 1), // Iron
                 new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
                         .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
                         .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
-                "aba",
+                "abe",
                 "cdc",
-                "aba",
+                "eba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1206,16 +1208,18 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 2), // Gold
                 new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
                         .add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("aqua"), 25)
                         .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
-                "aba",
+                "abe",
                 "cdc",
-                "aba",
+                "eba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1223,16 +1227,18 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 3), // Diamond
                 new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
                         .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
-                "aba",
+                "abe",
                 "cdc",
-                "aba",
+                "eba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1240,16 +1246,18 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingrock", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 4), // Copper
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
                         .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
                         .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
-                "aba",
+                "abe",
                 "cdc",
-                "aba",
+                "eba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1257,16 +1265,18 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 5), // Silver
                 new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("ignis"), 20)
                         .add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("aqua"), 20)
                         .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
-                "aba",
+                "abe",
                 "cdc",
-                "aba",
+                "eba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1274,16 +1284,18 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 6), // Crystal
                 new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
                         .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
-                "aba",
+                "abe",
                 "cdc",
-                "aba",
+                "eba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1291,16 +1303,18 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateReinforcedGlass", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 7), // Obsidian
                 new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
                         .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
-                "aba",
+                "abe",
                 "cdc",
-                "aba",
+                "eba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1308,7 +1322,9 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingrock", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1));
 
         // Shulker Box Upgrades
 
@@ -1410,7 +1426,7 @@ public class ScriptEFR implements IScriptLoader {
                 'a',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1),
                 'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1),
                 'c',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
