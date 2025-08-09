@@ -58,6 +58,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -1108,6 +1109,23 @@ public class ScriptEFR implements IScriptLoader {
                 .outputChances(5000, 2000, 1000, 750, 500, 250).duration(2 * MINUTES)
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
+
+        OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.getIS(1));
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "deepslate", 1, 0, missing))
+                .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetalMixture, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Basalt, 4L))
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
+
+        OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
 
         new ResearchItem(
                 "UNDYINGTOTEM",
