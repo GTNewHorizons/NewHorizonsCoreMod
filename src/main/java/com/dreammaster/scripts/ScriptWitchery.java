@@ -22,7 +22,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -563,7 +562,7 @@ public class ScriptWitchery implements IScriptLoader {
                                 new ResearchPage("Witchery.research_page.RUBYSLIPPERS.1"),
                                 new ResearchPage("Witchery.research_page.RUBYSLIPPERS.2"))
                         .registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "RUBYSLIPPERS",
                 getModItem(Witchery.ID, "rubyslippers", 1, 0, missing),
                 5,
@@ -571,14 +570,16 @@ public class ScriptWitchery implements IScriptLoader {
                         .add(Aspect.getAspect("lucrum"), 32).add(Aspect.getAspect("potentia"), 16)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("fames"), 32),
                 getModItem(Witchery.ID, "seepingshoes", 1, 0, missing),
-                new ItemStack[] { getModItem(Witchery.ID, "ingredient", 1, 80, missing),
-                        CustomItemList.ManyullynCrystal.get(1L), getModItem(Witchery.ID, "ingredient", 1, 34, missing),
-                        getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
-                        CustomItemList.ManyullynCrystal.get(1L), getModItem(Witchery.ID, "ingredient", 1, 80, missing),
-                        CustomItemList.ManyullynCrystal.get(1L),
-                        getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 34, missing),
-                        CustomItemList.ManyullynCrystal.get(1L), });
+                getModItem(Witchery.ID, "ingredient", 1, 80, missing),
+                CustomItemList.ManyullynCrystal.get(1L),
+                getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
+                CustomItemList.ManyullynCrystal.get(1L),
+                getModItem(Witchery.ID, "ingredient", 1, 80, missing),
+                CustomItemList.ManyullynCrystal.get(1L),
+                getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                CustomItemList.ManyullynCrystal.get(1L));
         TCHelper.addResearchPage(
                 "RUBYSLIPPERS",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "rubyslippers", 1, 0, missing))));
@@ -951,17 +952,19 @@ public class ScriptWitchery implements IScriptLoader {
                 3,
                 getModItem(Witchery.ID, "filteredfumefunnel", 1, 0, missing)).setParents("FUMEFILTER").setConcealed()
                         .setPages(new ResearchPage("Witchery.research_page.FILTEREDFUMEFUNNEL")).registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "FILTEREDFUMEFUNNEL",
                 getModItem(Witchery.ID, "filteredfumefunnel", 1, 0, missing),
                 3,
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("vitreus"), 8)
                         .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("lux"), 16),
                 getModItem(Witchery.ID, "fumefunnel", 1, 0, missing),
-                new ItemStack[] { CustomItemList.SteelBars.get(1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing), CustomItemList.SteelBars.get(1L),
-                        getModItem(Witchery.ID, "ingredient", 1, 73, missing), CustomItemList.SteelBars.get(1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing), });
+                CustomItemList.SteelBars.get(1L),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                CustomItemList.SteelBars.get(1L),
+                getModItem(Witchery.ID, "ingredient", 1, 73, missing),
+                CustomItemList.SteelBars.get(1L),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing));
         TCHelper.addResearchPage(
                 "FILTEREDFUMEFUNNEL",
                 new ResearchPage(
@@ -977,7 +980,7 @@ public class ScriptWitchery implements IScriptLoader {
                 3,
                 getModItem(Witchery.ID, "ingredient", 1, 12, missing)).setParents("RITUALCHALK").setConcealed()
                         .setPages(new ResearchPage("Witchery.research_page.WAYSTONE")).registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "WAYSTONE",
                 getModItem(Witchery.ID, "ingredient", 1, 12, missing),
                 5,
@@ -985,14 +988,14 @@ public class ScriptWitchery implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("tenebrae"), 32)
                         .add(Aspect.getAspect("aer"), 64),
                 getModItem(Minecraft.ID, "flint", 1, 0, missing),
-                new ItemStack[] { getModItem(Witchery.ID, "chalkritual", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 7, missing),
-                        getModItem(Witchery.ID, "chalkotherwhere", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 7, missing),
-                        getModItem(Witchery.ID, "chalkritual", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 7, missing),
-                        getModItem(Witchery.ID, "chalkotherwhere", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 7, missing), });
+                getModItem(Witchery.ID, "chalkritual", 1, 0, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 7, missing),
+                getModItem(Witchery.ID, "chalkotherwhere", 1, 0, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 7, missing),
+                getModItem(Witchery.ID, "chalkritual", 1, 0, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 7, missing),
+                getModItem(Witchery.ID, "chalkotherwhere", 1, 0, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 7, missing));
         TCHelper.addResearchPage(
                 "WAYSTONE",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "ingredient", 1, 12, missing))));
