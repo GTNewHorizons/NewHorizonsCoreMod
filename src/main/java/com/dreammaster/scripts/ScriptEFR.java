@@ -1264,7 +1264,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0, missing),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 4), // Copper
@@ -1321,7 +1321,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0, missing),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 7), // Obsidian
@@ -1340,7 +1340,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0, missing),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
 
         // Shulker Box Upgrades
 
@@ -1442,7 +1442,7 @@ public class ScriptEFR implements IScriptLoader {
                 'a',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'c',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
