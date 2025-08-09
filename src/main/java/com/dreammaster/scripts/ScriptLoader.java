@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 
@@ -129,6 +130,11 @@ public class ScriptLoader {
         // but @Optional.Method cannot have multiple mod ids
         if (TinkerConstruct.isModLoaded() && ExtraUtilities.isModLoaded()) {
             scripts.add(new ScriptAvaritia());
+        }
+
+        // Botania script load as null for some reason
+        if (Botania.isModLoaded()) {
+            scripts.add(new ScriptBotania());
         }
 
         ArrayList<String> errored = new ArrayList<>();
