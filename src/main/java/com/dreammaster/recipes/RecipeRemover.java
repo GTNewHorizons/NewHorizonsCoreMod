@@ -31,6 +31,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.GraviSuite;
@@ -1190,6 +1191,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard, missing));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemPersonalCloakingDevice));
+        removeRecipeByOutputDelayed(getModItem(GalacticraftCore.ID, "item.null", 3, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "Mutatron", 1, 0, missing));
