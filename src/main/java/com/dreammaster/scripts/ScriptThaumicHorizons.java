@@ -11,15 +11,12 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.ItemStack;
-
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -144,7 +141,7 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 12).add(Aspect.getAspect("alienis"), 9));
         TCHelper.setResearchComplexity("transductionAmplifier", 4);
         ThaumcraftApi.addWarpToResearch("transductionAmplifier", 2);
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "vortexStabilizer",
                 getModItem(ThaumicHorizons.ID, "vortexStabilizer", 1, 0, missing),
                 7,
@@ -152,14 +149,14 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.getAspect("machina"), 48).add(Aspect.getAspect("ordo"), 32)
                         .add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("vinculum"), 32),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                new ItemStack[] { getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Olivine, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Olivine, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L), });
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.Thaumium),
+                OrePrefixes.gemExquisite.get(Materials.Amber),
+                OrePrefixes.lens.get(Materials.Olivine),
+                OrePrefixes.plate.get(Materials.Void),
+                OrePrefixes.lens.get(Materials.Olivine),
+                OrePrefixes.gemExquisite.get(Materials.Amber),
+                OrePrefixes.plate.get(Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "vortexStabilizer",
                 new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("fames"), 18)
@@ -167,7 +164,7 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vinculum"), 6));
         TCHelper.setResearchComplexity("vortexStabilizer", 4);
         ThaumcraftApi.addWarpToResearch("vortexStabilizer", 2);
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "recombinator",
                 getModItem(ThaumicHorizons.ID, "recombinator", 1, 0, missing),
                 10,
@@ -175,18 +172,18 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.getAspect("fabrico"), 32).add(Aspect.getAspect("potentia"), 32)
                         .add(Aspect.getAspect("sensus"), 16).add(Aspect.getAspect("praecantatio"), 24),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                        getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                        getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L), });
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
+                OrePrefixes.gemExquisite.get(Materials.Amber),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                OrePrefixes.gemExquisite.get(Materials.Amber),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
+                OrePrefixes.gemExquisite.get(Materials.Amber),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                OrePrefixes.gemExquisite.get(Materials.Amber));
         TCHelper.setResearchAspects(
                 "recombinator",
                 new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("permutatio"), 18)
