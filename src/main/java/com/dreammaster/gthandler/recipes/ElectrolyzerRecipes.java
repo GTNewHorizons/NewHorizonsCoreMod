@@ -302,6 +302,71 @@ public class ElectrolyzerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 6L))
                 .fluidOutputs(Materials.Hydrogen.getGas(2000L)).duration(18 * SECONDS + 18 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
+
+        //Chlorite
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chlorite, 14L),
+                        ItemList.Cell_Empty.get(4L))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 3L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 10L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Water, 4L))
+                .fluidOutputs(Materials.Oxygen.getGas(5000)).duration(18 * SECONDS + 18 * TICKS)
+                .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
+        
+                //Staurolite
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Staurolite, 16L),
+                        ItemList.Cell_Empty.get(1L))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 1L))
+                .fluidOutputs(Materials.Oxygen.getGas(16000)).duration(18 * SECONDS + 18 * TICKS)
+                .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
+
+        //Epidote
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 11L),
+                        ItemList.Cell_Empty.get(1L))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 1L))
+                .fluidOutputs(Materials.Oxygen.getGas(5000)).duration(18 * SECONDS + 18 * TICKS)
+                .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
+
+        //Datolite
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Datolite, 6L),
+                        ItemList.Cell_Empty.get(1L))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Boron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 1L))
+                .fluidOutputs(Materials.Oxygen.getGas(3000)).duration(18 * SECONDS + 18 * TICKS)
+                .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
+
+        //Plagioclase
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plagioclase, 9L)
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 5L)
+                .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
+        
         // Vermiculite
 
         GTValues.RA.stdBuilder()
