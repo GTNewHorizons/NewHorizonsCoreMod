@@ -1122,15 +1122,26 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetalMixture, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Basalt, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chlorite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 9L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetamorphicMineralMixture, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 4L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Staurolite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 4L)) //gt
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
+        
+                GTValues.RA.stdBuilder().itemInputs(NHItemList.MetamorphicMineralMixture.getIS(36))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 9L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cordierite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobaltite, 9L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bismuthinite, 4L), //bart
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Datolite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanite, 4L)) //gt++
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
+
 
         // Totem of Undying
         new ResearchItem(
