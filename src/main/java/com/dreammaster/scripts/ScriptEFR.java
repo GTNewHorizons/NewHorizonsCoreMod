@@ -1124,10 +1124,10 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chlorite, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 9L), //gt
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetamorphicMineralMixture, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 4L), //gt
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Staurolite, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 4L)) //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetamorphicMineralMixture, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 8L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Staurolite, 3L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) //gt
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
@@ -1136,7 +1136,7 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 9L), //gt
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cordierite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobaltite, 9L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobaltite, 6L), //gt
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bismuthinite, 4L), //bart
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Datolite, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanite, 4L)) //gt++
