@@ -1,8 +1,11 @@
 package com.dreammaster.gthandler;
 
 import static gregtech.api.enums.GTValues.VP;
+import static gregtech.api.enums.Mods.CookingForBlockheads;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
+import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -987,7 +990,12 @@ public class GT_Loader_Machines {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Food_Sliced_Breads.get(1L), ItemList.Shape_Slicer_Flat.get(0L))
                 .itemOutputs(new ItemStack(QuantumBread.Instance(), 1)).duration(20 * TICKS).eut(TierEU.RECIPE_UV)
                 .addTo(slicerRecipes);
-
+        if (CookingForBlockheads.isModLoaded() && PamsHarvestCraft.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(PamsHarvestCraft.ID, "toastItem", 1, 0), ItemList.Shape_Slicer_Flat.get(0L))
+                    .itemOutputs(getModItem(CookingForBlockheads.ID, "toast", 1, 0)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_EV).requiresCleanRoom().addTo(slicerRecipes);
+        }
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_HA_UEV_UHV.get(1L),
                 GTModHandler.RecipeBits.BITSD,
