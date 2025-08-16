@@ -3,26 +3,35 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TecTech;
+import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import goodgenerator.loader.Loaders;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptSGCraft implements IScriptLoader {
@@ -272,6 +281,27 @@ public class ScriptSGCraft implements IScriptLoader {
                 'b', ItemList.ZPM6.get(1L),
                 'o', ocInterface,
                 'u', universeFluidCell);
+
+        // Zero Point Module recycling
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(ItemList.ZPM.get(1))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahAlloy, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DraconiumAwakened, 32L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 32L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Dilithium, 32L),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Amber, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 64L),
+                        GTModHandler.getModItem(DraconicEvolution.ID, "chaosFragment", 8L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 2L),
+                        GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L,3)
+                )
+                .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 1000, 250)
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("plasma.celestialtungsten"), 144))
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("molten.tungsten"), 144))
+                .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(plasmaArcFurnaceRecipes);
 
         // spotless:on
     }
