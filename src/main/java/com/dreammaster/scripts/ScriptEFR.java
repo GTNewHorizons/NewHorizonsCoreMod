@@ -23,6 +23,7 @@ import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.ThaumicHorizons;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.Witchery;
@@ -47,6 +48,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
 import java.util.Arrays;
@@ -71,10 +73,12 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -1223,6 +1227,24 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("UNDYINGTOTEM", 3);
 
         // Shulker Boxes
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(Botania.ID, "cocoon", 1L, 0),
+                        getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "spawn_egg", 1, 505, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.heeendium"), 4000)).requiresCleanRoom()
+                .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem(ThaumicBases.ID, "thauminiteHelmet", 1, 0, missing),
+                        GTOreDictUnificator.get("dustCrystallinePinkSlime", 1),
+                        getModItem(ThaumicHorizons.ID, "golemPowder", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.ManaDiamond, 1L),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing) },
+                2);
 
         new ResearchItem(
                 "SHULKER",
