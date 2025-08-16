@@ -35,7 +35,6 @@ import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
-import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
@@ -366,12 +365,6 @@ public class MainRegistry {
         GregTechAPI.sAfterGTPostload.add(() -> {
             Logger.debug("Add Runnable to GT to create pyrolyse oven logWood recipes");
             PyrolyseOvenLoader.registerRecipes();
-        });
-
-        // Registering all ores for deep dark
-        GregTechAPI.sAfterGTPostload.add(() -> {
-            Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
-            VoidMinerLoader.initDeepDark();
         });
 
         if (TwilightForest.isModLoaded()) {
