@@ -5,12 +5,14 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+import net.glease.tc4tweak.api.infusionrecipe.InfusionRecipeExt;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
@@ -299,5 +301,14 @@ public class TCHelper {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static InfusionRecipe addInfusionCraftingRecipe(String research, ItemStack result, int instability,
+            AspectList aspects, Object input, Object... recipe) {
+        if (input instanceof ItemData) input = input.toString();
+        for (int i = 0; i < recipe.length; i++) {
+            if (recipe[i] instanceof ItemData) recipe[i] = recipe[i].toString();
+        }
+        return InfusionRecipeExt.get().addInfusionCraftingRecipe(research, result, instability, aspects, input, recipe);
     }
 }

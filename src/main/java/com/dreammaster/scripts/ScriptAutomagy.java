@@ -604,7 +604,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L))
                         .setPages(new ResearchPage("tc.research_page.InfusedGoldGTNH.1"))
                         .setParents("INFUSION", "THAUMIUM").registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "InfusedGoldGTNH",
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L),
                 2,
@@ -612,10 +612,10 @@ public class ScriptAutomagy implements IScriptLoader {
                         .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("praecantatio"), 4)
                         .add(Aspect.getAspect("aer"), 4),
                 getModItem(Minecraft.ID, "gold_ingot", 1, 0, missing),
-                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), });
+                OrePrefixes.dust.get(Materials.Thaumium),
+                OrePrefixes.dust.get(Materials.Thaumium),
+                OrePrefixes.dust.get(Materials.Thaumium),
+                OrePrefixes.dust.get(Materials.Thaumium));
         TCHelper.addResearchPage(
                 "InfusedGoldGTNH",
                 new ResearchPage(
