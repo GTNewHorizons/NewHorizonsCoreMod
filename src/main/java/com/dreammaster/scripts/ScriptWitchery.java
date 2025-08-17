@@ -748,7 +748,8 @@ public class ScriptWitchery implements IScriptLoader {
                         .setParents("OVEN", "ARCANESTONE").setConcealed()
                         .setPages(
                                 new ResearchPage("Witchery.research_page.ALTAR.1"),
-                                new ResearchPage("Witchery.research_page.ALTAR.2"))
+                                new ResearchPage("Witchery.research_page.ALTAR.2"),
+                                new ResearchPage("Witchery.research_page.ALTAR.3"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALTAR",
