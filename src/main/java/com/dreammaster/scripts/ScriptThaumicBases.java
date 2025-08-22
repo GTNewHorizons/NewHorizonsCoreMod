@@ -20,7 +20,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -32,7 +31,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -335,7 +333,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "plateInfusedAir",
                 'i',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing));
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.AdvAlc",
                 getModItem(ThaumicBases.ID, "advAlchFurnace", 1, 0, missing),
                 6,
@@ -343,13 +341,13 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("machina"), 16).add(Aspect.getAspect("metallum"), 16)
                         .add(Aspect.getAspect("praecantatio"), 24),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 0, missing),
-                new ItemStack[] { getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Steel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Steel, 1L), });
+                getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
+                OrePrefixes.plateDense.get(Materials.Steel),
+                OrePrefixes.block.get(Materials.Thaumium),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
+                OrePrefixes.block.get(Materials.Thaumium),
+                OrePrefixes.plateDense.get(Materials.Steel));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.ThaumicAnvil",
                 getModItem(ThaumicBases.ID, "thaumicAnvil", 1, 0, missing),
@@ -377,26 +375,26 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "blockThaumium",
                 'i',
                 "plateThaumium");
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "ROD_tbthaumium",
                 getModItem(ThaumicBases.ID, "resource", 1, 3, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("auram"), 16)
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("vitreus"), 16)
                         .add(Aspect.getAspect("instrumentum"), 32),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), });
+                OrePrefixes.stick.get(Materials.Thaumium),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                OrePrefixes.dust.get(Materials.Thaumium),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                OrePrefixes.dust.get(Materials.Thaumium),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                OrePrefixes.dust.get(Materials.Thaumium),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                OrePrefixes.dust.get(Materials.Thaumium),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                OrePrefixes.dust.get(Materials.Thaumium),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                OrePrefixes.dust.get(Materials.Thaumium));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.BloodyRobes",
                 getModItem(ThaumicBases.ID, "bloodyChest", 1, 0, missing),
@@ -517,7 +515,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "blockThaumium",
                 'i',
                 "ingotThaumium");
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.Spike.Void",
                 getModItem(ThaumicBases.ID, "spike", 1, 4, missing),
                 5,
@@ -525,28 +523,22 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("alienis"), 16)
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("mortuus"), 16),
                 getModItem(ThaumicBases.ID, "spike", 1, 2, missing),
-                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        createItemStack(
-                                TinkersGregworks.ID,
-                                "tGregToolPartArrowHead",
-                                1,
-                                1520,
-                                "{material:\"Titanium\"}",
-                                missing),
-                        getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
-                        createItemStack(
-                                TinkersGregworks.ID,
-                                "tGregToolPartArrowHead",
-                                1,
-                                1583,
-                                "{material:\"Void\"}",
-                                missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                OrePrefixes.plate.get(Materials.Void),
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartArrowHead",
+                        1,
+                        1520,
+                        "{material:\"Titanium\"}",
+                        missing),
+                getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.Void),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
+                createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1583, "{material:\"Void\"}", missing),
+                OrePrefixes.plate.get(Materials.Void));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.VoidAnvil",
                 getModItem(ThaumicBases.ID, "voidAnvil", 1, 0, missing),
                 9,
@@ -555,16 +547,16 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("vacuos"), 16)
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("praecantatio"), 16),
                 getModItem(ThaumicBases.ID, "thaumicAnvil", 1, 0, missing),
-                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                OrePrefixes.plate.get(Materials.Void),
+                getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.Void),
+                getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.Void),
+                getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.Void),
+                getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.Void));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.VoidSeed",
                 getModItem(ThaumicBases.ID, "voidSeed", 1, 0, missing),
                 10,
@@ -574,19 +566,19 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("desidia"), 8)
                         .add(Aspect.getAspect("nebrisum"), 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
-                new ItemStack[] { getModItem(ThaumicBases.ID, "lazulliaSeeds", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "lucriteSeeds", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "redlonSeeds", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "rainbowCactus", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "metalleatSeeds", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "plaxSeed", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "briar", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "aurelia", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "ashroom", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "knoseSeed", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "flaxium", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "glieoniaSeed", 1, 0, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(ThaumicBases.ID, "lazulliaSeeds", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "lucriteSeeds", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "redlonSeeds", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "rainbowCactus", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "metalleatSeeds", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "plaxSeed", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "briar", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "aurelia", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "ashroom", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "knoseSeed", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "flaxium", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "glieoniaSeed", 1, 0, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "CAP_thauminite",
                 getModItem(ThaumicBases.ID, "resource", 1, 2, missing),
                 6,
@@ -594,109 +586,111 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("vitreus"), 16)
                         .add(Aspect.getAspect("instrumentum"), 32),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 2, missing),
-                new ItemStack[] { getModItem(ThaumicBases.ID, "resource", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
-                        getModItem(ThaumicBases.ID, "resource", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
-                        getModItem(ThaumicBases.ID, "resource", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(ThaumicBases.ID, "resource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                getModItem(ThaumicBases.ID, "resource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                getModItem(ThaumicBases.ID, "resource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.Foci.Experience",
                 getModItem(ThaumicBases.ID, "fociExperience", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("lucrum"), 32).add(Aspect.getAspect("vitreus"), 32)
                         .add(Aspect.getAspect("cognitio"), 16).add(Aspect.getAspect("permutatio"), 16),
-                GTOreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1L),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                OrePrefixes.lens.get(Materials.Emerald),
+                getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                OrePrefixes.gemFlawless.get(Materials.Emerald),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                OrePrefixes.gemFlawless.get(Materials.Emerald),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.Foci.Activation",
                 getModItem(ThaumicBases.ID, "fociActivation", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("vitreus"), 32)
                         .add(Aspect.getAspect("iter"), 16).add(Aspect.getAspect("sensus"), 16),
-                GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), ItemList.Emitter_LV.get(1L),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), ItemList.Sensor_LV.get(1L),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                OrePrefixes.lens.get(Materials.InfusedOrder),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                ItemList.Emitter_LV.get(1L),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                ItemList.Sensor_LV.get(1L),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.Foci.Drain",
                 getModItem(ThaumicBases.ID, "fociDrain", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("perditio"), 32)
                         .add(Aspect.getAspect("aqua"), 16),
-                GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L),
-                new ItemStack[] { getModItem(Minecraft.ID, "bucket", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        getModItem(Thaumcraft.ID, "blockJar", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        getModItem(IronTanks.ID, "ironTank", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        getModItem(ExtraUtilities.ID, "trashcan", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                OrePrefixes.lens.get(Materials.InfusedWater),
+                getModItem(Minecraft.ID, "bucket", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                getModItem(IronTanks.ID, "ironTank", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                getModItem(ExtraUtilities.ID, "trashcan", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.Foci.Flux",
                 getModItem(ThaumicBases.ID, "fociFlux", 1, 0, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("vitium"), 32).add(Aspect.getAspect("perditio"), 32)
                         .add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("sano"), 16),
-                GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 4, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                OrePrefixes.lens.get(Materials.EnderEye),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.CryingObs",
                 getModItem(ThaumicBases.ID, "cryingObsidian", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("vinculum"), 32)
                         .add(Aspect.getAspect("desidia"), 16).add(Aspect.getAspect("sensus"), 16),
                 GregtechItemList.DoubleCompressedObsidian.get(1),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8, missing),
-                        getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Thaumium, 1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8, missing),
+                getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0, missing),
+                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                OrePrefixes.plateDense.get(Materials.Thaumium));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.TaintFlask",
                 getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("vitium"), 64).add(Aspect.getAspect("venenum"), 32)
                         .add(Aspect.getAspect("perditio"), 16),
                 getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0, missing),
-                new ItemStack[] { getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.EntityDec",
                 getModItem(ThaumicBases.ID, "entityDeconstructor", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("cognitio"), 32).add(Aspect.getAspect("spiritus"), 24)
                         .add(Aspect.getAspect("mortuus"), 16).add(Aspect.getAspect("praecantatio"), 16),
                 getModItem(Thaumcraft.ID, "blockTable", 1, 14, missing),
-                new ItemStack[] { getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L),
-                        getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEarth, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEntropy, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
+                OrePrefixes.lens.get(Materials.InfusedAir),
+                OrePrefixes.lens.get(Materials.InfusedFire),
+                OrePrefixes.lens.get(Materials.InfusedWater),
+                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
+                OrePrefixes.lens.get(Materials.InfusedEarth),
+                OrePrefixes.lens.get(Materials.InfusedEntropy),
+                OrePrefixes.lens.get(Materials.InfusedOrder));
+        TCHelper.addInfusionCraftingRecipe(
                 "ROD_tbvoid",
                 getModItem(ThaumicBases.ID, "resource", 1, 4, missing),
                 8,
@@ -704,16 +698,16 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 16).add(Aspect.getAspect("instrumentum"), 32)
                         .add(Aspect.getAspect("potentia"), 40).add(Aspect.getAspect("vacuos"), 24),
                 getModItem(ThaumicBases.ID, "resource", 1, 3, missing),
-                new ItemStack[] { getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.Void),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.Void));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeMan",
                 getModItem(ThaumicBases.ID, "nodeManipulator", 1, 0, missing),
                 9,
@@ -721,17 +715,19 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 40).add(Aspect.getAspect("potentia"), 32)
                         .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 24),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
-                new ItemStack[] { getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        ItemList.Emitter_EV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Knightmetal, 1L),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing), ItemList.Sensor_EV.get(1L),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing), ItemList.Sensor_EV.get(1L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Knightmetal, 1L),
-                        ItemList.Emitter_EV.get(1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                ItemList.Emitter_EV.get(1L),
+                OrePrefixes.plate.get(Materials.Knightmetal),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                ItemList.Sensor_EV.get(1L),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing),
+                ItemList.Sensor_EV.get(1L),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
+                OrePrefixes.plate.get(Materials.Knightmetal),
+                ItemList.Emitter_EV.get(1L));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeLinker",
                 getModItem(ThaumicBases.ID, "nodeLinker", 1, 0, missing),
                 5,
@@ -739,14 +735,16 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("instrumentum"), 40).add(Aspect.getAspect("ordo"), 32)
                         .add(Aspect.getAspect("electrum"), 32),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
-                        ItemList.Emitter_MV.get(1L), CustomItemList.ReinforcedGlassLense.get(1L),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        CustomItemList.ReinforcedGlassLense.get(1L), ItemList.Emitter_MV.get(1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
+                ItemList.Emitter_MV.get(1L),
+                CustomItemList.ReinforcedGlassLense.get(1L),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                CustomItemList.ReinforcedGlassLense.get(1L),
+                ItemList.Emitter_MV.get(1L));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.Overchanter",
                 getModItem(ThaumicBases.ID, "overchanter", 1, 0, missing),
                 15,
@@ -756,17 +754,17 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("machina"), 32)
                         .add(Aspect.getAspect("cognitio"), 32),
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0, missing),
-                new ItemStack[] { getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L), });
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                OrePrefixes.block.get(Materials.Thaumium),
+                OrePrefixes.block.get(Materials.Thaumium));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Iron",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 0, missing),
@@ -1091,7 +1089,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "craftingToolScrewdriver",
                 'i',
                 "boltVoid");
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.Bracelet.Primal",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 12, missing),
                 10,
@@ -1100,19 +1098,19 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("ordo"), 64).add(Aspect.getAspect("perditio"), 64)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("alienis"), 32),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 4, missing),
-                new ItemStack[] { getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing),
-                        CustomItemList.SnowQueenBlood.get(1L),
-                        getModItem(ThaumicBases.ID, "castingBracelet", 1, 5, missing),
-                        getModItem(ThaumicBases.ID, "castingBracelet", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "castingBracelet", 1, 7, missing),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iridium, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iridium, 1L),
-                        getModItem(ThaumicBases.ID, "castingBracelet", 1, 8, missing),
-                        getModItem(ThaumicBases.ID, "castingBracelet", 1, 9, missing),
-                        getModItem(ThaumicBases.ID, "castingBracelet", 1, 10, missing),
-                        CustomItemList.SnowQueenBlood.get(1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing),
+                CustomItemList.SnowQueenBlood.get(1L),
+                getModItem(ThaumicBases.ID, "castingBracelet", 1, 5, missing),
+                getModItem(ThaumicBases.ID, "castingBracelet", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "castingBracelet", 1, 7, missing),
+                OrePrefixes.screw.get(Materials.Iridium),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing),
+                OrePrefixes.screw.get(Materials.Iridium),
+                getModItem(ThaumicBases.ID, "castingBracelet", 1, 8, missing),
+                getModItem(ThaumicBases.ID, "castingBracelet", 1, 9, missing),
+                getModItem(ThaumicBases.ID, "castingBracelet", 1, 10, missing),
+                CustomItemList.SnowQueenBlood.get(1L));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Bright",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 0, missing),
                 10,
@@ -1120,45 +1118,45 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 128).add(Aspect.getAspect("superbia"), 64)
                         .add(Aspect.getAspect("nebrisum"), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Destr",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 1, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("perditio"), 96)
                         .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("mortuus"), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        GregtechItemList.DoubleCompressedObsidian.get(1),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        GregtechItemList.DoubleCompressedObsidian.get(1),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        GregtechItemList.DoubleCompressedObsidian.get(1),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
+                GregtechItemList.DoubleCompressedObsidian.get(1),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
+                GregtechItemList.DoubleCompressedObsidian.get(1),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
+                GregtechItemList.DoubleCompressedObsidian.get(1),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Efficiency",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 2, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("potentia"), 96)
                         .add(Aspect.getAspect("electrum"), 64).add(Aspect.getAspect("machina"), 64),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Hunger",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 3, missing),
                 10,
@@ -1166,90 +1164,90 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("lucrum"), 128).add(Aspect.getAspect("vacuos"), 96)
                         .add(Aspect.getAspect("gula"), 64),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
-                        getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
-                        getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
-                        getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
+                getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
+                getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
+                getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Unstable",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 4, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("alienis"), 96)
                         .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("perditio"), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Purity",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 5, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("sano"), 96)
                         .add(Aspect.getAspect("victus"), 64).add(Aspect.getAspect("vitreus"), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 1, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 1, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 1, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 1, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 1, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 1, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Sinister",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 6, missing),
                 9,
                 new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("tenebrae"), 96)
                         .add(Aspect.getAspect("exanimis"), 64).add(Aspect.getAspect("spiritus"), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemCompassStone", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing),
-                        getModItem(Minecraft.ID, "skull", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing),
-                        getModItem(Minecraft.ID, "skull", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing),
-                        getModItem(Minecraft.ID, "skull", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemCompassStone", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing),
+                getModItem(Minecraft.ID, "skull", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing),
+                getModItem(Minecraft.ID, "skull", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing),
+                getModItem(Minecraft.ID, "skull", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Speed",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 7, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("potentia"), 96)
                         .add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("aer"), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Minecraft.ID, "sugar", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Minecraft.ID, "sugar", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Stability",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 8, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("cognitio"), 96)
                         .add(Aspect.getAspect("instrumentum"), 64).add(Aspect.getAspect("ordo"), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing),
-                        getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing),
-                        getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing),
-                        getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing),
+                getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing),
+                getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing),
+                getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Taint",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 9, missing),
                 10,
@@ -1257,14 +1255,14 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("venenum"), 128).add(Aspect.getAspect("perditio"), 64)
                         .add(Aspect.getAspect("strontio"), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
-                        getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing), });
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
+                getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing));
         ThaumcraftApi.addCrucibleRecipe(
                 "TB.SM",
                 getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
