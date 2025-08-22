@@ -138,6 +138,11 @@ public class ForgeHammerRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 9L, 8)).duration(16 * TICKS)
                     .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
         }
+        if (Railcraft.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1))
+                    .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 4, missing)).duration(2 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
+        }
 
         // Raw optical chip
         int chip_duration_ticks = 10 * SECONDS;
