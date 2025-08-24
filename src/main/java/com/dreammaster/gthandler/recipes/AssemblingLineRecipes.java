@@ -11,7 +11,6 @@ import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -1803,11 +1802,11 @@ public class AssemblingLineRecipes implements Runnable {
 
         if (AE2FluidCraft.isModLoaded()) {
             // Super Stock Replenisher
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.blockmachines", 1, 2717))
+            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_ME.get(1))
                     .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_UV))
                     .itemInputs(
-                            getModItem(GregTech.ID, "gt.blockmachines", 1, 2718),
-                            getModItem(GregTech.ID, "gt.blockmachines", 1, 2717),
+                            ItemList.Hatch_Input_Bus_ME.get(1L),
+                            ItemList.Hatch_Input_ME.get(1),
                             getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, 0),
                             getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0),
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 27),
