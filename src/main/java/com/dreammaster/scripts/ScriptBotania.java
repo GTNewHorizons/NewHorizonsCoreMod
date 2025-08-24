@@ -49,9 +49,10 @@ public class ScriptBotania implements IScriptLoader {
 
     public void runBeeRecipes() {
         // Manasteel -> Manasteel Centrifuge
-        GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.MANASTEEL, 1))
+        GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.MANASTEEL, 4))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.Manasteel, 1))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
+                .fluidInputs(Materials.Steel.getMolten(1 * INGOTS)).duration(33 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(GTRecipeConstants.UniversalChemical);
 
         // Elven -> Dragonstone Autoclave
         GTValues.RA.stdBuilder()
@@ -69,7 +70,7 @@ public class ScriptBotania implements IScriptLoader {
 
         // Elven -> Eleven Elementium LCR
         GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.ELVEN, 4))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, MaterialsBotania.ElvenElementium, 1))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.ElvenElementium, 1))
                 .fluidInputs(MaterialsBotania.Manasteel.getMolten(2 * INGOTS)).duration(33 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(GTRecipeConstants.UniversalChemical);
 
@@ -79,7 +80,7 @@ public class ScriptBotania implements IScriptLoader {
                         GTBees.combs.getStackForType(CombType.TERRASTEEL, 4),
                         GTOreDictUnificator.get(OrePrefixes.ingot, MaterialsBotania.Terrasteel, 1))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, MaterialsBotania.Terrasteel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.Terrasteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.nugget, MaterialsBotania.Terrasteel, 1))
                 .fluidInputs(MaterialsBotania.ElvenElementium.getMolten(4 * INGOTS)).outputChances(100 * 100, 10 * 100)
                 .duration(33 * SECONDS).eut(TierEU.RECIPE_EV).addTo(GTRecipeConstants.UniversalChemical);
