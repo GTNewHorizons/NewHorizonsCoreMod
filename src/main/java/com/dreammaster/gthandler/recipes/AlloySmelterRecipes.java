@@ -1,12 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import net.minecraft.init.Blocks;
@@ -26,26 +23,11 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
-import gtPlusPlus.core.util.minecraft.RecipeUtils;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class AlloySmelterRecipes implements Runnable {
 
     @Override
     public void run() {
-
-        RecipeUtils.addShapedGregtechRecipe(
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Bronze, 1L),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.frame, Materials.Carbon, 1L),
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Bronze, 1L),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-
-                GregtechItemList.Controller_SteamAlloySmelterMulti.get(1));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
