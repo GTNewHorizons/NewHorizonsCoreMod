@@ -590,7 +590,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateCertusQuartz",
                 "screwCertusQuartz",
                 "plateTungsten",
-                "gemEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47),
                 "plateTungsten",
                 "screwCertusQuartz",
                 "plateTungsten",
