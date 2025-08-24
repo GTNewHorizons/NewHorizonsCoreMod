@@ -1829,6 +1829,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Platinum, 1L));
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Nickel, 1L));
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Silver, 1L));
+        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Silver, 1L));
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Electrum, 1L));
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Invar, 1L));
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Lead, 1L));
@@ -2072,14 +2073,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Nickel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Nickel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Nickel, 1L));
-        TConstructHelper
-                .getMeltingAdder(GameRegistry.findBlock("gregtech", "gt.blockores"), 54, 500, "silver.molten", 144).add(
-                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Silver, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Silver, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Silver, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Silver, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Silver, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Silver, 1L));
         TConstructHelper
                 .getMeltingAdder(GameRegistry.findBlock("gregtech", "gt.blockores"), 85, 800, "platinum.molten", 144)
                 .add(
