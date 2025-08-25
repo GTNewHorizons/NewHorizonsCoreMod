@@ -51,7 +51,7 @@ public class VacuumFreezerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.MelodicAlloy, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MelodicAlloy, 1L))
-                .duration(36 * SECONDS + 19 * TICKS).eut(4096).addTo(vacuumFreezerRecipes);
+                .duration(36 * SECONDS + 19 * TICKS).eut(TierEU.RECIPE_IV / 2).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.CrystallinePinkSlime, 1L))
@@ -81,7 +81,7 @@ public class VacuumFreezerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tantalum, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Tantalum, 1L))
-                .duration(26 * SECONDS + 1 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
+                .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.EnderiumBase, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.EnderiumBase, 1L))

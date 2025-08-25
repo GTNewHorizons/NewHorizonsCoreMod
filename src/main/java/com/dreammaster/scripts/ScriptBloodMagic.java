@@ -1,6 +1,33 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.ElectroMagicTools;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EnderStorage;
+import static gregtech.api.enums.Mods.EnderZoo;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
+import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.IronChests;
+import static gregtech.api.enums.Mods.IronTanks;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.StevesCarts2;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TinkersGregworks;
+import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -708,7 +735,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("ira"), 32).add(Aspect.getAspect("alienis"), 16)
                         .add(Aspect.getAspect("victus"), 24).add(Aspect.getAspect("ignis"), 48)
                         .add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("perditio"), 16),
-                getModItem(Minecraft.ID, "diamond_block", 1, 0, missing),
+                getModItem(Botania.ID, "storage", 1, 3, missing),
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
@@ -1575,7 +1602,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                "gemDiamond",
+                getModItem(Botania.ID, "manaResource", 1, 2, missing),
                 'd',
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
                 'e',
@@ -1583,7 +1610,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'f',
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
                 'h',
-                "gemDiamond");
+                getModItem(Botania.ID, "manaResource", 1, 2, missing));
         TCHelper.addResearchPage(
                 "WEAKORB",
                 new ResearchPage(TCHelper.findArcaneRecipe(CustomItemList.WeakOrb.get(1L))));
@@ -3075,7 +3102,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("cognitio"), 8),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
-                getModItem(Minecraft.ID, "cookie", 1, 0, missing),
+                getModItem(Botania.ID, "manaCookie", 1, 0, missing),
                 getModItem(BloodMagic.ID, "aether", 1, 0, missing),
                 getModItem(BloodMagic.ID, "aether", 1, 0, missing),
                 getModItem(Minecraft.ID, "sugar", 1, 0, missing),
@@ -3083,7 +3110,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Minecraft.ID, "sugar", 1, 0, missing),
                 getModItem(BloodMagic.ID, "aether", 1, 0, missing),
                 getModItem(BloodMagic.ID, "aether", 1, 0, missing),
-                getModItem(Minecraft.ID, "cookie", 1, 0, missing));
+                getModItem(Botania.ID, "manaCookie", 1, 0, missing));
         TCHelper.addResearchPage(
                 "SIGILOFHASTE",
                 new ResearchPage(

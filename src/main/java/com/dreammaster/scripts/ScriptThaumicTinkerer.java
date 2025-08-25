@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -480,7 +481,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("praecantatio"), 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"ignis\"}]}", missing),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 23, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing));
@@ -509,7 +510,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aqua"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("praecantatio"), 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"aqua\"}]}", missing),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 23, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing));
@@ -538,7 +539,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("praecantatio"), 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"terra\"}]}", missing),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 23, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing));
@@ -567,7 +568,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("praecantatio"), 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"ordo\"}]}", missing),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 23, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing));
@@ -596,7 +597,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("praecantatio"), 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"aer\"}]}", missing),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 23, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
@@ -631,7 +632,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         1,
                         "{Aspects:[0:{amount:8,key:\"perditio\"}]}",
                         missing),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 23, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
@@ -2124,7 +2125,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"terra\"}]}}",
                         missing),
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
-                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 22, missing),
                 OrePrefixes.gemExquisite.get(Materials.Diamond),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8, missing),

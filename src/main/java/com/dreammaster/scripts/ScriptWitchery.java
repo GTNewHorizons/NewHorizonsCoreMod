@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -22,6 +23,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -81,6 +84,26 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Minecraft.ID, "magma_cream", 1, 0, missing),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
                 "dustTinyNetherStar");
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.magma_cream, 24),
+                        new ItemStack(Items.nether_star, 4),
+                        new ItemStack(Items.flint, 4),
+                        getModItem(Botania.ID, "manaResource", 4, 2, missing),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 130, missing)).duration(2 * SECONDS).eut(16)
+                .addTo(mixerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Witchery.ID, "ingredient", 9, 130, missing),
+                        new ItemStack(Items.magma_cream, 9),
+                        new ItemStack(Items.blaze_powder, 9),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L),
+                        GTUtility.getIntegratedCircuit(4))
+                .itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130, missing)).duration(2 * SECONDS).eut(16)
+                .addTo(mixerRecipes);
+
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 16, missing),
                 null,
@@ -375,7 +398,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'b',
                 getModItem(Witchery.ID, "ingredient", 1, 34, missing),
                 'e',
-                getModItem(Minecraft.ID, "diamond", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 2, missing),
                 'h',
                 getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing));
         TCHelper.addResearchPage(
@@ -727,7 +750,8 @@ public class ScriptWitchery implements IScriptLoader {
                         .setParents("OVEN", "ARCANESTONE").setConcealed()
                         .setPages(
                                 new ResearchPage("Witchery.research_page.ALTAR.1"),
-                                new ResearchPage("Witchery.research_page.ALTAR.2"))
+                                new ResearchPage("Witchery.research_page.ALTAR.2"),
+                                new ResearchPage("Witchery.research_page.ALTAR.3"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALTAR",

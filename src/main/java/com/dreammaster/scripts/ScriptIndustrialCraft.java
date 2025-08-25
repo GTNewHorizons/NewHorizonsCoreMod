@@ -755,17 +755,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
                 "craftingToolScrewdriver");
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 2, missing),
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                "chestIron",
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                "itemCasingSteel",
-                ItemList.Casing_LV.get(1L),
-                "itemCasingSteel",
-                "circuitBasic",
-                ItemList.Electric_Motor_LV.get(1L),
-                "circuitBasic");
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 6, missing),
                 "itemCasingAnyIron",
                 "itemCasingAnyIron",

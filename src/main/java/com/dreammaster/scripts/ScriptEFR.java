@@ -265,7 +265,65 @@ public class ScriptEFR implements IScriptLoader {
             }
         }
 
+        // Color Beds
+
+        final String[] colorBeds = { "white_bed", "orange_bed", "magenta_bed", "light_blue_bed", "yellow_bed",
+                "lime_bed", "pink_bed", "gray_bed", "light_gray_bed", "cyan_bed", "purple_bed", "blue_bed", "brown_bed",
+                "green_bed", "black_bed" };
+        final int[] bedCarpetMetas = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15 };
+        final List<ItemStack> allPlanks = net.minecraftforge.oredict.OreDictionary.getOres("plankWood");
+
+        for (int i = 0; i < colorBeds.length; i++) {
+            String bedType = colorBeds[i];
+            int carpetType = bedCarpetMetas[i];
+
+            GTModHandler.addCraftingRecipe(
+                    getModItem(EtFuturumRequiem.ID, bedType, 1L, 0, missing),
+                    bits,
+                    new Object[] { "AAA", "BBB", "CDC", 'A',
+                            getModItem(Minecraft.ID, "carpet", 1L, carpetType, missing), 'B', "plankWood", 'C',
+                            "fenceWood", 'D', "craftingToolSoftMallet" });
+
+            for (ItemStack plank : allPlanks) {
+                if (plank == null) continue;
+                ItemStack plank2 = plank.copy();
+                plank2.stackSize = 2;
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Minecraft.ID, "carpet", 2L, carpetType, missing),
+                                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
+                                plank2,
+                                GTUtility.getIntegratedCircuit(1))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, bedType, 1L, 0, missing)).duration(5 * SECONDS)
+                        .eut(24).addTo(assemblerRecipes);
+            }
+        }
+
+        // Regular Minecraft Bed
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(Minecraft.ID, "bed", 1L, 0, missing),
+                bits,
+                new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1L, 14, missing), 'B',
+                        "plankWood", 'C', "fenceWood", 'D', "craftingToolSoftMallet" });
+        for (ItemStack plank : allPlanks) {
+            if (plank == null) continue;
+            ItemStack plank2 = plank.copy();
+            plank2.stackSize = 2;
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "carpet", 2L, 14, missing),
+                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
+                            plank2,
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Minecraft.ID, "bed", 1L, 0, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+        }
+
         // Regular Copper Trapdoors
+
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1L, 0, missing),
                 bits,
@@ -280,6 +338,7 @@ public class ScriptEFR implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Regular Copper Doors
+
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "copper_door", 1L, 0, missing),
                 bits,
@@ -750,6 +809,18 @@ public class ScriptEFR implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(256).addTo(assemblerRecipes);
+
+        addShapedRecipe(
+                GregtechItemList.Controller_SteamAlloySmelterMulti.get(1),
+                ItemList.Casing_BronzePlatedBricks.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Bronze, 1L),
+                ItemList.Casing_BronzePlatedBricks.get(1L),
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
+                "frameGtTumbaga",
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
+                ItemList.Casing_BronzePlatedBricks.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Bronze, 1L),
+                ItemList.Casing_BronzePlatedBricks.get(1L));
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0, missing),

@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static bartworks.system.material.WerkstoffLoader.Californium;
 import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.GTValues.L;
+import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
@@ -1798,6 +1799,25 @@ public class AssemblingLineRecipes implements Runnable {
                 ItemRefer.AntimatterAnnihilationMatrix.get(4),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
+
+        if (AE2FluidCraft.isModLoaded()) {
+            // Super Stock Replenisher
+            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_ME.get(1))
+                    .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_UV))
+                    .itemInputs(
+                            ItemList.Hatch_Input_Bus_ME.get(1L),
+                            ItemList.Hatch_Input_ME.get(1),
+                            getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, 0),
+                            getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0),
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 27),
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 56))
+                    .fluidInputs(
+                            Materials.Naquadria.getMolten(1_152L),
+                            MaterialsAlloy.INDALLOY_140.getFluidStack(1152),
+                            FluidRegistry.getFluidStack("lubricant", 2000))
+                    .itemOutputs(getModItem(AE2FluidCraft.ID, "super_stock_replenisher", 1, 0)).duration(30 * SECONDS)
+                    .eut((int) TierEU.RECIPE_UV).addTo(AssemblyLine);
+        }
 
     }
 }
