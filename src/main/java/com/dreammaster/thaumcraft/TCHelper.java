@@ -305,10 +305,35 @@ public class TCHelper {
 
     public static InfusionRecipe addInfusionCraftingRecipe(String research, ItemStack result, int instability,
             AspectList aspects, Object input, Object... recipe) {
-        if (input instanceof ItemData) input = input.toString();
-        for (int i = 0; i < recipe.length; i++) {
-            if (recipe[i] instanceof ItemData) recipe[i] = recipe[i].toString();
+
+        if (result == null || result.getItem() == null) {
+            return null;
         }
-        return InfusionRecipeExt.get().addInfusionCraftingRecipe(research, result, instability, aspects, input, recipe);
+        if (input == null) {
+            return null;
+        }
+
+        AspectList safeAspects = (aspects != null) ? aspects : new AspectList();
+
+        Object safeInput = (input instanceof ItemData) ? input.toString() : input;
+
+        Object[] safeRecipe;
+        if (recipe == null || recipe.length == 0) {
+            safeRecipe = new Object[0];
+        } else {
+            java.util.List<Object> tmp = new java.util.ArrayList<>(recipe.length);
+            for (Object oby : recipe) {
+                if (oby == null) continue;
+                tmp.add(oby instanceof ItemData ? oby.toString() : oby);
+            }
+            safeRecipe = tmp.toArray(new Object[0]);
+        }
+
+        try {
+            return InfusionRecipeExt.get()
+                    .addInfusionCraftingRecipe(research, result, instability, safeAspects, safeInput, safeRecipe);
+        } catch (RuntimeException e) {
+            return null;
+        }
     }
 }
