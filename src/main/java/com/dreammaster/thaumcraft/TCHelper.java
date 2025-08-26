@@ -5,12 +5,14 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+import net.glease.tc4tweak.api.infusionrecipe.InfusionRecipeExt;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
@@ -298,6 +300,40 @@ public class TCHelper {
             infusionRecipeResearchField.set(recipe, researchName);
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static InfusionRecipe addInfusionCraftingRecipe(String research, ItemStack result, int instability,
+            AspectList aspects, Object input, Object... recipe) {
+
+        if (result == null || result.getItem() == null) {
+            return null;
+        }
+        if (input == null) {
+            return null;
+        }
+
+        AspectList safeAspects = (aspects != null) ? aspects : new AspectList();
+
+        Object safeInput = (input instanceof ItemData) ? input.toString() : input;
+
+        Object[] safeRecipe;
+        if (recipe == null || recipe.length == 0) {
+            safeRecipe = new Object[0];
+        } else {
+            java.util.List<Object> tmp = new java.util.ArrayList<>(recipe.length);
+            for (Object oby : recipe) {
+                if (oby == null) continue;
+                tmp.add(oby instanceof ItemData ? oby.toString() : oby);
+            }
+            safeRecipe = tmp.toArray(new Object[0]);
+        }
+
+        try {
+            return InfusionRecipeExt.get()
+                    .addInfusionCraftingRecipe(research, result, instability, safeAspects, safeInput, safeRecipe);
+        } catch (RuntimeException e) {
+            return null;
         }
     }
 }

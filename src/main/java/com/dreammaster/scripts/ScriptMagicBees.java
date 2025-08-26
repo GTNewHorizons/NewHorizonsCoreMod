@@ -430,7 +430,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 getModItem(MagicBees.ID, "magicApiary", 1, 0, missing)).setParents("MB_DimensionalSingularity")
                         .setConcealed().setRound().setPages(new ResearchPage("MagicBees.research_page.MAGICAPIARY"))
                         .registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "MAGICAPIARY",
                 getModItem(MagicBees.ID, "magicApiary", 1, 0, missing),
                 3,
@@ -438,10 +438,11 @@ public class ScriptMagicBees implements IScriptLoader {
                         .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("lucrum"), 50)
                         .add(Aspect.getAspect("exanimis"), 25).add(Aspect.getAspect("herba"), 20),
                 getModItem(Forestry.ID, "apiculture", 1, 0, missing),
-                new ItemStack[] { getModItem(MagicBees.ID, "wax", 1, 0, missing),
-                        getModItem(MagicBees.ID, "wax", 1, 1, missing), getModItem(MagicBees.ID, "wax", 1, 2, missing),
-                        getModItem(MagicBees.ID, "pollen", 1, 0, missing),
-                        getModItem(MagicBees.ID, "pollen", 1, 1, missing), });
+                getModItem(MagicBees.ID, "wax", 1, 0, missing),
+                getModItem(MagicBees.ID, "wax", 1, 1, missing),
+                getModItem(MagicBees.ID, "wax", 1, 2, missing),
+                getModItem(MagicBees.ID, "pollen", 1, 0, missing),
+                getModItem(MagicBees.ID, "pollen", 1, 1, missing));
         TCHelper.addResearchPage(
                 "MAGICAPIARY",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(MagicBees.ID, "magicApiary", 1, 0, missing))));
@@ -600,19 +601,19 @@ public class ScriptMagicBees implements IScriptLoader {
         TCHelper.addResearchPage(
                 "MB_DimensionalSingularity",
                 new ResearchPage("tc.research_page.MB_DimensionalSingularity.1"));
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "MB_DimensionalSingularity",
                 getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("permutatio"), 24)
                         .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("tenebrae"), 16),
                 getModItem(Minecraft.ID, "gold_block", 1, 0, missing),
-                new ItemStack[] { getModItem(MagicBees.ID, "propolis", 1, 0, missing),
-                        getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
-                        getModItem(MagicBees.ID, "propolis", 1, 0, missing),
-                        getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
-                        getModItem(MagicBees.ID, "propolis", 1, 0, missing),
-                        getModItem(Minecraft.ID, "ender_eye", 1, 0, missing), });
+                getModItem(MagicBees.ID, "propolis", 1, 0, missing),
+                getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
+                getModItem(MagicBees.ID, "propolis", 1, 0, missing),
+                getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
+                getModItem(MagicBees.ID, "propolis", 1, 0, missing),
+                getModItem(Minecraft.ID, "ender_eye", 1, 0, missing));
         TCHelper.addResearchPage(
                 "MB_DimensionalSingularity",
                 new ResearchPage(
@@ -625,16 +626,16 @@ public class ScriptMagicBees implements IScriptLoader {
         TCHelper.moveResearch("MB_EssenceOblivion", "MAGICBEES", -7, 4);
         TCHelper.clearPages("MB_EssenceOblivion");
         TCHelper.addResearchPage("MB_EssenceOblivion", new ResearchPage("tc.research_page.MB_EssenceOblivion.1"));
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "MB_EssenceOblivion",
                 getModItem(MagicBees.ID, "miscResources", 1, 11, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("alienis"), 100).add(Aspect.getAspect("praecantatio"), 100)
                         .add(Aspect.getAspect("lucrum"), 75).add(Aspect.getAspect("bestia"), 75),
                 getModItem(Minecraft.ID, "dragon_egg", 1, 0, missing),
-                new ItemStack[] { getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
-                        getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
-                        getModItem(MagicBees.ID, "miscResources", 1, 17, missing), });
+                getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
+                getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
+                getModItem(MagicBees.ID, "miscResources", 1, 17, missing));
         TCHelper.addResearchPage(
                 "MB_EssenceOblivion",
                 new ResearchPage(
@@ -1120,16 +1121,19 @@ public class ScriptMagicBees implements IScriptLoader {
         TCHelper.setResearchComplexity("MB_ApimancersDrainer", 5);
         ResearchCategories.getResearch("MB_ApimancersDrainer").setConcealed();
         ThaumcraftApi.addWarpToResearch("MB_ApimancersDrainer", 3);
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "MB_ApimancersDrainer",
                 getModItem(MagicBees.ID, "apimancersDrainer", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("tempus"), 50),
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
-                        getModItem(MagicBees.ID, "pollen", 1, 0, missing), new ItemStack(Loaders.essentiaCell, 1, 0),
-                        new ItemStack(Loaders.essentiaCell, 1, 0), new ItemStack(Loaders.essentiaCell, 1, 0),
-                        new ItemStack(Loaders.essentiaCell, 1, 0), getModItem(MagicBees.ID, "pollen", 1, 1, missing) });
+                getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
+                getModItem(MagicBees.ID, "pollen", 1, 0, missing),
+                new ItemStack(Loaders.essentiaCell, 1, 0),
+                new ItemStack(Loaders.essentiaCell, 1, 0),
+                new ItemStack(Loaders.essentiaCell, 1, 0),
+                new ItemStack(Loaders.essentiaCell, 1, 0),
+                getModItem(MagicBees.ID, "pollen", 1, 1, missing));
         TCHelper.refreshResearchPages("MB_VisAuraProvider");
         TCHelper.refreshResearchPages("MB_EssenceLife");
         TCHelper.refreshResearchPages("MB_EssenceDeath");

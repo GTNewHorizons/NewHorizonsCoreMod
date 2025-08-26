@@ -1395,7 +1395,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
 
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0, missing),
                 30,
@@ -1409,58 +1409,60 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}",
                         missing),
-                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iridium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L),
-                        NHItemList.EngravedGoldChip.getIS(1),
-                        getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing), GregtechItemList.MagicFeather.get(1),
-                        getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "nether_star", 1, 0, missing), GregtechItemList.MagicFeather.get(1),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                        getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        NHItemList.EngravedGoldChip.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                OrePrefixes.ring.get(Materials.Iridium),
+                OrePrefixes.screw.get(Materials.Tritanium),
+                NHItemList.EngravedGoldChip.getIS(1),
+                getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                GregtechItemList.MagicFeather.get(1),
+                getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
+                getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                GregtechItemList.MagicFeather.get(1),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
+                NHItemList.EngravedGoldChip.getIS(1),
+                OrePrefixes.screw.get(Materials.Tritanium));
+        TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("permutatio"), 50).add(Aspect.getAspect("volatus"), 50)
                         .add(Aspect.getAspect("aer"), 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 2, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("permutatio"), 50).add(Aspect.getAspect("volatus"), 50)
                         .add(Aspect.getAspect("auram"), 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(TwilightForest.ID, "tile.TFCicada", 1, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.TFFirefly", 1, 0, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(TwilightForest.ID, "tile.TFCicada", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFFirefly", 1, 0, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 3, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("permutatio"), 50).add(Aspect.getAspect("bestia"), 50)
                         .add(Aspect.getAspect("infernus"), 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(Minecraft.ID, "dragon_egg", 1, 0, missing),
-                        getModItem(Botania.ID, "manaResource", 1, 9, missing), });
-        ThaumcraftApi.addInfusionCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Minecraft.ID, "dragon_egg", 1, 0, missing),
+                getModItem(Botania.ID, "manaResource", 1, 9, missing));
+        TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 4, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("permutatio"), 50).add(Aspect.getAspect("metallum"), 50)
                         .add(Aspect.getAspect("lucrum"), 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L), });
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                OrePrefixes.foil.get(Materials.RoseGold),
+                OrePrefixes.foil.get(Materials.RoseGold));
         new ResearchItem(
                 "EXURINGS",
                 "ARTIFICE",

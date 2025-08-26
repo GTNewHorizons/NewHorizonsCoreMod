@@ -99,7 +99,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 Materials.SolderingAlloy.getMolten(72) };
 
         // Creates ItemStack for CEC craft input
-        ItemStack[] CECInfusionItems = { ItemList.Field_Generator_UIV.get(1),
+        Object[] CECInfusionItems = { ItemList.Field_Generator_UIV.get(1),
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1),
                 getModItem(Gadomancy.ID, "BlockNodeManipulator", 1, 5),
                 getModItem(Gadomancy.ID, "BlockEssentiaCompressor", 1), ItemList.Field_Generator_UIV.get(1),
@@ -118,7 +118,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // Creative Essentia Cell
         ItemStack CEC = EssentialCellCreative;
 
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 CEC,
                 10,
@@ -273,7 +273,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         1,
                         0,
                         missing));
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEESSPROV",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0, missing),
                 8,
@@ -282,14 +282,16 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.getAspect("aqua"), 16).add(Aspect.getAspect("cognitio"), 8)
                         .add(Aspect.getAspect("lucrum"), 4),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L), DiffusionCore,
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing), CoalescenceCore,
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
+                getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                OrePrefixes.plate.get(Materials.Thaumium),
+                DiffusionCore,
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                CoalescenceCore,
+                OrePrefixes.plate.get(Materials.Thaumium),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",
                 new AspectList().add(Aspect.getAspect("sensus"), 21).add(Aspect.getAspect("praecantatio"), 18)
@@ -1473,7 +1475,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("praecantatio"), 6)
                         .add(Aspect.getAspect("permutatio"), 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TETHAUMGBOX", 3);
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEARCANEASSEMBLER",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0, missing),
                 16,
@@ -1482,19 +1484,20 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.getAspect("lucrum"), 16).add(Aspect.getAspect("praecantatio"), 48)
                         .add(Aspect.getAspect("vitreus"), 16),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1, 0, missing),
-                new ItemStack[] { createItemStack(
+                createItemStack(
                         Thaumcraft.ID,
                         "WandCasting",
                         1,
                         wildcard,
                         "{aqua:15000,ignis:15000,terra:15000,cap:\"thaumium\",rod:\"silverwood\",ordo:15000,sceptre:1b,perditio:15000,aer:15000}",
-                        missing), getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
+                        missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANEASSEMBLER",
                 new AspectList().add(Aspect.getAspect("lucrum"), 24).add(Aspect.getAspect("fabrico"), 21)
@@ -1561,7 +1564,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("permutatio"), 9)
                         .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEKNOWLEDGEINSCRIBER", 3);
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEINFPROV",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.infusion.provider", 1, 0, missing),
                 10,
@@ -1569,14 +1572,16 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("spiritus"), 8),
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "blockMirror", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                        getModItem(ThaumicEnergistics.ID, "part.base", 1, 0, missing), DiffusionCore,
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(Thaumcraft.ID, "blockMirror", 1, 6, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing), CoalescenceCore,
-                        getModItem(ThaumicEnergistics.ID, "part.base", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "blockMirror", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 0, missing),
+                DiffusionCore,
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "blockMirror", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                CoalescenceCore,
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEINFPROV",
                 new AspectList().add(Aspect.getAspect("permutatio"), 21).add(Aspect.getAspect("motus"), 18)
@@ -1585,15 +1590,25 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEINFPROV", 3);
 
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEADVINFPROV",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.advanced.infusion.provider", 1, 0, missing),
                 30,
                 new AspectList().add(Aspect.MECHANISM, 64).add(Aspect.MAGIC, 64).add(Aspect.EXCHANGE, 64)
                         .add(Aspect.MIND, 64).add(Aspect.GREED, 64),
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.infusion.provider", 1, 0, missing),
-                new ItemStack[] { InfusionIntercepter, PrimalCharm, DiffusionCore, ZPMEmitter, DiffusionCore,
-                        PrimalCharm, CraftingUnit, PrimalCharm, EngProcessor, ZPMSensor, EngProcessor, PrimalCharm });
+                InfusionIntercepter,
+                PrimalCharm,
+                DiffusionCore,
+                ZPMEmitter,
+                DiffusionCore,
+                PrimalCharm,
+                CraftingUnit,
+                PrimalCharm,
+                EngProcessor,
+                ZPMSensor,
+                EngProcessor,
+                PrimalCharm);
 
         TCHelper.refreshResearchPages("thaumicenergistics.TEESSPROV");
         TCHelper.refreshResearchPages("thaumicenergistics.TEIRONGEARBOX");
