@@ -1269,7 +1269,7 @@ public class ScriptEFR implements IScriptLoader {
                         .setConcealed().setRound()
                         .setPages(new ResearchPage("EtFuturumRequiem.research_page.UNDYINGTOTEM.1"))
                         .registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "UNDYINGTOTEM",
                 getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing),
                 15,
@@ -1277,18 +1277,18 @@ public class ScriptEFR implements IScriptLoader {
                         .add(Aspect.getAspect("lucrum"), 150).add(Aspect.getAspect("sano"), 200)
                         .add(Aspect.getAspect("praecantatio"), 200),
                 getModItem(TinkerConstruct.ID, "heartCanister", 1, 5, missing),
-                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
-                        getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 2, missing),
-                        getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 5, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
-                        getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 2, missing),
-                        getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GreenSapphire, 1L), });
+                OrePrefixes.plate.get(Materials.InfusedGold),
+                OrePrefixes.gemExquisite.get(Materials.Emerald),
+                getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
+                getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 2, missing),
+                getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
+                OrePrefixes.plate.get(Materials.InfusedGold),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 5, missing),
+                OrePrefixes.plate.get(Materials.InfusedGold),
+                getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
+                getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 2, missing),
+                getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
+                OrePrefixes.gemExquisite.get(Materials.GreenSapphire));
         TCHelper.addResearchPage(
                 "UNDYINGTOTEM",
                 new ResearchPage(
@@ -1976,7 +1976,7 @@ public class ScriptEFR implements IScriptLoader {
                 3,
                 getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing)).setParents("FeatherWings").setConcealed()
                         .setPages(new ResearchPage("EtFuturumRequiem.research_page.ELYTRA.1")).registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "ELYTRA",
                 getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing),
                 15,
@@ -1984,14 +1984,14 @@ public class ScriptEFR implements IScriptLoader {
                         .add(Aspect.getAspect("motus"), 150).add(Aspect.getAspect("tempestas"), 200)
                         .add(Aspect.getAspect("praecantatio"), 200),
                 getModItem(WitchingGadgets.ID, "item.WG_Kama", 1, 4, missing),
-                new ItemStack[] { getModItem(EnderIO.ID, "itemGliderWing", 1, 1, missing),
-                        GregtechItemList.MagicFeather.get(1),
-                        getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
-                        getModItem(Botania.ID, "manaBeacon", 1, 10, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
-                        getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing),
-                        GregtechItemList.MagicFeather.get(1), });
+                getModItem(EnderIO.ID, "itemGliderWing", 1, 1, missing),
+                GregtechItemList.MagicFeather.get(1),
+                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing),
+                getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
+                getModItem(Botania.ID, "manaBeacon", 1, 10, missing),
+                getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
+                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing),
+                GregtechItemList.MagicFeather.get(1));
         TCHelper.addResearchPage(
                 "ELYTRA",
                 new ResearchPage(
