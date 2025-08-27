@@ -5149,7 +5149,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 3L),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.EnderEye, 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

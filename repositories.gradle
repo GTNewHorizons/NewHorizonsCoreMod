@@ -14,4 +14,15 @@ repositories {
             artifact()
         }
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'glease'
+                url = 'https://maven.glease.net/repos/releases/'
+            }
+        }
+        filter {
+            includeGroup('net.glease')
+        }
+    }
 }
