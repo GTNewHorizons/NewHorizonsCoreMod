@@ -1319,7 +1319,7 @@ public class ScriptEFR implements IScriptLoader {
                 .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
         AlchemyRecipeRegistry.registerRecipe(
-                getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "shulker_shell", 8, 0, missing),
                 10,
                 new ItemStack[] { getModItem(ThaumicBases.ID, "thauminiteHelmet", 1, 0, missing),
                         GTOreDictUnificator.get("dustCrystallinePinkSlime", 1),
