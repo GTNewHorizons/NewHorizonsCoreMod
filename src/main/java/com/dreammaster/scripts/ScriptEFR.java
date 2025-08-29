@@ -1246,7 +1246,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chlorite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 9L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plagioclase, 9L), //gt
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetamorphicMineralMixture, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 8L), //gt
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Staurolite, 3L),
