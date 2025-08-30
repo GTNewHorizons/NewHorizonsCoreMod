@@ -1896,6 +1896,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 0,
                 800,
                 FluidRegistry.getFluidStack("glass.molten", 1000));
+        Smeltery.addMelting(
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Electrum, 1L),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                400,
+                FluidRegistry.getFluidStack("electrum.molten", 144));
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 1L),
                 FluidRegistry.getFluidStack("copper.molten", 16),
