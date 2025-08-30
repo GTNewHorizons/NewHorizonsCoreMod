@@ -43,6 +43,7 @@ public class ScriptLoader {
                         new ScriptBiomesOPlenty(),
                         new ScriptBloodArsenal(),
                         new ScriptBloodMagic(),
+                        new ScriptBotania(),
                         new ScriptBotany(),
                         new ScriptBuildCraft(),
                         new ScriptCarpentersBlocks(),
