@@ -1859,6 +1859,11 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Enderium, 1L));
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ardite, 1L));
         TConstructHelper.removeTableRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Manyullyn, 1L));
+        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Invar, 1L));
+        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Electrum, 1L));
+        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Platinum, 1L));
+        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Nickel, 1L));
+        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Enderium, 1L));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 29, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 30, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 4, missing));
@@ -1869,6 +1874,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing));
         TConstructHelper.removeMeltingRecipe(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15, missing));
         TConstructHelper.removeBasinRecipe(getModItem(IndustrialCraft2.ID, "blockMetal", 1, 5, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem(Thaumcraft.ID, "ItemNugget", 1, 19, missing));
         TConstructHelper
                 .getMeltingAdder(
                         GameRegistry.findBlock("gregtech", "gt.blockmachines"),
@@ -2065,23 +2071,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Aluminium, 1L),
                 GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Aluminium, 1L),
                 GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Aluminium, 1L));
-        TConstructHelper
-                .getMeltingAdder(GameRegistry.findBlock("gregtech", "gt.blockores"), 34, 400, "nickel.molten", 144).add(
-                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Nickel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Nickel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Nickel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Nickel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Nickel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Nickel, 1L));
-        TConstructHelper
-                .getMeltingAdder(GameRegistry.findBlock("gregtech", "gt.blockores"), 85, 800, "platinum.molten", 144)
-                .add(
-                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Platinum, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Platinum, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Platinum, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Platinum, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Platinum, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Platinum, 1L));
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Emerald"), 225, 640).add(
                 new ItemStack(GregTechAPI.sBlockOres1, 1, 501),
                 GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Emerald, 1L),
