@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.51.434:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.51.436:dev")
     api("com.github.GTNewHorizons:Yamcl:0.7.1:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.1.13-GTNH:dev")
 
@@ -25,7 +25,7 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.8.2:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Galacticraft:3.3.11-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Galacticraft:3.3.12-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.10.17:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:MatterManipulator:0.0.45-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.6.5:dev") { transitive = false }
@@ -35,7 +35,7 @@ dependencies {
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.3.4-GTNH:dev")
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Galacticraft:3.3.11-GTNH:dev")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Galacticraft:3.3.12-GTNH:dev")
 
     // Core unit testing platform
     testImplementation(platform('org.junit:junit-bom:5.9.2'))
