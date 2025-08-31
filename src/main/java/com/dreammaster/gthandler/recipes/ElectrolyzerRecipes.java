@@ -348,7 +348,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Epidote
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 10L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Epidote, 10L),
                         ItemList.Cell_Empty.get(1L))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 2L),

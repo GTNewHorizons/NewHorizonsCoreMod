@@ -1260,7 +1260,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(MaterialsGTNH.MetamorphicMineralMixture.getDust(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 9L), // gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Epidote, 9L), // gt
                         GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Cordierite, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobaltite, 6L), // gt
                         GTOreDictUnificator.get(WerkstoffLoader.Bismuthinit.get(OrePrefixes.dust, 4)), // bart
