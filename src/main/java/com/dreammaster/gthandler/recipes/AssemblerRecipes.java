@@ -4537,9 +4537,8 @@ public class AssemblerRecipes implements Runnable {
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 2L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2L),
                         GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(64L))
-                .fluidInputs(Materials.Xenoxene.getFluid(288)).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(64L)).fluidInputs(Materials.Xenoxene.getFluid(288))
+                .duration(16 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
         // Transistor
 
         GTValues.RA.stdBuilder()
