@@ -328,7 +328,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 5L))
-                .fluidOutputs(Materials.Oxygen.getGas(5000)).duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_MV)
+                .fluidOutputs(Materials.Oxygen.getGas(5000)).duration(13 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(electrolyzerRecipes);
 
         // Staurolite
@@ -342,7 +342,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 4L),
                         GTOreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 1L))
-                .fluidOutputs(Materials.Oxygen.getGas(4000)).duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_MV)
+                .fluidOutputs(Materials.Oxygen.getGas(4000)).duration(32 * SECONDS + 32 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(electrolyzerRecipes);
 
         // Epidote
@@ -355,7 +355,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 3L),
                         GTOreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 1L))
-                .fluidOutputs(Materials.Oxygen.getGas(1000)).duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_MV)
+                .fluidOutputs(Materials.Oxygen.getGas(1000)).duration(10 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(electrolyzerRecipes);
 
         // Datolite
@@ -368,7 +368,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Boron, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
                         GTOreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 1L))
-                .fluidOutputs(Materials.Oxygen.getGas(3000)).duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_EV)
+                .fluidOutputs(Materials.Oxygen.getGas(3000)).duration(7 * SECONDS + 7 * TICKS).eut(TierEU.RECIPE_EV)
                 .addTo(electrolyzerRecipes);
 
         // Plagioclase
@@ -378,7 +378,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L))
-                .fluidOutputs(Materials.Oxygen.getGas(2000)).duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_MV)
+                .fluidOutputs(Materials.Oxygen.getGas(2000)).duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(electrolyzerRecipes);
 
         // Vermiculite
