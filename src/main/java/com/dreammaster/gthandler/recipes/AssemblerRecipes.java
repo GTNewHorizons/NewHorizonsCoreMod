@@ -4532,13 +4532,13 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Netherite, 1L),
-                        MaterialsAlloy.PIKYONIUM.getFoil(2),
+                        MaterialsAlloy.PIKYONIUM.getFoil(4),
                         GTOreDictUnificator
-                                .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
+                                .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2L),
                         GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(32L))
-                .fluidInputs(Materials.Xenoxene.getFluid(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(64L))
+                .fluidInputs(Materials.Xenoxene.getFluid(288)).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .addTo(assemblerRecipes);
         // Transistor
 
