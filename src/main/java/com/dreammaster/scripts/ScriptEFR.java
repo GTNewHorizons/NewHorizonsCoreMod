@@ -1226,6 +1226,7 @@ public class ScriptEFR implements IScriptLoader {
                         new FluidStack(FluidRegistry.getFluid("ender"), 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
+        // stoneworks
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing))
                 .itemOutputs(NHItemList.TuffDust.getIS(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
 
@@ -1254,7 +1255,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 8L), // gt
                         GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Staurolite, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) // gt
-                .duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
+                .duration(1 * MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
 
