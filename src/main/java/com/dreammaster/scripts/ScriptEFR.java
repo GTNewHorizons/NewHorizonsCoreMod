@@ -74,6 +74,7 @@ import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
+import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -84,6 +85,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.material.MaterialsOres;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1245,15 +1247,25 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetalMixture, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Basalt, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Chlorite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Plagioclase, 9L), // gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.MetamorphicMineralMixture, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 8L), // gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Staurolite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) // gt
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
+
+        GTValues.RA.stdBuilder().itemInputs(OrePrefixes.dust, MaterialsGTNH.MetamorphicMineralMixture, 36L)
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 9L), // gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Cordierite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobaltite, 6L), // gt
+                        GTOreDictUnificator.get(WerkstoffLoader.Bismuthinit.get(OrePrefixes.dust, 4)), // bart
+                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Datolite, 4L),
+                        GTOreDictUnificator.get(MaterialsOres.TITANITE.getDust(4))) // gt++
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         // Totem of Undying
         new ResearchItem(
