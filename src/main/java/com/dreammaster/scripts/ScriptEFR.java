@@ -1257,6 +1257,17 @@ public class ScriptEFR implements IScriptLoader {
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
+        
+                GTValues.RA.stdBuilder().itemInputs(NHItemList.MetamorphicMineralMixture.getIS(36))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 9L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cordierite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobaltite, 6L), //gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bismuthinite, 4L), //bart
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Datolite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanite, 4L)) //gt++
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
+
 
         GTValues.RA.stdBuilder().itemInputs(OrePrefixes.dust, MaterialsGTNH.MetamorphicMineralMixture, 36L)
                 .itemOutputs(
