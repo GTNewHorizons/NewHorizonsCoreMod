@@ -378,10 +378,10 @@ public class ElectrolyzerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L))
-                .fluidOutputs(Materials.Oxygen.getGas(2000)).eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
+                .fluidOutputs(Materials.Oxygen.getGas(2000)).duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_MV)
+                .addTo(electrolyzerRecipes);
 
         // Vermiculite
-
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Vermiculite, 29L),
