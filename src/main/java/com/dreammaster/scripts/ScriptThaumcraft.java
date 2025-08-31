@@ -631,11 +631,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                "screwStainlessSteel",
+                "screwSteeleaf",
                 'b',
                 "foilSilver",
                 'c',
-                "screwStainlessSteel",
+                "screwSteeleaf",
                 'd',
                 "foilSilver",
                 'e',
@@ -643,11 +643,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "foilSilver",
                 'g',
-                "screwStainlessSteel",
+                "screwSteeleaf",
                 'h',
                 "foilSilver",
                 'i',
-                "screwStainlessSteel");
+                "screwSteeleaf");
         TCHelper.addResearchPage(
                 "CAP_silver",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 5))));
