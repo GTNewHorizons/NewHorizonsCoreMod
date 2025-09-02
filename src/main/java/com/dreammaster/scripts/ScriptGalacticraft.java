@@ -1240,7 +1240,11 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "wireFineSteel");
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing),
-                getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, wildcard, missing));
+                "rawOreMeteoricIron");
+        addShapelessRecipe(
+                getModItem(GalacticraftCore.ID, "item.null", 3, 0, missing),
+                "rawOreMeteoricIron",
+                "craftingToolSaw");
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, wildcard, missing));
@@ -1841,12 +1845,6 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 4, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L))
                 .duration(1 * MINUTES + 15 * SECONDS).eut(120).specialValue(1500).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 1L))
-                .duration(1 * MINUTES).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 2L))
-                .duration(1 * MINUTES).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
     }
 
     private void cannerRecipes() {
@@ -1911,9 +1909,6 @@ public class ScriptGalacticraft implements IScriptLoader {
     }
 
     private void maceratorRecipes() {
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.null", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Desh, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0, missing))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 2, 0, missing))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
@@ -2836,7 +2831,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
     private static void spaceStationRecipes() {
         final HashMap<Object, Integer> inputMap = new HashMap<>();
         inputMap.put(new ItemStack(GCBlocks.basicBlock, 1, 4), 231);
@@ -2847,7 +2842,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new SpaceStationType(ConfigManagerCore.idDimensionOverworldOrbit, 0, new SpaceStationRecipe(inputMap)));
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
     private static void buggyRecipes() {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
@@ -3012,7 +3007,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(GCItems.buggy, 1, 3), 143 - x, 64 - y));
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
     private static void cargoRecipes() {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
@@ -3103,7 +3098,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(MarsItems.spaceship, 1, 13), 134 - x, 73 - y));
     }
 
-    @Optional.Method(modid = Mods.Names.GALACTICRAFT_CORE)
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
     private static void astroMinerRecipes() {
         final HashMap<Integer, ItemStack> input = new HashMap<>();
         for (int i = 1; i <= 8; i++) {

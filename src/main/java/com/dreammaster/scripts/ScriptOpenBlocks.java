@@ -737,19 +737,19 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "goldenegg", 1, 0, missing)).setParents("MB_DimensionalSingularity")
                         .setConcealed().setPages(new ResearchPage("OpenBlocks.research_page.GOLDENEGG"))
                         .registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "GOLDENEGG",
                 getModItem(OpenBlocks.ID, "goldenegg", 1, 0, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("alienis"), 75).add(Aspect.getAspect("bestia"), 50)
                         .add(Aspect.getAspect("victus"), 50).add(Aspect.getAspect("humanus"), 25),
                 getModItem(Minecraft.ID, "egg", 1, 0, missing),
-                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
-                        getModItem(Minecraft.ID, "skull", 1, 3, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
-                        getModItem(Minecraft.ID, "skull", 1, 3, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
-                        getModItem(Minecraft.ID, "skull", 1, 3, missing), });
+                OrePrefixes.plateDense.get(Materials.Gold),
+                getModItem(Minecraft.ID, "skull", 1, 3, missing),
+                OrePrefixes.plateDense.get(Materials.Gold),
+                getModItem(Minecraft.ID, "skull", 1, 3, missing),
+                OrePrefixes.plateDense.get(Materials.Gold),
+                getModItem(Minecraft.ID, "skull", 1, 3, missing));
         TCHelper.addResearchPage(
                 "GOLDENEGG",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(OpenBlocks.ID, "goldenegg", 1, 0, missing))));

@@ -1007,7 +1007,7 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "cart.tank", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 1, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "craftingToolWrench",
                 null,
                 getModItem(Minecraft.ID, "minecart", 1, 0, missing),
@@ -2072,7 +2072,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 1, missing),
+                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Railcraft.ID, "cart.tank", 1, 0, missing)).duration(5 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);

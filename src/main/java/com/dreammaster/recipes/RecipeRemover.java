@@ -31,6 +31,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.GraviSuite;
@@ -342,6 +343,9 @@ public class RecipeRemover {
             }
             for (int i = 0; i < 9; i++) {
                 removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, i));
+            }
+            for (int i = 0; i < 16; i++) {
+                removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "shulker_box", 1, i));
             }
             for (int i = 0; i < 11; i++) {
                 removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, i));
@@ -1187,6 +1191,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard, missing));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemPersonalCloakingDevice));
+        removeRecipeByOutputDelayed(getModItem(GalacticraftCore.ID, "item.null", 3, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "Mutatron", 1, 0, missing));
@@ -1517,17 +1522,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemScanner", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemPlutonium", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemUran235small", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemUran235", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemLathingTool", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTurningBlanksWood", 1, 209715, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTurningBlanks", 1, 349525, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemPlutoniumSmall", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemMOX", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemUran", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing));

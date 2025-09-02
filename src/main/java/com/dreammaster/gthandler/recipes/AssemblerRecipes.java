@@ -4545,14 +4545,13 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Netherite, 1L),
-                        MaterialsAlloy.PIKYONIUM.getFoil(2),
+                        MaterialsAlloy.PIKYONIUM.getFoil(4),
                         GTOreDictUnificator
-                                .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
+                                .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2L),
                         GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(32L))
-                .fluidInputs(Materials.Xenoxene.getFluid(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(64L)).fluidInputs(Materials.Xenoxene.getFluid(288))
+                .duration(16 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
         // Transistor
 
         GTValues.RA.stdBuilder()
@@ -5162,7 +5161,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 3L),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.EnderEye, 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

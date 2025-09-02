@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
 import static gregtech.api.enums.Mods.EnderStorage;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
@@ -1462,31 +1463,37 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_Spruce.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_spruce", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_Birch.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_birch", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_Jungle.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_jungle", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_Acacia.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_acacia", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         ItemList.Plank_DarkOak.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_dark_oak", 3, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        ItemList.Plank_Cherry_EFR.get(1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1586,568 +1593,28 @@ public class ScriptMinecraft implements IScriptLoader {
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
+                        ItemList.Plank_Oak.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1))
+                .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
+                .eut(8).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(Minecraft.ID, "planks", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 1, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 2, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 3, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 4, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 5, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 6, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 7, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 8, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 9, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 10, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 11, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 12, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 13, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 14, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 15, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(GalacticraftAmunRa.ID, "tile.wood1", 2, 3, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(GalacticraftAmunRa.ID, "tile.wood1", 2, 2, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(Natura.ID, "planks", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(Forestry.ID, "planks", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 0, "{meta:0}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 1, "{meta:1}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 2, "{meta:2}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 3, "{meta:3}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 4, "{meta:4}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 5, "{meta:5}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 6, "{meta:6}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 7, "{meta:7}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 8, "{meta:8}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 9, "{meta:9}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 10, "{meta:10}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 11, "{meta:11}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 12, "{meta:12}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 13, "{meta:13}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 14, "{meta:14}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 15, "{meta:15}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 16, "{meta:16}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 17, "{meta:17}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 18, "{meta:18}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 19, "{meta:19}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 20, "{meta:20}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 21, "{meta:21}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 22, "{meta:22}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 23, "{meta:23}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 24, "{meta:24}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 25, "{meta:25}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 26, "{meta:26}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 27, "{meta:27}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 28, "{meta:28}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 29, "{meta:29}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 30, "{meta:30}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 31, "{meta:31}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 32, "{meta:32}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 33, "{meta:33}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        createItemStack(ExtraTrees.ID, "planks", 2, 34, "{meta:34}", missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ThaumicBases.ID, "enderPlanks", 2, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(Witchery.ID, "witchwood", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(GalaxySpace.ID, "barnardaCplanks", 2, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(TaintedMagic.ID, "BlockWarpwoodPlanks", 2, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.TFPlank", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(ForbiddenMagic.ID, "TaintPlank", 2, wildcard, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
+                        getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
+                .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
@@ -2423,9 +1890,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwIron",
                 "craftingToolHardHammer",
                 "screwIron",
-                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "stone_slab", 1, 0, missing),
                 "springAnyIron",
-                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "stone_slab", 1, 0, missing),
                 "screwIron",
                 "craftingToolScrewdriver",
                 "screwIron");
@@ -4396,17 +3863,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 "stickWood");
         addShapedRecipe(
-                getModItem(Minecraft.ID, "bed", 1, 0, missing),
-                getModItem(Minecraft.ID, "carpet", 1, wildcard, missing),
-                getModItem(Minecraft.ID, "carpet", 1, wildcard, missing),
-                getModItem(Minecraft.ID, "carpet", 1, wildcard, missing),
-                "plankWood",
-                "plankWood",
-                "plankWood",
-                "fenceWood",
-                ToolDictNames.craftingToolSoftMallet.name(),
-                "fenceWood");
-        addShapedRecipe(
                 getModItem(Minecraft.ID, "fishing_rod", 1, 0, missing),
                 null,
                 null,
@@ -4448,7 +3904,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "flower_pot", 1, 0, missing),
                 "craftingToolFile",
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketFired", 1, 0, missing));
-        addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 0, missing), "craftingToolSaw", "stone");
+        addShapelessRecipe(
+                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                "craftingToolSaw",
+                getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing));
         addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 1, missing), "craftingToolSaw", "sandstone");
         addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 3, missing), "craftingToolSaw", "cobblestone");
         addShapelessRecipe(
@@ -4583,7 +4042,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_spruce", 3, 0, missing),
                 ItemList.Plank_Spruce.get(1L),
                 ItemList.Plank_Spruce.get(1L),
                 ItemList.Plank_Spruce.get(1L),
@@ -4594,7 +4053,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_birch", 3, 0, missing),
                 ItemList.Plank_Birch.get(1L),
                 ItemList.Plank_Birch.get(1L),
                 ItemList.Plank_Birch.get(1L),
@@ -4605,7 +4064,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_jungle", 3, 0, missing),
                 ItemList.Plank_Jungle.get(1L),
                 ItemList.Plank_Jungle.get(1L),
                 ItemList.Plank_Jungle.get(1L),
@@ -4616,7 +4075,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_acacia", 3, 0, missing),
                 ItemList.Plank_Acacia.get(1L),
                 ItemList.Plank_Acacia.get(1L),
                 ItemList.Plank_Acacia.get(1L),
@@ -4627,13 +4086,24 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood",
                 null);
         addShapedRecipe(
-                getModItem(Minecraft.ID, "sign", 3, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "item_sign_dark_oak", 3, 0, missing),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
                 ItemList.Plank_DarkOak.get(1L),
+                null,
+                "stickWood",
+                null);
+        addShapedRecipe(
+                getModItem(EtFuturumRequiem.ID, "cherry_sign", 3, 0, missing),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
+                ItemList.Plank_Cherry_EFR.get(1L),
                 null,
                 "stickWood",
                 null);

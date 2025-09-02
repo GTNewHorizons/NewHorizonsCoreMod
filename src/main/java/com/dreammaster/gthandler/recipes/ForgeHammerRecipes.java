@@ -1,8 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
@@ -52,8 +50,8 @@ public class ForgeHammerRecipes implements Runnable {
 
         // Uncompressed coal variants
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCharcoal.getIS(1))
-                .itemOutputs(Materials.Charcoal.getGems(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.getIS(1)).itemOutputs(Materials.Coal.getGems(9))
+                .itemOutputs(Materials.Charcoal.getBlocks(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.getIS(1)).itemOutputs(Materials.Coal.getBlocks(9))
                 .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.getIS(1))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0, missing)).duration(15 * SECONDS).eut(2)
@@ -101,10 +99,6 @@ public class ForgeHammerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.getIS(1))
                 .itemOutputs(NHItemList.BioOrganicMesh.getIS(1)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-
         if (TinkerConstruct.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 3L, 2)).duration(1 * SECONDS)
@@ -142,6 +136,11 @@ public class ForgeHammerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(BlockList.PixieDust.getIS(1))
                     .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 9L, 8)).duration(16 * TICKS)
+                    .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
+        }
+        if (Railcraft.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1))
+                    .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 4, missing)).duration(2 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
         }
 

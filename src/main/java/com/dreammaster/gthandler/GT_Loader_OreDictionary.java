@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -141,6 +142,10 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator
                 .registerOre(OrePrefixes.bars, Materials.TungstenSteel, NHItemList.TungstenSteelBars.getIS());
 
+        GTOreDictUnificator.registerOre(
+                OrePrefixes.rawOre,
+                Materials.MeteoricIron,
+                GTModHandler.getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1L));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.ore,
                 Materials.Desh,
@@ -334,5 +339,10 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         // Add ore dictionary entries for sand and red sand to craft unfired coke oven bricks.
         GTOreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 0));
         GTOreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 1));
+
+        // Allow EFR blast furnace to be used instead of GT iron furnace.
+        GTOreDictUnificator.registerOre(
+                "craftingIronFurnace",
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "blast_furnace", 1L, 0));
     }
 }
