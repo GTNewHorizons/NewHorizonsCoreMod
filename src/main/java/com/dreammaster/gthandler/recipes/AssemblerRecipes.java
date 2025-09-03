@@ -84,7 +84,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -8536,7 +8535,7 @@ public class AssemblerRecipes implements Runnable {
         final int DURATION = SECONDS * 10;
 
         // Regular Tiered
-        addLootbagPair(1, 2, 3L, 1L, TierEU.RECIPE_LV, DURATION); // Basic -> Steam
+        addLootbagPair(1, 2, 3L, 1L, TierEU.RECIPE_ULV, DURATION); // Basic -> Steam
         addLootbagPair(2, 4, 3L, 1L, TierEU.RECIPE_LV, DURATION); // Steam -> LV
         addLootbagPair(4, 5, 3L, 1L, TierEU.RECIPE_MV, DURATION); // LV -> MV
         addLootbagPair(5, 6, 3L, 1L, TierEU.RECIPE_HV, DURATION); // MV -> HV
@@ -8556,6 +8555,9 @@ public class AssemblerRecipes implements Runnable {
         addLootbagPair(25, 26, 3L, 1L, TierEU.RECIPE_LV, DURATION); // Basic -> Advanced
         addLootbagPair(26, 27, 3L, 1L, TierEU.RECIPE_HV, DURATION); // Advanced -> Expert
 
+        // AE2
+        addLootbagPair(37, 38, 3L, 1L, TierEU.RECIPE_EV, DURATION); // Basic -> Good
+
         // Space
         addLootbagPair(22, 23, 3L, 1L, TierEU.RECIPE_EV, DURATION); // Moon -> Mars
         addLootbagPair(23, 24, 3L, 1L, TierEU.RECIPE_EV, DURATION); // Mars -> Asteroids
@@ -8574,43 +8576,26 @@ public class AssemblerRecipes implements Runnable {
         addLootbagPair(10, 11, 3L, 1L, TierEU.RECIPE_MV, DURATION); // Adept -> Master
         addLootbagPair(11, 12, 3L, 1L, TierEU.RECIPE_MV, DURATION); // Master -> Grandmaster
         addLootbagPair(12, 13, 16L, 1L, TierEU.RECIPE_MV, DURATION); // Grandmaster -> Unique
+
+        // Witchery
+        addLootbagPair(52, 53, 3L, 1L, TierEU.RECIPE_LV, DURATION); // Novice -> Adept
+        addLootbagPair(53, 54, 3L, 1L, TierEU.RECIPE_MV, DURATION); // Adept -> Master
+        addLootbagPair(54, 55, 3L, 1L, TierEU.RECIPE_HV, DURATION); // Master -> Witch
+        addLootbagPair(55, 56, 3L, 1L, TierEU.RECIPE_HV, DURATION); // Witch -> Daemon
+
+        // HEE
+        addLootbagPair(57, 58, 3L, 1L, TierEU.RECIPE_HV, DURATION); // Basic -> Advanced
+
     }
 
-    // Assembler recipe registry, first is regular second is fortune 3 recipe
+    // Assembler recipe registry
     private void addLootbagPair(int inMeta, int outMeta, long inCount, long outCount, long eut, int duration) {
         ItemStack inputBag = GTModHandler.getModItem(EnhancedLootBags.ID, "lootbag", inCount, inMeta, missing);
         ItemStack outputBag = GTModHandler.getModItem(EnhancedLootBags.ID, "lootbag", outCount, outMeta, missing);
         if (inputBag != null && outputBag != null) {
-            GTValues.RA.stdBuilder().itemInputs(inputBag).itemOutputs(outputBag).duration(duration).eut((int) eut) // cast
-                                                                                                                   // here
+            GTValues.RA.stdBuilder().itemInputs(inputBag).itemOutputs(outputBag).duration(duration).eut((int) eut)
                     .addTo(assemblerRecipes);
         }
-
-        ItemStack inputFortuneBag = GTModHandler.getModItem(EnhancedLootBags.ID, "lootbag", inCount, inMeta, missing);
-        ItemStack outputFortuneBag = GTModHandler
-                .getModItem(EnhancedLootBags.ID, "lootbag", outCount, outMeta, missing);
-        if (inputFortuneBag != null && outputFortuneBag != null) {
-            applyFortuneNBT(inputFortuneBag);
-            if (inputFortuneBag.hasTagCompound()) {
-                outputFortuneBag.setTagCompound((NBTTagCompound) inputFortuneBag.getTagCompound().copy());
-            }
-            GTValues.RA.stdBuilder().itemInputs(inputFortuneBag).itemOutputs(outputFortuneBag).duration(duration)
-                    .eut((int) eut).addTo(assemblerRecipes);
-        }
-    }
-
-    // Function to apply Fortune 3 NBT data
-    private static void applyFortuneNBT(ItemStack stack) {
-        final short FORTUNE_ID = (short) Enchantment.fortune.effectId;
-        NBTTagList enchList = new NBTTagList();
-        NBTTagCompound ench = new NBTTagCompound();
-        ench.setShort("id", FORTUNE_ID);
-        ench.setShort("lvl", (short) 3);
-        enchList.appendTag(ench);
-
-        NBTTagCompound tag = stack.hasTagCompound() ? stack.getTagCompound() : new NBTTagCompound();
-        tag.setTag("ench", enchList);
-        stack.setTagCompound(tag);
     }
 
     private void makeCoinRecipes() {
