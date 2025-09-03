@@ -2045,13 +2045,14 @@ public class ScriptEFR implements IScriptLoader {
 
         // x20 to keep the same ratio as the LCR
         ItemStack singleBlockInput = GTUtility.copyAmount(20, lessOxidized);
+        ItemStack singleBlockOutput = GTUtility.copyAmount(20, moreOxidized);
 
         GTValues.RA.stdBuilder().itemInputs(singleBlockInput, Materials.CarbonDioxide.getCells(2))
-                .itemOutputs(moreOxidized, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 2L, 0))
+                .itemOutputs(singleBlockOutput, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 2L, 0))
                 .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(20 * SECONDS).eut(30)
                 .addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder().itemInputs(singleBlockInput, Materials.Oxygen.getCells(1))
-                .itemOutputs(moreOxidized, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1L, 0))
+                .itemOutputs(singleBlockOutput, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1L, 0))
                 .fluidInputs(Materials.CarbonDioxide.getGas(2000L)).duration(20 * SECONDS).eut(30)
                 .addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder().itemInputs(moreOxidized).itemOutputs(lessOxidized)
