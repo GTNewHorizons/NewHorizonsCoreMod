@@ -615,7 +615,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 bits,
                 new Object[] { "RPR", "MBM", "CGC", 'B', ItemList.Hull_LV, 'R', OrePrefixes.rotor.get(Materials.Steel),
                         'P', ItemList.Electric_Pump_LV, 'M', ItemList.Electric_Motor_LV, 'C',
-                        OrePrefixes.cableGt01.get(Materials.Copper), 'G', ItemList.Casing_Turbine });
+                        OrePrefixes.cableGt01.get(Materials.Copper), 'G', ItemList.Casing_AirFilter_Turbine_T1 });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Vent_T2.get(1L),
                 bits,
