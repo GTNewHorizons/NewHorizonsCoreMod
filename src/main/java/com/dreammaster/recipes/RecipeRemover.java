@@ -2097,6 +2097,8 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, wildcard, missing));
         removeRecipeByOutputDelayed(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0, missing));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawruby", 1, 0, missing));
