@@ -2034,6 +2034,17 @@ public class ScriptEFR implements IScriptLoader {
         addOxidizedCopperDoors();
         addOxidizedCopperTrapdoors();
         addOxidizedCopperBlocks();
+
+        // Concrete
+        for (int i = 0; i < 16; i++) {
+            ItemStack efrConcrete = getModItem(EtFuturumRequiem.ID, "concrete", 1L, i);
+            if (efrConcrete == null) continue;
+            ChiselHelper.addVariationFromStack("hempcrete", efrConcrete);
+
+            ItemStack efrConcretePowder = getModItem(EtFuturumRequiem.ID, "concrete_powder", 1L, i);
+            if (efrConcretePowder == null) continue;
+            ChiselHelper.addVariationFromStack("hempcretesand", efrConcretePowder);
+        }
     }
 
     // Oxidation Functions
