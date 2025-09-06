@@ -4740,7 +4740,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_HV.get(1L),
-                        ItemList.Casing_Turbine2.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T2.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Titanium, 1L),
                         ItemList.Electric_Motor_HV.get(2L),
                         ItemList.Electric_Pump_HV.get(1L),
@@ -4753,7 +4753,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_HV.get(1L),
-                        ItemList.Casing_Turbine2.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T2.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Titanium, 1L),
                         ItemList.Electric_Motor_HV.get(2L),
                         ItemList.Electric_Pump_HV.get(1L),
@@ -4765,7 +4765,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_HV.get(1L),
-                        ItemList.Casing_Turbine2.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T2.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Titanium, 1L),
                         ItemList.Electric_Motor_HV.get(2L),
                         ItemList.Electric_Pump_HV.get(1L),
@@ -4830,7 +4830,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_IV.get(1L),
-                        ItemList.Casing_Turbine3.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T3.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 1L),
                         ItemList.Electric_Motor_IV.get(2L),
                         ItemList.Electric_Pump_IV.get(1L),
@@ -4843,7 +4843,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_IV.get(1L),
-                        ItemList.Casing_Turbine3.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T3.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 1L),
                         ItemList.Electric_Motor_IV.get(2L),
                         ItemList.Electric_Pump_IV.get(1L),
@@ -4855,7 +4855,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_IV.get(1L),
-                        ItemList.Casing_Turbine3.get(1L),
+                        ItemList.Casing_AirFilter_Turbine_T3.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 1L),
                         ItemList.Electric_Motor_IV.get(2L),
                         ItemList.Electric_Pump_IV.get(1L),
