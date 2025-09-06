@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.LogisticsPipes;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.ProjectRedTransmission;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
@@ -393,38 +392,6 @@ public class ChemicalBathRecipes implements Runnable {
                     .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 65, missing))
                     .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 864)).duration(10 * SECONDS)
                     .eut(2).addTo(chemicalBathRecipes);
-        }
-        if (ProjectRedTransmission.isModLoaded()) {
-            String[] cableDyes = {
-                    "dyered", "dyegreen", "dyebrown", "dyeblue", "dyepurple", "dyecyan",
-                    "dyelightgray", "dyegray", "dyepink", "dyelime", "dyeyellow",
-                    "dyelightblue", "dyemagenta", "dyeorange", "dyewhite"
-            };
-
-            // For Insulted Wire
-            for (int i = 0; i < cableDyes.length; i++) {
-                int outputMeta = 15 - i;
-                GTValues.RA.stdBuilder()
-                        .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                        .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing))
-                        .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 18))
-                        .duration(1 * SECONDS + 5 * TICKS)
-                        .eut(2)
-                        .addTo(chemicalBathRecipes);
-            }
-
-            // For Bundled Cable
-            for (int i = 0; i < cableDyes.length; i++) {
-                int outputMeta = 33 - i;
-                GTValues.RA.stdBuilder()
-                        .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
-                        .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing))
-                        .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 36))
-                        .duration(1 * SECONDS + 5 * TICKS)
-                        .eut(2)
-                        .addTo(chemicalBathRecipes);
-            }
-
         }
     }
 }
