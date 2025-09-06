@@ -373,11 +373,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("potentia"), 40).add(Aspect.getAspect("praecantatio"), 24)
                         .add(Aspect.getAspect("auram"), 24).add(Aspect.getAspect("sensus"), 8),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 5, missing),
-                OrePrefixes.dust.get(Materials.AstralSilver),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 getModItem(Botania.ID, "manaResource", 1, 0, missing),
-                OrePrefixes.dust.get(Materials.AstralSilver),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 getModItem(Botania.ID, "manaResource", 1, 0, missing),
-                OrePrefixes.dust.get(Materials.AstralSilver),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 getModItem(Botania.ID, "manaResource", 1, 0, missing));
         TCHelper.addResearchPage("CAP_manasteel", new ResearchPage("derp.research_page.CAP_manasteel"));
         TCHelper.addResearchPage(
