@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -26,6 +27,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
@@ -860,6 +862,15 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 1))
                     .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
 
+        }
+
+        if (Chisel.isModLoaded()) {
+            for (int meta = 0; meta < 16; ++meta) {
+                GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Chisel.ID, "hempcrete", 1L, meta))
+                        .itemOutputs(GTModHandler.getModItem(Chisel.ID, "hempcretesand", 1L, meta))
+                        .recipeCategory(RecipeCategories.maceratorRecycling).duration(4 * SECONDS + 18 * TICKS).eut(4)
+                        .addTo(maceratorRecipes);
+            }
         }
     }
 }

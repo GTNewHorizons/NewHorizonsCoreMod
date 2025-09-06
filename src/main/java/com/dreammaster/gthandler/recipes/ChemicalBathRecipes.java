@@ -467,7 +467,7 @@ public class ChemicalBathRecipes implements Runnable {
                     .duration(1 * SECONDS + 5 * TICKS).eut(2).addTo(chemicalBathRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                    .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 2, 1, missing))
+                    .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 1, missing))
                     .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyewhite", 18))
                     .duration(1 * SECONDS + 5 * TICKS).eut(2).addTo(chemicalBathRecipes);
             GTValues.RA.stdBuilder()

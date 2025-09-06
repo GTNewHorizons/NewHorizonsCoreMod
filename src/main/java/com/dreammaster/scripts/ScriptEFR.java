@@ -117,6 +117,23 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(ExtraUtilities.ID, "budoff", 1, 0), 'D',
                         GTModHandler.getModItem(Minecraft.ID, "comparator", 1, 0), 'E', "gearGtSmallAnyIron" });
 
+        // Copper Grate
+
+        GTModHandler.addCraftingRecipe(
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "copper_grate", 8L),
+                bits,
+                new Object[] { "ABA", "BCB", "ABA", 'A', GTOreDictUnificator.get(OrePrefixes.rod, Materials.Copper, 1L),
+                        'B', GTOreDictUnificator.get(OrePrefixes.dust, Materials.GraniteRed, 1L), 'C',
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Copper, 1L) });
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.rod, Materials.Copper, 8L),
+                        GTUtility.getIntegratedCircuit(8))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
+                .addTo(assemblerRecipes);
+
         // Cherry Planks
         addShapelessRecipe(
                 getModItem(EtFuturumRequiem.ID, "wood_planks", 2, 3),
@@ -2017,6 +2034,17 @@ public class ScriptEFR implements IScriptLoader {
         addOxidizedCopperDoors();
         addOxidizedCopperTrapdoors();
         addOxidizedCopperBlocks();
+
+        // Concrete
+        for (int i = 0; i < 16; i++) {
+            ItemStack efrConcrete = getModItem(EtFuturumRequiem.ID, "concrete", 1L, i);
+            if (efrConcrete == null) continue;
+            ChiselHelper.addVariationFromStack("hempcrete", efrConcrete);
+
+            ItemStack efrConcretePowder = getModItem(EtFuturumRequiem.ID, "concrete_powder", 1L, i);
+            if (efrConcretePowder == null) continue;
+            ChiselHelper.addVariationFromStack("hempcretesand", efrConcretePowder);
+        }
     }
 
     // Oxidation Functions
@@ -2028,13 +2056,14 @@ public class ScriptEFR implements IScriptLoader {
 
         // x20 to keep the same ratio as the LCR
         ItemStack singleBlockInput = GTUtility.copyAmount(20, lessOxidized);
+        ItemStack singleBlockOutput = GTUtility.copyAmount(20, moreOxidized);
 
         GTValues.RA.stdBuilder().itemInputs(singleBlockInput, Materials.CarbonDioxide.getCells(2))
-                .itemOutputs(moreOxidized, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 2L, 0))
+                .itemOutputs(singleBlockOutput, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 2L, 0))
                 .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(20 * SECONDS).eut(30)
                 .addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder().itemInputs(singleBlockInput, Materials.Oxygen.getCells(1))
-                .itemOutputs(moreOxidized, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1L, 0))
+                .itemOutputs(singleBlockOutput, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1L, 0))
                 .fluidInputs(Materials.CarbonDioxide.getGas(2000L)).duration(20 * SECONDS).eut(30)
                 .addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder().itemInputs(moreOxidized).itemOutputs(lessOxidized)
