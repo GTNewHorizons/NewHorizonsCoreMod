@@ -886,7 +886,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
                 bits,
                 new Object[] { "IGI", "PCP", "III", 'I', "plateIron", 'G', "dustGlowstone", 'P', "paneGlassColorless",
-                        'C', getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1, 0, missing) });
+                        'C', new ItemStack(Blocks.torch) });
 
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0, missing),
