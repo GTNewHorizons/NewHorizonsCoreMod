@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
 import tconstruct.world.blocks.GravelOre;
 
 public class ZincGravelOre extends GravelOre {
