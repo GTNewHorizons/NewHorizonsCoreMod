@@ -209,6 +209,17 @@ public class ScriptEFR implements IScriptLoader {
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
         }
 
+        // EFR Flower Dyes
+        addShapelessRecipe(
+                ItemList.Color_04.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "cornflower", 1L, 0));
+        addShapelessRecipe(
+                ItemList.Color_15.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1L, 0));
+        addShapelessRecipe(
+                ItemList.Color_00.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "wither_rose", 1L, 0));
+
         // Slabs
 
         final String[] slabInputs = { "red_sandstone:0", "red_sandstone:2", "purpur_block:0", "stone:0",
