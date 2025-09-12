@@ -1008,19 +1008,31 @@ public class ScriptEFR implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                "plateIron",
-                "plateIron",
-                "plateIron",
-                "plateIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
                 "craftingToolWrench",
-                "plateIron",
-                "plateIron",
+                "plateAnyIron",
+                "plateAnyIron",
                 getModItem(Minecraft.ID, "furnace", 1, 0, missing),
-                "plateIron");
+                "plateAnyIron");
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5L),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PigIron, 5L),
                         new ItemStack(Blocks.furnace, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
