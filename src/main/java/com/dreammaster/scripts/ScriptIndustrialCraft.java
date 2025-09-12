@@ -349,17 +349,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolWrench",
                 null);
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
-                "plateAnyIron",
-                "plateAnyIron",
-                "plateAnyIron",
-                "plateAnyIron",
-                "craftingToolWrench",
-                "plateAnyIron",
-                "plateAnyIron",
-                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
-                "plateAnyIron");
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
                 "plateAluminium",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
