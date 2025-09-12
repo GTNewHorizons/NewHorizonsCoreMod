@@ -1013,7 +1013,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
-                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 3, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
                         new ItemStack(Blocks.furnace, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
