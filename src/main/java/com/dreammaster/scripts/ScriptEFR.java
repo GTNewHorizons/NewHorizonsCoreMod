@@ -28,6 +28,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -1047,6 +1048,16 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'S',
                         getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing), 'C',
                         getModItem(AdventureBackpack.ID, "blockCampFire", 1, 0, missing) });
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.furnace, 1),
+                        getModItem(ZTones.ID, "minicharcoal", 6, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 2, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnyIron, 4L),
+                        GTUtility.getIntegratedCircuit(8))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "smoker", 1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "end_crystal", 1, 0, missing),
