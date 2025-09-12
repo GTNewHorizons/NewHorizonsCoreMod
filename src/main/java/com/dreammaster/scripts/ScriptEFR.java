@@ -1007,7 +1007,7 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 bits,
-                new Object[] { "PPP", "PFP", "SSS", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
+                new Object[] { "PPP", "PFP", "PSP", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
                         'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
 
         GTValues.RA.stdBuilder()
