@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -234,6 +235,9 @@ public class ScriptThaumicBases implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "quicksilverBrick", 1, 0, missing))
                 .fluidOutputs(FluidRegistry.getFluidStack("mercury", 9000)).duration(1152).eut(4)
                 .addTo(fluidExtractionRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "resource", 9, 1, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing)).duration(8 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "relocator", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "relocator", 1, 6, missing));
