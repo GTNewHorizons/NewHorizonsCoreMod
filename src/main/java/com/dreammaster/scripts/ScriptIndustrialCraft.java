@@ -349,17 +349,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolWrench",
                 null);
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
-                "plateAnyIron",
-                "plateAnyIron",
-                "plateAnyIron",
-                "plateAnyIron",
-                "craftingToolWrench",
-                "plateAnyIron",
-                "plateAnyIron",
-                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
-                "plateAnyIron");
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
                 "plateAluminium",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
@@ -1530,12 +1519,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(20 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "furnace", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing)).duration(20 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 8L),

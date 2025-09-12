@@ -1005,16 +1005,35 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1, missing)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
-        GTModHandler.addCraftingRecipe(
+        // Blast Furnace
+
+        addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                bits,
-                new Object[] { "PPP", "PFP", "SSS", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
-                        'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "craftingToolWrench",
+                "plateAnyIron",
+                "plateAnyIron",
+                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
+                "plateAnyIron");
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
-                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 3, 0, missing),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5L),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PigIron, 5L),
                         new ItemStack(Blocks.furnace, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
