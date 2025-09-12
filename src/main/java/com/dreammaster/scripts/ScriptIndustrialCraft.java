@@ -1521,12 +1521,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "furnace", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing)).duration(20 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 8L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockCrop", 16, 0, missing))
