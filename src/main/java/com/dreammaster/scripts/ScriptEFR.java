@@ -1004,16 +1004,23 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1, missing)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
-        GTModHandler.addCraftingRecipe(
+        // Blast Furnace
+
+        addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                bits,
-                new Object[] { "PPP", "PFP", "PSP", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
-                        'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
+                "plateIron",
+                "plateIron",
+                "plateIron",
+                "plateIron",
+                "craftingToolWrench",
+                "plateIron",
+                "plateIron",
+                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
+                "plateIron");
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
-                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
                         new ItemStack(Blocks.furnace, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
