@@ -264,8 +264,6 @@ public class GT_Recipe_Remover implements Runnable {
                 .removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeCrystal", 1L, GTValues.W));
         GTModHandler.removeRecipeByOutputDelayed(
                 getModItem(IndustrialCraft2.ID, "itemBatChargeLamaCrystal", 1L, GTValues.W));
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTreetapElectric", 1, GTValues.W));
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, GTValues.W));
         // Natural Compass
         GTModHandler
                 .removeRecipeByOutputDelayed(getModItem(NaturesCompass.ID, "NaturesCompass", 1L, 0), true, false, true);

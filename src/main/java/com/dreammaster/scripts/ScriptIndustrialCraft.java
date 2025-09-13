@@ -576,6 +576,28 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "batteryBasic",
                 "plateStainlessSteel");
         addShapedRecipe(
+                getModItem(IndustrialCraft2.ID, "itemTreetapElectric", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "stickLongSteel",
+                OrePrefixes.toolHeadDrill.get(Materials.Steel),
+                "stickLongSteel",
+                ItemList.Electric_Pump_LV,
+                "batteryBasic",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing),
+                OrePrefixes.cableGt01.get(Materials.Tin),
+                "screwSteel");
+        addShapedRecipe(
+                getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "plateSteel",
+                "stickSteel",
+                "plateSteel",
+                "gearGtSmallSteel",
+                "batteryBasic",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing),
+                null,
+                "screwSteel");
+        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemDoorAlloy", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0, missing),
