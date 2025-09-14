@@ -39,6 +39,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -540,5 +541,12 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "foliage", 1, 7, missing)).eut(TierEU.RECIPE_HV).duration(10)
                 .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
 
+        ChiselHelper.addVariationFromStack("topaz", GTOreDictUnificator.get(OrePrefixes.block, Materials.Topaz, 1L));
+        ChiselHelper.addVariationFromStack("topaz", getModItem(BiomesOPlenty.ID, "gemOre", 1, 7, missing));
+
+        ChiselHelper.addVariationFromStack(
+                "tanzanite",
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Tanzanite, 1L));
+        ChiselHelper.addVariationFromStack("tanzanite", getModItem(BiomesOPlenty.ID, "gemOre", 1, 9, missing));
     }
 }
