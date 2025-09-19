@@ -1907,10 +1907,20 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Titanium.getMolten(1440L)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
-        // EBF Controller
+        // EBF Controller - Iron Furnace (TBR)
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getIC2Item("ironFurnace", 3L),
+                        ItemList.Casing_HeatProof.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 3),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2))
+                .itemOutputs(ItemList.Machine_Multi_BlastFurnace.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // EBF Controller
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "blast_furnace", 3L, 0),
                         ItemList.Casing_HeatProof.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 3),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2))

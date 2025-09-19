@@ -28,6 +28,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -208,6 +209,18 @@ public class ScriptEFR implements IScriptLoader {
                     createItemStack(Thaumcraft.ID, "blockWoodenDevice", 1, 8, "{color:" + i + "b}", missing),
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
         }
+
+        // EFR Flower Dyes
+
+        addShapelessRecipe(
+                ItemList.Color_04.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "cornflower", 1L, 0));
+        addShapelessRecipe(
+                ItemList.Color_15.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1L, 0));
+        addShapelessRecipe(
+                ItemList.Color_00.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "wither_rose", 1L, 0));
 
         // Slabs
 
@@ -992,16 +1005,35 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1, missing)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
-        GTModHandler.addCraftingRecipe(
+        // Blast Furnace
+
+        addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                bits,
-                new Object[] { "PPP", "PFP", "SSS", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
-                        'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "craftingToolWrench",
+                "plateAnyIron",
+                "plateAnyIron",
+                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
+                "plateAnyIron");
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
-                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 3, 0, missing),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5L),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PigIron, 5L),
                         new ItemStack(Blocks.furnace, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1047,6 +1079,16 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'S',
                         getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing), 'C',
                         getModItem(AdventureBackpack.ID, "blockCampFire", 1, 0, missing) });
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.furnace, 1),
+                        getModItem(ZTones.ID, "minicharcoal", 6, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 2, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnyIron, 4L),
+                        GTUtility.getIntegratedCircuit(8))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "smoker", 1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "end_crystal", 1, 0, missing),

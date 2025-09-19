@@ -227,12 +227,12 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 -2,
                 2,
-                createItemStack(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27, "{shearsMode:1b}", missing))
-                        .setParents("ElectricMagicTools").setRound()
-                        .setPages(new ResearchPage("tc.research_page.DiamondChainsaw")).registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27, missing)).setParents("ElectricMagicTools")
+                        .setRound().setPages(new ResearchPage("tc.research_page.DiamondChainsaw"))
+                        .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiamondChainsaw",
-                createItemStack(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27, "{shearsMode:1b}", missing),
+                getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 35).add(Aspect.getAspect("terra"), 35)
                         .add(Aspect.getAspect("ignis"), 35).add(Aspect.getAspect("aqua"), 35)
                         .add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("perditio"), 35),
@@ -261,13 +261,7 @@ public class ScriptEMT implements IScriptLoader {
                 "DiamondChainsaw",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                createItemStack(
-                                        ElectroMagicTools.ID,
-                                        "DiamondChainsaw",
-                                        1,
-                                        27,
-                                        "{shearsMode:1b}",
-                                        missing))));
+                                getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27, missing))));
         TCHelper.removeResearch("Thaumium Plate");
         new ResearchItem(
                 "ThaumiumPlate",
