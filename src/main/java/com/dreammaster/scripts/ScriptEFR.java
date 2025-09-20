@@ -73,6 +73,7 @@ import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.google.common.collect.ImmutableList;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -237,6 +238,10 @@ public class ScriptEFR implements IScriptLoader {
                 "cut_copper_slab:0", "cut_copper_slab:1", "cut_copper_slab:2", "cut_copper_slab:3", "cut_copper_slab:4",
                 "cut_copper_slab:5", "cut_copper_slab:6", "cut_copper_slab:7", "blackstone_slab:0", "blackstone_slab:1",
                 "blackstone_slab:2" };
+
+        // Some slab shapeless recipes related to oredict are handled in ScriptMinecraft.java
+        final List<String> ignoreShapeless = ImmutableList.of("mossy_cobblestone:0", "stonebrick:1", "sandstone:2");
+
         for (int i = 0; i < slabInputs.length; i++) {
             String[] inParts = slabInputs[i].split(":");
             String[] outParts = slabOutputs[i].split(":");
@@ -250,11 +255,12 @@ public class ScriptEFR implements IScriptLoader {
             if (inName.equals("stone") || inName.equals("mossy_cobblestone")
                     || inName.equals("stonebrick")
                     || inName.equals("sandstone")) {
-                GTModHandler.addCraftingRecipe(
-                        GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
-                        bits,
-                        new Object[] { "BA ", "   ", "   ", 'A',
-                                GTModHandler.getModItem(Minecraft.ID, inName, 1L, inMeta), 'B', "craftingToolSaw" });
+                if (!ignoreShapeless.contains(slabInputs[i])) {
+                    addShapelessRecipe(
+                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
+                            "craftingToolSaw",
+                            GTModHandler.getModItem(Minecraft.ID, inName, 1L, inMeta));
+                }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
@@ -268,20 +274,18 @@ public class ScriptEFR implements IScriptLoader {
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
                         .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
             } else {
-                if (inName.equals("wood_planks")) {
-                    GTModHandler.addCraftingRecipe(
-                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
-                            bits,
-                            new Object[] { "BA ", "   ", "   ", 'A',
-                                    GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
-                                    "craftingToolSaw" });
-                } else {
-                    GTModHandler.addCraftingRecipe(
-                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
-                            bits,
-                            new Object[] { "BA ", "   ", "   ", 'A',
-                                    GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
-                                    "craftingToolSaw" });
+                if (!ignoreShapeless.contains(slabInputs[i])) {
+                    if (inName.equals("wood_planks")) {
+                        addShapelessRecipe(
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
+                                "craftingToolSaw",
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta));
+                    } else {
+                        addShapelessRecipe(
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
+                                "craftingToolSaw",
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta));
+                    }
                 }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
