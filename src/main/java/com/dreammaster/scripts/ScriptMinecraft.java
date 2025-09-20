@@ -1918,6 +1918,14 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "fluid.creosote.bucket", 1, 0, missing),
                 "stickWood",
                 null);
+        if (IguanaTweaksTinkerConstruct.isModLoaded()) {
+            addShapedRecipe(
+                    getModItem(Minecraft.ID, "torch", 5, 0, missing),
+                    "blockWool",
+                    getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketCreosote", 1, 0, missing),
+                    "stickWood",
+                    null);
+        }
         addShapedRecipe(
                 getModItem(Minecraft.ID, "torch", 4, 0, missing),
                 getModItem(TwilightForest.ID, "item.torchberries", 1, 0, missing),
