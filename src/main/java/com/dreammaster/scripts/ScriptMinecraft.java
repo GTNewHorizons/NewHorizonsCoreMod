@@ -3916,13 +3916,55 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
                 "craftingToolSaw",
                 getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing));
-        addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 1, missing), "craftingToolSaw", "sandstone");
-        addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 3, missing), "craftingToolSaw", "cobblestone");
+
+        // Cobble slabs
+        ItemStack cobblestoneSlab = getModItem(Minecraft.ID, "stone_slab", 1, 3, missing);
+        ItemStack mossyCobbleOutputSlab = EtFuturumRequiem.isModLoaded()
+                ? getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 1, missing)
+                : cobblestoneSlab;
+        addShapelessRecipe(cobblestoneSlab, "craftingToolSaw", getModItem(Minecraft.ID, "cobblestone", 1, 0, missing));
+        addShapelessRecipe(
+                mossyCobbleOutputSlab,
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "mossy_cobblestone", 1, 0, missing));
+        if (ExtraUtilities.isModLoaded()) {
+            for (int meta = 0; meta < 16; meta++) {
+                addShapelessRecipe(
+                        cobblestoneSlab,
+                        "craftingToolSaw",
+                        getModItem(ExtraUtilities.ID, "color_stonebrick", 1, meta, missing));
+            }
+        }
+
+        // Stone brick slabs
+        ItemStack stoneBrickSlab = getModItem(Minecraft.ID, "stone_slab", 1, 5, missing);
+        ItemStack mossyStoneBrickOutputSlab = EtFuturumRequiem.isModLoaded()
+                ? getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 2, missing)
+                : stoneBrickSlab;
+        addShapelessRecipe(stoneBrickSlab, "craftingToolSaw", getModItem(Minecraft.ID, "stonebrick", 1, 0, missing));
+        addShapelessRecipe(
+                mossyStoneBrickOutputSlab,
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "stonebrick", 1, 1, missing));
+        addShapelessRecipe(stoneBrickSlab, "craftingToolSaw", getModItem(Minecraft.ID, "stonebrick", 1, 2, missing));
+        addShapelessRecipe(stoneBrickSlab, "craftingToolSaw", getModItem(Minecraft.ID, "stonebrick", 1, 3, missing));
+
+        // Sandstone slabs
+        ItemStack sandstoneSlab = getModItem(Minecraft.ID, "stone_slab", 1L, 1, missing);
+        ItemStack cutSandstoneOutputSlab = EtFuturumRequiem.isModLoaded()
+                ? getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 3, missing)
+                : sandstoneSlab;
+        addShapelessRecipe(sandstoneSlab, "craftingToolSaw", getModItem(Minecraft.ID, "sandstone", 1, 0, missing));
+        addShapelessRecipe(sandstoneSlab, "craftingToolSaw", getModItem(Minecraft.ID, "sandstone", 1, 1, missing));
+        addShapelessRecipe(
+                cutSandstoneOutputSlab,
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "sandstone", 1, 2, missing));
+
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stone_slab", 1, 4, missing),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "brick_block", 1, 0, missing));
-        addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 5, missing), "craftingToolSaw", "stoneBricks");
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stone_slab", 1, 6, missing),
                 "craftingToolSaw",
