@@ -2043,13 +2043,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemHoeElemental", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, wildcard, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                ItemList.Circuit_Master.get(1L),
+            OrePrefixes.circuit.get(Materials.LuV),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                ItemList.Circuit_Master.get(1L),
+            OrePrefixes.circuit.get(Materials.LuV),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing));
         TCHelper.addResearchPage(
                 "ElectricHoeofGrowth",
