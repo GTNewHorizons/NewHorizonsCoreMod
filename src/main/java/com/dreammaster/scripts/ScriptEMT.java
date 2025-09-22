@@ -683,13 +683,13 @@ public class ScriptEMT implements IScriptLoader {
                         missing),
                 getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard, missing),
                 OrePrefixes.plate.get(Materials.Diamond),
-                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
+                OrePrefixes.circuit.get(Materials.HV),
                 OrePrefixes.plate.get(Materials.Diamond),
                 OrePrefixes.screw.get(Materials.Thaumium),
                 OrePrefixes.plate.get(Materials.Diamond),
                 OrePrefixes.screw.get(Materials.Thaumium),
                 OrePrefixes.plate.get(Materials.Diamond),
-                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
+                OrePrefixes.circuit.get(Materials.HV),
                 OrePrefixes.plate.get(Materials.Diamond));
         TCHelper.addResearchPage(
                 "DiamondOmnitool",
@@ -721,13 +721,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, wildcard, missing),
                 getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, wildcard, missing),
                 OrePrefixes.plate.get(Materials.TungstenSteel),
-                ItemList.Circuit_Elite.get(1L),
+                OrePrefixes.circuit.get(Materials.IV),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.screw.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.screw.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Thaumium),
-                ItemList.Circuit_Elite.get(1L),
+                OrePrefixes.circuit.get(Materials.IV),
                 OrePrefixes.plate.get(Materials.TungstenSteel));
         TCHelper.addResearchPage(
                 "ThaumiumOmnitool",
