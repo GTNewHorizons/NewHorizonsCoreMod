@@ -1152,11 +1152,11 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, wildcard, missing),
                 OrePrefixes.wireGt04.get(Materials.Electrum),
                 OrePrefixes.plate.get(Materials.Thaumium),
-                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
+            OrePrefixes.circuit.get(Materials.HV),
                 ItemList.Sensor_HV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                 ItemList.Sensor_HV.get(1L),
-                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
+            OrePrefixes.circuit.get(Materials.HV),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.wireGt04.get(Materials.Electrum));
         TCHelper.addResearchPage(
@@ -1191,13 +1191,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, wildcard, missing),
                 OrePrefixes.wireGt08.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Void),
-                ItemList.Circuit_Elite.get(1L),
+            OrePrefixes.circuit.get(Materials.IV),
                 ItemList.Sensor_EV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                 ItemList.Sensor_EV.get(1L),
-                ItemList.Circuit_Elite.get(1L),
+            OrePrefixes.circuit.get(Materials.IV),
                 OrePrefixes.plate.get(Materials.Void),
                 OrePrefixes.wireGt08.get(Materials.Titanium));
         TCHelper.addResearchPage(
