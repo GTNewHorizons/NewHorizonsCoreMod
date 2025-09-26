@@ -3314,6 +3314,7 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_copper", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_diamond", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_aluminium", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_obsidian", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_stainlesssteel", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_titanium", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_tungstensteel", 1, 0, missing));
