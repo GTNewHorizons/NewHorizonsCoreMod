@@ -1413,9 +1413,9 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
-                "abe",
+                "aba",
                 "cdc",
-                "eba",
+                "aba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1423,9 +1423,7 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
-                'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 1), // Iron
@@ -1574,7 +1572,7 @@ public class ScriptEFR implements IScriptLoader {
                 'a',
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1),
                 'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 0, missing), // Vanilla to Iron
@@ -1587,7 +1585,7 @@ public class ScriptEFR implements IScriptLoader {
                 'a',
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1),
                 'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 6, missing), // Copper to Iron
