@@ -16,6 +16,7 @@ import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
@@ -38,6 +39,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -530,6 +532,21 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 144))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "plants", 1, 12, missing)).eut(TierEU.RECIPE_HV).duration(10)
                 .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("fluidpure", 200),
+                        FluidRegistry.getFluidStack("fluiddeath", 200))
+                .itemInputs(getModItem(WitchingGadgets.ID, "WG_RoseVine", 1, 0, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 144))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "foliage", 1, 7, missing)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
 
+        ChiselHelper.addVariationFromStack("topaz", GTOreDictUnificator.get(OrePrefixes.block, Materials.Topaz, 1L));
+        ChiselHelper.addVariationFromStack("topaz", getModItem(BiomesOPlenty.ID, "gemOre", 1, 7, missing));
+
+        ChiselHelper.addVariationFromStack(
+                "tanzanite",
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Tanzanite, 1L));
+        ChiselHelper.addVariationFromStack("tanzanite", getModItem(BiomesOPlenty.ID, "gemOre", 1, 9, missing));
     }
 }

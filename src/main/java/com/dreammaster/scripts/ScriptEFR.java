@@ -28,6 +28,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -72,6 +73,7 @@ import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.google.common.collect.ImmutableList;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -209,6 +211,18 @@ public class ScriptEFR implements IScriptLoader {
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
         }
 
+        // EFR Flower Dyes
+
+        addShapelessRecipe(
+                ItemList.Color_04.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "cornflower", 1L, 0));
+        addShapelessRecipe(
+                ItemList.Color_15.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1L, 0));
+        addShapelessRecipe(
+                ItemList.Color_00.get(1L),
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "wither_rose", 1L, 0));
+
         // Slabs
 
         final String[] slabInputs = { "red_sandstone:0", "red_sandstone:2", "purpur_block:0", "stone:0",
@@ -224,6 +238,10 @@ public class ScriptEFR implements IScriptLoader {
                 "cut_copper_slab:0", "cut_copper_slab:1", "cut_copper_slab:2", "cut_copper_slab:3", "cut_copper_slab:4",
                 "cut_copper_slab:5", "cut_copper_slab:6", "cut_copper_slab:7", "blackstone_slab:0", "blackstone_slab:1",
                 "blackstone_slab:2" };
+
+        // Some slab shapeless recipes related to oredict are handled in ScriptMinecraft.java
+        final List<String> ignoreShapeless = ImmutableList.of("mossy_cobblestone:0", "stonebrick:1", "sandstone:2");
+
         for (int i = 0; i < slabInputs.length; i++) {
             String[] inParts = slabInputs[i].split(":");
             String[] outParts = slabOutputs[i].split(":");
@@ -237,11 +255,12 @@ public class ScriptEFR implements IScriptLoader {
             if (inName.equals("stone") || inName.equals("mossy_cobblestone")
                     || inName.equals("stonebrick")
                     || inName.equals("sandstone")) {
-                GTModHandler.addCraftingRecipe(
-                        GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
-                        bits,
-                        new Object[] { "BA ", "   ", "   ", 'A',
-                                GTModHandler.getModItem(Minecraft.ID, inName, 1L, inMeta), 'B', "craftingToolSaw" });
+                if (!ignoreShapeless.contains(slabInputs[i])) {
+                    addShapelessRecipe(
+                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
+                            "craftingToolSaw",
+                            GTModHandler.getModItem(Minecraft.ID, inName, 1L, inMeta));
+                }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
@@ -255,20 +274,18 @@ public class ScriptEFR implements IScriptLoader {
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
                         .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
             } else {
-                if (inName.equals("wood_planks")) {
-                    GTModHandler.addCraftingRecipe(
-                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
-                            bits,
-                            new Object[] { "BA ", "   ", "   ", 'A',
-                                    GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
-                                    "craftingToolSaw" });
-                } else {
-                    GTModHandler.addCraftingRecipe(
-                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
-                            bits,
-                            new Object[] { "BA ", "   ", "   ", 'A',
-                                    GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
-                                    "craftingToolSaw" });
+                if (!ignoreShapeless.contains(slabInputs[i])) {
+                    if (inName.equals("wood_planks")) {
+                        addShapelessRecipe(
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
+                                "craftingToolSaw",
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta));
+                    } else {
+                        addShapelessRecipe(
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
+                                "craftingToolSaw",
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta));
+                    }
                 }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
@@ -886,7 +903,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
                 bits,
                 new Object[] { "IGI", "PCP", "III", 'I', "plateIron", 'G', "dustGlowstone", 'P', "paneGlassColorless",
-                        'C', getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1, 0, missing) });
+                        'C', new ItemStack(Blocks.torch) });
 
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0, missing),
@@ -992,16 +1009,35 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1, missing)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
-        GTModHandler.addCraftingRecipe(
+        // Blast Furnace
+
+        addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                bits,
-                new Object[] { "PPP", "PFP", "SSS", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
-                        'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "craftingToolWrench",
+                "plateAnyIron",
+                "plateAnyIron",
+                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
+                "plateAnyIron");
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
-                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 3, 0, missing),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5L),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PigIron, 5L),
                         new ItemStack(Blocks.furnace, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1047,6 +1083,16 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'S',
                         getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing), 'C',
                         getModItem(AdventureBackpack.ID, "blockCampFire", 1, 0, missing) });
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.furnace, 1),
+                        getModItem(ZTones.ID, "minicharcoal", 6, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 2, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnyIron, 4L),
+                        GTUtility.getIntegratedCircuit(8))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "smoker", 1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "end_crystal", 1, 0, missing),
@@ -1367,9 +1413,9 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
-                "abe",
+                "aba",
                 "cdc",
-                "eba",
+                "aba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1377,9 +1423,7 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
-                'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 1), // Iron
@@ -1528,7 +1572,7 @@ public class ScriptEFR implements IScriptLoader {
                 'a',
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1),
                 'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 0, missing), // Vanilla to Iron
@@ -1541,7 +1585,7 @@ public class ScriptEFR implements IScriptLoader {
                 'a',
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1),
                 'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 6, missing), // Copper to Iron
