@@ -2,6 +2,7 @@ package com.dreammaster.tinkersConstruct.worldgen;
 
 import java.util.List;
 
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,9 +13,8 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import tconstruct.world.blocks.GravelOre;
 
-public class ZincGravelOre extends GravelOre {
+public class ZincGravelOre extends BlockSand {
 
     public IIcon icon;
 
