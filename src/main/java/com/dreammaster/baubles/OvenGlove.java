@@ -207,7 +207,7 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
             ItemStack[] stackList = baubles.stackList;
             for (int i = 0; i < stackList.length; i++) {
                 ItemStack stack = stackList[i];
-                if (stack.getItem() instanceof OvenGlove) {
+                if (stack != null && stack.getItem() instanceof OvenGlove) {
                     if (gloveL == null && stack.getItemDamage() == 0) {
                         gloveL = stack;
                     } else if (gloveR == null && stack.getItemDamage() == 1) {
@@ -219,11 +219,6 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
             }
 
             if (gloveL == null || gloveR == null) return;
-
-            // gloves are the same, skip
-            if (gloveL.getItemDamage() == gloveR.getItemDamage()) {
-                return;
-            }
 
             // Cheated gloves don't have NBT tags sometimes
             if (gloveL.stackTagCompound == null || gloveR.stackTagCompound == null) {
