@@ -17,6 +17,7 @@ import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
 import goodgenerator.loader.Loaders;
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.ItemList;
 import gregtech.api.util.GTModHandler;
 import tectech.thing.casing.TTCasingsContainer;
 
@@ -33,6 +34,10 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         API.hideItem(new ItemStack(GregTechAPI.nanoForgeRender));
         API.hideItem(new ItemStack(TTCasingsContainer.eyeOfHarmonyRenderBlock));
         API.hideItem(new ItemStack(TTCasingsContainer.forgeOfGodsRenderBlock));
+
+        // Hidden Space Project Manager & Space Research Until Fully Developed
+        API.hideItem(ItemList.SpaceElevatorModuleResearch.get(1));
+        API.hideItem(ItemList.SpaceElevatorModuleManager.get(1));
 
         if (Aroma1997Core.isModLoaded()) {
             API.hideItem(GTModHandler.getModItem(Aroma1997Core.ID, "wrenched", 1));
