@@ -2249,7 +2249,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.VanadiumGallium, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
                         ItemList.Transformer_ZPM_LuV.get(1),
-                        ItemList.Casing_Coil_TungstenSteel.get(1))
+                        ItemList.Casing_Coil_TungstenSteel.get(2))
                 .itemOutputs(GregtechItemList.Transformer_HA_ZPM_LuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
