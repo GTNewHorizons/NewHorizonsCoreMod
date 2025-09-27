@@ -2,7 +2,6 @@ package com.dreammaster.baubles;
 
 import java.util.List;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -30,9 +29,6 @@ import baubles.common.lib.PlayerHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
-import eu.usrv.yamcore.auxiliary.Hacks;
-import eu.usrv.yamcore.client.Notification;
-import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.iface.IExtendedModItem;
 import gregtech.api.damagesources.GTDamageSources.DamageSourceHotItem;
 import gregtech.api.enums.Mods;
@@ -113,7 +109,7 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
 
     @Override
     public boolean canEquip(ItemStack arg0, EntityLivingBase arg1) {
-        return true;
+        return arg1 instanceof EntityPlayer;
     }
 
     @Override
@@ -127,42 +123,12 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
     }
 
     @Override
-    public void onWornTick(ItemStack itemStack, EntityLivingBase entity) {
-        if (!shouldNotify(entity)) return;
+    public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
 
-        if (checkPopup) {
-            InventoryBaubles baubles = PlayerHandler.getPlayerBaubles((EntityPlayer) entity);
-
-            ItemStack ring1 = baubles.stackList[1];
-            ItemStack ring2 = baubles.stackList[2];
-
-            if (ring1 == null || ring2 == null
-                    || !(ring1.getItem() instanceof OvenGlove)
-                    || !(ring2.getItem() instanceof OvenGlove)) {
-                return;
-            }
-
-            if (ring1.getItemDamage() != 0 || ring2.getItemDamage() != 1) { // When the left one is on 'right' hand or
-                                                                            // vice versa
-                Notification noti = new Notification(ring1, "Wrong place", "The gloves feel weird...");
-                NotificationTickHandler.guiNotification.queueNotification(noti);
-            }
-
-            checkPopup = false;
-        }
-    }
-
-    private boolean shouldNotify(EntityLivingBase entity) {
-        return entity instanceof EntityPlayer && entity.worldObj.isRemote
-                && entity == Hacks.safeCast(Minecraft.getMinecraft().thePlayer);
     }
 
     @Override
-    public void onEquipped(ItemStack arg0, EntityLivingBase entity) {
-        if (!shouldNotify(entity)) return;
-
-        checkPopup = true;
-    }
+    public void onEquipped(ItemStack arg0, EntityLivingBase entity) {}
 
     @Override
     public void onUnequipped(ItemStack arg0, EntityLivingBase pEntityBase) {}
@@ -208,10 +174,9 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
         public void onDamage(LivingAttackEvent event) {
             Entity entity = event.entity;
 
-            if (!(entity instanceof EntityPlayer)) {
+            if (!(entity instanceof EntityPlayer player)) {
                 return;
             }
-            EntityPlayer player = (EntityPlayer) entity;
 
             if (!(event.source instanceof DamageSourceHotItem)) {
                 return;
@@ -227,49 +192,53 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
             ItemStack cause = ((DamageSourceHotItem) event.source).getDamagingStack();
 
             // We cancel damage only for held items!
-            boolean cancelled = cause == player.getHeldItem();
-            if (!cancelled && Mods.Backhand.isModLoaded()) {
+            boolean shouldAttemptCancel = cause == player.getHeldItem();
+            if (!shouldAttemptCancel && Mods.Backhand.isModLoaded()) {
                 if (cause == BackhandUtils.getOffhandItem(player)) {
-                    cancelled = true;
+                    shouldAttemptCancel = true;
                 }
             }
 
-            if (!cancelled) return;
+            if (!shouldAttemptCancel) return;
 
-            ItemStack ring1 = baubles.stackList[1];
-            ItemStack ring2 = baubles.stackList[2];
+            ItemStack gloveL = null;
+            ItemStack gloveR = null;
 
-            if (ring1 == null || ring2 == null
-                    || !(ring1.getItem() instanceof OvenGlove)
-                    || !(ring2.getItem() instanceof OvenGlove)) {
+            ItemStack[] stackList = baubles.stackList;
+            for (int i = 0; i < stackList.length; i++) {
+                ItemStack stack = stackList[i];
+                if (stack != null && stack.getItem() instanceof OvenGlove) {
+                    if (gloveL == null && stack.getItemDamage() == 0) {
+                        gloveL = stack;
+                    } else if (gloveR == null && stack.getItemDamage() == 1) {
+                        gloveR = stack;
+                    }
+
+                    if (gloveL != null && gloveR != null) break;
+                }
+            }
+
+            if (gloveL == null || gloveR == null) return;
+
+            // Cheated gloves don't have NBT tags sometimes
+            if (gloveL.stackTagCompound == null || gloveR.stackTagCompound == null) {
                 return;
             }
 
-            if (ring1.getItemDamage() != 0 || ring2.getItemDamage() != 1) { // When the left one is on 'right' hand or
-                                                                            // vice versa
-                return;
-            }
-
-            if (ring1.stackTagCompound == null || ring2.stackTagCompound == null) // Cheated gloves don't have NBT tags
-                                                                                  // sometimes
-            {
-                return;
-            }
-
-            if (ring1.stackTagCompound.getInteger(NBTTAG_DURABILITY) <= 1
-                    || ring2.stackTagCompound.getInteger(NBTTAG_DURABILITY) <= 1) {
+            if (gloveL.stackTagCompound.getInteger(NBTTAG_DURABILITY) <= 1
+                    || gloveR.stackTagCompound.getInteger(NBTTAG_DURABILITY) <= 1) {
                 return;
             }
 
             event.setCanceled(true);
 
-            int randomDamage = MainRegistry.Rnd.nextInt(10); // Randomly damage gloves while giving the protection
-                                                             // effect
+            // Randomly damage gloves while giving the protection effect
+            int randomDamage = MainRegistry.Rnd.nextInt(10);
 
             if (randomDamage == 1) {
-                OvenGlove.damageItem(ring1);
+                OvenGlove.damageItem(gloveL);
             } else if (randomDamage == 2) {
-                OvenGlove.damageItem(ring2);
+                OvenGlove.damageItem(gloveR);
             }
         }
     }

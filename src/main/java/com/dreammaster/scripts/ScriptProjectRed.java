@@ -480,227 +480,6 @@ public class ScriptProjectRed implements IScriptLoader {
                 "screwSteel",
                 "craftingToolScrewdriver",
                 "screwSteel");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                "plateAnyRubber");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 1, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeWhite");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 1, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 2, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeOrange");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 2, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 3, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeMagenta");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 3, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 4, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeLightBlue");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 4, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 5, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeYellow");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 5, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 6, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeLime");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 6, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 7, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyePink");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 7, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 8, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeGray");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 8, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 9, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeLightGray");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 9, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 10, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeCyan");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 10, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 11, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyePurple");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 11, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 12, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeBlue");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 12, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 13, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeBrown");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 13, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 14, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeGreen");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 14, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 15, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                "dyeRed");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 15, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 18, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeWhite");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 18, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 19, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeOrange");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 19, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 20, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeMagenta");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 20, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 21, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeLightBlue");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 21, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 22, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeYellow");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 22, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 23, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeLime");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 23, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 24, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyePink");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 24, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 25, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeGray");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 25, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 26, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeLightGray");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 26, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 27, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeCyan");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 27, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 28, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyePurple");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 28, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 29, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeBlue");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 29, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 30, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeBrown");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 30, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 31, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeGreen");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 31, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 32, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeRed");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 32, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 33, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                "dyeBlack");
-        addShapelessRecipe(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 33, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
                 null,
@@ -2081,24 +1860,6 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedExpansion.ID, "projectred.expansion.electric_screwdriver", 1, 0, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 5))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
-                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 5L))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
-                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 5L))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
-                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
@@ -3752,54 +3513,6 @@ public class ScriptProjectRed implements IScriptLoader {
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.ElectrotineWire.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
-                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.ElectrotineWire.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
-                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.ElectrotineWire.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
-                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
-                .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
-                .itemOutputs(
-                        NHItemList.ElectrotineWire.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
-                .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing))
@@ -3812,5 +3525,179 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(GTModHandler.getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1L, 0))
                 .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        // Base (Black) Insulated Wire
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
+                "plateAnyRubber");
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing))
+                .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
+
+        // Base Bundled Cable
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 5))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
+                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 5L))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
+                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 5L))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
+                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing))
+                .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
+
+        // Low Load Power Cable
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.ElectrotineWire.getIS(1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.ElectrotineWire.getIS(1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.ElectrotineWire.getIS(1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
+                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
+                .itemOutputs(NHItemList.ElectrotineWire.getIS(1)).duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
+
+        // All Framed Wire Variants
+        for (int i = 0; i <= 34; i++) {
+            if (i >= 18 && i <= 33) continue;
+            addShapedRecipe(
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, i, missing),
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i, missing),
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood");
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i, missing),
+                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L))
+                    .itemOutputs(
+                            getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, i, missing))
+                    .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, i, missing))
+                    .itemOutputs(
+                            getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i, missing),
+                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L))
+                    .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
+        }
+
+        final String[] cableDyes = { "dyeblack", "dyered", "dyegreen", "dyebrown", "dyeblue", "dyepurple", "dyecyan",
+                "dyelightgray", "dyegray", "dyepink", "dyelime", "dyeyellow", "dyelightblue", "dyemagenta", "dyeorange",
+                "dyewhite" };
+
+        final String[] craftingCableDyes = { "dyeBlack", "dyeRed", "dyeGreen", "dyeBrown", "dyeBlue", "dyePurple",
+                "dyeCyan", "dyeLightGray", "dyeGray", "dyePink", "dyeLime", "dyeYellow", "dyeLightBlue", "dyeMagenta",
+                "dyeOrange", "dyeWhite" };
+
+        // Insulated Wire Dyeing
+        for (int i = 1; i < cableDyes.length; i++) {
+            int outputMeta = 16 - i;
+
+            addShapelessRecipe(
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                    craftingCableDyes[i]);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
+                    .itemOutputs(
+                            getModItem(
+                                    ProjectRedTransmission.ID,
+                                    "projectred.transmission.wire",
+                                    1,
+                                    outputMeta,
+                                    missing))
+                    .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 18))
+                    .duration(1 * SECONDS + 5 * TICKS).eut(2).addTo(chemicalBathRecipes);
+        }
+
+        // Insulated Wire Undyeing
+        for (int i = 1; i < 16; i++) {
+            addShapelessRecipe(
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i, missing));
+        }
+
+        // Bundled Cable Dyeing
+        for (int i = 0; i < cableDyes.length; i++) {
+            int outputMeta = 33 - i;
+
+            addShapelessRecipe(
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                    craftingCableDyes[i]);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
+                    .itemOutputs(
+                            getModItem(
+                                    ProjectRedTransmission.ID,
+                                    "projectred.transmission.wire",
+                                    1,
+                                    outputMeta,
+                                    missing))
+                    .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 36))
+                    .duration(1 * SECONDS + 5 * TICKS).eut(2).addTo(chemicalBathRecipes);
+        }
+
+        // Bundled Cable Undyeing
+        for (int i = 18; i < 34; i++) {
+            addShapelessRecipe(
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i, missing));
+        }
     }
 }

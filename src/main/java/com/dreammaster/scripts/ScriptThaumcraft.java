@@ -1333,11 +1333,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.lens.get(Materials.NetherStar),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                getModItem(Minecraft.ID, "quartz", 1, 1, missing),
+                getModItem(Botania.ID, "quartz", 1, 1, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                getModItem(Minecraft.ID, "quartz", 1, 1, missing),
+                getModItem(Botania.ID, "quartz", 1, 1, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing));
         TCHelper.setResearchAspects(
                 "FOCUSWARDING",
@@ -1353,11 +1353,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("permutatio"), 10)
                         .add(Aspect.getAspect("praecantatio"), 5),
                 OrePrefixes.lens.get(Materials.EnderPearl),
-                getModItem(Minecraft.ID, "quartz", 1, 1, missing),
+                getModItem(Botania.ID, "quartz", 1, 1, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                getModItem(Minecraft.ID, "quartz", 1, 1, missing),
+                getModItem(Botania.ID, "quartz", 1, 1, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing));
@@ -1376,11 +1376,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("bestia"), 20).add(Aspect.getAspect("perditio"), 10)
                         .add(Aspect.getAspect("praecantatio"), 5),
                 OrePrefixes.lens.get(Materials.Firestone),
-                getModItem(Minecraft.ID, "quartz", 1, 4, missing),
+                getModItem(Botania.ID, "quartz", 1, 4, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                getModItem(Minecraft.ID, "quartz", 1, 4, missing),
+                getModItem(Botania.ID, "quartz", 1, 4, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
