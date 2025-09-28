@@ -1807,7 +1807,6 @@ public class AssemblingLineRecipes implements Runnable {
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
 
-
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Centrifuge.get(1))
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_EV)).itemInputs(
 
