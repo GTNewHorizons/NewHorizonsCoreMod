@@ -15,6 +15,7 @@ import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
+import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
@@ -1805,6 +1806,28 @@ public class AssemblingLineRecipes implements Runnable {
                 ItemRefer.AntimatterAnnihilationMatrix.get(4),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
+
+        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Centrifuge.get(1))
+                .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_EV)).itemInputs(
+
+                        GregtechItemList.Industrial_Centrifuge.get(64),
+                        ItemRefer.SC_Fluid_Turbine.get(4),
+                        GregtechItemList.Hatch_Turbine_Rotor.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        MaterialsAlloy.PIKYONIUM.getRotor(4),
+                        MaterialsAlloy.HELICOPTER.getRotor(4),
+                        MaterialsAlloy.TRINIUM_REINFORCED_STEEL.getRotor(4),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Netherite, 4),
+                        ItemList.Electric_Motor_ZPM.get(4),
+                        ItemList.Electric_Pump_ZPM.get(4),
+                        MaterialsAlloy.PIKYONIUM.getScrew(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorZPM, 16))
+                .fluidInputs(
+                        GGMaterial.marCeM200.getMolten(16 * INGOTS),
+                        MaterialsAlloy.INDALLOY_140.getFluidStack(10 * INGOTS),
+                        Materials.Lubricant.getFluid(4000))
+                .itemOutputs(ItemList.Machine_Multi_ChamberCentrifuge.get(1)).eut(TierEU.RECIPE_ZPM)
+                .duration(60 * SECONDS).addTo(AssemblyLine);
 
         if (AE2FluidCraft.isModLoaded()) {
             // Super Stock Replenisher
