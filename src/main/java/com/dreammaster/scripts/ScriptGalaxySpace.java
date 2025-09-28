@@ -533,10 +533,6 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 's',
                 ItemList.Sensor_MV.get(1));
 
-        // todo move somewhere else not in a script
-        // GT replaces this recipe automatically
-        addShapelessRecipe(getGSItem("barnardaClog", 1, 0), getGSItem("barnardaCplanks", 4, 0));
-
         addShapedRecipe(
                 getGSItem("item.spacesuit_boots", 1, 0),
                 "ABA",
