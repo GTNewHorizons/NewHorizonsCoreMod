@@ -47,6 +47,7 @@ import com.dreammaster.recipes.Recipe;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
+import cpw.mods.fml.common.registry.GameRegistry;
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.Dyes;
 import gregtech.api.enums.GTValues;
@@ -1374,6 +1375,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     new Object[] { "LLL", "PBP", "PVP", 'L', CustomItemList.BlackPlutoniumCompressedPlate.get(1), 'P',
                             CustomItemList.HeavyDutyPlateTier7.get(1), 'B', CustomItemList.Tier3Booster.get(1), 'V',
                             GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1L, 0) });
+
+            // Barnarda C Wood
+            // GT replaces this recipe automatically
+            GameRegistry.addShapelessRecipe(
+                    GTModHandler.getModItem(GalaxySpace.ID, "barnardaCplanks", 4, 0),
+                    GTModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 1, 0));
 
         }
 
