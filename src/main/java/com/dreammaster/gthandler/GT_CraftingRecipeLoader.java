@@ -615,7 +615,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 bits,
                 new Object[] { "RPR", "MBM", "CGC", 'B', ItemList.Hull_LV, 'R', OrePrefixes.rotor.get(Materials.Steel),
                         'P', ItemList.Electric_Pump_LV, 'M', ItemList.Electric_Motor_LV, 'C',
-                        OrePrefixes.cableGt01.get(Materials.Copper), 'G', ItemList.Casing_Turbine });
+                        OrePrefixes.cableGt01.get(Materials.Copper), 'G', ItemList.Casing_AirFilter_Turbine_T1 });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Vent_T2.get(1L),
                 bits,
@@ -633,7 +633,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "RPR", "MBM", "CGC", 'B', ItemList.Hull_HV, 'R',
                         OrePrefixes.rotor.get(Materials.Titanium), 'P', ItemList.Electric_Pump_HV, 'M',
                         ItemList.Electric_Motor_HV, 'C', OrePrefixes.cableGt01.get(Materials.Gold), 'G',
-                        ItemList.Casing_Turbine2 });
+                        ItemList.Casing_AirFilter_Turbine_T2 });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Vent_T3.get(1L),
                 bits,
@@ -652,7 +652,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "RPR", "MBM", "CGC", 'B', ItemList.Hull_IV, 'R',
                         OrePrefixes.rotor.get(Materials.TungstenSteel), 'P', ItemList.Electric_Pump_IV, 'M',
                         ItemList.Electric_Motor_IV, 'C', OrePrefixes.cableGt01.get(Materials.Tungsten), 'G',
-                        ItemList.Casing_Turbine3 });
+                        ItemList.Casing_AirFilter_Turbine_T3 });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Pyrolyse.get(1L),
@@ -1134,22 +1134,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         OrePrefixes.bolt.get(Materials.StainlessSteel), 'R',
                         OrePrefixes.ring.get(Materials.StainlessSteel), 'S',
                         GTModHandler.getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0) });
-        GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemTreetapElectric", 1, GTValues.W),
-                bits,
-                new Object[] { "dRD", "RPB", "ECS", 'R', OrePrefixes.stickLong.get(Materials.Steel), 'D',
-                        OrePrefixes.toolHeadDrill.get(Materials.Steel), 'P', ItemList.Electric_Pump_LV, 'B',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatRE", 1, GTValues.W), 'E',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3), 'C',
-                        OrePrefixes.cableGt01.get(Materials.Tin), 'S', screw.get(Materials.Steel) });
-        GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, GTValues.W),
-                bits,
-                new Object[] { "dPH", "PGB", "ECS", 'S', screw.get(Materials.Steel), 'H',
-                        OrePrefixes.stick.get(Materials.Steel), 'G', OrePrefixes.gearGtSmall.get(Materials.Steel), 'B',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatRE", 1, GTValues.W), 'E',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3), 'P',
-                        OrePrefixes.plate.get(Materials.Steel) });
 
         if (OpenComputers.isModLoaded()) GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(OpenComputers.ID, "wrench", 1, 0),

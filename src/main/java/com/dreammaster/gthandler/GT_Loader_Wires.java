@@ -29,7 +29,7 @@ public class GT_Loader_Wires {
         makeWires(Materials.MelodicAlloy, 11550, 2L, 4L, 4L, gregtech.api.enums.GTValues.V[6], true, false);
         makeWires(Materials.StellarAlloy, 11570, 12L, 24L, 12L, gregtech.api.enums.GTValues.V[8], true, false);
         makeWires(Materials.Trinium, 11450, 3L, 6L, 6L, GTValues.V[7], true, false);
-        makeWires(Materials.ElectrumFlux, 1900, 3L, 2L, 6L, GTValues.V[8], true, false);
+        makeWires(Materials.ElectrumFlux, 1900, 3L, 6L, 6L, GTValues.V[8], true, false);
         makeWires(Materials.Bedrockium, 11310, 6L, 48L, 3L, GTValues.V[9], true, false);
         makeWires(Materials.Osmiridium, 11610, 1L, 2L, 16L, GTValues.V[7], true, false);
         makeWires(Materials.HSSE, 11590, 4L, 8L, 6L, GTValues.V[6], true, false);
