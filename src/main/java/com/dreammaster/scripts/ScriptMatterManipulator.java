@@ -537,7 +537,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 (int) TierEU.RECIPE_UV,
                 8,
                 new Object[] { MMItemList.UpgradeBlank.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4L },
                         AEApi.instance().definitions().parts().cableDense().stack(AEColor.Transparent, 16),
                         AEApi.instance().definitions().parts().p2PTunnelGregtech().maybeStack(4).get(),
                         CustomItemList.Machine_Multi_Transformer.get(1),
