@@ -42,9 +42,19 @@ public class CustomToolTips {
             }
 
             for (ItemToolTip itt : mToolTips) {
-                if (itt.mUnlocalizedName.equalsIgnoreCase(tCompareName)
-                        && (itt.mNBT.isEmpty() || JsonToNBT.func_150315_a(itt.mNBT).equals(pItem.stackTagCompound))) {
-                    return itt;
+                if (itt.mMetaStart == null || itt.mMetaEnd == null) {
+                    if (itt.mUnlocalizedName.equalsIgnoreCase(tCompareName) && (itt.mNBT.isEmpty()
+                            || JsonToNBT.func_150315_a(itt.mNBT).equals(pItem.stackTagCompound))) {
+                        return itt;
+                    }
+                } else {
+                    if (tCompareName.startsWith(itt.mUnlocalizedName)
+                            && (pItem.getItemDamage() >= Integer.parseInt(itt.mMetaStart)
+                                    && pItem.getItemDamage() <= Integer.parseInt(itt.mMetaEnd))
+                            && (itt.mNBT.isEmpty()
+                                    || JsonToNBT.func_150315_a(itt.mNBT).equals(pItem.stackTagCompound))) {
+                        return itt;
+                    }
                 }
             }
 
@@ -73,6 +83,12 @@ public class CustomToolTips {
         @XmlAttribute(name = "NBT")
         protected String mNBT;
 
+        @XmlAttribute(name = "MetaStart")
+        protected String mMetaStart;
+
+        @XmlAttribute(name = "MetaEnd")
+        protected String mMetaEnd;
+
         public String getUnlocalizedName() {
             return mUnlocalizedName;
         }
@@ -83,6 +99,14 @@ public class CustomToolTips {
 
         public String getNBT() {
             return mNBT;
+        }
+
+        public String getMetaStart() {
+            return mMetaStart;
+        }
+
+        public String getMetaEnd() {
+            return mMetaEnd;
         }
     }
 }

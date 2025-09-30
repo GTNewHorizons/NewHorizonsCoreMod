@@ -33,10 +33,10 @@ public class ScriptIronTankMinecarts implements IScriptLoader {
     @Override
     public void loadRecipes() {
         for (TankType type : TankType.values()) {
-            if (type == TankType.GLASS || type == TankType.OBSIDIAN) {
+            if (type == TankType.GLASS) {
                 continue;
             }
-            ItemStack tank = getModItem(IronTanks.ID, type.name, 1, 1, missing);
+            ItemStack tank = getModItem(IronTanks.ID, type.name, 1, 0, missing);
             ItemStack cart = getModItem(
                     IronTanksMinecarts.ID,
                     "minecart_tank_" + secondderivative.irontankminecarts.IronTankMinecarts.tankTypeName(type),

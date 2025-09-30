@@ -20,6 +20,7 @@ import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -29,6 +30,7 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -590,7 +592,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateCertusQuartz",
                 "screwCertusQuartz",
                 "plateTungsten",
-                "gemEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47),
                 "plateTungsten",
                 "screwCertusQuartz",
                 "plateTungsten",
@@ -808,6 +810,12 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateTitanium",
                 ItemList.Electric_Piston_EV.get(1L),
                 "plateTitanium");
+
+        GTValues.RA.stdBuilder()
+                .itemInputsUnsafe(GTUtility.copyAmountUnsafe(512000, new ItemStack(Blocks.cobblestone, 1)))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47, missing))
+                .duration(3 * SECONDS).eut(TierEU.RECIPE_IV).addTo(neutroniumCompressorRecipes);
+
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyAcceptor", 1, 0, missing),
                 "plateTitanium",

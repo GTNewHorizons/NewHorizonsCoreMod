@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -37,12 +38,14 @@ import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.fluids.GTPPFluids;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
 
@@ -1000,6 +1003,12 @@ public class MixerRecipes implements Runnable {
                 .itemOutputs(Materials.AstralSilver.getDust(3)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(mixerRecipes);
 
+        // Chamber Centrifuge Tier2 Fluid
+        GTValues.RA.stdBuilder().itemInputs(Materials.CosmicNeutronium.getDust(4), Materials.Glowstone.getNanite(2))
+                .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), MaterialsUEVplus.LumipodExtract.getFluid(1000))
+                .fluidOutputs(MaterialsUEVplus.BiocatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)
+                .eut(TierEU.UHV).addTo(mixerNonCellRecipes);
+
         if (PamsHarvestCraft.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
@@ -1009,6 +1018,16 @@ public class MixerRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
                     .itemOutputs(CustomItemList.WetTofu.get(1L)).fluidInputs(GTModHandler.getDistilledWater(50L))
                     .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+        }
+        if (Botania.isModLoaded()) {
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.Terrasteel, 1L),
+                            GTModHandler.getModItem(Botania.ID, "manaResource", 4, 5))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.GaiaSpirit, 1L))
+                    .duration(30 * SECONDS).eut(200).addTo(mixerRecipes);
+
         }
 
         if (OpenComputers.isModLoaded()) {
