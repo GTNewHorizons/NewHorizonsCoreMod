@@ -113,6 +113,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
             // neuter Open to LAN
             mixins.add("MixinIntegratedServer");
+            mixins.add("MixinGuiShareToLan");
         }
         mixins.add("MixinTileEntityBeacon");
         return mixins;
