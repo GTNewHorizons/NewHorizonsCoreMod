@@ -1791,3 +1791,5 @@ dreamcraft.welcome.click_discord=Click to open Discord!
 dreamcraft.pausemenu.bug=Report a Bug
 dreamcraft.pausemenu.wiki=Open the Wiki
 dreamcraft.pausemenu.sharetolan.tooltip=§cOpen to LAN is not supported in GTNH§r\nInstead, setup a dedicated server for multiplayer\nCheck the wiki for instructions\nYou can run the server in parallel with the\ngame client on one computer
+
+dreamcraft.gui.sharetolan.message=GTNH does not support multiplayer via Open To LAN. §cExternal connections are disabled!§r
