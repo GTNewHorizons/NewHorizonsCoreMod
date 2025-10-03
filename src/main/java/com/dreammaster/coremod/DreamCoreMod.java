@@ -110,6 +110,9 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         if (FMLLaunchHandler.side().isClient()) {
             mixins.add("MixinMinecraft_ConfirmExit");
             mixins.add("MixinMinecraft_PackIcon");
+
+            // neuter Open to LAN
+            mixins.add("MixinIntegratedServer");
         }
         mixins.add("MixinTileEntityBeacon");
         return mixins;
