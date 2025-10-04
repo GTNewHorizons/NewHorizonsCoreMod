@@ -8553,6 +8553,8 @@ public class AssemblerRecipes implements Runnable {
         addLootbagPair(6, 7, 3L, 1L, TierEU.RECIPE_EV, DURATION); // HV -> EV
         addLootbagPair(7, 8, 3L, 1L, TierEU.RECIPE_IV, DURATION); // EV -> IV
         addLootbagPair(8, 41, 3L, 1L, TierEU.RECIPE_LuV, DURATION); // IV -> LuV
+        addLootbagPair(41, 42, 3L, 1L, TierEU.RECIPE_ZPM, DURATION); // LuV -> ZPM
+        addLootbagPair(42, 43, 3L, 1L, TierEU.RECIPE_UV, DURATION); // ZPM -> UV
 
         // Forest Ranger
         addLootbagPair(19, 20, 3L, 1L, TierEU.RECIPE_LV, DURATION); // Basic -> Advanced
