@@ -10,6 +10,8 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
+import com.cubefury.vendingmachine.items.VMItems;
+
 import gregtech.api.GregTechAPI;
 
 @SuppressWarnings("deprecation")
@@ -28,7 +30,7 @@ public class ScriptVendingMachine implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem(VendingMachine.ID, "multimachine.vendingmachine", 1, 0, missing),
+                VMItems.vendingMachine,
                 getModItem(Minecraft.ID, "dispenser", 1, 0),
                 "craftingToolWrench",
                 getModItem(Minecraft.ID, "dispenser", 1, 0),
@@ -39,7 +41,7 @@ public class ScriptVendingMachine implements IScriptLoader {
                 getModItem(Minecraft.ID, "chest", 1),
                 "cableGt01Tin");
         addShapelessRecipe(
-                getModItem(VendingMachine.ID, "hatch.vendinguplink.me", 1, 0, missing),
+                VMItems.uplinkHatch,
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
                 getModItem(Minecraft.ID, "dispenser", 1, 0));
     }
