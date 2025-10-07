@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static
 import gregtech.api.GregTechAPI;
 import net.minecraft.item.ItemStack;
 
