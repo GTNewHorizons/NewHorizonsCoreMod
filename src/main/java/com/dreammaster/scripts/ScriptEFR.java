@@ -73,6 +73,7 @@ import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.google.common.collect.ImmutableList;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -134,33 +135,6 @@ public class ScriptEFR implements IScriptLoader {
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
                 .addTo(assemblerRecipes);
-
-        // Cherry Planks
-        addShapelessRecipe(
-                getModItem(EtFuturumRequiem.ID, "wood_planks", 2, 3),
-                getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0));
-        addShapelessRecipe(
-                getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                "craftingToolSaw",
-                getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0));
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
-                .itemOutputs(
-                        getModItem(EtFuturumRequiem.ID, "wood_planks", 6, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(10 * SECONDS).eut(8)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
-                .itemOutputs(
-                        getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 5)).duration(20 * SECONDS).eut(8)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
-                .itemOutputs(
-                        getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3)).duration(20 * SECONDS)
-                .eut(8).addTo(cutterRecipes);
 
         // Cherry Trapdoors
 
@@ -237,6 +211,10 @@ public class ScriptEFR implements IScriptLoader {
                 "cut_copper_slab:0", "cut_copper_slab:1", "cut_copper_slab:2", "cut_copper_slab:3", "cut_copper_slab:4",
                 "cut_copper_slab:5", "cut_copper_slab:6", "cut_copper_slab:7", "blackstone_slab:0", "blackstone_slab:1",
                 "blackstone_slab:2" };
+
+        // Some slab shapeless recipes related to oredict are handled in ScriptMinecraft.java
+        final List<String> ignoreShapeless = ImmutableList.of("mossy_cobblestone:0", "stonebrick:1", "sandstone:2");
+
         for (int i = 0; i < slabInputs.length; i++) {
             String[] inParts = slabInputs[i].split(":");
             String[] outParts = slabOutputs[i].split(":");
@@ -250,11 +228,12 @@ public class ScriptEFR implements IScriptLoader {
             if (inName.equals("stone") || inName.equals("mossy_cobblestone")
                     || inName.equals("stonebrick")
                     || inName.equals("sandstone")) {
-                GTModHandler.addCraftingRecipe(
-                        GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
-                        bits,
-                        new Object[] { "BA ", "   ", "   ", 'A',
-                                GTModHandler.getModItem(Minecraft.ID, inName, 1L, inMeta), 'B', "craftingToolSaw" });
+                if (!ignoreShapeless.contains(slabInputs[i])) {
+                    addShapelessRecipe(
+                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
+                            "craftingToolSaw",
+                            GTModHandler.getModItem(Minecraft.ID, inName, 1L, inMeta));
+                }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
@@ -268,20 +247,18 @@ public class ScriptEFR implements IScriptLoader {
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
                         .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
             } else {
-                if (inName.equals("wood_planks")) {
-                    GTModHandler.addCraftingRecipe(
-                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
-                            bits,
-                            new Object[] { "BA ", "   ", "   ", 'A',
-                                    GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
-                                    "craftingToolSaw" });
-                } else {
-                    GTModHandler.addCraftingRecipe(
-                            GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
-                            bits,
-                            new Object[] { "BA ", "   ", "   ", 'A',
-                                    GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta), 'B',
-                                    "craftingToolSaw" });
+                if (!ignoreShapeless.contains(slabInputs[i])) {
+                    if (inName.equals("wood_planks")) {
+                        addShapelessRecipe(
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 2, outMeta),
+                                "craftingToolSaw",
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta));
+                    } else {
+                        addShapelessRecipe(
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, outName, 1, outMeta),
+                                "craftingToolSaw",
+                                GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta));
+                    }
                 }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
@@ -1409,9 +1386,9 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
-                "abe",
+                "aba",
                 "cdc",
-                "eba",
+                "aba",
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
@@ -1419,9 +1396,7 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 GTOreDictUnificator.get("plateLivingwood", 1),
                 'd',
-                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
-                'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 1), // Iron
@@ -1570,7 +1545,7 @@ public class ScriptEFR implements IScriptLoader {
                 'a',
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1),
                 'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 0, missing), // Vanilla to Iron
@@ -1583,7 +1558,7 @@ public class ScriptEFR implements IScriptLoader {
                 'a',
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1),
                 'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 6, missing), // Copper to Iron

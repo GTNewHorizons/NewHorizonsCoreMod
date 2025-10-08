@@ -2249,7 +2249,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.VanadiumGallium, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
                         ItemList.Transformer_ZPM_LuV.get(1),
-                        ItemList.Casing_Coil_TungstenSteel.get(1))
+                        ItemList.Casing_Coil_TungstenSteel.get(2))
                 .itemOutputs(GregtechItemList.Transformer_HA_ZPM_LuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -2802,6 +2802,19 @@ public class AssemblerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(1))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(8 * 144))
                 .itemOutputs(ItemList.Hatch_DegasifierControl.get(1)).eut(TierEU.RECIPE_UHV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // Spinmatron Centrifuge Casings
+        GTValues.RA.stdBuilder()
+                .itemInputs(GregtechItemList.Casing_Centrifuge1.get(1), WerkstoffLoader.HDCS.get(OrePrefixes.plate, 6))
+                .itemOutputs(ItemList.Chamber_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GregtechItemList.Casing_SifterGrate.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.NaquadahEnriched, 6))
+                .itemOutputs(ItemList.Chamber_Grate.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
         if (HardcoreEnderExpansion.isModLoaded()) {
@@ -8552,6 +8565,8 @@ public class AssemblerRecipes implements Runnable {
         addLootbagPair(6, 7, 3L, 1L, TierEU.RECIPE_EV, DURATION); // HV -> EV
         addLootbagPair(7, 8, 3L, 1L, TierEU.RECIPE_IV, DURATION); // EV -> IV
         addLootbagPair(8, 41, 3L, 1L, TierEU.RECIPE_LuV, DURATION); // IV -> LuV
+        addLootbagPair(41, 42, 3L, 1L, TierEU.RECIPE_ZPM, DURATION); // LuV -> ZPM
+        addLootbagPair(42, 43, 3L, 1L, TierEU.RECIPE_UV, DURATION); // ZPM -> UV
 
         // Forest Ranger
         addLootbagPair(19, 20, 3L, 1L, TierEU.RECIPE_LV, DURATION); // Basic -> Advanced
