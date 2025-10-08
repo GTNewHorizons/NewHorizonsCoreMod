@@ -289,15 +289,15 @@ public class ScriptSGCraft implements IScriptLoader {
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahAlloy, 8L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.DraconiumAwakened, 32L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 32L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 32L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Dilithium, 32L),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Amber, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Ichorium, 16L),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 64L),
-                        GTModHandler.getModItem(DraconicEvolution.ID, "chaosFragment", 8L),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 2L),
-                        GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L,3)
+                        GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 8L,3),
+                        GTModHandler.getModItem(DraconicEvolution.ID, "chaosFragment", 2L),
+                        GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L,26)
                 )
-                .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 1000, 250)
+                .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 500, 250)
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("plasma.celestialtungsten"), 144))
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("molten.tungsten"), 144))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
