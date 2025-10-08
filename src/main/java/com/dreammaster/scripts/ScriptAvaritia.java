@@ -500,7 +500,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'd',
                 getModItem(DraconicEvolution.ID, "draconicPickaxe", 1, 0, missing),
                 'e',
-                getModItem(GraviSuite.ID, "advDDrill", 1, 1, missing),
+                getModItem(GraviSuite.ID, "advDDrill", 1, 32767, missing),
                 'f',
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'g',
@@ -514,7 +514,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
                 'l',
-                createItemStack(Botania.ID, "terraPick", 1, 0, "{mana:2147483421,tipped:1b}", missing),
+                getModItem(Botania.ID, "terraPick", 1, 0, missing),
                 'm',
                 getModItem(ForbiddenMagic.ID, "MorphPickaxe", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
