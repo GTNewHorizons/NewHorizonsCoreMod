@@ -1,54 +1,10 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.AE2Stuff;
-import static gregtech.api.enums.Mods.AdventureBackpack;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.ElectroMagicTools;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MagicBees;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.TaintedMagic;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicBases;
-import static gregtech.api.enums.Mods.ThaumicHorizons;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.enums.Mods.WitchingGadgets;
-import static gregtech.api.enums.Mods.ZTones;
-import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
-import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
-import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
-import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
-import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
-import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
-import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
-import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
-import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
-import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
+import static gregtech.api.enums.Mods.*;
+import static gregtech.api.recipe.RecipeMaps.*;
+import static gregtech.api.util.GTModHandler.*;
 import static gregtech.api.util.GTModHandler.getModItem;
-import static gregtech.api.util.GTRecipeBuilder.MINUTES;
-import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeBuilder.*;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
@@ -78,6 +34,8 @@ import com.google.common.collect.ImmutableList;
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import forestry.api.recipes.RecipeManagers;
+import forestry.core.fluids.Fluids;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -1263,6 +1221,7 @@ public class ScriptEFR implements IScriptLoader {
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         // stoneworks
+
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing))
                 .itemOutputs(NHItemList.TuffDust.getIS(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
 
@@ -2062,6 +2021,105 @@ public class ScriptEFR implements IScriptLoader {
             if (efrConcretePowder == null) continue;
             ChiselHelper.addVariationFromStack("hempcretesand", efrConcretePowder);
         }
+
+        // Remove Red sandstone recipes
+        removeRecipeByOutput(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
+        removeRecipeByOutput(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+        removeRecipeByOutput(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+        removeRecipeByOutput(getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
+
+        // Red Sandstone OreDict
+
+        OreDictionary.registerOre("redsandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
+        OreDictionary.registerOre("redsandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+        OreDictionary.registerOre("redsandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+        OreDictionary.registerOre("redsandstone", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
+
+        OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
+        OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+        OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+        OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
+
+        /*
+         * OreDictionary.registerOre("stoneSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
+         * OreDictionary.registerOre("stoneSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+         * OreDictionary.registerOre("stoneSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+         * OreDictionary.registerOre("stoneSand", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
+         */
+
+        /*
+         * OreDictionary.registerOre("sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
+         * OreDictionary.registerOre("sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+         * OreDictionary.registerOre("sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+         * OreDictionary.registerOre("sandstone", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
+         */
+
+        // Red sand
+        for (ItemStack item : OreDictionary.getOres("stoneRedSand")) {
+            GTValues.RA.stdBuilder().itemInputs(item).itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1, missing))
+                    .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+        }
+
+        // Red sandstone
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "red_sandstone", 4, 1, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing))
+                .duration(2 * SECONDS + 10 * TICKS).eut(2).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "red_sandstone", 4, 2, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing))
+                .duration(2 * SECONDS + 10 * TICKS).eut(2).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 4, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(2).addTo(compressorRecipes);
+
+        // Cut Red Sandstone
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(23))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2, missing))
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(assemblerRecipes);
+
+        // Chiseled Red Sandstone
+        for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensWhite")) { // Copied from ScriptGalacticraft.java
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2, missing),
+                            GTUtility.copyAmount(0, lens))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1, missing))
+                    .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
+        }
+
+        // Red Sandstone Chisel group
+
+        ChiselHelper.addGroup("red_sandstone");
+        ChiselHelper.addVariationFromStack("red_sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
+        ChiselHelper.addVariationFromStack("red_sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+        ChiselHelper.addVariationFromStack("red_sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+        ChiselHelper
+                .addVariationFromStack("red_sandstone", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
+
+        // Add Red Sandstone as valid sand for Thermionic Fabricator
+        RecipeManagers.fabricatorSmeltingManager
+                .addSmelting(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0), Fluids.GLASS.getFluid(4000), 4800);
+        RecipeManagers.fabricatorSmeltingManager
+                .addSmelting(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1), Fluids.GLASS.getFluid(4000), 4800);
+        RecipeManagers.fabricatorSmeltingManager
+                .addSmelting(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2), Fluids.GLASS.getFluid(4000), 4800);
+        RecipeManagers.fabricatorSmeltingManager.addSmelting(
+                getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0),
+                Fluids.GLASS.getFluid(4000),
+                4800);
+
     }
 
     // Oxidation Functions
