@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -21,6 +22,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
+import static gregtech.api.util.GTModHandler.getModItem;
 import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
 import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
 import static gtPlusPlus.core.material.MaterialsAlloy.LEAGRISIUM;
@@ -1375,13 +1377,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     new Object[] { "LLL", "PBP", "PVP", 'L', CustomItemList.BlackPlutoniumCompressedPlate.get(1), 'P',
                             CustomItemList.HeavyDutyPlateTier7.get(1), 'B', CustomItemList.Tier3Booster.get(1), 'V',
                             GTModHandler.getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1L, 0) });
-
-            // Barnarda C Wood
-            // GT replaces this recipe automatically
-            GameRegistry.addShapelessRecipe(
-                    GTModHandler.getModItem(GalaxySpace.ID, "barnardaCplanks", 4, 0),
-                    GTModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 1, 0));
-
         }
 
         if (Mods.GraviSuite.isModLoaded()) {
@@ -2365,6 +2360,58 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Hatch_Input_MAX.get(1),
                 bits,
                 new Object[] { ItemList.Hatch_Output_MAX, ToolDictNames.craftingToolScrewdriver, });
+
+        // add various plank recipes
+        // GT replaces these recipes automatically
+
+        if (GalaxySpace.isModLoaded()) {
+            // Barnarda C Wood
+            GameRegistry.addShapelessRecipe(
+                    GTModHandler.getModItem(GalaxySpace.ID, "barnardaCplanks", 4, 0),
+                    GTModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 1, 0));
+        }
+
+        if (EtFuturumRequiem.isModLoaded()) {
+            // Cherry
+            GameRegistry.addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4L, 3),
+                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0));
+
+            // Stripped Oak
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 0),
+                    getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 0));
+
+            // Stripped Spruce
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 1),
+                    getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 1));
+
+            // Stripped Birch
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 2),
+                    getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 2));
+
+            // Stripped Jungle
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 3));
+
+            // Stripped Acacia
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 4),
+                    getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 0));
+
+            // Stripped Dark Oak
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 5),
+                    getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 1));
+
+            // Stripped Cherry
+            GameRegistry.addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4L, 3),
+                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2));
+        }
     }
 
     private Consumer<Recipe> shapelessUnremovableGtRecipes() {

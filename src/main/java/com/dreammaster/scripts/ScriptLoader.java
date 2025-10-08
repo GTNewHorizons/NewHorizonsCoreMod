@@ -119,6 +119,7 @@ public class ScriptLoader {
                         new ScriptTinkersDefence(),
                         new ScriptTranslocator(),
                         new ScriptTwilightForest(),
+                        new ScriptVendingMachine(),
                         new ScriptWarpTheory(),
                         new ScriptWirelessRedstone(),
                         new ScriptWitchery(),
