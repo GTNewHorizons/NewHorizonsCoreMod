@@ -500,7 +500,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'd',
                 getModItem(DraconicEvolution.ID, "draconicPickaxe", 1, 0, missing),
                 'e',
-                getModItem(GraviSuite.ID, "advDDrill", 1, 32767, missing),
+                getModItem(GraviSuite.ID, "advDDrill", 1, wildcard, missing),
                 'f',
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'g',
