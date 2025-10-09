@@ -3808,6 +3808,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("alienis"), 6)
                         .add(Aspect.getAspect("potentia"), 3));
         TCHelper.setResearchComplexity("RUNICARMOR", 3);
+
+        TCHelper.clearPages("MIRROR");
+        TCHelper.addResearchPage("MIRROR", new ResearchPage("tc.research_page.MIRROR.1"));
+        TCHelper.addResearchPage("MIRROR", new ResearchPage("tc.research_page.MIRROR.2"));
         TCHelper.addInfusionCraftingRecipe(
                 "MIRROR",
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 0, missing),
@@ -3823,6 +3827,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.screw.get(Materials.Thaumium),
                 OrePrefixes.plate.get(Materials.Gold),
                 OrePrefixes.screw.get(Materials.Thaumium));
+        TCHelper.addResearchPage(
+                "MIRROR",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockMirror", 1, 0, missing)))));
+        TCHelper.addResearchPage("MIRROR", new ResearchPage("tc.research_page.MIRROR.3fixed"));
         TCHelper.setResearchAspects(
                 "MIRROR",
                 new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("iter"), 12)
