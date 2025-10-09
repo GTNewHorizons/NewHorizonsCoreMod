@@ -541,7 +541,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "BASICTHAUMATURGY",
                 new ResearchPage(TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "WandCasting", 1, 0, missing))));
         TCHelper.clearPages("CAP_copper");
-        TCHelper.addResearchPage("CAP_copper", new ResearchPage("tc.research_page.CAP_copper.1"));
+        TCHelper.addResearchPage("CAP_copper", new ResearchPage("tc.research_page.CAP_copper.1fixed"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_copper",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 3, missing),

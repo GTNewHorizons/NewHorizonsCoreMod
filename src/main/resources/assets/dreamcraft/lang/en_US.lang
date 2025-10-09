@@ -1550,6 +1550,7 @@ tc.research_text.INCENSECRUCIBLE=[BM] Doesn't make you smell good IRL
 tc.research_page.INCENSECRUCIBLE=Because somehow, smelling good makes you bleed more.
 
 tc.research_page.MIRROR.3fixed=Transporting items through mirrors places stress on the magical glass and to prevent it from shattering the mirror automatically slows down the rate at which items is spit out the other side. The greater the instability, the more the transfer rate is slowed.<BR>This instability slowly lessens over time, but it can also be negated by relaying Ordo vis directly to the mirror.
+tc.research_page.CAP_copper.1fixed=Copper has similar properties to iron when used as a wand cap, but is as efficient as gold when used to channel Ordo or Perditio vis.
 
 # Tinker's Construct manual contents
 item.tconstruct.manual.common.recipes=Recipes
