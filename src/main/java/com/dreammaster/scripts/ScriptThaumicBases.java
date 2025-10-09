@@ -20,6 +20,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -1155,6 +1156,15 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 1).add(Aspect.getAspect("venenum"), 1));
         TCHelper.refreshResearchPages("TB.Relocator");
+        TCHelper.clearPages("TB.Knose");
+        TCHelper.addResearchPage("TB.Knose", new ResearchPage("tb.rec.knose.page.0"));
+        TCHelper.addResearchPage("TB.Knose", new ResearchPage("tb.rec.knose.page.1NH"));
+        TCHelper.addResearchPage(
+                "TB.Knose",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findCrucibleRecipe(getModItem(ThaumicBases.ID, "knoseSeed", 1, 0, missing)))));
+        TCHelper.refreshResearchPages("TB.Knose");
         TCHelper.clearPages("TB.AdvAlc");
         TCHelper.addResearchPage("TB.AdvAlc", new ResearchPage("tb.rec.advAlc.page.0"));
         TCHelper.addResearchPage(
