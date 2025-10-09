@@ -1162,7 +1162,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(MINUTES)
                 .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1170,7 +1170,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0, missing))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(MINUTES)
                 .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1178,7 +1178,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6, missing))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(MINUTES)
                 .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1186,7 +1186,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0, missing))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(MINUTES)
                 .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1195,7 +1195,7 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(chemicalDehydratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "honey_block", 1, 0, missing))
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(1 * MINUTES).eut(40)
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(MINUTES).eut(40)
                 .addTo(fluidExtractionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1))
@@ -1250,7 +1250,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 8L), // gt
                         GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Staurolite, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) // gt
-                .duration(1 * MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
+                .duration(MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
 
@@ -2021,12 +2021,6 @@ public class ScriptEFR implements IScriptLoader {
             if (efrConcretePowder == null) continue;
             ChiselHelper.addVariationFromStack("hempcretesand", efrConcretePowder);
         }
-
-        // Remove Red sandstone recipes
-        removeRecipeByOutput(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
-        removeRecipeByOutput(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
-        removeRecipeByOutput(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
-        removeRecipeByOutput(getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
 
         // Red Sandstone OreDict
 
