@@ -2079,19 +2079,6 @@ public class ScriptEFR implements IScriptLoader {
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
 
-        /*
-         * OreDictionary.registerOre("stoneSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
-         * OreDictionary.registerOre("stoneSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
-         * OreDictionary.registerOre("stoneSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
-         * OreDictionary.registerOre("stoneSand", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
-         */
-
-        /*
-         * OreDictionary.registerOre("sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
-         * OreDictionary.registerOre("sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
-         * OreDictionary.registerOre("sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
-         * OreDictionary.registerOre("sandstone", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
-         */
 
         // Red sand
         for (ItemStack item : OreDictionary.getOres("stoneRedSand")) {
