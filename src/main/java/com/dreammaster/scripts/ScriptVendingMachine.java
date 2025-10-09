@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.VendingMachine;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -41,9 +40,9 @@ public class ScriptVendingMachine implements IScriptLoader {
                 "plateIron",
                 new ItemStack(GregTechAPI.sBlockCasings11, 1, 0),
                 "plateIron",
-                getModItem(OpenComputers.ID, "item", 1L, 24),
+                null,
                 getModItem(Minecraft.ID, "hopper", 1),
-                getModItem(OpenComputers.ID, "item", 1L, 24));
+                null);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
