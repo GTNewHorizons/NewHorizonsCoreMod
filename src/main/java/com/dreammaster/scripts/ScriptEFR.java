@@ -136,33 +136,6 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
                 .addTo(assemblerRecipes);
 
-        // Cherry Planks
-        addShapelessRecipe(
-                getModItem(EtFuturumRequiem.ID, "wood_planks", 2, 3),
-                getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0));
-        addShapelessRecipe(
-                getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                "craftingToolSaw",
-                getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0));
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
-                .itemOutputs(
-                        getModItem(EtFuturumRequiem.ID, "wood_planks", 6, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(10 * SECONDS).eut(8)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
-                .itemOutputs(
-                        getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 5)).duration(20 * SECONDS).eut(8)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1L, 0))
-                .itemOutputs(
-                        getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3)).duration(20 * SECONDS)
-                .eut(8).addTo(cutterRecipes);
-
         // Cherry Trapdoors
 
         GTModHandler.addCraftingRecipe(
@@ -1308,6 +1281,9 @@ public class ScriptEFR implements IScriptLoader {
         OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.getIS(1));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "deepslate", 1, 0, missing))
+                .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cobbled_deepslate", 1, 0, missing))
                 .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
