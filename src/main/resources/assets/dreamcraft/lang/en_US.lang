@@ -1391,6 +1391,7 @@ tb.rec.capthauminite.page.NH.1=These new caps seem to better than thaumium caps,
 tc.research_name.TB.TaintFlask=Concentrated Taint
 tc.research_text.TB.TaintFlask=What could go wrong ?
 tb.rec.TB.TaintFlask.page.NH.0= Your experiments with taint were quite successful, but you know that you can do much better. So you tried to feed the bottled taint with some vitium essentia. The result is quite nice, it grows and gets even stronger, so why not trying this with a full jar of vitium. Since you definitly dont want to taint you whole home you'll need a controlled enviroment, like the infusion. However, you should better stabilise the flask with some salis mundus, just to make sure that no taint escapes.
+tb.rec.knose.page.1NH=A newborn Rosa Mysteria seems too weak for the regular soil - it dies of without any aspects supporting its growth. You've tried putting it on top of Salis Mundus - does not do the job. However, those Aspect Blocks serve like a descent enough base for the plant to grow. While growing it will accumulate aspects from the block underneath it. Once grown a Knowledge Fragment of sorts can be harvested. It will be attuned to certain aspects based on the block the Rose was growing on. Growing the rose on top of a mixed block yields a Mixed Fragment. It is up to you to discover what would happen should you grow the rose on a Tainted Block, but you have a feeling that nothing good will happen...
 tc.research_name.DiacountringsGTNH=Shard Rings
 tc.research_text.DiacountringsGTNH=Conserving vis
 tc.research_name.JarsealGTNH=Seal of Jar Binding
@@ -1548,6 +1549,9 @@ tc.research_page.CRIMSONRITES=You have seen glimpses of powerful magic users. Yo
 tc.research_name.INCENSECRUCIBLE=Incense Crucible
 tc.research_text.INCENSECRUCIBLE=[BM] Doesn't make you smell good IRL
 tc.research_page.INCENSECRUCIBLE=Because somehow, smelling good makes you bleed more.
+
+tc.research_page.MIRROR.3fixed=Transporting items through mirrors places stress on the magical glass and to prevent it from shattering the mirror automatically slows down the rate at which items is spit out the other side. The greater the instability, the more the transfer rate is slowed.<BR>This instability slowly lessens over time, but it can also be negated by relaying Ordo vis directly to the mirror.
+tc.research_page.CAP_copper.1fixed=Copper has similar properties to iron when used as a wand cap, but is as efficient as gold when used to channel Ordo or Perditio vis.
 
 # Tinker's Construct manual contents
 item.tconstruct.manual.common.recipes=Recipes

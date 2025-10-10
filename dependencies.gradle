@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.15-pre:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.25-pre:dev")
     api("com.github.GTNewHorizons:Yamcl:0.7.1:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.0-GTNH:dev")
 
@@ -15,12 +15,12 @@ dependencies {
     compileOnly("secondderivative.irontankminecarts:IronTankMinecarts:1.0.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.7.13:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.5.1:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.2-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.4-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.0:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
     compileOnly("com.github.GTNewHorizons:Chisel:2.17.0-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Botania:1.13.1-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Botania:1.13.3-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.8.0:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
@@ -31,6 +31,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.6.6:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.4-GTNH:dev")
     compileOnly("com.github.GTNewHorizons:Backhand:1.8.0:dev") { transitive = false }
+    compileOnly("com.cubefury.vendingmachine:VendingMachine:0.4.2:dev") { transitive = false }
     //compileOnly("com.github.Roadhog360:Et-Futurum-Requiem:2.6.2:dev") { transitive = false }
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
