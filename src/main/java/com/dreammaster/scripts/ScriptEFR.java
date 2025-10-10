@@ -2082,7 +2082,6 @@ public class ScriptEFR implements IScriptLoader {
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
 
-
         // Red sand
         for (ItemStack item : OreDictionary.getOres("stoneRedSand")) {
             GTValues.RA.stdBuilder().itemInputs(item).itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1, missing))
