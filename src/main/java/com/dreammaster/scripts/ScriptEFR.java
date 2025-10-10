@@ -1287,6 +1287,9 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "deepslate", 1, 0, missing))
                 .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cobbled_deepslate", 1, 0, missing))
+                .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Chlorite, 9L),
