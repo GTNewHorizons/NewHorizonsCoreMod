@@ -37,6 +37,7 @@ import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
+import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
@@ -874,6 +875,23 @@ public class ScriptEFR implements IScriptLoader {
         // .itemOutputs(getModItem(EtFuturumRequiem.ID, "netherite_barrel", 1, 0, missing))
         // .duration(20 * SECONDS).eut(480)
         // .addTo(assemblerRecipes);
+
+        // Flower to Dye recipes
+
+        addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(EtFuturumRequiem.ID, "cornflower"), 1, 0, missing);
+        addShapelessRecipe(
+                ItemList.Color_15.get(1L),
+                getModItem(EtFuturumRequiem.ID, "lily_of_the_valley"),
+                1,
+                0,
+                missing);
+        addShapelessRecipe(ItemList.Color_00.get(1L), getModItem(EtFuturumRequiem.ID, "wither_rose"), 1, 0, missing);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0, missing))
+                .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0, missing))
+                .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0, missing))
+                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
