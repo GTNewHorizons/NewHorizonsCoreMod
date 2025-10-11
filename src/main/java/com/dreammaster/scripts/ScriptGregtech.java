@@ -92,17 +92,6 @@ public class ScriptGregtech implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                ItemList.Teleporter.get(1L),
-                "circuitOptical",
-                getModItem(SGCraft.ID, "ic2PowerUnit", 1, 0, missing),
-                "circuitOptical",
-                getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
-                getModItem(SGCraft.ID, "stargateBase", 1, 0, missing),
-                getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
-                getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
-                getModItem(SGCraft.ID, "ocInterface", 1, 0, missing),
-                getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing));
-        addShapedRecipe(
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Wood, 1L),
                 "craftingToolKnife",
                 null,
