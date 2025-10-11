@@ -319,10 +319,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .addTo(electrolyzerRecipes);
 
         // Cordierite
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Cordierite, 13L),
-                        ItemList.Cell_Empty.get(4L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Cordierite, 13L))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L),
