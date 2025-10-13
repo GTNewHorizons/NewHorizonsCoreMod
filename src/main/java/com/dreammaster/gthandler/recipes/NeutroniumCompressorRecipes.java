@@ -191,6 +191,14 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     GTOreDictUnificator.get(OrePrefixes.block, Materials.ElectrumFlux, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 20))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(
+                            GTUtility.copyAmountUnsafe(
+                                    5678,
+                                    GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.ElasticSCRubber, 1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 21))
+                    .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
+
             if (ThaumicBases.isModLoaded()) {
                 GTValues.RA.stdBuilder()
                         .itemInputsUnsafe(
