@@ -2333,7 +2333,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .provideTo(recipe -> GTModHandler.addSmeltingRecipe(recipe.flatten()[0], recipe.getResult()))
                 .provideTo(MANTLE.manualSmeltingRecipeNamed("searedbrick"));
         GTModHandler.addSmeltingRecipe(
-                CustomItemList.UnfiredSlimeSoulBrick.get(1L),
+                CustomItemList.UnfiredSlimeSoilBrick.get(1L),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         GTValues.RA.stdBuilder()
                 .itemInputs(
