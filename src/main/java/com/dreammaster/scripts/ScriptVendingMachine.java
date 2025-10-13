@@ -3,7 +3,9 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.VendingMachine;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import com.cubefury.vendingmachine.items.VMItems;
 
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.GTValues;
 
 @SuppressWarnings("deprecation")
 public class ScriptVendingMachine implements IScriptLoader {
@@ -31,18 +34,19 @@ public class ScriptVendingMachine implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 VMItems.vendingMachine,
-                getModItem(Minecraft.ID, "dispenser", 1, 0),
+                getModItem(Minecraft.ID, "stone_button", 1, 0),
                 "craftingToolWrench",
-                getModItem(Minecraft.ID, "dispenser", 1, 0),
                 getModItem(Minecraft.ID, "stone_button", 1, 0),
+                "plateIron",
                 new ItemStack(GregTechAPI.sBlockCasings11, 1, 0),
-                getModItem(Minecraft.ID, "stone_button", 1, 0),
-                "cableGt01Tin",
-                getModItem(Minecraft.ID, "chest", 1),
-                "cableGt01Tin");
-        addShapelessRecipe(
-                VMItems.uplinkHatch,
-                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
-                getModItem(Minecraft.ID, "dispenser", 1, 0));
+                "plateIron",
+                null,
+                getModItem(Minecraft.ID, "hopper", 1),
+                null);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
+                        getModItem(Minecraft.ID, "dispenser", 1, 0))
+                .duration(5 * SECONDS).itemOutputs(VMItems.uplinkHatch).eut(120).addTo(assemblerRecipes);
     }
 }
