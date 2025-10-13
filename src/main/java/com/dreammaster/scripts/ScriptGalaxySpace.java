@@ -274,7 +274,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         BlockList.NeutroniumPlatedReinforcedStone.getIS(),
                         WerkstoffLoader.HDCS.get(OrePrefixes.plate, 8))
-                .itemOutputs(ItemList.UltraHighStrengthConcrete.get(9))
+                .itemOutputs(ItemList.UltraHighStrengthConcrete.get(1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(4), ItemList.NtNanofibers.get(4))
@@ -532,10 +532,6 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 CustomItemList.WaferTier3.get(1),
                 's',
                 ItemList.Sensor_MV.get(1));
-
-        // todo move somewhere else not in a script
-        // GT replaces this recipe automatically
-        addShapelessRecipe(getGSItem("barnardaClog", 1, 0), getGSItem("barnardaCplanks", 4, 0));
 
         addShapedRecipe(
                 getGSItem("item.spacesuit_boots", 1, 0),

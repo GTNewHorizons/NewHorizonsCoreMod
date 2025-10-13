@@ -66,7 +66,6 @@ import tconstruct.smeltery.TinkerSmeltery;
 import tconstruct.tools.TinkerTools;
 import tconstruct.tools.items.Pattern;
 import tconstruct.weaponry.TinkerWeaponry;
-import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import vexatos.tgregworks.reference.PartTypes;
@@ -501,7 +500,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'd',
                 getModItem(DraconicEvolution.ID, "draconicPickaxe", 1, 0, missing),
                 'e',
-                getModItem(GraviSuite.ID, "advDDrill", 1, 1, missing),
+                getModItem(GraviSuite.ID, "advDDrill", 1, wildcard, missing),
                 'f',
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'g',
@@ -515,7 +514,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
                 'l',
-                createItemStack(Botania.ID, "terraPick", 1, 0, "{mana:2147483421,tipped:1b}", missing),
+                getModItem(Botania.ID, "terraPick", 1, 0, missing),
                 'm',
                 getModItem(ForbiddenMagic.ID, "MorphPickaxe", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -912,30 +911,30 @@ public class ScriptAvaritia implements IScriptLoader {
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         TCHelper.removeInfusionRecipe(getModItem(Avaritia.ID, "Akashic_Record", 1, 0, missing));
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "AKASHIC",
                 getModItem(Avaritia.ID, "Akashic_Record", 1, 0, missing),
                 24,
                 new AspectList().add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("cognitio"), 128)
                         .add(Aspect.getAspect("sensus"), 96).add(Aspect.getAspect("luxuria"), 96)
                         .add(Aspect.getAspect("tempus"), 64).add(Aspect.getAspect("terminus"), 128),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L),
-                new ItemStack[] { getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
-                        getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
-                        getModItem(Gadomancy.ID, "BlockKnowledgeBook", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
-                        getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1, missing),
-                        getModItem(Gadomancy.ID, "BlockKnowledgeBook", 1, 0, missing),
-                        getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
-                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing), });
+                OrePrefixes.plate.get(Materials.Infinity),
+                getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
+                getModItem(Gadomancy.ID, "BlockKnowledgeBook", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1, missing),
+                getModItem(Gadomancy.ID, "BlockKnowledgeBook", 1, 0, missing),
+                getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing));
         TCHelper.refreshResearchPages("AKASHIC");
 
         registerTinkerPartsRecipes();

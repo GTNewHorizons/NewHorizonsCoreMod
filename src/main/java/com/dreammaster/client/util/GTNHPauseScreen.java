@@ -1,10 +1,12 @@
 package com.dreammaster.client.util;
 
 import java.net.URI;
+import java.util.Arrays;
 
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiIngameMenu;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
@@ -16,6 +18,7 @@ import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.gtnewhorizon.gtnhlib.util.FilesUtil;
 
+import cpw.mods.fml.client.config.HoverChecker;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
@@ -26,6 +29,8 @@ public class GTNHPauseScreen {
             "textures/icon/GTNH_256x256.png");
     private static final int BUG_BUTTON_ID = -161518;
     private static final int WIKI_BUTTON_ID = -8998561;
+
+    private HoverChecker shareToLANButtonHoverChecker;
 
     @SuppressWarnings("unchecked")
     @SubscribeEvent
@@ -49,6 +54,15 @@ public class GTNHPauseScreen {
                         20,
                         StatCollector.translateToLocal("dreamcraft.pausemenu.wiki")));
         // TODO add credits page
+
+        // find the Share To LAN button and attach a tooltip to it
+        for (Object element : event.buttonList) {
+            if (element instanceof GuiButton button) {
+                if (button.id == 7) {
+                    shareToLANButtonHoverChecker = new HoverChecker(button, 200);
+                }
+            }
+        }
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -65,6 +79,8 @@ public class GTNHPauseScreen {
         final int drawY = event.gui.height / 4 + 24 - 16 - 64;
         Gui.func_146110_a(drawX, drawY, 0f, 0f, 64, 64, 64f, 64f);
         GL11.glPopMatrix();
+
+        drawShareToLANButtonTooltip(event.gui, event.mouseX, event.mouseY);
     }
 
     @SubscribeEvent
@@ -83,6 +99,16 @@ public class GTNHPauseScreen {
             FilesUtil.openUri(uri);
         } catch (Throwable throwable) {
             MainRegistry.Logger.error("Couldn't open link", throwable);
+        }
+    }
+
+    private void drawShareToLANButtonTooltip(GuiScreen gui, int x, int y) {
+        if (shareToLANButtonHoverChecker != null && shareToLANButtonHoverChecker.checkHover(x, y)) {
+            gui.func_146283_a(
+                    Arrays.asList(
+                            StatCollector.translateToLocal("dreamcraft.pausemenu.sharetolan.tooltip").split("\\\\n")),
+                    x,
+                    y);
         }
     }
 
