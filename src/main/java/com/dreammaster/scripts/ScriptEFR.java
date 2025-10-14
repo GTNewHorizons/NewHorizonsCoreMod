@@ -2143,6 +2143,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 2),
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 3));
     }
+
     private static void addOxidizedCopperGrates() {
         addCopperOxidationRecipes(
                 getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 0),
