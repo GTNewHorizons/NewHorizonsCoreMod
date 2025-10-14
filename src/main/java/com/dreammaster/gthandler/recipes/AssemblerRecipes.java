@@ -104,7 +104,6 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
@@ -2876,7 +2875,7 @@ public class AssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
                             GTUtility.getIntegratedCircuit(1))
                     .itemOutputs(GTModHandler.getModItem(Botania.ID, "enderHand", 1L, 0))
-                    .fluidInputs(MaterialsBotania.Terrasteel.getMolten(1296)).duration(12 * SECONDS + 10 * TICKS)
+                    .fluidInputs(Materials.Terrasteel.getMolten(1296)).duration(12 * SECONDS + 10 * TICKS)
                     .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
             // Botania seeds grass
