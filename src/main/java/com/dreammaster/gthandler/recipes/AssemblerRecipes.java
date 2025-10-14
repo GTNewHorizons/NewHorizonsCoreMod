@@ -104,7 +104,6 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
@@ -986,7 +985,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 2L),
                         ItemList.Casing_UXV.get(1L))
-                .itemOutputs(ItemList.Hull_UXV.get(1L)).fluidInputs(MaterialsKevlar.Kevlar.getMolten(576L))
+                .itemOutputs(ItemList.Hull_UXV.get(1L)).fluidInputs(Materials.Kevlar.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         // Hermetic casings

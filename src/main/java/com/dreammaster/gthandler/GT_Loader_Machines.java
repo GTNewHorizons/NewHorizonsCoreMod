@@ -17,7 +17,6 @@ import com.dreammaster.item.food.QuantumBread;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OreDictNames;
 import gregtech.api.enums.OrePrefixes;
@@ -104,7 +103,7 @@ public class GT_Loader_Machines {
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UXV, 'W',
                         OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'H',
                         OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'P',
-                        OrePrefixes.plateDense.get(MaterialsKevlar.Kevlar) });
+                        OrePrefixes.plateDense.get(Materials.Kevlar) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Plasma_ZPMV.get(1L),
