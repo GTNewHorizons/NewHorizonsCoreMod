@@ -2071,6 +2071,7 @@ public class ScriptEFR implements IScriptLoader {
         addOxidizedCopperDoors();
         addOxidizedCopperTrapdoors();
         addOxidizedCopperBlocks();
+        addOxidizedCopperGrates();
 
         // Concrete
         for (int i = 0; i < 16; i++) {
@@ -2141,6 +2142,17 @@ public class ScriptEFR implements IScriptLoader {
         addCopperOxidationRecipes(
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 2),
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 3));
+    }
+    private static void addOxidizedCopperGrates() {
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 0),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 1));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 1),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 2));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 3),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 4));
     }
 
     // Shulker Box NBT Grabbing Function
