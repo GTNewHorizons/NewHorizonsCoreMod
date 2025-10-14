@@ -135,6 +135,12 @@ public class ScriptEFR implements IScriptLoader {
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
                 .addTo(assemblerRecipes);
+        for (int i = 0; i < 4; i++) {
+            GTModHandler.addShapelessCraftingRecipe(
+                    getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, i + 4),
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
+                    new Object[] { "itemBeeswax", getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, i) });
+        }
 
         // Cherry Trapdoors
 
