@@ -82,7 +82,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.MaterialsGTNH;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -1384,7 +1383,7 @@ public class ScriptEFR implements IScriptLoader {
                 new ItemStack[] { getModItem(ThaumicBases.ID, "thauminiteHelmet", 1, 0, missing),
                         GTOreDictUnificator.get("dustCrystallinePinkSlime", 1),
                         getModItem(ThaumicHorizons.ID, "golemPowder", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.ManaDiamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.ManaDiamond, 1L),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing) },
                 2);
 
