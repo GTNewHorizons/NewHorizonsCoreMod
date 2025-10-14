@@ -398,11 +398,7 @@ public class ScriptEFR implements IScriptLoader {
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
                     .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
-                    .addTo(multiblockChemicalReactorRecipes);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta))
-                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
-                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
-                    .addTo(chemicalReactorRecipes);
+                    .addTo(UniversalChemical);
         }
 
         // // Tipped Arrows
