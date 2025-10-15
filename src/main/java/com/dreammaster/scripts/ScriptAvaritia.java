@@ -829,7 +829,27 @@ public class ScriptAvaritia implements IScriptLoader {
                 ItemList.Electric_Motor_UV.get(1L),
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
-
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 5, missing),
+                "---------",
+                "---------",
+                "---------",
+                "---------",
+                "---------",
+                "---------",
+                "---------",
+                "---------",
+                "abcde-----",
+                'a',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 0, missing),
+                'b',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 1, missing),
+                'c',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 2, missing),
+                'd',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 3, missing),
+                'e',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 4, missing),
         // Neutronium Compressor Multi Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),
@@ -863,7 +883,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'j',
                 "plateNeutronium",
                 'k',
-                ItemList.CompressorUV.get(1));
+                ItemList.CompressorUV.get(1)));
 
         CompressorManager.addRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
