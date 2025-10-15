@@ -77,7 +77,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.StainlessSteel, 8),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, WILDCARD), // energy crystal
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 12),
-                        new Object[] { OrePrefixes.circuit.get(Materials.HV), 2 },
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 16))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(L * 4)).itemOutputs(MMItemList.PowerCore0.get(1))
                 .eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
@@ -537,7 +537,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 (int) TierEU.RECIPE_UV,
                 8,
                 new Object[] { MMItemList.UpgradeBlank.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4L },
                         AEApi.instance().definitions().parts().cableDense().stack(AEColor.Transparent, 16),
                         AEApi.instance().definitions().parts().p2PTunnelGregtech().maybeStack(4).get(),
                         CustomItemList.Machine_Multi_Transformer.get(1),

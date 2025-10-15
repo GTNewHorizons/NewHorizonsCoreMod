@@ -1,12 +1,14 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.ElectroMagicTools;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -16,7 +18,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
 
@@ -26,6 +31,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -209,12 +215,43 @@ public class ScriptTwilightForest implements IScriptLoader {
                         getModItem(TwilightForest.ID, "item.trophy", 0, 3, missing))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing))
                 .duration(1 * MINUTES + 15 * SECONDS).eut(4096).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TwilightForest.ID, "item.tfFeather", 1, 0, missing),
+                        getModItem(TwilightForest.ID, "item.torchberries", 1, 0, missing))
+                .fluidInputs(Materials.Glowstone.getMolten(144))
+                .itemOutputs(getModItem(TwilightForest.ID, "item.magicMapFocus", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0, missing), NHItemList.StonePlate.getIS(16))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0, missing))
                 .fluidInputs(Materials.Helium_3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "item.carminite", 9, 0, missing))
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.CarminiteBlock", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(2).addTo(compressorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "smoker", 1L),
+                        getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
+                        getModItem(TwilightForest.ID, "tile.CastleBrick", 2, 3, missing),
+                        GTUtility.getIntegratedCircuit(8))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 1000))
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.TFFireJet", 1L)).duration(12 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TwilightForest.ID, "tile.TFFireJet", 1L),
+                        new ItemStack(Items.fire_charge, 1),
+                        getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(8))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.TFFireJet", 1L, 8)).duration(12 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFRoots", 1, 0, missing),

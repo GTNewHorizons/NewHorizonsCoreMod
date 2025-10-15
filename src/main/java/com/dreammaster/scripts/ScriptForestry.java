@@ -327,21 +327,21 @@ public class ScriptForestry implements IScriptLoader {
                 3,
                 getModItem(Forestry.ID, "grafterProven", 1, 0, missing)).setParents("MB_Scoop").setConcealed()
                         .setPages(new ResearchPage("Forestry.research_page.PROVENGRAFTER")).registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        TCHelper.addInfusionCraftingRecipe(
                 "PROVENGRAFTER",
                 getModItem(Forestry.ID, "grafterProven", 1, 0, missing),
                 3,
                 new AspectList().add(Aspect.getAspect("instrumentum"), 25).add(Aspect.getAspect("permutatio"), 25)
                         .add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("arbor"), 10),
                 getModItem(Forestry.ID, "grafter", 1, 0, missing),
-                new ItemStack[] { getModItem(Minecraft.ID, "sapling", 1, 1, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 2, missing),
-                        getModItem(Forestry.ID, "pollen", 1, 0, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 3, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 4, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 5, missing),
-                        getModItem(Forestry.ID, "pollen", 1, 1, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 0, missing), });
+                getModItem(Minecraft.ID, "sapling", 1, 1, missing),
+                getModItem(Minecraft.ID, "sapling", 1, 2, missing),
+                getModItem(Forestry.ID, "pollen", 1, 0, missing),
+                getModItem(Minecraft.ID, "sapling", 1, 3, missing),
+                getModItem(Minecraft.ID, "sapling", 1, 4, missing),
+                getModItem(Minecraft.ID, "sapling", 1, 5, missing),
+                getModItem(Forestry.ID, "pollen", 1, 1, missing),
+                getModItem(Minecraft.ID, "sapling", 1, 0, missing));
         TCHelper.addResearchPage(
                 "PROVENGRAFTER",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Forestry.ID, "grafterProven", 1, 0, missing))));
