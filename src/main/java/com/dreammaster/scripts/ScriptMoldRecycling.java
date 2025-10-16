@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.*;
-import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,11 +9,13 @@ import java.util.stream.Stream;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
+import ggfab.GGItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptMoldRecycling implements IScriptLoader {
 
@@ -25,7 +26,7 @@ public class ScriptMoldRecycling implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(GregTech.ID);
+        return Arrays.asList(GregTech.ID, GGFab.ID, GTPlusPlus.ID);
     }
 
     @Override
@@ -104,17 +105,23 @@ public class ScriptMoldRecycling implements IScriptLoader {
                         item -> GTOreDictUnificator
                                 .addItemData(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
         // GT++ Pellet Shape
-        GTOreDictUnificator.addItemData(
-                getModItem(GTPlusPlus.ID, "item.BasicAgrichemItem", 1, 22),
-                new ItemData(Materials.Steel, 4 * GTValues.M));
+        GTOreDictUnificator
+                .addItemData(GregtechItemList.Pellet_Mold.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M));
         // Boat Shape
         GTOreDictUnificator
                 .addItemData(NHItemList.ExtruderShapeBoat.getIS(1), new ItemData(Materials.Steel, 4 * GTValues.M));
         // GGfab Single use molds
-        for (int meta = 30; meta <= 36; meta++) {
-            GTOreDictUnificator.addItemData(
-                    getModItem(GGFab.ID, "gt.ggfab.d1", 1, meta),
-                    new ItemData(Materials.Steel, 4 * GTValues.M));
-        }
+        Stream.of(
+                GGItemList.SingleUseFileMold,
+                GGItemList.SingleUseWrenchMold,
+                GGItemList.SingleUseCrowbarMold,
+                GGItemList.SingleUseWireCutterMold,
+                GGItemList.SingleUseHardHammerMold,
+                GGItemList.SingleUseSoftMalletMold,
+                GGItemList.SingleUseScrewdriverMold,
+                GGItemList.SingleUseSawMold).forEach(
+                        item -> GTOreDictUnificator
+                                .addItemData(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
+
     }
 }
