@@ -135,6 +135,12 @@ public class ScriptEFR implements IScriptLoader {
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
                 .addTo(assemblerRecipes);
+        for (int i = 0; i < 4; i++) {
+            GTModHandler.addShapelessCraftingRecipe(
+                    getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, i + 4),
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
+                    new Object[] { "itemBeeswax", getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, i) });
+        }
 
         // Cherry Trapdoors
 
@@ -397,12 +403,7 @@ public class ScriptEFR implements IScriptLoader {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
-                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
-                    .addTo(multiblockChemicalReactorRecipes);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta))
-                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
-                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
-                    .addTo(chemicalReactorRecipes);
+                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4).addTo(UniversalChemical);
         }
 
         // // Tipped Arrows
@@ -2071,6 +2072,7 @@ public class ScriptEFR implements IScriptLoader {
         addOxidizedCopperDoors();
         addOxidizedCopperTrapdoors();
         addOxidizedCopperBlocks();
+        addOxidizedCopperGrates();
 
         // Concrete
         for (int i = 0; i < 16; i++) {
@@ -2141,6 +2143,18 @@ public class ScriptEFR implements IScriptLoader {
         addCopperOxidationRecipes(
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 2),
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 3));
+    }
+
+    private static void addOxidizedCopperGrates() {
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 0),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 1));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 1),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 2));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 3),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 4));
     }
 
     // Shulker Box NBT Grabbing Function
