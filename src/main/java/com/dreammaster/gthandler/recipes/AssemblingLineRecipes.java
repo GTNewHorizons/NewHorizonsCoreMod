@@ -55,7 +55,6 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -1156,7 +1155,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Neutronium, 16),
                                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 16),
                                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 8),
-                                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsKevlar.Kevlar, 4))
+                                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Kevlar, 4))
                         .itemOutputs(ItemList.Machine_Multi_BlackHoleCompressor.get(1))
                         .fluidInputs(
                                 MaterialsUEVplus.SpaceTime.getMolten(1440),

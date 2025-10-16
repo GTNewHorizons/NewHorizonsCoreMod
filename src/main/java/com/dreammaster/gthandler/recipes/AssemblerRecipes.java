@@ -104,7 +104,6 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
@@ -986,7 +985,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 2L),
                         ItemList.Casing_UXV.get(1L))
-                .itemOutputs(ItemList.Hull_UXV.get(1L)).fluidInputs(MaterialsKevlar.Kevlar.getMolten(576L))
+                .itemOutputs(ItemList.Hull_UXV.get(1L)).fluidInputs(Materials.Kevlar.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         // Hermetic casings
@@ -3050,7 +3049,7 @@ public class AssemblerRecipes implements Runnable {
                         CustomItemList.MicaInsulatorFoil.get(64),
                         TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
                         HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 2))
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.ZPM, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("pyrotheum", 16000))
                 .itemOutputs(ItemList.Heating_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
@@ -3066,7 +3065,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Reactor_Coolant_Sp_3.get(1),
                         TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
                         HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 2))
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.ZPM, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("cryotheum", 16000))
                 .itemOutputs(ItemList.Coolant_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);

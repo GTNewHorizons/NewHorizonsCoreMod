@@ -363,6 +363,13 @@ public class RecipeRemover {
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "tinted_glass", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "chain", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 0));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 1));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 2));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 3));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 4));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 5));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 6));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 7));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_block", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
