@@ -38,7 +38,6 @@ import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -1023,9 +1022,9 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.Terrasteel, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Terrasteel, 1L),
                             GTModHandler.getModItem(Botania.ID, "manaResource", 4, 5))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.GaiaSpirit, 1L))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.GaiaSpirit, 1L))
                     .duration(30 * SECONDS).eut(200).addTo(mixerRecipes);
 
         }
