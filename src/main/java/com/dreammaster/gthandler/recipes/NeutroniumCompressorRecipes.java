@@ -198,11 +198,10 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Rubber, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 0))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputsUnsafe(
-                            GTUtility.copyAmountUnsafe(
-                                    12345,
-                                    GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.StyreneButadieneRubber, 1)))
+            GTValues.RA.stdBuilder().itemInputsUnsafe(
+                    GTUtility.copyAmountUnsafe(
+                            12345,
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.StyreneButadieneRubber, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 1))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
@@ -212,18 +211,16 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Silicone, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 2))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputsUnsafe(
-                            GTUtility.copyAmountUnsafe(
-                                    12345,
-                                    GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.PolyphenyleneSulfide, 1)))
+            GTValues.RA.stdBuilder().itemInputsUnsafe(
+                    GTUtility.copyAmountUnsafe(
+                            12345,
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.PolyphenyleneSulfide, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 3))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputsUnsafe(
-                            GTUtility.copyAmountUnsafe(
-                                    12345,
-                                    GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.PolyvinylChloride, 1)))
+            GTValues.RA.stdBuilder().itemInputsUnsafe(
+                    GTUtility.copyAmountUnsafe(
+                            12345,
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.PolyvinylChloride, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 4))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
 
