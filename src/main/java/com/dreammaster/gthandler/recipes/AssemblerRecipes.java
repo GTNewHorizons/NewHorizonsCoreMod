@@ -3049,7 +3049,7 @@ public class AssemblerRecipes implements Runnable {
                         CustomItemList.MicaInsulatorFoil.get(64),
                         TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
                         HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 2))
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.ZPM, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("pyrotheum", 16000))
                 .itemOutputs(ItemList.Heating_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
@@ -3065,7 +3065,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Reactor_Coolant_Sp_3.get(1),
                         TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
                         HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 2))
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.ZPM, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("cryotheum", 16000))
                 .itemOutputs(ItemList.Coolant_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
