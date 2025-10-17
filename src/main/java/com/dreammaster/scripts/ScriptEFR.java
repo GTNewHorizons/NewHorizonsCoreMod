@@ -201,6 +201,13 @@ public class ScriptEFR implements IScriptLoader {
                 ItemList.Color_00.get(1L),
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "wither_rose", 1L, 0));
 
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0))
+                .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0))
+                .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0))
+                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+
         // Slabs
 
         final String[] slabInputs = { "red_sandstone:0", "red_sandstone:2", "purpur_block:0", "stone:0",
@@ -874,15 +881,7 @@ public class ScriptEFR implements IScriptLoader {
 
         // Flower to Dye recipes
 
-        addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0));
-        addShapelessRecipe(ItemList.Color_15.get(1L), getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0));
-        addShapelessRecipe(ItemList.Color_00.get(1L), getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0));
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0))
-                .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0))
-                .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0))
-                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+
 
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
