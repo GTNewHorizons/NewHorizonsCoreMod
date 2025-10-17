@@ -881,8 +881,6 @@ public class ScriptEFR implements IScriptLoader {
 
         // Flower to Dye recipes
 
-
-
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
                 bits,
