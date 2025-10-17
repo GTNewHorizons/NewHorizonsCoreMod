@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.GGFab;
 import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GregTech;
 
 import java.util.Arrays;
 import java.util.List;
