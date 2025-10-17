@@ -23,7 +23,6 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -1225,12 +1224,12 @@ public class BlastFurnaceRecipes implements Runnable {
         if (SGCraft.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.getIS().splitStack(64))
-                    .fluidInputs(MaterialsUEVplus.StargateCrystalSlurry.getFluid(128_000_000L))
+                    .fluidInputs(Materials.StargateCrystalSlurry.getFluid(128_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).duration(7 * 24 * HOURS * 2)
                     .eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000).addTo(blastFurnaceRecipes); // ^ 2 weeks
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.getIS().splitStack(64))
-                    .fluidInputs(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(128_000_000L))
+                    .fluidInputs(Materials.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(128_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgControllerCrystal", 1L))
                     .duration(7 * 24 * HOURS * 2).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000)
                     .addTo(blastFurnaceRecipes);

@@ -44,7 +44,6 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -573,13 +572,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 'd',
                 getModItem(DraconicEvolution.ID, "reactorStabilizer", 1),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.TranscendentMetal, 1L),
+                GTOreDictUnificator.get(OrePrefixes.nanite, Materials.TranscendentMetal, 1L),
                 'f',
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 1L),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.SpaceTime, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SpaceTime, 1L),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialsUEVplus.SpaceTime, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SpaceTime, 1L),
                 'i',
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1),
                 'j',
