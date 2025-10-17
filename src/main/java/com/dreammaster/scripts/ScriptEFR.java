@@ -874,19 +874,18 @@ public class ScriptEFR implements IScriptLoader {
 
         // Flower to Dye recipes
 
-        addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(EtFuturumRequiem.ID, "cornflower"), 1, 0, missing);
+        addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0));
         addShapelessRecipe(
                 ItemList.Color_15.get(1L),
-                getModItem(EtFuturumRequiem.ID, "lily_of_the_valley"),
+                getModItem(EtFuturumRequiem.ID, "lily_of_the_valley",
                 1,
-                0,
-                missing);
-        addShapelessRecipe(ItemList.Color_00.get(1L), getModItem(EtFuturumRequiem.ID, "wither_rose"), 1, 0, missing);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0, missing))
+                0));
+        addShapelessRecipe(ItemList.Color_00.get(1L), getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0));
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0))
                 .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0))
                 .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0))
                 .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
 
         GTModHandler.addCraftingRecipe(
