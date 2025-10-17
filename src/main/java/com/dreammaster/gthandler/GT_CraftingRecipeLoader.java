@@ -55,7 +55,6 @@ import gregtech.api.enums.Dyes;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OreDictNames;
 import gregtech.api.enums.OrePrefixes;
@@ -121,14 +120,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UMV.get(1L),
                 bits,
-                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime) });
+                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SpaceTime) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UXV.get(1L),
                 bits,
                 new Object[] { "PSP", "SwS", "PSP", 'P',
-                        OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
-                        OrePrefixes.plate.get(MaterialsUEVplus.MagMatter) });
+                        OrePrefixes.plate.get(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
+                        OrePrefixes.plate.get(Materials.MagMatter) });
 
         // Hull recycling placed here after the casing recipes for proper item data
         GTOreDictUnificator.addItemDataFromInputs(
@@ -950,11 +949,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         machinehull = ItemList.Hull_UMV.get(1L);
                         break;
                     case 13: // UXV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.TranscendentMetal, 1L);
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 1L);
                         machinehull = ItemList.Hull_UXV.get(1L);
                         break;
                     default: // MAX
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 1L);
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 1L);
                         machinehull = ItemList.Hull_MAXV.get(1L);
                         break;
                 }
