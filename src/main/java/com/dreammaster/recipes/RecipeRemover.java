@@ -1866,6 +1866,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_star", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0, missing));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1L, 1), "cropBeetroot");
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "planks", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "Natura.workbench", 1, wildcard, missing));
