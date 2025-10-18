@@ -189,7 +189,7 @@ public class ScriptEFR implements IScriptLoader {
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
         }
 
-        // EFR Flower Dyes
+        // EFR Plant Dyes
 
         addShapelessRecipe(
                 ItemList.Color_04.get(1L),
