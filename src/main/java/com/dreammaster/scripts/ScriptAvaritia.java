@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Gadomancy;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
@@ -828,7 +829,35 @@ public class ScriptAvaritia implements IScriptLoader {
                 ItemList.Electric_Motor_UV.get(1L),
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
-
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 5, missing),
+                "---------",
+                "--ff--g--",
+                "-f-----g-",
+                "---b-c-g-",
+                "----a----",
+                "-i-d-e---",
+                "-i-----h-",
+                "--i--hh--",
+                "---------",
+                'a',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 0, missing),
+                'b',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 1, missing),
+                'c',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 2, missing),
+                'd',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 3, missing),
+                'e',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 4, missing),
+                'f',
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17471, missing),
+                'g',
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17635, missing),
+                'h',
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17649, missing),
+                'i',
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17631, missing));
         // Neutronium Compressor Multi Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),
