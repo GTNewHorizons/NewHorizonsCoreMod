@@ -200,6 +200,7 @@ public class ScriptEFR implements IScriptLoader {
         addShapelessRecipe(
                 ItemList.Color_00.get(1L),
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "wither_rose", 1L, 0));
+        addShapelessRecipe(ItemList.Color_01.get(1L), GTModHandler.getModItem(EtFuturumRequiem.ID, "beetroot", 1L, 0));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0))
                 .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
@@ -207,6 +208,8 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0))
                 .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "beetroot", 1, 0))
+                .itemOutputs(ItemList.Color_01.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
 
         // Slabs
 
