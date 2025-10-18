@@ -3075,6 +3075,9 @@ public class RecipeRemover {
                 getModItem(ThaumicBases.ID, "resource", 1, 0, missing),
                 getModItem(ThaumicBases.ID, "resource", 1, 0, missing),
                 getModItem(ThaumicBases.ID, "resource", 1, 0, missing));
+        removeRecipeShapelessDelayed(
+                getModItem(Minecraft.ID, "dye", 1L, 1),
+                getModItem(PamsHarvestCraft.ID, "beetItem", 1L, 0));
 
         removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 1, missing));
