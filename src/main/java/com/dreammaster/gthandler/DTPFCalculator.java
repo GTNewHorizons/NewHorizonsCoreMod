@@ -10,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipe;
@@ -39,9 +38,9 @@ public class DTPFCalculator {
     Collection<GTRecipe> ebfRecipes = blastFurnaceRecipes.getAllRecipes();
     Collection<GTRecipe> freezerRecipes = vacuumFreezerRecipes.getAllRecipes();
     private int[] catalystAmounts = new int[5];
-    private static final FluidStack[] CATALYSTS = new FluidStack[] { MaterialsUEVplus.ExcitedDTCC.getFluid(1),
-            MaterialsUEVplus.ExcitedDTPC.getFluid(1), MaterialsUEVplus.ExcitedDTRC.getFluid(1),
-            MaterialsUEVplus.ExcitedDTEC.getFluid(1), MaterialsUEVplus.ExcitedDTSC.getFluid(1) };
+    private static final FluidStack[] CATALYSTS = new FluidStack[] { Materials.ExcitedDTCC.getFluid(1),
+            Materials.ExcitedDTPC.getFluid(1), Materials.ExcitedDTRC.getFluid(1), Materials.ExcitedDTEC.getFluid(1),
+            Materials.ExcitedDTSC.getFluid(1) };
     // These were calculated based on their respective mixer + laser engraver recipes & their plasma energy values
     private static final long[] CATALYST_ENERGY_VALUES = new long[] { 14_514_983L, 66_768_460L, 269_326_451L,
             1_073_007_393L, 4_276_767_521L };

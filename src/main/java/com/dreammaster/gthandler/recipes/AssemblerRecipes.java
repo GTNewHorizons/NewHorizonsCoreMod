@@ -104,7 +104,6 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
@@ -948,17 +947,19 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 8L),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(ItemList.Casing_UMV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                GTOreDictUnificator
-                        .get(OrePrefixes.plate, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
-                GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.MagMatter, 4L),
-                GTUtility.getIntegratedCircuit(8)).itemOutputs(ItemList.Casing_UXV.get(1L))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator
+                                .get(OrePrefixes.plate, Materials.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.MagMatter, 4L),
+                        GTUtility.getIntegratedCircuit(8))
+                .itemOutputs(ItemList.Casing_UXV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1562,9 +1563,8 @@ public class AssemblerRecipes implements Runnable {
 
         // Humongous input hatch
         GTValues.RA.stdBuilder().itemInputs(ItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1))
-                .itemOutputs(ItemRegistry.humongousInputHatch.copy())
-                .fluidInputs(MaterialsUEVplus.Space.getMolten(5_760L)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemRegistry.humongousInputHatch.copy()).fluidInputs(Materials.Space.getMolten(5_760L))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(assemblerRecipes);
 
         // Wood Plates
         GTValues.RA.stdBuilder()
@@ -1811,7 +1811,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.TranscendentMetal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.TranscendentMetal, 1L),
                         ItemList.Hull_UIV.get(1L),
                         GTUtility.getIntegratedCircuit(4))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UIV.get(1L))
@@ -2496,7 +2496,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Quantium, 2),
                         GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.BlackPlutonium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Infinity, 1),
-                        GTOreDictUnificator.get(OrePrefixes.springSmall, MaterialsUEVplus.SpaceTime, 1),
+                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.SpaceTime, 1),
                         ItemList.Transformer_HA_UXV_UMV.get(1),
                         ItemList.Electric_Pump_LuV.get(1),
                         ItemList.Reactor_Coolant_Sp_1.get(2))
@@ -2508,8 +2508,8 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 2),
                         GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Infinity, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, MaterialsUEVplus.SpaceTime, 1),
-                        GTOreDictUnificator.get(OrePrefixes.springSmall, MaterialsUEVplus.Universium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.SpaceTime, 1),
+                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Universium, 1),
                         ItemList.Transformer_HA_MAX_UXV.get(1),
                         ItemList.Electric_Pump_ZPM.get(1),
                         ItemList.Reactor_Coolant_Sp_2.get(2))
@@ -3049,7 +3049,7 @@ public class AssemblerRecipes implements Runnable {
                         CustomItemList.MicaInsulatorFoil.get(64),
                         TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
                         HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 2))
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.ZPM, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("pyrotheum", 16000))
                 .itemOutputs(ItemList.Heating_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
@@ -3065,7 +3065,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Reactor_Coolant_Sp_3.get(1),
                         TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
                         HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 2))
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.ZPM, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("cryotheum", 16000))
                 .itemOutputs(ItemList.Coolant_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
@@ -3088,7 +3088,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(Avaritia.ID, "Singularity", 1L, 3, missing),
                         ItemList.Sensor_UIV.get(2),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedstoneAlloy, 16))
-                .fluidInputs(MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(16000))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(16000))
                 .itemOutputs(ItemList.Hatch_BlackHoleUtility.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .addTo(assemblerRecipes);
 
@@ -3133,7 +3133,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 1),
+                        GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.SpaceTime, 1),
                         ItemList.Hull_UMV.get(1),
                         GTUtility.getIntegratedCircuit(4))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304))
@@ -3142,7 +3142,7 @@ public class AssemblerRecipes implements Runnable {
         // Spacetime quadruple is temp replacement until Universium Pipes.
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 4),
+                        GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.SpaceTime, 4),
                         ItemList.Hull_UXV.get(1),
                         GTUtility.getIntegratedCircuit(4))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304))
@@ -3152,9 +3152,9 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemRegistry.humongousInputHatch.copy(),
-                        GTOreDictUnificator.get(OrePrefixes.pipeHuge, MaterialsUEVplus.SpaceTime, 4),
+                        GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.SpaceTime, 4),
                         GTUtility.getIntegratedCircuit(4))
-                .fluidInputs(MaterialsUEVplus.Space.getMolten(5760))
+                .fluidInputs(Materials.Space.getMolten(5760))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UXV).addTo(assemblerRecipes);
 
@@ -6951,7 +6951,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIVBase, 30L),
-                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, MaterialsUEVplus.TranscendentMetal, 20L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.TranscendentMetal, 20L),
                         ItemList.Electric_Pump_UIV.get(1L),
                         GTUtility.getIntegratedCircuit(9))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 30L))
@@ -10021,7 +10021,7 @@ public class AssemblerRecipes implements Runnable {
                                 GTOreDictUnificator.get(orePrefix, Materials.Rubidium, 64),
                                 GTOreDictUnificator.get(orePrefix, Materials.Pumice, 64),
                                 GTUtility.getIntegratedCircuit(17))
-                        .fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(10000))
+                        .fluidInputs(Materials.SpaceTime.getMolten(10000))
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("DD"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UMV).addTo(assemblerRecipes);
             }
