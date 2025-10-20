@@ -27,7 +27,6 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -56,14 +55,14 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         ItemList.Emitter_UHV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
                         ItemList.EnergisedTesseract.get(1),
                         ItemList.EnergisedTesseract.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
                         ItemList.EnergisedTesseract.get(1),
                         ItemList.EnergisedTesseract.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
                         ItemList.Emitter_UHV.get(1),
                         GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
@@ -82,14 +81,14 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
                         ItemList.Sensor_UHV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
                         ItemList.Tesseract.get(1),
                         ItemList.Tesseract.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
                         ItemList.Tesseract.get(1),
                         ItemList.Tesseract.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
                         ItemList.Sensor_UHV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
@@ -137,7 +136,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_Optical.get(16L),
                         ItemList.Optical_Cpu_Containment_Housing.get(16L),
                         MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
-                        GTOreDictUnificator.get(OrePrefixes.screw, MaterialsUEVplus.SpaceTime, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.SpaceTime, 16L),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
                         CustomItemList.DATApipe.get(16L),
                         // Enriched Naquadah Alloy screw
@@ -215,34 +214,35 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(32L),
                         ItemList.Circuit_Parts_ResistorXSMD.get(32L),
                         ItemList.Circuit_Parts_TransistorXSMD.get(32L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialsUEVplus.SpaceTime, 12L))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SpaceTime, 12L))
                 .fluidInputs(new FluidStack(solderUEV, 1440)).itemOutputs(ItemList.Energy_Cluster.get(1))
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
         // Alternate Ultimate Battery Recipe
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Board_Optical.get(1),
-                GTOreDictUnificator.get("foilShirabon", 64),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                ItemList.Circuit_Chip_PPIC.get(64L),
-                ItemList.Circuit_Parts_DiodeXSMD.get(64L),
-                ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
-                ItemList.Circuit_Parts_ResistorXSMD.get(64L),
-                ItemList.Circuit_Parts_TransistorXSMD.get(64L),
-                GTOreDictUnificator
-                        .get(OrePrefixes.bolt, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 4L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Board_Optical.get(1),
+                        GTOreDictUnificator.get("foilShirabon", 64),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                        ItemList.Circuit_Chip_PPIC.get(64L),
+                        ItemList.Circuit_Parts_DiodeXSMD.get(64L),
+                        ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
+                        ItemList.Circuit_Parts_ResistorXSMD.get(64L),
+                        ItemList.Circuit_Parts_TransistorXSMD.get(64L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.bolt, Materials.MagnetohydrodynamicallyConstrainedStarMatter, 4L))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        MaterialsUEVplus.WhiteDwarfMatter.getMolten(576),
-                        MaterialsUEVplus.BlackDwarfMatter.getMolten(576))
+                        Materials.WhiteDwarfMatter.getMolten(576),
+                        Materials.BlackDwarfMatter.getMolten(576))
                 .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -363,7 +363,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.EnergisedTesseract.get(1))
                         .fluidInputs(
                                 new FluidStack(solderUEV, 2304),
-                                MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(4000))
+                                Materials.DimensionallyShiftedSuperfluid.getFluid(4000))
                         .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1))
                         .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(15 * SECONDS).eut(TierEU.RECIPE_UIV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -385,13 +385,13 @@ public class SpaceAssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
-                            GTOreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.TranscendentMetal, 64L),
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.TranscendentMetal, 64L),
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            MaterialsUEVplus.MagMatter.getNanite(4),
-                            MaterialsUEVplus.Eternity.getNanite(4))
-                    .fluidInputs(MaterialsUEVplus.Eternity.getMolten(36864))
+                            Materials.MagMatter.getNanite(4),
+                            Materials.Eternity.getNanite(4))
+                    .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -421,9 +421,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            MaterialsUEVplus.MagMatter.getNanite(4),
-                            MaterialsUEVplus.Eternity.getNanite(4))
-                    .fluidInputs(MaterialsUEVplus.Eternity.getMolten(36864))
+                            Materials.MagMatter.getNanite(4),
+                            Materials.Eternity.getNanite(4))
+                    .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);

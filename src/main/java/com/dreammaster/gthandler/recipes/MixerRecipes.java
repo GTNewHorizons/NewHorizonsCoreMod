@@ -38,7 +38,6 @@ import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -605,7 +604,7 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.TranscendentMetal, 10L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.TranscendentMetal, 10L),
                         MaterialsElements.STANDALONE.RHUGNOR.getDust(6),
                         CHRONOMATIC_GLASS.getDust(5),
                         GTUtility.getIntegratedCircuit(2))
@@ -975,7 +974,7 @@ public class MixerRecipes implements Runnable {
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.ETA_MESON)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.LAMBDA)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
-                        GTOreDictUnificator.get(OrePrefixes.gem, MaterialsUEVplus.GravitonShard, 4))
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 4))
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
                 .itemOutputs(NHItemList.StargateCrystalDust.getIS()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
                 .addTo(mixerRecipes);
@@ -1004,8 +1003,8 @@ public class MixerRecipes implements Runnable {
 
         // Chamber Centrifuge Tier2 Fluid
         GTValues.RA.stdBuilder().itemInputs(Materials.CosmicNeutronium.getDust(4), Materials.Glowstone.getNanite(2))
-                .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), MaterialsUEVplus.LumipodExtract.getFluid(1000))
-                .fluidOutputs(MaterialsUEVplus.BiocatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)
+                .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), Materials.LumipodExtract.getFluid(1000))
+                .fluidOutputs(Materials.BiocatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)
                 .eut(TierEU.UHV).addTo(mixerNonCellRecipes);
 
         if (PamsHarvestCraft.isModLoaded()) {
@@ -1206,7 +1205,7 @@ public class MixerRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 8))
                     .fluidInputs(
                             GGMaterial.naquadahBasedFuelMkV.getFluidOrGas(1000),
-                            MaterialsUEVplus.ExcitedDTEC.getFluid(128000))
+                            Materials.ExcitedDTEC.getFluid(128000))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerNonCellRecipes);
         }
         if (EnderIO.isModLoaded() && BiomesOPlenty.isModLoaded() && Witchery.isModLoaded()) {

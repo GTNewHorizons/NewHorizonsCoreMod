@@ -17,7 +17,6 @@ import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
@@ -419,7 +418,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
             // Recipes which require stabilized black hole - not from original neutronium compressor
 
             // Eternal Singularity
-            GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(72L))
+            GTValues.RA.stdBuilder().fluidInputs(Materials.SpaceTime.getMolten(72L))
                     .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(100 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
