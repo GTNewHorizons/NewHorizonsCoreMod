@@ -82,8 +82,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsBotania;
-import gregtech.api.enums.MaterialsGTNH;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -136,6 +134,12 @@ public class ScriptEFR implements IScriptLoader {
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
                 .addTo(assemblerRecipes);
+        for (int i = 0; i < 4; i++) {
+            GTModHandler.addShapelessCraftingRecipe(
+                    getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, i + 4),
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
+                    new Object[] { "itemBeeswax", getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, i) });
+        }
 
         // Cherry Trapdoors
 
@@ -185,7 +189,7 @@ public class ScriptEFR implements IScriptLoader {
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
         }
 
-        // EFR Flower Dyes
+        // EFR Plant Dyes
 
         addShapelessRecipe(
                 ItemList.Color_04.get(1L),
@@ -196,6 +200,16 @@ public class ScriptEFR implements IScriptLoader {
         addShapelessRecipe(
                 ItemList.Color_00.get(1L),
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "wither_rose", 1L, 0));
+        addShapelessRecipe(ItemList.Color_01.get(1L), GTModHandler.getModItem(EtFuturumRequiem.ID, "beetroot", 1L, 0));
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0))
+                .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0))
+                .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0))
+                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "beetroot", 1, 0))
+                .itemOutputs(ItemList.Color_01.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
 
         // Slabs
 
@@ -398,12 +412,7 @@ public class ScriptEFR implements IScriptLoader {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
-                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
-                    .addTo(multiblockChemicalReactorRecipes);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta))
-                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1L, outMeta))
-                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4)
-                    .addTo(chemicalReactorRecipes);
+                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4).addTo(UniversalChemical);
         }
 
         // // Tipped Arrows
@@ -875,21 +884,6 @@ public class ScriptEFR implements IScriptLoader {
 
         // Flower to Dye recipes
 
-        addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(EtFuturumRequiem.ID, "cornflower"), 1, 0, missing);
-        addShapelessRecipe(
-                ItemList.Color_15.get(1L),
-                getModItem(EtFuturumRequiem.ID, "lily_of_the_valley"),
-                1,
-                0,
-                missing);
-        addShapelessRecipe(ItemList.Color_00.get(1L), getModItem(EtFuturumRequiem.ID, "wither_rose"), 1, 0, missing);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0, missing))
-                .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0, missing))
-                .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0, missing))
-                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
-
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
                 bits,
@@ -1306,23 +1300,23 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Chlorite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Plagioclase, 9L), // gt
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.MetamorphicMineralMixture, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chlorite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plagioclase, 9L), // gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetamorphicMineralMixture, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 8L), // gt
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Staurolite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Staurolite, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) // gt
                 .duration(1 * MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialsGTNH.MetamorphicMineralMixture.getDust(36))
+        GTValues.RA.stdBuilder().itemInputs(Materials.MetamorphicMineralMixture.getDust(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Epidote, 9L), // gt
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Cordierite, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 9L), // gt
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cordierite, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobaltite, 6L), // gt
                         GTOreDictUnificator.get(WerkstoffLoader.Bismuthinit.get(OrePrefixes.dust, 4)), // bart
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsGTNH.Datolite, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Datolite, 4L),
                         GTOreDictUnificator.get(MaterialsOres.TITANITE.getDust(4))) // gt++
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
@@ -1384,7 +1378,7 @@ public class ScriptEFR implements IScriptLoader {
                 new ItemStack[] { getModItem(ThaumicBases.ID, "thauminiteHelmet", 1, 0, missing),
                         GTOreDictUnificator.get("dustCrystallinePinkSlime", 1),
                         getModItem(ThaumicHorizons.ID, "golemPowder", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.ManaDiamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.ManaDiamond, 1L),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing) },
                 2);
 
@@ -2072,6 +2066,7 @@ public class ScriptEFR implements IScriptLoader {
         addOxidizedCopperDoors();
         addOxidizedCopperTrapdoors();
         addOxidizedCopperBlocks();
+        addOxidizedCopperGrates();
 
         // Concrete
         for (int i = 0; i < 16; i++) {
@@ -2142,6 +2137,18 @@ public class ScriptEFR implements IScriptLoader {
         addCopperOxidationRecipes(
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 2),
                 getModItem(EtFuturumRequiem.ID, "copper_block", 1L, 3));
+    }
+
+    private static void addOxidizedCopperGrates() {
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 0),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 1));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 1),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 2));
+        addCopperOxidationRecipes(
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 3),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 4));
     }
 
     // Shulker Box NBT Grabbing Function
