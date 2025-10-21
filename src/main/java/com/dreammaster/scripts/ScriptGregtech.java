@@ -470,6 +470,61 @@ public class ScriptGregtech implements IScriptLoader {
                 "circuitElite",
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
         addShapedRecipe(
+                ItemList.Machine_LV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
+                getModItem(Minecraft.ID, "glass", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 1L),
+                ItemList.Hull_LV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
+                ItemList.Electric_Pump_LV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L));
+        addShapedRecipe(
+                ItemList.Machine_MV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
+                getModItem(Minecraft.ID, "glass", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                ItemList.Hull_MV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
+                ItemList.Electric_Pump_MV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L));
+        addShapedRecipe(
+                ItemList.Machine_HV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
+                getModItem(Minecraft.ID, "glass", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
+                ItemList.Hull_HV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
+                ItemList.Electric_Pump_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L));
+        addShapedRecipe(
+                ItemList.Machine_EV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
+                getModItem(Minecraft.ID, "glass", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Aluminium, 1L),
+                ItemList.Hull_EV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
+                ItemList.Electric_Pump_EV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L));
+        addShapedRecipe(
+                ItemList.LATEX.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
+                ItemList.Electric_Pump_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                ItemList.Machine_HV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
+                ItemList.Electric_Pump_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L));
+        addShapedRecipe(
                 new ItemStack(GregTechAPI.sBlockStones, 1, 2),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
