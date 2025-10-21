@@ -39,6 +39,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -81,7 +82,6 @@ public class ScriptGregtech implements IScriptLoader {
                 IndustrialCraft2.ID,
                 Natura.ID,
                 OpenBlocks.ID,
-                PamsHarvestCraft.ID,
                 SGCraft.ID,
                 SuperSolarPanels.ID,
                 Thaumcraft.ID,
@@ -472,7 +472,7 @@ public class ScriptGregtech implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Machine_LV_CableCoater.get(1),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
-                getModItem(Minecraft.ID, "glass", 1, 0, missing),
+                new ItemStack(Blocks.glass),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
                 GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 1L),
                 ItemList.Hull_LV.get(1),
@@ -483,7 +483,7 @@ public class ScriptGregtech implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Machine_MV_CableCoater.get(1),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
-                getModItem(Minecraft.ID, "glass", 1, 0, missing),
+                new ItemStack(Blocks.glass),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
                 GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
                 ItemList.Hull_MV.get(1),
@@ -494,7 +494,7 @@ public class ScriptGregtech implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Machine_HV_CableCoater.get(1),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
-                getModItem(Minecraft.ID, "glass", 1, 0, missing),
+                new ItemStack(Blocks.glass),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
                 GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
                 ItemList.Hull_HV.get(1),
@@ -505,7 +505,7 @@ public class ScriptGregtech implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Machine_EV_CableCoater.get(1),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
-                getModItem(Minecraft.ID, "glass", 1, 0, missing),
+                new ItemStack(Blocks.glass),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
                 GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Aluminium, 1L),
                 ItemList.Hull_EV.get(1),
