@@ -535,6 +535,7 @@ item.VoidSeed.name=Void Seed
 item.WaferTier3.name=Wafer Tier 3
 item.MirandaStoneDust.name=Miranda Stone Dust
 item.TuffDust.name=Tuff Dust
+item.ChaoticDust.name=Chaotic Dust
 item.DeepslateDust.name=Deepslate Dust
 item.QuantumBoard.name=Empty Quantum Processor Board
 item.NanoBoard.name=Empty Nano Processor Board
