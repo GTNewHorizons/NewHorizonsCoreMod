@@ -1365,9 +1365,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 47, missing));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 49, missing),
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.EnhancedGalgadorian, 1L));
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.GalgadorianEnhanced, 1L));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.EnhancedGalgadorian, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.GalgadorianEnhanced, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 49, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1952,7 +1952,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).duration(1 * MINUTES + 40 * SECONDS).eut(120)
                 .specialValue(2200).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.EnhancedGalgadorian, 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.GalgadorianEnhanced, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).duration(2 * MINUTES + 30 * SECONDS).eut(120)
                 .specialValue(3500).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing))
