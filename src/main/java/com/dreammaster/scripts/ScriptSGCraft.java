@@ -292,7 +292,7 @@ public class ScriptSGCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Dilithium, 32L),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Ichorium, 16L),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 64L),
-                        GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 8L,3),
+                        GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4L,3),
                         NHItemList.ChaoticDust.getIS(2),
                         GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L,26)
                 )
