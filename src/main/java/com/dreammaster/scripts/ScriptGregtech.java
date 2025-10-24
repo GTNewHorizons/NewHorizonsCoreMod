@@ -3,9 +3,11 @@ package com.dreammaster.scripts;
 import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.CropsPlusPlus;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MCFrames;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -86,7 +88,9 @@ public class ScriptGregtech implements IScriptLoader {
                 SuperSolarPanels.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
-                TinkerConstruct.ID);
+                TinkerConstruct.ID,
+                DraconicEvolution.ID,
+                Avaritia.ID);
     }
 
     @Override
@@ -1527,5 +1531,31 @@ public class ScriptGregtech implements IScriptLoader {
         GTModHandler.addSmeltingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                ItemList.ChaosLocator.get(1),
+                "----a----",
+                "---bbb---",
+                "--bcdcb--",
+                "abcefecba",
+                "-bdfgfdb-",
+                "-bcefecb-",
+                "-bbcdcbb-",
+                "-aabbbaa-",
+                "a-------a",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 1),
+                'b',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackPlutonium, 1),
+                'c',
+                getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing),
+                'd',
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.DraconiumAwakened, 1),
+                'e',
+                NHItemList.ChaoticDust.getIS(1),
+                'f',
+                getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
+                'g',
+                getModItem(DraconicEvolution.ID, "teleporterMKI", 1, 0, missing));
     }
 }
