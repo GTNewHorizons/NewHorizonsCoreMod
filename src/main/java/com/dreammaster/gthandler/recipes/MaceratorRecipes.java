@@ -4,6 +4,7 @@ import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Chisel;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -21,6 +22,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -871,6 +873,16 @@ public class MaceratorRecipes implements Runnable {
                         .recipeCategory(RecipeCategories.maceratorRecycling).duration(4 * SECONDS + 18 * TICKS).eut(4)
                         .addTo(maceratorRecipes);
             }
+        }
+
+        if (DraconicEvolution.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(DraconicEvolution.ID, "chaoticCore", 1L, 0))
+                    .itemOutputs(
+                            Materials.DraconiumAwakened.getDust(64),
+                            Materials.SpaceTime.getDust(10),
+                            Materials.BlackPlutonium.getDust(4),
+                            NHItemList.ChaoticDust.getIS(1))
+                    .duration(50 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(maceratorRecipes);
         }
     }
 }
