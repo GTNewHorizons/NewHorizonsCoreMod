@@ -3,7 +3,7 @@ package com.dreammaster.command;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.command.ICommand;
+import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -14,12 +14,7 @@ import com.dreammaster.main.MainRegistry;
 
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 
-public class HazardousItemsCommand implements ICommand {
-
-    @Override
-    public int compareTo(Object arg0) {
-        return 0;
-    }
+public class HazardousItemsCommand extends CommandBase {
 
     @Override
     public String getCommandName() {
@@ -32,7 +27,7 @@ public class HazardousItemsCommand implements ICommand {
     }
 
     @Override
-    public List getCommandAliases() {
+    public List<String> getCommandAliases() {
         ArrayList<String> aliases = new ArrayList<>();
         aliases.add("hazarditems");
         aliases.add("hazit");
@@ -42,17 +37,16 @@ public class HazardousItemsCommand implements ICommand {
     @Override
     public void processCommand(ICommandSender pCmdSender, String[] pArgs) {
         if (pArgs.length == 0) {
-            if (InGame(pCmdSender)) {
+            if (inGame(pCmdSender)) {
                 PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /hazarditems help for help");
             } else {
                 PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Syntax error. Type /hazarditems help for help");
             }
-            return;
         } else if ("help".equalsIgnoreCase(pArgs[0])) {
-            SendHelpToPlayer(pCmdSender);
+            sendHelpToPlayer(pCmdSender);
         } else if ("save".equalsIgnoreCase(pArgs[0])) {
             boolean tResult = MainRegistry.Module_HazardousItems.SaveHazardousItems();
-            if (!InGame(pCmdSender)) {
+            if (!inGame(pCmdSender)) {
                 if (tResult) {
                     PlayerChatHelper.SendPlain(pCmdSender, "[OK] Config has been saved");
                 } else {
@@ -67,7 +61,7 @@ public class HazardousItemsCommand implements ICommand {
             }
 
         } else if ("listdamagesources".equalsIgnoreCase(pArgs[0])) {
-            if (!InGame(pCmdSender)) {
+            if (!inGame(pCmdSender)) {
                 PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Valid DamageTypes are:");
                 PlayerChatHelper
                         .SendPlain(pCmdSender, "[HAZIT] inFire, onFire, lava, inWall, drown, starve, cactus, fall");
@@ -79,7 +73,7 @@ public class HazardousItemsCommand implements ICommand {
                 PlayerChatHelper.SendInfo(pCmdSender, "outOfWorld, generic, magic, wither, anvil, fallingBlock");
             }
         } else if ("listpotions".equalsIgnoreCase(pArgs[0])) {
-            SendPotionsToPlayer(pCmdSender);
+            sendPotionsToPlayer(pCmdSender);
         } else if ("reload".equalsIgnoreCase(pArgs[0])) {
             boolean bForce = false;
             if (pArgs.length == 2) {
@@ -90,7 +84,7 @@ public class HazardousItemsCommand implements ICommand {
             }
 
             if (MainRegistry.Module_HazardousItems.HasConfigChanged() && !bForce) {
-                if (!InGame(pCmdSender)) {
+                if (!inGame(pCmdSender)) {
                     PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Config file has changed and was not saved yet.");
                     PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] To confirm the reload, type");
                     PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] /hazarditems reload force");
@@ -103,14 +97,14 @@ public class HazardousItemsCommand implements ICommand {
             } else {
                 boolean tFlag = MainRegistry.Module_HazardousItems.ReloadHazardousItems();
                 if (!tFlag) {
-                    if (!InGame(pCmdSender)) {
+                    if (!inGame(pCmdSender)) {
                         PlayerChatHelper
                                 .SendPlain(pCmdSender, "[HAZIT] Reload failed. Check your log for syntax errors");
                     } else {
                         PlayerChatHelper.SendWarn(pCmdSender, "Reload failed. Check your log for syntax errors");
                     }
                 } else {
-                    if (!InGame(pCmdSender)) {
+                    if (!inGame(pCmdSender)) {
                         PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Reload done. New config is activated");
                     } else {
                         PlayerChatHelper.SendInfo(pCmdSender, "Reload done. New config is activated");
@@ -120,21 +114,20 @@ public class HazardousItemsCommand implements ICommand {
         }
         // Commands for ingame only >>
         else {
-            SendHelpToPlayer(pCmdSender);
+            sendHelpToPlayer(pCmdSender);
         }
     }
 
-    private boolean InGame(ICommandSender pCmdSender) {
+    private boolean inGame(ICommandSender pCmdSender) {
         return pCmdSender instanceof EntityPlayer;
     }
 
     /**
      * Send a list of all valid potions to the command sender
-     * 
-     * @param pCmdSender
+     *
      */
-    private void SendPotionsToPlayer(ICommandSender pCmdSender) {
-        if (!InGame(pCmdSender)) {
+    private void sendPotionsToPlayer(ICommandSender pCmdSender) {
+        if (!inGame(pCmdSender)) {
             PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] List of known Potions; Name(ID)");
         } else {
             PlayerChatHelper.SendInfo(pCmdSender, "List of known Potions; Name(ID)");
@@ -151,7 +144,7 @@ public class HazardousItemsCommand implements ICommand {
             }
             String t = String.format("%s(%d)", p.getName(), p.id);
             if (tMsg.length() + t.length() > 50) {
-                if (!InGame(pCmdSender)) {
+                if (!inGame(pCmdSender)) {
                     PlayerChatHelper.SendPlain(pCmdSender, tMsg.toString());
                 } else {
                     PlayerChatHelper.SendInfo(pCmdSender, tMsg.toString());
@@ -161,15 +154,15 @@ public class HazardousItemsCommand implements ICommand {
                 tMsg.append(t);
             }
         }
-        if (!InGame(pCmdSender)) {
+        if (!inGame(pCmdSender)) {
             PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] End of list");
         } else {
             PlayerChatHelper.SendInfo(pCmdSender, "End of list");
         }
     }
 
-    private void SendHelpToPlayer(ICommandSender pCmdSender) {
-        if (!InGame(pCmdSender)) {
+    private void sendHelpToPlayer(ICommandSender pCmdSender) {
+        if (!inGame(pCmdSender)) {
             PlayerChatHelper
                     .SendPlain(pCmdSender, "[HAZIT] Valid options are: reload|save|listdamagesources|listpotions");
         } else {
@@ -182,23 +175,10 @@ public class HazardousItemsCommand implements ICommand {
      */
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender pCommandSender) {
-        if (pCommandSender instanceof EntityPlayerMP) {
-            EntityPlayerMP tEP = (EntityPlayerMP) pCommandSender;
-            boolean tPlayerOpped = MinecraftServer.getServer().getConfigurationManager()
-                    .func_152596_g(tEP.getGameProfile());
-            return tPlayerOpped;
+        if (pCommandSender instanceof EntityPlayerMP tEP) {
+            return MinecraftServer.getServer().getConfigurationManager().func_152596_g(tEP.getGameProfile());
         } else {
             return pCommandSender instanceof MinecraftServer;
         }
-    }
-
-    @Override
-    public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
-        return null;
-    }
-
-    @Override
-    public boolean isUsernameIndex(String[] p_82358_1_, int p_82358_2_) {
-        return false;
     }
 }
