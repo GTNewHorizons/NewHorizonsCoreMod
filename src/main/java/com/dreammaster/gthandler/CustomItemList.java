@@ -311,7 +311,7 @@ public enum CustomItemList implements IItemContainer {
     UnfiredClayBrick,
     UnfiredSearedBrick,
     UnfiredCokeOvenBrick,
-    UnfiredSlimeSoulBrick,
+    UnfiredSlimeSoilBrick,
     RawLapotronCrystal,
     LapotronDust,
     AluminiumIronPlate,
