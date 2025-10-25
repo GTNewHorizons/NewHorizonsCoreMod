@@ -19,6 +19,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
@@ -814,6 +815,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemInputsUnsafe(GTUtility.copyAmountUnsafe(512000, new ItemStack(Blocks.cobblestone, 1)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47, missing))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_IV).addTo(neutroniumCompressorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47, missing))
+                .itemOutputs(
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 64, 6, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 36, 6, missing))
+                .duration(50 * SECONDS).eut(TierEU.RECIPE_IV).addTo(hammerRecipes);
 
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyAcceptor", 1, 0, missing),
