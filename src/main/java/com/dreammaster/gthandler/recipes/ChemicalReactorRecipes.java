@@ -98,7 +98,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 4))
                 .itemOutputs(ItemList.Circuit_Board_Plastic.get(1L)).fluidInputs(Materials.SulfuricAcid.getFluid(500L))
                 .duration(25 * SECONDS).eut(10).addTo(UniversalChemical);
@@ -246,7 +246,7 @@ public class ChemicalReactorRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.MutatedEgg.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 64))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 64))
                 .itemOutputs(CustomItemList.EnderEgg.get(1L)).fluidInputs(FluidRegistry.getFluidStack("ender", 1000))
                 .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 

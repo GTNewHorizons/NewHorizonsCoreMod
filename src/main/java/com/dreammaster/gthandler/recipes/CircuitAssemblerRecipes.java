@@ -584,7 +584,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_NAND.get(32L),
                             ItemList.Circuit_Chip_Ram.get(4L),
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 16),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 4))
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 4))
                     .itemOutputs(ItemList.Tool_DataStick.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
                     .requiresCleanRoom().duration(20 * SECONDS).eut(90).addTo(circuitAssemblerRecipes);
 

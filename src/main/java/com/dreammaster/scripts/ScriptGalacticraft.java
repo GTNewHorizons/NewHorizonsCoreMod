@@ -1820,7 +1820,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

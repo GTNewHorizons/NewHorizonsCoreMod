@@ -1578,7 +1578,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, missing, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, missing, 4L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, missing, 4L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, missing, 1L),
                         GTUtility.getIntegratedCircuit(3))

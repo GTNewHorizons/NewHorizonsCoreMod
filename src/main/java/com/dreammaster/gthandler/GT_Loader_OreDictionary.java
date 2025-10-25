@@ -165,11 +165,11 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         GTOreDictUnificator.registerOre(
                 OrePrefixes.ingot,
-                Materials.HeeEndium,
+                Materials.Endium,
                 GTModHandler.getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1L, 0));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
-                Materials.HeeEndium,
+                Materials.Endium,
                 GTModHandler.getModItem(HardcoreEnderExpansion.ID, "endium_block", 1L, 0));
 
         GTOreDictUnificator
@@ -283,7 +283,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 GTModHandler.getModItem(StevesCarts2.ID, "BlockMetalStorage", 1L, 1));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
-                Materials.EnhancedGalgadorian,
+                Materials.GalgadorianEnhanced,
                 GTModHandler.getModItem(StevesCarts2.ID, "BlockMetalStorage", 1L, 2));
 
         GTOreDictUnificator.registerOre(

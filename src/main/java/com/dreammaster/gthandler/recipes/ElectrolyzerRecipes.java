@@ -27,7 +27,7 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
-                    .fluidOutputs(Materials.Helium_3.getGas(100)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .fluidOutputs(Materials.Helium3.getGas(100)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(electrolyzerRecipes);
 
             GTValues.RA.stdBuilder()
@@ -37,7 +37,7 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
-                    .fluidOutputs(Materials.Helium_3.getGas(200)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .fluidOutputs(Materials.Helium3.getGas(200)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(electrolyzerRecipes);
 
             GTValues.RA.stdBuilder()
@@ -47,7 +47,7 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
-                    .fluidOutputs(Materials.Helium_3.getGas(50)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .fluidOutputs(Materials.Helium3.getGas(50)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(electrolyzerRecipes);
 
             GTValues.RA.stdBuilder()
@@ -57,7 +57,7 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
-                    .fluidOutputs(Materials.Helium_3.getGas(100)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .fluidOutputs(Materials.Helium3.getGas(100)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(electrolyzerRecipes);
         }
         // Ore Processing related to alumina and silicon dioxide
