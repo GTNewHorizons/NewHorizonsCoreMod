@@ -641,8 +641,8 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(
-                        GTOreDictUnificator.getDust(Materials.NaquadahAlloy, 4L * OrePrefixes.dust.mMaterialAmount))
-                .duration((int) (400L * OrePrefixes.dust.mMaterialAmount / 3628800L)).eut(TierEU.RECIPE_IV)
+                        GTOreDictUnificator.getDust(Materials.NaquadahAlloy, 4L * OrePrefixes.dust.getMaterialAmount()))
+                .duration((int) (400L * OrePrefixes.dust.getMaterialAmount() / 3628800L)).eut(TierEU.RECIPE_IV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -653,9 +653,9 @@ public class MixerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(
                         GTOreDictUnificator
-                                .getDust(Materials.YttriumBariumCuprate, 13L * OrePrefixes.dust.mMaterialAmount))
+                                .getDust(Materials.YttriumBariumCuprate, 13L * OrePrefixes.dust.getMaterialAmount()))
                 .fluidInputs(Materials.Oxygen.getGas(7000))
-                .duration((int) (600L * OrePrefixes.dust.mMaterialAmount / 3628800L)).eut(TierEU.RECIPE_EV)
+                .duration((int) (600L * OrePrefixes.dust.getMaterialAmount() / 3628800L)).eut(TierEU.RECIPE_EV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -665,8 +665,9 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Manganese, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(GTOreDictUnificator.getDust(Materials.Duralumin, 9L * OrePrefixes.dust.mMaterialAmount))
-                .duration((int) (900L * OrePrefixes.dust.mMaterialAmount / 3628800L)).eut(TierEU.RECIPE_EV)
+                .itemOutputs(
+                        GTOreDictUnificator.getDust(Materials.Duralumin, 9L * OrePrefixes.dust.getMaterialAmount()))
+                .duration((int) (900L * OrePrefixes.dust.getMaterialAmount() / 3628800L)).eut(TierEU.RECIPE_EV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()

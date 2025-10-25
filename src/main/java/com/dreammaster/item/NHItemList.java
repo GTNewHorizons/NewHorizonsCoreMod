@@ -301,6 +301,7 @@ public enum NHItemList {
     MeteoricIronDualCompressedPlates(new ModSimpleBaseItem("MeteoricIronDualCompressedPlates", ModTabList.ModSpaceTab)),
     MirandaStoneDust(new ModSimpleBaseItem("MirandaStoneDust", ModTabList.ModSpaceTab)),
     TuffDust(new ModSimpleBaseItem("TuffDust", ModTabList.ModGenericTab)),
+    ChaoticDust(new ModSimpleBaseItem("ChaoticDust", ModTabList.ModGenericTab)),
     DeepslateDust(new ModSimpleBaseItem("DeepslateDust", ModTabList.ModGenericTab)),
     MoldChestplate(new ModSimpleBaseItem("MoldChestplate", ModTabList.ModMoldsTab)),
     MoldHelmet(new ModSimpleBaseItem("MoldHelmet", ModTabList.ModMoldsTab)),
