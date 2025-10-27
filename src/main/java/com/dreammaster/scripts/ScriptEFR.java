@@ -1714,7 +1714,7 @@ public class ScriptEFR implements IScriptLoader {
             }
         }
         for (int k = 0; k < 8; k++) {
-            for (int i = 0; i < 17; i++) {
+            for (int i = 1; i < 17; i++) {
                 GameRegistry.addRecipe(new ShulkerNBTRecipe(getShulkerBox(0, k), getShulkerBox(i, k)));
             }
         }
