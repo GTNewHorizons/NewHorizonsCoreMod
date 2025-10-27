@@ -21,7 +21,7 @@ import com.dreammaster.gthandler.CustomItemList;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.MaterialsUEVplus;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -43,9 +43,9 @@ public class ScriptSGCraft implements IScriptLoader {
         // spotless:off
 
         ItemStack darkMatterBlock = getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14, missing);
-        ItemStack magmatterBlock = GTOreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.MagMatter, 1L);
-        ItemStack magmatterSuperdensePlate = GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsUEVplus.MagMatter, 1L);
-        ItemStack magmatterNanite = GTOreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.MagMatter, 1L);
+        ItemStack magmatterBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.MagMatter, 1L);
+        ItemStack magmatterSuperdensePlate = GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 1L);
+        ItemStack magmatterNanite = GTOreDictUnificator.get(OrePrefixes.nanite, Materials.MagMatter, 1L);
         ItemStack compact5Coil = new ItemStack(Loaders.compactFusionCoil, 1, 4);
 
         ItemStack ringBlock = getModItem(SGCraft.ID, "stargateRing", 1, 0, missing);
@@ -184,7 +184,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "wpmmmmw--",
                 "wbppmmmw-",
                 "cwwwwwwww",
-                'w', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsUEVplus.WhiteDwarfMatter, 1L),
+                'w', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 1L),
                 'm', magmatterSuperdensePlate,
                 'p', ItemList.Electric_Piston_UXV.get(1L),
                 'b', ItemList.ZPM6.get(1L),
@@ -272,6 +272,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'b', ItemList.ZPM6.get(1L),
                 'o', ocInterface,
                 'u', universeFluidCell);
+
 
         // spotless:on
     }

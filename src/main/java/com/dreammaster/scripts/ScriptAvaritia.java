@@ -500,7 +500,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'd',
                 getModItem(DraconicEvolution.ID, "draconicPickaxe", 1, 0, missing),
                 'e',
-                getModItem(GraviSuite.ID, "advDDrill", 1, 1, missing),
+                getModItem(GraviSuite.ID, "advDDrill", 1, wildcard, missing),
                 'f',
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'g',
@@ -514,7 +514,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
                 'l',
-                createItemStack(Botania.ID, "terraPick", 1, 0, "{mana:2147483421,tipped:1b}", missing),
+                getModItem(Botania.ID, "terraPick", 1, 0, missing),
                 'm',
                 getModItem(ForbiddenMagic.ID, "MorphPickaxe", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -828,7 +828,35 @@ public class ScriptAvaritia implements IScriptLoader {
                 ItemList.Electric_Motor_UV.get(1L),
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
-
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 5, missing),
+                "---------",
+                "--ff--g--",
+                "-f-----g-",
+                "---b-c-g-",
+                "----a----",
+                "-i-d-e---",
+                "-i-----h-",
+                "--i--hh--",
+                "---------",
+                'a',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 0, missing),
+                'b',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 1, missing),
+                'c',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 2, missing),
+                'd',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 3, missing),
+                'e',
+                getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 4, missing),
+                'f',
+                "plateSilicone",
+                'g',
+                "plateStyreneButadieneRubber",
+                'h',
+                "platePolyvinylChloride",
+                'i',
+                "platePolyphenyleneSulfide");
         // Neutronium Compressor Multi Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),

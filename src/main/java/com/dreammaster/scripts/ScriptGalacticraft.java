@@ -1288,6 +1288,17 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing));
 
+        final String[] dyeInputs = { "dyeWhite", "dyeBlack", "dyeLightBlue", "dyeLime", "dyeBrown", "dyeBlue",
+                "dyeGray", "dyeGreen", "dyeLightGray", "dyeMagenta", "dyeOrange", "dyePink", "dyePurple", "dyeRed",
+                "dyeCyan", "dyeYellow" };
+
+        for (int i = 0; i < dyeInputs.length; i++) {
+            addShapelessRecipe(
+                    getModItem(GalacticraftCore.ID, "item.parachute", 1, i, missing),
+                    getModItem(GalacticraftCore.ID, "item.parachute", 1, WILDCARD, missing),
+                    dyeInputs[i]);
+        }
+
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(GalacticraftCore.ID, "item.infiniteOxygen", 1, 0, missing),
                 "--abbba--",
