@@ -262,7 +262,7 @@ public class ChemicalBathRecipes implements Runnable {
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing),
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing),
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing))
-                    .outputChances(10000, 10000, 10000).fluidInputs(Materials.Silicone.getMolten(144L))
+                    .outputChances(10000, 10000, 10000).fluidInputs(Materials.RubberSilicone.getMolten(144L))
                     .duration(10 * SECONDS).eut(2).addTo(chemicalBathRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 2, missing))
                     .itemOutputs(

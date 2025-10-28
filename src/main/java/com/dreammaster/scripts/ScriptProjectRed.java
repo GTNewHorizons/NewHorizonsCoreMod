@@ -1837,13 +1837,13 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing))
                 .duration(25 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9, missing))
                 .duration(15 * SECONDS).eut(64).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -3546,7 +3546,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
 
@@ -3571,7 +3571,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 5L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 5L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -3595,7 +3595,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.ElectrotineWire.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GTValues.RA.stdBuilder()

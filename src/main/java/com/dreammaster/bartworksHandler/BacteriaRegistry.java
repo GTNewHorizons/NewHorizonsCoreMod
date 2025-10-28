@@ -186,7 +186,7 @@ public class BacteriaRegistry {
 
     private void runAdditionalFuelRecipes() {
         // XenoxRecycleRecipe
-        GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(1)).fluidInputs(Materials.DilutedXenoxene.getFluid(1000))
+        GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(1)).fluidInputs(Materials.XenoxeneDiluted.getFluid(1000))
                 .fluidOutputs(Xenoxene.getFluid(250), RadoxLight.getGas(300)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
 
@@ -215,10 +215,10 @@ public class BacteriaRegistry {
                         GTModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 64L),
                         GTUtility.getIntegratedCircuit(24))
                 .itemOutputs(Ash.getDust(8)).fluidInputs(Materials.Xenoxene.getFluid(1000))
-                .fluidOutputs(Materials.RawRadox.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
+                .fluidOutputs(Materials.RadoxRaw.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
                 .addTo(pyrolyseRecipes);
 
-        GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(5)).fluidInputs(Materials.RawRadox.getFluid(5000))
+        GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(5)).fluidInputs(Materials.RadoxRaw.getFluid(5000))
                 .fluidOutputs(
                         OilHeavy.getFluid(600),
                         Oil.getFluid(300),
@@ -228,7 +228,7 @@ public class BacteriaRegistry {
                         FermentedBiomass.getFluid(50),
                         RadoxSuperHeavy.getFluid(100),
                         RadoxHeavy.getFluid(150),
-                        DilutedXenoxene.getFluid(50),
+                        XenoxeneDiluted.getFluid(50),
                         RadoxLight.getGas(300),
                         RadoxSuperLight.getGas(500))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(distillationTowerRecipes);
