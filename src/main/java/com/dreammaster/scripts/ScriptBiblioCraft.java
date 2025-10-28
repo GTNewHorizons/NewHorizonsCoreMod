@@ -1,11 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.BiblioCraft;
-import static gregtech.api.enums.Mods.FloodLights;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.OpenComputers;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -47,6 +42,11 @@ public class ScriptBiblioCraft implements IScriptLoader {
         ItemStack[] FrameB = new ItemStack[7];
         ItemStack[] PaintingB = new ItemStack[7];
         ItemStack[] FClockB = new ItemStack[7];
+        ItemStack[] signs = new ItemStack[] { getModItem(Minecraft.ID, "sign"),
+                getModItem(EtFuturumRequiem.ID, "item_sign_spruce"), getModItem(EtFuturumRequiem.ID, "item_sign_birch"),
+                getModItem(EtFuturumRequiem.ID, "item_sign_jungle"),
+                getModItem(EtFuturumRequiem.ID, "item_sign_acacia"),
+                getModItem(EtFuturumRequiem.ID, "item_sign_dark_oak"), getModItem(Minecraft.ID, "sign") };
         ItemStack[] Swood = new ItemStack[] { getModItem(Minecraft.ID, "wooden_slab", 1, 0),
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1), getModItem(Minecraft.ID, "wooden_slab", 1, 2),
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3), getModItem(Minecraft.ID, "wooden_slab", 1, 4),
@@ -113,7 +113,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 addShapelessRecipe(
                         getModItem(BiblioCraft.ID, "BiblioFancySign", 1, i),
                         getModItem(Minecraft.ID, "paper", 1),
-                        getModItem(Minecraft.ID, "sign", 1),
+                        signs[i],
                         LableB[i]);
 
                 addShapedRecipe(
@@ -875,8 +875,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
         // --- Frame Board
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
@@ -891,8 +890,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
     }
 
