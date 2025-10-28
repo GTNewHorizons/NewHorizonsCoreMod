@@ -530,15 +530,15 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L));
         addShapedRecipe(
                 ItemList.LATEX.get(1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
                 ItemList.Machine_HV_CableCoater.get(1),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L));
 
         addShapedRecipe(
                 new ItemStack(GregTechAPI.sBlockStones, 1, 2),
