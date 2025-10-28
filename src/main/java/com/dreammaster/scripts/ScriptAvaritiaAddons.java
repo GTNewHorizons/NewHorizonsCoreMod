@@ -240,9 +240,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                             getModItem(EternalSingularity.ID, "eternal_singularity", 8, 0, missing),
                             ItemList.Timepiece.get(1))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing))
-                    .fluidInputs(
-                            Materials.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(288),
-                            Materials.ExcitedDTSC.getFluid(10000))
+                    .fluidInputs(Materials.MHDCSM.getMolten(288), Materials.ExcitedDTSC.getFluid(10000))
                     .fluidOutputs(Materials.Hydrogen.getPlasma(576), Materials.Helium.getPlasma(576))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(hammerRecipes);
 

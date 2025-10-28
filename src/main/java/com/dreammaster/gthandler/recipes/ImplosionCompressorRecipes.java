@@ -333,7 +333,7 @@ public class ImplosionCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Diamond, 1L))
                     .itemOutputs(
                             GTModHandler.getModItem(Translocator.ID, "diamondNugget", 2L, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.DarkAsh, 1L))
+                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.AshDark, 1L))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }

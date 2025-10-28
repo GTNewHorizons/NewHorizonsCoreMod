@@ -138,8 +138,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing));
@@ -3255,12 +3255,12 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0, missing),
                 getModItem(EnderStorage.ID, "enderChest", 1, 0, missing),
                 ItemList.Gravistar.get(1L),
-                OrePrefixes.plate.get(Materials.HeeEndium),
+                OrePrefixes.plate.get(Materials.Endium),
                 ItemList.QuantumEye.get(1L),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
                 ItemList.QuantumEye.get(1L),
-                OrePrefixes.plate.get(Materials.HeeEndium),
+                OrePrefixes.plate.get(Materials.Endium),
                 ItemList.Gravistar.get(1L));
         TCHelper.addResearchPage(
                 "ENDERSIGIL",
