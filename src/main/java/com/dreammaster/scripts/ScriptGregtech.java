@@ -3,9 +3,11 @@ package com.dreammaster.scripts;
 import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.CropsPlusPlus;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MCFrames;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -39,6 +41,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -81,12 +84,13 @@ public class ScriptGregtech implements IScriptLoader {
                 IndustrialCraft2.ID,
                 Natura.ID,
                 OpenBlocks.ID,
-                PamsHarvestCraft.ID,
                 SGCraft.ID,
                 SuperSolarPanels.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
-                TinkerConstruct.ID);
+                TinkerConstruct.ID,
+                DraconicEvolution.ID,
+                Avaritia.ID);
     }
 
     @Override
@@ -469,6 +473,73 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                 "circuitElite",
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
+        addShapedRecipe(
+                ItemList.Machine_LV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
+                new ItemStack(Blocks.glass),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 1L),
+                ItemList.Hull_LV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
+                ItemList.Electric_Pump_LV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L));
+        addShapedRecipe(
+                ItemList.Machine_MV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
+                new ItemStack(Blocks.glass),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                ItemList.Hull_MV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
+                ItemList.Electric_Pump_MV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L));
+        addShapedRecipe(
+                ItemList.Machine_HV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
+                new ItemStack(Blocks.glass),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
+                ItemList.Hull_HV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
+                ItemList.Electric_Pump_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L));
+        addShapedRecipe(
+                ItemList.Machine_EV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
+                new ItemStack(Blocks.glass),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Aluminium, 1L),
+                ItemList.Hull_EV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
+                ItemList.Electric_Pump_EV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L));
+        addShapedRecipe(
+                ItemList.LATEX.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
+                ItemList.Electric_Pump_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                ItemList.Machine_HV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
+                ItemList.Electric_Pump_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L));
+        addShapedRecipe(
+                ItemList.LATEX.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                ItemList.Electric_Pump_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                ItemList.Machine_HV_CableCoater.get(1),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                ItemList.Electric_Pump_HV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L));
+
         addShapedRecipe(
                 new ItemStack(GregTechAPI.sBlockStones, 1, 2),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
@@ -1460,5 +1531,31 @@ public class ScriptGregtech implements IScriptLoader {
         GTModHandler.addSmeltingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                ItemList.ChaosLocator.get(1),
+                "----a----",
+                "---bbb---",
+                "--bcdcb--",
+                "abcefecba",
+                "-bdfgfdb-",
+                "-bcefecb-",
+                "-bbcdcbb-",
+                "-aabbbaa-",
+                "a-------a",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 1),
+                'b',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackPlutonium, 1),
+                'c',
+                getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing),
+                'd',
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.DraconiumAwakened, 1),
+                'e',
+                NHItemList.ChaoticDust.getIS(1),
+                'f',
+                getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
+                'g',
+                getModItem(DraconicEvolution.ID, "teleporterMKI", 1, 0, missing));
     }
 }
