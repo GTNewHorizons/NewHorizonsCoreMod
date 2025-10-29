@@ -125,8 +125,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UXV.get(1L),
                 bits,
-                new Object[] { "PSP", "SwS", "PSP", 'P',
-                        OrePrefixes.plate.get(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
+                new Object[] { "PSP", "SwS", "PSP", 'P', OrePrefixes.plate.get(Materials.MHDCSM), 'S',
                         OrePrefixes.plate.get(Materials.MagMatter) });
 
         // Hull recycling placed here after the casing recipes for proper item data
@@ -330,7 +329,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Casing_Tank_1.get(1L),
                 bits,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Steel), 'I',
-                        OrePrefixes.pipeLarge.get(Materials.Plastic) });
+                        OrePrefixes.pipeLarge.get(Materials.Polyethylene) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_2.get(1L),
                 bits,

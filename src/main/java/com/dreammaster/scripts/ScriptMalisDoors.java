@@ -155,15 +155,15 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateAnyIron");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "garage_door", 5, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0, missing),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
@@ -1110,7 +1110,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0, missing))
                 .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);

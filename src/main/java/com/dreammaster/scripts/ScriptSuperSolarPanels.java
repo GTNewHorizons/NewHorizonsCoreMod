@@ -149,7 +149,7 @@ public class ScriptSuperSolarPanels implements IScriptLoader {
                 .eut(7680).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L)),
+                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5, missing))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0, missing)).duration(50 * SECONDS)
                 .eut(7680).addTo(laserEngraverRecipes);
