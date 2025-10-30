@@ -60,6 +60,7 @@ import java.util.Objects;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
@@ -1712,7 +1713,7 @@ public class ScriptEFR implements IScriptLoader {
             }
         }
         for (int k = 0; k < 8; k++) {
-            for (int i = 0; i < 17; i++) {
+            for (int i = 1; i < 17; i++) {
                 GameRegistry.addRecipe(new ShulkerNBTRecipe(getShulkerBox(0, k), getShulkerBox(i, k)));
             }
         }
@@ -2151,7 +2152,6 @@ public class ScriptEFR implements IScriptLoader {
     }
 
     // Shulker Box NBT Grabbing Function
-
     public static ItemStack getShulkerBox(int color, int type) {
         ItemStack stack = getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing);
         NBTTagCompound tag = new NBTTagCompound();
@@ -2161,88 +2161,79 @@ public class ScriptEFR implements IScriptLoader {
         return stack;
     }
 
-    // Shulker Box NBT Crafting Preservation Function
+    // Shulker Box Dyeing NBT Crafting Function
+    public static class ShulkerNBTRecipe implements IRecipe {
 
-    public class ShulkerNBTRecipe implements IRecipe {
+        private static final String NBT_ITEMS = "Items";
+        private static final String NBT_COLOR = "Color";
+        private static final String NBT_TYPE = "Type";
 
         private final ItemStack output;
-        private final ItemStack requiredShulker;
-        private final String dye; // Nullable: if null, acts as "wash" recipe
+        private final Item reqItem;
+        private final int expectedColor;
+        private final int expectedType;
+        private final String dye; // Null For Undyeing
 
+        // Dyeing Recipes
         public ShulkerNBTRecipe(ItemStack output, ItemStack requiredShulker, String dye) {
             this.output = output;
-            this.requiredShulker = requiredShulker;
-            this.dye = dye; // if null, acts as 1-input recipe
+            this.reqItem = requiredShulker.getItem();
+            NBTTagCompound exp = requiredShulker.getTagCompound();
+            this.expectedColor = getByte(exp, NBT_COLOR);
+            this.expectedType = getByte(exp, NBT_TYPE);
+            this.dye = dye;
         }
 
+        // Undyeing Recipes
         public ShulkerNBTRecipe(ItemStack output, ItemStack requiredShulker) {
-            this(output, requiredShulker, null); // 1-input wash recipe
+            this(output, requiredShulker, null);
         }
 
         @Override
         public boolean matches(InventoryCrafting inv, World world) {
-            boolean foundShulker = false;
-            boolean foundDye = (dye == null); // True for 1-input recipes
+            ItemStack foundShulker = null;
+            boolean foundDye = (dye == null); // <- For Undye
+            int craftingCount = 0;
+
             for (int i = 0; i < inv.getSizeInventory(); i++) {
-                ItemStack stack = inv.getStackInSlot(i);
-                if (stack == null) continue;
-                if (!foundShulker && shulkerMatches(stack, requiredShulker)) {
-                    foundShulker = true;
-                } else if (dye != null && !foundDye && isOreDict(stack, dye)) {
-                    foundDye = true;
+                ItemStack slot = inv.getStackInSlot(i);
+                if (slot == null) continue;
+                craftingCount++; // <- 2 For Dye, 1 for Undye
+
+                // Find Recipe Items
+                if (foundShulker == null && isRequiredShulker(slot)) {
+                    foundShulker = slot;
+                    continue;
                 }
+                if (dye != null && !foundDye && isOreDict(slot, dye)) {
+                    foundDye = true;
+                    continue;
+                }
+                // Invalid For All Other Items
+                return false;
             }
-            return foundShulker && foundDye;
-        }
-
-        private boolean shulkerMatches(ItemStack stack, ItemStack required) {
-            if (stack.getItem() != required.getItem()) return false;
-            if (stack.getItemDamage() != required.getItemDamage()) return false;
-
-            NBTTagCompound actual = stack.getTagCompound();
-            NBTTagCompound expected = required.getTagCompound();
-
-            int actualColor = (actual != null && actual.hasKey("Color")) ? actual.getByte("Color") : 0;
-            int expectedColor = (expected != null && expected.hasKey("Color")) ? expected.getByte("Color") : 0;
-
-            int actualType = (actual != null && actual.hasKey("Type")) ? actual.getByte("Type") : 0;
-            int expectedType = (expected != null && expected.hasKey("Type")) ? expected.getByte("Type") : 0;
-
-            return actualColor == expectedColor && actualType == expectedType;
-        }
-
-        private boolean isOreDict(ItemStack stack, String oredict) {
-            for (ItemStack ore : OreDictionary.getOres(oredict)) {
-                if (OreDictionary.itemMatches(ore, stack, false)) return true;
-            }
-            return false;
+            return (dye == null) ? (foundShulker != null && craftingCount == 1)
+                    : (foundShulker != null && foundDye && craftingCount == 2);
         }
 
         @Override
         public ItemStack getCraftingResult(InventoryCrafting inv) {
             ItemStack result = output.copy();
-            NBTTagCompound tag = result.hasTagCompound() ? result.getTagCompound() : new NBTTagCompound();
+            NBTTagCompound outTag = imprintTag(result);
 
             for (int i = 0; i < inv.getSizeInventory(); i++) {
-                ItemStack stack = inv.getStackInSlot(i);
-                if (stack != null && shulkerMatches(stack, requiredShulker)) {
-                    NBTTagCompound inTag = stack.getTagCompound();
-
-                    if (inTag != null && inTag.hasKey("Items")) {
-                        tag.setTag("Items", inTag.getTag("Items"));
+                ItemStack slot = inv.getStackInSlot(i);
+                if (slot != null && isRequiredShulker(slot)) {
+                    NBTTagCompound inTag = slot.getTagCompound();
+                    if (inTag != null && inTag.hasKey(NBT_ITEMS)) {
+                        outTag.setTag(NBT_ITEMS, inTag.getTag(NBT_ITEMS));
                     }
-
-                    int type = (inTag != null && inTag.hasKey("Type")) ? inTag.getByte("Type") : 0;
-                    tag.setByte("Type", (byte) type);
-
-                    int color = (result.hasTagCompound() && result.getTagCompound().hasKey("Color"))
-                            ? result.getTagCompound().getByte("Color")
-                            : 0;
-                    tag.setByte("Color", (byte) color);
+                    outTag.setByte(NBT_TYPE, (byte) getByte(inTag, NBT_TYPE));
+                    outTag.setByte(NBT_COLOR, (byte) getByte(result.getTagCompound(), NBT_COLOR));
                     break;
                 }
             }
-            result.setTagCompound(tag);
+            result.setTagCompound(outTag);
             return result;
         }
 
@@ -2254,6 +2245,34 @@ public class ScriptEFR implements IScriptLoader {
         @Override
         public ItemStack getRecipeOutput() {
             return output;
+        }
+
+        // Helpers
+
+        private static int getByte(NBTTagCompound tag, String key) {
+            return (tag != null && tag.hasKey(key)) ? tag.getByte(key) : 0;
+        }
+
+        private boolean isRequiredShulker(ItemStack shulker) {
+            if (shulker.getItem() != reqItem) return false;
+            NBTTagCompound tag = shulker.getTagCompound();
+            return getByte(tag, NBT_COLOR) == expectedColor && getByte(tag, NBT_TYPE) == expectedType;
+        }
+
+        private static boolean isOreDict(ItemStack dyeType, String oreDictName) {
+            for (ItemStack dyeOreName : OreDictionary.getOres(oreDictName)) {
+                if (OreDictionary.itemMatches(dyeOreName, dyeType, false)) return true;
+            }
+            return false;
+        }
+
+        private static NBTTagCompound imprintTag(ItemStack shulker) {
+            NBTTagCompound tag = shulker.getTagCompound();
+            if (tag == null) {
+                tag = new NBTTagCompound();
+                shulker.setTagCompound(tag);
+            }
+            return tag;
         }
     }
 }
