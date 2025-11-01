@@ -3961,6 +3961,18 @@ public class ScriptMinecraft implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "sandstone", 1, 2, missing));
 
+        ItemStack stoneBrick = getModItem(Minecraft.ID, "stonebrick", 1, 0, missing);
+        addShapedRecipe(
+                getModItem(Minecraft.ID, "stone_brick_stairs", 4, 0, missing),
+                stoneBrick,
+                null,
+                null,
+                stoneBrick,
+                stoneBrick,
+                null,
+                stoneBrick,
+                stoneBrick,
+                stoneBrick);
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stone_slab", 1, 4, missing),
                 "craftingToolSaw",
