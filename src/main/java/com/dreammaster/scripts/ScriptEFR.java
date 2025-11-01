@@ -110,6 +110,24 @@ public class ScriptEFR implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+
+        // Ore Dictionary Calls
+
+        OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
+        OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.getIS(1));
+        OreDictionary.registerOre("flowerWhite", getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0));
+        OreDictionary.registerOre("flowerLilyValley", getModItem(EtFuturumRequiem.ID, "lily_of_the_valley", 1, 0));
+        OreDictionary.registerOre("flowerBlue", getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0));
+        OreDictionary.registerOre("flowerCorn", getModItem(EtFuturumRequiem.ID, "cornflower", 1, 0));
+        OreDictionary.registerOre("flowerBlack", getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0));
+        OreDictionary.registerOre("flowerRoseWither", getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0));
+        OreDictionary.registerOre("flowerRed", getModItem(EtFuturumRequiem.ID, "rose", 1, 0));
+        OreDictionary.registerOre("flowerRose", getModItem(EtFuturumRequiem.ID, "rose", 1, 0));
+        OreDictionary.registerOre("flowerPink", getModItem(EtFuturumRequiem.ID, "pink_petals", 1, 0));
+        OreDictionary.registerOre("flowerPinkPetals", getModItem(EtFuturumRequiem.ID, "pink_petals", 1, 0));
+
+        // Observer
+
         long bits = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE
                 | GTModHandler.RecipeBits.BUFFERED;
         GTModHandler.addCraftingRecipe(
@@ -1291,8 +1309,6 @@ public class ScriptEFR implements IScriptLoader {
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
-        OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.getIS(1));
-
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "deepslate", 1, 0, missing))
                 .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
 
@@ -1308,8 +1324,6 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Staurolite, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) // gt
                 .duration(1 * MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
-
-        OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
 
         GTValues.RA.stdBuilder().itemInputs(Materials.MetamorphicMineralMixture.getDust(36))
                 .itemOutputs(
