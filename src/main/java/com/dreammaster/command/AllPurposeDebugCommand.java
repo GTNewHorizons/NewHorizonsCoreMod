@@ -1,10 +1,9 @@
 package com.dreammaster.command;
 
-import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.command.ICommand;
+import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -23,12 +22,7 @@ import eu.usrv.yamcore.auxiliary.PlayerHelper;
 
 // Use this command for your own needs. Add stuff you want to test/debug. This
 // command is only available while running in debug mode
-public class AllPurposeDebugCommand implements ICommand {
-
-    @Override
-    public int compareTo(Object arg0) {
-        return 0;
-    }
+public class AllPurposeDebugCommand extends CommandBase {
 
     @Override
     public String getCommandName() {
@@ -40,11 +34,6 @@ public class AllPurposeDebugCommand implements ICommand {
         return "/gtnhdebug";
     }
 
-    @Override
-    public List getCommandAliases() {
-        return null;
-    }
-
     private void moarArgs(ICommandSender pCmdSender) {
         PlayerChatHelper.SendError(pCmdSender, "Y U NO GIEV MOAR ARGS?");
     }
@@ -54,7 +43,6 @@ public class AllPurposeDebugCommand implements ICommand {
         try {
             if (pArgs.length == 0) {
                 moarArgs(pCmdSender);
-                return;
             } else if ("ci".equalsIgnoreCase(pArgs[0])) {
                 EntityPlayer tEP = (EntityPlayer) pCmdSender;
                 World tWorldObj = tEP.worldObj;
@@ -144,22 +132,21 @@ public class AllPurposeDebugCommand implements ICommand {
                     }
                 } else {
                     moarArgs(pCmdSender);
-                    return;
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
-            PlayerChatHelper.SendError(pCmdSender, "Unknown error occoured [%s]", e.getMessage());
+            PlayerChatHelper.SendError(pCmdSender, "Unknown error occurred [%s]", e.getMessage());
         }
     }
 
-    private boolean InGame(ICommandSender pCmdSender) {
+    private boolean inGame(ICommandSender pCmdSender) {
         return pCmdSender instanceof EntityPlayer;
     }
 
-    private void SendHelpToPlayer(ICommandSender pCmdSender) {
-        if (!InGame(pCmdSender)) {
-            PlayerChatHelper.SendPlain(pCmdSender, "Command can only be executed ingame");
+    private void sendHelpToPlayer(ICommandSender pCmdSender) {
+        if (!inGame(pCmdSender)) {
+            PlayerChatHelper.SendPlain(pCmdSender, "Command can only be executed in game");
         } else {
             PlayerChatHelper.SendInfo(pCmdSender, "/gtnhdebug");
         }
@@ -168,15 +155,5 @@ public class AllPurposeDebugCommand implements ICommand {
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender pCommandSender) {
         return true;
-    }
-
-    @Override
-    public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
-        return null;
-    }
-
-    @Override
-    public boolean isUsernameIndex(String[] p_82358_1_, int p_82358_2_) {
-        return false;
     }
 }
