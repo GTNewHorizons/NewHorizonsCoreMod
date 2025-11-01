@@ -348,9 +348,6 @@ public class CompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdvancedCokeOvenBrick.get(4L))
                 .itemOutputs(getModItem(Railcraft.ID, "machine.alpha", 1, 12, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CokeOvenBrick.get(4L))
-                .itemOutputs(getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing)).duration(15 * SECONDS).eut(2)
-                .addTo(compressorRecipes);
     }
 
     private void makeThaumcraftRecipes() {
