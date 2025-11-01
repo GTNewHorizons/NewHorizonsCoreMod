@@ -48,6 +48,7 @@ import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.iguana.IguanaProxy;
@@ -86,6 +87,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
+import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
@@ -585,6 +587,23 @@ public class MainRegistry {
     public void serverUnload(FMLServerStoppingEvent event) {
         if (handleAchievements) {
             AchievementHandler.cleanup();
+        }
+    }
+
+    @Mod.EventHandler
+    public void onMissingMappings(FMLMissingMappingsEvent event) {
+        for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
+            if (mapping.type != GameRegistry.Type.ITEM) {
+                continue;
+            }
+
+            // Remaps the old "UnfiredSlimeSoulBrick" (with a typo) to the new, correct "UnfiredSlimeSoilBrick".
+            final String oldBrickName = "dreamcraft:item.UnfiredSlimeSoulBrick";
+            if (oldBrickName.equals(mapping.name)) {
+                mapping.remap(CustomItemList.UnfiredSlimeSoilBrick.getItem());
+            }
+
+            break;
         }
     }
 }
