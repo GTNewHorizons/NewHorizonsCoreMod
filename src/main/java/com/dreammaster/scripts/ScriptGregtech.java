@@ -152,7 +152,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "brick", 1, 0, missing));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L),
                 "stickPlastic",
                 "craftingToolHardHammer",
                 "stickPlastic");
@@ -530,15 +530,15 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L));
         addShapedRecipe(
                 ItemList.LATEX.get(1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
                 ItemList.Machine_HV_CableCoater.get(1),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L));
 
         addShapedRecipe(
                 new ItemStack(GregTechAPI.sBlockStones, 1, 2),
@@ -714,7 +714,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Battery_Buffer_3by3_IV.get(1L));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L)).duration(15 * SECONDS)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L)).duration(15 * SECONDS)
                 .eut(2).addTo(extractorRecipes);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Empty.get(1L),
@@ -1450,9 +1450,9 @@ public class ScriptGregtech implements IScriptLoader {
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(64)
                 .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 2L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L)).duration(20).eut(16)
-                .addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L)).duration(20)
+                .eut(16).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Rubber, 2L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1)).duration(20).eut(16)
                 .addTo(hammerRecipes);

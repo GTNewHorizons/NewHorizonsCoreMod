@@ -505,18 +505,18 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .duration(15 * SECONDS).eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_powder", 4, 0, missing))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.HeeEndium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.EnderEye, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.HeeEndium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.EnderEye, 1L))
                 .outputChances(9000, 8000, 7500, 5000).fluidOutputs(FluidRegistry.getFluidStack("ender", 100))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder()
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Tungstate, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.HeeEndium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.EnderEye, 1L))
                 .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -537,15 +537,15 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(120).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Endium, 9L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 500)).duration(3 * MINUTES).eut(30)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Endium, 9L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 350)).duration(3 * MINUTES).eut(30)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Endium, 9L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 150)).duration(1 * MINUTES + 30 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing))
@@ -564,7 +564,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "igneous_rock", 4, 0, missing)).outputChances(10000)
                 .duration(2 * SECONDS + 10 * TICKS).eut(480).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 9L)).outputChances(10000)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 9L)).outputChances(10000)
                 .duration(2 * SECONDS + 10 * TICKS).eut(480).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Sphalerite, 4L))
