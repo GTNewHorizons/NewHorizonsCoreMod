@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
@@ -14,6 +15,7 @@ import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenPrinters;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
@@ -907,6 +909,50 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Iridium), 'P',
                         OrePrefixes.plate.get(Materials.Plutonium241), 'O',
                         CustomItemList.ReinforcedGlassLense.get(1L) });
+
+        // ===================================================================================================
+        // Coke Oven
+        // ===================================================================================================
+
+        GTModHandler.addCraftingRecipe(
+                ItemList.CokeOvenCasing.get(1),
+                bits,
+                new Object[] {
+                        // spotless:off
+                        "BB ",
+                        "BB ",
+                        "   ",
+                        'B', NHItemList.CokeOvenBrick.getIS().splitStack(1)
+                        // spotless:on
+                });
+
+        GTModHandler.addCraftingRecipe(
+                ItemList.CokeOvenController.get(1),
+                bits,
+                new Object[] {
+                        // spotless:off
+                        "BBB",
+                        "BFB",
+                        "BBB",
+                        'B', NHItemList.CokeOvenBrick.getIS().splitStack(1),
+                        'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing)
+                        // spotless:on
+                });
+
+        GTModHandler.addCraftingRecipe(
+                ItemList.CokeOvenHatch.get(1),
+                bits,
+                new Object[] {
+                        // spotless:off
+                        "BHB",
+                        "BCB",
+                        "BPB",
+                        'B', NHItemList.CokeOvenBrick.getIS().splitStack(1),
+                        'H', getModItem(Minecraft.ID, "hopper", 1, 0, missing),
+                        'C', getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                        'P', OrePrefixes.pipeMedium.get(Materials.Bronze)
+                        // spotless:on
+                });
 
         // ===================================================================================================
         // Diodes
