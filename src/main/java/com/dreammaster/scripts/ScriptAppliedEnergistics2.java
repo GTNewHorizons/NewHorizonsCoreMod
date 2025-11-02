@@ -997,14 +997,16 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 12, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 4L),
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
+                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 7, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 4L),
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
+                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
