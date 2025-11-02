@@ -969,6 +969,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "stickCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 "stickCertusQuartz");
+
+        // Fluix Pearls
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
@@ -991,6 +993,21 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
                 "plateEnderEye",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 12, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 4L),
+                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 7, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 4L),
+                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
