@@ -44,7 +44,7 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         }
 
         if (Avaritia.isModLoaded()) {
-            API.hideItem(GTModHandler.getModItem(Avaritia.ID, "neutronium_compressor", 1));
+            API.hideItem(GTModHandler.getModItem(Avaritia.ID, "Neutronium_Compressor", 1));
         }
 
         if (BiblioCraft.isModLoaded()) {
