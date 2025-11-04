@@ -2973,14 +2973,6 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Neutronium_Stable_Casing.get(4)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(assemblerRecipes);
 
-        // Neutronium Compressor conversion
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(16))
-                .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(16).addTo(assemblerRecipes);
-
         // Background Radiation Absorbent Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(

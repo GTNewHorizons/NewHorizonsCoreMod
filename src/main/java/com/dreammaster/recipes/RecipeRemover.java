@@ -376,12 +376,8 @@ public class RecipeRemover {
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
 
-            ItemStack mossyStoneBricks = getModItem(Minecraft.ID, "stonebrick", 1L, 1);
-            removeRecipeShapedDelayed(
-                    getModItem(Minecraft.ID, "stone_brick_stairs", 4L, 0),
-                    new Object[] { mossyStoneBricks, null, null },
-                    new Object[] { mossyStoneBricks, mossyStoneBricks, null },
-                    new Object[] { mossyStoneBricks, mossyStoneBricks, mossyStoneBricks });
+            removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_brick_stairs", 4, 0));
+
             GTModHandler.removeFurnaceSmelting(getModItem(EtFuturumRequiem.ID, "deepslate", 1));
         }
 

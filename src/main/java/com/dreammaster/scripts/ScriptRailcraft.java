@@ -1336,12 +1336,6 @@ public class ScriptRailcraft implements IScriptLoader {
                 "stickSteel",
                 null,
                 null);
-        addShapelessRecipe(
-                getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing),
-                CustomItemList.CokeOvenBrick.get(1L),
-                CustomItemList.CokeOvenBrick.get(1L),
-                CustomItemList.CokeOvenBrick.get(1L),
-                CustomItemList.CokeOvenBrick.get(1L));
         addShapedRecipe(
                 getModItem(Railcraft.ID, "brick.sandy", 2, 2, missing),
                 "ingotBrick",
