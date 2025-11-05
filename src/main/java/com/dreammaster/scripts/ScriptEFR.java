@@ -1079,7 +1079,7 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(ZTones.ID, "minicharcoal", 6, 0, missing),
                         getModItem(EtFuturumRequiem.ID, "smooth_stone", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnyIron, 4L),
-                        GTUtility.getIntegratedCircuit(8))
+                        GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "smoker", 1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -1212,8 +1212,8 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 13L),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 2880)).duration(2 * MINUTES)
-                .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
