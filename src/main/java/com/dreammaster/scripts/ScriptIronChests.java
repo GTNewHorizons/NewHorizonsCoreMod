@@ -1453,19 +1453,22 @@ public class ScriptIronChests implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L),
+                        GTUtility.getIntegratedCircuit(7))
                 .itemOutputs(getModItem(IronChests.ID, "diamondDarkSteelUpgrade", 1, 0, missing)).duration(40 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L),
+                        GTUtility.getIntegratedCircuit(7))
                 .itemOutputs(getModItem(IronChests.ID, "crystalDarkSteelUpgrade", 1, 0, missing)).duration(40 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L),
+                        GTUtility.getIntegratedCircuit(7))
                 .itemOutputs(getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0, missing))
                 .duration(40 * SECONDS).eut(480).addTo(assemblerRecipes);
     }
