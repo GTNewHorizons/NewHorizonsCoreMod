@@ -5989,7 +5989,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Casing_LV.get(1L),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 3L, 25),
+                        GTModHandler.getModItem(OpenComputers.ID, "item", 3L, 24),
                         ItemList.Electric_Motor_MV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Copper, 1),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.IronMagnetic, 1),
@@ -6095,12 +6095,12 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Transformer_HV_MV.get(1L),
                         ItemList.Circuit_Board_Plastic_Advanced.get(2L),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
+                        GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "powerConverter", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // powerDistributor
 
         GTValues.RA.stdBuilder()
