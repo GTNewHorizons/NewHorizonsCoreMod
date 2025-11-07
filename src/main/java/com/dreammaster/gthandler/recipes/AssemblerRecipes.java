@@ -6100,7 +6100,8 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "powerConverter", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
         // powerDistributor
 
         GTValues.RA.stdBuilder()
