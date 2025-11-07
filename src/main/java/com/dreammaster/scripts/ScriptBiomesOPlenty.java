@@ -117,7 +117,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),

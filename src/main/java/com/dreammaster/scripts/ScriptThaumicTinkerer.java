@@ -882,11 +882,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.block.get(Materials.Thaumium),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.plate.get(Materials.Iron),
-                OrePrefixes.plate.get(Materials.ReinforceGlass),
+                OrePrefixes.plate.get(Materials.ReinforcedGlass),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 OrePrefixes.plate.get(Materials.Diamond),
-                OrePrefixes.plate.get(Materials.ReinforceGlass),
+                OrePrefixes.plate.get(Materials.ReinforcedGlass),
                 OrePrefixes.plate.get(Materials.Gold));
         TCHelper.setResearchAspects(
                 "REPAIRER",

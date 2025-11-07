@@ -71,7 +71,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         Materials.Plutonium.getMolten(64 * 144),
                         GGMaterial.atomicSeparationCatalyst.getMolten(64 * 144),
                         Materials.Tartarite.getMolten(64 * 144),
-                        Materials.Longasssuperconductornameforuvwire.getMolten(64 * 144))
+                        Materials.SuperconductorUVBase.getMolten(64 * 144))
                 .itemOutputs(ItemList.Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                 .duration(120 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -94,7 +94,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
                         ItemList.Sensor_UHV.get(1))
                 .fluidInputs(
-                        Materials.Longasssuperconductornameforuhvwire.getMolten(64 * 144),
+                        Materials.SuperconductorUHVBase.getMolten(64 * 144),
                         Materials.Osmiridium.getMolten(64 * 144),
                         Materials.Ledox.getMolten(64 * 144),
                         Materials.CallistoIce.getMolten(64 * 144))
@@ -120,7 +120,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Chip_Optical.get(4L),
                         ItemList.Optical_Cpu_Containment_Housing.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Longasssuperconductornameforuhvwire, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.SuperconductorUHVBase, 8L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.TengamAttuned, 8L),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.DraconiumAwakened, 8L),
                         CustomItemList.DATApipe.get(4L),
@@ -237,8 +237,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
                         ItemList.Circuit_Parts_ResistorXSMD.get(64L),
                         ItemList.Circuit_Parts_TransistorXSMD.get(64L),
-                        GTOreDictUnificator
-                                .get(OrePrefixes.bolt, Materials.MagnetohydrodynamicallyConstrainedStarMatter, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.MHDCSM, 4L))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
                         Materials.WhiteDwarfMatter.getMolten(576),
