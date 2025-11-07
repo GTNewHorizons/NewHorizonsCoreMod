@@ -1799,6 +1799,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "brewing_stand", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "clock", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "compass", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_sword", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_shovel", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_pickaxe", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_axe", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_hoe", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_sword", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_shovel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0, missing));
