@@ -253,20 +253,18 @@ public class LaserEngraverRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(Botania.ID, "livingrock", 1L, 0),
-                        GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
-                        GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0),
+                        GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dragonstone, 1)))
                 .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerrock", 1L, 0)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(Botania.ID, "dreamwood", 1L, 1),
-                        GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
-                        GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0),
+                        GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dragonstone, 1)))
                 .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerwoodPlanks", 1L, 0)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         // Protomatter recipes
         GTValues.RA.stdBuilder().fluidInputs(Materials.DTR.getFluid(100L)).duration(10 * SECONDS).eut(TierEU.RECIPE_UIV)
