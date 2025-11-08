@@ -276,12 +276,12 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 1L),
                         GTModHandler.getIC2Item("carbonMesh", 1L),
                         GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(ItemList.Duct_Tape.get(2L)).fluidInputs(Materials.AdvancedGlue.getFluid(200))
+                .itemOutputs(ItemList.Duct_Tape.get(2L)).fluidInputs(Materials.GlueAdvanced.getFluid(200))
                 .duration(6 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Hull_LV.get(1), ItemList.Duct_Tape.get(2), GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Hatch_Maintenance.get(1)).fluidInputs(Materials.AdvancedGlue.getFluid(200))
+                .itemOutputs(ItemList.Hatch_Maintenance.get(1)).fluidInputs(Materials.GlueAdvanced.getFluid(200))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // 10,30 and 60K NAK Cells
@@ -954,8 +954,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.plate, Materials.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.MHDCSM, 4L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.MagMatter, 4L),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(ItemList.Casing_UXV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
@@ -993,7 +992,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Plastic, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Polyethylene, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 8L),
                         GTUtility.getIntegratedCircuit(4))
                 .itemOutputs(ItemList.Casing_Tank_1.get(1L)).duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
@@ -1641,7 +1640,7 @@ public class AssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sugar, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.cell, Materials.Fuel, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.cell, Materials.Diesel, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.SulfuricAcid, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Acetone, 1L),
                             GTModHandler.getModItem(PamsHarvestCraft.ID, "pepperoniItem", 1L, 0),
@@ -1796,7 +1795,7 @@ public class AssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4L),
                             GTUtility.getIntegratedCircuit(1))
                     .itemOutputs(GTModHandler.getModItem(ExtraUtilities.ID, "filing", 1L, 0))
-                    .fluidInputs(Materials.Plastic.getMolten(144L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                    .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(assemblerRecipes);
         }
 
@@ -2819,10 +2818,10 @@ public class AssemblerRecipes implements Runnable {
             // Biome Compass
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            Materials.HeeEndium.getPlates(1),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.HeeEndium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.HeeEndium, 2),
-                            GTOreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 2),
+                            Materials.Endium.getPlates(1),
+                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Endium, 1),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.Endium, 2),
+                            GTOreDictUnificator.get(OrePrefixes.ring, Materials.Endium, 2),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
                             GTModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0))
                     .itemOutputs(GTModHandler.getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 0))
@@ -2845,7 +2844,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 2))
-                .fluidInputs(Materials.Plastic.getMolten(144)).itemOutputs(CustomItemList.Display.get(1))
+                .fluidInputs(Materials.Polyethylene.getMolten(144)).itemOutputs(CustomItemList.Display.get(1))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Ender-Quantum Component
@@ -2973,14 +2972,6 @@ public class AssemblerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(16))
                 .itemOutputs(ItemList.Neutronium_Stable_Casing.get(4)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(assemblerRecipes);
-
-        // Neutronium Compressor conversion
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(16))
-                .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(16).addTo(assemblerRecipes);
 
         // Background Radiation Absorbent Casing
         GTValues.RA.stdBuilder()
@@ -3474,7 +3465,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_LV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Silicone, 2),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Tin, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tin, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
@@ -3507,7 +3498,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_MV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Silicone, 2),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Bronze, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Bronze, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1),
@@ -3540,7 +3531,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_HV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Silicone, 2),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
@@ -3573,7 +3564,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_EV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Silicone, 2),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1),
@@ -3595,7 +3586,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_IV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Silicone, 2),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1),
@@ -3626,7 +3617,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_LV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 6),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1))
                 .itemOutputs(ItemList.Conveyor_Module_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3650,7 +3641,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_MV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 6),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 1))
                 .itemOutputs(ItemList.Conveyor_Module_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3674,7 +3665,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_HV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 6),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1))
                 .itemOutputs(ItemList.Conveyor_Module_HV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3690,7 +3681,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_EV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 6),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1))
                 .itemOutputs(ItemList.Conveyor_Module_EV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3714,7 +3705,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_IV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 6),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1))
                 .itemOutputs(ItemList.Conveyor_Module_IV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3990,7 +3981,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 32),
                         GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(ItemList.Circuit_Board_Coated_Basic.get(16L))
-                .fluidInputs(Materials.Plastic.getMolten(288L)).duration(1 * MINUTES + 20 * SECONDS).eut(8)
+                .fluidInputs(Materials.Polyethylene.getMolten(288L)).duration(1 * MINUTES + 20 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4252,7 +4243,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1),
                         GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(ItemList.Circuit_Parts_Diode.get(4L)).fluidInputs(Materials.Plastic.getMolten(144L))
+                .itemOutputs(ItemList.Circuit_Parts_Diode.get(4L)).fluidInputs(Materials.Polyethylene.getMolten(144L))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4277,7 +4268,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4),
                         ItemList.Circuit_Silicon_Wafer.get(1L),
                         GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(ItemList.Circuit_Parts_Diode.get(2L)).fluidInputs(Materials.Plastic.getMolten(144L))
+                .itemOutputs(ItemList.Circuit_Parts_Diode.get(2L)).fluidInputs(Materials.Polyethylene.getMolten(144L))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4302,7 +4293,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4),
                         ItemList.Circuit_Silicon_Wafer.get(1L),
                         GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(ItemList.Circuit_Parts_Diode.get(4L)).fluidInputs(Materials.Plastic.getMolten(144L))
+                .itemOutputs(ItemList.Circuit_Parts_Diode.get(4L)).fluidInputs(Materials.Polyethylene.getMolten(144L))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4310,7 +4301,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 4),
                         ItemList.Circuit_Silicon_Wafer.get(1L),
                         GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(ItemList.Circuit_Parts_Diode.get(8L)).fluidInputs(Materials.Plastic.getMolten(144L))
+                .itemOutputs(ItemList.Circuit_Parts_Diode.get(8L)).fluidInputs(Materials.Polyethylene.getMolten(144L))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4318,7 +4309,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_Coil.get(2L)).fluidInputs(Materials.Plastic.getMolten(36L))
+                .itemOutputs(ItemList.Circuit_Parts_Coil.get(2L)).fluidInputs(Materials.Polyethylene.getMolten(36L))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4326,7 +4317,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.NickelZincFerrite, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_Coil.get(4L)).fluidInputs(Materials.Plastic.getMolten(36L))
+                .itemOutputs(ItemList.Circuit_Parts_Coil.get(4L)).fluidInputs(Materials.Polyethylene.getMolten(36L))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4334,7 +4325,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 2),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_Coil.get(4L)).fluidInputs(Materials.Plastic.getMolten(36L))
+                .itemOutputs(ItemList.Circuit_Parts_Coil.get(4L)).fluidInputs(Materials.Polyethylene.getMolten(36L))
                 .duration(16 * SECONDS).eut(60).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4342,56 +4333,42 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.NickelZincFerrite, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 2),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_Coil.get(8L)).fluidInputs(Materials.Plastic.getMolten(36L))
+                .itemOutputs(ItemList.Circuit_Parts_Coil.get(8L)).fluidInputs(Materials.Polyethylene.getMolten(36L))
                 .duration(16 * SECONDS).eut(60).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Plastic, 1),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polyethylene, 1),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Tantalum, 2),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_Capacitor.get(12L)).fluidInputs(Materials.Plastic.getMolten(144L))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_Capacitor.get(12L))
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(16 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Plastic, 1),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polyethylene, 1),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 2),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_Capacitor.get(8L)).fluidInputs(Materials.Plastic.getMolten(144L))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_Capacitor.get(8L))
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(16 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.SiliconSG, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tin, 8),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(ItemList.Circuit_Parts_Transistor.get(6L)).fluidInputs(Materials.Plastic.getMolten(144L))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        // All SMD Component recipes.
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 4),
-                        GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_ResistorSMD.get(16L)).fluidInputs(Materials.Plastic.getMolten(288L))
-                .duration(16 * SECONDS).eut(96).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 4),
-                        GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_ResistorSMD.get(32L)).fluidInputs(Materials.Plastic.getMolten(288L))
-                .duration(16 * SECONDS).eut(96).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_Transistor.get(6L))
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1),
                         GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(ItemList.Circuit_Parts_Diode.get(6L)).fluidInputs(Materials.Plastic.getMolten(144L))
+                .itemOutputs(ItemList.Circuit_Parts_Diode.get(6L)).fluidInputs(Materials.Polyethylene.getMolten(144L))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4399,16 +4376,37 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 4),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1),
                         GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(ItemList.Circuit_Parts_Diode.get(16L)).fluidInputs(Materials.Plastic.getMolten(144L))
+                .itemOutputs(ItemList.Circuit_Parts_Diode.get(16L)).fluidInputs(Materials.Polyethylene.getMolten(144L))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // All SMD Component recipes.
+        // Normal SMD
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Circuit_Parts_ResistorSMD.get(16L))
+                .fluidInputs(Materials.Polyethylene.getMolten(288L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Circuit_Parts_ResistorSMD.get(32L))
+                .fluidInputs(Materials.Polyethylene.getMolten(288L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 16),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 1),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_DiodeSMD.get(64L)).fluidInputs(Materials.Plastic.getMolten(576L))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_DiodeSMD.get(64L))
+                .fluidInputs(Materials.Polyethylene.getMolten(576L)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -4416,7 +4414,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 8),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Circuit_Parts_TransistorSMD.get(16L))
-                .fluidInputs(Materials.Plastic.getMolten(288L)).duration(16 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(288L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4425,17 +4423,16 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 8),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Circuit_Parts_TransistorSMD.get(32L))
-                .fluidInputs(Materials.Plastic.getMolten(288L)).duration(16 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(288L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-        // Normal SMD
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Silicone, 2),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.RubberSilicone, 2),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 2),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Circuit_Parts_CapacitorSMD.get(16L))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(16 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4444,16 +4441,16 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 2),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Circuit_Parts_CapacitorSMD.get(24L))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(16 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Silicone, 2),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.RubberSilicone, 2),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Tantalum, 2),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Circuit_Parts_CapacitorSMD.get(32L))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(16 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4462,7 +4459,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Tantalum, 2),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Circuit_Parts_CapacitorSMD.get(48L))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(16 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4470,34 +4467,38 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.ConductiveIron, 8),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(24L)).fluidInputs(Materials.Plastic.getMolten(36L))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(24L))
+                .fluidInputs(Materials.Polyethylene.getMolten(36L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 8),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(32L)).fluidInputs(Materials.Plastic.getMolten(36L))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(32L))
+                .fluidInputs(Materials.Polyethylene.getMolten(36L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 8),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(48L)).fluidInputs(Materials.Plastic.getMolten(36L))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(48L))
+                .fluidInputs(Materials.Polyethylene.getMolten(36L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Iridium, 8),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(64L)).fluidInputs(Materials.Plastic.getMolten(36L))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        // ASMD
+                .itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(64L))
+                .fluidInputs(Materials.Polyethylene.getMolten(36L)).duration(8 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
+        // ASMD
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Graphene, 2),
@@ -4554,8 +4555,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Netherite, 1L),
                         MaterialsAlloy.PIKYONIUM.getFoil(4),
-                        GTOreDictUnificator
-                                .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.SuperconductorZPMBase, 2L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2L),
                         GTUtility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(64L)).fluidInputs(Materials.Xenoxene.getFluid(288))
@@ -4566,8 +4566,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.BlackPlutonium, 4L),
                         MaterialsAlloy.TRINIUM_REINFORCED_STEEL.getFoil(2),
-                        GTOreDictUnificator
-                                .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.SuperconductorZPMBase, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GTUtility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_TransistorXSMD.get(32L))
@@ -4579,8 +4578,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 4L),
                         MaterialsAlloy.CINOBITE.getFoil(2),
-                        GTOreDictUnificator
-                                .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.SuperconductorZPMBase, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GTUtility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_CapacitorXSMD.get(32L))
@@ -4592,8 +4590,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Tritanium, 4L),
                         MaterialsAlloy.LAFIUM.getFoil(2),
-                        GTOreDictUnificator
-                                .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.SuperconductorZPMBase, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GTUtility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_DiodeXSMD.get(64L)).fluidInputs((Materials.Xenoxene.getFluid(144L)))
@@ -4917,7 +4914,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "itemBasicCapacitor", 1L, 7))
-                .fluidInputs(Materials.Plastic.getMolten(288)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Polyethylene.getMolten(288)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4926,7 +4923,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "itemBasicCapacitor", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(288)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Polyethylene.getMolten(288)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -5784,7 +5781,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Aluminium, 2),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "case1", 1, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // case 2
 
@@ -5797,7 +5794,8 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Aluminium, 2),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "case2", 1, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // case 3
 
         GTValues.RA.stdBuilder()
@@ -5809,7 +5807,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Aluminium, 2),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "case3", 1, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         // micro case 1
 
@@ -5821,7 +5819,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 82))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // mirco case 2
 
@@ -5833,7 +5831,8 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Titanium, 2L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 86))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // drone case 1
 
         GTValues.RA.stdBuilder()
@@ -5845,7 +5844,8 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
                         ItemList.Electric_Motor_HV.get(4L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1, 83))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // drone case 2
 
         GTValues.RA.stdBuilder()
@@ -5857,7 +5857,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Titanium, 1L),
                         ItemList.Electric_Motor_EV.get(4L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1, 87))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         // Card
 
@@ -5874,7 +5874,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 19),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Plastic, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polyethylene, 4),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 4)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
@@ -5933,7 +5933,8 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 4L),
                         CustomItemList.SteelBars.get(2L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "rack", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // adapter block
 
         GTValues.RA.stdBuilder()
@@ -5944,7 +5945,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "adapter", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // assembler
 
@@ -5957,7 +5958,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Robot_Arm_LV.get(3L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "assembler", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // disassembler
 
         GTValues.RA.stdBuilder()
@@ -5969,7 +5971,8 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
                         ItemList.Robot_Arm_HV.get(2L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "disassembler", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // capacitor
 
         GTValues.RA.stdBuilder()
@@ -5981,7 +5984,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "capacitor", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // charger
 
@@ -5994,19 +5997,20 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "charger", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // diskDrive
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Casing_LV.get(1L),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 3L, 25),
+                        GTModHandler.getModItem(OpenComputers.ID, "item", 3L, 24),
                         ItemList.Electric_Motor_MV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Copper, 1),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.IronMagnetic, 1),
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "diskDrive", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // diskDriver
 
@@ -6019,7 +6023,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 4),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 109))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         // geolyzer
 
@@ -6040,13 +6044,13 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(2L),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2),
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1),
                         GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "hologram1", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // hologram2
 
@@ -6054,7 +6058,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(2L),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 26),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 4),
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1),
@@ -6062,19 +6066,20 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1),
                         GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "hologram2", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // motionSensor
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 42),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         new ItemStack(Blocks.daylight_detector, 2, 0),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "motionSensor", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // netSplitter
 
@@ -6082,12 +6087,13 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_LV.get(1L),
                         ItemList.Circuit_Board_Plastic_Advanced.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 4),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 3L, 0),
                         ItemList.Electric_Piston_LV.get(1L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "netSplitter", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(64)
+                .addTo(assemblerRecipes);
         // printer
 
         GTValues.RA.stdBuilder()
@@ -6095,23 +6101,25 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Machine_HV_Printer.get(1L),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 4),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "printer", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // powerConverter
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_HV_MV.get(1L),
                         ItemList.Circuit_Board_Plastic_Advanced.get(2L),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
+                        GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "powerConverter", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
         // powerDistributor
 
         GTValues.RA.stdBuilder()
@@ -6123,7 +6131,8 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "powerDistributor", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // raid
 
         GTValues.RA.stdBuilder()
@@ -6132,10 +6141,11 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 43),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 1),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 4),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "raid", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // redstone
 
         GTValues.RA.stdBuilder()
@@ -6147,7 +6157,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 66),
                         ItemList.Cover_ActivityDetector.get(1L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "redstone", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // relay
 
@@ -6155,12 +6165,12 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_MV.get(1L),
                         ItemList.Circuit_Board_Plastic_Advanced.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "relay", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         // waypoint
@@ -6174,7 +6184,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "waypoint", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(10 * SECONDS).eut(64)
+                .addTo(assemblerRecipes);
         // cartridge empty
 
         GTValues.RA.stdBuilder()
@@ -6182,11 +6193,12 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
                         ItemList.Circuit_Parts_Transistor.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Plastic, 8),
+                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polyethylene, 8),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 94))
-                .fluidInputs(Materials.Plastic.getMolten(36L)).duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(36L)).duration(10 * SECONDS).eut(64)
+                .addTo(assemblerRecipes);
         // cartridge full
 
         GTValues.RA.stdBuilder()
@@ -6202,7 +6214,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1),
                         new ItemStack(Items.string, 8, 0),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 48))
@@ -6239,7 +6251,8 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 18),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 9L, 96))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 107))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(20 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(20 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // Server Tier 1
 
         GTValues.RA.stdBuilder()
@@ -6251,7 +6264,8 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 3),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 45))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(20 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(20 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // Server Tier 2
 
         GTValues.RA.stdBuilder()
@@ -6263,7 +6277,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 38),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 46))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         // Server Tier 3
 
@@ -6276,7 +6290,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 39),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 40))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(20 * SECONDS).eut(1024)
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(20 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
         // Tablet Case Tier 1
 
@@ -6289,7 +6303,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 74))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Tablet Case Tier 2
 
@@ -6302,7 +6316,8 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 92))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(20 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(20 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // remote Monitor
 
         GTValues.RA.stdBuilder()
@@ -6314,7 +6329,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "keyboard", 1L, 0),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 41))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Terminal Server
 
@@ -6327,7 +6342,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 16L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 108))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         // Open Printers
         // Printer
@@ -6339,7 +6354,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printer", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Shredder
 
@@ -6350,7 +6365,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.shredder", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Paper Roll
 
@@ -6416,7 +6431,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "magreader", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // RFID Reader
 
         GTValues.RA.stdBuilder()
@@ -6427,7 +6443,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "rfidreader", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Card writer
 
@@ -6440,7 +6456,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         ItemList.Circuit_Parts_Transistor.get(2L))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "rfidwriter", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Alarm
 
@@ -6452,7 +6468,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "alarm", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Entity Detector
 
@@ -6464,7 +6480,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "entitydetector", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Door Controler
 
@@ -6476,7 +6492,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 4L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "doorcontroller", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Data Block
 
@@ -6488,7 +6504,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "cable", 1L, 0),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "opensecurity.DataBlock", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // swtichable Hub
 
@@ -6500,7 +6516,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "opensecurity.SwitchableHub", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // kvm Hub
 
@@ -6512,7 +6528,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "opensecurity.BlockKVM", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // energy turret
 
@@ -6524,7 +6540,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "energyTurretBlock", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // keypad
 
@@ -6536,7 +6552,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "keypadLock", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // biometric reader
 
@@ -6548,7 +6564,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "biometricScanner", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // magnetic stipe card
 
@@ -6584,7 +6600,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "opensecurity.rfidReaderCard", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Secure Network Card
 
@@ -6595,7 +6611,8 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "opensecurity.secureNetworkCard", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(256)
+                .addTo(assemblerRecipes);
         // Secure Door
 
         GTValues.RA.stdBuilder()
@@ -6669,7 +6686,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 38),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenGlasses.ID, "openglassesterminal", 1L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(144L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         // Open Glasses
 
@@ -6680,7 +6697,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(OpenGlasses.ID, "openglasses", 1L, W))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
     }
@@ -7136,7 +7153,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(GalacticraftCore.ID, "item.airVent", 1L, 0),
                         GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(GTModHandler.getModItem(GalacticraftCore.ID, "item.engine", 1L, 1))
-                .fluidInputs(Materials.Fuel.getFluid(1000L)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Diesel.getFluid(1000L)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -9780,7 +9797,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalacticraftCore.ID, "tile.moonBlock", 64, 4),
                             getModItem(GalacticraftCore.ID, "tile.moonBlock", 64, 5),
                             GTUtility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Helium_3.getGas(10000))
+                    .fluidInputs(Materials.Helium3.getGas(10000))
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("Ra"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
             // T6 Planets
@@ -10953,7 +10970,7 @@ public class AssemblerRecipes implements Runnable {
                                 ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                                 GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
                                 ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2L),
+                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2L),
                                 GTUtility.getIntegratedCircuit(1))
                         .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.portableTapeDrive", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)

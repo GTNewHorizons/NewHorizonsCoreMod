@@ -41,7 +41,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -152,7 +151,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "brick", 1, 0, missing));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L),
                 "stickPlastic",
                 "craftingToolHardHammer",
                 "stickPlastic");
@@ -474,71 +473,27 @@ public class ScriptGregtech implements IScriptLoader {
                 "circuitElite",
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
         addShapedRecipe(
-                ItemList.Machine_LV_CableCoater.get(1),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
-                new ItemStack(Blocks.glass),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 1L),
-                ItemList.Hull_LV.get(1),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L),
-                ItemList.Electric_Pump_LV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tin, 1L));
-        addShapedRecipe(
-                ItemList.Machine_MV_CableCoater.get(1),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
-                new ItemStack(Blocks.glass),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
-                ItemList.Hull_MV.get(1),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L),
-                ItemList.Electric_Pump_MV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 1L));
-        addShapedRecipe(
-                ItemList.Machine_HV_CableCoater.get(1),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
-                new ItemStack(Blocks.glass),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
-                ItemList.Hull_HV.get(1),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L),
-                ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1L));
-        addShapedRecipe(
-                ItemList.Machine_EV_CableCoater.get(1),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
-                new ItemStack(Blocks.glass),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Aluminium, 1L),
-                ItemList.Hull_EV.get(1),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Aluminium, 1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L),
-                ItemList.Electric_Pump_EV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 1L));
-        addShapedRecipe(
                 ItemList.LATEX.get(1),
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                ItemList.Machine_HV_CableCoater.get(1),
+                ItemList.Machine_HV_Assembler.get(1),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L));
         addShapedRecipe(
                 ItemList.LATEX.get(1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                ItemList.Machine_HV_CableCoater.get(1),
+                ItemList.Machine_HV_Assembler.get(1),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Silicone, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L));
 
         addShapedRecipe(
                 new ItemStack(GregTechAPI.sBlockStones, 1, 2),
@@ -714,7 +669,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Battery_Buffer_3by3_IV.get(1L));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L)).duration(15 * SECONDS)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L)).duration(15 * SECONDS)
                 .eut(2).addTo(extractorRecipes);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Empty.get(1L),
@@ -1450,9 +1405,9 @@ public class ScriptGregtech implements IScriptLoader {
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(64)
                 .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 2L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L)).duration(20).eut(16)
-                .addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L)).duration(20)
+                .eut(16).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Rubber, 2L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1)).duration(20).eut(16)
                 .addTo(hammerRecipes);

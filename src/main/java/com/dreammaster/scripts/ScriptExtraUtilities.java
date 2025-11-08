@@ -1102,7 +1102,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2, missing)).duration(4 * SECONDS)
                 .eut(64).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
