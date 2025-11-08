@@ -804,6 +804,22 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         ItemList.Cover_SolarPanel_8V, 'T', OrePrefixes.plate.get(Materials.StainlessSteel), 'C',
                         OrePrefixes.circuit.get(Materials.EV) });
 
+        GTModHandler.addCraftingRecipe(
+                ItemList.LATEX.get(1),
+                bits,
+                new Object[] { "SPS", "CMC", "SPS", 'S',
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L), 'P',
+                        ItemList.Electric_Pump_HV.get(1L), 'C', OrePrefixes.circuit.get(Materials.EV), 'M',
+                        ItemList.Machine_HV_Assembler.get(1) });
+
+        GTModHandler.addCraftingRecipe(
+                ItemList.LATEX.get(1),
+                bits,
+                new Object[] { "SPS", "CMC", "SPS", 'S',
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L), 'P',
+                        ItemList.Electric_Pump_HV.get(1L), 'C', OrePrefixes.circuit.get(Materials.EV), 'M',
+                        ItemList.Machine_HV_Assembler.get(1) });
+
         // Reinforced Wooden Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Reinforced_Wood.get(1),

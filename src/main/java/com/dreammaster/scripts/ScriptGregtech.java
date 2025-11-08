@@ -472,28 +472,6 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                 "circuitElite",
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
-        addShapedRecipe(
-                ItemList.LATEX.get(1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
-                ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                ItemList.Machine_HV_Assembler.get(1),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L),
-                ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L));
-        addShapedRecipe(
-                ItemList.LATEX.get(1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
-                ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                ItemList.Machine_HV_Assembler.get(1),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L),
-                ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L));
 
         addShapedRecipe(
                 new ItemStack(GregTechAPI.sBlockStones, 1, 2),
