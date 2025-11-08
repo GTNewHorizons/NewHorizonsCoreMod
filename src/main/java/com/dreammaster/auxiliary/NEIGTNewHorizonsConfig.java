@@ -88,6 +88,10 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GTModHandler.getModItem(HardcoreEnderExpansion.ID, "item_special_effects", 1));
         }
 
+        if (IndustrialCraft2.isModLoaded()) {
+            API.hideItem(GTModHandler.getIC2Item("electrolyzedWaterCell", 1L));
+        }
+
         if (Mantle.isModLoaded()) {
             API.hideItem(GTModHandler.getModItem(Mantle.ID, "mantleBook", 1));
         }
