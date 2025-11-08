@@ -210,7 +210,7 @@ public class RecipeRemover {
                     return false;
                 }
                 boolean found = false;
-                for (Iterator<Object> iterator = recipe.iterator(); iterator.hasNext(); ) {
+                for (Iterator<Object> iterator = recipe.iterator(); iterator.hasNext();) {
                     Object o = iterator.next();
                     for (GTUtility.ItemId id : getItemsHashed(o, false)) {
                         if (rInputHashed.contains(id)) {
@@ -253,7 +253,7 @@ public class RecipeRemover {
                 throw new RuntimeException(ex);
             }
         }
-        Object[][] recipe = new Object[][]{row1, row2, row3};
+        Object[][] recipe = new Object[][] { row1, row2, row3 };
         addToBuffer(getItemsHashed(aOutput, false), r -> {
             if (!(r instanceof ShapedOreRecipe) && !(r instanceof ShapedRecipes)) return false;
             Object[] inputs = (r instanceof ShapedOreRecipe ? ((ShapedOreRecipe) r).getInput()
@@ -2828,8 +2828,8 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "item.ironwoodRaw", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "tile.TFUncraftingTable", 1, 0, missing));
 
-        String[] materials = new String[]{"Twilight", "Canopy", "Mangrove", "Darkwood", "Time", "Trans", "Mine",
-                "Sort"};
+        String[] materials = new String[] { "Twilight", "Canopy", "Mangrove", "Darkwood", "Time", "Trans", "Mine",
+                "Sort" };
         for (int i = 0; i < materials.length; i++) {
             removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing));
             removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing));
@@ -3081,53 +3081,53 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 5, missing));
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "wheat", 1, 0, missing),
-                new Object[]{getModItem(BiomesOPlenty.ID, "plants", 1, 6, missing),
+                new Object[] { getModItem(BiomesOPlenty.ID, "plants", 1, 6, missing),
                         getModItem(BiomesOPlenty.ID, "plants", 1, 6, missing),
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 6, missing)},
+                        getModItem(BiomesOPlenty.ID, "plants", 1, 6, missing) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(
                 getModItem(EnderIO.ID, "itemAlloy", 1, 6, missing),
-                new Object[]{"nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel"},
-                new Object[]{"nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel"},
-                new Object[]{"nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel"});
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" });
         removeRecipeShapedDelayed(
                 getModItem(EnderIO.ID, "itemAlloy", 1, 8, missing),
-                new Object[]{getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
+                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing)},
-                new Object[]{getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing) },
+                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing)},
-                new Object[]{getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing) },
+                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing)});
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11, missing) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
-                new Object[]{getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
+                new Object[] { getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
                         getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing)},
-                new Object[]{getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
+                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing) },
+                new Object[] { getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
                         getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing)},
-                new Object[]{getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
+                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing) },
+                new Object[] { getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
                         getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing)});
+                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5, missing) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
-                new Object[]{null, getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing), null},
-                new Object[]{getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing),
+                new Object[] { null, getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing), null },
+                new Object[] { getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing),
                         getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing),
-                        getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing)},
-                new Object[]{null, getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing), null});
+                        getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing) },
+                new Object[] { null, getModItem(EnderZoo.ID, "enderFragment", 1, 0, missing), null });
         removeRecipeShapedDelayed(
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 0, missing),
-                new Object[]{getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing)},
-                new Object[]{getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0, missing)},
-                new Object[]{getModItem(Minecraft.ID, "diamond", 1, 0, missing)});
+                new Object[] { getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing) },
+                new Object[] { getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0, missing) },
+                new Object[] { getModItem(Minecraft.ID, "diamond", 1, 0, missing) });
         removeRecipeShapedDelayed(
                 getModItem(ForbiddenMagic.ID, "FMResource", 9, 0, missing),
-                new Object[]{getModItem(Minecraft.ID, "emerald", 1, 0, missing)},
+                new Object[] { getModItem(Minecraft.ID, "emerald", 1, 0, missing) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem(ForbiddenMagic.ID, "FMResource", 2, 1, missing));
@@ -3135,46 +3135,46 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing));
         removeRecipeShapedDelayed(
                 GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
-                new Object[]{getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 7)},
-                new Object[]{getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 7)},
-                new Object[]{getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 7)});
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 7) },
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 7) },
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 7) });
         removeRecipeShapedDelayed(
                 "ingotSilver",
-                new Object[]{"nuggetSilver", "nuggetSilver", "nuggetSilver"},
-                new Object[]{"nuggetSilver", "nuggetSilver", "nuggetSilver"},
-                new Object[]{"nuggetSilver", "nuggetSilver", "nuggetSilver"});
+                new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
+                new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
+                new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" });
         removeRecipeShapedDelayed(
                 "ingotLead",
-                new Object[]{"nuggetLead", "nuggetLead", "nuggetLead"},
-                new Object[]{"nuggetLead", "nuggetLead", "nuggetLead"},
-                new Object[]{"nuggetLead", "nuggetLead", "nuggetLead"});
+                new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" },
+                new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" },
+                new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" });
         removeRecipeShapedDelayed(
                 "ingotDraconium",
-                new Object[]{"nuggetDraconium", "nuggetDraconium", "nuggetDraconium"},
-                new Object[]{"nuggetDraconium", "nuggetDraconium", "nuggetDraconium"},
-                new Object[]{"nuggetDraconium", "nuggetDraconium", "nuggetDraconium"});
+                new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" },
+                new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" },
+                new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" });
         removeRecipeShapedDelayed(
                 "ingotDraconiumAwakened",
-                new Object[]{"nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened"},
-                new Object[]{"nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened"},
-                new Object[]{"nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened"});
+                new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" },
+                new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" },
+                new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" });
         removeRecipeShapedDelayed(
                 "ingotVibrantAlloy",
-                new Object[]{"nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy"},
-                new Object[]{"nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy"},
-                new Object[]{"nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy"});
+                new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" },
+                new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" },
+                new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" });
         removeRecipeShapedDelayed(
                 "ingotPulsatingIron",
-                new Object[]{"nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron"},
-                new Object[]{"nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron"},
-                new Object[]{"nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron"});
+                new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
+                new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
+                new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" });
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
-                new Object[]{"cropCotton", "cropCotton", "cropCotton"},
+                new Object[] { "cropCotton", "cropCotton", "cropCotton" },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "speckled_melon", 1, 0, missing));
@@ -3189,10 +3189,10 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "packed_ice", 4, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "gunpowder", 1, 0, missing),
-                new Object[]{getModItem(Natura.ID, "barleyFood", 1, 4, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 4, missing), null},
-                new Object[]{getModItem(Natura.ID, "barleyFood", 1, 4, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 4, missing), null},
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4, missing),
+                        getModItem(Natura.ID, "barleyFood", 1, 4, missing), null },
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4, missing),
+                        getModItem(Natura.ID, "barleyFood", 1, 4, missing), null },
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "chest_minecart", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "furnace_minecart", 1, 0, missing));
@@ -3200,104 +3200,104 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "tnt_minecart", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
-                new Object[]{"nuggetIron", "nuggetIron", "nuggetIron"},
-                new Object[]{"nuggetIron", "nuggetIron", "nuggetIron"},
-                new Object[]{"nuggetIron", "nuggetIron", "nuggetIron"});
+                new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" },
+                new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" },
+                new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" });
         removeRecipeShapedDelayed("nuggetIron");
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "gold_ingot", 1, 0, missing),
-                new Object[]{"nuggetGold", "nuggetGold", "nuggetGold"},
-                new Object[]{"nuggetGold", "nuggetGold", "nuggetGold"},
-                new Object[]{"nuggetGold", "nuggetGold", "nuggetGold"});
+                new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" },
+                new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" },
+                new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "wooden_slab", 6, 0, missing),
-                new Object[]{getModItem(Minecraft.ID, "planks", 1, 0, missing),
+                new Object[] { getModItem(Minecraft.ID, "planks", 1, 0, missing),
                         getModItem(Minecraft.ID, "planks", 1, 0, missing),
-                        getModItem(Minecraft.ID, "planks", 1, 0, missing)},
+                        getModItem(Minecraft.ID, "planks", 1, 0, missing) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
-                new Object[]{getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing)},
+                new Object[] { getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "leather_helmet", 1, 0, missing),
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)},
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)},
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) },
                 new Object[0]);
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)},
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)},
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)});
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "leather_leggings", 1, 0, missing),
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)},
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)},
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)});
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "leather_boots", 1, 0, missing),
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)},
-                new Object[]{getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing)},
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing) },
                 new Object[0]);
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "emerald", 1, 0, missing),
-                new Object[]{getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
+                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
                         getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing)},
-                new Object[]{getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing) },
+                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
                         getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing)},
-                new Object[]{getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing) },
+                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
                         getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing)});
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "diamond", 1, 0, missing),
-                new Object[]{getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
                         getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5, missing)},
-                new Object[]{getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 5, missing) },
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
                         getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5, missing)},
-                new Object[]{getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 5, missing) },
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
                         getModItem(MagicBees.ID, "beeNugget", 1, 5, missing),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5, missing)});
+                        getModItem(MagicBees.ID, "beeNugget", 1, 5, missing) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                new Object[]{getModItem(Minecraft.ID, "reeds", 1, 0, missing),
+                new Object[] { getModItem(Minecraft.ID, "reeds", 1, 0, missing),
                         getModItem(Minecraft.ID, "reeds", 1, 0, missing),
-                        getModItem(Minecraft.ID, "reeds", 1, 0, missing)},
+                        getModItem(Minecraft.ID, "reeds", 1, 0, missing) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "sand", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "leather", 1, 0, missing),
-                new Object[]{getModItem(Natura.ID, "barleyFood", 1, 6, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 6, missing)},
-                new Object[]{getModItem(Natura.ID, "barleyFood", 1, 6, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 6, missing)},
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6, missing),
+                        getModItem(Natura.ID, "barleyFood", 1, 6, missing) },
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6, missing),
+                        getModItem(Natura.ID, "barleyFood", 1, 6, missing) },
                 new Object[0]);
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "leather", 1, 0, missing),
-                new Object[]{getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing)},
-                new Object[]{getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing)},
+                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing) },
+                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing) },
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "paintBrush", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "goldenEye", 1, wildcard, missing));
@@ -3325,55 +3325,55 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_tungstensteel", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing),
-                new Object[]{getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0, missing)},
+                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0, missing) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing),
-                new Object[]{getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 1, missing)},
+                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 1, missing) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(
                 "ingotThaumium",
-                new Object[]{"nuggetThaumium", "nuggetThaumium", "nuggetThaumium"},
-                new Object[]{"nuggetThaumium", "nuggetThaumium", "nuggetThaumium"},
-                new Object[]{"nuggetThaumium", "nuggetThaumium", "nuggetThaumium"});
+                new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
+                new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
+                new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" });
         removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "crystalSlab", 1, wildcard, missing));
         removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "genericSlab", 1, wildcard, missing));
         removeRecipeShapedDelayed(
                 "ingotTin",
-                new Object[]{"nuggetTin", "nuggetTin", "nuggetTin"},
-                new Object[]{"nuggetTin", "nuggetTin", "nuggetTin"},
-                new Object[]{"nuggetTin", "nuggetTin", "nuggetTin"});
+                new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
+                new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
+                new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" });
         removeRecipeShapedDelayed(
                 "ingotCopper",
-                new Object[]{"nuggetCopper", "nuggetCopper", "nuggetCopper"},
-                new Object[]{"nuggetCopper", "nuggetCopper", "nuggetCopper"},
-                new Object[]{"nuggetCopper", "nuggetCopper", "nuggetCopper"});
+                new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" },
+                new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" },
+                new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" });
         removeRecipeShapedDelayed(
                 "ingotSteel",
-                new Object[]{"nuggetSteel", "nuggetSteel", "nuggetSteel"},
-                new Object[]{"nuggetSteel", "nuggetSteel", "nuggetSteel"},
-                new Object[]{"nuggetSteel", "nuggetSteel", "nuggetSteel"});
+                new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" },
+                new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" },
+                new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" });
         removeRecipeShapedDelayed(
                 "ingotBronze",
-                new Object[]{"nuggetBronze", "nuggetBronze", "nuggetBronze"},
-                new Object[]{"nuggetBronze", "nuggetBronze", "nuggetBronze"},
-                new Object[]{"nuggetBronze", "nuggetBronze", "nuggetBronze"});
+                new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
+                new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
+                new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" });
         removeRecipeShapedDelayed(
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
-                new Object[]{getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
+                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22, missing)},
-                new Object[]{getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22, missing) },
+                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22, missing)},
-                new Object[]{getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22, missing) },
+                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22, missing)});
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22, missing) });
         removeRecipeShapedDelayed(
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
-                new Object[]{getModItem(TinkerConstruct.ID, "materials", 1, 12, missing), null, null},
+                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 12, missing), null, null },
                 new Object[0],
                 new Object[0]);
 
