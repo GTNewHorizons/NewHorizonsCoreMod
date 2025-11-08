@@ -442,11 +442,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
                     BOBwood[i],
                     getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i));
 
-            addShapelessRecipe(
-                    fancySignBOP[i],
-                    getModItem(Minecraft.ID, "paper", 1),
-                    getModItem(Minecraft.ID, "sign", 1),
-                    LableBOP[i]);
+            addShapelessRecipe(fancySignBOP[i], getModItem(Minecraft.ID, "paper", 1), "signWood", LableBOP[i]);
         }
     }
 }
