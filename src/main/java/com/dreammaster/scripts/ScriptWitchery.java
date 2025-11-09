@@ -84,15 +84,26 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Minecraft.ID, "magma_cream", 1, 0, missing),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
                 "dustTinyNetherStar");
+        addShapelessRecipe(
+                getModItem(Witchery.ID, "ingredient", 2, 130, missing),
+                new ItemStack(Items.nether_star, 1),
+                getModItem(Botania.ID, "manaResource", 1, 2, missing),
+                new ItemStack(Items.flint, 1),
+                new ItemStack(Items.magma_cream, 1),
+                new ItemStack(Items.magma_cream, 1),
+                new ItemStack(Items.magma_cream, 1),
+                new ItemStack(Items.magma_cream, 1),
+                new ItemStack(Items.magma_cream, 1),
+                new ItemStack(Items.magma_cream, 1));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Items.magma_cream, 24),
-                        new ItemStack(Items.nether_star, 4),
-                        new ItemStack(Items.flint, 4),
-                        getModItem(Botania.ID, "manaResource", 4, 2, missing),
+                        new ItemStack(Items.magma_cream, 6),
+                        new ItemStack(Items.nether_star, 1),
+                        new ItemStack(Items.flint, 1),
+                        getModItem(Botania.ID, "manaResource", 1, 2, missing),
                         GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 130, missing)).duration(2 * SECONDS).eut(16)
+                .itemOutputs(getModItem(Witchery.ID, "ingredient", 2, 130, missing)).duration(2 * SECONDS).eut(16)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
