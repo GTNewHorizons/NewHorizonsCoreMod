@@ -128,7 +128,10 @@ public class ScriptMechworks implements IScriptLoader {
                 .itemOutputs(getModItem(TinkersMechworks.ID, "SignalTerminal", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Brass, 1))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Brass, 1),
+                        GTUtility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(TinkersMechworks.ID, "LengthWire", 2, 0, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(wiremillRecipes);
 
