@@ -2885,6 +2885,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "ingredient", 1, 12, missing));
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "rubyslippers", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "snowpressureplate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(Witchery.ID, "ingredient", 2, 130, missing));
 
         removeRecipeByOutputDelayed("nuggetLead");
         removeRecipeByOutputDelayed("nuggetSilver");
