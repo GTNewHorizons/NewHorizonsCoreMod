@@ -524,8 +524,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Thaumium, 8),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Mercury, 32),
-                        GTOreDictUnificator
-                                .get(OrePrefixes.wireFine, Materials.Titaniumonabariumdecacoppereikosaoxid, 64))
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.SuperconductorHVBase, 64))
                 .fluidInputs(Materials.Void.getMolten(L * 8)).itemOutputs(MMItemList.UpgradePowerEff.get(1))
                 .eut(TierEU.RECIPE_HV).duration(10 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
 

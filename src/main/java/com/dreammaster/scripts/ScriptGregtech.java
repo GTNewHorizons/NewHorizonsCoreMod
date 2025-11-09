@@ -3,9 +3,11 @@ package com.dreammaster.scripts;
 import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.CropsPlusPlus;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MCFrames;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -81,12 +83,13 @@ public class ScriptGregtech implements IScriptLoader {
                 IndustrialCraft2.ID,
                 Natura.ID,
                 OpenBlocks.ID,
-                PamsHarvestCraft.ID,
                 SGCraft.ID,
                 SuperSolarPanels.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
-                TinkerConstruct.ID);
+                TinkerConstruct.ID,
+                DraconicEvolution.ID,
+                Avaritia.ID);
     }
 
     @Override
@@ -148,7 +151,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "brick", 1, 0, missing));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L),
                 "stickPlastic",
                 "craftingToolHardHammer",
                 "stickPlastic");
@@ -469,6 +472,7 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                 "circuitElite",
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
+
         addShapedRecipe(
                 new ItemStack(GregTechAPI.sBlockStones, 1, 2),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
@@ -643,7 +647,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Battery_Buffer_3by3_IV.get(1L));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L)).duration(15 * SECONDS)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L)).duration(15 * SECONDS)
                 .eut(2).addTo(extractorRecipes);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Empty.get(1L),
@@ -1379,9 +1383,9 @@ public class ScriptGregtech implements IScriptLoader {
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(64)
                 .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 2L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L)).duration(20).eut(16)
-                .addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L)).duration(20)
+                .eut(16).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Rubber, 2L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1)).duration(20).eut(16)
                 .addTo(hammerRecipes);
@@ -1460,5 +1464,31 @@ public class ScriptGregtech implements IScriptLoader {
         GTModHandler.addSmeltingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                ItemList.ChaosLocator.get(1),
+                "----a----",
+                "---bbb---",
+                "--bcdcb--",
+                "abcefecba",
+                "-bdfgfdb-",
+                "-bcefecb-",
+                "-bbcdcbb-",
+                "-aabbbaa-",
+                "a-------a",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 1),
+                'b',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackPlutonium, 1),
+                'c',
+                getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing),
+                'd',
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.DraconiumAwakened, 1),
+                'e',
+                NHItemList.ChaoticDust.getIS(1),
+                'f',
+                getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
+                'g',
+                getModItem(DraconicEvolution.ID, "teleporterMKI", 1, 0, missing));
     }
 }

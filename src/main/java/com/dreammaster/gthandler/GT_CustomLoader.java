@@ -12,7 +12,6 @@ import com.dreammaster.modfixes.enderIO.FrankenskullFix;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 
 /**
@@ -47,11 +46,11 @@ public class GT_CustomLoader {
 
         UIV(OrePrefixes.circuit.get(Materials.UIV), OrePrefixes.wireGt08.get(Materials.Bedrockium),
                 Materials.NetherStar, OrePrefixes.wireGt02.get(Materials.NetherStar), null, null, "blockGlassUIV",
-                Materials.CosmicNeutronium, MaterialsUEVplus.TranscendentMetal),
+                Materials.CosmicNeutronium, Materials.TranscendentMetal),
 
         UMV(OrePrefixes.circuit.get(Materials.UMV), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
-                OrePrefixes.wireGt02.get(Materials.Quantium), null, null, "blockGlassUMV",
-                MaterialsUEVplus.TranscendentMetal, MaterialsUEVplus.SpaceTime);
+                OrePrefixes.wireGt02.get(Materials.Quantium), null, null, "blockGlassUMV", Materials.TranscendentMetal,
+                Materials.SpaceTime);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;

@@ -23,8 +23,6 @@ import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeCategories.alloySmelterMolding;
-import static gregtech.api.recipe.RecipeCategories.fluidExtractorRecycling;
-import static gregtech.api.recipe.RecipeCategories.maceratorRecycling;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
@@ -403,7 +401,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 1L),
                 null,
                 null,
                 null,
@@ -985,7 +983,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L)),
+                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.EngravedEnergyChip.get(1L)).duration(30 * SECONDS).eut(4096)
                 .addTo(laserEngraverRecipes);
@@ -1301,24 +1299,6 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "whitemushroomItem", 1, 0, missing))
                 .itemOutputs(NHItemList.MushroomPowder.getIS(2)).outputChances(10000).duration(15 * SECONDS).eut(2)
                 .addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.MoldHelmet.get(1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.ExtruderShapeBoat.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.MoldLeggings.get(1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.MoldBoots.get(1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.MoldChestplate.get(1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.MarshmallowForm.get(1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.IridiumAlloyItemCasing.get(1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Iridium, 8L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
@@ -1351,10 +1331,10 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .fluidOutputs(Materials.Obsidian.getMolten(288)).duration(10 * SECONDS + 16 * TICKS).eut(35)
-                .recipeCategory(fluidExtractorRecycling).addTo(fluidExtractionRecipes);
+                .addTo(fluidExtractionRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 2))
-                .duration(9 * SECONDS + 18 * TICKS).eut(4).recipeCategory(maceratorRecycling).addTo(maceratorRecipes);
+                .duration(9 * SECONDS + 18 * TICKS).eut(4).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian), ItemList.Shape_Mold_Ingot.get(0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2))
                 .duration(6 * SECONDS + 10 * TICKS).eut(3).recipeCategory(alloySmelterMolding)

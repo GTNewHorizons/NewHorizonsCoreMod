@@ -165,19 +165,16 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         GTOreDictUnificator.registerOre(
                 OrePrefixes.ingot,
-                Materials.HeeEndium,
+                Materials.Endium,
                 GTModHandler.getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1L, 0));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
-                Materials.HeeEndium,
+                Materials.Endium,
                 GTModHandler.getModItem(HardcoreEnderExpansion.ID, "endium_block", 1L, 0));
 
         GTOreDictUnificator
                 .registerOre("oreAdamantium", GTModHandler.getModItem(GalaxySpace.ID, "oberonblocks", 1L, 3));
-        GTOreDictUnificator
-                .registerOre("ingotAdamantium", GTModHandler.getModItem(GalaxySpace.ID, "item.Ingots", 1L, 0));
         GTOreDictUnificator.registerOre("oreCobalt", GTModHandler.getModItem(GalaxySpace.ID, "phobosblocks", 1L, 4));
-        GTOreDictUnificator.registerOre("ingotCobalt", GTModHandler.getModItem(GalaxySpace.ID, "item.Ingots", 1L, 1));
 
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
@@ -286,7 +283,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 GTModHandler.getModItem(StevesCarts2.ID, "BlockMetalStorage", 1L, 1));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
-                Materials.EnhancedGalgadorian,
+                Materials.GalgadorianEnhanced,
                 GTModHandler.getModItem(StevesCarts2.ID, "BlockMetalStorage", 1L, 2));
 
         GTOreDictUnificator.registerOre(

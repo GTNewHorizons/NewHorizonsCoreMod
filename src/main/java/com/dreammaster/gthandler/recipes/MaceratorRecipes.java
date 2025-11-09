@@ -4,6 +4,7 @@ import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Chisel;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -21,6 +22,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -135,18 +137,6 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1))
                     .itemOutputs(Materials.Ardite.getDust(9)).outputChances(10000).duration(15 * SECONDS).eut(2)
                     .addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "SearedBrick", 1L, 1))
-                    .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Cobalt, 2L),
-                            Materials.Cobalt.getDust(1))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "SearedBrick", 1L, 2))
-                    .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L),
-                            Materials.Ardite.getDust(1))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 12))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))
@@ -871,6 +861,16 @@ public class MaceratorRecipes implements Runnable {
                         .recipeCategory(RecipeCategories.maceratorRecycling).duration(4 * SECONDS + 18 * TICKS).eut(4)
                         .addTo(maceratorRecipes);
             }
+        }
+
+        if (DraconicEvolution.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(DraconicEvolution.ID, "chaoticCore", 1L, 0))
+                    .itemOutputs(
+                            Materials.DraconiumAwakened.getDust(64),
+                            Materials.SpaceTime.getDust(10),
+                            Materials.BlackPlutonium.getDust(4),
+                            NHItemList.ChaoticDust.getIS(1))
+                    .duration(50 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(maceratorRecipes);
         }
     }
 }

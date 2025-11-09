@@ -22,8 +22,6 @@ import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsBotania;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -37,9 +35,8 @@ public class LaserEngraverRecipes implements Runnable {
     public void run() {
         // Energised tesseract
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tesseract.get(1), GregtechItemList.Laser_Lens_Special.get(0))
-                .itemOutputs(ItemList.EnergisedTesseract.get(1))
-                .fluidOutputs(MaterialsUEVplus.ExcitedDTEC.getFluid(100)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UIV).addTo(laserEngraverRecipes);
+                .itemOutputs(ItemList.EnergisedTesseract.get(1)).fluidOutputs(Materials.ExcitedDTEC.getFluid(100))
+                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(laserEngraverRecipes);
 
         // Mysterious crystal upgrading
 
@@ -256,44 +253,36 @@ public class LaserEngraverRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(Botania.ID, "livingrock", 1L, 0),
-                        GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
-                        GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0),
-                        GTUtility.copyAmount(
-                                0,
-                                GTOreDictUnificator.get(OrePrefixes.lens, MaterialsBotania.BotaniaDragonstone, 1)))
+                        GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dragonstone, 1)))
                 .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerrock", 1L, 0)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(Botania.ID, "dreamwood", 1L, 1),
-                        GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
-                        GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0),
-                        GTUtility.copyAmount(
-                                0,
-                                GTOreDictUnificator.get(OrePrefixes.lens, MaterialsBotania.BotaniaDragonstone, 1)))
+                        GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dragonstone, 1)))
                 .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerwoodPlanks", 1L, 0)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         // Protomatter recipes
-        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(100L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_UIV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(100L))
-                .requiresCleanRoom().addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder().fluidInputs(Materials.DTR.getFluid(100L)).duration(10 * SECONDS).eut(TierEU.RECIPE_UIV)
+                .fluidOutputs(Materials.Protomatter.getFluid(100L)).requiresCleanRoom().addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(100L)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_UMV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(1000L)).requiresCleanRoom()
+        GTValues.RA.stdBuilder().fluidInputs(Materials.SpaceTime.getMolten(100L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).fluidOutputs(Materials.Protomatter.getFluid(1000L)).requiresCleanRoom()
                 .addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(100L)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_UXV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(10000L)).requiresCleanRoom()
+        GTValues.RA.stdBuilder().fluidInputs(Materials.PrimordialMatter.getFluid(100L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).fluidOutputs(Materials.Protomatter.getFluid(10000L)).requiresCleanRoom()
                 .addTo(laserEngraverRecipes);
 
         // Bootstrap antimatter recipe
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsUEVplus.HotProtoHalkonite, 1))
-                .fluidInputs(MaterialsUEVplus.Protomatter.getFluid(100L)).duration(10000 * SECONDS)
-                .eut(TierEU.RECIPE_UIV).fluidOutputs(MaterialsUEVplus.Antimatter.getFluid(1L)).requiresCleanRoom()
-                .addTo(laserEngraverRecipes);
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.HotProtoHalkonite, 1))
+                .fluidInputs(Materials.Protomatter.getFluid(100L)).duration(10000 * SECONDS).eut(TierEU.RECIPE_UIV)
+                .fluidOutputs(Materials.Antimatter.getFluid(1L)).requiresCleanRoom().addTo(laserEngraverRecipes);
 
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT

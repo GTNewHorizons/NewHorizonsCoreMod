@@ -1394,7 +1394,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.CrudeSteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ClayCompound, 1L),
                         GTUtility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(64).addTo(assemblerRecipes);
@@ -1546,7 +1546,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.CrudeSteel, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ClayCompound, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
@@ -1754,7 +1754,8 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
-                .fluidInputs(Materials.Silicone.getMolten(144)).duration(15 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .fluidInputs(Materials.RubberSilicone.getMolten(144)).duration(15 * SECONDS).eut(64)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),

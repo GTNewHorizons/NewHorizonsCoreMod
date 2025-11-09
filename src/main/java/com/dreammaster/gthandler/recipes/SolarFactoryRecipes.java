@@ -24,7 +24,6 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.metadata.SolarFactoryRecipeDataKey;
@@ -228,8 +227,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUV, 24),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 2))
-                    .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1))
-                    .fluidInputs(MaterialsKevlar.Kevlar.getMolten(1 * 144))
+                    .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1)).fluidInputs(Materials.Kevlar.getMolten(1 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
 
             GTValues.RA.stdBuilder()
@@ -243,8 +241,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 36),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 2),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2))
-                    .itemOutputs(ItemList.Cover_SolarPanel_UV.get(1))
-                    .fluidInputs(MaterialsKevlar.Kevlar.getMolten(2 * 144))
+                    .itemOutputs(ItemList.Cover_SolarPanel_UV.get(1)).fluidInputs(Materials.Kevlar.getMolten(2 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV),
 
             // Non-recursive / skipping recipes
@@ -346,7 +343,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Samarium), 1),
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Steeleaf), 1))
                     .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1))
-                    .fluidInputs(Materials.Infinity.getMolten(2 * 144), MaterialsKevlar.Kevlar.getMolten(4 * 144))
+                    .fluidInputs(Materials.Infinity.getMolten(2 * 144), Materials.Kevlar.getMolten(4 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
 
             GTValues.RA.stdBuilder()
@@ -363,7 +360,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .itemOutputs(ItemList.Cover_SolarPanel_UV.get(1))
                     .fluidInputs(
                             Materials.Infinity.getMolten(4 * 144),
-                            MaterialsKevlar.Kevlar.getMolten(8 * 144),
+                            Materials.Kevlar.getMolten(8 * 144),
                             Materials.Knightmetal.getMolten(2 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UEV) };

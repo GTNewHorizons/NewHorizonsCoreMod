@@ -178,7 +178,7 @@ public class ScriptForestry implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 6L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 6L))
                 .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()

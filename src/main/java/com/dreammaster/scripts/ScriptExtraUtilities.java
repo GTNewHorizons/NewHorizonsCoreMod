@@ -1102,7 +1102,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2, missing)).duration(4 * SECONDS)
                 .eut(64).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
@@ -1441,8 +1441,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         .add(Aspect.getAspect("auram"), 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                getModItem(TwilightForest.ID, "tile.TFCicada", 1, 0, missing),
-                getModItem(TwilightForest.ID, "tile.TFFirefly", 1, 0, missing));
+                getModItem(TwilightForest.ID, "item.critter", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.critter", 1, 1, missing));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 3, missing),
