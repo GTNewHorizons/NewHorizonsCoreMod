@@ -5781,6 +5781,29 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.refreshResearchPages("ROD_ice");
         TCHelper.refreshResearchPages("ROD_quartz");
         TCHelper.refreshResearchPages("ROD_bone");
+
+        // Alternative infusion
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "INFUSION",
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 45).add(Aspect.getAspect("ignis"), 45)
+                        .add(Aspect.getAspect("terra"), 45).add(Aspect.getAspect("aqua"), 45)
+                        .add(Aspect.getAspect("ordo"), 45).add(Aspect.getAspect("perditio"), 45),
+                "aba",
+                "bcb",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                'c',
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing));
+        TCHelper.addResearchPage(
+                "INFUSION",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing)))));
     }
 
     private void aspectAdds() {
