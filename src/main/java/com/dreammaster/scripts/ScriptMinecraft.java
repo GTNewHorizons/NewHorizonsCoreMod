@@ -3522,6 +3522,61 @@ public class ScriptMinecraft implements IScriptLoader {
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "reeds", 1, 0, missing));
         addShapedRecipe(
+                getModItem(Minecraft.ID, "stone_sword", 1, 0, missing),
+                null,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                null,
+                "craftingToolFile",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                "craftingToolHardHammer",
+                null,
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                null);
+        addShapedRecipe(
+                getModItem(Minecraft.ID, "stone_shovel", 1, 0, missing),
+                "craftingToolFile",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                "craftingToolHardHammer",
+                null,
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                null,
+                null,
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                null);
+        addShapedRecipe(
+                getModItem(Minecraft.ID, "stone_pickaxe", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                "craftingToolFile",
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                "craftingToolHardHammer",
+                null,
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                null);
+        addShapedRecipe(
+                getModItem(Minecraft.ID, "stone_axe", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                "craftingToolHardHammer",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                null,
+                "craftingToolFile",
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                null);
+        addShapedRecipe(
+                getModItem(Minecraft.ID, "stone_hoe", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                "craftingToolHardHammer",
+                "craftingToolFile",
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                null,
+                null,
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                null);
+        addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_sword", 1, 0, missing),
                 null,
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
@@ -4535,9 +4590,9 @@ public class ScriptMinecraft implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 new ItemStack(Blocks.ender_chest, 1),
                 bits,
-                new Object[] { "ABA", "ACA", "ADA", 'A', "plateObsidian", 'B', "plateDenseEnderium", 'C',
+                new Object[]{"ABA", "ACA", "ADA", 'A', "plateObsidian", 'B', "plateDenseEnderium", 'C',
                         GTModHandler.getModItem(EnderStorage.ID, "enderChest", 1L, 0), 'D',
-                        GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45) });
+                        GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45)});
 
     }
 }
