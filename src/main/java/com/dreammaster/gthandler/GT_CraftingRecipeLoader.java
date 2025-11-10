@@ -804,6 +804,22 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         ItemList.Cover_SolarPanel_8V, 'T', OrePrefixes.plate.get(Materials.StainlessSteel), 'C',
                         OrePrefixes.circuit.get(Materials.EV) });
 
+        GTModHandler.addCraftingRecipe(
+                ItemList.LATEX.get(1),
+                bits,
+                new Object[] { "SPS", "CMC", "SPS", 'S',
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L), 'P',
+                        ItemList.Electric_Pump_HV.get(1L), 'C', OrePrefixes.circuit.get(Materials.EV), 'M',
+                        ItemList.Machine_HV_Assembler.get(1) });
+
+        GTModHandler.addCraftingRecipe(
+                ItemList.LATEX.get(1),
+                bits,
+                new Object[] { "SPS", "CMC", "SPS", 'S',
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L), 'P',
+                        ItemList.Electric_Pump_HV.get(1L), 'C', OrePrefixes.circuit.get(Materials.EV), 'M',
+                        ItemList.Machine_HV_Assembler.get(1) });
+
         // Reinforced Wooden Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Reinforced_Wood.get(1),
@@ -1081,13 +1097,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     .provideTo(shapelessUnremovableGtRecipes())
                     .provideTo(MANTLE.manualShapedCraftingRecipeNamed("unfiredsearedbrick"));
             GTModHandler.addCraftingRecipe(
-                    CustomItemList.UnfiredSlimeSoulBrick.get(8L),
+                    CustomItemList.UnfiredSlimeSoilBrick.get(8L),
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { "SSS", "SFS", "SSS", 'S',
                             GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6), 'F',
                             new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W) });
             GTModHandler.addShapelessCraftingRecipe(
-                    CustomItemList.UnfiredSlimeSoulBrick.get(1L),
+                    CustomItemList.UnfiredSlimeSoilBrick.get(1L),
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6),
                             new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W) });

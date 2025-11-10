@@ -1605,24 +1605,24 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UMV);
 
         // Miniature Wormhole Generator
-        TTRecipeAdder.addResearchableAssemblylineRecipe(
-                AEApi.instance().definitions().materials().singularity().maybeStack(1).get(),
-                64000,
-                64,
-                200000,
-                4,
-                new Object[] { tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1),
+        GTValues.RA.stdBuilder()
+                .metadata(RESEARCH_ITEM, AEApi.instance().definitions().materials().singularity().maybeStack(1).get())
+                .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_IV)).itemInputs(
+
+                        tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1),
                         AEApi.instance().definitions().materials().singularity().maybeStack(4).get(),
-                        ItemList.Field_Generator_UHV.get(4), ItemList.Emitter_UHV.get(4),
-                        ItemList.Casing_Fusion_Coil.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2L },
-                        tectech.thing.CustomItemList.LASERpipe.get(64), },
-                new FluidStack[] { new FluidStack(Materials.Neutronium.mStandardMoltenFluid, 144 * 12),
+                        ItemList.Field_Generator_ZPM.get(4),
+                        ItemList.Emitter_ZPM.get(4),
+                        ItemList.Casing_Fusion_Coil.get(4),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 2L },
+                        tectech.thing.CustomItemList.LASERpipe.get(64))
+                .fluidInputs(
+                        new FluidStack(Materials.Neutronium.mStandardMoltenFluid, 144 * 12),
                         new FluidStack(Materials.Tritanium.mStandardMoltenFluid, 144 * 12),
                         new FluidStack(solderIndalloy, 144 * 24),
-                        new FluidStack(Materials.SuperCoolant.mFluid, 144 * 48), },
-                ItemList.WormholeGenerator.get(1L),
-                60 * SECONDS,
-                (int) TierEU.RECIPE_UEV);
+                        new FluidStack(Materials.SuperCoolant.mFluid, 144 * 48))
+                .itemOutputs(ItemList.WormholeGenerator.get(1L)).eut(TierEU.RECIPE_ZPM).duration(60 * SECONDS)
+                .addTo(AssemblyLine);
 
         // Antimatter Forge - Antimatter Sequencer - SSASS
         TTRecipeAdder.addResearchableAssemblylineRecipe(

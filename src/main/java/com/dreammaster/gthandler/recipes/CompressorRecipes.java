@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -188,11 +187,6 @@ public class CompressorRecipes implements Runnable {
 
         if (IndustrialCraft2.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemWeed", 16L))
-                    .itemOutputs(ItemList.IC2_Plantball.get(1L)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
-        }
-
-        if (ExtraTrees.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 64L, 24))
                     .itemOutputs(ItemList.IC2_Plantball.get(1L)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
         }
         if (GalacticraftCore.isModLoaded()) {

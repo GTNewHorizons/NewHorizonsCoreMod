@@ -194,11 +194,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
         ItemStack woodenPressurePlate = getModItem(Minecraft.ID, "wooden_pressure_plate", 1);
 
         for (int i = 0; i < 13; i++) {
-            addShapelessRecipe(
-                    fancySignNatura[i],
-                    getModItem(Minecraft.ID, "paper", 1),
-                    getModItem(Minecraft.ID, "sign", 1),
-                    LableN[i]);
+            addShapelessRecipe(fancySignNatura[i], getModItem(Minecraft.ID, "paper", 1), "signWood", LableN[i]);
             addShapedRecipe(
                     FClockN[i],
                     Nwood[i],
