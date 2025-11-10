@@ -4590,9 +4590,9 @@ public class ScriptMinecraft implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 new ItemStack(Blocks.ender_chest, 1),
                 bits,
-                new Object[]{"ABA", "ACA", "ADA", 'A', "plateObsidian", 'B', "plateDenseEnderium", 'C',
+                new Object[] { "ABA", "ACA", "ADA", 'A', "plateObsidian", 'B', "plateDenseEnderium", 'C',
                         GTModHandler.getModItem(EnderStorage.ID, "enderChest", 1L, 0), 'D',
-                        GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45)});
+                        GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45) });
 
     }
 }
