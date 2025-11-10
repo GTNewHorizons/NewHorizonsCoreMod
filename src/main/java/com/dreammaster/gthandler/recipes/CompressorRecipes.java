@@ -64,7 +64,7 @@ public class CompressorRecipes implements Runnable {
 
         // custom dust to plate compression
         Materials[] dustToPlateList = new Materials[] { Materials.NetherQuartz, Materials.Quartzite, Materials.Lazurite,
-                Materials.Sodalite };
+                Materials.Sodalite, Materials.Livingrock };
         for (Materials material : dustToPlateList) {
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, material, 1L))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 1L)).duration(15 * SECONDS).eut(2)
