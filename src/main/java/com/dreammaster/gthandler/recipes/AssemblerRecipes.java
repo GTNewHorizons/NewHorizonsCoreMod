@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
+import static com.dreammaster.scripts.IScriptLoader.missing;
 import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
 import static gregtech.api.enums.GTValues.L;
 import static gregtech.api.enums.GTValues.W;
@@ -151,6 +152,7 @@ public class AssemblerRecipes implements Runnable {
         makeElectricMachinePartRecipes();
         makeCircuitPartRecipes();
         makeMachineRecipes();
+        makeStoneToolRecipes();
 
         // --- Advanced Solar Panel
         if (AdvancedSolarPanel.isModLoaded()) {
@@ -3364,6 +3366,48 @@ public class AssemblerRecipes implements Runnable {
                         .duration(40 * SECONDS).eut(16).addTo(assemblerRecipes);
             }
         }
+    }
+
+    private void makeStoneToolRecipes() {
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
+                        GTUtility.getIntegratedCircuit(17))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_sword", 1, 0)).duration(30 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                        GTUtility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_shovel", 1, 0)).duration(30 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 3L),
+                        GTUtility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_pickaxe", 1, 0)).duration(30 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 3L),
+                        GTUtility.getIntegratedCircuit(20))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_axe", 1, 0)).duration(30 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
+                        GTUtility.getIntegratedCircuit(21))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_hoe", 1, 0)).duration(30 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
     }
 
     private void makeElectricMachinePartRecipes() {
@@ -9985,7 +10029,7 @@ public class AssemblerRecipes implements Runnable {
                                 GTOreDictUnificator.get(orePrefix, Materials.Dilithium, 64),
                                 GTUtility.getIntegratedCircuit(17))
                         .fluidInputs(Materials.Water.getFluid(10000)) // There isn't actually water on Neper, but it
-                                                                      // fits
+                        // fits
                         // the grass
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("Np"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
