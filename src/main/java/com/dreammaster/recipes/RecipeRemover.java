@@ -3341,6 +3341,7 @@ public class RecipeRemover {
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" });
         removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "crystalSlab", 1, wildcard, missing));
         removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "genericSlab", 1, wildcard, missing));
+        removeRecipeShapelessDelayed(getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing));
         removeRecipeShapedDelayed(
                 "ingotTin",
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
