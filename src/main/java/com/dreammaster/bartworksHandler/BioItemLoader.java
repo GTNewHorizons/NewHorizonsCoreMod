@@ -41,7 +41,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.fluid.GTFluidFactory;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Sievert;
 
 public class BioItemLoader {
@@ -99,14 +98,13 @@ public class BioItemLoader {
                 .fluidOutputs(new FluidStack(BIOFLUIDS[0], 4000)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(chemicalReactorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(Materials.Phosphorus.getDust(1), new ItemStack(BIOTEMS, 4, 1))
+        GTValues.RA.stdBuilder().iCircuit(1).itemOutputs(Materials.Phosphorus.getDust(1), new ItemStack(BIOTEMS, 4, 1))
                 .fluidInputs(new FluidStack(BIOFLUIDS[0], 6000)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(centrifugeRecipes);
 
-        RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(11), new ItemStack(BIOTEMS, 1, 1))
-                .itemOutputs(new ItemStack(BIOTEMS, 1, 2)).fluidInputs(GTModHandler.getDistilledWater(1000))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+        RA.stdBuilder().itemInputs(new ItemStack(BIOTEMS, 1, 1)).iCircuit(11).itemOutputs(new ItemStack(BIOTEMS, 1, 2))
+                .fluidInputs(GTModHandler.getDistilledWater(1000)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(Materials.MeatRaw.getDust(1))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[1], 125)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -135,7 +133,7 @@ public class BioItemLoader {
                 .metadata(SIEVERT, new Sievert(100, false)).addTo(bacterialVatRecipes);
 
         for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
-            GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(i + 1))
+            GTValues.RA.stdBuilder().iCircuit(i + 1)
                     .itemOutputs(OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64))
                     .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000)).duration(2 * SECONDS).eut(TierEU.RECIPE_UV)
                     .addTo(centrifugeRecipes);

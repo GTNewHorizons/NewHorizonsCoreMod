@@ -21,7 +21,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class AlloySmelterRecipes implements Runnable {
@@ -201,16 +200,15 @@ public class AlloySmelterRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L)).duration(25 * SECONDS)
                     .eut(90).addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(Materials.Glass.getDust(3), GTUtility.getIntegratedCircuit(1))
+            GTValues.RA.stdBuilder().itemInputs(Materials.Glass.getDust(3)).iCircuit(1)
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(Materials.Quartzite.getDust(4), GTUtility.getIntegratedCircuit(1))
+            GTValues.RA.stdBuilder().itemInputs(Materials.Quartzite.getDust(4)).iCircuit(1)
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(Materials.BorosilicateGlass.getDust(1), GTUtility.getIntegratedCircuit(1))
+            GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getDust(1)).iCircuit(1)
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 2L, 1)).duration(25 * SECONDS)
                     .eut(90).addTo(alloySmelterRecipes);
 
