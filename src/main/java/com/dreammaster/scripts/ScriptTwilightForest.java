@@ -46,7 +46,13 @@ public class ScriptTwilightForest implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(TwilightForest.ID, Thaumcraft.ID, MagicBees.ID, ElectroMagicTools.ID, EtFuturumRequiem.ID, ZTones.ID);
+        return Arrays.asList(
+                TwilightForest.ID,
+                Thaumcraft.ID,
+                MagicBees.ID,
+                ElectroMagicTools.ID,
+                EtFuturumRequiem.ID,
+                ZTones.ID);
     }
 
     @Override
