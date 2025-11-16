@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -23,7 +24,7 @@ public class ScriptMoldRecycling implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return List.of();
+        return Collections.emptyList();
     }
 
     @Override
