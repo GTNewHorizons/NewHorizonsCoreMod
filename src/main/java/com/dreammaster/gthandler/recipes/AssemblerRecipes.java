@@ -6629,7 +6629,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.IronMagnetic, 2L),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
                         ItemList.Circuit_Parts_Transistor.get(1L),
-                        GTUtility.getIntegratedCircuit(2))
+                        GTUtility.getIntegratedCircuit(7))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "opensecurity.rfidCard", 2L, 0))
                 .fluidInputs(Materials.Glue.getFluid(144L)).duration(7 * SECONDS + 10 * TICKS).eut(64)
                 .addTo(assemblerRecipes);
