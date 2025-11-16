@@ -219,7 +219,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 8),
-                        GTUtility.getIntegratedCircuit(6))
+                        GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(ItemList.Hull_HP.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
