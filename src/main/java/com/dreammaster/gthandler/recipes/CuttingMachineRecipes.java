@@ -184,37 +184,6 @@ public class CuttingMachineRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1L)).duration(4 * MINUTES)
                     .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L))
-                    .fluidInputs(Materials.Water.getFluid(1000)).duration(4 * MINUTES).eut(TierEU.RECIPE_LV)
-                    .addTo(cutterRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L))
-                    .fluidInputs(GTModHandler.getDistilledWater(750L)).duration(4 * MINUTES).eut(TierEU.RECIPE_LV)
-                    .addTo(cutterRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L))
-                    .fluidInputs(Materials.Lubricant.getFluid(250)).duration(2 * MINUTES).eut(TierEU.RECIPE_LV)
-                    .addTo(cutterRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L))
-                    .fluidInputs(Materials.Water.getFluid(1000)).duration(8 * MINUTES).eut(TierEU.RECIPE_LV)
-                    .addTo(cutterRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L))
-                    .fluidInputs(GTModHandler.getDistilledWater(750L)).duration(8 * MINUTES).eut(TierEU.RECIPE_LV)
-                    .addTo(cutterRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L))
-                    .fluidInputs(Materials.Lubricant.getFluid(250)).duration(4 * MINUTES).eut(TierEU.RECIPE_LV)
-                    .addTo(cutterRecipes);
-
         }
 
         // Photonically Prepared Wafer
