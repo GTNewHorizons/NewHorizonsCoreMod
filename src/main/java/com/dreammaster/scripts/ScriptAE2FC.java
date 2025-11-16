@@ -4,8 +4,6 @@ import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -53,13 +51,8 @@ public class ScriptAE2FC implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(
-                AE2FluidCraft.ID,
-                AppliedEnergistics2.ID,
-                OpenComputers.ID,
-                GoodGenerator.ID,
-                GTPlusPlus.ID,
-                EternalSingularity.ID);
+        return Arrays
+                .asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, Avaritia.ID, EternalSingularity.ID, OpenComputers.ID);
     }
 
     @Override

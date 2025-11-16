@@ -105,7 +105,35 @@ public class ScriptEFR implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(EtFuturumRequiem.ID, ExtraUtilities.ID, Thaumcraft.ID);
+        return Arrays.asList(
+                AE2Stuff.ID,
+                AdventureBackpack.ID,
+                AppliedEnergistics2.ID,
+                BiomesOPlenty.ID,
+                BloodMagic.ID,
+                Botania.ID,
+                DraconicEvolution.ID,
+                ElectroMagicTools.ID,
+                EnderIO.ID,
+                EtFuturumRequiem.ID,
+                ExtraUtilities.ID,
+                ForbiddenMagic.ID,
+                Forestry.ID,
+                HardcoreEnderExpansion.ID,
+                IndustrialCraft2.ID,
+                MagicBees.ID,
+                PamsHarvestCraft.ID,
+                PamsHarvestTheNether.ID,
+                StevesCarts2.ID,
+                TaintedMagic.ID,
+                Thaumcraft.ID,
+                ThaumicBases.ID,
+                ThaumicHorizons.ID,
+                TinkerConstruct.ID,
+                TinkersGregworks.ID,
+                Witchery.ID,
+                WitchingGadgets.ID,
+                ZTones.ID);
     }
 
     @Override

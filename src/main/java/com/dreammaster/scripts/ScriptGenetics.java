@@ -26,7 +26,6 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -41,12 +40,12 @@ public class ScriptGenetics implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.Genetics.ID,
                 Botany.ID,
                 BuildCraftFactory.ID,
                 ExtraBees.ID,
                 ExtraTrees.ID,
                 Forestry.ID,
+                Genetics.ID,
                 IndustrialCraft2.ID);
     }
 

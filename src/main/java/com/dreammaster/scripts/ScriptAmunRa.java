@@ -1,8 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
-import static gregtech.api.enums.Mods.GTNHIntergalactic;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -11,7 +9,6 @@ import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.RandomThings;
-import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.implosionRecipes;
@@ -70,14 +67,12 @@ public class ScriptAmunRa implements IScriptLoader {
         return Arrays.asList(
                 AdvancedSolarPanel.ID,
                 GalacticraftAmunRa.ID,
+                GalacticraftCore.ID,
+                GalacticraftMars.ID,
                 GalaxySpace.ID,
-                GoodGenerator.ID,
                 GraviSuite.ID,
-                GTNHIntergalactic.ID,
-                GTPlusPlus.ID,
                 IronChests.ID,
-                RandomThings.ID,
-                TecTech.ID);
+                RandomThings.ID);
     }
 
     @Override

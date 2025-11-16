@@ -20,7 +20,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Natura.ID, BiblioWoodsNaturaEdition.ID, BiblioCraft.ID);
+        return Arrays.asList(BiblioCraft.ID, BiblioWoodsNaturaEdition.ID, Natura.ID);
     }
 
     @Override

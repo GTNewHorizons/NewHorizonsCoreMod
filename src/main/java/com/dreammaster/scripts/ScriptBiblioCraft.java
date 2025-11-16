@@ -1,6 +1,12 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.BiblioCraft;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.FloodLights;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -25,8 +31,13 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays
-                .asList(BiblioCraft.ID, PamsHarvestCraft.ID, FloodLights.ID, IndustrialCraft2.ID, OpenComputers.ID);
+        return Arrays.asList(
+                BiblioCraft.ID,
+                EtFuturumRequiem.ID,
+                FloodLights.ID,
+                IndustrialCraft2.ID,
+                OpenComputers.ID,
+                PamsHarvestCraft.ID);
     }
 
     @Override

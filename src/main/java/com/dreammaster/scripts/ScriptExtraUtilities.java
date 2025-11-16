@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
@@ -71,24 +70,23 @@ public class ScriptExtraUtilities implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                ExtraUtilities.ID,
-                Thaumcraft.ID,
-                ProjectRedIllumination.ID,
-                TinkerConstruct.ID,
                 Avaritia.ID,
-                GTPlusPlus.ID,
-                TwilightForest.ID,
                 Botania.ID,
-                WirelessRedstoneCBECore.ID,
-                WirelessRedstoneCBELogic.ID,
                 BuildCraftFactory.ID,
                 BuildCraftTransport.ID,
+                ExtraUtilities.ID,
                 HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
                 PamsHarvestCraft.ID,
+                ProjectRedIllumination.ID,
                 Railcraft.ID,
-                RandomThings.ID);
+                RandomThings.ID,
+                Thaumcraft.ID,
+                TinkerConstruct.ID,
+                TwilightForest.ID,
+                WirelessRedstoneCBECore.ID,
+                WirelessRedstoneCBELogic.ID);
     }
 
     @Override

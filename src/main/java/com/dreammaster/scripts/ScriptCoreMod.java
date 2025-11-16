@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static com.dreammaster.tinkersConstruct.SmelteryFluidTypes.getMoltenPatternFluidTypeName;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -84,8 +83,6 @@ public class ScriptCoreMod implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                TinkerConstruct.ID,
-                BartWorks.ID,
                 AdvancedSolarPanel.ID,
                 AppliedEnergistics2.ID,
                 BiomesOPlenty.ID,

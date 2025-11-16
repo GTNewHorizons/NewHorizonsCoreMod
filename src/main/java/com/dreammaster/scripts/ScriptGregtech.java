@@ -72,24 +72,26 @@ public class ScriptGregtech implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                MCFrames.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransmission.ID,
-                StructureLib.ID,
                 AdvancedSolarPanel.ID,
+                AppliedEnergistics2.ID,
+                Avaritia.ID,
                 BiomesOPlenty.ID,
                 BloodArsenal.ID,
                 CropsPlusPlus.ID,
+                DraconicEvolution.ID,
                 IndustrialCraft2.ID,
+                MCFrames.ID,
                 Natura.ID,
                 OpenBlocks.ID,
+                PamsHarvestCraft.ID,
+                ProjectRedExpansion.ID,
+                ProjectRedTransmission.ID,
                 SGCraft.ID,
+                StructureLib.ID,
                 SuperSolarPanels.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
-                TinkerConstruct.ID,
-                DraconicEvolution.ID,
-                Avaritia.ID);
+                TinkerConstruct.ID);
     }
 
     @Override

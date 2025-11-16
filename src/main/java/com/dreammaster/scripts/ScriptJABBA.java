@@ -1,12 +1,10 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.JABBA;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
@@ -38,15 +36,13 @@ public class ScriptJABBA implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                JABBA.ID,
                 BiomesOPlenty.ID,
+                EnderStorage.ID,
                 ExtraTrees.ID,
                 ExtraUtilities.ID,
                 Forestry.ID,
+                JABBA.ID,
                 Natura.ID,
-                GregTech.ID,
-                BartWorks.ID,
-                EnderStorage.ID,
                 Railcraft.ID);
     }
 

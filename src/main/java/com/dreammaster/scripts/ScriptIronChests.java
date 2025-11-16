@@ -42,16 +42,16 @@ public class ScriptIronChests implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                IronChests.ID,
-                GalacticraftAmunRa.ID,
-                IronChestsMinecarts.ID,
                 BiomesOPlenty.ID,
                 ExtraTrees.ID,
                 ExtraUtilities.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
+                GalacticraftAmunRa.ID,
                 GalaxySpace.ID,
                 IndustrialCraft2.ID,
+                IronChests.ID,
+                IronChestsMinecarts.ID,
                 Natura.ID,
                 PamsHarvestTheNether.ID,
                 TaintedMagic.ID,

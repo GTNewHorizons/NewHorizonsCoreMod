@@ -20,7 +20,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(BiomesOPlenty.ID, BiblioWoodsBoPEdition.ID, BiblioCraft.ID);
+        return Arrays.asList(BiblioCraft.ID, BiblioWoodsBoPEdition.ID, BiomesOPlenty.ID);
     }
 
     @Override

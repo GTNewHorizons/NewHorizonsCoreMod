@@ -37,7 +37,6 @@ import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -52,15 +51,12 @@ public class ScriptBuildCraft implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.BuildCraftCore.ID,
+                Botany.ID,
                 BuildCraftBuilders.ID,
                 BuildCraftCompat.ID,
-                BuildCraftRobotics.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransportation.ID,
-                Botany.ID,
+                BuildCraftCore.ID,
                 BuildCraftFactory.ID,
-                BuildCraftSilicon.ID,
+                BuildCraftRobotics.ID,
                 BuildCraftSilicon.ID,
                 BuildCraftTransport.ID,
                 ExtraBees.ID,
@@ -70,6 +66,8 @@ public class ScriptBuildCraft implements IScriptLoader {
                 IndustrialCraft2.ID,
                 OpenBlocks.ID,
                 ProjectRedCore.ID,
+                ProjectRedExpansion.ID,
+                ProjectRedTransportation.ID,
                 Railcraft.ID,
                 RandomThings.ID,
                 TinkerConstruct.ID);

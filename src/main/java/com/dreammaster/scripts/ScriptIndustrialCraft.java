@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -67,7 +66,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 BiomesOPlenty.ID,
                 BuildCraftFactory.ID,
                 Forestry.ID,
-                GTPlusPlus.ID,
                 IndustrialCraft2.ID,
                 Natura.ID,
                 Railcraft.ID,
