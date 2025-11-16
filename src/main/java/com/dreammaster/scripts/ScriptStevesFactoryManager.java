@@ -39,16 +39,16 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                StevesFactoryManager.ID,
-                StevesAddons.ID,
                 AppliedEnergistics2.ID,
-                ProjectRedTransmission.ID,
                 Computronics.ID,
                 EnderIO.ID,
                 ExtraUtilities.ID,
                 IndustrialCraft2.ID,
                 OpenBlocks.ID,
-                Railcraft.ID);
+                ProjectRedTransmission.ID,
+                Railcraft.ID,
+                StevesFactoryManager.ID,
+                StevesAddons.ID);
     }
 
     @Override

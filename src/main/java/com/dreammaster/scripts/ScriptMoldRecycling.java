@@ -1,10 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.GGFab;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -28,7 +23,7 @@ public class ScriptMoldRecycling implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(GregTech.ID, GGFab.ID, GTPlusPlus.ID);
+        return List.of();
     }
 
     @Override

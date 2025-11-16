@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
@@ -51,18 +50,17 @@ public class ScriptLogisticPipes implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                LogisticsPipes.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedCore.ID,
                 AppliedEnergistics2.ID,
-                BartWorks.ID,
                 BuildCraftSilicon.ID,
                 ExtraUtilities.ID,
                 Forestry.ID,
                 GalacticraftCore.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
+                LogisticsPipes.ID,
                 OpenComputers.ID,
+                ProjectRedExpansion.ID,
+                ProjectRedCore.ID,
                 Railcraft.ID,
                 Thaumcraft.ID);
     }

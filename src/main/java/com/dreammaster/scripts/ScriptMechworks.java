@@ -31,7 +31,7 @@ public class ScriptMechworks implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(TinkersMechworks.ID, TinkerConstruct.ID);
+        return Arrays.asList(TinkerConstruct.ID, TinkersMechworks.ID);
     }
 
     @Override

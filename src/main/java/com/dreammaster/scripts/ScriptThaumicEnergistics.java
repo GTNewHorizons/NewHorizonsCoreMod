@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Gadomancy;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -48,16 +47,16 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                TaintedMagic.ID,
-                Gadomancy.ID,
-                ThaumicEnergistics.ID,
-                EternalSingularity.ID,
-                AppliedEnergistics2.ID,
                 AE2Stuff.ID,
-                TinkerConstruct.ID,
-                BartWorks.ID,
+                AppliedEnergistics2.ID,
+                EternalSingularity.ID,
+                Gadomancy.ID,
                 IndustrialCraft2.ID,
-                Thaumcraft.ID);
+                TaintedMagic.ID,
+                Thaumcraft.ID,
+                ThaumicEnergistics.ID,
+                ThaumicInsurgence.ID,
+                TinkerConstruct.ID);
     }
 
     @Override

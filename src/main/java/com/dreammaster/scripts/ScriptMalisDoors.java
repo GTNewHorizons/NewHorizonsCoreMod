@@ -22,7 +22,6 @@ import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -36,12 +35,8 @@ public class ScriptMalisDoors implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(
-                Mods.MalisisDoors.ID,
-                BiomesOPlenty.ID,
-                Natura.ID,
-                ProjectRedIntegration.ID,
-                TinkerConstruct.ID);
+        return Arrays
+                .asList(BiomesOPlenty.ID, MalisisDoors.ID, Natura.ID, ProjectRedIntegration.ID, TinkerConstruct.ID);
     }
 
     @Override

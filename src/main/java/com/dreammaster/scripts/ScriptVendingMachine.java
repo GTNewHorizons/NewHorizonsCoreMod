@@ -17,7 +17,6 @@ import com.cubefury.vendingmachine.items.VMItems;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 
-@SuppressWarnings("deprecation")
 public class ScriptVendingMachine implements IScriptLoader {
 
     @Override
@@ -27,7 +26,7 @@ public class ScriptVendingMachine implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(VendingMachine.ID, AppliedEnergistics2.ID);
+        return Arrays.asList(AppliedEnergistics2.ID, VendingMachine.ID);
     }
 
     @Override

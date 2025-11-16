@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
@@ -9,7 +8,6 @@ import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.GregTech;
@@ -79,30 +77,28 @@ public class ScriptProjectRed implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                ProjectRedCore.ID,
-                ProjectRedExploration.ID,
-                ProjectRedTransmission.ID,
-                ProjectRedTransportation.ID,
-                TinkerConstruct.ID,
-                GalacticraftAmunRa.ID,
-                MCFrames.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedFabrication.ID,
-                BartWorks.ID,
                 BiomesOPlenty.ID,
                 Botania.ID,
                 Botany.ID,
                 BuildCraftFactory.ID,
+                EtFuturumRequiem.ID,
                 ExtraBees.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
+                GalacticraftAmunRa.ID,
                 Gendustry.ID,
-                GTPlusPlus.ID,
                 IndustrialCraft2.ID,
+                MCFrames.ID,
                 Natura.ID,
                 OpenBlocks.ID,
                 OpenComputers.ID,
                 PamsHarvestCraft.ID,
+                ProjectRedCore.ID,
+                ProjectRedExploration.ID,
+                ProjectRedTransmission.ID,
+                ProjectRedTransportation.ID,
+                ProjectRedExpansion.ID,
+                ProjectRedFabrication.ID,
                 Railcraft.ID,
                 StevesCarts2.ID,
                 ThaumicHorizons.ID,
