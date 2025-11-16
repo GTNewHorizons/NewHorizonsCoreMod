@@ -37,7 +37,6 @@ import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -52,15 +51,12 @@ public class ScriptBuildCraft implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.BuildCraftCore.ID,
+                Botany.ID,
                 BuildCraftBuilders.ID,
                 BuildCraftCompat.ID,
-                BuildCraftRobotics.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransportation.ID,
-                Botany.ID,
+                BuildCraftCore.ID,
                 BuildCraftFactory.ID,
-                BuildCraftSilicon.ID,
+                BuildCraftRobotics.ID,
                 BuildCraftSilicon.ID,
                 BuildCraftTransport.ID,
                 ExtraBees.ID,
@@ -70,6 +66,8 @@ public class ScriptBuildCraft implements IScriptLoader {
                 IndustrialCraft2.ID,
                 OpenBlocks.ID,
                 ProjectRedCore.ID,
+                ProjectRedExpansion.ID,
+                ProjectRedTransportation.ID,
                 Railcraft.ID,
                 RandomThings.ID,
                 TinkerConstruct.ID);
@@ -562,7 +560,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .eut(480).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 4L))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);

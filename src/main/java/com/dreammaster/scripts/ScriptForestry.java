@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -64,19 +63,18 @@ public class ScriptForestry implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Forestry.ID,
-                Thaumcraft.ID,
-                MagicBees.ID,
-                ProjectRedExpansion.ID,
                 Backpack.ID,
                 BiomesOPlenty.ID,
                 BuildCraftFactory.ID,
                 ExtraBees.ID,
-                GTPlusPlus.ID,
+                Forestry.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 Natura.ID,
                 PamsHarvestCraft.ID,
+                ProjectRedExpansion.ID,
                 Railcraft.ID,
+                Thaumcraft.ID,
                 TinkerConstruct.ID);
     }
 

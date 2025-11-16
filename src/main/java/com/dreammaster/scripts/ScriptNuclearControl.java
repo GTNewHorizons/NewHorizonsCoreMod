@@ -33,7 +33,7 @@ public class ScriptNuclearControl implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(IC2NuclearControl.ID, AppliedEnergistics2.ID, IndustrialCraft2.ID, Natura.ID);
+        return Arrays.asList(AppliedEnergistics2.ID, IC2NuclearControl.ID, IndustrialCraft2.ID, Natura.ID);
     }
 
     @Override

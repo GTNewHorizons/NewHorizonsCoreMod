@@ -66,11 +66,9 @@ public class ScriptRailcraft implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                BuildCraftFactory.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
                 Backpack.ID,
                 BiomesOPlenty.ID,
+                BuildCraftFactory.ID,
                 EnderIO.ID,
                 Forestry.ID,
                 ForgeMicroblocks.ID,
@@ -78,7 +76,9 @@ public class ScriptRailcraft implements IScriptLoader {
                 IndustrialCraft2.ID,
                 PamsHarvestCraft.ID,
                 ProjectRedIntegration.ID,
-                StevesCarts2.ID);
+                Railcraft.ID,
+                StevesCarts2.ID,
+                Thaumcraft.ID);
     }
 
     @Override
@@ -2155,14 +2155,14 @@ public class ScriptRailcraft implements IScriptLoader {
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
                         getModItem(Railcraft.ID, "firestone.raw", 1, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.cut", 1, 0, missing)).duration(8 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
                         getModItem(Railcraft.ID, "firestone.raw", 1, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.cut", 1, 0, missing)).duration(2 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);

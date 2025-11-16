@@ -57,20 +57,20 @@ public class ScriptOpenBlocks implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                OpenBlocks.ID,
-                RandomThings.ID,
-                ExtraUtilities.ID,
-                Thaumcraft.ID,
-                ProjectBlue.ID,
-                ProjectRedExpansion.ID,
                 Backpack.ID,
                 BiblioCraft.ID,
                 BuildCraftCore.ID,
+                ExtraUtilities.ID,
                 Forestry.ID,
                 GalacticraftCore.ID,
                 IndustrialCraft2.ID,
+                OpenBlocks.ID,
                 OpenComputers.ID,
+                ProjectBlue.ID,
+                ProjectRedExpansion.ID,
                 Railcraft.ID,
+                RandomThings.ID,
+                Thaumcraft.ID,
                 TinkerConstruct.ID);
     }
 

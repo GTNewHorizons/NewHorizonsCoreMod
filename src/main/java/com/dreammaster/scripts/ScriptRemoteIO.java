@@ -39,16 +39,16 @@ public class ScriptRemoteIO implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                RemoteIO.ID,
-                TinkerConstruct.ID,
-                WirelessRedstoneCBELogic.ID,
                 AppliedEnergistics2.ID,
                 EnderStorage.ID,
                 ExtraUtilities.ID,
                 IndustrialCraft2.ID,
                 ProjectRedIntegration.ID,
                 RandomThings.ID,
-                Thaumcraft.ID);
+                RemoteIO.ID,
+                Thaumcraft.ID,
+                TinkerConstruct.ID,
+                WirelessRedstoneCBELogic.ID);
     }
 
     @Override

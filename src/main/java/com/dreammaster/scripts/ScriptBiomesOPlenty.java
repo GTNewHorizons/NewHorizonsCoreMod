@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -63,10 +62,19 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 BiomesOPlenty.ID,
+                Botania.ID,
+                Botany.ID,
+                Chisel.ID,
                 Forestry.ID,
-                GTPlusPlus.ID,
+                HardcoreEnderExpansion.ID,
                 IguanaTweaksTinkerConstruct.ID,
-                PamsHarvestCraft.ID);
+                PamsHarvestCraft.ID,
+                Railcraft.ID,
+                RandomThings.ID,
+                ThaumicBases.ID,
+                TinkerConstruct.ID,
+                Witchery.ID,
+                WitchingGadgets.ID);
     }
 
     @Override

@@ -25,7 +25,7 @@ public class ScriptTB implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Thaumcraft.ID, ThaumicBoots.ID, IndustrialCraft2.ID);
+        return Arrays.asList(IndustrialCraft2.ID, Thaumcraft.ID, ThaumicBoots.ID);
     }
 
     @Override

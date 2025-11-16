@@ -66,15 +66,13 @@ public class ScriptStevesCarts implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                EtFuturumRequiem.ID,
-                StevesCarts2.ID,
-                ProjectRedExploration.ID,
                 Backpack.ID,
                 BiomesOPlenty.ID,
                 Botany.ID,
                 BuildCraftFactory.ID,
                 BuildCraftSilicon.ID,
                 EnderIO.ID,
+                EtFuturumRequiem.ID,
                 ExtraBees.ID,
                 ExtraUtilities.ID,
                 Forestry.ID,
@@ -83,8 +81,10 @@ public class ScriptStevesCarts implements IScriptLoader {
                 IronTanks.ID,
                 Natura.ID,
                 OpenBlocks.ID,
+                ProjectRedExploration.ID,
                 ProjectRedIntegration.ID,
                 Railcraft.ID,
+                StevesCarts2.ID,
                 Thaumcraft.ID,
                 TinkerConstruct.ID,
                 TwilightForest.ID);

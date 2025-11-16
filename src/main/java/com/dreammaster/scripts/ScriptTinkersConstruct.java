@@ -81,10 +81,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                TinkerConstruct.ID,
-                Mantle.ID,
-                RandomThings.ID,
-                TinkersMechworks.ID,
+                Backpack.ID,
+                BiomesOPlenty.ID,
                 BloodArsenal.ID,
                 BuildCraftCore.ID,
                 ElectroMagicTools.ID,
@@ -95,10 +93,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 GalaxySpace.ID,
                 IguanaTweaksTinkerConstruct.ID,
                 IndustrialCraft2.ID,
+                Mantle.ID,
                 Natura.ID,
                 PamsHarvestCraft.ID,
                 Railcraft.ID,
-                Thaumcraft.ID);
+                RandomThings.ID,
+                Thaumcraft.ID,
+                TinkerConstruct.ID,
+                TinkersMechworks.ID,
+                WitchingGadgets.ID);
     }
 
     @Override

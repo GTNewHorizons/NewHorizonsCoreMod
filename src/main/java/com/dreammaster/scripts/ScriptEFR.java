@@ -105,7 +105,35 @@ public class ScriptEFR implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(EtFuturumRequiem.ID, ExtraUtilities.ID, Thaumcraft.ID);
+        return Arrays.asList(
+                AE2Stuff.ID,
+                AdventureBackpack.ID,
+                AppliedEnergistics2.ID,
+                BiomesOPlenty.ID,
+                BloodMagic.ID,
+                Botania.ID,
+                DraconicEvolution.ID,
+                ElectroMagicTools.ID,
+                EnderIO.ID,
+                EtFuturumRequiem.ID,
+                ExtraUtilities.ID,
+                ForbiddenMagic.ID,
+                Forestry.ID,
+                HardcoreEnderExpansion.ID,
+                IndustrialCraft2.ID,
+                MagicBees.ID,
+                PamsHarvestCraft.ID,
+                PamsHarvestTheNether.ID,
+                StevesCarts2.ID,
+                TaintedMagic.ID,
+                Thaumcraft.ID,
+                ThaumicBases.ID,
+                ThaumicHorizons.ID,
+                TinkerConstruct.ID,
+                TinkersGregworks.ID,
+                Witchery.ID,
+                WitchingGadgets.ID,
+                ZTones.ID);
     }
 
     @Override
@@ -616,14 +644,6 @@ public class ScriptEFR implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 5, missing)).duration(30 * SECONDS)
                 .eut(256).addTo(assemblerRecipes);
-        // GTValues.RA.stdBuilder()
-        // .itemInputs(
-        // GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-        // GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Netherite, 1L),
-        // GTUtility.getIntegratedCircuit(3))
-        // .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 6, missing))
-        // .duration(5 * SECONDS).eut(64)
-        // .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),

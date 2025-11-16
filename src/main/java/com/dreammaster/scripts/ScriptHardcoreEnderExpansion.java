@@ -47,10 +47,10 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                HardcoreEnderExpansion.ID,
                 BiomesOPlenty.ID,
                 Chisel.ID,
                 EnderStorage.ID,
+                HardcoreEnderExpansion.ID,
                 IronTanks.ID,
                 Thaumcraft.ID,
                 TinkerConstruct.ID);

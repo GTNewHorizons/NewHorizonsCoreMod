@@ -59,19 +59,23 @@ public class ScriptDraconicEvolution implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                EtFuturumRequiem.ID,
-                DraconicEvolution.ID,
                 AvaritiaAddons.ID,
                 BloodArsenal.ID,
                 BloodMagic.ID,
+                Botania.ID,
                 BuildCraftTransport.ID,
+                DraconicEvolution.ID,
                 EnderIO.ID,
+                EtFuturumRequiem.ID,
+                ExtraUtilities.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
                 OpenBlocks.ID,
+                OpenComputers.ID,
                 ProjectRedIntegration.ID,
                 Railcraft.ID,
                 Thaumcraft.ID,
+                TinkerConstruct.ID,
                 TinkersGregworks.ID);
     }
 

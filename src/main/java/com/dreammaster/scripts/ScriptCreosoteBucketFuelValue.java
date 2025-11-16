@@ -2,11 +2,12 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.CoreConfig;
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
+import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.Nonnull;
@@ -22,7 +23,7 @@ public class ScriptCreosoteBucketFuelValue implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Railcraft.ID);
+        return Collections.singletonList(Railcraft.ID);
     }
 
     @Override

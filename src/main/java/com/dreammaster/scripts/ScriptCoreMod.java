@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static com.dreammaster.tinkersConstruct.SmelteryFluidTypes.getMoltenPatternFluidTypeName;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -84,8 +83,6 @@ public class ScriptCoreMod implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                TinkerConstruct.ID,
-                BartWorks.ID,
                 AdvancedSolarPanel.ID,
                 AppliedEnergistics2.ID,
                 BiomesOPlenty.ID,
@@ -965,133 +962,133 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(fermentingRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
                 .itemOutputs(CustomItemList.EngravedDiamondCrystalChip.get(1L)).duration(20 * SECONDS).eut(1920)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.EngravedEnergyChip.get(1L)).duration(30 * SECONDS).eut(4096)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.EngravedEnergyChip.get(1L)).duration(30 * SECONDS).eut(4096)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.EngravedEnergyChip.get(1L)).duration(30 * SECONDS).eut(4096)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.EngravedEnergyChip.get(1L)).duration(30 * SECONDS).eut(4096)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.EngravedEnergyChip.get(1L)).duration(30 * SECONDS).eut(4096)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
                 .itemOutputs(CustomItemList.EngravedQuantumChip.get(1L)).duration(1 * MINUTES).eut(30720)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Force, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Force, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
                 .itemOutputs(CustomItemList.EngravedQuantumChip.get(1L)).duration(1 * MINUTES).eut(30720)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetYellow, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetYellow, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
                 .itemOutputs(CustomItemList.EngravedQuantumChip.get(1L)).duration(1 * MINUTES).eut(30720)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.NanoCrystal.get(1L)).duration(30 * SECONDS).eut(480)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.NanoCrystal.get(1L)).duration(30 * SECONDS).eut(480)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.QuantumCrystal.get(1L)).duration(40 * SECONDS).eut(1920)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.QuantumCrystal.get(1L)).duration(40 * SECONDS).eut(1920)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 4))
                 .itemOutputs(CustomItemList.ManyullynCrystal.get(1L)).duration(1 * MINUTES).eut(1920)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 4))
                 .itemOutputs(CustomItemList.ManyullynCrystal.get(1L)).duration(1 * MINUTES).eut(1920)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
                         CustomItemList.ManyullynCrystal.get(1L))
                 .itemOutputs(NHItemList.EngravedManyullynCrystalChip.getIS(1)).duration(45 * SECONDS).eut(7680)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
                         CustomItemList.ManyullynCrystal.get(1L))
                 .itemOutputs(NHItemList.EngravedManyullynCrystalChip.getIS(1)).duration(45 * SECONDS).eut(7680)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(NHItemList.EngravedGoldChip.getIS(1)).duration(5 * SECONDS).eut(120)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(NHItemList.EngravedGoldChip.getIS(1)).duration(5 * SECONDS).eut(120)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(NHItemList.EngravedGoldChip.getIS(1)).duration(5 * SECONDS).eut(120)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(NHItemList.EngravedGoldChip.getIS(1)).duration(5 * SECONDS).eut(120)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(NHItemList.EngravedGoldChip.getIS(1)).duration(5 * SECONDS).eut(120)
                 .addTo(laserEngraverRecipes);

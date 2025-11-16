@@ -44,11 +44,12 @@ public class ScriptExtraBees implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 ExtraBees.ID,
-                Thaumcraft.ID,
-                MagicBees.ID,
+                ExtraUtilities.ID,
                 Forestry.ID,
+                IndustrialCraft2.ID,
+                MagicBees.ID,
                 PamsHarvestCraft.ID,
-                IndustrialCraft2.ID);
+                Thaumcraft.ID);
     }
 
     @Override

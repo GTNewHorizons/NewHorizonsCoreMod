@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -44,14 +43,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(
-                Mods.GTPlusPlus.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                IronTanks.ID,
-                RemoteIO.ID,
-                EternalSingularity.ID,
-                GregTech.ID);
+        return Arrays.asList(EternalSingularity.ID, Forestry.ID, IndustrialCraft2.ID, IronTanks.ID, RemoteIO.ID);
     }
 
     @Override

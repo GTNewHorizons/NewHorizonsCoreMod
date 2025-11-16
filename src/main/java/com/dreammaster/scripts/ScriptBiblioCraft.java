@@ -1,6 +1,12 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.BiblioCraft;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.FloodLights;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -25,8 +31,13 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays
-                .asList(BiblioCraft.ID, PamsHarvestCraft.ID, FloodLights.ID, IndustrialCraft2.ID, OpenComputers.ID);
+        return Arrays.asList(
+                BiblioCraft.ID,
+                EtFuturumRequiem.ID,
+                FloodLights.ID,
+                IndustrialCraft2.ID,
+                OpenComputers.ID,
+                PamsHarvestCraft.ID);
     }
 
     @Override
@@ -86,8 +97,6 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         ItemStack torch = getModItem(Minecraft.ID, "torch", 1);
         ItemStack feather = getModItem(Minecraft.ID, "feather", 1);
-        ItemStack ink = getModItem(Minecraft.ID, "dye", 1);
-        ItemStack craftingTable = getModItem(Minecraft.ID, "crafting_table", 1);
         ItemStack emptyBottle = getModItem(Minecraft.ID, "glass_bottle", 1);
         ItemStack ironIngot = getModItem(Minecraft.ID, "iron_ingot", 1);
         ItemStack glass = getModItem(Minecraft.ID, "glass", 1);

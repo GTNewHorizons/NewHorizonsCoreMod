@@ -40,15 +40,15 @@ public class ScriptAutomagy implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                EtFuturumRequiem.ID,
-                Thaumcraft.ID,
-                Automagy.ID,
-                Genetics.ID,
                 AppliedEnergistics2.ID,
-                ProjectRedIntegration.ID,
+                Automagy.ID,
                 BuildCraftFactory.ID,
+                EtFuturumRequiem.ID,
+                Genetics.ID,
                 IndustrialCraft2.ID,
-                Railcraft.ID);
+                ProjectRedIntegration.ID,
+                Railcraft.ID,
+                Thaumcraft.ID);
     }
 
     @Override

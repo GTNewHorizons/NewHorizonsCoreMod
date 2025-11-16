@@ -89,18 +89,19 @@ public class ScriptGalacticraft implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
                 AE2FluidCraft.ID,
                 AppliedEnergistics2.ID,
                 BuildCraftTransport.ID,
                 CarpentersBlocks.ID,
+                GalacticraftCore.ID,
+                GalacticraftMars.ID,
+                GalaxySpace.ID,
                 GraviSuite.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
                 PamsHarvestCraft.ID,
-                ProjectRedIllumination.ID);
+                ProjectRedIllumination.ID,
+                TinkersGregworks.ID);
     }
 
     @Override
@@ -2859,9 +2860,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         HashMap<Integer, ItemStack> input2;
         input.put(1, new ItemStack(GCItems.basicItem, 1, 19));
         input.put(2, new ItemStack(GCItems.partBuggy, 1, 1));
-        if (GalaxySpace.isModLoaded()) {
-            input.put(3, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 100));
-        }
+        input.put(3, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 100));
         for (int i = 4; i <= 7; i++) {
             input.put(i, new ItemStack(GCItems.partBuggy));
         }
@@ -2901,14 +2900,9 @@ public class ScriptGalacticraft implements IScriptLoader {
         final HashMap<Integer, PositionedStack> input3 = new HashMap<>();
         input3.put(1, new PositionedStack(new ItemStack(GCItems.basicItem, 1, 19), 62 - x, 19 - y));
         input3.put(2, new PositionedStack(new ItemStack(GCItems.partBuggy, 1, 1), 62 - x, 55 - y));
-        if (GalaxySpace.isModLoaded()) {
-            input3.put(
-                    3,
-                    new PositionedStack(
-                            getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 100),
-                            62 - x,
-                            73 - y));
-        }
+        input3.put(
+                3,
+                new PositionedStack(getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 100), 62 - x, 73 - y));
         input3.put(4, new PositionedStack(new ItemStack(GCItems.partBuggy), 8 - x, 19 - y));
         input3.put(5, new PositionedStack(new ItemStack(GCItems.partBuggy), 116 - x, 19 - y));
         input3.put(6, new PositionedStack(new ItemStack(GCItems.partBuggy), 8 - x, 109 - y));
@@ -3023,11 +3017,9 @@ public class ScriptGalacticraft implements IScriptLoader {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
         input.put(1, new ItemStack(GCItems.basicItem, 1, 14));
-        if (GalaxySpace.isModLoaded()) {
-            input.put(2, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 101));
-            for (int i = 3; i <= 5; i++) {
-                input.put(i, getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1));
-            }
+        input.put(2, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 101));
+        for (int i = 3; i <= 5; i++) {
+            input.put(i, getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1));
         }
         input.put(7, new ItemStack(GCItems.partNoseCone));
         for (int i = 8; i <= 15; i++) {
@@ -3051,32 +3043,15 @@ public class ScriptGalacticraft implements IScriptLoader {
         // NEI integration
         NEIGalacticraftMarsConfig instance = new NEIGalacticraftMarsConfig();
         final ArrayList<PositionedStack> input3 = new ArrayList<>();
-        ArrayList<PositionedStack> input4 = new ArrayList<>();
+        ArrayList<PositionedStack> input4;
         final int x = CargoRocketRecipeHandler.tX - CargoRocketRecipeHandler.x;
         final int y = CargoRocketRecipeHandler.tY - CargoRocketRecipeHandler.y;
         input3.add(new PositionedStack(new ItemStack(GCItems.basicItem, 1, 14), 134 - x, 10 - y));
-        if (GalaxySpace.isModLoaded()) {
-            input3.add(
-                    new PositionedStack(
-                            getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 101),
-                            134 - x,
-                            28 - y));
-            input3.add(
-                    new PositionedStack(
-                            getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1),
-                            116 - x,
-                            19 - y));
-            input3.add(
-                    new PositionedStack(
-                            getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1),
-                            152 - x,
-                            19 - y));
-            input3.add(
-                    new PositionedStack(
-                            getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1),
-                            116 - x,
-                            37 - y));
-        }
+        input3.add(
+                new PositionedStack(getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 101), 134 - x, 28 - y));
+        input3.add(new PositionedStack(getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1), 116 - x, 19 - y));
+        input3.add(new PositionedStack(getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1), 152 - x, 19 - y));
+        input3.add(new PositionedStack(getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1), 116 - x, 37 - y));
         input3.add(new PositionedStack(new ItemStack(GCItems.partNoseCone), 53 - x, 19 - y));
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 2; j++) {
@@ -3123,9 +3098,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         for (int i = 14; i <= 17; i++) {
             input.put(i, new ItemStack(AsteroidsItems.orionDrive));
         }
-        if (GalaxySpace.isModLoaded()) {
-            input.put(18, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 102));
-        }
+        input.put(18, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 102));
         input.put(19, new ItemStack(GCItems.basicItem, 1, 14));
         input.put(20, new ItemStack(GCItems.basicItem, 1, 14));
         for (int i = 21; i <= 23; i++) {
@@ -3163,13 +3136,8 @@ public class ScriptGalacticraft implements IScriptLoader {
         input3.add(new PositionedStack(new ItemStack(AsteroidsItems.orionDrive), 26 - x, 55 - y));
         input3.add(new PositionedStack(new ItemStack(AsteroidsItems.orionDrive), 44 - x, 55 - y));
         input3.add(new PositionedStack(new ItemStack(AsteroidsItems.orionDrive), 62 - x, 55 - y));
-        if (GalaxySpace.isModLoaded()) {
-            input3.add(
-                    new PositionedStack(
-                            getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 102),
-                            62 - x,
-                            37 - y));
-        }
+        input3.add(
+                new PositionedStack(getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 102), 62 - x, 37 - y));
         input3.add(new PositionedStack(new ItemStack(GCItems.basicItem, 1, 14), 80 - x, 37 - y));
         input3.add(new PositionedStack(new ItemStack(GCItems.basicItem, 1, 14), 98 - x, 37 - y));
         input3.add(new PositionedStack(new ItemStack(GCItems.heavyPlatingTier1), 116 - x, 37 - y));

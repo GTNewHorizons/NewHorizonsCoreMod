@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -63,15 +62,17 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 AppliedEnergistics2.ID,
-                TinkerConstruct.ID,
                 Avaritia.ID,
+                Computronics.ID,
+                DraconicEvolution.ID,
+                EnderIO.ID,
                 EternalSingularity.ID,
-                BartWorks.ID,
                 ExtraUtilities.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
+                OpenComputers.ID,
                 Thaumcraft.ID,
-                DraconicEvolution.ID);
+                TinkerConstruct.ID);
     }
 
     @Override

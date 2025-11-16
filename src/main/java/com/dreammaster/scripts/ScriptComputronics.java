@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -22,7 +21,7 @@ public class ScriptComputronics implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Avaritia.ID, Computronics.ID, GregTech.ID, OpenComputers.ID, Thaumcraft.ID);
+        return Arrays.asList(Avaritia.ID, Computronics.ID, OpenComputers.ID, Thaumcraft.ID);
     }
 
     @Override
