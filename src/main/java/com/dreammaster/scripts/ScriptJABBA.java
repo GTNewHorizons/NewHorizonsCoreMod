@@ -177,7 +177,7 @@ public class ScriptJABBA implements IScriptLoader {
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 13)).duration(4 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3), GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3), GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 4)).duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
