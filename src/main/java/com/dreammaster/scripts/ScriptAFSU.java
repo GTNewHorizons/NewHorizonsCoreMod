@@ -6,6 +6,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import gregtech.api.enums.GTValues;
@@ -25,7 +26,7 @@ public class ScriptAFSU implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(AFSU.ID);
+        return Collections.singletonList(AFSU.ID);
     }
 
     @Override

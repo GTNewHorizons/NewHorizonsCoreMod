@@ -81,8 +81,6 @@ public class ScriptAmunRa implements IScriptLoader {
 
         final Block baseBlockRock = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.baseBlockRock");
         final Block rockSlab = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.rockSlab");
-        final Block woodSlab = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.woodSlab");
-        final Block wood1 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.wood1");
         final Block machines1 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines1");
         final Block machines2 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines2");
         final Block machines3 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines3");
@@ -522,27 +520,6 @@ public class ScriptAmunRa implements IScriptLoader {
 
     private static void addShapelessOredictRecipe(ItemStack result, Object... recipe) {
         GameRegistry.addRecipe(new ShapelessOreRecipe(result, recipe));
-    }
-
-    private static void addWoodRecipes(ItemStack log, ItemStack plank, ItemStack slab, ItemStack stair) {
-        // Log -> Planks
-        GameRegistry.addShapelessRecipe(GTUtility.copyAmount(2, plank), log);
-        addShapedOredictRecipe(GTUtility.copyAmount(4, plank), "S", "L", 'S', "craftingToolSaw", 'L', log);
-        GTValues.RA.stdBuilder().itemInputs(log).fluidInputs(Materials.Lubricant.getFluid(1))
-                .itemOutputs(GTUtility.copyAmount(6, plank), Materials.Wood.getDust(1)).duration(10 * SECONDS).eut(7)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(log).fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3))
-                .itemOutputs(GTUtility.copyAmount(4, plank), Materials.Wood.getDust(2)).duration(20 * SECONDS).eut(7)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(log).fluidInputs(Materials.Water.getFluid(5))
-                .itemOutputs(GTUtility.copyAmount(4, plank), Materials.Wood.getDust(2)).duration(20 * SECONDS).eut(7)
-                .addTo(cutterRecipes);
-
-        // Slabs -> Planks
-        GameRegistry.addShapedRecipe(plank, "S", "S", 'S', slab);
-
-        // Slabs and Staits
-        addSlabAndStairRecipes(plank, GTUtility.copyAmount(2, slab), stair, false);
     }
 
     private static void addSlabAndStairRecipes(ItemStack input, ItemStack slab, ItemStack stair, boolean isRock) {

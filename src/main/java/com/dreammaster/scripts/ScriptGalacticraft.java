@@ -3043,7 +3043,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         // NEI integration
         NEIGalacticraftMarsConfig instance = new NEIGalacticraftMarsConfig();
         final ArrayList<PositionedStack> input3 = new ArrayList<>();
-        ArrayList<PositionedStack> input4 = new ArrayList<>();
+        ArrayList<PositionedStack> input4;
         final int x = CargoRocketRecipeHandler.tX - CargoRocketRecipeHandler.x;
         final int y = CargoRocketRecipeHandler.tY - CargoRocketRecipeHandler.y;
         input3.add(new PositionedStack(new ItemStack(GCItems.basicItem, 1, 14), 134 - x, 10 - y));

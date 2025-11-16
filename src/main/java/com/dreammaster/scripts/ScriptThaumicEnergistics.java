@@ -115,11 +115,10 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // ItemStacks for in/out
         ItemStack DigitalSingularity = getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10);
         // Creative Essentia Cell
-        ItemStack CEC = EssentialCellCreative;
 
         TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                CEC,
+                EssentialCellCreative,
                 10,
                 new AspectList().add(Aspect.AIR, 2000).add(Aspect.FIRE, 2000).add(Aspect.ORDER, 2000)
                         .add(Aspect.ENTROPY, 2000).add(Aspect.EARTH, 2000).add(Aspect.WATER, 2000),

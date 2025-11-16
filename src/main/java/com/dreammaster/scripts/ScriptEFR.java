@@ -644,14 +644,6 @@ public class ScriptEFR implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 5, missing)).duration(30 * SECONDS)
                 .eut(256).addTo(assemblerRecipes);
-        // GTValues.RA.stdBuilder()
-        // .itemInputs(
-        // GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-        // GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Netherite, 1L),
-        // GTUtility.getIntegratedCircuit(3))
-        // .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 6, missing))
-        // .duration(5 * SECONDS).eut(64)
-        // .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),

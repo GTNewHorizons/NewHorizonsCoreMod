@@ -8,6 +8,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.Nonnull;
@@ -23,7 +24,7 @@ public class ScriptCreosoteBucketFuelValue implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Railcraft.ID);
+        return Collections.singletonList(Railcraft.ID);
     }
 
     @Override
