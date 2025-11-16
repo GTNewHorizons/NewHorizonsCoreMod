@@ -22,6 +22,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class CuttingMachineRecipes implements Runnable {
 
@@ -110,7 +111,7 @@ public class CuttingMachineRecipes implements Runnable {
 
         }
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.NandChipBoard.get(1)).itemOutputs(ItemList.NandChip.get(8))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.NandChipBoard.get(1), GTUtility.getIntegratedCircuit(1)).itemOutputs(ItemList.NandChip.get(8))
                 .requiresCleanRoom().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(cutterRecipes);
 
         if (ZTones.isModLoaded() && ProjectRedCore.isModLoaded()) {
