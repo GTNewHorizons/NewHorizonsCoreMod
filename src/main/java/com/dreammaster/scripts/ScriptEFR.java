@@ -1137,7 +1137,7 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blue_ice", 1, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.nether_wart, 9))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.nether_wart, 9), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 1L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
