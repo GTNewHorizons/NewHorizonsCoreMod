@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 

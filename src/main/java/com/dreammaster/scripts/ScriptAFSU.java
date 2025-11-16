@@ -5,7 +5,6 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
