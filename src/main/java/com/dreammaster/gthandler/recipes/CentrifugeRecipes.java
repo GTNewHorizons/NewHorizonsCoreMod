@@ -440,10 +440,9 @@ public class CentrifugeRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.CokeOvenBrickDust.get(4L), GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Brick, 1L))
-                .outputChances(10000, 9000, 7500).duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 2L))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(CustomItemList.AdvancedCokeOvenBrickDust.get(36L), GTUtility.getIntegratedCircuit(2))
