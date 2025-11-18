@@ -657,7 +657,7 @@ public class ScriptCoreMod implements IScriptLoader {
                                 NHItemList.MoldFormPipeHuge).map(NHItemList::getIS))
                 .add(CustomItemList.MarshmallowFormMold.get(1L));
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.CokeOvenCasing.get(1))
                 .itemOutputs(CustomItemList.CokeOvenBrick.get(4L)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 12, missing))
