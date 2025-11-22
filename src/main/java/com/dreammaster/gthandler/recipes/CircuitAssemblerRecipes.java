@@ -8,10 +8,12 @@ import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
+import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
+import gtPlusPlus.core.material.MaterialMisc;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -790,6 +792,21 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Biowarecomputer.get(1L)).fluidInputs(new FluidStack(solderIndalloy, 144))
                 .requiresCleanRoom().duration(2 * SECONDS + 10 * TICKS).eut(614400).addTo(circuitAssemblerRecipes);
 
+        // Optical Processor
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Optically_Perfected_CPU.get(1L),
+                        ItemList.Optically_Compatible_Memory.get(2L),
+                        ItemList.Circuit_Parts_CapacitorXSMD.get(16L),
+                        ItemList.Circuit_Parts_DiodeXSMD.get(16L),
+                        tectech.thing.CustomItemList.DATApipe.get(4L),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.EnrichedHolmium, 16))
+                .itemOutputs(ItemList.Circuit_OpticalProcessor.get(1L))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(2 * INGOTS))
+                .requiresCleanRoom()
+                .duration(20 * SECONDS)
+                .eut(614400)
+                .addTo(circuitAssemblerRecipes);
     }
 
     @Override
