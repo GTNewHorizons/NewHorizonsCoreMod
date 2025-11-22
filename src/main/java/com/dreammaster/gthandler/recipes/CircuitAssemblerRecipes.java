@@ -823,145 +823,155 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.BioMediumSterilized.getFluid(16000L)).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
 
-        if (AppliedEnergistics2.isModLoaded()) {
-            // 1k ME Storage Component
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                            CustomItemList.ChargedCertusQuartzDust.get(2),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
-                            ItemList.Circuit_Board_Basic.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
-                    .fluidInputs(Materials.Lead.getMolten(288)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(circuitAssemblerRecipes);
+        // 1k ME Storage Component
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                            CustomItemList.ChargedCertusQuartzDust.get(2),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
-                            ItemList.Circuit_Board_Basic.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
-                    .fluidInputs(Materials.Tin.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(circuitAssemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        ItemList.Circuit_Board_Basic.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
+                .fluidInputs(Materials.Lead.getMolten(288)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(AppliedEnergistics2)
+                .addTo(circuitAssemblerRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                            CustomItemList.ChargedCertusQuartzDust.get(2),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
-                            ItemList.Circuit_Board_Basic.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
-                    .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(circuitAssemblerRecipes);
-            // 4k ME Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        ItemList.Circuit_Board_Basic.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
+                .fluidInputs(Materials.Tin.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(AppliedEnergistics2)
+                .addTo(circuitAssemblerRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
-                            ItemList.Circuit_Board_Coated_Basic.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
-                    .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        ItemList.Circuit_Board_Basic.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(AppliedEnergistics2)
+                .addTo(circuitAssemblerRecipes);
+        // 4k ME Storage Component
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
-                            ItemList.Circuit_Board_Coated_Basic.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
-                    .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        ItemList.Circuit_Board_Coated_Basic.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
+                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
-                            ItemList.Circuit_Board_Coated_Basic.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
-                    .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
-            // 16k ME Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        ItemList.Circuit_Board_Coated_Basic.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
+                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
-                            ItemList.Circuit_Board_Phenolic_Good.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
-                    .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        ItemList.Circuit_Board_Coated_Basic.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+        // 16k ME Storage Component
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
-                            ItemList.Circuit_Board_Phenolic_Good.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
-                    .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
+                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
-                            ItemList.Circuit_Board_Phenolic_Good.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
-                    .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-            // 64k ME Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
+                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
-                            ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))
-                    .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+        // 64k ME Storage Component
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
-                            ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))
-                    .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))
+                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
-                            ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                            GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))
-                    .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))
+                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
-        }
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
+                .requireMods(AppliedEnergistics2)
+                .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
     }
 
     public void solderingMaterials() {
@@ -1049,501 +1059,536 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .requiresCleanRoom().duration(51 * SECONDS + 4 * TICKS).eut(4096).addTo(circuitAssemblerRecipes);
 
             // PCBs Steve Carts
-            if (StevesCarts2.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Coated_Basic.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
+                            GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 9))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(StevesCarts2)
+                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Coated_Basic.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
-                                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 9))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                            GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 2L, 9),
+                            GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 16))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
+                    .requireMods(StevesCarts2)
+                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                                GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 2L, 9),
-                                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 16))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
-                        .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
-            }
+            // OC Parts
 
-            if (OpenComputers.isModLoaded()) {
-                // ALU
+            // ALU
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                ItemList.Circuit_Chip_ILC.get(16L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 27))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(20 * SECONDS).eut(64)
-                        .addTo(circuitAssemblerRecipes);
-                // CU
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            ItemList.Circuit_Chip_ILC.get(16L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 27))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(20 * SECONDS).eut(64)
+                    .requireMods(OpenComputers)
+                    .addTo(circuitAssemblerRecipes);
+            // CU
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Parts_Transistor.get(4L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Parts_Transistor.get(4L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
-                // anylyser
+            // anylyser
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Tool_Scanner.get(1L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
-                                ItemList.Circuit_Parts_Transistor.get(2L),
-                                ItemList.Sensor_HV.get(1L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 0))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Tool_Scanner.get(1L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
+                            ItemList.Circuit_Parts_Transistor.get(2L),
+                            ItemList.Sensor_HV.get(1L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 0))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
-                // CPU 1
+            // CPU 1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 8L, 27),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
-                                GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 29))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // CPU 2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 8L, 27),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
+                            GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 29))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // CPU 2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 12L, 27),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 28),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                                GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 42))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // CPU 3
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 12L, 27),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 28),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                            GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 42))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // CPU 3
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 16L, 27),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 28),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                                GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
-                                GTUtility.getIntegratedCircuit(3))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 43))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // Graphics Card 1
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 16L, 27),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 28),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                            GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
+                            GTUtility.getIntegratedCircuit(3))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 43))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // Graphics Card 1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 8L, 27),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 1),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 8))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // Graphics Card 2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 8L, 27),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 1),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 8))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // Graphics Card 2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 16L, 27),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 28),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 2),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 9))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS).eut(256)
-                        .addTo(circuitAssemblerRecipes);
-                // Graphics Card 3
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 16L, 27),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 28),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 2),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 9))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS).eut(256)
+                    .requireMods(OpenComputers)
+                    .addTo(circuitAssemblerRecipes);
+            // Graphics Card 3
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 32L, 27),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 28),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 26),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 38),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 10))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
-                        .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
-                // Internet Crad
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 32L, 27),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 28),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 26),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 38),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 10))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+            // Internet Crad
 
-                GTValues.RA.stdBuilder().itemInputs(
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 48),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GTModHandler
-                                .getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1L, 14),
-                        GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 44))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
-                        .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
-                // APU T1
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
+                    GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 48),
+                    GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
+                    GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                    GTModHandler
+                            .getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1L, 14),
+                    GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 44))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+            // APU T1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 32L, 27),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 28),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                                GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 101))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
-                        .addTo(circuitAssemblerRecipes);
-                // APU T2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 32L, 27),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 28),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                            GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 101))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
+                    .requireMods(OpenComputers)
+                    .addTo(circuitAssemblerRecipes);
+            // APU T2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 64L, 27),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 8L, 28),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
-                                GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
-                                GTUtility.getIntegratedCircuit(3))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 102))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
-                // EEPROM
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 64L, 27),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 8L, 28),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
+                            GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L),
+                            GTUtility.getIntegratedCircuit(3))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 102))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+            // EEPROM
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
-                                ItemList.Circuit_Parts_Transistor.get(6L),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
+                            ItemList.Circuit_Parts_Transistor.get(6L),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
-                // RAM 1
+            // RAM 1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                ItemList.Circuit_Chip_Ram.get(16L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 1))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(64).addTo(circuitAssemblerRecipes);
-                // RAM 1.5
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            ItemList.Circuit_Chip_Ram.get(16L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 1))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(64).addTo(circuitAssemblerRecipes);
+            // RAM 1.5
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                ItemList.Circuit_Chip_Ram.get(32L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 24),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 50))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // RAM 2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            ItemList.Circuit_Chip_Ram.get(32L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 24),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 50))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // RAM 2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                ItemList.Circuit_Chip_Ram.get(64L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 2))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(256).addTo(circuitAssemblerRecipes);
-                // RAM 2.5
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                            ItemList.Circuit_Chip_Ram.get(64L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 2))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(256).addTo(circuitAssemblerRecipes);
+            // RAM 2.5
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                ItemList.Circuit_Chip_Ram.get(64L),
-                                ItemList.Circuit_Chip_NAND.get(16L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 25),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 3))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
-                // RAM 3
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                            ItemList.Circuit_Chip_Ram.get(64L),
+                            ItemList.Circuit_Chip_NAND.get(16L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 25),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 3))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+            // RAM 3
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                                ItemList.Circuit_Chip_Ram.get(64L),
-                                ItemList.Circuit_Chip_NAND.get(32L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 26),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 38))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(1024).addTo(circuitAssemblerRecipes);
-                // RAM 3.5
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                            ItemList.Circuit_Chip_Ram.get(64L),
+                            ItemList.Circuit_Chip_NAND.get(32L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 26),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 38))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(1024).addTo(circuitAssemblerRecipes);
+            // RAM 3.5
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                                ItemList.Circuit_Chip_Ram.get(64L),
-                                ItemList.Circuit_Chip_NAND.get(64L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 26),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 39))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
-                // Circuit 1
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                            ItemList.Circuit_Chip_Ram.get(64L),
+                            ItemList.Circuit_Chip_NAND.get(64L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 26),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 39))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
+            // Circuit 1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
-                                ItemList.Circuit_Parts_Transistor.get(4L),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
+                            ItemList.Circuit_Parts_Transistor.get(4L),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
-                                ItemList.Circuit_Parts_TransistorASMD.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // Circuit 2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
+                            ItemList.Circuit_Parts_TransistorASMD.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // Circuit 2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                                ItemList.Circuit_Parts_Transistor.get(8L),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 8L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS).eut(256)
-                        .addTo(circuitAssemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                            ItemList.Circuit_Parts_Transistor.get(8L),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 8L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS).eut(256)
+                    .requireMods(OpenComputers)
+                    .addTo(circuitAssemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                                ItemList.Circuit_Parts_TransistorASMD.get(2L),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 8L),
-                                GTUtility.getIntegratedCircuit(3))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
-                        .eut(256).addTo(circuitAssemblerRecipes);
-                // Circuit 3
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                            ItemList.Circuit_Parts_TransistorASMD.get(2L),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 8L),
+                            GTUtility.getIntegratedCircuit(3))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(256).addTo(circuitAssemblerRecipes);
+            // Circuit 3
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                                ItemList.Circuit_Parts_Transistor.get(16L),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                            ItemList.Circuit_Parts_Transistor.get(16L),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                                ItemList.Circuit_Parts_TransistorASMD.get(4L),
-                                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
-                // network card
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                            ItemList.Circuit_Parts_TransistorASMD.get(4L),
+                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+            // network card
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
-                                GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 11))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // tps card
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
+                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 11))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // tps card
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Items.clock, 1),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 66),
-                                ItemList.Emitter_HV.get(1L),
-                                ItemList.Sensor_HV.get(1L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 117))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // wlan card1
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Items.clock, 1),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 66),
+                            ItemList.Emitter_HV.get(1L),
+                            ItemList.Sensor_HV.get(1L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 117))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // wlan card1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 11),
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
-                                ItemList.Emitter_LV.get(1L),
-                                ItemList.Sensor_LV.get(1L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 113))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // wlan card2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 11),
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
+                            ItemList.Emitter_LV.get(1L),
+                            ItemList.Sensor_LV.get(1L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 113))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // wlan card2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 11),
-                                ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
-                                ItemList.Emitter_HV.get(1L),
-                                ItemList.Sensor_HV.get(1L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 13))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
-                        .addTo(circuitAssemblerRecipes);
-                // World sensor card
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 11),
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
+                            ItemList.Emitter_HV.get(1L),
+                            ItemList.Sensor_HV.get(1L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 13))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
+                    .requireMods(OpenComputers)
+                    .addTo(circuitAssemblerRecipes);
+            // World sensor card
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
-                                GTModHandler.getModItem(GalacticraftCore.ID, "item.sensorLens", 2L, 0),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 89))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // redstone card 1
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
+                            GTModHandler.getModItem(GalacticraftCore.ID, "item.sensorLens", 2L, 0),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 89))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // redstone card 1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
-                                GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
-                                ItemList.Circuit_Chip_ILC.get(4L),
-                                new ItemStack(Blocks.redstone_torch, 2),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 66))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // redstone card 2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
+                            GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
+                            ItemList.Circuit_Chip_ILC.get(4L),
+                            new ItemStack(Blocks.redstone_torch, 2),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 66))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // redstone card 2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
-                                GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
-                                ItemList.Circuit_Chip_ILC.get(16L),
-                                new ItemStack(Blocks.redstone_torch, 4),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 12))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
-                        .addTo(circuitAssemblerRecipes);
-                // data card 1
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
+                            GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
+                            ItemList.Circuit_Chip_ILC.get(16L),
+                            new ItemStack(Blocks.redstone_torch, 4),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 12))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
+                    .requireMods(OpenComputers)
+                    .addTo(circuitAssemblerRecipes);
+            // data card 1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4, 27),
-                                GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 104))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // data card 2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4, 27),
+                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 104))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // data card 2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1, 29),
-                                GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 16L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 105))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS).eut(156)
-                        .addTo(circuitAssemblerRecipes);
-                // data card 3
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1, 29),
+                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 16L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 105))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS).eut(156)
+                    .requireMods(OpenComputers)
+                    .addTo(circuitAssemblerRecipes);
+            // data card 3
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1, 42),
-                                GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 32L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 106))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
-                // component bus t1
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 33),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1, 42),
+                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 32L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 106))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+            // component bus t1
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28),
-                                GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 4L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 70))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // component bus t2
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 24),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28),
+                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 4L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 70))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+            // component bus t2
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 28),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 2),
-                                GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 71))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(256).addTo(circuitAssemblerRecipes);
-                // component bus t3
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 4L, 28),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 2),
+                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 71))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(256).addTo(circuitAssemblerRecipes);
+            // component bus t3
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 26),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 8L, 28),
-                                GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 38),
-                                GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Diamond, 16),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 72))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
-
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 26),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 8L, 28),
+                            GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 38),
+                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Diamond, 16),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 72))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
+                    .requireMods(OpenComputers)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
         }
-
     }
 }
