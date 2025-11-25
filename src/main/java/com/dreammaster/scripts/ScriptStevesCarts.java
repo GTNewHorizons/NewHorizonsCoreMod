@@ -54,7 +54,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptStevesCarts implements IScriptLoader {
 
@@ -1487,12 +1486,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Galgadorian, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 81, missing))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iron, 2L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83, missing)).duration(15 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iron, 2L))
+                .circuit(1).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83, missing))
+                .duration(15 * SECONDS).eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Iron, 1L),
@@ -1511,28 +1507,16 @@ public class ScriptStevesCarts implements IScriptLoader {
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 16, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 58, missing)).duration(1 * MINUTES)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing)).circuit(4)
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing)).duration(4 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing)).circuit(4)
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing)).duration(8 * SECONDS)
                 .eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing)).circuit(4)
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing)).duration(8 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing)).circuit(4)
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing)).duration(16 * SECONDS)
                 .eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1595,17 +1579,11 @@ public class ScriptStevesCarts implements IScriptLoader {
                         getModItem(TwilightForest.ID, "tile.TFSapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(15 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing)).circuit(4)
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 36)).duration(8 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing)).circuit(4)
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 72)).duration(16 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
@@ -1669,8 +1647,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 88, missing)).duration(30 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "torch", 3, 0, missing), GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "torch", 3, 0, missing)).circuit(3)
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 29, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1938,9 +1915,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                         new ItemStack(Items.magma_cream, 8),
                         new ItemStack(Items.fermented_spider_eye, 8),
                         new ItemStack(Items.ghast_tear, 8),
-                        new ItemStack(Items.ender_eye, 4),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 45, missing))
+                        new ItemStack(Items.ender_eye, 4))
+                .circuit(24).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 45, missing))
                 .fluidInputs(Materials.Glowstone.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(multiblockChemicalReactorRecipes);
         //
