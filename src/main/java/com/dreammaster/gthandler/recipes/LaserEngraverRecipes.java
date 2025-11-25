@@ -402,10 +402,7 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setTag("oc:data", subtag);
         lua.setTagCompound(tag);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0),
-                        GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0)).circuit(1)
                 .itemOutputs(lua).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         return true;
