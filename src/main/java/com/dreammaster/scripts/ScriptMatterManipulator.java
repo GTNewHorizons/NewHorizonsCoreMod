@@ -38,7 +38,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -80,72 +79,68 @@ public class ScriptMatterManipulator implements IScriptLoader {
         // Power core MK0
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.StainlessSteel, 8),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, WILDCARD), // energy crystal
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 12),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 16))
-                .fluidInputs(Materials.SolderingAlloy.getMolten(INGOTS * 4)).itemOutputs(MMItemList.PowerCore0.get(1))
-                .eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+                .circuit(5).fluidInputs(Materials.SolderingAlloy.getMolten(INGOTS * 4))
+                .itemOutputs(MMItemList.PowerCore0.get(1)).eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS)
+                .addTo(RecipeMaps.assemblerRecipes);
 
         // Computer core MK0
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.StainlessSteel, 8),
                         new Object[] { OrePrefixes.circuit.get(Materials.IV), 2 },
                         getModItem(EnderIO.ID, "blockEndermanSkull", 1, 2), // tormented enderman skull
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 12),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 16))
-                .fluidInputs(Materials.SolderingAlloy.getMolten(INGOTS * 8))
+                .circuit(5).fluidInputs(Materials.SolderingAlloy.getMolten(INGOTS * 8))
                 .itemOutputs(MMItemList.ComputerCore0.get(1)).eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.circuitAssemblerRecipes);
 
         // Teleporter core MK0
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1),
                         ItemList.Emitter_HV.get(2),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15), // primal charm
                         ItemList.QuantumEye.get(2),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Thaumium, 8),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 16))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 2000)).itemOutputs(MMItemList.TeleporterCore0.get(1))
-                .eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+                .circuit(5).fluidInputs(FluidRegistry.getFluidStack("ender", 2000))
+                .itemOutputs(MMItemList.TeleporterCore0.get(1)).eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS)
+                .addTo(RecipeMaps.assemblerRecipes);
 
         // Frame MK0
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.getIntegratedCircuit(10),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 16))
-                .itemOutputs(MMItemList.Frame0.get(1)).eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 16))
+                .circuit(10).itemOutputs(MMItemList.Frame0.get(1)).eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.benderRecipes);
 
         // Lens MK0
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.StainlessSteel, 4),
                         getModItem(Thaumcraft.ID, "FocusTrade", 1), // equal trade focus
                         ItemList.Field_Generator_LV.get(1),
                         ItemList.Electric_Piston_HV.get(2),
                         ItemList.Electric_Motor_HV.get(2))
-                .fluidInputs(Materials.SolderingAlloy.getMolten(INGOTS * 4)).itemOutputs(MMItemList.Lens0.get(1))
-                .eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+                .circuit(5).fluidInputs(Materials.SolderingAlloy.getMolten(INGOTS * 4))
+                .itemOutputs(MMItemList.Lens0.get(1)).eut((int) TierEU.RECIPE_HV).duration(20 * SECONDS)
+                .addTo(RecipeMaps.assemblerRecipes);
 
         // Manipulator MK0
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         MMItemList.Lens0.get(1),
                         MMItemList.TeleporterCore0.get(1),
                         MMItemList.ComputerCore0.get(1),
                         MMItemList.PowerCore0.get(1),
                         MMItemList.Frame0.get(1))
-                .fluidInputs(Materials.SolderingAlloy.getMolten(INGOTS * 8)).itemOutputs(MMItemList.MK0.get(1))
-                .eut((int) TierEU.RECIPE_HV).duration(30 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+                .circuit(5).fluidInputs(Materials.SolderingAlloy.getMolten(INGOTS * 8))
+                .itemOutputs(MMItemList.MK0.get(1)).eut((int) TierEU.RECIPE_HV).duration(30 * SECONDS)
+                .addTo(RecipeMaps.assemblerRecipes);
 
     }
 
@@ -153,75 +148,69 @@ public class ScriptMatterManipulator implements IScriptLoader {
         // Power core MK1
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 8),
                         ItemList.Energy_LapotronicOrb.get(1),
                         ItemList.Circuit_Chip_PIC.get(4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorIV, 6),
                         new Object[] { OrePrefixes.circuit.get(Materials.IV), 2 },
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 16))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8))
+                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8))
                 .itemOutputs(MMItemList.PowerCore1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
 
         // Computer core MK1
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
                         new Object[] { OrePrefixes.circuit.get(Materials.ZPM), 2 },
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 12),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 8),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 16))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
                 .itemOutputs(MMItemList.ComputerCore1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.circuitAssemblerRecipes);
 
         // Teleporter core MK1
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Enderium, 1),
                         getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0), // teleporter
                         ItemList.Emitter_IV.get(2),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 8),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 16))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
                 .itemOutputs(MMItemList.TeleporterCore1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
 
         // Frame MK1
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.getIntegratedCircuit(10),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 32))
-                .itemOutputs(MMItemList.Frame1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 32))
+                .circuit(10).itemOutputs(MMItemList.Frame1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.benderRecipes);
 
         // Lens MK1
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 2),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.TungstenSteel, 4),
                         ItemList.Field_Generator_IV.get(1),
                         ItemList.Electric_Piston_IV.get(2),
                         ItemList.Electric_Motor_IV.get(2))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 4)).itemOutputs(MMItemList.Lens1.get(1))
-                .eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 4))
+                .itemOutputs(MMItemList.Lens1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
+                .addTo(RecipeMaps.assemblerRecipes);
 
         // Manipulator MK1
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         MMItemList.Lens1.get(1),
                         MMItemList.TeleporterCore1.get(1),
                         MMItemList.ComputerCore1.get(1),
                         MMItemList.PowerCore1.get(1),
                         MMItemList.Frame1.get(1),
                         MMItemList.AEDownlink.get(1))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16)).itemOutputs(MMItemList.MK1.get(1))
-                .eut((int) TierEU.RECIPE_IV).duration(30 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .itemOutputs(MMItemList.MK1.get(1)).eut((int) TierEU.RECIPE_IV).duration(30 * SECONDS)
+                .addTo(RecipeMaps.assemblerRecipes);
     }
 
     private static void addMK2Recipes() {
@@ -278,10 +267,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .addTo(AssemblyLine);
 
         // Frame MK2
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.getIntegratedCircuit(10),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSS, 48))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSS, 48)).circuit(10)
                 .itemOutputs(MMItemList.Frame2.get(1)).eut((int) TierEU.RECIPE_LuV).duration(30 * SECONDS)
                 .addTo(RecipeMaps.benderRecipes);
 
@@ -300,15 +286,15 @@ public class ScriptMatterManipulator implements IScriptLoader {
         // Manipulator MK2
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         MMItemList.Lens2.get(1),
                         MMItemList.TeleporterCore2.get(1),
                         MMItemList.ComputerCore2.get(1),
                         MMItemList.PowerCore2.get(1),
                         MMItemList.Frame2.get(1),
                         MMItemList.AEDownlink.get(1))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16)).itemOutputs(MMItemList.MK2.get(1))
-                .eut((int) TierEU.RECIPE_LuV).duration(30 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .itemOutputs(MMItemList.MK2.get(1)).eut((int) TierEU.RECIPE_LuV).duration(30 * SECONDS)
+                .addTo(RecipeMaps.assemblerRecipes);
     }
 
     private static void addMK3Recipe() {
@@ -366,11 +352,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .addTo(AssemblyLine);
 
         // Frame MK3
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.getIntegratedCircuit(10),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 64))
-                .itemOutputs(MMItemList.Frame3.get(1)).eut((int) TierEU.RECIPE_ZPM).duration(30 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 64))
+                .circuit(10).itemOutputs(MMItemList.Frame3.get(1)).eut((int) TierEU.RECIPE_ZPM).duration(30 * SECONDS)
                 .addTo(RecipeMaps.benderRecipes);
 
         // Lens MK3
@@ -389,7 +372,6 @@ public class ScriptMatterManipulator implements IScriptLoader {
         // ME Downlink
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         AEApi.instance().definitions().blocks().wireless().maybeStack(1).get(),
                         AEApi.instance().definitions().blocks().energyCell().maybeStack(1).get(),
                         AEApi.instance().definitions().materials().cell256kPart().maybeStack(1).get(),
@@ -397,7 +379,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         ItemList.Conveyor_Module_IV.get(2),
                         ItemList.Electric_Pump_IV.get(2),
                         new Object[] { OrePrefixes.circuit.get(Materials.IV), 1 })
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8))
+                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8))
                 .itemOutputs(MMItemList.AEDownlink.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
 
@@ -422,7 +404,6 @@ public class ScriptMatterManipulator implements IScriptLoader {
         // Manipulator MK3
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(5),
                         MMItemList.Lens3.get(1),
                         MMItemList.TeleporterCore3.get(1),
                         MMItemList.ComputerCore3.get(1),
@@ -430,8 +411,9 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MMItemList.Frame3.get(1),
                         MMItemList.AEDownlink.get(1),
                         MMItemList.QuantumDownlink.get(1))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16)).itemOutputs(MMItemList.MK3.get(1))
-                .eut((int) TierEU.RECIPE_ZPM).duration(30 * SECONDS).addTo(RecipeMaps.assemblerRecipes);
+                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .itemOutputs(MMItemList.MK3.get(1)).eut((int) TierEU.RECIPE_ZPM).duration(30 * SECONDS)
+                .addTo(RecipeMaps.assemblerRecipes);
     }
 
     private static void addUplinkRecipes() {
