@@ -373,7 +373,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(OpenBlocks.ID, "ladder", 1, 0, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0, missing), GTUtility.getIntegratedCircuit(1))
+                .itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(OpenBlocks.ID, "sky", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
