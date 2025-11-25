@@ -14,7 +14,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptAFSU implements IScriptLoader {
 
@@ -45,9 +44,8 @@ public class ScriptAFSU implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
-                        ItemList.Energy_LapotronicOrb.get(1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(AFSU.ID, "ALC", 1)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
+                        ItemList.Energy_LapotronicOrb.get(1L))
+                .circuit(1).itemOutputs(getModItem(AFSU.ID, "ALC", 1)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
     }
