@@ -20,7 +20,6 @@ import static gregtech.api.util.GTRecipeBuilder.QUARTER_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.SCANNING;
-import static gregtech.api.util.GTUtility.getIntegratedCircuit;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -283,13 +282,13 @@ public class ScriptAmunRa implements IScriptLoader {
          * Assembler *
          *************/
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 1), getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 1)).circuit(4)
                 .itemOutputs(new ItemStack(baseBlockRock, 1, 7)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 0), getIntegratedCircuit(23))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 0)).circuit(23)
                 .itemOutputs(new ItemStack(baseBlockRock, 1, 8)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1, 0), getIntegratedCircuit(23))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1, 0)).circuit(23)
                 .itemOutputs(new ItemStack(baseBlockRock, 1, 9)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -306,17 +305,13 @@ public class ScriptAmunRa implements IScriptLoader {
                 .itemInputs(
                         NHItemList.HeavyDutyPlateTier8.getIS(2),
                         new ItemStack(baseItem, 4, 15),
-                        NHItemList.HeavyDutyRocketFinsTier4.getIS(),
-                        getIntegratedCircuit(5))
-                .itemOutputs(new ItemStack(baseItem, 1, 14)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV)
+                        NHItemList.HeavyDutyRocketFinsTier4.getIS())
+                .circuit(5).itemOutputs(new ItemStack(baseItem, 1, 14)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyNoseConeTier4.getIS(), new ItemStack(baseItem, 4, 15))
+                .circuit(4).fluidInputs(Materials.Neutronium.getMolten(QUARTER_INGOTS))
+                .itemOutputs(new ItemStack(baseItem, 1, 16)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.HeavyDutyNoseConeTier4.getIS(),
-                        new ItemStack(baseItem, 4, 15),
-                        getIntegratedCircuit(4))
-                .fluidInputs(Materials.Neutronium.getMolten(QUARTER_INGOTS)).itemOutputs(new ItemStack(baseItem, 1, 16))
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new Object[] { "compressedTin", 4 },
