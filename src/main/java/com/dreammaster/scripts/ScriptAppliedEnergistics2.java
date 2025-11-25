@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -17,6 +16,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
+import static gregtech.api.recipe.RecipeMaps.cableRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
@@ -48,6 +48,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -63,15 +64,17 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 AppliedEnergistics2.ID,
-                TinkerConstruct.ID,
                 Avaritia.ID,
+                Computronics.ID,
+                DraconicEvolution.ID,
+                EnderIO.ID,
                 EternalSingularity.ID,
-                BartWorks.ID,
                 ExtraUtilities.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
+                OpenComputers.ID,
                 Thaumcraft.ID,
-                DraconicEvolution.ID);
+                TinkerConstruct.ID);
     }
 
     @Override
@@ -342,68 +345,139 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 36),
                     FluixCoveredCableColor[i]);
         }
-        GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.Rubber.getMolten(144L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(108L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(72L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        AE2_ME_Glass_Cable,
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
-                .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(36L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        AE2_ME_Glass_Cable,
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
-                .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(36L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        AE2_ME_Glass_Cable,
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(36L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        AE2_ME_Glass_Cable,
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(36L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        for (RecipeMap<?> aeCables : new RecipeMap<?>[] { assemblerRecipes, cableRecipes }) {
+            // Covered Cable
+            GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GTUtility.getIntegratedCircuit(24))
+                    .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.Rubber.getMolten(144L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GTUtility.getIntegratedCircuit(24))
+                    .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(108L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GTUtility.getIntegratedCircuit(24))
+                    .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(72L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            AE2_ME_Glass_Cable,
+                            GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
+                    .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(36L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            AE2_ME_Glass_Cable,
+                            GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
+                    .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(36L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            AE2_ME_Glass_Cable,
+                            GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
+                    .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(36L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            AE2_ME_Glass_Cable,
+                            GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
+                    .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(36L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
+                    .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144L)).duration(25 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
+                    .fluidInputs(Materials.RubberSilicone.getMolten(144L)).duration(25 * SECONDS).eut(TierEU.RECIPE_MV)
+                    .addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
+                    .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144L)).duration(25 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
+                    .fluidInputs(Materials.RubberSilicone.getMolten(144L)).duration(25 * SECONDS).eut(TierEU.RECIPE_MV)
+                    .addTo(aeCables);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144L)).duration(25 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
-                .fluidInputs(Materials.RubberSilicone.getMolten(144L)).duration(25 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144L)).duration(25 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
-                .fluidInputs(Materials.RubberSilicone.getMolten(144L)).duration(25 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+            // Dense Covered Cable
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            GTUtility.getIntegratedCircuit(24))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
+                    .fluidInputs(Materials.StyreneButadieneRubber.getMolten(216L)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            GTUtility.getIntegratedCircuit(24))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(144L))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
+                    .fluidInputs(Materials.StyreneButadieneRubber.getMolten(72L)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(72L))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
+                    .fluidInputs(Materials.StyreneButadieneRubber.getMolten(72L)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(72L))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
+                    .fluidInputs(Materials.StyreneButadieneRubber.getMolten(288L)).duration(35 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
+                    .fluidInputs(Materials.RubberSilicone.getMolten(288L)).duration(35 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
+                    .fluidInputs(Materials.StyreneButadieneRubber.getMolten(288L)).duration(35 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
+                    .fluidInputs(Materials.RubberSilicone.getMolten(288L)).duration(35 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(aeCables);
+        }
 
         // --- Fluix Dense Covered Cable
         for (int i = 0; i < 16; i++) {
@@ -413,72 +487,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 536),
                     FluixDenseCoveredCableColor[i]);
         }
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(216L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(144L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
-                .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
-                .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.RubberSilicone.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(288L)).duration(35 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
-                .fluidInputs(Materials.RubberSilicone.getMolten(288L)).duration(35 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(288L)).duration(35 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
-                .fluidInputs(Materials.RubberSilicone.getMolten(288L)).duration(35 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(assemblerRecipes);
 
         // ME Smart Cable Fluix
         for (int i = 0; i < 16; i++) {

@@ -13,6 +13,7 @@ import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import java.util.Arrays;
 import java.util.List;
@@ -99,7 +100,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         'a',
                         "itemLeather",
                         'b',
-                        getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, GTValues.W, missing),
+                        getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, WILDCARD, missing),
                         'c',
                         getModItem(Minecraft.ID, "potion", 1, 8262, missing),
                         'd',

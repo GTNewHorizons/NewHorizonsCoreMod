@@ -930,6 +930,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Coke Oven
         // ===================================================================================================
 
+        // Recycle deprecated Railcraft casings
+        GTModHandler.addShapelessCraftingRecipe(
+                NHItemList.CokeOvenBrick.getIS().splitStack(4),
+                bits4,
+                new Object[] { getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing) });
+
         GTModHandler.addCraftingRecipe(
                 ItemList.CokeOvenCasing.get(1),
                 bits,

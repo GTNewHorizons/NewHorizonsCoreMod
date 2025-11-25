@@ -16,7 +16,6 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
@@ -36,11 +35,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.TaintedMagic.ID,
-                Mods.Thaumcraft.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
+                TaintedMagic.ID,
+                Thaumcraft.ID,
                 TinkersGregworks.ID);
     }
 

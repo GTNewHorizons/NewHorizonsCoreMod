@@ -4,14 +4,12 @@ import static bartworks.common.loaders.ItemRegistry.bw_realglas;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -60,24 +58,24 @@ public class ScriptEnderIO implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                EnderIO.ID,
-                Thaumcraft.ID,
-                ThaumicExploration.ID,
                 AppliedEnergistics2.ID,
                 Avaritia.ID,
-                Botania.ID,
                 Backpack.ID,
-                BartWorks.ID,
+                Botania.ID,
                 BuildCraftFactory.ID,
                 DraconicEvolution.ID,
+                EnderIO.ID,
                 ExtraUtilities.ID,
                 FloodLights.ID,
-                GTPlusPlus.ID,
                 GraviSuite.ID,
+                HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 OpenBlocks.ID,
                 ProjectRedIllumination.ID,
-                ProjectRedIntegration.ID);
+                ProjectRedIntegration.ID,
+                Thaumcraft.ID,
+                ThaumicExploration.ID);
     }
 
     @Override

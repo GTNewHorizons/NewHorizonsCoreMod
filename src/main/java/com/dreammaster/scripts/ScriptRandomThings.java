@@ -45,18 +45,20 @@ public class ScriptRandomThings implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                RandomThings.ID,
-                TinkerConstruct.ID,
-                ExtraUtilities.ID,
-                TwilightForest.ID,
                 Chisel.ID,
                 EnderIO.ID,
+                ExtraUtilities.ID,
                 Forestry.ID,
+                HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 ProjectRedIllumination.ID,
                 ProjectRedIntegration.ID,
+                RandomThings.ID,
                 RemoteIO.ID,
-                Thaumcraft.ID);
+                Thaumcraft.ID,
+                TinkerConstruct.ID,
+                TwilightForest.ID);
     }
 
     @Override

@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -73,29 +72,32 @@ public class ScriptMinecraft implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                GalacticraftAmunRa.ID,
-                TinkerConstruct.ID,
-                BloodArsenal.ID,
-                Natura.ID,
-                MagicBees.ID,
                 Backpack.ID,
                 BiomesOPlenty.ID,
+                BloodArsenal.ID,
+                Botania.ID,
                 CarpentersBlocks.ID,
+                EnderStorage.ID,
+                EtFuturumRequiem.ID,
                 ExtraTrees.ID,
                 ExtraUtilities.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
-                GTPlusPlus.ID,
+                GalacticraftAmunRa.ID,
                 GalaxySpace.ID,
                 HardcoreEnderExpansion.ID,
                 IguanaTweaksTinkerConstruct.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
+                Natura.ID,
                 PamsHarvestCraft.ID,
                 PamsHarvestTheNether.ID,
                 Railcraft.ID,
+                StevesCarts2.ID,
                 TaintedMagic.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
+                TinkerConstruct.ID,
                 TwilightForest.ID,
                 Witchery.ID);
     }
@@ -1918,14 +1920,12 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "fluid.creosote.bucket", 1, 0, missing),
                 "stickWood",
                 null);
-        if (IguanaTweaksTinkerConstruct.isModLoaded()) {
-            addShapedRecipe(
-                    getModItem(Minecraft.ID, "torch", 5, 0, missing),
-                    "blockWool",
-                    getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketCreosote", 1, 0, missing),
-                    "stickWood",
-                    null);
-        }
+        addShapedRecipe(
+                getModItem(Minecraft.ID, "torch", 5, 0, missing),
+                "blockWool",
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketCreosote", 1, 0, missing),
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "torch", 4, 0, missing),
                 getModItem(TwilightForest.ID, "item.torchberries", 1, 0, missing),
@@ -3974,28 +3974,22 @@ public class ScriptMinecraft implements IScriptLoader {
 
         // Cobble slabs
         ItemStack cobblestoneSlab = getModItem(Minecraft.ID, "stone_slab", 1, 3, missing);
-        ItemStack mossyCobbleOutputSlab = EtFuturumRequiem.isModLoaded()
-                ? getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 1, missing)
-                : cobblestoneSlab;
+        ItemStack mossyCobbleOutputSlab = getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 1, missing);
         addShapelessRecipe(cobblestoneSlab, "craftingToolSaw", getModItem(Minecraft.ID, "cobblestone", 1, 0, missing));
         addShapelessRecipe(
                 mossyCobbleOutputSlab,
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "mossy_cobblestone", 1, 0, missing));
-        if (ExtraUtilities.isModLoaded()) {
-            for (int meta = 0; meta < 16; meta++) {
-                addShapelessRecipe(
-                        cobblestoneSlab,
-                        "craftingToolSaw",
-                        getModItem(ExtraUtilities.ID, "color_stonebrick", 1, meta, missing));
-            }
+        for (int meta = 0; meta < 16; meta++) {
+            addShapelessRecipe(
+                    cobblestoneSlab,
+                    "craftingToolSaw",
+                    getModItem(ExtraUtilities.ID, "color_stonebrick", 1, meta, missing));
         }
 
         // Stone brick slabs
         ItemStack stoneBrickSlab = getModItem(Minecraft.ID, "stone_slab", 1, 5, missing);
-        ItemStack mossyStoneBrickOutputSlab = EtFuturumRequiem.isModLoaded()
-                ? getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 2, missing)
-                : stoneBrickSlab;
+        ItemStack mossyStoneBrickOutputSlab = getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 2, missing);
         addShapelessRecipe(stoneBrickSlab, "craftingToolSaw", getModItem(Minecraft.ID, "stonebrick", 1, 0, missing));
         addShapelessRecipe(
                 mossyStoneBrickOutputSlab,
@@ -4006,9 +4000,7 @@ public class ScriptMinecraft implements IScriptLoader {
 
         // Sandstone slabs
         ItemStack sandstoneSlab = getModItem(Minecraft.ID, "stone_slab", 1L, 1, missing);
-        ItemStack cutSandstoneOutputSlab = EtFuturumRequiem.isModLoaded()
-                ? getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 3, missing)
-                : sandstoneSlab;
+        ItemStack cutSandstoneOutputSlab = getModItem(EtFuturumRequiem.ID, "stone_slab", 1L, 3, missing);
         addShapelessRecipe(sandstoneSlab, "craftingToolSaw", getModItem(Minecraft.ID, "sandstone", 1, 0, missing));
         addShapelessRecipe(sandstoneSlab, "craftingToolSaw", getModItem(Minecraft.ID, "sandstone", 1, 1, missing));
         addShapelessRecipe(

@@ -43,9 +43,9 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                EnhancedLootBags.ID,
                 BloodMagic.ID,
                 DraconicEvolution.ID,
+                EnhancedLootBags.ID,
                 Forestry.ID,
                 GalacticraftCore.ID,
                 GalacticraftMars.ID,

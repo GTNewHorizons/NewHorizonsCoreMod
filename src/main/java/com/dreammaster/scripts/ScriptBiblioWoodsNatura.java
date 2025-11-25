@@ -20,7 +20,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Natura.ID, BiblioWoodsNaturaEdition.ID, BiblioCraft.ID);
+        return Arrays.asList(BiblioCraft.ID, BiblioWoodsNaturaEdition.ID, Natura.ID);
     }
 
     @Override
@@ -184,8 +184,6 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
 
         ItemStack torch = getModItem(Minecraft.ID, "torch", 1);
         ItemStack feather = getModItem(Minecraft.ID, "feather", 1);
-        ItemStack ink = getModItem(Minecraft.ID, "dye", 1);
-        ItemStack craftingTable = getModItem(Minecraft.ID, "crafting_table", 1);
         ItemStack emptyBottle = getModItem(Minecraft.ID, "glass_bottle", 1);
         ItemStack ironIngot = getModItem(Minecraft.ID, "iron_ingot", 1);
         ItemStack glass = getModItem(Minecraft.ID, "glass", 1);

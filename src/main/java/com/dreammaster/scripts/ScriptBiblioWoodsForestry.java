@@ -22,7 +22,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(BiblioCraft.ID, Forestry.ID, BiblioWoodsForestryEdition.ID);
+        return Arrays.asList(BiblioCraft.ID, BiblioWoodsForestryEdition.ID, Forestry.ID);
     }
 
     @Override

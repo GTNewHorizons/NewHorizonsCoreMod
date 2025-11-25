@@ -33,7 +33,6 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -55,14 +54,14 @@ public class ScriptMagicBees implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.MagicBees.ID,
-                Thaumcraft.ID,
-                Forestry.ID,
                 AppliedEnergistics2.ID,
                 Backpack.ID,
                 Botania.ID,
+                Forestry.ID,
                 Genetics.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
+                Thaumcraft.ID,
                 PamsHarvestCraft.ID);
     }
 

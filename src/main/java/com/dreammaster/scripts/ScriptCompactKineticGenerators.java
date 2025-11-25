@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.CompactKineticGenerators;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.util.GTModHandler.getModItem;
 
@@ -23,7 +22,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(CompactKineticGenerators.ID, GTPlusPlus.ID, IndustrialCraft2.ID);
+        return Arrays.asList(CompactKineticGenerators.ID, IndustrialCraft2.ID);
     }
 
     @Override

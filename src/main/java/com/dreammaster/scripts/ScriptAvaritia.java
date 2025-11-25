@@ -92,17 +92,17 @@ public class ScriptAvaritia implements IScriptLoader {
                 EternalSingularity.ID,
                 ExtraUtilities.ID,
                 ForbiddenMagic.ID,
+                Gadomancy.ID,
                 GalaxySpace.ID,
                 GraviSuite.ID,
                 IndustrialCraft2.ID,
+                TaintedMagic.ID,
+                Thaumcraft.ID,
+                ThaumicBases.ID,
                 ThaumicTinkerer.ID,
                 TinkerConstruct.ID,
                 TinkersGregworks.ID,
                 UniversalSingularities.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                Gadomancy.ID,
-                TaintedMagic.ID,
                 WitchingGadgets.ID);
     }
 

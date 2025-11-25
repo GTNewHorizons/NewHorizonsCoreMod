@@ -1,12 +1,10 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.JABBA;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
@@ -38,15 +36,13 @@ public class ScriptJABBA implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                JABBA.ID,
                 BiomesOPlenty.ID,
+                EnderStorage.ID,
                 ExtraTrees.ID,
                 ExtraUtilities.ID,
                 Forestry.ID,
+                JABBA.ID,
                 Natura.ID,
-                GregTech.ID,
-                BartWorks.ID,
-                EnderStorage.ID,
                 Railcraft.ID);
     }
 
@@ -181,7 +177,7 @@ public class ScriptJABBA implements IScriptLoader {
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 13)).duration(4 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3), GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3), GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 4)).duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 

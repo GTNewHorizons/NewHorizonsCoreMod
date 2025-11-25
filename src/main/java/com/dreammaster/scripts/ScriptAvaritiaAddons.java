@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.Witchery;
@@ -51,12 +50,13 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 AppliedEnergistics2.ID,
+                Avaritia.ID,
                 AvaritiaAddons.ID,
+                Botania.ID,
                 EternalSingularity.ID,
                 ForbiddenMagic.ID,
-                GregTech.ID,
-                Avaritia.ID,
                 IronChests.ID,
+                UniversalSingularities.ID,
                 Witchery.ID);
     }
 

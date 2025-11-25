@@ -4,8 +4,6 @@ import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -31,7 +29,6 @@ import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -53,13 +50,8 @@ public class ScriptAE2FC implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(
-                AE2FluidCraft.ID,
-                AppliedEnergistics2.ID,
-                OpenComputers.ID,
-                GoodGenerator.ID,
-                GTPlusPlus.ID,
-                EternalSingularity.ID);
+        return Arrays
+                .asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, Avaritia.ID, EternalSingularity.ID, OpenComputers.ID);
     }
 
     @Override
@@ -73,12 +65,9 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2_PATTERN_TERM = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 340);
         final ItemStack AE2_TERM = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380);
         final ItemStack AE2_INTERFACE_TERM = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480);
-        final ItemStack AE2_PROCESS_LOG = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22);
         final ItemStack AE2_QUARTZ_GLASS = getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1);
-        final ItemStack AE2_LAMP_GLASS = getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzLamp", 1);
         final ItemStack AE2_ME_CHEST = getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0);
         final ItemStack AE2_ENERGY_CELL = getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0);
-        final ItemStack AE2_CELL_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39);
         final ItemStack AE2_CORE_ANN = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44);
         final ItemStack AE2_CORE_FOM = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43);
         final ItemStack AE2_BLANK_PATTERN = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 52);
@@ -91,10 +80,6 @@ public class ScriptAE2FC implements IScriptLoader {
                 "item.ToolWirelessTerminal",
                 1,
                 OreDictionary.WILDCARD_VALUE);
-        final ItemStack AE2_PURE_CERTUS = new ItemStack(
-                GameRegistry.findItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial"),
-                1,
-                10);
         final ItemStack BUCKET = new ItemStack(Items.bucket, 1);
         final ItemStack IRON_BAR = new ItemStack(Blocks.iron_bars, 1);
         final ItemStack IRON_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L);
@@ -164,14 +149,11 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_INTERFACE_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_interface_terminal", 1, 0);
         final ItemStack AE2FC_LEVEL_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_level_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
-        final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
         final ItemStack AE2FC_FLUID_VOID_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.void", 1, 0);
         final ItemStack AE2_SINGULARITY = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47);
         final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 0);
         final ItemStack AE2_P2P_ME = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460);
         final ItemStack AE2FC_INTERFACE_P2P = getModItem(AE2FluidCraft.ID, "part_fluid_p2p_interface", 1);
-        final ItemStack AE2_ADVANCED_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 61);
-        final ItemStack T7_YOT = new ItemStack(Loaders.yottaFluidTankCell, 1, 6);
         final ItemStack AE2FC_INFINITY_WATER_STORAGE_CELL = getModItem(
                 AE2FluidCraft.ID,
                 "fluid_storage.infinity.water",
@@ -195,12 +177,6 @@ public class ScriptAE2FC implements IScriptLoader {
                 1,
                 0);
         final ItemStack AE2FC_ENERGY_CARD = getModItem(AE2FluidCraft.ID, "energy_card", 1, 0);
-        ItemStack[] mCells = new ItemStack[] { CELL_1M, CELL_4M, CELL_16M, CELL_64M, CELL_256M, CELL_1024M, CELL_4096M,
-                CELL_16384M };
-        ItemStack[] sCells = new ItemStack[] { CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096,
-                CELL_16384 };
-        ItemStack[] components = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64, COMPONENT_256,
-                COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
 
         final ItemStack nitinolPlate = MaterialsAlloy.NITINOL_60.getPlate(2);
         final ItemStack zeronPlate = MaterialsAlloy.ZERON_100.getPlate(2);
