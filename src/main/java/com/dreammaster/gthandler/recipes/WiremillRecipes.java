@@ -17,7 +17,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeRegistrator;
-import gregtech.api.util.GTUtility;
 
 public class WiremillRecipes implements Runnable {
 
@@ -31,7 +30,7 @@ public class WiremillRecipes implements Runnable {
                 .itemOutputs(CustomItemList.TungstenString.get(4L)).duration(60 * SECONDS).eut(1024)
                 .addTo(wiremillRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getIngots(1), GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getIngots(1)).circuit(3)
                 .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(wiremillRecipes);
 
