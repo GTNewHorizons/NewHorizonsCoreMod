@@ -35,7 +35,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptHardcoreEnderExpansion implements IScriptLoader {
 
@@ -470,9 +469,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 8, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "endoplasm", 4, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 16, 0, missing),
-                        getModItem(HardcoreEnderExpansion.ID, "essence", 16, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "blank_gem", 1, 0, missing))
+                        getModItem(HardcoreEnderExpansion.ID, "essence", 16, 0, missing))
+                .circuit(1).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "blank_gem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1440)).duration(30 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -481,9 +479,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 16, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "endoplasm", 8, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 32, 0, missing),
-                        getModItem(HardcoreEnderExpansion.ID, "essence", 32, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "spatial_dash_gem", 1, 0, missing))
+                        getModItem(HardcoreEnderExpansion.ID, "essence", 32, 0, missing))
+                .circuit(1).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "spatial_dash_gem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("endergoo", 2880)).duration(1 * MINUTES).eut(1920)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -492,9 +489,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 32, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "endoplasm", 16, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 64, 0, missing),
-                        getModItem(HardcoreEnderExpansion.ID, "essence", 64, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "transference_gem", 1, 0, missing))
+                        getModItem(HardcoreEnderExpansion.ID, "essence", 64, 0, missing))
+                .circuit(1).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "transference_gem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("endergoo", 5760)).duration(1 * MINUTES + 30 * SECONDS)
                 .eut(7068).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -590,9 +586,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "end_stone", 16, 0, missing),
-                        getModItem(Minecraft.ID, "red_mushroom", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(23))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 0, missing))
+                        getModItem(Minecraft.ID, "red_mushroom", 1, 0, missing))
+                .circuit(23).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 0, missing))
                 .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         addShapedRecipe(
@@ -609,9 +604,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "end_stone", 16, 0, missing),
-                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(23))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 1, missing))
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing))
+                .circuit(23).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 1, missing))
                 .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         addShapedRecipe(
@@ -628,9 +622,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "end_stone", 16, 0, missing),
-                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(23))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 2, missing))
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing))
+                .circuit(23).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 2, missing))
                 .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         // Laboratory
@@ -650,9 +643,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 4, 0, missing),
                         getModItem(Minecraft.ID, "quartz", 1, 0, missing),
-                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(11))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 8, 0, missing))
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing))
+                .circuit(11).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 8, 0, missing))
                 .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         addShapedRecipe(
@@ -669,18 +661,16 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "obsidian", 4, 0, missing),
-                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_obsidian", 8, 0, missing))
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing))
+                .circuit(24).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_obsidian", 8, 0, missing))
                 .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         // Crafting recipe already exists.
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass", 4, 0, missing),
-                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_glass", 8, 0, missing))
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing))
+                .circuit(24).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_glass", 8, 0, missing))
                 .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         addShapedRecipe(
@@ -730,9 +720,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "brick_block", 4, 0, missing),
-                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 8, 0, missing))
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing))
+                .circuit(24).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 8, 0, missing))
                 .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         addShapedRecipe(
@@ -776,10 +765,9 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "end_stone", 2, 0, missing),
                         getModItem(Minecraft.ID, "gravel", 2, 0, missing),
-                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "persegrit", 8, 0, missing)).duration(5 * SECONDS)
-                .eut(24).addTo(assemblerRecipes);
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing))
+                .circuit(24).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "persegrit", 8, 0, missing))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         ChiselHelper.addGroup("HEEPersegrit");
         for (int meta = 0; meta < 16; ++meta) {
