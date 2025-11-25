@@ -315,10 +315,7 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setInteger("oc:color", color);
         tag.setString("oc:lootFactory", "OpenComputers:" + name);
         floppy.setTagCompound(tag);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 4),
-                        GTUtility.getIntegratedCircuit(circuit))
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 4)).circuit(circuit)
                 .itemOutputs(floppy).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         return true;
     }
