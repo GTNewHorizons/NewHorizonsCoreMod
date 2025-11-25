@@ -200,15 +200,15 @@ public class AlloySmelterRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L)).duration(25 * SECONDS)
                     .eut(90).addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(Materials.Glass.getDust(3)).iCircuit(1)
+            GTValues.RA.stdBuilder().itemInputs(Materials.Glass.getDust(3)).circuit(1)
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(Materials.Quartzite.getDust(4)).iCircuit(1)
+            GTValues.RA.stdBuilder().itemInputs(Materials.Quartzite.getDust(4)).circuit(1)
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getDust(1)).iCircuit(1)
+            GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getDust(1)).circuit(1)
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 2L, 1)).duration(25 * SECONDS)
                     .eut(90).addTo(alloySmelterRecipes);
 

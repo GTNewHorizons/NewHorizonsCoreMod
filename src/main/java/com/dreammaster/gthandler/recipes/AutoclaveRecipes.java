@@ -39,33 +39,33 @@ public class AutoclaveRecipes implements Runnable {
                 .fluidInputs(Materials.VibrantAlloy.getMolten(288L)).duration(60 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0)).iCircuit(1)
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0)).circuit(1)
                 .itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(8000)
                 .fluidInputs(Materials.Water.getFluid(100)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0)).iCircuit(2)
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0)).circuit(2)
                 .itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(9000)
                 .fluidInputs(GTModHandler.getDistilledWater(50L)).duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0)).iCircuit(3)
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0)).circuit(3)
                 .itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(10000)
                 .fluidInputs(Materials.Void.getMolten(18)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L))
-                .iCircuit(1).itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(8000)
+                .circuit(1).itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(8000)
                 .fluidInputs(Materials.Water.getFluid(100)).duration(1 * MINUTES + 15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L))
-                .iCircuit(2).itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(9000)
+                .circuit(2).itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(9000)
                 .fluidInputs(GTModHandler.getDistilledWater(75L)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L))
-                .iCircuit(3).itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(10000)
+                .circuit(3).itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(10000)
                 .fluidInputs(Materials.Void.getMolten(36)).duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
