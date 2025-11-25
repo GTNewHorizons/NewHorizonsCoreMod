@@ -45,7 +45,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptEnderIO implements IScriptLoader {
@@ -86,7 +85,6 @@ public class ScriptEnderIO implements IScriptLoader {
         ItemStack staffOfTravelling = getModItem(EnderIO.ID, "itemTravelStaff", 1, wildcard);
         ItemStack endestPearl = getModItem(Avaritia.ID, "Endest_Pearl", 1);
         ItemStack fieldGeneratorZPM = ItemList.Field_Generator_ZPM.get(1);
-        ItemStack circuit2 = GTUtility.getIntegratedCircuit(2);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 teleportStaff,
@@ -116,9 +114,8 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
-                        circuit2)
-                .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L))
+                .circuit(2).itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4))
                 .fluidInputs(Materials.ConductiveIron.getMolten(144L)).duration(10 * SECONDS).eut(256)
                 .addTo(assemblerRecipes);
 
@@ -126,9 +123,8 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemMEConduit", 16),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
-                        circuit2)
-                .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 1))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L))
+                .circuit(2).itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 1))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
