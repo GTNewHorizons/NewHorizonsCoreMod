@@ -35,7 +35,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import vazkii.botania.common.item.ModItems;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
@@ -79,9 +78,8 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         getModItem(IronChests.ID, "BlockIronChest", 1, 6),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                         ItemList.Electric_Piston_HV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1))
+                .circuit(1).itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         addShapedRecipe(
