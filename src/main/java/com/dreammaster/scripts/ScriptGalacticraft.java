@@ -1711,17 +1711,15 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 8, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 8L),
-                        CustomItemList.MeteoricIronString.get(8L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7, missing))
+                        CustomItemList.MeteoricIronString.get(8L))
+                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 144)).duration(15 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Carbon, 1L),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0, missing))
+                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing))
+                .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1738,58 +1736,42 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7, missing),
-                        CustomItemList.MeteoricIronString.get(5L),
-                        GTUtility.getIntegratedCircuit(5))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0, missing))
+                        CustomItemList.MeteoricIronString.get(5L))
+                .circuit(5).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 720)).duration(37 * SECONDS + 10 * TICKS)
                 .eut(1024).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0, missing))
+                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7, missing))
                 .duration(9 * SECONDS).eut(256).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7, missing),
-                        CustomItemList.MeteoricIronString.get(8L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1, missing))
+                        CustomItemList.MeteoricIronString.get(8L))
+                .circuit(8).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 1152)).duration(1 * MINUTES).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1, missing))
+                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7, missing))
                 .duration(15 * SECONDS).eut(256).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7, missing),
-                        CustomItemList.MeteoricIronString.get(7L),
-                        GTUtility.getIntegratedCircuit(7))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2, missing))
+                        CustomItemList.MeteoricIronString.get(7L))
+                .circuit(7).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 1008)).duration(52 * SECONDS + 10 * TICKS)
                 .eut(1024).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2, missing))
+                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7, missing))
                 .duration(13 * SECONDS).eut(256).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7, missing),
-                        CustomItemList.MeteoricIronString.get(4L),
-                        GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3, missing))
+                        CustomItemList.MeteoricIronString.get(4L))
+                .circuit(4).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 576)).duration(30 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3, missing))
+                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7, missing))
                 .duration(7 * SECONDS + 10 * TICKS).eut(256).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2806,41 +2788,23 @@ public class ScriptGalacticraft implements IScriptLoader {
                 null);
 
         // Glowstone dusts
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.CeresStoneDust.getIS(2))
+                .circuit(8).itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 0))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.IoStoneDust.getIS(2))
+                .circuit(8).itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 1))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 2),
-                        NHItemList.CeresStoneDust.getIS(2),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 0)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 2),
-                        NHItemList.IoStoneDust.getIS(2),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 1)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 2),
-                        NHItemList.EnceladusStoneDust.getIS(2),
-                        GTUtility.getIntegratedCircuit(8))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.EnceladusStoneDust.getIS(2)).circuit(8)
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 2),
-                        NHItemList.ProteusStoneDust.getIS(2),
-                        GTUtility.getIntegratedCircuit(8))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.ProteusStoneDust.getIS(2)).circuit(8)
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 3)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 2),
-                        NHItemList.PlutoStoneDust.getIS(2),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 4)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.PlutoStoneDust.getIS(2))
+                .circuit(8).itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 4))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
     }
 
     @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
