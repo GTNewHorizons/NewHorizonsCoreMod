@@ -3,9 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -138,18 +136,6 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 2, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing))
                 .duration(1 * MINUTES).eut(7680).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
-                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0, missing))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing))
-                .duration(40 * SECONDS).eut(30720).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 3, missing))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing))
-                .duration(1 * MINUTES + 20 * SECONDS).eut(122880).addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9, 9, missing))
