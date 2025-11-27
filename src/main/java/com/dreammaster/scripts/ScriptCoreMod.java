@@ -729,25 +729,19 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 1L))
                 .itemOutputs(NHItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1)).duration(1 * MINUTES + 40 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Neutronium, 1L))
-                .itemOutputs(
-                        getModItem(
-                                NewHorizonsCoreMod.ID,
-                                "item.EnrichedNaquadriaNeutroniumSunnariumAlloy",
-                                1,
-                                0,
-                                missing))
-                .duration(2 * MINUTES).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+                .itemOutputs( NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.getIS(1))
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_UHV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 18))
                 .itemOutputs(NHItemList.EnrichedXSunnariumAlloy.getIS(1)).duration(2 * MINUTES + 20 * SECONDS)
-                .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_UEV).addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
