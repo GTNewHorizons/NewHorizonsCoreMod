@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -115,6 +116,7 @@ public class ScriptEFR implements IScriptLoader {
                 BiomesOPlenty.ID,
                 BloodMagic.ID,
                 Botania.ID,
+                Chisel.ID,
                 DraconicEvolution.ID,
                 ElectroMagicTools.ID,
                 EnderIO.ID,
@@ -2073,11 +2075,6 @@ public class ScriptEFR implements IScriptLoader {
 
         // Red Sandstone OreDict
 
-        OreDictionary.registerOre("redsandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
-        OreDictionary.registerOre("redsandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
-        OreDictionary.registerOre("redsandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
-        OreDictionary.registerOre("redsandstone", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
-
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
@@ -2085,25 +2082,21 @@ public class ScriptEFR implements IScriptLoader {
 
         // Red sand
         for (ItemStack item : OreDictionary.getOres("stoneRedSand")) {
-            GTValues.RA.stdBuilder().itemInputs(item).itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1, missing))
+            GTValues.RA.stdBuilder().itemInputs(item).itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1))
                     .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
         }
 
-        // Red sandstone
+        // Red Sandstone
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "red_sandstone", 4, 1, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(2).addTo(assemblerRecipes);
+                .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1), GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(4).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "red_sandstone", 4, 2, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(2).addTo(assemblerRecipes);
+                .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2), GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(4).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 4, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing)).duration(15 * SECONDS)
@@ -2112,19 +2105,15 @@ public class ScriptEFR implements IScriptLoader {
         // Cut Red Sandstone
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(23))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(assemblerRecipes);
+                .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0), GTUtility.getIntegratedCircuit(23))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(4).addTo(assemblerRecipes);
 
         // Chiseled Red Sandstone
-        for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensWhite")) { // Copied from ScriptGalacticraft.java
+        for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensRed")) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2, missing),
-                            GTUtility.copyAmount(0, lens))
-                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1, missing))
+                    .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2), GTUtility.copyAmount(0, lens))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1))
                     .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
         }
 
