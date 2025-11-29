@@ -1807,33 +1807,17 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 9, 2, missing)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing))
-                .itemOutputs(
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing))
-                .outputChances(10000, 1000, 100, 10).duration(5 * SECONDS).eut(480).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing))
-                .itemOutputs(
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing))
-                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing))
-                .itemOutputs(
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing))
-                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 13, missing))
-                .itemOutputs(
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing))
-                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1L, 0),
