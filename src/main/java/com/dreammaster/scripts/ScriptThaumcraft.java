@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static bartworks.system.material.WerkstoffLoader.Fluorspar;
 import static bartworks.system.material.WerkstoffLoader.RedZircon;
 import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -86,30 +85,32 @@ public class ScriptThaumcraft implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                Backpack.ID,
+                BiomesOPlenty.ID,
+                Botania.ID,
+                BuildCraftFactory.ID,
+                Chisel.ID,
+                ExtraUtilities.ID,
+                ForbiddenMagic.ID,
+                Forestry.ID,
+                GalacticraftCore.ID,
+                GalacticraftMars.ID,
+                IguanaTweaksTinkerConstruct.ID,
+                IndustrialCraft2.ID,
+                MagicBees.ID,
+                MalisisDoors.ID,
+                Natura.ID,
+                PamsHarvestCraft.ID,
+                PamsHarvestTheNether.ID,
+                ProjectRedIntegration.ID,
+                Railcraft.ID,
+                RandomThings.ID,
+                StevesCarts2.ID,
+                TaintedMagic.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
                 TinkerConstruct.ID,
-                RandomThings.ID,
-                BiomesOPlenty.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                Backpack.ID,
                 TwilightForest.ID,
-                Natura.ID,
-                BuildCraftFactory.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                GalacticraftCore.ID,
-                ForbiddenMagic.ID,
-                GalacticraftMars.ID,
-                MalisisDoors.ID,
-                ExtraUtilities.ID,
-                BartWorks.ID,
-                PamsHarvestTheNether.ID,
-                StevesCarts2.ID,
-                TaintedMagic.ID,
                 Witchery.ID);
     }
 
@@ -2470,31 +2471,31 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)))
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)))
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L)))
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)))
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)))
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
@@ -5781,6 +5782,29 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.refreshResearchPages("ROD_ice");
         TCHelper.refreshResearchPages("ROD_quartz");
         TCHelper.refreshResearchPages("ROD_bone");
+
+        // Alternative infusion
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "INFUSION",
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 45).add(Aspect.getAspect("ignis"), 45)
+                        .add(Aspect.getAspect("terra"), 45).add(Aspect.getAspect("aqua"), 45)
+                        .add(Aspect.getAspect("ordo"), 45).add(Aspect.getAspect("perditio"), 45),
+                "aba",
+                "bcb",
+                "aba",
+                'a',
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                'c',
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing));
+        TCHelper.addResearchPage(
+                "INFUSION",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing)))));
     }
 
     private void aspectAdds() {

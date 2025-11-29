@@ -5,7 +5,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import gregtech.api.enums.GTValues;
@@ -14,7 +14,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptAFSU implements IScriptLoader {
 
@@ -25,7 +24,7 @@ public class ScriptAFSU implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(AFSU.ID);
+        return Collections.singletonList(AFSU.ID);
     }
 
     @Override
@@ -45,9 +44,8 @@ public class ScriptAFSU implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
-                        ItemList.Energy_LapotronicOrb.get(1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(AFSU.ID, "ALC", 1)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
+                        ItemList.Energy_LapotronicOrb.get(1L))
+                .circuit(1).itemOutputs(getModItem(AFSU.ID, "ALC", 1)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
     }

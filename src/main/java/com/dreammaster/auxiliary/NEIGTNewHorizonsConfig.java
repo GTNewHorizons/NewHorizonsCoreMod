@@ -43,6 +43,10 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GTModHandler.getModItem(Aroma1997Core.ID, "wrenched", 1));
         }
 
+        if (Avaritia.isModLoaded()) {
+            API.hideItem(GTModHandler.getModItem(Avaritia.ID, "Neutronium_Compressor", 1));
+        }
+
         if (BiblioCraft.isModLoaded()) {
             API.hideItem(GTModHandler.getModItem(BiblioCraft.ID, "BiblioClipboard", 1));
         }
@@ -82,6 +86,10 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GTModHandler.getModItem(HardcoreEnderExpansion.ID, "temple_end_portal", 1));
             API.hideItem(GTModHandler.getModItem(HardcoreEnderExpansion.ID, "laser_beam", 1));
             API.hideItem(GTModHandler.getModItem(HardcoreEnderExpansion.ID, "item_special_effects", 1));
+        }
+
+        if (IndustrialCraft2.isModLoaded()) {
+            API.hideItem(GTModHandler.getIC2Item("electrolyzedWaterCell", 1L));
         }
 
         if (Mantle.isModLoaded()) {

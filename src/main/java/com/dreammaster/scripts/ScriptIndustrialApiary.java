@@ -40,12 +40,12 @@ public class ScriptIndustrialApiary implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Forestry.ID,
-                Gendustry.ID,
+                BiomesOPlenty.ID,
+                Botany.ID,
                 ExtraBees.ID,
                 ExtraUtilities.ID,
-                Botany.ID,
-                BiomesOPlenty.ID,
+                Forestry.ID,
+                Gendustry.ID,
                 Genetics.ID,
                 ProjectRedIllumination.ID,
                 TinkerConstruct.ID);

@@ -44,8 +44,6 @@ public class ScriptChisel implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Chisel.ID,
-                ProjectRedExploration.ID,
                 BiomesOPlenty.ID,
                 Botania.ID,
                 Chisel.ID,
@@ -55,6 +53,7 @@ public class ScriptChisel implements IScriptLoader {
                 IndustrialCraft2.ID,
                 IronChests.ID,
                 Natura.ID,
+                ProjectRedExploration.ID,
                 Railcraft.ID,
                 TinkerConstruct.ID,
                 TwilightForest.ID);

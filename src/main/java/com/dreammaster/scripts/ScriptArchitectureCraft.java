@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.ArchitectureCraft;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -22,7 +21,7 @@ public class ScriptArchitectureCraft implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(ArchitectureCraft.ID, GregTech.ID, TinkerConstruct.ID);
+        return Arrays.asList(ArchitectureCraft.ID, TinkerConstruct.ID);
     }
 
     @Override

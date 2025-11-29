@@ -36,12 +36,12 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                OpenModularTurrets.ID,
                 EnderIO.ID,
                 EnderStorage.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
                 OpenComputers.ID,
+                OpenModularTurrets.ID,
                 Thaumcraft.ID);
     }
 

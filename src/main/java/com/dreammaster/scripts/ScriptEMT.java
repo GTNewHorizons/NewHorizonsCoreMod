@@ -54,16 +54,16 @@ public class ScriptEMT implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                AdvancedSolarPanel.ID,
+                Avaritia.ID,
                 ElectroMagicTools.ID,
-                Thaumcraft.ID,
+                GalacticraftCore.ID,
                 IndustrialCraft2.ID,
                 ProjectRedIntegration.ID,
-                AdvancedSolarPanel.ID,
-                GalacticraftCore.ID,
-                Avaritia.ID,
+                Railcraft.ID,
+                Thaumcraft.ID,
                 ThaumicEnergistics.ID,
-                TinkerConstruct.ID,
-                Railcraft.ID);
+                TinkerConstruct.ID);
     }
 
     @Override
@@ -2539,12 +2539,12 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("victus"), 16).add(Aspect.getAspect("vinculum"), 24)
                         .add(Aspect.getAspect("vitreus"), 16).add(Aspect.getAspect("praecantatio"), 8),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
-                OrePrefixes.plate.get(Materials.ReinforceGlass),
+                OrePrefixes.plate.get(Materials.ReinforcedGlass),
                 ItemList.Block_TungstenSteelReinforced.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
                 OrePrefixes.plate.get(Materials.Reinforced),
                 ItemList.Block_TungstenSteelReinforced.get(1L),
-                OrePrefixes.plate.get(Materials.ReinforceGlass),
+                OrePrefixes.plate.get(Materials.ReinforcedGlass),
                 ItemList.Block_TungstenSteelReinforced.get(1L),
                 OrePrefixes.plate.get(Materials.Reinforced),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),

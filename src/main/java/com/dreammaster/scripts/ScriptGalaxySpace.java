@@ -1,8 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.GTValues.W;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
-import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -22,6 +20,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
@@ -43,7 +42,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
@@ -59,14 +57,13 @@ public class ScriptGalaxySpace implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                BuildCraftBuilders.ID,
                 GalacticraftCore.ID,
                 GalacticraftMars.ID,
                 GalaxySpace.ID,
-                GTNHIntergalactic.ID,
-                OpenComputers.ID,
-                BuildCraftBuilders.ID,
                 IndustrialCraft2.ID,
-                OpenModularTurrets.ID);
+                OpenComputers.ID,
+                TinkerConstruct.ID);
     }
 
     @Override
@@ -76,59 +73,46 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(new ItemStack(Blocks.glass), GTOreDictUnificator.get(OrePrefixes.stick, Materials.Desh, 8))
                 .itemOutputs(getGSItem("futureglass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(GCItems.battery, 1, W), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(GCItems.battery, 1, WILDCARD)).circuit(1)
                 .itemOutputs(getGSItem("item.LeadBattery", 1, 100)).fluidInputs(Materials.Lead.getMolten(6 * 144))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 0), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 0)).circuit(1)
                 .itemOutputs(getGSItem("item.ThermalClothT2", 5, 0)).duration(18 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 1), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 1)).circuit(1)
                 .itemOutputs(getGSItem("item.ThermalClothT2", 8, 0)).duration(30 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 2), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 2)).circuit(1)
                 .itemOutputs(getGSItem("item.ThermalClothT2", 7, 0)).duration(26 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 3), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 3)).circuit(1)
                 .itemOutputs(getGSItem("item.ThermalClothT2", 4, 0)).duration(15 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(AsteroidsItems.basicItem, 1, 7),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Titanium, 8),
-                        CustomItemList.TungstenString.get(8),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getGSItem("item.ThermalClothT2", 1, 0))
+                        CustomItemList.TungstenString.get(8))
+                .circuit(1).itemOutputs(getGSItem("item.ThermalClothT2", 1, 0))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(576)).duration(30 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getGSItem("item.ThermalClothT2", 5, 0),
-                        CustomItemList.TungstenString.get(5),
-                        GTUtility.getIntegratedCircuit(5))
+                .itemInputs(getGSItem("item.ThermalClothT2", 5, 0), CustomItemList.TungstenString.get(5)).circuit(5)
                 .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 0))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(1440)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getGSItem("item.ThermalClothT2", 8, 0),
-                        CustomItemList.TungstenString.get(8),
-                        GTUtility.getIntegratedCircuit(8))
+                .itemInputs(getGSItem("item.ThermalClothT2", 8, 0), CustomItemList.TungstenString.get(8)).circuit(8)
                 .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 1))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getGSItem("item.ThermalClothT2", 7, 0),
-                        CustomItemList.TungstenString.get(7),
-                        GTUtility.getIntegratedCircuit(7))
+                .itemInputs(getGSItem("item.ThermalClothT2", 7, 0), CustomItemList.TungstenString.get(7)).circuit(7)
                 .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 2))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2016)).duration(1 * MINUTES + 45 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getGSItem("item.ThermalClothT2", 4, 0),
-                        CustomItemList.TungstenString.get(4),
-                        GTUtility.getIntegratedCircuit(4))
+                .itemInputs(getGSItem("item.ThermalClothT2", 4, 0), CustomItemList.TungstenString.get(4)).circuit(4)
                 .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 3))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(1152)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
@@ -140,7 +124,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getGSItem("item.spacesuit_plate", 1, 0),
-                        getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1, W, missing))
+                        getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1, WILDCARD, missing))
                 .itemOutputs(getGSItem("item.spacesuit_jetplate", 1, 0))
                 .fluidInputs(Materials.Duralumin.getMolten(1440)).duration(30 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
@@ -291,9 +275,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get("dustTantalumCarbide", 4),
-                        WerkstoffLoader.HafniumCarbide.get(OrePrefixes.dust),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(WerkstoffLoader.TantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust, 5))
+                        WerkstoffLoader.HafniumCarbide.get(OrePrefixes.dust))
+                .circuit(1).itemOutputs(WerkstoffLoader.TantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust, 5))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(mixerRecipes);
 
         // Plasma Arc Furnace
@@ -679,7 +662,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'F',
                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1),
                 'P',
-                new ItemStack(GCItems.parachute, 1, W),
+                new ItemStack(GCItems.parachute, 1, WILDCARD),
                 'C',
                 new ItemStack(GCItems.canvas),
                 'L',
@@ -702,7 +685,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "DCD", "fCh", "DBW", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
                         'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                        'B', new ItemStack(GCItems.battery, 1, W), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1) });
+                        'B', new ItemStack(GCItems.battery, 1, WILDCARD), 'W',
+                        new ItemStack(GCBlocks.aluminumWire, 1, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmapickaxe", 1, 100),
@@ -710,7 +694,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 new Object[] { "CCC", "fPh", "DBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'P', new ItemStack(GCItems.flagPole), 'D',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'B',
-                        new ItemStack(GCItems.battery, 1, W), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1) });
+                        new ItemStack(GCItems.battery, 1, WILDCARD), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmaaxe", 1, 100),
@@ -718,7 +702,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 new Object[] { "CCh", "CPD", "fBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'P', new ItemStack(GCItems.flagPole), 'D',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'B',
-                        new ItemStack(GCItems.battery, 1, W), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1) });
+                        new ItemStack(GCItems.battery, 1, WILDCARD), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmashovel", 1, 100),
@@ -726,7 +710,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 new Object[] { "fCh", "DPD", "WBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'P',
                         new ItemStack(GCItems.flagPole), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B',
-                        new ItemStack(GCItems.battery, 1, W) });
+                        new ItemStack(GCItems.battery, 1, WILDCARD) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmahoe", 1, 100),
@@ -734,7 +718,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 new Object[] { "CCh", "fPD", "WBD", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'P', new ItemStack(GCItems.flagPole), 'D',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'W',
-                        new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B', new ItemStack(GCItems.battery, 1, W) });
+                        new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B', new ItemStack(GCItems.battery, 1, WILDCARD) });
 
         addShapedRecipe(
                 getGSItem("item.SolarFlares", 1, 0), // Solar Flares Part

@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -27,7 +26,6 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -45,14 +43,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(
-                Mods.GTPlusPlus.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                IronTanks.ID,
-                RemoteIO.ID,
-                EternalSingularity.ID,
-                GregTech.ID);
+        return Arrays.asList(EternalSingularity.ID, Forestry.ID, IndustrialCraft2.ID, IronTanks.ID, RemoteIO.ID);
     }
 
     @Override
@@ -77,8 +68,8 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
                         ItemList.EnergisedTesseract.get(1))
                 .itemOutputs(GTOreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
-                .fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
-                .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
+                .fluidInputs(Materials.PrimordialMatter.getFluid(1152))
+                .fluidOutputs(Materials.Eternity.getMolten(9216), Materials.Time.getMolten(18432))
                 .metadata(QFT_CATALYST, GregtechItemList.TemporalHarmonyCatalyst.get(0)).metadata(QFT_FOCUS_TIER, 4)
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(quantumForceTransformerRecipes);
         addForestryRecipes();

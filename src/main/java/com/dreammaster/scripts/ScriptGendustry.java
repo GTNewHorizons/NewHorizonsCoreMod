@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
@@ -38,7 +37,7 @@ public class ScriptGendustry implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Gendustry.ID, IronTanks.ID, ExtraBees.ID, Forestry.ID, GTPlusPlus.ID, IndustrialCraft2.ID);
+        return Arrays.asList(ExtraBees.ID, Forestry.ID, Gendustry.ID, IndustrialCraft2.ID, IronTanks.ID);
     }
 
     @Override

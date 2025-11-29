@@ -363,18 +363,21 @@ public class RecipeRemover {
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "tinted_glass", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "chain", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 0));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 1));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 2));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 3));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 4));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 5));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 6));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 7));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_block", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
 
-            ItemStack mossyStoneBricks = getModItem(Minecraft.ID, "stonebrick", 1L, 1);
-            removeRecipeShapedDelayed(
-                    getModItem(Minecraft.ID, "stone_brick_stairs", 4L, 0),
-                    new Object[] { mossyStoneBricks, null, null },
-                    new Object[] { mossyStoneBricks, mossyStoneBricks, null },
-                    new Object[] { mossyStoneBricks, mossyStoneBricks, mossyStoneBricks });
+            removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_brick_stairs", 4, 0));
+
             GTModHandler.removeFurnaceSmelting(getModItem(EtFuturumRequiem.ID, "deepslate", 1));
         }
 
@@ -1855,6 +1858,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_star", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0, missing));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1L, 1), "cropBeetroot");
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "planks", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "Natura.workbench", 1, wildcard, missing));
@@ -2885,6 +2889,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "ingredient", 1, 12, missing));
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "rubyslippers", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "snowpressureplate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(Witchery.ID, "ingredient", 2, 130, missing));
 
         removeRecipeByOutputDelayed("nuggetLead");
         removeRecipeByOutputDelayed("nuggetSilver");
@@ -3340,6 +3345,7 @@ public class RecipeRemover {
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" });
         removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "crystalSlab", 1, wildcard, missing));
         removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "genericSlab", 1, wildcard, missing));
+        removeRecipeShapelessDelayed(getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0, missing));
         removeRecipeShapedDelayed(
                 "ingotTin",
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },

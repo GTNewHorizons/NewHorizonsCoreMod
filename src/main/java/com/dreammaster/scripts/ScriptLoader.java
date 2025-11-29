@@ -51,6 +51,7 @@ public class ScriptLoader {
                         new ScriptCompactKineticGenerators(),
                         new ScriptComputronics(),
                         new ScriptCoreMod(),
+                        new ScriptMoldRecycling(),
                         new ScriptCreosoteBucketFuelValue(),
                         new ScriptDraconicEvolution(),
                         new ScriptEFR(),

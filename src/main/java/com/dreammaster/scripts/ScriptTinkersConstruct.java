@@ -61,7 +61,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import mantle.lib.client.MantleClientRegistry;
 import tconstruct.TConstruct;
 import tconstruct.library.TConstructRegistry;
@@ -81,10 +80,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                TinkerConstruct.ID,
-                Mantle.ID,
-                RandomThings.ID,
-                TinkersMechworks.ID,
+                Backpack.ID,
+                BiomesOPlenty.ID,
                 BloodArsenal.ID,
                 BuildCraftCore.ID,
                 ElectroMagicTools.ID,
@@ -95,10 +92,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 GalaxySpace.ID,
                 IguanaTweaksTinkerConstruct.ID,
                 IndustrialCraft2.ID,
+                Mantle.ID,
                 Natura.ID,
                 PamsHarvestCraft.ID,
                 Railcraft.ID,
-                Thaumcraft.ID);
+                RandomThings.ID,
+                Thaumcraft.ID,
+                TinkerConstruct.ID,
+                TinkersMechworks.ID,
+                WitchingGadgets.ID);
     }
 
     @Override
@@ -2333,7 +2335,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .provideTo(recipe -> GTModHandler.addSmeltingRecipe(recipe.flatten()[0], recipe.getResult()))
                 .provideTo(MANTLE.manualSmeltingRecipeNamed("searedbrick"));
         GTModHandler.addSmeltingRecipe(
-                CustomItemList.UnfiredSlimeSoulBrick.get(1L),
+                CustomItemList.UnfiredSlimeSoilBrick.get(1L),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2386,35 +2388,22 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ForgeMicroblocks.ID, "stoneRod", 7, 0, missing),
-                        getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(6))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
+                        getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing))
+                .circuit(6).itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
                 .duration(3 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
-                        GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0, missing)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.getIS(16), GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.getIS(16)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1, missing)).eut(30)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing)).circuit(16)
                 .itemOutputs(getModItem(WitchingGadgets.ID, "item.WG_MagicFood", 1, 2, missing)).eut(30)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
 

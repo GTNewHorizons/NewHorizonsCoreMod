@@ -32,8 +32,8 @@ public class ScriptExtraTrees implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                ExtraTrees.ID,
                 BuildCraftFactory.ID,
+                ExtraTrees.ID,
                 Forestry.ID,
                 MalisisDoors.ID,
                 Railcraft.ID,

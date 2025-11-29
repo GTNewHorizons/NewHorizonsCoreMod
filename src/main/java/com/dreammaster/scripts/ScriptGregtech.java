@@ -3,9 +3,11 @@ package com.dreammaster.scripts;
 import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.CropsPlusPlus;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MCFrames;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -55,7 +57,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import tconstruct.library.TConstructRegistry;
 import vexatos.tgregworks.reference.PartTypes;
 import vexatos.tgregworks.util.TGregUtils;
@@ -70,19 +71,22 @@ public class ScriptGregtech implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                MCFrames.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransmission.ID,
-                StructureLib.ID,
                 AdvancedSolarPanel.ID,
+                AppliedEnergistics2.ID,
+                Avaritia.ID,
                 BiomesOPlenty.ID,
                 BloodArsenal.ID,
                 CropsPlusPlus.ID,
+                DraconicEvolution.ID,
                 IndustrialCraft2.ID,
+                MCFrames.ID,
                 Natura.ID,
                 OpenBlocks.ID,
                 PamsHarvestCraft.ID,
+                ProjectRedExpansion.ID,
+                ProjectRedTransmission.ID,
                 SGCraft.ID,
+                StructureLib.ID,
                 SuperSolarPanels.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
@@ -148,7 +152,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "brick", 1, 0, missing));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L),
                 "stickPlastic",
                 "craftingToolHardHammer",
                 "stickPlastic");
@@ -469,6 +473,7 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                 "circuitElite",
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
+
         addShapedRecipe(
                 new ItemStack(GregTechAPI.sBlockStones, 1, 2),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
@@ -643,7 +648,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Battery_Buffer_3by3_IV.get(1L));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L)).duration(15 * SECONDS)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L)).duration(15 * SECONDS)
                 .eut(2).addTo(extractorRecipes);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Empty.get(1L),
@@ -1046,9 +1051,8 @@ public class ScriptGregtech implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
                         ItemList.Electric_Motor_EV.get(2, missing),
                         ItemList.Hull_EV.get(1, missing),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, missing, 1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(ItemList.Machine_EV_Bender.get(1, missing)).duration(10 * SECONDS).eut(1920)
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, missing, 1L))
+                .circuit(1).itemOutputs(ItemList.Machine_EV_Bender.get(1, missing)).duration(10 * SECONDS).eut(1920)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1178,8 +1182,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(50 * SECONDS).eut(30)
                 .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.PotassiumHydroxideDust.get(3L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.PotassiumHydroxideDust.get(3L)).circuit(1)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 5L))
                 .fluidInputs(FluidRegistry.getFluidStack("nitricacid", 5000))
                 .fluidOutputs(FluidRegistry.getFluidStack("steam", 16000)).duration(10).eut(30)
@@ -1379,9 +1382,9 @@ public class ScriptGregtech implements IScriptLoader {
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(64)
                 .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 2L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L)).duration(20).eut(16)
-                .addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L)).duration(20)
+                .eut(16).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Rubber, 2L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1)).duration(20).eut(16)
                 .addTo(hammerRecipes);
@@ -1460,5 +1463,31 @@ public class ScriptGregtech implements IScriptLoader {
         GTModHandler.addSmeltingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                ItemList.ChaosLocator.get(1),
+                "----a----",
+                "---bbb---",
+                "--bcdcb--",
+                "abcefecba",
+                "-bdfgfdb-",
+                "-bcefecb-",
+                "-bbcdcbb-",
+                "-aabbbaa-",
+                "a-------a",
+                'a',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 1),
+                'b',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackPlutonium, 1),
+                'c',
+                getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing),
+                'd',
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.DraconiumAwakened, 1),
+                'e',
+                NHItemList.ChaoticDust.getIS(1),
+                'f',
+                getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
+                'g',
+                getModItem(DraconicEvolution.ID, "teleporterMKI", 1, 0, missing));
     }
 }
