@@ -2088,13 +2088,11 @@ public class ScriptEFR implements IScriptLoader {
 
         // Red Sandstone
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1)).circuit(1)
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(4).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2)).circuit(1)
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(4).addTo(assemblerRecipes);
 
@@ -2104,8 +2102,7 @@ public class ScriptEFR implements IScriptLoader {
 
         // Cut Red Sandstone
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0), GTUtility.getIntegratedCircuit(23))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0)).circuit(23)
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(4).addTo(assemblerRecipes);
 
