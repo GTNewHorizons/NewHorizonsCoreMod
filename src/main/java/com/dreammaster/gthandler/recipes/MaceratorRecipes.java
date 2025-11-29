@@ -62,12 +62,7 @@ public class MaceratorRecipes implements Runnable {
                 .eut(2).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.CokeOvenBrick.get(1L))
-                .itemOutputs(
-                        CustomItemList.CokeOvenBrickDust.get(1L),
-                        CustomItemList.CokeOvenBrickDust.get(1L),
-                        CustomItemList.CokeOvenBrickDust.get(1L),
-                        CustomItemList.CokeOvenBrickDust.get(1L))
-                .outputChances(10000, 2500, 750, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(CustomItemList.CokeOvenBrickDust.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdvancedCokeOvenBrick.get(1L))
