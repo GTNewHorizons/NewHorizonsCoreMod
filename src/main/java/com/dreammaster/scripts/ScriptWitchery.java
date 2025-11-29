@@ -36,7 +36,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -102,19 +101,17 @@ public class ScriptWitchery implements IScriptLoader {
                         new ItemStack(Items.magma_cream, 6),
                         new ItemStack(Items.nether_star, 1),
                         new ItemStack(Items.flint, 1),
-                        getModItem(Botania.ID, "manaResource", 1, 2, missing),
-                        GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(getModItem(Witchery.ID, "ingredient", 2, 130, missing)).duration(2 * SECONDS).eut(16)
-                .addTo(mixerRecipes);
+                        getModItem(Botania.ID, "manaResource", 1, 2, missing))
+                .circuit(3).itemOutputs(getModItem(Witchery.ID, "ingredient", 2, 130, missing)).duration(2 * SECONDS)
+                .eut(16).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Witchery.ID, "ingredient", 9, 130, missing),
                         new ItemStack(Items.magma_cream, 9),
                         new ItemStack(Items.blaze_powder, 9),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L),
-                        GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130, missing)).duration(2 * SECONDS).eut(16)
-                .addTo(mixerRecipes);
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L))
+                .circuit(4).itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130, missing)).duration(2 * SECONDS)
+                .eut(16).addTo(mixerRecipes);
 
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 16, missing),
@@ -278,17 +275,15 @@ public class ScriptWitchery implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L),
-                        GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing))
+                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1),
-                        GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
+                .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing))
+                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0, missing))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(5 * SECONDS).eut(24)

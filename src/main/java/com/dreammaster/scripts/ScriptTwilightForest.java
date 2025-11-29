@@ -32,7 +32,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -244,9 +243,8 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "smoker", 1L),
                         getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.CastleBrick", 2, 3, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 1000))
+                        getModItem(TwilightForest.ID, "tile.CastleBrick", 2, 3, missing))
+                .circuit(8).fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 1000))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFFireJet", 1L)).duration(12 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -254,9 +252,8 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         getModItem(TwilightForest.ID, "tile.TFFireJet", 1L),
                         new ItemStack(Items.fire_charge, 1),
-                        getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
+                        getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing))
+                .circuit(8).fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFFireJet", 1L, 8)).duration(12 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 

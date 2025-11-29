@@ -24,7 +24,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptMalisDoors implements IScriptLoader {
 
@@ -1109,12 +1108,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0, missing))
                 .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L),
-                        GTUtility.getIntegratedCircuit(5))
-                .itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0, missing)).duration(3 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L))
+                .circuit(5).itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0, missing)).duration(3 * SECONDS)
+                .eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "planks", 4, 4, missing),

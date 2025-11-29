@@ -30,7 +30,6 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.util.GTRecipe;
-import gregtech.api.util.GTUtility;
 
 public class ScriptZZClientOnly implements IScriptLoader {
 
@@ -380,27 +379,27 @@ public class ScriptZZClientOnly implements IScriptLoader {
     @Override
     public void loadRecipes() {
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L), GTUtility.getIntegratedCircuit(1))
+                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(1)
                         .itemOutputs(CustomItemList.CoinChunkloaderTierI.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).duration(30 * SECONDS).eut(120)
                         .disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L), GTUtility.getIntegratedCircuit(2))
+                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(2)
                         .itemOutputs(CustomItemList.CoinChunkloaderTierII.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).duration(30 * SECONDS).eut(480)
                         .disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L), GTUtility.getIntegratedCircuit(3))
+                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(3)
                         .itemOutputs(CustomItemList.CoinChunkloaderTierIII.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).duration(30 * SECONDS).eut(1920)
                         .disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L), GTUtility.getIntegratedCircuit(4))
+                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(4)
                         .itemOutputs(CustomItemList.CoinChunkloaderTierIV.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).duration(30 * SECONDS).eut(7680)
                         .disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L), GTUtility.getIntegratedCircuit(5))
+                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(5)
                         .itemOutputs(CustomItemList.CoinChunkloaderTierV.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).duration(30 * SECONDS).eut(30720)
                         .disabled().hidden().addTo(assemblerRecipes));

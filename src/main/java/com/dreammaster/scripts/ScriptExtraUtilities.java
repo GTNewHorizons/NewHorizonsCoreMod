@@ -52,7 +52,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1139,28 +1138,16 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Minecraft.ID, "diamond_block", 1, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(256).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 1, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 2, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(5))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing)).circuit(5)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 6, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 9, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1220,20 +1207,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Minecraft.ID, "stonebrick", 5, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 9, 0, missing)).duration(9 * SECONDS)
                 .eut(4).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4, missing)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4, missing)).circuit(4)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 7, missing)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "gravel", 1, 0, missing), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 1, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 6, missing)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1271,10 +1251,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6, missing), ItemList.Plank_Oak.get(4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "trading_post", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L),
-                        GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L)).circuit(2)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).duration(5 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
@@ -1284,13 +1261,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 216)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 4, 0, missing), GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 4, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 12, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1376,20 +1351,16 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "scanner", 1, 0, missing)).duration(30 * SECONDS).eut(120)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTUtility.getIntegratedCircuit(9), getModItem(Minecraft.ID, "cobblestone", 9, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0, missing), GTUtility.getIntegratedCircuit(9))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0, missing), GTUtility.getIntegratedCircuit(9))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "sand", 9, 0, missing), GTUtility.getIntegratedCircuit(9))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
 

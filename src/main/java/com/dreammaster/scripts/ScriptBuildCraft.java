@@ -469,8 +469,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0, missing), GTUtility.getIntegratedCircuit(8))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "paper", 8, 0, missing)).circuit(8)
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "redstone_board", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);

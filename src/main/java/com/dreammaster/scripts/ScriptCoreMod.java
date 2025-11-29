@@ -812,18 +812,15 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 6, missing),
                         getModItem(GalacticraftCore.ID, "item.basicItem", 2, 14, missing))
                 .itemOutputs(NHItemList.LightBinding.getIS(1)).duration(30 * SECONDS).eut(480).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.RawBioFiber.getIS(2), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.RawBioFiber.getIS(2)).circuit(2)
                 .itemOutputs(NHItemList.BioOrganicMesh.getIS(1)).duration(40 * SECONDS).eut(2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L),
                         NHItemList.CompressedBioBall.getIS(8))
                 .itemOutputs(NHItemList.BioChunk.getIS(1)).duration(1 * MINUTES).eut(64).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L),
-                        GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(BlockList.DiamondFrameBox.getIS()).duration(3 * SECONDS + 4 * TICKS).eut(8)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L))
+                .circuit(4).itemOutputs(BlockList.DiamondFrameBox.getIS()).duration(3 * SECONDS + 4 * TICKS).eut(8)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1067,8 +1064,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(NHItemList.EngravedGoldChip.getIS(1)).duration(5 * SECONDS).eut(120)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
-                .fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 10))
+        GTValues.RA.stdBuilder().circuit(3).fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 10))
                 .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1)).duration(3 * SECONDS).eut(1920)
                 .addTo(distilleryRecipes);
         GTValues.RA.stdBuilder()
