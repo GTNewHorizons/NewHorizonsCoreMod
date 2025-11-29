@@ -29,7 +29,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptNatura implements IScriptLoader {
 
@@ -2554,10 +2553,7 @@ public class ScriptNatura implements IScriptLoader {
                         getModItem(Natura.ID, "heatsand", 1, 0, missing))
                 .itemOutputs(getModItem(Natura.ID, "NetherGlass", 1, 1, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing)).circuit(3)
                 .itemOutputs(getModItem(Natura.ID, "natura.flintandblaze", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 432)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
@@ -3180,17 +3176,15 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L),
-                        GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .circuit(9).itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing))
+                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1),
-                        GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
+                .circuit(9).itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing))
+                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0, missing))
                 .itemOutputs(getModItem(Natura.ID, "button.eucalyptus", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
@@ -3370,19 +3364,19 @@ public class ScriptNatura implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .outputChances(10000, 8000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.snow, 4), GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.snow, 4)).circuit(4)
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("cloud_seed", 1000)).duration(20 * TICKS).eut(16)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 0), GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 0)).circuit(4)
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("cloud_seed_concentrated", 1000)).duration(20 * TICKS).eut(16)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1), GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1)).circuit(4)
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("woodtar", 2000)).duration(20 * TICKS).eut(16)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1), GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1)).circuit(4)
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("sulfurdioxide", 4000)).duration(20 * TICKS).eut(16)
                 .addTo(mixerRecipes);

@@ -58,7 +58,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -375,34 +374,19 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(Minecraft.ID, "redstone_torch", 2, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "ritualDismantler", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 1, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(3)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 2, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 3, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(5))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(5)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 4, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing))

@@ -42,7 +42,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
@@ -74,60 +73,46 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(new ItemStack(Blocks.glass), GTOreDictUnificator.get(OrePrefixes.stick, Materials.Desh, 8))
                 .itemOutputs(getGSItem("futureglass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(GCItems.battery, 1, WILDCARD), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(GCItems.battery, 1, WILDCARD)).circuit(1)
                 .itemOutputs(getGSItem("item.LeadBattery", 1, 100)).fluidInputs(Materials.Lead.getMolten(6 * 144))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 0), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 0)).circuit(1)
                 .itemOutputs(getGSItem("item.ThermalClothT2", 5, 0)).duration(18 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 1), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 1)).circuit(1)
                 .itemOutputs(getGSItem("item.ThermalClothT2", 8, 0)).duration(30 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 2), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 2)).circuit(1)
                 .itemOutputs(getGSItem("item.ThermalClothT2", 7, 0)).duration(26 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 3), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 3)).circuit(1)
                 .itemOutputs(getGSItem("item.ThermalClothT2", 4, 0)).duration(15 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(AsteroidsItems.basicItem, 1, 7),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Titanium, 8),
-                        CustomItemList.TungstenString.get(8),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getGSItem("item.ThermalClothT2", 1, 0))
+                        CustomItemList.TungstenString.get(8))
+                .circuit(1).itemOutputs(getGSItem("item.ThermalClothT2", 1, 0))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(576)).duration(30 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getGSItem("item.ThermalClothT2", 5, 0),
-                        CustomItemList.TungstenString.get(5),
-                        GTUtility.getIntegratedCircuit(5))
+                .itemInputs(getGSItem("item.ThermalClothT2", 5, 0), CustomItemList.TungstenString.get(5)).circuit(5)
                 .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 0))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(1440)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getGSItem("item.ThermalClothT2", 8, 0),
-                        CustomItemList.TungstenString.get(8),
-                        GTUtility.getIntegratedCircuit(8))
+                .itemInputs(getGSItem("item.ThermalClothT2", 8, 0), CustomItemList.TungstenString.get(8)).circuit(8)
                 .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 1))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getGSItem("item.ThermalClothT2", 7, 0),
-                        CustomItemList.TungstenString.get(7),
-                        GTUtility.getIntegratedCircuit(7))
+                .itemInputs(getGSItem("item.ThermalClothT2", 7, 0), CustomItemList.TungstenString.get(7)).circuit(7)
                 .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 2))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2016)).duration(1 * MINUTES + 45 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getGSItem("item.ThermalClothT2", 4, 0),
-                        CustomItemList.TungstenString.get(4),
-                        GTUtility.getIntegratedCircuit(4))
+                .itemInputs(getGSItem("item.ThermalClothT2", 4, 0), CustomItemList.TungstenString.get(4)).circuit(4)
                 .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 3))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(1152)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
@@ -290,9 +275,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get("dustTantalumCarbide", 4),
-                        WerkstoffLoader.HafniumCarbide.get(OrePrefixes.dust),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(WerkstoffLoader.TantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust, 5))
+                        WerkstoffLoader.HafniumCarbide.get(OrePrefixes.dust))
+                .circuit(1).itemOutputs(WerkstoffLoader.TantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust, 5))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(mixerRecipes);
 
         // Plasma Arc Furnace

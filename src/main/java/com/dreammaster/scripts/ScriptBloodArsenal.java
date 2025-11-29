@@ -35,7 +35,6 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptBloodArsenal implements IScriptLoader {
 
@@ -730,11 +729,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 1, 0, missing))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_stick", 2, 0, missing)).duration(20).eut(8)
                 .addTo(latheRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Blocks.glass, 1),
-                        new ItemStack(Items.flint, 1),
-                        GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glass, 1), new ItemStack(Items.flint, 1)).circuit(2)
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("blood"), 100))
                 .itemOutputs(getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing)).duration(6 * SECONDS).eut(20)
                 .addTo(assemblerRecipes);

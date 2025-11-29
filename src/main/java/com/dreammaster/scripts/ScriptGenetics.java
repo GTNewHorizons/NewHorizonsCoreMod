@@ -28,7 +28,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptGenetics implements IScriptLoader {
 
@@ -263,22 +262,18 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).duration(1 * MINUTES).eut(120)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 6, 0, missing), GTUtility.getIntegratedCircuit(6))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 6, 0, missing)).circuit(6)
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 8, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 2, 0, missing), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 2, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 4, 0, missing), GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 4, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 144)).duration(10 * SECONDS).eut(48)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Genetics.ID, "misc", 10, 6, missing), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Genetics.ID, "misc", 10, 6, missing)).circuit(10)
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 576)).duration(10 * SECONDS).eut(96)
                 .addTo(assemblerRecipes);
@@ -292,17 +287,15 @@ public class ScriptGenetics implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
-                        getModItem(Genetics.ID, "misc", 2, 10, missing),
-                        GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 11, missing))
+                        getModItem(Genetics.ID, "misc", 2, 10, missing))
+                .circuit(2).itemOutputs(getModItem(Genetics.ID, "misc", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                        getModItem(Forestry.ID, "thermionicTubes", 1, 5, missing),
-                        GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 10, missing))
+                        getModItem(Forestry.ID, "thermionicTubes", 1, 5, missing))
+                .circuit(2).itemOutputs(getModItem(Genetics.ID, "misc", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

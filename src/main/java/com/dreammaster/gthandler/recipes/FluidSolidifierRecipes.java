@@ -26,7 +26,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class FluidSolidifierRecipes implements Runnable {
 
@@ -133,7 +132,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     .addTo(fluidSolidifierRecipes);
             // maybe Materials.Glue.getFluid(144L) instead
 
-            GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
+            GTValues.RA.stdBuilder().circuit(1)
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "blankPattern", 1L, 1))
                     .fluidInputs(FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144))
                     .duration(20 * TICKS).eut(48).addTo(fluidSolidifierRecipes);

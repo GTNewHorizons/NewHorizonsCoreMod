@@ -33,7 +33,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptRandomThings implements IScriptLoader {
 
@@ -187,17 +186,11 @@ public class ScriptRandomThings implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 4L))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 0, missing))
                 .duration(12 * SECONDS + 10 * TICKS).eut(480).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "GlassPane", 16, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 16, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "fluidDisplay", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 72)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(RandomThings.ID, "fluidDisplay", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(RandomThings.ID, "fluidDisplay", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "advancedFluidDisplay", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
@@ -224,15 +217,11 @@ public class ScriptRandomThings implements IScriptLoader {
                 .itemOutputs(getModItem(RandomThings.ID, "wirelessLever", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TwilightForest.ID, "item.charmOfKeeping3", 4, 0, missing),
-                        GTUtility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(RandomThings.ID, "whitestone", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "item.charmOfKeeping3", 4, 0, missing))
+                .circuit(4).itemOutputs(getModItem(RandomThings.ID, "whitestone", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 4000)).duration(1 * MINUTES).eut(480)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "dropFilter", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
@@ -249,8 +238,7 @@ public class ScriptRandomThings implements IScriptLoader {
                         getModItem(RandomThings.ID, "ingredient", 1, 3, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 4, missing)).duration(1 * MINUTES).eut(480)
                 .specialValue(2500).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "diamond", 1, 0, missing), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "diamond", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1 * MINUTES).eut(30)
                 .addTo(UniversalChemical);
