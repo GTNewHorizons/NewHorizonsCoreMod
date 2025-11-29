@@ -18,6 +18,7 @@ import codechicken.nei.api.IConfigureNEI;
 import goodgenerator.loader.Loaders;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.util.GTModHandler;
 import tectech.thing.casing.TTCasingsContainer;
 
@@ -34,6 +35,8 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         API.hideItem(new ItemStack(GregTechAPI.nanoForgeRender));
         API.hideItem(new ItemStack(TTCasingsContainer.eyeOfHarmonyRenderBlock));
         API.hideItem(new ItemStack(TTCasingsContainer.forgeOfGodsRenderBlock));
+
+        API.hideItem(Materials.RadoxPolymer.getCells(1));
 
         // Hidden Space Project Manager & Space Research Until Fully Developed
         API.hideItem(ItemList.SpaceElevatorModuleResearch.get(1));
