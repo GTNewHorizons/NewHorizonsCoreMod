@@ -1637,9 +1637,9 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 3, missing), // Gold to Diamond
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("aqua"), 25)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
+                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
+                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
                 " a ",
                 "bcb",
                 " a ",
