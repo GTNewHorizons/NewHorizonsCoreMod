@@ -20,6 +20,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.io.File;
 import java.util.Random;
 
+import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -176,6 +177,8 @@ public class MainRegistry {
 
     public MainRegistry() {
         if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
+
+        GregTechAPI.sGTCompleteLoad.add(new CircuitAssemblyLineRecipes());
     }
 
     @Mod.EventHandler
