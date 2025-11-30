@@ -2,7 +2,9 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.GTValues.RA;
 import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
+import bartworks.API.recipe.BartWorksRecipeMaps;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -23,6 +25,8 @@ public class CircuitAssemblyLineRecipes implements Runnable{
                 ItemList.Circuit_Chip_ILC.get(16))
             .fluidInputs(Materials.SolderingAlloy.getMolten(1*HALF_INGOTS))
             .special(ItemList.CircuitImprint_IntegratedLogicCircuit.get(1))
-        ;
+            .eut(16)
+            .duration(120*SECONDS)
+            .addTo(BartWorksRecipeMaps.circuitAssemblyLineRecipes);
     }
 }
