@@ -22,7 +22,7 @@ public class CircuitAssemblyLineRecipes implements Runnable{
                 GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 2),
                 GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Tin, 32))
             .itemOutputs(
-                ItemList.Circuit_Chip_ILC.get(16))
+                ItemList.Circuit_Basic.get(16))
             .fluidInputs(Materials.SolderingAlloy.getMolten(1*HALF_INGOTS))
             .special(ItemList.CircuitImprint_IntegratedLogicCircuit.get(1))
             .eut(16)
