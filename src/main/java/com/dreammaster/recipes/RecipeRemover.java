@@ -158,8 +158,11 @@ public class RecipeRemover {
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
         HashSet<GTUtility.ItemId> hashedItems = new HashSet<>();
         if (item instanceof ItemStack stack) {
+            // avoid copying the tag to remove it right after
+            final NBTTagCompound nbt = stack.stackTagCompound;
+            stack.stackTagCompound = null;
             ItemStack iCopy = stack.copy();
-            iCopy.stackTagCompound = null;
+            stack.stackTagCompound = nbt;
             hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
             if (includeWildcardVariants) {
                 iCopy = iCopy.copy();
@@ -178,8 +181,11 @@ public class RecipeRemover {
         } else if (item instanceof ArrayList) {
             // noinspection unchecked
             for (ItemStack stack : (ArrayList<ItemStack>) item) {
+                // avoid copying the tag to remove it right after
+                final NBTTagCompound nbt = stack.stackTagCompound;
+                stack.stackTagCompound = null;
                 ItemStack iCopy = stack.copy();
-                iCopy.stackTagCompound = null;
+                stack.stackTagCompound = nbt;
                 hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
                 if (includeWildcardVariants) {
                     iCopy = iCopy.copy();
