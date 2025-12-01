@@ -94,6 +94,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -122,22 +123,27 @@ public class RecipeRemover {
         final ArrayList<IRecipe> list = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
         int i = list.size();
         list.removeIf(r -> {
-            ItemStack rCopy = r.getRecipeOutput();
-            if (rCopy == null) {
+            ItemStack output = r.getRecipeOutput();
+            if (output == null) {
                 return false;
             }
-            if (rCopy.getItem() == null) {
+            if (output.getItem() == null) {
                 MainRegistry.Logger.warn("Someone is adding recipes with null items!");
                 return true;
             }
-            if (rCopy.stackTagCompound != null) {
-                rCopy = rCopy.copy();
-                rCopy.stackTagCompound = null;
+            final ItemStack copyStack;
+            if (output.stackTagCompound != null) {
+                // avoid copying the tag to remove it right after
+                final NBTTagCompound nbt = output.stackTagCompound;
+                output.stackTagCompound = null;
+                copyStack = output.copy();
+                output.stackTagCompound = nbt;
+            } else {
+                copyStack = output.copy();
             }
-            GTUtility.ItemId key = GTUtility.ItemId.createNoCopy(rCopy);
-            rCopy = rCopy.copy();
-            Items.feather.setDamage(rCopy, wildcard);
-            GTUtility.ItemId keyWildcard = GTUtility.ItemId.createNoCopy(rCopy);
+            GTUtility.ItemId key = GTUtility.ItemId.createNoCopy(copyStack);
+            Items.feather.setDamage(copyStack, wildcard);
+            GTUtility.ItemId keyWildcard = GTUtility.ItemId.createNoCopy(copyStack);
             List<Function<IRecipe, Boolean>> listWhenToRemove = bufferMap.get(key);
             if (listWhenToRemove == null) listWhenToRemove = bufferMap.get(keyWildcard);
             if (listWhenToRemove == null) return false;
@@ -151,9 +157,12 @@ public class RecipeRemover {
 
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
         HashSet<GTUtility.ItemId> hashedItems = new HashSet<>();
-        if (item instanceof ItemStack) {
-            ItemStack iCopy = ((ItemStack) item).copy();
-            iCopy.stackTagCompound = null;
+        if (item instanceof ItemStack stack) {
+            // avoid copying the tag to remove it right after
+            final NBTTagCompound nbt = stack.stackTagCompound;
+            stack.stackTagCompound = null;
+            ItemStack iCopy = stack.copy();
+            stack.stackTagCompound = nbt;
             hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
             if (includeWildcardVariants) {
                 iCopy = iCopy.copy();
@@ -172,8 +181,11 @@ public class RecipeRemover {
         } else if (item instanceof ArrayList) {
             // noinspection unchecked
             for (ItemStack stack : (ArrayList<ItemStack>) item) {
+                // avoid copying the tag to remove it right after
+                final NBTTagCompound nbt = stack.stackTagCompound;
+                stack.stackTagCompound = null;
                 ItemStack iCopy = stack.copy();
-                iCopy.stackTagCompound = null;
+                stack.stackTagCompound = nbt;
                 hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
                 if (includeWildcardVariants) {
                     iCopy = iCopy.copy();
