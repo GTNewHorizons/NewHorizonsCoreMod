@@ -63,9 +63,9 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "CompressedChest", 1),
-                "stickObsidian",
+                "stickNichrome",
                 ItemList.Electric_Piston_HV.get(1),
-                "stickObsidian",
+                "stickNichrome",
                 "plateDenseObsidian",
                 "chestObsidian",
                 "plateDenseObsidian",
@@ -78,7 +78,8 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         getModItem(IronChests.ID, "BlockIronChest", 1, 6),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                         ItemList.Electric_Piston_HV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1))
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Nichrome, 1))
                 .circuit(1).itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 

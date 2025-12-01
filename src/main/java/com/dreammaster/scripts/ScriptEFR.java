@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -43,6 +44,7 @@ import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
+import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
@@ -80,6 +82,8 @@ import com.google.common.collect.ImmutableList;
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import forestry.api.recipes.RecipeManagers;
+import forestry.core.fluids.Fluids;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -112,6 +116,7 @@ public class ScriptEFR implements IScriptLoader {
                 BiomesOPlenty.ID,
                 BloodMagic.ID,
                 Botania.ID,
+                Chisel.ID,
                 DraconicEvolution.ID,
                 ElectroMagicTools.ID,
                 EnderIO.ID,
@@ -1263,6 +1268,7 @@ public class ScriptEFR implements IScriptLoader {
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         // stoneworks
+
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing))
                 .itemOutputs(NHItemList.TuffDust.getIS(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
 
@@ -1625,9 +1631,9 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 3, missing), // Gold to Diamond
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("aqua"), 25)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
+                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
+                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
                 " a ",
                 "bcb",
                 " a ",
@@ -2066,6 +2072,69 @@ public class ScriptEFR implements IScriptLoader {
             if (efrConcretePowder == null) continue;
             ChiselHelper.addVariationFromStack("hempcretesand", efrConcretePowder);
         }
+
+        // Red Sandstone OreDict
+
+        OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
+        OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+        OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+        OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
+
+        // Red sand
+        for (ItemStack item : OreDictionary.getOres("stoneRedSand")) {
+            GTValues.RA.stdBuilder().itemInputs(item).itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1))
+                    .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+        }
+
+        // Red Sandstone
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1)).circuit(1)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(4).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2)).circuit(1)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(4).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 4, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(2).addTo(compressorRecipes);
+
+        // Cut Red Sandstone
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0)).circuit(23)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(4).addTo(assemblerRecipes);
+
+        // Chiseled Red Sandstone
+        for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensRed")) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2), GTUtility.copyAmount(0, lens))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1))
+                    .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
+        }
+
+        // Red Sandstone Chisel group
+
+        ChiselHelper.addGroup("red_sandstone");
+        ChiselHelper.addVariationFromStack("red_sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0));
+        ChiselHelper.addVariationFromStack("red_sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+        ChiselHelper.addVariationFromStack("red_sandstone", getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+        ChiselHelper
+                .addVariationFromStack("red_sandstone", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
+
+        // Add Red Sandstone as valid sand for Thermionic Fabricator
+        RecipeManagers.fabricatorSmeltingManager
+                .addSmelting(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 0), Fluids.GLASS.getFluid(4000), 4800);
+        RecipeManagers.fabricatorSmeltingManager
+                .addSmelting(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1), Fluids.GLASS.getFluid(4000), 4800);
+        RecipeManagers.fabricatorSmeltingManager
+                .addSmelting(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2), Fluids.GLASS.getFluid(4000), 4800);
+        RecipeManagers.fabricatorSmeltingManager.addSmelting(
+                getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0),
+                Fluids.GLASS.getFluid(4000),
+                4800);
+
     }
 
     // Oxidation Functions

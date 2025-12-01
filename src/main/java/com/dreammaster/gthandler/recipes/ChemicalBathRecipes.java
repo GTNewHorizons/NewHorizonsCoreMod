@@ -48,11 +48,11 @@ public class ChemicalBathRecipes implements Runnable {
         // tanned leather
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.leather, 2, 0))
                 .itemOutputs(GTModHandler.getModItem(Backpack.ID, "tannedLeather", 1L, 0))
-                .fluidInputs(Materials.PhosphoricAcid.getFluid(144)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(chemicalBathRecipes);
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.ArtificialLeather.get(2L))
                 .itemOutputs(GTModHandler.getModItem(Backpack.ID, "tannedLeather", 1L, 0))
-                .fluidInputs(Materials.PhosphoricAcid.getFluid(144)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(chemicalBathRecipes);
 
         // Chlorine cleaning of pistons
