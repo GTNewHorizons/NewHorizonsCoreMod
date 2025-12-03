@@ -30,7 +30,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     public static Properties coremodConfig = new Properties();
     public static File coremodConfigFile;
     public static File debugOutputDir;
-    public static boolean deobf;
+    private static Boolean isObf;
 
     public static boolean showConfirmExitWindow;
     public static boolean patchItemFocusWarding;
@@ -38,7 +38,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     @Override
     public String[] getASMTransformerClass() {
-        return new String[] { DreamClassTransformer.class.getName() };
+        return new String[] { "com.dreammaster.coremod.DreamClassTransformer" };
     }
 
     @Override
@@ -53,7 +53,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     @Override
     public void injectData(Map<String, Object> data) {
-        deobf = !(boolean) data.get("runtimeDeobfuscationEnabled");
+        isObf = (boolean) data.get("runtimeDeobfuscationEnabled");
         coremodConfig.setProperty("showConfirmExitWindow", "true");
         coremodConfig.setProperty("patchItemFocusWarding", "true");
         coremodConfig.setProperty("downloadOnlyOnce", "true");
@@ -130,6 +130,13 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         } catch (IOException e) {
             logger.warn("Can't save coremod config.", e);
         }
+    }
+
+    public static boolean isObf() {
+        if (isObf == null) {
+            throw new IllegalStateException("Obfuscation stated accessed too early!");
+        }
+        return isObf;
     }
 
 }
