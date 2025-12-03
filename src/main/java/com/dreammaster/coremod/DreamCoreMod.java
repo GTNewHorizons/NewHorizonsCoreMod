@@ -31,6 +31,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     public static File coremodConfigFile;
     public static File debugOutputDir;
     private static Boolean isObf;
+    private static boolean modpackHasUpdated;
 
     public static boolean showConfirmExitWindow;
     public static boolean patchItemFocusWarding;
@@ -63,6 +64,10 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         // noinspection ResultOfMethodCallIgnored
         configDir.mkdir();
         File config = new File(configDir, "DreamCoreMod.properties");
+        File modpackUpdate = new File(configDir, "modpack-update");
+        if (modpackUpdate.exists()) {
+            modpackHasUpdated = true;
+        }
         coremodConfigFile = config;
         try (Reader r = new FileReader(config)) {
             coremodConfig.load(r);
@@ -137,6 +142,14 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
             throw new IllegalStateException("Obfuscation stated accessed too early!");
         }
         return isObf;
+    }
+
+    /**
+     * Returns true if the file "modpack-update" is present in the config folder which means the modpack has just been
+     * updated, and it's the first time the game is running after the update.
+     */
+    public static boolean modpackHasUpdated() {
+        return modpackHasUpdated;
     }
 
 }
