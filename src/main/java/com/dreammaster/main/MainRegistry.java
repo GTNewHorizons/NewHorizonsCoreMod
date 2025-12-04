@@ -588,7 +588,10 @@ public class MainRegistry {
         }
         if (Loader.isModLoaded("betterquesting")) {
             if (!bqConfig$ReloadOnStartup() && DreamCoreMod.modpackHasUpdated()) {
+                Logger.info("Modpack has been updated, loading default quest database");
+                final long l = System.currentTimeMillis();
                 event.getServer().getCommandManager().executeCommand(event.getServer(), "/bq_admin default load");
+                Logger.info("Loading quest data base took " + (System.currentTimeMillis() - l) + "ms");
             }
         }
     }
