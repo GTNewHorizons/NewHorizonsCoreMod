@@ -46,7 +46,7 @@ public class ItemFocusWardingTransformer implements IDreamTransformer {
                                     new MethodInsnNode(
                                             INVOKEVIRTUAL,
                                             "net/minecraft/item/Item",
-                                            DreamCoreMod.deobf ? "setContainerItem" : "func_77642_a",
+                                            DreamCoreMod.isObf() ? "func_77642_a" : "setContainerItem",
                                             "(Lnet/minecraft/item/Item;)Lnet/minecraft/item/Item;",
                                             false));
                             methodNode.instructions.insertBefore(insnNode, list);
@@ -66,7 +66,7 @@ public class ItemFocusWardingTransformer implements IDreamTransformer {
             mv.visitMethodInsn(
                     INVOKEVIRTUAL,
                     "net/minecraft/item/ItemStack",
-                    DreamCoreMod.deobf ? "copy" : "func_77946_l",
+                    DreamCoreMod.isObf() ? "func_77946_l" : "copy",
                     "()Lnet/minecraft/item/ItemStack;",
                     false);
             mv.visitInsn(ARETURN);
