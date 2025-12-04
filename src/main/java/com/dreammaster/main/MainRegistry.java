@@ -85,7 +85,6 @@ import com.dreammaster.witchery.WitcheryPlugin;
 import bartworks.system.material.WerkstoffLoader;
 import betterquesting.api.storage.BQ_Settings;
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.SidedProxy;
@@ -111,6 +110,7 @@ import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.util.GTLanguageManager;
 import gregtech.common.items.MetaGeneratedItem01;
 
@@ -586,7 +586,7 @@ public class MainRegistry {
         if (YAMCore.isDebug()) {
             event.registerServerCommand(new AllPurposeDebugCommand());
         }
-        if (Loader.isModLoaded("betterquesting")) {
+        if (Mods.BetterQuesting.isModLoaded()) {
             if (!bqConfig$ReloadOnStartup() && DreamCoreMod.modpackHasUpdated()) {
                 Logger.info("Modpack has been updated, loading default quest database");
                 final long l = System.currentTimeMillis();
