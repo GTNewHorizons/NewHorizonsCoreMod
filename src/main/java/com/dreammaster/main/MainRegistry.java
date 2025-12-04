@@ -620,7 +620,7 @@ public class MainRegistry {
         }
     }
 
-    @Optional.Method(modid = "betterquesting")
+    @Optional.Method(modid = Mods.ModIDs.BETTER_QUESTING)
     private static boolean bqConfig$ReloadOnStartup() {
         return BQ_Settings.loadDefaultsOnStartup;
     }
