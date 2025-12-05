@@ -25,6 +25,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.benderRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
@@ -1382,6 +1383,12 @@ public class ScriptGregtech implements IScriptLoader {
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(64)
                 .addTo(extruderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 18, missing)).circuit(1)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(24)
+                .addTo(benderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 18, missing)).circuit(9)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1)).duration(180)
+                .eut(120).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L)).duration(20)
                 .eut(16).addTo(hammerRecipes);
