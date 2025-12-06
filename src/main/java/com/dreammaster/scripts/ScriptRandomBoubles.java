@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
