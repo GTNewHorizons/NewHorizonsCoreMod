@@ -98,6 +98,7 @@ public class ScriptLoader {
                         new ScriptOpenModularTurrets(),
                         new ScriptProjectRed(),
                         new ScriptRailcraft(),
+                        new ScriptRandomBoubles(),
                         new ScriptRandomThings(),
                         new ScriptRemoteIO(),
                         new ScriptRunicTablet(),
