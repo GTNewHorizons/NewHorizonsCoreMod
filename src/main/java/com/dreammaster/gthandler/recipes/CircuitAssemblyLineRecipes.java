@@ -444,142 +444,302 @@ public class CircuitAssemblyLineRecipes implements Runnable{
                 .eut(TierEU.RECIPE_MV)
                 .duration(3*MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
+
+        // Processor Assembly
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_PlasticCircuitBoards2.get(1),
+                        ItemList.Circuit_Processor.get(32),
+                        ItemList.Wrap_SMDInductors.get(4),
+                        ItemList.Wrap_SMDCapacitors.get(8),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.RedAlloy, 8)
+                )
+                .itemOutputs(ItemList.Circuit_Advanced.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_ProcessorAssembly.get(0))
+                .eut(TierEU.RECIPE_MV)
+                .duration(4*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Workstation
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_PlasticCircuitBoards2.get(1),
+                        ItemList.Circuit_Advanced.get(32),
+                        ItemList.Wrap_SMDDiodes.get(4),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 16),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 64)
+
+                )
+                .itemOutputs(ItemList.Circuit_Data.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_Workstation.get(0))
+                .eut(TierEU.RECIPE_MV)
+                .duration(4*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // NAND Chip Array
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_PlasticCircuitBoards2.get(1),
+                        ItemList.Wrap_SimpleSOCs.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 4)
+                )
+                .itemOutputs(ItemList.NandChip.get(32))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*EIGHTH_INGOTS))
+                .special(ItemList.CircuitImprint_NANDChipArray.get(0))
+                .eut(TierEU.RECIPE_HV)
+                .duration(1*MINUTES+30*SECONDS)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // NAND Chip Array
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_PlasticCircuitBoards2.get(1),
+                        ItemList.Wrap_SimpleSOCs.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 4)
+                )
+                .itemOutputs(ItemList.NandChip.get(32))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*EIGHTH_INGOTS))
+                .special(ItemList.CircuitImprint_NANDChipArray.get(0))
+                .eut(TierEU.RECIPE_HV)
+                .duration(3*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Mainframe
+        RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
+                        ItemList.Circuit_Data.get(32),
+                        ItemList.Wrap_AdvancedSMDInductors.get(3),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(4),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 16)
+                )
+                .itemOutputs(ItemList.Circuit_Elite.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(2*INGOTS))
+                .special(ItemList.CircuitImprint_Mainframe.get(0))
+                .eut(TierEU.RECIPE_HV)
+                .duration(8*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Mainframe
+        RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
+                        ItemList.Circuit_Data.get(32),
+                        ItemList.Wrap_SMDInductors.get(12),
+                        ItemList.Wrap_SMDCapacitors.get(16),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 24)
+                )
+                .itemOutputs(ItemList.Circuit_Elite.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(2*INGOTS))
+                .special(ItemList.CircuitImprint_Mainframe.get(0))
+                .eut(TierEU.RECIPE_HV)
+                .duration(8*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Microprocessor
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_PlasticCircuitBoards2.get(1),
+                        ItemList.Wrap_SoCs.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 2),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Copper, 2)
+                )
+                .itemOutputs(ItemList.Circuit_Microprocessor.get(32))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*HALF_INGOTS))
+                .special(ItemList.CircuitImprint_Microprocessor.get(0))
+                .eut(600)
+                .duration(30*SECONDS)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Processor
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Wrap_NanocomponentCentralProcessingUnits.get(1),
+                        ItemList.Wrap_AdvancedSMDResistors.get(2),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(2),
+                        ItemList.Wrap_AdvancedSMDTransistors.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 8)
+                )
+                .itemOutputs(ItemList.Circuit_Nanoprocessor.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*HALF_INGOTS))
+                .special(ItemList.CircuitImprint_NanoProcessor.get(0))
+                .eut(600)
+                .duration(1*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Processor
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Wrap_NanocomponentCentralProcessingUnits.get(1),
+                        ItemList.Wrap_SMDResistors.get(8),
+                        ItemList.Wrap_SMDCapacitors.get(8),
+                        ItemList.Wrap_SMDTransistors.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 8)
+                )
+                .itemOutputs(ItemList.Circuit_Nanoprocessor.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*HALF_INGOTS))
+                .special(ItemList.CircuitImprint_NanoProcessor.get(0))
+                .eut(600)
+                .duration(2*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Assembly
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Circuit_Nanoprocessor.get(32),
+                        ItemList.Wrap_AdvancedSMDInductors.get(2),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(2),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 16)
+                )
+                .itemOutputs(ItemList.Circuit_Nanocomputer.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_NanoAssembly.get(0))
+                .eut(600)
+                .duration(2*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Supercomputer
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Circuit_Nanocomputer.get(32),
+                        ItemList.Wrap_AdvancedSMDDiodes.get(2),
+                        ItemList.Wrap_NORMemoryChips.get(4),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 16)
+                )
+                .itemOutputs(ItemList.Circuit_Elitenanocomputer.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_NanoSupercomputer.get(0))
+                .eut(600)
+                .duration(2*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Assembly
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Circuit_Nanoprocessor.get(32),
+                        ItemList.Wrap_SMDInductors.get(8),
+                        ItemList.Wrap_SMDCapacitors.get(8),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 16)
+                )
+                .itemOutputs(ItemList.Circuit_Nanocomputer.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_NanoAssembly.get(0))
+                .eut(600)
+                .duration(4*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Supercomputer
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Circuit_Nanocomputer.get(32),
+                        ItemList.Wrap_SMDDiodes.get(8),
+                        ItemList.Wrap_NORMemoryChips.get(4),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 16)
+                )
+                .itemOutputs(ItemList.Circuit_Elitenanocomputer.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_NanoSupercomputer.get(0))
+                .eut(600)
+                .duration(4*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // NAND Chip Array
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Wrap_SimpleSOCs.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 4)
+                )
+                .itemOutputs(ItemList.NandChip.get(64))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*EIGHTH_INGOTS))
+                .special(ItemList.CircuitImprint_NANDChipArray.get(0))
+                .eut(TierEU.RECIPE_EV)
+                .duration(1*MINUTES+30*SECONDS)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // NAND Chip Array
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Wrap_SimpleSOCs.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 4)
+                )
+                .itemOutputs(ItemList.NandChip.get(64))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*EIGHTH_INGOTS))
+                .special(ItemList.CircuitImprint_NANDChipArray.get(0))
+                .eut(TierEU.RECIPE_EV)
+                .duration(3*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Mainframe
+        RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
+                        ItemList.Circuit_Elitenanocomputer.get(32),
+                        ItemList.Wrap_AdvancedSMDInductors.get(4),
+                        ItemList.Wrap_AdvancedSMDDiodes.get(8),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 32)
+                )
+                .itemOutputs(ItemList.Circuit_Master.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(2*INGOTS))
+                .special(ItemList.CircuitImprint_NanoMainframe.get(0))
+                .eut(TierEU.RECIPE_EV)
+                .duration(8*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Mainframe
+        RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
+                        ItemList.Circuit_Elitenanocomputer.get(32),
+                        ItemList.Wrap_SMDInductors.get(16),
+                        ItemList.Wrap_SMDDiodes.get(32),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 32)
+                )
+                .itemOutputs(ItemList.Circuit_Master.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(2*INGOTS))
+                .special(ItemList.CircuitImprint_NanoMainframe.get(0))
+                .eut(TierEU.RECIPE_EV)
+                .duration(16*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Integrated Processor
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_PlasticCircuitBoards2.get(1),
+                        ItemList.Wrap_SoCs.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.RedAlloy, 4),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.AnnealedCopper, 64)
+                )
+                .itemOutputs(ItemList.Circuit_Processor.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*HALF_INGOTS))
+                .special(ItemList.CircuitImprint_IntegratedProcessor.get(0))
+                .eut(2400)
+                .duration(30*SECONDS)
+                .addTo(circuitAssemblyLineRecipes);
+
 //        RA.stdBuilder()
 //                .itemInputs()
 //                .itemOutputs()
