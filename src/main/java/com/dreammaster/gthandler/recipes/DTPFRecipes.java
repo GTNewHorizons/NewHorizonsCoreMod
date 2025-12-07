@@ -1168,7 +1168,7 @@ public class DTPFRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GregtechItemList.Laser_Lens_Special.get(1),
-                            new ItemStack(Particle.getBaseParticle(Particle.GRAVITON).getItem(), 4),
+                            ItemList.StableBosonContainmentUnit.get(4),
                             CustomItemList.MysteriousCrystalLens.get(0),
                             ItemRefer.HiC_T5.get(0))
                     .fluidInputs(Materials.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
