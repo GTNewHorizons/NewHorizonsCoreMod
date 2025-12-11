@@ -1601,12 +1601,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                             OrePrefixes.plate.get(Materials.Emerald), 'E', OrePrefixes.gem.get(Materials.EnderPearl),
                             'O', OrePrefixes.plate.get(Materials.Obsidian) });
             GTModHandler.addCraftingRecipe(
-                    GTModHandler.getModItem(Railcraft.ID, aTextMachineAlpha, 4L, 3),
-                    bits,
-                    new Object[] { "CSC", "SHS", "CSC", 'C',
-                            GTModHandler.getModItem(Railcraft.ID, aTextMachineBeta, 1L, 4), 'S',
-                            ItemList.Casing_Firebox_Steel, 'H', ItemList.Machine_HP_Furnace });
-            GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 5),
                     bits,
                     new Object[] { "PBP", "PwP", "LHW", 'P', OrePrefixes.plate.get(Materials.Steel), 'H',
