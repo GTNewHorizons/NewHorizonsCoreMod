@@ -122,7 +122,6 @@ public class TF_Loot_Chests {
         TFTreasure.tower_library.common.add(GTModHandler.getModItem(Thaumcraft.ID, "blockCandle", 4, 14), 12);
         TFTreasure.tower_library.common.add(GTModHandler.getModItem(Thaumcraft.ID, "blockCandle", 4, 15), 12);
         TFTreasure.tower_library.common.add(GTOreDictUnificator.get(OrePrefixes.dust, Materials.StainlessSteel, 4L), 6);
-        TFTreasure.tower_library.common.add(GTOreDictUnificator.get(OrePrefixes.gem, Materials.EnderEye, 4L), 6);
         TFTreasure.tower_library.common.add(GTOreDictUnificator.get(OrePrefixes.gem, Materials.EnderPearl, 8L), 6);
         TFTreasure.tower_library.common
                 .add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 2L), 6);
