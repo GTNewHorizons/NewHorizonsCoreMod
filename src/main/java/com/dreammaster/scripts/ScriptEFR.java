@@ -885,10 +885,10 @@ public class ScriptEFR implements IScriptLoader {
         // Flower to Dye recipes
 
         GTModHandler.addCraftingRecipe(
-                getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "lantern", 2, 0, missing),
                 bits,
-                new Object[] { "IGI", "PCP", "III", 'I', "plateIron", 'G', "dustGlowstone", 'P', "paneGlassColorless",
-                        'C', new ItemStack(Blocks.torch) });
+                new Object[] { "IPI", "PCP", "IPI", 'I', "screwIron", 'P', "paneGlassColorless", 'C',
+                        new ItemStack(Blocks.torch) });
 
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0, missing),
