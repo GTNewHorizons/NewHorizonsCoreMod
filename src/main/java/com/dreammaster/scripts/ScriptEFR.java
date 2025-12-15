@@ -891,7 +891,7 @@ public class ScriptEFR implements IScriptLoader {
                         new ItemStack(Blocks.torch) });
 
         GTModHandler.addCraftingRecipe(
-                getModItem(EtFuturumRequiem.ID, "soul_lantern", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "soul_lantern", 2, 0, missing),
                 bits,
                 new Object[] { "IPI", "PCP", "IPI", 'I', "screwIron", 'G', "dustInfusedWater", 'P',
                         "paneGlassColorless", 'C', getModItem(EtFuturumRequiem.ID, "soul_torch", 1, 0, missing) });
