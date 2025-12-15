@@ -496,7 +496,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "screwGold");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioLantern", 4)).duration(3 * SECONDS)
@@ -516,7 +516,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioIronLantern", 2)).duration(3 * SECONDS)
