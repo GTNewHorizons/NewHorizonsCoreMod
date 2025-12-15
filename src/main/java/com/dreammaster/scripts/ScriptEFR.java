@@ -890,6 +890,35 @@ public class ScriptEFR implements IScriptLoader {
                 new Object[] { "IPI", "PCP", "IPI", 'I', "screwIron", 'P', "paneGlassColorless", 'C',
                         new ItemStack(Blocks.torch) });
 
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "soul_lantern", 1, 0, missing),
+                bits,
+                new Object[] { "IPI", "PCP", "IPI", 'I', "screwIron", 'G', "dustInfusedWater", 'P',
+                        "paneGlassColorless", 'C', getModItem(EtFuturumRequiem.ID, "soul_torch", 1, 0, missing) });
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
+                        new ItemStack(Blocks.torch, 2),
+                        new ItemStack(Blocks.glass_pane, 2, 0))
+                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "lantern", 4, 0, missing)).duration(3 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
+                        new ItemStack(Blocks.glass_pane, 2, 0),
+                        getModItem(EtFuturumRequiem.ID, "soul_torch", 2, 0, missing))
+                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "soul_lantern", 4, 0, missing))
+                .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
+                        new ItemStack(Blocks.furnace, 1))
+                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing));
@@ -1044,11 +1073,6 @@ public class ScriptEFR implements IScriptLoader {
                 bits,
                 new Object[] { "SSS", "HHH", "SSS", 'S', getModItem(Minecraft.ID, "string", 1, 0, missing), 'H',
                         getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing) });
-        GTModHandler.addCraftingRecipe(
-                getModItem(EtFuturumRequiem.ID, "soul_lantern", 1, 0, missing),
-                bits,
-                new Object[] { "IGI", "PCP", "III", 'I', "plateIron", 'G', "dustInfusedWater", 'P',
-                        "paneGlassColorless", 'C', getModItem(EtFuturumRequiem.ID, "soul_torch", 1, 0, missing) });
 
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "target", 1, 0, missing),
