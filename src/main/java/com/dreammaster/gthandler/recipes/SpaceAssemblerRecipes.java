@@ -306,7 +306,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Robot_Arm_UHV.get(16),
                             ItemList.Circuit_OpticalProcessor.get(16),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 4L),
-                            getModItem(AE2FluidCraft.ID, "part_fluid_pattern_terminal_ex", 1))
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500))
                     .fluidInputs(new FluidStack(solderUEV, 9216))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockPatternOptimizationMatrix", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(5 * MINUTES).eut(TierEU.RECIPE_UHV)

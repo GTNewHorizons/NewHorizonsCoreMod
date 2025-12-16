@@ -157,11 +157,12 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "copper_grate", 8L),
                 bits,
-                new Object[] { "ABA", "BCB", "ABA", 'A', GTOreDictUnificator.get(OrePrefixes.rod, Materials.Copper, 1L),
-                        'B', GTOreDictUnificator.get(OrePrefixes.dust, Materials.GraniteRed, 1L), 'C',
+                new Object[] { "ABA", "BCB", "ABA", 'A',
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Copper, 1L), 'B',
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GraniteRed, 1L), 'C',
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Copper, 1L) });
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.rod, Materials.Copper, 8L)).circuit(8)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Copper, 8L)).circuit(8)
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
                 .addTo(assemblerRecipes);
