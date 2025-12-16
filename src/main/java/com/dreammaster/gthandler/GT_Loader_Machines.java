@@ -22,7 +22,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.metatileentity.implementations.MTEBasicMachineWithRecipe;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class GT_Loader_Machines {
@@ -100,8 +99,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UXV, 'W',
                         OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'H',
-                        OrePrefixes.plate.get(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'P',
-                        OrePrefixes.plateDense.get(Materials.Kevlar) });
+                        OrePrefixes.plate.get(Materials.MHDCSM), 'P', OrePrefixes.plateDense.get(Materials.Kevlar) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Plasma_ZPMV.get(1L),
@@ -1162,15 +1160,15 @@ public class GT_Loader_Machines {
                 ItemList.Hull_UXV.get(1), ItemList.Hull_MAXV.get(1), };
 
         for (int i = 0; i < hulls.length; i++) {
-            flInputs[i] = new ItemStack[] { hulls[i].copy(), tanks[i].copy(), GTUtility.getIntegratedCircuit(1) };
-            flInputs2[i] = new ItemStack[] { hulls[i].copy(), tanks[i].copy(), GTUtility.getIntegratedCircuit(2) };
+            flInputs[i] = new ItemStack[] { hulls[i].copy(), tanks[i].copy() };
+            flInputs2[i] = new ItemStack[] { hulls[i].copy(), tanks[i].copy() };
         }
 
         for (int aTier = 10; aTier < 15; aTier++) {
-            GTValues.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).itemOutputs(inHatches[aTier - 10])
+            GTValues.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).circuit(1).itemOutputs(inHatches[aTier - 10])
                     .fluidInputs(Materials.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
                     .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
-            GTValues.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).itemOutputs(outHatches[aTier - 10])
+            GTValues.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).circuit(2).itemOutputs(outHatches[aTier - 10])
                     .fluidInputs(Materials.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
                     .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
         }

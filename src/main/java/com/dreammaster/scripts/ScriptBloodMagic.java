@@ -58,7 +58,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -76,32 +75,33 @@ public class ScriptBloodMagic implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                BloodMagic.ID,
-                BloodArsenal.ID,
-                Thaumcraft.ID,
-                Witchery.ID,
-                ExtraUtilities.ID,
-                Botania.ID,
-                EnderIO.ID,
-                TinkerConstruct.ID,
-                Railcraft.ID,
-                IndustrialCraft2.ID,
-                BuildCraftFactory.ID,
-                IronChests.ID,
-                ThaumicTinkerer.ID,
-                IronTanks.ID,
-                ElectroMagicTools.ID,
-                StevesCarts2.ID,
-                EnderStorage.ID,
-                DraconicEvolution.ID,
-                Avaritia.ID,
-                ForbiddenMagic.ID,
                 AppliedEnergistics2.ID,
+                Avaritia.ID,
                 BiomesOPlenty.ID,
+                BloodArsenal.ID,
+                BloodMagic.ID,
+                Botania.ID,
+                BuildCraftFactory.ID,
+                DraconicEvolution.ID,
+                ElectroMagicTools.ID,
+                EnderIO.ID,
+                EnderStorage.ID,
                 EnderZoo.ID,
+                ExtraUtilities.ID,
+                ForbiddenMagic.ID,
                 Genetics.ID,
+                IndustrialCraft2.ID,
+                IronChests.ID,
+                IronTanks.ID,
+                Railcraft.ID,
+                StevesCarts2.ID,
+                Thaumcraft.ID,
                 ThaumicBases.ID,
-                TwilightForest.ID);
+                ThaumicTinkerer.ID,
+                TinkerConstruct.ID,
+                TinkersGregworks.ID,
+                TwilightForest.ID,
+                Witchery.ID);
     }
 
     @Override
@@ -138,8 +138,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing));
@@ -374,34 +374,19 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(Minecraft.ID, "redstone_torch", 2, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "ritualDismantler", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 1, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(3)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 2, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 3, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(5))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(5)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 4, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing))
@@ -3255,12 +3240,12 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0, missing),
                 getModItem(EnderStorage.ID, "enderChest", 1, 0, missing),
                 ItemList.Gravistar.get(1L),
-                OrePrefixes.plate.get(Materials.HeeEndium),
+                OrePrefixes.plate.get(Materials.Endium),
                 ItemList.QuantumEye.get(1L),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
                 ItemList.QuantumEye.get(1L),
-                OrePrefixes.plate.get(Materials.HeeEndium),
+                OrePrefixes.plate.get(Materials.Endium),
                 ItemList.Gravistar.get(1L));
         TCHelper.addResearchPage(
                 "ENDERSIGIL",

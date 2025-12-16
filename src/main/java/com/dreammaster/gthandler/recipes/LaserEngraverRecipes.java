@@ -250,26 +250,25 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemOutputs(GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                GTModHandler.getModItem(Botania.ID, "livingrock", 1L, 0),
-                GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
-                GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0),
-                GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.BotaniaDragonstone, 1)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(Botania.ID, "livingrock", 1L, 0),
+                        GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dragonstone, 1)))
                 .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerrock", 1L, 0)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                GTModHandler.getModItem(Botania.ID, "dreamwood", 1L, 1),
-                GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
-                GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0),
-                GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.BotaniaDragonstone, 1)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(Botania.ID, "dreamwood", 1L, 1),
+                        GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dragonstone, 1)))
                 .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerwoodPlanks", 1L, 0)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         // Protomatter recipes
-        GTValues.RA.stdBuilder().fluidInputs(Materials.DimensionallyTranscendentResidue.getFluid(100L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_UIV).fluidOutputs(Materials.Protomatter.getFluid(100L))
-                .requiresCleanRoom().addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder().fluidInputs(Materials.DTR.getFluid(100L)).duration(10 * SECONDS).eut(TierEU.RECIPE_UIV)
+                .fluidOutputs(Materials.Protomatter.getFluid(100L)).requiresCleanRoom().addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder().fluidInputs(Materials.SpaceTime.getMolten(100L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_UMV).fluidOutputs(Materials.Protomatter.getFluid(1000L)).requiresCleanRoom()
@@ -316,10 +315,7 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setInteger("oc:color", color);
         tag.setString("oc:lootFactory", "OpenComputers:" + name);
         floppy.setTagCompound(tag);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 4),
-                        GTUtility.getIntegratedCircuit(circuit))
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 4)).circuit(circuit)
                 .itemOutputs(floppy).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         return true;
     }
@@ -406,10 +402,7 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setTag("oc:data", subtag);
         lua.setTagCompound(tag);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0),
-                        GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0)).circuit(1)
                 .itemOutputs(lua).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         return true;

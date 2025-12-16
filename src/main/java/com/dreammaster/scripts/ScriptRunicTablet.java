@@ -11,7 +11,6 @@ import java.util.List;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.Mods;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -27,8 +26,7 @@ public class ScriptRunicTablet implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays
-                .asList(Mods.Thaumcraft.ID, Mods.DraconicEvolution.ID, Mods.ThaumicExploration.ID, Mods.Automagy.ID);
+        return Arrays.asList(Automagy.ID, DraconicEvolution.ID, Thaumcraft.ID, ThaumicExploration.ID);
     }
 
     @Override

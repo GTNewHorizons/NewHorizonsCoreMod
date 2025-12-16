@@ -20,7 +20,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class FormingPressRecipes implements Runnable {
@@ -38,17 +37,15 @@ public class FormingPressRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.MicaBasedPulp.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.MicaBasedSheet.get(4L)).duration(20 * SECONDS).eut(28)
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L))
+                .circuit(1).itemOutputs(CustomItemList.MicaBasedSheet.get(4L)).duration(20 * SECONDS).eut(28)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.MicaBasedPulp.get(16L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
-                        ItemList.Shape_Mold_Plate.get(0L),
-                        GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(CustomItemList.MicaBasedSheet.get(16L)).duration(20 * SECONDS).eut(256)
+                        ItemList.Shape_Mold_Plate.get(0L))
+                .circuit(2).itemOutputs(CustomItemList.MicaBasedSheet.get(16L)).duration(20 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Plate.get(0L))
@@ -329,94 +326,49 @@ public class FormingPressRecipes implements Runnable {
                 .addTo(formingPressRecipes);
 
         // Recipes for Any circuits
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitULV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitLV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitMV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitHV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitEV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitIV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitLuV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitZPM.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitUV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitUHV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitUEV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitUIV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitUMV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitUXV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 1),
-                        GTUtility.getIntegratedCircuit(24))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 1)).circuit(24)
                 .itemOutputs(NHItemList.CircuitMAX.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
 

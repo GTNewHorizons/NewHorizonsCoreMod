@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -46,7 +45,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.bop.blocks.BOPBlockRegistrator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -64,19 +62,18 @@ public class ScriptForestry implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Forestry.ID,
-                Thaumcraft.ID,
-                MagicBees.ID,
-                ProjectRedExpansion.ID,
                 Backpack.ID,
                 BiomesOPlenty.ID,
                 BuildCraftFactory.ID,
                 ExtraBees.ID,
-                GTPlusPlus.ID,
+                Forestry.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 Natura.ID,
                 PamsHarvestCraft.ID,
+                ProjectRedExpansion.ID,
                 Railcraft.ID,
+                Thaumcraft.ID,
                 TinkerConstruct.ID);
     }
 
@@ -178,7 +175,7 @@ public class ScriptForestry implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 6L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 6L))
                 .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
@@ -205,28 +202,16 @@ public class ScriptForestry implements IScriptLoader {
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
                 .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0, missing)).duration(6 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "craftingMaterial", 5, 3, missing),
-                        GTUtility.getIntegratedCircuit(5))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "craftingMaterial", 5, 3, missing)).circuit(5)
                 .itemOutputs(getModItem(Forestry.ID, "apiaristHelmet", 1, 0, missing)).duration(1 * MINUTES).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "craftingMaterial", 8, 3, missing),
-                        GTUtility.getIntegratedCircuit(8))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "craftingMaterial", 8, 3, missing)).circuit(8)
                 .itemOutputs(getModItem(Forestry.ID, "apiaristChest", 1, 0, missing)).duration(1 * MINUTES).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "craftingMaterial", 7, 3, missing),
-                        GTUtility.getIntegratedCircuit(7))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "craftingMaterial", 7, 3, missing)).circuit(7)
                 .itemOutputs(getModItem(Forestry.ID, "apiaristLegs", 1, 0, missing)).duration(1 * MINUTES).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "craftingMaterial", 4, 3, missing),
-                        GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "craftingMaterial", 4, 3, missing)).circuit(4)
                 .itemOutputs(getModItem(Forestry.ID, "apiaristBoots", 1, 0, missing)).duration(1 * MINUTES).eut(64)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -245,10 +230,9 @@ public class ScriptForestry implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "book", 1, 0, missing),
                         getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Forestry.ID, "factory2", 1, 2, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                        getModItem(Minecraft.ID, "chest", 1, 0, missing))
+                .circuit(1).itemOutputs(getModItem(Forestry.ID, "factory2", 1, 2, missing)).duration(10 * SECONDS)
+                .eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing))
                 .itemOutputs(getModItem(Forestry.ID, "propolis", 1, 0, missing)).outputChances(500)
                 .duration(20 * SECONDS).eut(40).addTo(centrifugeRecipes);

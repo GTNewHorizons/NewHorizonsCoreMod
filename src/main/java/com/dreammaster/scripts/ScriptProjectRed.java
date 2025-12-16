@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
@@ -9,7 +8,6 @@ import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.GregTech;
@@ -79,30 +77,28 @@ public class ScriptProjectRed implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                ProjectRedCore.ID,
-                ProjectRedExploration.ID,
-                ProjectRedTransmission.ID,
-                ProjectRedTransportation.ID,
-                TinkerConstruct.ID,
-                GalacticraftAmunRa.ID,
-                MCFrames.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedFabrication.ID,
-                BartWorks.ID,
                 BiomesOPlenty.ID,
                 Botania.ID,
                 Botany.ID,
                 BuildCraftFactory.ID,
+                EtFuturumRequiem.ID,
                 ExtraBees.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
+                GalacticraftAmunRa.ID,
                 Gendustry.ID,
-                GTPlusPlus.ID,
                 IndustrialCraft2.ID,
+                MCFrames.ID,
                 Natura.ID,
                 OpenBlocks.ID,
                 OpenComputers.ID,
                 PamsHarvestCraft.ID,
+                ProjectRedCore.ID,
+                ProjectRedExploration.ID,
+                ProjectRedTransmission.ID,
+                ProjectRedTransportation.ID,
+                ProjectRedExpansion.ID,
+                ProjectRedFabrication.ID,
                 Railcraft.ID,
                 StevesCarts2.ID,
                 ThaumicHorizons.ID,
@@ -1791,11 +1787,8 @@ public class ScriptProjectRed implements IScriptLoader {
     }
 
     private void recipes1() {
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing))
+                .circuit(1).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1837,20 +1830,17 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing))
                 .duration(25 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9, missing))
                 .duration(15 * SECONDS).eut(64).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Paper, 1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.datacard", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Paper, 1L))
+                .circuit(1).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.datacard", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1863,127 +1853,127 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing))
                 .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing))
                 .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing))
                 .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing))
                 .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing))
                 .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing))
                 .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 64, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 64, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
-                        GTUtility.getIntegratedCircuit(19))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L))
+                .circuit(19)
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 64, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -2159,11 +2149,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
+                .circuit(1).itemOutputs(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0, missing))
                 .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
     }
 
@@ -2770,758 +2757,512 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57, missing))
                 .duration(20 * SECONDS).eut(30).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 15, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 15, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 0, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 8, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 8, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_15.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_15.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ExtraBees.ID, "misc", 1, 23, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 23, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 25, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 25, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 14, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 14, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 1, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 1, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_14.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_14.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 24, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 24, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 13, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 13, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 2, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 2, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_13.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_13.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 23, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 23, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 12, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 12, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 3, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 3, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_12.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_12.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 22, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 22, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 11, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 11, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 4, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 4, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.YellowLimonite, 1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.YellowLimonite, 1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_11.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_11.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ExtraBees.ID, "misc", 1, 20, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 20, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 21, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 21, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 10, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 10, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 5, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 5, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_10.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_10.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 20, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 20, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 9, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 9, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 6, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 6, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_09.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_09.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 19, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 19, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 8, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 8, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 7, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 7, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_08.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_08.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 18, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 18, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 7, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 7, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 8, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 8, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_07.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_07.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 17, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 17, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 6, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 6, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 9, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 9, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Lazurite, 1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Lazurite, 1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_06.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_06.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 16, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 16, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 5, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 5, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 10, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 10, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_05.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_05.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 15, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 15, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 4, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 4, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 11, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 11, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Natura.ID, "barleyFood", 1, 8, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Natura.ID, "barleyFood", 1, 8, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 5, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 5, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sodalite, 1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sodalite, 1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Dye_Indigo.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Dye_Indigo.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_04.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_04.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ExtraBees.ID, "misc", 1, 21, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 21, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 14, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 14, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 3, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 3, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 29, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                        getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 29, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 12, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 12, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cocoa, 1),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cocoa, 1))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coffee, 1),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coffee, 1))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BrownLimonite, 1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BrownLimonite, 1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ExtraBees.ID, "misc", 1, 25, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 25, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 13, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 13, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 2, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 2, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 13, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 13, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 7, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 7, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_02.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_02.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ExtraBees.ID, "misc", 1, 22, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 22, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 12, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 12, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 1, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 1, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 14, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 14, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_01.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_01.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ExtraBees.ID, "misc", 1, 19, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 19, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 11, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 11, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Minecraft.ID, "dye", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 0, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Botania.ID, "dye", 1, 15, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 15, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 9, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 9, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        ItemList.Color_00.get(1L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_00.get(1L))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 1, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 1, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ThaumicHorizons.ID, "inkEgg", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+                        getModItem(ThaumicHorizons.ID, "inkEgg", 1, 0, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ExtraBees.ID, "misc", 1, 24, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 24, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(Gendustry.ID, "HoneyDrop", 1, 10, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
+                        getModItem(Gendustry.ID, "HoneyDrop", 1, 10, missing))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
-                        GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
+                .circuit(2)
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing))
                 .duration(SECONDS).eut(8).addTo(wiremillRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(EtFuturumRequiem.ID, "barrel", 1L, 0),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WoodSealed, 4L),
-                        GTUtility.getIntegratedCircuit(5))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WoodSealed, 4L))
+                .circuit(5)
                 .itemOutputs(GTModHandler.getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1L, 0))
                 .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -3546,7 +3287,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
 
@@ -3571,7 +3312,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 5L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 5L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -3595,7 +3336,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.ElectrotineWire.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GTValues.RA.stdBuilder()

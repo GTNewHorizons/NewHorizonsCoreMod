@@ -17,12 +17,10 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
@@ -35,7 +33,7 @@ public class ScriptOpenComputers implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.OpenComputers.ID, HardcoreEnderExpansion.ID, IndustrialCraft2.ID);
+        return Arrays.asList(HardcoreEnderExpansion.ID, IndustrialCraft2.ID, OpenComputers.ID);
     }
 
     private static ItemStack getTransposer(int aAmount, int rate) {
@@ -53,10 +51,9 @@ public class ScriptOpenComputers implements IScriptLoader {
                         ItemList.Automation_ChestBuffer_LV.get(1L),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 61),
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 77),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2),
-                        GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getTransposer(2, 2_560)).fluidInputs(Materials.Plastic.getMolten(72L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2),
+                        GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0))
+                .circuit(1).itemOutputs(getTransposer(2, 2_560)).fluidInputs(Materials.Polyethylene.getMolten(72L))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_HV.get(1L))

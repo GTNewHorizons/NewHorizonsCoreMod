@@ -22,10 +22,8 @@ import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptMalisDoors implements IScriptLoader {
 
@@ -36,12 +34,8 @@ public class ScriptMalisDoors implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(
-                Mods.MalisisDoors.ID,
-                BiomesOPlenty.ID,
-                Natura.ID,
-                ProjectRedIntegration.ID,
-                TinkerConstruct.ID);
+        return Arrays
+                .asList(BiomesOPlenty.ID, MalisisDoors.ID, Natura.ID, ProjectRedIntegration.ID, TinkerConstruct.ID);
     }
 
     @Override
@@ -155,15 +149,15 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateAnyIron");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "garage_door", 5, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0, missing),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
@@ -1110,16 +1104,13 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0, missing))
                 .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L),
-                        GTUtility.getIntegratedCircuit(5))
-                .itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0, missing)).duration(3 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L))
+                .circuit(5).itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0, missing)).duration(3 * SECONDS)
+                .eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "planks", 4, 4, missing),

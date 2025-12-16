@@ -20,7 +20,6 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -39,11 +38,15 @@ public class ScriptThaumicExploration implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.ThaumicExploration.ID,
-                Thaumcraft.ID,
-                ExtraUtilities.ID,
                 BiomesOPlenty.ID,
-                PamsHarvestCraft.ID);
+                Botania.ID,
+                EnderIO.ID,
+                ExtraUtilities.ID,
+                ForbiddenMagic.ID,
+                Natura.ID,
+                PamsHarvestCraft.ID,
+                Thaumcraft.ID,
+                ThaumicExploration.ID);
     }
 
     @Override

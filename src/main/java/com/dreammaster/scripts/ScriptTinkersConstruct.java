@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftCore;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -44,6 +45,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
@@ -61,7 +63,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import mantle.lib.client.MantleClientRegistry;
 import tconstruct.TConstruct;
 import tconstruct.library.TConstructRegistry;
@@ -81,12 +82,11 @@ public class ScriptTinkersConstruct implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                TinkerConstruct.ID,
-                Mantle.ID,
-                RandomThings.ID,
-                TinkersMechworks.ID,
+                Backpack.ID,
+                BiomesOPlenty.ID,
                 BloodArsenal.ID,
                 BuildCraftCore.ID,
+                Chisel.ID,
                 ElectroMagicTools.ID,
                 ExtraTrees.ID,
                 ExtraUtilities.ID,
@@ -95,10 +95,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 GalaxySpace.ID,
                 IguanaTweaksTinkerConstruct.ID,
                 IndustrialCraft2.ID,
+                Mantle.ID,
                 Natura.ID,
                 PamsHarvestCraft.ID,
                 Railcraft.ID,
-                Thaumcraft.ID);
+                RandomThings.ID,
+                Thaumcraft.ID,
+                TinkerConstruct.ID,
+                TinkersMechworks.ID,
+                WitchingGadgets.ID);
     }
 
     @Override
@@ -1312,246 +1317,16 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 15, missing),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
                 "dyeBlack");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeWhite",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeWhite");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 1, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeOrange",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 1, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeOrange");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 2, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeMagenta",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 2, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeMagenta");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 3, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeLightBlue",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 3, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeLightBlue");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 4, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeYellow",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 4, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeYellow");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 5, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeLime",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 5, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeLime");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 6, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyePink",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 6, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyePink");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 7, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeGray",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 7, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeGray");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 8, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeLightGray",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 8, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeLightGray");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 9, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeCyan",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 9, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeCyan");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 10, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyePurple",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 10, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyePurple");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 11, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeBlue",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 11, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeBlue");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 12, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeBrown",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 12, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeBrown");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 13, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeGreen",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 13, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeGreen");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 14, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeRed",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 14, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeRed");
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 15, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeBlack",
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 15, missing),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "dyeBlack");
+
+        // Add TiCon Stained Glass to Chisel
+        String[] colors = new String[] { "white", "orange", "magenta", "lightblue", "yellow", "lime", "pink", "gray",
+                "lightgray", "cyan", "purple", "blue", "brown", "green", "red", "black" };
+        for (int i = 0; i < 16; i++) {
+            ChiselHelper.addVariationFromStack(
+                    "stained_glass_pane_" + colors[i],
+                    getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, i));
+        }
+
         Recipe.of(
                 getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 0, missing),
                 "slabWood",
@@ -2333,7 +2108,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .provideTo(recipe -> GTModHandler.addSmeltingRecipe(recipe.flatten()[0], recipe.getResult()))
                 .provideTo(MANTLE.manualSmeltingRecipeNamed("searedbrick"));
         GTModHandler.addSmeltingRecipe(
-                CustomItemList.UnfiredSlimeSoulBrick.get(1L),
+                CustomItemList.UnfiredSlimeSoilBrick.get(1L),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2386,35 +2161,22 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ForgeMicroblocks.ID, "stoneRod", 7, 0, missing),
-                        getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(6))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
+                        getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing))
+                .circuit(6).itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
                 .duration(3 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
-                        GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0, missing)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.getIS(16), GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.getIS(16)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1, missing)).eut(30)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing)).circuit(16)
                 .itemOutputs(getModItem(WitchingGadgets.ID, "item.WG_MagicFood", 1, 2, missing)).eut(30)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
 

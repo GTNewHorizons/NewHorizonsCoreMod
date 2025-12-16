@@ -45,9 +45,11 @@ import com.dreammaster.command.CustomFuelsCommand;
 import com.dreammaster.command.CustomToolTipsCommand;
 import com.dreammaster.command.HazardousItemsCommand;
 import com.dreammaster.config.CoreModConfig;
+import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.iguana.IguanaProxy;
@@ -81,11 +83,14 @@ import com.dreammaster.travellersgear.TGConverter;
 import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
+import betterquesting.api.storage.BQ_Settings;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
+import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
@@ -105,6 +110,7 @@ import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.util.GTLanguageManager;
 import gregtech.common.items.MetaGeneratedItem01;
 
@@ -120,7 +126,8 @@ import gregtech.common.items.MetaGeneratedItem01;
                 + "after:HardcoreEnderExpansion;"
                 + "after:Thaumcraft;"
                 + "after:amazingtrophies;"
-                + "after:backhand@[1.6.9,);")
+                + "after:backhand@[1.6.9,);"
+                + "after:betterquesting")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -560,24 +567,32 @@ public class MainRegistry {
     /**
      * Do some stuff once the server starts
      *
-     * @param pEvent
+     * @param event
      */
     @Mod.EventHandler
-    public void serverLoad(FMLServerStartingEvent pEvent) {
+    public void serverLoad(FMLServerStartingEvent event) {
         if (CoreConfig.ModHazardousItems_Enabled) {
-            pEvent.registerServerCommand(new HazardousItemsCommand());
+            event.registerServerCommand(new HazardousItemsCommand());
         }
         if (CoreConfig.ModCustomToolTips_Enabled) {
-            pEvent.registerServerCommand(new CustomToolTipsCommand());
+            event.registerServerCommand(new CustomToolTipsCommand());
         }
         if (CoreConfig.ModCustomFuels_Enabled) {
-            pEvent.registerServerCommand(new CustomFuelsCommand());
+            event.registerServerCommand(new CustomFuelsCommand());
         }
         if (CoreConfig.ModCustomDrops_Enabled) {
-            pEvent.registerServerCommand(new CustomDropsCommand());
+            event.registerServerCommand(new CustomDropsCommand());
         }
         if (YAMCore.isDebug()) {
-            pEvent.registerServerCommand(new AllPurposeDebugCommand());
+            event.registerServerCommand(new AllPurposeDebugCommand());
+        }
+        if (Mods.BetterQuesting.isModLoaded()) {
+            if (!bqConfig$ReloadOnStartup() && DreamCoreMod.modpackHasUpdated()) {
+                Logger.info("Modpack has been updated, loading default quest database");
+                final long l = System.currentTimeMillis();
+                event.getServer().getCommandManager().executeCommand(event.getServer(), "/bq_admin default load");
+                Logger.info("Loading quest data base took " + (System.currentTimeMillis() - l) + "ms");
+            }
         }
     }
 
@@ -586,5 +601,27 @@ public class MainRegistry {
         if (handleAchievements) {
             AchievementHandler.cleanup();
         }
+    }
+
+    @Mod.EventHandler
+    public void onMissingMappings(FMLMissingMappingsEvent event) {
+        for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
+            if (mapping.type != GameRegistry.Type.ITEM) {
+                continue;
+            }
+
+            // Remaps the old "UnfiredSlimeSoulBrick" (with a typo) to the new, correct "UnfiredSlimeSoilBrick".
+            final String oldBrickName = "dreamcraft:item.UnfiredSlimeSoulBrick";
+            if (oldBrickName.equals(mapping.name)) {
+                mapping.remap(CustomItemList.UnfiredSlimeSoilBrick.getItem());
+            }
+
+            break;
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.BETTER_QUESTING)
+    private static boolean bqConfig$ReloadOnStartup() {
+        return BQ_Settings.loadDefaultsOnStartup;
     }
 }

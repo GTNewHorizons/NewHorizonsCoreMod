@@ -31,7 +31,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 
@@ -40,45 +39,41 @@ public class CentrifugeRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.AdsorptionFilterDirty.get(1L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdsorptionFilterDirty.get(1L)).circuit(1)
                 .itemOutputs(
                         CustomItemList.AdsorptionFilterCasing.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 4L))
                 .outputChances(8000, 10000, 10000)
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 100)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.AdsorptionFilterDirty.get(1L), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdsorptionFilterDirty.get(1L)).circuit(2)
                 .itemOutputs(
                         CustomItemList.AdsorptionFilterCasing.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 8L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 8L))
                 .outputChances(9000, 10000, 10000)
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 250)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.AdsorptionFilterDirty.get(1L), GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdsorptionFilterDirty.get(1L)).circuit(3)
                 .itemOutputs(
                         CustomItemList.AdsorptionFilterCasing.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 12L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 12L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 12L))
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 500)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.AdsorptionFilterDirty.get(1L), GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdsorptionFilterDirty.get(1L)).circuit(4)
                 .itemOutputs(
                         CustomItemList.AdsorptionFilterCasing.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 16L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 16L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 16L))
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 1000)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().circuit(1)
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 5L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 3L),
@@ -237,7 +232,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Jade, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 4L))
-                .outputChances(5000, 3000, 1000, 750, 500, 250).fluidOutputs(Materials.Helium_3.getGas(1800L))
+                .outputChances(5000, 3000, 1000, 750, 500, 250).fluidOutputs(Materials.Helium3.getGas(1800L))
                 .duration(3 * MINUTES + 36 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.MercuryCoreDust.get(36L))
@@ -438,15 +433,13 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(5000, 2500, 1000, 750, 150, 50).duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS)
                 .eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CokeOvenBrickDust.get(4L), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CokeOvenBrickDust.get(4L))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Brick, 1L))
-                .outputChances(10000, 9000, 7500).duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 2L))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.AdvancedCokeOvenBrickDust.get(36L), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdvancedCokeOvenBrickDust.get(36L)).circuit(2)
                 .itemOutputs(
                         CustomItemList.CokeOvenBrickDust.get(36L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 36L),
@@ -595,8 +588,7 @@ public class CentrifugeRecipes implements Runnable {
 
         // Liquid Fertilizer reverse recipe
 
-        GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(ItemList.IC2_Fertilizer.get(1L))
+        GTValues.RA.stdBuilder().circuit(1).itemOutputs(ItemList.IC2_Fertilizer.get(1L))
                 .fluidInputs(FluidRegistry.getFluidStack("fluid.fertiliser", 144)).duration(2 * SECONDS).eut(16)
                 .addTo(centrifugeRecipes);
 
@@ -612,11 +604,11 @@ public class CentrifugeRecipes implements Runnable {
             // Centrifuge
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
                     .fluidOutputs(Materials.Glue.getFluid(50)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.slime_ball, 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
                     .fluidOutputs(Materials.Glue.getFluid(50)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 2))
@@ -624,17 +616,17 @@ public class CentrifugeRecipes implements Runnable {
                     .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 8L))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 8L))
                     .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 8L))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 8L))
                     .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 1L, 0))
                     .itemOutputs(
                             new ItemStack(Blocks.dirt, 1, 32767),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 1L),
                             GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0))
                     .outputChances(10000, 10000, 1000).fluidOutputs(Materials.Glue.getFluid(25)).duration(15 * SECONDS)
                     .eut(5).addTo(centrifugeRecipes);
@@ -652,8 +644,7 @@ public class CentrifugeRecipes implements Runnable {
                             GTModHandler.getModItem(Forestry.ID, "beeswax", 1L, 0),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L))
                     .outputChances(10000, 11).duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTUtility.getIntegratedCircuit(2), GTBees.combs.getStackForType(CombType.INDIUM, 8))
+            GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.INDIUM, 8)).circuit(2)
                     .fluidInputs(GGMaterial.thoriumBasedLiquidFuelDepleted.getFluidOrGas(1000))
                     .itemOutputs(
                             WerkstoffLoader.Thorium232.get(OrePrefixes.dust, 64),

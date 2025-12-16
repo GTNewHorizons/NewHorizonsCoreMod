@@ -64,12 +64,7 @@ public class MaceratorRecipes implements Runnable {
                 .eut(2).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.CokeOvenBrick.get(1L))
-                .itemOutputs(
-                        CustomItemList.CokeOvenBrickDust.get(1L),
-                        CustomItemList.CokeOvenBrickDust.get(1L),
-                        CustomItemList.CokeOvenBrickDust.get(1L),
-                        CustomItemList.CokeOvenBrickDust.get(1L))
-                .outputChances(10000, 2500, 750, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(CustomItemList.CokeOvenBrickDust.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdvancedCokeOvenBrick.get(1L))
@@ -137,18 +132,6 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1))
                     .itemOutputs(Materials.Ardite.getDust(9)).outputChances(10000).duration(15 * SECONDS).eut(2)
                     .addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "SearedBrick", 1L, 1))
-                    .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Cobalt, 2L),
-                            Materials.Cobalt.getDust(1))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "SearedBrick", 1L, 2))
-                    .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L),
-                            Materials.Ardite.getDust(1))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 12))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))

@@ -17,7 +17,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class BendingMachineRecipes implements Runnable {
 
@@ -37,51 +36,30 @@ public class BendingMachineRecipes implements Runnable {
                 .itemOutputs(ItemList.Shape_Empty.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(benderRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20 * SECONDS)
-                .eut(24).addTo(benderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 9L),
-                        GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 1L))
+                .circuit(1).itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L))
+                .duration(20 * SECONDS).eut(24).addTo(benderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 9L))
+                .circuit(9).itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(benderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 9L),
-                        GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 9L))
+                .circuit(9).itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(benderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 9L),
-                        GTUtility.getIntegratedCircuit(9))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 9L)).circuit(9)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lapis, 1L)).duration(3 * MINUTES)
                 .eut(TierEU.RECIPE_MV * 3 / 4).addTo(benderRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.spring, Materials.Plastic, 1L)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L))
+                .circuit(1).itemOutputs(GTOreDictUnificator.get(OrePrefixes.spring, Materials.Polyethylene, 1L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
 
         if (GalacticraftCore.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7, missing),
-                            GTUtility.getIntegratedCircuit(2))
-                    .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing)).duration(10 * SECONDS)
-                    .eut(8).addTo(benderRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6, missing),
-                            GTUtility.getIntegratedCircuit(2))
-                    .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing)).duration(10 * SECONDS)
-                    .eut(8).addTo(benderRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7, missing))
+                    .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing))
+                    .duration(10 * SECONDS).eut(8).addTo(benderRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6, missing))
+                    .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing))
+                    .duration(10 * SECONDS).eut(8).addTo(benderRecipes);
         }
     }
 }

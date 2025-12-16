@@ -40,7 +40,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -57,20 +56,20 @@ public class ScriptOpenBlocks implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                OpenBlocks.ID,
-                RandomThings.ID,
-                ExtraUtilities.ID,
-                Thaumcraft.ID,
-                ProjectBlue.ID,
-                ProjectRedExpansion.ID,
                 Backpack.ID,
                 BiblioCraft.ID,
                 BuildCraftCore.ID,
+                ExtraUtilities.ID,
                 Forestry.ID,
                 GalacticraftCore.ID,
                 IndustrialCraft2.ID,
+                OpenBlocks.ID,
                 OpenComputers.ID,
+                ProjectBlue.ID,
+                ProjectRedExpansion.ID,
                 Railcraft.ID,
+                RandomThings.ID,
+                Thaumcraft.ID,
                 TinkerConstruct.ID);
     }
 
@@ -79,13 +78,12 @@ public class ScriptOpenBlocks implements IScriptLoader {
         ItemStack devNull = getModItem(OpenBlocks.ID, "devnull", 1);
         ItemStack voidDropFilter = getModItem(RandomThings.ID, "dropFilter", 1, 1);
         ItemStack trashCan = getModItem(ExtraUtilities.ID, "trashcan", 1);
-        ItemStack circuit2 = GTUtility.getIntegratedCircuit(2);
 
         FluidStack ender250 = FluidRegistry.getFluidStack("ender", 250);
 
         addShapelessRecipe(devNull, voidDropFilter);
 
-        GTValues.RA.stdBuilder().itemInputs(trashCan, circuit2).itemOutputs(devNull).fluidInputs(ender250)
+        GTValues.RA.stdBuilder().itemInputs(trashCan).itemOutputs(devNull).circuit(2).fluidInputs(ender250)
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
@@ -372,8 +370,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                         getModItem(Minecraft.ID, "ladder", 1, 0, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "ladder", 1, 0, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0, missing), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(OpenBlocks.ID, "sky", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
