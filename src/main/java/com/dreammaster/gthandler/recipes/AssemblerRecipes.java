@@ -3196,6 +3196,20 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 8L),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 2L),
                         new ItemStack[] { ItemList.Reactor_Coolant_He_1.get(1), ItemList.Reactor_Coolant_NaK_1.get(1) },
+                        ItemList.Reactor_Coolant_He_1.get(1),
+                        ItemList.Electric_Pump_MV.get(1))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(L * 2))
+                .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_MV.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTUtility.getIntegratedCircuit(6),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorMV, 6L),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Aluminium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 2L),
+                        ItemList.Reactor_Coolant_NaK_1.get(1),
                         ItemList.Electric_Pump_MV.get(1))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(L * 2))
                 .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_MV.get(1)).duration(10 * SECONDS)
@@ -3211,6 +3225,20 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 8L),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.BlackSteel, 2L),
                         new ItemStack[] { ItemList.Reactor_Coolant_He_3.get(1), ItemList.Reactor_Coolant_NaK_3.get(1) },
+                        ItemList.Reactor_Coolant_He_3.get(1),
+                        ItemList.Electric_Pump_HV.get(1))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(L * 2))
+                .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_HV.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTUtility.getIntegratedCircuit(6),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorHV, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Silver, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.BlackSteel, 2L),
+                        ItemList.Reactor_Coolant_NaK_3.get(1),
                         ItemList.Electric_Pump_HV.get(1))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(L * 2))
                 .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_HV.get(1)).duration(10 * SECONDS)
@@ -3226,6 +3254,20 @@ public class AssemblerRecipes implements Runnable {
                         WerkstoffMaterialPool.Permalloy.get(OrePrefixes.stickLong, 8),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenSteel, 2L),
                         new ItemStack[] { ItemList.Reactor_Coolant_He_6.get(1), ItemList.Reactor_Coolant_NaK_6.get(1) },
+                        ItemList.Reactor_Coolant_He_6.get(1),
+                        ItemList.Electric_Pump_EV.get(1))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(L * 2))
+                .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_EV.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTUtility.getIntegratedCircuit(6),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorEV, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
+                        WerkstoffMaterialPool.Permalloy.get(OrePrefixes.stickLong, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenSteel, 2L),
+                        ItemList.Reactor_Coolant_NaK_6.get(1),
                         ItemList.Electric_Pump_EV.get(1))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(L * 2))
                 .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_EV.get(1)).duration(10 * SECONDS)
