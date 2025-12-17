@@ -651,6 +651,17 @@ item.StargateDustAncients.name=Stargate-Crystal Dust of the Ancients
 item.StargateCrystalAncients.name=Stargate Core Crystal of the Ancients
 item.warptheory.portableshower.name=Portable Shower
 
+achievement.item.HeavyDutyAlloyIngotT4=Rocket Plate Tier 4!
+achievement.item.HeavyDutyAlloyIngotT4.desc=On your way to the T4 Dims!
+achievement.item.HeavyDutyAlloyIngotT5=Rocket Plate Tier 5!
+achievement.item.HeavyDutyAlloyIngotT5.desc=On your way to the T5 Dims!
+achievement.item.HeavyDutyAlloyIngotT6=Rocket Plate Tier 6!
+achievement.item.HeavyDutyAlloyIngotT6.desc=On your way to the T6 Dims!
+achievement.item.HeavyDutyAlloyIngotT7=Rocket Plate Tier 7!
+achievement.item.HeavyDutyAlloyIngotT7.desc=On your way to the T7 Dims!
+achievement.item.HeavyDutyAlloyIngotT8=Rocket Plate Tier 8!
+achievement.item.HeavyDutyAlloyIngotT8.desc=On your way to the T8 Dims!
+
 tc.research_name.InfusedGoldGTNH=Infused Gold
 tc.research_text.InfusedGoldGTNH=[AM] Infuse Gold with magic.
 tc.research_page.InfusedGoldGTNH.1=You found a way to fuse gold and thaumium to create a new metal INFUSED GOLD
