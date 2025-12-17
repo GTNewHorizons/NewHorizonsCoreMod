@@ -167,11 +167,11 @@ public class CustomToolTipsHandler {
 
             if (pPlayer instanceof EntityPlayerMP) {
                 for (CTTClientSyncMessage tMsg : tPendingMessages) {
-                    MainRegistry.NW.sendTo(tMsg, (EntityPlayerMP) pPlayer);
+                    MainRegistry.dispatcher.sendTo(tMsg, (EntityPlayerMP) pPlayer);
                 }
             } else if (pPlayer == null) {
                 for (CTTClientSyncMessage tMsg : tPendingMessages) {
-                    MainRegistry.NW.sendToAll(tMsg);
+                    MainRegistry.dispatcher.sendToAll(tMsg);
                 }
             } else {
                 _mLogger.error("[CTT.sendClientUpdate] Target is no EntityPlayer and not null");
