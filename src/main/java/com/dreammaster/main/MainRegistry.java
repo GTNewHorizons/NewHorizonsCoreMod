@@ -70,7 +70,8 @@ import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 import com.dreammaster.modhazardousitems.HazardousItemsHandler;
-import com.dreammaster.network.CoreModDispatcher;
+import com.dreammaster.network.msg.CTTClientSyncMessage;
+import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
@@ -96,6 +97,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -146,7 +148,7 @@ public class MainRegistry {
     public static IngameErrorLog Module_AdminErrorLogs;
     public static GT_CustomLoader GTCustomLoader;
     public static CoreModConfig CoreConfig;
-    public static CoreModDispatcher NW;
+    public static SimpleNetworkWrapper dispatcher;
     public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
@@ -222,8 +224,17 @@ public class MainRegistry {
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Init NetworkChannel");
-        NW = new CoreModDispatcher();
-        NW.registerPackets();
+        dispatcher = new SimpleNetworkWrapper(Refstrings.MODID);
+        dispatcher.registerMessage(
+                CTTClientSyncMessage.CTTClientSyncMessageHandler.class,
+                CTTClientSyncMessage.class,
+                0,
+                Side.CLIENT);
+        dispatcher.registerMessage(
+                ZZClientOnlySyncMessage.ZZClientOnlySyncMessageHandler.class,
+                ZZClientOnlySyncMessage.class,
+                1,
+                Side.CLIENT);
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
