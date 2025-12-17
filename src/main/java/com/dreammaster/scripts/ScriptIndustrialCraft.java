@@ -979,23 +979,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null);
 
         addShapedRecipe(
-                createItemStack(
-                        GregTech.ID,
-                        "gt.metatool.01",
-                        1,
-                        12,
-                        "{GT.ToolStats:{PrimaryMaterial:\"Iridium\",MaxDamage:512000L,SecondaryMaterial:\"Steel\"}}",
-                        missing),
-                "ingotIridium",
-                "ingotIridium",
-                null,
-                "ingotIridium",
-                "ingotIridium",
-                "stickSteel",
-                "ingotIridium",
-                "ingotIridium",
-                null);
-        addShapedRecipe(
                 GTOreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iridium, 1L),
                 "plateIridium",
                 "plateIridium",
