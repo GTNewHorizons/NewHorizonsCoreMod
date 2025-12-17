@@ -3,8 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
@@ -67,7 +65,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 BiomesOPlenty.ID,
                 BuildCraftFactory.ID,
                 Forestry.ID,
-                GTPlusPlus.ID,
                 IndustrialCraft2.ID,
                 Natura.ID,
                 Railcraft.ID,
@@ -981,23 +978,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
 
-        addShapedRecipe(
-                createItemStack(
-                        GregTech.ID,
-                        "gt.metatool.01",
-                        1,
-                        12,
-                        "{GT.ToolStats:{PrimaryMaterial:\"Iridium\",MaxDamage:512000L,SecondaryMaterial:\"Steel\"}}",
-                        missing),
-                "ingotIridium",
-                "ingotIridium",
-                null,
-                "ingotIridium",
-                "ingotIridium",
-                "stickSteel",
-                "ingotIridium",
-                "ingotIridium",
-                null);
         addShapedRecipe(
                 GTOreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iridium, 1L),
                 "plateIridium",
