@@ -651,6 +651,17 @@ item.StargateDustAncients.name=Stargate-Crystal Dust of the Ancients
 item.StargateCrystalAncients.name=Stargate Core Crystal of the Ancients
 item.warptheory.portableshower.name=Portable Shower
 
+achievement.item.HeavyDutyAlloyIngotT4=Rocket Plate Tier 4!
+achievement.item.HeavyDutyAlloyIngotT4.desc=On your way to the T4 Dims!
+achievement.item.HeavyDutyAlloyIngotT5=Rocket Plate Tier 5!
+achievement.item.HeavyDutyAlloyIngotT5.desc=On your way to the T5 Dims!
+achievement.item.HeavyDutyAlloyIngotT6=Rocket Plate Tier 6!
+achievement.item.HeavyDutyAlloyIngotT6.desc=On your way to the T6 Dims!
+achievement.item.HeavyDutyAlloyIngotT7=Rocket Plate Tier 7!
+achievement.item.HeavyDutyAlloyIngotT7.desc=On your way to the T7 Dims!
+achievement.item.HeavyDutyAlloyIngotT8=Rocket Plate Tier 8!
+achievement.item.HeavyDutyAlloyIngotT8.desc=On your way to the T8 Dims!
+
 tc.research_name.InfusedGoldGTNH=Infused Gold
 tc.research_text.InfusedGoldGTNH=[AM] Infuse Gold with magic.
 tc.research_page.InfusedGoldGTNH.1=You found a way to fuse gold and thaumium to create a new metal INFUSED GOLD
@@ -1776,9 +1787,10 @@ dreamcraft.welcome.report_bug=Please report bugs on GitHub:
 dreamcraft.welcome.click_github=Click to open the GitHub!
 dreamcraft.welcome.visitdiscord=Visit our Discord at
 dreamcraft.welcome.click_discord=Click to open Discord!
+dreamcraft.welcome.open_to_lan=Connected to Open to LAN server. This is not officially supported. Expect more bugs than usual
 
 dreamcraft.pausemenu.bug=Report a Bug
 dreamcraft.pausemenu.wiki=Open the Wiki
-dreamcraft.pausemenu.sharetolan.tooltip=§cOpen to LAN is not supported in GTNH§r\nInstead, setup a dedicated server for multiplayer\nCheck the wiki for instructions\nYou can run the server in parallel with the\ngame client on one computer
+dreamcraft.pausemenu.sharetolan.tooltip=§cOpen to LAN is buggy in GTNH§r\nInstead, set up a dedicated server for multiplayer\nCheck the wiki for instructions\nYou can run the server in parallel with the\ngame client on the same computer
 
-dreamcraft.gui.sharetolan.message=GTNH does not support multiplayer via Open To LAN. §cExternal connections are disabled!§r
+dreamcraft.gui.sharetolan.message=§cOpen To LAN can break the GTNH questbook.§r Consider setting up a dedicated server

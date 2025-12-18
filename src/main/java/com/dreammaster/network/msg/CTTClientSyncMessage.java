@@ -6,14 +6,12 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import net.minecraft.entity.player.EntityPlayer;
-
 import com.dreammaster.main.MainRegistry;
 
 import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
+import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
-import eu.usrv.yamcore.network.client.AbstractClientMessageHandler;
 import io.netty.buffer.ByteBuf;
 
 public class CTTClientSyncMessage implements IMessage {
@@ -70,13 +68,13 @@ public class CTTClientSyncMessage implements IMessage {
         return tReturnList;
     }
 
-    public static class CTTClientSyncMessageHandler extends AbstractClientMessageHandler<CTTClientSyncMessage> {
+    public static class CTTClientSyncMessageHandler implements IMessageHandler<CTTClientSyncMessage, IMessage> {
 
         private static long _mLastReceived = 0;
         private static HashMap<Integer, CTTClientSyncMessage> _mReceivedFrames;
 
         @Override
-        public IMessage handleClientMessage(EntityPlayer pPlayer, CTTClientSyncMessage pMessage, MessageContext pCtx) {
+        public IMessage onMessage(CTTClientSyncMessage pMessage, MessageContext pCtx) {
             // Assuming resend or timeout if this happens
             if (_mLastReceived + 5000 < System.currentTimeMillis()) {
                 _mReceivedFrames = new HashMap<>();
@@ -92,7 +90,6 @@ public class CTTClientSyncMessage implements IMessage {
 
             // Seems we got all frames
             if (_mReceivedFrames.size() == pMessage._mNumFrames) {
-                int tIDX = 0;
                 StringBuilder tSb = new StringBuilder(32);
 
                 SortedSet<Integer> keys = new TreeSet<>(_mReceivedFrames.keySet());

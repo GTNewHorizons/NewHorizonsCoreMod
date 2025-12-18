@@ -423,12 +423,12 @@ public class ScriptZZClientOnly implements IScriptLoader {
     public void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent pEvent) {
         if (MainRegistry.isClient()) {
             // this runs on the server thread of a client
-            // -> we are playing single player
-            MainRegistry.NW.sendTo(
+            // -> we are playing single player (TODO: Does this work correctly on LAN?)
+            MainRegistry.dispatcher.sendTo(
                     new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsEnabled),
                     (EntityPlayerMP) pEvent.player);
         } else {
-            MainRegistry.NW.sendTo(
+            MainRegistry.dispatcher.sendTo(
                     new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled),
                     (EntityPlayerMP) pEvent.player);
         }
