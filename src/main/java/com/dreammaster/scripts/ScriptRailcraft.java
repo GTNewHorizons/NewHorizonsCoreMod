@@ -2119,15 +2119,15 @@ public class ScriptRailcraft implements IScriptLoader {
                 .specialValue(1200).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
+                .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
+                .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
+                .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing))
