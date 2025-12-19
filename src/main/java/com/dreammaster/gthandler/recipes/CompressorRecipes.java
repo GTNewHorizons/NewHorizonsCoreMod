@@ -342,7 +342,7 @@ public class CompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "slab", 2, 2, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 1, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "slab", 2, 38, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 8, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdvancedCokeOvenBrick.get(4L))
