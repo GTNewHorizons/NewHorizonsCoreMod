@@ -37,23 +37,26 @@ public class LoginHandler {
         event.player.addChatMessage(new ChatComponentTranslation(GTNH_WIKI).setChatStyle(new ChatStyle().setColor(DARK_GREEN))
                 .appendSibling(new ChatComponentText(" " + DARK_GREEN + Refstrings.WIKI_LINK)
                         .setChatStyle(new ChatStyle()
-                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(YELLOW + CLICK_WIKI)))
+                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                        new ChatComponentTranslation(CLICK_WIKI).setChatStyle(new ChatStyle().setColor(YELLOW))))
                                 .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.WIKI_LINK)))));
         event.player.addChatMessage(new ChatComponentTranslation(REPORT_BUG).setChatStyle(new ChatStyle().setColor(GREEN)));
         event.player.addChatMessage(new ChatComponentText(GOLD + Refstrings.ISSUE_TRACKER_LINK)
                 .setChatStyle(new ChatStyle()
-                        .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(YELLOW + CLICK_GITHUB)))
+                        .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                new ChatComponentTranslation(CLICK_GITHUB).setChatStyle(new ChatStyle().setColor(YELLOW))))
                         .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.ISSUE_TRACKER_LINK))));
         event.player.addChatMessage(new ChatComponentTranslation(VISIT_DISCORD).setChatStyle(new ChatStyle().setColor(BLUE))
                 .appendSibling(new ChatComponentText(" " + BLUE + Refstrings.DISCORD_LINK)
                         .setChatStyle(new ChatStyle()
-                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(YELLOW + CLICK_DISCORD)))
+                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                        new ChatComponentTranslation(CLICK_DISCORD).setChatStyle(new ChatStyle().setColor(YELLOW))))
                                 .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.DISCORD_LINK)))));
         event.player.addChatMessage(new ChatComponentText(GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------"));
 
         MinecraftServer server = MinecraftServer.getServer();
         if (server.isSinglePlayer() && !event.player.getGameProfile().getName().equals(server.getServerOwner())) {
-            event.player.addChatMessage(new ChatComponentText(OPEN_TO_LAN_WARNING));
+            event.player.addChatMessage(new ChatComponentTranslation(OPEN_TO_LAN_WARNING));
         }
     }
     // spotless:on
