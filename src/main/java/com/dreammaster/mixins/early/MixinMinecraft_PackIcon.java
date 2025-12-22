@@ -1,4 +1,4 @@
-package com.dreammaster.mixin.mixins.early;
+package com.dreammaster.mixins.early;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;

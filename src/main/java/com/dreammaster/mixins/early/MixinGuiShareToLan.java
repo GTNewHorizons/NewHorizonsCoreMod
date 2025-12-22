@@ -1,4 +1,4 @@
-package com.dreammaster.mixin.mixins.early;
+package com.dreammaster.mixins.early;
 
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiShareToLan;
