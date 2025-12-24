@@ -5079,13 +5079,13 @@ public class ScriptBloodMagic implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.VibrantAlloy, 1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
-                getModItem(BloodMagic.ID, "weakBloodShard", 3, 0, missing),
-                100,
+                getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
+                500,
                 new ItemStack[] { getModItem(BloodArsenal.ID, "heart", 1, 0, missing),
                         new ItemStack(Items.fermented_spider_eye, 1, 0),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         getModItem(BloodMagic.ID, "sanctus", 1, 0, missing),
                         getModItem(ThaumicHorizons.ID, "meatNuggetTH", 1, 0, missing) },
-                2);
+                3);
     }
 }

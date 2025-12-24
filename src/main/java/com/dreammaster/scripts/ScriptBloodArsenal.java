@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.BetterQuesting;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -739,7 +738,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodArsenal.ID, "heart", 1, 0, missing),
                 90,
-                new ItemStack[] { getModItem(BetterQuesting.ID, "extra_life", 1, 0, missing),
+                new ItemStack[] { getModItem(Witchery.ID, "ingredient", 1, 23, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 7, missing),
                         getModItem(BloodMagic.ID, "bloodMagicIncenseItem", 1, 4, missing),
                         getModItem(BloodMagic.ID, "bloodMagicIncenseItem", 1, 3, missing),
