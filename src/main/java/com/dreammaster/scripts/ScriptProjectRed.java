@@ -2982,7 +2982,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(30)
                     .addTo(circuitAssemblerRecipes);
             // Bus Input Pannel
-            for (ItemStack itemStack : OreDictionary.getOres("projectIllumar")) {
+            for (ItemStack itemStack : OreDictionary.getOres("projecdIllumar")) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
