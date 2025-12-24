@@ -2877,9 +2877,8 @@ public class ScriptProjectRed implements IScriptLoader {
             // State Cell
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 0, missing),
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1, missing),
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 4, missing),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7, missing))
