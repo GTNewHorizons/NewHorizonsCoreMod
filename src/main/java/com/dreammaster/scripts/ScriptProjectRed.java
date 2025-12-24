@@ -2989,7 +2989,7 @@ public class ScriptProjectRed implements IScriptLoader {
                                 getModItem(ProjectRedCore.ID, "projectred.core.part", 7, 3, missing),
                                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7, missing),
                                 GTUtility.copyAmount(1, itemStack))
-                        .circuit(7)
+                        .circuit(17)
                         .itemOutputs(
                                 getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30, missing))
                         .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(30)
