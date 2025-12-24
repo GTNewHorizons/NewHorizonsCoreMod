@@ -23,6 +23,7 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.ThaumicHorizons;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
@@ -37,6 +38,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -5075,6 +5077,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.VibrantAlloy, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.VibrantAlloy, 1L) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
+                500,
+                new ItemStack[] { getModItem(BloodArsenal.ID, "heart", 1, 0, missing),
+                        new ItemStack(Items.fermented_spider_eye, 1, 0),
+                        getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
+                        getModItem(BloodMagic.ID, "sanctus", 1, 0, missing),
+                        getModItem(ThaumicHorizons.ID, "meatNuggetTH", 1, 0, missing) },
                 3);
     }
 }

@@ -27,6 +27,7 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
+import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
@@ -733,5 +734,15 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("blood"), 100))
                 .itemOutputs(getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing)).duration(6 * SECONDS).eut(20)
                 .addTo(assemblerRecipes);
+
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem(BloodArsenal.ID, "heart", 1, 0, missing),
+                90,
+                new ItemStack[] { getModItem(Witchery.ID, "ingredient", 1, 23, missing),
+                        getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 7, missing),
+                        getModItem(BloodMagic.ID, "bloodMagicIncenseItem", 1, 4, missing),
+                        getModItem(BloodMagic.ID, "bloodMagicIncenseItem", 1, 3, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 79, missing) },
+                2);
     }
 }
