@@ -2823,7 +2823,8 @@ public class ScriptProjectRed implements IScriptLoader {
                                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                                 GTUtility.copyAmount(3, itemStack))
                         .circuit(14)
-                        .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15, missing))
+                        .itemOutputs(
+                                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15, missing))
                         .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(30)
                         .addTo(circuitAssemblerRecipes);
             }
@@ -2835,7 +2836,8 @@ public class ScriptProjectRed implements IScriptLoader {
                                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                                 GTUtility.copyAmount(3, itemStack))
                         .circuit(15)
-                        .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16, missing))
+                        .itemOutputs(
+                                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16, missing))
                         .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(30)
                         .addTo(circuitAssemblerRecipes);
             }
@@ -2989,7 +2991,8 @@ public class ScriptProjectRed implements IScriptLoader {
                                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7, missing),
                                 GTUtility.copyAmount(1, itemStack))
                         .circuit(7)
-                        .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30, missing))
+                        .itemOutputs(
+                                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30, missing))
                         .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(30)
                         .addTo(circuitAssemblerRecipes);
             }
