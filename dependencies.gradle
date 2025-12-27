@@ -1,11 +1,11 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.140:dev")
-    api("com.github.GTNewHorizons:Yamcl:0.7.1:dev")
-    api("com.github.GTNewHorizons:Baubles-Expanded:2.2.4-GTNH:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.164:dev")
+    api("com.github.GTNewHorizons:Yamcl:0.7.3:dev")
+    api("com.github.GTNewHorizons:Baubles-Expanded:2.2.6-GTNH:dev")
 
-    implementation("com.github.GTNewHorizons:GTNHLib:0.8.29:dev")
+    implementation("com.github.GTNewHorizons:GTNHLib:0.8.34:dev")
 
     implementation("net.glease:tc4recipelib:1.5.37:dev")
 
@@ -15,19 +15,19 @@ dependencies {
     compileOnly("secondderivative.irontankminecarts:IronTankMinecarts:1.0.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.7.13:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.5.1:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.14-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.3:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.17-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.5:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
-    compileOnly("com.github.GTNewHorizons:Chisel:2.17.7-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Chisel:2.17.9-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Botania:1.13.6-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.8.7:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.8.2:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Galacticraft:3.4.11-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.2:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:MatterManipulator:0.1.4-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Galacticraft:3.4.14-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.4:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:MatterManipulator:0.1.5-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.7.0:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.8-GTNH:dev")
     compileOnly("com.github.GTNewHorizons:Backhand:1.8.2:dev") { transitive = false }
@@ -37,7 +37,7 @@ dependencies {
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.3.4-GTNH:dev")
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Galacticraft:3.4.11-GTNH:dev")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Galacticraft:3.4.14-GTNH:dev")
 
     // Core unit testing platform
     testImplementation(platform('org.junit:junit-bom:5.9.2'))
@@ -58,7 +58,7 @@ project.getConfigurations()
         final DependencySubstitutions ds = c.getResolutionStrategy()
             .getDependencySubstitution();
         ds.substitute(ds.module("com.github.GTNewHorizons:Baubles"))
-            .using(ds.module("com.github.GTNewHorizons:Baubles-Expanded:2.2.4-GTNH"))
+            .using(ds.module("com.github.GTNewHorizons:Baubles-Expanded:2.2.6-GTNH"))
             .withClassifier("dev")
             .because("Baubles-Expanded replaces Baubles");
     });
