@@ -7,8 +7,8 @@ import net.minecraft.event.ClickEvent;
 import net.minecraft.event.HoverEvent;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.ChatStyle;
-import net.minecraft.util.StatCollector;
 
 import com.dreammaster.lib.Refstrings;
 
@@ -20,39 +20,43 @@ public class LoginHandler {
     // spotless:off
     @SubscribeEvent
     public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
-        final String WELCOME             = StatCollector.translateToLocal("dreamcraft.welcome.welcome");
-        final String QUESTBOOK           = StatCollector.translateToLocal("dreamcraft.welcome.questbook");
-        final String GTNH_WIKI           = StatCollector.translateToLocal("dreamcraft.welcome.gtnh_wiki");
-        final String CLICK_WIKI          = StatCollector.translateToLocal("dreamcraft.welcome.click_wiki");
-        final String REPORT_BUG          = StatCollector.translateToLocal("dreamcraft.welcome.report_bug");
-        final String CLICK_GITHUB        = StatCollector.translateToLocal("dreamcraft.welcome.click_github");
-        final String VISIT_DISCORD       = StatCollector.translateToLocal("dreamcraft.welcome.visitdiscord");
-        final String CLICK_DISCORD       = StatCollector.translateToLocal("dreamcraft.welcome.click_discord");
-        final String OPEN_TO_LAN_WARNING = StatCollector.translateToLocal("dreamcraft.welcome.open_to_lan");
+        final String WELCOME             = "dreamcraft.welcome.welcome";
+        final String QUESTBOOK           = "dreamcraft.welcome.questbook";
+        final String GTNH_WIKI           = "dreamcraft.welcome.gtnh_wiki";
+        final String CLICK_WIKI          = "dreamcraft.welcome.click_wiki";
+        final String REPORT_BUG          = "dreamcraft.welcome.report_bug";
+        final String CLICK_GITHUB        = "dreamcraft.welcome.click_github";
+        final String VISIT_DISCORD       = "dreamcraft.welcome.visitdiscord";
+        final String CLICK_DISCORD       = "dreamcraft.welcome.click_discord";
+        final String OPEN_TO_LAN_WARNING = "dreamcraft.welcome.open_to_lan";
 
         event.player.addChatMessage(new ChatComponentText(GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------"));
-        event.player.addChatMessage(new ChatComponentText(BOLD + WELCOME + " " + GREEN + ModPackVersion));
-        event.player.addChatMessage(new ChatComponentText(BLUE + QUESTBOOK));
-        event.player.addChatMessage(new ChatComponentText(DARK_GREEN + GTNH_WIKI + " ")
-                .appendSibling(new ChatComponentText(DARK_GREEN + Refstrings.WIKI_LINK)
+        event.player.addChatMessage(new ChatComponentTranslation(WELCOME).setChatStyle(new ChatStyle().setBold(true))
+                .appendText(" " + GREEN + ModPackVersion));
+        event.player.addChatMessage(new ChatComponentTranslation(QUESTBOOK).setChatStyle(new ChatStyle().setColor(BLUE)));
+        event.player.addChatMessage(new ChatComponentTranslation(GTNH_WIKI).setChatStyle(new ChatStyle().setColor(DARK_GREEN))
+                .appendSibling(new ChatComponentText(" " + DARK_GREEN + Refstrings.WIKI_LINK)
                         .setChatStyle(new ChatStyle()
-                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(YELLOW + CLICK_WIKI)))
+                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                        new ChatComponentTranslation(CLICK_WIKI).setChatStyle(new ChatStyle().setColor(YELLOW))))
                                 .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.WIKI_LINK)))));
-        event.player.addChatMessage(new ChatComponentText(GREEN + REPORT_BUG));
+        event.player.addChatMessage(new ChatComponentTranslation(REPORT_BUG).setChatStyle(new ChatStyle().setColor(GREEN)));
         event.player.addChatMessage(new ChatComponentText(GOLD + Refstrings.ISSUE_TRACKER_LINK)
                 .setChatStyle(new ChatStyle()
-                        .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(YELLOW + CLICK_GITHUB)))
+                        .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                new ChatComponentTranslation(CLICK_GITHUB).setChatStyle(new ChatStyle().setColor(YELLOW))))
                         .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.ISSUE_TRACKER_LINK))));
-        event.player.addChatMessage(new ChatComponentText(BLUE + VISIT_DISCORD + " ")
-                .appendSibling(new ChatComponentText(BLUE + Refstrings.DISCORD_LINK)
+        event.player.addChatMessage(new ChatComponentTranslation(VISIT_DISCORD).setChatStyle(new ChatStyle().setColor(BLUE))
+                .appendSibling(new ChatComponentText(" " + BLUE + Refstrings.DISCORD_LINK)
                         .setChatStyle(new ChatStyle()
-                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(YELLOW + CLICK_DISCORD)))
+                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                        new ChatComponentTranslation(CLICK_DISCORD).setChatStyle(new ChatStyle().setColor(YELLOW))))
                                 .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.DISCORD_LINK)))));
         event.player.addChatMessage(new ChatComponentText(GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------"));
 
         MinecraftServer server = MinecraftServer.getServer();
         if (server.isSinglePlayer() && !event.player.getGameProfile().getName().equals(server.getServerOwner())) {
-            event.player.addChatMessage(new ChatComponentText(OPEN_TO_LAN_WARNING));
+            event.player.addChatMessage(new ChatComponentTranslation(OPEN_TO_LAN_WARNING));
         }
     }
     // spotless:on
