@@ -111,6 +111,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.MetaGeneratedTool01;
+import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
@@ -1417,6 +1418,16 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64))
                 .fluidInputs(Materials.Glue.getFluid(144L)).duration(2 * MINUTES).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64)).circuit(2)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64))
+                .fluidInputs(Materials.GlueAdvanced.getFluid(72L)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64)).circuit(2)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64))
+                .fluidInputs(MaterialMisc.ETHYL_CYANOACRYLATE.getFluidStack(36)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         if (OpenBlocks.isModLoaded() && BloodMagic.isModLoaded()) {
             ItemStack[] trophies = { GTModHandler.getModItem(OpenBlocks.ID, "trophy", 1L),
