@@ -4849,18 +4849,20 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 39))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
 
+        // ME Output Bus
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Hatch_Output_Bus_HV.get(1L),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 440),
+                        ItemList.Hatch_Output_Bus_EV.get(1L),
+                        GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1L),
                         GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30))
                 .circuit(1).itemOutputs(ItemList.Hatch_Output_Bus_ME.get(1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
+        // ME Output Hatch
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Hatch_Output_HV.get(1L),
-                        GTModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1L),
+                        ItemList.Hatch_Output_EV.get(1L),
+                        GTModHandler.getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
                         GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30))
                 .circuit(1).itemOutputs(ItemList.Hatch_Output_ME.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
@@ -4868,7 +4870,7 @@ public class AssemblerRecipes implements Runnable {
         // Stocking Input Bus (ME)
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Hatch_Input_Bus_HV.get(1L),
+                        ItemList.Hatch_Input_Bus_EV.get(1L),
                         GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1L),
                         // Acceleration Card
                         GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30))
