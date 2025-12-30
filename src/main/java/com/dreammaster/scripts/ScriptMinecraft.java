@@ -37,10 +37,10 @@ import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
+import static gregtech.api.util.GTModHandler.RecipeBits.BITS;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtPlusPlus.core.recipe.common.CI.bits;
 import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import java.util.Arrays;
@@ -4564,7 +4564,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         GTModHandler.addCraftingRecipe(
                 new ItemStack(Blocks.ender_chest, 1),
-                bits,
+                BITS,
                 new Object[] { "ABA", "ACA", "ADA", 'A', "plateObsidian", 'B', "plateDenseEnderium", 'C',
                         GTModHandler.getModItem(EnderStorage.ID, "enderChest", 1L, 0), 'D',
                         GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45) });
