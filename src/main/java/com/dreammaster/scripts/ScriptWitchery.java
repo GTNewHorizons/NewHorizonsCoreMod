@@ -21,7 +21,6 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -310,21 +309,14 @@ public class ScriptWitchery implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(20 * SECONDS).eut(120)
                 .addTo(mixerRecipes);
 
+        // === Thaumcraft Recipes ===
         ResearchCategories.registerCategory(
                 "WITCHERY",
                 new ResourceLocation("dreamcraft:textures/thaumcraft/icon/icon_Witchery.png"),
                 new ResourceLocation("dreamcraft:textures/thaumcraft/tab/tab_Witchery.png"));
-        new ResearchItem(
-                "ANOINTINGPASTE",
-                "WITCHERY",
-                new AspectList().add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("aqua"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6),
-                0,
-                -4,
-                2,
-                getModItem(Witchery.ID, "ingredient", 1, 153, missing))
-                        .setPages(new ResearchPage("Witchery.research_page.ANOINTINGPASTE.1")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+
+        // Anointing Paste
+        final var anointingPasteRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "ANOINTINGPASTE",
                 getModItem(Witchery.ID, "cauldron", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("ignis"), 2)
@@ -336,25 +328,22 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 153, missing),
                 'c',
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing));
-        TCHelper.addResearchPage(
-                "ANOINTINGPASTE",
-                new ResearchPage(
-                        Objects.requireNonNull(
-                                TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "cauldron", 1, 0, missing)))));
         new ResearchItem(
-                "OVEN",
+                "ANOINTINGPASTE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("machina"), 6),
-                -2,
+                new AspectList().add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("aqua"), 9)
+                        .add(Aspect.getAspect("praecantatio"), 6),
+                0,
+                -4,
                 2,
-                3,
-                getModItem(Witchery.ID, "witchesovenidle", 1, 0, missing))
+                getModItem(Witchery.ID, "ingredient", 1, 153, missing))
                         .setPages(
-                                new ResearchPage("Witchery.research_page.OVEN.1"),
-                                new ResearchPage("Witchery.research_page.OVEN.2"))
+                                new ResearchPage("Witchery.research_page.ANOINTINGPASTE.1"),
+                                new ResearchPage(anointingPasteRecipe))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+
+        // Witches' Oven
+        final var witchesOvenRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "OVEN",
                 getModItem(Witchery.ID, "witchesovenidle", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("ignis"), 20)
@@ -380,21 +369,24 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 'i',
                 getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0, missing));
-        TCHelper.addResearchPage(
-                "OVEN",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "witchesovenidle", 1, 0, missing))));
-        ThaumcraftApi.addWarpToResearch("OVEN", 1);
         new ResearchItem(
-                "ATTUNEDSTONE",
+                "OVEN",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("vitreus"), 12)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("praecantatio"), 6),
+                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 12)
+                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("machina"), 6),
+                -2,
                 2,
-                0,
                 3,
-                getModItem(Witchery.ID, "ingredient", 1, 10, missing)).setParents("OVEN")
-                        .setPages(new ResearchPage("Witchery.research_page.ATTUNEDSTONE")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+                getModItem(Witchery.ID, "witchesovenidle", 1, 0, missing))
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.OVEN.1"),
+                                new ResearchPage("Witchery.research_page.OVEN.2"),
+                                new ResearchPage(witchesOvenRecipe))
+                        .registerResearchItem();
+        ThaumcraftApi.addWarpToResearch("OVEN", 1);
+
+        // Attuned Stone
+        final var attunedStoneRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "ATTUNEDSTONE",
                 getModItem(Witchery.ID, "ingredient", 1, 10, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ignis"), 30)
@@ -408,21 +400,23 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Botania.ID, "manaResource", 1, 2, missing),
                 'h',
                 getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing));
-        TCHelper.addResearchPage(
-                "ATTUNEDSTONE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "ingredient", 1, 10, missing))));
         new ResearchItem(
-                "QUARTZSPHERE",
+                "ATTUNEDSTONE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("instrumentum"), 12)
-                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("vitreus"), 12)
+                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("praecantatio"), 6),
                 2,
-                -2,
+                0,
                 3,
-                getModItem(Witchery.ID, "ingredient", 1, 92, missing)).setParents("ATTUNEDSTONE")
-                        .setPages(new ResearchPage("Witchery.research_page.QUARTZSPHERE")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+                getModItem(Witchery.ID, "ingredient", 1, 10, missing))
+                        .setParents("OVEN")
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.ATTUNEDSTONE"),
+                                new ResearchPage(attunedStoneRecipe))
+                        .registerResearchItem();
+
+        // Quartz Sphere
+        final var quartzSphereRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "QUARTZSPHERE",
                 getModItem(Witchery.ID, "ingredient", 1, 92, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
@@ -448,21 +442,24 @@ public class ScriptWitchery implements IScriptLoader {
                 "plateQuartzite",
                 'i',
                 "plateNetherQuartz");
-        TCHelper.addResearchPage(
-                "QUARTZSPHERE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "ingredient", 1, 92, missing))));
         new ResearchItem(
-                "CANDELABRA",
+                "QUARTZSPHERE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("ignis"), 6),
-                0,
+                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("instrumentum"), 12)
+                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("ordo"), 6)
+                        .add(Aspect.getAspect("praecantatio"), 3),
+                2,
                 -2,
                 3,
-                getModItem(Witchery.ID, "ingredient", 1, 0, missing)).setParents("ALTAR", "TALLOW", "ATTUNEDSTONE")
-                        .setConcealed().setPages(new ResearchPage("Witchery.research_page.CANDELABRA"))
+                getModItem(Witchery.ID, "ingredient", 1, 92, missing))
+                        .setParents("ATTUNEDSTONE")
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.QUARTZSPHERE"),
+                                new ResearchPage(quartzSphereRecipe))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+
+        // Candelabra
+        final var candelabraRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "CANDELABRA",
                 getModItem(Witchery.ID, "ingredient", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("ignis"), 10)
@@ -488,25 +485,21 @@ public class ScriptWitchery implements IScriptLoader {
                 "stickThaumium",
                 'i',
                 "plateIron");
-        TCHelper.addResearchPage(
-                "CANDELABRA",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "ingredient", 1, 0, missing))));
         new ResearchItem(
-                "KETTLE",
+                "CANDELABRA",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("ignis"), 6),
-                4,
+                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lux"), 12)
+                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("ignis"), 6),
                 0,
+                -2,
                 3,
-                getModItem(Witchery.ID, "kettle", 1, 0, missing))
-                        .setParents("ATTUNEDSTONE").setConcealed()
-                        .setPages(
-                                new ResearchPage("Witchery.research_page.KETTLE.1"),
-                                new ResearchPage("Witchery.research_page.KETTLE.2"),
-                                new ResearchPage("Witchery.research_page.KETTLE.3"))
+                getModItem(Witchery.ID, "ingredient", 1, 0, missing)).setParents("ALTAR", "TALLOW", "ATTUNEDSTONE")
+                        .setConcealed()
+                        .setPages(new ResearchPage("Witchery.research_page.CANDELABRA"), new ResearchPage(candelabraRecipe))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+
+        // Kettle
+        final var kettleRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "KETTLE",
                 getModItem(Witchery.ID, "kettle", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("ignis"), 40)
@@ -532,22 +525,26 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
                 'i',
                 "screwThaumium");
-        TCHelper.addResearchPage(
-                "KETTLE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "kettle", 1, 0, missing))));
-        ThaumcraftApi.addWarpToResearch("KETTLE", 2);
         new ResearchItem(
-                "SPINNINGWHEELW",
+                "KETTLE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("motus"), 15)
-                        .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("instrumentum"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("praecantatio"), 3),
-                6,
+                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 12)
+                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("ignis"), 6),
+                4,
                 0,
                 3,
-                getModItem(Witchery.ID, "spinningwheel", 1, 0, missing)).setParents("KETTLE").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.SPINNINGWHEELW")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+                getModItem(Witchery.ID, "kettle", 1, 0, missing))
+                        .setParents("ATTUNEDSTONE").setConcealed()
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.KETTLE.1"),
+                                new ResearchPage("Witchery.research_page.KETTLE.2"),
+                                new ResearchPage("Witchery.research_page.KETTLE.3"),
+                                new ResearchPage(kettleRecipe))
+                        .registerResearchItem();
+        ThaumcraftApi.addWarpToResearch("KETTLE", 2);
+
+        // Spinning Wheel
+        final var spinningWheelRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "SPINNINGWHEELW",
                 getModItem(Witchery.ID, "spinningwheel", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 60).add(Aspect.getAspect("ignis"), 60)
@@ -573,26 +570,24 @@ public class ScriptWitchery implements IScriptLoader {
                 "craftingToolScrewdriver",
                 'i',
                 "stickStainlessSteel");
-        TCHelper.addResearchPage(
-                "SPINNINGWHEELW",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "spinningwheel", 1, 0, missing))));
         new ResearchItem(
-                "RUBYSLIPPERS",
+                "SPINNINGWHEELW",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("aer"), 18)
-                        .add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("motus"), 15)
+                        .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("instrumentum"), 9)
+                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("praecantatio"), 3),
                 6,
-                -2,
+                0,
                 3,
-                getModItem(Witchery.ID, "rubyslippers", 1, 0, missing)).setParents("BLOODALTAR", "SPINNINGWHEELW")
-                        .setConcealed()
+                getModItem(Witchery.ID, "spinningwheel", 1, 0, missing))
+                        .setParents("KETTLE").setConcealed()
                         .setPages(
-                                new ResearchPage("Witchery.research_page.RUBYSLIPPERS.1"),
-                                new ResearchPage("Witchery.research_page.RUBYSLIPPERS.2"))
+                                new ResearchPage("Witchery.research_page.SPINNINGWHEELW"),
+                                new ResearchPage(spinningWheelRecipe))
                         .registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+
+        // Ruby Slippers
+        final var rubySlippersRecipe = TCHelper.addInfusionCraftingRecipe(
                 "RUBYSLIPPERS",
                 getModItem(Witchery.ID, "rubyslippers", 1, 0, missing),
                 5,
@@ -610,22 +605,27 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 34, missing),
                 CustomItemList.ManyullynCrystal.get(1L));
-        TCHelper.addResearchPage(
-                "RUBYSLIPPERS",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "rubyslippers", 1, 0, missing))));
-        ThaumcraftApi.addWarpToResearch("RUBYSLIPPERS", 5);
         new ResearchItem(
-                "DISTILLERY",
+                "RUBYSLIPPERS",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("motus"), 15)
-                        .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("instrumentum"), 9)
-                        .add(Aspect.getAspect("aqua"), 6).add(Aspect.getAspect("praecantatio"), 3),
-                8,
-                0,
+                new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("aer"), 18)
+                        .add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("lucrum"), 12)
+                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("potentia"), 6)
+                        .add(Aspect.getAspect("praecantatio"), 3),
+                6,
+                -2,
                 3,
-                getModItem(Witchery.ID, "distilleryidle", 1, 0, missing)).setParents("SPINNINGWHEELW").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.DISTILLERY")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+                getModItem(Witchery.ID, "rubyslippers", 1, 0, missing)).setParents("BLOODALTAR", "SPINNINGWHEELW")
+                        .setConcealed()
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.RUBYSLIPPERS.1"),
+                                new ResearchPage("Witchery.research_page.RUBYSLIPPERS.2"),
+                                new ResearchPage(rubySlippersRecipe))
+                        .registerResearchItem();
+        ThaumcraftApi.addWarpToResearch("RUBYSLIPPERS", 5);
+
+        // Distillery
+        final var distilleryRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILLERY",
                 getModItem(Witchery.ID, "distilleryidle", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 80).add(Aspect.getAspect("ignis"), 80)
@@ -652,26 +652,22 @@ public class ScriptWitchery implements IScriptLoader {
                 "craftingIronFurnace",
                 'i',
                 "plateDenseThaumium");
-        TCHelper.addResearchPage(
-                "DISTILLERY",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "distilleryidle", 1, 0, missing))));
-        ThaumcraftApi.addWarpToResearch("DISTILLERY", 3);
         new ResearchItem(
-                "RITUALCHALK",
+                "DISTILLERY",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("sensus"), 18).add(Aspect.getAspect("motus"), 15)
-                        .add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("iter"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("motus"), 15)
+                        .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("instrumentum"), 9)
+                        .add(Aspect.getAspect("aqua"), 6).add(Aspect.getAspect("praecantatio"), 3),
                 8,
-                -2,
+                0,
                 3,
-                getModItem(Witchery.ID, "chalkritual", 1, 0, missing))
-                        .setParents("DISTILLERY").setConcealed()
-                        .setPages(
-                                new ResearchPage("Witchery.research_page.RITUALCHALK.1"),
-                                new ResearchPage("Witchery.research_page.RITUALCHALK.2"))
+                getModItem(Witchery.ID, "distilleryidle", 1, 0, missing)).setParents("SPINNINGWHEELW").setConcealed()
+                        .setPages(new ResearchPage("Witchery.research_page.DISTILLERY"), new ResearchPage(distilleryRecipe))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        ThaumcraftApi.addWarpToResearch("DISTILLERY", 3);
+
+        // Ritual Chalk
+        final var ritualChalkRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "RITUALCHALK",
                 getModItem(Witchery.ID, "chalkritual", 2, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50)
@@ -697,25 +693,25 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 17, missing),
                 'i',
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing));
-        TCHelper.addResearchPage(
-                "RITUALCHALK",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "chalkritual", 1, 0, missing))));
         new ResearchItem(
-                "CIRCLETALISMAN",
+                "RITUALCHALK",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("lucrum"), 18).add(Aspect.getAspect("motus"), 15)
+                new AspectList().add(Aspect.getAspect("sensus"), 18).add(Aspect.getAspect("motus"), 15)
                         .add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("praecantatio"), 3),
-                10,
+                        .add(Aspect.getAspect("iter"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                8,
                 -2,
                 3,
-                getModItem(Witchery.ID, "circletalisman", 1, 0, missing))
-                        .setParents("RITUALCHALK").setConcealed()
+                getModItem(Witchery.ID, "chalkritual", 1, 0, missing))
+                        .setParents("DISTILLERY").setConcealed()
                         .setPages(
-                                new ResearchPage("Witchery.research_page.CIRCLETALISMAN.1"),
-                                new ResearchPage("Witchery.research_page.CIRCLETALISMAN.2"))
+                                new ResearchPage("Witchery.research_page.RITUALCHALK.1"),
+                                new ResearchPage("Witchery.research_page.RITUALCHALK.2"),
+                                new ResearchPage(ritualChalkRecipe))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+
+        // Circle Talisman
+        final var circleTalismanRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "CIRCLETALISMAN",
                 getModItem(Witchery.ID, "circletalisman", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("terra"), 50)
@@ -741,26 +737,26 @@ public class ScriptWitchery implements IScriptLoader {
                 "stickGold",
                 'i',
                 "screwGold");
-        TCHelper.addResearchPage(
-                "CIRCLETALISMAN",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "circletalisman", 1, 0, missing))));
-        ThaumcraftApi.addWarpToResearch("CIRCLETALISMAN", 1);
         new ResearchItem(
-                "ALTAR",
+                "CIRCLETALISMAN",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("arbor"), 9).add(Aspect.getAspect("terra"), 6),
+                new AspectList().add(Aspect.getAspect("lucrum"), 18).add(Aspect.getAspect("motus"), 15)
+                        .add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
+                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                10,
                 -2,
-                0,
                 3,
-                getModItem(Witchery.ID, "altar", 1, 0, missing))
-                        .setParents("OVEN", "ARCANESTONE").setConcealed()
+                getModItem(Witchery.ID, "circletalisman", 1, 0, missing))
+                        .setParents("RITUALCHALK").setConcealed()
                         .setPages(
-                                new ResearchPage("Witchery.research_page.ALTAR.1"),
-                                new ResearchPage("Witchery.research_page.ALTAR.2"),
-                                new ResearchPage("Witchery.research_page.ALTAR.3"))
+                                new ResearchPage("Witchery.research_page.CIRCLETALISMAN.1"),
+                                new ResearchPage("Witchery.research_page.CIRCLETALISMAN.2"),
+                                new ResearchPage(circleTalismanRecipe))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        ThaumcraftApi.addWarpToResearch("CIRCLETALISMAN", 1);
+
+        // Altar
+        final var altarRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALTAR",
                 getModItem(Witchery.ID, "altar", 2, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("ignis"), 20)
@@ -786,21 +782,26 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "witchlog", 1, 0, missing),
                 'i',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing));
-        TCHelper.addResearchPage(
-                "ALTAR",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "altar", 1, 0, missing))));
-        ThaumcraftApi.addWarpToResearch("ALTAR", 2);
         new ResearchItem(
-                "CHALICE",
+                "ALTAR",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("terra"), 6),
-                0,
+                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
+                        .add(Aspect.getAspect("arbor"), 9).add(Aspect.getAspect("terra"), 6),
+                -2,
                 0,
                 3,
-                getModItem(Witchery.ID, "ingredient", 1, 1, missing)).setParents("ALTAR", "ATTUNEDSTONE").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.CHALICE")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+                getModItem(Witchery.ID, "altar", 1, 0, missing))
+                        .setParents("OVEN", "ARCANESTONE").setConcealed()
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.ALTAR.1"),
+                                new ResearchPage("Witchery.research_page.ALTAR.2"),
+                                new ResearchPage("Witchery.research_page.ALTAR.3"),
+                                new ResearchPage(altarRecipe))
+                        .registerResearchItem();
+        ThaumcraftApi.addWarpToResearch("ALTAR", 2);
+
+        // Chalice
+        final var chaliceRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "CHALICE",
                 getModItem(Witchery.ID, "ingredient", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("terra"), 10)
@@ -826,24 +827,20 @@ public class ScriptWitchery implements IScriptLoader {
                 "ingotGold",
                 'i',
                 "foilThaumium");
-        TCHelper.addResearchPage(
-                "CHALICE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "ingredient", 1, 1, missing))));
         new ResearchItem(
-                "ARTHANA",
+                "CHALICE",
                 "WITCHERY",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("mortuus"), 6),
-                -4,
-                -2,
+                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("terra"), 6),
+                0,
+                0,
                 3,
-                getModItem(Witchery.ID, "arthana", 1, 0, missing))
-                        .setParents("ALTAR").setConcealed()
-                        .setPages(
-                                new ResearchPage("Witchery.research_page.ARTHANA.1"),
-                                new ResearchPage("Witchery.research_page.ARTHANA.2"))
+                getModItem(Witchery.ID, "ingredient", 1, 1, missing)).setParents("ALTAR", "ATTUNEDSTONE").setConcealed()
+                        .setPages(new ResearchPage("Witchery.research_page.CHALICE"), new ResearchPage(chaliceRecipe))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+
+        // Arthana
+        final var arthanaRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARTHANA",
                 getModItem(Witchery.ID, "arthana", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("perditio"), 15)
@@ -869,10 +866,30 @@ public class ScriptWitchery implements IScriptLoader {
                 "screwThaumium",
                 'i',
                 getModItem(TinkerConstruct.ID, "handGuard", 1, 16, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "ARTHANA",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "arthana", 1, 0, missing))));
+                "WITCHERY",
+                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lucrum"), 12)
+                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("mortuus"), 6),
+                -4,
+                -2,
+                3,
+                getModItem(Witchery.ID, "arthana", 1, 0, missing))
+                        .setParents("ALTAR").setConcealed()
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.ARTHANA.1"),
+                                new ResearchPage("Witchery.research_page.ARTHANA.2"),
+                                new ResearchPage(arthanaRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("ARTHANA", 2);
+
+        // Warm Blood
+        final var warmBloodRecipe = ThaumcraftApi.addCrucibleRecipe(
+                "WARMBLOOD",
+                getModItem(Witchery.ID, "ingredient", 1, 163, missing),
+                getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing),
+                new AspectList().add(Aspect.getAspect("exanimis"), 4).add(Aspect.getAspect("fames"), 4)
+                        .add(Aspect.getAspect("lucrum"), 4));
         new ResearchItem(
                 "WARMBLOOD",
                 "WITCHERY",
@@ -882,28 +899,12 @@ public class ScriptWitchery implements IScriptLoader {
                 -2,
                 3,
                 getModItem(Witchery.ID, "ingredient", 1, 163, missing)).setParents("ALTAR").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.WARMBLOOD")).registerResearchItem();
-        ThaumcraftApi.addCrucibleRecipe(
-                "WARMBLOOD",
-                getModItem(Witchery.ID, "ingredient", 1, 163, missing),
-                getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing),
-                new AspectList().add(Aspect.getAspect("exanimis"), 4).add(Aspect.getAspect("fames"), 4)
-                        .add(Aspect.getAspect("lucrum"), 4));
-        TCHelper.addResearchPage(
-                "WARMBLOOD",
-                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Witchery.ID, "ingredient", 1, 163, missing))));
+                        .setPages(new ResearchPage("Witchery.research_page.WARMBLOOD"), new ResearchPage(warmBloodRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("WARMBLOOD", 3);
-        new ResearchItem(
-                "FUMEFUNNEL",
-                "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("lux"), 9).add(Aspect.getAspect("sensus"), 6),
-                0,
-                2,
-                3,
-                getModItem(Witchery.ID, "fumefunnel", 1, 0, missing)).setParents("OVEN").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.FUMEFUNNEL")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+
+        // Fume Funnel
+        final var fumeFunnelRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "FUMEFUNNEL",
                 getModItem(Witchery.ID, "fumefunnel", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ignis"), 30)
@@ -929,22 +930,21 @@ public class ScriptWitchery implements IScriptLoader {
                 CustomItemList.SteelBars.get(1L),
                 'i',
                 "blockSteel");
-        TCHelper.addResearchPage(
-                "FUMEFUNNEL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "fumefunnel", 1, 0, missing))));
-        ThaumcraftApi.addWarpToResearch("FUMEFUNNEL", 1);
         new ResearchItem(
-                "FUMEFILTER",
+                "FUMEFUNNEL",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("vitreus"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("praecantatio"), 3),
-                2,
+                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("ignis"), 12)
+                        .add(Aspect.getAspect("lux"), 9).add(Aspect.getAspect("sensus"), 6),
+                0,
                 2,
                 3,
-                getModItem(Witchery.ID, "ingredient", 1, 73, missing))
-                        .setParents("DISTILESSENTIA", "FUMEFUNNEL", "ATTUNEDSTONE").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.FUMEFILTER")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+                getModItem(Witchery.ID, "fumefunnel", 1, 0, missing)).setParents("OVEN").setConcealed()
+                        .setPages(new ResearchPage("Witchery.research_page.FUMEFUNNEL"), new ResearchPage(fumeFunnelRecipe))
+                        .registerResearchItem();
+        ThaumcraftApi.addWarpToResearch("FUMEFUNNEL", 1);
+
+        // Fume Filter
+        final var fumeFilterRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "FUMEFILTER",
                 getModItem(Witchery.ID, "ingredient", 1, 73, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("ordo"), 16)
@@ -970,20 +970,21 @@ public class ScriptWitchery implements IScriptLoader {
                 "paneGlass",
                 'i',
                 "paneGlass");
-        TCHelper.addResearchPage(
-                "FUMEFILTER",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "ingredient", 1, 73, missing))));
         new ResearchItem(
-                "FILTEREDFUMEFUNNEL",
+                "FUMEFILTER",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("vitreus"), 12)
-                        .add(Aspect.getAspect("lux"), 9).add(Aspect.getAspect("praecantatio"), 6),
+                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("vitreus"), 9)
+                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("praecantatio"), 3),
                 2,
-                4,
+                2,
                 3,
-                getModItem(Witchery.ID, "filteredfumefunnel", 1, 0, missing)).setParents("FUMEFILTER").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.FILTEREDFUMEFUNNEL")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+                getModItem(Witchery.ID, "ingredient", 1, 73, missing))
+                        .setParents("DISTILESSENTIA", "FUMEFUNNEL", "ATTUNEDSTONE").setConcealed()
+                        .setPages(new ResearchPage("Witchery.research_page.FUMEFILTER"), new ResearchPage(fumeFilterRecipe))
+                        .registerResearchItem();
+
+        // Filtered Fume Funnel
+        final var filteredFumeFunnelRecipe = TCHelper.addInfusionCraftingRecipe(
                 "FILTEREDFUMEFUNNEL",
                 getModItem(Witchery.ID, "filteredfumefunnel", 1, 0, missing),
                 3,
@@ -996,22 +997,24 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 73, missing),
                 CustomItemList.SteelBars.get(1L),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing));
-        TCHelper.addResearchPage(
-                "FILTEREDFUMEFUNNEL",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "filteredfumefunnel", 1, 0, missing))));
-        ThaumcraftApi.addWarpToResearch("FILTEREDFUMEFUNNEL", 2);
         new ResearchItem(
-                "WAYSTONE",
+                "FILTEREDFUMEFUNNEL",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("praecantatio"), 6),
-                8,
-                -4,
+                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("vitreus"), 12)
+                        .add(Aspect.getAspect("lux"), 9).add(Aspect.getAspect("praecantatio"), 6),
+                2,
+                4,
                 3,
-                getModItem(Witchery.ID, "ingredient", 1, 12, missing)).setParents("RITUALCHALK").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.WAYSTONE")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+                getModItem(Witchery.ID, "filteredfumefunnel", 1, 0, missing))
+                        .setParents("FUMEFILTER").setConcealed()
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.FILTEREDFUMEFUNNEL"),
+                                new ResearchPage(filteredFumeFunnelRecipe))
+                        .registerResearchItem();
+        ThaumcraftApi.addWarpToResearch("FILTEREDFUMEFUNNEL", 2);
+
+        // Waystone
+        final var waystoneRecipe = TCHelper.addInfusionCraftingRecipe(
                 "WAYSTONE",
                 getModItem(Witchery.ID, "ingredient", 1, 12, missing),
                 5,
@@ -1027,9 +1030,17 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 7, missing),
                 getModItem(Witchery.ID, "chalkotherwhere", 1, 0, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 7, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "WAYSTONE",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "ingredient", 1, 12, missing))));
+                "WITCHERY",
+                new AspectList().add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("iter"), 12)
+                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("praecantatio"), 6),
+                8,
+                -4,
+                3,
+                getModItem(Witchery.ID, "ingredient", 1, 12, missing)).setParents("RITUALCHALK").setConcealed()
+                        .setPages(new ResearchPage("Witchery.research_page.WAYSTONE"), new ResearchPage(waystoneRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("WAYSTONE", 5);
     }
 }
