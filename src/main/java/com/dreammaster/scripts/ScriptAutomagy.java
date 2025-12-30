@@ -27,6 +27,7 @@ import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
@@ -81,10 +82,8 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalRes", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalMerc", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "focusCrafting", 1, 0, missing));
-        TCHelper.clearPages("REDSTONETHEORY");
-        TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.1"));
-        TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.2"));
-        TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.3"));
+
+        // Alchemical Boiler
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMYBOILER",
                 getModItem(Automagy.ID, "blockBoiler", 1, 0, missing),
@@ -102,7 +101,9 @@ public class ScriptAutomagy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'T',
                 "plateThaumium");
-        ThaumcraftApi.addArcaneCraftingRecipe(
+
+        // Redstone Theory Research
+        final var inversionTorchRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDSTONETHEORY",
                 getModItem(Automagy.ID, "blockTorchInversion", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10),
@@ -119,12 +120,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 getModItem(Automagy.ID, "shardSliver", 1, 4, missing),
                 'h',
                 getModItem(Automagy.ID, "shardSliver", 1, 4, missing));
-        TCHelper.addResearchPage(
-                "REDSTONETHEORY",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTorchInversion", 1, 0, missing))));
-        TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.4"));
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        final var hourglassRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDSTONETHEORY",
                 getModItem(Automagy.ID, "blockHourglass", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 10),
@@ -149,10 +145,16 @@ public class ScriptAutomagy implements IScriptLoader {
                 ItemList.Plank_Oak.get(1L),
                 'i',
                 "ringGold");
-        TCHelper.addResearchPage(
-                "REDSTONETHEORY",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockHourglass", 1, 0, missing))));
-        TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.5"));
+        ResearchCategories.getResearch("REDSTONETHEORY").setPages(
+                new ResearchPage("Automagy.research_page.REDSTONETHEORY.1"),
+                new ResearchPage("Automagy.research_page.REDSTONETHEORY.2"),
+                new ResearchPage("Automagy.research_page.REDSTONETHEORY.3"),
+                new ResearchPage(inversionTorchRecipe),
+                new ResearchPage("Automagy.research_page.REDSTONETHEORY.4"),
+                new ResearchPage(hourglassRecipe),
+                new ResearchPage("Automagy.research_page.REDSTONETHEORY.5"));
+
+        // Redcrystal Research
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
                 new AspectList().add(Aspect.getAspect("machina"), 2).add(Aspect.getAspect("praecantatio"), 6)

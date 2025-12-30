@@ -230,6 +230,28 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0, missing))));
         TCHelper.orphanResearch("DARK_QUARTZ");
         TCHelper.removeResearch("DARK_QUARTZ");
+        final var darkQuartzItemRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
+                "DARKQUARTZ",
+                getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("perditio"), 8),
+                "qqq",
+                "qcq",
+                "qqq",
+                'q',
+                "gemQuartz",
+                'c',
+                "coal");
+        final var darkQuartzItemRecipe2 = ThaumcraftApi.addArcaneCraftingRecipe(
+                "DARKQUARTZ",
+                getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("perditio"), 8),
+                "qqq",
+                "qcq",
+                "qqq",
+                'q',
+                "gemQuartz",
+                'c',
+                "charcoal");
         new ResearchItem(
                 "DARKQUARTZ",
                 "TT_CATEGORY",
@@ -238,61 +260,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 2,
                 1,
                 getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing)).setRound().setAutoUnlock()
-                        .setPages(new ResearchPage("ttresearch.page.DARK_QUARTZ.0")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "DARKQUARTZ",
-                getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 8),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                "gemQuartz",
-                'b',
-                "gemQuartz",
-                'c',
-                "gemQuartz",
-                'd',
-                "gemQuartz",
-                'e',
-                "coal",
-                'f',
-                "gemQuartz",
-                'g',
-                "gemQuartz",
-                'h',
-                "gemQuartz",
-                'i',
-                "gemQuartz");
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "DARKQUARTZ",
-                getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 8),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                "gemQuartz",
-                'b',
-                "gemQuartz",
-                'c',
-                "gemQuartz",
-                'd',
-                "gemQuartz",
-                'e',
-                "charcoal",
-                'f',
-                "gemQuartz",
-                'g',
-                "gemQuartz",
-                'h',
-                "gemQuartz",
-                'i',
-                "gemQuartz");
-        TCHelper.addResearchPage(
-                "DARKQUARTZ",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing))));
+                .setPages(
+                        new ResearchPage("ttresearch.page.DARK_QUARTZ.0"),
+                        new ResearchPage(darkQuartzItemRecipe),
+                        new ResearchPage(darkQuartzItemRecipe2)
+                ).registerResearchItem();
         TCHelper.addResearchPage(
                 "DARKQUARTZ",
                 new ResearchPage(
