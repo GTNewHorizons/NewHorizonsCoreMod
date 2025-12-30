@@ -495,7 +495,9 @@ public class ScriptWitchery implements IScriptLoader {
                 3,
                 getModItem(Witchery.ID, "ingredient", 1, 0, missing)).setParents("ALTAR", "TALLOW", "ATTUNEDSTONE")
                         .setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.CANDELABRA"), new ResearchPage(candelabraRecipe))
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.CANDELABRA"),
+                                new ResearchPage(candelabraRecipe))
                         .registerResearchItem();
 
         // Kettle
@@ -661,8 +663,11 @@ public class ScriptWitchery implements IScriptLoader {
                 8,
                 0,
                 3,
-                getModItem(Witchery.ID, "distilleryidle", 1, 0, missing)).setParents("SPINNINGWHEELW").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.DISTILLERY"), new ResearchPage(distilleryRecipe))
+                getModItem(Witchery.ID, "distilleryidle", 1, 0, missing))
+                        .setParents("SPINNINGWHEELW").setConcealed()
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.DISTILLERY"),
+                                new ResearchPage(distilleryRecipe))
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("DISTILLERY", 3);
 
@@ -898,8 +903,11 @@ public class ScriptWitchery implements IScriptLoader {
                 -2,
                 -2,
                 3,
-                getModItem(Witchery.ID, "ingredient", 1, 163, missing)).setParents("ALTAR").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.WARMBLOOD"), new ResearchPage(warmBloodRecipe))
+                getModItem(Witchery.ID, "ingredient", 1, 163, missing))
+                        .setParents("ALTAR").setConcealed()
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.WARMBLOOD"),
+                                new ResearchPage(warmBloodRecipe))
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("WARMBLOOD", 3);
 
@@ -938,8 +946,11 @@ public class ScriptWitchery implements IScriptLoader {
                 0,
                 2,
                 3,
-                getModItem(Witchery.ID, "fumefunnel", 1, 0, missing)).setParents("OVEN").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.FUMEFUNNEL"), new ResearchPage(fumeFunnelRecipe))
+                getModItem(Witchery.ID, "fumefunnel", 1, 0, missing))
+                        .setParents("OVEN").setConcealed()
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.FUMEFUNNEL"),
+                                new ResearchPage(fumeFunnelRecipe))
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("FUMEFUNNEL", 1);
 
@@ -980,7 +991,9 @@ public class ScriptWitchery implements IScriptLoader {
                 3,
                 getModItem(Witchery.ID, "ingredient", 1, 73, missing))
                         .setParents("DISTILESSENTIA", "FUMEFUNNEL", "ATTUNEDSTONE").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.FUMEFILTER"), new ResearchPage(fumeFilterRecipe))
+                        .setPages(
+                                new ResearchPage("Witchery.research_page.FUMEFILTER"),
+                                new ResearchPage(fumeFilterRecipe))
                         .registerResearchItem();
 
         // Filtered Fume Funnel

@@ -107,6 +107,11 @@ public class TCHelper {
         ri.setPages(ArrayUtils.add(ri.getPages(), page));
     }
 
+    public static void addResearchPages(final String research, ResearchPage... pages) {
+        ResearchItem ri = ResearchCategories.getResearch(research);
+        ri.setPages(ArrayUtils.addAll(ri.getPages(), pages));
+    }
+
     public static void clearPrereq(final String research) {
         ResearchCategories.getResearch(research).setParents().setParentsHidden();
     }

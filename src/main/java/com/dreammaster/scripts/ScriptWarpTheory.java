@@ -59,8 +59,7 @@ public class ScriptWarpTheory implements IScriptLoader {
         TCHelper.clearPrereq("warptheory.paper");
         TCHelper.addResearchPrereq("warptheory.paper", "RESEARCHER2", false);
         TCHelper.clearPages("warptheory.paper");
-        TCHelper.addResearchPage("warptheory.paper", new ResearchPage("research.warptheory.paper"));
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        final var litmusPaperRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "warptheory.paper",
                 getModItem(WarpTheory.ID, "item.warptheory.paper", 2, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 8).add(Aspect.getAspect("terra"), 8),
@@ -77,10 +76,10 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
-        TCHelper.addResearchPage(
+        TCHelper.addResearchPages(
                 "warptheory.paper",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0, missing))));
+                new ResearchPage("research.warptheory.paper"),
+                new ResearchPage(litmusPaperRecipe));
         TCHelper.setResearchAspects(
                 "warptheory.paper",
                 new AspectList().add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("praecantatio"), 6)
@@ -102,19 +101,7 @@ public class ScriptWarpTheory implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("warptheory.something", 3);
         TCHelper.orphanResearch("warptheory.cleanserminor");
         TCHelper.removeResearch("warptheory.cleanserminor");
-        new ResearchItem(
-                "PURETEARMINOR",
-                "WT_Category",
-                new AspectList().add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("sano"), 3)
-                        .add(Aspect.getAspect("terra"), 2),
-                -1,
-                -2,
-                2,
-                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing))
-                        .setParents("ELDRITCHMINOR", "warptheory.paper")
-                        .setPages(new ResearchPage("research.warptheory.warpcleanserminor")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var impureTearRecipe = TCHelper.addInfusionCraftingRecipe(
                 "PURETEARMINOR",
                 getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing),
                 10,
@@ -135,26 +122,25 @@ public class ScriptWarpTheory implements IScriptLoader {
                 OrePrefixes.cell.get(Materials.LifeEssence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 36, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "PURETEARMINOR",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing))));
+                "WT_Category",
+                new AspectList().add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("praecantatio"), 6)
+                        .add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("sano"), 3)
+                        .add(Aspect.getAspect("terra"), 2),
+                -1,
+                -2,
+                2,
+                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing))
+                        .setParents("ELDRITCHMINOR", "warptheory.paper")
+                        .setPages(
+                                new ResearchPage("research.warptheory.warpcleanserminor"),
+                                new ResearchPage(impureTearRecipe))
+                        .registerResearchItem();
+
         TCHelper.orphanResearch("warptheory.cleanser");
         TCHelper.removeResearch("warptheory.cleanser");
-        new ResearchItem(
-                "PURETEAR",
-                "WT_Category",
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("sano"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
-                -4,
-                -1,
-                3,
-                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing))
-                        .setParents("ELDRITCHMAJOR", "warptheory.paper", "ICHORIUM")
-                        .setPages(new ResearchPage("research.warptheory.warpcleanser")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var pureTearRecipe = TCHelper.addInfusionCraftingRecipe(
                 "PURETEAR",
                 getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
                 10,
@@ -171,11 +157,22 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
                 OrePrefixes.lens.get(Materials.Diamond),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "PURETEAR",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing))));
+                "WT_Category",
+                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("praecantatio"), 12)
+                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("sano"), 6)
+                        .add(Aspect.getAspect("terra"), 3),
+                -4,
+                -1,
+                3,
+                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing))
+                        .setParents("ELDRITCHMAJOR", "warptheory.paper", "ICHORIUM")
+                        .setPages(
+                                new ResearchPage("research.warptheory.warpcleanser"),
+                                new ResearchPage(pureTearRecipe))
+                        .registerResearchItem();
+
         TCHelper.orphanResearch("warptheory.amulet");
         TCHelper.clearPrereq("warptheory.amulet");
         TCHelper.addResearchPrereq("warptheory.amulet", "PURETEAR", false);
