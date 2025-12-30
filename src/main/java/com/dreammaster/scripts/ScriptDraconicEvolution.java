@@ -23,11 +23,11 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
+import static gregtech.api.util.GTModHandler.RecipeBits.BITS;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtPlusPlus.core.recipe.common.CI.bits;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1278,7 +1278,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
 
         GTModHandler.addCraftingRecipe(
                 getModItem(DraconicEvolution.ID, "dislocatorInhibitor", 1, 0, missing),
-                bits,
+                BITS,
                 new Object[] { "PSP", "BMB", "PSP", 'P', "plateSteelMagnetic", 'S',
                         getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6, missing), 'B',
                         getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), 'M',
