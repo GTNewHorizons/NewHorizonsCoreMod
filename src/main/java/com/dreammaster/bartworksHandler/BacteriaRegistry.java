@@ -61,7 +61,7 @@ import static gregtech.api.util.GTRecipeConstants.FUSION_THRESHOLD;
 import static gregtech.api.util.GTRecipeConstants.GLASS;
 import static gregtech.api.util.GTRecipeConstants.SIEVERT;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.LinkedHashMap;
 
 import net.minecraft.init.Blocks;
