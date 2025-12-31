@@ -466,7 +466,7 @@ public class BacteriaRegistry {
                     .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(new ItemStack(Blocks.glowstone, 1), new ItemStack(Blocks.double_plant, 0, 1))
+                    .itemInputs(
                             new ItemStack(Blocks.glowstone, 1),
                             GTModHandler.getModItem(Botania.ID, "quartz", 1L, 6))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
