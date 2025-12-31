@@ -42,6 +42,7 @@ import static gregtech.api.enums.Materials.Uranium;
 import static gregtech.api.enums.Materials.Water;
 import static gregtech.api.enums.Materials.Xenoxene;
 import static gregtech.api.enums.Materials.XenoxeneDiluted;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Genetics;
@@ -466,6 +467,8 @@ public class BacteriaRegistry {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(new ItemStack(Blocks.glowstone, 1), new ItemStack(Blocks.double_plant, 0, 1))
+                            new ItemStack(Blocks.glowstone, 1),
+                            GTModHandler.getModItem(Botania.ID, "quartz", 1L, 6))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
                     .fluidInputs(FluidRegistry.getFluidStack("fire_water", 1000))
                     .fluidOutputs(FluidRegistry.getFluidStack("liquid_sunshine", 1000)).duration(30 * SECONDS)
