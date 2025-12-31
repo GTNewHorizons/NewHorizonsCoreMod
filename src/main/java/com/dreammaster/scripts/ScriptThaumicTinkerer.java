@@ -201,18 +201,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem(ThaumicTinkerer.ID, "revealingHelm", 1, 0, missing));
         TCHelper.orphanResearch("SHARE_TOME");
         TCHelper.removeResearch("SHARE_TOME");
-        new ResearchItem(
-                "SHARETOME",
-                "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("instrumentum"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
-                0,
-                -1,
-                3,
-                getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0, missing)).setParents("INFUSION")
-                        .setPages(new ResearchPage("ttresearch.page.SHARE_TOME.0")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var shareTomeRecipe = TCHelper.addInfusionCraftingRecipe(
                 "SHARETOME",
                 getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0, missing),
                 6,
@@ -224,10 +213,18 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
                 getModItem(Minecraft.ID, "paper", 1, 0, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "SHARETOME",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0, missing))));
+                "TT_CATEGORY",
+                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("praecantatio"), 12)
+                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("instrumentum"), 6)
+                        .add(Aspect.getAspect("terra"), 3),
+                0,
+                -1,
+                3,
+                getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0, missing)).setParents("INFUSION")
+                        .setPages(new ResearchPage("ttresearch.page.SHARE_TOME.0"), new ResearchPage(shareTomeRecipe))
+                        .registerResearchItem();
         TCHelper.orphanResearch("DARK_QUARTZ");
         TCHelper.removeResearch("DARK_QUARTZ");
         final var darkQuartzItemRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
@@ -259,25 +256,23 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 -2,
                 2,
                 1,
-                getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing)).setRound().setAutoUnlock()
-                .setPages(
-                        new ResearchPage("ttresearch.page.DARK_QUARTZ.0"),
-                        new ResearchPage(darkQuartzItemRecipe),
-                        new ResearchPage(darkQuartzItemRecipe2)
-                ).registerResearchItem();
-        TCHelper.addResearchPage(
-                "DARKQUARTZ",
-                new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 2, missing))));
-        TCHelper.addResearchPage(
-                "DARKQUARTZ",
-                new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 1, 0, missing))));
-        TCHelper.addResearchPage(
-                "DARKQUARTZ",
-                new ResearchPage(
-                        TCHelper.findCraftingRecipe(
-                                getModItem(ThaumicTinkerer.ID, "darkQuartzStairs", 1, 0, missing))));
+                getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing))
+                        .setRound().setAutoUnlock()
+                        .setPages(
+                                new ResearchPage("ttresearch.page.DARK_QUARTZ.0"),
+                                new ResearchPage(darkQuartzItemRecipe),
+                                new ResearchPage(darkQuartzItemRecipe2),
+                                new ResearchPage(
+                                        TCHelper.findCraftingRecipe(
+                                                getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 2, missing))),
+                                new ResearchPage(
+                                        TCHelper.findCraftingRecipe(
+                                                getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 1, 0, missing))),
+                                new ResearchPage(
+                                        TCHelper.findCraftingRecipe(
+                                                getModItem(ThaumicTinkerer.ID, "darkQuartzStairs", 1, 0, missing))))
+                        .registerResearchItem();
+
         TCHelper.addResearchPrereq("INTERFACE", "INFUSION", false);
         TCHelper.addResearchPrereq("INTERFACE", "DARKQUARTZ", false);
         ResearchCategories.getResearch("INTERFACE").setConcealed();
@@ -434,20 +429,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("potentia"), 6)
                         .add(Aspect.getAspect("praecantatio"), 3));
         TCHelper.setResearchComplexity("BRIGHT_NITOR", 3);
+
+        // Elemental Fires
         TCHelper.orphanResearch("FIRE_IGNIS");
         TCHelper.removeResearch("FIRE_IGNIS");
-        new ResearchItem(
-                "FIREIGNIS",
-                "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
-                4,
-                -4,
-                3,
-                getModItem(ThaumicTinkerer.ID, "fireFire", 1, 0, missing))
-                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
-                        .setPages(new ResearchPage("ttresearch.page.FIRE_IGNIS.0")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var ignisFireRecipe = TCHelper.addInfusionCraftingRecipe(
                 "FIREIGNIS",
                 getModItem(ThaumicTinkerer.ID, "fireFire", 1, 0, missing),
                 16,
@@ -458,25 +444,22 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "FIREIGNIS",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "fireFire", 1, 0, missing))));
+                "TT_CATEGORY",
+                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("lux"), 12)
+                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                4,
+                -4,
+                3,
+                getModItem(ThaumicTinkerer.ID, "fireFire", 1, 0, missing))
+                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
+                        .setPages(new ResearchPage("ttresearch.page.FIRE_IGNIS.0"), new ResearchPage(ignisFireRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("FIREIGNIS", 10);
         TCHelper.orphanResearch("FIRE_AQUA");
         TCHelper.removeResearch("FIRE_AQUA");
-        new ResearchItem(
-                "FIREAQUA",
-                "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
-                2,
-                -2,
-                3,
-                getModItem(ThaumicTinkerer.ID, "fireWater", 1, 0, missing))
-                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
-                        .setPages(new ResearchPage("ttresearch.page.FIRE_AQUA.0")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var aquaFireRecipe = TCHelper.addInfusionCraftingRecipe(
                 "FIREAQUA",
                 getModItem(ThaumicTinkerer.ID, "fireWater", 1, 0, missing),
                 16,
@@ -487,25 +470,22 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "FIREAQUA",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "fireWater", 1, 0, missing))));
+                "TT_CATEGORY",
+                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("lux"), 12)
+                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                2,
+                -2,
+                3,
+                getModItem(ThaumicTinkerer.ID, "fireWater", 1, 0, missing))
+                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
+                        .setPages(new ResearchPage("ttresearch.page.FIRE_AQUA.0"), new ResearchPage(aquaFireRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("FIREAQUA", 10);
         TCHelper.orphanResearch("FIRE_TERRA");
         TCHelper.removeResearch("FIRE_TERRA");
-        new ResearchItem(
-                "FIRETERRA",
-                "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
-                4,
-                -6,
-                3,
-                getModItem(ThaumicTinkerer.ID, "fireEarth", 1, 0, missing))
-                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
-                        .setPages(new ResearchPage("ttresearch.page.FIRE_TERRA.0")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var terraFireRecipe = TCHelper.addInfusionCraftingRecipe(
                 "FIRETERRA",
                 getModItem(ThaumicTinkerer.ID, "fireEarth", 1, 0, missing),
                 16,
@@ -516,25 +496,22 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "FIRETERRA",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "fireEarth", 1, 0, missing))));
+                "TT_CATEGORY",
+                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("lux"), 12)
+                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                4,
+                -6,
+                3,
+                getModItem(ThaumicTinkerer.ID, "fireEarth", 1, 0, missing))
+                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
+                        .setPages(new ResearchPage("ttresearch.page.FIRE_TERRA.0"), new ResearchPage(terraFireRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("FIRETERRA", 10);
         TCHelper.orphanResearch("FIRE_ORDO");
         TCHelper.removeResearch("FIRE_ORDO");
-        new ResearchItem(
-                "FIREORDO",
-                "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
-                3,
-                -3,
-                3,
-                getModItem(ThaumicTinkerer.ID, "fireOrder", 1, 0, missing))
-                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
-                        .setPages(new ResearchPage("ttresearch.page.FIRE_ORDO.0")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var ordoFireRecipe = TCHelper.addInfusionCraftingRecipe(
                 "FIREORDO",
                 getModItem(ThaumicTinkerer.ID, "fireOrder", 1, 0, missing),
                 16,
@@ -545,25 +522,22 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "FIREORDO",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "fireOrder", 1, 0, missing))));
+                "TT_CATEGORY",
+                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("lux"), 12)
+                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                3,
+                -3,
+                3,
+                getModItem(ThaumicTinkerer.ID, "fireOrder", 1, 0, missing))
+                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
+                        .setPages(new ResearchPage("ttresearch.page.FIRE_ORDO.0"), new ResearchPage(ordoFireRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("FIREORDO", 10);
         TCHelper.orphanResearch("FIRE_AER");
         TCHelper.removeResearch("FIRE_AER");
-        new ResearchItem(
-                "FIREAER",
-                "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("motus"), 9).add(Aspect.getAspect("praecantatio"), 3),
-                3,
-                -7,
-                3,
-                getModItem(ThaumicTinkerer.ID, "fireAir", 1, 0, missing))
-                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
-                        .setPages(new ResearchPage("ttresearch.page.FIRE_AER.0")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var aerFireRecipe = TCHelper.addInfusionCraftingRecipe(
                 "FIREAER",
                 getModItem(ThaumicTinkerer.ID, "fireAir", 1, 0, missing),
                 16,
@@ -574,25 +548,22 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "FIREAER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "fireAir", 1, 0, missing))));
+                "TT_CATEGORY",
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("lux"), 12)
+                        .add(Aspect.getAspect("motus"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                3,
+                -7,
+                3,
+                getModItem(ThaumicTinkerer.ID, "fireAir", 1, 0, missing))
+                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
+                        .setPages(new ResearchPage("ttresearch.page.FIRE_AER.0"), new ResearchPage(aerFireRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("FIREAER", 10);
         TCHelper.orphanResearch("FIRE_PERDITIO");
         TCHelper.removeResearch("FIRE_PERDITIO");
-        new ResearchItem(
-                "FIREPERDITIO",
-                "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
-                2,
-                -8,
-                3,
-                getModItem(ThaumicTinkerer.ID, "fireChaos", 1, 0, missing))
-                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
-                        .setPages(new ResearchPage("ttresearch.page.FIRE_PERDITIO.0")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var perditioFireRecipe = TCHelper.addInfusionCraftingRecipe(
                 "FIREPERDITIO",
                 getModItem(ThaumicTinkerer.ID, "fireChaos", 1, 0, missing),
                 16,
@@ -609,13 +580,127 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "FIREPERDITIO",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "fireChaos", 1, 0, missing))));
+                "TT_CATEGORY",
+                new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("lux"), 12)
+                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                2,
+                -8,
+                3,
+                getModItem(ThaumicTinkerer.ID, "fireChaos", 1, 0, missing))
+                        .setParents("INFUSION", "BRIGHT_NITOR", "ELDRITCHMINOR").setConcealed()
+                        .setPages(
+                                new ResearchPage("ttresearch.page.FIRE_PERDITIO.0"),
+                                new ResearchPage(perditioFireRecipe))
+                        .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("FIREPERDITIO", 10);
+
+        // Infused Seeds
         TCHelper.orphanResearch("INFUSED_POTIONS");
         TCHelper.removeResearch("INFUSED_POTIONS");
+        final var aerSeedRecipe = TCHelper.addInfusionCraftingRecipe(
+                "INFUSEDSEED",
+                createItemStack(
+                        ThaumicTinkerer.ID,
+                        "infusedSeeds",
+                        1,
+                        0,
+                        "{mainAspect:{Aspects:[0:{amount:1,key:\"aer\"}]},aspectTendencies:{Aspects:[]}}",
+                        missing),
+                4,
+                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
+                        .add(Aspect.getAspect("aer"), 16),
+                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
+        final var ignisSeedRecipe = TCHelper.addInfusionCraftingRecipe(
+                "INFUSEDSEED",
+                createItemStack(
+                        ThaumicTinkerer.ID,
+                        "infusedSeeds",
+                        1,
+                        0,
+                        "{mainAspect:{Aspects:[0:{amount:1,key:\"ignis\"}]},aspectTendencies:{Aspects:[]}}",
+                        missing),
+                4,
+                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
+                        .add(Aspect.getAspect("ignis"), 16),
+                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing));
+        final var aquaSeedRecipe = TCHelper.addInfusionCraftingRecipe(
+                "INFUSEDSEED",
+                createItemStack(
+                        ThaumicTinkerer.ID,
+                        "infusedSeeds",
+                        1,
+                        0,
+                        "{mainAspect:{Aspects:[0:{amount:1,key:\"aqua\"}]},aspectTendencies:{Aspects:[]}}",
+                        missing),
+                4,
+                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
+                        .add(Aspect.getAspect("aqua"), 16),
+                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing));
+        final var terraSeedRecipe = TCHelper.addInfusionCraftingRecipe(
+                "INFUSEDSEED",
+                createItemStack(
+                        ThaumicTinkerer.ID,
+                        "infusedSeeds",
+                        1,
+                        0,
+                        "{mainAspect:{Aspects:[0:{amount:1,key:\"terra\"}]},aspectTendencies:{Aspects:[]}}",
+                        missing),
+                4,
+                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
+                        .add(Aspect.getAspect("terra"), 16),
+                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing));
+        final var ordoSeedRecipe = TCHelper.addInfusionCraftingRecipe(
+                "INFUSEDSEED",
+                createItemStack(
+                        ThaumicTinkerer.ID,
+                        "infusedSeeds",
+                        1,
+                        0,
+                        "{mainAspect:{Aspects:[0:{amount:1,key:\"ordo\"}]},aspectTendencies:{Aspects:[]}}",
+                        missing),
+                4,
+                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
+                        .add(Aspect.getAspect("ordo"), 16),
+                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing));
+        final var perditioSeedRecipe = TCHelper.addInfusionCraftingRecipe(
+                "INFUSEDSEED",
+                createItemStack(
+                        ThaumicTinkerer.ID,
+                        "infusedSeeds",
+                        1,
+                        0,
+                        "{mainAspect:{Aspects:[0:{amount:1,key:\"perditio\"}]},aspectTendencies:{Aspects:[]}}",
+                        missing),
+                4,
+                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
+                        .add(Aspect.getAspect("perditio"), 16),
+                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         new ResearchItem(
                 "INFUSEDSEED",
                 "TT_CATEGORY",
@@ -644,123 +729,42 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                                         new ResearchPage("ttresearch.page.INFUSED_POTIONS.0"),
                                         new ResearchPage("ttresearch.page.INFUSED_POTIONS.1"),
                                         new ResearchPage("ttresearch.page.INFUSED_POTIONS.2"),
-                                        new ResearchPage("ttresearch.page.INFUSED_POTIONS.3"))
+                                        new ResearchPage("ttresearch.page.INFUSED_POTIONS.3"),
+                                        new ResearchPage(aerSeedRecipe),
+                                        new ResearchPage(ignisSeedRecipe),
+                                        new ResearchPage(aquaSeedRecipe),
+                                        new ResearchPage(terraSeedRecipe),
+                                        new ResearchPage(ordoSeedRecipe),
+                                        new ResearchPage(perditioSeedRecipe),
+                                        new ResearchPage("tt.research.page.INFUSEDSEED.3"))
                                 .registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
-                "INFUSEDSEED",
-                createItemStack(
-                        ThaumicTinkerer.ID,
-                        "infusedSeeds",
-                        1,
-                        0,
-                        "{mainAspect:{Aspects:[0:{amount:1,key:\"aer\"}]},aspectTendencies:{Aspects:[]}}",
-                        missing),
-                4,
-                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
-                        .add(Aspect.getAspect("aer"), 16),
-                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
-        TCHelper.addResearchPage(
-                "INFUSEDSEED",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                createItemStack(
-                                        ThaumicTinkerer.ID,
-                                        "infusedSeeds",
-                                        1,
-                                        0,
-                                        "{mainAspect:{Aspects:[0:{amount:1,key:\"aer\"}]},aspectTendencies:{Aspects:[]}}",
-                                        missing))));
-        TCHelper.addInfusionCraftingRecipe(
-                "INFUSEDSEED",
-                createItemStack(
-                        ThaumicTinkerer.ID,
-                        "infusedSeeds",
-                        1,
-                        0,
-                        "{mainAspect:{Aspects:[0:{amount:1,key:\"ignis\"}]},aspectTendencies:{Aspects:[]}}",
-                        missing),
-                4,
-                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
-                        .add(Aspect.getAspect("ignis"), 16),
-                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing));
-        TCHelper.addInfusionCraftingRecipe(
-                "INFUSEDSEED",
-                createItemStack(
-                        ThaumicTinkerer.ID,
-                        "infusedSeeds",
-                        1,
-                        0,
-                        "{mainAspect:{Aspects:[0:{amount:1,key:\"aqua\"}]},aspectTendencies:{Aspects:[]}}",
-                        missing),
-                4,
-                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
-                        .add(Aspect.getAspect("aqua"), 16),
-                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing));
-        TCHelper.addInfusionCraftingRecipe(
-                "INFUSEDSEED",
-                createItemStack(
-                        ThaumicTinkerer.ID,
-                        "infusedSeeds",
-                        1,
-                        0,
-                        "{mainAspect:{Aspects:[0:{amount:1,key:\"terra\"}]},aspectTendencies:{Aspects:[]}}",
-                        missing),
-                4,
-                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
-                        .add(Aspect.getAspect("terra"), 16),
-                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing));
-        TCHelper.addInfusionCraftingRecipe(
-                "INFUSEDSEED",
-                createItemStack(
-                        ThaumicTinkerer.ID,
-                        "infusedSeeds",
-                        1,
-                        0,
-                        "{mainAspect:{Aspects:[0:{amount:1,key:\"ordo\"}]},aspectTendencies:{Aspects:[]}}",
-                        missing),
-                4,
-                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
-                        .add(Aspect.getAspect("ordo"), 16),
-                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing));
-        TCHelper.addInfusionCraftingRecipe(
-                "INFUSEDSEED",
-                createItemStack(
-                        ThaumicTinkerer.ID,
-                        "infusedSeeds",
-                        1,
-                        0,
-                        "{mainAspect:{Aspects:[0:{amount:1,key:\"perditio\"}]},aspectTendencies:{Aspects:[]}}",
-                        missing),
-                4,
-                new AspectList().add(Aspect.getAspect("messis"), 32).add(Aspect.getAspect("meto"), 32)
-                        .add(Aspect.getAspect("perditio"), 16),
-                getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
-        TCHelper.addResearchPage("INFUSEDSEED", new ResearchPage("tt.research.page.INFUSEDSEED.3"));
         ThaumcraftApi.addWarpToResearch("INFUSEDSEED", 2);
+
+        // Infused Potions
+        final var aerPotionRecipe = ThaumcraftApi.addCrucibleRecipe(
+                "INFUSEDPOTIONS",
+                getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 0, missing),
+                getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("aer"), 16)
+                        .add(Aspect.getAspect("praecantatio"), 8));
+        final var ignisPotionRecipe = ThaumcraftApi.addCrucibleRecipe(
+                "INFUSEDPOTIONS",
+                getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 1, missing),
+                getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 1, missing),
+                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("ignis"), 16)
+                        .add(Aspect.getAspect("praecantatio"), 8));
+        final var terraPotionRecipe = ThaumcraftApi.addCrucibleRecipe(
+                "INFUSEDPOTIONS",
+                getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 2, missing),
+                getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 2, missing),
+                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("terra"), 16)
+                        .add(Aspect.getAspect("praecantatio"), 8));
+        final var aquaPotionRecipe = ThaumcraftApi.addCrucibleRecipe(
+                "INFUSEDPOTIONS",
+                getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 3, missing),
+                getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 3, missing),
+                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("aqua"), 16)
+                        .add(Aspect.getAspect("praecantatio"), 8));
         new ResearchItem(
                 "INFUSEDPOTIONS",
                 "TT_CATEGORY",
@@ -774,48 +778,12 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .setConcealed()
                         .setPages(
                                 new ResearchPage("ttresearch.page.INFUSED_POTIONS.4"),
-                                new ResearchPage("ttresearch.page.INFUSED_POTIONS.5"))
+                                new ResearchPage("ttresearch.page.INFUSED_POTIONS.5"),
+                                new ResearchPage(aerPotionRecipe),
+                                new ResearchPage(ignisPotionRecipe),
+                                new ResearchPage(terraPotionRecipe),
+                                new ResearchPage(aquaPotionRecipe))
                         .registerResearchItem();
-        ThaumcraftApi.addCrucibleRecipe(
-                "INFUSEDPOTIONS",
-                getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 0, missing),
-                getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("aer"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8));
-        TCHelper.addResearchPage(
-                "INFUSEDPOTIONS",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 0, missing))));
-        ThaumcraftApi.addCrucibleRecipe(
-                "INFUSEDPOTIONS",
-                getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 1, missing),
-                getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 1, missing),
-                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("ignis"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8));
-        TCHelper.addResearchPage(
-                "INFUSEDPOTIONS",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 1, missing))));
-        ThaumcraftApi.addCrucibleRecipe(
-                "INFUSEDPOTIONS",
-                getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 2, missing),
-                getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 2, missing),
-                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8));
-        TCHelper.addResearchPage(
-                "INFUSEDPOTIONS",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 2, missing))));
-        ThaumcraftApi.addCrucibleRecipe(
-                "INFUSEDPOTIONS",
-                getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 3, missing),
-                getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 3, missing),
-                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("aqua"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8));
-        TCHelper.addResearchPage(
-                "INFUSEDPOTIONS",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 3, missing))));
         ThaumcraftApi.addWarpToResearch("INFUSEDPOTIONS", 2);
         TCHelper.addResearchPrereq("FUNNEL", "INFUSION", false);
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -1570,19 +1538,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(ThaumicTinkerer.ID, "blockTalisman", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicTinkerer.ID, "placementMirror", 1, 0, missing));
         TCHelper.removeResearch("DIMENSION_SHARDS");
-        new ResearchItem(
-                "DIMENSIONSHARDS",
-                "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("luxuria"), 15)
-                        .add(Aspect.getAspect("superbia"), 15).add(Aspect.getAspect("gula"), 12)
-                        .add(Aspect.getAspect("invidia"), 9).add(Aspect.getAspect("desidia"), 6)
-                        .add(Aspect.getAspect("ira"), 3),
-                7,
-                8,
-                3,
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing)).setParents("INFUSION")
-                        .setPages(new ResearchPage("tt.research.page.DIMENSIONSHARDS")).registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
+        final var netherShardRecipe = TCHelper.addInfusionCraftingRecipe(
                 "DIMENSIONSHARDS",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
                 8,
@@ -1608,7 +1564,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing));
-        TCHelper.addInfusionCraftingRecipe(
+        final var enderShardRecipe = TCHelper.addInfusionCraftingRecipe(
                 "DIMENSIONSHARDS",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing),
                 8,
@@ -1634,14 +1590,23 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing));
-        TCHelper.addResearchPage(
+        new ResearchItem(
                 "DIMENSIONSHARDS",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing))));
-        TCHelper.addResearchPage(
-                "DIMENSIONSHARDS",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing))));
+                "TT_CATEGORY",
+                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("luxuria"), 15)
+                        .add(Aspect.getAspect("superbia"), 15).add(Aspect.getAspect("gula"), 12)
+                        .add(Aspect.getAspect("invidia"), 9).add(Aspect.getAspect("desidia"), 6)
+                        .add(Aspect.getAspect("ira"), 3),
+                7,
+                8,
+                3,
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing))
+                        .setParents("INFUSION")
+                        .setPages(
+                                new ResearchPage("tt.research.page.DIMENSIONSHARDS"),
+                                new ResearchPage(netherShardRecipe),
+                                new ResearchPage(enderShardRecipe))
+                        .registerResearchItem();
         TCHelper.addResearchPrereq("ICHOR", "DIMENSIONSHARDS", false);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHOR",
@@ -1691,7 +1656,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("ICHOR_CLOTH", 1);
         TCHelper.clearPages("ICHORIUM");
         TCHelper.addResearchPage("ICHORIUM", new ResearchPage("ttresearch.page.ICHORIUM.0"));
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        final var ichoriumRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORIUM",
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                 new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("aqua"), 125)
@@ -1718,10 +1683,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
                 'i',
                 "gemFlawlessDiamond");
-        TCHelper.addResearchPage(
-                "ICHORIUM",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L))));
+        TCHelper.addResearchPage("ICHORIUM", new ResearchPage(ichoriumRecipe));
         TCHelper.setResearchAspects(
                 "ICHORIUM",
                 new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 15)
@@ -1744,7 +1706,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 3,
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing)).setParents("ICHORIUM").setConcealed()
                         .setPages(new ResearchPage("ttresearch.page.CAP_ICHOR.0")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        final var ichoriumWandCapRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_ICHOR",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 2, 4, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 150).add(Aspect.getAspect("aqua"), 150)
@@ -1771,10 +1733,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "WandCap", 1, 7, missing),
                 'i',
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing));
-        TCHelper.addResearchPage(
-                "CAP_ICHOR",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing))));
+        TCHelper.addResearchPage("CAP_ICHOR", new ResearchPage(ichoriumWandCapRecipe));
         TCHelper.setResearchAspects(
                 "CAP_ICHOR",
                 new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("instrumentum"), 15)
