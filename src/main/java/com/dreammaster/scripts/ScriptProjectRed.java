@@ -3628,7 +3628,13 @@ public class ScriptProjectRed implements IScriptLoader {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
-                    .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing))
+                    .itemOutputs(
+                            getModItem(
+                                    ProjectRedTransmission.ID,
+                                    "projectred.transmission.wire",
+                                    1,
+                                    outputMeta,
+                                    missing))
                     .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 36))
                     .duration(1 * SECONDS + 5 * TICKS).eut(2).requireMods(ProjectRedTransmission)
                     .addTo(chemicalBathRecipes);
