@@ -135,14 +135,20 @@ public class ScriptLoader {
         }
 
         ArrayList<String> errored = new ArrayList<>();
-        final long totalTimeStart = System.currentTimeMillis();
+        final long totalTimeStart = System.nanoTime();
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
                 try {
-                    final long timeStart = System.currentTimeMillis();
+                    final long timeStart = System.nanoTime();
                     script.loadRecipes();
-                    final long timeToLoad = System.currentTimeMillis() - timeStart;
-                    MainRegistry.Logger.info("Loaded " + script.getScriptName() + " script in " + timeToLoad + " ms.");
+                    final long timeToLoad = System.nanoTime() - timeStart;
+                    MainRegistry.Logger.info(
+                            "Loaded " + script.getScriptName()
+                                    + " script in "
+                                    + timeToLoad
+                                    + " ns ("
+                                    + timeToLoad / 1_000_000
+                                    + " ms).");
                 } catch (Exception ex) {
                     errored.add(script.getScriptName());
                     MainRegistry.Logger.error(
@@ -154,8 +160,9 @@ public class ScriptLoader {
                         "Missing dependencies to load " + script.getScriptName() + " script. It won't be loaded.");
             }
         }
-        final long totalTimeToLoad = System.currentTimeMillis() - totalTimeStart;
-        MainRegistry.Logger.info("Script loader took " + totalTimeToLoad + " ms.");
+        final long totalTimeToLoad = System.nanoTime() - totalTimeStart;
+        MainRegistry.Logger
+                .info("Script loader took " + totalTimeToLoad + " ns (" + totalTimeToLoad / 1_000_000 + " ms).");
         if (!errored.isEmpty()) throw new RuntimeException(
                 "Scripts " + errored + " thrown an exception! Scroll up the log to see the stacktrace!");
     }
