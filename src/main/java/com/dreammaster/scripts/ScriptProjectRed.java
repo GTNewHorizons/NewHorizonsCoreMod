@@ -3560,12 +3560,12 @@ public class ScriptProjectRed implements IScriptLoader {
         for (int i = 0; i <= 34; i++) {
             if (i >= 18 && i <= 33) continue;
             addShapedRecipe(
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, i),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, i, missing),
                     "stickWood",
                     "stickWood",
                     "stickWood",
                     "stickWood",
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i, missing),
                     "stickWood",
                     "stickWood",
                     "stickWood",
@@ -3607,7 +3607,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16))
                     .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta))
                     .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 18))
-                    .duration(SECONDS + 5 * TICKS).eut(2).addTo(chemicalBathRecipes);
+                    .duration(1 * SECONDS + 5 * TICKS).eut(2).addTo(chemicalBathRecipes);
         }
 
         // Insulated Wire Undyeing
@@ -3630,7 +3630,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                     .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing))
                     .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 36))
-                    .duration(SECONDS + 5 * TICKS).eut(2).requireMods(ProjectRedTransmission)
+                    .duration(1 * SECONDS + 5 * TICKS).eut(2).requireMods(ProjectRedTransmission)
                     .addTo(chemicalBathRecipes);
         }
 
