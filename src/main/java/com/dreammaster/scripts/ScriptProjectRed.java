@@ -3627,7 +3627,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     craftingCableDyes[i]);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
+                    .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17))
                     .itemOutputs(
                             getModItem(
                                     ProjectRedTransmission.ID,
