@@ -2711,7 +2711,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
                         .addTo(circuitAssemblerRecipes);
             }
-            // Light Sensor
+            // Rain Sensor
             for (ItemStack itemStack : OreDictionary.getOres("slimeball")) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
@@ -2775,7 +2775,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .circuit(3).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                     .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
-            // Bus Transition
+            // Bus Transceiver
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
@@ -2884,7 +2884,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .circuit(9).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                     .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
-            // Segment Display Gate
+            // Dec Randomizer
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
