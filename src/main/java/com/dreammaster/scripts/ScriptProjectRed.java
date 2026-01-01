@@ -3599,8 +3599,8 @@ public class ScriptProjectRed implements IScriptLoader {
             int outputMeta = 16 - i;
 
             addShapelessRecipe(
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta),
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
                     craftingCableDyes[i]);
 
             GTValues.RA.stdBuilder()
@@ -3613,8 +3613,8 @@ public class ScriptProjectRed implements IScriptLoader {
         // Insulated Wire Undyeing
         for (int i = 1; i < 16; i++) {
             addShapelessRecipe(
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16),
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i));
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i, missing));
         }
 
         // Bundled Cable Dyeing
@@ -3622,13 +3622,13 @@ public class ScriptProjectRed implements IScriptLoader {
             int outputMeta = 33 - i;
 
             addShapelessRecipe(
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta),
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
                     craftingCableDyes[i]);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17))
-                    .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta))
+                    .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
+                    .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta, missing))
                     .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 36))
                     .duration(SECONDS + 5 * TICKS).eut(2).requireMods(ProjectRedTransmission)
                     .addTo(chemicalBathRecipes);
@@ -3637,8 +3637,8 @@ public class ScriptProjectRed implements IScriptLoader {
         // Bundled Cable Undyeing
         for (int i = 18; i < 34; i++) {
             addShapelessRecipe(
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17),
-                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i));
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                    getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i, missing));
         }
     }
 }
