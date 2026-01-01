@@ -445,66 +445,69 @@ public class BacteriaRegistry {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTModHandler.getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L, 0),
-                            new ItemStack(Items.fermented_spider_eye, 1))
+                            GTModHandler.getModItem(Thaumcraft.ID, "ItemZombieBrain", 4L, 0),
+                            new ItemStack(Items.fermented_spider_eye, 4))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
-                    .fluidInputs(Water.getFluid(4000))
-                    .fluidOutputs(FluidRegistry.getFluidStack("nutrient_distillation", 1000)).duration(30 * SECONDS)
+                    .fluidInputs(FluidRegistry.getFluidStack("potion.mineralwater", 40))
+                    .fluidOutputs(FluidRegistry.getFluidStack("nutrient_distillation", 10)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
                     .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.poisonous_potato, 1), new ItemStack(Items.sugar, 1))
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.poisonous_potato, 4), new ItemStack(Items.sugar, 4))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
-                    .fluidInputs(Water.getFluid(8000)).fluidOutputs(FluidRegistry.getFluidStack("hootch", 2000))
-                    .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
-                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.blaze_powder, 1), Redstone.getDust(1))
-                    .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
-                    .fluidInputs(FluidRegistry.getFluidStack("hootch", 1000))
-                    .fluidOutputs(FluidRegistry.getFluidStack("fire_water", 1000)).duration(30 * SECONDS)
+                    .fluidInputs(FluidRegistry.getFluidStack("potion.mineralwater", 80))
+                    .fluidOutputs(FluidRegistry.getFluidStack("hootch", 20)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
                     .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            new ItemStack(Blocks.glowstone, 1),
-                            GTModHandler.getModItem(Botania.ID, "quartz", 1L, 6))
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.blaze_powder, 4), Redstone.getDust(4))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
-                    .fluidInputs(FluidRegistry.getFluidStack("fire_water", 1000))
-                    .fluidOutputs(FluidRegistry.getFluidStack("liquid_sunshine", 1000)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
-                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.clay, 1), new ItemStack(Blocks.packed_ice, 1))
-                    .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
-                    .fluidInputs(Water.getFluid(2000)).fluidOutputs(FluidRegistry.getFluidStack("cloud_seed", 2000))
-                    .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
-                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.clay, 1), Saltpeter.getDust(1))
-                    .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
-                    .fluidInputs(FluidRegistry.getFluidStack("cloud_seed", 2000))
-                    .fluidOutputs(FluidRegistry.getFluidStack("cloud_seed_concentrated", 2000)).duration(30 * SECONDS)
+                    .fluidInputs(FluidRegistry.getFluidStack("hootch", 10))
+                    .fluidOutputs(FluidRegistry.getFluidStack("fire_water", 10)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
                     .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 1L, 14),
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 1L, 16))
+                            new ItemStack(Blocks.glowstone, 4),
+                            GTModHandler.getModItem(Botania.ID, "quartz", 4L, 6))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
-                    .fluidInputs(FluidRegistry.getFluidStack("nutrient_distillation", 4000))
-                    .fluidOutputs(FluidRegistry.getFluidStack("ender_distillation", 4000)).duration(30 * SECONDS)
+                    .fluidInputs(FluidRegistry.getFluidStack("fire_water", 10))
+                    .fluidOutputs(FluidRegistry.getFluidStack("liquid_sunshine", 10)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
+                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.clay, 4), new ItemStack(Blocks.packed_ice, 4))
+                    .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
+                    .fluidInputs(FluidRegistry.getFluidStack("potion.mineralwater", 20))
+                    .fluidOutputs(FluidRegistry.getFluidStack("cloud_seed", 20)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
+                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.clay, 4), Saltpeter.getDust(4))
+                    .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
+                    .fluidInputs(FluidRegistry.getFluidStack("cloud_seed", 20))
+                    .fluidOutputs(FluidRegistry.getFluidStack("cloud_seed_concentrated", 20)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
                     .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 1L, 15),
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 1L, 17))
+                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 4L, 14),
+                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 4L, 16))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
-                    .fluidInputs(FluidRegistry.getFluidStack("ender_distillation", 1000))
-                    .fluidOutputs(FluidRegistry.getFluidStack("vapor_of_levity", 1000)).duration(30 * SECONDS)
+                    .fluidInputs(FluidRegistry.getFluidStack("nutrient_distillation", 40))
+                    .fluidOutputs(FluidRegistry.getFluidStack("ender_distillation", 40)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
+                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 4L, 15),
+                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 4L, 17))
+                    .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
+                    .fluidInputs(FluidRegistry.getFluidStack("ender_distillation", 10))
+                    .fluidOutputs(FluidRegistry.getFluidStack("vapor_of_levity", 10)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_EV).metadata(GLASS, 2)
                     .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
 
