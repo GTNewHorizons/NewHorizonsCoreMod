@@ -444,7 +444,6 @@ public class BacteriaRegistry {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L, 0),
                             GTModHandler.getModItem(Thaumcraft.ID, "ItemZombieBrain", 4L, 0),
                             new ItemStack(Items.fermented_spider_eye, 4))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
