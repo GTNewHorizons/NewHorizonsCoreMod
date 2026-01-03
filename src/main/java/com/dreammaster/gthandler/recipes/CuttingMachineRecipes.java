@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import net.minecraft.init.Blocks;
@@ -178,11 +177,11 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.crafting_table, 1))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L))
-                    .duration(4 * MINUTES).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                    .duration(5 * SECONDS).eut(16).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1L)).duration(4 * MINUTES)
-                    .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1L)).duration(5 * SECONDS)
+                    .eut(16).addTo(cutterRecipes);
         }
 
         // Photonically Prepared Wafer
