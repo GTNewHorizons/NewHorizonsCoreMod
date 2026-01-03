@@ -7307,6 +7307,9 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "tobaccoPowder", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("humanus"), 1)
                         .add(Aspect.getAspect("perditio"), 1));
+        ThaumcraftApi.registerObjectTag(
+                CustomItemList.NANCertificate.get(1),
+                new AspectList().add(Aspect.METAL, 64).add(Aspect.CRAFT, 64).add(Aspect.CRYSTAL, 64));
 
     }
 

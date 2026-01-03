@@ -151,6 +151,7 @@ public enum NHItemList {
     CoinTechnicianIII(new ModSimpleBaseItem("CoinTechnicianIII", ModTabList.ModGenericTab)),
     CoinTechnicianIV(new ModSimpleBaseItem("CoinTechnicianIV", ModTabList.ModGenericTab)),
     CoinDonation(new ModSimpleBaseItem("CoinDonation", ModTabList.ModGenericTab)),
+    NANCertificate(new ModSimpleBaseItem("NANCertificate", ModTabList.ModGenericTab)),
     CokeOvenBrick(new ModSimpleBaseItem("CokeOvenBrick", ModTabList.ModGenericTab)),
     CokeOvenBrickDust(new ModSimpleBaseItem("CokeOvenBrickDust", ModTabList.ModGenericTab)),
     ConductiveIronBars(new ModSimpleBaseItem("ConductiveIronBars", ModTabList.ModBarsAndCasingsTab)),

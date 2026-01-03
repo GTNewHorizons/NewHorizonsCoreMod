@@ -198,6 +198,7 @@ public enum CustomItemList implements IItemContainer {
     CoinFlowerIII,
     CoinFlowerIV,
     CoinDonation,
+    NANCertificate,
     WetTofu,
     WeakOrb,
     ApprenticeOrb,
