@@ -1901,7 +1901,6 @@ public class ScriptEnderIO implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitator", 1, 6, missing),
                         getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 6, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 8, 9, missing),
                         getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing),
