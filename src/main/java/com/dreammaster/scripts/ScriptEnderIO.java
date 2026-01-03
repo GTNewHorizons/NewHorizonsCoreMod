@@ -1836,7 +1836,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soularium, 1),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 8),
-                        getModItem(EnderIO.ID, "blockEndermanSkull", 16, 0, missing),
+                        getModItem(EnderIO.ID, "blockEndermanSkull", 8, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 8, 0, missing),
                         getModItem(Witchery.ID, "witchhand", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "heartCanister", 1, 1, missing))
@@ -1902,19 +1902,14 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicCapacitator", 1, 6, missing),
+                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 6, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 8, 9, missing),
                         getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing),
-                        new ItemStack(Items.experience_bottle, 27),
+                        new ItemStack(Blocks.dragon_egg, 1),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing))
                 .itemOutputs(
-                        createItemStack(
-                                EnderIO.ID,
-                                "itemBasicCapacitator",
-                                1,
-                                6,
-                                "{ench:[0:{id:32s,lvl:5s}]}",
-                                missing))
+                        createItemStack(EnderIO.ID, "itemBasicCapacitor", 1, 6, "{ench:[0:{id:32s,lvl:5s}]}", missing))
                 .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 40)).requiresCleanRoom().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_ZPM).addTo(circuitAssemblerRecipes);
 
