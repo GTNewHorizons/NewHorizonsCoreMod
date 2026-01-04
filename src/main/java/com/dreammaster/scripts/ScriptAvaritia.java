@@ -1006,7 +1006,7 @@ public class ScriptAvaritia implements IScriptLoader {
                         6 * MINUTES + 24 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        Materials.Alumite.getIngots(1),
+                        Materials.Obzinite.getIngots(1),
                         TinkerTools.MaterialID.Alumite,
                         7 * MINUTES + 20 * SECONDS + 8 * TICKS,
                         TierEU.RECIPE_MV),
