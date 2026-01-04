@@ -20,7 +20,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptMechworks implements IScriptLoader {
 
@@ -31,7 +30,7 @@ public class ScriptMechworks implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(TinkersMechworks.ID, TinkerConstruct.ID);
+        return Arrays.asList(TinkerConstruct.ID, TinkersMechworks.ID);
     }
 
     @Override
@@ -76,10 +75,9 @@ public class ScriptMechworks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
-                        getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 256, missing)).duration(10 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
+                        getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing))
+                .circuit(1).itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 256, missing))
+                .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0, missing),
@@ -110,25 +108,18 @@ public class ScriptMechworks implements IScriptLoader {
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0, missing),
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0, missing),
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0, missing),
-                        getModItem(TinkersMechworks.ID, "LengthWire", 64, 0, missing),
-                        GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 0, missing))
+                        getModItem(TinkersMechworks.ID, "LengthWire", 64, 0, missing))
+                .circuit(2).itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 0, missing))
                 .duration(2 * MINUTES + 8 * SECONDS).eut(64).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkersMechworks.ID, "LengthWire", 3, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkersMechworks.ID, "LengthWire", 3, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(TinkersMechworks.ID, "SignalBus", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 432)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkersMechworks.ID, "SignalBus", 2, 0, missing),
-                        GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkersMechworks.ID, "SignalBus", 2, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(TinkersMechworks.ID, "SignalTerminal", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Brass, 1))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Brass, 1)).circuit(5)
                 .itemOutputs(getModItem(TinkersMechworks.ID, "LengthWire", 2, 0, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(wiremillRecipes);
 

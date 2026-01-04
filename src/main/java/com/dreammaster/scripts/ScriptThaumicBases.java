@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.CarpentersBlocks;
 import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -50,16 +49,16 @@ public class ScriptThaumicBases implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                ThaumicBases.ID,
-                Thaumcraft.ID,
-                Railcraft.ID,
-                IronTanks.ID,
-                ExtraUtilities.ID,
-                GTPlusPlus.ID,
                 CarpentersBlocks.ID,
-                TwilightForest.ID,
+                ExtraUtilities.ID,
+                IndustrialCraft2.ID,
+                IronTanks.ID,
+                Railcraft.ID,
+                Thaumcraft.ID,
+                ThaumicBases.ID,
                 ThaumicTinkerer.ID,
-                IndustrialCraft2.ID);
+                TinkersGregworks.ID,
+                TwilightForest.ID);
     }
 
     @Override

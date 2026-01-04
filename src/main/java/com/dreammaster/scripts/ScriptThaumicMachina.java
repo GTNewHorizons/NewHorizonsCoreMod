@@ -24,7 +24,7 @@ public class ScriptThaumicMachina implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(ThaumicMachina.ID, Thaumcraft.ID);
+        return Arrays.asList(Thaumcraft.ID, ThaumicMachina.ID);
     }
 
     @Override

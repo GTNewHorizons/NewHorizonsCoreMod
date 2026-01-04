@@ -22,13 +22,10 @@ import bartworks.common.loaders.ItemRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsBotania;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class FluidSolidifierRecipes implements Runnable {
 
@@ -119,12 +116,11 @@ public class FluidSolidifierRecipes implements Runnable {
 
         // Non photonic matter exclusion glass
         GTValues.RA.stdBuilder().itemInputs(ItemList.GlassOmniPurposeInfinityFused.get(1))
-                .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(1000L))
-                .itemOutputs(ItemList.GlassQuarkContainment.get(1)).eut(TierEU.RECIPE_UEV).duration(5 * SECONDS)
-                .addTo(fluidSolidifierRecipes);
+                .fluidInputs(Materials.ExcitedDTRC.getFluid(1000L)).itemOutputs(ItemList.GlassQuarkContainment.get(1))
+                .eut(TierEU.RECIPE_UEV).duration(5 * SECONDS).addTo(fluidSolidifierRecipes);
         if (Botania.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L))
-                    .itemOutputs(BlockList.Gaia.getIS(1)).fluidInputs(MaterialsBotania.GaiaSpirit.getMolten(1296L))
+                    .itemOutputs(BlockList.Gaia.getIS(1)).fluidInputs(Materials.GaiaSpirit.getMolten(1296L))
                     .duration(2 * SECONDS).eut(TierEU.RECIPE_IV).addTo(fluidSolidifierRecipes);
         }
 
@@ -136,7 +132,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     .addTo(fluidSolidifierRecipes);
             // maybe Materials.Glue.getFluid(144L) instead
 
-            GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
+            GTValues.RA.stdBuilder().circuit(1)
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "blankPattern", 1L, 1))
                     .fluidInputs(FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144))
                     .duration(20 * TICKS).eut(48).addTo(fluidSolidifierRecipes);

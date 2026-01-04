@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TwilightForest;
@@ -31,7 +32,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -45,7 +45,13 @@ public class ScriptTwilightForest implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(TwilightForest.ID, Thaumcraft.ID);
+        return Arrays.asList(
+                ElectroMagicTools.ID,
+                EtFuturumRequiem.ID,
+                MagicBees.ID,
+                Thaumcraft.ID,
+                TwilightForest.ID,
+                ZTones.ID);
     }
 
     @Override
@@ -226,7 +232,7 @@ public class ScriptTwilightForest implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0, missing), NHItemList.StonePlate.getIS(16))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0, missing))
-                .fluidInputs(Materials.Helium_3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
+                .fluidInputs(Materials.Helium3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "item.carminite", 9, 0, missing))
@@ -237,9 +243,8 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "smoker", 1L),
                         getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.CastleBrick", 2, 3, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 1000))
+                        getModItem(TwilightForest.ID, "tile.CastleBrick", 2, 3, missing))
+                .circuit(8).fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 1000))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFFireJet", 1L)).duration(12 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -247,9 +252,8 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         getModItem(TwilightForest.ID, "tile.TFFireJet", 1L),
                         new ItemStack(Items.fire_charge, 1),
-                        getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
+                        getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing))
+                .circuit(8).fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFFireJet", 1L, 8)).duration(12 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 

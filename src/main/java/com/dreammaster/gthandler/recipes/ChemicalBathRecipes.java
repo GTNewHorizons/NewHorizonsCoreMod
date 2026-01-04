@@ -48,11 +48,11 @@ public class ChemicalBathRecipes implements Runnable {
         // tanned leather
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.leather, 2, 0))
                 .itemOutputs(GTModHandler.getModItem(Backpack.ID, "tannedLeather", 1L, 0))
-                .fluidInputs(Materials.PhosphoricAcid.getFluid(144)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(chemicalBathRecipes);
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.ArtificialLeather.get(2L))
                 .itemOutputs(GTModHandler.getModItem(Backpack.ID, "tannedLeather", 1L, 0))
-                .fluidInputs(Materials.PhosphoricAcid.getFluid(144)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(chemicalBathRecipes);
 
         // Chlorine cleaning of pistons
@@ -70,25 +70,25 @@ public class ChemicalBathRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Kanthal, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Kanthal, 1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 250))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(1 * MINUTES)
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
         // Cooling Hot Tantalum MV
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tantalum, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Tantalum, 1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 250))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250))
-                .duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
         // Cooling Hot Silicon MV
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Silicon, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Silicon, 1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 250))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(30 * SECONDS)
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
         // Cooling Hot SiliconSG MV
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.SiliconSG, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.SiliconSG, 1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 250))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(40 * SECONDS)
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.MysteriousCrystalGemExquisite.get(1L))
@@ -262,7 +262,7 @@ public class ChemicalBathRecipes implements Runnable {
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing),
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing),
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing))
-                    .outputChances(10000, 10000, 10000).fluidInputs(Materials.Silicone.getMolten(144L))
+                    .outputChances(10000, 10000, 10000).fluidInputs(Materials.RubberSilicone.getMolten(144L))
                     .duration(10 * SECONDS).eut(2).addTo(chemicalBathRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 2, missing))
                     .itemOutputs(

@@ -18,7 +18,6 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -34,7 +33,7 @@ public class ScriptGadomancy implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Gadomancy.ID, Thaumcraft.ID, Mods.ThaumicTinkerer.ID);
+        return Arrays.asList(Gadomancy.ID, Thaumcraft.ID, ThaumicTinkerer.ID);
     }
 
     @Override

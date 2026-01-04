@@ -45,9 +45,11 @@ import com.dreammaster.command.CustomFuelsCommand;
 import com.dreammaster.command.CustomToolTipsCommand;
 import com.dreammaster.command.HazardousItemsCommand;
 import com.dreammaster.config.CoreModConfig;
+import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.iguana.IguanaProxy;
@@ -68,7 +70,8 @@ import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 import com.dreammaster.modhazardousitems.HazardousItemsHandler;
-import com.dreammaster.network.CoreModDispatcher;
+import com.dreammaster.network.msg.CTTClientSyncMessage;
+import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
@@ -81,16 +84,20 @@ import com.dreammaster.travellersgear.TGConverter;
 import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
+import betterquesting.api.storage.BQ_Settings;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
+import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -105,7 +112,7 @@ import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
-import gregtech.api.util.GTLanguageManager;
+import gregtech.api.enums.Mods;
 import gregtech.common.items.MetaGeneratedItem01;
 
 @Mod(
@@ -120,7 +127,8 @@ import gregtech.common.items.MetaGeneratedItem01;
                 + "after:HardcoreEnderExpansion;"
                 + "after:Thaumcraft;"
                 + "after:amazingtrophies;"
-                + "after:backhand@[1.6.9,);")
+                + "after:backhand@[1.6.9,);"
+                + "after:betterquesting")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -140,7 +148,7 @@ public class MainRegistry {
     public static IngameErrorLog Module_AdminErrorLogs;
     public static GT_CustomLoader GTCustomLoader;
     public static CoreModConfig CoreConfig;
-    public static CoreModDispatcher NW;
+    public static SimpleNetworkWrapper dispatcher;
     public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
@@ -216,8 +224,17 @@ public class MainRegistry {
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Init NetworkChannel");
-        NW = new CoreModDispatcher();
-        NW.registerPackets();
+        dispatcher = new SimpleNetworkWrapper(Refstrings.MODID);
+        dispatcher.registerMessage(
+                CTTClientSyncMessage.CTTClientSyncMessageHandler.class,
+                CTTClientSyncMessage.class,
+                0,
+                Side.CLIENT);
+        dispatcher.registerMessage(
+                ZZClientOnlySyncMessage.ZZClientOnlySyncMessageHandler.class,
+                ZZClientOnlySyncMessage.class,
+                1,
+                Side.CLIENT);
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
@@ -474,22 +491,6 @@ public class MainRegistry {
 
         registerModFixes();
 
-        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
-        GTLanguageManager
-                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
-        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");
-        GTLanguageManager
-                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5.desc", "On your way to the T5 Dims!");
-        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6", "Rocket Plate Tier 6!");
-        GTLanguageManager
-                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6.desc", "On your way to the T6 Dims!");
-        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7", "Rocket Plate Tier 7!");
-        GTLanguageManager
-                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc", "On your way to the T7 Dims!");
-        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8", "Rocket Plate Tier 8!");
-        GTLanguageManager
-                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
-
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
@@ -560,24 +561,32 @@ public class MainRegistry {
     /**
      * Do some stuff once the server starts
      *
-     * @param pEvent
+     * @param event
      */
     @Mod.EventHandler
-    public void serverLoad(FMLServerStartingEvent pEvent) {
+    public void serverLoad(FMLServerStartingEvent event) {
         if (CoreConfig.ModHazardousItems_Enabled) {
-            pEvent.registerServerCommand(new HazardousItemsCommand());
+            event.registerServerCommand(new HazardousItemsCommand());
         }
         if (CoreConfig.ModCustomToolTips_Enabled) {
-            pEvent.registerServerCommand(new CustomToolTipsCommand());
+            event.registerServerCommand(new CustomToolTipsCommand());
         }
         if (CoreConfig.ModCustomFuels_Enabled) {
-            pEvent.registerServerCommand(new CustomFuelsCommand());
+            event.registerServerCommand(new CustomFuelsCommand());
         }
         if (CoreConfig.ModCustomDrops_Enabled) {
-            pEvent.registerServerCommand(new CustomDropsCommand());
+            event.registerServerCommand(new CustomDropsCommand());
         }
         if (YAMCore.isDebug()) {
-            pEvent.registerServerCommand(new AllPurposeDebugCommand());
+            event.registerServerCommand(new AllPurposeDebugCommand());
+        }
+        if (Mods.BetterQuesting.isModLoaded()) {
+            if (!bqConfig$ReloadOnStartup() && DreamCoreMod.modpackHasUpdated()) {
+                Logger.info("Modpack has been updated, loading default quest database");
+                final long l = System.currentTimeMillis();
+                event.getServer().getCommandManager().executeCommand(event.getServer(), "/bq_admin default load");
+                Logger.info("Loading quest data base took " + (System.currentTimeMillis() - l) + "ms");
+            }
         }
     }
 
@@ -586,5 +595,27 @@ public class MainRegistry {
         if (handleAchievements) {
             AchievementHandler.cleanup();
         }
+    }
+
+    @Mod.EventHandler
+    public void onMissingMappings(FMLMissingMappingsEvent event) {
+        for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
+            if (mapping.type != GameRegistry.Type.ITEM) {
+                continue;
+            }
+
+            // Remaps the old "UnfiredSlimeSoulBrick" (with a typo) to the new, correct "UnfiredSlimeSoilBrick".
+            final String oldBrickName = "dreamcraft:item.UnfiredSlimeSoulBrick";
+            if (oldBrickName.equals(mapping.name)) {
+                mapping.remap(CustomItemList.UnfiredSlimeSoilBrick.getItem());
+            }
+
+            break;
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.BETTER_QUESTING)
+    private static boolean bqConfig$ReloadOnStartup() {
+        return BQ_Settings.loadDefaultsOnStartup;
     }
 }

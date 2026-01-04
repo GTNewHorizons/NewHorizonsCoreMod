@@ -32,6 +32,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTLog;
@@ -165,19 +166,16 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         GTOreDictUnificator.registerOre(
                 OrePrefixes.ingot,
-                Materials.HeeEndium,
+                Materials.Endium,
                 GTModHandler.getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1L, 0));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
-                Materials.HeeEndium,
+                Materials.Endium,
                 GTModHandler.getModItem(HardcoreEnderExpansion.ID, "endium_block", 1L, 0));
 
         GTOreDictUnificator
                 .registerOre("oreAdamantium", GTModHandler.getModItem(GalaxySpace.ID, "oberonblocks", 1L, 3));
-        GTOreDictUnificator
-                .registerOre("ingotAdamantium", GTModHandler.getModItem(GalaxySpace.ID, "item.Ingots", 1L, 0));
         GTOreDictUnificator.registerOre("oreCobalt", GTModHandler.getModItem(GalaxySpace.ID, "phobosblocks", 1L, 4));
-        GTOreDictUnificator.registerOre("ingotCobalt", GTModHandler.getModItem(GalaxySpace.ID, "item.Ingots", 1L, 1));
 
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
@@ -286,7 +284,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 GTModHandler.getModItem(StevesCarts2.ID, "BlockMetalStorage", 1L, 1));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
-                Materials.EnhancedGalgadorian,
+                Materials.GalgadorianEnhanced,
                 GTModHandler.getModItem(StevesCarts2.ID, "BlockMetalStorage", 1L, 2));
 
         GTOreDictUnificator.registerOre(
@@ -322,6 +320,12 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1L, 3));
         GTOreDictUnificator
                 .registerOre(OrePrefixes.paneGlass, GTModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 1L, 0));
+        GTOreDictUnificator.registerOre(
+                OrePrefixes.ingot,
+                "SearedBrick",
+                GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1, 2));
+
+        GTOreDictUnificator.registerOre(OrePrefixes.ingot, "Firebrick", ItemList.Firebrick.get(1));
 
         GTOreDictUnificator.registerOre("dyeLime", GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L));
 

@@ -1,12 +1,10 @@
 package com.dreammaster.network.msg;
 
-import net.minecraft.entity.player.EntityPlayer;
-
 import com.dreammaster.scripts.ScriptZZClientOnly;
 
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
+import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
-import eu.usrv.yamcore.network.client.AbstractClientMessageHandler;
 import io.netty.buffer.ByteBuf;
 
 public class ZZClientOnlySyncMessage implements IMessage {
@@ -30,10 +28,10 @@ public class ZZClientOnlySyncMessage implements IMessage {
         buf.writeBoolean(enabled);
     }
 
-    public static class ZZClientOnlySyncMessageHandler extends AbstractClientMessageHandler<ZZClientOnlySyncMessage> {
+    public static class ZZClientOnlySyncMessageHandler implements IMessageHandler<ZZClientOnlySyncMessage, IMessage> {
 
         @Override
-        public IMessage handleClientMessage(EntityPlayer player, ZZClientOnlySyncMessage message, MessageContext ctx) {
+        public IMessage onMessage(ZZClientOnlySyncMessage message, MessageContext ctx) {
             ScriptZZClientOnly.instance.handleServerMessage(message.enabled);
             return null;
         }

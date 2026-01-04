@@ -27,7 +27,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptStevesFactoryManager implements IScriptLoader {
 
@@ -39,16 +38,16 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                StevesFactoryManager.ID,
-                StevesAddons.ID,
                 AppliedEnergistics2.ID,
-                ProjectRedTransmission.ID,
                 Computronics.ID,
                 EnderIO.ID,
                 ExtraUtilities.ID,
                 IndustrialCraft2.ID,
                 OpenBlocks.ID,
-                Railcraft.ID);
+                ProjectRedTransmission.ID,
+                Railcraft.ID,
+                StevesFactoryManager.ID,
+                StevesAddons.ID);
     }
 
     @Override
@@ -146,11 +145,8 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableSignName", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(15 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesFactoryManager.ID, "BlockCableName", 8, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 8, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 8, 0, missing))
+                .circuit(1).itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 8, missing))
                 .duration(10 * SECONDS).eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

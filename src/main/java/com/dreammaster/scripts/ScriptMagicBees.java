@@ -33,10 +33,8 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -55,14 +53,14 @@ public class ScriptMagicBees implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.MagicBees.ID,
-                Thaumcraft.ID,
-                Forestry.ID,
                 AppliedEnergistics2.ID,
                 Backpack.ID,
                 Botania.ID,
+                Forestry.ID,
                 Genetics.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
+                Thaumcraft.ID,
                 PamsHarvestCraft.ID);
     }
 
@@ -223,13 +221,11 @@ public class ScriptMagicBees implements IScriptLoader {
                 .itemOutputs(getModItem(MagicBees.ID, "effectJar", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(30 * SECONDS).eut(120)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "miscResources", 4, 3, missing), GTUtility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "miscResources", 4, 3, missing)).circuit(4)
                 .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 72)).duration(10 * SECONDS).eut(48)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "miscResources", 6, 5, missing), GTUtility.getIntegratedCircuit(6))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "miscResources", 6, 5, missing)).circuit(6)
                 .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 288)).duration(20 * SECONDS).eut(256)
                 .addTo(assemblerRecipes);

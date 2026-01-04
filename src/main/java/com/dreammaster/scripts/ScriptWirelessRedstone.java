@@ -33,10 +33,10 @@ public class ScriptWirelessRedstone implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                WirelessRedstoneCBECore.ID,
-                WirelessRedstoneCBELogic.ID,
+                ProjectRedCore.ID,
                 WirelessRedstoneCBEAddons.ID,
-                ProjectRedCore.ID);
+                WirelessRedstoneCBECore.ID,
+                WirelessRedstoneCBELogic.ID);
     }
 
     @Override

@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -49,7 +48,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptBiomesOPlenty implements IScriptLoader {
@@ -63,10 +61,19 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 BiomesOPlenty.ID,
+                Botania.ID,
+                Botany.ID,
+                Chisel.ID,
                 Forestry.ID,
-                GTPlusPlus.ID,
+                HardcoreEnderExpansion.ID,
                 IguanaTweaksTinkerConstruct.ID,
-                PamsHarvestCraft.ID);
+                PamsHarvestCraft.ID,
+                Railcraft.ID,
+                RandomThings.ID,
+                ThaumicBases.ID,
+                TinkerConstruct.ID,
+                Witchery.ID,
+                WitchingGadgets.ID);
     }
 
     @Override
@@ -117,7 +124,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
@@ -167,12 +174,10 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "driedDirt", 1, 0, missing),
                 getModItem(Minecraft.ID, "dirt", 1, 0, missing));
         Module_CustomFuels.registerCustomFuelValue(getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing), (short) 100);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "beeswax", 2, 0, missing), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeswax", 2, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing)).duration(6 * SECONDS).eut(20)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "propolis", 2, 0, missing), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "propolis", 2, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing)).duration(20 * SECONDS).eut(40)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -326,19 +331,16 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1L)).fluidInputs(Materials.Honey.getFluid(1000L))
                 .duration(2 * SECONDS).eut(1).addTo(fluidCannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.getIS(1), GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.getIS(1)).circuit(16)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 3, missing), GTUtility.getIntegratedCircuit(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 3, missing)).circuit(16)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing), GTUtility.getIntegratedCircuit(11))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing)).circuit(11)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing)).eut(30).duration(15 * SECONDS)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Botania.ID, "manaResource", 1, 8, missing), GTUtility.getIntegratedCircuit(11))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 1, 8, missing)).circuit(11)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11, missing)).eut(30).duration(15 * SECONDS)
                 .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1, missing))

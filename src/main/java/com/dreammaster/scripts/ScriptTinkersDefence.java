@@ -24,7 +24,7 @@ public class ScriptTinkersDefence implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(TinkersDefence.ID, TinkerConstruct.ID);
+        return Arrays.asList(TinkerConstruct.ID, TinkersDefence.ID);
     }
 
     @Override

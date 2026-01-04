@@ -20,7 +20,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(BiomesOPlenty.ID, BiblioWoodsBoPEdition.ID, BiblioCraft.ID);
+        return Arrays.asList(BiblioCraft.ID, BiblioWoodsBoPEdition.ID, BiomesOPlenty.ID);
     }
 
     @Override
@@ -201,8 +201,6 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
 
         ItemStack torch = getModItem(Minecraft.ID, "torch", 1);
         ItemStack feather = getModItem(Minecraft.ID, "feather", 1);
-        ItemStack ink = getModItem(Minecraft.ID, "dye", 1);
-        ItemStack craftingTable = getModItem(Minecraft.ID, "crafting_table", 1);
         ItemStack emptyBottle = getModItem(Minecraft.ID, "glass_bottle", 1);
         ItemStack ironIngot = getModItem(Minecraft.ID, "iron_ingot", 1);
         ItemStack glass = getModItem(Minecraft.ID, "glass", 1);
@@ -442,11 +440,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
                     BOBwood[i],
                     getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i));
 
-            addShapelessRecipe(
-                    fancySignBOP[i],
-                    getModItem(Minecraft.ID, "paper", 1),
-                    getModItem(Minecraft.ID, "sign", 1),
-                    LableBOP[i]);
+            addShapelessRecipe(fancySignBOP[i], getModItem(Minecraft.ID, "paper", 1), "signWood", LableBOP[i]);
         }
     }
 }
