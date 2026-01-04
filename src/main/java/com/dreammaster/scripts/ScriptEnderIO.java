@@ -1835,9 +1835,9 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soularium, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 8),
-                        getModItem(EnderIO.ID, "blockEndermanSkull", 8, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 8, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1),
+                        getModItem(EnderIO.ID, "blockEndermanSkull", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                         getModItem(Witchery.ID, "witchhand", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "heartCanister", 1, 1, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 4, 3, missing))
