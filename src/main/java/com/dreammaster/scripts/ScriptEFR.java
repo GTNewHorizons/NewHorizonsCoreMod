@@ -834,18 +834,6 @@ public class ScriptEFR implements IScriptLoader {
                 .duration(30 * SECONDS).eut(256).addTo(assemblerRecipes);
 
         addShapedRecipe(
-                GregtechItemList.Controller_SteamAlloySmelterMulti.get(1),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Bronze, 1L),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                "frameGtTumbaga",
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Bronze, 1L),
-                ItemList.Casing_BronzePlatedBricks.get(1L));
-
-        addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0, missing),
                 "screwDarkSteel",
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
