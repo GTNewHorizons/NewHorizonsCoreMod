@@ -4,7 +4,7 @@ import static gregtech.api.enums.GTValues.VP;
 import static gregtech.api.enums.Mods.CookingForBlockheads;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
+import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -54,7 +54,6 @@ public class GT_Loader_Machines {
         registerPolarizer();
         registerRecycler();
         registerSiftingMachine();
-        registerSlicingMachine();
         registerThermalCentrifuge();
         registerWiremill();
         registerArcFurnace();
@@ -984,12 +983,12 @@ public class GT_Loader_Machines {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Food_Sliced_Breads.get(1L), ItemList.Shape_Slicer_Flat.get(0L))
                 .itemOutputs(new ItemStack(QuantumBread.Instance(), 1)).duration(20 * TICKS).eut(TierEU.RECIPE_UV)
-                .addTo(slicerRecipes);
+                .addTo(cutterRecipes);
         if (CookingForBlockheads.isModLoaded() && PamsHarvestCraft.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(PamsHarvestCraft.ID, "toastItem", 1, 0), ItemList.Shape_Slicer_Flat.get(0L))
                     .itemOutputs(getModItem(CookingForBlockheads.ID, "toast", 1, 0)).duration(20 * TICKS)
-                    .eut(TierEU.RECIPE_EV).requiresCleanRoom().addTo(slicerRecipes);
+                    .eut(TierEU.RECIPE_EV).requiresCleanRoom().addTo(cutterRecipes);
         }
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_HA_UEV_UHV.get(1L),
@@ -2614,66 +2613,6 @@ public class GT_Loader_Machines {
                 new Object[] { "WFW", "PMP", "CFC", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
                         'F', OreDictNames.craftingFilter, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
                         'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
-                12);
-
-    }
-
-    private void registerSlicingMachine() {
-
-        GTModHandler.addMachineCraftingRecipe(
-                ItemList.SlicingMachineLuV.get(1L),
-                new Object[] { "WCW", "PMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
-                6);
-
-        GTModHandler.addMachineCraftingRecipe(
-                ItemList.SlicingMachineZPM.get(1L),
-                new Object[] { "WCW", "PMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
-                7);
-
-        GTModHandler.addMachineCraftingRecipe(
-                ItemList.SlicingMachineUV.get(1L),
-                new Object[] { "WCW", "PMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
-                8);
-
-        GTModHandler.addMachineCraftingRecipe(
-                ItemList.SlicingMachineUHV.get(1L),
-                new Object[] { "WCW", "PMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
-                9);
-
-        GTModHandler.addMachineCraftingRecipe(
-                ItemList.SlicingMachineUEV.get(1L),
-                new Object[] { "WCW", "PMV", "WCW", 'M', ItemList.Hull_UEV.get(1), 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
-                10);
-
-        GTModHandler.addMachineCraftingRecipe(
-                ItemList.SlicingMachineUIV.get(1L),
-                new Object[] { "WCW", "PMV", "WCW", 'M', ItemList.Hull_UIV.get(1), 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
-                11);
-
-        GTModHandler.addMachineCraftingRecipe(
-                ItemList.SlicingMachineUMV.get(1L),
-                new Object[] { "WCW", "PMV", "WCW", 'M', ItemList.Hull_UMV.get(1), 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
 
     }
