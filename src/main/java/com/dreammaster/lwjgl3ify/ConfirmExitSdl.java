@@ -4,7 +4,6 @@ import static org.lwjgl.sdl.SDLMessageBox.*;
 
 import java.nio.IntBuffer;
 
-import me.eigenraven.lwjgl3ify.api.Lwjgl3Aware;
 import net.minecraft.util.StatCollector;
 
 import org.lwjgl.sdl.SDLError;
@@ -15,6 +14,8 @@ import org.lwjglx.opengl.Display;
 
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.lib.Refstrings;
+
+import me.eigenraven.lwjgl3ify.api.Lwjgl3Aware;
 
 @Lwjgl3Aware
 public class ConfirmExitSdl {
