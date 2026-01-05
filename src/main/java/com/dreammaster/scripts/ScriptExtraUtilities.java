@@ -1368,7 +1368,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
 
         for (int i = 0; i < 16; i++) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "color_lightgem", 1, i, missing))
-                    .itemOutputs(new ItemStack(Items.glowstone_dust, 4)).duration(98 * TICKS).eut(4)
+                    .itemOutputs(new ItemStack(Items.glowstone_dust, 4)).duration(392 * TICKS).eut(4)
                     .addTo(maceratorRecipes);
         }
 
