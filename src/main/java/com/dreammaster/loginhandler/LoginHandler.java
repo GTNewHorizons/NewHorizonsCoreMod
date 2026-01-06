@@ -35,20 +35,20 @@ public class LoginHandler {
                 .appendText(" " + GREEN + ModPackVersion));
         event.player.addChatMessage(new ChatComponentTranslation(QUESTBOOK).setChatStyle(new ChatStyle().setColor(BLUE)));
         event.player.addChatMessage(new ChatComponentTranslation(GTNH_WIKI).setChatStyle(new ChatStyle().setColor(DARK_GREEN))
-                .appendSibling(new ChatComponentText(" " + DARK_GREEN + Refstrings.WIKI_LINK)
-                        .setChatStyle(new ChatStyle()
+                .appendSibling(new ChatComponentText(Refstrings.WIKI_LINK)
+                        .setChatStyle(new ChatStyle().setColor(DARK_GREEN)
                                 .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                                         new ChatComponentTranslation(CLICK_WIKI).setChatStyle(new ChatStyle().setColor(YELLOW))))
                                 .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.WIKI_LINK)))));
         event.player.addChatMessage(new ChatComponentTranslation(REPORT_BUG).setChatStyle(new ChatStyle().setColor(GREEN)));
-        event.player.addChatMessage(new ChatComponentText(GOLD + Refstrings.ISSUE_TRACKER_LINK)
-                .setChatStyle(new ChatStyle()
+        event.player.addChatMessage(new ChatComponentText(Refstrings.ISSUE_TRACKER_LINK)
+                .setChatStyle(new ChatStyle().setColor(GOLD)
                         .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                                 new ChatComponentTranslation(CLICK_GITHUB).setChatStyle(new ChatStyle().setColor(YELLOW))))
                         .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.ISSUE_TRACKER_LINK))));
         event.player.addChatMessage(new ChatComponentTranslation(VISIT_DISCORD).setChatStyle(new ChatStyle().setColor(BLUE))
-                .appendSibling(new ChatComponentText(" " + BLUE + Refstrings.DISCORD_LINK)
-                        .setChatStyle(new ChatStyle()
+                .appendSibling(new ChatComponentText(Refstrings.DISCORD_LINK)
+                        .setChatStyle(new ChatStyle().setColor(BLUE)
                                 .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                                         new ChatComponentTranslation(CLICK_DISCORD).setChatStyle(new ChatStyle().setColor(YELLOW))))
                                 .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.DISCORD_LINK)))));
