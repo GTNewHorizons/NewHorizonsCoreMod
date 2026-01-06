@@ -638,14 +638,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "chestIron",
                 "screwIron");
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockCrop", 1, 0, missing),
-                "stickLongWood",
-                null,
-                "stickLongWood",
-                "stickLongWood",
-                null,
-                "stickLongWood");
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemFoamSprayer", 1, 0, missing),
                 "pipeSmallSteel",
                 "craftingToolScrewdriver",

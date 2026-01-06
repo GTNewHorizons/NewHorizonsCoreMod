@@ -721,14 +721,6 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L),
-                        new ItemStack(Blocks.sand, 4, 0))
-                .itemOutputs(ItemList.IC2_Fertilizer.get(4)).fluidInputs(Materials.Water.getFluid(1000L))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lead, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Antimony, 1L))
                 .circuit(1).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.BatteryAlloy, 5L))
