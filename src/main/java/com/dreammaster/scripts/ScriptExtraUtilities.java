@@ -21,6 +21,7 @@ import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -31,6 +32,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
@@ -1363,6 +1365,12 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+
+        for (int i = 0; i < 16; i++) {
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "color_lightgem", 1, i, missing))
+                    .itemOutputs(new ItemStack(Items.glowstone_dust, 4)).duration(392 * TICKS).eut(4)
+                    .addTo(maceratorRecipes);
+        }
 
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
