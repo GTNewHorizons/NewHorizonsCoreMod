@@ -6300,13 +6300,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemFertilizer", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("sano"), 2)
-                        .add(Aspect.getAspect("herba"), 1));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemWeed", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
-        ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("ignis"), 2)
                         .add(Aspect.getAspect("terra"), 1).add(Aspect.getAspect("instrumentum"), 1));
@@ -6492,13 +6485,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing),
-                new AspectList().add(Aspect.getAspect("cognitio"), 8).add(Aspect.getAspect("lux"), 2)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("instrumentum"), 4));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemHops", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("herba"), 4));
-        ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemCofeeBeans", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("sensus"), 2));
         ThaumcraftApi.registerObjectTag(
@@ -6518,13 +6504,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemRemote", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 4)
                         .add(Aspect.getAspect("sensus"), 4).add(Aspect.getAspect("perditio"), 2));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemWeedEx", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("venenum"), 8).add(Aspect.getAspect("cognitio"), 2));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemTerraWart", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("auram"), 8).add(Aspect.getAspect("praecantatio"), 4)
-                        .add(Aspect.getAspect("victus"), 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 2)
