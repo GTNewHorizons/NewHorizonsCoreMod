@@ -60,6 +60,7 @@ import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -2648,6 +2649,19 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.NaquadahEnriched, 6))
                 .itemOutputs(ItemList.Chamber_Grate.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
+
+        // Exo-Foundry Inner Casing / T2 Mass Solidifier Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUVBase, 1),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(2),
+                        ItemList.Electric_Pump_UV.get(4),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 },
+                        ItemList.Reactor_Coolant_Sp_6.get(1),
+                        ItemList.Emitter_UV.get(1))
+                .itemOutputs(ItemList.Secondary_Casing_ExoFoundry.get(1))
+                .fluidInputs(Materials.CosmicNeutronium.getMolten(INGOTS * 16)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
 
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass

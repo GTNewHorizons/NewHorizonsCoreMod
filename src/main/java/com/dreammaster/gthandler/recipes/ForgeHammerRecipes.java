@@ -1,10 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import static bartworks.common.loaders.ItemRegistry.bw_realglas;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -142,6 +145,17 @@ public class ForgeHammerRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1))
                     .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 4, missing)).duration(2 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
+        }
+
+        if (UniversalSingularities.isModLoaded()) {
+            // Exo Foundry Glass
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(bw_realglas, 8, 14),
+                            ItemList.Naquarite_Universal_Insulator_Foil.get(4),
+                            getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 13))
+                    .fluidInputs(Materials.SuperCoolant.getFluid(64000)).itemOutputs(ItemList.Glass_ExoFoundry.get(8))
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(formingPressRecipes);
         }
 
         // Raw optical chip
