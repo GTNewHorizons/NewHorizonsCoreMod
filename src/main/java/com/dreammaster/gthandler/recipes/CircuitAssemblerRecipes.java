@@ -1058,7 +1058,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 ItemList.Circuit_Parts_Transistor.get(4L),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
+                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
                         .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 28))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
                         .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);

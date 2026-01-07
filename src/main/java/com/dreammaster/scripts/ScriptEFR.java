@@ -834,18 +834,6 @@ public class ScriptEFR implements IScriptLoader {
                 .duration(30 * SECONDS).eut(256).addTo(assemblerRecipes);
 
         addShapedRecipe(
-                GregtechItemList.Controller_SteamAlloySmelterMulti.get(1),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Bronze, 1L),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                "frameGtTumbaga",
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Bronze, 1L),
-                ItemList.Casing_BronzePlatedBricks.get(1L));
-
-        addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0, missing),
                 "screwDarkSteel",
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
@@ -1325,7 +1313,7 @@ public class ScriptEFR implements IScriptLoader {
                 -6,
                 -7,
                 3,
-                getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing)).setParents("GREENHEART")
+                getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing)).setParents("REDHEART")
                         .setConcealed().setRound()
                         .setPages(new ResearchPage("EtFuturumRequiem.research_page.UNDYINGTOTEM.1"))
                         .registerResearchItem();
@@ -1336,17 +1324,17 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("exanimis"), 100).add(Aspect.getAspect("ignis"), 150)
                         .add(Aspect.getAspect("lucrum"), 150).add(Aspect.getAspect("sano"), 200)
                         .add(Aspect.getAspect("praecantatio"), 200),
-                getModItem(TinkerConstruct.ID, "heartCanister", 1, 5, missing),
+                getModItem(TinkerConstruct.ID, "heartCanister", 1, 1, missing),
                 OrePrefixes.plate.get(Materials.InfusedGold),
                 OrePrefixes.gemExquisite.get(Materials.Emerald),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
-                getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 2, missing),
+                OrePrefixes.block.get(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
                 OrePrefixes.plate.get(Materials.InfusedGold),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 5, missing),
                 OrePrefixes.plate.get(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
-                getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 2, missing),
+                OrePrefixes.block.get(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing),
                 OrePrefixes.gemExquisite.get(Materials.GreenSapphire));
         TCHelper.addResearchPage(

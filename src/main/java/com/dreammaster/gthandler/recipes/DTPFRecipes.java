@@ -29,7 +29,6 @@ import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
-import gtPlusPlus.core.recipe.common.CI;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class DTPFRecipes implements Runnable {
@@ -1087,7 +1086,7 @@ public class DTPFRecipes implements Runnable {
                     .setHighestCatalystTier(4).setEUtDivisor(1.12f)
                     .calculateNonEBFRecipe(total_EUt, recipe_time_per_quantum_ingot);
             GTValues.RA.stdBuilder().itemInputs(
-                    CI.getEnergyCore(9, 0),
+                    GregtechItemList.Energy_Core_UHV.get(0),
                     BlockList.Quantinum.getIS(2),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(2))
@@ -1107,7 +1106,7 @@ public class DTPFRecipes implements Runnable {
 
             // Quantum + Astral Titanium v2
             GTValues.RA.stdBuilder().itemInputs(
-                    CI.getEnergyCore(9, 0),
+                    GregtechItemList.Energy_Core_UHV.get(0),
                     BlockList.Quantinum.getIS(4),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(3))

@@ -36,11 +36,10 @@ import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
+import static gregtech.api.util.GTModHandler.RecipeBits.BITS;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtPlusPlus.core.recipe.common.CI.bits;
 import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import java.util.Arrays;
@@ -1687,7 +1686,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "melon_block", 1, 0, missing), ItemList.Shape_Slicer_Flat.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "melon", 8, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(slicerRecipes);
+                .addTo(cutterRecipes);
         Module_CustomFuels
                 .registerCustomFuelValue(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing), (short) 75);
 
@@ -4564,7 +4563,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         GTModHandler.addCraftingRecipe(
                 new ItemStack(Blocks.ender_chest, 1),
-                bits,
+                BITS,
                 new Object[] { "ABA", "ACA", "ADA", 'A', "plateObsidian", 'B', "plateDenseEnderium", 'C',
                         GTModHandler.getModItem(EnderStorage.ID, "enderChest", 1L, 0), 'D',
                         GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45) });

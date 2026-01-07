@@ -1,0 +1,4 @@
+{
+    "alarm-stargate1-evac": {"category": "master","sounds": [{"name": "alarm-stargate1-evac","stream": true}]},
+    "alarm-klaxon2": {"category": "master","sounds": [{"name": "alarm-klaxon2","stream": true}]}
+}
