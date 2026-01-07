@@ -611,7 +611,6 @@ public class ScriptCoreMod implements IScriptLoader {
                                 NHItemList.ShapeLargePipe,
                                 NHItemList.MoldFormSmallGear,
                                 NHItemList.MoldFormCasing,
-                                NHItemList.ShapeWire,
                                 NHItemList.MoldFormChestplate,
                                 NHItemList.ShapeShovelHead,
                                 NHItemList.MoldFormBread,
