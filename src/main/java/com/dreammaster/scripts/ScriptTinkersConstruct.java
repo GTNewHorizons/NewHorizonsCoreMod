@@ -1897,7 +1897,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 ItemList.Shape_Extruder_Ring.get(1L),
                 ItemList.Shape_Extruder_Cell.get(1L),
                 ItemList.Shape_Extruder_Ingot.get(1L),
-                ItemList.Shape_Extruder_Wire.get(1L),
                 ItemList.Shape_Extruder_Casing.get(1L),
                 ItemList.Shape_Extruder_Pipe_Tiny.get(1L),
                 ItemList.Shape_Extruder_Pipe_Small.get(1L),

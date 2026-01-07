@@ -1934,9 +1934,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     NHItemList.ShapeIngot.getIS(),
                     new Object[] { " x ", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeWire.getIS(),
-                    new Object[] { "fx ", " C ", "   ", 'C', aBlankCast });
-            GTModHandler.addCraftingRecipe(
                     NHItemList.ShapeCasing.getIS(),
                     new Object[] { "  x", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(

@@ -212,10 +212,6 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(ItemList.Shape_Extruder_Ingot.get(1L)).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Wire.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Wire.get(1L)).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Casing.get(0L))
                 .itemOutputs(ItemList.Shape_Extruder_Casing.get(1L)).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
