@@ -881,12 +881,6 @@ public class ScriptGregtech implements IScriptLoader {
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                ItemList.Shape_Extruder_Wire.get(1L),
-                FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeWire.getIS(1),
-                true,
-                100);
-        TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Casing.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 NHItemList.ShapeCasing.getIS(1),

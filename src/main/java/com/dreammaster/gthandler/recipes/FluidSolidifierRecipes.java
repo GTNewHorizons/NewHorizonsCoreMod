@@ -375,10 +375,6 @@ public class FluidSolidifierRecipes implements Runnable {
                     .itemOutputs(ItemList.Shape_Extruder_Rod.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeWire.getIS(1))
-                    .itemOutputs(ItemList.Shape_Extruder_Wire.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
-
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeTinyPipe.getIS(1))
                     .itemOutputs(ItemList.Shape_Extruder_Pipe_Tiny.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
