@@ -30,9 +30,10 @@ public class LoginHandler {
         final String CLICK_DISCORD       = "dreamcraft.welcome.click_discord";
         final String OPEN_TO_LAN_WARNING = "dreamcraft.welcome.open_to_lan";
 
-        event.player.addChatMessage(new ChatComponentText(GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------"));
+        event.player.addChatMessage(new ChatComponentText("-----------------------------------------------------")
+                .setChatStyle(new ChatStyle().setColor(GOLD).setStrikethrough(true)));
         event.player.addChatMessage(new ChatComponentTranslation(WELCOME).setChatStyle(new ChatStyle().setBold(true))
-                .appendText(" " + GREEN + ModPackVersion));
+                .appendSibling(new ChatComponentText(ModPackVersion).setChatStyle(new ChatStyle().setColor(GREEN))));
         event.player.addChatMessage(new ChatComponentTranslation(QUESTBOOK).setChatStyle(new ChatStyle().setColor(BLUE)));
         event.player.addChatMessage(new ChatComponentTranslation(GTNH_WIKI).setChatStyle(new ChatStyle().setColor(DARK_GREEN))
                 .appendSibling(new ChatComponentText(Refstrings.WIKI_LINK)
@@ -52,7 +53,8 @@ public class LoginHandler {
                                 .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                                         new ChatComponentTranslation(CLICK_DISCORD).setChatStyle(new ChatStyle().setColor(YELLOW))))
                                 .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.DISCORD_LINK)))));
-        event.player.addChatMessage(new ChatComponentText(GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------"));
+        event.player.addChatMessage(new ChatComponentText("-----------------------------------------------------")
+                .setChatStyle(new ChatStyle().setColor(GOLD).setStrikethrough(true)));
 
         MinecraftServer server = MinecraftServer.getServer();
         if (server.isSinglePlayer() && !event.player.getGameProfile().getName().equals(server.getServerOwner())) {
