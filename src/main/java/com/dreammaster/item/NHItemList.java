@@ -474,7 +474,7 @@ public enum NHItemList {
     ShapeSwordBlade(new ModSimpleBaseItem("ShapeSwordBlade", ModTabList.ModShapesTab)),
     ShapeTinyPipe(new ModSimpleBaseItem("ShapeTinyPipe", ModTabList.ModShapesTab)),
     ShapeTurbineBlade(new ModSimpleBaseItem("ShapeTurbineBlade", ModTabList.ModShapesTab)),
-    ShapeWire(new ModSimpleBaseItem("ShapeWire", ModTabList.ModShapesTab)),
+    ShapeWire(new ModSimpleBaseItem("ShapeWire", ModTabList.ModShapesTab)), // DEPRECATED. remove in next major version
     ShapeDrillHead(new ModSimpleBaseItem("ShapeDrillHead", ModTabList.ModShapesTab)),
     SilverThread(new ModSimpleBaseItem("SilverThread", ModTabList.ModThaumcraftTab)),
     SilveredFleece(new ModSimpleBaseItem("SilveredFleece", ModTabList.ModThaumcraftTab)),

@@ -679,8 +679,13 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "boiledeggItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "boiledwaterItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "potItem", 1, 0, missing),
                 getModItem(Minecraft.ID, "egg", 1, 0, missing));
+
+        addShapelessRecipe(
+                getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "boiledwaterItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0, missing),
                 getModItem(Minecraft.ID, "bowl", 1, 0, missing),
