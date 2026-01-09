@@ -54,7 +54,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptEnderIO implements IScriptLoader {
