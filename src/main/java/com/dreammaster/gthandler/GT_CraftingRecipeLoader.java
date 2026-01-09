@@ -728,9 +728,16 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         OrePrefixes.plate.get(Materials.StainlessSteel), 'E', OrePrefixes.circuit.get(Materials.EV),
                         'B', ItemList.Electric_Piston_HV });
 
-        // Fluid Shaper
+        // Fluid Shaper to Mass Solidifier
+        // REMOVE AFTER 2.9
+        GTModHandler.addShapelessCraftingRecipe(
+                ItemList.Machine_Mass_Solidifier.get(1),
+                bits4,
+                new Object[] { ItemList.Machine_Fluid_Shaper.get(1) });
+
+        // Mass Solidifier
         GTModHandler.addCraftingRecipe(
-                ItemList.Machine_Multi_Solidifier.get(1),
+                ItemList.Machine_Mass_Solidifier.get(1),
                 bits,
                 new Object[] { "CFC", "EAE", "CFC", 'A', ItemList.Machine_IV_FluidSolidifier, 'E',
                         ItemList.Electric_Pump_IV, 'F', OrePrefixes.circuit.get(Materials.LuV), 'C',
