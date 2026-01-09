@@ -51,7 +51,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(EternalSingularity.ID, DraconicEvolution.ID);
+        return Arrays.asList(UniversalSingularities.ID, EternalSingularity.ID, DraconicEvolution.ID);
     }
 
     @Override
