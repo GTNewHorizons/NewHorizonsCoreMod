@@ -1978,13 +1978,12 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Exo-Foundry Controller
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    ItemList.Machine_Multi_Solidifier.get(1),
+                    ItemList.Machine_Mass_Solidifier.get(1),
                     4_000_000,
                     2_048,
                     (int) TierEU.RECIPE_UEV,
                     64,
-                    new Object[] { ItemList.Machine_Multi_Solidifier.get(64),
-                            ItemList.Primary_Casing_ExoFoundry.get(16),
+                    new Object[] { ItemList.Machine_Mass_Solidifier.get(64), ItemList.Primary_Casing_ExoFoundry.get(16),
                             GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Infinity, 8),
                             GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 8),
                             ItemList.Field_Generator_UEV.get(4), ItemList.Electric_Pump_UEV.get(8),
