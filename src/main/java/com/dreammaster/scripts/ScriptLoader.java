@@ -66,6 +66,7 @@ public class ScriptLoader {
                         new ScriptForbiddenMagic(),
                         new ScriptForestry(),
                         new ScriptForgeMultipart(),
+                        new ScriptFoundryRecipes(),
                         new ScriptGadomancy(),
                         new ScriptGalacticraft(),
                         new ScriptGalaxySpace(),
