@@ -1863,7 +1863,7 @@ public class ScriptEnderIO implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(ModItems.itemMetaFood, 1, 0),
+                        GregtechItemList.RawHumanMeat.get(1),
                         getModItem(RandomThings.ID, "ingredient", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing))
                 .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 20)).duration(25 * SECONDS)
