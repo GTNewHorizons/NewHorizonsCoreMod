@@ -9,7 +9,6 @@ import com.dreammaster.item.NHItemList;
 
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.creativetabs.ModCreativeTab;
-import gregtech.api.GregTechAPI;
 
 public final class ModTabList {
 

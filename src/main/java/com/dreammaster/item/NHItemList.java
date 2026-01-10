@@ -26,7 +26,7 @@ public enum NHItemList {
     OvenGlove("OvenGlove", new OvenGlove(), GENERIC),
     WitherProtectionRing("WitherProtectionRing", new WitherProtectionRing(), THAUMCRAFT),
     WoodenBrickForm("WoodenBrickForm", new WoodenBrickForm(), GENERIC),
-    QuantumBread("QuantumBread", new QuantumBread(), null),
+    QuantumBread("QuantumBread", new QuantumBread(), GENERIC),
     BowFletchingCast("BowFletchingCast", new CustomPattern(), MOLDS),
     BowStringCast("BowStringCast", new CustomPattern(), MOLDS),
 

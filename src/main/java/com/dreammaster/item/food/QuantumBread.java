@@ -2,9 +2,7 @@ package com.dreammaster.item.food;
 
 import java.util.List;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -37,7 +35,7 @@ public final class QuantumBread extends ItemFood {
             }
             prevTime = curTime;
 
-            return StatCollector.translateToLocal(getUnlocalizedName() + "_" + curRand);
+            return StatCollector.translateToLocal(getUnlocalizedName() + "_" + curRand + ".name");
         } else {
             return super.getItemStackDisplayName(stack);
         }
@@ -65,7 +63,4 @@ public final class QuantumBread extends ItemFood {
             list.add(EnumChatFormatting.AQUA + StatCollector.translateToLocal("item.QuantumBread.desc"));
         }
     }
-
-    @Override
-    public void getSubItems(Item item, CreativeTabs tabs, List<ItemStack> list) {}
 }

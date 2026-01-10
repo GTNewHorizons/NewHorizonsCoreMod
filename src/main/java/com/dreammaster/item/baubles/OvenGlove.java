@@ -51,7 +51,8 @@ public final class OvenGlove extends Item implements IBauble {
             }
             prevTime = curTime;
 
-            return StatCollector.translateToLocal(getUnlocalizedName() + "_" + stack.getItemDamage() + "_" + curRand);
+            return StatCollector
+                    .translateToLocal(getUnlocalizedName() + "_" + stack.getItemDamage() + "_" + curRand + ".name");
         } else {
             return super.getItemStackDisplayName(stack);
         }
