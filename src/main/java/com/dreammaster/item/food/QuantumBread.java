@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 import com.dreammaster.main.MainRegistry;
@@ -28,16 +29,17 @@ public final class QuantumBread extends ItemFood {
     private static int curRand = -1;
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
+    public String getItemStackDisplayName(ItemStack stack) {
         if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT) {
             long curTime = System.currentTimeMillis();
             if (curTime - prevTime > 250L || curRand == -1) {
                 curRand = MainRegistry.Rnd.nextInt(2);
             }
             prevTime = curTime;
-            return String.format("%s_%d", getUnlocalizedName(), curRand);
+
+            return StatCollector.translateToLocal(getUnlocalizedName() + "_" + curRand);
         } else {
-            return super.getUnlocalizedName(stack);
+            return super.getItemStackDisplayName(stack);
         }
     }
 
