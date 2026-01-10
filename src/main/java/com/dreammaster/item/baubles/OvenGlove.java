@@ -1,4 +1,4 @@
-package com.dreammaster.baubles;
+package com.dreammaster.item.baubles;
 
 import java.util.List;
 
@@ -11,16 +11,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
-import com.dreammaster.main.NHItems;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
@@ -29,42 +25,16 @@ import baubles.common.lib.PlayerHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
-import eu.usrv.yamcore.iface.IExtendedModItem;
 import gregtech.api.damagesources.GTDamageSources.DamageSourceHotItem;
 import gregtech.api.enums.Mods;
 import xonin.backhand.api.core.BackhandUtils;
 
-public final class OvenGlove extends Item implements IBauble, IExtendedModItem<OvenGlove> {
+public final class OvenGlove extends Item implements IBauble {
 
-    public static final Logger LOGGER = LogManager.getLogger();
     private static final String NBTTAG_DURABILITY = "Durability";
+    private static final int MAX_DURABILITY = 1000;
 
-    private final String _mItemName;
-    private final String _mCreativeTab;
-    private static final int MaxDurability = 1000;
-    private static boolean checkPopup = false;
-
-    @Override
-    public OvenGlove getConstructedItem() {
-        return NHItems.OVEN_GLOVE.get();
-    }
-
-    @Override
-    public String getCreativeTabName() {
-        return _mCreativeTab;
-    }
-
-    @Override
-    public String getUnlocalizedNameForRegistration() {
-        return super.getUnlocalizedName();
-    }
-
-    public OvenGlove(String pItemName, String pCreativeTab) {
-        _mItemName = pItemName;
-        _mCreativeTab = pCreativeTab;
-
-        super.setTextureName(String.format("%s:item%s", Refstrings.MODID, _mItemName));
-        super.setUnlocalizedName(_mItemName);
+    public OvenGlove() {
         super.setMaxDamage(0);
         super.setHasSubtypes(true);
     }
@@ -73,16 +43,17 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
     private static int curRand = -1;
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
+    public String getItemStackDisplayName(ItemStack stack) {
         if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT) {
             long curTime = System.currentTimeMillis();
             if (curTime - prevTime > 1000L || curRand == -1) {
                 curRand = MainRegistry.Rnd.nextInt(4);
             }
             prevTime = curTime;
-            return String.format("%s_%d_%d", getUnlocalizedName(), stack.getItemDamage(), curRand);
+
+            return StatCollector.translateToLocal(getUnlocalizedName() + "_" + stack.getItemDamage() + "_" + curRand);
         } else {
-            return super.getUnlocalizedName(stack);
+            return super.getItemStackDisplayName(stack);
         }
     }
 
@@ -90,9 +61,8 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
 
     @Override
     public void registerIcons(IIconRegister reg) {
-        for (int i = 0; i < 2; i++) {
-            icons[i] = reg.registerIcon(String.format("%s:item%s_%d", Refstrings.MODID, _mItemName, i));
-        }
+        icons[0] = reg.registerIcon(super.getIconString() + "_0");
+        icons[1] = reg.registerIcon(super.getIconString() + "_1");
     }
 
     @Override
@@ -101,10 +71,9 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
     }
 
     @Override
-    public void getSubItems(Item item, CreativeTabs tab, List list) {
-        for (int i = 0; i < 2; i++) {
-            list.add(new ItemStack(item, 1, i));
-        }
+    public void getSubItems(Item item, CreativeTabs tab, List<ItemStack> list) {
+        list.add(new ItemStack(item, 1, 0));
+        list.add(new ItemStack(item, 1, 1));
     }
 
     @Override
@@ -123,9 +92,7 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
     }
 
     @Override
-    public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
-
-    }
+    public void onWornTick(ItemStack itemstack, EntityLivingBase player) {}
 
     @Override
     public void onEquipped(ItemStack arg0, EntityLivingBase entity) {}
@@ -151,20 +118,20 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
     }
 
     @Override
-    public void addInformation(ItemStack pItemStack, EntityPlayer pWorld, List list, boolean par4) {
-        createOrInitNBTTag(pItemStack);
+    public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean adv) {
+        createOrInitNBTTag(stack);
 
         list.add("Protecting your fingers since 1890");
-        list.add(String.format("Durability: %d/%d", getNBTDurability(pItemStack), MaxDurability));
-        if (pItemStack.stackTagCompound.getInteger(NBTTAG_DURABILITY) <= 1) {
+        list.add(String.format("Durability: %d/%d", getNBTDurability(stack), MAX_DURABILITY));
+        if (stack.stackTagCompound.getInteger(NBTTAG_DURABILITY) <= 1) {
             list.add("This glove is too damaged to protect you. You need to repair it");
         }
     }
 
-    private void createOrInitNBTTag(ItemStack pItemStack) {
-        if (pItemStack.stackTagCompound == null) {
-            pItemStack.setTagCompound(new NBTTagCompound());
-            pItemStack.stackTagCompound.setInteger(NBTTAG_DURABILITY, MaxDurability);
+    private void createOrInitNBTTag(ItemStack stack) {
+        if (stack.stackTagCompound == null) {
+            stack.setTagCompound(new NBTTagCompound());
+            stack.stackTagCompound.setInteger(NBTTAG_DURABILITY, MAX_DURABILITY);
         }
     }
 
