@@ -1,14 +1,10 @@
 package com.dreammaster.creativetab;
 
-import java.util.List;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
@@ -19,7 +15,6 @@ public final class ModTabList {
 
     public static String ModFluidsTab = "tabDreamCraftFluids";
     public static String ModBlocksTab = "tabDreamCraftBlocks";
-    public static String ModAdditionsToGregTechTab = "tabDreamGregTechAdditions";
 
     public static final CreativeTabs GENERIC = new CreativeTabs("tabDreamCraftItems_Generic") {
 
@@ -90,19 +85,5 @@ public final class ModTabList {
     public static void InitModTabs(CreativeTabsManager tabManager) {
         tabManager.AddCreativeTab(new ModCreativeTab(ModFluidsTab, Items.bucket));
         tabManager.AddCreativeTab(new ModCreativeTab(ModBlocksTab, Item.getItemFromBlock(Blocks.stone)));
-        tabManager.AddCreativeTab(
-                new ModCreativeTab(ModAdditionsToGregTechTab, NHItemList.EtchedLudicrousVoltageWiring.item) {
-
-                    @Override
-                    public void displayAllReleventItems(List<ItemStack> stuffToShow) {
-                        // te adder
-                        for (CustomItemList item : CustomItemList.values()) {
-                            if (item.hasBeenSet() && item.getBlock() == GregTechAPI.sBlockMachines) {
-                                stuffToShow.add(item.get(1));
-                            }
-                        }
-                        super.displayAllReleventItems(stuffToShow);
-                    }
-                });
     }
 }
