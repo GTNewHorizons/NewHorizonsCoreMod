@@ -19,8 +19,6 @@ import cpw.mods.fml.relauncher.Side;
 
 public final class QuantumBread extends ItemFood {
 
-    private static final String QUANTUM_BREAD_NAME = "QuantumBread";
-
     public QuantumBread() {
         super(1, 0.0F, true);
         setAlwaysEdible();

@@ -172,8 +172,7 @@ public final class OvenGlove extends Item implements IBauble {
             ItemStack gloveR = null;
 
             ItemStack[] stackList = baubles.stackList;
-            for (int i = 0; i < stackList.length; i++) {
-                ItemStack stack = stackList[i];
+            for (ItemStack stack : stackList) {
                 if (stack != null && stack.getItem() instanceof OvenGlove) {
                     if (gloveL == null && stack.getItemDamage() == 0) {
                         gloveL = stack;
