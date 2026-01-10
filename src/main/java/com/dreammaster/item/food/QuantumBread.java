@@ -62,7 +62,7 @@ public final class QuantumBread extends ItemFood {
         super.addInformation(stack, player, list, adv);
 
         if (curRand == 1) {
-            list.add(EnumChatFormatting.AQUA + "...wasn't it sliced just a second ago?");
+            list.add(EnumChatFormatting.AQUA + StatCollector.translateToLocal("item.QuantumBread.desc"));
         }
     }
 

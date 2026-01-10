@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
@@ -39,8 +40,10 @@ public final class WitherProtectionRing extends Item implements IBauble {
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean adv) {
         list.add(
                 EnumChatFormatting.GREEN.toString() + EnumChatFormatting.ITALIC
-                        + "Finally, a way to get rid of the nasty withering effect.");
-        list.add(EnumChatFormatting.GREEN.toString() + EnumChatFormatting.ITALIC + "Now it's time to get some Stars!");
+                        + StatCollector.translateToLocal("item.WitherProtectionRing.desc.1"));
+        list.add(
+                EnumChatFormatting.GREEN.toString() + EnumChatFormatting.ITALIC
+                        + StatCollector.translateToLocal("item.WitherProtectionRing.desc.2"));
     }
 
     @Override

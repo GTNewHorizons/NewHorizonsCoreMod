@@ -121,10 +121,12 @@ public final class OvenGlove extends Item implements IBauble {
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean adv) {
         createOrInitNBTTag(stack);
 
-        list.add("Protecting your fingers since 1890");
-        list.add(String.format("Durability: %d/%d", getNBTDurability(stack), MAX_DURABILITY));
+        list.add(StatCollector.translateToLocal("item.OvenGlove.desc.1"));
+        list.add(
+                StatCollector
+                        .translateToLocalFormatted("item.OvenGlove.desc.2", getNBTDurability(stack), MAX_DURABILITY));
         if (stack.stackTagCompound.getInteger(NBTTAG_DURABILITY) <= 1) {
-            list.add("This glove is too damaged to protect you. You need to repair it");
+            list.add(StatCollector.translateToLocal("item.OvenGlove.desc.broken"));
         }
     }
 
