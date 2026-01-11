@@ -20,7 +20,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.io.File;
 import java.util.Random;
 
-import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -52,6 +51,7 @@ import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CustomLoader;
+import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.CustomPatterns;
