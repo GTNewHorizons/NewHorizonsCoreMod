@@ -6,11 +6,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.modfixes.biomesoplenty.BlockHarvestToolFix;
 import com.dreammaster.modfixes.enderIO.FrankenskullFix;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 
@@ -140,7 +138,6 @@ public class GT_CustomLoader {
     private static final GT_Recipe_Remover Remover = new GT_Recipe_Remover();
 
     public void run() {
-        GameRegistry.registerItem(QuantumBread.Instance(), "itemQuantumToast");
         if (EnderIO.isModLoaded()) {
             FrankenskullFix.fixEnderIO();
         }

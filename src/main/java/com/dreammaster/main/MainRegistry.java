@@ -18,11 +18,13 @@ import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -35,8 +37,6 @@ import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
-import com.dreammaster.baubles.OvenGlove;
-import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.client.util.GTNHPauseScreen;
 import com.dreammaster.command.AllPurposeDebugCommand;
@@ -49,14 +49,12 @@ import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.iguana.IguanaProxy;
-import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.WoodenBrickForm;
+import com.dreammaster.item.baubles.OvenGlove;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
 import com.dreammaster.modbabychest.BlockBabyChest;
@@ -108,7 +106,6 @@ import eu.usrv.yamcore.blocks.ModBlockManager;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
-import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
@@ -137,7 +134,6 @@ public class MainRegistry {
     @Mod.Instance(Refstrings.MODID)
     public static MainRegistry instance;
 
-    public static ModItemManager ItemManager;
     public static CreativeTabsManager TabManager;
     public static ModFluidManager FluidManager;
     public static ModBlockManager BlockManager;
@@ -239,21 +235,19 @@ public class MainRegistry {
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Init itemmanager");
-        ItemManager = new ModItemManager(Refstrings.MODID);
         BlockManager = new ModBlockManager(Refstrings.MODID);
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Init Tabmanager");
         TabManager = new CreativeTabsManager();
-        ModTabList.InitModTabs(TabManager, ItemManager);
+        ModTabList.InitModTabs(TabManager);
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
+        // FIXME: Move bio-items to Bartworks and remove this whole section.
         Logger.debug("PRELOAD Create Items");
-        if (!NHItemList.AddToItemManager(ItemManager)
-                | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))
-                | !(BioItemLoader.preInit())) {
+        if (!BioItemLoader.preInit()) {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
         }
@@ -308,7 +302,7 @@ public class MainRegistry {
 
         // register final list with valid items to forge
         Logger.debug("LOAD Register Items");
-        ItemManager.RegisterItems(TabManager);
+        NHItemList.registerAll();
 
         Logger.debug("LOAD Register Blocks");
         BlockManager.RegisterItems(TabManager);
@@ -316,12 +310,6 @@ public class MainRegistry {
         Logger.debug("LOAD Register Fluids");
         FluidManager.RegisterItems(TabManager);
 
-        // register all non-enum items
-        Logger.debug("LOAD Register non enum Items");
-        if (!RegisterNonEnumItems()) {
-            Logger.error("Some extended items could not be registered to the game registry");
-            AddLoginError("[CoreMod-Items] Some extended items could not be registered to the game registry");
-        }
         if (PreEvent.getSide() == Side.CLIENT) {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
@@ -346,25 +334,6 @@ public class MainRegistry {
             TiCoLoader.doPreInitialization();
             GregTechAPI.sAfterGTPreload.add(SmelteryFluidTypes::registerGregtechFluidTypes);
         }
-    }
-
-    private static boolean RegisterNonEnumItems() {
-        boolean tResult = true;
-        NHItems.OVEN_GLOVE.place(new OvenGlove("OvenGlove", ModTabList.ModGenericTab));
-        if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.OVEN_GLOVE.get())) {
-            tResult = false;
-        }
-        NHItems.WITHER_PROTECTION_RING
-                .place(new WitherProtectionRing("WitherProtectionRing", ModTabList.ModThaumcraftTab));
-        if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.WITHER_PROTECTION_RING.get())) {
-            tResult = false;
-        }
-        NHItems.WOODEN_BRICK_FORM.place(new WoodenBrickForm("WoodenBrickForm", ModTabList.ModGenericTab));
-        if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.WOODEN_BRICK_FORM.get())) {
-            tResult = false;
-        }
-
-        return tResult;
     }
 
     @Mod.EventHandler
@@ -599,19 +568,37 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void onMissingMappings(FMLMissingMappingsEvent event) {
+        HashMap<String, Item> itemListRemaps = null;
+
         for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
-            if (mapping.type != GameRegistry.Type.ITEM) {
-                continue;
-            }
+            if (mapping.type != GameRegistry.Type.ITEM) continue;
 
-            // Remaps the old "UnfiredSlimeSoulBrick" (with a typo) to the new, correct "UnfiredSlimeSoilBrick".
-            final String oldBrickName = "dreamcraft:item.UnfiredSlimeSoulBrick";
-            if (oldBrickName.equals(mapping.name)) {
-                mapping.remap(CustomItemList.UnfiredSlimeSoilBrick.getItem());
-            }
+            if (mapping.name.startsWith("dreamcraft:item.")) {
+                // Remap all the old Yamcl names to the new names.
+                if (itemListRemaps == null) {
+                    itemListRemaps = createNHItemListRemaps();
+                }
 
-            break;
+                mapping.remap(itemListRemaps.get(mapping.name.substring(16)));
+            } else if ("dreamcraft:itemQuantumToast".equals(mapping.name)) {
+                // Replace the old Quantum Bread declaration with the new one.
+                mapping.remap(NHItemList.QuantumBread.item);
+            }
         }
+    }
+
+    private static HashMap<String, Item> createNHItemListRemaps() {
+        final HashMap<String, Item> itemListData = new HashMap<>();
+
+        // Remap all the old Yamcl names to the new names.
+        for (var entry : NHItemList.values()) {
+            itemListData.put(entry.name, entry.item);
+        }
+
+        // Remaps the old "UnfiredSlimeSoulBrick" (with a typo) to the new, correct "UnfiredSlimeSoilBrick".
+        itemListData.put("UnfiredSlimeSoulBrick", NHItemList.UnfiredSlimeSoilBrick.item);
+
+        return itemListData;
     }
 
     @Optional.Method(modid = Mods.ModIDs.BETTER_QUESTING)

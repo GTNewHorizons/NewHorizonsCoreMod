@@ -54,9 +54,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.main.NHItems;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
@@ -225,7 +223,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "craftingToolHardHammer",
                 null);
         addShapedRecipe(
-                new ItemStack(CustomPatterns.BowFletchingCast, 1),
+                NHItemList.BowFletchingCast.getIS(),
                 null,
                 null,
                 "craftingToolHardHammer",
@@ -236,7 +234,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 "craftingToolFile");
         addShapedRecipe(
-                new ItemStack(CustomPatterns.BowFletchingCast, 1),
+                NHItemList.BowFletchingCast.getIS(),
                 null,
                 null,
                 "craftingToolHardHammer",
@@ -247,7 +245,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 "craftingToolFile");
         addShapedRecipe(
-                new ItemStack(CustomPatterns.BowStringCast, 1),
+                NHItemList.BowStringCast.getIS(),
                 null,
                 null,
                 null,
@@ -258,7 +256,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "craftingToolFile",
                 "craftingToolKnife");
         addShapedRecipe(
-                new ItemStack(CustomPatterns.BowStringCast, 1),
+                NHItemList.BowStringCast.getIS(),
                 null,
                 null,
                 null,
@@ -544,7 +542,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0, missing));
         addShapelessRecipe(
                 createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 0, "{Durability:1000}", missing),
-                new ItemStack(NHItems.OVEN_GLOVE.get(), 1, 0),
+                new ItemStack(NHItemList.OvenGlove.item, 1, 0),
                 "itemLeather",
                 "itemLeather",
                 "itemLeather");
@@ -561,7 +559,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0, missing));
         addShapelessRecipe(
                 createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 1, "{Durability:1000}", missing),
-                new ItemStack(NHItems.OVEN_GLOVE.get(), 1, 1),
+                new ItemStack(NHItemList.OvenGlove.item, 1, 1),
                 "itemLeather",
                 "itemLeather",
                 "itemLeather");
@@ -711,13 +709,13 @@ public class ScriptCoreMod implements IScriptLoader {
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                new ItemStack(CustomPatterns.BowFletchingCast, 1),
+                NHItemList.BowFletchingCast.getIS(),
                 FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144),
                 getModItem(TinkerConstruct.ID, "fletching", 1, wildcard, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                new ItemStack(CustomPatterns.BowStringCast, 1),
+                NHItemList.BowStringCast.getIS(),
                 FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144),
                 getModItem(TinkerConstruct.ID, "bowstring", 1, wildcard, missing),
                 true,
@@ -1090,51 +1088,41 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1)).duration(5 * SECONDS)
                 .eut(480).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "feather", 1, 0, missing),
-                        new ItemStack(CustomPatterns.BowFletchingCast, 0))
+                .itemInputs(getModItem(Minecraft.ID, "feather", 1, 0, missing), NHItemList.BowFletchingCast.getIS(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 1, missing),
-                        new ItemStack(CustomPatterns.BowFletchingCast, 0))
+                        NHItemList.BowFletchingCast.getIS(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 2, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 17, missing),
-                        new ItemStack(CustomPatterns.BowFletchingCast, 0))
+                        NHItemList.BowFletchingCast.getIS(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 3, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "leaves", 1, 0, missing),
-                        new ItemStack(CustomPatterns.BowFletchingCast, 0))
+                .itemInputs(getModItem(Minecraft.ID, "leaves", 1, 0, missing), NHItemList.BowFletchingCast.getIS(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 1, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "slime.leaves", 1, 0, missing),
-                        new ItemStack(CustomPatterns.BowFletchingCast, 0))
+                        NHItemList.BowFletchingCast.getIS(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 4, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "string", 3, 0, missing),
-                        new ItemStack(CustomPatterns.BowStringCast, 0))
+                .itemInputs(getModItem(Minecraft.ID, "string", 3, 0, missing), NHItemList.BowStringCast.getIS(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 0, missing)).duration(20 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "barleyFood", 3, 7, missing),
-                        new ItemStack(CustomPatterns.BowStringCast, 0))
+                .itemInputs(getModItem(Natura.ID, "barleyFood", 3, 7, missing), NHItemList.BowStringCast.getIS(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 2, missing)).duration(20 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "ItemResource", 3, 7, missing),
-                        new ItemStack(CustomPatterns.BowStringCast, 0))
+                .itemInputs(getModItem(Thaumcraft.ID, "ItemResource", 3, 7, missing), NHItemList.BowStringCast.getIS(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 1, missing)).duration(20 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
