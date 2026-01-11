@@ -47,13 +47,13 @@ public class ConfirmExitSdl {
 
             box.flags(SDL_MESSAGEBOX_WARNING);
             box.window(Display.getWindow());
-            box.title(stack.ASCII(Refstrings.NAME));
-            box.message(stack.ASCII(messageText));
+            box.title(stack.UTF8(Refstrings.NAME));
+            box.message(stack.UTF8(messageText));
 
             final SDL_MessageBoxButtonData.Buffer buttons = SDL_MessageBoxButtonData.calloc(3, stack);
-            buttons.get(BUTTON_YES).set(SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT, BUTTON_YES, stack.ASCII(yesText));
-            buttons.get(BUTTON_NO).set(SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT, BUTTON_NO, stack.ASCII(noText));
-            buttons.get(BUTTON_NEVER).set(0, BUTTON_NEVER, stack.ASCII(neverText));
+            buttons.get(BUTTON_YES).set(SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT, BUTTON_YES, stack.UTF8(yesText));
+            buttons.get(BUTTON_NO).set(SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT, BUTTON_NO, stack.UTF8(noText));
+            buttons.get(BUTTON_NEVER).set(0, BUTTON_NEVER, stack.UTF8(neverText));
             box.buttons(buttons);
 
             if (!SDL_ShowMessageBox(box, selectedOption)) {
