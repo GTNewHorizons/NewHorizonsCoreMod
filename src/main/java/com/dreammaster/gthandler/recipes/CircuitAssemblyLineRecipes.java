@@ -10,7 +10,9 @@ import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gtPlusPlus.core.material.MaterialsAlloy.INDALLOY_140;
 
+import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -740,77 +742,173 @@ public class CircuitAssemblyLineRecipes implements Runnable{
                 .duration(30*SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
 
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
-//
-//        RA.stdBuilder()
-//                .itemInputs()
-//                .itemOutputs()
-//                .fluidInputs()
-//                .special()
-//                .eut()
-//                .duration()
-//                .addTo(circuitAssemblyLineRecipes);
+        // Quantum Processor
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_MoreAdvancedCircuitBoards.get(1),
+                        ItemList.Wrap_QBitProcessingUnits.get(1),
+                        ItemList.Wrap_NanocomponentCentralProcessingUnits.get(1),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(3),
+                        ItemList.Wrap_AdvancedSMDTransistors.get(3),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 16)
+                )
+                .itemOutputs(ItemList.Circuit_Quantumprocessor.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*HALF_INGOTS))
+                .special(ItemList.CircuitImprint_QuantumProcessor.get(0))
+                .eut(2400)
+                .duration(1*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Quantum Processor
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_MoreAdvancedCircuitBoards.get(1),
+                        ItemList.Wrap_QBitProcessingUnits.get(1),
+                        ItemList.Wrap_NanocomponentCentralProcessingUnits.get(1),
+                        ItemList.Wrap_SMDCapacitors.get(12),
+                        ItemList.Wrap_SMDTransistors.get(12),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 16)
+                )
+                .itemOutputs(ItemList.Circuit_Quantumprocessor.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*HALF_INGOTS))
+                .special(ItemList.CircuitImprint_QuantumProcessor.get(0))
+                .eut(2400)
+                .duration(2*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Quantum Assembly
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_MoreAdvancedCircuitBoards.get(1),
+                        ItemList.Circuit_Quantumprocessor.get(32),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(3),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(4),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 24)
+                )
+                .itemOutputs(ItemList.Circuit_Quantumcomputer.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_QuantumAssembly.get(1))
+                .eut(2400)
+                .duration(2*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Quantum Supercomputer
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_MoreAdvancedCircuitBoards.get(1),
+                        ItemList.Circuit_Quantumcomputer.get(32),
+                        ItemList.Wrap_AdvancedSMDDiodes.get(2),
+                        ItemList.Wrap_NORMemoryChips.get(4),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 48)
+                )
+                .itemOutputs(ItemList.Circuit_Masterquantumcomputer.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_QuantumSupercomputer.get(1))
+                .eut(2400)
+                .duration(2*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Quantum Assembly
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_MoreAdvancedCircuitBoards.get(1),
+                        ItemList.Circuit_Quantumprocessor.get(32),
+                        ItemList.Wrap_SMDInductors.get(12),
+                        ItemList.Wrap_SMDCapacitors.get(16),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 24)
+                )
+                .itemOutputs(ItemList.Circuit_Quantumcomputer.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_QuantumAssembly.get(1))
+                .eut(2400)
+                .duration(4*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Quantum Supercomputer
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_MoreAdvancedCircuitBoards.get(1),
+                        ItemList.Circuit_Quantumcomputer.get(32),
+                        ItemList.Wrap_SMDDiodes.get(8),
+                        ItemList.Wrap_NORMemoryChips.get(4),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 48)
+                )
+                .itemOutputs(ItemList.Circuit_Masterquantumcomputer.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(1*INGOTS))
+                .special(ItemList.CircuitImprint_QuantumSupercomputer.get(1))
+                .eut(2400)
+                .duration(4*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Quantum Mainframe
+        RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
+                        ItemList.Circuit_Masterquantumcomputer.get(32),
+                        ItemList.Wrap_AdvancedSMDInductors.get(6),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(12),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(24),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 48)
+                )
+                .itemOutputs(ItemList.Circuit_Quantummainframe.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(2*INGOTS))
+                .special(ItemList.CircuitImprint_QuantumMainframe.get(0))
+                .eut(TierEU.RECIPE_IV)
+                .duration(8*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Quantum Mainframe
+        RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
+                        ItemList.Circuit_Masterquantumcomputer.get(32),
+                        ItemList.Wrap_SMDInductors.get(24),
+                        ItemList.Wrap_SMDCapacitors.get(48),
+                        ItemList.Wrap_RandomAccessMemoryChips.get(24),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 48)
+                )
+                .itemOutputs(ItemList.Circuit_Quantummainframe.get(16))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(2*INGOTS))
+                .special(ItemList.CircuitImprint_QuantumMainframe.get(0))
+                .eut(TierEU.RECIPE_IV)
+                .duration(16*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // High Energy Flow Circuit
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_EliteCircuitBoards.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 32),
+                        ItemList.Wrap_UltraHighPowerICs.get(4),
+                        ItemList.Wrap_QBitProcessingUnits.get(2),
+                        ItemList.Wrap_NanocomponentCentralProcessingUnits.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorZPM, 64)
+                )
+                .itemOutputs(CustomItemList.HighEnergyFlowCircuit.get(16))
+                .fluidInputs(INDALLOY_140.getFluidStack(2*INGOTS))
+                .special(ItemList.CircuitImprint_HighEnergyFlowCircuit.get(0))
+                .eut(TierEU.RECIPE_IV)
+                .duration(24*MINUTES)
+                .addTo(circuitAssemblyLineRecipes);
+
+        // Nano Processor
+        RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Wrap_AdvancedCircuitBoards.get(1),
+                        ItemList.Wrap_ASoCs.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 8),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 64)
+                )
+                .itemOutputs(ItemList.Circuit_Nanoprocessor.get(16))
+                .fluidInputs(INDALLOY_140.getFluidStack(1*HALF_INGOTS))
+                .special(ItemList.CircuitImprint_NanoProcessor.get(0))
+                .eut(9600)
+                .duration(30*SECONDS)
+                .addTo(circuitAssemblyLineRecipes);
 //
 //        RA.stdBuilder()
 //                .itemInputs()
