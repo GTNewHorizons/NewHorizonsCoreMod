@@ -182,8 +182,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
 
                 )
                 .itemOutputs(
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 0),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 0))
+                        GTUtility.copyAmountUnsafe(128, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 0)))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_ControllerCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(4 * MINUTES)
                 .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -197,8 +196,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
 
                 )
                 .itemOutputs(
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 1),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 1))
+                        GTUtility.copyAmountUnsafe(128, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 1)))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_ReceiverCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(4 * MINUTES)
                 .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -210,8 +208,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         GTModHandler.getModItem(Railcraft.ID, "part.signal.lamp", 64, 1))
                 .itemOutputs(
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 2),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 2))
+                        GTUtility.copyAmountUnsafe(128, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 2)))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_SignalCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(4 * MINUTES)
                 .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -225,10 +222,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
 
                 )
                 .itemOutputs(
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 0),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 0),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 0),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 0))
+                        GTUtility.copyAmountUnsafe(256, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 0)))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_ControllerCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(5 * MINUTES)
                 .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -242,10 +236,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
 
                 )
                 .itemOutputs(
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 1),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 1),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 1),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 1))
+                        GTUtility.copyAmountUnsafe(256, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 1)))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_ReceiverCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(5 * MINUTES)
                 .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -257,10 +248,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         GTModHandler.getModItem(Railcraft.ID, "part.signal.lamp", 64, 1))
                 .itemOutputs(
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 2),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 2),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 2),
-                        GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 2))
+                        GTUtility.copyAmountUnsafe(256, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 2)))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_SignalCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(5 * MINUTES)
                 .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
