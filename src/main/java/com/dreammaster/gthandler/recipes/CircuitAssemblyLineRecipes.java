@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static bartworks.API.recipe.BartWorksRecipeMaps.circuitAssemblyLineRecipes;
 import static gregtech.api.enums.GTValues.RA;
 import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.EIGHTH_INGOTS;
@@ -165,13 +166,13 @@ public class CircuitAssemblyLineRecipes implements Runnable {
         RA.stdBuilder()
                 .itemInputs(
                         ItemList.Wrap_GoodCircuitBoards.get(1),
-                        GTModHandler.getIC2Item("itemPartCircuit", 32),
+                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 32, 0),
                         ItemList.Wrap_SMDDiodes.get(2),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Copper, 2))
                 .itemOutputs(ItemList.Circuit_Integrated_Good.get(16))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_GoodElectronicCircuit.get(0)).eut(TierEU.RECIPE_LV)
-                .duration(3 * MINUTES).addTo(circuitAssemblyLineRecipes);
+                .duration(3 * MINUTES).requireMods(IndustrialCraft2).addTo(circuitAssemblyLineRecipes);
 
         // Controller Circuit
         RA.stdBuilder()
