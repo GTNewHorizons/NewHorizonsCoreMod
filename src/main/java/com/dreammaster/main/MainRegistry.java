@@ -51,6 +51,7 @@ import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CustomLoader;
+import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.CustomPatterns;
@@ -176,6 +177,8 @@ public class MainRegistry {
 
     public MainRegistry() {
         if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
+
+        GregTechAPI.sGTCompleteLoad.add(new CircuitAssemblyLineRecipes());
     }
 
     @Mod.EventHandler
