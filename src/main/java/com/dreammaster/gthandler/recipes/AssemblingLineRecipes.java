@@ -1822,6 +1822,5 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "super_stock_replenisher", 1, 0)).duration(30 * SECONDS)
                     .eut((int) TierEU.RECIPE_UV).addTo(AssemblyLine);
         }
-
     }
 }
