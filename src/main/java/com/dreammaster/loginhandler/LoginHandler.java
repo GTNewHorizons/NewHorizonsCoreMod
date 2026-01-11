@@ -9,6 +9,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.ChatStyle;
+import net.minecraft.util.IChatComponent;
 
 import com.dreammaster.lib.Refstrings;
 
@@ -30,29 +31,34 @@ public class LoginHandler {
         final String CLICK_DISCORD       = "dreamcraft.welcome.click_discord";
         final String OPEN_TO_LAN_WARNING = "dreamcraft.welcome.open_to_lan";
 
-        event.player.addChatMessage(new ChatComponentText("-----------------------------------------------------")
-                .setChatStyle(new ChatStyle().setColor(GOLD).setStrikethrough(true)));
-        event.player.addChatMessage(new ChatComponentTranslation(WELCOME).setChatStyle(new ChatStyle().setBold(true))
-                .appendSibling(new ChatComponentText(ModPackVersion).setChatStyle(new ChatStyle().setColor(GREEN))));
-        event.player.addChatMessage(new ChatComponentTranslation(QUESTBOOK).setChatStyle(new ChatStyle().setColor(BLUE)));
-        event.player.addChatMessage(new ChatComponentTranslation(GTNH_WIKI).setChatStyle(new ChatStyle().setColor(DARK_GREEN))
-                .appendSibling(new ChatComponentText(Refstrings.WIKI_LINK)
-                        .setChatStyle(new ChatStyle().setColor(DARK_GREEN)
-                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
-                                        new ChatComponentTranslation(CLICK_WIKI).setChatStyle(new ChatStyle().setColor(YELLOW))))
-                                .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.WIKI_LINK)))));
-        event.player.addChatMessage(new ChatComponentTranslation(REPORT_BUG).setChatStyle(new ChatStyle().setColor(GREEN)));
-        event.player.addChatMessage(new ChatComponentText(Refstrings.ISSUE_TRACKER_LINK)
+        final IChatComponent modpackVersion = new ChatComponentText(ModPackVersion).setChatStyle(new ChatStyle().setColor(GREEN));
+
+        final IChatComponent gtnhWikiLink = new ChatComponentText(Refstrings.WIKI_LINK)
+                .setChatStyle(new ChatStyle()
+                        .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                new ChatComponentTranslation(CLICK_WIKI).setChatStyle(new ChatStyle().setColor(YELLOW))))
+                        .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.WIKI_LINK)));
+
+        final IChatComponent issueTrackerLink = new ChatComponentText(Refstrings.ISSUE_TRACKER_LINK)
                 .setChatStyle(new ChatStyle().setColor(GOLD)
                         .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                                 new ChatComponentTranslation(CLICK_GITHUB).setChatStyle(new ChatStyle().setColor(YELLOW))))
-                        .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.ISSUE_TRACKER_LINK))));
-        event.player.addChatMessage(new ChatComponentTranslation(VISIT_DISCORD).setChatStyle(new ChatStyle().setColor(BLUE))
-                .appendSibling(new ChatComponentText(Refstrings.DISCORD_LINK)
-                        .setChatStyle(new ChatStyle().setColor(BLUE)
-                                .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
-                                        new ChatComponentTranslation(CLICK_DISCORD).setChatStyle(new ChatStyle().setColor(YELLOW))))
-                                .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.DISCORD_LINK)))));
+                        .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.ISSUE_TRACKER_LINK)));
+
+        final IChatComponent discordLink = new ChatComponentText(Refstrings.DISCORD_LINK)
+                .setChatStyle(new ChatStyle()
+                        .setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                new ChatComponentTranslation(CLICK_DISCORD).setChatStyle(new ChatStyle().setColor(YELLOW))))
+                        .setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, Refstrings.DISCORD_LINK)));
+
+        event.player.addChatMessage(new ChatComponentText("-----------------------------------------------------")
+                .setChatStyle(new ChatStyle().setColor(GOLD).setStrikethrough(true)));
+        event.player.addChatMessage(new ChatComponentTranslation(WELCOME, modpackVersion).setChatStyle(new ChatStyle().setBold(true)));
+        event.player.addChatMessage(new ChatComponentTranslation(QUESTBOOK).setChatStyle(new ChatStyle().setColor(BLUE)));
+        event.player.addChatMessage(new ChatComponentTranslation(GTNH_WIKI, gtnhWikiLink).setChatStyle(new ChatStyle().setColor(DARK_GREEN)));
+        event.player.addChatMessage(new ChatComponentTranslation(REPORT_BUG).setChatStyle(new ChatStyle().setColor(GREEN)));
+        event.player.addChatMessage(issueTrackerLink);
+        event.player.addChatMessage(new ChatComponentTranslation(VISIT_DISCORD, discordLink).setChatStyle(new ChatStyle().setColor(BLUE)));
         event.player.addChatMessage(new ChatComponentText("-----------------------------------------------------")
                 .setChatStyle(new ChatStyle().setColor(GOLD).setStrikethrough(true)));
 
