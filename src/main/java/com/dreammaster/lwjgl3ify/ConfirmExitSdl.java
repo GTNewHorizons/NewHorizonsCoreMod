@@ -38,9 +38,10 @@ public class ConfirmExitSdl {
             final IntBuffer selectedOption = stack.ints(1);
             final SDL_MessageBoxData box = SDL_MessageBoxData.calloc(stack);
 
-// This dialog might get shown in a situation where localization isn't loaded, so this allows us to set a hardcoded
-// default.
-// See the corresponding mixin for the Minecraft class for more details.
+            // This dialog might get shown in a situation where localization isn't loaded, so this allows us to set a
+            // hardcoded
+            // default.
+            // See the corresponding mixin for the Minecraft class for more details.
             final String yesText = translateOrDefault("dreamcraft.gui.quitmessage.yes", "Yes");
             final String noText = translateOrDefault("dreamcraft.gui.quitmessage.no", "No");
             final String neverText = translateOrDefault("dreamcraft.gui.quitmessage.never", "Don't Show Again!");
