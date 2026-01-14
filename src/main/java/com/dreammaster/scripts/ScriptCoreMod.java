@@ -530,7 +530,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "craftingToolHardHammer",
                 "screwStainlessSteel");
         addShapedRecipe(
-                createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 0, "{Durability:1000}", missing),
+                createItemStack(NewHorizonsCoreMod.ID, "OvenGlove", 1, 0, "{Durability:1000}", missing),
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                 "itemLeather",
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
@@ -541,13 +541,13 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 getModItem(Minecraft.ID, "string", 1, 0, missing));
         addShapelessRecipe(
-                createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 0, "{Durability:1000}", missing),
+                createItemStack(NewHorizonsCoreMod.ID, "OvenGlove", 1, 0, "{Durability:1000}", missing),
                 new ItemStack(NHItemList.OvenGlove.item, 1, 0),
                 "itemLeather",
                 "itemLeather",
                 "itemLeather");
         addShapedRecipe(
-                createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 1, "{Durability:1000}", missing),
+                createItemStack(NewHorizonsCoreMod.ID, "OvenGlove", 1, 1, "{Durability:1000}", missing),
                 "itemLeather",
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                 "itemLeather",
@@ -558,7 +558,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 getModItem(Minecraft.ID, "string", 1, 0, missing));
         addShapelessRecipe(
-                createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 1, "{Durability:1000}", missing),
+                createItemStack(NewHorizonsCoreMod.ID, "OvenGlove", 1, 1, "{Durability:1000}", missing),
                 new ItemStack(NHItemList.OvenGlove.item, 1, 1),
                 "itemLeather",
                 "itemLeather",
@@ -838,7 +838,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(
                         getModItem(
                                 NewHorizonsCoreMod.ID,
-                                "item.EngineeringProcessorSpatialPulsatingCore",
+                                "EngineeringProcessorSpatialPulsatingCore",
                                 1,
                                 0,
                                 missing))

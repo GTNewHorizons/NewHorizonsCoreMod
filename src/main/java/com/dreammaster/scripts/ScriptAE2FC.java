@@ -90,11 +90,11 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack LAPIS_SCREW = GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
         final ItemStack FLUID_CORE_1 = getModItem(
                 NewHorizonsCoreMod.ID,
-                "item.EngineeringProcessorFluidDiamondCore",
+                "EngineeringProcessorFluidDiamondCore",
                 1);
         final ItemStack FLUID_CORE_2 = getModItem(
                 NewHorizonsCoreMod.ID,
-                "item.EngineeringProcessorFluidEmeraldCore",
+                "EngineeringProcessorFluidEmeraldCore",
                 1);
         final ItemStack FISH = getModItem(Minecraft.ID, "fish", 1, 0);
         final ItemStack CELL_1 = getModItem(AE2FluidCraft.ID, "fluid_storage1", 1, 0);
