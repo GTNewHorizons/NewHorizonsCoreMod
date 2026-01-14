@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
@@ -88,8 +87,8 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack NIOBIUM_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1L);
         final ItemStack NETHER_QUARTZ_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
         final ItemStack LAPIS_SCREW = GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
-        final ItemStack FLUID_CORE_1 = getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorFluidDiamondCore", 1);
-        final ItemStack FLUID_CORE_2 = getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorFluidEmeraldCore", 1);
+        final ItemStack FLUID_CORE_1 = NHItemList.EngineeringProcessorFluidDiamondCore.getIS();
+        final ItemStack FLUID_CORE_2 = NHItemList.EngineeringProcessorFluidEmeraldCore.getIS();
         final ItemStack FISH = getModItem(Minecraft.ID, "fish", 1, 0);
         final ItemStack CELL_1 = getModItem(AE2FluidCraft.ID, "fluid_storage1", 1, 0);
         final ItemStack CELL_4 = getModItem(AE2FluidCraft.ID, "fluid_storage4", 1, 0);
