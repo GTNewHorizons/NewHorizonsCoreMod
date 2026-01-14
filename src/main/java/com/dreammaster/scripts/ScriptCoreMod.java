@@ -836,12 +836,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.PulsatingSpatialCoreChip.getIS(1))
                 .itemOutputs(
-                        getModItem(
-                                NewHorizonsCoreMod.ID,
-                                "EngineeringProcessorSpatialPulsatingCore",
-                                1,
-                                0,
-                                missing))
+                        getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorSpatialPulsatingCore", 1, 0, missing))
                 .duration(5 * SECONDS).eut(7680).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
