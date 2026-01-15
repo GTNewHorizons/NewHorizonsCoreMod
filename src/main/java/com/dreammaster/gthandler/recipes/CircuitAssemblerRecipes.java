@@ -754,8 +754,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_TransistorASMD.get(64),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(1))
-                .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom()
-                .duration(1 * MINUTES + 4 * SECONDS).eut(153600).addTo(circuitAssemblerRecipes);
+                .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom().duration(1 * MINUTES)
+                .eut(153600).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -775,7 +775,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Chip_Bioware.get(6),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64),
                         MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getBolt(48))
-                .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderUEV, 4 * INGOTS))
+                .itemOutputs(ItemList.Circuit_Bioprocessor.get(1)).fluidInputs(new FluidStack(solderUEV, 4 * INGOTS))
                 .requiresCleanRoom().duration(15 * SECONDS).eut(2457600).addTo(circuitAssemblerRecipes);
 
         // Bioware Assembly
@@ -788,8 +788,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_Ram.get(64),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64))
                 .itemOutputs(ItemList.Circuit_Biowarecomputer.get(1))
-                .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom().duration(20 * SECONDS)
-                .eut(153600).addTo(circuitAssemblerRecipes);
+                .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom()
+                .duration(1 * MINUTES + 20 * SECONDS).eut(153600).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(

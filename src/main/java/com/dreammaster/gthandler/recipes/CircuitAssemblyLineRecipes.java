@@ -434,7 +434,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_PlasticCircuitBoards2.get(1),
                         ItemList.Wrap_SoCs.get(1),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 2),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Copper, 2))
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Copper, 32))
                 .itemOutputs(ItemList.Circuit_Microprocessor.get(32))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_Microprocessor.get(0)).eut(600).duration(30 * SECONDS)
