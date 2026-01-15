@@ -157,6 +157,25 @@ public class ScriptThaumcraft implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemNugget", 8, 5, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 2, missing)).duration(30 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
+        // Glass Phial
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glass_bottle),
+                        GTOreDictUnificator.get(OrePrefixes.round, Materials.Rubber, 1))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing)).duration(1 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glass_bottle),
+                        GTOreDictUnificator.get(OrePrefixes.round, Materials.RubberSilicone, 1))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing)).duration(1 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glass_bottle),
+                        GTOreDictUnificator.get(OrePrefixes.round, Materials.StyreneButadieneRubber, 1))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing)).duration(1 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTable", 1, 14, missing));
         TCHelper.clearPages("PLANTS");
