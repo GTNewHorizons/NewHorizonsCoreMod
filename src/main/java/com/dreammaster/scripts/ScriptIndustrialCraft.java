@@ -1508,9 +1508,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(20 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 8L))
-                .circuit(2).itemOutputs(getModItem(IndustrialCraft2.ID, "blockCrop", 16, 0, missing))
-                .duration(7 * SECONDS + 10 * TICKS).eut(30).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
