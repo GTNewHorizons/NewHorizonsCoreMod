@@ -885,6 +885,10 @@ public class ScriptBiblioCraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
                 .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
+            .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
+            .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         // --- Frame Board
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
@@ -900,6 +904,10 @@ public class ScriptBiblioCraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
                 .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
+            .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
+            .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4).addTo(cutterRecipes);
 
     }
 
