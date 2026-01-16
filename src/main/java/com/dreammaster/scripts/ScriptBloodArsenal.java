@@ -726,6 +726,10 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 6, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(5 * SECONDS).eut(120)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0, missing))
+            .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 6, 0, missing))
+            .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS).eut(120)
+            .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 1, 0, missing))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_stick", 2, 0, missing)).duration(20).eut(8)
                 .addTo(latheRecipes);
