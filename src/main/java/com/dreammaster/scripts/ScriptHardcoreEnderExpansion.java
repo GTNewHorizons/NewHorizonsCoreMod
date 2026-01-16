@@ -544,6 +544,10 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Endium, 9L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 150)).duration(1 * MINUTES + 30 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Endium, 9L))
+            .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(36 * SECONDS).eut(30)
+            .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Sphalerite, 2L)).duration(4).eut(10)
                 .addTo(hammerRecipes);
