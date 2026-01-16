@@ -126,10 +126,6 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L),
                 "craftingToolMortar",
                 "listAllfishraw");
-        addShapelessRecipe(
-                getModItem(Minecraft.ID, "sugar", 4, 0, missing),
-                "craftingToolMortar",
-                getModItem(CropsPlusPlus.ID, "foodBerries", 1, 1, missing));
         List<ItemStack> cookedMeatItems = new ArrayList<>(OreDictionary.getOres("listAllmeatcooked")).stream()
                 .filter(
                         itemStack -> !ItemStack.areItemStacksEqual(
