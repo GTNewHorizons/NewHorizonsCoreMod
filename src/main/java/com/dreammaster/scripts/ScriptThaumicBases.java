@@ -1319,5 +1319,9 @@ public class ScriptThaumicBases implements IScriptLoader {
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
+            .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
+            .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(2)).duration(4 * SECONDS).eut(30)
+            .addTo(cutterRecipes);
     }
 }
