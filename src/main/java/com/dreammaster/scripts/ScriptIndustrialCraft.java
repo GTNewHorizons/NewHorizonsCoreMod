@@ -529,7 +529,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateStone",
                 null);
         addShapelessRecipe(
-                getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coffee, missing, 1L),
                 "craftingToolMortar",
                 "cropCoffee");
         addShapedRecipe(
