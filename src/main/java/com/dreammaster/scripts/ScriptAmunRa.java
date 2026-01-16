@@ -527,6 +527,8 @@ public class ScriptAmunRa implements IScriptLoader {
         // Slab (efficient)
         final int eut = isRock ? 7 : 4;
 
+        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).itemOutputs(slab)
+            .duration(10 * TICKS).eut(eut).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.Lubricant.getFluid(1)).itemOutputs(slab)
                 .duration(1 * SECONDS + 5 * TICKS).eut(eut).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.Water.getFluid(4)).itemOutputs(slab)
