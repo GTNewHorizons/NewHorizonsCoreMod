@@ -1655,9 +1655,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 .fluidInputs(getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing))
-            .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
-            .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(6 * TICKS).eut(4)
-            .addTo(cutterRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(6 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
                 .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(8)
@@ -1671,9 +1671,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 .fluidInputs(getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(8)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
-            .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
-            .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(6 * TICKS).eut(8)
-            .addTo(cutterRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(6 * TICKS).eut(8)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, wildcard, missing))
                 .fluidOutputs(Materials.Glass.getMolten(144)).duration(10 * SECONDS).eut(48)
                 .addTo(fluidExtractionRecipes);
