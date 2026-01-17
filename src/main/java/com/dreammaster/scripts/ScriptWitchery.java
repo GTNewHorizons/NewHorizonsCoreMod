@@ -296,6 +296,10 @@ public class ScriptWitchery implements IScriptLoader {
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(2 * SECONDS + 10 * TICKS).eut(24)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0, missing))
+                .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(12 * TICKS).eut(24)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0, missing), ItemList.Shape_Mold_Bottle.get(0L))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 1, 26, missing)).duration(5 * SECONDS).eut(30)

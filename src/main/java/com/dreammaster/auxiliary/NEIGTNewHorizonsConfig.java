@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagString;
 
-import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 
@@ -25,8 +24,6 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
     @Override
     public void loadConfig() {
-        API.hideItem(new ItemStack(QuantumBread.Instance()));
-
         API.hideItem(new ItemStack(Loaders.antimatterRenderBlock));
         API.hideItem(new ItemStack(GregTechAPI.sDroneRender));
         API.hideItem(new ItemStack(GregTechAPI.sWormholeRender));
