@@ -38,7 +38,6 @@ import bartworks.util.BWUtil;
 import bartworks.util.BioCulture;
 import bartworks.util.BioDNA;
 import bartworks.util.BioData;
-import bartworks.util.BioPlasmid;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -68,7 +67,7 @@ public class BacteriaRegistry {
         BioCulture bioCulture = createAndRegisterBioCulture(
                 new Color(133, 0, 128), // color = violet
                 "Barnadafis Arboriatoris", // name
-                BioPlasmid.convertDataToPlasmid(bioData), // BioData -> plasmid
+                bioData, // BioData -> plasmid
                 BioDNA.convertDataToDNA(bioData), // /BioData -> DNA
                 EnumRarity.rare, // rare (only visual)
                 true // can be multiplied in the BioVat
@@ -81,7 +80,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(
                 new Color(27, 153, 94),
                 "TCetiEis Fucus Serratus",
-                BioPlasmid.convertDataToPlasmid(bioData),
+                bioData,
                 BioDNA.convertDataToDNA(bioData),
                 EnumRarity.rare,
                 true);
@@ -103,7 +102,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(
                 new Color(223, 206, 155),
                 "Ova Evolutionis",
-                BioPlasmid.convertDataToPlasmid(bioData),
+                bioData,
                 BioDNA.convertDataToDNA(bioData),
                 EnumRarity.rare,
                 false);
@@ -114,7 +113,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(
                 new Color(26, 59, 137),
                 "Derivantur Cellula Evolutionis",
-                BioPlasmid.convertDataToPlasmid(bioData),
+                bioData,
                 BioDNA.convertDataToDNA(bioData),
                 EnumRarity.rare,
                 false);
@@ -125,7 +124,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(
                 new Color(91, 255, 41),
                 "Cellula Biologicum Evolutione",
-                BioPlasmid.convertDataToPlasmid(bioData),
+                bioData,
                 BioDNA.convertDataToDNA(bioData),
                 EnumRarity.epic,
                 false);
@@ -136,7 +135,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(
                 new Color(219, 223, 138),
                 "Binni Growth Medium",
-                BioPlasmid.convertDataToPlasmid(bioData),
+                bioData,
                 BioDNA.convertDataToDNA(bioData),
                 EnumRarity.common,
                 false);
@@ -147,7 +146,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(
                 new Color(209, 181, 129),
                 "Binni Bacteria",
-                BioPlasmid.convertDataToPlasmid(bioData),
+                bioData,
                 BioDNA.convertDataToDNA(bioData),
                 EnumRarity.common,
                 true);
@@ -158,7 +157,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(
                 new Color(10, 62, 13),
                 "Corynebacterium Sludge Marsensis",
-                BioPlasmid.convertDataToPlasmid(bioData),
+                bioData,
                 BioDNA.convertDataToDNA(bioData),
                 EnumRarity.uncommon,
                 false);
@@ -169,7 +168,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(
                 new Color(29, 149, 50),
                 "Mutagen Bacteria a Spatio",
-                BioPlasmid.convertDataToPlasmid(bioData),
+                bioData,
                 BioDNA.convertDataToDNA(bioData),
                 EnumRarity.rare,
                 false);
