@@ -413,7 +413,7 @@ public class GT_Loader_Items {
         CustomItemList.ReinforcedTitaniumIronPlate.set(NHItemList.ReinforcedTitaniumIronPlate.getIS());
         CustomItemList.TungstenIronPlate.set(NHItemList.TungstenIronPlate.getIS());
         CustomItemList.ReinforcedTungstenIronPlate.set(NHItemList.ReinforcedTungstenIronPlate.getIS());
-        CustomItemList.TungstenSteelIronPlate.set(NHItemList.TungstenSteeLIronPlate.getIS());
+        CustomItemList.TungstenSteelIronPlate.set(NHItemList.TungstenSteelIronPlate.getIS());
         CustomItemList.ReinforcedTungstenSteelIronPlate.set(NHItemList.ReinforcedTungstenSteelIronPlate.getIS());
         CustomItemList.ChromeIronPlate.set(NHItemList.ChromeIronPlate.getIS());
         CustomItemList.ReinforcedChromeIronPlate.set(NHItemList.ReinforcedChromeIronPlate.getIS());

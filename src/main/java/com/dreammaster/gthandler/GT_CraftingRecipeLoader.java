@@ -45,7 +45,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.main.NHItems;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.recipes.Recipe;
 
@@ -1084,15 +1083,15 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 CustomItemList.UnfiredClayBrick.get(8L),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "CCC", "CFC", "CCC", 'C', new ItemStack(Items.clay_ball, 1, 0), 'F',
-                        new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W) });
+                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
         GTModHandler.addShapelessCraftingRecipe(
                 CustomItemList.UnfiredClayBrick.get(1L),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { new ItemStack(Items.clay_ball, 1, 0),
-                        new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W) });
+                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
         if (TinkerConstruct.isModLoaded()) {
             Recipe.of(
-                    new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W),
+                    new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W),
                     ToolDictNames.craftingToolKnife,
                     GTModHandler.getModItem(aTextTConstruct, "blankPattern", 1L, 0))
                     .provideTo(shapelessUnremovableGtRecipes())
@@ -1102,11 +1101,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { "GGG", "GFG", "GGG", 'G',
                             GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1), 'F',
-                            new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W) });
+                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
             Recipe.of(
                     CustomItemList.UnfiredSearedBrick.get(1L),
                     GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1),
-                    new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W))
+                    new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W))
                     .provideTo(shapelessUnremovableGtRecipes())
                     .provideTo(MANTLE.manualShapedCraftingRecipeNamed("unfiredsearedbrick"));
             GTModHandler.addCraftingRecipe(
@@ -1114,19 +1113,19 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { "SSS", "SFS", "SSS", 'S',
                             GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6), 'F',
-                            new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W) });
+                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
             GTModHandler.addShapelessCraftingRecipe(
                     CustomItemList.UnfiredSlimeSoilBrick.get(1L),
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6),
-                            new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W) });
+                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
         }
         GTModHandler.addCraftingRecipe(
                 CustomItemList.UnfiredCokeOvenBrick.get(3L),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "CCC", "SFS", "SSS", 'C', new ItemStack(Items.clay_ball, 1, 0), 'S',
                         GTOreDictUnificator.get("sand", 1L), 'F',
-                        new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GTValues.W) });
+                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
 
         GTModHandler.addCraftingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),

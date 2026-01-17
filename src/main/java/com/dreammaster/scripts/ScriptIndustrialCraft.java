@@ -740,72 +740,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 ItemList.Electric_Motor_MV.get(1L),
                 "circuitAdvanced");
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 1, missing),
-                "screwSteel",
-                "plateSteel",
-                "screwSteel",
-                "circuitBasic",
-                ItemList.Casing_LV.get(1L),
-                "circuitBasic",
-                "craftingToolHardHammer",
-                "plateSteel",
-                "craftingToolScrewdriver");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 2, missing),
-                "screwSteel",
-                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                "screwSteel",
-                "circuitBasic",
-                ItemList.Casing_LV.get(1L),
-                "circuitBasic",
-                "craftingToolHardHammer",
-                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                "craftingToolScrewdriver");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 6, missing),
-                "itemCasingAnyIron",
-                "itemCasingAnyIron",
-                "itemCasingAnyIron",
-                "craftingChest",
-                ItemList.Casing_LV.get(1L),
-                "craftingChest",
-                "itemCasingAnyIron",
-                "itemCasingAnyIron",
-                "itemCasingAnyIron");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 5, missing),
-                "itemCasingAnyIron",
-                "circuitBasic",
-                "itemCasingAnyIron",
-                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
-                ItemList.Casing_LV.get(1L),
-                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
-                "itemCasingAnyIron",
-                "craftingChest",
-                "itemCasingAnyIron");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 4, missing),
-                "itemCasingAnyIron",
-                "circuitBasic",
-                "itemCasingAnyIron",
-                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
-                ItemList.Casing_LV.get(1L),
-                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
-                "pipeLargeSteel",
-                Materials.Empty.getCells(1),
-                "pipeLargeSteel");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 3, missing),
-                "itemCasingAnyIron",
-                ItemList.Cover_SolarPanel.get(1L),
-                "itemCasingAnyIron",
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                ItemList.Casing_LV.get(1L),
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                "itemCasingAnyIron",
-                "circuitBasic",
-                "itemCasingAnyIron");
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 0, missing),
                 "itemCasingSteel",
                 "circuitBasic",
@@ -828,28 +762,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "circuitBasic",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 14, missing),
-                "itemCasingSteel",
-                "itemCasingSteel",
-                "itemCasingSteel",
-                "pipeMediumSteel",
-                ItemList.Electric_Pump_MV.get(1L),
-                "pipeMediumSteel",
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                "circuitBasic",
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 12, missing),
-                "itemCasingSteel",
-                ItemList.Electric_Pump_LV.get(1L),
-                "itemCasingSteel",
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                "chestSteel",
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                "itemCasingSteel",
-                "circuitBasic",
-                "itemCasingSteel");
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
@@ -860,17 +772,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "circuitAdvanced",
                 "cableGt04Gold",
                 "circuitAdvanced");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 9, missing),
-                "plateRedAlloy",
-                "itemCasingSteel",
-                "plateRedAlloy",
-                "springSteelMagnetic",
-                ItemList.Casing_LV.get(1L),
-                "springSteelMagnetic",
-                ItemList.Electric_Motor_LV.get(1L),
-                "circuitBasic",
-                ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockChargepad", 1, 3, missing),
                 "screwStainlessSteel",
@@ -1240,9 +1141,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Machine_LV_Canner.get(1L), ItemList.Machine_LV_FluidCanner.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 6, missing)).duration(1 * MINUTES)
-                .eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing),
