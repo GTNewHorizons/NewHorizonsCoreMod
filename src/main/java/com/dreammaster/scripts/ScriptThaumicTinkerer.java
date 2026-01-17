@@ -86,6 +86,10 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(2 * SECONDS + 10 * TICKS).eut(8)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(20 * TICKS).eut(8)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),

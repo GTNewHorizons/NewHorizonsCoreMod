@@ -919,6 +919,10 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(CustomItemList.IridiumAlloyItemCasing.get(2L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 64)).duration(30 * SECONDS).eut(256)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing))
+                .itemOutputs(CustomItemList.IridiumAlloyItemCasing.get(2L))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(12 * SECONDS).eut(256)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 75)).duration(2 * MINUTES).eut(2)
                 .addTo(fermentingRecipes);
@@ -1265,6 +1269,10 @@ public class ScriptCoreMod implements IScriptLoader {
         // Obsidian Stuff
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(NHItemList.LongObsidianRod.getIS(2)).duration(32 * SECONDS).eut(16).addTo(latheRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
                 .fluidInputs(Materials.Lubricant.getFluid(5)).duration(11 * SECONDS).eut(TierEU.RECIPE_LV)
