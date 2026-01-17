@@ -14,7 +14,6 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.dreammaster.main.NHItems;
 import com.dreammaster.mantle.BookLoader;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOre;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOreItem;
@@ -31,15 +30,17 @@ import gregtech.api.util.GTOreDictUnificator;
 
 public class TiCoLoader {
 
+    public static Block ZINC_GRAVEL_ORE;
+
     public static void doPreInitialization() {
         registerZincGravelOre();
     }
 
     private static void registerZincGravelOre() {
-        NHItems.ZINC_GRAVEL_ORE = new ZincGravelOre().setBlockName("block.ore.gravel.zinc");
-        NHItems.ZINC_GRAVEL_ORE.setHarvestLevel("shovel", 1, 0);
-        GameRegistry.registerBlock(NHItems.ZINC_GRAVEL_ORE, ZincGravelOreItem.class, "ZincGravelOre");
-        OreDictionary.registerOre("oreZinc", new ItemStack(NHItems.ZINC_GRAVEL_ORE, 1, 0));
+        ZINC_GRAVEL_ORE = new ZincGravelOre().setBlockName("block.ore.gravel.zinc");
+        ZINC_GRAVEL_ORE.setHarvestLevel("shovel", 1, 0);
+        GameRegistry.registerBlock(ZINC_GRAVEL_ORE, ZincGravelOreItem.class, "ZincGravelOre");
+        OreDictionary.registerOre("oreZinc", new ItemStack(ZINC_GRAVEL_ORE, 1, 0));
     }
 
     public static void doInitialization() {
@@ -157,12 +158,12 @@ public class TiCoLoader {
         String targetBlock = "TConstruct:GravelOre";
         BlockReplacementManager.addBlockReplacement(targetBlock, (blockConversionInfoOld, world) -> {
             BlockConversionInfo blockConversionInfoNew = new BlockConversionInfo();
-            blockConversionInfoNew.blockID = Block.getIdFromBlock(NHItems.ZINC_GRAVEL_ORE);
+            blockConversionInfoNew.blockID = Block.getIdFromBlock(ZINC_GRAVEL_ORE);
             blockConversionInfoNew.metadata = 0;
             return blockConversionInfoNew;
         });
         ItemStackReplacementManager.addItemReplacement(targetBlock, tag -> {
-            tag.setShort("id", (short) Block.getIdFromBlock(NHItems.ZINC_GRAVEL_ORE));
+            tag.setShort("id", (short) Block.getIdFromBlock(ZINC_GRAVEL_ORE));
             tag.setShort("Damage", (short) 0);
             return tag;
         });
