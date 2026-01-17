@@ -1721,8 +1721,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 8L),
                         CustomItemList.MeteoricIronString.get(8L))
                 .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 144)).duration(15 * SECONDS).eut(480)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 144)).duration(15 * SECONDS)
+                .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Carbon, 1L),
