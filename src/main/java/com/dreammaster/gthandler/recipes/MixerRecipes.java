@@ -210,7 +210,7 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 4L))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
