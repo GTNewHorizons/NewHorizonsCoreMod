@@ -1415,18 +1415,18 @@ public class AssemblerRecipes implements Runnable {
 
         // Wood Plates
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64)).circuit(2)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64))
-                .fluidInputs(Materials.Glue.getFluid(144L)).duration(2 * MINUTES).eut(TierEU.RECIPE_LV)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 32))
+                .fluidInputs(Materials.Glue.getFluid(72L)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64)).circuit(2)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64))
-                .fluidInputs(Materials.GlueAdvanced.getFluid(72L)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 32))
+                .fluidInputs(Materials.GlueAdvanced.getFluid(36L)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64)).circuit(2)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64))
-                .fluidInputs(MaterialMisc.ETHYL_CYANOACRYLATE.getFluidStack(36)).duration(30 * SECONDS)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 32))
+                .fluidInputs(MaterialMisc.ETHYL_CYANOACRYLATE.getFluidStack(18)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         if (OpenBlocks.isModLoaded() && BloodMagic.isModLoaded()) {
