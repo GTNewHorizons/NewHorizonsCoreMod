@@ -1717,6 +1717,14 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 8, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 8L),
+                        CustomItemList.MeteoricIronString.get(8L))
+                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 144)).duration(15 * SECONDS)
+                .eut(480).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Carbon, 1L),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing))
                 .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0, missing))

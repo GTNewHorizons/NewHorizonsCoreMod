@@ -1259,15 +1259,15 @@ public class CircuitAssemblerRecipes implements Runnable {
                         .circuit(2).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 39))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
-                // Circuit 1
 
+                // Microchip T1
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
                                 ItemList.Circuit_Parts_Transistor.get(4L),
                                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L))
-                        .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24))
+                        .circuit(2).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
@@ -1277,11 +1277,11 @@ public class CircuitAssemblerRecipes implements Runnable {
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
                                 ItemList.Circuit_Parts_TransistorASMD.get(1L),
                                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L))
-                        .circuit(2).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24))
+                        .circuit(3).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 24))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-                // Circuit 2
 
+                // Microchip T2
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
@@ -1301,15 +1301,15 @@ public class CircuitAssemblerRecipes implements Runnable {
                         .circuit(3).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
                         .eut(256).addTo(circuitAssemblerRecipes);
-                // Circuit 3
 
+                // Microchip T3
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
                                 ItemList.Circuit_Parts_Transistor.get(16L),
                                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
-                        .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26))
+                        .circuit(2).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -1319,7 +1319,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
                                 ItemList.Circuit_Parts_TransistorASMD.get(4L),
                                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
-                        .circuit(2).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26))
+                        .circuit(3).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 26))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
                 // network card

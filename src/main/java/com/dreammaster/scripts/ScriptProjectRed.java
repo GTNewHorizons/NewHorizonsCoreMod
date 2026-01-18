@@ -2568,7 +2568,7 @@ public class ScriptProjectRed implements IScriptLoader {
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5))
-                    .circuit(2).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1))
+                    .circuit(10).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                     .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
             // NOT Gate
