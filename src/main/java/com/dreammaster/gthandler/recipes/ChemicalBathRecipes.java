@@ -27,7 +27,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
@@ -50,7 +50,7 @@ public class ChemicalBathRecipes implements Runnable {
                 .itemOutputs(GTModHandler.getModItem(Backpack.ID, "tannedLeather", 1L, 0))
                 .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(chemicalBathRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ArtificialLeather.get(2L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.ArtificialLeather.get(2))
                 .itemOutputs(GTModHandler.getModItem(Backpack.ID, "tannedLeather", 1L, 0))
                 .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(chemicalBathRecipes);
@@ -61,8 +61,8 @@ public class ChemicalBathRecipes implements Runnable {
                 .duration(1 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
 
         // Cooling Hot Netherrack Bricks
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.HotNetherrackBrick.get(1L))
-                .itemOutputs(CustomItemList.InfernalBrick.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.HotNetherrackBrick.get())
+                .itemOutputs(NHItemList.InfernalBrick.get())
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 250))
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
@@ -91,8 +91,8 @@ public class ChemicalBathRecipes implements Runnable {
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.MysteriousCrystalGemExquisite.get(1L))
-                .itemOutputs(CustomItemList.MysteriousCrystalLens.get(1L)).fluidInputs(Materials.UUMatter.getFluid(144))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MysteriousCrystalGemExquisite.get())
+                .itemOutputs(NHItemList.MysteriousCrystalLens.get()).fluidInputs(Materials.UUMatter.getFluid(144))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(chemicalBathRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_GlassFiber.get(1L))
@@ -275,7 +275,7 @@ public class ChemicalBathRecipes implements Runnable {
 
         if (PamsHarvestCraft.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1L, 0))
-                    .itemOutputs(CustomItemList.ArtificialLeather.get(1L))
+                    .itemOutputs(NHItemList.ArtificialLeather.get())
                     .fluidInputs(Materials.PolyvinylChloride.getMolten(72L)).duration(7 * SECONDS + 10 * TICKS)
                     .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
         }

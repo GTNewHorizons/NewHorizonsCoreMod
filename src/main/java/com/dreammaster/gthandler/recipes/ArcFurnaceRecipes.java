@@ -51,7 +51,7 @@ public class ArcFurnaceRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Ichorium, 16L),
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 64L),
                             GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4L, 3),
-                            NHItemList.ChaoticDust.getIS(2),
+                            NHItemList.ChaoticDust.get(2),
                             GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L, 26))
                     .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 500, 250)
                     .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144))

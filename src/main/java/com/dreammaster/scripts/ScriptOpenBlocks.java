@@ -31,7 +31,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
@@ -198,15 +198,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateObsidian");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
-                CustomItemList.AluminiumBars.get(1L),
+                NHItemList.AluminiumBars.get(),
                 "stickGold",
-                CustomItemList.AluminiumBars.get(1L),
+                NHItemList.AluminiumBars.get(),
                 "pipeSmallDarkSteel",
                 "rotorDarkSteel",
                 "pipeSmallDarkSteel",
-                CustomItemList.AluminiumBars.get(1L),
+                NHItemList.AluminiumBars.get(),
                 "stickGold",
-                CustomItemList.AluminiumBars.get(1L));
+                NHItemList.AluminiumBars.get());
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "guide", 1, 0, missing),
                 "stoneObsidian",
@@ -237,15 +237,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateStone");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "beartrap", 1, 0, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "craftingToolHardHammer",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "screwSteel",
                 "plateSteel",
                 "screwSteel",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "craftingToolScrewdriver",
-                CustomItemList.SteelBars.get(1L));
+                NHItemList.SteelBars.get());
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "cannon", 1, 0, missing),
                 "craftingToolSaw",

@@ -34,7 +34,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.forestry.ForestryHelper;
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -381,9 +380,9 @@ public class ScriptForestry implements IScriptLoader {
                 "plateCupronickel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "plateCupronickel",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "gearGtSmallSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
@@ -489,7 +488,7 @@ public class ScriptForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Forestry.ID, "mail", 1, 1, missing),
                 getModItem(Forestry.ID, "thermionicTubes", 1, 9, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(Forestry.ID, "thermionicTubes", 1, 9, missing),
                 "plateSteel",
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
@@ -514,7 +513,7 @@ public class ScriptForestry implements IScriptLoader {
                 "slabWood",
                 "slabWood",
                 getModItem(Forestry.ID, "frameUntreated", 1, 0, missing),
-                CustomItemList.WoodenCasing.get(1L),
+                NHItemList.WoodenCasing.get(),
                 getModItem(Forestry.ID, "frameUntreated", 1, 0, missing),
                 "beeComb",
                 "slabWood",
@@ -2826,15 +2825,15 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'b',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'e',
                 ItemList.Rotor_MV.get(1L),
                 'f',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -2852,7 +2851,7 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7, missing),
                 'b',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7, missing),
                 'd',
@@ -2904,7 +2903,7 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'b',
-                NHItemList.ChargedCertusQuartzPlate.getIS(1),
+                NHItemList.ChargedCertusQuartzPlate.get(1),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'd',
@@ -2916,7 +2915,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'h',
-                NHItemList.ChargedCertusQuartzPlate.getIS(1),
+                NHItemList.ChargedCertusQuartzPlate.get(1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -2948,7 +2947,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(Forestry.ID, "beealyzer", 1, 0, missing),
                 "abc",
                 "def",
@@ -2974,7 +2973,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(Forestry.ID, "treealyzer", 1, 0, missing),
                 "abc",
                 "def",
@@ -3000,7 +2999,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing),
                 "abc",
                 "def",
@@ -5114,9 +5113,9 @@ public class ScriptForestry implements IScriptLoader {
                 null,
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Forestry.ID, "thermionicTubes", 2, 6, missing),
-                new Object[] { "abc", "def", "ghi", 'b', NHItemList.LongObsidianRod.getIS(1), 'd',
+                new Object[] { "abc", "def", "ghi", 'b', NHItemList.LongObsidianRod.get(1), 'd',
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
-                        NHItemList.LongObsidianRod.getIS(1), 'f',
+                        NHItemList.LongObsidianRod.get(1), 'f',
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'g',
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 1L), 'h',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L), 'i',
