@@ -38,7 +38,6 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -1883,9 +1882,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60, missing)).duration(20 * SECONDS)
                 .eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.SteelBars.get(5),
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing))
+                .itemInputs(NHItemList.SteelBars.get(5), getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 57, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

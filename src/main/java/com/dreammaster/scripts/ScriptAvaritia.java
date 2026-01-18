@@ -38,7 +38,6 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -48,6 +47,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.rwtema.extrautils.ExtraUtils;
 

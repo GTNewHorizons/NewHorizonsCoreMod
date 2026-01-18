@@ -900,8 +900,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 NHItemList.RawOrbTier1.get(),
                 bits,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Aluminium), 'P',
-                        OrePrefixes.plate.get(Materials.AnnealedCopper), 'O',
-                        NHItemList.ReinforcedGlassLense.get() });
+                        OrePrefixes.plate.get(Materials.AnnealedCopper), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier2.get(),
                 bits,
@@ -911,26 +910,22 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 NHItemList.RawOrbTier3.get(),
                 bits,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Titanium), 'P',
-                        OrePrefixes.plate.get(Materials.PulsatingIron), 'O',
-                        NHItemList.ReinforcedGlassLense.get() });
+                        OrePrefixes.plate.get(Materials.PulsatingIron), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier4.get(),
                 bits,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.TungstenSteel), 'P',
-                        OrePrefixes.plate.get(Materials.EnergeticAlloy), 'O',
-                        NHItemList.ReinforcedGlassLense.get() });
+                        OrePrefixes.plate.get(Materials.EnergeticAlloy), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier5.get(),
                 bits,
                 new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.LuVTierMaterial.get(screw), 'P',
-                        OrePrefixes.plate.get(Materials.FierySteel), 'O',
-                        NHItemList.ReinforcedGlassLense.get() });
+                        OrePrefixes.plate.get(Materials.FierySteel), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier6.get(),
                 bits,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Iridium), 'P',
-                        OrePrefixes.plate.get(Materials.Plutonium241), 'O',
-                        NHItemList.ReinforcedGlassLense.get() });
+                        OrePrefixes.plate.get(Materials.Plutonium241), 'O', NHItemList.ReinforcedGlassLense.get() });
 
         // ===================================================================================================
         // Coke Oven
@@ -1321,8 +1316,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     bits,
                     new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.Chrome), 'T',
                             NHItemList.QuantinumDualCompressedPlates.get(), 'D',
-                            NHItemList.IceDualCompressedPlates.get(), 'C',
-                            NHItemList.MediumFuelCanister.get() });
+                            NHItemList.IceDualCompressedPlates.get(), 'C', NHItemList.MediumFuelCanister.get() });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ExtraLargeFuelCanister.get(),
                     bits,
@@ -1359,8 +1353,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     NHItemList.HeavyDutyRocketEngineTier4.get(),
                     bits,
                     new Object[] { "BPB", "PPP", "EPE", 'B', NHItemList.Tier3Booster.get(), 'P',
-                            NHItemList.HeavyDutyPlateTier7.get(), 'E',
-                            NHItemList.HeavyDutyRocketEngineTier3.get() });
+                            NHItemList.HeavyDutyPlateTier7.get(), 'E', NHItemList.HeavyDutyRocketEngineTier3.get() });
             // nose cones
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(GalacticraftCore.ID, "item.noseCone", 1L, 0),

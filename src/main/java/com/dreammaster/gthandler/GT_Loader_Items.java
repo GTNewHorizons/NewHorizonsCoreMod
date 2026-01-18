@@ -23,7 +23,8 @@ public class GT_Loader_Items {
 
     public void run() {
         MetaGeneratedItem01 GT = MetaGeneratedItem01.INSTANCE;
-        NandChipBoard = GT.addItem(81, "NAND Chip Array", "Chips on Board", "circuitPrimitiveArray", SubTag.NO_UNIFICATION);
+        NandChipBoard = GT
+                .addItem(81, "NAND Chip Array", "Chips on Board", "circuitPrimitiveArray", SubTag.NO_UNIFICATION);
         registerTooltips();
     }
 

@@ -48,7 +48,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -586,8 +585,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "craftingToolWireCutter",
                 null);
 
-        GTModHandler
-                .addSmeltingRecipe(NHItemList.UnfiredCokeOvenBrick.get(), NHItemList.CokeOvenBrick.get());
+        GTModHandler.addSmeltingRecipe(NHItemList.UnfiredCokeOvenBrick.get(), NHItemList.CokeOvenBrick.get());
         TConstructHelper.getMeltingAdder(FluidType.getFluidType(getMoltenPatternFluidTypeName()), 150, 72)
                 .add(
                         Stream.of(
@@ -654,9 +652,8 @@ public class ScriptCoreMod implements IScriptLoader {
                                 NHItemList.MoldFormPipeHuge).map(NHItemList::get))
                 .add(NHItemList.MarshmallowFormMold.get());
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.CokeOvenCasing.get(1))
-                .itemOutputs(NHItemList.CokeOvenBrick.get(4)).duration(15 * SECONDS).eut(2)
-                .addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.CokeOvenCasing.get(1)).itemOutputs(NHItemList.CokeOvenBrick.get(4))
+                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 12, missing))
                 .itemOutputs(NHItemList.AdvancedCokeOvenBrick.get(4)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
@@ -834,8 +831,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.PulsatingSpatialCoreChip.get())
-                .itemOutputs(NHItemList.EngineeringProcessorSpatialPulsatingCore.get()).duration(5 * SECONDS)
-                .eut(7680).addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.EngineeringProcessorSpatialPulsatingCore.get()).duration(5 * SECONDS).eut(7680)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
@@ -870,8 +867,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.EmeraldHighAdvancedCoreChip.get())
-                .itemOutputs(NHItemList.EngineeringProcessorItemAdvEmeraldCore.get()).duration(5 * SECONDS)
-                .eut(30720).addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.EngineeringProcessorItemAdvEmeraldCore.get()).duration(5 * SECONDS).eut(30720)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 3, missing),
@@ -984,14 +981,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(480)
-                .addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(480).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(480)
-                .addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(480).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
@@ -1076,8 +1071,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 2, 5, missing),
                         ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeManyullyn.get()).duration(30 * SECONDS).eut(120)
-                .addTo(extruderRecipes);
+                .itemOutputs(NHItemList.SawBladeManyullyn.get()).duration(30 * SECONDS).eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 5, missing),
@@ -1144,8 +1138,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         NHItemList.EngravedGoldChip.get(),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing))
-                .itemOutputs(NHItemList.GoldCoreChip.get()).duration(15 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.GoldCoreChip.get()).duration(15 * SECONDS).eut(256).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EngravedDiamondCrystalChip.get(),

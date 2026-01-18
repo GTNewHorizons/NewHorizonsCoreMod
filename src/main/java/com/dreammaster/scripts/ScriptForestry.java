@@ -35,7 +35,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;

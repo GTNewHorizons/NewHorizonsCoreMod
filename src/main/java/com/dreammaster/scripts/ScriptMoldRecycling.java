@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 
 import ggfab.GGItemList;
 import gregtech.api.enums.GTValues;
@@ -31,13 +30,13 @@ public class ScriptMoldRecycling implements IScriptLoader {
     public void loadRecipes() {
         // Coremod molds
         Stream.of(
-                ToBeDeletedItemList.MoldHelmet,
-                ToBeDeletedItemList.MoldChestplate,
-                ToBeDeletedItemList.MoldLeggings,
-                ToBeDeletedItemList.MoldBoots,
-                ToBeDeletedItemList.MarshmallowForm).forEach(
+                NHItemList.MoldHelmet,
+                NHItemList.MoldChestplate,
+                NHItemList.MoldLeggings,
+                NHItemList.MoldBoots,
+                NHItemList.MarshmallowForm).forEach(
                         item -> GTOreDictUnificator
-                                .addItemData(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
+                                .addItemData(item.get(), new ItemData(Materials.Steel, 4 * GTValues.M)));
         // GT5 Shapes and Molds
         Stream.of(
                 ItemList.Shape_Empty,

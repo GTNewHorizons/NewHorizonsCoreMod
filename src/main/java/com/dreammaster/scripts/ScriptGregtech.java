@@ -42,7 +42,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -1420,8 +1419,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         ItemList.Shape_Mold_Credit.get(0L))
-                .itemOutputs(NHItemList.CoinBlank.get()).duration(10 * SECONDS).eut(30)
-                .addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CoinBlank.get()).duration(10 * SECONDS).eut(30).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);

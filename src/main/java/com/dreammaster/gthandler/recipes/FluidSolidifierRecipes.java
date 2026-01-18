@@ -15,7 +15,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 
 import bartworks.common.loaders.ItemRegistry;
@@ -288,9 +287,9 @@ public class FluidSolidifierRecipes implements Runnable {
                     .itemOutputs(ItemList.Shape_Mold_Turbine_Blade.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBoots.get(1))
-                    .itemOutputs(NHItemList.MoldBoots.get()).fluidInputs(Materials.Steel.getMolten(576L))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBoots.get(1)).itemOutputs(NHItemList.MoldBoots.get())
+                    .fluidInputs(Materials.Steel.getMolten(576L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
+                    .addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormChestplate.get(1))
                     .itemOutputs(NHItemList.MoldChestplate.get()).fluidInputs(Materials.Steel.getMolten(576L))

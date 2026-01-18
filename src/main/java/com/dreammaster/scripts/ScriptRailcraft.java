@@ -31,11 +31,11 @@ import static gregtech.api.util.GTRecipeConstants.FUEL_VALUE;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.forestry.ForestryHelper;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.railcraft.RailcraftHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 

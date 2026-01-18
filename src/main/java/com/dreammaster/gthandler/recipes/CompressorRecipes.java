@@ -27,7 +27,6 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -150,9 +149,8 @@ public class CompressorRecipes implements Runnable {
                 .itemOutputs(BlockList.QuintupleCompressedCoalCoke.getIS(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioBall.get())
-                .itemOutputs(NHItemList.CompressedBioBall.get(1)).duration(15 * SECONDS).eut(2)
-                .addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioBall.get()).itemOutputs(NHItemList.CompressedBioBall.get(1))
+                .duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.get(1))
                 .itemOutputs(NHItemList.BioCarbonPlate.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 

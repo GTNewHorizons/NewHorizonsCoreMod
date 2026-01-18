@@ -24,7 +24,6 @@ import static gregtech.api.util.GTRecipeConstants.SIEVERT;
 import java.awt.Color;
 import java.util.LinkedHashMap;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
@@ -32,6 +31,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.fluids.FluidList;
+import com.dreammaster.item.NHItemList;
 
 import bartworks.common.loaders.BioItemList;
 import bartworks.util.BWUtil;

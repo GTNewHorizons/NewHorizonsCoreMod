@@ -26,12 +26,12 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
+import com.dreammaster.item.NHItemList;
 
 import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.GregTechAPI;
@@ -96,24 +96,20 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .circuit(1).itemOutputs(getGSItem("item.ThermalClothT2", 1, 0))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(576)).duration(30 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getGSItem("item.ThermalClothT2", 5, 0), NHItemList.TungstenString.get(5)).circuit(5)
-                .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalClothT2", 5, 0), NHItemList.TungstenString.get(5))
+                .circuit(5).itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 0))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(1440)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getGSItem("item.ThermalClothT2", 8, 0), NHItemList.TungstenString.get(8)).circuit(8)
-                .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 1))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalClothT2", 8, 0), NHItemList.TungstenString.get(8))
+                .circuit(8).itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 1))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getGSItem("item.ThermalClothT2", 7, 0), NHItemList.TungstenString.get(7)).circuit(7)
-                .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 2))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalClothT2", 7, 0), NHItemList.TungstenString.get(7))
+                .circuit(7).itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 2))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2016)).duration(1 * MINUTES + 45 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getGSItem("item.ThermalClothT2", 4, 0), NHItemList.TungstenString.get(4)).circuit(4)
-                .itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 3))
+        GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalClothT2", 4, 0), NHItemList.TungstenString.get(4))
+                .circuit(4).itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 3))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(1152)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

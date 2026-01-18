@@ -25,7 +25,6 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.mixerNonCellRecipes;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -608,8 +607,8 @@ public class MixerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.IC2_Energium_Dust.get(9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 6L))
-                .circuit(2).itemOutputs(NHItemList.LapotronDust.get(15)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+                .circuit(2).itemOutputs(NHItemList.LapotronDust.get(15)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -749,9 +748,8 @@ public class MixerRecipes implements Runnable {
                 .duration(5 * SECONDS).eut(4).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 1L))
-                .circuit(1).itemOutputs(NHItemList.RawNeutronium.get())
-                .fluidInputs(Materials.Helium.getPlasma(144L)).duration(11 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ZPM)
-                .addTo(mixerRecipes);
+                .circuit(1).itemOutputs(NHItemList.RawNeutronium.get()).fluidInputs(Materials.Helium.getPlasma(144L))
+                .duration(11 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(mixerRecipes);
 
         // One Step Alloy Dust Mixer
 
@@ -860,8 +858,7 @@ public class MixerRecipes implements Runnable {
                 .itemInputs(
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16L, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 2L))
-                .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(16)
-                .addTo(mixerRecipes);
+                .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(16).addTo(mixerRecipes);
 
         // Stargate-Crystal Dust
         GTValues.RA.stdBuilder()

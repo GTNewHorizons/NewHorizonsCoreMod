@@ -19,7 +19,6 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.Optional;
 import forestry.api.recipes.RecipeManagers;

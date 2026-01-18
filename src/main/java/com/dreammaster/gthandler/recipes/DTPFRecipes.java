@@ -6,13 +6,13 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.COIL_HEAT;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.DTPFCalculator;
+import com.dreammaster.item.NHItemList;
 
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;

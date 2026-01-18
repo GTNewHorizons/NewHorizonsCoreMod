@@ -9,7 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;

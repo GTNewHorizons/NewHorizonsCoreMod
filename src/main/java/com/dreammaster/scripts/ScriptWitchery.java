@@ -23,12 +23,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;

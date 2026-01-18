@@ -14,7 +14,6 @@ import static gregtech.api.util.GTRecipeConstants.COIL_HEAT;
 import static gregtech.api.util.GTRecipeConstants.NO_GAS;
 import static gregtech.api.util.GTRecipeConstants.NO_GAS_CIRCUIT_CONFIG;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -755,9 +754,8 @@ public class BlastFurnaceRecipes implements Runnable {
                 .metadata(COIL_HEAT, (int) Materials.NickelZincFerrite.mBlastFurnaceTemp).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.BrickNether, 1L))
-                .circuit(1).itemOutputs(NHItemList.HotNetherrackBrick.get())
-                .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
-                .metadata(COIL_HEAT, 1200).addTo(blastFurnaceRecipes);
+                .circuit(1).itemOutputs(NHItemList.HotNetherrackBrick.get()).fluidInputs(Materials.Oxygen.getGas(1000L))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.InfernalBrick.get(), NHItemList.CokeOvenBrick.get())
                 .itemOutputs(NHItemList.AdvancedCokeOvenBrick.get(2)).fluidInputs(Materials.Oxygen.getGas(1000L))

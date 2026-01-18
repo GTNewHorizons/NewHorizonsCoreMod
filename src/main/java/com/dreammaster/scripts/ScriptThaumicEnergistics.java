@@ -18,10 +18,10 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;

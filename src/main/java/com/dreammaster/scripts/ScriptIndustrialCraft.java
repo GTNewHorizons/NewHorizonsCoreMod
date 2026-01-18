@@ -31,7 +31,6 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -1479,9 +1478,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing),
-                        NHItemList.ExtruderShapeBoat.get(0))
+                .itemInputs(getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing), NHItemList.ExtruderShapeBoat.get(0))
                 .itemOutputs(NHItemList.ElectricBoatHull.get(1)).duration(1 * MINUTES).eut(30).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

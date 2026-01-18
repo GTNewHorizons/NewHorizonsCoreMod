@@ -25,7 +25,6 @@ import static gregtech.common.items.IDMetaTool01.SOFTMALLET;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.item.NHItemList;

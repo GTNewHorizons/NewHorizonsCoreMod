@@ -31,7 +31,6 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -178,7 +177,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 SuperSpeedCard,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                ToBeDeletedItemList.MysteriousCrystal,
+                NHItemList.MysteriousCrystal.get(),
                 ItemList.AcceleratorLuV);
 
         // Quad Core

@@ -19,7 +19,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -338,9 +337,8 @@ public class ChemicalReactorRecipes implements Runnable {
         if (Gendustry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.TheBigEgg.get(), ItemList.IC2_Uranium_238.get(64))
-                    .itemOutputs(NHItemList.MutatedEgg.get())
-                    .fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000)).requiresCleanRoom()
-                    .duration(60 * MINUTES).eut(256).addTo(UniversalChemical);
+                    .itemOutputs(NHItemList.MutatedEgg.get()).fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000))
+                    .requiresCleanRoom().duration(60 * MINUTES).eut(256).addTo(UniversalChemical);
 
         }
 

@@ -18,8 +18,9 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraftforge.fluids.FluidRegistry;
+
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -187,9 +188,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.Display.get(),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
+                .itemInputs(NHItemList.Display.get(), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
                 .itemOutputs(getModItem(StevesAddons.ID, "labeler", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(480).addTo(assemblerRecipes);

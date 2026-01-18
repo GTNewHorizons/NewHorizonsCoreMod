@@ -12,8 +12,6 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
-import com.dreammaster.gthandler.GT_Loader_Items;
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -21,6 +19,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+
+import com.dreammaster.gthandler.GT_Loader_Items;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -48,9 +49,8 @@ public class CircuitAssemblerRecipes implements Runnable {
             NHItemList.HeavyDutyPlateTier8.get() };
 
     public final ItemStack[] RocketChip = new ItemStack[] { NHItemList.SchematicsTier1.get(),
-            NHItemList.SchematicsTier2.get(), NHItemList.SchematicsTier3.get(),
-            NHItemList.SchematicsTier4.get(), NHItemList.SchematicsTier5.get(),
-            NHItemList.SchematicsTier6.get(), NHItemList.SchematicsTier7.get(),
+            NHItemList.SchematicsTier2.get(), NHItemList.SchematicsTier3.get(), NHItemList.SchematicsTier4.get(),
+            NHItemList.SchematicsTier5.get(), NHItemList.SchematicsTier6.get(), NHItemList.SchematicsTier7.get(),
             NHItemList.SchematicsTier8.get(), };
 
     // Rocket Circuits
@@ -295,9 +295,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_QuantumCPU.get(2L),
                         ItemList.Circuit_Chip_NanoCPU.get(2L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 64))
-                .itemOutputs(NHItemList.HighEnergyFlowCircuit.get())
-                .fluidInputs(new FluidStack(solderIndalloy, 288)).requiresCleanRoom().duration(2 * MINUTES)
-                .eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
+                .itemOutputs(NHItemList.HighEnergyFlowCircuit.get()).fluidInputs(new FluidStack(solderIndalloy, 288))
+                .requiresCleanRoom().duration(2 * MINUTES).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
         // SoC for nano, quantum, crystal
 
         GTValues.RA.stdBuilder()

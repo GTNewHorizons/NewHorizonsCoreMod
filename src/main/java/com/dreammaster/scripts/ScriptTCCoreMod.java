@@ -33,7 +33,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
@@ -93,9 +92,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 3,
                 2,
                 3,
-                NHItemList.WitherProtectionRing.get()).setParents("RUNICARMOR").setSiblings("RUNICARMOR")
-                        .setConcealed().setPages(new ResearchPage("NewHorizons.research_page.WITHERRING"))
-                        .registerResearchItem();
+                NHItemList.WitherProtectionRing.get()).setParents("RUNICARMOR").setSiblings("RUNICARMOR").setConcealed()
+                        .setPages(new ResearchPage("NewHorizons.research_page.WITHERRING")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "WITHERRING",
                 NHItemList.WitherProtectionRing.get(),

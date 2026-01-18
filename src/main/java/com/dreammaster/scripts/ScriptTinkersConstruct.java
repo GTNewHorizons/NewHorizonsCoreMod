@@ -47,7 +47,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.recipes.Recipe;

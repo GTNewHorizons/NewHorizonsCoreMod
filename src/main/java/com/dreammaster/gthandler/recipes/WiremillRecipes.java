@@ -27,8 +27,7 @@ public class WiremillRecipes implements Runnable {
                 .addTo(wiremillRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Tungsten, 1L))
-                .itemOutputs(NHItemList.TungstenString.get(4)).duration(60 * SECONDS).eut(1024)
-                .addTo(wiremillRecipes);
+                .itemOutputs(NHItemList.TungstenString.get(4)).duration(60 * SECONDS).eut(1024).addTo(wiremillRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getIngots(1)).circuit(3)
                 .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)

@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 

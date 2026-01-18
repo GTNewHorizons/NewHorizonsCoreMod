@@ -18,7 +18,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -94,8 +93,8 @@ public class ForgeHammerRecipes implements Runnable {
                 .itemOutputs(BlockList.QuadrupleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.CompressedBioBall.get(1))
-                .itemOutputs(NHItemList.BioBall.get()).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.CompressedBioBall.get(1)).itemOutputs(NHItemList.BioBall.get())
+                .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.get(1))
                 .itemOutputs(NHItemList.BioOrganicMesh.get(1)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
 
@@ -117,8 +116,8 @@ public class ForgeHammerRecipes implements Runnable {
 
         if (Thaumcraft.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3))
-                    .itemOutputs(NHItemList.PrimordialPearlFragment.get(3)).duration(16 * TICKS)
-                    .eut(TierEU.RECIPE_IV).addTo(hammerRecipes);
+                    .itemOutputs(NHItemList.PrimordialPearlFragment.get(3)).duration(16 * TICKS).eut(TierEU.RECIPE_IV)
+                    .addTo(hammerRecipes);
         }
         if (Botania.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(BlockList.Gaia.getIS(1))

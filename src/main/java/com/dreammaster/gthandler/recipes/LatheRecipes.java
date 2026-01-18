@@ -16,9 +16,8 @@ public class LatheRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().itemInputs(CHRONOMATIC_GLASS.getPlate(1))
-                .itemOutputs(NHItemList.ChromaticLens.get()).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .addTo(latheRecipes);
+        GTValues.RA.stdBuilder().itemInputs(CHRONOMATIC_GLASS.getPlate(1)).itemOutputs(NHItemList.ChromaticLens.get())
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(latheRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(Materials.RadoxPolymer.getPlates(1))
                 .itemOutputs(NHItemList.RadoxPolymerLens.get()).duration(1 * MINUTES + 30 * SECONDS)

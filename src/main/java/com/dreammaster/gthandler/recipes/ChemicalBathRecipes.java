@@ -20,13 +20,14 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;

@@ -14,8 +14,9 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.item.ItemStack;
+
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import goodgenerator.loader.Loaders;

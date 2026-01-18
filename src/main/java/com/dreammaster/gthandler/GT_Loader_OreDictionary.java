@@ -68,8 +68,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 Materials.CallistoIce,
                 NHItemList.CallistoIceCompressedPlate.get());
         GTOreDictUnificator.registerOre("blockLedox", BlockList.Ledox.getIS());
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.compressed, Materials.Ledox, NHItemList.LedoxCompressedPlate.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.compressed, Materials.Ledox, NHItemList.LedoxCompressedPlate.get());
         GTOreDictUnificator.registerOre(OrePrefixes.stick, Materials.Stone, NHItemList.CobbleStoneRod.get());
         GTOreDictUnificator.registerOre(OrePrefixes.plate, Materials.Stone, NHItemList.StonePlate.get());
         GTOreDictUnificator.registerOre("stickSandstone", NHItemList.SandStoneRod.get());
@@ -126,10 +125,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Iridium, NHItemList.IridiumBars.get());
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Neutronium, NHItemList.NeutroniumBars.get());
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Osmium, NHItemList.OsmiumBars.get());
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.bars, Materials.PulsatingIron, NHItemList.PulsatingIronBars.get());
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.bars, Materials.RedstoneAlloy, NHItemList.RedstoneAlloyBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.PulsatingIron, NHItemList.PulsatingIronBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.RedstoneAlloy, NHItemList.RedstoneAlloyBars.get());
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Soularium, NHItemList.SoulariumBars.get());
         GTOreDictUnificator.registerOre(
                 OrePrefixes.bars,
@@ -140,8 +137,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Steel, NHItemList.SteelBars.get());
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Titanium, NHItemList.TitaniumBars.get());
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Tungsten, NHItemList.TungstenBars.get());
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.bars, Materials.TungstenSteel, NHItemList.TungstenSteelBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.TungstenSteel, NHItemList.TungstenSteelBars.get());
 
         GTOreDictUnificator.registerOre(
                 OrePrefixes.rawOre,

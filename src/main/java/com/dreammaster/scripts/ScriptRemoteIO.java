@@ -21,7 +21,6 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -181,9 +180,7 @@ public class ScriptRemoteIO implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(30 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.BlankPlatedChip.get(1),
-                        getModItem(EnderStorage.ID, "enderChest", 1, 0, missing))
+                .itemInputs(NHItemList.BlankPlatedChip.get(1), getModItem(EnderStorage.ID, "enderChest", 1, 0, missing))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

@@ -7,7 +7,6 @@ import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -27,8 +26,7 @@ public class FormingPressRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(NHItemList.MalformedSlush.get(2), NHItemList.MarshmallowForm.get(0))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MalformedSlush.get(2), NHItemList.MarshmallowForm.get(0))
                 .itemOutputs(NHItemList.UncookedSlush.get()).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MarshmallowForm.get(0))
@@ -169,20 +167,17 @@ public class FormingPressRecipes implements Runnable {
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldHelmet.get(0))
-                .itemOutputs(NHItemList.MoldHelmet.get()).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.MoldHelmet.get()).duration(10 * SECONDS).eut(256).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldChestplate.get(0))
                 .itemOutputs(NHItemList.MoldChestplate.get()).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldLeggings.get(0))
-                .itemOutputs(NHItemList.MoldLeggings.get()).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.MoldLeggings.get()).duration(10 * SECONDS).eut(256).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldBoots.get(0))
-                .itemOutputs(NHItemList.MoldBoots.get()).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.MoldBoots.get()).duration(10 * SECONDS).eut(256).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_ToolHeadDrill.get(0L))
                 .itemOutputs(ItemList.Shape_Mold_ToolHeadDrill.get(1L)).duration(10 * SECONDS).eut(256)

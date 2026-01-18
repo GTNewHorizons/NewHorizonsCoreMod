@@ -37,7 +37,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -1596,9 +1595,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
                 'h',
                 getModItem(Botania.ID, "manaResource", 1, 2, missing));
-        TCHelper.addResearchPage(
-                "WEAKORB",
-                new ResearchPage(TCHelper.findArcaneRecipe(NHItemList.WeakOrb.get())));
+        TCHelper.addResearchPage("WEAKORB", new ResearchPage(TCHelper.findArcaneRecipe(NHItemList.WeakOrb.get())));
         ThaumcraftApi.addWarpToResearch("WEAKORB", 1);
         new ResearchItem(
                 "APPRENTICEORB",
@@ -1705,9 +1702,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                 'h',
                 getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing));
-        TCHelper.addResearchPage(
-                "MASTERORB",
-                new ResearchPage(TCHelper.findArcaneRecipe(NHItemList.MasterOrb.get())));
+        TCHelper.addResearchPage("MASTERORB", new ResearchPage(TCHelper.findArcaneRecipe(NHItemList.MasterOrb.get())));
         ThaumcraftApi.addWarpToResearch("MASTERORB", 4);
         new ResearchItem(
                 "ARCHMAGEORB",
@@ -4972,8 +4967,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 150,
                 new ItemStack[] { getModItem(BloodMagic.ID, "blankSpell", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
-                        NHItemList.EngravedGoldChip.get(1), NHItemList.EngravedDiamondCrystalChip.get() },
+                        getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing), NHItemList.EngravedGoldChip.get(1),
+                        NHItemList.EngravedDiamondCrystalChip.get() },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2, 15, missing),
@@ -5055,8 +5050,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.FierySteel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.FierySteel, 1L),
-                        NHItemList.ChargedCertusQuartzDust.get(),
-                        NHItemList.ChargedCertusQuartzDust.get() },
+                        NHItemList.ChargedCertusQuartzDust.get(), NHItemList.ChargedCertusQuartzDust.get() },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 7, missing),

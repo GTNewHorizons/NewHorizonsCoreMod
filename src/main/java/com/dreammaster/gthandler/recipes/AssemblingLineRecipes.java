@@ -36,7 +36,6 @@ import static tectech.thing.CustomItemList.dataOutAss_Wireless_Hatch;
 import static tectech.thing.CustomItemList.dataOut_Hatch;
 import static tectech.thing.CustomItemList.dataOut_Wireless_Hatch;
 
-import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -90,9 +89,8 @@ public class AssemblingLineRecipes implements Runnable {
                         NHItemList.QuantinumCompressedPlate.get(4),
                         NHItemList.QuantinumCompressedPlate.get(4),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Europium, 8))
-                .fluidInputs(new FluidStack(solderIndalloy, 72))
-                .itemOutputs(NHItemList.HeavyDutyAlloyIngotT5.get()).eut(TierEU.RECIPE_ZPM).duration(15 * SECONDS)
-                .addTo(AssemblyLine);
+                .fluidInputs(new FluidStack(solderIndalloy, 72)).itemOutputs(NHItemList.HeavyDutyAlloyIngotT5.get())
+                .eut(TierEU.RECIPE_ZPM).duration(15 * SECONDS).addTo(AssemblyLine);
 
         // Heavy duty alloy ingot T6
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, NHItemList.HeavyDutyPlateTier5.get())
@@ -102,9 +100,8 @@ public class AssemblingLineRecipes implements Runnable {
                         NHItemList.LeadOriharukonPlate.get(5),
                         NHItemList.LeadOriharukonPlate.get(5),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Tritanium, 8))
-                .fluidInputs(new FluidStack(solderIndalloy, 144))
-                .itemOutputs(NHItemList.HeavyDutyAlloyIngotT6.get()).eut(TierEU.RECIPE_UV).duration(15 * SECONDS)
-                .addTo(AssemblyLine);
+                .fluidInputs(new FluidStack(solderIndalloy, 144)).itemOutputs(NHItemList.HeavyDutyAlloyIngotT6.get())
+                .eut(TierEU.RECIPE_UV).duration(15 * SECONDS).addTo(AssemblyLine);
 
         // Heavy duty alloy ingot T7
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, NHItemList.HeavyDutyPlateTier6.get())
@@ -114,9 +111,8 @@ public class AssemblingLineRecipes implements Runnable {
                         NHItemList.MysteriousCrystalCompressedPlate.get(6),
                         NHItemList.MysteriousCrystalCompressedPlate.get(6),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Neutronium, 10))
-                .fluidInputs(new FluidStack(solderIndalloy, 288))
-                .itemOutputs(NHItemList.HeavyDutyAlloyIngotT7.get()).eut(TierEU.RECIPE_UHV).duration(15 * SECONDS)
-                .addTo(AssemblyLine);
+                .fluidInputs(new FluidStack(solderIndalloy, 288)).itemOutputs(NHItemList.HeavyDutyAlloyIngotT7.get())
+                .eut(TierEU.RECIPE_UHV).duration(15 * SECONDS).addTo(AssemblyLine);
 
         // Heavy duty alloy ingot T8
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, NHItemList.HeavyDutyPlateTier7.get())
@@ -126,9 +122,8 @@ public class AssemblingLineRecipes implements Runnable {
                         NHItemList.BlackPlutoniumCompressedPlate.get(7),
                         NHItemList.BlackPlutoniumCompressedPlate.get(7),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlackPlutonium, 12))
-                .fluidInputs(new FluidStack(solderIndalloy, 576))
-                .itemOutputs(NHItemList.HeavyDutyAlloyIngotT8.get()).eut(TierEU.RECIPE_UEV).duration(15 * SECONDS)
-                .addTo(AssemblyLine);
+                .fluidInputs(new FluidStack(solderIndalloy, 576)).itemOutputs(NHItemList.HeavyDutyAlloyIngotT8.get())
+                .eut(TierEU.RECIPE_UEV).duration(15 * SECONDS).addTo(AssemblyLine);
 
         // Neuro CPU
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Circuit_Chip_Stemcell.get(1L))
