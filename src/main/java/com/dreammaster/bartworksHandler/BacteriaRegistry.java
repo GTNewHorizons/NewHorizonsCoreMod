@@ -24,6 +24,7 @@ import static gregtech.api.util.GTRecipeConstants.SIEVERT;
 import java.awt.Color;
 import java.util.LinkedHashMap;
 
+import bartworks.API.enums.BioCultureEnum;
 import bartworks.API.enums.BioDataEnum;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
@@ -58,106 +59,46 @@ public class BacteriaRegistry {
     }
 
     private void runLateBioOBJs() {
-        BioCulture bioCulture = createAndRegisterBioCulture(
-                new Color(133, 0, 128), // color = violet
-                "Barnadafis Arboriatoris", // name
-                BioDataEnum.BarnadafisArboriatoris.getBioData(), // BioData -> plasmid
-                BioDataEnum.BarnadafisArboriatoris.getBioData(), // /BioData -> DNA
-                EnumRarity.rare, // rare (only visual)
-                true // can be multiplied in the BioVat
-        );
+        BioCulture bioCulture = BioCultureEnum.BarnadafisArboriatoris.bioCulture;
 
         CultureSet.put("BarnadaCBac", bioCulture); // save it in a Map to get it later
 
         // TCetiE culture, same as above
-        bioCulture = createAndRegisterBioCulture(
-                new Color(27, 153, 94),
-                "TCetiEis Fucus Serratus",
-                BioDataEnum.TcetieisFucusSerratus.getBioData(),
-                BioDataEnum.TcetieisFucusSerratus.getBioData(),
-                EnumRarity.rare,
-                true);
+        bioCulture = BioCultureEnum.TcetieisFucusSerratus.bioCulture;
+
 
         CultureSet.put("TcetiEBac", bioCulture);
 
         // combined Culture
-        bioCulture = createAndRegisterBioCulture(
-                new Color(54, 119, 181),
-                "Xenoxene Xenoxsis",
-                BioDataEnum.BarnadafisArboriatoris.getBioData(), // Barnada Plasmid
-                BioDataEnum.TcetieisFucusSerratus.getBioData(), // TcetiE DNA
-                EnumRarity.epic,
-                false);
+        bioCulture = BioCultureEnum.XenoxeneXenoxsis.bioCulture;
 
         CultureSet.put("CombinedBac", bioCulture);
 
-        bioCulture = createAndRegisterBioCulture(
-                new Color(223, 206, 155),
-                "Ova Evolutionis",
-                BioDataEnum.Ovumbac.getBioData(),
-                BioDataEnum.Ovumbac.getBioData(),
-                EnumRarity.rare,
-                false);
+        bioCulture = BioCultureEnum.OvaEvolutionis.bioCulture;
 
         CultureSet.put("OvumBac", bioCulture);
 
-        bioCulture = createAndRegisterBioCulture(
-                new Color(26, 59, 137),
-                "Derivantur Cellula Evolutionis",
-                BioDataEnum.Stemcellbac.getBioData(),
-                BioDataEnum.Stemcellbac.getBioData(),
-                EnumRarity.rare,
-                false);
+        bioCulture = BioCultureEnum.DerivanturCellulaEvolutionis.bioCulture;
 
         CultureSet.put("StemCellBac", bioCulture);
 
-        bioCulture = createAndRegisterBioCulture(
-                new Color(91, 255, 41),
-                "Cellula Biologicum Evolutione",
-                BioDataEnum.Biocellbac.getBioData(),
-                BioDataEnum.Biocellbac.getBioData(),
-                EnumRarity.epic,
-                false);
+        bioCulture = BioCultureEnum.CellulaBiologicumEvolutione.bioCulture;
 
         CultureSet.put("BioCellBac", bioCulture);
 
-        bioCulture = createAndRegisterBioCulture(
-                new Color(219, 223, 138),
-                "Binni Growth Medium",
-                BioDataEnum.Binnigrowthmedium.getBioData(),
-                BioDataEnum.Binnigrowthmedium.getBioData(),
-                EnumRarity.common,
-                false);
+        bioCulture = BioCultureEnum.BinniGrowthMedium.bioCulture;
 
         CultureSet.put("BinniGrowthMedium", bioCulture);
 
-        bioCulture = createAndRegisterBioCulture(
-                new Color(209, 181, 129),
-                "Binni Bacteria",
-                BioDataEnum.Binnibacteria.getBioData(),
-                BioDataEnum.Binnibacteria.getBioData(),
-                EnumRarity.common,
-                true);
+        bioCulture = BioCultureEnum.BinniBacteria.bioCulture;
 
         CultureSet.put("BinniBacteria", bioCulture);
 
-        bioCulture = createAndRegisterBioCulture(
-                new Color(10, 62, 13),
-                "Corynebacterium Sludge Marsensis",
-                BioDataEnum.Bacterialsludgebac.getBioData(),
-                BioDataEnum.Bacterialsludgebac.getBioData(),
-                EnumRarity.uncommon,
-                false);
+        bioCulture = BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture;
 
         CultureSet.put("BacterialSludgeBac", bioCulture);
 
-        bioCulture = createAndRegisterBioCulture(
-                new Color(29, 149, 50),
-                "Mutagen Bacteria a Spatio",
-                BioDataEnum.Mutagen.getBioData(),
-                BioDataEnum.Mutagen.getBioData(),
-                EnumRarity.rare,
-                false);
+        bioCulture = BioCultureEnum.MutagenBacteriaASpatio.bioCulture;
 
         CultureSet.put("Mutagen", bioCulture);
 
