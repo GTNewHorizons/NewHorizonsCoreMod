@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -23,7 +24,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -316,7 +316,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         'D',
                         "circuitPrimitive",
                         'C',
-                        CustomItemList.ChargedCertusQuartzDust.get(1),
+                        NHItemList.ChargedCertusQuartzDust.get(),
                         'E',
                         FLUID_CORE_1));
         GameRegistry.addRecipe(
@@ -448,7 +448,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Basic.get(1))
@@ -458,7 +458,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Basic.get(1))
@@ -468,7 +468,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Basic.get(1))

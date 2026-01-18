@@ -14,10 +14,10 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
-import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -612,11 +612,11 @@ public class ScriptMalisDoors implements IScriptLoader {
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.jail_door", 1, 0, missing),
                 null,
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 null,
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(Minecraft.ID, "iron_door", 1, 0, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 null,
                 "craftingToolSaw",
                 null);
@@ -1206,7 +1206,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.iron_sliding_door", 1, 0, missing))
                 .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing), CustomItemList.SteelBars.get(2L))
+                .itemInputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing), NHItemList.SteelBars.get(2))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.jail_door", 1, 0, missing)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

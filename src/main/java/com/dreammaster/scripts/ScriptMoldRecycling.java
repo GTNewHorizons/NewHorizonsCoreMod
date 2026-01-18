@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.item.NHItemList;
 
 import ggfab.GGItemList;
@@ -31,11 +31,11 @@ public class ScriptMoldRecycling implements IScriptLoader {
     public void loadRecipes() {
         // Coremod molds
         Stream.of(
-                CustomItemList.MoldHelmet,
-                CustomItemList.MoldChestplate,
-                CustomItemList.MoldLeggings,
-                CustomItemList.MoldBoots,
-                CustomItemList.MarshmallowForm).forEach(
+                ToBeDeletedItemList.MoldHelmet,
+                ToBeDeletedItemList.MoldChestplate,
+                ToBeDeletedItemList.MoldLeggings,
+                ToBeDeletedItemList.MoldBoots,
+                ToBeDeletedItemList.MarshmallowForm).forEach(
                         item -> GTOreDictUnificator
                                 .addItemData(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
         // GT5 Shapes and Molds

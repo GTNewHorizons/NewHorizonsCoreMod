@@ -586,6 +586,19 @@ public enum NHItemList {
     StargateDustAncients("StargateDustAncients", SPACE),
     StargateCrystalAncients("StargateCrystalAncients", SPACE);
 
+    static {
+        CoinChunkloaderTierI.item.setMaxStackSize(4);
+        CoinChunkloaderTierII.item.setMaxStackSize(4);
+        CoinChunkloaderTierIII.item.setMaxStackSize(4);
+        CoinChunkloaderTierIV.item.setMaxStackSize(4);
+        CoinChunkloaderTierV.item.setMaxStackSize(4);
+        MedalDerp.item.setMaxStackSize(1);
+        MedalGTExplosion.item.setMaxStackSize(1);
+        MedalBuilder.item.setMaxStackSize(1);
+        MedalEngineer.item.setMaxStackSize(1);
+        MedalWarp.item.setMaxStackSize(1);
+    }
+
     // ################################################################################
     public final String name;
     public final Item item;

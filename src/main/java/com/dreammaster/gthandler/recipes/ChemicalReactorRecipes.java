@@ -19,13 +19,13 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -238,9 +238,9 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MutatedEgg.get(1L),
+                        NHItemList.MutatedEgg.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 64))
-                .itemOutputs(CustomItemList.EnderEgg.get(1L)).fluidInputs(FluidRegistry.getFluidStack("ender", 1000))
+                .itemOutputs(NHItemList.EnderEgg.get()).fluidInputs(FluidRegistry.getFluidStack("ender", 1000))
                 .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
@@ -295,9 +295,9 @@ public class ChemicalReactorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.EnderEgg.get(1L),
+                            NHItemList.EnderEgg.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 64))
-                    .itemOutputs(CustomItemList.DraconiumEgg.get(1L))
+                    .itemOutputs(NHItemList.DraconiumEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(1024).addTo(UniversalChemical);
 
@@ -307,7 +307,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.DraconiumEgg.get(1L),
+                            NHItemList.DraconiumEgg.get(),
                             GTModHandler.getModItem(DraconicEvolution.ID, "dragonHeart", 0L, 0))
                     .itemOutputs(new ItemStack(Blocks.dragon_egg, 1, 0))
                     .fluidInputs(Materials.Enderium.getMolten(7 * INGOTS)).requiresCleanRoom().duration(60 * MINUTES)
@@ -321,7 +321,7 @@ public class ChemicalReactorRecipes implements Runnable {
                     .itemInputs(
                             new ItemStack(Items.spawn_egg, 1, GTValues.W),
                             GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
-                    .itemOutputs(CustomItemList.TheBigEgg.get(1L))
+                    .itemOutputs(NHItemList.TheBigEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
@@ -329,7 +329,7 @@ public class ChemicalReactorRecipes implements Runnable {
                     .itemInputs(
                             GTModHandler.getModItem(Botania.ID, "cocoon", 1L, 0),
                             GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
-                    .itemOutputs(CustomItemList.TheBigEgg.get(1L))
+                    .itemOutputs(NHItemList.TheBigEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
@@ -337,8 +337,8 @@ public class ChemicalReactorRecipes implements Runnable {
 
         if (Gendustry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(CustomItemList.TheBigEgg.get(1L), ItemList.IC2_Uranium_238.get(64))
-                    .itemOutputs(CustomItemList.MutatedEgg.get(1L))
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.TheBigEgg.get(), ItemList.IC2_Uranium_238.get(64))
+                    .itemOutputs(NHItemList.MutatedEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(256).addTo(UniversalChemical);
 

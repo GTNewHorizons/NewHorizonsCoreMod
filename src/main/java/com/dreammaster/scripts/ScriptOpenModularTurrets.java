@@ -16,9 +16,8 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraftforge.fluids.FluidRegistry;
-
-import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -383,7 +382,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.SteelBars.get(1L),
+                        NHItemList.SteelBars.get(),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierTwo", 4, 0, missing)).duration(5 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
@@ -395,13 +394,13 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .eut(64).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.TungstenSteelBars.get(1L),
+                        NHItemList.TungstenSteelBars.get(),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Titanium, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFour", 4, 0, missing)).duration(5 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.IridiumBars.get(1L),
+                        NHItemList.IridiumBars.get(),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.TungstenSteel, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFive", 4, 0, missing)).duration(5 * SECONDS)
                 .eut(256).addTo(assemblerRecipes);
@@ -563,7 +562,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
-                        CustomItemList.ReinforcedGlassLense.get(1L))
+                        NHItemList.ReinforcedGlassLense.get())
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "accuraccyUpgradeItem", 1, 0, missing))
                 .duration(5 * SECONDS).eut(120).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -581,7 +580,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
-                        CustomItemList.StainlessSteelBars.get(1L))
+                        NHItemList.StainlessSteelBars.get())
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "scattershotUpgradeItem", 1, 0, missing))
                 .duration(5 * SECONDS).eut(120).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

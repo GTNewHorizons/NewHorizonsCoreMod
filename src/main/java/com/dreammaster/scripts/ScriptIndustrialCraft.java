@@ -31,12 +31,12 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.oredict.OreDictHelper;
 
@@ -368,15 +368,15 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateDoubleCopper");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing),
-                CustomItemList.StainlessSteelBars.get(1L),
+                NHItemList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
-                CustomItemList.StainlessSteelBars.get(1L),
-                CustomItemList.StainlessSteelBars.get(1L),
+                NHItemList.StainlessSteelBars.get(),
+                NHItemList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0, missing),
-                CustomItemList.StainlessSteelBars.get(1L),
-                CustomItemList.StainlessSteelBars.get(1L),
+                NHItemList.StainlessSteelBars.get(),
+                NHItemList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
-                CustomItemList.StainlessSteelBars.get(1L));
+                NHItemList.StainlessSteelBars.get());
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentGold", 1, 1, missing),
                 "screwStainlessSteel",
@@ -390,15 +390,15 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentSpread", 1, 0, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateDenseTin",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateDenseTin",
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
                 "plateDenseTin",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateDenseTin",
-                CustomItemList.SteelBars.get(1L));
+                NHItemList.SteelBars.get());
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing),
                 "plateSilver",
@@ -712,7 +712,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "screwSteel",
                 "cableGt01Gold",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "cableGt01Gold",
                 "itemCasingAnyIron",
                 "batteryAdvanced",
@@ -1096,37 +1096,37 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 6L),
-                        CustomItemList.MoldBoots.get(0L))
+                        NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(30).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 6),
-                        CustomItemList.MoldBoots.get(0L))
+                        NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(30).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L),
-                        CustomItemList.MoldBoots.get(0L))
+                        NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeBoots", 1, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 8L),
-                        CustomItemList.MoldChestplate.get(0L))
+                        NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeChestplate", 1, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 5L),
-                        CustomItemList.MoldHelmet.get(0L))
+                        NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeHelmet", 1, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 7L),
-                        CustomItemList.MoldLeggings.get(0L))
+                        NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0, missing))
                 .duration(20 * SECONDS).eut(30).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
@@ -1305,14 +1305,14 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 5),
-                        CustomItemList.ReinforcedGlassLense.get(2L))
+                        NHItemList.ReinforcedGlassLense.get(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(25 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 5),
-                        CustomItemList.ReinforcedGlassLense.get(2L))
+                        NHItemList.ReinforcedGlassLense.get(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(25 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
@@ -1567,19 +1567,19 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 8000)).duration(6 * SECONDS + 9 * TICKS)
                 .eut(1).addTo(fluidCannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.TenKCell.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.TenKCell.get())
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(16).eut(1)
                 .addTo(fluidCannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ThirtyKCell.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.ThirtyKCell.get())
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantTriple", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 3000)).duration(2 * SECONDS + 8 * TICKS).eut(1)
                 .addTo(fluidCannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.SixtyKCell.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.SixtyKCell.get())
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 6000)).duration(4 * SECONDS + 16 * TICKS).eut(1)
                 .addTo(fluidCannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.MoldBoots.get(0L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 720)).duration(15 * SECONDS).eut(30)
                 .addTo(fluidSolidifierRecipes);
@@ -1592,7 +1592,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Basalt, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
-                .itemOutputs(CustomItemList.LapotronDust.get(30L)).outputChances(10000).duration(15 * SECONDS).eut(2)
+                .itemOutputs(NHItemList.LapotronDust.get(30)).outputChances(10000).duration(15 * SECONDS).eut(2)
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

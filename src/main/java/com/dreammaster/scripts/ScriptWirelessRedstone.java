@@ -14,9 +14,8 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraftforge.fluids.FluidRegistry;
-
-import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
@@ -58,7 +57,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
                 "craftingToolFile",
                 "circuitAdvanced",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "circuitAdvanced",
                 "itemCasingTungstenSteel",
                 "screwTungstenSteel",

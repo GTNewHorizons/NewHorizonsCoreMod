@@ -14,9 +14,8 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraft.item.ItemStack;
-
-import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import goodgenerator.loader.Loaders;
@@ -81,9 +80,9 @@ public class ScriptSGCraft implements IScriptLoader {
                 "mmmfcffpp",
                 'm', magmatterBlock,
                 'd', darkMatterBlock,
-                'f', CustomItemList.StargateFramePart.get(1L),
-                'c', CustomItemList.StargateChevron.get(1L),
-                'p', CustomItemList.StargateShieldingFoil.get(1L),
+                'f', NHItemList.StargateFramePart.get(),
+                'c', NHItemList.StargateChevron.get(),
+                'p', NHItemList.StargateShieldingFoil.get(),
                 'g', ItemList.Field_Generator_UXV.get(1L));
 
         // Stargate Chevron Upgrade
@@ -98,8 +97,8 @@ public class ScriptSGCraft implements IScriptLoader {
                 "----ege--",
                 "-----f---",
                 "---------",
-                'f', CustomItemList.StargateFramePart.get(1L),
-                'c', CustomItemList.StargateChevron.get(1L),
+                'f', NHItemList.StargateFramePart.get(),
+                'c', NHItemList.StargateChevron.get(),
                 'p', ItemList.Electric_Piston_UXV.get(1L),
                 'g', ItemList.Field_Generator_UXV.get(1L),
                 's', ItemList.Sensor_UXV.get(1L),
@@ -142,7 +141,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'd', magmatterNanite,
                 'e', tectech.thing.CustomItemList.Godforge_GravitonFlowModulatorTier3.get(1L),
                 'f', magmatterSuperdensePlate,
-                'g', CustomItemList.StargateShieldingFoil.get(1L),
+                'g', NHItemList.StargateShieldingFoil.get(),
                 'h', ItemList.MiningDroneUXV.get(1),
                 'i', ItemList.ZPM6.get(1L),
                 'j', universeCell,
@@ -165,7 +164,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "--pgpgp--",
                 "----e----",
                 "---------",
-                'p', CustomItemList.StargateShieldingFoil.get(1L),
+                'p', NHItemList.StargateShieldingFoil.get(),
                 's', tectech.thing.CustomItemList.Godforge_StellarEnergySiphonCasing.get(1),
                 'g', ItemList.Field_Generator_UXV.get(1L),
                 'e', ItemList.Emitter_UXV.get(1L),
@@ -264,11 +263,11 @@ public class ScriptSGCraft implements IScriptLoader {
                 'm', magmatterBlock,
                 'd', darkMatterBlock,
                 'k', keyboard,
-                'f', CustomItemList.StargateFramePart.get(1L),
+                'f', NHItemList.StargateFramePart.get(),
                 's', ItemList.Sensor_UXV.get(1L),
                 'e', ItemList.Emitter_UXV.get(1L),
                 'c', stargateControllerCrystal,
-                'p', CustomItemList.StargateShieldingFoil.get(1L),
+                'p', NHItemList.StargateShieldingFoil.get(),
                 'b', ItemList.ZPM6.get(1L),
                 'o', ocInterface,
                 'u', universeFluidCell);

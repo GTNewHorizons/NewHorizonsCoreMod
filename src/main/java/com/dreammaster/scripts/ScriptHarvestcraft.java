@@ -25,9 +25,9 @@ import static gregtech.common.items.IDMetaTool01.SOFTMALLET;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -657,22 +657,22 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 2, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapelessRecipe(
-                CustomItemList.WetTofu.get(1L),
+                NHItemList.WetTofu.get(),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
         addShapelessRecipe(
-                CustomItemList.WetTofu.get(1L),
+                NHItemList.WetTofu.get(),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapelessRecipe(
-                CustomItemList.WetTofu.get(1L),
+                NHItemList.WetTofu.get(),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing),
                 ToolDictNames.craftingToolSoftMallet.name(),
-                CustomItemList.WetTofu.get(1L));
+                NHItemList.WetTofu.get());
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                 "craftingToolRollingPin",
@@ -982,7 +982,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTModHandler.addSmeltingRecipe(
                 getModItem(PamsHarvestCraft.ID, "rabbitrawItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "rabbitcookedItem", 1, 0, missing));
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.WetTofu.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.WetTofu.get())
                 .itemOutputs(
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),

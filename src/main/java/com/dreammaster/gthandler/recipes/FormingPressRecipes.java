@@ -7,10 +7,10 @@ import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -28,24 +28,24 @@ public class FormingPressRecipes implements Runnable {
     public void run() {
 
         GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.MalformedSlush.get(2L), CustomItemList.MarshmallowForm.get(0L))
-                .itemOutputs(CustomItemList.UncookedSlush.get(1L)).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
+                .itemInputs(NHItemList.MalformedSlush.get(2), NHItemList.MarshmallowForm.get(0))
+                .itemOutputs(NHItemList.UncookedSlush.get()).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MarshmallowForm.get(0L))
-                .itemOutputs(CustomItemList.MarshmallowForm.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MarshmallowForm.get(0))
+                .itemOutputs(NHItemList.MarshmallowForm.get()).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MicaBasedPulp.get(4L),
+                        NHItemList.MicaBasedPulp.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L))
-                .circuit(1).itemOutputs(CustomItemList.MicaBasedSheet.get(4L)).duration(20 * SECONDS).eut(28)
+                .circuit(1).itemOutputs(NHItemList.MicaBasedSheet.get(4)).duration(20 * SECONDS).eut(28)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MicaBasedPulp.get(16L),
+                        NHItemList.MicaBasedPulp.get(16),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
                         ItemList.Shape_Mold_Plate.get(0L))
-                .circuit(2).itemOutputs(CustomItemList.MicaBasedSheet.get(16L)).duration(20 * SECONDS).eut(256)
+                .circuit(2).itemOutputs(NHItemList.MicaBasedSheet.get(16)).duration(20 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Plate.get(0L))
@@ -168,20 +168,20 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(ItemList.Shape_Mold_Pipe_Huge.get(1L)).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldHelmet.get(0L))
-                .itemOutputs(CustomItemList.MoldHelmet.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldHelmet.get(0))
+                .itemOutputs(NHItemList.MoldHelmet.get()).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldChestplate.get(0L))
-                .itemOutputs(CustomItemList.MoldChestplate.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldChestplate.get(0))
+                .itemOutputs(NHItemList.MoldChestplate.get()).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldLeggings.get(0L))
-                .itemOutputs(CustomItemList.MoldLeggings.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldLeggings.get(0))
+                .itemOutputs(NHItemList.MoldLeggings.get()).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldBoots.get(0L))
-                .itemOutputs(CustomItemList.MoldBoots.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldBoots.get(0))
+                .itemOutputs(NHItemList.MoldBoots.get()).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_ToolHeadDrill.get(0L))
@@ -385,7 +385,7 @@ public class FormingPressRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
                             GTModHandler.getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1L, 4))
-                    .itemOutputs(CustomItemList.EssentiaCircuit.get(1L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .itemOutputs(NHItemList.EssentiaCircuit.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(formingPressRecipes);
 
         }
@@ -394,7 +394,7 @@ public class FormingPressRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
-                            CustomItemList.EtchedLowVoltageWiring.get(1L))
+                            NHItemList.EtchedLowVoltageWiring.get())
                     .itemOutputs(GTModHandler.getModItem(ProjectRedCore.ID, "projectred.core.part", 1L, 0))
                     .duration(5 * SECONDS).eut(16).addTo(formingPressRecipes);
 

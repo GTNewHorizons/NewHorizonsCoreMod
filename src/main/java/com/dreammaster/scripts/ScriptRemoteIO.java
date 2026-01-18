@@ -20,7 +20,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -153,7 +153,7 @@ public class ScriptRemoteIO implements IScriptLoader {
                 "itemCasingAluminium",
                 "screwIron",
                 "circuitBasic",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "circuitBasic",
                 "itemCasingAluminium",
                 createItemStack(GregTech.ID, "gt.metaitem.01", 1, 32518, "{GT.ItemCharge:100000L}", missing),

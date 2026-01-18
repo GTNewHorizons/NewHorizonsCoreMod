@@ -9,12 +9,12 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -33,114 +33,114 @@ public class AlloySmelterRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MicaBasedSheet.get(4L),
+                        NHItemList.MicaBasedSheet.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .itemOutputs(CustomItemList.MicaInsulatorSheet.get(4L)).duration(20 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MicaBasedSheet.get(4L),
+                        NHItemList.MicaBasedSheet.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                .itemOutputs(CustomItemList.MicaInsulatorSheet.get(4L)).duration(20 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MicaBasedSheet.get(4L),
+                        NHItemList.MicaBasedSheet.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L))
-                .itemOutputs(CustomItemList.MicaInsulatorSheet.get(4L)).duration(20 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MicaBasedSheet.get(4L),
+                        NHItemList.MicaBasedSheet.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L))
-                .itemOutputs(CustomItemList.MicaInsulatorSheet.get(4L)).duration(20 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L))
-                .itemOutputs(CustomItemList.AluminoSilicateWool.get(2L)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()

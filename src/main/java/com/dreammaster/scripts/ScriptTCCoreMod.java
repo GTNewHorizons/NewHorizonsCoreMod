@@ -32,7 +32,7 @@ import static kubatech.loaders.DEFCRecipes.fusionCraftingRecipes;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -322,7 +322,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("superbia"), 24).add(Aspect.getAspect("sano"), 28)
                         .add(Aspect.getAspect("iter"), 20).add(Aspect.getAspect("potentia"), 12),
-                CustomItemList.Marshmallow.get(1L),
+                NHItemList.Marshmallow.get(),
                 getModItem(PamsHarvestCraft.ID, "epicbaconItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "deluxechickencurryItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "meatfeastpizzaItem", 1, 0, missing),
@@ -1200,13 +1200,13 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
                 getModItem(Avaritia.ID, "Resource", 1, 0, missing),
-                CustomItemList.LichBone.get(1L),
+                NHItemList.LichBone.get(),
                 getModItem(Avaritia.ID, "Resource", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 8, missing),
                 OrePrefixes.ingot.get(Materials.Silver),
                 getModItem(TinkerConstruct.ID, "materials", 1, 8, missing),
                 getModItem(Avaritia.ID, "Resource", 1, 0, missing),
-                CustomItemList.LichBone.get(1L),
+                NHItemList.LichBone.get(),
                 getModItem(Avaritia.ID, "Resource", 1, 0, missing),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing));
         TCHelper.addResearchPage(

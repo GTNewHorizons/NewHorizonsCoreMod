@@ -32,11 +32,11 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
@@ -699,7 +699,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'a',
                 "plateDraconiumAwakened",
                 'b',
-                CustomItemList.EngravedEnergyChip.get(1L),
+                NHItemList.EngravedEnergyChip.get(),
                 'c',
                 getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -716,7 +716,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'a',
                 "plateDraconium",
                 'b',
-                CustomItemList.EngravedDiamondCrystalChip.get(1L),
+                NHItemList.EngravedDiamondCrystalChip.get(),
                 'c',
                 getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(

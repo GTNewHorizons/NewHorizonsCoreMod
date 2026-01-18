@@ -11,10 +11,10 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.forestry.ForestryHelper;
-import com.dreammaster.gthandler.CustomItemList;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
@@ -118,7 +118,7 @@ public class ScriptBotany implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1440),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(Botany.ID, "database", 1, 0, missing),
                 "abc",
                 "def",

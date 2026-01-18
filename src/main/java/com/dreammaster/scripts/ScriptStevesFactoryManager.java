@@ -18,9 +18,8 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraftforge.fluids.FluidRegistry;
-
-import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -55,7 +54,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesFactoryManager.ID, "BlockMachineManagerName", 1, 0, missing),
                 "plateStainlessSteel",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "plateStainlessSteel",
                 "plateRedAlloy",
                 ItemList.Casing_Processor.get(1L),
@@ -189,7 +188,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Display.get(1L),
+                        NHItemList.Display.get(),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
                 .itemOutputs(getModItem(StevesAddons.ID, "labeler", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS + 10 * TICKS)

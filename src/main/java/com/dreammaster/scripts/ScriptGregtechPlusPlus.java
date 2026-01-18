@@ -18,7 +18,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.Optional;
@@ -149,7 +149,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .itemOutputs(GregtechItemList.HiveFrameAccelerated.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), GregtechItemList.HiveFrameVoid.get(1));
+        addShapelessRecipe(NHItemList.CoinBeesI.get(16), GregtechItemList.HiveFrameVoid.get(1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),

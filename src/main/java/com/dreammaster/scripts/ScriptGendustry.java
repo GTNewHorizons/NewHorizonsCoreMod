@@ -12,9 +12,9 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -58,9 +58,9 @@ public class ScriptGendustry implements IScriptLoader {
                 getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing),
                 getModItem(Gendustry.ID, "BeeReceptacle", 1, 0, missing),
                 getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing),
-                CustomItemList.EngravedDiamondCrystalChip.get(1L),
+                NHItemList.EngravedDiamondCrystalChip.get(),
                 getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
-                CustomItemList.EngravedDiamondCrystalChip.get(1L),
+                NHItemList.EngravedDiamondCrystalChip.get(),
                 "gearOsmium",
                 getModItem(Gendustry.ID, "PowerModule", 1, 0, missing),
                 "gearOsmium");
@@ -113,9 +113,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "screwHSSS",
                 GTBees.combs.getStackForType(CombType.PLUTONIUM),
                 "screwHSSS",
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
-                CustomItemList.OsmiumBars.get(1L),
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                NHItemList.IridiumAlloyItemCasing.get(),
+                NHItemList.OsmiumBars.get(),
+                NHItemList.IridiumAlloyItemCasing.get(),
                 "screwHSSS",
                 "craftingToolScrewdriver",
                 "screwHSSS");
@@ -124,9 +124,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "cableGt01VanadiumGallium",
                 GTBees.combs.getStackForType(CombType.NAQUADAH),
                 "cableGt01VanadiumGallium",
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                NHItemList.IridiumAlloyItemCasing.get(),
                 "circuitMaster",
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                NHItemList.IridiumAlloyItemCasing.get(),
                 "gearGtSmallOsmium",
                 ItemList.Electric_Motor_LuV.get(1L),
                 "gearGtSmallOsmium");
@@ -160,9 +160,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "stickPalladium",
                 "rotorOsmium",
                 "stickPalladium",
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                NHItemList.IridiumAlloyItemCasing.get(),
                 ItemList.Electric_Motor_LuV.get(1L),
-                CustomItemList.IridiumAlloyItemCasing.get(1L));
+                NHItemList.IridiumAlloyItemCasing.get());
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing),

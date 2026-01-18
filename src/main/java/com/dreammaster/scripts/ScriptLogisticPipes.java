@@ -22,11 +22,11 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.item.NHItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.common.loaders.ItemRegistry;
@@ -1200,7 +1200,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        CustomItemList.Display.get(1L),
+                        NHItemList.Display.get(),
                         ItemList.Cover_Crafting.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
@@ -1265,7 +1265,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
-                        CustomItemList.Display.get(1L),
+                        NHItemList.Display.get(),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
