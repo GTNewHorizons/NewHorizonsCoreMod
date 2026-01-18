@@ -107,7 +107,7 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 .addItemData(GregtechItemList.Pellet_Mold.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M));
         // Boat Shape
         GTOreDictUnificator
-                .addItemData(NHItemList.ExtruderShapeBoat.getIS(1), new ItemData(Materials.Steel, 4 * GTValues.M));
+                .addItemData(NHItemList.ExtruderShapeBoat.get(1), new ItemData(Materials.Steel, 4 * GTValues.M));
         // GGfab Single use molds
         Stream.of(
                 GGItemList.SingleUseFileMold,

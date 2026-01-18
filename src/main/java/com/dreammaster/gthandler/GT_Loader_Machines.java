@@ -982,7 +982,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'M', ItemList.Hull_UMV });
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Food_Sliced_Breads.get(1L), ItemList.Shape_Slicer_Flat.get(0L))
-                .itemOutputs(NHItemList.QuantumBread.getIS()).duration(20 * TICKS).eut(TierEU.RECIPE_UV)
+                .itemOutputs(NHItemList.QuantumBread.get()).duration(20 * TICKS).eut(TierEU.RECIPE_UV)
                 .addTo(cutterRecipes);
         if (CookingForBlockheads.isModLoaded() && PamsHarvestCraft.isModLoaded()) {
             GTValues.RA.stdBuilder()

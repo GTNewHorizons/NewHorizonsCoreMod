@@ -1239,7 +1239,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                            NHItemList.GoldCoreChip.getIS(1),
+                            NHItemList.GoldCoreChip.get(1),
                             ItemList.Robot_Arm_MV.get(2L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L))
@@ -1251,7 +1251,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
-                            NHItemList.DiamondCoreChip.getIS(1),
+                            NHItemList.DiamondCoreChip.get(1),
                             ItemList.Robot_Arm_HV.get(1L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L))

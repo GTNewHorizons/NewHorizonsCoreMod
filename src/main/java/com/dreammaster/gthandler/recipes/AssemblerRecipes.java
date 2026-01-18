@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
-import static com.dreammaster.scripts.IScriptLoader.missing;
 import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
 import static gregtech.api.enums.GTValues.L;
 import static gregtech.api.enums.GTValues.W;
@@ -5148,7 +5147,7 @@ public class AssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
                             getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
-                            NHItemList.EngineeringProcessorFluidDiamondCore.getIS(2))
+                            NHItemList.EngineeringProcessorFluidDiamondCore.get(2))
                     .circuit(2).itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_interface", 1, 0)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -5158,7 +5157,7 @@ public class AssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
                             getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
-                            NHItemList.EngineeringProcessorFluidDiamondCore.getIS(2))
+                            NHItemList.EngineeringProcessorFluidDiamondCore.get(2))
                     .circuit(3).itemOutputs(getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, 0))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -5442,7 +5441,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         alveary,
                         GTModHandler.getModItem(Forestry.ID, "thermionicTubes", 4L, 4),
-                        NHItemList.ChargedCertusQuartzPlate.getIS(2),
+                        NHItemList.ChargedCertusQuartzPlate.get(2),
                         ItemList.Component_Filter.get(2L),
                         GTModHandler.getModItem(Forestry.ID, "royalJelly", 1L, 0))
                 .itemOutputs(GTModHandler.getModItem(Forestry.ID, "alveary", 1L, 6))

@@ -1388,7 +1388,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         missing),
                 OrePrefixes.ring.get(Materials.Iridium),
                 OrePrefixes.screw.get(Materials.Tritanium),
-                NHItemList.EngravedGoldChip.getIS(1),
+                NHItemList.EngravedGoldChip.get(1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 GregtechItemList.MagicFeather.get(1),
@@ -1398,7 +1398,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 GregtechItemList.MagicFeather.get(1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                NHItemList.EngravedGoldChip.getIS(1),
+                NHItemList.EngravedGoldChip.get(1),
                 OrePrefixes.screw.get(Materials.Tritanium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",

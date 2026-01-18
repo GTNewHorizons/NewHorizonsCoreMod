@@ -52,15 +52,15 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Fish Trap
         addShapedRecipe(
                 GregtechItemList.FishTrap.get(1),
-                NHItemList.SteelBars.getIS(),
-                NHItemList.SteelBars.getIS(),
-                NHItemList.SteelBars.getIS(),
-                NHItemList.SteelBars.getIS(),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1),
-                NHItemList.SteelBars.getIS(),
-                NHItemList.SteelBars.getIS(),
-                NHItemList.SteelBars.getIS(),
-                NHItemList.SteelBars.getIS());
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get());
 
         // Shirabon and Eternity
         GTValues.RA.stdBuilder()

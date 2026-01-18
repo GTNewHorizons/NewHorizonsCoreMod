@@ -876,19 +876,19 @@ public class MixerRecipes implements Runnable {
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 4))
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
-                .itemOutputs(NHItemList.StargateCrystalDust.getIS()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
+                .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
                 .addTo(mixerRecipes);
 
         // Legacy Stargate Crystal Dust
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.TCetiESeaweedExtract.getIS().splitStack(64),
+                        NHItemList.TCetiESeaweedExtract.get().splitStack(64),
                         Materials.Dolomite.getDust(64),
                         Materials.SamariumMagnetic.getDust(21),
                         Materials.ChromiumDioxide.getDust(64),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 54L),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 47L))
-                .itemOutputs(NHItemList.StargateDustAncients.getIS()).duration(3 * MINUTES).eut(262144)
+                .itemOutputs(NHItemList.StargateDustAncients.get()).duration(3 * MINUTES).eut(262144)
                 .addTo(mixerRecipes);
 
         // Astral Silver & Soldering Alloy + reverse

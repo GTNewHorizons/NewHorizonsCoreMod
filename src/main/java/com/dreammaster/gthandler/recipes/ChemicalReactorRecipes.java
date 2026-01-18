@@ -56,12 +56,12 @@ public class ChemicalReactorRecipes implements Runnable {
         // Potassium Hydroxide
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L))
-                .circuit(1).itemOutputs(NHItemList.PotassiumHydroxideDust.getIS(3))
+                .circuit(1).itemOutputs(NHItemList.PotassiumHydroxideDust.get(3))
                 .fluidInputs(Materials.Water.getFluid(3000)).fluidOutputs(Materials.Hydrogen.getGas(1000))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         // Rock Salt
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.getIS()).circuit(2)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.get()).circuit(2)
                 .itemOutputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
@@ -550,12 +550,12 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.RawPicoWafer.getIS(),
+                        NHItemList.RawPicoWafer.get(),
                         Materials.MysteriousCrystal.getDust(2),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.InfinityCatalyst, 1L).copy()
                                 .splitStack(0),
-                        NHItemList.TCetiESeaweedExtract.getIS(1))
-                .itemOutputs(NHItemList.PicoWafer.getIS()).fluidInputs(Materials.Neutronium.getMolten(144L))
+                        NHItemList.TCetiESeaweedExtract.get(1))
+                .itemOutputs(NHItemList.PicoWafer.get()).fluidInputs(Materials.Neutronium.getMolten(144L))
                 .duration(2 * MINUTES + 30 * SECONDS).eut((GTValues.V[9] - (GTValues.V[9] / 10)))
                 .addTo(multiblockChemicalReactorRecipes);
 

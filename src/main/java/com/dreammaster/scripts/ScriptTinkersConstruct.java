@@ -1917,7 +1917,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 ItemList.Shape_Extruder_Rotor.get(1L),
                 ItemList.Shape_Extruder_Small_Gear.get(1L),
                 ItemList.Shape_Extruder_Turbine_Blade.get(1L),
-                NHItemList.ExtruderShapeBoat.getIS(1),
+                NHItemList.ExtruderShapeBoat.get(1),
                 CustomItemList.MarshmallowForm.get(1L),
                 CustomItemList.MoldChestplate.get(1L),
                 CustomItemList.MoldHelmet.get(1L),
@@ -2172,7 +2172,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0, missing)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.getIS(16)).circuit(16)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.get(16)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1, missing)).eut(30)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing)).circuit(16)

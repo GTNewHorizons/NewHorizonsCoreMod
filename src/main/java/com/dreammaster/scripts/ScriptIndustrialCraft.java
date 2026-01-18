@@ -187,7 +187,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemToolMiningLaser", 1, 0, missing),
                 "plateTitanium",
-                NHItemList.LaserEmitter.getIS(1),
+                NHItemList.LaserEmitter.get(1),
                 "plateTitanium",
                 "circuitMaster",
                 ItemList.Battery_RE_MV_Cadmium.get(1L),
@@ -538,7 +538,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateSteel",
                 "screwSteel",
                 "craftingToolWrench",
-                NHItemList.ElectricBoatHull.getIS(1),
+                NHItemList.ElectricBoatHull.get(1),
                 "craftingToolScrewdriver",
                 ItemList.Rotor_LV.get(1L),
                 ItemList.Electric_Motor_LV.get(1L),
@@ -1457,32 +1457,32 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, missing, 1L))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing))
                 .duration(30 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioChunk.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioChunk.get(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0, missing)).duration(1 * MINUTES)
                 .eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.get(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 1, 0, missing))
                 .duration(30 * SECONDS).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.get(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing))
                 .duration(30 * SECONDS).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 8, 0, missing),
-                        NHItemList.ExtruderShapeBoat.getIS(0))
+                        NHItemList.ExtruderShapeBoat.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Rubber, 4L),
-                        NHItemList.ExtruderShapeBoat.getIS(0))
+                        NHItemList.ExtruderShapeBoat.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing),
-                        NHItemList.ExtruderShapeBoat.getIS(0))
-                .itemOutputs(NHItemList.ElectricBoatHull.getIS(1)).duration(1 * MINUTES).eut(30).addTo(extruderRecipes);
+                        NHItemList.ExtruderShapeBoat.get(0))
+                .itemOutputs(NHItemList.ElectricBoatHull.get(1)).duration(1 * MINUTES).eut(30).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 1L),

@@ -660,350 +660,350 @@ public class ScriptGregtech implements IScriptLoader {
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Plate.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormPlate.getIS(1),
+                NHItemList.MoldFormPlate.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Casing.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormCasing.getIS(1),
+                NHItemList.MoldFormCasing.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Gear.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormGear.getIS(1),
+                NHItemList.MoldFormGear.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Credit.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormCoinage.getIS(1),
+                NHItemList.MoldFormCoinage.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Bottle.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormBottle.getIS(1),
+                NHItemList.MoldFormBottle.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Ingot.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormIngot.getIS(1),
+                NHItemList.MoldFormIngot.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Ball.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormBall.getIS(1),
+                NHItemList.MoldFormBall.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Block.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormBlock.getIS(1),
+                NHItemList.MoldFormBlock.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Nugget.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormNuggets.getIS(1),
+                NHItemList.MoldFormNuggets.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Bun.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormBuns.getIS(1),
+                NHItemList.MoldFormBuns.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Bread.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormBread.getIS(1),
+                NHItemList.MoldFormBread.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Baguette.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormBaguette.getIS(1),
+                NHItemList.MoldFormBaguette.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Cylinder.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormCylinder.getIS(1),
+                NHItemList.MoldFormCylinder.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Anvil.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormAnvil.getIS(1),
+                NHItemList.MoldFormAnvil.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Name.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormName.getIS(1),
+                NHItemList.MoldFormName.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Arrow.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormArrowHead.getIS(1),
+                NHItemList.MoldFormArrowHead.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Gear_Small.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormSmallGear.getIS(1),
+                NHItemList.MoldFormSmallGear.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Rod.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormStick.getIS(1),
+                NHItemList.MoldFormStick.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Bolt.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormBolt.getIS(1),
+                NHItemList.MoldFormBolt.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Round.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormRound.getIS(1),
+                NHItemList.MoldFormRound.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Screw.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormScrew.getIS(1),
+                NHItemList.MoldFormScrew.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Ring.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormRing.getIS(1),
+                NHItemList.MoldFormRing.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Rod_Long.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormStickLong.getIS(1),
+                NHItemList.MoldFormStickLong.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Turbine_Blade.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormTurbineBlade.getIS(1),
+                NHItemList.MoldFormTurbineBlade.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Rotor.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormRotor.getIS(1),
+                NHItemList.MoldFormRotor.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Pipe_Tiny.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormPipeTiny.getIS(1),
+                NHItemList.MoldFormPipeTiny.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Pipe_Small.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormPipeSmall.getIS(1),
+                NHItemList.MoldFormPipeSmall.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Pipe_Medium.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormPipeMedium.getIS(1),
+                NHItemList.MoldFormPipeMedium.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Pipe_Large.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormPipeLarge.getIS(1),
+                NHItemList.MoldFormPipeLarge.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_Pipe_Huge.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormPipeHuge.getIS(1),
+                NHItemList.MoldFormPipeHuge.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Mold_ToolHeadDrill.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.MoldFormDrillHead.getIS(1),
+                NHItemList.MoldFormDrillHead.get(1),
                 true,
                 100);
 
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Plate.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapePlate.getIS(1),
+                NHItemList.ShapePlate.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Rod.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeRod.getIS(1),
+                NHItemList.ShapeRod.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Bolt.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeBolt.getIS(1),
+                NHItemList.ShapeBolt.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Cell.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeCell.getIS(1),
+                NHItemList.ShapeCell.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Ring.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeRing.getIS(1),
+                NHItemList.ShapeRing.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Ingot.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeIngot.getIS(1),
+                NHItemList.ShapeIngot.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Casing.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeCasing.getIS(1),
+                NHItemList.ShapeCasing.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Pipe_Tiny.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeTinyPipe.getIS(1),
+                NHItemList.ShapeTinyPipe.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Pipe_Small.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeSmallPipe.getIS(1),
+                NHItemList.ShapeSmallPipe.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Pipe_Medium.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeNormalPipe.getIS(1),
+                NHItemList.ShapeNormalPipe.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Pipe_Large.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeLargePipe.getIS(1),
+                NHItemList.ShapeLargePipe.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Pipe_Huge.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeHugePipe.getIS(1),
+                NHItemList.ShapeHugePipe.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Block.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeBlock.getIS(1),
+                NHItemList.ShapeBlock.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Sword.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeSwordBlade.getIS(1),
+                NHItemList.ShapeSwordBlade.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Pickaxe.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapePickaxeHead.getIS(1),
+                NHItemList.ShapePickaxeHead.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Shovel.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeShovelHead.getIS(1),
+                NHItemList.ShapeShovelHead.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Axe.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeAxeHead.getIS(1),
+                NHItemList.ShapeAxeHead.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Hoe.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeHoeHead.getIS(1),
+                NHItemList.ShapeHoeHead.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Hammer.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeHammerHead.getIS(1),
+                NHItemList.ShapeHammerHead.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_File.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeFileHead.getIS(1),
+                NHItemList.ShapeFileHead.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Saw.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeSawBlade.getIS(1),
+                NHItemList.ShapeSawBlade.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Gear.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeGear.getIS(1),
+                NHItemList.ShapeGear.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Bottle.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeBottle.getIS(1),
+                NHItemList.ShapeBottle.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Rotor.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeRotor.getIS(1),
+                NHItemList.ShapeRotor.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Turbine_Blade.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeTurbineBlade.getIS(1),
+                NHItemList.ShapeTurbineBlade.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Small_Gear.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeSmallGear.getIS(1),
+                NHItemList.ShapeSmallGear.get(1),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_ToolHeadDrill.get(1),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                NHItemList.ShapeDrillHead.getIS(1),
+                NHItemList.ShapeDrillHead.get(1),
                 true,
                 100);
 
@@ -1485,7 +1485,7 @@ public class ScriptGregtech implements IScriptLoader {
                 'd',
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.DraconiumAwakened, 1),
                 'e',
-                NHItemList.ChaoticDust.getIS(1),
+                NHItemList.ChaoticDust.get(1),
                 'f',
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
                 'g',

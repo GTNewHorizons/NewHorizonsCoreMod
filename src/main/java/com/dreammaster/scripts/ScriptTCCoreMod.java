@@ -93,12 +93,12 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 3,
                 2,
                 3,
-                NHItemList.WitherProtectionRing.getIS()).setParents("RUNICARMOR").setSiblings("RUNICARMOR")
+                NHItemList.WitherProtectionRing.get()).setParents("RUNICARMOR").setSiblings("RUNICARMOR")
                         .setConcealed().setPages(new ResearchPage("NewHorizons.research_page.WITHERRING"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "WITHERRING",
-                NHItemList.WitherProtectionRing.getIS(),
+                NHItemList.WitherProtectionRing.get(),
                 3,
                 new AspectList().add(Aspect.getAspect("alienis"), 45).add(Aspect.getAspect("praecantatio"), 35)
                         .add(Aspect.getAspect("spiritus"), 30).add(Aspect.getAspect("superbia"), 25)
@@ -111,7 +111,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "skull", 1, 1, missing));
         TCHelper.addResearchPage(
                 "WITHERRING",
-                new ResearchPage(TCHelper.findInfusionRecipe(NHItemList.WitherProtectionRing.getIS())));
+                new ResearchPage(TCHelper.findInfusionRecipe(NHItemList.WitherProtectionRing.get())));
         ThaumcraftApi.addWarpToResearch("WITHERRING", 2);
         new ResearchItem(
                 "EMINENCESTONE",

@@ -867,12 +867,12 @@ public class BlastFurnaceRecipes implements Runnable {
 
         if (SGCraft.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.getIS().splitStack(64))
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.get().splitStack(64))
                     .fluidInputs(Materials.StargateCrystalSlurry.getFluid(128_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).duration(7 * 24 * HOURS * 2)
                     .eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000).addTo(blastFurnaceRecipes); // ^ 2 weeks
 
-            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.getIS().splitStack(64))
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.get().splitStack(64))
                     .fluidInputs(Materials.MHDCSM.getMolten(128_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgControllerCrystal", 1L))
                     .duration(7 * 24 * HOURS * 2).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000)

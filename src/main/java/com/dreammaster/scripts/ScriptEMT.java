@@ -216,7 +216,7 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 0,
                 1,
-                NHItemList.EMT.getIS()).setAutoUnlock().setSpecial()
+                NHItemList.EMT.get()).setAutoUnlock().setSpecial()
                         .setPages(new ResearchPage("tc.research_page.ElectricMagicTools")).registerResearchItem();
         TCHelper.removeResearch("Diamond Chainsaw");
         new ResearchItem(

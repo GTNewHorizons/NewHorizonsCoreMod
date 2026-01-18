@@ -26,7 +26,7 @@ public class GT_CustomLoader {
 
         ZPM(OrePrefixes.circuit.get(Materials.ZPM), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
                 Materials.Naquadah, OrePrefixes.wireGt02.get(Materials.Naquadah),
-                OrePrefixes.gemExquisite.get(Materials.GarnetYellow), NHItemList.MysteriousCrystal.getIS(),
+                OrePrefixes.gemExquisite.get(Materials.GarnetYellow), NHItemList.MysteriousCrystal.get(),
                 "blockGlassZPM", Materials.Iridium, Materials.Naquadah),
 
         UV(OrePrefixes.circuit.get(Materials.UV), OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),

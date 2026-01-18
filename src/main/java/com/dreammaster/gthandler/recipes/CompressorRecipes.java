@@ -151,10 +151,10 @@ public class CompressorRecipes implements Runnable {
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.BioBall.get(1L))
-                .itemOutputs(NHItemList.CompressedBioBall.getIS(1)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(NHItemList.CompressedBioBall.get(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.getIS(1))
-                .itemOutputs(NHItemList.BioCarbonPlate.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.get(1))
+                .itemOutputs(NHItemList.BioCarbonPlate.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)

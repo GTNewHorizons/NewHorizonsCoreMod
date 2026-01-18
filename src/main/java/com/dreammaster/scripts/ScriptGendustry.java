@@ -300,13 +300,13 @@ public class ScriptGendustry implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.GeneticCircuit.getIS(1),
+                        NHItemList.GeneticCircuit.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(1920).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.EnvironmentalCircuit.getIS(1),
+                        NHItemList.EnvironmentalCircuit.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)

@@ -135,8 +135,8 @@ public class AutoclaveRecipes implements Runnable {
                 .fluidInputs(Materials.UUMatter.getFluid(250L)).requiresCleanRoom().requiresLowGravity()
                 .duration(10 * MINUTES).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateDustAncients.getIS().splitStack(64))
-                .itemOutputs(NHItemList.StargateCrystalAncients.getIS()).outputChances(10000)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateDustAncients.get().splitStack(64))
+                .itemOutputs(NHItemList.StargateCrystalAncients.get()).outputChances(10000)
                 .fluidInputs(Materials.Silver.getPlasma(8000L)).requiresCleanRoom().requiresLowGravity()
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
     }

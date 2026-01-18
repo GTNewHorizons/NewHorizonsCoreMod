@@ -938,7 +938,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         // Recycle deprecated Railcraft casings
         GTModHandler.addShapelessCraftingRecipe(
-                NHItemList.CokeOvenBrick.getIS().splitStack(4),
+                NHItemList.CokeOvenBrick.get().splitStack(4),
                 bits4,
                 new Object[] { getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing) });
 
@@ -950,7 +950,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         "BB ",
                         "BB ",
                         "   ",
-                        'B', NHItemList.CokeOvenBrick.getIS().splitStack(1)
+                        'B', NHItemList.CokeOvenBrick.get().splitStack(1)
                         // spotless:on
                 });
 
@@ -962,7 +962,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         "BBB",
                         "BFB",
                         "BBB",
-                        'B', NHItemList.CokeOvenBrick.getIS().splitStack(1),
+                        'B', NHItemList.CokeOvenBrick.get().splitStack(1),
                         'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing)
                         // spotless:on
                 });
@@ -975,7 +975,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         "BHB",
                         "BCB",
                         "BPB",
-                        'B', NHItemList.CokeOvenBrick.getIS().splitStack(1),
+                        'B', NHItemList.CokeOvenBrick.get().splitStack(1),
                         'H', getModItem(Minecraft.ID, "hopper", 1, 0, missing),
                         'C', getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         'P', OrePrefixes.pipeMedium.get(Materials.Bronze)
@@ -1815,195 +1815,195 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             // Add Casting Forms for Molds
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormPlate.getIS(),
+                    NHItemList.MoldFormPlate.get(),
                     new Object[] { " hf", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormCasing.getIS(),
+                    NHItemList.MoldFormCasing.get(),
                     new Object[] { " h ", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormGear.getIS(),
+                    NHItemList.MoldFormGear.get(),
                     new Object[] { " h ", " C ", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormBottle.getIS(),
+                    NHItemList.MoldFormBottle.get(),
                     new Object[] { " h ", " C ", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormIngot.getIS(),
+                    NHItemList.MoldFormIngot.get(),
                     new Object[] { " h ", " C ", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormBall.getIS(),
+                    NHItemList.MoldFormBall.get(),
                     new Object[] { " h ", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormBlock.getIS(),
+                    NHItemList.MoldFormBlock.get(),
                     new Object[] { "fh ", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormNuggets.getIS(),
+                    NHItemList.MoldFormNuggets.get(),
                     new Object[] { "  h", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormBuns.getIS(),
+                    NHItemList.MoldFormBuns.get(),
                     new Object[] { "  h", " C ", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormBread.getIS(),
+                    NHItemList.MoldFormBread.get(),
                     new Object[] { "  h", " C ", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormBaguette.getIS(),
+                    NHItemList.MoldFormBaguette.get(),
                     new Object[] { "  h", " C ", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormCylinder.getIS(),
+                    NHItemList.MoldFormCylinder.get(),
                     new Object[] { "  h", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormAnvil.getIS(),
+                    NHItemList.MoldFormAnvil.get(),
                     new Object[] { "f h", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormName.getIS(),
+                    NHItemList.MoldFormName.get(),
                     new Object[] { " fh", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormArrowHead.getIS(),
+                    NHItemList.MoldFormArrowHead.get(),
                     new Object[] { "   ", " Ch", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormSmallGear.getIS(),
+                    NHItemList.MoldFormSmallGear.get(),
                     new Object[] { "   ", " Ch", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormStick.getIS(),
+                    NHItemList.MoldFormStick.get(),
                     new Object[] { "   ", " Ch", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormBolt.getIS(),
+                    NHItemList.MoldFormBolt.get(),
                     new Object[] { "   ", "fCh", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormRound.getIS(),
+                    NHItemList.MoldFormRound.get(),
                     new Object[] { "f  ", " Ch", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormScrew.getIS(),
+                    NHItemList.MoldFormScrew.get(),
                     new Object[] { " f ", " Ch", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormRing.getIS(),
+                    NHItemList.MoldFormRing.get(),
                     new Object[] { "  f", " Ch", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormStickLong.getIS(),
+                    NHItemList.MoldFormStickLong.get(),
                     new Object[] { "   ", " C ", " fh", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormRotor.getIS(),
+                    NHItemList.MoldFormRotor.get(),
                     new Object[] { "   ", " C ", "f h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormTurbineBlade.getIS(),
+                    NHItemList.MoldFormTurbineBlade.get(),
                     new Object[] { "   ", "fC ", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormBoots.getIS(),
+                    NHItemList.MoldFormBoots.get(),
                     new Object[] { "f  ", " C ", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormChestplate.getIS(),
+                    NHItemList.MoldFormChestplate.get(),
                     new Object[] { " f ", " C ", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormHelmet.getIS(),
+                    NHItemList.MoldFormHelmet.get(),
                     new Object[] { "  f", " C ", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormLeggings.getIS(),
+                    NHItemList.MoldFormLeggings.get(),
                     new Object[] { "   ", " Cf", "  h", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MarshmallowFormMold.getIS(),
+                    NHItemList.MarshmallowFormMold.get(),
                     new Object[] { "   ", " C ", "fh ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormPipeTiny.getIS(),
+                    NHItemList.MoldFormPipeTiny.get(),
                     new Object[] { "   ", "fC ", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormPipeSmall.getIS(),
+                    NHItemList.MoldFormPipeSmall.get(),
                     new Object[] { "f  ", " C ", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormPipeMedium.getIS(),
+                    NHItemList.MoldFormPipeMedium.get(),
                     new Object[] { " f ", " C ", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormPipeLarge.getIS(),
+                    NHItemList.MoldFormPipeLarge.get(),
                     new Object[] { "  f", " C ", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormPipeHuge.getIS(),
+                    NHItemList.MoldFormPipeHuge.get(),
                     new Object[] { "   ", " Cf", " h ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.MoldFormDrillHead.getIS(),
+                    NHItemList.MoldFormDrillHead.get(),
                     new Object[] { "   ", " C ", " hf", 'C', aBlankCast });
 
             // Add Casting Forms for Shapes
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapePlate.getIS(),
+                    NHItemList.ShapePlate.get(),
                     new Object[] { " xf", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeRod.getIS(),
+                    NHItemList.ShapeRod.get(),
                     new Object[] { " x ", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeBolt.getIS(),
+                    NHItemList.ShapeBolt.get(),
                     new Object[] { " x ", " C ", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeCell.getIS(),
+                    NHItemList.ShapeCell.get(),
                     new Object[] { " x ", " C ", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeRing.getIS(),
+                    NHItemList.ShapeRing.get(),
                     new Object[] { " x ", " C ", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeIngot.getIS(),
+                    NHItemList.ShapeIngot.get(),
                     new Object[] { " x ", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeCasing.getIS(),
+                    NHItemList.ShapeCasing.get(),
                     new Object[] { "  x", " Cf", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeTinyPipe.getIS(),
+                    NHItemList.ShapeTinyPipe.get(),
                     new Object[] { "  x", " C ", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeSmallPipe.getIS(),
+                    NHItemList.ShapeSmallPipe.get(),
                     new Object[] { "  x", " C ", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeNormalPipe.getIS(),
+                    NHItemList.ShapeNormalPipe.get(),
                     new Object[] { "  x", " C ", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeLargePipe.getIS(),
+                    NHItemList.ShapeLargePipe.get(),
                     new Object[] { "  x", "fC ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeHugePipe.getIS(),
+                    NHItemList.ShapeHugePipe.get(),
                     new Object[] { "f x", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeBlock.getIS(),
+                    NHItemList.ShapeBlock.get(),
                     new Object[] { " fx", " C ", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeSwordBlade.getIS(),
+                    NHItemList.ShapeSwordBlade.get(),
                     new Object[] { "   ", " Cx", "  f", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapePickaxeHead.getIS(),
+                    NHItemList.ShapePickaxeHead.get(),
                     new Object[] { "   ", " Cx", " f ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeShovelHead.getIS(),
+                    NHItemList.ShapeShovelHead.get(),
                     new Object[] { "   ", " Cx", "f  ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeAxeHead.getIS(),
+                    NHItemList.ShapeAxeHead.get(),
                     new Object[] { "   ", "fCx", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeHoeHead.getIS(),
+                    NHItemList.ShapeHoeHead.get(),
                     new Object[] { "f  ", " Cx", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeHammerHead.getIS(),
+                    NHItemList.ShapeHammerHead.get(),
                     new Object[] { " f ", " Cx", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeFileHead.getIS(),
+                    NHItemList.ShapeFileHead.get(),
                     new Object[] { "  f", " Cx", "   ", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeSawBlade.getIS(),
+                    NHItemList.ShapeSawBlade.get(),
                     new Object[] { "   ", " C ", " fx", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeGear.getIS(),
+                    NHItemList.ShapeGear.get(),
                     new Object[] { "   ", " C ", "f x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeBottle.getIS(),
+                    NHItemList.ShapeBottle.get(),
                     new Object[] { "   ", "fC ", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeBoat.getIS(),
+                    NHItemList.ShapeBoat.get(),
                     new Object[] { "f  ", " C ", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeRotor.getIS(),
+                    NHItemList.ShapeRotor.get(),
                     new Object[] { " f ", " C ", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeTurbineBlade.getIS(),
+                    NHItemList.ShapeTurbineBlade.get(),
                     new Object[] { "  f", " C ", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeSmallGear.getIS(),
+                    NHItemList.ShapeSmallGear.get(),
                     new Object[] { "   ", " Cf", "  x", 'C', aBlankCast });
             GTModHandler.addCraftingRecipe(
-                    NHItemList.ShapeDrillHead.getIS(),
+                    NHItemList.ShapeDrillHead.get(),
                     new Object[] { " f ", " C ", " x ", 'C', aBlankCast });
 
             // Add Clay Casts

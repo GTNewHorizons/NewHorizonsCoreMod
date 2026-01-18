@@ -161,7 +161,7 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Wafer_SoC2.get(1L),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
-                .itemOutputs(NHItemList.RawPicoWafer.getIS()).requiresCleanRoom().duration(5 * MINUTES)
+                .itemOutputs(NHItemList.RawPicoWafer.get()).requiresCleanRoom().duration(5 * MINUTES)
                 .eut((GTValues.V[8] - (GTValues.V[8] / 10))).addTo(laserEngraverRecipes);
 
         // Optical Boule

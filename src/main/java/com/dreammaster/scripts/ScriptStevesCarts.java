@@ -291,7 +291,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "blockSteel",
                 getModItem(StevesCarts2.ID, "CartModule", 1, 42, missing),
-                NHItemList.DiamondDrillTip.getIS(1),
+                NHItemList.DiamondDrillTip.get(1),
                 CustomItemList.SteelBars.get(1L),
                 "screwSteel",
                 "craftingToolHardHammer");

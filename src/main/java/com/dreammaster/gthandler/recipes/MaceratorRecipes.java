@@ -864,7 +864,7 @@ public class MaceratorRecipes implements Runnable {
                             Materials.DraconiumAwakened.getDust(64),
                             Materials.SpaceTime.getDust(10),
                             Materials.BlackPlutonium.getDust(4),
-                            NHItemList.ChaoticDust.getIS(1))
+                            NHItemList.ChaoticDust.get(1))
                     .duration(50 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(maceratorRecipes);
         }
     }

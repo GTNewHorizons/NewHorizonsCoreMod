@@ -182,53 +182,53 @@ public class ScriptRemoteIO implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.BlankPlatedChip.getIS(1),
+                        NHItemList.BlankPlatedChip.get(1),
                         getModItem(EnderStorage.ID, "enderChest", 1, 0, missing))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.BlankPlatedChip.getIS(1),
+                        NHItemList.BlankPlatedChip.get(1),
                         getModItem(EnderStorage.ID, "enderChest", 1, 4096, missing))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 1, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(NHItemList.BlankPlatedChip.getIS(1), getModItem(Thaumcraft.ID, "blockJar", 2, 0, missing))
+                .itemInputs(NHItemList.BlankPlatedChip.get(1), getModItem(Thaumcraft.ID, "blockJar", 2, 0, missing))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 2, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.BlankPlatedChip.getIS(1),
+                        NHItemList.BlankPlatedChip.get(1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.BlackSteel, 2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 10, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.BlankPlatedChip.getIS(1),
+                        NHItemList.BlankPlatedChip.get(1),
                         getModItem(ExtraUtilities.ID, "extractor_base", 2, 12, missing))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 12, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.BlankPlatedChip.getIS(1),
+                        NHItemList.BlankPlatedChip.get(1),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, 0, missing))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 20, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.BlankPlatedChip.getIS(1),
+                        NHItemList.BlankPlatedChip.get(1),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 21, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.BlankPlatedChip.getIS(1),
+                        NHItemList.BlankPlatedChip.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Enderium, 4L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.BlankPlatedChip.getIS(1),
+                        NHItemList.BlankPlatedChip.get(1),
                         getModItem(RemoteIO.ID, "item.wireless_transmitter", 1, 0, missing))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 1, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);

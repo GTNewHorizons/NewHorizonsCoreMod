@@ -603,11 +603,11 @@ public enum NHItemList {
         item.setCreativeTab(tab);
     }
 
-    public ItemStack getIS() {
+    public ItemStack get() {
         return new ItemStack(item, 1);
     }
 
-    public ItemStack getIS(int amount) {
+    public ItemStack get(int amount) {
         return new ItemStack(item, amount);
     }
 

@@ -94,10 +94,10 @@ public class ForgeHammerRecipes implements Runnable {
                 .itemOutputs(BlockList.QuadrupleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.CompressedBioBall.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.CompressedBioBall.get(1))
                 .itemOutputs(CustomItemList.BioBall.get(1L)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.getIS(1))
-                .itemOutputs(NHItemList.BioOrganicMesh.getIS(1)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.get(1))
+                .itemOutputs(NHItemList.BioOrganicMesh.get(1)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
 
         if (TinkerConstruct.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2))

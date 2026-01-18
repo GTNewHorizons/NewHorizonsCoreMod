@@ -636,7 +636,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapelessRecipe(NHItemList.EdibleSalt.getIS(1), "toolPot", "listAllwater");
+        addShapelessRecipe(NHItemList.EdibleSalt.get(1), "toolPot", "listAllwater");
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing),
                 "craftingToolHardHammer",
