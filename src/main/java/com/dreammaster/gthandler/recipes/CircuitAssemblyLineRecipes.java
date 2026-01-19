@@ -63,7 +63,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_GoodCircuitBoards.get(1),
                         ItemList.Circuit_Basic.get(32),
                         ItemList.Wrap_SMDResistors.get(4),
-                        ItemList.Wrap_SMDDiodes.get(1),
+                        ItemList.Wrap_SMDDiodes.get(4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 4),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 64))
                 .itemOutputs(ItemList.Circuit_Integrated_Good.get(16))
