@@ -411,7 +411,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
                         ItemList.Circuit_Data.get(32),
                         ItemList.Wrap_SMDInductors.get(12),
-                        ItemList.Wrap_SMDCapacitors.get(16),
+                        ItemList.Wrap_SMDCapacitors.get(24),
                         ItemList.Wrap_RandomAccessMemoryChips.get(16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 24))
                 .itemOutputs(ItemList.Circuit_Elite.get(16)).fluidInputs(Materials.SolderingAlloy.getMolten(2 * INGOTS))
