@@ -16,6 +16,7 @@ import static gtPlusPlus.core.material.MaterialMisc.MUTATED_LIVING_SOLDER;
 import static gtPlusPlus.core.material.MaterialsAlloy.INDALLOY_140;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
+import com.dreammaster.gthandler.GT_Loader_Items;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.ItemList;
@@ -81,8 +82,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Forestry.ID, "chipsets", 16, 0))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(4 * INGOTS))
-                .special(ItemList.CircuitImprint_BasicCircuitBoard.get(0)).eut(TierEU.LV).duration(2 * MINUTES)
-                .requireMods(Forestry).addTo(circuitAssemblyLineRecipes);
+                .special(ItemList.CircuitImprint_BasicCircuitBoard.get(0)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
+                .circuit(1).requireMods(Forestry).addTo(circuitAssemblyLineRecipes);
 
         // Enhanced Circuit Board
         RA.stdBuilder()
@@ -169,7 +170,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 32, 0),
                         ItemList.Wrap_SMDDiodes.get(2),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Copper, 2))
-                .itemOutputs(ItemList.Circuit_Integrated_Good.get(16))
+                .itemOutputs(ItemList.Circuit_Good.get(16))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_GoodElectronicCircuit.get(0)).eut(TierEU.RECIPE_LV)
                 .duration(3 * MINUTES).requireMods(IndustrialCraft2).addTo(circuitAssemblyLineRecipes);
@@ -307,7 +308,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.RedAlloy, 8))
                 .itemOutputs(ItemList.Circuit_Advanced.get(16))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * INGOTS))
-                .special(ItemList.CircuitImprint_ProcessorAssembly.get(0)).eut(96).duration(1 * MINUTES + 30 * SECONDS)
+                .special(ItemList.CircuitImprint_ProcessorAssembly.get(0)).eut(96).duration(2 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
         // NAND Chip Array
@@ -317,8 +318,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_SimpleSOCs.get(1),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 1)
-
-                ).itemOutputs(ItemList.NandChip.get(16))
+                ).itemOutputs(GTUtility.copyAmount(16, GT_Loader_Items.NandChipBoard))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * EIGHTH_INGOTS))
                 .special(ItemList.CircuitImprint_NANDChipArray.get(0)).eut(TierEU.RECIPE_MV)
                 .duration(1 * MINUTES + 30 * SECONDS).addTo(circuitAssemblyLineRecipes);
@@ -344,8 +344,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_SimpleSOCs.get(1),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1)
-
-                ).itemOutputs(ItemList.NandChip.get(16))
+                ).itemOutputs(GTUtility.copyAmount(16, GT_Loader_Items.NandChipBoard))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * EIGHTH_INGOTS))
                 .special(ItemList.CircuitImprint_NANDChipArray.get(0)).eut(TierEU.RECIPE_MV).duration(3 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
@@ -621,7 +620,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Wrap_MoreAdvancedCircuitBoards.get(1),
                         ItemList.Circuit_Quantumprocessor.get(32),
-                        ItemList.Wrap_AdvancedSMDCapacitors.get(3),
+                        ItemList.Wrap_AdvancedSMDInductors.get(3),
                         ItemList.Wrap_AdvancedSMDCapacitors.get(4),
                         ItemList.Wrap_RandomAccessMemoryChips.get(4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 24))
