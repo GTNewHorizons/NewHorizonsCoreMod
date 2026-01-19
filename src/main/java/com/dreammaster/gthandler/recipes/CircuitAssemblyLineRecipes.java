@@ -133,7 +133,6 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_CircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         ItemList.Cover_Controller.get(16)
-
                 ).itemOutputs(GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 0))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_ControllerCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(3 * MINUTES)
@@ -145,7 +144,6 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_CircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         ItemList.Sensor_LV.get(16)
-
                 ).itemOutputs(GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 1))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_ReceiverCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(3 * MINUTES)
@@ -156,8 +154,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Wrap_CircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                        GTModHandler.getModItem(Railcraft.ID, "part.signal.lamp", 64, 1)
-
+                        GTModHandler.getModItem(Railcraft.ID, "part.signal.lamp", 16, 1)
                 ).itemOutputs(GTModHandler.getModItem(Railcraft.ID, "part.circuit", 64, 2))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_SignalCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(3 * MINUTES)
@@ -181,7 +178,6 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_GoodCircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         ItemList.Cover_Controller.get(16)
-
                 )
                 .itemOutputs(
                         GTUtility.copyAmountUnsafe(128, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 0)))
@@ -195,7 +191,6 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_GoodCircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         ItemList.Sensor_LV.get(16)
-
                 )
                 .itemOutputs(
                         GTUtility.copyAmountUnsafe(128, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 1)))
@@ -208,7 +203,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Wrap_GoodCircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                        GTModHandler.getModItem(Railcraft.ID, "part.signal.lamp", 64, 1))
+                        GTModHandler.getModItem(Railcraft.ID, "part.signal.lamp", 16, 1))
                 .itemOutputs(
                         GTUtility.copyAmountUnsafe(128, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 2)))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
@@ -221,7 +216,6 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_AdvancedCircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         ItemList.Cover_Controller.get(16)
-
                 )
                 .itemOutputs(
                         GTUtility.copyAmountUnsafe(256, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 0)))
@@ -235,7 +229,6 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_AdvancedCircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         ItemList.Sensor_LV.get(16)
-
                 )
                 .itemOutputs(
                         GTUtility.copyAmountUnsafe(256, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 1)))
@@ -248,7 +241,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Wrap_AdvancedCircuitBoards.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
-                        GTModHandler.getModItem(Railcraft.ID, "part.signal.lamp", 64, 1))
+                        GTModHandler.getModItem(Railcraft.ID, "part.signal.lamp", 16, 1))
                 .itemOutputs(
                         GTUtility.copyAmountUnsafe(256, GTModHandler.getModItem(Railcraft.ID, "part.circuit", 1, 2)))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
@@ -332,7 +325,6 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_RandomAccessMemoryChips.get(8),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 16),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 64)
-
                 ).itemOutputs(ItemList.Circuit_Data.get(16)).fluidInputs(Materials.SolderingAlloy.getMolten(1 * INGOTS))
                 .special(ItemList.CircuitImprint_Workstation.get(0)).eut(TierEU.RECIPE_MV).duration(2 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
@@ -372,7 +364,6 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_RandomAccessMemoryChips.get(8),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 16),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 64)
-
                 ).itemOutputs(ItemList.Circuit_Data.get(16)).fluidInputs(Materials.SolderingAlloy.getMolten(1 * INGOTS))
                 .special(ItemList.CircuitImprint_Workstation.get(0)).eut(TierEU.RECIPE_MV).duration(4 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
@@ -553,7 +544,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
                         ItemList.Circuit_Elitenanocomputer.get(32),
                         ItemList.Wrap_AdvancedSMDInductors.get(4),
-                        ItemList.Wrap_AdvancedSMDDiodes.get(8),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(8),
                         ItemList.Wrap_RandomAccessMemoryChips.get(16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 32))
                 .itemOutputs(ItemList.Circuit_Master.get(16))
@@ -567,7 +558,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 32),
                         ItemList.Circuit_Elitenanocomputer.get(32),
                         ItemList.Wrap_SMDInductors.get(16),
-                        ItemList.Wrap_SMDDiodes.get(32),
+                        ItemList.Wrap_SMDCapacitors.get(32),
                         ItemList.Wrap_RandomAccessMemoryChips.get(16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 32))
                 .itemOutputs(ItemList.Circuit_Master.get(16))
@@ -747,7 +738,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_EliteCircuitBoards.get(1),
                         ItemList.Circuit_Crystalprocessor.get(16),
                         ItemList.Wrap_AdvancedSMDInductors.get(6),
-                        ItemList.Wrap_AdvancedSMDCapacitors.get(6),
+                        ItemList.Wrap_AdvancedSMDCapacitors.get(8),
                         ItemList.Wrap_RandomAccessMemoryChips.get(24),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.NiobiumTitanium, 16))
                 .itemOutputs(ItemList.Circuit_Crystalcomputer.get(16))
@@ -826,7 +817,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
         // Wetware Supercomputer
         RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Wrap_WetwareLifesupportCircuitBoards.get(2),
+                        ItemList.Wrap_ExtremeWetwareLifesupportCircuitBoards.get(2),
                         ItemList.Circuit_Wetwarecomputer.get(32),
                         ItemList.Wrap_AdvancedSMDDiodes.get(8),
                         ItemList.Wrap_NORMemoryChips.get(16),
@@ -963,7 +954,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
         RA.stdBuilder()
                 .itemInputs(
                         ItemList.Wrap_OpticallyPerfectedCPUs.get(1),
-                        ItemList.Wrap_OpticallyCompatibleMemories.get(1),
+                        ItemList.Wrap_OpticallyCompatibleMemories.get(2),
                         ItemList.Wrap_OpticalSMDCapacitors.get(16),
                         ItemList.Wrap_OpticalSMDDiodes.get(16),
                         tectech.thing.CustomItemList.DATApipe.get(64),
