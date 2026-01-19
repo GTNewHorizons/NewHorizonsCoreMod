@@ -745,7 +745,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
         RA.stdBuilder()
                 .itemInputs(
                         ItemList.Wrap_EliteCircuitBoards.get(1),
-                        ItemList.Circuit_Crystalprocessor.get(16),
+                        ItemList.Circuit_Crystalprocessor.get(32),
                         ItemList.Wrap_AdvancedSMDInductors.get(6),
                         ItemList.Wrap_AdvancedSMDCapacitors.get(8),
                         ItemList.Wrap_RandomAccessMemoryChips.get(24),
