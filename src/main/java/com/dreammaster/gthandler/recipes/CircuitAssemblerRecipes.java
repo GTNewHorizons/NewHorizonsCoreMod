@@ -21,7 +21,6 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.GT_Loader_Items;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -99,9 +98,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_Simple_SoC.get(1L),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1))
-                    .itemOutputs(ItemList.NandChipArray.get(1))
-                    .fluidInputs(tMat.getMolten(36L * tMultiplier / 2L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(circuitAssemblerRecipes);
+                    .itemOutputs(ItemList.NandChipArray.get(1)).fluidInputs(tMat.getMolten(36L * tMultiplier / 2L))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -109,9 +107,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_Simple_SoC.get(1L),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1))
-                    .itemOutputs(ItemList.NandChipArray.get(1))
-                    .fluidInputs(tMat.getMolten(36L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
-                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+                    .itemOutputs(ItemList.NandChipArray.get(1)).fluidInputs(tMat.getMolten(36L * tMultiplier / 2L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -119,9 +116,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_Simple_SoC.get(2L),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1))
-                    .itemOutputs(ItemList.NandChipArray.get(2))
-                    .fluidInputs(tMat.getMolten(36L * tMultiplier / 2L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(circuitAssemblerRecipes);
+                    .itemOutputs(ItemList.NandChipArray.get(2)).fluidInputs(tMat.getMolten(36L * tMultiplier / 2L))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -129,9 +125,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_Simple_SoC.get(2L),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1))
-                    .itemOutputs(ItemList.NandChipArray.get(2))
-                    .fluidInputs(tMat.getMolten(36L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
-                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+                    .itemOutputs(ItemList.NandChipArray.get(2)).fluidInputs(tMat.getMolten(36L * tMultiplier / 2L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -139,9 +134,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_Simple_SoC.get(4L),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1))
-                    .itemOutputs(ItemList.NandChipArray.get(4))
-                    .fluidInputs(tMat.getMolten(36L * tMultiplier / 2L)).duration(15 * SECONDS).eut(TierEU.RECIPE_EV)
-                    .addTo(circuitAssemblerRecipes);
+                    .itemOutputs(ItemList.NandChipArray.get(4)).fluidInputs(tMat.getMolten(36L * tMultiplier / 2L))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -149,9 +143,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_Simple_SoC.get(4L),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1))
-                    .itemOutputs(ItemList.NandChipArray.get(4))
-                    .fluidInputs(tMat.getMolten(36L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
-                    .eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
+                    .itemOutputs(ItemList.NandChipArray.get(4)).fluidInputs(tMat.getMolten(36L * tMultiplier / 2L))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
 
             // Basic Circuit
             GTValues.RA.stdBuilder()

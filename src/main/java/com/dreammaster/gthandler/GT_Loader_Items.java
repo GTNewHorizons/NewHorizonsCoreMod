@@ -13,9 +13,6 @@ import net.minecraft.util.StatCollector;
 
 import com.dreammaster.item.NHItemList;
 
-import gregtech.api.enums.SubTag;
-import gregtech.common.items.MetaGeneratedItem01;
-
 public class GT_Loader_Items {
 
     public void run() {

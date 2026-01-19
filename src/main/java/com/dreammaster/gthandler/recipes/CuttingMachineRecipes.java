@@ -12,7 +12,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.GT_Loader_Items;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -20,7 +19,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTUtility;
 
 public class CuttingMachineRecipes implements Runnable {
 
