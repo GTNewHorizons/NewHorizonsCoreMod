@@ -84,9 +84,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_QuantumCPU.get(2L),
                         ItemList.Circuit_Chip_NanoCPU.get(2L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 64))
-                .itemOutputs(CustomItemList.HighEnergyFlowCircuit.get(1L))
-                .fluidInputs(new FluidStack(solderIndalloy, 288)).requiresCleanRoom().duration(2 * MINUTES)
-                .eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
+                .itemOutputs(NHItemList.HighEnergyFlowCircuit.get()).fluidInputs(new FluidStack(solderIndalloy, 288))
+                .requiresCleanRoom().duration(2 * MINUTES).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
 
         for (Materials tMat : solderingMaterials) {
             int tMultiplier = tMat.contains(SubTag.SOLDERING_MATERIAL_GOOD) ? 1
@@ -853,8 +852,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
-                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Basic.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
@@ -864,8 +863,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
-                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Basic.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
@@ -875,8 +874,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
-                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Basic.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35))
@@ -888,7 +887,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
-                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
@@ -899,7 +898,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
-                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
@@ -910,7 +909,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
-                        CustomItemList.LogicProcessorItemGoldCore.get(1),
+                        NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36))
@@ -922,7 +921,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
@@ -933,7 +932,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
@@ -944,7 +943,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37))
@@ -956,7 +955,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))
@@ -967,7 +966,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))
@@ -978,7 +977,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                        CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                        NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
                 .circuit(1)
                 .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38))

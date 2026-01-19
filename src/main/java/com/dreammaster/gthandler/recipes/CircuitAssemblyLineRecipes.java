@@ -16,7 +16,7 @@ import static gtPlusPlus.core.material.MaterialMisc.MUTATED_LIVING_SOLDER;
 import static gtPlusPlus.core.material.MaterialsAlloy.INDALLOY_140;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -709,7 +709,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_QBitProcessingUnits.get(2),
                         ItemList.Wrap_NanocomponentCentralProcessingUnits.get(2),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorZPM, 64))
-                .itemOutputs(CustomItemList.HighEnergyFlowCircuit.get(16))
+                .itemOutputs(NHItemList.HighEnergyFlowCircuit.get(16))
                 .fluidInputs(INDALLOY_140.getFluidStack(2 * INGOTS))
                 .special(ItemList.CircuitImprint_HighEnergyFlowCircuit.get(0)).eut(TierEU.RECIPE_IV)
                 .duration(24 * MINUTES).addTo(circuitAssemblyLineRecipes);
