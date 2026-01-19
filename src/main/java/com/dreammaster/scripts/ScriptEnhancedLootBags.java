@@ -26,7 +26,7 @@ import java.util.Map;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
@@ -90,8 +90,8 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(32, new ItemStack(Items.minecart));
         metaExtraItemMap
                 .put(33, createItemStack(Railcraft.ID, "track", 1, 816, "{track:\"railcraft:track.speed\"}", missing));
-        metaExtraItemMap.put(37, CustomItemList.LogicProcessorItemGoldCore.get(1L));
-        metaExtraItemMap.put(38, CustomItemList.EngineeringProcessorItemDiamondCore.get(1L));
+        metaExtraItemMap.put(37, NHItemList.LogicProcessorItemGoldCore.get());
+        metaExtraItemMap.put(38, NHItemList.EngineeringProcessorItemDiamondCore.get());
         metaExtraItemMap.put(41, ItemList.Electric_Motor_LuV.get(1L));
         metaExtraItemMap.put(42, ItemList.Electric_Motor_ZPM.get(1L));
         metaExtraItemMap.put(43, ItemList.Electric_Motor_UV.get(1L));

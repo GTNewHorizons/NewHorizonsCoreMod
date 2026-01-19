@@ -1271,9 +1271,9 @@ public class ScriptEFR implements IScriptLoader {
         // stoneworks
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing))
-                .itemOutputs(NHItemList.TuffDust.getIS(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
+                .itemOutputs(NHItemList.TuffDust.get(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.getIS(36))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.VolcanicAsh, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 9L),
@@ -1285,15 +1285,15 @@ public class ScriptEFR implements IScriptLoader {
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
-        OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.getIS(1));
+        OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.get(1));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "deepslate", 1, 0, missing))
-                .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(NHItemList.DeepslateDust.get(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cobbled_deepslate", 1, 0, missing))
-                .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(NHItemList.DeepslateDust.get(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.get(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chlorite, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plagioclase, 9L), // gt
@@ -1303,7 +1303,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) // gt
                 .duration(1 * MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
-        OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
+        OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.get(1));
 
         GTValues.RA.stdBuilder().itemInputs(Materials.MetamorphicMineralMixture.getDust(36))
                 .itemOutputs(

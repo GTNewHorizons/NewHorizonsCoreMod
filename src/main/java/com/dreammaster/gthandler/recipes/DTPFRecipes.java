@@ -11,8 +11,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.DTPFCalculator;
+import com.dreammaster.item.NHItemList;
 
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
@@ -61,7 +61,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
 
                 DTPFCalculator neutronium = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .setCustomEBFinputItem(CustomItemList.RawNeutronium.get(1L))
+                        .setCustomEBFinputItem(NHItemList.RawNeutronium.get())
                         .calculateGenericEBFBasedRecipe(Materials.Neutronium);
 
                 // Tier 4
@@ -1168,7 +1168,7 @@ public class DTPFRecipes implements Runnable {
                     .itemInputs(
                             GregtechItemList.Laser_Lens_Special.get(1),
                             new ItemStack(Particle.getBaseParticle(Particle.GRAVITON).getItem(), 4),
-                            CustomItemList.MysteriousCrystalLens.get(0),
+                            NHItemList.MysteriousCrystalLens.get(0),
                             ItemRefer.HiC_T5.get(0))
                     .fluidInputs(Materials.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
                     .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)

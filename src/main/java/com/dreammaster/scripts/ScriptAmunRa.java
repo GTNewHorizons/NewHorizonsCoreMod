@@ -157,7 +157,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'P',
                 "plateCosmicNeutronium",
                 'D',
-                NHItemList.Display.getIS(),
+                NHItemList.Display.get(),
                 'C',
                 "circuitInfinite",
                 'F',
@@ -178,7 +178,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'W',
                 "springTungstenSteel",
                 'D',
-                NHItemList.Display.getIS(),
+                NHItemList.Display.get(),
                 'T',
                 "craftingToolScrewdriver",
                 'P',
@@ -225,13 +225,13 @@ public class ScriptAmunRa implements IScriptLoader {
                 'H',
                 "craftingToolHardHammer",
                 '8',
-                NHItemList.HeavyDutyPlateTier8.getIS(),
+                NHItemList.HeavyDutyPlateTier8.get(),
                 'F',
                 "craftingToolFile",
                 'L',
                 new ItemStack(baseItem, 1, 15),
                 '4',
-                NHItemList.HeavyDutyRocketFinsTier4.getIS());
+                NHItemList.HeavyDutyRocketFinsTier4.get());
         addShapedOredictRecipe(
                 new ItemStack(baseItem, 1, 16),
                 "DCH",
@@ -240,7 +240,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'D',
                 "craftingToolScrewdriver",
                 'C',
-                NHItemList.HeavyDutyNoseConeTier4.getIS(),
+                NHItemList.HeavyDutyNoseConeTier4.get(),
                 'H',
                 "craftingToolHardHammer",
                 'S',
@@ -303,12 +303,12 @@ public class ScriptAmunRa implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.HeavyDutyPlateTier8.getIS(2),
+                        NHItemList.HeavyDutyPlateTier8.get(2),
                         new ItemStack(baseItem, 4, 15),
-                        NHItemList.HeavyDutyRocketFinsTier4.getIS())
+                        NHItemList.HeavyDutyRocketFinsTier4.get())
                 .circuit(5).itemOutputs(new ItemStack(baseItem, 1, 14)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyNoseConeTier4.getIS(), new ItemStack(baseItem, 4, 15))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyNoseConeTier4.get(), new ItemStack(baseItem, 4, 15))
                 .circuit(4).fluidInputs(Materials.Neutronium.getMolten(QUARTER_INGOTS))
                 .itemOutputs(new ItemStack(baseItem, 1, 16)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
@@ -345,7 +345,7 @@ public class ScriptAmunRa implements IScriptLoader {
          * Implosion Compressor *
          ************************/
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyAlloyIngotT9.getIS())
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyAlloyIngotT9.get())
                 .itemOutputs(new ItemStack(baseItem, 1, 15), Materials.Neutronium.getDustTiny(8))
                 .metadata(GTRecipeConstants.ADDITIVE_AMOUNT, 64).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(implosionRecipes);
@@ -370,7 +370,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 (int) TierEU.RECIPE_UHV,
                 8,
                 new Object[] { ItemList.Hull_MAX.get(1), new ItemStack(baseItem, 32, 28),
-                        NHItemList.IrradiantReinforcedNeutroniumPlate.getIS(64),
+                        NHItemList.IrradiantReinforcedNeutroniumPlate.get(64),
                         new ItemStack(GameRegistry.findItem(GalaxySpace.ID, "item.RocketControlComputer"), 4, 8),
                         new Object[] { OrePrefixes.circuit.get(Materials.UHV), 16 }, ItemList.Sensor_UHV.get(8),
                         ItemList.Emitter_UHV.get(8) },
@@ -382,14 +382,14 @@ public class ScriptAmunRa implements IScriptLoader {
                 (int) TierEU.RECIPE_UEV);
         // Rocket Engine Jet
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                NHItemList.HeavyDutyRocketEngineTier4.getIS(),
+                NHItemList.HeavyDutyRocketEngineTier4.get(),
                 64000,
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
                 new Object[] { ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
                         ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
-                        NHItemList.HeavyDutyRocketEngineTier4.getIS(64),
+                        NHItemList.HeavyDutyRocketEngineTier4.get(64),
                         new Object[] { OrePrefixes.pipeHuge.get(Materials.Infinity), 8 },
                         ItemList.Electric_Pump_UHV.get(16), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 8 },
                         new ItemStack(baseItem, 4, 27) },
@@ -419,7 +419,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 2500000);
         // Rocket Engine Base
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                NHItemList.Tier4Booster.getIS(),
+                NHItemList.Tier4Booster.get(),
                 64000,
                 64,
                 (int) TierEU.RECIPE_UHV,
@@ -480,13 +480,13 @@ public class ScriptAmunRa implements IScriptLoader {
         // Lightweight Alloy Ingot
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.HeavyDutyPlateTier8.getIS(),
+                        NHItemList.HeavyDutyPlateTier8.get(),
                         Materials.Kevlar.getPlates(7),
                         Materials.Kevlar.getPlates(7),
                         new Object[] { OrePrefixes.screw.get(Materials.Neutronium), 12 })
                 .fluidInputs(Materials.RadoxPolymer.getMolten(4 * INGOTS))
-                .itemOutputs(NHItemList.HeavyDutyAlloyIngotT9.getIS())
-                .metadata(GTRecipeConstants.RESEARCH_ITEM, NHItemList.HeavyDutyPlateTier8.getIS())
+                .itemOutputs(NHItemList.HeavyDutyAlloyIngotT9.get())
+                .metadata(GTRecipeConstants.RESEARCH_ITEM, NHItemList.HeavyDutyPlateTier8.get())
                 .metadata(SCANNING, new Scanning(2 * MINUTES + 20 * SECONDS, TierEU.RECIPE_UV)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(GTRecipeConstants.AssemblyLine);
     }

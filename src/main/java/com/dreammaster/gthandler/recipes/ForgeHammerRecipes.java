@@ -17,7 +17,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -40,12 +39,12 @@ public class ForgeHammerRecipes implements Runnable {
                 .itemOutputs(ItemList.GalliumArsenideCrystalSmallPart.get(4L)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemExquisite.get(1))
-                .itemOutputs(CustomItemList.ChromaticGemFlawless.get(2)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.ChromaticGemExquisite.get())
+                .itemOutputs(NHItemList.ChromaticGemFlawless.get(2)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemFlawless.get(1))
-                .itemOutputs(CustomItemList.ChromaticGem.get(2)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.ChromaticGemFlawless.get())
+                .itemOutputs(NHItemList.ChromaticGem.get(2)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(hammerRecipes);
 
         // Uncompressed coal variants
@@ -94,10 +93,10 @@ public class ForgeHammerRecipes implements Runnable {
                 .itemOutputs(BlockList.QuadrupleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.CompressedBioBall.getIS(1))
-                .itemOutputs(CustomItemList.BioBall.get(1L)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.getIS(1))
-                .itemOutputs(NHItemList.BioOrganicMesh.getIS(1)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.CompressedBioBall.get(1)).itemOutputs(NHItemList.BioBall.get())
+                .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.get(1))
+                .itemOutputs(NHItemList.BioOrganicMesh.get(1)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
 
         if (TinkerConstruct.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2))
@@ -117,8 +116,8 @@ public class ForgeHammerRecipes implements Runnable {
 
         if (Thaumcraft.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3))
-                    .itemOutputs(CustomItemList.PrimordialPearlFragment.get(3L)).duration(16 * TICKS)
-                    .eut(TierEU.RECIPE_IV).addTo(hammerRecipes);
+                    .itemOutputs(NHItemList.PrimordialPearlFragment.get(3)).duration(16 * TICKS).eut(TierEU.RECIPE_IV)
+                    .addTo(hammerRecipes);
         }
         if (Botania.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(BlockList.Gaia.getIS(1))
