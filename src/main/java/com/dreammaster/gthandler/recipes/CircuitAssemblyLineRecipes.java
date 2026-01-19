@@ -383,8 +383,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_PlasticCircuitBoards2.get(1),
                         ItemList.Wrap_SimpleSOCs.get(2),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 4))
-                .itemOutputs(ItemList.NandChip.get(32))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 1))
+                .itemOutputs(GTUtility.copyAmount(32, GT_Loader_Items.NandChipBoard))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * EIGHTH_INGOTS))
                 .special(ItemList.CircuitImprint_NANDChipArray.get(0)).eut(TierEU.RECIPE_HV)
                 .duration(1 * MINUTES + 30 * SECONDS).addTo(circuitAssemblyLineRecipes);
@@ -395,8 +395,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_PlasticCircuitBoards2.get(1),
                         ItemList.Wrap_SimpleSOCs.get(2),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 4))
-                .itemOutputs(ItemList.NandChip.get(32))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 1))
+                .itemOutputs(GTUtility.copyAmount(32, GT_Loader_Items.NandChipBoard))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * EIGHTH_INGOTS))
                 .special(ItemList.CircuitImprint_NANDChipArray.get(0)).eut(TierEU.RECIPE_HV).duration(3 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
@@ -424,7 +424,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_RandomAccessMemoryChips.get(16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.AnnealedCopper, 24))
                 .itemOutputs(ItemList.Circuit_Elite.get(16)).fluidInputs(Materials.SolderingAlloy.getMolten(2 * INGOTS))
-                .special(ItemList.CircuitImprint_Mainframe.get(0)).eut(TierEU.RECIPE_HV).duration(8 * MINUTES)
+                .special(ItemList.CircuitImprint_Mainframe.get(0)).eut(TierEU.RECIPE_HV).duration(16 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
         // Microprocessor
@@ -529,7 +529,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_AdvancedCircuitBoards.get(1),
                         ItemList.Wrap_SimpleSOCs.get(4),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 4))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 1))
                 .itemOutputs(GTUtility.copyAmount(64, GT_Loader_Items.NandChipBoard))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * EIGHTH_INGOTS))
                 .special(ItemList.CircuitImprint_NANDChipArray.get(0)).eut(TierEU.RECIPE_EV)
@@ -541,7 +541,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_AdvancedCircuitBoards.get(1),
                         ItemList.Wrap_SimpleSOCs.get(4),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 16),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 4))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1))
                 .itemOutputs(GTUtility.copyAmount(64, GT_Loader_Items.NandChipBoard))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * EIGHTH_INGOTS))
                 .special(ItemList.CircuitImprint_NANDChipArray.get(0)).eut(TierEU.RECIPE_EV).duration(3 * MINUTES)
