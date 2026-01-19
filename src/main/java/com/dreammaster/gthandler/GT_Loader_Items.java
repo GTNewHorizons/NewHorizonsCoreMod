@@ -13,18 +13,9 @@ import net.minecraft.util.StatCollector;
 
 import com.dreammaster.item.NHItemList;
 
-import gregtech.api.enums.SubTag;
-import gregtech.common.items.MetaGeneratedItem01;
-
 public class GT_Loader_Items {
 
-    // FIXME: Move this item to one of GT5-Unofficial's Item Lists.
-    public static ItemStack NandChipBoard;
-
     public void run() {
-        MetaGeneratedItem01 GT = MetaGeneratedItem01.INSTANCE;
-        NandChipBoard = GT
-                .addItem(81, "NAND Chip Array", "Chips on Board", "circuitPrimitiveArray", SubTag.NO_UNIFICATION);
         registerTooltips();
     }
 
