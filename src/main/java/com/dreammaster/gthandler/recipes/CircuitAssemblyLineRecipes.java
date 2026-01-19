@@ -81,12 +81,12 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 32),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Iron, 32),
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 64),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Iron, 1),
-                            GTUtility.getIntegratedCircuit(1))
+                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Iron, 1)
+                    )
                     .itemOutputs(getModItem(Forestry.ID, "chipsets", 16, 0))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(4 * INGOTS))
                     .special(ItemList.CircuitImprint_BasicCircuitBoard.get(0)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
-                    .circuit(1).requireMods(Forestry).addTo(circuitAssemblyLineRecipes);
+                    .requireMods(Forestry).addTo(circuitAssemblyLineRecipes);
 
             // Enhanced Circuit Board
             RA.stdBuilder()
@@ -95,8 +95,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 32),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 32),
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.Bronze, 64),
-                            GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Bronze, 16),
-                            GTUtility.getIntegratedCircuit(1))
+                            GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Bronze, 16)
+                    )
                     .itemOutputs(getModItem(Forestry.ID, "chipsets", 16, 1))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(4 * INGOTS))
                     .special(ItemList.CircuitImprint_EnhancedCircuitBoard.get(0)).eut(TierEU.RECIPE_LV)
@@ -109,8 +109,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 32),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Steel, 32),
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 64),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Steel, 1),
-                            GTUtility.getIntegratedCircuit(1))
+                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Steel, 1)
+                    )
                     .itemOutputs(getModItem(Forestry.ID, "chipsets", 16, 2))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(4 * INGOTS))
                     .special(ItemList.CircuitImprint_RefinedCircuitBoard.get(0)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
@@ -123,8 +123,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 32),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 32),
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.Electrum, 64),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1),
-                            GTUtility.getIntegratedCircuit(1))
+                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1)
+                    )
                     .itemOutputs(getModItem(Forestry.ID, "chipsets", 16, 3))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(4 * INGOTS))
                     .special(ItemList.CircuitImprint_IntricateCircuitBoard.get(0)).eut(TierEU.RECIPE_LV)
