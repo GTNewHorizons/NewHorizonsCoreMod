@@ -109,7 +109,7 @@ public class CuttingMachineRecipes implements Runnable {
 
         }
 
-        GTValues.RA.stdBuilder().itemInputs(GTUtility.copyAmount(1, GT_Loader_Items.NandChipBoard)).circuit(1)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.NandChipArray.get(1)).circuit(1)
                 .itemOutputs(ItemList.NandChip.get(8)).requiresCleanRoom().duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(cutterRecipes);
 
