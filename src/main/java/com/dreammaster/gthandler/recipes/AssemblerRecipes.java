@@ -3790,7 +3790,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4))
-                .circuit(13).itemOutputs(ItemList.Field_Generator_EV.get(1)).fluidInputs(Materials.HSSG.getMolten(576))
+                .circuit(1).itemOutputs(ItemList.Field_Generator_EV.get(1)).fluidInputs(Materials.HSSG.getMolten(576))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
