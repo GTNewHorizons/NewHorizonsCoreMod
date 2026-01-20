@@ -21,7 +21,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -137,7 +137,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                             getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
-                            CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Coated.get(1L))
                     .circuit(1).itemOutputs(EssentialComponent1K).fluidInputs(solder).duration(10 * SECONDS).eut(30)
                     .addTo(circuitAssemblerRecipes);
@@ -146,7 +146,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
-                            CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Coated_Basic.get(1L))
                     .circuit(1).itemOutputs(EssentialComponent4K).fluidInputs(solder).duration(10 * SECONDS).eut(30)
                     .addTo(circuitAssemblerRecipes);
@@ -155,7 +155,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                            CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Phenolic_Good.get(1L))
                     .circuit(1).itemOutputs(EssentialComponent16K).fluidInputs(solder).duration(10 * SECONDS).eut(120)
                     .addTo(circuitAssemblerRecipes);
@@ -164,7 +164,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                            CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1L))
                     .circuit(1).itemOutputs(EssentialComponent64K).fluidInputs(solder).duration(10 * SECONDS).eut(480)
                     .addTo(circuitAssemblerRecipes);
@@ -173,7 +173,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
-                            CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                     .circuit(1).itemOutputs(EssentialComponent256K).fluidInputs(solder).requiresCleanRoom()
                     .duration(10 * SECONDS).eut(1920).addTo(circuitAssemblerRecipes);
@@ -182,7 +182,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
-                            CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                     .circuit(1).itemOutputs(EssentialComponent1024K).fluidInputs(solder).requiresCleanRoom()
                     .duration(10 * SECONDS).eut(7680).addTo(circuitAssemblerRecipes);
@@ -191,7 +191,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
-                            CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Wetware_Extreme.get(1))
                     .circuit(1).itemOutputs(EssentialComponent4096K).fluidInputs(solder).requiresCleanRoom()
                     .duration(10 * SECONDS).eut(30720).addTo(circuitAssemblerRecipes);
@@ -200,7 +200,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
-                            CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Bio_Ultra.get(1))
                     .circuit(1).itemOutputs(EssentialComponent16384K).fluidInputs(solder).requiresCleanRoom()
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
@@ -803,7 +803,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'e',
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                 'f',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'g',
@@ -832,7 +832,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 EssentialComponent1K,
                 'e',
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                 'f',
                 EssentialComponent1K,
                 'g',
@@ -861,7 +861,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 EssentialComponent4K,
                 'e',
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                 'f',
                 EssentialComponent4K,
                 'g',
@@ -890,7 +890,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 EssentialComponent16K,
                 'e',
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                 'f',
                 EssentialComponent16K,
                 'g',
@@ -919,7 +919,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 EssentialComponent64K,
                 'e',
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                 'f',
                 EssentialComponent64K,
                 'g',
@@ -948,7 +948,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 EssentialComponent256K,
                 'e',
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                 'f',
                 EssentialComponent256K,
                 'g',
@@ -977,7 +977,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 EssentialComponent1024K,
                 'e',
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                 'f',
                 EssentialComponent1024K,
                 'g',
@@ -1006,7 +1006,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 EssentialComponent4096K,
                 'e',
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                 'f',
                 EssentialComponent4096K,
                 'g',

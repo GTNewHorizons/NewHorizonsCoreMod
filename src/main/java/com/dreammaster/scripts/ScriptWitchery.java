@@ -28,7 +28,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
@@ -373,11 +373,11 @@ public class ScriptWitchery implements IScriptLoader {
                 'c',
                 "plateSteel",
                 'd',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'e',
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
                 'f',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'g',
                 getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0, missing),
                 'h',
@@ -521,7 +521,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'a',
                 "craftingToolScrewdriver",
                 'b',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'c',
                 "craftingToolHardHammer",
                 'd',
@@ -605,15 +605,15 @@ public class ScriptWitchery implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("fames"), 32),
                 getModItem(Witchery.ID, "seepingshoes", 1, 0, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 80, missing),
-                CustomItemList.ManyullynCrystal.get(1L),
+                NHItemList.ManyullynCrystal.get(),
                 getModItem(Witchery.ID, "ingredient", 1, 34, missing),
                 getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
-                CustomItemList.ManyullynCrystal.get(1L),
+                NHItemList.ManyullynCrystal.get(),
                 getModItem(Witchery.ID, "ingredient", 1, 80, missing),
-                CustomItemList.ManyullynCrystal.get(1L),
+                NHItemList.ManyullynCrystal.get(),
                 getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 34, missing),
-                CustomItemList.ManyullynCrystal.get(1L));
+                NHItemList.ManyullynCrystal.get());
         TCHelper.addResearchPage(
                 "RUBYSLIPPERS",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "rubyslippers", 1, 0, missing))));
@@ -918,7 +918,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'a',
                 "plateThaumium",
                 'b',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'c',
                 "plateThaumium",
                 'd',
@@ -930,7 +930,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'g',
                 "blockSteel",
                 'h',
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 'i',
                 "blockSteel");
         TCHelper.addResearchPage(
@@ -994,11 +994,11 @@ public class ScriptWitchery implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("vitreus"), 8)
                         .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("lux"), 16),
                 getModItem(Witchery.ID, "fumefunnel", 1, 0, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(Witchery.ID, "ingredient", 1, 73, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing));
         TCHelper.addResearchPage(
                 "FILTEREDFUMEFUNNEL",

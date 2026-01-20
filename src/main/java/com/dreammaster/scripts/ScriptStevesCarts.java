@@ -43,7 +43,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -286,13 +285,13 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 8, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "screwSteel",
                 "craftingToolScrewdriver",
                 "blockSteel",
                 getModItem(StevesCarts2.ID, "CartModule", 1, 42, missing),
-                NHItemList.DiamondDrillTip.getIS(1),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.DiamondDrillTip.get(1),
+                NHItemList.SteelBars.get(),
                 "screwSteel",
                 "craftingToolHardHammer");
         addShapedRecipe(
@@ -619,15 +618,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 40, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "dustRedstone",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "dustCoal",
                 "rotorSteel",
                 "dustCoal",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "dustRedstone",
-                CustomItemList.SteelBars.get(1L));
+                NHItemList.SteelBars.get());
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59, missing),
                 "itemCasingSteel",
@@ -720,7 +719,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "upgrade", 1, 6, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 ItemList.Electric_Motor_LV.get(1L),
                 "rotorSteel",
@@ -1026,7 +1025,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "paneGlassColorless",
                 "stickPlastic",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "stickPlastic",
                 "paneGlassColorless",
@@ -1055,15 +1054,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "screwIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 57, missing),
-                CustomItemList.SteelBars.get(1L),
-                CustomItemList.SteelBars.get(1L),
-                CustomItemList.SteelBars.get(1L),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
                 "craftingToolHardHammer",
-                CustomItemList.SteelBars.get(1L),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
+                NHItemList.SteelBars.get(),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                CustomItemList.SteelBars.get(1L));
+                NHItemList.SteelBars.get());
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 12, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
@@ -1180,7 +1179,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(Minecraft.ID, "compass", 1, 0, missing),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
@@ -1235,7 +1234,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateRedstone",
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(Minecraft.ID, "stone_button", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
@@ -1301,7 +1300,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(Minecraft.ID, "sign", 1, 0, missing),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "plateIron",
                 "plateRedstone",
@@ -1470,7 +1469,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.SteelBars.get(5L),
+                        NHItemList.SteelBars.get(5),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 19, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 20, missing)).duration(10 * SECONDS)
                 .eut(64).addTo(assemblerRecipes);
@@ -1883,9 +1882,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60, missing)).duration(20 * SECONDS)
                 .eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.SteelBars.get(5L),
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing))
+                .itemInputs(NHItemList.SteelBars.get(5), getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 57, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

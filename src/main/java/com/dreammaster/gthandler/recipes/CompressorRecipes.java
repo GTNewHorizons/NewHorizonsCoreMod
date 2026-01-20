@@ -32,7 +32,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.block.BlockList;
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -150,11 +149,10 @@ public class CompressorRecipes implements Runnable {
                 .itemOutputs(BlockList.QuintupleCompressedCoalCoke.getIS(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.BioBall.get(1L))
-                .itemOutputs(NHItemList.CompressedBioBall.getIS(1)).duration(15 * SECONDS).eut(2)
-                .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.getIS(1))
-                .itemOutputs(NHItemList.BioCarbonPlate.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioBall.get()).itemOutputs(NHItemList.CompressedBioBall.get(1))
+                .duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.get(1))
+                .itemOutputs(NHItemList.BioCarbonPlate.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
@@ -339,7 +337,7 @@ public class CompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "slab", 2, 38, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 8, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.AdvancedCokeOvenBrick.get(4L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.AdvancedCokeOvenBrick.get(4))
                 .itemOutputs(getModItem(Railcraft.ID, "machine.alpha", 1, 12, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
     }
@@ -359,7 +357,7 @@ public class CompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "rotten_flesh", 9, 0, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ArcaneSlate.get(9L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.ArcaneSlate.get(9))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
 

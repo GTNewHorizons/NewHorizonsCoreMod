@@ -12,7 +12,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -102,12 +102,12 @@ public class CuttingMachineRecipes implements Runnable {
         if (IndustrialCraft2.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0))
-                    .itemOutputs(CustomItemList.ReinforcedGlassPLate.get(2L)).duration(60 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                    .itemOutputs(NHItemList.ReinforcedGlassPlate.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(cutterRecipes);
 
         }
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.NandChipBoard.get(1)).circuit(1)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.NandChipArray.get(1)).circuit(1)
                 .itemOutputs(ItemList.NandChip.get(8)).requiresCleanRoom().duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(cutterRecipes);
 

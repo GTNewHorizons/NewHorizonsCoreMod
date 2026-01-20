@@ -11,7 +11,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -29,13 +28,13 @@ public class AutoclaveRecipes implements Runnable {
     public void run() {
         spaceRecipes();
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.LapotronDust.get(30L))
-                .itemOutputs(CustomItemList.RawLapotronCrystal.get(1L)).outputChances(10000)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.LapotronDust.get(30))
+                .itemOutputs(NHItemList.RawLapotronCrystal.get()).outputChances(10000)
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(576L)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.LapotronDust.get(30L))
-                .itemOutputs(CustomItemList.RawLapotronCrystal.get(1L)).outputChances(10000)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.LapotronDust.get(30))
+                .itemOutputs(NHItemList.RawLapotronCrystal.get()).outputChances(10000)
                 .fluidInputs(Materials.VibrantAlloy.getMolten(288L)).duration(60 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
 
@@ -135,8 +134,8 @@ public class AutoclaveRecipes implements Runnable {
                 .fluidInputs(Materials.UUMatter.getFluid(250L)).requiresCleanRoom().requiresLowGravity()
                 .duration(10 * MINUTES).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateDustAncients.getIS().splitStack(64))
-                .itemOutputs(NHItemList.StargateCrystalAncients.getIS()).outputChances(10000)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateDustAncients.get().splitStack(64))
+                .itemOutputs(NHItemList.StargateCrystalAncients.get()).outputChances(10000)
                 .fluidInputs(Materials.Silver.getPlasma(8000L)).requiresCleanRoom().requiresLowGravity()
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
     }

@@ -3,7 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
@@ -17,9 +17,9 @@ public class CannerRecipes implements Runnable {
     public void run() {
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.AdsorptionFilterCasing.get(1),
+                        NHItemList.AdsorptionFilterCasing.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 32))
-                .itemOutputs(CustomItemList.AdsorptionFilter.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .itemOutputs(NHItemList.AdsorptionFilter.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(cannerRecipes);
     }
 }
