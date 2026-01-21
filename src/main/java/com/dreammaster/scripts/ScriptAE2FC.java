@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -726,13 +727,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'k',
                 AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
                 'l',
-                createItemStack(
-                        AE2FluidCraft.ID,
-                        "fluid_packet",
-                        1,
-                        0,
-                        "{FluidStack:{FluidName:water,Amount:2147483647}}",
-                        missing));
+                getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 3));
 
         // Fluid Quantum Drive
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
