@@ -9,6 +9,7 @@ import static com.dreammaster.creativetab.ModTabList.SOLAR;
 import static com.dreammaster.creativetab.ModTabList.SPACE;
 import static com.dreammaster.creativetab.ModTabList.THAUMCRAFT;
 
+import com.dreammaster.item.record.NHMusicRecord;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,6 +30,11 @@ public enum NHItemList {
     QuantumBread("QuantumBread", new QuantumBread(), GENERIC),
     BowFletchingCast("BowFletchingCast", new CustomPattern(), MOLDS),
     BowStringCast("BowStringCast", new CustomPattern(), MOLDS),
+
+    // ===== Music Discs =====
+    AbsoluteZeroDisc("AbsoluteZeroDisc", new NHMusicRecord("absolute_zero"), GENERIC),
+    FloraDisc("FloraDisc", new NHMusicRecord("flora"), GENERIC),
+    SweetDreamsDisc("SweetDreamsDisc", new NHMusicRecord("sweet_dreams"), GENERIC),
 
     // ===== Simple Items =====
     MicaBasedPulp("MicaBasedPulp", GENERIC),

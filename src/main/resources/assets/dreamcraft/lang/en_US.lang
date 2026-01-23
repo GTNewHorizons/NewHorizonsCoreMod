@@ -1,3 +1,9 @@
+item.AbsoluteZeroDisc.name=Music Disc
+item.record.dreamcraft:absolute_zero.desc="Absolute Zero" by Sol IX
+item.FloraDisc.name=Music Disc
+item.record.dreamcraft:flora.desc="Flora" by Sol IX
+item.SweetDreamsDisc.name=Music Disc
+item.record.dreamcraft:sweet_dreams.desc="Sweet Dreams" by Aviators
 item.TenKCell.name=10K Cell
 item.ThirtyKCell.name=30K Cell
 item.SixtyKCell.name=60K Cell
