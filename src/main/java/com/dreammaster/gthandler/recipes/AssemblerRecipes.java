@@ -2625,14 +2625,14 @@ public class AssemblerRecipes implements Runnable {
         // Spinmatron Centrifuge Casings
         GTValues.RA.stdBuilder()
                 .itemInputs(GregtechItemList.Casing_Centrifuge1.get(1), WerkstoffLoader.HDCS.get(OrePrefixes.plate, 6))
-                .itemOutputs(ItemList.Chamber_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .itemOutputs(ItemList.Spinmatron_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GregtechItemList.Casing_SifterGrate.get(1),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.NaquadahEnriched, 6))
-                .itemOutputs(ItemList.Chamber_Grate.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .itemOutputs(ItemList.Spinmatron_Chamber_Grate.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
         if (HardcoreEnderExpansion.isModLoaded()) {
@@ -3790,7 +3790,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4))
-                .circuit(13).itemOutputs(ItemList.Field_Generator_EV.get(1)).fluidInputs(Materials.HSSG.getMolten(576))
+                .circuit(1).itemOutputs(ItemList.Field_Generator_EV.get(1)).fluidInputs(Materials.HSSG.getMolten(576))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
