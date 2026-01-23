@@ -16,7 +16,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
@@ -58,7 +58,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
                 "craftingToolFile",
                 "circuitAdvanced",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "circuitAdvanced",
                 "itemCasingTungstenSteel",
                 "screwTungstenSteel",

@@ -55,7 +55,7 @@ public class ScriptIguanaTweaks implements IScriptLoader {
         /*
          * oredict so the recipes modified in iguanatweaks will work those are exceptionnally in iguanatweaks because
          * the items in the recipes are registered at PostInit=
-         */ GTOreDictUnificator.registerOre("toolHeadSawArdite", NHItemList.SawBladeArdite.getIS());
-        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", NHItemList.SawBladeManyullyn.getIS());
+         */ GTOreDictUnificator.registerOre("toolHeadSawArdite", NHItemList.SawBladeArdite.get());
+        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", NHItemList.SawBladeManyullyn.get());
     }
 }

@@ -5,8 +5,8 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -24,7 +24,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -88,14 +87,8 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack NIOBIUM_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1L);
         final ItemStack NETHER_QUARTZ_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
         final ItemStack LAPIS_SCREW = GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
-        final ItemStack FLUID_CORE_1 = getModItem(
-                NewHorizonsCoreMod.ID,
-                "item.EngineeringProcessorFluidDiamondCore",
-                1);
-        final ItemStack FLUID_CORE_2 = getModItem(
-                NewHorizonsCoreMod.ID,
-                "item.EngineeringProcessorFluidEmeraldCore",
-                1);
+        final ItemStack FLUID_CORE_1 = NHItemList.EngineeringProcessorFluidDiamondCore.get();
+        final ItemStack FLUID_CORE_2 = NHItemList.EngineeringProcessorFluidEmeraldCore.get();
         final ItemStack FISH = getModItem(Minecraft.ID, "fish", 1, 0);
         final ItemStack CELL_1 = getModItem(AE2FluidCraft.ID, "fluid_storage1", 1, 0);
         final ItemStack CELL_4 = getModItem(AE2FluidCraft.ID, "fluid_storage4", 1, 0);
@@ -323,7 +316,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         'D',
                         "circuitPrimitive",
                         'C',
-                        CustomItemList.ChargedCertusQuartzDust.get(1),
+                        NHItemList.ChargedCertusQuartzDust.get(),
                         'E',
                         FLUID_CORE_1));
         GameRegistry.addRecipe(
@@ -455,9 +448,9 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Basic.get(1))
                 .circuit(1).itemOutputs(COMPONENT_1).fluidInputs(Materials.Lead.getMolten(288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -465,9 +458,9 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Basic.get(1))
                 .circuit(1).itemOutputs(COMPONENT_1).fluidInputs(Materials.Tin.getMolten(144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -475,9 +468,9 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        NHItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Basic.get(1))
                 .circuit(1).itemOutputs(COMPONENT_1).fluidInputs(Materials.SolderingAlloy.getMolten(72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -488,7 +481,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         ItemList.Electric_Pump_LV.get(2),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
                 .circuit(1).itemOutputs(COMPONENT_4).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -498,7 +491,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         ItemList.Electric_Pump_LV.get(2),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
                 .circuit(1).itemOutputs(COMPONENT_4).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -508,7 +501,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         ItemList.Electric_Pump_LV.get(2),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
                 .circuit(1).itemOutputs(COMPONENT_4).fluidInputs(Materials.SolderingAlloy.getMolten(72))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -519,7 +512,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         ItemList.Electric_Pump_MV.get(1),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(2),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
                 .circuit(1).itemOutputs(COMPONENT_16).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -529,7 +522,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         ItemList.Electric_Pump_MV.get(1),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(2),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
                 .circuit(1).itemOutputs(COMPONENT_16).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -539,7 +532,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         ItemList.Electric_Pump_MV.get(1),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(2),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
                 .circuit(1).itemOutputs(COMPONENT_16).fluidInputs(Materials.SolderingAlloy.getMolten(72))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -550,7 +543,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         ItemList.Electric_Pump_MV.get(2),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(4),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(4),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
                 .circuit(1).itemOutputs(COMPONENT_64).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -560,7 +553,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         ItemList.Electric_Pump_MV.get(2),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(4),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(4),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
                 .circuit(1).itemOutputs(COMPONENT_64).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -570,7 +563,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         ItemList.Electric_Pump_MV.get(2),
-                        NHItemList.EngineeringProcessorFluidDiamondCore.getIS(4),
+                        NHItemList.EngineeringProcessorFluidDiamondCore.get(4),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
                 .circuit(1).itemOutputs(COMPONENT_64).fluidInputs(Materials.SolderingAlloy.getMolten(72))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -581,7 +574,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         ItemList.Electric_Pump_HV.get(1),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(1),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                 .circuit(1).itemOutputs(COMPONENT_256).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
@@ -591,7 +584,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         ItemList.Electric_Pump_HV.get(1),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(1),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                 .circuit(1).itemOutputs(COMPONENT_256).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
@@ -601,7 +594,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         ItemList.Electric_Pump_HV.get(1),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(1),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(1),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                 .circuit(1).itemOutputs(COMPONENT_256).fluidInputs(Materials.SolderingAlloy.getMolten(72))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
@@ -612,7 +605,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
                         ItemList.Electric_Pump_HV.get(2),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(2),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(2),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                 .circuit(1).itemOutputs(COMPONENT_1024).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
@@ -622,7 +615,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
                         ItemList.Electric_Pump_HV.get(2),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(2),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(2),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                 .circuit(1).itemOutputs(COMPONENT_1024).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
@@ -632,7 +625,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
                         ItemList.Electric_Pump_HV.get(2),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(2),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(2),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                 .circuit(1).itemOutputs(COMPONENT_1024).fluidInputs(Materials.SolderingAlloy.getMolten(72))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
@@ -643,7 +636,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         ItemList.Electric_Pump_EV.get(1),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(4),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(4),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1))
                 .circuit(1).itemOutputs(COMPONENT_4096).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
@@ -653,7 +646,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         ItemList.Electric_Pump_EV.get(1),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(4),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(4),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1))
                 .circuit(1).itemOutputs(COMPONENT_4096).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
@@ -663,7 +656,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         ItemList.Electric_Pump_EV.get(1),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(4),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(4),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1))
                 .circuit(1).itemOutputs(COMPONENT_4096).fluidInputs(Materials.SolderingAlloy.getMolten(72))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
@@ -674,7 +667,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         ItemList.Electric_Pump_EV.get(2),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(8),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(8),
                         ItemList.Circuit_Board_Bio_Ultra.get(1))
                 .circuit(1).itemOutputs(COMPONENT_16384).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
@@ -684,7 +677,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         ItemList.Electric_Pump_EV.get(2),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(8),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(8),
                         ItemList.Circuit_Board_Bio_Ultra.get(1))
                 .circuit(1).itemOutputs(COMPONENT_16384).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
@@ -694,7 +687,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         ItemList.Electric_Pump_EV.get(2),
-                        NHItemList.EngineeringProcessorFluidEmeraldCore.getIS(8),
+                        NHItemList.EngineeringProcessorFluidEmeraldCore.get(8),
                         ItemList.Circuit_Board_Bio_Ultra.get(1))
                 .circuit(1).itemOutputs(COMPONENT_16384).fluidInputs(Materials.SolderingAlloy.getMolten(72))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
@@ -734,13 +727,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'k',
                 AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
                 'l',
-                createItemStack(
-                        AE2FluidCraft.ID,
-                        "fluid_packet",
-                        1,
-                        0,
-                        "{FluidStack:{FluidName:water,Amount:2147483647}}",
-                        missing));
+                getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 3));
 
         // Fluid Quantum Drive
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(

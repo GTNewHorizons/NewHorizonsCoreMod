@@ -12,7 +12,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.item.food.QuantumBread;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -982,7 +982,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'M', ItemList.Hull_UMV });
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Food_Sliced_Breads.get(1L), ItemList.Shape_Slicer_Flat.get(0L))
-                .itemOutputs(new ItemStack(QuantumBread.Instance(), 1)).duration(20 * TICKS).eut(TierEU.RECIPE_UV)
+                .itemOutputs(NHItemList.QuantumBread.get()).duration(20 * TICKS).eut(TierEU.RECIPE_UV)
                 .addTo(cutterRecipes);
         if (CookingForBlockheads.isModLoaded() && PamsHarvestCraft.isModLoaded()) {
             GTValues.RA.stdBuilder()

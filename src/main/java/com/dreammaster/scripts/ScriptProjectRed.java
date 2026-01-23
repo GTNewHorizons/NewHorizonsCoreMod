@@ -67,8 +67,6 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
-import mrtjp.projectred.ProjectRedCore;
-import mrtjp.projectred.ProjectRedExploration;
 
 public class ScriptProjectRed implements IScriptLoader {
 
@@ -197,7 +195,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "itemCasingSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "itemCasingSteel",
-                NHItemList.DiamondDrillTip.getIS(1),
+                NHItemList.DiamondDrillTip.get(1),
                 getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing),
                 "circuitBasic",
                 "itemCasingSteel",
@@ -287,7 +285,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                NHItemList.SawBladeRuby.getIS(1),
+                NHItemList.SawBladeRuby.get(1),
                 "stickSteel",
                 null,
                 null,
@@ -298,7 +296,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                NHItemList.SawBladeSapphire.getIS(1),
+                NHItemList.SawBladeSapphire.get(1),
                 "stickSteel",
                 null,
                 null,
@@ -309,7 +307,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                NHItemList.SawBladePeridot.getIS(1),
+                NHItemList.SawBladePeridot.get(1),
                 "stickSteel",
                 null,
                 null,
@@ -2568,7 +2566,7 @@ public class ScriptProjectRed implements IScriptLoader {
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5))
-                    .circuit(2).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1))
+                    .circuit(10).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                     .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
             // NOT Gate
@@ -3535,25 +3533,25 @@ public class ScriptProjectRed implements IScriptLoader {
         // Low Load Power Cable
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.ElectrotineWire.getIS(1),
+                        NHItemList.ElectrotineWire.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34))
                 .duration(5 * SECONDS).eut(8).requireMods(ProjectRedTransmission).addTo(packagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.ElectrotineWire.getIS(1),
+                        NHItemList.ElectrotineWire.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34))
                 .duration(5 * SECONDS).eut(8).requireMods(ProjectRedTransmission).addTo(packagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.ElectrotineWire.getIS(1),
+                        NHItemList.ElectrotineWire.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34))
                 .duration(5 * SECONDS).eut(8).requireMods(ProjectRedTransmission).addTo(packagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34))
-                .itemOutputs(NHItemList.ElectrotineWire.getIS(1)).duration(5 * SECONDS).eut(8)
+                .itemOutputs(NHItemList.ElectrotineWire.get(1)).duration(5 * SECONDS).eut(8)
                 .requireMods(ProjectRedTransmission).addTo(unpackagerRecipes);
 
         // All Framed Wire Variants
