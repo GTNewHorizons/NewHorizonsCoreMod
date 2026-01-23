@@ -4,6 +4,7 @@ import net.minecraft.item.ItemRecord;
 import net.minecraft.util.ResourceLocation;
 
 public class NHMusicRecord extends ItemRecord {
+
     private final String sound;
 
     public NHMusicRecord(String sound) {

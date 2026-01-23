@@ -9,7 +9,6 @@ import static com.dreammaster.creativetab.ModTabList.SOLAR;
 import static com.dreammaster.creativetab.ModTabList.SPACE;
 import static com.dreammaster.creativetab.ModTabList.THAUMCRAFT;
 
-import com.dreammaster.item.record.NHMusicRecord;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.baubles.OvenGlove;
 import com.dreammaster.item.baubles.WitherProtectionRing;
 import com.dreammaster.item.food.QuantumBread;
+import com.dreammaster.item.record.NHMusicRecord;
 import com.dreammaster.lib.Refstrings;
 
 import cpw.mods.fml.common.registry.GameRegistry;
