@@ -2137,7 +2137,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { ItemList.Hatch_Output_ME.get(1L), FLUID_SINGULARITY });
 
         // Pre-add planet block to EOH controller
-        for (String dimAbbreviation : DimensionHelper.DimNameDisplayed) {
+        for (String dimAbbreviation : DimensionHelper.getAllDisplayedNames()) {
             ItemStack dimDisplay = new ItemStack(ModBlocks.getBlock(dimAbbreviation));
             ItemStack EOHController = tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L);
             ItemStack NBTController = EOHController.copy();

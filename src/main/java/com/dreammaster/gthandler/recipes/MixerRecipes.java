@@ -894,7 +894,7 @@ public class MixerRecipes implements Runnable {
                 .itemOutputs(Materials.AstralSilver.getDust(3)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(mixerRecipes);
 
-        // Chamber Centrifuge Tier2 Fluid
+        // Spinmatron Tier2 Fluid
         GTValues.RA.stdBuilder().itemInputs(Materials.CosmicNeutronium.getDust(4), Materials.Glowstone.getNanite(2))
                 .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), Materials.LumipodExtract.getFluid(1000))
                 .fluidOutputs(Materials.BiocatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)

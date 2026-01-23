@@ -2625,14 +2625,14 @@ public class AssemblerRecipes implements Runnable {
         // Spinmatron Centrifuge Casings
         GTValues.RA.stdBuilder()
                 .itemInputs(GregtechItemList.Casing_Centrifuge1.get(1), WerkstoffLoader.HDCS.get(OrePrefixes.plate, 6))
-                .itemOutputs(ItemList.Chamber_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .itemOutputs(ItemList.Spinmatron_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GregtechItemList.Casing_SifterGrate.get(1),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.NaquadahEnriched, 6))
-                .itemOutputs(ItemList.Chamber_Grate.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .itemOutputs(ItemList.Spinmatron_Chamber_Grate.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
         if (HardcoreEnderExpansion.isModLoaded()) {
