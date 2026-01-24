@@ -1,0 +1,8 @@
+{
+  "record.absolute_zero": {"category": "record", "sounds": [{"name": "music/absolute_zero_sol_ix", "stream": true}]},
+  "record.flora": {"category": "record", "sounds": [{"name": "music/flora_sol_ix", "stream": true}]},
+  "record.sweet_dreams": {"category": "record", "sounds": [{"name": "music/sweet_dreams_aviators", "stream": true}]},
+  "records.record.absolute_zero": {"category": "record", "sounds": [{"name": "music/absolute_zero_sol_ix", "stream": true}]},
+  "records.record.flora": {"category": "record", "sounds": [{"name": "music/flora_sol_ix", "stream": true}]},
+  "records.record.sweet_dreams": {"category": "record", "sounds": [{"name": "music/sweet_dreams_aviators", "stream": true}]}
+}
