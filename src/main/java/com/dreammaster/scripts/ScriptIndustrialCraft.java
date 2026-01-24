@@ -14,8 +14,8 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
+import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.latheRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
@@ -1536,12 +1536,10 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .duration(1 * SECONDS + 12 * TICKS).eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.coffee", 500)).duration(8).eut(1)
-                .addTo(fluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("potion.coffee", 500)).duration(8).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.latte", 500)).duration(8).eut(1)
-                .addTo(fluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("potion.latte", 500)).duration(8).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFoamSprayer", 1, 0, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1552,7 +1550,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:8000}}",
                                 missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 8000)).duration(6 * SECONDS + 9 * TICKS)
-                .eut(1).addTo(fluidCannerRecipes);
+                .eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1563,19 +1561,18 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:8000}}",
                                 missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 8000)).duration(6 * SECONDS + 9 * TICKS)
-                .eut(1).addTo(fluidCannerRecipes);
+                .eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TenKCell.get())
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(16).eut(1)
-                .addTo(fluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(16).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.ThirtyKCell.get())
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantTriple", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 3000)).duration(2 * SECONDS + 8 * TICKS).eut(1)
-                .addTo(fluidCannerRecipes);
+                .addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.SixtyKCell.get())
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 6000)).duration(4 * SECONDS + 16 * TICKS).eut(1)
-                .addTo(fluidCannerRecipes);
+                .addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 720)).duration(15 * SECONDS).eut(30)
