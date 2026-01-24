@@ -179,7 +179,7 @@ public class OreDictHandler {
 
         OreDictionary.registerOre("ingotHotBrickNether", NHItemList.HotNetherrackBrick.get());
 
-        OreDictionary.registerOre("oreZinc", BlockList.ZincGravelOre.getIS());
+        OreDictionary.registerOre("oreZinc", BlockList.ZincGravelOre.get());
 
         // Olivine = Peridot
         for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {

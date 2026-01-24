@@ -119,7 +119,7 @@ public class FluidSolidifierRecipes implements Runnable {
                 .eut(TierEU.RECIPE_UEV).duration(5 * SECONDS).addTo(fluidSolidifierRecipes);
         if (Botania.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L))
-                    .itemOutputs(BlockList.Gaia.getIS(1)).fluidInputs(Materials.GaiaSpirit.getMolten(1296L))
+                    .itemOutputs(BlockList.Gaia.get(1)).fluidInputs(Materials.GaiaSpirit.getMolten(1296L))
                     .duration(2 * SECONDS).eut(TierEU.RECIPE_IV).addTo(fluidSolidifierRecipes);
         }
 

@@ -78,11 +78,11 @@ public enum BlockList {
         block.setCreativeTab(ModTabList.BLOCKS);
     }
 
-    public ItemStack getIS() {
+    public ItemStack get() {
         return new ItemStack(block, 1);
     }
 
-    public ItemStack getIS(int amount) {
+    public ItemStack get(int amount) {
         return new ItemStack(block, amount);
     }
 
