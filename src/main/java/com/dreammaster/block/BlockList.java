@@ -9,6 +9,7 @@ import com.dreammaster.lib.Refstrings;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
+@SuppressWarnings("SameParameterValue")
 public enum BlockList {
 
     // ===== Generic Blocks =====
