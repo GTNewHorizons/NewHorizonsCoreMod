@@ -1087,7 +1087,7 @@ public class DTPFRecipes implements Runnable {
                     .calculateNonEBFRecipe(total_EUt, recipe_time_per_quantum_ingot);
             GTValues.RA.stdBuilder().itemInputs(
                     GregtechItemList.Energy_Core_UHV.get(0),
-                    BlockList.Quantinum.getIS(2),
+                    BlockList.Quantinum.get(2),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(2))
                     .itemOutputs(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
@@ -1107,7 +1107,7 @@ public class DTPFRecipes implements Runnable {
             // Quantum + Astral Titanium v2
             GTValues.RA.stdBuilder().itemInputs(
                     GregtechItemList.Energy_Core_UHV.get(0),
-                    BlockList.Quantinum.getIS(4),
+                    BlockList.Quantinum.get(4),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(3))
                     .itemOutputs(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getBlock(4))

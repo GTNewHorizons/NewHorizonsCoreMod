@@ -48,49 +48,47 @@ public class ForgeHammerRecipes implements Runnable {
                 .addTo(hammerRecipes);
 
         // Uncompressed coal variants
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCharcoal.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCharcoal.get(1))
                 .itemOutputs(Materials.Charcoal.getBlocks(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.getIS(1)).itemOutputs(Materials.Coal.getBlocks(9))
+        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.get(1)).itemOutputs(Materials.Coal.getBlocks(9))
                 .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.get(1))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCharcoal.getIS(1))
-                .itemOutputs(BlockList.CompressedCharcoal.getIS(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCoal.getIS(1))
-                .itemOutputs(BlockList.CompressedCoal.getIS(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCoalCoke.getIS(1))
-                .itemOutputs(BlockList.CompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCharcoal.get(1))
+                .itemOutputs(BlockList.CompressedCharcoal.get(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCoal.get(1))
+                .itemOutputs(BlockList.CompressedCoal.get(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCoalCoke.get(1))
+                .itemOutputs(BlockList.CompressedCoalCoke.get(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCharcoal.getIS(1))
-                .itemOutputs(BlockList.DoubleCompressedCharcoal.getIS(9)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCharcoal.get(1))
+                .itemOutputs(BlockList.DoubleCompressedCharcoal.get(9)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCoal.getIS(1))
-                .itemOutputs(BlockList.DoubleCompressedCoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCoalCoke.getIS(1))
-                .itemOutputs(BlockList.DoubleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCharcoal.getIS(1))
-                .itemOutputs(BlockList.TripleCompressedCharcoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCoal.getIS(1))
-                .itemOutputs(BlockList.TripleCompressedCoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCoalCoke.getIS(1))
-                .itemOutputs(BlockList.TripleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCoal.get(1))
+                .itemOutputs(BlockList.DoubleCompressedCoal.get(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCoalCoke.get(1))
+                .itemOutputs(BlockList.DoubleCompressedCoalCoke.get(9)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCharcoal.getIS(1))
-                .itemOutputs(BlockList.QuadrupleCompressedCharcoal.getIS(9)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCharcoal.get(1))
+                .itemOutputs(BlockList.TripleCompressedCharcoal.get(9)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCoal.getIS(1))
-                .itemOutputs(BlockList.QuadrupleCompressedCoal.getIS(9)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCoal.get(1))
+                .itemOutputs(BlockList.TripleCompressedCoal.get(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCoalCoke.get(1))
+                .itemOutputs(BlockList.TripleCompressedCoalCoke.get(9)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCoalCoke.getIS(1))
-                .itemOutputs(BlockList.QuadrupleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
+
+        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCharcoal.get(1))
+                .itemOutputs(BlockList.QuadrupleCompressedCharcoal.get(9)).duration(15 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCoal.get(1))
+                .itemOutputs(BlockList.QuadrupleCompressedCoal.get(9)).duration(15 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCoalCoke.get(1))
+                .itemOutputs(BlockList.QuadrupleCompressedCoalCoke.get(9)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CompressedBioBall.get(1)).itemOutputs(NHItemList.BioBall.get())
@@ -120,20 +118,20 @@ public class ForgeHammerRecipes implements Runnable {
                     .addTo(hammerRecipes);
         }
         if (Botania.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(BlockList.Gaia.getIS(1))
+            GTValues.RA.stdBuilder().itemInputs(BlockList.Gaia.get(1))
                     .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 32L, 5))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("prismaticacid"), 1152)).duration(16 * TICKS)
                     .eut(TierEU.RECIPE_LuV).addTo(hammerRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(BlockList.ManaPearl.getIS(1))
+            GTValues.RA.stdBuilder().itemInputs(BlockList.ManaPearl.get(1))
                     .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 9L, 1)).duration(16 * TICKS)
                     .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(BlockList.ManaPowder.getIS(1))
+            GTValues.RA.stdBuilder().itemInputs(BlockList.ManaPowder.get(1))
                     .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 9L, 23)).duration(16 * TICKS)
                     .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(BlockList.PixieDust.getIS(1))
+            GTValues.RA.stdBuilder().itemInputs(BlockList.PixieDust.get(1))
                     .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 9L, 8)).duration(16 * TICKS)
                     .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
         }
