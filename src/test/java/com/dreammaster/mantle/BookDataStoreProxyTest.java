@@ -2,18 +2,19 @@ package com.dreammaster.mantle;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import eu.usrv.yamcore.auxiliary.LogHelper;
 import mantle.books.BookData;
 import mantle.books.BookDataStore;
 
@@ -21,7 +22,7 @@ import mantle.books.BookDataStore;
 class BookDataStoreProxyTest {
 
     @Mock
-    LogHelper LOGGER;
+    Logger LOGGER;
 
     @Mock
     BookData BOOKDATA;
@@ -69,7 +70,7 @@ class BookDataStoreProxyTest {
             bookDataStoreProxy.addBook(BOOKDATA);
 
             bookDataStore.verify(() -> BookDataStore.addBook(BOOKDATA));
-            verify(LOGGER).error(anyString());
+            verify(LOGGER).error(anyString(), any(Object[].class));
         }
     }
 }

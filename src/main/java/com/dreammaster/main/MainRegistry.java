@@ -30,6 +30,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
@@ -102,7 +105,6 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import eu.usrv.yamcore.YAMCore;
 import eu.usrv.yamcore.auxiliary.IngameErrorLog;
-import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
@@ -145,7 +147,7 @@ public class MainRegistry {
     public static CoreModConfig CoreConfig;
     public static SimpleNetworkWrapper dispatcher;
     public static Random Rnd;
-    public static LogHelper Logger = new LogHelper(Refstrings.MODID);
+    public static Logger Logger = LogManager.getLogger(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
     private static boolean handleAchievements;
 
@@ -177,8 +179,6 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void PreLoad(FMLPreInitializationEvent PreEvent) {
-        Logger.setDebugOutput(true);
-
         Rnd = new Random(System.currentTimeMillis());
 
         // ------------------------------------------------------------
@@ -188,10 +188,7 @@ public class MainRegistry {
                 Refstrings.COLLECTIONID,
                 Refstrings.MODID);
         if (!CoreConfig.LoadConfig()) {
-            Logger.error(
-                    String.format(
-                            "%s could not load its config file. Things are going to be weird!",
-                            Refstrings.MODID));
+            Logger.error("{} could not load its config file. Things are going to be weird!", Refstrings.MODID);
         }
         // ------------------------------------------------------------
 
@@ -312,7 +309,7 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
         }
         Logger.warn("==================================================");
-        Logger.warn("Welcome to Gregtech:New Horizons " + CoreModConfig.ModPackVersion);
+        Logger.warn("Welcome to Gregtech:New Horizons {}", CoreModConfig.ModPackVersion);
         Logger.warn("Please bring comments to " + "https://discord.gg/gtnh");
         Logger.warn("==================================================");
 
@@ -542,7 +539,7 @@ public class MainRegistry {
                 Logger.info("Modpack has been updated, loading default quest database");
                 final long l = System.currentTimeMillis();
                 event.getServer().getCommandManager().executeCommand(event.getServer(), "/bq_admin default load");
-                Logger.info("Loading quest data base took " + (System.currentTimeMillis() - l) + "ms");
+                Logger.info("Loading quest data base took {}ms", System.currentTimeMillis() - l);
             }
         }
     }
