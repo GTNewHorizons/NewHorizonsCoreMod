@@ -42,7 +42,6 @@ import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.client.util.GTNHPauseScreen;
-import com.dreammaster.command.AllPurposeDebugCommand;
 import com.dreammaster.command.CustomDropsCommand;
 import com.dreammaster.command.CustomFuelsCommand;
 import com.dreammaster.command.CustomToolTipsCommand;
@@ -530,9 +529,6 @@ public class MainRegistry {
         }
         if (CoreConfig.ModCustomDrops_Enabled) {
             event.registerServerCommand(new CustomDropsCommand());
-        }
-        if (YAMCore.isDebug()) {
-            event.registerServerCommand(new AllPurposeDebugCommand());
         }
         if (Mods.BetterQuesting.isModLoaded()) {
             if (!bqConfig$ReloadOnStartup() && DreamCoreMod.modpackHasUpdated()) {
