@@ -359,13 +359,14 @@ public class MainRegistry {
         }
     }
 
-    public static Block _mBlockBabyChest = new BlockBabyChest();
+    public static Block blockBabyChest = new BlockBabyChest();
 
     private void InitAdditionalBlocks() {
-        GameRegistry.registerBlock(_mBlockBabyChest, ItemBlockBabyChest.class, "BabyChest");
-        GameRegistry.addShapelessRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
+        GameRegistry.registerBlock(blockBabyChest, ItemBlockBabyChest.class, "BabyChest");
+        blockBabyChest.setCreativeTab(ModTabList.BLOCKS);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(_mBlockBabyChest, 9))
+        GameRegistry.addShapelessRecipe(new ItemStack(blockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(blockBabyChest, 9))
                 .itemOutputs(new ItemStack(Blocks.chest, 1, 0)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GameRegistry.registerTileEntity(TileEntityBabyChest.class, "teBabyChest");
