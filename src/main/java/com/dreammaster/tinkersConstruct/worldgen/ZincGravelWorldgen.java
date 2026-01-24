@@ -6,6 +6,7 @@ import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.Ev
 
 import java.util.Random;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate;
@@ -20,7 +21,7 @@ import tconstruct.world.gen.SurfaceOreGen;
 
 public class ZincGravelWorldgen {
 
-    private final SurfaceOreGen zincSurface = new SurfaceOreGen(TiCoLoader.ZINC_GRAVEL_ORE, 0, 12, true);
+    private final SurfaceOreGen zincSurface = new SurfaceOreGen(BlockList.ZincGravelOre.block, 0, 12, true);
 
     private static final ImmutableCollection<BiomeGenBase> EXTRA_ORE_BIOMES = ImmutableList
             .of(extremeHills, extremeHillsEdge);

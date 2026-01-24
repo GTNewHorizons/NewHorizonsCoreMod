@@ -3,9 +3,9 @@ package com.dreammaster.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockDiamondFrameBox extends Block {
+public class DiamondFrameBox extends Block {
 
-    public BlockDiamondFrameBox() {
+    public DiamondFrameBox() {
         super(Material.iron);
         setHardness(25f);
         setHarvestLevel("pickaxe", 3);

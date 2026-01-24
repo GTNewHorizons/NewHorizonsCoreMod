@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTModHandler.getModItem;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -12,36 +13,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.mantle.BookLoader;
-import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOre;
-import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOreItem;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelWorldgen;
 import com.gtnewhorizons.postea.api.BlockReplacementManager;
 import com.gtnewhorizons.postea.api.ItemStackReplacementManager;
 import com.gtnewhorizons.postea.api.TileEntityReplacementManager;
 import com.gtnewhorizons.postea.utility.BlockConversionInfo;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class TiCoLoader {
-
-    public static Block ZINC_GRAVEL_ORE;
-
-    public static void doPreInitialization() {
-        registerZincGravelOre();
-    }
-
-    private static void registerZincGravelOre() {
-        ZINC_GRAVEL_ORE = new ZincGravelOre().setBlockName("block.ore.gravel.zinc");
-        ZINC_GRAVEL_ORE.setHarvestLevel("shovel", 1, 0);
-        GameRegistry.registerBlock(ZINC_GRAVEL_ORE, ZincGravelOreItem.class, "ZincGravelOre");
-        OreDictionary.registerOre("oreZinc", new ItemStack(ZINC_GRAVEL_ORE, 1, 0));
-    }
 
     public static void doInitialization() {
         registerZincGravelOreWorldGen();
@@ -158,12 +142,12 @@ public class TiCoLoader {
         String targetBlock = "TConstruct:GravelOre";
         BlockReplacementManager.addBlockReplacement(targetBlock, (blockConversionInfoOld, world) -> {
             BlockConversionInfo blockConversionInfoNew = new BlockConversionInfo();
-            blockConversionInfoNew.blockID = Block.getIdFromBlock(ZINC_GRAVEL_ORE);
+            blockConversionInfoNew.blockID = Block.getIdFromBlock(BlockList.ZincGravelOre.block);
             blockConversionInfoNew.metadata = 0;
             return blockConversionInfoNew;
         });
         ItemStackReplacementManager.addItemReplacement(targetBlock, tag -> {
-            tag.setShort("id", (short) Block.getIdFromBlock(ZINC_GRAVEL_ORE));
+            tag.setShort("id", (short) Block.getIdFromBlock(BlockList.ZincGravelOre.block));
             tag.setShort("Damage", (short) 0);
             return tag;
         });

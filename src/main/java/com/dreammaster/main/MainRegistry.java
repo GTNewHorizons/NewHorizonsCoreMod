@@ -319,7 +319,6 @@ public class MainRegistry {
         MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
 
         if (TinkerConstruct.isModLoaded()) {
-            TiCoLoader.doPreInitialization();
             GregTechAPI.sAfterGTPreload.add(SmelteryFluidTypes::registerGregtechFluidTypes);
         }
     }

@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -177,6 +178,8 @@ public class OreDictHandler {
         OreDictionary.registerOre("foodSalt", NHItemList.EdibleSalt.get());
 
         OreDictionary.registerOre("ingotHotBrickNether", NHItemList.HotNetherrackBrick.get());
+
+        OreDictionary.registerOre("oreZinc", BlockList.ZincGravelOre.getIS());
 
         // Olivine = Peridot
         for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {

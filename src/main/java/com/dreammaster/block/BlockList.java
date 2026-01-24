@@ -15,8 +15,9 @@ public enum BlockList {
     // ===== Generic Blocks =====
     SandClayMix("SandClayMix", gravelLike(0, 0.5f)),
     PistonBlock("PistonBlock", stoneLike(1, 0.5f)),
-    DiamondFrameBox("DiamondFrameBox", new BlockDiamondFrameBox()), // FIXME: Move to GT5U
+    DiamondFrameBox("DiamondFrameBox", new DiamondFrameBox()), // FIXME: Move to GT5U
     CompressedGraphite("CompressedGraphite", stoneLike(1, 5f)),
+    ZincGravelOre("ZincGravelOre", new ZincGravelOre()),
 
     // ===== Resource Blocks =====
     // FIXME: Move these to GT5-Unofficial
