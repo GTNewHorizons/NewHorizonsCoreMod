@@ -145,8 +145,9 @@ public class WitcheryPlugin extends BasePluginWitchery {
             }
         }
         log.warn(
-                "There is no cauldron recipe matching these items: last: {}, rest: " + Arrays.toString(items),
-                lastItem);
+                "There is no cauldron recipe matching these items: last: {}, rest: {}",
+                lastItem,
+                Arrays.toString(items));
     }
 
     private static void removeAllKettleRecipe(ItemStack output) {

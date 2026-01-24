@@ -87,7 +87,7 @@ public enum BlockList {
         for (BlockList bl : BlockList.values()) {
             if (bl.Block != null) {
                 if (!pBlockManager.AddItemToManagedRegistry(bl.Block)) {
-                    MainRegistry.Logger.error(String.format("Block [%s] failed to register", bl.toString()));
+                    MainRegistry.Logger.error("Block [{}] failed to register", bl.toString());
                     tResult = false;
                 }
             }

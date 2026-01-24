@@ -98,7 +98,7 @@ public class GTNHPauseScreen {
             final URI uri = new URI(address);
             FilesUtil.openUri(uri);
         } catch (Throwable throwable) {
-            MainRegistry.Logger.error("Couldn't open link", throwable);
+            MainRegistry.Logger.error("Couldn't open link: {}", throwable.toString());
         }
     }
 
