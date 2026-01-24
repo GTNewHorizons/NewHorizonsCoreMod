@@ -6,12 +6,11 @@ import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.Ev
 
 import java.util.Random;
 
-import com.dreammaster.block.BlockList;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate;
 
-import com.dreammaster.tinkersConstruct.TiCoLoader;
+import com.dreammaster.block.BlockList;
 import com.google.common.collect.ImmutableCollection;
 import com.google.common.collect.ImmutableList;
 
