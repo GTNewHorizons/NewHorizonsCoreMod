@@ -78,7 +78,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator
                 .registerOre(OrePrefixes.compressed, Materials.Quantium, NHItemList.QuantinumCompressedPlate.get());
         GTOreDictUnificator
-                .registerOre(OrePrefixes.block, Materials.MysteriousCrystal, BlockList.MysteriousCrystal.getIS());
+                .registerOre(OrePrefixes.block, Materials.MysteriousCrystal, BlockList.MysteriousCrystalBlock.getIS());
         GTOreDictUnificator.registerOre(
                 OrePrefixes.compressed,
                 Materials.MysteriousCrystal,

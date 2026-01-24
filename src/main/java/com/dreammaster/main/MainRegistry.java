@@ -559,27 +559,36 @@ public class MainRegistry {
         HashMap<String, Block> blockListRemaps = null;
 
         for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
-            if (mapping.type == GameRegistry.Type.ITEM) {
-                if (mapping.name.startsWith("dreamcraft:item.")) {
-                    // Remap all the old Yamcl names (for items)
-                    if (itemListRemaps == null) {
-                        itemListRemaps = createNHItemListRemaps();
-                    }
-
-                    mapping.remap(itemListRemaps.get(mapping.name.substring(16)));
-                } else if ("dreamcraft:itemQuantumToast".equals(mapping.name)) {
-                    // Replace the old Quantum Bread declaration with the new one.
-                    mapping.remap(NHItemList.QuantumBread.item);
-                }
-            } else if (mapping.type == GameRegistry.Type.BLOCK) {
-                if (!mapping.name.startsWith("dreamcraft:tile.")) continue;
-
-                // Remap all the old Yamcl names (for blocks)
+            // Remap all the old Yamcl names (for Blocks & their ItemBlocks)
+            if (mapping.name.startsWith("dreamcraft:tile.")) {
                 if (blockListRemaps == null) {
                     blockListRemaps = createBlockListRemaps();
                 }
 
-                mapping.remap(blockListRemaps.get(mapping.name.substring(16)));
+                final Block newBlockID = blockListRemaps.get(mapping.name.substring(16));
+                if (mapping.type == GameRegistry.Type.ITEM) {
+                    mapping.remap(Item.getItemFromBlock(newBlockID));
+                } else {
+                    mapping.remap(newBlockID);
+                }
+                continue;
+            }
+
+            if (mapping.type != GameRegistry.Type.ITEM) continue;
+
+            // Remap all the old Yamcl names (for Items)
+            if (mapping.name.startsWith("dreamcraft:item.")) {
+                if (itemListRemaps == null) {
+                    itemListRemaps = createNHItemListRemaps();
+                }
+
+                mapping.remap(itemListRemaps.get(mapping.name.substring(16)));
+                continue;
+            }
+
+            if ("dreamcraft:itemQuantumToast".equals(mapping.name)) {
+                // Replace the old Quantum Bread declaration with the new one.
+                mapping.remap(NHItemList.QuantumBread.item);
             }
         }
     }
@@ -604,6 +613,9 @@ public class MainRegistry {
         for (var entry : BlockList.values()) {
             blockListData.put(entry.name, entry.block);
         }
+
+        // Remaps MysteriousCrystal to MysteriousCrystalBlock in order to not conflict with the item
+        blockListData.put("MysteriousCrystal", BlockList.MysteriousCrystalBlock.block);
 
         return blockListData;
     }

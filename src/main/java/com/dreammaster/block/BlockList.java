@@ -23,7 +23,7 @@ public enum BlockList {
     // FIXME: Move these to GT5-Unofficial
     CallistoColdIce("CallistoColdIce", crystal(2, 25f)),
     Ledox("Ledox", metal(3, 50f)),
-    MysteriousCrystal("MysteriousCrystal", crystal(3, 50f)),
+    MysteriousCrystalBlock("MysteriousCrystalBlock", crystal(3, 50f)),
     Mytryl("Mytryl", metal(2, 30f)),
     Quantinum("Quantinum", metal(3, 50f)),
     BlackPlutonium("BlackPlutonium", metal(3, 50f)),
