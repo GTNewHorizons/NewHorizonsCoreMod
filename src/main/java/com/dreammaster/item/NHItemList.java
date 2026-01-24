@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.baubles.OvenGlove;
 import com.dreammaster.item.baubles.WitherProtectionRing;
 import com.dreammaster.item.food.QuantumBread;
+import com.dreammaster.item.record.NHMusicRecord;
 import com.dreammaster.lib.Refstrings;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -29,6 +30,11 @@ public enum NHItemList {
     QuantumBread("QuantumBread", new QuantumBread(), GENERIC),
     BowFletchingCast("BowFletchingCast", new CustomPattern(), MOLDS),
     BowStringCast("BowStringCast", new CustomPattern(), MOLDS),
+
+    // ===== Music Discs =====
+    AbsoluteZeroDisc("AbsoluteZeroDisc", new NHMusicRecord("absolute_zero"), GENERIC),
+    FloraDisc("FloraDisc", new NHMusicRecord("flora"), GENERIC),
+    SweetDreamsDisc("SweetDreamsDisc", new NHMusicRecord("sweet_dreams"), GENERIC),
 
     // ===== Simple Items =====
     MicaBasedPulp("MicaBasedPulp", GENERIC),
