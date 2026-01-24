@@ -61,29 +61,29 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         GTOreDictUnificator
                 .registerOre(OrePrefixes.compressed, Materials.Mytryl, NHItemList.MytrylCompressedPlate.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.block, Materials.Mytryl, BlockList.Mytryl.getIS());
-        GTOreDictUnificator.registerOre("blockCallistoIce", BlockList.CallistoColdIce.getIS());
+        GTOreDictUnificator.registerOre(OrePrefixes.block, Materials.Mytryl, BlockList.Mytryl.get());
+        GTOreDictUnificator.registerOre("blockCallistoIce", BlockList.CallistoColdIce.get());
         GTOreDictUnificator.registerOre(
                 OrePrefixes.compressed,
                 Materials.CallistoIce,
                 NHItemList.CallistoIceCompressedPlate.get());
-        GTOreDictUnificator.registerOre("blockLedox", BlockList.Ledox.getIS());
+        GTOreDictUnificator.registerOre("blockLedox", BlockList.Ledox.get());
         GTOreDictUnificator.registerOre(OrePrefixes.compressed, Materials.Ledox, NHItemList.LedoxCompressedPlate.get());
         GTOreDictUnificator.registerOre(OrePrefixes.stick, Materials.Stone, NHItemList.CobbleStoneRod.get());
         GTOreDictUnificator.registerOre(OrePrefixes.plate, Materials.Stone, NHItemList.StonePlate.get());
         GTOreDictUnificator.registerOre("stickSandstone", NHItemList.SandStoneRod.get());
         GTOreDictUnificator.registerOre("lensReinforcedGlass", NHItemList.ReinforcedGlassLense.get());
         GTOreDictUnificator.registerOre("plateReinforcedGlass", NHItemList.ReinforcedGlassPlate.get());
-        GTOreDictUnificator.registerOre("blockQuantium", BlockList.Quantinum.getIS());
+        GTOreDictUnificator.registerOre("blockQuantium", BlockList.Quantinum.get());
         GTOreDictUnificator
                 .registerOre(OrePrefixes.compressed, Materials.Quantium, NHItemList.QuantinumCompressedPlate.get());
         GTOreDictUnificator
-                .registerOre(OrePrefixes.block, Materials.MysteriousCrystal, BlockList.MysteriousCrystal.getIS());
+                .registerOre(OrePrefixes.block, Materials.MysteriousCrystal, BlockList.MysteriousCrystalBlock.get());
         GTOreDictUnificator.registerOre(
                 OrePrefixes.compressed,
                 Materials.MysteriousCrystal,
                 NHItemList.MysteriousCrystalCompressedPlate.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.block, Materials.BlackPlutonium, BlockList.BlackPlutonium.getIS());
+        GTOreDictUnificator.registerOre(OrePrefixes.block, Materials.BlackPlutonium, BlockList.BlackPlutonium.get());
         GTOreDictUnificator.registerOre(
                 OrePrefixes.dust,
                 Materials.CertusQuartzCharged,

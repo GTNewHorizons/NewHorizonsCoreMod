@@ -563,7 +563,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "itemLeather",
                 "itemLeather");
         addShapedRecipe(
-                BlockList.DiamondFrameBox.getIS(),
+                BlockList.DiamondFrameBox.get(),
                 "stickDiamond",
                 "stickDiamond",
                 "stickDiamond",
@@ -722,79 +722,79 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 6L))
-                .itemOutputs(BlockList.BronzePlatedReinforcedStone.getIS())
+                .itemOutputs(BlockList.BronzePlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 144)).duration(10 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 6L))
-                .itemOutputs(BlockList.SteelPlatedReinforcedStone.getIS())
+                .itemOutputs(BlockList.SteelPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 6L))
-                .itemOutputs(BlockList.TitaniumPlatedReinforcedStone.getIS())
+                .itemOutputs(BlockList.TitaniumPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.platinum", 144)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L))
-                .itemOutputs(BlockList.TungstensteelPlatedReinforcedStone.getIS())
+                .itemOutputs(BlockList.TungstensteelPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iridium", 144)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(64).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 6L))
-                .itemOutputs(BlockList.NaquadahPlatedReinforcedStone.getIS())
+                .itemOutputs(BlockList.NaquadahPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.osmium", 144)).duration(22 * SECONDS + 10 * TICKS)
                 .eut(256).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 6L))
-                .itemOutputs(BlockList.NeutroniumPlatedReinforcedStone.getIS())
+                .itemOutputs(BlockList.NeutroniumPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).duration(25 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
         GTOreDictUnificator.addItemData(
-                BlockList.BronzePlatedReinforcedStone.getIS(),
+                BlockList.BronzePlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Bronze, 6 * GTValues.M),
                         new ItemData(Materials.Steel, 3 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
-                BlockList.SteelPlatedReinforcedStone.getIS(),
+                BlockList.SteelPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Steel, 8 * GTValues.M),
                         new ItemData(Materials.Aluminium, 1 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
-                BlockList.TitaniumPlatedReinforcedStone.getIS(),
+                BlockList.TitaniumPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Titanium, 6 * GTValues.M),
                         new ItemData(Materials.Platinum, 1 * GTValues.M),
                         new ItemData(Materials.Steel, 2 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
-                BlockList.TungstensteelPlatedReinforcedStone.getIS(),
+                BlockList.TungstensteelPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.TungstenSteel, 6 * GTValues.M),
                         new ItemData(Materials.Iridium, 1 * GTValues.M),
                         new ItemData(Materials.Steel, 2 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
-                BlockList.NaquadahPlatedReinforcedStone.getIS(),
+                BlockList.NaquadahPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Naquadah, 6 * GTValues.M),
                         new ItemData(Materials.Osmium, 1 * GTValues.M),
                         new ItemData(Materials.Steel, 2 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
-                BlockList.NeutroniumPlatedReinforcedStone.getIS(),
+                BlockList.NeutroniumPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Neutronium, 6 * GTValues.M),
                         new ItemData(Materials.Naquadria, 1 * GTValues.M),
@@ -814,14 +814,13 @@ public class ScriptCoreMod implements IScriptLoader {
                         NHItemList.CompressedBioBall.get(8))
                 .itemOutputs(NHItemList.BioChunk.get()).duration(1 * MINUTES).eut(64).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L))
-                .circuit(4).itemOutputs(BlockList.DiamondFrameBox.getIS()).duration(3 * SECONDS + 4 * TICKS).eut(8)
+                .circuit(4).itemOutputs(BlockList.DiamondFrameBox.get()).duration(3 * SECONDS + 4 * TICKS).eut(8)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 1L))
-                .itemOutputs(BlockList.CompressedGraphite.getIS(2)).duration(5 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                .itemOutputs(BlockList.CompressedGraphite.get(2)).duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing),
