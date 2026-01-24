@@ -1,110 +1,131 @@
 package com.dreammaster.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
 
-import eu.usrv.yamcore.blocks.ModBlockManager;
-import eu.usrv.yamcore.blocks.ModSimpleBaseBlock;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public enum BlockList {
 
-    SandClayMix(new ModSimpleBaseBlock(new SandClayProperties(), ModTabList.ModBlocksTab)),
-    CallistoColdIce(new ModSimpleBaseBlock(new CallistoColdIceProperties(), ModTabList.ModBlocksTab)),
-    Ledox(new ModSimpleBaseBlock(new LedoxProperties(), ModTabList.ModBlocksTab)),
-    MysteriousCrystal(new ModSimpleBaseBlock(new MysteriousCrystalProperties(), ModTabList.ModBlocksTab)),
-    Mytryl(new ModSimpleBaseBlock(new MytrylProperties(), ModTabList.ModBlocksTab)),
-    Quantinum(new ModSimpleBaseBlock(new QuantinumProperties(), ModTabList.ModBlocksTab)),
-    PistonBlock(new ModSimpleBaseBlock(new PistonBlockProperties(), ModTabList.ModBlocksTab)),
-    BronzePlatedReinforcedStone(
-            new ModSimpleBaseBlock(new BronzePlatedReinforcedStoneProperties(), ModTabList.ModBlocksTab)),
-    SteelPlatedReinforcedStone(
-            new ModSimpleBaseBlock(new SteelPlatedReinforcedStoneProperties(), ModTabList.ModBlocksTab)),
-    TitaniumPlatedReinforcedStone(
-            new ModSimpleBaseBlock(new TitaniumPlatedReinforcedStoneProperties(), ModTabList.ModBlocksTab)),
-    TungstensteelPlatedReinforcedStone(
-            new ModSimpleBaseBlock(new TungstensteelPlatedReinforcedStoneProperties(), ModTabList.ModBlocksTab)),
-    NaquadahPlatedReinforcedStone(
-            new ModSimpleBaseBlock(new NaquadahPlatedReinforcedStoneProperties(), ModTabList.ModBlocksTab)),
-    NeutroniumPlatedReinforcedStone(
-            new ModSimpleBaseBlock(new NeutroniumPlatedReinforcedStoneProperties(), ModTabList.ModBlocksTab)),
-    BlackPlutonium(new ModSimpleBaseBlock(new BlackPlutoniumProperties(), ModTabList.ModBlocksTab)),
-    Charcoal(new ModSimpleBaseBlock(new CharcoalProperties(), ModTabList.ModBlocksTab)),
-    CompressedCharcoal(new ModSimpleBaseBlock(new CompressedCharcoalProperties(), ModTabList.ModBlocksTab)),
-    CompressedCoal(new ModSimpleBaseBlock(new CompressedCoalProperties(), ModTabList.ModBlocksTab)),
-    CompressedCoalCoke(new ModSimpleBaseBlock(new CompressedCoalCokeProperties(), ModTabList.ModBlocksTab)),
-    DoubleCompressedCharcoal(new ModSimpleBaseBlock(new DoubleCompressedCharcoalProperties(), ModTabList.ModBlocksTab)),
-    DoubleCompressedCoal(new ModSimpleBaseBlock(new DoubleCompressedCoalProperties(), ModTabList.ModBlocksTab)),
-    DoubleCompressedCoalCoke(new ModSimpleBaseBlock(new DoubleCompressedCoalCokeProperties(), ModTabList.ModBlocksTab)),
-    TripleCompressedCharcoal(new ModSimpleBaseBlock(new TripleCompressedCharcoalProperties(), ModTabList.ModBlocksTab)),
-    TripleCompressedCoal(new ModSimpleBaseBlock(new TripleCompressedCoalProperties(), ModTabList.ModBlocksTab)),
-    TripleCompressedCoalCoke(new ModSimpleBaseBlock(new TripleCompressedCoalCokeProperties(), ModTabList.ModBlocksTab)),
-    QuadrupleCompressedCharcoal(
-            new ModSimpleBaseBlock(new QuadrupleCompressedCharcoalProperties(), ModTabList.ModBlocksTab)),
-    QuadrupleCompressedCoal(new ModSimpleBaseBlock(new QuadrupleCompressedCoalProperties(), ModTabList.ModBlocksTab)),
-    QuadrupleCompressedCoalCoke(
-            new ModSimpleBaseBlock(new QuadrupleCompressedCoalCokeProperties(), ModTabList.ModBlocksTab)),
-    QuintupleCompressedCharcoal(
-            new ModSimpleBaseBlock(new QuintupleCompressedCharcoalProperties(), ModTabList.ModBlocksTab)),
-    QuintupleCompressedCoal(new ModSimpleBaseBlock(new QuintupleCompressedCoalProperties(), ModTabList.ModBlocksTab)),
-    QuintupleCompressedCoalCoke(
-            new ModSimpleBaseBlock(new QuintupleCompressedCoalCokeProperties(), ModTabList.ModBlocksTab)),
-    DiamondFrameBox(new ModSimpleBaseBlock(new DiamondFrameBoxProperties(), ModTabList.ModBlocksTab)),
-    CompressedGraphite(new ModSimpleBaseBlock(new CompressedGraphiteProperties(), ModTabList.ModBlocksTab)),
-    BloodyThaumium(new ModSimpleBaseBlock(new BloodyThaumiumProperties(), ModTabList.ModBlocksTab)),
-    BloodyVoid(new ModSimpleBaseBlock(new BloodyVoidProperties(), ModTabList.ModBlocksTab)),
-    BloodyIchorium(new ModSimpleBaseBlock(new BloodyIchoriumProperties(), ModTabList.ModBlocksTab)),
+    // ===== Generic Blocks =====
+    SandClayMix("SandClayMix", gravelLike(0, 0.5f)),
+    PistonBlock("PistonBlock", stoneLike(1, 0.5f)),
+    DiamondFrameBox("DiamondFrameBox", new BlockDiamondFrameBox()), // FIXME: Move to GT5U
+    CompressedGraphite("CompressedGraphite", stoneLike(1, 5f)),
 
-    Gaia(new ModSimpleBaseBlock(new GaiaProperties(), ModTabList.ModBlocksTab)),
-    ManaPowder(new ModSimpleBaseBlock(new ManaPowderProperties(), ModTabList.ModBlocksTab)),
-    ManaPearl(new ModSimpleBaseBlock(new ManaPearlProperties(), ModTabList.ModBlocksTab)),
-    PixieDust(new ModSimpleBaseBlock(new PixieDustProperties(), ModTabList.ModBlocksTab)),
-    // A simple basic block. Not enabled, as it doesn't have a texture
-    // BoringDefaultBlock(new ModSimpleBaseBlock(Material.rock, "BoringBlock", ModTabList.ModBlocksTab)),
+    // ===== Resource Blocks =====
+    // FIXME: Move these to GT5-Unofficial
+    CallistoColdIce("CallistoColdIce", crystal(2, 25f)),
+    Ledox("Ledox", metal(3, 50f)),
+    MysteriousCrystal("MysteriousCrystal", crystal(3, 50f)),
+    Mytryl("Mytryl", metal(2, 30f)),
+    Quantinum("Quantinum", metal(3, 50f)),
+    BlackPlutonium("BlackPlutonium", metal(3, 50f)),
 
-    // fancy admin lamp noone will take! Shows how to use other's mod's textures for blocks without stealing them
-    // also not enabled, to prevent blockID spam on the server. (They ARE limited..)
-    // AdminsBedrockLamp(new ModSimpleBaseBlock(new AdminsBedrockLampProperties(), ModTabList.ModBlocksTab)),
+    // ===== Plated Reinforced Stone =====
+    BronzePlatedReinforcedStone("BronzePlatedReinforcedStone", platedStone(4, 60f)),
+    SteelPlatedReinforcedStone("SteelPlatedReinforcedStone", platedStone(3, 150f)),
+    TitaniumPlatedReinforcedStone("TitaniumPlatedReinforcedStone", platedStone(4, 200f)),
+    TungstensteelPlatedReinforcedStone("TungstensteelPlatedReinforcedStone", platedStone(4, 250f)),
+    NaquadahPlatedReinforcedStone("NaquadahPlatedReinforcedStone", platedStone(5, 500f)),
+    NeutroniumPlatedReinforcedStone("NeutroniumPlatedReinforcedStone", platedStone(5, 750f)),
 
-    // Do not delete this
-    EndOfList(null);
+    // ===== Compressed Coal Blocks =====
+    Charcoal("Charcoal", stoneLike(1, 5f)),
+    CompressedCharcoal("CompressedCharcoal", stoneLike(1, 10f)),
+    CompressedCoal("CompressedCoal", stoneLike(1, 10f)),
+    CompressedCoalCoke("CompressedCoalCoke", stoneLike(1, 10f)),
+    DoubleCompressedCharcoal("DoubleCompressedCharcoal", stoneLike(1, 15f)),
+    DoubleCompressedCoal("DoubleCompressedCoal", stoneLike(1, 15f)),
+    DoubleCompressedCoalCoke("DoubleCompressedCoalCoke", stoneLike(1, 15f)),
+    TripleCompressedCharcoal("TripleCompressedCharcoal", stoneLike(2, 20f)),
+    TripleCompressedCoal("TripleCompressedCoal", stoneLike(2, 20f)),
+    TripleCompressedCoalCoke("TripleCompressedCoalCoke", stoneLike(2, 20f)),
+    QuadrupleCompressedCharcoal("QuadrupleCompressedCharcoal", stoneLike(3, 25f)),
+    QuadrupleCompressedCoal("QuadrupleCompressedCoal", stoneLike(3, 25f)),
+    QuadrupleCompressedCoalCoke("QuadrupleCompressedCoalCoke", stoneLike(3, 25f)),
+    QuintupleCompressedCharcoal("QuintupleCompressedCharcoal", stoneLike(3, 30f)),
+    QuintupleCompressedCoal("QuintupleCompressedCoal", stoneLike(2, 30f)),
+    QuintupleCompressedCoalCoke("QuintupleCompressedCoalCoke", stoneLike(3, 30f)),
+
+    // ===== Blood Magic Altar Blocks =====
+    BloodyThaumium("BloodyThaumium", metal(2, 30f)),
+    BloodyVoid("BloodyVoid", metal(3, 60f)),
+    BloodyIchorium("BloodyIchorium", metal(4, 120f)),
+
+    // ===== Botania Blocks =====
+    Gaia("Gaia", metal(6, 50f)),
+    ManaPowder("ManaPowder", powder(3, 50f)),
+    ManaPearl("ManaPearl", crystal(1, 50f)),
+    PixieDust("PixieDust", powder(3, 50f));
 
     // ################################################################################
-    public ModSimpleBaseBlock Block;
+    public final String name;
+    public final Block block;
 
-    BlockList(ModSimpleBaseBlock pBlock) {
-        Block = pBlock;
-        if (Block != null) {
-            Block.setModIDName(Refstrings.MODID);
-        }
-    }
+    BlockList(String name, Block block) {
+        this.name = name;
+        this.block = block;
 
-    public static boolean AddToItemManager(ModBlockManager pBlockManager) {
-        boolean tResult = true;
-        for (BlockList bl : BlockList.values()) {
-            if (bl.Block != null) {
-                if (!pBlockManager.AddItemToManagedRegistry(bl.Block)) {
-                    MainRegistry.Logger.error(String.format("Block [%s] failed to register", bl.toString()));
-                    tResult = false;
-                }
-            }
-        }
-
-        return tResult;
-    }
-
-    public Block getBlock() {
-        return Block.getConstructedBlock();
+        block.setBlockName(name);
+        block.setBlockTextureName(Refstrings.MODID + ":block" + name);
+        block.setCreativeTab(ModTabList.BLOCKS);
     }
 
     public ItemStack getIS() {
-        return new ItemStack(Block.getConstructedBlock(), 1);
+        return new ItemStack(block, 1);
     }
 
     public ItemStack getIS(int amount) {
-        return new ItemStack(Block.getConstructedBlock(), amount);
+        return new ItemStack(block, amount);
+    }
+
+    public static void registerAll() {
+        for (var entry : BlockList.values()) {
+            GameRegistry.registerBlock(entry.block, entry.name);
+        }
+    }
+
+    // ===== Simple Block Factories =====
+
+    private static Block stoneLike(int harvestLevel, float hardness) {
+        var newBlock = new Block(Material.rock).setHardness(hardness).setStepSound(Block.soundTypeStone);
+        newBlock.setHarvestLevel("pickaxe", harvestLevel);
+        return newBlock;
+    }
+
+    private static Block platedStone(int harvestLevel, float hardness) {
+        var newBlock = new Block(Material.iron).setHardness(hardness).setResistance(hardness + 500f) // Blast-resistant
+                .setStepSound(Block.soundTypeMetal);
+        newBlock.setHarvestLevel("pickaxe", harvestLevel);
+        return newBlock;
+    }
+
+    private static Block metal(int harvestLevel, float hardness) {
+        var newBlock = new Block(Material.iron).setHardness(hardness).setStepSound(Block.soundTypeMetal);
+        newBlock.setHarvestLevel("pickaxe", harvestLevel);
+        return newBlock;
+    }
+
+    private static Block crystal(int harvestLevel, float hardness) {
+        var newBlock = new Block(Material.glass).setHardness(hardness).setStepSound(Block.soundTypeGlass);
+        newBlock.setHarvestLevel("pickaxe", harvestLevel);
+        return newBlock;
+    }
+
+    private static Block powder(int harvestLevel, float hardness) {
+        var newBlock = new Block(Material.sand).setHardness(hardness).setStepSound(Block.soundTypeSand);
+        newBlock.setHarvestLevel("shovel", harvestLevel);
+        return newBlock;
+    }
+
+    private static Block gravelLike(int harvestLevel, float hardness) {
+        var newBlock = new Block(Material.sand).setHardness(hardness).setStepSound(Block.soundTypeGravel);
+        newBlock.setHarvestLevel("shovel", harvestLevel);
+        return newBlock;
     }
 }

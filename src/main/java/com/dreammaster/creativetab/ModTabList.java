@@ -23,6 +23,14 @@ public final class ModTabList {
         }
     };
 
+    public static final CreativeTabs BLOCKS = new CreativeTabs("tabDreamCraftBlocks") {
+
+        @Override
+        public Item getTabIconItem() {
+            return Item.getItemFromBlock(Blocks.stone);
+        }
+    };
+
     public static final CreativeTabs SHAPES = new CreativeTabs("tabDreamCraftItems_Shapes") {
 
         @Override
