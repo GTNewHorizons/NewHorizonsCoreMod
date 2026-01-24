@@ -557,20 +557,30 @@ public class MainRegistry {
     @Mod.EventHandler
     public void onMissingMappings(FMLMissingMappingsEvent event) {
         HashMap<String, Item> itemListRemaps = null;
+        HashMap<String, Block> blockListRemaps = null;
 
         for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
-            if (mapping.type != GameRegistry.Type.ITEM) continue;
+            if (mapping.type == GameRegistry.Type.ITEM) {
+                if (mapping.name.startsWith("dreamcraft:item.")) {
+                    // Remap all the old Yamcl names (for items)
+                    if (itemListRemaps == null) {
+                        itemListRemaps = createNHItemListRemaps();
+                    }
 
-            if (mapping.name.startsWith("dreamcraft:item.")) {
-                // Remap all the old Yamcl names to the new names.
-                if (itemListRemaps == null) {
-                    itemListRemaps = createNHItemListRemaps();
+                    mapping.remap(itemListRemaps.get(mapping.name.substring(16)));
+                } else if ("dreamcraft:itemQuantumToast".equals(mapping.name)) {
+                    // Replace the old Quantum Bread declaration with the new one.
+                    mapping.remap(NHItemList.QuantumBread.item);
+                }
+            } else if (mapping.type == GameRegistry.Type.BLOCK) {
+                if (!mapping.name.startsWith("dreamcraft:tile.")) continue;
+
+                // Remap all the old Yamcl names (for blocks)
+                if (blockListRemaps == null) {
+                    blockListRemaps = createBlockListRemaps();
                 }
 
-                mapping.remap(itemListRemaps.get(mapping.name.substring(16)));
-            } else if ("dreamcraft:itemQuantumToast".equals(mapping.name)) {
-                // Replace the old Quantum Bread declaration with the new one.
-                mapping.remap(NHItemList.QuantumBread.item);
+                mapping.remap(blockListRemaps.get(mapping.name.substring(16)));
             }
         }
     }
@@ -587,6 +597,16 @@ public class MainRegistry {
         itemListData.put("UnfiredSlimeSoulBrick", NHItemList.UnfiredSlimeSoilBrick.item);
 
         return itemListData;
+    }
+
+    private static HashMap<String, Block> createBlockListRemaps() {
+        final HashMap<String, Block> blockListData = new HashMap<>();
+
+        for (var entry : BlockList.values()) {
+            blockListData.put(entry.name, entry.block);
+        }
+
+        return blockListData;
     }
 
     @Optional.Method(modid = Mods.ModIDs.BETTER_QUESTING)
