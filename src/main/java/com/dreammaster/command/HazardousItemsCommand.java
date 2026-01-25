@@ -7,10 +7,9 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.potion.Potion;
+import net.minecraft.util.ChatComponentTranslation;
 
 import com.dreammaster.main.MainRegistry;
-
-import net.minecraft.util.ChatComponentTranslation;
 
 public class HazardousItemsCommand extends CommandBase {
 
@@ -73,10 +72,11 @@ public class HazardousItemsCommand extends CommandBase {
         for (Potion potion : Potion.potionTypes) {
             if (potion == null) continue;
 
-            sender.addChatMessage(new ChatComponentTranslation(
-                    "dreamcraft.command.hazarditems.potion.entry",
-                    new ChatComponentTranslation(potion.getName()),
-                    potion.id));
+            sender.addChatMessage(
+                    new ChatComponentTranslation(
+                            "dreamcraft.command.hazarditems.potion.entry",
+                            new ChatComponentTranslation(potion.getName()),
+                            potion.id));
         }
     }
 

@@ -8,10 +8,9 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.command.PlayerNotFoundException;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.ChatComponentTranslation;
 
 import com.dreammaster.main.MainRegistry;
-
-import net.minecraft.util.ChatComponentTranslation;
 
 public class CustomDropsCommand extends CommandBase {
 

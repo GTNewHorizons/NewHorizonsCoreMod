@@ -6,10 +6,9 @@ import java.util.List;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.WrongUsageException;
+import net.minecraft.util.ChatComponentTranslation;
 
 import com.dreammaster.main.MainRegistry;
-
-import net.minecraft.util.ChatComponentTranslation;
 
 public class CustomFuelsCommand extends CommandBase {
 
