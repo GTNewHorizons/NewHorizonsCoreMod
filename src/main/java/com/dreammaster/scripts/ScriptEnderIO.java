@@ -31,6 +31,7 @@ import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -1811,7 +1812,16 @@ public class ScriptEnderIO implements IScriptLoader {
                         GregtechItemList.Battery_RE_EV_Lithium.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
+        // Binder Composite
 
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 14),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 7),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 7),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 7))
+                .circuit(3).itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 63, 2, missing)).duration(7 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         // Bulk crystals
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 64))
