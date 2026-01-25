@@ -29,8 +29,6 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
-import eu.usrv.yamcore.auxiliary.ItemDescriptor;
-import eu.usrv.yamcore.gameregistry.PotionHelper;
 import gregtech.api.hazards.HazardProtection;
 
 /**
@@ -272,7 +270,7 @@ public class HazardousItemsHandler {
         boolean tResult = true;
         for (HazardousItem hi : pItemCollection.getHazardousItems()) {
             for (HazardousItems.ItmPotionEffect ipe : hi.getPotionEffects()) {
-                if (!PotionHelper.IsValidPotionID(ipe.getId())) {
+                if (!isValidPotionID(ipe.getId())) {
                     MainRegistry.LOGGER.warn(
                             "HazardousItem [{}] has invalid PotionID: [{}] (There is no such potion)",
                             hi.getItemName(),
@@ -284,7 +282,7 @@ public class HazardousItemsHandler {
 
         for (HazardousItems.HazardousFluid hf : pItemCollection.getHazardousFluids()) {
             for (HazardousItems.ItmPotionEffect ipe : hf.getPotionEffects()) {
-                if (!PotionHelper.IsValidPotionID(ipe.getId())) {
+                if (!isValidPotionID(ipe.getId())) {
                     MainRegistry.LOGGER.warn(
                             "HazardousFluid [{}] has invalid PotionID: [{}] (There is no such potion)",
                             hf.getFluidName(),
@@ -342,11 +340,9 @@ public class HazardousItemsHandler {
         if (pInventory == null) return;
 
         for (ItemStack stack : pInventory) {
-            String tCurrIS = "";
             try {
                 if (stack == null) continue;
 
-                tCurrIS = ItemDescriptor.fromStack(stack).toString();
                 // Check if item is a fluid container
                 if (stack.getItem() instanceof IFluidContainerItem) {
                     HazardousItems.HazardousFluid hazardFluid = _mHazardItemsCollection.FindHazardousFluid(stack);
@@ -378,7 +374,10 @@ public class HazardousItemsHandler {
                             }
                         }
             } catch (Exception e) {
-                MainRegistry.LOGGER.debug("Something weird happend with item {}", tCurrIS);
+                MainRegistry.LOGGER.debug(
+                        "Something weird happend with item {}:{}",
+                        GameRegistry.findUniqueIdentifierFor(stack.getItem()),
+                        stack.getItemDamage());
             }
         }
     }
@@ -426,5 +425,9 @@ public class HazardousItemsHandler {
         for (HazardousItems.ItmPotionEffect effect : effectContainer.getPotionEffects()) {
             effect.apply(cause, player);
         }
+    }
+
+    private static boolean isValidPotionID(int id) {
+        return id < 0 || id >= Potion.potionTypes.length || Potion.potionTypes[id] == null;
     }
 }

@@ -10,6 +10,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.util.ChatComponentTranslation;
 
 import com.dreammaster.main.MainRegistry;
+import com.dreammaster.modhazardousitems.HazardDamageSources;
 
 public class HazardousItemsCommand extends CommandBase {
 
@@ -44,7 +45,10 @@ public class HazardousItemsCommand extends CommandBase {
                 sender.addChatMessage(new ChatComponentTranslation("dreamcraft.command.hazarditems.save.failure"));
             }
         } else if ("listdamagesources".equalsIgnoreCase(args[0])) {
-            sender.addChatMessage(new ChatComponentTranslation("dreamcraft.command.hazarditems.damage_source_list"));
+            sender.addChatMessage(
+                    new ChatComponentTranslation(
+                            "dreamcraft.command.hazarditems.damage_source_list",
+                            HazardDamageSources.DAMAGE_SOURCES.keySet().toString()));
         } else if ("listpotions".equalsIgnoreCase(args[0])) {
             sendPotionsToPlayer(sender);
         } else if ("reload".equalsIgnoreCase(args[0])) {
