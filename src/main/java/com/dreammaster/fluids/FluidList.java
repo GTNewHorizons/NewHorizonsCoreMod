@@ -43,7 +43,7 @@ public enum FluidList {
         for (FluidList il : FluidList.values()) {
             if (il.Fluid != null) {
                 if (!pFluidManager.AddItemToManagedRegistry(il.Fluid)) {
-                    MainRegistry.Logger.error("Fluid [{}] failed to register", il.toString());
+                    MainRegistry.LOGGER.error("Fluid [{}] failed to register", il.toString());
                     tResult = false;
                 }
             }
