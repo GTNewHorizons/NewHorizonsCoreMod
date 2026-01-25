@@ -20,7 +20,6 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
@@ -1336,7 +1335,6 @@ public class ScriptGalacticraft implements IScriptLoader {
         blastFurnaceRecipes();
         cannerRecipes();
         extruderRecipes();
-        fluidCannerRecipes();
         maceratorRecipes();
         plasmaArcFurnaceRecipes();
         dungeonBlockRecipes();
@@ -1873,6 +1871,10 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 18, missing)).duration(40 * SECONDS)
                 .eut(1).addTo(cannerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1001, missing))
+                .itemOutputs(getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("fuel", 1000)).duration(16).eut(1).addTo(cannerRecipes);
     }
 
     private void extruderRecipes() {
@@ -1900,13 +1902,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Shape_Extruder_Bolt.get(0L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(30).addTo(extruderRecipes);
-    }
-
-    private void fluidCannerRecipes() {
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1001, missing))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("fuel", 1000)).duration(16).eut(1).addTo(fluidCannerRecipes);
     }
 
     private void maceratorRecipes() {
