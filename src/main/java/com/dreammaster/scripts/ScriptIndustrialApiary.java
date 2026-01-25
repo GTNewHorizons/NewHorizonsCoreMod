@@ -22,7 +22,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -81,7 +81,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemStack LVRobotArm = ItemList.Robot_Arm_LV.get(1);
         final Block Cactus = Blocks.cactus;
         final Item WaterBucket = Items.water_bucket;
-        final ItemStack SteelBars = CustomItemList.SteelBars.get(1);
+        final ItemStack SteelBars = NHItemList.SteelBars.get();
         final ItemData TitaniumRotor = (ItemData) OrePrefixes.rotor.get(Materials.Titanium);
         final Block Snow = Blocks.snow;
         final Item FermentedSpiderEye = Items.fermented_spider_eye;

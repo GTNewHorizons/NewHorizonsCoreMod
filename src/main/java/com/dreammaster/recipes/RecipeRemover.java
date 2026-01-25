@@ -108,7 +108,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.item.ModItems;
 
 public class RecipeRemover {
 
@@ -153,7 +152,7 @@ public class RecipeRemover {
             }
             return false;
         });
-        MainRegistry.Logger.info("Removed " + (i - list.size()) + " recipes!");
+        MainRegistry.Logger.info("Removed {} recipes!", i - list.size());
     }
 
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
@@ -1217,7 +1216,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "lepidopterology", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(new ItemStack(ModItems.itemPersonalCloakingDevice));
         removeRecipeByOutputDelayed(getModItem(GalacticraftCore.ID, "item.null", 3, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing));
@@ -3455,6 +3453,6 @@ public class RecipeRemover {
         flushBuffer();
         bufferMap = null;
         final long timeToLoad = System.currentTimeMillis() - timeStart;
-        MainRegistry.Logger.info("Recipes removal took " + timeToLoad + " ms.");
+        MainRegistry.Logger.info("Recipes removal took {} ms.", timeToLoad);
     }
 }

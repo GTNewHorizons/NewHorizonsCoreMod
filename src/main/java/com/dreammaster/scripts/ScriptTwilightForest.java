@@ -230,7 +230,7 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0, missing), NHItemList.StonePlate.getIS(16))
+                .itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0, missing), NHItemList.StonePlate.get(16))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0, missing))
                 .fluidInputs(Materials.Helium3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);

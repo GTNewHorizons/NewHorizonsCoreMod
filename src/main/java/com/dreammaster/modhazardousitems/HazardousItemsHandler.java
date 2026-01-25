@@ -30,7 +30,6 @@ import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
-import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.gameregistry.PotionHelper;
 import gregtech.api.hazards.HazardProtection;
 
@@ -43,7 +42,6 @@ import gregtech.api.hazards.HazardProtection;
 public class HazardousItemsHandler {
 
     private final Random _mRnd = new Random();
-    private final LogHelper _mLogger = MainRegistry.Logger;
     private HazardousItems _mHazardItemsCollection;
     private final String _mConfigFileName;
     private final HazardousObjectFactory _mHazFactory = new HazardousObjectFactory();
@@ -93,14 +91,14 @@ public class HazardousItemsHandler {
             if (getAverageTiming() > 250) {
                 // lol wut...
                 if (touchBlockChance > 500) {
-                    _mLogger.error(
+                    MainRegistry.Logger.error(
                             "Execution chance is over 500. Not going to increase wait-timer anymore. if it still lags, contact me and we'll find another way");
                     _mRunProfiler = false;
-                    _mLogger.error("HazardousItems-Profiler is now disabled");
+                    MainRegistry.Logger.error("HazardousItems-Profiler is now disabled");
                     return;
                 }
 
-                _mLogger.warn(
+                MainRegistry.Logger.warn(
                         "WARNING: The HazardousItems loop has an average timing of > 250ms, which may cause lag. Increasing wait-time between inventory-scan calls");
                 touchBlockChance++;
                 inventoryCheckPeriod++;
@@ -167,11 +165,11 @@ public class HazardousItemsHandler {
             jaxMarsh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxMarsh.marshal(_mHazardItemsCollection, new FileOutputStream(_mConfigFileName, false));
 
-            _mLogger.debug("Config file written");
+            MainRegistry.Logger.debug("Config file written");
             IsConfigDirty = false;
             return true;
         } catch (Exception e) {
-            _mLogger.error("Unable to create new HazardousItems.xml. What did you do??");
+            MainRegistry.Logger.error("Unable to create new HazardousItems.xml. What did you do??");
             e.printStackTrace();
             return false;
         }
@@ -181,10 +179,11 @@ public class HazardousItemsHandler {
      * Initial Loading of config with automatic creation of default xml
      */
     public void LoadConfig() {
-        _mLogger.debug("HazardousItems entering state: LOAD CONFIG");
+        MainRegistry.Logger.debug("HazardousItems entering state: LOAD CONFIG");
         File tConfigFile = new File(_mConfigFileName);
         if (!tConfigFile.exists()) {
-            _mLogger.debug("HazardousItems Config file not found, assuming first-start. Creating default one");
+            MainRegistry.Logger
+                    .debug("HazardousItems Config file not found, assuming first-start. Creating default one");
             InitSampleConfig();
             SaveHazardousItems();
         }
@@ -193,7 +192,7 @@ public class HazardousItemsHandler {
         // there to be fixed, but load
         // default setting instead, so an Op/Admin can do reload ingame
         if (!ReloadHazardousItems()) {
-            _mLogger.warn(
+            MainRegistry.Logger.warn(
                     "Configuration File seems to be damaged, loading does-nothing-evil default config. You should fix your file and reload it");
             MainRegistry.AddLoginError("[HazardousItems] Config file not loaded due errors");
             InitSampleConfig();
@@ -208,13 +207,13 @@ public class HazardousItemsHandler {
     public boolean ReloadHazardousItems() {
         boolean tResult = false;
 
-        _mLogger.debug("HazardousItemsHandler will now try to load it's configuration");
+        MainRegistry.Logger.debug("HazardousItemsHandler will now try to load it's configuration");
         try {
             JAXBContext tJaxbCtx = JAXBContext.newInstance(HazardousItems.class);
             File tConfigFile = new File(_mConfigFileName);
             Unmarshaller jaxUnmarsh = tJaxbCtx.createUnmarshaller();
             HazardousItems tNewItemCollection = (HazardousItems) jaxUnmarsh.unmarshal(tConfigFile);
-            _mLogger.debug("Config file has been loaded. Entering Verify state");
+            MainRegistry.Logger.debug("Config file has been loaded. Entering Verify state");
 
             if (VerifyConfiguredDamageEffects(tNewItemCollection)
                     && VerifyConfiguredPotionEffects(tNewItemCollection)) {
@@ -241,11 +240,10 @@ public class HazardousItemsHandler {
         for (HazardousItem hi : pItemCollection.getHazardousItems()) {
             for (HazardousItems.ItmDamageEffect ide : hi.getDamageEffects()) {
                 if (!HazardDamageSources.isValid(ide.getDamageSource())) {
-                    _mLogger.warn(
-                            String.format(
-                                    "HazardousItem [%s] has invalid DamageSource entry: [%s]",
-                                    hi.getItemName(),
-                                    ide.getDamageSource()));
+                    MainRegistry.Logger.warn(
+                            "HazardousItem [{}] has invalid DamageSource entry: [{}]",
+                            hi.getItemName(),
+                            ide.getDamageSource());
                     tResult = false;
                 }
             }
@@ -253,11 +251,10 @@ public class HazardousItemsHandler {
         for (HazardousItems.HazardousFluid hf : pItemCollection.getHazardousFluids()) {
             for (HazardousItems.ItmDamageEffect ide : hf.getDamageEffects()) {
                 if (!HazardDamageSources.isValid(ide.getDamageSource())) {
-                    _mLogger.warn(
-                            String.format(
-                                    "HazardousFluid [%s] has invalid DamageSource entry: [%s]",
-                                    hf.getFluidName(),
-                                    ide.getDamageSource()));
+                    MainRegistry.Logger.warn(
+                            "HazardousFluid [{}] has invalid DamageSource entry: [{}]",
+                            hf.getFluidName(),
+                            ide.getDamageSource());
                     tResult = false;
                 }
             }
@@ -277,11 +274,10 @@ public class HazardousItemsHandler {
         for (HazardousItem hi : pItemCollection.getHazardousItems()) {
             for (HazardousItems.ItmPotionEffect ipe : hi.getPotionEffects()) {
                 if (!PotionHelper.IsValidPotionID(ipe.getId())) {
-                    _mLogger.warn(
-                            String.format(
-                                    "HazardousItem [%s] has invalid PotionID: [%s] (There is no such potion)",
-                                    hi.getItemName(),
-                                    ipe.getId()));
+                    MainRegistry.Logger.warn(
+                            "HazardousItem [{}] has invalid PotionID: [{}] (There is no such potion)",
+                            hi.getItemName(),
+                            ipe.getId());
                     tResult = false;
                 }
             }
@@ -290,11 +286,10 @@ public class HazardousItemsHandler {
         for (HazardousItems.HazardousFluid hf : pItemCollection.getHazardousFluids()) {
             for (HazardousItems.ItmPotionEffect ipe : hf.getPotionEffects()) {
                 if (!PotionHelper.IsValidPotionID(ipe.getId())) {
-                    _mLogger.warn(
-                            String.format(
-                                    "HazardousFluid [%s] has invalid PotionID: [%s] (There is no such potion)",
-                                    hf.getFluidName(),
-                                    ipe.getId()));
+                    MainRegistry.Logger.warn(
+                            "HazardousFluid [{}] has invalid PotionID: [{}] (There is no such potion)",
+                            hf.getFluidName(),
+                            ipe.getId());
                     tResult = false;
                 }
             }
@@ -338,9 +333,7 @@ public class HazardousItemsHandler {
                 }
             }
         } catch (Exception e) {
-            _mLogger.error(
-                    "HazardousItemsHandler.CheckPlayerTouchesBlock.error",
-                    "Something bad happend while processing the onPlayerTick event");
+            MainRegistry.Logger.error("Something bad happened while processing the onPlayerTick event");
             e.printStackTrace();
         }
     }
@@ -386,7 +379,7 @@ public class HazardousItemsHandler {
                             }
                         }
             } catch (Exception e) {
-                _mLogger.debug(String.format("Something weird happend with item %s", tCurrIS));
+                MainRegistry.Logger.debug("Something weird happend with item {}", tCurrIS);
             }
         }
     }
@@ -407,9 +400,8 @@ public class HazardousItemsHandler {
                         try {
                             bg2ExtraInvField = pPlayer.inventory.getClass().getDeclaredField("battlegear2$extraItems");
                         } catch (NoSuchFieldException nsfe) {
-                            _mLogger.warn(
-                                    "battlegear.changed.1",
-                                    "Seems battlegear has updated/changed. Someone has to fix HazardousItems!");
+                            MainRegistry.Logger
+                                    .warn("Seems battlegear has updated/changed. Someone has to fix HazardousItems!");
                             bg2ExtraInvField = pPlayer.inventory.getClass().getDeclaredField("extraItems");
                         }
                         bg2ExtraInvField.setAccessible(true);
@@ -418,15 +410,12 @@ public class HazardousItemsHandler {
                     ItemStack[] tExtraInv = (ItemStack[]) bg2ExtraInvField.get(pPlayer.inventory);
                     checkInventoryArray(tExtraInv, pPlayer);
                 } catch (NoSuchFieldException | IllegalAccessException ex) {
-                    _mLogger.warn(
-                            "battlegear.changed.2",
-                            "Seems battlegear has updated/changed. Someone has to fix HazardousItems!");
+                    MainRegistry.Logger
+                            .warn("Seems battlegear has updated/changed. Someone has to fix HazardousItems!");
                 }
             }
         } catch (Exception e) {
-            _mLogger.error(
-                    "HazardousItemsHandler.CheckInventoryForItems.error",
-                    "Something bad happend while processing the onPlayerTick event");
+            MainRegistry.Logger.error("Something bad happend while processing the onPlayerTick event");
             e.printStackTrace();
         }
     }

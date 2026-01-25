@@ -47,7 +47,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.rwtema.extrautils.ExtraUtils;
 
@@ -126,7 +126,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 "plateDiamond",
                 "screwDiamond",
                 "plateDiamond",
-                CustomItemList.StainlessSteelBars.get(1L),
+                NHItemList.StainlessSteelBars.get(),
                 "plateDiamond",
                 "screwDiamond",
                 "plateDiamond",
@@ -931,7 +931,7 @@ public class ScriptAvaritia implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
-                        CustomItemList.StainlessSteelBars.get(1L))
+                        NHItemList.StainlessSteelBars.get())
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 3, missing))

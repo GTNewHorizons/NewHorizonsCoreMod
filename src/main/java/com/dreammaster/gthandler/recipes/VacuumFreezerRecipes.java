@@ -6,7 +6,7 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
@@ -20,8 +20,8 @@ public class VacuumFreezerRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.GlowingMarshmallow.get(1L))
-                .itemOutputs(CustomItemList.Marshmallow.get(1L)).duration(40 * MINUTES).eut(TierEU.RECIPE_EV)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.GlowingMarshmallow.get())
+                .itemOutputs(NHItemList.Marshmallow.get()).duration(40 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Neutronium, 1L))
@@ -219,8 +219,8 @@ public class VacuumFreezerRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L))
                 .duration(7 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.HotNetherrackBrick.get(1L))
-                .itemOutputs(CustomItemList.InfernalBrick.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.HotNetherrackBrick.get())
+                .itemOutputs(NHItemList.InfernalBrick.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(vacuumFreezerRecipes);
 
     }

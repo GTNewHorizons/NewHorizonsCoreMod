@@ -94,6 +94,9 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     GTUtility.copyAmountUnsafe(729, GTOreDictUnificator.get(OrePrefixes.block, Materials.Diamond, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Water.getFluid(2147483647L))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 3))
+                    .duration(1 * TICKS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputsUnsafe(
                     GTUtility
                             .copyAmountUnsafe(1824, GTOreDictUnificator.get(OrePrefixes.block, Materials.Aluminium, 1)))

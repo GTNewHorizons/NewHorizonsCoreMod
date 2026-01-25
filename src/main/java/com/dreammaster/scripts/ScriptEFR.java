@@ -34,13 +34,13 @@ import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
@@ -283,6 +283,10 @@ public class ScriptEFR implements IScriptLoader {
                 }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
+                        .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
+                        .addTo(cutterRecipes);
+                GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta, missing))
@@ -307,6 +311,10 @@ public class ScriptEFR implements IScriptLoader {
                                 GTModHandler.getModItem(EtFuturumRequiem.ID, inName, 1L, inMeta));
                     }
                 }
+                GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
+                        .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
+                        .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta, missing))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta, missing))
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
@@ -538,6 +546,10 @@ public class ScriptEFR implements IScriptLoader {
                     bits,
                     new Object[] { "BA ", "   ", "   ", 'A', GTModHandler.getModItem(EtFuturumRequiem.ID, inParts, 1L),
                             'B', "craftingToolSaw" });
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
+                    .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
+                    .addTo(cutterRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
@@ -832,18 +844,6 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 2, 7, missing))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0, missing))
                 .duration(30 * SECONDS).eut(256).addTo(assemblerRecipes);
-
-        addShapedRecipe(
-                GregtechItemList.Controller_SteamAlloySmelterMulti.get(1),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Bronze, 1L),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                "frameGtTumbaga",
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
-                ItemList.Casing_BronzePlatedBricks.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Bronze, 1L),
-                ItemList.Casing_BronzePlatedBricks.get(1L));
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0, missing),
@@ -1249,13 +1249,12 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "honey_bottle", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 250)).duration(1).eut(1)
-                .addTo(fluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 250)).duration(1).eut(1).addTo(cannerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "honey_bottle", 1, 0, missing))
                 .itemOutputs(new ItemStack(Items.glass_bottle, 1))
                 .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 250)).duration(2 * SECONDS).eut(2)
-                .addTo(fluidCannerRecipes);
+                .addTo(cannerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1271,9 +1270,9 @@ public class ScriptEFR implements IScriptLoader {
         // stoneworks
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing))
-                .itemOutputs(NHItemList.TuffDust.getIS(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
+                .itemOutputs(NHItemList.TuffDust.get(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.getIS(36))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.VolcanicAsh, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 9L),
@@ -1285,15 +1284,15 @@ public class ScriptEFR implements IScriptLoader {
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
-        OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.getIS(1));
+        OreDictionary.registerOre("dustTuff", NHItemList.TuffDust.get(1));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "deepslate", 1, 0, missing))
-                .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(NHItemList.DeepslateDust.get(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cobbled_deepslate", 1, 0, missing))
-                .itemOutputs(NHItemList.DeepslateDust.getIS(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(NHItemList.DeepslateDust.get(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.getIS(36))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.get(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chlorite, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plagioclase, 9L), // gt
@@ -1303,7 +1302,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) // gt
                 .duration(1 * MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
-        OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.getIS(1));
+        OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.get(1));
 
         GTValues.RA.stdBuilder().itemInputs(Materials.MetamorphicMineralMixture.getDust(36))
                 .itemOutputs(

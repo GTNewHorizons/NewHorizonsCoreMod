@@ -28,7 +28,6 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import eu.usrv.yamcore.YAMCore;
 import eu.usrv.yamcore.auxiliary.IntHelper;
-import eu.usrv.yamcore.auxiliary.LogHelper;
 
 public class OilGeneratorFix extends ModFixBase {
 
@@ -162,12 +161,10 @@ public class OilGeneratorFix extends ModFixBase {
 
     private Block _mBuildCraftOilBlock;
     public static String ModFixName = "OilGeneratorFix";
-    private LogHelper _mLog;
 
     public OilGeneratorFix() {
         super(ModFixName);
         _mBuildCraftOilBlock = GameRegistry.findBlock("BuildCraft|Energy", "blockOil");
-        _mLog = MainRegistry.Logger;
     }
 
     @Override
@@ -178,10 +175,10 @@ public class OilGeneratorFix extends ModFixBase {
     @Override
     public boolean init() {
         if (_mBuildCraftOilBlock == null) {
-            _mLog.error("Unable to find BuildCraft Oil Block. ModFix will not spawn anything");
+            MainRegistry.Logger.error("Unable to find BuildCraft Oil Block. ModFix will not spawn anything");
             return false;
         } else {
-            _mLog.info("Found BC Oil block. Ready for worldgen");
+            MainRegistry.Logger.info("Found BC Oil block. Ready for worldgen");
             return true;
         }
     }
@@ -254,7 +251,7 @@ public class OilGeneratorFix extends ModFixBase {
             }
 
             if (YAMCore.isDebug()) {
-                _mLog.info(String.format("About to generate OilSphere, centered at %d/%d/%d, radius %d", x, cy, z, r));
+                MainRegistry.Logger.info("About to generate OilSphere, centered at {}/{}/{}, radius {}", x, cy, z, r);
             }
 
             // Taken from BuildCraft; Dont' generate if topblock is at y = 5
@@ -262,7 +259,7 @@ public class OilGeneratorFix extends ModFixBase {
             int groundLevel = getTopBlock(world, x, z);
             if (groundLevel < 5) {
                 if (YAMCore.isDebug()) {
-                    _mLog.warn("OilGenerator stopped; World-height is below 5");
+                    MainRegistry.Logger.warn("OilGenerator stopped; World-height is below 5");
                 }
                 return;
             }
@@ -291,7 +288,8 @@ public class OilGeneratorFix extends ModFixBase {
         int pMaxHeight = pGroundLevel + tSpringHeight;
         if (pMaxHeight >= pWorld.getActualHeight() - 1) {
             if (YAMCore.isDebug()) {
-                _mLog.warn("The total height of the calculated OilDeposit would exceed the maximum world-size.");
+                MainRegistry.Logger
+                        .warn("The total height of the calculated OilDeposit would exceed the maximum world-size.");
             }
             return;
         }
@@ -446,10 +444,9 @@ public class OilGeneratorFix extends ModFixBase {
         // Limited to Whitelisted Dimensions
         if (!MainRegistry.CoreConfig.OilFixConfig.OilDimensionWhitelist.contains(pWorld.provider.dimensionId)) {
             if (YAMCore.isDebug()) {
-                _mLog.info(
-                        String.format(
-                                "Not generating OilDeposit; Dimension is not Whitelisted %d",
-                                pWorld.provider.dimensionId));
+                MainRegistry.Logger.info(
+                        "Not generating OilDeposit; Dimension is not Whitelisted {}",
+                        pWorld.provider.dimensionId);
             }
             return false;
         }
@@ -459,7 +456,7 @@ public class OilGeneratorFix extends ModFixBase {
         // Skip blacklisted DimensionIDs
         if (MainRegistry.CoreConfig.OilFixConfig.OilBiomeIDBlackList.contains(biomegenbase.biomeID)) {
             if (YAMCore.isDebug()) {
-                _mLog.info(String.format("Not generating OilDeposit; BiomeID %d is Blacklisted", biomegenbase.biomeID));
+                MainRegistry.Logger.info("Not generating OilDeposit; BiomeID {} is Blacklisted", biomegenbase.biomeID);
             }
             return false;
         }
