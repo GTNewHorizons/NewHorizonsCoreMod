@@ -20,6 +20,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
@@ -38,7 +39,6 @@ import com.kuba6000.mobsinfo.api.MobRecipe;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
-import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import eu.usrv.yamcore.persisteddata.PersistedDataBase;
 import gregtech.api.enums.Mods;
 import io.netty.buffer.ByteBuf;
@@ -182,8 +182,10 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
                     tEP = (EntityPlayer) pEvent.source.getEntity();
                     tUUID = tEP.getUniqueID();
                     if (_mDeathDebugPlayers.contains(tUUID)) {
-                        PlayerChatHelper
-                                .SendInfo(tEP, String.format("Killed entity: [%s]", tEntity.getClass().getName()));
+                        tEP.addChatMessage(
+                                new ChatComponentTranslation(
+                                        "dreamcraft.customdrops.log_kill",
+                                        tEntity.getClass().getName()));
                     }
                 }
             }
@@ -192,9 +194,7 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
             {
                 return;
             }
-            if (tEP instanceof FakePlayer) // Nope,
-            // no
-            // fakeplayers
+            if (tEP instanceof FakePlayer) // Nope, no fakeplayers
             {
                 return;
             }
@@ -303,10 +303,10 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
         UUID tUUID = pEP.getUniqueID();
         if (_mDeathDebugPlayers.contains(tUUID)) {
             _mDeathDebugPlayers.remove(tUUID);
-            PlayerChatHelper.SendInfo(pEP, "Death-Debug is now diabled");
+            pEP.addChatMessage(new ChatComponentTranslation("dreamcraft.customdrops.debug.off"));
         } else {
             _mDeathDebugPlayers.add(tUUID);
-            PlayerChatHelper.SendInfo(pEP, "Death-Debug is now enabled");
+            pEP.addChatMessage(new ChatComponentTranslation("dreamcraft.customdrops.debug.on"));
         }
     }
 
