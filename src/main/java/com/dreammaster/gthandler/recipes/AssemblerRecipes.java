@@ -2782,7 +2782,7 @@ public class AssemblerRecipes implements Runnable {
         // Extreme Density Space-Bending Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        BlockList.NeutroniumPlatedReinforcedStone.getIS(),
+                        BlockList.NeutroniumPlatedReinforcedStone.get(),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Steel, 64),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Iron, 64),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 64))

@@ -13,13 +13,20 @@ import eu.usrv.yamcore.creativetabs.ModCreativeTab;
 public final class ModTabList {
 
     public static String ModFluidsTab = "tabDreamCraftFluids";
-    public static String ModBlocksTab = "tabDreamCraftBlocks";
 
     public static final CreativeTabs GENERIC = new CreativeTabs("tabDreamCraftItems_Generic") {
 
         @Override
         public Item getTabIconItem() {
             return NHItemList.AsteroidsStoneDust.item;
+        }
+    };
+
+    public static final CreativeTabs BLOCKS = new CreativeTabs("tabDreamCraftBlocks") {
+
+        @Override
+        public Item getTabIconItem() {
+            return Item.getItemFromBlock(Blocks.stone);
         }
     };
 
@@ -83,6 +90,5 @@ public final class ModTabList {
 
     public static void InitModTabs(CreativeTabsManager tabManager) {
         tabManager.AddCreativeTab(new ModCreativeTab(ModFluidsTab, Items.bucket));
-        tabManager.AddCreativeTab(new ModCreativeTab(ModBlocksTab, Item.getItemFromBlock(Blocks.stone)));
     }
 }
