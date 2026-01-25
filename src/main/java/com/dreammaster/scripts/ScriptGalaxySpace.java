@@ -252,7 +252,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        BlockList.NeutroniumPlatedReinforcedStone.getIS(),
+                        BlockList.NeutroniumPlatedReinforcedStone.get(),
                         WerkstoffLoader.HDCS.get(OrePrefixes.plate, 8))
                 .itemOutputs(ItemList.UltraHighStrengthConcrete.get(1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)

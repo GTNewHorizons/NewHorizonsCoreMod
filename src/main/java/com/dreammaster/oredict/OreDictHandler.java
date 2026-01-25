@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -177,6 +178,8 @@ public class OreDictHandler {
         OreDictionary.registerOre("foodSalt", NHItemList.EdibleSalt.get());
 
         OreDictionary.registerOre("ingotHotBrickNether", NHItemList.HotNetherrackBrick.get());
+
+        OreDictionary.registerOre("oreZinc", BlockList.ZincGravelOre.get());
 
         // Olivine = Peridot
         for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {

@@ -1857,7 +1857,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
                 'e',
-                BlockList.DiamondFrameBox.getIS(),
+                BlockList.DiamondFrameBox.get(),
                 'f',
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
                 'g',
@@ -2857,7 +2857,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("infernus"), 24)
                         .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("superbia"), 16)
                         .add(Aspect.getAspect("terra"), 8),
-                BlockList.Mytryl.getIS(),
+                BlockList.Mytryl.get(),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28, missing),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
@@ -4643,7 +4643,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                BlockList.BloodyThaumium.getIS(),
+                BlockList.BloodyThaumium.get(),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 4, missing),
                 2,
                 5000,
@@ -4651,7 +4651,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                BlockList.BloodyVoid.getIS(),
+                BlockList.BloodyVoid.get(),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
                 3,
                 10000,
@@ -4659,7 +4659,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                BlockList.BloodyIchorium.getIS(),
+                BlockList.BloodyIchorium.get(),
                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
                 5,
                 50000,

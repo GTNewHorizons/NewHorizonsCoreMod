@@ -18,9 +18,8 @@ public final class ModFixesMaster {
     public static void registerModFix(IModFix pConstructedModFix) {
         if (mEnabled) {
             MainRegistry.Logger.error(
-                    String.format(
-                            "ModFix %s tried to register after enable phase. This mod-fix will be ignored",
-                            pConstructedModFix.getModFixName()));
+                    "ModFix {} tried to register after enable phase. This mod-fix will be ignored",
+                    pConstructedModFix.getModFixName());
             return;
         }
 
@@ -28,9 +27,8 @@ public final class ModFixesMaster {
             mModFixes.put(pConstructedModFix.getModFixName(), pConstructedModFix);
         } else {
             MainRegistry.Logger.error(
-                    String.format(
-                            "ModFix [%s] is already registered! Did you forget to change the name?",
-                            pConstructedModFix.getModFixName()));
+                    "ModFix [{}] is already registered! Did you forget to change the name?",
+                    pConstructedModFix.getModFixName());
         }
     }
 
@@ -42,10 +40,9 @@ public final class ModFixesMaster {
 
         for (IModFix tModFix : mModFixes.values()) {
             if (!tModFix.init()) {
-                MainRegistry.Logger
-                        .error(String.format("ModFix [%s] could not be initialized", tModFix.getModFixName()));
+                MainRegistry.Logger.error("ModFix [{}] could not be initialized", tModFix.getModFixName());
             } else {
-                MainRegistry.Logger.info(String.format("ModFix [%s] initialized and enabled", tModFix.getModFixName()));
+                MainRegistry.Logger.info("ModFix [{}] initialized and enabled", tModFix.getModFixName());
             }
         }
         mEnabled = true;

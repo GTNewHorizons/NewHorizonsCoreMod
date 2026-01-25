@@ -109,7 +109,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 "plateRedstone",
-                BlockList.DiamondFrameBox.getIS(),
+                BlockList.DiamondFrameBox.get(),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -1091,7 +1091,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        BlockList.DiamondFrameBox.getIS(),
+                        BlockList.DiamondFrameBox.get(),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(30 * SECONDS).eut(30)
