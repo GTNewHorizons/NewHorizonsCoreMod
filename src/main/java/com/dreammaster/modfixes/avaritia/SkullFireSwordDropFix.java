@@ -1,7 +1,5 @@
 package com.dreammaster.modfixes.avaritia;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import gregtech.api.enums.Mods;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,6 +13,8 @@ import com.dreammaster.modfixes.ModFixBase;
 
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.Mods;
 
 /**
  * Problem: The original Avarita-Source of this sword will only check for Minecraft.Skeleton. SpecialMobs replaces all
