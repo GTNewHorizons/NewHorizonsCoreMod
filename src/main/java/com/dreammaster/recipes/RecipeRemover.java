@@ -3008,6 +3008,36 @@ public class RecipeRemover {
         removeRecipeShapelessDelayed(
                 getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing),
                 getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "sacredoakFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "cherryFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "darkFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "firFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "etherealFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "magicFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "mangroveFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "palmFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "redwoodFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "willowFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "bamboothatchingFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "pineFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "hell_barkFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "jacarandaFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "mahoganyFence", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "sacredoakFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "cherryFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "darkFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "firFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "etherealFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "magicFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "mangroveFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "palmFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "redwoodFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "willowFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "bamboothatchingFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "pineFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "hell_barkFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "jacarandaFenceGate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "mahoganyFenceGate", 1, 0, missing));
         removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
         removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
         removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1, 4, missing));
