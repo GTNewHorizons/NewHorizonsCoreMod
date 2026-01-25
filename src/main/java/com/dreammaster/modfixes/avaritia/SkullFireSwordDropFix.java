@@ -1,9 +1,12 @@
 package com.dreammaster.modfixes.avaritia;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.Mods;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
@@ -12,7 +15,6 @@ import com.dreammaster.modfixes.ModFixBase;
 
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 
 /**
  * Problem: The original Avarita-Source of this sword will only check for Minecraft.Skeleton. SpecialMobs replaces all
@@ -22,11 +24,11 @@ import eu.usrv.yamcore.auxiliary.ItemDescriptor;
  */
 public class SkullFireSwordDropFix extends ModFixBase {
 
-    private ItemDescriptor mSkullFireSword;
+    private final Item skullFireSword;
 
     public SkullFireSwordDropFix() {
         super("AvaritiaSkullFireDropFix");
-        mSkullFireSword = ItemDescriptor.fromString("Avaritia:Skull_Sword", true);
+        skullFireSword = GameRegistry.findItem(Mods.Avaritia.ID, "Skull_Sword");
     }
 
     /**
@@ -47,7 +49,7 @@ public class SkullFireSwordDropFix extends ModFixBase {
 
     @Override
     public boolean getIsActive() {
-        return mSkullFireSword != null;
+        return skullFireSword != null;
     }
 
     /**
@@ -55,7 +57,7 @@ public class SkullFireSwordDropFix extends ModFixBase {
      */
     @Override
     public boolean init() {
-        return mSkullFireSword != null;
+        return skullFireSword != null;
     }
 
     /**
@@ -93,15 +95,13 @@ public class SkullFireSwordDropFix extends ModFixBase {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onLivingDrops(LivingDropsEvent event) {
         try {
-            if (mSkullFireSword == null) {
+            if (skullFireSword == null) {
                 return;
             }
 
             if (event.recentlyHit && isValidSkeletonEntity(event.entityLiving)
-                    && event.source.getEntity() instanceof EntityPlayer) {
-                EntityPlayer player = (EntityPlayer) event.source.getEntity();
-                if (player.getHeldItem() != null && player.getHeldItem().getItem() == mSkullFireSword.getItem()) {
-
+                    && event.source.getEntity() instanceof EntityPlayer player) {
+                if (player.getHeldItem() != null && player.getHeldItem().getItem() == skullFireSword) {
                     if (event.drops.isEmpty()) {
                         dropWitherHeadsInWorld(event, new ItemStack(Items.skull, 1, 1));
                     } else {
