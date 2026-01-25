@@ -5,7 +5,7 @@ dependencies {
     api("com.github.GTNewHorizons:Yamcl:0.7.3:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.6-GTNH:dev")
 
-    implementation("com.github.GTNewHorizons:GTNHLib:0.8.44:dev")
+    implementation("com.github.GTNewHorizons:GTNHLib:0.9.0:dev")
 
     implementation("net.glease:tc4recipelib:1.5.37:dev")
 
@@ -32,7 +32,7 @@ dependencies {
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.9-GTNH:dev")
     compileOnly("com.github.GTNewHorizons:Backhand:1.8.2:dev") { transitive = false }
     compileOnly("com.cubefury.vendingmachine:VendingMachine:0.4.2:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:BetterQuesting:3.8.14-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:BetterQuesting:3.8.17:dev") { transitive = false }
     //compileOnly("com.github.Roadhog360:Et-Futurum-Requiem:2.6.2:dev") { transitive = false }
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
