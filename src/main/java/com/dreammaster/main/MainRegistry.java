@@ -102,7 +102,6 @@ import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
-import eu.usrv.yamcore.YAMCore;
 import eu.usrv.yamcore.auxiliary.IngameErrorLog;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
@@ -252,20 +251,17 @@ public class MainRegistry {
         if (CoreConfig.ModHazardousItems_Enabled) {
             Logger.debug("Module_HazardousItems is enabled");
             Module_HazardousItems = new HazardousItemsHandler();
-            // Module_HazardousItems.LoadConfig();
         }
 
         if (CoreConfig.ModCustomToolTips_Enabled) {
             Logger.debug("Module_CustomToolTips is enabled");
             Module_CustomToolTips = new CustomToolTipsHandler();
             proxy.registerResourceReload();
-            // Module_CustomToolTips.LoadConfig();
         }
 
         if (CoreConfig.ModCustomFuels_Enabled) {
             Logger.debug("Module_CustomFuels is enabled");
             Module_CustomFuels = new CustomFuelsHandler();
-            // Module_CustomFuels.LoadConfig();
         }
 
         if (CoreConfig.ModCustomDrops_Enabled) {
