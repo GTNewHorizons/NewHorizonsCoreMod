@@ -128,7 +128,7 @@ public class RecipeRemover {
                 return false;
             }
             if (output.getItem() == null) {
-                MainRegistry.Logger.warn("Someone is adding recipes with null items!");
+                MainRegistry.LOGGER.warn("Someone is adding recipes with null items!");
                 return true;
             }
             final ItemStack copyStack;
@@ -152,7 +152,7 @@ public class RecipeRemover {
             }
             return false;
         });
-        MainRegistry.Logger.info("Removed {} recipes!", i - list.size());
+        MainRegistry.LOGGER.info("Removed {} recipes!", i - list.size());
     }
 
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
@@ -3453,6 +3453,6 @@ public class RecipeRemover {
         flushBuffer();
         bufferMap = null;
         final long timeToLoad = System.currentTimeMillis() - timeStart;
-        MainRegistry.Logger.info("Recipes removal took {} ms.", timeToLoad);
+        MainRegistry.LOGGER.info("Recipes removal took {} ms.", timeToLoad);
     }
 }

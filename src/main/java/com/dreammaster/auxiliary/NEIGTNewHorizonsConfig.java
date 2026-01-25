@@ -184,7 +184,7 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
         API.setOverrideName(new ItemStack(Blocks.ender_chest), "Personal Ender Chest");
 
-        MainRegistry.Logger.info("Added NEI Config");
+        MainRegistry.LOGGER.info("Added NEI Config");
     }
 
     @Override

@@ -143,7 +143,7 @@ public class MainRegistry {
     public static CoreModConfig CoreConfig;
     public static SimpleNetworkWrapper dispatcher;
     public static Random Rnd;
-    public static Logger Logger = LogManager.getLogger(Refstrings.MODID);
+    public static final Logger LOGGER = LogManager.getLogger(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
     private static boolean handleAchievements;
 
@@ -178,12 +178,12 @@ public class MainRegistry {
                 Refstrings.COLLECTIONID,
                 Refstrings.MODID);
         if (!CoreConfig.LoadConfig()) {
-            Logger.error("{} could not load its config file. Things are going to be weird!", Refstrings.MODID);
+            LOGGER.error("{} could not load its config file. Things are going to be weird!", Refstrings.MODID);
         }
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
-        Logger.debug("PRELOAD Init TexturePage");
+        LOGGER.debug("PRELOAD Init TexturePage");
         File tFile = new File(new File(PreEvent.getModConfigurationDirectory(), "GregTech"), "GregTech.cfg");
         Configuration tMainConfig = new Configuration(tFile);
         tMainConfig.load();
@@ -202,7 +202,7 @@ public class MainRegistry {
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
-        Logger.debug("PRELOAD Init NetworkChannel");
+        LOGGER.debug("PRELOAD Init NetworkChannel");
         dispatcher = new SimpleNetworkWrapper(Refstrings.MODID);
         dispatcher.registerMessage(
                 CTTClientSyncMessage.CTTClientSyncMessageHandler.class,
@@ -217,7 +217,7 @@ public class MainRegistry {
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
-        Logger.debug("PRELOAD Init Tabmanager");
+        LOGGER.debug("PRELOAD Init Tabmanager");
         TabManager = new CreativeTabsManager();
         ModTabList.InitModTabs(TabManager);
         // ------------------------------------------------------------
@@ -226,47 +226,47 @@ public class MainRegistry {
 
         // ------------------------------------------------------------
         // Init Modules
-        Logger.debug("PRELOAD Init Modules");
+        LOGGER.debug("PRELOAD Init Modules");
 
         if (CoreConfig.ModHazardousItems_Enabled) {
-            Logger.debug("Module_HazardousItems is enabled");
+            LOGGER.debug("Module_HazardousItems is enabled");
             Module_HazardousItems = new HazardousItemsHandler();
         }
 
         if (CoreConfig.ModCustomToolTips_Enabled) {
-            Logger.debug("Module_CustomToolTips is enabled");
+            LOGGER.debug("Module_CustomToolTips is enabled");
             Module_CustomToolTips = new CustomToolTipsHandler();
             proxy.registerResourceReload();
         }
 
         if (CoreConfig.ModCustomFuels_Enabled) {
-            Logger.debug("Module_CustomFuels is enabled");
+            LOGGER.debug("Module_CustomFuels is enabled");
             Module_CustomFuels = new CustomFuelsHandler();
         }
 
         if (CoreConfig.ModCustomDrops_Enabled) {
-            Logger.debug("Module_CustomDrops is enabled");
+            LOGGER.debug("Module_CustomDrops is enabled");
             Module_CustomDrops = new CustomDropsHandler(PreEvent.getModConfigurationDirectory());
         }
 
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
-        Logger.debug("PRELOAD Create Fluids");
+        LOGGER.debug("PRELOAD Create Fluids");
         FluidManager = new ModFluidManager(Refstrings.MODID);
         if (!FluidList.AddToItemManager(FluidManager)) {
-            Logger.error("Some fluids failed to register. Check the logfile for details");
+            LOGGER.error("Some fluids failed to register. Check the logfile for details");
         }
         // ------------------------------------------------------------
 
         // register final list with valid items to forge
-        Logger.debug("LOAD Register Items");
+        LOGGER.debug("LOAD Register Items");
         NHItemList.registerAll();
 
-        Logger.debug("LOAD Register Blocks");
+        LOGGER.debug("LOAD Register Blocks");
         BlockList.registerAll();
 
-        Logger.debug("LOAD Register Fluids");
+        LOGGER.debug("LOAD Register Fluids");
         FluidManager.RegisterItems(TabManager);
 
         if (PreEvent.getSide() == Side.CLIENT) {
@@ -282,10 +282,10 @@ public class MainRegistry {
         if (CoreModConfig.ModLoginMessage_Enabled) {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
         }
-        Logger.warn("==================================================");
-        Logger.warn("Welcome to Gregtech:New Horizons {}", CoreModConfig.ModPackVersion);
-        Logger.warn("Please bring comments to " + "https://discord.gg/gtnh");
-        Logger.warn("==================================================");
+        LOGGER.warn("==================================================");
+        LOGGER.warn("Welcome to Gregtech:New Horizons {}", CoreModConfig.ModPackVersion);
+        LOGGER.warn("Please bring comments to " + "https://discord.gg/gtnh");
+        LOGGER.warn("==================================================");
 
         MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
 
@@ -307,7 +307,7 @@ public class MainRegistry {
         if (CoreConfig.OreDictItems_Enabled) OreDictHandler.register_all();
 
         GregTechAPI.sAfterGTPostload.add(() -> {
-            Logger.debug("Add Runnable to GT to create pyrolyse oven logWood recipes");
+            LOGGER.debug("Add Runnable to GT to create pyrolyse oven logWood recipes");
             PyrolyseOvenLoader.registerRecipes();
         });
 
@@ -420,10 +420,10 @@ public class MainRegistry {
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
 
-        Logger.debug("Add Bacteria Stuff to BartWorks");
+        LOGGER.debug("Add Bacteria Stuff to BartWorks");
         BacteriaRegistry.runAllPostinit();
 
-        Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
+        LOGGER.debug("Nerf Platinum Metal Cauldron Cleaning");
         MetaGeneratedItem01
                 .registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
         MetaGeneratedItem01
@@ -503,10 +503,10 @@ public class MainRegistry {
         }
         if (Mods.BetterQuesting.isModLoaded()) {
             if (!bqConfig$ReloadOnStartup() && DreamCoreMod.modpackHasUpdated()) {
-                Logger.info("Modpack has been updated, loading default quest database");
+                LOGGER.info("Modpack has been updated, loading default quest database");
                 final long l = System.currentTimeMillis();
                 event.getServer().getCommandManager().executeCommand(event.getServer(), "/bq_admin default load");
-                Logger.info("Loading quest data base took {}ms", System.currentTimeMillis() - l);
+                LOGGER.info("Loading quest data base took {}ms", System.currentTimeMillis() - l);
             }
         }
     }
