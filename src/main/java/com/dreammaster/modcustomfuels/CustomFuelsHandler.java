@@ -66,9 +66,8 @@ public class CustomFuelsHandler implements IFuelHandler {
         // there to be fixed, but load
         // default setting instead, so an Op/Admin can do reload ingame
         if (!ReloadCustomFuels()) {
-            MainRegistry.Logger.warn(
+            MainRegistry.Logger.error(
                     "Configuration File seems to be damaged, loading does-nothing-evil default config. You should fix your file and reload it");
-            MainRegistry.AddLoginError("[CustomFuels] Config file not loaded due errors");
             InitSampleConfig();
         }
     }

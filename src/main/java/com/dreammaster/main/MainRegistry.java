@@ -102,7 +102,6 @@ import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
-import eu.usrv.yamcore.auxiliary.IngameErrorLog;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
@@ -140,7 +139,6 @@ public class MainRegistry {
     public static CustomToolTipsHandler Module_CustomToolTips;
     public static CustomFuelsHandler Module_CustomFuels;
     public static CustomDropsHandler Module_CustomDrops;
-    public static IngameErrorLog Module_AdminErrorLogs;
     public static GT_CustomLoader GTCustomLoader;
     public static CoreModConfig CoreConfig;
     public static SimpleNetworkWrapper dispatcher;
@@ -148,12 +146,6 @@ public class MainRegistry {
     public static Logger Logger = LogManager.getLogger(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
     private static boolean handleAchievements;
-
-    public static void AddLoginError(String pMessage) {
-        if (Module_AdminErrorLogs != null) {
-            Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
-        }
-    }
 
     /**
      * Returns true on a client
@@ -189,11 +181,6 @@ public class MainRegistry {
             Logger.error("{} could not load its config file. Things are going to be weird!", Refstrings.MODID);
         }
         // ------------------------------------------------------------
-
-        if (CoreConfig.ModAdminErrorLogs_Enabled) {
-            Logger.debug("Module_AdminErrorLogs is enabled");
-            Module_AdminErrorLogs = new IngameErrorLog();
-        }
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Init TexturePage");
@@ -235,14 +222,7 @@ public class MainRegistry {
         ModTabList.InitModTabs(TabManager);
         // ------------------------------------------------------------
 
-        // ------------------------------------------------------------
-        // FIXME: Move bio-items to Bartworks and remove this whole section.
-        Logger.debug("PRELOAD Create Items");
-        if (!BioItemLoader.preInit()) {
-            Logger.warn("Some items failed to register. Check the logfile for details");
-            AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
-        }
-        // ------------------------------------------------------------
+        BioItemLoader.preInit();
 
         // ------------------------------------------------------------
         // Init Modules
@@ -275,8 +255,7 @@ public class MainRegistry {
         Logger.debug("PRELOAD Create Fluids");
         FluidManager = new ModFluidManager(Refstrings.MODID);
         if (!FluidList.AddToItemManager(FluidManager)) {
-            Logger.warn("Some fluids failed to register. Check the logfile for details");
-            AddLoginError("[CoreMod-Fluids] Some fluids failed to register. Check the logfile for details");
+            Logger.error("Some fluids failed to register. Check the logfile for details");
         }
         // ------------------------------------------------------------
 
@@ -369,10 +348,6 @@ public class MainRegistry {
     }
 
     private void RegisterModuleEvents() {
-        if (CoreConfig.ModAdminErrorLogs_Enabled) {
-            FMLCommonHandler.instance().bus().register(Module_AdminErrorLogs);
-        }
-
         if (CoreConfig.ModHazardousItems_Enabled) {
             FMLCommonHandler.instance().bus().register(Module_HazardousItems);
         }

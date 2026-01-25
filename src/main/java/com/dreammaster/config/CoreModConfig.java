@@ -23,7 +23,6 @@ public class CoreModConfig extends ConfigManager {
     public boolean ModCustomToolTips_Enabled;
     public boolean ModCustomFuels_Enabled;
     public boolean ModCustomDrops_Enabled;
-    public boolean ModAdminErrorLogs_Enabled;
     public boolean ModBabyChest_Enabled;
     public boolean ForestryStampsAndChunkLoaderCoinsEnabled;
     public boolean ForestryStampsAndChunkLoaderCoinsServerEnabled;
@@ -63,7 +62,6 @@ public class CoreModConfig extends ConfigManager {
         ModCustomToolTips_Enabled = false;
         ModCustomFuels_Enabled = false;
         ModCustomDrops_Enabled = false;
-        ModAdminErrorLogs_Enabled = true;
         ModBabyChest_Enabled = true;
         OreDictItems_Enabled = true;
         ForestryStampsAndChunkLoaderCoinsEnabled = true;
@@ -130,11 +128,6 @@ public class CoreModConfig extends ConfigManager {
                 "Modules",
                 ModCustomFuels_Enabled,
                 "Set to true to enable CustomFuels module. Allows you to set burn-time values to almost any item");
-        ModAdminErrorLogs_Enabled = _mainConfig.getBoolean(
-                "AdminErrorLog",
-                "Modules",
-                ModAdminErrorLogs_Enabled,
-                "If set to true, every op/admin will receive all errors occoured during the startup phase as ingame message on join");
         ModBabyChest_Enabled = _mainConfig.getBoolean(
                 "BabyChest",
                 "Modules",
