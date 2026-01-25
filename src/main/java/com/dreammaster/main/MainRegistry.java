@@ -102,7 +102,6 @@ import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
-import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import gregtech.api.GregTechAPI;
@@ -268,10 +267,6 @@ public class MainRegistry {
 
         LOGGER.debug("LOAD Register Fluids");
         FluidManager.RegisterItems(TabManager);
-
-        if (PreEvent.getSide() == Side.CLIENT) {
-            FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
-        }
 
         BacteriaRegistry = new BacteriaRegistry();
 
