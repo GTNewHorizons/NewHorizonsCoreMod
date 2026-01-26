@@ -1,7 +1,5 @@
 package com.dreammaster.modhazardousitems;
 
-import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;
@@ -385,37 +383,9 @@ public class HazardousItemsHandler {
     private Field bg2ExtraInvField;
 
     private void CheckInventoryForItems(EntityPlayer pPlayer) {
-        if (ticks % inventoryCheckPeriod != 0) {
-            return;
-        }
+        if (ticks % inventoryCheckPeriod != 0) return;
 
-        try {
-            checkInventoryArray(pPlayer.inventory.mainInventory, pPlayer);
-
-            if (MineAndBladeBattleGear2.isModLoaded()) {
-                try {
-                    if (bg2ExtraInvField == null) {
-                        try {
-                            bg2ExtraInvField = pPlayer.inventory.getClass().getDeclaredField("battlegear2$extraItems");
-                        } catch (NoSuchFieldException nsfe) {
-                            MainRegistry.LOGGER
-                                    .warn("Seems battlegear has updated/changed. Someone has to fix HazardousItems!");
-                            bg2ExtraInvField = pPlayer.inventory.getClass().getDeclaredField("extraItems");
-                        }
-                        bg2ExtraInvField.setAccessible(true);
-                    }
-                    if (bg2ExtraInvField == null) return;
-                    ItemStack[] tExtraInv = (ItemStack[]) bg2ExtraInvField.get(pPlayer.inventory);
-                    checkInventoryArray(tExtraInv, pPlayer);
-                } catch (NoSuchFieldException | IllegalAccessException ex) {
-                    MainRegistry.LOGGER
-                            .warn("Seems battlegear has updated/changed. Someone has to fix HazardousItems!");
-                }
-            }
-        } catch (Exception e) {
-            MainRegistry.LOGGER.error("Something bad happend while processing the onPlayerTick event");
-            e.printStackTrace();
-        }
+        checkInventoryArray(pPlayer.inventory.mainInventory, pPlayer);
     }
 
     private void doEffects(HazardCause cause, IDamageEffectContainer effectContainer, EntityPlayer player) {
