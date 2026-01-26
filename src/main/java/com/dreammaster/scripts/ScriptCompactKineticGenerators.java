@@ -7,7 +7,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
@@ -120,7 +120,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'b',
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 1, missing),
                 'c',
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                NHItemList.IridiumAlloyItemCasing.get(),
                 'd',
                 "gearGtSmallDraconium",
                 'e',
@@ -228,7 +228,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'b',
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 5, missing),
                 'c',
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                NHItemList.IridiumAlloyItemCasing.get(),
                 'd',
                 ItemList.Electric_Pump_LuV.get(1L),
                 'e',

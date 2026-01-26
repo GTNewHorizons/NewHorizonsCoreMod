@@ -152,7 +152,7 @@ public class RecipeRemover {
             }
             return false;
         });
-        MainRegistry.Logger.info("Removed " + (i - list.size()) + " recipes!");
+        MainRegistry.Logger.info("Removed {} recipes!", i - list.size());
     }
 
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
@@ -3453,6 +3453,6 @@ public class RecipeRemover {
         flushBuffer();
         bufferMap = null;
         final long timeToLoad = System.currentTimeMillis() - timeStart;
-        MainRegistry.Logger.info("Recipes removal took " + timeToLoad + " ms.");
+        MainRegistry.Logger.info("Recipes removal took {} ms.", timeToLoad);
     }
 }

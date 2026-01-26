@@ -26,7 +26,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.common.loaders.ItemRegistry;
@@ -1200,7 +1199,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        CustomItemList.Display.get(1L),
+                        NHItemList.Display.get(),
                         ItemList.Cover_Crafting.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
@@ -1239,7 +1238,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                            NHItemList.GoldCoreChip.getIS(1),
+                            NHItemList.GoldCoreChip.get(1),
                             ItemList.Robot_Arm_MV.get(2L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L))
@@ -1251,7 +1250,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
-                            NHItemList.DiamondCoreChip.getIS(1),
+                            NHItemList.DiamondCoreChip.get(1),
                             ItemList.Robot_Arm_HV.get(1L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L))
@@ -1265,7 +1264,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
-                        CustomItemList.Display.get(1L),
+                        NHItemList.Display.get(),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),

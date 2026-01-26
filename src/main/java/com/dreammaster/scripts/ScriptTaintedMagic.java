@@ -535,13 +535,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .setConcealed().setPages(new ResearchPage("tm.text.CREATIONSHARD.1")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "CreationShardGTNH",
-                NHItemList.VoidEssence.getIS(2),
+                NHItemList.VoidEssence.get(2),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("vacuos"), 16)
                         .add(Aspect.getAspect("tenebrae"), 16));
         TCHelper.addResearchPage(
                 "CreationShardGTNH",
-                new ResearchPage(TCHelper.findCrucibleRecipe(NHItemList.VoidEssence.getIS(1))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(NHItemList.VoidEssence.get(1))));
         TCHelper.addInfusionCraftingRecipe(
                 "CreationShardGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 2, 5, missing),
@@ -553,13 +553,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing));
         TCHelper.addResearchPage(
@@ -1846,15 +1846,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
         TCHelper.addResearchPage(
                 "FocusTimeGTNH",
@@ -1888,15 +1888,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing),
                 getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 getModItem(Thaumcraft.ID, "FocusFrost", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing));
         TCHelper.addResearchPage(
                 "FocusWeatherGTNH",
@@ -1938,9 +1938,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 OrePrefixes.plate.get(Materials.Shadow),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing),
-                NHItemList.VoidEssence.getIS(1),
+                NHItemList.VoidEssence.get(1),
                 OrePrefixes.plate.get(Materials.Shadow),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 OrePrefixes.plate.get(Materials.Void),

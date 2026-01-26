@@ -38,7 +38,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -178,7 +177,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 SuperSpeedCard,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                CustomItemList.MysteriousCrystal,
+                NHItemList.MysteriousCrystal.get(),
                 ItemList.AcceleratorLuV);
 
         // Quad Core
@@ -241,19 +240,19 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 components[0],
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitData", 'P',
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38), // 64k
-                        'X', CustomItemList.EngineeringProcessorItemEmeraldCore.get(1) });
+                        'X', NHItemList.EngineeringProcessorItemEmeraldCore.get() });
         GTModHandler.addCraftingRecipe(
                 components[1],
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitElite", 'P', components[0], 'X',
-                        CustomItemList.EngineeringProcessorItemEmeraldCore.get(1) });
+                        NHItemList.EngineeringProcessorItemEmeraldCore.get() });
         GTModHandler.addCraftingRecipe(
                 components[2],
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitMaster", 'P', components[1], 'X',
-                        CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1) });
+                        NHItemList.EngineeringProcessorItemAdvEmeraldCore.get() });
         GTModHandler.addCraftingRecipe(
                 components[3],
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitSuperconductor", 'P', components[2], 'X',
-                        CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1) });
+                        NHItemList.EngineeringProcessorItemAdvEmeraldCore.get() });
         FluidStack[] solders = new FluidStack[] { Materials.Lead.getMolten(288), Materials.Tin.getMolten(144),
                 Materials.SolderingAlloy.getMolten(72), };
         for (FluidStack solder : solders) {
@@ -262,7 +261,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
-                            CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
+                            NHItemList.EngineeringProcessorItemEmeraldCore.get(),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                     .circuit(1).itemOutputs(components[0]).fluidInputs(solder).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_EV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
@@ -271,7 +270,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
-                            CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
+                            NHItemList.EngineeringProcessorItemEmeraldCore.get(),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                     .circuit(1).itemOutputs(components[1]).fluidInputs(solder).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_IV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
@@ -280,7 +279,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
-                            CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
+                            NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
                             ItemList.Circuit_Board_Wetware_Extreme.get(1))
                     .circuit(1).itemOutputs(components[2]).fluidInputs(solder).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
@@ -289,7 +288,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
-                            CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
+                            NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
                             ItemList.Circuit_Board_Bio_Ultra.get(1))
                     .circuit(1).itemOutputs(components[3]).fluidInputs(solder).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
@@ -560,7 +559,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 'a',
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1),
                 'b',
-                CustomItemList.PikoCircuit.get(1L),
+                NHItemList.PikoCircuit.get(),
                 'c',
                 ItemList.Field_Generator_UIV.get(1L),
                 'd',
@@ -609,7 +608,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 'b',
                 getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
                 'c',
-                CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1L),
+                NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
                 'd',
                 "blockCosmicNeutronium");
 
@@ -1092,7 +1091,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
                 ToolDictNames.craftingToolSoftMallet.name(),
                 ItemList.Conveyor_Module_LuV.get(1L),
-                CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1L),
+                NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
                 ItemList.Conveyor_Module_LuV.get(1L),
                 ItemList.Electric_Motor_LuV.get(1L),
                 ItemList.Robot_Arm_LuV.get(1L),
@@ -1767,7 +1766,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                 "circuitPrimitive",
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
-                CustomItemList.LogicProcessorItemGoldCore.get(1L),
+                NHItemList.LogicProcessorItemGoldCore.get(),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                 "circuitPrimitive",
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
@@ -1778,7 +1777,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
                 "circuitBasic",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                CustomItemList.LogicProcessorItemGoldCore.get(1L),
+                NHItemList.LogicProcessorItemGoldCore.get(),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
                 "circuitBasic",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
@@ -1789,7 +1788,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
                 "circuitGood",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
-                CustomItemList.EngineeringProcessorItemDiamondCore.get(1L),
+                NHItemList.EngineeringProcessorItemDiamondCore.get(),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
                 "circuitGood",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
@@ -1800,7 +1799,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
                 "circuitAdvanced",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
-                CustomItemList.EngineeringProcessorItemDiamondCore.get(1L),
+                NHItemList.EngineeringProcessorItemDiamondCore.get(),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
                 "circuitAdvanced",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
@@ -1811,7 +1810,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
                 "plateGlowstone",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                NHItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
+                NHItemList.EngineeringProcessorSpatialPulsatingCore.get(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
                 "plateGlowstone",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
@@ -1822,7 +1821,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
                 "plateEnderPearl",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
-                NHItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
+                NHItemList.EngineeringProcessorSpatialPulsatingCore.get(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
                 "plateEnderPearl",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
@@ -1833,7 +1832,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
                 "plateEnderEye",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
-                NHItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
+                NHItemList.EngineeringProcessorSpatialPulsatingCore.get(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
                 "plateEnderEye",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
@@ -2093,7 +2092,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
                         ItemList.Conveyor_Module_LuV.get(2L),
-                        CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1L),
+                        NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
                         ItemList.Electric_Motor_LuV.get(2L),
                         ItemList.Robot_Arm_LuV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500, missing))

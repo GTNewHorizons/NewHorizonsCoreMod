@@ -35,7 +35,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.forestry.ForestryHelper;
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.railcraft.RailcraftHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -1930,7 +1930,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
-                        CustomItemList.ChargedCertusQuartzDust.get(1L), 'f',
+                        NHItemList.ChargedCertusQuartzDust.get(), 'f',
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
@@ -2021,25 +2021,25 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 5L),
-                        CustomItemList.MoldHelmet.get(0L))
+                        NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 8L),
-                        CustomItemList.MoldChestplate.get(0L))
+                        NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 7L),
-                        CustomItemList.MoldLeggings.get(0L))
+                        NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.legs", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
-                        CustomItemList.MoldBoots.get(0L))
+                        NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.boots", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()

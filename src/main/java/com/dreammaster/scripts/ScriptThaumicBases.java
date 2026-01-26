@@ -23,7 +23,7 @@ import java.util.Objects;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -610,12 +610,12 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
                 ItemList.Emitter_MV.get(1L),
-                CustomItemList.ReinforcedGlassLense.get(1L),
+                NHItemList.ReinforcedGlassLense.get(),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                CustomItemList.ReinforcedGlassLense.get(1L),
+                NHItemList.ReinforcedGlassLense.get(),
                 ItemList.Emitter_MV.get(1L));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.Overchanter",
@@ -677,7 +677,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 'a',
                 "screwStainlessSteel",
                 'b',
-                CustomItemList.LichBone.get(1L),
+                NHItemList.LichBone.get(),
                 'c',
                 "screwStainlessSteel",
                 'd',
@@ -704,7 +704,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 'a',
                 "screwStainlessSteel",
                 'b',
-                CustomItemList.LichBone.get(1L),
+                NHItemList.LichBone.get(),
                 'c',
                 "screwStainlessSteel",
                 'd',
@@ -972,7 +972,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("alienis"), 32),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 4, missing),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing),
-                CustomItemList.SnowQueenBlood.get(1L),
+                NHItemList.SnowQueenBlood.get(),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 5, missing),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 6, missing),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 7, missing),
@@ -982,7 +982,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 8, missing),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 9, missing),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 10, missing),
-                CustomItemList.SnowQueenBlood.get(1L));
+                NHItemList.SnowQueenBlood.get());
         TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Bright",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 0, missing),

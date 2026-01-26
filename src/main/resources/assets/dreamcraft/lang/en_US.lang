@@ -1,3 +1,9 @@
+item.AbsoluteZeroDisc.name=Cosmic Music Disc
+item.record.dreamcraft:absolute_zero.desc="Absolute Zero" by Sol IX
+item.FloraDisc.name=Primal Music Disc
+item.record.dreamcraft:flora.desc="Flora" by Sol IX
+item.SweetDreamsDisc.name=Technological Music Disc
+item.record.dreamcraft:sweet_dreams.desc="Sweet Dreams" by Aviators
 item.TenKCell.name=10K Cell
 item.ThirtyKCell.name=30K Cell
 item.SixtyKCell.name=60K Cell
@@ -245,9 +251,10 @@ item.SoulariumBars.name=Soularium Bars
 item.EnderiumBaseBars.name=Enderium Base Bars
 item.EnderiumBars.name=Enderium Bars
 tile.SandClayMix.name=Sand Clay Mix
+tile.ZincGravelOre.name=Zinc Gravel Ore
 tile.CallistoColdIce.name=Callisto Cold Ice Block
 tile.Ledox.name=Block of Ledox
-tile.MysteriousCrystal.name=Mysterious Crystal Block
+tile.MysteriousCrystalBlock.name=Mysterious Crystal Block
 tile.Mytryl.name=Block of Mytryl
 tile.Quantinum.name=Block of Quantium
 tile.PistonBlock.name=Piston Block
@@ -1773,8 +1780,6 @@ item.tconstruct.manual.weaponry.crossbow=\n\nCrossbow:\nThose pesky metals are s
 item.tconstruct.manual.weaponry.projectiles=Projectiles\nFor these projectiles goes: The heavier the projectile, the more damage carries through armor.\n\nArrows:\nThe bread and butter of every ranger. Arrows can be built from many different materials. It needs an arrow head, a shaft and a fletching.\nThe choice of materials allows a balance between damage, arrow-count, accuracy and fragility. The head material is crucial for its weight.\nA fragile arrow has a chance to break on impact with terrain. Arrows always break when they hit a target, however the reinforced trait gives a chance for the arrow to survive the impact.
 item.tconstruct.manual.weaponry.part_materials=\n\nValid Shaft Materials:\n* Stick\n* Sugarcane\n* Bone\n* Blaze Rod\n\nValid Fletching Materials:\n* Leaves\n* Slimeleaves\n* Feathers\n* Slime
 item.tconstruct.manual.weaponry.bolts=\n\nBolts:\nCrafting bolts is a delicate process. First you need a core in the form of a tool rod.\nTake this tool rod to a smeltery and put it into a Casting Table. Pour some metal onto it to coat the tip with a more damaging material.\nAfter this process, add a fletching and your bolts are ready to be used.\n\nSince the bolts consist of a harder core and tip they carry more weight than regular arrows, making them perfect to fight armored targets.
-
-block.ore.gravel.zinc.name=Zinc Gravel Ore
 
 dreamcraft.mobsinfocompat.limitedropcount=Drops only %s times per person
 dreamcraft.gui.quitmessage=Are you sure you want to exit the game?
