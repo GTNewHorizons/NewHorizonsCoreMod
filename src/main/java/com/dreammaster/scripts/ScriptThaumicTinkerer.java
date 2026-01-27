@@ -32,6 +32,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -92,25 +93,25 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
