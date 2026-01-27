@@ -701,9 +701,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_Canner.get(1),
                 bits,
-                new Object[] { "CFC", "AMB", "CFC", 'A', ItemList.Machine_HV_Canner, 'B',
-                        ItemList.Machine_HV_FluidCanner, 'F', OrePrefixes.circuit.get(Materials.HV), 'C',
-                        OrePrefixes.pipeLarge.get(Materials.Steel), 'M', ItemList.Electric_Pump_HV });
+                new Object[] { "CFC", "MAM", "CFC", 'A', ItemList.Machine_HV_Canner, 'F',
+                        OrePrefixes.circuit.get(Materials.HV), 'C', OrePrefixes.pipeLarge.get(Materials.Steel), 'M',
+                        ItemList.Electric_Pump_HV });
 
         // High Energy Laser Emitter
         GTModHandler.addCraftingRecipe(
@@ -2137,7 +2137,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { ItemList.Hatch_Output_ME.get(1L), FLUID_SINGULARITY });
 
         // Pre-add planet block to EOH controller
-        for (String dimAbbreviation : DimensionHelper.DimNameDisplayed) {
+        for (String dimAbbreviation : DimensionHelper.getAllDisplayedNames()) {
             ItemStack dimDisplay = new ItemStack(ModBlocks.getBlock(dimAbbreviation));
             ItemStack EOHController = tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L);
             ItemStack NBTController = EOHController.copy();

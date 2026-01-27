@@ -485,55 +485,6 @@ public class GT_Loader_Machines {
                         'G', GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
 
         GTModHandler.addCraftingRecipe(
-                ItemList.FluidCannerLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
-                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'P',
-                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C', OrePrefixes.circuit.get(Materials.LuV),
-                        'G', GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.FluidCannerZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
-                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.Naquadah), 'P',
-                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C', OrePrefixes.circuit.get(Materials.ZPM),
-                        'G', GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.FluidCannerUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
-                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'P',
-                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C', OrePrefixes.circuit.get(Materials.UV),
-                        'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.FluidCannerUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
-                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
-                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C', OrePrefixes.circuit.get(Materials.UV),
-                        'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.FluidCannerUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
-                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'P',
-                        ItemList.Electric_Pump_UEV, 'B', ItemList.Hull_UEV, 'C', OrePrefixes.circuit.get(Materials.UV),
-                        'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.FluidCannerUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
-                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
-                        ItemList.Electric_Pump_UIV, 'B', ItemList.Hull_UIV, 'C', OrePrefixes.circuit.get(Materials.UV),
-                        'G', GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.FluidCannerUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
-                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
-                        ItemList.Electric_Pump_UMV, 'B', ItemList.Hull_UMV, 'C', OrePrefixes.circuit.get(Materials.UV),
-                        'G', GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
-
-        GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorLuV.get(1L),
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_LuV, 'E', ItemList.Electric_Piston_LuV, 'P',

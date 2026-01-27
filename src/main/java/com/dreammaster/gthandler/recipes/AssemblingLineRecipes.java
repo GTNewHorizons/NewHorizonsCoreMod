@@ -1796,8 +1796,8 @@ public class AssemblingLineRecipes implements Runnable {
                         GGMaterial.marCeM200.getMolten(16 * INGOTS),
                         MaterialsAlloy.INDALLOY_140.getFluidStack(10 * INGOTS),
                         Materials.Lubricant.getFluid(4000))
-                .itemOutputs(ItemList.Machine_Multi_ChamberCentrifuge.get(1)).eut(TierEU.RECIPE_ZPM)
-                .duration(60 * SECONDS).addTo(AssemblyLine);
+                .itemOutputs(ItemList.Machine_Multi_Spinmatron.get(1)).eut(TierEU.RECIPE_ZPM).duration(60 * SECONDS)
+                .addTo(AssemblyLine);
 
         if (AE2FluidCraft.isModLoaded()) {
             // Super Stock Replenisher

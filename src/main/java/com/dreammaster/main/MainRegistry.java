@@ -30,6 +30,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
@@ -102,8 +105,6 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import eu.usrv.yamcore.YAMCore;
 import eu.usrv.yamcore.auxiliary.IngameErrorLog;
-import eu.usrv.yamcore.auxiliary.LogHelper;
-import eu.usrv.yamcore.blocks.ModBlockManager;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
@@ -137,7 +138,6 @@ public class MainRegistry {
 
     public static CreativeTabsManager TabManager;
     public static ModFluidManager FluidManager;
-    public static ModBlockManager BlockManager;
     public static HazardousItemsHandler Module_HazardousItems;
     public static CustomToolTipsHandler Module_CustomToolTips;
     public static CustomFuelsHandler Module_CustomFuels;
@@ -147,7 +147,7 @@ public class MainRegistry {
     public static CoreModConfig CoreConfig;
     public static SimpleNetworkWrapper dispatcher;
     public static Random Rnd;
-    public static LogHelper Logger = new LogHelper(Refstrings.MODID);
+    public static Logger Logger = LogManager.getLogger(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
     private static boolean handleAchievements;
 
@@ -179,8 +179,6 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void PreLoad(FMLPreInitializationEvent PreEvent) {
-        Logger.setDebugOutput(true);
-
         Rnd = new Random(System.currentTimeMillis());
 
         // ------------------------------------------------------------
@@ -190,10 +188,7 @@ public class MainRegistry {
                 Refstrings.COLLECTIONID,
                 Refstrings.MODID);
         if (!CoreConfig.LoadConfig()) {
-            Logger.error(
-                    String.format(
-                            "%s could not load its config file. Things are going to be weird!",
-                            Refstrings.MODID));
+            Logger.error("{} could not load its config file. Things are going to be weird!", Refstrings.MODID);
         }
         // ------------------------------------------------------------
 
@@ -237,11 +232,6 @@ public class MainRegistry {
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
-        Logger.debug("PRELOAD Init itemmanager");
-        BlockManager = new ModBlockManager(Refstrings.MODID);
-        // ------------------------------------------------------------
-
-        // ------------------------------------------------------------
         Logger.debug("PRELOAD Init Tabmanager");
         TabManager = new CreativeTabsManager();
         ModTabList.InitModTabs(TabManager);
@@ -253,14 +243,6 @@ public class MainRegistry {
         if (!BioItemLoader.preInit()) {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
-        }
-        // ------------------------------------------------------------
-
-        // ------------------------------------------------------------
-        Logger.info("PRELOAD Create Blocks");
-        if (!BlockList.AddToItemManager(BlockManager)) {
-            Logger.warn("Some blocks failed to register. Check the logfile for details");
-            AddLoginError("[CoreMod-Blocks] Some blocks failed to register. Check the logfile for details");
         }
         // ------------------------------------------------------------
 
@@ -308,7 +290,7 @@ public class MainRegistry {
         NHItemList.registerAll();
 
         Logger.debug("LOAD Register Blocks");
-        BlockManager.RegisterItems(TabManager);
+        BlockList.registerAll();
 
         Logger.debug("LOAD Register Fluids");
         FluidManager.RegisterItems(TabManager);
@@ -327,14 +309,13 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
         }
         Logger.warn("==================================================");
-        Logger.warn("Welcome to Gregtech:New Horizons " + CoreModConfig.ModPackVersion);
+        Logger.warn("Welcome to Gregtech:New Horizons {}", CoreModConfig.ModPackVersion);
         Logger.warn("Please bring comments to " + "https://discord.gg/gtnh");
         Logger.warn("==================================================");
 
         MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
 
         if (TinkerConstruct.isModLoaded()) {
-            TiCoLoader.doPreInitialization();
             GregTechAPI.sAfterGTPreload.add(SmelteryFluidTypes::registerGregtechFluidTypes);
         }
     }
@@ -375,13 +356,14 @@ public class MainRegistry {
         }
     }
 
-    public static Block _mBlockBabyChest = new BlockBabyChest();
+    public static Block blockBabyChest = new BlockBabyChest();
 
     private void InitAdditionalBlocks() {
-        GameRegistry.registerBlock(_mBlockBabyChest, ItemBlockBabyChest.class, "BabyChest");
-        GameRegistry.addShapelessRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
+        GameRegistry.registerBlock(blockBabyChest, ItemBlockBabyChest.class, "BabyChest");
+        blockBabyChest.setCreativeTab(ModTabList.BLOCKS);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(_mBlockBabyChest, 9))
+        GameRegistry.addShapelessRecipe(new ItemStack(blockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(blockBabyChest, 9))
                 .itemOutputs(new ItemStack(Blocks.chest, 1, 0)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GameRegistry.registerTileEntity(TileEntityBabyChest.class, "teBabyChest");
@@ -557,7 +539,7 @@ public class MainRegistry {
                 Logger.info("Modpack has been updated, loading default quest database");
                 final long l = System.currentTimeMillis();
                 event.getServer().getCommandManager().executeCommand(event.getServer(), "/bq_admin default load");
-                Logger.info("Loading quest data base took " + (System.currentTimeMillis() - l) + "ms");
+                Logger.info("Loading quest data base took {}ms", System.currentTimeMillis() - l);
             }
         }
     }
@@ -572,18 +554,37 @@ public class MainRegistry {
     @Mod.EventHandler
     public void onMissingMappings(FMLMissingMappingsEvent event) {
         HashMap<String, Item> itemListRemaps = null;
+        HashMap<String, Block> blockListRemaps = null;
 
         for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
+            // Remap all the old Yamcl names (for Blocks & their ItemBlocks)
+            if (mapping.name.startsWith("dreamcraft:tile.")) {
+                if (blockListRemaps == null) {
+                    blockListRemaps = createBlockListRemaps();
+                }
+
+                final Block newBlockID = blockListRemaps.get(mapping.name.substring(16));
+                if (mapping.type == GameRegistry.Type.ITEM) {
+                    mapping.remap(Item.getItemFromBlock(newBlockID));
+                } else {
+                    mapping.remap(newBlockID);
+                }
+                continue;
+            }
+
             if (mapping.type != GameRegistry.Type.ITEM) continue;
 
+            // Remap all the old Yamcl names (for Items)
             if (mapping.name.startsWith("dreamcraft:item.")) {
-                // Remap all the old Yamcl names to the new names.
                 if (itemListRemaps == null) {
                     itemListRemaps = createNHItemListRemaps();
                 }
 
                 mapping.remap(itemListRemaps.get(mapping.name.substring(16)));
-            } else if ("dreamcraft:itemQuantumToast".equals(mapping.name)) {
+                continue;
+            }
+
+            if ("dreamcraft:itemQuantumToast".equals(mapping.name)) {
                 // Replace the old Quantum Bread declaration with the new one.
                 mapping.remap(NHItemList.QuantumBread.item);
             }
@@ -602,6 +603,19 @@ public class MainRegistry {
         itemListData.put("UnfiredSlimeSoulBrick", NHItemList.UnfiredSlimeSoilBrick.item);
 
         return itemListData;
+    }
+
+    private static HashMap<String, Block> createBlockListRemaps() {
+        final HashMap<String, Block> blockListData = new HashMap<>();
+
+        for (var entry : BlockList.values()) {
+            blockListData.put(entry.name, entry.block);
+        }
+
+        // Remaps MysteriousCrystal to MysteriousCrystalBlock in order to not conflict with the item
+        blockListData.put("MysteriousCrystal", BlockList.MysteriousCrystalBlock.block);
+
+        return blockListData;
     }
 
     @Optional.Method(modid = Mods.ModIDs.BETTER_QUESTING)
