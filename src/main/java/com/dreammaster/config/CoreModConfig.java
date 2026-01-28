@@ -27,9 +27,7 @@ public class CoreModConfig extends ConfigManager {
     public boolean ForestryStampsAndChunkLoaderCoinsEnabled;
     public boolean ForestryStampsAndChunkLoaderCoinsServerEnabled;
 
-    public boolean AvaritiaFixEnabled;
     public boolean MinetweakerFurnaceFixEnabled;
-    public String[] SkullFireSwordEntityTargets;
 
     public OilGeneratorFix.OilConfig OilFixConfig;
 
@@ -47,12 +45,7 @@ public class CoreModConfig extends ConfigManager {
         ForestryStampsAndChunkLoaderCoinsEnabled = true;
         ForestryStampsAndChunkLoaderCoinsServerEnabled = false;
 
-        AvaritiaFixEnabled = false;
         MinetweakerFurnaceFixEnabled = true;
-
-        SkullFireSwordEntityTargets = new String[] { "net.minecraft.entity.monster.EntitySkeleton",
-                "galaxyspace.SolarSystem.planets.venus.entities.EntityEvolvedFireSkeleton",
-                "micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton" };
     }
 
     @Override
@@ -114,21 +107,11 @@ public class CoreModConfig extends ConfigManager {
                 ForestryStampsAndChunkLoaderCoinsServerEnabled,
                 "Enables crafting recipes for Forestry stamps and Chunk Loader Coins on server");
 
-        AvaritiaFixEnabled = _mainConfig.getBoolean(
-                "AvaritiaFixEnabled",
-                "ModFixes",
-                AvaritiaFixEnabled,
-                "Set to true to enable the modfix for Avaritia SkullFireSword");
         MinetweakerFurnaceFixEnabled = _mainConfig.getBoolean(
                 "MinetweakerFurnaceFixEnabled",
                 "ModFixes",
                 MinetweakerFurnaceFixEnabled,
                 "Set to true to allow Minetweaker to override the vanilla furnace fuel handler, allowing the burn value of WOOD material items to be changed.");
-        SkullFireSwordEntityTargets = _mainConfig.getStringList(
-                "Avaritia_SkullFireSwordEntityTargets",
-                "ModFixes.Avaritia",
-                SkullFireSwordEntityTargets,
-                "The Canonical Class-Name of the Entity");
 
         OilFixConfig = new OilGeneratorFix.OilConfig(_mainConfig);
     }
