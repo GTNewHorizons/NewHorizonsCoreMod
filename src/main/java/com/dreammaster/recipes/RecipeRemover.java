@@ -760,7 +760,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "diamondChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "netherStarChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "cloudinabottle", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Chisel.ID, "ballomoss", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "smashingrock", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "autoChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "upgrade", 1, 0, missing));
