@@ -20,6 +20,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
@@ -38,7 +39,6 @@ import com.kuba6000.mobsinfo.api.MobRecipe;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
-import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import eu.usrv.yamcore.persisteddata.PersistedDataBase;
 import gregtech.api.enums.Mods;
 import io.netty.buffer.ByteBuf;
@@ -88,20 +88,20 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
             jaxMarsh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxMarsh.marshal(_mCustomDrops, new FileOutputStream(_mConfigFileName, false));
 
-            MainRegistry.Logger.debug("Config file written");
+            MainRegistry.LOGGER.debug("Config file written");
             return true;
         } catch (Exception e) {
-            MainRegistry.Logger.error("Unable to create new CustomDrops.xml. What did you do??");
+            MainRegistry.LOGGER.error("Unable to create new CustomDrops.xml. What did you do??");
             e.printStackTrace();
             return false;
         }
     }
 
     public void LoadConfig() {
-        MainRegistry.Logger.debug("CustomDrops entering state: LOAD CONFIG");
+        MainRegistry.LOGGER.debug("CustomDrops entering state: LOAD CONFIG");
         File tConfigFile = new File(_mConfigFileName);
         if (!tConfigFile.exists()) {
-            MainRegistry.Logger.debug("CustomDrops Config file not found, assuming first-start. Creating default one");
+            MainRegistry.LOGGER.debug("CustomDrops Config file not found, assuming first-start. Creating default one");
             InitSampleConfig();
             SaveCustomDrops();
         }
@@ -110,9 +110,8 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
         // there to be fixed, but load
         // default setting instead, so an Op/Admin can do reload ingame
         if (!ReloadCustomDrops()) {
-            MainRegistry.Logger.warn(
+            MainRegistry.LOGGER.error(
                     "Configuration File seems to be damaged, loading does-nothing-evil default config. You should fix your file and reload it");
-            MainRegistry.AddLoginError("[CustomDrops] Config file not loaded due errors");
             InitSampleConfig();
         }
     }
@@ -123,7 +122,7 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
         for (CustomDrops.CustomDrop X : pDropListToCheck.getCustomDrops()) {
             for (CustomDrops.CustomDrop.Drop Y : X.getDrops()) {
                 if (ItemDescriptor.fromString(Y.getItemName()) == null) {
-                    MainRegistry.Logger
+                    MainRegistry.LOGGER
                             .error("In ItemDropID: [{}], can't find item [{}]", Y.getIdentifier(), Y.getItemName());
                     tSuccess = false;
                 }
@@ -135,7 +134,7 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
                             tSuccess = false;
                         }
                     } catch (Exception e) {
-                        MainRegistry.Logger.error("In ItemDropID: [{}], NBTTag is invalid", Y.getIdentifier());
+                        MainRegistry.LOGGER.error("In ItemDropID: [{}], NBTTag is invalid", Y.getIdentifier());
                         tSuccess = false;
                     }
                 }
@@ -147,16 +146,16 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
     public boolean ReloadCustomDrops() {
         boolean tResult = false;
 
-        MainRegistry.Logger.debug("CustomDropsHandler will now try to load its configuration");
+        MainRegistry.LOGGER.debug("CustomDropsHandler will now try to load its configuration");
         try {
             JAXBContext tJaxbCtx = JAXBContext.newInstance(CustomDrops.class);
             File tConfigFile = new File(_mConfigFileName);
             Unmarshaller jaxUnmarsh = tJaxbCtx.createUnmarshaller();
             CustomDrops tNewItemCollection = (CustomDrops) jaxUnmarsh.unmarshal(tConfigFile);
-            MainRegistry.Logger.debug("Config file has been loaded. Entering Verify state");
+            MainRegistry.LOGGER.debug("Config file has been loaded. Entering Verify state");
 
             if (!VerifyConfig(tNewItemCollection)) {
-                MainRegistry.Logger
+                MainRegistry.LOGGER
                         .error("New config will NOT be activated. Please check your error-log and try again");
                 tResult = false;
             } else {
@@ -183,8 +182,10 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
                     tEP = (EntityPlayer) pEvent.source.getEntity();
                     tUUID = tEP.getUniqueID();
                     if (_mDeathDebugPlayers.contains(tUUID)) {
-                        PlayerChatHelper
-                                .SendInfo(tEP, String.format("Killed entity: [%s]", tEntity.getClass().getName()));
+                        tEP.addChatMessage(
+                                new ChatComponentTranslation(
+                                        "dreamcraft.customdrops.log_kill",
+                                        tEntity.getClass().getName()));
                     }
                 }
             }
@@ -193,9 +194,7 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
             {
                 return;
             }
-            if (tEP instanceof FakePlayer) // Nope,
-            // no
-            // fakeplayers
+            if (tEP instanceof FakePlayer) // Nope, no fakeplayers
             {
                 return;
             }
@@ -284,7 +283,7 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
                 ItemStack tDropStack = ItemDescriptor.fromString(dr.getItemName())
                         .getItemStackwNBT(tFinalAmount, dr.mTag);
                 if (tDropStack == null) {
-                    MainRegistry.Logger.error("CustomDrop ID {} failed to drop", dr.getIdentifier());
+                    MainRegistry.LOGGER.error("CustomDrop ID {} failed to drop", dr.getIdentifier());
                 } else {
                     EntityItem tDropEntity = new EntityItem(
                             tEntity.worldObj,
@@ -304,10 +303,10 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
         UUID tUUID = pEP.getUniqueID();
         if (_mDeathDebugPlayers.contains(tUUID)) {
             _mDeathDebugPlayers.remove(tUUID);
-            PlayerChatHelper.SendInfo(pEP, "Death-Debug is now diabled");
+            pEP.addChatMessage(new ChatComponentTranslation("dreamcraft.customdrops.debug.off"));
         } else {
             _mDeathDebugPlayers.add(tUUID);
-            PlayerChatHelper.SendInfo(pEP, "Death-Debug is now enabled");
+            pEP.addChatMessage(new ChatComponentTranslation("dreamcraft.customdrops.debug.on"));
         }
     }
 

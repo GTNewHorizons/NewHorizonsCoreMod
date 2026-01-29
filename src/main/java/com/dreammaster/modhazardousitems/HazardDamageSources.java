@@ -12,10 +12,17 @@ import com.dreammaster.modhazardousitems.cause.HazardCause.Type;
 import com.dreammaster.modhazardousitems.cause.InventoryItemHazardCause;
 import com.google.common.collect.ImmutableMap;
 
-import eu.usrv.yamcore.gameregistry.DamageTypeHelper;
 import gregtech.api.damagesources.GTDamageSources;
 
 public class HazardDamageSources {
+
+    public static final ImmutableMap<String, DamageSource> DAMAGE_SOURCES = ImmutableMap.<String, DamageSource>builder()
+            .put("inFire", DamageSource.inFire).put("onFire", DamageSource.onFire).put("lava", DamageSource.lava)
+            .put("inWall", DamageSource.inWall).put("drown", DamageSource.drown).put("starve", DamageSource.starve)
+            .put("cactus", DamageSource.cactus).put("fall", DamageSource.fall)
+            .put("outOfWorld", DamageSource.outOfWorld).put("generic", DamageSource.generic)
+            .put("magic", DamageSource.magic).put("wither", DamageSource.wither).put("anvil", DamageSource.anvil)
+            .put("fallingBlock", DamageSource.fallingBlock).build();
 
     public static final Map<String, Function<HazardCause, DamageSource>> EXTRA_SOURCE_FACTORIES = ImmutableMap
             .<String, Function<HazardCause, DamageSource>>builder().put("gregtech:hot", cause -> {
@@ -38,7 +45,7 @@ public class HazardDamageSources {
             }
         }
 
-        DamageSource damageSource = DamageTypeHelper.ParseStringToDamageSource(damageSourceId);
+        DamageSource damageSource = DAMAGE_SOURCES.get(damageSourceId);
         return damageSource != null ? cause -> damageSource : null;
     }
 

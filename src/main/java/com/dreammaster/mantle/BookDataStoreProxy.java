@@ -16,7 +16,7 @@ import mantle.books.BookDataStore;
  */
 class BookDataStoreProxy {
 
-    private static final BookDataStoreProxy INSTANCE = new BookDataStoreProxy(MainRegistry.Logger);
+    private static final BookDataStoreProxy INSTANCE = new BookDataStoreProxy(MainRegistry.LOGGER);
 
     static BookDataStoreProxy getInstance() {
         return INSTANCE;

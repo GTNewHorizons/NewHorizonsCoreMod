@@ -44,20 +44,20 @@ public class CustomFuelsHandler implements IFuelHandler {
             jaxMarsh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxMarsh.marshal(_mCustomFuels, new FileOutputStream(_mConfigFileName, false));
 
-            MainRegistry.Logger.debug("Config file written");
+            MainRegistry.LOGGER.debug("Config file written");
             return true;
         } catch (Exception e) {
-            MainRegistry.Logger.error("Unable to create new CustomFuels.xml. What did you do??");
+            MainRegistry.LOGGER.error("Unable to create new CustomFuels.xml. What did you do??");
             e.printStackTrace();
             return false;
         }
     }
 
     public void LoadConfig() {
-        MainRegistry.Logger.debug("CustomFuels entering state: LOAD CONFIG");
+        MainRegistry.LOGGER.debug("CustomFuels entering state: LOAD CONFIG");
         File tConfigFile = new File(_mConfigFileName);
         if (!tConfigFile.exists()) {
-            MainRegistry.Logger.debug("CustomFuels Config file not found, assuming first-start. Creating default one");
+            MainRegistry.LOGGER.debug("CustomFuels Config file not found, assuming first-start. Creating default one");
             InitSampleConfig();
             SaveCustomFuels();
         }
@@ -66,9 +66,8 @@ public class CustomFuelsHandler implements IFuelHandler {
         // there to be fixed, but load
         // default setting instead, so an Op/Admin can do reload ingame
         if (!ReloadCustomFuels()) {
-            MainRegistry.Logger.warn(
+            MainRegistry.LOGGER.error(
                     "Configuration File seems to be damaged, loading does-nothing-evil default config. You should fix your file and reload it");
-            MainRegistry.AddLoginError("[CustomFuels] Config file not loaded due errors");
             InitSampleConfig();
         }
     }
@@ -76,13 +75,13 @@ public class CustomFuelsHandler implements IFuelHandler {
     public boolean ReloadCustomFuels() {
         boolean tResult = false;
 
-        MainRegistry.Logger.debug("CustomFuelsHandler will now try to load it's configuration");
+        MainRegistry.LOGGER.debug("CustomFuelsHandler will now try to load it's configuration");
         try {
             JAXBContext tJaxbCtx = JAXBContext.newInstance(CustomFuels.class);
             File tConfigFile = new File(_mConfigFileName);
             Unmarshaller jaxUnmarsh = tJaxbCtx.createUnmarshaller();
             CustomFuels tNewItemCollection = (CustomFuels) jaxUnmarsh.unmarshal(tConfigFile);
-            MainRegistry.Logger.debug("Config file has been loaded. Entering Verify state");
+            MainRegistry.LOGGER.debug("Config file has been loaded. Entering Verify state");
 
             _mCustomFuels = tNewItemCollection;
             tResult = true;
@@ -116,7 +115,7 @@ public class CustomFuelsHandler implements IFuelHandler {
                 return 0;
             }
         } catch (Exception e) {
-            MainRegistry.Logger.error("Something went wrong");
+            MainRegistry.LOGGER.error("Something went wrong");
             e.printStackTrace();
             return 0;
         }

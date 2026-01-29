@@ -1,7 +1,5 @@
 package com.dreammaster.main;
 
-import static com.dreammaster.main.ConfigHandler.CONFIG_HANDLER;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.client.resources.IReloadableResourceManager;
@@ -44,7 +42,6 @@ public class ClientProxy extends CommonProxy implements IResourceManagerReloadLi
                 .registerItemRenderer(Item.getItemFromBlock(MainRegistry.blockBabyChest), new RenderItemBabyChest());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBabyChest.class, render);
 
-        MinecraftForge.EVENT_BUS.register(CONFIG_HANDLER);
         MinecraftForge.EVENT_BUS.register(new DebugHandler());
     }
 
