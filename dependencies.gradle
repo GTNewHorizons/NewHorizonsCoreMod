@@ -5,7 +5,7 @@ dependencies {
     api("com.github.GTNewHorizons:Yamcl:0.7.3:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.6-GTNH:dev")
 
-    implementation("com.github.GTNewHorizons:GTNHLib:0.8.44:dev")
+    implementation("com.github.GTNewHorizons:GTNHLib:0.9.0:dev")
 
     implementation("net.glease:tc4recipelib:1.5.37:dev")
 
