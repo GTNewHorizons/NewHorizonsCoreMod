@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.recipe.RecipeMaps.solarFactoryRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.common.tileentities.machines.multi.MTESolarFactory.validWafers;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ import gregtech.api.recipe.metadata.SolarFactoryRecipeDataKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeBuilder;
 import gregtech.api.util.recipe.SolarFactoryRecipeData;
+import gtPlusPlus.core.material.MaterialsElements;
 
 // Recipe metadata values represent the minimum tier and the amount of wafers respectively.
 
@@ -345,6 +347,15 @@ public class SolarFactoryRecipes implements Runnable {
                     .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1))
                     .fluidInputs(Materials.Infinity.getMolten(2 * 144), Materials.Kevlar.getMolten(4 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ChromaticLens.get(0),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 5, missing),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 5, missing))
+                    .itemOutputs(getModItem(SuperSolarPanels.ID, "solarsplitter", 8, 0, missing))
+                    .fluidInputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getFluidStack(2304))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 3)).duration(20 * TICKS).eut(TierEU.RECIPE_UHV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
