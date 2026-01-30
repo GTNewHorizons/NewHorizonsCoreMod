@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.*;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagString;
@@ -181,8 +180,6 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             creativeBank.setTagInfo("type", new NBTTagString("CREATIVE"));
             creativeBank.setTagInfo("storedEnergyRF", new NBTTagInt(2500000));
         }
-
-        API.setOverrideName(new ItemStack(Blocks.ender_chest), "Personal Ender Chest");
 
         MainRegistry.LOGGER.info("Added NEI Config");
     }
