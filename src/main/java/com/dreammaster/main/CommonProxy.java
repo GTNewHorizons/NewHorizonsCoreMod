@@ -7,8 +7,6 @@ import cpw.mods.fml.common.network.IGuiHandler;
 
 public class CommonProxy implements IGuiHandler {
 
-    public void addTexturePage() {}
-
     public void registerResourceReload() {}
 
     public void registerRenderInfo() {}
@@ -27,7 +25,4 @@ public class CommonProxy implements IGuiHandler {
         return null;
     }
 
-    public World getClientWorld() {
-        return null;
-    }
 }

@@ -1,6 +1,5 @@
 package com.dreammaster.main;
 
-import static gregtech.api.enums.Dyes.MACHINE_METAL;
 import static gregtech.api.enums.Mods.AmazingTrophies;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodMagic;
@@ -17,7 +16,6 @@ import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -27,7 +25,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 
 import org.apache.logging.log4j.LogManager;
@@ -178,25 +175,6 @@ public class MainRegistry {
         if (!CoreConfig.LoadConfig()) {
             LOGGER.error("{} could not load its config file. Things are going to be weird!", Refstrings.MODID);
         }
-        // ------------------------------------------------------------
-
-        // ------------------------------------------------------------
-        LOGGER.debug("PRELOAD Init TexturePage");
-        File tFile = new File(new File(PreEvent.getModConfigurationDirectory(), "GregTech"), "GregTech.cfg");
-        Configuration tMainConfig = new Configuration(tFile);
-        tMainConfig.load();
-
-        GregTechAPI.sUseMachineMetal = tMainConfig.get("machines", "use_machine_metal_tint", true).getBoolean(true);
-        if (GregTechAPI.sUseMachineMetal) {
-            // use default in GregTech Dyes enum.
-        } else {
-            // Override MACHINE_METAL dye color with white
-            MACHINE_METAL.mRGBa[0] = 255;
-            MACHINE_METAL.mRGBa[1] = 255;
-            MACHINE_METAL.mRGBa[2] = 255;
-        }
-
-        proxy.addTexturePage();
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------

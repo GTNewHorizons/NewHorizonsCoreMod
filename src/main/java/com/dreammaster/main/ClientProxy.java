@@ -16,17 +16,10 @@ import com.dreammaster.modbabychest.RenderBabyChest;
 import com.dreammaster.modbabychest.RenderItemBabyChest;
 import com.dreammaster.modbabychest.TileEntityBabyChest;
 
-import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
-import gregtech.api.util.GTUtility;
 
 public class ClientProxy extends CommonProxy implements IResourceManagerReloadListener {
-
-    @Override
-    public void addTexturePage() {
-        GTUtility.addTexturePage((byte) 8);
-    }
 
     @Override
     public void registerResourceReload() {
@@ -53,11 +46,6 @@ public class ClientProxy extends CommonProxy implements IResourceManagerReloadLi
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         return null;
-    }
-
-    @Override
-    public World getClientWorld() {
-        return FMLClientHandler.instance().getClient().theWorld;
     }
 
     @Override
