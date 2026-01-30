@@ -22,6 +22,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.item.NHItemList;
+
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
 import ggfab.GGItemList;
@@ -320,9 +322,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Robot_Arm_UEV.get(1),
                         ItemList.Machine_Multi_IndustrialLaserEngraver.get(1),
                         GregtechItemList.Industrial_CuttingFactoryController.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1)
-                // todo chromatic glass lens (coremod)
-                )
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1),
+                        NHItemList.ChromaticLens.get(1))
                 .fluidInputs(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(32 * INGOTS),
                         Materials.Neutronium.getMolten(32 * INGOTS))
