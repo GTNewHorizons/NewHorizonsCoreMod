@@ -103,6 +103,9 @@ public class MaceratorRecipes implements Runnable {
                 .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(Materials.Calcium.getIngots(1)).itemOutputs(Materials.Calcium.getDust(1))
+                .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+
         if (OpenPrinters.isModLoaded()) {
 
             // Open Printers
