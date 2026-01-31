@@ -17,7 +17,7 @@ public class TGConverter {
     public static void doPostInitialization() {
         TileEntityReplacementManager.tileEntityTransformer(
                 "TravellersGear.ArmorStand",
-                (tag, world) -> new BlockInfo(Blocks.chest, 0, TGConverter::chestTransformer));
+                (tag, world, chunk) -> new BlockInfo(Blocks.chest, 0, TGConverter::chestTransformer));
     }
 
     private static NBTTagCompound chestTransformer(NBTTagCompound oldTag) {

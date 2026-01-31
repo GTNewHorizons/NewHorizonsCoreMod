@@ -5,8 +5,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTModHandler.getModItem;
 
-import net.minecraft.block.Block;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -16,10 +14,8 @@ import net.minecraftforge.common.MinecraftForge;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.mantle.BookLoader;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelWorldgen;
-import com.gtnewhorizons.postea.api.BlockReplacementManager;
 import com.gtnewhorizons.postea.api.ItemStackReplacementManager;
 import com.gtnewhorizons.postea.api.TileEntityReplacementManager;
-import com.gtnewhorizons.postea.utility.BlockConversionInfo;
 
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -62,53 +58,22 @@ public class TiCoLoader {
     }
 
     private static void convertAluminumBrassBlock() {
-        String targetBlock = "TConstruct:MetalBlock";
         ItemStack brassBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.Brass, 1L);
-        int brassBlockMeta = Items.feather.getDamage(brassBlock);
-        BlockReplacementManager.addBlockReplacement(targetBlock, (blockConversionInfoOld, world) -> {
-            if (blockConversionInfoOld.metadata == 7) {
-                BlockConversionInfo blockConversionInfoNew = new BlockConversionInfo();
-                blockConversionInfoNew.blockID = Item.getIdFromItem(brassBlock.getItem());
-                blockConversionInfoNew.metadata = brassBlockMeta;
-                return blockConversionInfoNew;
-            }
-            return null;
-        });
-        ItemStackReplacementManager.addItemReplacement(targetBlock, tag -> {
-            if (tag.getShort("Damage") == 7) {
-                tag.setShort("id", (short) Item.getIdFromItem(brassBlock.getItem()));
-                tag.setShort("Damage", (short) brassBlockMeta);
-                return tag;
-            }
-            return tag;
-        });
+        // also applies a corresponding block transform.
+        ItemStackReplacementManager.addSimpleReplacement("TConstruct:MetalBlock", 7, brassBlock, false);
     }
 
     private static void convertAluminumBrassItems() {
         ItemStack brassIngot = GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Brass, 1L);
         ItemStack brassNugget = GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Brass, 1L);
         ItemStack brassDust = GTOreDictUnificator.get(OrePrefixes.dust, Materials.Brass, 1L);
-        ItemStackReplacementManager.addItemReplacement("TConstruct:materials", tag -> {
-            switch (tag.getShort("Damage")) {
-                case 14:
-                    tag.setShort("id", (short) Item.getIdFromItem(brassIngot.getItem()));
-                    tag.setShort("Damage", (short) Items.feather.getDamage(brassIngot));
-                    break;
-                case 24:
-                    tag.setShort("id", (short) Item.getIdFromItem(brassNugget.getItem()));
-                    tag.setShort("Damage", (short) Items.feather.getDamage(brassNugget));
-                    break;
-                case 42:
-                    tag.setShort("id", (short) Item.getIdFromItem(brassDust.getItem()));
-                    tag.setShort("Damage", (short) Items.feather.getDamage(brassDust));
-                    break;
-            }
-            return tag;
-        });
+        ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 14, brassIngot);
+        ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 24, brassNugget);
+        ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 42, brassDust);
     }
 
     private static void convertMoltenAluminumBrassInSmeltery() {
-        TileEntityReplacementManager.tileEntityTransformer("TConstruct.Smeltery", (tags, world) -> {
+        TileEntityReplacementManager.tileEntityTransformer("TConstruct.Smeltery", (tags, world, chunk) -> {
             NBTTagList liquidTag = tags.getTagList("Liquids", 10);
             for (int i = 0; i < liquidTag.tagCount(); i++) {
                 NBTTagCompound nbt = liquidTag.getCompoundTagAt(i);
@@ -127,30 +92,19 @@ public class TiCoLoader {
                 1,
                 32,
                 missing);
-        ItemStackReplacementManager
-                .addItemReplacement("universalsingularities:universal.tinkersConstruct.singularity", tag -> {
-                    if (tag.getShort("Damage") == 0) {
-                        tag.setShort("id", (short) Item.getIdFromItem(roseGoldSingularity.getItem()));
-                        tag.setShort("Damage", (short) roseGoldSingularity.getItemDamage());
-                        return tag;
-                    }
-                    return tag;
-                });
+        ItemStackReplacementManager.addSimpleReplacement(
+                "universalsingularities:universal.tinkersConstruct.singularity",
+                0,
+                roseGoldSingularity,
+                true);
     }
 
     private static void registerGravelOrePosteaTransformers() {
-        String targetBlock = "TConstruct:GravelOre";
-        BlockReplacementManager.addBlockReplacement(targetBlock, (blockConversionInfoOld, world) -> {
-            BlockConversionInfo blockConversionInfoNew = new BlockConversionInfo();
-            blockConversionInfoNew.blockID = Block.getIdFromBlock(BlockList.ZincGravelOre.block);
-            blockConversionInfoNew.metadata = 0;
-            return blockConversionInfoNew;
-        });
-        ItemStackReplacementManager.addItemReplacement(targetBlock, tag -> {
-            tag.setShort("id", (short) Block.getIdFromBlock(BlockList.ZincGravelOre.block));
-            tag.setShort("Damage", (short) 0);
-            return tag;
-        });
+        ItemStackReplacementManager.addSimpleReplacement(
+                "TConstruct:GravelOre",
+                Item.getItemFromBlock(BlockList.ZincGravelOre.block),
+                0,
+                false);
     }
 
 }
