@@ -21,7 +21,6 @@ import com.dreammaster.gthandler.recipes.ElectrolyzerRecipes;
 import com.dreammaster.gthandler.recipes.ExtractorRecipes;
 import com.dreammaster.gthandler.recipes.ExtruderRecipes;
 import com.dreammaster.gthandler.recipes.FermenterRecipes;
-import com.dreammaster.gthandler.recipes.FluidCannerRecipes;
 import com.dreammaster.gthandler.recipes.FluidExtractorRecipes;
 import com.dreammaster.gthandler.recipes.FluidHeaterRecipes;
 import com.dreammaster.gthandler.recipes.FluidSolidifierRecipes;
@@ -69,7 +68,6 @@ public class GT_MachineRecipeLoader implements Runnable {
         new ExtractorRecipes().run();
         new ExtruderRecipes().run();
         new FermenterRecipes().run();
-        new FluidCannerRecipes().run();
         new FluidExtractorRecipes().run();
         new FluidHeaterRecipes().run();
         new FluidSolidifierRecipes().run();

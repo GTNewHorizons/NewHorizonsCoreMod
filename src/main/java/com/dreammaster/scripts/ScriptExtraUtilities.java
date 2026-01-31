@@ -41,7 +41,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
@@ -279,13 +278,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
                 "plateLapis",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateLapis",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateLapis",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateLapis");
         addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
@@ -1388,7 +1387,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         missing),
                 OrePrefixes.ring.get(Materials.Iridium),
                 OrePrefixes.screw.get(Materials.Tritanium),
-                NHItemList.EngravedGoldChip.getIS(1),
+                NHItemList.EngravedGoldChip.get(1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 GregtechItemList.MagicFeather.get(1),
@@ -1398,7 +1397,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 GregtechItemList.MagicFeather.get(1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                NHItemList.EngravedGoldChip.getIS(1),
+                NHItemList.EngravedGoldChip.get(1),
                 OrePrefixes.screw.get(Materials.Tritanium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",

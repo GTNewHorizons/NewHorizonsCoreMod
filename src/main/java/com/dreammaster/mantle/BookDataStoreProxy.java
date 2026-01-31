@@ -2,9 +2,10 @@ package com.dreammaster.mantle;
 
 import java.util.Objects;
 
+import org.apache.logging.log4j.Logger;
+
 import com.dreammaster.main.MainRegistry;
 
-import eu.usrv.yamcore.auxiliary.LogHelper;
 import mantle.books.BookData;
 import mantle.books.BookDataStore;
 
@@ -21,9 +22,9 @@ class BookDataStoreProxy {
         return INSTANCE;
     }
 
-    private final LogHelper logger;
+    private final Logger logger;
 
-    BookDataStoreProxy(LogHelper logger) {
+    BookDataStoreProxy(Logger logger) {
         Objects.requireNonNull(logger);
         this.logger = logger;
 
@@ -34,7 +35,7 @@ class BookDataStoreProxy {
         try {
             BookDataStore.addBook(bookData);
         } catch (IllegalArgumentException e) {
-            logger.error("Cannot override book " + bookData.unlocalizedName + " which is already defined elsewhere.");
+            logger.error("Cannot override book {} which is already defined elsewhere.", bookData.unlocalizedName);
         }
     }
 }

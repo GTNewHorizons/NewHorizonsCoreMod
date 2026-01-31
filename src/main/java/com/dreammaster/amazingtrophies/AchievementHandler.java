@@ -78,10 +78,9 @@ public class AchievementHandler {
 
         if (statFile == null) {
             MainRegistry.Logger.warn(
-                    String.format(
-                            "Failed to get statistics file for player %s (UUID: %s) during PlayerTickEvent.",
-                            player.getCommandSenderName(),
-                            uuid));
+                    "Failed to get statistics file for player {} (UUID: {}) during PlayerTickEvent.",
+                    player.getCommandSenderName(),
+                    uuid);
             return;
         }
 
@@ -152,10 +151,9 @@ public class AchievementHandler {
 
         if (statFile == null) {
             MainRegistry.Logger.warn(
-                    String.format(
-                            "Failed to get statistics file for player %s (UUID: %s) during LivingAttackEvent.",
-                            player.getCommandSenderName(),
-                            uuid));
+                    "Failed to get statistics file for player {} (UUID: {}) during LivingAttackEvent.",
+                    player.getCommandSenderName(),
+                    uuid);
             return;
         }
 
