@@ -478,8 +478,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.NeuroProcessingUnit,
                 Materials.GrowthMediumSterilized.getFluid(1000),
                 CircuitComponent.ProcessedNeuroProcessingUnit,
-                ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                ModuleRecipeInfo.HighTier,
+                20 * SECONDS,
                 RecipeMaps.nanochipBiologicalCoordinator);
 
         // Living Crystal Chip
@@ -488,7 +488,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Materials.BioMediumSterilized.getFluid(1000),
                 CircuitComponent.ProcessedChipLivingCrystal,
                 ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                20 * SECONDS,
                 RecipeMaps.nanochipBiologicalCoordinator);
 
         // Bio Processing Unit
@@ -496,8 +496,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.BioProcessingUnit,
                 Materials.BioMediumSterilized.getFluid(1000),
                 CircuitComponent.ProcessedBioProcessingUnit,
-                ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                ModuleRecipeInfo.HighTier,
+                30 * SECONDS,
                 RecipeMaps.nanochipBiologicalCoordinator);
 
         // Living Bio Chip
@@ -506,7 +506,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Materials.BioMediumSterilized.getFluid(1000),
                 CircuitComponent.ProcessedLivingBioChip,
                 ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                30 * SECONDS,
                 RecipeMaps.nanochipBiologicalCoordinator);
     }
 
@@ -526,38 +526,38 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Wetware Board
         GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 2)
                 .itemInputs(CircuitComponent.BoardWetwareLifesupport.getFakeStack(1))
-                .itemOutputs(CircuitComponent.ProcessedBoardWetwareLifesupport.getFakeStack(1)).duration(5 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedBoardWetwareLifesupport.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
         // Wetware Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardWetwareLifesupport.getFakeStack(1))
                 .fluidInputs(Materials.GrowthMediumSterilized.getFluid(0))
-                .itemOutputs(CircuitComponent.ProcessedBoardWetwareLifesupport.getFakeStack(1)).duration(5 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedBoardWetwareLifesupport.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
         // Bio Board
         GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 3)
                 .itemInputs(CircuitComponent.BoardBioMutated.getFakeStack(1))
-                .itemOutputs(CircuitComponent.ProcessedBoardBioMutated.getFakeStack(1)).duration(5 * SECONDS)
-                .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.ProcessedBoardBioMutated.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
         // Bio Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardBioMutated.getFakeStack(1))
                 .fluidInputs(Materials.BioMediumSterilized.getFluid(0))
-                .itemOutputs(CircuitComponent.ProcessedBoardBioMutated.getFakeStack(1)).duration(5 * SECONDS)
-                .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.ProcessedBoardBioMutated.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
         // Optical Board
         GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 4)
                 .itemInputs(CircuitComponent.BoardOptical.getFakeStack(1))
-                .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(5 * SECONDS)
-                .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(20 * SECONDS)
+                .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
         // Optical Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardOptical.getFakeStack(1))
                 .fluidInputs(Materials.PrismaticAcid.getFluid(0))
-                .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(5 * SECONDS)
-                .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(20 * SECONDS)
+                .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
     }
 
     private static void registerCuttingChamberRecipes() {
@@ -565,64 +565,64 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // CPU
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipNanoCPU,
-                Materials.Lubricant.getFluid(250),
+                Materials.Lubricant.getFluid(50),
                 CircuitComponent.ProcessedChipNanoCPU,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // RAM
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipRAM,
-                Materials.Lubricant.getFluid(67),
+                Materials.Lubricant.getFluid(50),
                 CircuitComponent.ProcessedChipRAM,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // NOR
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipNOR,
-                Materials.Lubricant.getFluid(135),
+                Materials.Lubricant.getFluid(50),
                 CircuitComponent.ProcessedChipNOR,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // NAND
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipNAND,
-                Materials.Lubricant.getFluid(135),
+                Materials.Lubricant.getFluid(50),
                 CircuitComponent.ProcessedChipNAND,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // ASoC
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipASOC,
-                Materials.Lubricant.getFluid(250),
+                Materials.Lubricant.getFluid(50),
                 CircuitComponent.ProcessedChipASOC,
                 ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // PPIC
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipPikoPIC,
-                Materials.Lubricant.getFluid(375),
+                Materials.Lubricant.getFluid(50),
                 CircuitComponent.ProcessedChipPikoPIC,
                 ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // QPIC
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipQuantumPIC,
-                Materials.Lubricant.getFluid(500),
+                Materials.Lubricant.getFluid(50),
                 CircuitComponent.ProcessedChipQuantumPIC,
                 ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // Pico
@@ -631,7 +631,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Materials.DimensionallyShiftedSuperfluid.getFluid(10),
                 CircuitComponent.ProcessedChipPico,
                 ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                20 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // Bolts
@@ -641,7 +641,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Materials.Lubricant.getFluid(20),
                 CircuitComponent.ProcessedBoltEnrichedHolmium,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // Transcendent Metal
@@ -650,7 +650,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Materials.Lubricant.getFluid(20),
                 CircuitComponent.ProcessedBoltTranscendentMetal,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // Yttrium Barium Cuprate
@@ -659,7 +659,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Materials.Lubricant.getFluid(20),
                 CircuitComponent.ProcessedBoltYttriumBariumCuprate,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // Cosmic Neutronium
@@ -668,7 +668,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Materials.Lubricant.getFluid(20),
                 CircuitComponent.ProcessedBoltCosmicNeutronium,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // Chromatic Glass
@@ -677,56 +677,93 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Materials.Lubricant.getFluid(20),
                 CircuitComponent.ProcessedBoltChromaticGlass,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // Frame box recipes
+
+        // Aluminium
         addSimpleProcessingRecipe(
                 CircuitComponent.FrameboxAluminium,
                 Materials.Grade1PurifiedWater.getFluid(500),
                 CircuitComponent.ProcessedFrameboxAluminium,
                 ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                10 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
+        addSimpleProcessingRecipe(
+                CircuitComponent.FrameboxAluminium,
+                Materials.Grade2PurifiedWater.getFluid(250),
+                CircuitComponent.ProcessedFrameboxAluminium,
+                ModuleRecipeInfo.HighTier,
+                5 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
+        // Tritanium
+        addSimpleProcessingRecipe(
+                CircuitComponent.FrameboxTritanium,
+                Materials.Grade3PurifiedWater.getFluid(500),
+                CircuitComponent.ProcessedFrameboxTritanium,
+                ModuleRecipeInfo.HighTier,
+                20 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.FrameboxTritanium,
-                Materials.Grade1PurifiedWater.getFluid(500),
+                Materials.Grade4PurifiedWater.getFluid(250),
                 CircuitComponent.ProcessedFrameboxTritanium,
                 ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                10 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
+        // Celestial Tungsten
+        addSimpleProcessingRecipe(
+                CircuitComponent.FrameboxCelestialTungsten,
+                Materials.Grade5PurifiedWater.getFluid(500),
+                CircuitComponent.ProcessedFrameboxCelestialTungsten,
+                ModuleRecipeInfo.ExtremeTier,
+                20 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.FrameboxCelestialTungsten,
-                Materials.Grade1PurifiedWater.getFluid(500),
+                Materials.Grade6PurifiedWater.getFluid(250),
                 CircuitComponent.ProcessedFrameboxCelestialTungsten,
-                ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                ModuleRecipeInfo.ExtremeTier,
+                10 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
+        // Hypogen
+        addSimpleProcessingRecipe(
+                CircuitComponent.FrameboxHypogen,
+                Materials.Grade7PurifiedWater.getFluid(500),
+                CircuitComponent.ProcessedFrameboxHypogen,
+                ModuleRecipeInfo.ExtremeTier,
+                40 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.FrameboxHypogen,
-                Materials.Grade1PurifiedWater.getFluid(500),
+                Materials.Grade8PurifiedWater.getFluid(250),
                 CircuitComponent.ProcessedFrameboxHypogen,
-                ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                ModuleRecipeInfo.ExtremeTier,
+                20 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
         // Plate recipes
         addSimpleProcessingRecipe(
                 CircuitComponent.PlateMetastableOganesson,
-                Materials.Grade1PurifiedWater.getFluid(500),
+                Materials.DimensionallyShiftedSuperfluid.getFluid(50),
                 CircuitComponent.ProcessedPlateMetastableOganesson,
-                ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                ModuleRecipeInfo.ExtremeTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
     }
 
     private static void registerEncasementWrapperRecipes() {
         // Crystal
         GTValues.RA.stdBuilder().itemInputs(CircuitComponent.ProcessedFrameboxAluminium.getFakeStack(2))
-                .itemOutputs(CircuitComponent.ProcessedBasicMainframeCasing.getFakeStack(1)).duration(20)
+                .itemOutputs(CircuitComponent.ProcessedBasicMainframeCasing.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(ModuleRecipeInfo.MediumTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Wetware, Bioware, Optical
@@ -735,16 +772,16 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedFoilSiliconeRubber.getFakeStack(16),
                         CircuitComponent.ProcessedFrameboxTritanium.getFakeStack(1),
                         CircuitComponent.ProcessedFoilPolybenzimidazole.getFakeStack(16))
-                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(20)
-                .eut(ModuleRecipeInfo.MediumTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
+                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CircuitComponent.ProcessedFoilStyreneRubber.getFakeStack(16),
                         CircuitComponent.ProcessedFrameboxTritanium.getFakeStack(1),
                         CircuitComponent.ProcessedFoilPolybenzimidazole.getFakeStack(16))
-                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(20)
-                .eut(ModuleRecipeInfo.MediumTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
+                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Pico
         GTValues.RA.stdBuilder()
@@ -753,7 +790,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ScrewAstralTitanium.getFakeStack(4),
                         CircuitComponent.CasingUEVSuperconductor.getFakeStack(1),
                         CircuitComponent.ProcessedFoilRadoxPolymer.getFakeStack(16))
-                .itemOutputs(CircuitComponent.ProcessedPicoCircuitCasing.getFakeStack(1)).duration(20)
+                .itemOutputs(CircuitComponent.ProcessedPicoCircuitCasing.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Quantum
@@ -763,7 +800,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ScrewSixPhasedCopper.getFakeStack(4),
                         CircuitComponent.CasingCreon.getFakeStack(1),
                         CircuitComponent.ProcessedFoilShirabon.getFakeStack(48))
-                .itemOutputs(CircuitComponent.ProcessedQuantumCircuitCasing.getFakeStack(1)).duration(20)
+                .itemOutputs(CircuitComponent.ProcessedQuantumCircuitCasing.getFakeStack(1)).duration(20 * SECONDS)
                 .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Foil processing recipes
@@ -771,35 +808,35 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.FoilPolybenzimidazole,
                 CircuitComponent.ProcessedFoilPolybenzimidazole,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipEncasementWrapper);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.FoilSiliconeRubber,
                 CircuitComponent.ProcessedFoilSiliconeRubber,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
-                RecipeMaps.nanochipEncasementWrapper);
-
-        addSimpleProcessingRecipe(
-                CircuitComponent.FoilRadoxPolymer,
-                CircuitComponent.ProcessedFoilRadoxPolymer,
-                ModuleRecipeInfo.HighTier,
-                20 * TICKS,
-                RecipeMaps.nanochipEncasementWrapper);
-
-        addSimpleProcessingRecipe(
-                CircuitComponent.FoilShirabon,
-                CircuitComponent.ProcessedFoilShirabon,
-                ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipEncasementWrapper);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.FoilStyreneRubber,
                 CircuitComponent.ProcessedFoilStyreneRubber,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
+                RecipeMaps.nanochipEncasementWrapper);
+
+        addSimpleProcessingRecipe(
+                CircuitComponent.FoilRadoxPolymer,
+                CircuitComponent.ProcessedFoilRadoxPolymer,
+                ModuleRecipeInfo.HighTier,
+                5 * SECONDS,
+                RecipeMaps.nanochipEncasementWrapper);
+
+        addSimpleProcessingRecipe(
+                CircuitComponent.FoilShirabon,
+                CircuitComponent.ProcessedFoilShirabon,
+                ModuleRecipeInfo.ExtremeTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipEncasementWrapper);
     }
 
@@ -809,15 +846,23 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.ChipCrystalCPU,
                 CircuitComponent.ProcessedChipCrystalCPU,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                10 * SECONDS,
+                RecipeMaps.nanochipEtchingArray);
+
+        // Raw Advanced Crystal Chip
+        addSimpleProcessingRecipe(
+                CircuitComponent.ChipRawAdvancedCrystal,
+                CircuitComponent.ProcessedChipRawAdvancedCrystal,
+                ModuleRecipeInfo.HighTier,
+                10 * SECONDS,
                 RecipeMaps.nanochipEtchingArray);
 
         // Crystal SoC
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipCrystalSoC,
                 CircuitComponent.ProcessedChipCrystalSoC,
-                ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                ModuleRecipeInfo.HighTier,
+                20 * SECONDS,
                 RecipeMaps.nanochipEtchingArray);
     }
 
@@ -835,7 +880,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.OpticalRAM,
                 CircuitComponent.ProcessedOpticalRAM,
                 ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipOpticalOrganizer);
     }
 
@@ -845,71 +890,71 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.AdvSMDResistor,
                 CircuitComponent.ProcessedAdvSMDResistor,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDTransistor,
                 CircuitComponent.ProcessedAdvSMDTransistor,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDInductor,
                 CircuitComponent.ProcessedAdvSMDInductor,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDCapacitor,
                 CircuitComponent.ProcessedAdvSMDCapacitor,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDDiode,
                 CircuitComponent.ProcessedAdvSMDDiode,
                 ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         // Optical SMDs
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDResistor,
                 CircuitComponent.ProcessedOpticalSMDResistor,
-                ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                ModuleRecipeInfo.MediumTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDTransistor,
                 CircuitComponent.ProcessedOpticalSMDTransistor,
-                ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                ModuleRecipeInfo.MediumTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDInductor,
                 CircuitComponent.ProcessedOpticalSMDInductor,
-                ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                ModuleRecipeInfo.MediumTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDCapacitor,
                 CircuitComponent.ProcessedOpticalSMDCapacitor,
-                ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                ModuleRecipeInfo.MediumTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDDiode,
                 CircuitComponent.ProcessedOpticalSMDDiode,
-                ModuleRecipeInfo.LowTier,
-                20 * TICKS,
+                ModuleRecipeInfo.MediumTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipSMDProcessorRecipes);
     }
 
@@ -919,7 +964,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorLuV,
                 CircuitComponent.ProcessedSuperconductorLuV,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // ZPM
@@ -927,7 +972,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorZPM,
                 CircuitComponent.ProcessedSuperconductorZPM,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                10 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UV
@@ -935,7 +980,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUV,
                 CircuitComponent.ProcessedSuperconductorUV,
                 ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UHV
@@ -943,7 +988,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUHV,
                 CircuitComponent.ProcessedSuperconductorUHV,
                 ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                10 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UEV
@@ -951,7 +996,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUEV,
                 CircuitComponent.ProcessedSuperconductorUEV,
                 ModuleRecipeInfo.HighTier,
-                20 * TICKS,
+                20 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UIV
@@ -959,7 +1004,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUIV,
                 CircuitComponent.ProcessedSuperconductorUIV,
                 ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UMV
@@ -967,7 +1012,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUMV,
                 CircuitComponent.ProcessedSuperconductorUMV,
                 ModuleRecipeInfo.ExtremeTier,
-                20 * TICKS,
+                10 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
     }
 
@@ -977,7 +1022,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.WireNiobiumTitanium,
                 CircuitComponent.ProcessedWireNiobiumTitanium,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
         // YBCO
@@ -985,7 +1030,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.WireYttriumBariumCuprate,
                 CircuitComponent.ProcessedWireYttriumBariumCuprate,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
         // Lumiium
@@ -993,31 +1038,31 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.WireLumiium,
                 CircuitComponent.ProcessedWireLumiium,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
         // Proto Halkonite
         addSimpleProcessingRecipe(
                 CircuitComponent.WireProtoHalkonite,
                 CircuitComponent.ProcessedWireProtoHalkonite,
-                ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                ModuleRecipeInfo.HighTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
         // Infinity
         addSimpleProcessingRecipe(
                 CircuitComponent.WireInfinity,
                 CircuitComponent.ProcessedWireInfinity,
-                ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                ModuleRecipeInfo.HighTier,
+                5 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
         // Spacetime
         addSimpleProcessingRecipe(
                 CircuitComponent.WireSpacetime,
                 CircuitComponent.ProcessedWireSpacetime,
-                ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                ModuleRecipeInfo.HighTier,
+                10 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
         // Optical Cable
@@ -1025,7 +1070,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.CableOpticalFiber,
                 CircuitComponent.ProcessedCableOpticalFiber,
                 ModuleRecipeInfo.MediumTier,
-                20 * TICKS,
+                5 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
     }
 
