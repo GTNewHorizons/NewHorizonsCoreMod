@@ -2,7 +2,6 @@ package com.dreammaster.modhazardousitems;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.lang.reflect.Field;
 import java.util.Random;
 
 import javax.xml.bind.JAXBContext;
@@ -268,7 +267,7 @@ public class HazardousItemsHandler {
         boolean tResult = true;
         for (HazardousItem hi : pItemCollection.getHazardousItems()) {
             for (HazardousItems.ItmPotionEffect ipe : hi.getPotionEffects()) {
-                if (!isValidPotionID(ipe.getId())) {
+                if (isInvalidPotionID(ipe.getId())) {
                     MainRegistry.LOGGER.warn(
                             "HazardousItem [{}] has invalid PotionID: [{}] (There is no such potion)",
                             hi.getItemName(),
@@ -280,7 +279,7 @@ public class HazardousItemsHandler {
 
         for (HazardousItems.HazardousFluid hf : pItemCollection.getHazardousFluids()) {
             for (HazardousItems.ItmPotionEffect ipe : hf.getPotionEffects()) {
-                if (!isValidPotionID(ipe.getId())) {
+                if (isInvalidPotionID(ipe.getId())) {
                     MainRegistry.LOGGER.warn(
                             "HazardousFluid [{}] has invalid PotionID: [{}] (There is no such potion)",
                             hf.getFluidName(),
@@ -380,8 +379,6 @@ public class HazardousItemsHandler {
         }
     }
 
-    private Field bg2ExtraInvField;
-
     private void CheckInventoryForItems(EntityPlayer pPlayer) {
         if (ticks % inventoryCheckPeriod != 0) return;
 
@@ -397,7 +394,7 @@ public class HazardousItemsHandler {
         }
     }
 
-    private static boolean isValidPotionID(int id) {
+    private static boolean isInvalidPotionID(int id) {
         return id < 0 || id >= Potion.potionTypes.length || Potion.potionTypes[id] == null;
     }
 }

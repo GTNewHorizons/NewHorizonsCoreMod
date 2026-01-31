@@ -21,7 +21,7 @@ public class HazardousItemsCommand extends CommandBase {
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return "/hazarditems <action> [<parm1>, <parm2>, ..]";
+        return "dreamcraft.command.hazarditems.usage";
     }
 
     @Override
