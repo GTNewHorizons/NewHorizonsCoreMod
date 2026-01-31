@@ -23,14 +23,11 @@ public class CoreModConfig extends ConfigManager {
     public boolean ModCustomToolTips_Enabled;
     public boolean ModCustomFuels_Enabled;
     public boolean ModCustomDrops_Enabled;
-    public boolean ModAdminErrorLogs_Enabled;
     public boolean ModBabyChest_Enabled;
     public boolean ForestryStampsAndChunkLoaderCoinsEnabled;
     public boolean ForestryStampsAndChunkLoaderCoinsServerEnabled;
 
-    public boolean AvaritiaFixEnabled;
     public boolean MinetweakerFurnaceFixEnabled;
-    public String[] SkullFireSwordEntityTargets;
 
     public OilGeneratorFix.OilConfig OilFixConfig;
 
@@ -43,18 +40,12 @@ public class CoreModConfig extends ConfigManager {
         ModCustomToolTips_Enabled = false;
         ModCustomFuels_Enabled = false;
         ModCustomDrops_Enabled = false;
-        ModAdminErrorLogs_Enabled = true;
         ModBabyChest_Enabled = true;
         OreDictItems_Enabled = true;
         ForestryStampsAndChunkLoaderCoinsEnabled = true;
         ForestryStampsAndChunkLoaderCoinsServerEnabled = false;
 
-        AvaritiaFixEnabled = false;
         MinetweakerFurnaceFixEnabled = true;
-
-        SkullFireSwordEntityTargets = new String[] { "net.minecraft.entity.monster.EntitySkeleton",
-                "galaxyspace.SolarSystem.planets.venus.entities.EntityEvolvedFireSkeleton",
-                "micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton" };
     }
 
     @Override
@@ -100,11 +91,6 @@ public class CoreModConfig extends ConfigManager {
                 "Modules",
                 ModCustomFuels_Enabled,
                 "Set to true to enable CustomFuels module. Allows you to set burn-time values to almost any item");
-        ModAdminErrorLogs_Enabled = _mainConfig.getBoolean(
-                "AdminErrorLog",
-                "Modules",
-                ModAdminErrorLogs_Enabled,
-                "If set to true, every op/admin will receive all errors occoured during the startup phase as ingame message on join");
         ModBabyChest_Enabled = _mainConfig.getBoolean(
                 "BabyChest",
                 "Modules",
@@ -121,21 +107,11 @@ public class CoreModConfig extends ConfigManager {
                 ForestryStampsAndChunkLoaderCoinsServerEnabled,
                 "Enables crafting recipes for Forestry stamps and Chunk Loader Coins on server");
 
-        AvaritiaFixEnabled = _mainConfig.getBoolean(
-                "AvaritiaFixEnabled",
-                "ModFixes",
-                AvaritiaFixEnabled,
-                "Set to true to enable the modfix for Avaritia SkullFireSword");
         MinetweakerFurnaceFixEnabled = _mainConfig.getBoolean(
                 "MinetweakerFurnaceFixEnabled",
                 "ModFixes",
                 MinetweakerFurnaceFixEnabled,
                 "Set to true to allow Minetweaker to override the vanilla furnace fuel handler, allowing the burn value of WOOD material items to be changed.");
-        SkullFireSwordEntityTargets = _mainConfig.getStringList(
-                "Avaritia_SkullFireSwordEntityTargets",
-                "ModFixes.Avaritia",
-                SkullFireSwordEntityTargets,
-                "The Canonical Class-Name of the Entity");
 
         OilFixConfig = new OilGeneratorFix.OilConfig(_mainConfig);
     }

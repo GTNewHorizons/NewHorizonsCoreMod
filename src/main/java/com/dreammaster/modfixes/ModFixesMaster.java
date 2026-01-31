@@ -17,7 +17,7 @@ public final class ModFixesMaster {
 
     public static void registerModFix(IModFix pConstructedModFix) {
         if (mEnabled) {
-            MainRegistry.Logger.error(
+            MainRegistry.LOGGER.error(
                     "ModFix {} tried to register after enable phase. This mod-fix will be ignored",
                     pConstructedModFix.getModFixName());
             return;
@@ -26,7 +26,7 @@ public final class ModFixesMaster {
         if (!mModFixes.containsKey(pConstructedModFix.getModFixName())) {
             mModFixes.put(pConstructedModFix.getModFixName(), pConstructedModFix);
         } else {
-            MainRegistry.Logger.error(
+            MainRegistry.LOGGER.error(
                     "ModFix [{}] is already registered! Did you forget to change the name?",
                     pConstructedModFix.getModFixName());
         }
@@ -34,15 +34,15 @@ public final class ModFixesMaster {
 
     public static void enableModFixes() {
         if (mEnabled) {
-            MainRegistry.Logger.error("ModFixesMaster::enableModFixes() was called more than once");
+            MainRegistry.LOGGER.error("ModFixesMaster::enableModFixes() was called more than once");
             return;
         }
 
         for (IModFix tModFix : mModFixes.values()) {
             if (!tModFix.init()) {
-                MainRegistry.Logger.error("ModFix [{}] could not be initialized", tModFix.getModFixName());
+                MainRegistry.LOGGER.error("ModFix [{}] could not be initialized", tModFix.getModFixName());
             } else {
-                MainRegistry.Logger.info("ModFix [{}] initialized and enabled", tModFix.getModFixName());
+                MainRegistry.LOGGER.info("ModFix [{}] initialized and enabled", tModFix.getModFixName());
             }
         }
         mEnabled = true;
