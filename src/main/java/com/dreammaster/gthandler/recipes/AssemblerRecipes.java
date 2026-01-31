@@ -1811,7 +1811,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Large_Fluid_Cell_Steel.get(1),
                             GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 4),
-                            ItemList.Electric_Motor_HV.get(4))
+                            ItemList.Electric_Pump_HV.get(4))
                     .itemOutputs(GTModHandler.getModItem(GalacticraftMars.ID, "item.null", 1, 6)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
             // Cooling Core With NaK
