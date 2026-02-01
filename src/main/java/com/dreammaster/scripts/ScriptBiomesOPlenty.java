@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
+import static gregtech.api.enums.Materials.Saltpeter;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
@@ -17,6 +18,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
@@ -36,6 +38,8 @@ import static gtnhlanth.api.recipe.LanthanidesRecipeMaps.dissolutionTankRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.chisel.ChiselHelper;
@@ -541,6 +545,11 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 144))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "foliage", 1, 7, missing)).eut(TierEU.RECIPE_HV).duration(10)
                 .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.potato, 16), Saltpeter.getDust(4))
+                .itemOutputs(new ItemStack(Items.poisonous_potato, 16))
+                .fluidInputs(FluidRegistry.getFluidStack("poison", 200)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
 
         ChiselHelper.addVariationFromStack("topaz", GTOreDictUnificator.get(OrePrefixes.block, Materials.Topaz, 1L));
         ChiselHelper.addVariationFromStack("topaz", getModItem(BiomesOPlenty.ID, "gemOre", 1, 7, missing));
