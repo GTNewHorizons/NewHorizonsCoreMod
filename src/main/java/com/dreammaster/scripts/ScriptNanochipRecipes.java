@@ -476,7 +476,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Neuro Processing Unit
         addSimpleProcessingRecipe(
                 CircuitComponent.NeuroProcessingUnit,
-                Materials.GrowthMediumSterilized.getFluid(1000),
+                Materials.GrowthMediumSterilized.getFluid(50),
                 CircuitComponent.ProcessedNeuroProcessingUnit,
                 ModuleRecipeInfo.HighTier,
                 20 * SECONDS,
@@ -485,7 +485,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Living Crystal Chip
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipLivingCrystal,
-                Materials.BioMediumSterilized.getFluid(1000),
+                Materials.BioMediumSterilized.getFluid(5),
                 CircuitComponent.ProcessedChipLivingCrystal,
                 ModuleRecipeInfo.ExtremeTier,
                 20 * SECONDS,
@@ -494,7 +494,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Bio Processing Unit
         addSimpleProcessingRecipe(
                 CircuitComponent.BioProcessingUnit,
-                Materials.BioMediumSterilized.getFluid(1000),
+                Materials.BioMediumSterilized.getFluid(50),
                 CircuitComponent.ProcessedBioProcessingUnit,
                 ModuleRecipeInfo.HighTier,
                 30 * SECONDS,
@@ -503,7 +503,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Living Bio Chip
         addSimpleProcessingRecipe(
                 CircuitComponent.LivingBioChip,
-                Materials.BioMediumSterilized.getFluid(1000),
+                Materials.BioMediumSterilized.getFluid(50),
                 CircuitComponent.ProcessedLivingBioChip,
                 ModuleRecipeInfo.ExtremeTier,
                 30 * SECONDS,
@@ -1296,7 +1296,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         }),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(10 * INGOTS),
-                        Materials.BioMediumSterilized.getFluid(10 * INGOTS),
+                        Materials.BioMediumSterilized.getFluid(5 * INGOTS),
                         Materials.SuperCoolant.getFluid(10000)),
                 CircuitComponent.BiowareComputer,
                 200 * SECONDS,
@@ -1321,7 +1321,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         }),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(20 * INGOTS),
-                        Materials.BioMediumSterilized.getFluid(20 * INGOTS),
+                        Materials.BioMediumSterilized.getFluid(10 * INGOTS),
                         Materials.SuperCoolant.getFluid(20000)),
                 CircuitComponent.BiowareMainframe,
                 300 * SECONDS,
