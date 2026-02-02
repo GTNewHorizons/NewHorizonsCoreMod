@@ -128,7 +128,7 @@ public class RecipeRemover {
                 return false;
             }
             if (output.getItem() == null) {
-                MainRegistry.Logger.warn("Someone is adding recipes with null items!");
+                MainRegistry.LOGGER.warn("Someone is adding recipes with null items!");
                 return true;
             }
             final ItemStack copyStack;
@@ -152,7 +152,7 @@ public class RecipeRemover {
             }
             return false;
         });
-        MainRegistry.Logger.info("Removed " + (i - list.size()) + " recipes!");
+        MainRegistry.LOGGER.info("Removed {} recipes!", i - list.size());
     }
 
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
@@ -760,7 +760,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "diamondChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "netherStarChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "cloudinabottle", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Chisel.ID, "ballomoss", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "smashingrock", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "autoChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "upgrade", 1, 0, missing));
@@ -3483,6 +3482,6 @@ public class RecipeRemover {
         flushBuffer();
         bufferMap = null;
         final long timeToLoad = System.currentTimeMillis() - timeStart;
-        MainRegistry.Logger.info("Recipes removal took " + timeToLoad + " ms.");
+        MainRegistry.LOGGER.info("Recipes removal took {} ms.", timeToLoad);
     }
 }

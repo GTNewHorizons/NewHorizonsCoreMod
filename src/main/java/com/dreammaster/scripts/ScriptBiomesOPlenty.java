@@ -18,10 +18,10 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
@@ -280,8 +280,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .addTo(fluidExtractionRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).duration(1).eut(1)
-                .addTo(fluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).duration(1).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(20 * SECONDS).eut(40)
@@ -333,8 +332,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1L)).fluidInputs(Materials.Honey.getFluid(1000L))
-                .duration(2 * SECONDS).eut(1).addTo(fluidCannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.getIS(1)).circuit(16)
+                .duration(2 * SECONDS).eut(1).addTo(cannerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.get(1)).circuit(16)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 3, missing)).circuit(16)

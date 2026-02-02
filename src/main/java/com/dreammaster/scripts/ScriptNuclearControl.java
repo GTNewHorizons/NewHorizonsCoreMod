@@ -15,7 +15,7 @@ import java.util.List;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -239,7 +239,7 @@ public class ScriptNuclearControl implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "remoteMonitor", 1, 0, missing),
                 "cableGt01Tin",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "cableGt01Tin",
                 getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),

@@ -35,7 +35,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
@@ -532,7 +532,7 @@ public class ScriptEnderIO implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPowerMonitor", 1, 0, missing),
                 "plateElectricalSteel",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "plateElectricalSteel",
                 "circuitBasic",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
@@ -576,11 +576,11 @@ public class ScriptEnderIO implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
                 "itemCasingSteel",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "itemCasingSteel",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel");
@@ -639,7 +639,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemFunctionUpgrade", 1, 0, missing),
                 "plateDarkSteel",
                 getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
                 "plateDarkSteel",
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
@@ -1383,7 +1383,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.ManyullynCrystal.get(1L),
+                        NHItemList.ManyullynCrystal.get(),
                         GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Enderium, 8L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 10, missing)).duration(10 * SECONDS).eut(256)
                 .addTo(assemblerRecipes);
@@ -1815,7 +1815,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(Materials.VibrantAlloy.getMolten(8192)).duration(2 * MINUTES).eut(TierEU.RECIPE_IV)
                 .addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ManyullynCrystal.get(16L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.ManyullynCrystal.get(16))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 16, 10, missing))
                 .fluidInputs(Materials.Enderium.getMolten(2048)).duration(1 * MINUTES).eut(4096)
                 .addTo(autoclaveRecipes);

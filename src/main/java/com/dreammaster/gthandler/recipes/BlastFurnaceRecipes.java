@@ -17,7 +17,6 @@ import static gregtech.api.util.GTRecipeConstants.NO_GAS_CIRCUIT_CONFIG;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -33,8 +32,8 @@ public class BlastFurnaceRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.UncookedSlush.get(1L)).circuit(1)
-                .itemOutputs(CustomItemList.GlowingMarshmallow.get(1L)).duration(2 * MINUTES + 50 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.UncookedSlush.get()).circuit(1)
+                .itemOutputs(NHItemList.GlowingMarshmallow.get()).duration(2 * MINUTES + 50 * SECONDS)
                 .eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 4500).metadata(ADDITIVE_AMOUNT, 1000)
                 .addTo(BlastFurnaceWithGas);
 
@@ -755,15 +754,14 @@ public class BlastFurnaceRecipes implements Runnable {
                 .metadata(COIL_HEAT, (int) Materials.NickelZincFerrite.mBlastFurnaceTemp).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.BrickNether, 1L))
-                .circuit(1).itemOutputs(CustomItemList.HotNetherrackBrick.get(1L))
-                .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
-                .metadata(COIL_HEAT, 1200).addTo(blastFurnaceRecipes);
+                .circuit(1).itemOutputs(NHItemList.HotNetherrackBrick.get()).fluidInputs(Materials.Oxygen.getGas(1000L))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(blastFurnaceRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.InfernalBrick.get(1L), CustomItemList.CokeOvenBrick.get(1L))
-                .itemOutputs(CustomItemList.AdvancedCokeOvenBrick.get(2L)).fluidInputs(Materials.Oxygen.getGas(1000L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.InfernalBrick.get(), NHItemList.CokeOvenBrick.get())
+                .itemOutputs(NHItemList.AdvancedCokeOvenBrick.get(2)).fluidInputs(Materials.Oxygen.getGas(1000L))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1600).addTo(blastFurnaceRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.RawNeutronium.get(1L)).circuit(11)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.RawNeutronium.get()).circuit(11)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Neutronium, 1L))
                 .duration(6 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_UV).metadata(COIL_HEAT, 9000)
                 .metadata(ADDITIVE_AMOUNT, 1000).addTo(BlastFurnaceWithGas);
@@ -867,12 +865,12 @@ public class BlastFurnaceRecipes implements Runnable {
 
         if (SGCraft.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.getIS().splitStack(64))
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.get().splitStack(64))
                     .fluidInputs(Materials.StargateCrystalSlurry.getFluid(128_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).duration(7 * 24 * HOURS * 2)
                     .eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000).addTo(blastFurnaceRecipes); // ^ 2 weeks
 
-            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.getIS().splitStack(64))
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.get().splitStack(64))
                     .fluidInputs(Materials.MHDCSM.getMolten(128_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgControllerCrystal", 1L))
                     .duration(7 * 24 * HOURS * 2).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000)

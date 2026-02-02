@@ -423,6 +423,11 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS).eut(30)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing))
+                .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(30)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 20)).duration(5 * SECONDS).eut(30)
@@ -435,6 +440,10 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS).eut(30)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0, missing))
+                .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(30)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 20)).duration(5 * SECONDS).eut(16)
@@ -446,6 +455,10 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
+                .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(16)
                 .addTo(cutterRecipes);
 
     }
