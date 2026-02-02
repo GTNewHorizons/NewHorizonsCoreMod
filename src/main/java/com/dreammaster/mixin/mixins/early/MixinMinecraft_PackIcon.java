@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import com.dreammaster.client.util.IconLoader;
+import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.lib.Refstrings;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 
@@ -26,7 +27,7 @@ public class MixinMinecraft_PackIcon {
                     remap = false))
     private String dreamcraft$changeWindowTitle(String original) {
         this.dreamcraft$loadedGTNHIcon = IconLoader.setCustomIcon("assets/dreamcraft/textures/icon/GTNH_42x42.png");
-        return Refstrings.NAME + " " + Refstrings.MODPACKPACK_VERSION;
+        return Refstrings.NAME + " " + CoreModConfig.ModPackVersion;
     }
 
     @ModifyExpressionValue(

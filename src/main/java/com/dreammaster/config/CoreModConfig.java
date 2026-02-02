@@ -13,40 +13,26 @@ public class CoreModConfig extends ConfigManager {
         super(pConfigBaseDirectory, pModCollectionDirectory, pModID);
     }
 
-    public boolean OreDictItems_Enabled;
-    public static boolean ModLoginMessage_Enabled;
-    public boolean gtnhPauseMenuButtons;
+    public boolean OreDictItems_Enabled = true;
+    public static boolean ModLoginMessage_Enabled = true;
+    public boolean gtnhPauseMenuButtons = true;
     public static String ModPackVersion = Refstrings.MODPACKPACK_VERSION;
 
-    public boolean ModHazardousItems_Enabled;
-    public boolean ModDebugVersionDisplay_Enabled;
-    public boolean ModCustomToolTips_Enabled;
-    public boolean ModCustomFuels_Enabled;
-    public boolean ModCustomDrops_Enabled;
-    public boolean ModBabyChest_Enabled;
-    public boolean ForestryStampsAndChunkLoaderCoinsEnabled;
-    public boolean ForestryStampsAndChunkLoaderCoinsServerEnabled;
+    public boolean ModHazardousItems_Enabled = false;
+    public boolean ModDebugVersionDisplay_Enabled = true;
+    public boolean ModCustomToolTips_Enabled = false;
+    public boolean ModCustomFuels_Enabled = false;
+    public boolean ModCustomDrops_Enabled = false;
+    public boolean ModBabyChest_Enabled = true;
+    public boolean ForestryStampsAndChunkLoaderCoinsEnabled = true;
+    public boolean ForestryStampsAndChunkLoaderCoinsServerEnabled = false;
 
-    public boolean MinetweakerFurnaceFixEnabled;
+    public boolean MinetweakerFurnaceFixEnabled = true;
 
     public OilGeneratorFix.OilConfig OilFixConfig;
 
     @Override
-    protected void PreInit() {
-        ModLoginMessage_Enabled = true;
-        gtnhPauseMenuButtons = true;
-        ModDebugVersionDisplay_Enabled = true;
-        ModHazardousItems_Enabled = false;
-        ModCustomToolTips_Enabled = false;
-        ModCustomFuels_Enabled = false;
-        ModCustomDrops_Enabled = false;
-        ModBabyChest_Enabled = true;
-        OreDictItems_Enabled = true;
-        ForestryStampsAndChunkLoaderCoinsEnabled = true;
-        ForestryStampsAndChunkLoaderCoinsServerEnabled = false;
-
-        MinetweakerFurnaceFixEnabled = true;
-    }
+    protected void PreInit() {}
 
     @Override
     protected void Init() {
