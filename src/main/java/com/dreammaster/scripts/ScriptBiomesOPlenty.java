@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.HodgePodge;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -40,6 +39,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.biomesoplenty.BOPWoodTypes;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 
@@ -68,7 +68,6 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 Chisel.ID,
                 Forestry.ID,
                 HardcoreEnderExpansion.ID,
-                HodgePodge.ID,
                 IguanaTweaksTinkerConstruct.ID,
                 PamsHarvestCraft.ID,
                 Railcraft.ID,
@@ -555,9 +554,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
 
         // Fence and Fence Gate recipes:
 
-        enum WoodTypes{sacredoak,cherry,dark,fir,ethereal,magic,mangrove,palm,redwood,willow,bamboothatching,pine,hell_bark,jacaranda,mahogany}
-
-        for (WoodTypes woodType : WoodTypes.values()) {
+        for (BOPWoodTypes woodType : BOPWoodTypes.values()) {
             ItemStack plank = getModItem(BiomesOPlenty.ID, "planks", 1, woodType.ordinal());
 
             // Fences
