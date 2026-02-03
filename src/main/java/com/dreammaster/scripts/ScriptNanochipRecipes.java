@@ -680,6 +680,15 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
+        // Chromatic Glass
+        addSimpleProcessingRecipe(
+                CircuitComponent.BoltUMVSuperconductor,
+                Materials.Lubricant.getFluid(20),
+                CircuitComponent.ProcessedBoltUMVSuperconductor,
+                ModuleRecipeInfo.LowTier,
+                5 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
         // Frame box recipes
 
         // Aluminium
