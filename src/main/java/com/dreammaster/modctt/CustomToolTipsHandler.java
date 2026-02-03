@@ -3,43 +3,31 @@ package com.dreammaster.modctt;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
-import com.dreammaster.network.msg.CTTClientSyncMessage;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent;
 
 public class CustomToolTipsHandler {
 
     private String _mConfigFileName;
-    private final CustomToolTipsObjectFactory _mCttFactory = new CustomToolTipsObjectFactory();
     private CustomToolTips _mCustomToolTips;
     private boolean _mInitialized;
 
-    /**
-     * The server just sent us a new tooltip file
-     *
-     * @param pServerXML
-     */
-    public void processServerConfig(String pServerXML) {
-        if (ReloadCustomToolTips(pServerXML)) {
-            MainRegistry.LOGGER.info("[CTT] Received and activated configuration from server");
-        } else {
-            MainRegistry.LOGGER.warn("[CTT] Received invalid configuration from server; Not activated!");
-        }
+    public static CustomToolTips.ItemToolTip createCustomItemToolTip(String pUnlocalizedName, String pToolTip) {
+        CustomToolTips.ItemToolTip itt = new CustomToolTips.ItemToolTip();
+        itt.mToolTip = pToolTip;
+        itt.mUnlocalizedName = pUnlocalizedName;
+
+        return itt;
     }
 
     public CustomToolTipsHandler() {
@@ -60,10 +48,10 @@ public class CustomToolTipsHandler {
     public void InitSampleConfig() {
         _mCustomToolTips = new CustomToolTips();
         _mCustomToolTips.getToolTips()
-                .add(_mCttFactory.createCustomItemToolTip("minecraft:stone", "Wow, such stone, much rock"));
-        _mCustomToolTips.getToolTips().add(_mCttFactory.createCustomItemToolTip("minecraft:coal", "This is coal..."));
+                .add(createCustomItemToolTip("minecraft:stone", "Wow, such stone, much rock"));
+        _mCustomToolTips.getToolTips().add(createCustomItemToolTip("minecraft:coal", "This is coal..."));
         _mCustomToolTips.getToolTips()
-                .add(_mCttFactory.createCustomItemToolTip("minecraft:coal:1", "...and this charcoal!"));
+                .add(createCustomItemToolTip("minecraft:coal:1", "...and this charcoal!"));
     }
 
     /**
@@ -85,22 +73,6 @@ public class CustomToolTipsHandler {
                     .error("[CTT.SaveCustomToolTips] Unable to create new CustomToolTips.xml. What did you do??");
             e.printStackTrace();
             return false;
-        }
-    }
-
-    private String getXMLStream() {
-        try {
-            StringWriter tSW = new StringWriter();
-            JAXBContext tJaxbCtx = JAXBContext.newInstance(CustomToolTips.class);
-            Marshaller jaxMarsh = tJaxbCtx.createMarshaller();
-            jaxMarsh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            jaxMarsh.marshal(_mCustomToolTips, tSW);
-
-            return tSW.toString();
-        } catch (Exception e) {
-            MainRegistry.LOGGER.error("[CTT.getXMLStream] Unable to serialize tooltip objects");
-            e.printStackTrace();
-            return "";
         }
     }
 
@@ -145,41 +117,10 @@ public class CustomToolTipsHandler {
      */
     public boolean reload() {
         boolean tState = ReloadCustomToolTips("");
-        if (_mInitialized) {
-            if (tState) {
-                sendClientUpdate();
-            } else {
-                MainRegistry.LOGGER
-                        .error("[CTT.ReloadCustomToolTips] Reload of tooltip file failed. Not sending client update");
-            }
+        if (_mInitialized && !tState) {
+            MainRegistry.LOGGER.error("[CTT.ReloadCustomToolTips] Reload of tooltip file failed.");
         }
         return tState;
-    }
-
-    private void sendClientUpdate() {
-        sendClientUpdate(null);
-    }
-
-    private void sendClientUpdate(EntityPlayer pPlayer) {
-        String tPayload = getXMLStream();
-        if (!tPayload.isEmpty()) {
-            List<CTTClientSyncMessage> tPendingMessages = CTTClientSyncMessage.getPreparedNetworkMessages(tPayload);
-
-            if (pPlayer instanceof EntityPlayerMP) {
-                for (CTTClientSyncMessage tMsg : tPendingMessages) {
-                    MainRegistry.dispatcher.sendTo(tMsg, (EntityPlayerMP) pPlayer);
-                }
-            } else if (pPlayer == null) {
-                for (CTTClientSyncMessage tMsg : tPendingMessages) {
-                    MainRegistry.dispatcher.sendToAll(tMsg);
-                }
-            } else {
-                MainRegistry.LOGGER.error("[CTT.sendClientUpdate] Target is no EntityPlayer and not null");
-            }
-        } else {
-            MainRegistry.LOGGER
-                    .error("[CTT.sendClientUpdate] Unable to send update to clients; Received empty serialized object");
-        }
     }
 
     /**
@@ -216,13 +157,6 @@ public class CustomToolTipsHandler {
         }
 
         return tResult;
-    }
-
-    @SubscribeEvent
-    public void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent pEvent) {
-        if (pEvent.player instanceof EntityPlayerMP) {
-            sendClientUpdate(pEvent.player);
-        }
     }
 
     @SubscribeEvent
