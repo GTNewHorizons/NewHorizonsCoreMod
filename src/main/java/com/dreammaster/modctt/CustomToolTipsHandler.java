@@ -47,11 +47,9 @@ public class CustomToolTipsHandler {
 
     public void InitSampleConfig() {
         _mCustomToolTips = new CustomToolTips();
-        _mCustomToolTips.getToolTips()
-                .add(createCustomItemToolTip("minecraft:stone", "Wow, such stone, much rock"));
+        _mCustomToolTips.getToolTips().add(createCustomItemToolTip("minecraft:stone", "Wow, such stone, much rock"));
         _mCustomToolTips.getToolTips().add(createCustomItemToolTip("minecraft:coal", "This is coal..."));
-        _mCustomToolTips.getToolTips()
-                .add(createCustomItemToolTip("minecraft:coal:1", "...and this charcoal!"));
+        _mCustomToolTips.getToolTips().add(createCustomItemToolTip("minecraft:coal:1", "...and this charcoal!"));
     }
 
     /**
