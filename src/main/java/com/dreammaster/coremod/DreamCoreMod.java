@@ -110,6 +110,8 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
             mixins.add("MixinGuiShareToLan");
         }
         mixins.add("MixinTileEntityBeacon");
+        mixins.add("MixinBOPBlocks");
+
         return mixins;
     }
 
