@@ -200,7 +200,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Nanochip Assembly Complex
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Circuit_OpticalMainframe.get(1),
+                ItemList.Circuit_OpticalProcessor.get(1),
                 16777216,
                 4096,
                 (int) TierEU.RECIPE_UHV,
