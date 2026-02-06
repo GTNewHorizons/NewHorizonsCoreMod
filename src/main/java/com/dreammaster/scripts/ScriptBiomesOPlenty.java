@@ -17,10 +17,10 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
@@ -36,8 +36,10 @@ import static gtnhlanth.api.recipe.LanthanidesRecipeMaps.dissolutionTankRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.biomesoplenty.BOPWoodTypes;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 
@@ -277,8 +279,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .addTo(fluidExtractionRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).duration(1).eut(1)
-                .addTo(fluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).duration(1).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(20 * SECONDS).eut(40)
@@ -330,8 +331,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1L)).fluidInputs(Materials.Honey.getFluid(1000L))
-                .duration(2 * SECONDS).eut(1).addTo(fluidCannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.getIS(1)).circuit(16)
+                .duration(2 * SECONDS).eut(1).addTo(cannerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.get(1)).circuit(16)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 3, missing)).circuit(16)
@@ -550,5 +551,94 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 "tanzanite",
                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Tanzanite, 1L));
         ChiselHelper.addVariationFromStack("tanzanite", getModItem(BiomesOPlenty.ID, "gemOre", 1, 9, missing));
+
+        // Fence and Fence Gate recipes:
+
+        for (BOPWoodTypes woodType : BOPWoodTypes.values()) {
+            ItemStack plank = getModItem(BiomesOPlenty.ID, "planks", 1, woodType.ordinal());
+
+            // Fences
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "Fence", 1, 0, missing),
+                    "stickWood",
+                    plank,
+                    "stickWood",
+                    "stickWood",
+                    plank,
+                    "stickWood",
+                    "stickWood",
+                    plank,
+                    "stickWood");
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "Fence", 2, 0, missing),
+                    "screwIron",
+                    "craftingToolScrewdriver",
+                    "screwIron",
+                    "stickWood",
+                    plank,
+                    "stickWood",
+                    "stickWood",
+                    plank,
+                    "stickWood");
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "Fence", 4, 0, missing),
+                    "screwSteel",
+                    "craftingToolScrewdriver",
+                    "screwSteel",
+                    "stickWood",
+                    plank,
+                    "stickWood",
+                    "stickWood",
+                    plank,
+                    "stickWood");
+
+            // Fence Gates
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0, missing),
+                    getModItem(Minecraft.ID, "flint", 1, 0, missing),
+                    null,
+                    getModItem(Minecraft.ID, "flint", 1, 0, missing),
+                    plank,
+                    "stickWood",
+                    plank,
+                    plank,
+                    "stickWood",
+                    plank);
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 2, 0, missing),
+                    "screwIron",
+                    "craftingToolScrewdriver",
+                    "screwIron",
+                    plank,
+                    "stickWood",
+                    plank,
+                    plank,
+                    "stickWood",
+                    plank);
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 4, 0, missing),
+                    "screwSteel",
+                    "craftingToolScrewdriver",
+                    "screwSteel",
+                    plank,
+                    "stickWood",
+                    plank,
+                    plank,
+                    "stickWood",
+                    plank);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "stick", 2, 0, missing),
+                            getModItem(BiomesOPlenty.ID, "planks", 2, woodType.ordinal()))
+                    .itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0, missing))
+                    .duration(15 * SECONDS).eut(8).addTo(assemblerRecipes);
+        }
     }
 }

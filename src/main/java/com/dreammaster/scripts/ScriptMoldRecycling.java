@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import ggfab.GGItemList;
@@ -31,13 +30,13 @@ public class ScriptMoldRecycling implements IScriptLoader {
     public void loadRecipes() {
         // Coremod molds
         Stream.of(
-                CustomItemList.MoldHelmet,
-                CustomItemList.MoldChestplate,
-                CustomItemList.MoldLeggings,
-                CustomItemList.MoldBoots,
-                CustomItemList.MarshmallowForm).forEach(
+                NHItemList.MoldHelmet,
+                NHItemList.MoldChestplate,
+                NHItemList.MoldLeggings,
+                NHItemList.MoldBoots,
+                NHItemList.MarshmallowForm).forEach(
                         item -> GTOreDictUnificator
-                                .addItemData(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
+                                .addItemData(item.get(), new ItemData(Materials.Steel, 4 * GTValues.M)));
         // GT5 Shapes and Molds
         Stream.of(
                 ItemList.Shape_Empty,
@@ -107,7 +106,7 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 .addItemData(GregtechItemList.Pellet_Mold.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M));
         // Boat Shape
         GTOreDictUnificator
-                .addItemData(NHItemList.ExtruderShapeBoat.getIS(1), new ItemData(Materials.Steel, 4 * GTValues.M));
+                .addItemData(NHItemList.ExtruderShapeBoat.get(1), new ItemData(Materials.Steel, 4 * GTValues.M));
         // GGfab Single use molds
         Stream.of(
                 GGItemList.SingleUseFileMold,

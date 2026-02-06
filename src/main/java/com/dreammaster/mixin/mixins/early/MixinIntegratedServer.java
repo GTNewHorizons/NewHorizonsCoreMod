@@ -25,17 +25,10 @@ public abstract class MixinIntegratedServer extends MinecraftServer {
         super(workDir, proxy);
     }
 
-    @Inject(method = "shareToLAN", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "shareToLAN", at = @At(value = "HEAD"))
     public void dreamcraft$makeShareToLANSingleplayerOnly(WorldSettings.GameType type, boolean allowCheats,
             CallbackInfoReturnable<String> cir) {
-        logger.info(
-                "Share to LAN was initiated. This is not supported by GTNH, no external player will be able to connect");
-
-        this.getConfigurationManager().func_152604_a(type);
-        this.getConfigurationManager().setCommandsAllowedForAll(allowCheats);
-
-        cir.setReturnValue(null);
-        cir.cancel();
+        logger.info("Share to LAN was initiated. This is not officially supported by GTNH");
     }
 
 }

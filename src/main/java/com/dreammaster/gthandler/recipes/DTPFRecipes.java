@@ -11,8 +11,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.DTPFCalculator;
+import com.dreammaster.item.NHItemList;
 
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
@@ -29,7 +29,6 @@ import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
-import gtPlusPlus.core.recipe.common.CI;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class DTPFRecipes implements Runnable {
@@ -62,7 +61,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
 
                 DTPFCalculator neutronium = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .setCustomEBFinputItem(CustomItemList.RawNeutronium.get(1L))
+                        .setCustomEBFinputItem(NHItemList.RawNeutronium.get())
                         .calculateGenericEBFBasedRecipe(Materials.Neutronium);
 
                 // Tier 4
@@ -1087,8 +1086,8 @@ public class DTPFRecipes implements Runnable {
                     .setHighestCatalystTier(4).setEUtDivisor(1.12f)
                     .calculateNonEBFRecipe(total_EUt, recipe_time_per_quantum_ingot);
             GTValues.RA.stdBuilder().itemInputs(
-                    CI.getEnergyCore(9, 0),
-                    BlockList.Quantinum.getIS(2),
+                    GregtechItemList.Energy_Core_UHV.get(0),
+                    BlockList.Quantinum.get(2),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(2))
                     .itemOutputs(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
@@ -1107,8 +1106,8 @@ public class DTPFRecipes implements Runnable {
 
             // Quantum + Astral Titanium v2
             GTValues.RA.stdBuilder().itemInputs(
-                    CI.getEnergyCore(9, 0),
-                    BlockList.Quantinum.getIS(4),
+                    GregtechItemList.Energy_Core_UHV.get(0),
+                    BlockList.Quantinum.get(4),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(3))
                     .itemOutputs(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getBlock(4))
@@ -1169,7 +1168,7 @@ public class DTPFRecipes implements Runnable {
                     .itemInputs(
                             GregtechItemList.Laser_Lens_Special.get(1),
                             ItemList.StableBosonContainmentUnit.get(4),
-                            CustomItemList.MysteriousCrystalLens.get(0),
+                            NHItemList.MysteriousCrystalLens.get(0),
                             ItemRefer.HiC_T5.get(0))
                     .fluidInputs(Materials.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
                     .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)

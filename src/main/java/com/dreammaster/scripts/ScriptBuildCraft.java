@@ -32,7 +32,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -137,15 +137,15 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "stickWood");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowersandstone", 1, 0, missing),
-                CustomItemList.SandStoneRod.get(1L),
+                NHItemList.SandStoneRod.get(),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                CustomItemList.SandStoneRod.get(1L),
+                NHItemList.SandStoneRod.get(),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
                 "wireGt01Cupronickel",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                CustomItemList.SandStoneRod.get(1L),
+                NHItemList.SandStoneRod.get(),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                CustomItemList.SandStoneRod.get(1L));
+                NHItemList.SandStoneRod.get());
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerquartz", 1, 0, missing),
                 "stickNetherQuartz",
@@ -301,7 +301,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "crystalRedstone",
                 "itemCasingStainlessSteel",
                 "circuitData",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "circuitData",
                 "itemCasingStainlessSteel",
                 "plateSteel",
@@ -311,11 +311,11 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "itemCasingSteel",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "itemCasingSteel");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserBlock", 1, 0, missing),

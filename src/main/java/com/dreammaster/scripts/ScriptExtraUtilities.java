@@ -21,6 +21,7 @@ import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -31,6 +32,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
@@ -39,7 +41,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
@@ -277,13 +278,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
                 "plateLapis",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateLapis",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateLapis",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "plateLapis");
         addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
@@ -1364,6 +1365,12 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
 
+        for (int i = 0; i < 16; i++) {
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "color_lightgem", 1, i, missing))
+                    .itemOutputs(new ItemStack(Items.glowstone_dust, 4)).duration(392 * TICKS).eut(4)
+                    .addTo(maceratorRecipes);
+        }
+
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0, missing),
@@ -1380,7 +1387,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         missing),
                 OrePrefixes.ring.get(Materials.Iridium),
                 OrePrefixes.screw.get(Materials.Tritanium),
-                NHItemList.EngravedGoldChip.getIS(1),
+                NHItemList.EngravedGoldChip.get(1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 GregtechItemList.MagicFeather.get(1),
@@ -1390,7 +1397,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 GregtechItemList.MagicFeather.get(1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                NHItemList.EngravedGoldChip.getIS(1),
+                NHItemList.EngravedGoldChip.get(1),
                 OrePrefixes.screw.get(Materials.Tritanium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",

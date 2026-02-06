@@ -145,8 +145,9 @@ public class WitcheryPlugin extends BasePluginWitchery {
             }
         }
         log.warn(
-                "There is no cauldron recipe matching these items: last: {}, rest: " + Arrays.toString(items),
-                lastItem);
+                "There is no cauldron recipe matching these items: last: {}, rest: {}",
+                lastItem,
+                Arrays.toString(items));
     }
 
     private static void removeAllKettleRecipe(ItemStack output) {
@@ -244,7 +245,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                     GTModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
-                    NHItemList.ManyullynCrystal.getIS(1));
+                    NHItemList.ManyullynCrystal.get(1));
         }
         // rites
         // TODO write doc

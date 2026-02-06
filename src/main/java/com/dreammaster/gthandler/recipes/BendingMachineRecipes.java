@@ -9,7 +9,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -25,8 +25,8 @@ public class BendingMachineRecipes implements Runnable {
         ItemStack missing = new ItemStack(Blocks.fire);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.MicaInsulatorSheet.get(1L), ItemList.Circuit_Integrated.getWithDamage(0, 1))
-                .itemOutputs(CustomItemList.MicaInsulatorFoil.get(4L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemInputs(NHItemList.MicaInsulatorSheet.get(), ItemList.Circuit_Integrated.getWithDamage(0, 1))
+                .itemOutputs(NHItemList.MicaInsulatorFoil.get(4)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(benderRecipes);
 
         GTValues.RA.stdBuilder()

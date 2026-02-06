@@ -122,7 +122,6 @@ public class TF_Loot_Chests {
         TFTreasure.tower_library.common.add(GTModHandler.getModItem(Thaumcraft.ID, "blockCandle", 4, 14), 12);
         TFTreasure.tower_library.common.add(GTModHandler.getModItem(Thaumcraft.ID, "blockCandle", 4, 15), 12);
         TFTreasure.tower_library.common.add(GTOreDictUnificator.get(OrePrefixes.dust, Materials.StainlessSteel, 4L), 6);
-        TFTreasure.tower_library.common.add(GTOreDictUnificator.get(OrePrefixes.gem, Materials.EnderEye, 4L), 6);
         TFTreasure.tower_library.common.add(GTOreDictUnificator.get(OrePrefixes.gem, Materials.EnderPearl, 8L), 6);
         TFTreasure.tower_library.common
                 .add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 2L), 6);
@@ -153,8 +152,8 @@ public class TF_Loot_Chests {
         // Litch Tower Boss Room
         TFTreasure.tower_room.common.add(GTModHandler.getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0), 3);
         TFTreasure.tower_room.common.add(GTModHandler.getModItem(Thaumcraft.ID, "ItemLootBag", 1, 0), 12);
-        // TFTreasure.tower_room.common.add(CustomItemList.LichBone.get(2),50);
-        // TFTreasure.tower_room.common.add(CustomItemList.LichBoneChip.get(8),75);
+        // TFTreasure.tower_room.common.add(NHItemList.LichBone.get(2),50);
+        // TFTreasure.tower_room.common.add(NHItemList.LichBoneChip.get(8),75);
         TFTreasure.tower_room.uncommon.add(GTModHandler.getModItem(Thaumcraft.ID, "ItemLootBag", 1, 1), 12);
         TFTreasure.tower_room.uncommon.add(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.NetherStar, 1L), 2);
         TFTreasure.tower_room.rare.add(GTModHandler.getModItem(Thaumcraft.ID, "ItemLootBag", 1, 2), 6);

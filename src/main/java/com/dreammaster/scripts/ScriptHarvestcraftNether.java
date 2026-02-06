@@ -165,6 +165,10 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS).eut(16)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
+                .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS).eut(16)
+                .addTo(cutterRecipes);
 
         removeOreDict("listAllmeatraw", getModItem(PamsHarvestTheNether.ID, "fleshrootItem", 1));
     }

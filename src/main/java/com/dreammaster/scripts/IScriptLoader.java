@@ -62,7 +62,7 @@ public interface IScriptLoader {
         try {
             GameRegistry.addRecipe(new ShapedUniversalRecipe(aOutput, inputs));
         } catch (Exception e) {
-            MainRegistry.Logger.error("a recipe went wrong:");
+            MainRegistry.LOGGER.error("a recipe went wrong:");
             e.printStackTrace();
             return false;
         }
@@ -81,7 +81,7 @@ public interface IScriptLoader {
         try {
             GameRegistry.addRecipe(new ShapelessUniversalRecipe(aOutput, inputs));
         } catch (Exception e) {
-            MainRegistry.Logger.error("a recipe went wrong:");
+            MainRegistry.LOGGER.error("a recipe went wrong:");
             e.printStackTrace();
             return false;
         }

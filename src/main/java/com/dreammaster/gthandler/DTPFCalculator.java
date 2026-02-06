@@ -94,10 +94,10 @@ public class DTPFCalculator {
         // Determine oganesson recipe stats
         for (GTRecipe recipe : foundEBFRecipes) {
             if (recipe.mFluidInputs.length == 0) {
-                ebfDuration = (long) (recipe.mDuration * 0.3);
+                ebfDuration = (long) Math.max(1, recipe.mDuration * 0.3);
                 ebfEUpertick = recipe.mEUt;
             } else if (recipe.mFluidInputs[0].isFluidEqual(Materials.Radon.getGas(1000L))) {
-                ebfDuration = (long) (recipe.mDuration / 0.7 * 0.3);
+                ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
                 ebfEUpertick = recipe.mEUt;
                 break;
             }

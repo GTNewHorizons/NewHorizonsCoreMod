@@ -39,7 +39,7 @@ public class ExtractorRecipes implements Runnable {
             for (int i = 0; i < 6; ++i) {
 
                 GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tcetiedandelions", 64L, i))
-                        .itemOutputs(NHItemList.TCetiESeaweedExtract.getIS()).duration(3 * MINUTES).eut(262144)
+                        .itemOutputs(NHItemList.TCetiESeaweedExtract.get()).duration(3 * MINUTES).eut(262144)
                         .addTo(extractorRecipes);
 
             }

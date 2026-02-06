@@ -23,11 +23,11 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
+import static gregtech.api.util.GTModHandler.RecipeBits.BITS;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtPlusPlus.core.recipe.common.CI.bits;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +36,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
@@ -380,7 +379,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
                 'd',
-                NHItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
+                NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1),
                 'e',
                 getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 1, 1, missing),
                 'f',
@@ -699,7 +698,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'a',
                 "plateDraconiumAwakened",
                 'b',
-                CustomItemList.EngravedEnergyChip.get(1L),
+                NHItemList.EngravedEnergyChip.get(),
                 'c',
                 getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -716,7 +715,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'a',
                 "plateDraconium",
                 'b',
-                CustomItemList.EngravedDiamondCrystalChip.get(1L),
+                NHItemList.EngravedDiamondCrystalChip.get(),
                 'c',
                 getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -800,7 +799,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDraconiumAwakened",
                 'c',
-                NHItemList.EngravedManyullynCrystalChip.getIS(1),
+                NHItemList.EngravedManyullynCrystalChip.get(1),
                 'd',
                 getModItem(DraconicEvolution.ID, "draconiumFluxCapacitor", 1, 1, missing),
                 'e',
@@ -1278,7 +1277,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
 
         GTModHandler.addCraftingRecipe(
                 getModItem(DraconicEvolution.ID, "dislocatorInhibitor", 1, 0, missing),
-                bits,
+                BITS,
                 new Object[] { "PSP", "BMB", "PSP", 'P', "plateSteelMagnetic", 'S',
                         getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6, missing), 'B',
                         getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), 'M',
