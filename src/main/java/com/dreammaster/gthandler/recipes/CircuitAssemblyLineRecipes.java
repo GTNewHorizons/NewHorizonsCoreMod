@@ -965,7 +965,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_OpticalSMDDiodes.get(16),
                         tectech.thing.CustomItemList.DATApipe.get(64),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.EnrichedHolmium, 64))
-                .itemOutputs(ItemList.Circuit_OpticalProcessor.get(16))
+                .itemOutputs(ItemList.Circuit_OpticalProcessor.get(4))
                 .fluidInputs(MUTATED_LIVING_SOLDER.getFluidStack(2 * INGOTS))
                 .special(ItemList.CircuitImprint_OpticalProcessor.get(0)).eut(614_400).duration(4 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
