@@ -67,7 +67,6 @@ import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 import com.dreammaster.modhazardousitems.HazardousItemsHandler;
-import com.dreammaster.network.msg.CTTClientSyncMessage;
 import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
@@ -180,11 +179,6 @@ public class MainRegistry {
         // ------------------------------------------------------------
         LOGGER.debug("PRELOAD Init NetworkChannel");
         dispatcher = new SimpleNetworkWrapper(Refstrings.MODID);
-        dispatcher.registerMessage(
-                CTTClientSyncMessage.CTTClientSyncMessageHandler.class,
-                CTTClientSyncMessage.class,
-                0,
-                Side.CLIENT);
         dispatcher.registerMessage(
                 ZZClientOnlySyncMessage.ZZClientOnlySyncMessageHandler.class,
                 ZZClientOnlySyncMessage.class,
