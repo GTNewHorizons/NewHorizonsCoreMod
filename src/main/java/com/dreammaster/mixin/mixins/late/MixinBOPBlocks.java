@@ -1,6 +1,6 @@
-package com.dreammaster.mixin.mixins.early;
+package com.dreammaster.mixin.mixins.late;
 
-import static biomesoplenty.common.core.BOPBlocks.*;
+import static biomesoplenty.common.core.BOPBlocks.registerBlock;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -16,12 +16,12 @@ public class LateMixinLoader implements ILateMixinLoader {
 
     @Override
     public String getMixinConfig() {
-        return "mixins.dreamcraft.json";
+        return "mixins.dreamcraft.late.json";
     }
 
     @Override
     public @NotNull List<String> getMixins(Set<String> loadedMods) {
-        if (Mods.BiomesOPlenty.isModLoaded()) {
+        if (loadedMods.contains(Mods.ModIDs.BIOMES_O_PLENTY)) {
             return Collections.singletonList("MixinBOPBlocks");
         }
         return Collections.emptyList();
