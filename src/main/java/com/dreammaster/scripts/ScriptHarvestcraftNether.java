@@ -15,6 +15,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptHarvestcraftNether implements IScriptLoader {
@@ -155,20 +156,20 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
                 .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(5 * SECONDS).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
                 .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(5 * SECONDS).eut(16)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
                 .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS).eut(16)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
                 .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS).eut(16)
-                .addTo(cutterRecipes);
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         removeOreDict("listAllmeatraw", getModItem(PamsHarvestTheNether.ID, "fleshrootItem", 1));
     }

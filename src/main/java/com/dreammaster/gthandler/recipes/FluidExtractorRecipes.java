@@ -36,8 +36,8 @@ public class FluidExtractorRecipes implements Runnable {
         if (OpenBlocks.isModLoaded() && TinkerConstruct.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 1L, 5))
-                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("xpjuice"), 250)).duration(5 * SECONDS).eut(16)
-                    .addTo(fluidExtractionRecipes);
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("xpjuice"), 250)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
         }
 
@@ -60,20 +60,20 @@ public class FluidExtractorRecipes implements Runnable {
                     .addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.slime_ball, 1, 0))
-                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS).eut(16)
-                    .addTo(fluidExtractionRecipes);
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0))
-                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS).eut(16)
-                    .addTo(fluidExtractionRecipes);
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 1))
-                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS).eut(16)
-                    .addTo(fluidExtractionRecipes);
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 36))
-                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS).eut(16)
-                    .addTo(fluidExtractionRecipes);
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0))
                     .fluidOutputs(Materials.Glass.getMolten(144L)).duration(24 * TICKS).eut(54)

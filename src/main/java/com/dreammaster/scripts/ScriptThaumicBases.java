@@ -31,6 +31,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
@@ -1309,19 +1310,19 @@ public class ScriptThaumicBases implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(2)).duration(4 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(2)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
     }
 }

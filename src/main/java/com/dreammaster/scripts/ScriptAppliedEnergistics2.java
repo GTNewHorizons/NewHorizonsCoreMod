@@ -197,7 +197,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 3L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L))
-                .circuit(3).itemOutputs(AE2_ADVANCED_HOUSING).duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .circuit(3).itemOutputs(AE2_ADVANCED_HOUSING).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(assemblerRecipes);
         GTModHandler.addCraftingRecipe(
                 AE2_ADVANCED_HOUSING,
                 new Object[] { "hPS", "CGC", "SCd", 'P', CERTUS_PLATE, 'S',
@@ -2209,7 +2210,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(Minecraft.ID, "glass", 4, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0, missing))
-                .duration(20 * SECONDS).eut(16).addTo(alloySmelterRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing))
                 .itemOutputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockTinyTNT", 1, 0, missing),

@@ -2047,43 +2047,43 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(Minecraft.ID, "crafting_table", 1, 0, missing))
                 .circuit(1).itemOutputs(getModItem(Railcraft.ID, "cart.work", 1, 0, missing)).duration(5 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(Railcraft.ID, "machine.alpha", 1, 2, missing))
                 .circuit(1).itemOutputs(getModItem(Railcraft.ID, "cart.anchor.personal", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(Railcraft.ID, "machine.alpha", 1, 0, missing))
                 .circuit(1).itemOutputs(getModItem(Railcraft.ID, "cart.anchor", 1, 0, missing)).duration(5 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing))
                 .circuit(1).itemOutputs(getModItem(Railcraft.ID, "cart.tank", 1, 0, missing)).duration(5 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 0, missing))
                 .circuit(1).itemOutputs(getModItem(Railcraft.ID, "cart.energy.batbox", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing))
                 .circuit(1).itemOutputs(getModItem(Railcraft.ID, "cart.energy.cesu", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 1, missing))
                 .circuit(1).itemOutputs(getModItem(Railcraft.ID, "cart.energy.mfe", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemToolMEter", 1, 0, missing),
@@ -2143,8 +2143,8 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "dye", 1, 15, missing),
                         getModItem(Minecraft.ID, "dye", 1, 15, missing),
                         getModItem(Minecraft.ID, "dye", 1, 15, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "part.bleached.clay", 2, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(mixerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.bleached.clay", 2, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),

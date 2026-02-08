@@ -29,6 +29,7 @@ import forestry.factory.recipes.CarpenterRecipe;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTRecipe;
 
 public class ScriptZZClientOnly implements IScriptLoader {
@@ -381,28 +382,28 @@ public class ScriptZZClientOnly implements IScriptLoader {
         coins.addAll(
                 GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(1)
                         .itemOutputs(NHItemList.CoinChunkloaderTierI.get())
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).duration(30 * SECONDS).eut(120)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_MV).disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
                 GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(2)
                         .itemOutputs(NHItemList.CoinChunkloaderTierII.get())
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).duration(30 * SECONDS).eut(480)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_HV).disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
                 GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(3)
                         .itemOutputs(NHItemList.CoinChunkloaderTierIII.get())
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).duration(30 * SECONDS).eut(1920)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_EV).disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
                 GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(4)
                         .itemOutputs(NHItemList.CoinChunkloaderTierIV.get())
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).duration(30 * SECONDS).eut(7680)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_IV).disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
                 GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(5)
                         .itemOutputs(NHItemList.CoinChunkloaderTierV.get())
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).duration(30 * SECONDS).eut(30720)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_LuV).disabled().hidden().addTo(assemblerRecipes));
 
         if (MainRegistry.isServer() && CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
             stamps(true);

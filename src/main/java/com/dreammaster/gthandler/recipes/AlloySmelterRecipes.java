@@ -34,127 +34,127 @@ public class AlloySmelterRecipes implements Runnable {
                 .itemInputs(
                         NHItemList.MicaBasedSheet.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedSheet.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedSheet.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L))
-                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedSheet.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L))
-                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L))
-                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(15)
+                .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1),
                         ItemList.Shape_Mold_Ball.get(0))
-                .itemOutputs(ItemList.Circuit_Parts_Glass_Tube.get(1L)).duration(6 * SECONDS).eut(16)
+                .itemOutputs(ItemList.Circuit_Parts_Glass_Tube.get(1L)).duration(6 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemPartIridium", 2L),
                         ItemList.Shape_Mold_Casing.get(0))
-                .itemOutputs(NHItemList.IridiumAlloyItemCasing.get().splitStack(3)).duration(60 * SECONDS).eut(256)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(NHItemList.IridiumAlloyItemCasing.get().splitStack(3)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(alloySmelterRecipes);
 
         // GT++ Recipes
         ItemStack[] tumbagaInputs = { Materials.Gold.getDust(7), // 0
@@ -165,12 +165,12 @@ public class AlloySmelterRecipes implements Runnable {
         int[][] tumbagaCombos = { { 0, 2 }, { 0, 3 }, { 1, 2 }, { 1, 3 } };
         for (int[] pair : tumbagaCombos) {
             GTValues.RA.stdBuilder().itemInputs(tumbagaInputs[pair[0]], tumbagaInputs[pair[1]])
-                    .itemOutputs(MaterialsAlloy.TUMBAGA.getIngot(10)).duration(15 * SECONDS).eut(30)
+                    .itemOutputs(MaterialsAlloy.TUMBAGA.getIngot(10)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                     .addTo(alloySmelterRecipes);
         }
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard), new ItemStack(Items.clay_ball))
-                .itemOutputs(NHItemList.CokeOvenBrick.get().splitStack(2)).duration(10 * SECONDS).eut(8)
+                .itemOutputs(NHItemList.CokeOvenBrick.get().splitStack(2)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(alloySmelterRecipes);
 
         if (EnderIO.isModLoaded()) {

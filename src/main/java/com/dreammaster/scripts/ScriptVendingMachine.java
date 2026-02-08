@@ -16,6 +16,7 @@ import com.cubefury.vendingmachine.items.VMItems;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.TierEU;
 
 public class ScriptVendingMachine implements IScriptLoader {
 
@@ -46,6 +47,6 @@ public class ScriptVendingMachine implements IScriptLoader {
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
                         getModItem(Minecraft.ID, "dispenser", 1, 0))
-                .duration(5 * SECONDS).itemOutputs(VMItems.uplinkHatch).eut(120).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).itemOutputs(VMItems.uplinkHatch).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
     }
 }

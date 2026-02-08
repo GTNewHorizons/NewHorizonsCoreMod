@@ -77,16 +77,16 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(getGSItem("item.LeadBattery", 1, 100)).fluidInputs(Materials.Lead.getMolten(6 * 144))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 0)).circuit(1)
-                .itemOutputs(getGSItem("item.ThermalClothT2", 5, 0)).duration(18 * SECONDS).eut(1024)
+                .itemOutputs(getGSItem("item.ThermalClothT2", 5, 0)).duration(18 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 1)).circuit(1)
-                .itemOutputs(getGSItem("item.ThermalClothT2", 8, 0)).duration(30 * SECONDS).eut(1024)
+                .itemOutputs(getGSItem("item.ThermalClothT2", 8, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 2)).circuit(1)
-                .itemOutputs(getGSItem("item.ThermalClothT2", 7, 0)).duration(26 * SECONDS).eut(1024)
+                .itemOutputs(getGSItem("item.ThermalClothT2", 7, 0)).duration(26 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 3)).circuit(1)
-                .itemOutputs(getGSItem("item.ThermalClothT2", 4, 0)).duration(15 * SECONDS).eut(1024)
+                .itemOutputs(getGSItem("item.ThermalClothT2", 4, 0)).duration(15 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -94,8 +94,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Titanium, 8),
                         NHItemList.TungstenString.get(8))
                 .circuit(1).itemOutputs(getGSItem("item.ThermalClothT2", 1, 0))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(576)).duration(30 * SECONDS).eut(1024)
-                .addTo(assemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(576)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalClothT2", 5, 0), NHItemList.TungstenString.get(5))
                 .circuit(5).itemOutputs(getGSItem("item.ThermalPaddingT2", 1, 0))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(1440)).duration(1 * MINUTES + 15 * SECONDS)

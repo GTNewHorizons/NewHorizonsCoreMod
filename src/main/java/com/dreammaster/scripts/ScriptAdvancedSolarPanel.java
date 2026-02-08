@@ -129,13 +129,13 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
                         getModItem(Minecraft.ID, "glowstone", 4, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing))
-                .duration(30 * SECONDS).eut(1920).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 2, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing))
-                .duration(1 * MINUTES).eut(7680).addTo(assemblerRecipes);
+                .duration(1 * MINUTES).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9, 9, missing))

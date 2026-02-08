@@ -298,7 +298,7 @@ public class ChemicalReactorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 64))
                     .itemOutputs(NHItemList.DraconiumEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000)).requiresCleanRoom()
-                    .duration(60 * MINUTES).eut(1024).addTo(UniversalChemical);
+                    .duration(60 * MINUTES).eut(TierEU.RECIPE_EV / 2).addTo(UniversalChemical);
 
         }
 
@@ -338,7 +338,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.TheBigEgg.get(), ItemList.IC2_Uranium_238.get(64))
                     .itemOutputs(NHItemList.MutatedEgg.get()).fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000))
-                    .requiresCleanRoom().duration(60 * MINUTES).eut(256).addTo(UniversalChemical);
+                    .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV / 2).addTo(UniversalChemical);
 
         }
 

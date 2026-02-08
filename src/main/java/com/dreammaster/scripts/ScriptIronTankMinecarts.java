@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import com.indemnity83.irontank.reference.TankType;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.TierEU;
 
 public class ScriptIronTankMinecarts implements IScriptLoader {
 
@@ -54,7 +55,7 @@ public class ScriptIronTankMinecarts implements IScriptLoader {
                     "craftingToolScrewdriver",
                     null);
             GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "minecart", 1, 0, missing), tank).circuit(1)
-                    .itemOutputs(cart).duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                    .itemOutputs(cart).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         }
     }
 }

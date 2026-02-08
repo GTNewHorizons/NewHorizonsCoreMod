@@ -85,15 +85,15 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Topaz, 1)))
-                .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS).eut(256)
-                .addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amber, 1)))
-                .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS).eut(256)
-                .addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -153,7 +153,8 @@ public class LaserEngraverRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Silicon_Wafer3.get(1L), NHItemList.ReinforcedGlassLense.get(0))
-                .itemOutputs(NHItemList.WaferTier3.get()).duration(10 * SECONDS).eut(1024).addTo(WaferEngravingRecipes);
+                .itemOutputs(NHItemList.WaferTier3.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_EV / 2)
+                .addTo(WaferEngravingRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -201,7 +202,7 @@ public class LaserEngraverRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(ItemList.Circuit_Silicon_Wafer.get(1L), NHItemList.ReinforcedGlassLense.get(0))
                     .itemOutputs(GTModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1L, 13))
-                    .duration(10 * SECONDS).eut(256).addTo(laserEngraverRecipes);
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(laserEngraverRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(ItemList.Circuit_Silicon_Wafer2.get(1L), NHItemList.ReinforcedGlassLense.get(0))

@@ -13,6 +13,7 @@ import java.util.List;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
 
 public class ScriptTinkersDefence implements IScriptLoader {
@@ -37,21 +38,21 @@ public class ScriptTinkersDefence implements IScriptLoader {
                         getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing))
-                .duration(1 * MINUTES + 28 * SECONDS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
-                .addTo(extruderRecipes);
+                .duration(1 * MINUTES + 28 * SECONDS).eut(TierEU.RECIPE_MV)
+                .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing))
-                .duration(1 * MINUTES + 4 * SECONDS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
-                .addTo(extruderRecipes);
+                .duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
+                .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing)).duration(10 * SECONDS)
-                .eut(120).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
+                .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
 
     }
 }

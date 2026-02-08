@@ -90,7 +90,7 @@ public class CentrifugeRecipes implements Runnable {
                         new ItemStack(Items.blaze_powder, 1, 0),
                         new ItemStack(Items.gunpowder, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L))
-                .duration(20 * SECONDS).eut(8).addTo(centrifugeRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MoonStoneDust.get(36))
                 .itemOutputs(
@@ -555,8 +555,8 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cassiterite, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
-                .outputChances(9000, 3000, 2000, 1500, 1000, 750).duration(1 * MINUTES + 48 * SECONDS).eut(16)
-                .addTo(centrifugeRecipes);
+                .outputChances(9000, 3000, 2000, 1500, 1000, 750).duration(1 * MINUTES + 48 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust.get(Materials.DeepIron), 4L))
                 .itemOutputs(
@@ -583,14 +583,14 @@ public class CentrifugeRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(5L))
                 .itemOutputs(Materials.Oxygen.getCells(1), ItemList.Cell_Empty.get(4L))
-                .fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS).eut(8)
-                .addTo(centrifugeRecipes);
+                .fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
 
         // Liquid Fertilizer reverse recipe
 
         GTValues.RA.stdBuilder().circuit(1).itemOutputs(ItemList.IC2_Fertilizer.get(1L))
-                .fluidInputs(FluidRegistry.getFluidStack("fluid.fertiliser", 144)).duration(2 * SECONDS).eut(16)
-                .addTo(centrifugeRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("fluid.fertiliser", 144)).duration(2 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(centrifugeRecipes);
 
         if (PamsHarvestCraft.isModLoaded()) {
 
