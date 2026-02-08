@@ -154,8 +154,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2),
                             ItemList.Circuit_Parts_Vacuum_Tube.get(2L))
                     .itemOutputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1L, 0))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(16)
-                    .addTo(circuitAssemblerRecipes);
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_LV / 2).addTo(circuitAssemblerRecipes);
 
             // Good Circuit
             GTValues.RA.stdBuilder()
@@ -177,7 +177,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Tin, 2))
                     .itemOutputs(ItemList.Circuit_Basic.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
-                    .duration(10 * SECONDS).eut(16).addTo(circuitAssemblerRecipes);
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(circuitAssemblerRecipes);
 
             // Good Integrated Circuit
             GTValues.RA.stdBuilder()
@@ -240,7 +240,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
                     .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(circuitAssemblerRecipes);
+                    .eut(TierEU.RECIPE_MV / 2).addTo(circuitAssemblerRecipes);
 
             // Integrated Processor
             GTValues.RA.stdBuilder()
@@ -253,7 +253,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
                     .itemOutputs(ItemList.Circuit_Processor.get(1L))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(circuitAssemblerRecipes);
+                    .eut(TierEU.RECIPE_MV / 2).addTo(circuitAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -265,7 +265,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
                     .itemOutputs(ItemList.Circuit_Processor.get(1L))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(5 * SECONDS)
-                    .eut(60).addTo(circuitAssemblerRecipes);
+                    .eut(TierEU.RECIPE_MV / 2).addTo(circuitAssemblerRecipes);
 
             // Processor Assembly
             GTValues.RA.stdBuilder()
@@ -1046,7 +1046,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 16),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Platinum, 8))
                     .itemOutputs(ItemList.Energy_LapotronicOrb.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
-                    .requiresCleanRoom().duration(25 * SECONDS + 12 * TICKS).eut(1024).addTo(circuitAssemblerRecipes);
+                    .requiresCleanRoom().duration(25 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_EV / 2)
+                    .addTo(circuitAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -1057,7 +1058,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 16))
                     .itemOutputs(ItemList.Energy_LapotronicOrb2.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
-                    .requiresCleanRoom().duration(51 * SECONDS + 4 * TICKS).eut(4096).addTo(circuitAssemblerRecipes);
+                    .requiresCleanRoom().duration(51 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(circuitAssemblerRecipes);
 
             // PCBs Steve Carts
             GTValues.RA.stdBuilder()
@@ -1085,8 +1087,8 @@ public class CircuitAssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(ItemList.Circuit_Board_Plastic_Advanced.get(1L), ItemList.Circuit_Chip_ILC.get(16L))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 27))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(20 * SECONDS).eut(64)
-                    .requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(20 * SECONDS)
+                    .eut(TierEU.RECIPE_MV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
             // CU
 
             GTValues.RA.stdBuilder()
@@ -1164,8 +1166,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTModHandler.getModItem(OpenComputers.ID, "item", 2L, 25),
                             GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 2))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 9))
-                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS).eut(256)
-                    .requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
+                    .eut(TierEU.RECIPE_HV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
             // Graphics Card 3
 
             GTValues.RA.stdBuilder()
@@ -1198,8 +1200,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
                             GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L))
                     .circuit(2).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 101))
-                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
-                    .requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
             // APU T2
 
             GTValues.RA.stdBuilder()
@@ -1233,7 +1235,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 1))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                    .requireMods(OpenComputers).eut(64).addTo(circuitAssemblerRecipes);
+                    .requireMods(OpenComputers).eut(TierEU.RECIPE_MV / 2).addTo(circuitAssemblerRecipes);
             // RAM 1.5
 
             GTValues.RA.stdBuilder()
@@ -1255,7 +1257,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 2))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                    .requireMods(OpenComputers).eut(256).addTo(circuitAssemblerRecipes);
+                    .requireMods(OpenComputers).eut(TierEU.RECIPE_HV / 2).addTo(circuitAssemblerRecipes);
             // RAM 2.5
 
             GTValues.RA.stdBuilder()
@@ -1279,7 +1281,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 38))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                    .requireMods(OpenComputers).eut(1024).addTo(circuitAssemblerRecipes);
+                    .requireMods(OpenComputers).eut(TierEU.RECIPE_EV / 2).addTo(circuitAssemblerRecipes);
             // RAM 3.5
 
             GTValues.RA.stdBuilder()
@@ -1322,8 +1324,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Parts_Transistor.get(8L),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 8L))
                     .circuit(2).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS).eut(256)
-                    .requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(15 * SECONDS)
+                    .eut(TierEU.RECIPE_HV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -1333,7 +1335,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 8L))
                     .circuit(3).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 25))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
-                    .requireMods(OpenComputers).eut(256).addTo(circuitAssemblerRecipes);
+                    .requireMods(OpenComputers).eut(TierEU.RECIPE_HV / 2).addTo(circuitAssemblerRecipes);
 
             // Microchip T3
             GTValues.RA.stdBuilder()
@@ -1400,8 +1402,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Emitter_HV.get(1L),
                             ItemList.Sensor_HV.get(1L))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 13))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
-                    .requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
             // World sensor card
 
             GTValues.RA.stdBuilder()
@@ -1435,8 +1437,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_ILC.get(16L),
                             new ItemStack(Blocks.redstone_torch, 4))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 12))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(256)
-                    .requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
             // data card 1
 
             GTValues.RA.stdBuilder()
@@ -1492,7 +1494,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 71))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                    .requireMods(OpenComputers).eut(256).addTo(circuitAssemblerRecipes);
+                    .requireMods(OpenComputers).eut(TierEU.RECIPE_HV / 2).addTo(circuitAssemblerRecipes);
             // component bus t3
 
             GTValues.RA.stdBuilder()
