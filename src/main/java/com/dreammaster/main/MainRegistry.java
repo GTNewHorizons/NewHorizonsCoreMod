@@ -2,6 +2,7 @@ package com.dreammaster.main;
 
 import static gregtech.api.enums.Mods.AmazingTrophies;
 import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DetravScannerMod;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
@@ -37,6 +38,9 @@ import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
+import com.dreammaster.biomesoplenty.BOPWoodTypes;
+import com.dreammaster.biomesoplenty.BlockBOPFence;
+import com.dreammaster.biomesoplenty.BlockBOPFenceGate;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.client.util.GTNHPauseScreen;
 import com.dreammaster.command.CustomDropsCommand;
@@ -82,6 +86,7 @@ import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
 import betterquesting.api.storage.BQ_Settings;
+import biomesoplenty.common.core.BOPBlocks;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Optional;
@@ -119,7 +124,8 @@ import gregtech.common.items.MetaGeneratedItem01;
                 + "after:Thaumcraft;"
                 + "after:amazingtrophies;"
                 + "after:backhand@[1.6.9,);"
-                + "after:betterquesting")
+                + "after:betterquesting;"
+                + "after:BiomesOPlenty")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -263,6 +269,17 @@ public class MainRegistry {
 
         if (TinkerConstruct.isModLoaded()) {
             GregTechAPI.sAfterGTPreload.add(SmelteryFluidTypes::registerGregtechFluidTypes);
+        }
+        if (BiomesOPlenty.isModLoaded()) {
+            MainRegistry.loadBOPBlocks();
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.BIOMES_O_PLENTY)
+    private static void loadBOPBlocks() {
+        for (BOPWoodTypes woodType : BOPWoodTypes.values()) {
+            BOPBlocks.registerBlock(new BlockBOPFence(woodType.name()).setBlockName(woodType.name() + "Fence"));
+            BOPBlocks.registerBlock(new BlockBOPFenceGate(woodType.name()).setBlockName(woodType.name() + "FenceGate"));
         }
     }
 
