@@ -378,6 +378,13 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 getModItem(Botania.ID, "manaResource", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Botania.ID, "manaResource", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Botania.ID, "manaResource", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Botania.ID, "manaResource", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 getModItem(Botania.ID, "manaResource", 1, 0, missing));
         TCHelper.addResearchPage("CAP_manasteel", new ResearchPage("derp.research_page.CAP_manasteel"));
         TCHelper.addResearchPage(
