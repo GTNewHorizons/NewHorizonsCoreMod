@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.enums.Mods.ThaumicInsurgence;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -123,13 +122,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.ENTROPY, 2000).add(Aspect.EARTH, 2000).add(Aspect.WATER, 2000),
                 DigitalSingularity,
                 CECInfusionItems);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, wildcard, missing),
-                        getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "wireless.essentia.terminal", 1, 0, missing))
-                .duration(30 * SECONDS).eut(120).addTo(assemblerRecipes);
 
         for (FluidStack solder : solders) {
             // 1k Essentia Storage Component
@@ -439,132 +431,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("limus"), 9)
                         .add(Aspect.getAspect("permutatio"), 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TECORES", 3);
-        TCHelper.clearPages("thaumicenergistics.TEESSTERM");
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TEESSTERM",
-                new ResearchPage("thaumicenergistics.research_page.TEESSTERM.1"));
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TEESSTERM",
-                new ResearchPage("thaumicenergistics.research_page.TEESSTERM.2"));
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "thaumicenergistics.TEESSTERM",
-                getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing),
-                new AspectList().add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("ordo"), 25)
-                        .add(Aspect.getAspect("ignis"), 25).add(Aspect.getAspect("terra"), 25),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                CalcProcessor,
-                'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                'c',
-                LogicProcessor,
-                'd',
-                DiffusionCore,
-                'e',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
-                'f',
-                CoalescenceCore,
-                'g',
-                "plateInfusedWater",
-                'h',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                'i',
-                "plateInfusedWater");
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TEESSTERM",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing))));
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TEESSTERM",
-                new ResearchPage("thaumicenergistics.research_page.TEESSTERM.3"));
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "thaumicenergistics.TEESSTERM",
-                getModItem(ThaumicEnergistics.ID, "part.base", 1, 1, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 10),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                'b',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
-                'c',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing));
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TEESSTERM",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 1, missing))));
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TEESSTERM",
-                new ResearchPage("thaumicenergistics.research_page.TEESSTERM.4"));
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "thaumicenergistics.TEESSTERM",
-                getModItem(ThaumicEnergistics.ID, "part.base", 1, 7, missing),
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("ordo"), 15),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                "craftingToolScrewdriver",
-                'b',
-                "itemIlluminatedPanel",
-                'c',
-                "craftingToolHardHammer",
-                'd',
-                "screwInfusedWater",
-                'e',
-                getModItem(ThaumicEnergistics.ID, "part.base", 1, 1, missing),
-                'f',
-                "screwInfusedWater",
-                'g',
-                "plateInfusedOrder",
-                'h',
-                "plateInfusedOrder",
-                'i',
-                "plateInfusedOrder");
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TEESSTERM",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 7, missing))));
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "thaumicenergistics.TEESSTERM",
-                getModItem(ThaumicEnergistics.ID, "part.base", 1, 8, missing),
-                new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("ordo"), 20),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                "craftingToolScrewdriver",
-                'b',
-                getModItem(ThaumicEnergistics.ID, "part.base", 1, 7, missing),
-                'c',
-                "craftingToolHardHammer",
-                'd',
-                "screwInfusedFire",
-                'e',
-                DiffusionCore,
-                'f',
-                "screwInfusedFire",
-                'g',
-                "plateInfusedOrder",
-                'h',
-                CoalescenceCore,
-                'i',
-                "plateInfusedOrder");
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TEESSTERM",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 8, missing))));
-        TCHelper.setResearchAspects(
-                "thaumicenergistics.TEESSTERM",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("sensus"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("aqua"), 3));
-        TCHelper.setResearchComplexity("thaumicenergistics.TEESSTERM", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEESSVIBCMBR",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.vibration.chamber", 1, 0, missing),
@@ -576,7 +442,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "plateInfusedOrder",
                 'b',
-                getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
                 'c',
                 "plateInfusedOrder",
                 'd',
@@ -1376,42 +1242,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'e',
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing));
 
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "thaumicenergistics.TESTORAGE",
-                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("ignis"), 20),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                "craftingToolScrewdriver",
-                'b',
-                EssentialComponent1K,
-                'c',
-                "craftingToolWrench",
-                'd',
-                "screwInfusedEarth",
-                'e',
-                getModItem(AppliedEnergistics2.ID, "tile.BlockCellWorkbench", 1, 0, missing),
-                'f',
-                "screwInfusedEarth",
-                'g',
-                "plateInfusedOrder",
-                'h',
-                LogicProcessor,
-                'i',
-                "plateInfusedOrder");
-        TCHelper.addResearchPage(
-                "thaumicenergistics.TESTORAGE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(
-                                        ThaumicEnergistics.ID,
-                                        "thaumicenergistics.block.essentia.cell.workbench",
-                                        1,
-                                        0,
-                                        missing))));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TESTORAGE",
                 new AspectList().add(Aspect.getAspect("vacuos"), 21).add(Aspect.getAspect("potentia"), 18)
@@ -1604,7 +1434,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.refreshResearchPages("thaumicenergistics.TEARCANETERM");
         TCHelper.refreshResearchPages("thaumicenergistics.TECERTUSDUPE");
         TCHelper.refreshResearchPages("thaumicenergistics.TECORES");
-        TCHelper.refreshResearchPages("thaumicenergistics.TEESSTERM");
         TCHelper.refreshResearchPages("thaumicenergistics.TEESSVIBCMBR");
         TCHelper.refreshResearchPages("thaumicenergistics.TEIO");
         TCHelper.refreshResearchPages("thaumicenergistics.TEDISTILLATIONPATTERNENCODER");
