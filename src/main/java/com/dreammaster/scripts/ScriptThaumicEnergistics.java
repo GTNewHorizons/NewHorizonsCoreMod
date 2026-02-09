@@ -131,8 +131,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                             getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                             NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Coated.get(1L))
-                    .circuit(1).itemOutputs(EssentialComponent1K).fluidInputs(solder).duration(10 * SECONDS).eut(30)
-                    .addTo(circuitAssemblerRecipes);
+                    .circuit(1).itemOutputs(EssentialComponent1K).fluidInputs(solder).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
             // 4k Essentia Storage Component
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -140,8 +140,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                             NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Coated_Basic.get(1L))
-                    .circuit(1).itemOutputs(EssentialComponent4K).fluidInputs(solder).duration(10 * SECONDS).eut(30)
-                    .addTo(circuitAssemblerRecipes);
+                    .circuit(1).itemOutputs(EssentialComponent4K).fluidInputs(solder).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
             // 16k Essentia Storage Component
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -149,8 +149,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                             NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Phenolic_Good.get(1L))
-                    .circuit(1).itemOutputs(EssentialComponent16K).fluidInputs(solder).duration(10 * SECONDS).eut(120)
-                    .addTo(circuitAssemblerRecipes);
+                    .circuit(1).itemOutputs(EssentialComponent16K).fluidInputs(solder).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
             // 64k Essentia Storage Component
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -158,8 +158,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                             NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1L))
-                    .circuit(1).itemOutputs(EssentialComponent64K).fluidInputs(solder).duration(10 * SECONDS).eut(480)
-                    .addTo(circuitAssemblerRecipes);
+                    .circuit(1).itemOutputs(EssentialComponent64K).fluidInputs(solder).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
             // 256k Essentia Storage Component
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -168,7 +168,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                             NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                     .circuit(1).itemOutputs(EssentialComponent256K).fluidInputs(solder).requiresCleanRoom()
-                    .duration(10 * SECONDS).eut(1920).addTo(circuitAssemblerRecipes);
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
             // 1024k Essentia Storage Component
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -177,7 +177,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                             NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                     .circuit(1).itemOutputs(EssentialComponent1024K).fluidInputs(solder).requiresCleanRoom()
-                    .duration(10 * SECONDS).eut(7680).addTo(circuitAssemblerRecipes);
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
             // 4096k Essentia Storage Component
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -186,7 +186,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                             NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                             ItemList.Circuit_Board_Wetware_Extreme.get(1))
                     .circuit(1).itemOutputs(EssentialComponent4096K).fluidInputs(solder).requiresCleanRoom()
-                    .duration(10 * SECONDS).eut(30720).addTo(circuitAssemblerRecipes);
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
             // 16384k Essentia Storage Component
             GTValues.RA.stdBuilder()
                     .itemInputs(

@@ -52,6 +52,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
@@ -1102,106 +1103,106 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2, missing)).duration(4 * SECONDS)
-                .eut(64).addTo(alloySmelterRecipes);
+                .eut(TierEU.RECIPE_MV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5, missing)).duration(10 * SECONDS)
-                .eut(8).addTo(alloySmelterRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 4, missing)).duration(10 * SECONDS)
-                .eut(8).addTo(alloySmelterRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 3, missing)).duration(10 * SECONDS)
-                .eut(8).addTo(alloySmelterRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7, missing)).duration(20 * SECONDS)
-                .eut(16).addTo(alloySmelterRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         getModItem(Minecraft.ID, "dye", 1, 9, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 8, missing)).duration(10 * SECONDS)
-                .eut(8).addTo(alloySmelterRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "cobblestone_compressed", 4, 3, missing),
                         getModItem(Minecraft.ID, "diamond_block", 1, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0, missing)).duration(30 * SECONDS)
-                .eut(256).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 1, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 2, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing)).circuit(5)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 6, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 9, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 10, missing)).duration(10 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 10, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11, missing)).duration(20 * SECONDS)
-                .eut(30).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "chestMini", 1, 0, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(30).addTo(assemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 2, missing),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 4, 7, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 500)).duration(30 * SECONDS).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 500)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 1, missing),
                         getModItem(Minecraft.ID, "ender_eye", 3, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "endConstructor", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(20 * SECONDS).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "detector", 1, 2, missing),
                         getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone_block", 4, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 3, missing)).duration(10 * SECONDS).eut(120)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 3, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 5, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "chandelier", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 4, 0, missing),
@@ -1246,124 +1247,124 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 1, missing),
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 8, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1 * MINUTES).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6, missing), ItemList.Plank_Oak.get(4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "trading_post", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(30).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L)).circuit(2)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).duration(5 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 216)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 216)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 4, 0, missing)).circuit(4)
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 12, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 12, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 13, missing)).duration(15 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 13, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing)).duration(15 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 2L),
                         getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 14, missing)).duration(15 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 14, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing), ItemList.Tool_DataStick.get(1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).duration(20 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
                         getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 1, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 1, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
                         getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 2, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 2, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(20 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(20 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(20 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "golden_lasso", 1, 0, missing)).duration(10 * SECONDS)
-                .eut(30).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "scanner", 1, 0, missing)).duration(30 * SECONDS).eut(120)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "scanner", 1, 0, missing)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 9, 0, missing)).circuit(9)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         for (int i = 0; i < 16; i++) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "color_lightgem", 1, i, missing))

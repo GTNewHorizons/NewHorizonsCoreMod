@@ -2112,20 +2112,20 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 0, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 1, missing)).duration(20 * SECONDS).eut(16)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 1, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 2, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 17, missing)).duration(20 * SECONDS).eut(16)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 17, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 32, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15, missing)).duration(10 * SECONDS).eut(8)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 27, missing),
@@ -2142,14 +2142,14 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 37, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 37, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
@@ -2161,21 +2161,21 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         getModItem(ForgeMicroblocks.ID, "stoneRod", 7, 0, missing),
                         getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing))
                 .circuit(6).itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
-                .duration(3 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0, missing)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.get(16)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1, missing)).eut(30)
+                .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1, missing)).eut(TierEU.RECIPE_LV)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing)).circuit(16)
-                .itemOutputs(getModItem(WitchingGadgets.ID, "item.WG_MagicFood", 1, 2, missing)).eut(30)
+                .itemOutputs(getModItem(WitchingGadgets.ID, "item.WG_MagicFood", 1, 2, missing)).eut(TierEU.RECIPE_LV)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
