@@ -194,7 +194,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
-                .outputChances(10000, 5000, 2500, 1200).duration(3 * MINUTES + 20 * SECONDS).eut(8)
+                .outputChances(10000, 5000, 2500, 1200).duration(3 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0, missing)).outputChances(10000)
@@ -268,8 +268,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing))
                 .itemOutputs(ItemList.Color_03.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mud", 1, 0, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(extractorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1, 1, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing)).outputChances(10000)
                 .fluidOutputs(FluidRegistry.getFluidStack("poison", 1000)).duration(1 * SECONDS).eut(2)
@@ -299,14 +299,16 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.CassiteriteSand, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Phosphate, 1L))
-                .outputChances(10000, 5000, 1000, 500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
+                .outputChances(10000, 5000, 1000, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardDirt", 1, 0, missing))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 2L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Quicklime, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gypsum, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Calcite, 1L))
-                .outputChances(10000, 7500, 2500, 2500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
+                .outputChances(10000, 7500, 2500, 2500).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 8L),
@@ -333,20 +335,20 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1L)).fluidInputs(Materials.Honey.getFluid(1000L))
                 .duration(2 * SECONDS).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.get(1)).circuit(16)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 3, missing)).circuit(16)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing)).circuit(11)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing)).eut(30).duration(15 * SECONDS)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing)).eut(TierEU.RECIPE_LV)
+                .duration(15 * SECONDS).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 1, 8, missing)).circuit(11)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11, missing)).eut(30).duration(15 * SECONDS)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11, missing)).eut(TierEU.RECIPE_LV)
+                .duration(15 * SECONDS).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing)).eut(30).duration(15 * SECONDS)
-                .addTo(compressorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing)).eut(TierEU.RECIPE_LV)
+                .duration(15 * SECONDS).addTo(compressorRecipes);
 
         // BOP renovable flora
 
@@ -638,7 +640,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                             getModItem(Minecraft.ID, "stick", 2, 0, missing),
                             getModItem(BiomesOPlenty.ID, "planks", 2, woodType.ordinal()))
                     .itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0, missing))
-                    .duration(15 * SECONDS).eut(8).addTo(assemblerRecipes);
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         }
     }
 }

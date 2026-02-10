@@ -26,7 +26,8 @@ public class CuttingMachineRecipes implements Runnable {
     public void run() {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_ILC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_ILC.get(8L)).duration(45 * SECONDS).eut(64).addTo(cutterRecipes);
+                .itemOutputs(ItemList.Circuit_Chip_ILC.get(8L)).duration(45 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Ram.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Ram.get(32L)).duration(45 * SECONDS).eut(96).addTo(cutterRecipes);
@@ -44,7 +45,7 @@ public class CuttingMachineRecipes implements Runnable {
                 .eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Simple_SoC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_Simple_SoC.get(6L)).duration(45 * SECONDS).eut(64)
+                .itemOutputs(ItemList.Circuit_Chip_Simple_SoC.get(6L)).duration(45 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                 .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_SoC.get(1L))
@@ -52,8 +53,8 @@ public class CuttingMachineRecipes implements Runnable {
                 .eut(TierEU.RECIPE_HV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_SoC2.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_SoC2.get(6L)).requiresCleanRoom().duration(45 * SECONDS).eut(1024)
-                .addTo(cutterRecipes);
+                .itemOutputs(ItemList.Circuit_Chip_SoC2.get(6L)).requiresCleanRoom().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_EV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_ULPIC.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_ULPIC.get(6L)).duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -197,11 +198,11 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.crafting_table, 1))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L))
-                    .duration(5 * SECONDS).eut(16).addTo(cutterRecipes);
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1L)).duration(5 * SECONDS)
-                    .eut(16).addTo(cutterRecipes);
+                    .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
         }
 
         // Photonically Prepared Wafer

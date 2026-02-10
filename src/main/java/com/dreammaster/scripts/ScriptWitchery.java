@@ -35,6 +35,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -103,7 +104,7 @@ public class ScriptWitchery implements IScriptLoader {
                         new ItemStack(Items.flint, 1),
                         getModItem(Botania.ID, "manaResource", 1, 2, missing))
                 .circuit(3).itemOutputs(getModItem(Witchery.ID, "ingredient", 2, 130, missing)).duration(2 * SECONDS)
-                .eut(16).addTo(mixerRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Witchery.ID, "ingredient", 9, 130, missing),
@@ -111,7 +112,7 @@ public class ScriptWitchery implements IScriptLoader {
                         new ItemStack(Items.blaze_powder, 9),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L))
                 .circuit(4).itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130, missing)).duration(2 * SECONDS)
-                .eut(16).addTo(mixerRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 16, missing),
@@ -277,13 +278,13 @@ public class ScriptWitchery implements IScriptLoader {
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing))
-                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing))
-                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0, missing))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(5 * SECONDS).eut(24)
@@ -302,8 +303,8 @@ public class ScriptWitchery implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0, missing), ItemList.Shape_Mold_Bottle.get(0L))
-                .itemOutputs(getModItem(Witchery.ID, "ingredient", 1, 26, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(formingPressRecipes);
+                .itemOutputs(getModItem(Witchery.ID, "ingredient", 1, 26, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Witchery.ID, "seedsbelladonna", 1, 0, missing),
@@ -311,7 +312,7 @@ public class ScriptWitchery implements IScriptLoader {
                         getModItem(Witchery.ID, "seedsartichoke", 1, 0, missing),
                         getModItem(Witchery.ID, "seedssnowbell", 1, 0, missing))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 1, 153, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(20 * SECONDS).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(mixerRecipes);
 
         ResearchCategories.registerCategory(
