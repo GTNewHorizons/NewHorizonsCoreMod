@@ -2,7 +2,6 @@ package com.dreammaster.modctt;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.StringReader;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -114,7 +113,7 @@ public class CustomToolTipsHandler {
      * @return
      */
     public boolean reload() {
-        boolean tState = ReloadCustomToolTips("");
+        boolean tState = ReloadCustomToolTips();
         if (_mInitialized && !tState) {
             MainRegistry.LOGGER.error("[CTT.ReloadCustomToolTips] Reload of tooltip file failed.");
         }
@@ -126,7 +125,7 @@ public class CustomToolTipsHandler {
      *
      * @return
      */
-    public boolean ReloadCustomToolTips(String pXMLContent) {
+    public boolean ReloadCustomToolTips() {
         boolean tResult = false;
 
         MainRegistry.LOGGER.debug("[CTT.ReloadCustomToolTips] will now try to load it's configuration");
@@ -136,16 +135,9 @@ public class CustomToolTipsHandler {
 
             CustomToolTips tNewItemCollection;
 
-            if (pXMLContent.isEmpty()) {
-                File tConfigFile = new File(_mConfigFileName);
-                tNewItemCollection = (CustomToolTips) jaxUnmarsh.unmarshal(tConfigFile);
-                MainRegistry.LOGGER
-                        .debug("[CTT.ReloadCustomToolTips] Config file has been loaded. Entering Verify state");
-            } else {
-                StringReader reader = new StringReader(pXMLContent);
-                tNewItemCollection = (CustomToolTips) jaxUnmarsh.unmarshal(reader);
-                MainRegistry.LOGGER.debug("[CTT.ReloadCustomToolTips] Received Server-Tooltips. Entering Verify state");
-            }
+            File tConfigFile = new File(_mConfigFileName);
+            tNewItemCollection = (CustomToolTips) jaxUnmarsh.unmarshal(tConfigFile);
+            MainRegistry.LOGGER.debug("[CTT.ReloadCustomToolTips] Config file has been loaded. Entering Verify state");
 
             _mCustomToolTips = tNewItemCollection;
             tResult = true;
