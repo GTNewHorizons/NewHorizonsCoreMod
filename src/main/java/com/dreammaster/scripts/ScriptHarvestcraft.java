@@ -33,6 +33,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -986,13 +987,14 @@ public class ScriptHarvestcraft implements IScriptLoader {
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing))
-                .outputChances(10000, 5000, 5000).duration(10 * SECONDS).eut(8).addTo(centrifugeRecipes);
+                .outputChances(10000, 5000, 5000).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Backpack.ID, "tannedLeather", 2, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing))
-                .duration(15 * SECONDS).eut(30).addTo(formingPressRecipes);
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "cornItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cornmealItem", 1, 0, missing)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);

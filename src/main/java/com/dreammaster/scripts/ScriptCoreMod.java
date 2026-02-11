@@ -731,35 +731,35 @@ public class ScriptCoreMod implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 6L))
                 .itemOutputs(BlockList.SteelPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).duration(12 * SECONDS + 10 * TICKS)
-                .eut(16).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 6L))
                 .itemOutputs(BlockList.TitaniumPlatedReinforcedStone.get())
-                .fluidInputs(FluidRegistry.getFluidStack("molten.platinum", 144)).duration(15 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.platinum", 144)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L))
                 .itemOutputs(BlockList.TungstensteelPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iridium", 144)).duration(17 * SECONDS + 10 * TICKS)
-                .eut(64).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 6L))
                 .itemOutputs(BlockList.NaquadahPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.osmium", 144)).duration(22 * SECONDS + 10 * TICKS)
-                .eut(256).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 6L))
                 .itemOutputs(BlockList.NeutroniumPlatedReinforcedStone.get())
-                .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).duration(25 * SECONDS).eut(480)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTOreDictUnificator.addItemData(
                 BlockList.BronzePlatedReinforcedStone.get(),
                 new ItemData(
@@ -805,80 +805,84 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 6, missing),
                         getModItem(GalacticraftCore.ID, "item.basicItem", 2, 14, missing))
-                .itemOutputs(NHItemList.LightBinding.get()).duration(30 * SECONDS).eut(480).addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.LightBinding.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.RawBioFiber.get(2)).circuit(2)
                 .itemOutputs(NHItemList.BioOrganicMesh.get()).duration(40 * SECONDS).eut(2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L),
                         NHItemList.CompressedBioBall.get(8))
-                .itemOutputs(NHItemList.BioChunk.get()).duration(1 * MINUTES).eut(64).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L))
-                .circuit(4).itemOutputs(BlockList.DiamondFrameBox.get()).duration(3 * SECONDS + 4 * TICKS).eut(8)
+                .itemOutputs(NHItemList.BioChunk.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_MV / 2)
                 .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L))
+                .circuit(4).itemOutputs(BlockList.DiamondFrameBox.get()).duration(3 * SECONDS + 4 * TICKS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 1L))
-                .itemOutputs(BlockList.CompressedGraphite.get(2)).duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
+                .itemOutputs(BlockList.CompressedGraphite.get(2)).duration(5 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing),
                         getModItem(RemoteIO.ID, "item.blank_plate", 1, 0, missing))
-                .itemOutputs(NHItemList.BlankPlatedChip.get()).duration(5 * SECONDS).eut(480).addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.BlankPlatedChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.PulsatingSpatialCoreChip.get())
-                .itemOutputs(NHItemList.EngineeringProcessorSpatialPulsatingCore.get()).duration(5 * SECONDS).eut(7680)
-                .addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.EngineeringProcessorSpatialPulsatingCore.get()).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.DiamondFluidCoreChip.get())
-                .itemOutputs(NHItemList.EngineeringProcessorFluidDiamondCore.get()).duration(5 * SECONDS).eut(1920)
-                .addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.EngineeringProcessorFluidDiamondCore.get()).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.EmeraldAdvancedFluidCoreChip.get())
-                .itemOutputs(NHItemList.EngineeringProcessorFluidEmeraldCore.get()).duration(5 * SECONDS).eut(7680)
-                .addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.EngineeringProcessorFluidEmeraldCore.get()).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                         NHItemList.GoldCoreChip.get())
-                .itemOutputs(NHItemList.LogicProcessorItemGoldCore.get()).duration(5 * SECONDS).eut(480)
+                .itemOutputs(NHItemList.LogicProcessorItemGoldCore.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.DiamondCoreChip.get())
-                .itemOutputs(NHItemList.EngineeringProcessorItemDiamondCore.get()).duration(5 * SECONDS).eut(1920)
-                .addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.EngineeringProcessorItemDiamondCore.get()).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.EmeraldAdvancedCoreChip.get())
-                .itemOutputs(NHItemList.EngineeringProcessorItemEmeraldCore.get()).duration(5 * SECONDS).eut(7680)
-                .addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.EngineeringProcessorItemEmeraldCore.get()).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         NHItemList.EmeraldHighAdvancedCoreChip.get())
-                .itemOutputs(NHItemList.EngineeringProcessorItemAdvEmeraldCore.get()).duration(5 * SECONDS).eut(30720)
-                .addTo(assemblerRecipes);
+                .itemOutputs(NHItemList.EngineeringProcessorItemAdvEmeraldCore.get()).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 3, missing),
                         getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 6, missing))
                 .itemOutputs(NHItemList.LeadNickelPlate.get(2))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 2000)).duration(30 * SECONDS).eut(1024)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 2000)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 288)).duration(1 * MINUTES).eut(480)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 288)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16, 0, missing))
                 .itemOutputs(NHItemList.RawBioFiber.get()).outputChances(3300)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2biomass", 8)).duration(10 * SECONDS).eut(20)
@@ -905,20 +909,20 @@ public class ScriptCoreMod implements IScriptLoader {
                 .duration(6 * SECONDS + 8 * TICKS).eut(4).addTo(brewingRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 288)).duration(1 * MINUTES).eut(256)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 288)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV / 2)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 160)).duration(1 * MINUTES).eut(256)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 160)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 64)).duration(30 * SECONDS).eut(256)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 64)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(12 * SECONDS).eut(256)
-                .addTo(cutterRecipes);
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(12 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 75)).duration(2 * MINUTES).eut(2)
                 .addTo(fermentingRecipes);
@@ -926,134 +930,136 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
-                .itemOutputs(NHItemList.EngravedDiamondCrystalChip.get()).duration(20 * SECONDS).eut(1920)
+                .itemOutputs(NHItemList.EngravedDiamondCrystalChip.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(4096)
+                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(4096)
+                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(4096)
+                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(4096)
+                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(4096)
+                .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
-                .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(30720)
+                .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Force, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
-                .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(30720)
+                .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetYellow, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
-                .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(30720)
+                .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(480).addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(480).addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.QuantumCrystal.get()).duration(40 * SECONDS).eut(1920)
+                .itemOutputs(NHItemList.QuantumCrystal.get()).duration(40 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
-                .itemOutputs(NHItemList.QuantumCrystal.get()).duration(40 * SECONDS).eut(1920)
+                .itemOutputs(NHItemList.QuantumCrystal.get()).duration(40 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 4))
-                .itemOutputs(NHItemList.ManyullynCrystal.get()).duration(1 * MINUTES).eut(1920)
+                .itemOutputs(NHItemList.ManyullynCrystal.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 4))
-                .itemOutputs(NHItemList.ManyullynCrystal.get()).duration(1 * MINUTES).eut(1920)
+                .itemOutputs(NHItemList.ManyullynCrystal.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
                         NHItemList.ManyullynCrystal.get())
-                .itemOutputs(NHItemList.EngravedManyullynCrystalChip.get()).duration(45 * SECONDS).eut(7680)
+                .itemOutputs(NHItemList.EngravedManyullynCrystalChip.get()).duration(45 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
                         NHItemList.ManyullynCrystal.get())
-                .itemOutputs(NHItemList.EngravedManyullynCrystalChip.get()).duration(45 * SECONDS).eut(7680)
+                .itemOutputs(NHItemList.EngravedManyullynCrystalChip.get()).duration(45 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
-                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(120)
+                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
-                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(120)
+                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
-                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(120)
+                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
-                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(120)
+                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
-                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(120)
+                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder().circuit(3).fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 10))
-                .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1)).duration(3 * SECONDS).eut(1920)
+                .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1)).duration(3 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(distilleryRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1065,145 +1071,148 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 2, 4, missing),
                         ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeArdite.get()).duration(20 * SECONDS).eut(120).addTo(extruderRecipes);
+                .itemOutputs(NHItemList.SawBladeArdite.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 2, 5, missing),
                         ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeManyullyn.get()).duration(30 * SECONDS).eut(120).addTo(extruderRecipes);
+                .itemOutputs(NHItemList.SawBladeManyullyn.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 5, missing),
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1)).duration(5 * SECONDS)
-                .eut(480).addTo(extruderRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "feather", 1, 0, missing), NHItemList.BowFletchingCast.get(0))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 1, missing),
                         NHItemList.BowFletchingCast.get(0))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 2, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 2, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 17, missing),
                         NHItemList.BowFletchingCast.get(0))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 3, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 3, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "leaves", 1, 0, missing), NHItemList.BowFletchingCast.get(0))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 1, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 1, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "slime.leaves", 1, 0, missing),
                         NHItemList.BowFletchingCast.get(0))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 4, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 4, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "string", 3, 0, missing), NHItemList.BowStringCast.get(0))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 0, missing)).duration(20 * SECONDS).eut(30)
-                .addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "barleyFood", 3, 7, missing), NHItemList.BowStringCast.get(0))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 2, missing)).duration(20 * SECONDS).eut(30)
-                .addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 2, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Thaumcraft.ID, "ItemResource", 3, 7, missing), NHItemList.BowStringCast.get(0))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 1, missing)).duration(20 * SECONDS).eut(30)
-                .addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 1, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EngravedManyullynCrystalChip.get(),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 4, missing))
-                .itemOutputs(NHItemList.PulsatingSpatialCoreChip.get()).duration(15 * SECONDS).eut(7680)
+                .itemOutputs(NHItemList.PulsatingSpatialCoreChip.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing))
-                .itemOutputs(NHItemList.DiamondFluidCoreChip.get()).duration(15 * SECONDS).eut(480)
+                .itemOutputs(NHItemList.DiamondFluidCoreChip.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing))
-                .itemOutputs(NHItemList.EmeraldAdvancedFluidCoreChip.get()).duration(15 * SECONDS).eut(1024)
-                .addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.EmeraldAdvancedFluidCoreChip.get()).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_EV / 2).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EngravedGoldChip.get(),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing))
-                .itemOutputs(NHItemList.GoldCoreChip.get()).duration(15 * SECONDS).eut(256).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.GoldCoreChip.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EngravedDiamondCrystalChip.get(),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing))
-                .itemOutputs(NHItemList.DiamondCoreChip.get()).duration(15 * SECONDS).eut(480)
+                .itemOutputs(NHItemList.DiamondCoreChip.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EngravedEnergyChip.get(),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing))
-                .itemOutputs(NHItemList.EmeraldAdvancedCoreChip.get()).duration(15 * SECONDS).eut(1024)
+                .itemOutputs(NHItemList.EmeraldAdvancedCoreChip.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EngravedQuantumChip.get(),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing))
-                .itemOutputs(NHItemList.EmeraldHighAdvancedCoreChip.get()).duration(15 * SECONDS).eut(4096)
-                .addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.EmeraldHighAdvancedCoreChip.get()).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_IV / 2).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Parts_Crystal_Chip_Elite.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 4, missing))
-                .itemOutputs(NHItemList.GeneticCircuit.get()).duration(15 * SECONDS).eut(480)
+                .itemOutputs(NHItemList.GeneticCircuit.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Parts_Crystal_Chip_Elite.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing))
-                .itemOutputs(NHItemList.EnvironmentalCircuit.get()).duration(15 * SECONDS).eut(480)
+                .itemOutputs(NHItemList.EnvironmentalCircuit.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(NHItemList.AluminiumIronPlate.get()).duration(30 * SECONDS).eut(120)
+                .itemOutputs(NHItemList.AluminiumIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(NHItemList.TitaniumIronPlate.get()).duration(30 * SECONDS).eut(480)
+                .itemOutputs(NHItemList.TitaniumIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(NHItemList.TungstenIronPlate.get()).duration(30 * SECONDS).eut(1920)
+                .itemOutputs(NHItemList.TungstenIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(NHItemList.TungstenSteelIronPlate.get()).duration(30 * SECONDS).eut(7680)
+                .itemOutputs(NHItemList.TungstenSteelIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(NHItemList.ChromeIronPlate.get()).duration(30 * SECONDS).eut(30720)
+                .itemOutputs(NHItemList.ChromeIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6, missing))
-                .duration(30 * SECONDS).eut(122880).addTo(formingPressRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),
@@ -1223,14 +1232,16 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.BedrockiumIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone", 1, 0, missing))
-                .itemOutputs(NHItemList.LongStoneRod.get(4)).duration(16 * SECONDS).eut(16).addTo(latheRecipes);
+                .itemOutputs(NHItemList.LongStoneRod.get(4)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sandstone", 1, wildcard, missing))
-                .itemOutputs(NHItemList.SandStoneRod.get()).duration(8 * SECONDS).eut(16).addTo(latheRecipes);
+                .itemOutputs(NHItemList.SandStoneRod.get()).duration(8 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0, missing))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Stone, 2L))
-                .duration(8 * SECONDS).eut(16).addTo(latheRecipes);
+                .duration(8 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, wildcard, missing))
                 .itemOutputs(NHItemList.MushroomPowder.get(2)).outputChances(10000).duration(15 * SECONDS).eut(2)
                 .addTo(maceratorRecipes);
@@ -1260,7 +1271,8 @@ public class ScriptCoreMod implements IScriptLoader {
 
         // Obsidian Stuff
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(NHItemList.LongObsidianRod.get(2)).duration(32 * SECONDS).eut(16).addTo(latheRecipes);
+                .itemOutputs(NHItemList.LongObsidianRod.get(2)).duration(32 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(4 * SECONDS)
@@ -1291,7 +1303,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(new ItemStack(Blocks.obsidian)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
         GTValues.RA.stdBuilder().fluidInputs(Materials.Obsidian.getMolten(288))
                 .itemInputs(ItemList.Shape_Mold_Block.get(0)).itemOutputs(new ItemStack(Blocks.obsidian))
-                .duration(14 * SECONDS + 8 * TICKS).eut(8).addTo(fluidSolidifierRecipes);
+                .duration(14 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_ULV).addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 2),

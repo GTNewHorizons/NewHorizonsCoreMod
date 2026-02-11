@@ -56,6 +56,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -309,113 +310,113 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "apprenticeBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "magicianBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "masterBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "archmageBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "transcendentBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodArsenal.ID, "transparent_orb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(ForbiddenMagic.ID, "EldritchOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(Avaritia.ID, "Orb_Armok", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone_torch", 2, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "ritualDismantler", 1, 0, missing)).duration(30 * SECONDS)
-                .eut(120).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 0, missing)).duration(10 * SECONDS)
-                .eut(120).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 1, missing)).duration(10 * SECONDS)
-                .eut(120).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(3)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 2, missing)).duration(10 * SECONDS)
-                .eut(120).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 3, missing)).duration(10 * SECONDS)
-                .eut(120).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing)).circuit(5)
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 4, missing)).duration(10 * SECONDS)
-                .eut(120).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing))
                 .itemOutputs(NHItemList.ArcaneSlate.get(9))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(10 * SECONDS).eut(48)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "blankSlate", 9, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(20 * SECONDS).eut(64)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 1, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "reinforcedSlate", 9, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(30 * SECONDS).eut(120)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 2, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "imbuedSlate", 9, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(40 * SECONDS).eut(480)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 3, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "demonicSlate", 9, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(50 * SECONDS).eut(1920)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(50 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 9, 27, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(1 * MINUTES).eut(7680)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_IV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 250)).duration(20 * SECONDS).eut(64)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 250)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(cutterRecipes);
 
         TCHelper.removeInfusionRecipe(getModItem(BloodArsenal.ID, "wand_caps", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(BloodArsenal.ID, "wand_cores", 1, 0, missing));

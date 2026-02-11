@@ -56,10 +56,10 @@ public class BendingMachineRecipes implements Runnable {
         if (GalacticraftCore.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7, missing))
                     .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing))
-                    .duration(10 * SECONDS).eut(8).addTo(benderRecipes);
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6, missing))
                     .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing))
-                    .duration(10 * SECONDS).eut(8).addTo(benderRecipes);
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
         }
     }
 }

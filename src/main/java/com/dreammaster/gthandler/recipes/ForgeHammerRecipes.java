@@ -99,17 +99,17 @@ public class ForgeHammerRecipes implements Runnable {
         if (TinkerConstruct.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 3L, 2)).duration(1 * SECONDS)
-                    .eut(16).addTo(hammerRecipes);
+                    .eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         }
 
         if (ZTones.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.coal, 1, 0))
                     .itemOutputs(GTModHandler.getModItem(ZTones.ID, "minicoal", 9L, 0))
-                    .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(hammerRecipes);
+                    .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV).addTo(hammerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.coal, 1, 1))
                     .itemOutputs(GTModHandler.getModItem(ZTones.ID, "minicharcoal", 9L, 0))
-                    .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(hammerRecipes);
+                    .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV).addTo(hammerRecipes);
         }
 
         if (Thaumcraft.isModLoaded()) {

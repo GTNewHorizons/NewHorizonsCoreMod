@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.TierEU;
 
 public class ScriptBetterBuildersWands implements IScriptLoader {
 
@@ -55,7 +56,7 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
                         getModItem(TinkerConstruct.ID, "toolRod", 2, 2, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandIron", 1, 0, missing)).duration(30 * SECONDS)
-                .eut(30).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(
@@ -73,43 +74,43 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
                                 "{material:\"Diamond\"}",
                                 missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandDiamond", 1, 0, missing)).duration(30 * SECONDS)
-                .eut(64).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "toughRod", 1, 314, missing),
                         getModItem(ExtraUtilities.ID, "builderswand", 1, 0, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 4, missing))
-                .duration(30 * SECONDS).eut(120).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 4, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 1, 314, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 5, missing))
-                .duration(30 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 5, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 2, 314, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 6, missing))
-                .duration(30 * SECONDS).eut(480).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 6, missing),
                         getModItem(ExtraUtilities.ID, "creativebuilderswand", 1, 0, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 12, missing))
-                .duration(30 * SECONDS).eut(1024).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 12, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 4, 314, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 13, missing))
-                .duration(30 * SECONDS).eut(1920).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 13, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 8, 314, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 14, missing))
-                .duration(30 * SECONDS).eut(4096).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
 
     }
 }
