@@ -30,6 +30,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -78,43 +79,44 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(5 * SECONDS).eut(8).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 4)).duration(5 * SECONDS).eut(8)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(5 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(2 * SECONDS + 10 * TICKS).eut(8)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(20 * TICKS).eut(8)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(20 * TICKS)
+                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicTinkerer.ID, "interface", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicTinkerer.ID, "connector", 1, 0, missing));

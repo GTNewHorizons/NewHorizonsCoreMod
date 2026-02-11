@@ -4,8 +4,5 @@
   "package": "com.dreammaster.mixin.mixins.early",
   "refmap": "mixins.dreamcraft.refmap.json",
   "target": "@env(DEFAULT)",
-  "compatibilityLevel": "JAVA_8",
-  "mixins": [],
-  "client": [],
-  "server": []
+  "compatibilityLevel": "JAVA_8"
 }

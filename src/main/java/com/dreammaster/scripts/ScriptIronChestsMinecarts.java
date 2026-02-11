@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.TierEU;
 
 public class ScriptIronChestsMinecarts implements IScriptLoader {
 
@@ -43,31 +44,31 @@ public class ScriptIronChestsMinecarts implements IScriptLoader {
                         getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing),
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing))
                 .itemOutputs(getModItem(IronChestsMinecarts.ID, "minecart_chest_steel", 1, 0, missing))
-                .duration(7 * SECONDS).eut(8).addTo(assemblerRecipes);
+                .duration(7 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing),
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing))
                 .itemOutputs(getModItem(IronChestsMinecarts.ID, "minecart_chest_gold", 1, 0, missing))
-                .duration(8 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(8 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing))
                 .itemOutputs(getModItem(IronChestsMinecarts.ID, "minecart_chest_diamond", 1, 0, missing))
-                .duration(9 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(9 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing),
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing))
                 .itemOutputs(getModItem(IronChestsMinecarts.ID, "minecart_chest_crystal", 1, 0, missing))
-                .duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 6, missing),
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing))
                 .itemOutputs(getModItem(IronChestsMinecarts.ID, "minecart_chest_obsidian", 1, 0, missing))
-                .duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
     }
 }
