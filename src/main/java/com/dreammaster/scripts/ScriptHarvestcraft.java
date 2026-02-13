@@ -27,13 +27,13 @@ import java.util.List;
 
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -636,7 +636,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapelessRecipe(NHItemList.EdibleSalt.getIS(1), "toolPot", "listAllwater");
+        addShapelessRecipe(NHItemList.EdibleSalt.get(1), "toolPot", "listAllwater");
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing),
                 "craftingToolHardHammer",
@@ -657,30 +657,35 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 2, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapelessRecipe(
-                CustomItemList.WetTofu.get(1L),
+                NHItemList.WetTofu.get(),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
         addShapelessRecipe(
-                CustomItemList.WetTofu.get(1L),
+                NHItemList.WetTofu.get(),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapelessRecipe(
-                CustomItemList.WetTofu.get(1L),
+                NHItemList.WetTofu.get(),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing),
                 ToolDictNames.craftingToolSoftMallet.name(),
-                CustomItemList.WetTofu.get(1L));
+                NHItemList.WetTofu.get());
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                 "craftingToolRollingPin",
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "boiledeggItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "boiledwaterItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "potItem", 1, 0, missing),
                 getModItem(Minecraft.ID, "egg", 1, 0, missing));
+
+        addShapelessRecipe(
+                getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "boiledwaterItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0, missing),
                 getModItem(Minecraft.ID, "bowl", 1, 0, missing),
@@ -977,18 +982,19 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTModHandler.addSmeltingRecipe(
                 getModItem(PamsHarvestCraft.ID, "rabbitrawItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "rabbitcookedItem", 1, 0, missing));
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.WetTofu.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.WetTofu.get())
                 .itemOutputs(
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing))
-                .outputChances(10000, 5000, 5000).duration(10 * SECONDS).eut(8).addTo(centrifugeRecipes);
+                .outputChances(10000, 5000, 5000).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Backpack.ID, "tannedLeather", 2, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing))
-                .duration(15 * SECONDS).eut(30).addTo(formingPressRecipes);
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "cornItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cornmealItem", 1, 0, missing)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);

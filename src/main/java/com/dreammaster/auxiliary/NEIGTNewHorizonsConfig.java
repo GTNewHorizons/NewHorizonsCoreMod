@@ -4,12 +4,10 @@ import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.*;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagString;
 
-import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 
@@ -25,8 +23,6 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
     @Override
     public void loadConfig() {
-        API.hideItem(new ItemStack(QuantumBread.Instance()));
-
         API.hideItem(new ItemStack(Loaders.antimatterRenderBlock));
         API.hideItem(new ItemStack(GregTechAPI.sDroneRender));
         API.hideItem(new ItemStack(GregTechAPI.sWormholeRender));
@@ -185,9 +181,7 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             creativeBank.setTagInfo("storedEnergyRF", new NBTTagInt(2500000));
         }
 
-        API.setOverrideName(new ItemStack(Blocks.ender_chest), "Personal Ender Chest");
-
-        MainRegistry.Logger.info("Added NEI Config");
+        MainRegistry.LOGGER.info("Added NEI Config");
     }
 
     @Override

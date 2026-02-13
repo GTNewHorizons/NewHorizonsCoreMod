@@ -15,7 +15,7 @@ import java.util.List;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 
@@ -29,6 +29,7 @@ import forestry.factory.recipes.CarpenterRecipe;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTRecipe;
 
 public class ScriptZZClientOnly implements IScriptLoader {
@@ -379,30 +380,30 @@ public class ScriptZZClientOnly implements IScriptLoader {
     @Override
     public void loadRecipes() {
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(1)
-                        .itemOutputs(CustomItemList.CoinChunkloaderTierI.get(1L))
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).duration(30 * SECONDS).eut(120)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(1)
+                        .itemOutputs(NHItemList.CoinChunkloaderTierI.get())
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_MV).disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(2)
-                        .itemOutputs(CustomItemList.CoinChunkloaderTierII.get(1L))
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).duration(30 * SECONDS).eut(480)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(2)
+                        .itemOutputs(NHItemList.CoinChunkloaderTierII.get())
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_HV).disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(3)
-                        .itemOutputs(CustomItemList.CoinChunkloaderTierIII.get(1L))
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).duration(30 * SECONDS).eut(1920)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(3)
+                        .itemOutputs(NHItemList.CoinChunkloaderTierIII.get())
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_EV).disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(4)
-                        .itemOutputs(CustomItemList.CoinChunkloaderTierIV.get(1L))
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).duration(30 * SECONDS).eut(7680)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(4)
+                        .itemOutputs(NHItemList.CoinChunkloaderTierIV.get())
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_IV).disabled().hidden().addTo(assemblerRecipes));
         coins.addAll(
-                GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinBlank.get(1L)).circuit(5)
-                        .itemOutputs(CustomItemList.CoinChunkloaderTierV.get(1L))
-                        .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).duration(30 * SECONDS).eut(30720)
-                        .disabled().hidden().addTo(assemblerRecipes));
+                GTValues.RA.stdBuilder().itemInputs(NHItemList.CoinBlank.get()).circuit(5)
+                        .itemOutputs(NHItemList.CoinChunkloaderTierV.get())
+                        .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).duration(30 * SECONDS)
+                        .eut(TierEU.RECIPE_LuV).disabled().hidden().addTo(assemblerRecipes));
 
         if (MainRegistry.isServer() && CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
             stamps(true);
@@ -423,12 +424,12 @@ public class ScriptZZClientOnly implements IScriptLoader {
     public void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent pEvent) {
         if (MainRegistry.isClient()) {
             // this runs on the server thread of a client
-            // -> we are playing single player
-            MainRegistry.NW.sendTo(
+            // -> we are playing single player (TODO: Does this work correctly on LAN?)
+            MainRegistry.dispatcher.sendTo(
                     new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsEnabled),
                     (EntityPlayerMP) pEvent.player);
         } else {
-            MainRegistry.NW.sendTo(
+            MainRegistry.dispatcher.sendTo(
                     new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled),
                     (EntityPlayerMP) pEvent.player);
         }

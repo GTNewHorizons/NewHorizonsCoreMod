@@ -17,12 +17,13 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptMalisDoors implements IScriptLoader {
@@ -109,7 +110,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 "plateRedstone",
-                BlockList.DiamondFrameBox.getIS(),
+                BlockList.DiamondFrameBox.get(),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -612,11 +613,11 @@ public class ScriptMalisDoors implements IScriptLoader {
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.jail_door", 1, 0, missing),
                 null,
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 null,
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 getModItem(Minecraft.ID, "iron_door", 1, 0, missing),
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 null,
                 "craftingToolSaw",
                 null);
@@ -1054,63 +1055,63 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0, missing)).duration(5 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "sliding_trapdoor", 1, 0, missing))
-                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1, 0, missing),
                         getModItem(Minecraft.ID, "skull", 1, 3, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "player_sensor", 2, 0, missing)).duration(5 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(MalisisDoors.ID, "player_sensor", 2, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(15 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(20 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(25 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        BlockList.DiamondFrameBox.getIS(),
+                        BlockList.DiamondFrameBox.get(),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "rustyHatch", 1, 0, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(MalisisDoors.ID, "rustyHatch", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0, missing))
-                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L))
                 .circuit(5).itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0, missing)).duration(3 * SECONDS)
-                .eut(30).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "planks", 4, 4, missing),
@@ -1206,7 +1207,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.iron_sliding_door", 1, 0, missing))
                 .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing), CustomItemList.SteelBars.get(2L))
+                .itemInputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing), NHItemList.SteelBars.get(2))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.jail_door", 1, 0, missing)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1342,31 +1343,31 @@ public class ScriptMalisDoors implements IScriptLoader {
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, 4, missing))
                 .itemOutputs(getModItem(MalisisDoors.ID, "acaciaFenceGate", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, 2, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "birchFenceGate", 1, 0, missing)).duration(15 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(MalisisDoors.ID, "birchFenceGate", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, 5, missing))
                 .itemOutputs(getModItem(MalisisDoors.ID, "darkOakFenceGate", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, 3, missing))
                 .itemOutputs(getModItem(MalisisDoors.ID, "jungleFenceGate", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, 1, missing))
                 .itemOutputs(getModItem(MalisisDoors.ID, "spruceFenceGate", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 4, missing),

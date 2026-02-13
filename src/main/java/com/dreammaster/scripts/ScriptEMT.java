@@ -26,7 +26,6 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -82,29 +81,29 @@ public class ScriptEMT implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(10 * SECONDS)
-                .eut(16).addTo(alloySmelterRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 12, 0, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 4, 10, missing))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 6912)).duration(30 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 6912)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 12, 0, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 4, 10, missing))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 6912)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 6912)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS).eut(16)
-                .addTo(fluidSolidifierRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).duration(5 * SECONDS).eut(30)
-                .addTo(fluidSolidifierRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
                 .fluidOutputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
@@ -112,8 +111,8 @@ public class ScriptEMT implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(formingPressRecipes);
+                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
@@ -216,7 +215,7 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 0,
                 1,
-                NHItemList.EMT.getIS()).setAutoUnlock().setSpecial()
+                NHItemList.EMT.get()).setAutoUnlock().setSpecial()
                         .setPages(new ResearchPage("tc.research_page.ElectricMagicTools")).registerResearchItem();
         TCHelper.removeResearch("Diamond Chainsaw");
         new ResearchItem(
@@ -679,7 +678,7 @@ public class ScriptEMT implements IScriptLoader {
                         "gt.metatool.01",
                         1,
                         102,
-                        "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,SecondaryMaterial:\"Titanium\"},GT.ItemCharge:400000L}",
+                        "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Titanium\"},GT.ItemCharge:400000L}",
                         missing),
                 getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard, missing),
                 OrePrefixes.plate.get(Materials.Diamond),
@@ -874,7 +873,7 @@ public class ScriptEMT implements IScriptLoader {
                         "gt.metatool.01",
                         1,
                         102,
-                        "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,SecondaryMaterial:\"Aluminium\"},GT.ItemCharge:400000L}",
+                        "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Aluminium\"},GT.ItemCharge:400000L}",
                         missing),
                 OrePrefixes.screw.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Thaumium),
@@ -1236,9 +1235,9 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.wireGt12.get(Materials.Osmium),
                 OrePrefixes.plate.get(Materials.Naquadah),
                 ItemList.Sensor_IV.get(1L),
-                CustomItemList.MysteriousCrystal.get(1L),
+                NHItemList.MysteriousCrystal.get(),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
-                CustomItemList.MysteriousCrystal.get(1L),
+                NHItemList.MysteriousCrystal.get(),
                 ItemList.Sensor_IV.get(1L),
                 OrePrefixes.plate.get(Materials.Naquadah),
                 OrePrefixes.wireGt12.get(Materials.Osmium));
@@ -1279,7 +1278,7 @@ public class ScriptEMT implements IScriptLoader {
                 'd',
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing),
                 'e',
-                CustomItemList.ReinforcedAluminiumIronPlate.get(1L),
+                NHItemList.ReinforcedAluminiumIronPlate.get(),
                 'f',
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing),
                 'g',
@@ -1310,7 +1309,7 @@ public class ScriptEMT implements IScriptLoader {
                 'd',
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 0, missing),
                 'e',
-                CustomItemList.IrradiantReinforcedTitaniumPlate.get(1L),
+                NHItemList.IrradiantReinforcedTitaniumPlate.get(),
                 'f',
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 0, missing),
                 'g',
@@ -1330,13 +1329,13 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 150).add(Aspect.getAspect("aqua"), 150)
                         .add(Aspect.getAspect("terra"), 150).add(Aspect.getAspect("ignis"), 150)
                         .add(Aspect.getAspect("ordo"), 150).add(Aspect.getAspect("perditio"), 150),
-                CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(1L),
-                CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(1L),
+                NHItemList.IrradiantReinforcedTungstenSteelPlate.get(),
+                NHItemList.IrradiantReinforcedTungstenSteelPlate.get(),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
-                CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(1L),
+                NHItemList.IrradiantReinforcedTungstenSteelPlate.get(),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
@@ -1352,13 +1351,13 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 300).add(Aspect.getAspect("aqua"), 300)
                         .add(Aspect.getAspect("terra"), 300).add(Aspect.getAspect("ignis"), 300)
                         .add(Aspect.getAspect("ordo"), 300).add(Aspect.getAspect("perditio"), 300),
-                CustomItemList.IrradiantReinforcedChromePlate.get(1L),
-                CustomItemList.IrradiantReinforcedChromePlate.get(1L),
+                NHItemList.IrradiantReinforcedChromePlate.get(),
+                NHItemList.IrradiantReinforcedChromePlate.get(),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2, missing),
-                CustomItemList.IrradiantReinforcedChromePlate.get(1L),
+                NHItemList.IrradiantReinforcedChromePlate.get(),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2, missing),
@@ -1396,13 +1395,13 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 1200).add(Aspect.getAspect("aqua"), 1200)
                         .add(Aspect.getAspect("terra"), 1200).add(Aspect.getAspect("ignis"), 1200)
                         .add(Aspect.getAspect("ordo"), 1200).add(Aspect.getAspect("perditio"), 1200),
-                CustomItemList.IrradiantReinforcedNaquadriaPlate.get(1L),
-                CustomItemList.IrradiantReinforcedNaquadriaPlate.get(1L),
+                NHItemList.IrradiantReinforcedNaquadriaPlate.get(),
+                NHItemList.IrradiantReinforcedNaquadriaPlate.get(),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7, missing),
-                CustomItemList.IrradiantReinforcedNaquadriaPlate.get(1L),
+                NHItemList.IrradiantReinforcedNaquadriaPlate.get(),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7, missing),
@@ -1418,13 +1417,13 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 2400).add(Aspect.getAspect("aqua"), 2400)
                         .add(Aspect.getAspect("terra"), 2400).add(Aspect.getAspect("ignis"), 2400)
                         .add(Aspect.getAspect("ordo"), 2400).add(Aspect.getAspect("perditio"), 2400),
-                CustomItemList.IrradiantReinforcedNeutroniumPlate.get(1L),
-                CustomItemList.IrradiantReinforcedNeutroniumPlate.get(1L),
+                NHItemList.IrradiantReinforcedNeutroniumPlate.get(),
+                NHItemList.IrradiantReinforcedNeutroniumPlate.get(),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14, missing),
-                CustomItemList.IrradiantReinforcedNeutroniumPlate.get(1L),
+                NHItemList.IrradiantReinforcedNeutroniumPlate.get(),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14, missing),
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14, missing),
@@ -2698,7 +2697,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("potentia"), 10),
                 getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemToolMiningLaser", 1, wildcard, missing),
-                CustomItemList.ReinforcedGlassLense.get(1L),
+                NHItemList.ReinforcedGlassLense.get(),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 getModItem(Minecraft.ID, "firework_charge", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "PrimalArrow", 1, 1, missing), // Fire Arrow
@@ -2706,7 +2705,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "PrimalArrow", 1, 1, missing), // Fire Arrow
                 getModItem(Minecraft.ID, "firework_charge", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
-                CustomItemList.ReinforcedGlassLense.get(1L));
+                NHItemList.ReinforcedGlassLense.get());
         TCHelper.addResearchPage(
                 "ExplosionFocus",
                 new ResearchPage(

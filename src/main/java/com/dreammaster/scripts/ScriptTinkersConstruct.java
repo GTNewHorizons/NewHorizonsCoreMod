@@ -46,7 +46,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.oredict.OreDictHelper;
@@ -1897,7 +1896,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 ItemList.Shape_Extruder_Ring.get(1L),
                 ItemList.Shape_Extruder_Cell.get(1L),
                 ItemList.Shape_Extruder_Ingot.get(1L),
-                ItemList.Shape_Extruder_Wire.get(1L),
                 ItemList.Shape_Extruder_Casing.get(1L),
                 ItemList.Shape_Extruder_Pipe_Tiny.get(1L),
                 ItemList.Shape_Extruder_Pipe_Small.get(1L),
@@ -1918,12 +1916,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 ItemList.Shape_Extruder_Rotor.get(1L),
                 ItemList.Shape_Extruder_Small_Gear.get(1L),
                 ItemList.Shape_Extruder_Turbine_Blade.get(1L),
-                NHItemList.ExtruderShapeBoat.getIS(1),
-                CustomItemList.MarshmallowForm.get(1L),
-                CustomItemList.MoldChestplate.get(1L),
-                CustomItemList.MoldHelmet.get(1L),
-                CustomItemList.MoldLeggings.get(1L),
-                CustomItemList.MoldBoots.get(1L));
+                NHItemList.ExtruderShapeBoat.get(1),
+                NHItemList.MarshmallowForm.get(),
+                NHItemList.MoldChestplate.get(),
+                NHItemList.MoldHelmet.get(),
+                NHItemList.MoldLeggings.get(),
+                NHItemList.MoldBoots.get());
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Glue"), 125, 144)
                 .add(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 1L),
@@ -1991,97 +1989,97 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeHelmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 720),
-                CustomItemList.MoldHelmet.get(1L),
+                NHItemList.MoldHelmet.get(),
                 false,
                 500);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeChestplate", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 1152),
-                CustomItemList.MoldChestplate.get(1L),
+                NHItemList.MoldChestplate.get(),
                 false,
                 800);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 1008),
-                CustomItemList.MoldLeggings.get(1L),
+                NHItemList.MoldLeggings.get(),
                 false,
                 700);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeBoots", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 576),
-                CustomItemList.MoldBoots.get(1L),
+                NHItemList.MoldBoots.get(),
                 false,
                 400);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("steel.molten", 720),
-                CustomItemList.MoldHelmet.get(1L),
+                NHItemList.MoldHelmet.get(),
                 false,
                 500);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing),
                 FluidRegistry.getFluidStack("steel.molten", 1152),
-                CustomItemList.MoldChestplate.get(1L),
+                NHItemList.MoldChestplate.get(),
                 false,
                 800);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Railcraft.ID, "armor.steel.legs", 1, 0, missing),
                 FluidRegistry.getFluidStack("steel.molten", 1008),
-                CustomItemList.MoldLeggings.get(1L),
+                NHItemList.MoldLeggings.get(),
                 false,
                 700);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Railcraft.ID, "armor.steel.boots", 1, 0, missing),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                CustomItemList.MoldBoots.get(1L),
+                NHItemList.MoldBoots.get(),
                 false,
                 400);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("iron.molten", 720),
-                CustomItemList.MoldHelmet.get(1L),
+                NHItemList.MoldHelmet.get(),
                 false,
                 500);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "iron_chestplate", 1, 0, missing),
                 FluidRegistry.getFluidStack("iron.molten", 1152),
-                CustomItemList.MoldChestplate.get(1L),
+                NHItemList.MoldChestplate.get(),
                 false,
                 800);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "iron_leggings", 1, 0, missing),
                 FluidRegistry.getFluidStack("iron.molten", 1008),
-                CustomItemList.MoldLeggings.get(1L),
+                NHItemList.MoldLeggings.get(),
                 false,
                 700);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "iron_boots", 1, 0, missing),
                 FluidRegistry.getFluidStack("iron.molten", 576),
-                CustomItemList.MoldBoots.get(1L),
+                NHItemList.MoldBoots.get(),
                 false,
                 400);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "golden_helmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("gold.molten", 720),
-                CustomItemList.MoldHelmet.get(1L),
+                NHItemList.MoldHelmet.get(),
                 false,
                 500);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "golden_chestplate", 1, 0, missing),
                 FluidRegistry.getFluidStack("gold.molten", 1152),
-                CustomItemList.MoldChestplate.get(1L),
+                NHItemList.MoldChestplate.get(),
                 false,
                 800);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "golden_leggings", 1, 0, missing),
                 FluidRegistry.getFluidStack("gold.molten", 1008),
-                CustomItemList.MoldLeggings.get(1L),
+                NHItemList.MoldLeggings.get(),
                 false,
                 700);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "golden_boots", 1, 0, missing),
                 FluidRegistry.getFluidStack("gold.molten", 576),
-                CustomItemList.MoldBoots.get(1L),
+                NHItemList.MoldBoots.get(),
                 false,
                 400);
         Smeltery.addAlloyMixing(
@@ -2104,30 +2102,30 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 12000,
                 getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing));
 
-        Recipe.of(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing), CustomItemList.UnfiredSearedBrick.get(1L))
+        Recipe.of(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing), NHItemList.UnfiredSearedBrick.get())
                 .provideTo(recipe -> GTModHandler.addSmeltingRecipe(recipe.flatten()[0], recipe.getResult()))
                 .provideTo(MANTLE.manualSmeltingRecipeNamed("searedbrick"));
         GTModHandler.addSmeltingRecipe(
-                CustomItemList.UnfiredSlimeSoilBrick.get(1L),
+                NHItemList.UnfiredSlimeSoilBrick.get(),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 0, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 1, missing)).duration(20 * SECONDS).eut(16)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 1, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 2, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 17, missing)).duration(20 * SECONDS).eut(16)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 17, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 32, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15, missing)).duration(10 * SECONDS).eut(8)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 27, missing),
@@ -2144,14 +2142,14 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 37, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 37, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
@@ -2163,21 +2161,21 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         getModItem(ForgeMicroblocks.ID, "stoneRod", 7, 0, missing),
                         getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing))
                 .circuit(6).itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
-                .duration(3 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0, missing)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.getIS(16)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1, missing)).eut(30)
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.get(16)).circuit(16)
+                .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1, missing)).eut(TierEU.RECIPE_LV)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing)).circuit(16)
-                .itemOutputs(getModItem(WitchingGadgets.ID, "item.WG_MagicFood", 1, 2, missing)).eut(30)
+                .itemOutputs(getModItem(WitchingGadgets.ID, "item.WG_MagicFood", 1, 2, missing)).eut(TierEU.RECIPE_LV)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))

@@ -54,6 +54,7 @@ import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.ProjectRedExploration;
 import static gregtech.api.enums.Mods.ProjectRedFabrication;
+import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.ProjectRedTransmission;
 import static gregtech.api.enums.Mods.ProjectRedTransportation;
 import static gregtech.api.enums.Mods.QuestBook;
@@ -107,7 +108,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.item.ModItems;
 
 public class RecipeRemover {
 
@@ -128,7 +128,7 @@ public class RecipeRemover {
                 return false;
             }
             if (output.getItem() == null) {
-                MainRegistry.Logger.warn("Someone is adding recipes with null items!");
+                MainRegistry.LOGGER.warn("Someone is adding recipes with null items!");
                 return true;
             }
             final ItemStack copyStack;
@@ -152,7 +152,7 @@ public class RecipeRemover {
             }
             return false;
         });
-        MainRegistry.Logger.info("Removed " + (i - list.size()) + " recipes!");
+        MainRegistry.LOGGER.info("Removed {} recipes!", i - list.size());
     }
 
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
@@ -760,7 +760,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "diamondChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "netherStarChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "cloudinabottle", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Chisel.ID, "ballomoss", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "smashingrock", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "autoChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "upgrade", 1, 0, missing));
@@ -1216,7 +1215,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "lepidopterology", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(new ItemStack(ModItems.itemPersonalCloakingDevice));
         removeRecipeByOutputDelayed(getModItem(GalacticraftCore.ID, "item.null", 3, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing));
@@ -2194,6 +2192,64 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.screwdriver", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.wiredebugger", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.datacard", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 2, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 3, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 4, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 5, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 6, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 7, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 8, missing));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 9, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 10, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 11, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 12, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 13, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 14, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 17, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 18, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 19, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 20, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 22, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 23, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 24, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 25, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 27, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 28, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 29, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 31, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 33, missing));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.electric_screwdriver", 1, 0, missing));
         removeRecipeByOutputDelayed(
@@ -2618,7 +2674,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "voidFAS", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "voidShears", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "wireless.essentia.terminal", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "part.base", 1, 7, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "part.base", 1, 8, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing));
@@ -2633,8 +2688,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 9, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10, missing));
-        removeRecipeByOutputDelayed(
-                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicExploration.ID, "blankSeal", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing));
@@ -3396,6 +3449,6 @@ public class RecipeRemover {
         flushBuffer();
         bufferMap = null;
         final long timeToLoad = System.currentTimeMillis() - timeStart;
-        MainRegistry.Logger.info("Recipes removal took " + timeToLoad + " ms.");
+        MainRegistry.LOGGER.info("Recipes removal took {} ms.", timeToLoad);
     }
 }

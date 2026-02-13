@@ -70,11 +70,10 @@ public class TCLoader {
                     outputString = (String) output;
                 }
                 if (!availableResearches.contains(researchName)) {
-                    MainRegistry.Logger.warn(
-                            "WARNING!! Thaumcraft recipe for " + outputString
-                                    + " has invalid research name ("
-                                    + researchName
-                                    + ")!");
+                    MainRegistry.LOGGER.warn(
+                            "WARNING!! Thaumcraft recipe for {} has invalid research name ({})!",
+                            outputString,
+                            researchName);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

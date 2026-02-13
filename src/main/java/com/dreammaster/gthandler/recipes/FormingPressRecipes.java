@@ -10,7 +10,6 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -27,282 +26,277 @@ public class FormingPressRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.MalformedSlush.get(2L), CustomItemList.MarshmallowForm.get(0L))
-                .itemOutputs(CustomItemList.UncookedSlush.get(1L)).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MalformedSlush.get(2), NHItemList.MarshmallowForm.get(0))
+                .itemOutputs(NHItemList.UncookedSlush.get()).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MarshmallowForm.get(0L))
-                .itemOutputs(CustomItemList.MarshmallowForm.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MarshmallowForm.get(0))
+                .itemOutputs(NHItemList.MarshmallowForm.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MicaBasedPulp.get(4L),
+                        NHItemList.MicaBasedPulp.get(4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L))
-                .circuit(1).itemOutputs(CustomItemList.MicaBasedSheet.get(4L)).duration(20 * SECONDS).eut(28)
+                .circuit(1).itemOutputs(NHItemList.MicaBasedSheet.get(4)).duration(20 * SECONDS).eut(28)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MicaBasedPulp.get(16L),
+                        NHItemList.MicaBasedPulp.get(16),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
                         ItemList.Shape_Mold_Plate.get(0L))
-                .circuit(2).itemOutputs(CustomItemList.MicaBasedSheet.get(16L)).duration(20 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .circuit(2).itemOutputs(NHItemList.MicaBasedSheet.get(16)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Plate.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Plate.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Plate.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Casing.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Casing.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Casing.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Gear.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Gear.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Gear.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Credit.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Credit.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Credit.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Bottle.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Bottle.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Bottle.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Ingot.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Ingot.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Ball.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Ball.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Block.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Block.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Nugget.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Nugget.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Nugget.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Bun.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Bun.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Bun.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Bread.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Bread.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Bread.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Baguette.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Baguette.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Baguette.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Cylinder.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Cylinder.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Cylinder.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Anvil.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Anvil.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Anvil.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Name.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Name.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Name.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Arrow.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Arrow.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Arrow.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Gear_Small.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Gear_Small.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Gear_Small.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Rod.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Rod.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Rod.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Bolt.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Bolt.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Bolt.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Round.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Round.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Round.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Screw.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Screw.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Screw.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Ring.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Ring.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Ring.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Rod_Long.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Rod_Long.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Rod_Long.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Rotor.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Rotor.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Rotor.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Turbine_Blade.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Turbine_Blade.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Turbine_Blade.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Pipe_Tiny.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Pipe_Tiny.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Pipe_Tiny.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Pipe_Small.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Pipe_Small.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Pipe_Small.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Pipe_Medium.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Pipe_Medium.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Pipe_Medium.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Pipe_Large.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Pipe_Large.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Pipe_Large.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Pipe_Huge.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_Pipe_Huge.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_Pipe_Huge.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldHelmet.get(0L))
-                .itemOutputs(CustomItemList.MoldHelmet.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldHelmet.get(0))
+                .itemOutputs(NHItemList.MoldHelmet.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldChestplate.get(0L))
-                .itemOutputs(CustomItemList.MoldChestplate.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldChestplate.get(0))
+                .itemOutputs(NHItemList.MoldChestplate.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldLeggings.get(0L))
-                .itemOutputs(CustomItemList.MoldLeggings.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldLeggings.get(0))
+                .itemOutputs(NHItemList.MoldLeggings.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldBoots.get(0L))
-                .itemOutputs(CustomItemList.MoldBoots.get(1L)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.MoldBoots.get(0))
+                .itemOutputs(NHItemList.MoldBoots.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_ToolHeadDrill.get(0L))
-                .itemOutputs(ItemList.Shape_Mold_ToolHeadDrill.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Mold_ToolHeadDrill.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Plate.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Plate.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Rod.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Rod.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Rod.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Bolt.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Bolt.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Bolt.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Ring.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Ring.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Ring.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Cell.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Cell.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Cell.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Ingot.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Ingot.get(1L)).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Wire.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Wire.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Ingot.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Casing.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Casing.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Casing.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Pipe_Tiny.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Pipe_Tiny.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Pipe_Small.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Pipe_Small.get(1L)).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(ItemList.Shape_Extruder_Pipe_Small.get(1L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Pipe_Medium.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Pipe_Medium.get(1L)).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(ItemList.Shape_Extruder_Pipe_Medium.get(1L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Pipe_Large.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Pipe_Large.get(1L)).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(ItemList.Shape_Extruder_Pipe_Large.get(1L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Pipe_Huge.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Pipe_Huge.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Pipe_Huge.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Block.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Block.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Sword.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Sword.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Sword.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Pickaxe.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Pickaxe.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Pickaxe.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Shovel.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Shovel.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Shovel.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Axe.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Axe.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Axe.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Hoe.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Hoe.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Hoe.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Hammer.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Hammer.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Hammer.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_File.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_File.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_File.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Saw.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Saw.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Gear.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Gear.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Gear.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Bottle.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Bottle.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Bottle.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Rotor.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Rotor.get(1L)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(ItemList.Shape_Extruder_Rotor.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Small_Gear.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Small_Gear.get(1L)).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(ItemList.Shape_Extruder_Small_Gear.get(1L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Turbine_Blade.get(0L))
-                .itemOutputs(ItemList.Shape_Extruder_Turbine_Blade.get(1L)).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(ItemList.Shape_Extruder_Turbine_Blade.get(1L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.ExtruderShapeBoat.getIS(0))
-                .itemOutputs(NHItemList.ExtruderShapeBoat.getIS(1)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.ExtruderShapeBoat.get(0))
+                .itemOutputs(NHItemList.ExtruderShapeBoat.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_ToolHeadDrill.get(0))
-                .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1)).duration(10 * SECONDS).eut(256)
-                .addTo(formingPressRecipes);
+                .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -315,7 +309,7 @@ public class FormingPressRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
                         ItemList.Shape_Mold_Bottle.get(0L))
-                .itemOutputs(ItemList.Bottle_Empty.get(1L)).duration(1 * SECONDS + 12 * TICKS).eut(8)
+                .itemOutputs(ItemList.Bottle_Empty.get(1L)).duration(1 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_ULV)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
@@ -327,49 +321,49 @@ public class FormingPressRecipes implements Runnable {
 
         // Recipes for Any circuits
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitULV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitULV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitLV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitLV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitMV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitMV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitHV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitHV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitEV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitEV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitIV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitIV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitLuV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitLuV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitZPM.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitZPM.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitUV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUHV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitUHV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUEV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitUEV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUIV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitUIV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUMV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitUMV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUXV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitUXV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitMAX.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(NHItemList.CircuitMAX.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
 
         if (BloodArsenal.isModLoaded()) {
@@ -389,7 +383,7 @@ public class FormingPressRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
                             GTModHandler.getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1L, 4))
-                    .itemOutputs(CustomItemList.EssentiaCircuit.get(1L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .itemOutputs(NHItemList.EssentiaCircuit.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(formingPressRecipes);
 
         }
@@ -398,9 +392,9 @@ public class FormingPressRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
-                            CustomItemList.EtchedLowVoltageWiring.get(1L))
+                            NHItemList.EtchedLowVoltageWiring.get())
                     .itemOutputs(GTModHandler.getModItem(ProjectRedCore.ID, "projectred.core.part", 1L, 0))
-                    .duration(5 * SECONDS).eut(16).addTo(formingPressRecipes);
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(formingPressRecipes);
 
         }
 

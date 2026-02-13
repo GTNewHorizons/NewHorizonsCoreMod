@@ -32,6 +32,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptRandomThings implements IScriptLoader {
@@ -179,96 +180,96 @@ public class ScriptRandomThings implements IScriptLoader {
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
                         getModItem(Minecraft.ID, "nether_wart", 1, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 5, missing))
-                .duration(7 * SECONDS + 10 * TICKS).eut(120).addTo(assemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "emerald", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 4L))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 0, missing))
-                .duration(12 * SECONDS + 10 * TICKS).eut(480).addTo(assemblerRecipes);
+                .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 16, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "fluidDisplay", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 72)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 72)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(RandomThings.ID, "fluidDisplay", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "advancedFluidDisplay", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "stone", 1, 0, missing))
-                .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 0, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing))
-                .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 1, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 1, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "porkchop", 1, 0, missing))
-                .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 2, missing)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 2, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
-                .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 3, missing)).duration(10 * SECONDS).eut(120)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 3, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "lever", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone_block", 1, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "wirelessLever", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(15 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "item.charmOfKeeping3", 4, 0, missing))
                 .circuit(4).itemOutputs(getModItem(RandomThings.ID, "whitestone", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 4000)).duration(1 * MINUTES).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 4000)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "dropFilter", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).duration(15 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(RandomThings.ID, "ingredient", 1, 4, missing),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 1L))
                 .itemOutputs(getModItem(RandomThings.ID, "spectreKey", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 1000)).duration(30 * SECONDS).eut(1024)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 1000)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L),
                         getModItem(RandomThings.ID, "ingredient", 1, 3, missing))
-                .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 4, missing)).duration(1 * MINUTES).eut(480)
-                .specialValue(2500).addTo(blastFurnaceRecipes);
+                .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 4, missing)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_HV).specialValue(2500).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "diamond", 1, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1 * MINUTES).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1 * MINUTES).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "dirt", 1, 0, missing),
                         getModItem(Minecraft.ID, "dye", 4, 15, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "fertilizedDirt", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "dirt", 1, 0, missing),
                         getModItem(Forestry.ID, "fertilizerCompound", 2, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "fertilizedDirt", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "dirt", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemFertilizer", 2, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "fertilizedDirt", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "endoplasm", 1, 0, missing),
                         getModItem(MagicBees.ID, "wax", 1, 1, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("cadaverine", 100)).duration(5 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("cadaverine", 100)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
 
     }

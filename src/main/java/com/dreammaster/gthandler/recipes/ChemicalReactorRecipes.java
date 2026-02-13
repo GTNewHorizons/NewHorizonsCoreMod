@@ -25,7 +25,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -56,12 +55,12 @@ public class ChemicalReactorRecipes implements Runnable {
         // Potassium Hydroxide
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L))
-                .circuit(1).itemOutputs(NHItemList.PotassiumHydroxideDust.getIS(3))
+                .circuit(1).itemOutputs(NHItemList.PotassiumHydroxideDust.get(3))
                 .fluidInputs(Materials.Water.getFluid(3000)).fluidOutputs(Materials.Hydrogen.getGas(1000))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         // Rock Salt
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.getIS()).circuit(2)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.get()).circuit(2)
                 .itemOutputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
@@ -238,9 +237,9 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MutatedEgg.get(1L),
+                        NHItemList.MutatedEgg.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 64))
-                .itemOutputs(CustomItemList.EnderEgg.get(1L)).fluidInputs(FluidRegistry.getFluidStack("ender", 1000))
+                .itemOutputs(NHItemList.EnderEgg.get()).fluidInputs(FluidRegistry.getFluidStack("ender", 1000))
                 .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
@@ -295,11 +294,11 @@ public class ChemicalReactorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.EnderEgg.get(1L),
+                            NHItemList.EnderEgg.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 64))
-                    .itemOutputs(CustomItemList.DraconiumEgg.get(1L))
+                    .itemOutputs(NHItemList.DraconiumEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000)).requiresCleanRoom()
-                    .duration(60 * MINUTES).eut(1024).addTo(UniversalChemical);
+                    .duration(60 * MINUTES).eut(TierEU.RECIPE_EV / 2).addTo(UniversalChemical);
 
         }
 
@@ -307,7 +306,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.DraconiumEgg.get(1L),
+                            NHItemList.DraconiumEgg.get(),
                             GTModHandler.getModItem(DraconicEvolution.ID, "dragonHeart", 0L, 0))
                     .itemOutputs(new ItemStack(Blocks.dragon_egg, 1, 0))
                     .fluidInputs(Materials.Enderium.getMolten(7 * INGOTS)).requiresCleanRoom().duration(60 * MINUTES)
@@ -321,7 +320,7 @@ public class ChemicalReactorRecipes implements Runnable {
                     .itemInputs(
                             new ItemStack(Items.spawn_egg, 1, GTValues.W),
                             GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
-                    .itemOutputs(CustomItemList.TheBigEgg.get(1L))
+                    .itemOutputs(NHItemList.TheBigEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
@@ -329,7 +328,7 @@ public class ChemicalReactorRecipes implements Runnable {
                     .itemInputs(
                             GTModHandler.getModItem(Botania.ID, "cocoon", 1L, 0),
                             GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
-                    .itemOutputs(CustomItemList.TheBigEgg.get(1L))
+                    .itemOutputs(NHItemList.TheBigEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
@@ -337,10 +336,9 @@ public class ChemicalReactorRecipes implements Runnable {
 
         if (Gendustry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(CustomItemList.TheBigEgg.get(1L), ItemList.IC2_Uranium_238.get(64))
-                    .itemOutputs(CustomItemList.MutatedEgg.get(1L))
-                    .fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000)).requiresCleanRoom()
-                    .duration(60 * MINUTES).eut(256).addTo(UniversalChemical);
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.TheBigEgg.get(), ItemList.IC2_Uranium_238.get(64))
+                    .itemOutputs(NHItemList.MutatedEgg.get()).fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000))
+                    .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV / 2).addTo(UniversalChemical);
 
         }
 
@@ -550,12 +548,12 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.RawPicoWafer.getIS(),
+                        NHItemList.RawPicoWafer.get(),
                         Materials.MysteriousCrystal.getDust(2),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.InfinityCatalyst, 1L).copy()
                                 .splitStack(0),
-                        NHItemList.TCetiESeaweedExtract.getIS(1))
-                .itemOutputs(NHItemList.PicoWafer.getIS()).fluidInputs(Materials.Neutronium.getMolten(144L))
+                        NHItemList.TCetiESeaweedExtract.get(1))
+                .itemOutputs(NHItemList.PicoWafer.get()).fluidInputs(Materials.Neutronium.getMolten(144L))
                 .duration(2 * MINUTES + 30 * SECONDS).eut((GTValues.V[9] - (GTValues.V[9] / 10)))
                 .addTo(multiblockChemicalReactorRecipes);
 

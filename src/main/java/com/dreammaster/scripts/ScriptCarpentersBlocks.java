@@ -20,6 +20,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -275,13 +276,13 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 2L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 4, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 8, 0, missing))
-                .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
@@ -293,160 +294,173 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 16, 0, missing))
-                .duration(5 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 20, 0, missing))
-                .duration(5 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 24, 0, missing))
-                .duration(5 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "fence", 1, 0, missing),
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 2, 0, missing))
-                .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         ItemList.Plank_Oak.get(1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         getModItem(Minecraft.ID, "flower_pot", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersFlowerPot", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersGarageDoor", 2, 0, missing))
-                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersGarageDoor", 4, 0, missing))
-                .duration(15 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "fence_gate", 1, 0, missing),
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersGate", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         getModItem(Minecraft.ID, "trapdoor", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersHatch", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         getModItem(Minecraft.ID, "ladder", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersLadder", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         getModItem(Minecraft.ID, "lever", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersLever", 1, 0, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 3, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSafe", 1, 0, missing))
-                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         getModItem(Minecraft.ID, "torch", 10, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersTorch", 10, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "chiselHead", 1, 2, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "itemCarpentersChisel", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.toolHeadHammer, Materials.Iron, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "itemCarpentersHammer", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing),
                         getModItem(Minecraft.ID, "clay_ball", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "itemCarpentersTile", 2, 0, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         getModItem(Minecraft.ID, "wooden_door", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "itemCarpentersDoor", 1, 0, missing))
-                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 2, 0, missing))
-                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 2, 0, missing))
-                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 20)).duration(5 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing))
-                .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 20)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing))
+                .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing))
+                .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0, missing))
+                .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 20)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 20)).duration(5 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS).eut(30)
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
+                .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 20)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 20)).duration(5 * SECONDS).eut(16)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS).eut(16)
-                .addTo(cutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS).eut(16)
-                .addTo(cutterRecipes);
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
     }
 }

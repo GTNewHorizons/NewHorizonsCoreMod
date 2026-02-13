@@ -6,9 +6,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.STACKS;
 import static gregtech.api.util.GTRecipeConstants.PRECISE_ASSEMBLER_CASING_TIER;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
@@ -20,13 +17,9 @@ import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class PreciseAssemblerRecipes implements Runnable {
 
-    // put the soldering Materials in this array
-    final Materials[] solderingMaterials = new Materials[] { Materials.Lead, Materials.SolderingAlloy, Materials.Tin };
-
-    ItemStack missing = new ItemStack(Blocks.fire);
-
     @Override
     public void run() {
+
         if (TwilightForest.isModLoaded() && GalacticraftAmunRa.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(

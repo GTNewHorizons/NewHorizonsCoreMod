@@ -202,25 +202,25 @@ public class ScriptTwilightForest implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 1, missing))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing)).duration(30 * SECONDS)
-                .eut(64).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "ItemResource", 6, 14, missing),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 0, missing))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.fieryBlood", 1, 0, missing)).duration(1 * MINUTES)
-                .eut(1024).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 3, missing))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.fieryTears", 1, 0, missing))
-                .duration(1 * MINUTES + 15 * SECONDS).eut(256).addTo(assemblerRecipes);
+                .duration(1 * MINUTES + 15 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "ItemResource", 8, 14, missing),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 3, missing))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing))
-                .duration(1 * MINUTES + 15 * SECONDS).eut(4096).addTo(assemblerRecipes);
+                .duration(1 * MINUTES + 15 * SECONDS).eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "item.tfFeather", 1, 0, missing),
@@ -230,7 +230,7 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0, missing), NHItemList.StonePlate.getIS(16))
+                .itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0, missing), NHItemList.StonePlate.get(16))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0, missing))
                 .fluidInputs(Materials.Helium3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
