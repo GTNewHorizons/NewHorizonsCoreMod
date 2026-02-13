@@ -4,10 +4,12 @@ import static bartworks.common.loaders.ItemRegistry.bw_realglas;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.GraviSuite;
@@ -18,12 +20,17 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
+import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -33,6 +40,8 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -1829,6 +1838,88 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 16, 10, missing))
                 .fluidInputs(Materials.Enderium.getMolten(2048)).duration(1 * MINUTES).eut(TierEU.RECIPE_IV / 2)
                 .addTo(autoclaveRecipes);
+
+        // Soul Infused Medium
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soularium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1),
+                        getModItem(EnderIO.ID, "blockEndermanSkull", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(Witchery.ID, "witchhand", 1, 0, missing),
+                        getModItem(TinkerConstruct.ID, "heartCanister", 1, 1, missing))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 4, 3, missing))
+                .fluidInputs(
+                        FluidRegistry.getFluidStack("xpjuice", 1728),
+                        FluidRegistry.getFluidStack("hell_blood", 100),
+                        FluidRegistry.getFluidStack("putrescine", 288),
+                        FluidRegistry.getFluidStack("binnie.growthmedium", 100),
+                        FluidRegistry.getFluidStack("vapor_of_levity", 500),
+                        FluidRegistry.getFluidStack("cadaverine", 144))
+                .fluidOutputs(Materials.SoulInfusedMedium.getFluid(2880)).duration(30 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(multiblockChemicalReactorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GregtechItemList.RawHumanMeat.get(1),
+                        getModItem(RandomThings.ID, "ingredient", 1, 0, missing))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing))
+                .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 20)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1),
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing))
+                .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 20)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1),
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 13, missing))
+                .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 10)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.rotten_flesh, 1),
+                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing))
+                .itemOutputs(getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing))
+                .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 10)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.fermented_spider_eye, 1),
+                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing))
+                .itemOutputs(getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing))
+                .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 10)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1),
+                        new ItemStack(Blocks.detector_rail, 1))
+                .itemOutputs(getModItem(EnderIO.ID, "blockEnderRail", 1, 0, missing))
+                .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 15)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 6, missing),
+                        getModItem(EnderIO.ID, "itemMaterial", 8, 9, missing),
+                        getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0, missing),
+                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing),
+                        new ItemStack(Blocks.dragon_egg, 1),
+                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing))
+                .itemOutputs(
+                        createItemStack(EnderIO.ID, "itemBasicCapacitor", 1, 6, "{ench:[0:{id:32s,lvl:5s}]}", missing))
+                .fluidInputs(Materials.SoulInfusedMedium.getFluid(144 * 40)).requiresCleanRoom().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_ZPM).addTo(circuitAssemblerRecipes);
 
     }
 }
