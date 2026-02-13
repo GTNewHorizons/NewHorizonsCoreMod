@@ -23,15 +23,14 @@ import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
-import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
+import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -1847,16 +1846,15 @@ public class ScriptEnderIO implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1),
                         getModItem(EnderIO.ID, "blockEndermanSkull", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
-                        getModItem(Witchery.ID, "witchhand", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "heartCanister", 1, 1, missing))
+                        getModItem(Witchery.ID, "witchhand", 1, 0, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 4, 3, missing))
                 .fluidInputs(
                         FluidRegistry.getFluidStack("xpjuice", 1728),
                         FluidRegistry.getFluidStack("hell_blood", 100),
-                        FluidRegistry.getFluidStack("putrescine", 288),
+                        FluidRegistry.getFluidStack("putrescine", 250),
                         FluidRegistry.getFluidStack("binnie.growthmedium", 100),
                         FluidRegistry.getFluidStack("vapor_of_levity", 500),
-                        FluidRegistry.getFluidStack("cadaverine", 144))
+                        FluidRegistry.getFluidStack("cadaverine", 250))
                 .fluidOutputs(Materials.SoulInfusedMedium.getFluid(2880)).duration(30 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(multiblockChemicalReactorRecipes);
 
