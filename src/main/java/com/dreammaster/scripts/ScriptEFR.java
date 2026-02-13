@@ -886,13 +886,13 @@ public class ScriptEFR implements IScriptLoader {
         // Flower to Dye recipes
 
         GTModHandler.addCraftingRecipe(
-                getModItem(EtFuturumRequiem.ID, "lantern", 2, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
                 bits,
                 new Object[] { "IPI", "PCP", "IPI", 'I', "screwIron", 'P', "paneGlassColorless", 'C',
                         new ItemStack(Blocks.torch) });
 
         GTModHandler.addCraftingRecipe(
-                getModItem(EtFuturumRequiem.ID, "soul_lantern", 2, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "soul_lantern", 1, 0, missing),
                 bits,
                 new Object[] { "IPI", "PCP", "IPI", 'I', "screwIron", 'G', "dustInfusedWater", 'P',
                         "paneGlassColorless", 'C', getModItem(EtFuturumRequiem.ID, "soul_torch", 1, 0, missing) });
@@ -900,7 +900,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
-                        new ItemStack(Blocks.torch, 2),
+                        new ItemStack(Blocks.torch, 4),
                         new ItemStack(Blocks.glass_pane, 2, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "lantern", 4, 0, missing)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -909,16 +909,9 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
-                        getModItem(EtFuturumRequiem.ID, "soul_torch", 2, 0, missing))
+                        getModItem(EtFuturumRequiem.ID, "soul_torch", 4, 0, missing))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "soul_lantern", 4, 0, missing))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
-                        new ItemStack(Blocks.furnace, 1))
-                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0, missing),

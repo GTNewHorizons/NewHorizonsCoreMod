@@ -47,9 +47,6 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        long bits = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE
-                | GTModHandler.RecipeBits.BUFFERED;
-
         ItemStack[] TypeWriterB = new ItemStack[16];
         ItemStack[] Pedestals = new ItemStack[16];
         ItemStack[] cwool16 = new ItemStack[16];
@@ -484,7 +481,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "blockIron");
 
         addShapedRecipe(
-                getModItem(BiblioCraft.ID, "BiblioLantern", 2),
+                getModItem(BiblioCraft.ID, "BiblioLantern", 1),
                 "screwGold",
                 "paneGlassColorless",
                 "screwGold",
@@ -498,12 +495,12 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
-                        getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1))
+                        getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioLantern", 4)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
-                getModItem(BiblioCraft.ID, "BiblioIronLantern", 2),
+                getModItem(BiblioCraft.ID, "BiblioIronLantern", 1),
                 "screwIron",
                 "dustGlowstone",
                 "screwIron",
@@ -518,8 +515,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
-                        getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1))
-                .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioIronLantern", 2)).duration(3 * SECONDS)
+                        getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
+                .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioIronLantern", 4)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
