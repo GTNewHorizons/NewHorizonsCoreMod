@@ -1,11 +1,11 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.274:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.283:dev")
     api("com.github.GTNewHorizons:Yamcl:0.7.4:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.6-GTNH:dev")
 
-    implementation("com.github.GTNewHorizons:GTNHLib:0.9.13:dev")
+    implementation("com.github.GTNewHorizons:GTNHLib:0.9.19:dev")
 
     implementation("net.glease:tc4recipelib:1.5.37:dev")
 
@@ -27,7 +27,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:amunra:0.8.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.4.17-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.4:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:MatterManipulator:0.1.12-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:MatterManipulator:0.1.14-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.7.1:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.10-GTNH:dev")
     compileOnly("com.github.GTNewHorizons:Backhand:1.8.2:dev") { transitive = false }

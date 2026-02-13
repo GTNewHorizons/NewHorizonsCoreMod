@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -15,12 +16,16 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptBiblioCraft implements IScriptLoader {
 
@@ -477,27 +482,42 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioCraft.ID, "BiblioLantern", 1),
-                "plateGold",
-                "dustGlowstone",
-                "plateGold",
+                "screwGold",
+                "paneGlassColorless",
+                "screwGold",
                 "paneGlassColorless",
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1),
                 "paneGlassColorless",
-                "plateGold",
-                "plateGold",
-                "plateGold");
+                "screwGold",
+                "paneGlassColorless",
+                "screwGold");
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1),
+                        new ItemStack(Blocks.glass_pane, 2, 0),
+                        getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
+                .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioLantern", 4)).duration(3 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(BiblioCraft.ID, "BiblioIronLantern", 1),
-                "plateIron",
+                "screwIron",
                 "dustGlowstone",
-                "plateIron",
+                "screwIron",
                 "paneGlassColorless",
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1),
                 "paneGlassColorless",
-                "plateIron",
-                "plateIron",
-                "plateIron");
+                "screwIron",
+                "paneGlassColorless",
+                "screwIron");
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
+                        new ItemStack(Blocks.glass_pane, 2, 0),
+                        getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
+                .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioIronLantern", 4)).duration(3 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(BiblioCraft.ID, "BiblioLamp", 1),
