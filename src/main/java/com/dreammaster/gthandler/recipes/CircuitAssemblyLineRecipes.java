@@ -40,8 +40,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Tin, 32))
                 .itemOutputs(ItemList.Circuit_Basic.get(16))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
-                .special(ItemList.CircuitImprint_IntegratedLogicCircuit.get(0)).eut(16).duration(2 * MINUTES)
-                .addTo(circuitAssemblyLineRecipes);
+                .special(ItemList.CircuitImprint_IntegratedLogicCircuit.get(0)).eut(TierEU.RECIPE_LV / 2)
+                .duration(2 * MINUTES).addTo(circuitAssemblyLineRecipes);
 
         // Good Integrated Circuit
         RA.stdBuilder()
@@ -265,8 +265,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.RedAlloy, 4))
                 .itemOutputs(ItemList.Circuit_Processor.get(16))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
-                .special(ItemList.CircuitImprint_IntegratedProcessor.get(0)).eut(60).duration(1 * MINUTES)
-                .addTo(circuitAssemblyLineRecipes);
+                .special(ItemList.CircuitImprint_IntegratedProcessor.get(0)).eut(TierEU.RECIPE_MV / 2)
+                .duration(1 * MINUTES).addTo(circuitAssemblyLineRecipes);
 
         // Microprocessor
         RA.stdBuilder()
@@ -279,7 +279,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 2))
                 .itemOutputs(ItemList.Circuit_Microprocessor.get(32))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
-                .special(ItemList.CircuitImprint_Microprocessor.get(0)).eut(60).duration(2 * MINUTES)
+                .special(ItemList.CircuitImprint_Microprocessor.get(0)).eut(TierEU.RECIPE_MV / 2).duration(2 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
         // Integrated Processor
@@ -293,8 +293,8 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.RedAlloy, 4))
                 .itemOutputs(ItemList.Circuit_Processor.get(16))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
-                .special(ItemList.CircuitImprint_IntegratedProcessor.get(0)).eut(60).duration(2 * MINUTES)
-                .addTo(circuitAssemblyLineRecipes);
+                .special(ItemList.CircuitImprint_IntegratedProcessor.get(0)).eut(TierEU.RECIPE_MV / 2)
+                .duration(2 * MINUTES).addTo(circuitAssemblyLineRecipes);
 
         // Processor Assembly
         RA.stdBuilder()

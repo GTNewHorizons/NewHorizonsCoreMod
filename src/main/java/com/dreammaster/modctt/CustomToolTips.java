@@ -43,7 +43,7 @@ public class CustomToolTips {
 
             for (ItemToolTip itt : mToolTips) {
                 if (itt.mMetaStart == null || itt.mMetaEnd == null) {
-                    if (itt.mUnlocalizedName.equalsIgnoreCase(tCompareName) && (itt.mNBT.isEmpty()
+                    if (itt.mUnlocalizedName.equalsIgnoreCase(tCompareName) && (itt.mNBT == null || itt.mNBT.isEmpty()
                             || JsonToNBT.func_150315_a(itt.mNBT).equals(pItem.stackTagCompound))) {
                         return itt;
                     }
@@ -51,7 +51,7 @@ public class CustomToolTips {
                     if (tCompareName.startsWith(itt.mUnlocalizedName)
                             && (pItem.getItemDamage() >= Integer.parseInt(itt.mMetaStart)
                                     && pItem.getItemDamage() <= Integer.parseInt(itt.mMetaEnd))
-                            && (itt.mNBT.isEmpty()
+                            && (itt.mNBT == null || itt.mNBT.isEmpty()
                                     || JsonToNBT.func_150315_a(itt.mNBT).equals(pItem.stackTagCompound))) {
                         return itt;
                     }

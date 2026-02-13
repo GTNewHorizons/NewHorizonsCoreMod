@@ -30,14 +30,15 @@ public class ArcFurnaceRecipes implements Runnable {
                 .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 0))
-                .itemOutputs(new ItemStack(Blocks.glass, 2)).duration(1 * SECONDS).eut(256).addTo(UniversalArcFurnace);
+                .itemOutputs(new ItemStack(Blocks.glass, 2)).duration(1 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                .addTo(UniversalArcFurnace);
 
         // red sand
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1))
                 .itemOutputs(
                         new ItemStack(Blocks.glass, 2),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1))
-                .duration(1 * SECONDS).eut(256).addTo(UniversalArcFurnace);
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(UniversalArcFurnace);
 
         if (GalacticraftAmunRa.isModLoaded()) {
             // Zero Point Module recycling

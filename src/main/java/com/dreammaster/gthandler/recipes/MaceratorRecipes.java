@@ -39,7 +39,7 @@ public class MaceratorRecipes implements Runnable {
     public void run() {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)).outputChances(10000)
-                .duration(4 * SECONDS).eut(8).addTo(maceratorRecipes);
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
 
         if (IndustrialCraft2.isModLoaded()) {
             GTValues.RA.stdBuilder()
@@ -54,7 +54,7 @@ public class MaceratorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2L))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L)).outputChances(10000)
-                    .duration(5 * SECONDS).eut(16).addTo(maceratorRecipes);
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(maceratorRecipes);
 
         }
 
@@ -89,7 +89,8 @@ public class MaceratorRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L))
-                .outputChances(10000, 2500, 2000, 1500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
+                .outputChances(10000, 2500, 2000, 1500).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.ChromaticGemExquisite.get())
                 .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(8)).duration(16 * SECONDS)
@@ -298,25 +299,29 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.MarsStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalacticraftMars.ID, "tile.mars", 1L, 5))
                     .itemOutputs(
                             NHItemList.MarsStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalacticraftMars.ID, "tile.mars", 1L, 6))
                     .itemOutputs(
                             NHItemList.MarsStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalacticraftMars.ID, "tile.mars", 1L, 9))
                     .itemOutputs(
                             NHItemList.MarsStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(GTModHandler.getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1L, 0))
@@ -353,31 +358,36 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.PhobosStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
-                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "phobosblocks", 1L, 1))
                     .itemOutputs(
                             NHItemList.PhobosStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
-                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "phobosblocks", 1L, 2))
                     .itemOutputs(
                             NHItemList.PhobosStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
-                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "deimosblocks", 1L, 0))
                     .itemOutputs(
                             NHItemList.DeimosStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesite, 1))
-                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "deimosblocks", 1L, 1))
                     .itemOutputs(
                             NHItemList.DeimosStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesite, 1))
-                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(64).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1L, 0))
                     .itemOutputs(
@@ -466,7 +476,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tantalite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1))
-                    .outputChances(10000, 1250, 625, 375).duration(20 * SECONDS).eut(256).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 625, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1L, 1))
                     .itemOutputs(
@@ -474,7 +485,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tantalite, 1))
-                    .outputChances(10000, 1250, 750, 500).duration(20 * SECONDS).eut(256).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1L, 2))
                     .itemOutputs(
@@ -482,7 +494,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tantalite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1))
-                    .outputChances(10000, 1250, 625, 375).duration(20 * SECONDS).eut(256).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 625, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "venusblocks", 1L, 0))
                     .itemOutputs(
@@ -490,7 +503,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quantium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mytryl, 1))
-                    .outputChances(10000, 1125, 625, 375).duration(20 * SECONDS).eut(256).addTo(maceratorRecipes);
+                    .outputChances(10000, 1125, 625, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "venusblocks", 1L, 1))
                     .itemOutputs(
@@ -498,7 +512,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quantium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mytryl, 1))
-                    .outputChances(10000, 1125, 625, 375).duration(20 * SECONDS).eut(256).addTo(maceratorRecipes);
+                    .outputChances(10000, 1125, 625, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 0))
                     .itemOutputs(
@@ -506,7 +521,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
-                    .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(256).addTo(maceratorRecipes);
+                    .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 1))
                     .itemOutputs(
@@ -514,7 +530,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
-                    .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(256).addTo(maceratorRecipes);
+                    .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 2))
                     .itemOutputs(
@@ -522,7 +539,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
-                    .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(256).addTo(maceratorRecipes);
+                    .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 0))
                     .itemOutputs(
@@ -638,7 +656,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uraninite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Adamantium, 1))
-                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(1024).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "proteusblocks", 1L, 1))
                     .itemOutputs(
@@ -646,7 +665,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uraninite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Adamantium, 1))
-                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(1024).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "proteusblocks", 1L, 2))
                     .itemOutputs(
@@ -654,7 +674,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uraninite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Adamantium, 1))
-                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(1024).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tritonblocks", 1L, 0))
                     .itemOutputs(
@@ -662,7 +683,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neodymium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.RareEarth, 1))
-                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(1024).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tritonblocks", 1L, 1))
                     .itemOutputs(
@@ -670,7 +692,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neodymium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.RareEarth, 1))
-                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(1024).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tritonblocks", 1L, 2))
                     .itemOutputs(
@@ -678,7 +701,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neodymium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.RareEarth, 1))
-                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(1024).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "plutoblocks", 1L, 0))
                     .itemOutputs(
@@ -767,7 +791,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
-                    .outputChances(10000, 1250, 750, 250).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 750, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1L, 0))
                     .itemOutputs(
@@ -775,7 +800,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 1))
-                    .outputChances(10000, 1250, 750, 125).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 750, 125).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "vegabsubgrunt", 1L, 0))
                     .itemOutputs(
@@ -783,7 +809,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 1))
-                    .outputChances(10000, 1250, 750, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 750, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "vegabgrunt", 1L, 0))
                     .itemOutputs(
@@ -791,7 +818,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 1))
-                    .outputChances(10000, 1250, 750, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 1250, 750, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "barnardaEgrunt", 1L, 0))
                     .itemOutputs(
@@ -799,7 +827,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1))
-                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "barnardaEsubgrunt", 1L, 0))
                     .itemOutputs(
@@ -807,7 +836,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1))
-                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "barnardaFgrunt", 1L, 0))
                     .itemOutputs(
@@ -815,7 +845,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 1))
-                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 1L, 0))
                     .itemOutputs(
@@ -823,7 +854,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 1))
-                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 0))
                     .itemOutputs(
@@ -831,7 +863,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 1))
-                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 1))
                     .itemOutputs(
@@ -839,7 +872,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 1))
-                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 2))
                     .itemOutputs(
@@ -847,7 +881,8 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 1))
-                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(4096).addTo(maceratorRecipes);
+                    .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
+                    .addTo(maceratorRecipes);
 
         }
 
