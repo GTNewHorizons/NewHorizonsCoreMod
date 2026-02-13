@@ -1802,3 +1802,52 @@ dreamcraft.pausemenu.wiki=Open the Wiki
 dreamcraft.pausemenu.sharetolan.tooltip=§cOpen to LAN is buggy in GTNH§r\nInstead, set up a dedicated server for multiplayer\nCheck the wiki for instructions\nYou can run the server in parallel with the\ngame client on the same computer
 
 dreamcraft.gui.sharetolan.message=§cOpen To LAN can break the GTNH questbook.§r Consider setting up a dedicated server
+
+tile.sacredoakFence.name=Sacred Oak Fence
+tile.cherryFence.name=Cherry Fence
+tile.darkFence.name=Dark Fence
+tile.firFence.name=Fir Fence
+tile.etherealFence.name=Ethereal Fence
+tile.magicFence.name=Magic Fence
+tile.mangroveFence.name=Mangrove Fence
+tile.palmFence.name=Palm Fence
+tile.redwoodFence.name=Redwood Fence
+tile.willowFence.name=Willow Fence
+tile.bamboothatchingFence.name=Bamboo Thatching Fence
+tile.pineFence.name=Pine Fence
+tile.hell_barkFence.name=Hellbark Fence
+tile.jacarandaFence.name=Jacaranda Fence
+tile.mahoganyFence.name=Mahogany Fence
+
+tile.sacredoakFenceGate.name=Sacred Oak Fence Gate
+tile.cherryFenceGate.name=Cherry Fence Gate
+tile.darkFenceGate.name=Dark Fence Gate
+tile.firFenceGate.name=Fir Fence Gate
+tile.etherealFenceGate.name=Ethereal Fence Gate
+tile.magicFenceGate.name=Magic Fence Gate
+tile.mangroveFenceGate.name=Mangrove Fence Gate
+tile.palmFenceGate.name=Palm Fence Gate
+tile.redwoodFenceGate.name=Redwood Fence Gate
+tile.willowFenceGate.name=Willow Fence Gate
+tile.bamboothatchingFenceGate.name=Bamboo Thatching Fence Gate
+tile.pineFenceGate.name=Pine Fence Gate
+tile.hell_barkFenceGate.name=Hellbark Fence Gate
+tile.jacarandaFenceGate.name=Jacaranda Fence Gate
+tile.mahoganyFenceGate.name=Mahogany Fence Gate
+
+dreamcraft.command.customdrops.usage=/customdrops reload|toggleinfo
+dreamcraft.command.customfuels.usage=/customfuels reload
+dreamcraft.command.customtooltips.usage=/customtooltips reload
+dreamcraft.command.hazarditems.usage=/hazarditems save|listdamagesources|listpotions|reload [force]
+dreamcraft.command.hazarditems.damage_source_list=Valid DamageTypes are: %s
+dreamcraft.command.hazarditems.save.success=Config has been saved.
+dreamcraft.command.hazarditems.save.failure=Config could not be saved. Check your logfiles.
+dreamcraft.command.hazarditems.reload.unsafe=Config file has changed and was not saved yet. To confirm the reload, type /hazarditems reload force
+dreamcraft.command.hazarditems.potion.header=List of Loaded Potions:
+dreamcraft.command.hazarditems.potion.entry= - %s - ID %s
+dreamcraft.command.reload.success=Reload complete. New config is activated.
+dreamcraft.command.reload.failure=Reload failed. Check your log for syntax errors.
+
+dreamcraft.customdrops.log_kill=Killed entity: [%s]
+dreamcraft.customdrops.debug.on=Death-Debug is now enabled
+dreamcraft.customdrops.debug.off=Death-Debug is now disabled

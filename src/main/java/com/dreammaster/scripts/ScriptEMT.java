@@ -81,29 +81,29 @@ public class ScriptEMT implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(10 * SECONDS)
-                .eut(16).addTo(alloySmelterRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 12, 0, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 4, 10, missing))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 6912)).duration(30 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 6912)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 12, 0, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 4, 10, missing))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 6912)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 6912)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS).eut(16)
-                .addTo(fluidSolidifierRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).duration(5 * SECONDS).eut(30)
-                .addTo(fluidSolidifierRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
                 .fluidOutputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
@@ -111,8 +111,8 @@ public class ScriptEMT implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(formingPressRecipes);
+                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
