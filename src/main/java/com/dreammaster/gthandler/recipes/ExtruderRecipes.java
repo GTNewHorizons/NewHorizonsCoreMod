@@ -6,7 +6,7 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -114,7 +114,7 @@ public class ExtruderRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64),
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64))
-                .itemOutputs(CustomItemList.NANCertificate.get(1))
+                .itemOutputs(NHItemList.NANCertificate.get(1))
                 .duration(29826 * HOURS + 9 * MINUTES + 7 * SECONDS + 7 * TICKS)
                 // not using recipe EUt on purpose
                 .eut(TierEU.ULV).addTo(extruderRecipes);
