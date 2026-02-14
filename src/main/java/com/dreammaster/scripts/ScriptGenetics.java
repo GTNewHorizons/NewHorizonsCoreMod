@@ -20,13 +20,14 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.forestry.ForestryHelper;
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptGenetics implements IScriptLoader {
@@ -179,7 +180,7 @@ public class ScriptGenetics implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 2880),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(Genetics.ID, "database", 1, 0, missing),
                 "abc",
                 "def",
@@ -205,7 +206,7 @@ public class ScriptGenetics implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 4320),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(Genetics.ID, "analyst", 1, 0, missing),
                 "abc",
                 "def",
@@ -231,7 +232,7 @@ public class ScriptGenetics implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 4320),
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 getModItem(Genetics.ID, "registry", 1, 0, missing),
                 "abc",
                 "def",
@@ -259,16 +260,16 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 8))
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).duration(1 * MINUTES).eut(120)
+                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 6, 0, missing)).circuit(6)
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 8, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 8, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 2, 0, missing)).circuit(2)
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(10 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 4, 0, missing)).circuit(4)
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 144)).duration(10 * SECONDS).eut(48)
@@ -282,22 +283,22 @@ public class ScriptGenetics implements IScriptLoader {
                         getModItem(Forestry.ID, "chipsets", 1, 1, missing),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
                         getModItem(Genetics.ID, "misc", 2, 10, missing))
                 .circuit(2).itemOutputs(getModItem(Genetics.ID, "misc", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(480).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 5, missing))
                 .circuit(2).itemOutputs(getModItem(Genetics.ID, "misc", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
@@ -305,8 +306,8 @@ public class ScriptGenetics implements IScriptLoader {
                         ItemList.Color_04.get(1L),
                         ItemList.Color_05.get(1L))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 144)).duration(5 * SECONDS).eut(30)
-                .addTo(mixerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 144)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
@@ -314,8 +315,8 @@ public class ScriptGenetics implements IScriptLoader {
                         ItemList.Color_14.get(1L),
                         ItemList.Color_11.get(1L))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 144)).duration(5 * SECONDS).eut(30)
-                .addTo(mixerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 144)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
 
     }
 }

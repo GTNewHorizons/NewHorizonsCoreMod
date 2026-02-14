@@ -48,7 +48,7 @@ import java.util.List;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -104,9 +104,8 @@ public class ScriptMinecraft implements IScriptLoader {
     public void loadRecipes() {
         craftingRecipes();
 
-        GTModHandler.addSmeltingRecipe(
-                CustomItemList.UnfiredClayBrick.get(1L),
-                getModItem(Minecraft.ID, "brick", 1, 0, missing));
+        GTModHandler
+                .addSmeltingRecipe(NHItemList.UnfiredClayBrick.get(), getModItem(Minecraft.ID, "brick", 1, 0, missing));
         GTModHandler
                 .addSmeltingRecipe(ItemList.Food_Raw_Bread.get(1L), getModItem(Minecraft.ID, "bread", 1, 0, missing));
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing))
@@ -135,54 +134,50 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(BloodArsenal.ID, "glass_shard", 2, 0, missing),
                         ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).duration(5).eut(64)
+                .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).duration(5).eut(TierEU.RECIPE_MV / 2)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 5L),
-                        CustomItemList.MoldHelmet.get(0L))
+                        NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 8L),
-                        CustomItemList.MoldChestplate.get(0L))
+                        NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_chestplate", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 7L),
-                        CustomItemList.MoldLeggings.get(0L))
+                        NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_leggings", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 4L),
-                        CustomItemList.MoldBoots.get(0L))
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 4L), NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_boots", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 5L),
-                        CustomItemList.MoldHelmet.get(0L))
+                        NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_helmet", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 8L),
-                        CustomItemList.MoldChestplate.get(0L))
+                        NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_chestplate", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 7L),
-                        CustomItemList.MoldLeggings.get(0L))
+                        NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_leggings", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 4L),
-                        CustomItemList.MoldBoots.get(0L))
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 4L), NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_boots", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 2, 3, missing)).circuit(1)
@@ -199,7 +194,8 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Natura.ID, "heatsand", 1, 0, missing),
                         getModItem(Natura.ID, "soil.tainted", 4, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 1, 0, missing))
-                .fluidInputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "miscResources", 6, 4, missing)).circuit(6)
                 .itemOutputs(getModItem(Minecraft.ID, "skull", 1, 1, missing))
                 .fluidInputs(Materials.Thaumium.getMolten(216)).duration(10 * SECONDS).eut(96).addTo(assemblerRecipes);
@@ -228,11 +224,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing))
                 .fluidInputs(Materials.Copper.getMolten(16)).duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
-                        CustomItemList.SteelBars.get(1L))
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L), NHItemList.SteelBars.get())
                 .itemOutputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing))
-                .fluidInputs(Materials.Steel.getMolten(16)).duration(20 * SECONDS).eut(8).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Steel.getMolten(16)).duration(20 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
@@ -249,8 +244,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "planks", 6, wildcard, missing),
                         getModItem(Minecraft.ID, "book", 3, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "bookshelf", 1, 0, missing)).duration(15 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "bookshelf", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 1, wildcard, missing),
@@ -687,8 +682,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Minecraft.ID, "planks", 2, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0, missing)).duration(15 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
@@ -1420,19 +1415,19 @@ public class ScriptMinecraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(16).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L))
-                .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 2, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 2, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L))
-                .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 4, 0, missing)).duration(5 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
+                .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 4, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
@@ -1447,7 +1442,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "brick", 8, 0, missing)).circuit(1)
                 .itemOutputs(getModItem(Minecraft.ID, "brick_block", 2, 0, missing))
-                .fluidInputs(Materials.Water.getFluid(500)).duration(15 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Water.getFluid(500)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L), ItemList.Plank_Oak.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
@@ -1577,37 +1573,37 @@ public class ScriptMinecraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Plank_Oak.get(2L), GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Plank_Oak.get(2L),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Plank_Oak.get(2L),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "stone_slab", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
-                .eut(8).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
@@ -1638,7 +1634,7 @@ public class ScriptMinecraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.ArtificialLeather.get(4L),
+                        NHItemList.ArtificialLeather.get(4),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
                 .circuit(1).itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).duration(5 * SECONDS).eut(24)
                 .addTo(assemblerRecipes);
@@ -1654,18 +1650,26 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
                 .fluidInputs(getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
-                .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(8)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(6 * TICKS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
-                .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS).eut(8)
+                .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
-                .fluidInputs(getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(8)
+                .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
+                .fluidInputs(getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(6 * TICKS)
+                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, wildcard, missing))
                 .fluidOutputs(Materials.Glass.getMolten(144)).duration(10 * SECONDS).eut(48)
                 .addTo(fluidExtractionRecipes);
@@ -1675,7 +1679,8 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "dirt", 1, wildcard, missing),
                         getModItem(MagicBees.ID, "wax", 4, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 4, 0, missing))
-                .fluidInputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(16).addTo(mixerRecipes);
+                .fluidInputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "blaze_powder", 3, 0, missing),
@@ -1685,8 +1690,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "melon_block", 1, 0, missing), ItemList.Shape_Slicer_Flat.get(0L))
-                .itemOutputs(getModItem(Minecraft.ID, "melon", 8, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "melon", 8, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         Module_CustomFuels
                 .registerCustomFuelValue(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing), (short) 75);
 
@@ -4102,7 +4107,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0, missing),
                 "plateAnyIron",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "craftingToolHardHammer",
                 "plateAnyIron",
                 "ringSteel",
@@ -4113,7 +4118,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0, missing),
                 "plateAnyIron",
-                CustomItemList.SteelBars.get(1L),
+                NHItemList.SteelBars.get(),
                 "craftingToolScrewdriver",
                 "plateAnyIron",
                 "ringSteel",

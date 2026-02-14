@@ -32,7 +32,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import goodgenerator.items.GGMaterial;
@@ -211,7 +210,7 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 4L))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
@@ -319,7 +318,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ClayCompound, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -327,7 +326,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RedstoneAlloy, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -335,7 +334,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ConductiveIron, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -343,7 +342,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackSteel, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnergeticAlloy, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -351,7 +350,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackSteel, 1L))
                 .circuit(3).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnergeticSilver, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -359,7 +358,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.VibrantAlloy, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -367,7 +366,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.VividAlloy, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -375,7 +374,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Oriharukon, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MelodicAlloy, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -383,7 +382,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.StellarAlloy, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -391,7 +390,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ElectricalSteel, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -399,7 +398,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.RedstoneAlloy, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.PulsatingIron, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -407,7 +406,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soularium, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -415,7 +414,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkSteel, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -423,7 +422,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endstone, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EndSteel, 3L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -431,7 +430,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Platinum, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderiumBase, 4L))
-                .duration(20 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -439,7 +438,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 4L))
-                .duration(10 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         // Superconductor dust recipes in mixer.
 
@@ -547,18 +546,18 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ardite, 1L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 2L))
-                .duration(20 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 3L), ItemList.IC2_Resin.get(1L))
-                .circuit(2).itemOutputs(CustomItemList.MicaBasedPulp.get(4L)).duration(20 * SECONDS).eut(8)
+                .circuit(2).itemOutputs(NHItemList.MicaBasedPulp.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 3L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
-                .circuit(2).itemOutputs(CustomItemList.MicaBasedPulp.get(4L)).duration(20 * SECONDS).eut(8)
+                .circuit(2).itemOutputs(NHItemList.MicaBasedPulp.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -603,42 +602,42 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 5L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 2L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 9))
-                .duration(10 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.IC2_Energium_Dust.get(9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 6L))
-                .circuit(2).itemOutputs(CustomItemList.LapotronDust.get(15L)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+                .circuit(2).itemOutputs(NHItemList.LapotronDust.get(15)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 4L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 4L))
-                .duration(10 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 16L))
                 .circuit(4).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 16L))
-                .duration(40 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 4L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 5L))
-                .duration(8 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(8 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 16L))
                 .circuit(4).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 20L))
-                .duration(32 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(32 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -707,18 +706,19 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L))
                 .circuit(2).fluidInputs(Materials.Water.getFluid(2000L))
-                .fluidOutputs(Materials.Concrete.getMolten(2304L)).duration(5 * SECONDS).eut(16).addTo(mixerRecipes);
+                .fluidOutputs(Materials.Concrete.getMolten(2304L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 2L))
                 .circuit(2).itemOutputs(new ItemStack(Items.clay_ball, 1, 0)).fluidInputs(GTModHandler.getWater(250L))
-                .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(mixerRecipes);
+                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 4L))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RedAlloy, 1L))
-                .duration(5 * SECONDS).eut(16).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -732,7 +732,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Antimony, 1L))
                 .circuit(1).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SolderingAlloy, 10L))
-                .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -742,9 +742,8 @@ public class MixerRecipes implements Runnable {
                 .duration(5 * SECONDS).eut(4).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 1L))
-                .circuit(1).itemOutputs(CustomItemList.RawNeutronium.get(1L))
-                .fluidInputs(Materials.Helium.getPlasma(144L)).duration(11 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ZPM)
-                .addTo(mixerRecipes);
+                .circuit(1).itemOutputs(NHItemList.RawNeutronium.get()).fluidInputs(Materials.Helium.getPlasma(144L))
+                .duration(11 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(mixerRecipes);
 
         // One Step Alloy Dust Mixer
 
@@ -853,7 +852,7 @@ public class MixerRecipes implements Runnable {
                 .itemInputs(
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16L, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 2L))
-                .circuit(1).itemOutputs(CustomItemList.BioBall.get(1L)).duration(10 * SECONDS).eut(16)
+                .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
 
         // Stargate-Crystal Dust
@@ -869,19 +868,19 @@ public class MixerRecipes implements Runnable {
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 4))
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
-                .itemOutputs(NHItemList.StargateCrystalDust.getIS()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
+                .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
                 .addTo(mixerRecipes);
 
         // Legacy Stargate Crystal Dust
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.TCetiESeaweedExtract.getIS().splitStack(64),
+                        NHItemList.TCetiESeaweedExtract.get().splitStack(64),
                         Materials.Dolomite.getDust(64),
                         Materials.SamariumMagnetic.getDust(21),
                         Materials.ChromiumDioxide.getDust(64),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 54L),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 47L))
-                .itemOutputs(NHItemList.StargateDustAncients.getIS()).duration(3 * MINUTES).eut(262144)
+                .itemOutputs(NHItemList.StargateDustAncients.get()).duration(3 * MINUTES).eut(262144)
                 .addTo(mixerRecipes);
 
         // Astral Silver & Soldering Alloy + reverse
@@ -890,7 +889,7 @@ public class MixerRecipes implements Runnable {
                 .itemOutputs(Materials.AstralSilver.getDust(3)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(mixerRecipes);
 
-        // Chamber Centrifuge Tier2 Fluid
+        // Spinmatron Tier2 Fluid
         GTValues.RA.stdBuilder().itemInputs(Materials.CosmicNeutronium.getDust(4), Materials.Glowstone.getNanite(2))
                 .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), Materials.LumipodExtract.getFluid(1000))
                 .fluidOutputs(Materials.BiocatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)
@@ -899,11 +898,11 @@ public class MixerRecipes implements Runnable {
         if (PamsHarvestCraft.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
-                    .itemOutputs(CustomItemList.WetTofu.get(1L)).fluidInputs(Materials.Water.getFluid(100L))
+                    .itemOutputs(NHItemList.WetTofu.get()).fluidInputs(Materials.Water.getFluid(100L))
                     .duration(30 * SECONDS).eut(2).addTo(mixerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
-                    .itemOutputs(CustomItemList.WetTofu.get(1L)).fluidInputs(GTModHandler.getDistilledWater(50L))
+                    .itemOutputs(NHItemList.WetTofu.get()).fluidInputs(GTModHandler.getDistilledWater(50L))
                     .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
         }
         if (Botania.isModLoaded()) {
@@ -933,8 +932,8 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.dirt, 1, 0)).circuit(4)
                     .itemOutputs(GTModHandler.getModItem(BiomesOPlenty.ID, "mudball", 4L, 0))
-                    .fluidInputs(Materials.Water.getFluid(1000L)).duration(2 * SECONDS + 10 * TICKS).eut(8)
-                    .addTo(mixerRecipes);
+                    .fluidInputs(Materials.Water.getFluid(1000L)).duration(2 * SECONDS + 10 * TICKS)
+                    .eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         }
 
@@ -946,7 +945,7 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1L))
                     .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.CrystallineAlloy, 3L))
-                    .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         }
 
@@ -967,7 +966,7 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.CrystallineAlloy, 1L))
                     .circuit(2)
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.CrystallinePinkSlime, 3L))
-                    .duration(5 * SECONDS).eut(8).addTo(mixerRecipes);
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -975,7 +974,8 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Blocks.gravel, 3, 0),
                             new ItemStack(Blocks.clay, 2, 0))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 8L, 1))
-                    .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(16).addTo(mixerRecipes);
+                    .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                    .addTo(mixerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -983,7 +983,8 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Blocks.gravel, 3, 0),
                             new ItemStack(Blocks.clay, 2, 0))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 8L, 1))
-                    .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(16).addTo(mixerRecipes);
+                    .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                    .addTo(mixerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -992,7 +993,8 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Blocks.gravel, 1, 0),
                             GTModHandler.getModItem(Natura.ID, "soil.tainted", 1L, 0))
                     .circuit(1).itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 2L, 6))
-                    .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(16).addTo(mixerRecipes);
+                    .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                    .addTo(mixerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -1001,7 +1003,8 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Blocks.gravel, 1, 0),
                             new ItemStack(Blocks.sand, 1, 32767))
                     .circuit(2).itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 2L, 6))
-                    .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(16).addTo(mixerRecipes);
+                    .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                    .addTo(mixerRecipes);
 
         }
 
@@ -1014,7 +1017,8 @@ public class MixerRecipes implements Runnable {
                             ItemList.FR_Mulch.get(1L),
                             GTModHandler.getModItem(Witchery.ID, "ingredient", 1L, 18))
                     .circuit(2).itemOutputs(GTModHandler.getModItem(Genetics.ID, "misc", 1L, 4))
-                    .fluidInputs(Materials.Water.getFluid(1000L)).duration(20 * SECONDS).eut(16).addTo(mixerRecipes);
+                    .fluidInputs(Materials.Water.getFluid(1000L)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                    .addTo(mixerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -1023,7 +1027,7 @@ public class MixerRecipes implements Runnable {
                             ItemList.FR_Mulch.get(1L),
                             GTModHandler.getModItem(Witchery.ID, "ingredient", 1L, 18))
                     .circuit(3).itemOutputs(GTModHandler.getModItem(Genetics.ID, "misc", 1L, 4))
-                    .fluidInputs(GTModHandler.getDistilledWater(800L)).duration(20 * SECONDS).eut(16)
+                    .fluidInputs(GTModHandler.getDistilledWater(800L)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
         }
@@ -1036,7 +1040,7 @@ public class MixerRecipes implements Runnable {
                             GTModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
                             new ItemStack(Items.sugar, 1, 0),
                             GTModHandler.getModItem(DraconicEvolution.ID, "draconiumDust", 1L, 0))
-                    .circuit(2).itemOutputs(CustomItemList.MalformedSlush.get(2L))
+                    .circuit(2).itemOutputs(NHItemList.MalformedSlush.get(2))
                     .fluidInputs(FluidRegistry.getFluidStack("witchery:fluidspirit", 1000)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(mixerRecipes);
 
@@ -1051,7 +1055,8 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
                     .circuit(4)
                     .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 8))
-                    .fluidInputs(Materials.Water.getFluid(500L)).duration(20 * TICKS).eut(16).addTo(mixerRecipes);
+                    .fluidInputs(Materials.Water.getFluid(500L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2)
+                    .addTo(mixerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -1060,7 +1065,8 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
                     .circuit(4)
                     .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 8))
-                    .fluidInputs(GTModHandler.getDistilledWater(500L)).duration(20 * TICKS).eut(16).addTo(mixerRecipes);
+                    .fluidInputs(GTModHandler.getDistilledWater(500L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2)
+                    .addTo(mixerRecipes);
 
         }
 

@@ -36,7 +36,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
@@ -45,6 +44,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.tools.TinkerTools;
@@ -380,7 +380,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
                 'd',
-                NHItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
+                NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1),
                 'e',
                 getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 1, 1, missing),
                 'f',
@@ -699,7 +699,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'a',
                 "plateDraconiumAwakened",
                 'b',
-                CustomItemList.EngravedEnergyChip.get(1L),
+                NHItemList.EngravedEnergyChip.get(),
                 'c',
                 getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -716,7 +716,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'a',
                 "plateDraconium",
                 'b',
-                CustomItemList.EngravedDiamondCrystalChip.get(1L),
+                NHItemList.EngravedDiamondCrystalChip.get(),
                 'c',
                 getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -800,7 +800,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDraconiumAwakened",
                 'c',
-                NHItemList.EngravedManyullynCrystalChip.getIS(1),
+                NHItemList.EngravedManyullynCrystalChip.get(1),
                 'd',
                 getModItem(DraconicEvolution.ID, "draconiumFluxCapacitor", 1, 1, missing),
                 'e',
@@ -1203,39 +1203,39 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 4),
                         getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infoTablet", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(480).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "energyCrystal", 1, 0, missing),
                         getModItem(DraconicEvolution.ID, "particleGenerator", 2, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "energyCrystal", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.enderium", 864)).duration(1 * MINUTES).eut(1024)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.enderium", 864)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "energyCrystal", 1, 1, missing),
                         getModItem(DraconicEvolution.ID, "particleGenerator", 2, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "energyCrystal", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.enderium", 864)).duration(2 * MINUTES).eut(4096)
-                .addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.enderium", 864)).duration(2 * MINUTES)
+                .eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "arrow", 1, 0, missing),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "enderArrow", 1, 0, missing)).duration(10 * SECONDS)
-                .eut(480).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "detector", 1, 5, missing),
                         getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "playerDetector", 1, 0, missing)).duration(10 * SECONDS)
-                .eut(480).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "rainSensor", 1, 0, missing)).duration(10 * SECONDS)
-                .eut(480).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -1258,23 +1258,23 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                         getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infusedObsidian", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.draconium", 144)).duration(1 * MINUTES).eut(1920)
-                .specialValue(7500).addTo(blastFurnaceRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.draconium", 144)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_EV).specialValue(7500).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosShard", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 2, missing)).duration(5 * SECONDS)
-                .eut(480).addTo(hammerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 2, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(480).addTo(hammerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 1, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 0, missing))
-                .duration(1 * SECONDS + 5 * TICKS).eut(480).addTo(hammerRecipes);
+                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_HV).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "safetyMatch", 16, 1000, missing),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0, missing))
-                .duration(3 * SECONDS + 4 * TICKS).eut(16).addTo(packagerRecipes);
+                .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(packagerRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(DraconicEvolution.ID, "dislocatorInhibitor", 1, 0, missing),

@@ -66,6 +66,7 @@ public class ScriptLoader {
                         new ScriptForbiddenMagic(),
                         new ScriptForestry(),
                         new ScriptForgeMultipart(),
+                        new ScriptFoundryRecipes(),
                         new ScriptGadomancy(),
                         new ScriptGalacticraft(),
                         new ScriptGalaxySpace(),
@@ -142,27 +143,24 @@ public class ScriptLoader {
                     final long timeStart = System.nanoTime();
                     script.loadRecipes();
                     final long timeToLoad = System.nanoTime() - timeStart;
-                    MainRegistry.Logger.info(
-                            "Loaded " + script.getScriptName()
-                                    + " script in "
-                                    + timeToLoad
-                                    + " ns ("
-                                    + timeToLoad / 1_000_000
-                                    + " ms).");
+                    MainRegistry.LOGGER.info(
+                            "Loaded {} script in {} ns ({} ms).",
+                            script.getScriptName(),
+                            timeToLoad,
+                            timeToLoad / 1_000_000);
                 } catch (Exception ex) {
                     errored.add(script.getScriptName());
-                    MainRegistry.Logger.error(
-                            "There was an error while loading " + script.getScriptName() + "! Printing stacktrace:");
+                    MainRegistry.LOGGER
+                            .error("There was an error while loading {}! Printing stacktrace:", script.getScriptName());
                     ex.printStackTrace();
                 }
             } else {
-                MainRegistry.Logger.info(
-                        "Missing dependencies to load " + script.getScriptName() + " script. It won't be loaded.");
+                MainRegistry.LOGGER
+                        .info("Missing dependencies to load {} script. It won't be loaded.", script.getScriptName());
             }
         }
         final long totalTimeToLoad = System.nanoTime() - totalTimeStart;
-        MainRegistry.Logger
-                .info("Script loader took " + totalTimeToLoad + " ns (" + totalTimeToLoad / 1_000_000 + " ms).");
+        MainRegistry.LOGGER.info("Script loader took {} ns ({} ms).", totalTimeToLoad, totalTimeToLoad / 1_000_000);
         if (!errored.isEmpty()) throw new RuntimeException(
                 "Scripts " + errored + " thrown an exception! Scroll up the log to see the stacktrace!");
     }

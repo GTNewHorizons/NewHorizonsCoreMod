@@ -15,7 +15,7 @@ import java.util.List;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -46,7 +46,8 @@ public class ScriptNuclearControl implements IScriptLoader {
                         NC2_REMOTE_SENSOR_KIT,
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2))
-                .itemOutputs(NC2_PANEL_MEMORY_CARD).duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
+                .itemOutputs(NC2_PANEL_MEMORY_CARD).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(assemblerRecipes);
 
         addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(Natura.ID, "Bluebells", 1, 0, missing));
         addShapedRecipe(
@@ -239,7 +240,7 @@ public class ScriptNuclearControl implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "remoteMonitor", 1, 0, missing),
                 "cableGt01Tin",
-                CustomItemList.Display.get(1L),
+                NHItemList.Display.get(),
                 "cableGt01Tin",
                 getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),

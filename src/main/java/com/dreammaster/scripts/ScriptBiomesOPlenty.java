@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
+import static gregtech.api.enums.Materials.Saltpeter;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
@@ -17,10 +18,11 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
@@ -36,8 +38,11 @@ import static gtnhlanth.api.recipe.LanthanidesRecipeMaps.dissolutionTankRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.biomesoplenty.BOPWoodTypes;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 
@@ -192,7 +197,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
-                .outputChances(10000, 5000, 2500, 1200).duration(3 * MINUTES + 20 * SECONDS).eut(8)
+                .outputChances(10000, 5000, 2500, 1200).duration(3 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0, missing)).outputChances(10000)
@@ -266,8 +271,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing))
                 .itemOutputs(ItemList.Color_03.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mud", 1, 0, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0, missing)).duration(5 * SECONDS).eut(8)
-                .addTo(extractorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1, 1, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing)).outputChances(10000)
                 .fluidOutputs(FluidRegistry.getFluidStack("poison", 1000)).duration(1 * SECONDS).eut(2)
@@ -277,8 +282,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .addTo(fluidExtractionRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).duration(1).eut(1)
-                .addTo(fluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).duration(1).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(20 * SECONDS).eut(40)
@@ -298,14 +302,16 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.CassiteriteSand, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Phosphate, 1L))
-                .outputChances(10000, 5000, 1000, 500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
+                .outputChances(10000, 5000, 1000, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardDirt", 1, 0, missing))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 2L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Quicklime, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gypsum, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Calcite, 1L))
-                .outputChances(10000, 7500, 2500, 2500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
+                .outputChances(10000, 7500, 2500, 2500).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 8L),
@@ -330,22 +336,22 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1L)).fluidInputs(Materials.Honey.getFluid(1000L))
-                .duration(2 * SECONDS).eut(1).addTo(fluidCannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.getIS(1)).circuit(16)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .duration(2 * SECONDS).eut(1).addTo(cannerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.get(1)).circuit(16)
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 3, missing)).circuit(16)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2, missing)).eut(30).duration(2 * MINUTES)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2, missing)).eut(TierEU.RECIPE_LV)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing)).circuit(11)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing)).eut(30).duration(15 * SECONDS)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing)).eut(TierEU.RECIPE_LV)
+                .duration(15 * SECONDS).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 1, 8, missing)).circuit(11)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11, missing)).eut(30).duration(15 * SECONDS)
-                .addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11, missing)).eut(TierEU.RECIPE_LV)
+                .duration(15 * SECONDS).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing)).eut(30).duration(15 * SECONDS)
-                .addTo(compressorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing)).eut(TierEU.RECIPE_LV)
+                .duration(15 * SECONDS).addTo(compressorRecipes);
 
         // BOP renovable flora
 
@@ -543,6 +549,11 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "foliage", 1, 7, missing)).eut(TierEU.RECIPE_HV).duration(10)
                 .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.potato, 16), Saltpeter.getDust(4))
+                .itemOutputs(new ItemStack(Items.poisonous_potato, 16))
+                .fluidInputs(FluidRegistry.getFluidStack("poison", 200)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
+
         ChiselHelper.addVariationFromStack("topaz", GTOreDictUnificator.get(OrePrefixes.block, Materials.Topaz, 1L));
         ChiselHelper.addVariationFromStack("topaz", getModItem(BiomesOPlenty.ID, "gemOre", 1, 7, missing));
 
@@ -550,5 +561,94 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 "tanzanite",
                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Tanzanite, 1L));
         ChiselHelper.addVariationFromStack("tanzanite", getModItem(BiomesOPlenty.ID, "gemOre", 1, 9, missing));
+
+        // Fence and Fence Gate recipes:
+
+        for (BOPWoodTypes woodType : BOPWoodTypes.values()) {
+            ItemStack plank = getModItem(BiomesOPlenty.ID, "planks", 1, woodType.ordinal());
+
+            // Fences
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "Fence", 1, 0, missing),
+                    "stickWood",
+                    plank,
+                    "stickWood",
+                    "stickWood",
+                    plank,
+                    "stickWood",
+                    "stickWood",
+                    plank,
+                    "stickWood");
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "Fence", 2, 0, missing),
+                    "screwIron",
+                    "craftingToolScrewdriver",
+                    "screwIron",
+                    "stickWood",
+                    plank,
+                    "stickWood",
+                    "stickWood",
+                    plank,
+                    "stickWood");
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "Fence", 4, 0, missing),
+                    "screwSteel",
+                    "craftingToolScrewdriver",
+                    "screwSteel",
+                    "stickWood",
+                    plank,
+                    "stickWood",
+                    "stickWood",
+                    plank,
+                    "stickWood");
+
+            // Fence Gates
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0, missing),
+                    getModItem(Minecraft.ID, "flint", 1, 0, missing),
+                    null,
+                    getModItem(Minecraft.ID, "flint", 1, 0, missing),
+                    plank,
+                    "stickWood",
+                    plank,
+                    plank,
+                    "stickWood",
+                    plank);
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 2, 0, missing),
+                    "screwIron",
+                    "craftingToolScrewdriver",
+                    "screwIron",
+                    plank,
+                    "stickWood",
+                    plank,
+                    plank,
+                    "stickWood",
+                    plank);
+
+            addShapedRecipe(
+                    getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 4, 0, missing),
+                    "screwSteel",
+                    "craftingToolScrewdriver",
+                    "screwSteel",
+                    plank,
+                    "stickWood",
+                    plank,
+                    plank,
+                    "stickWood",
+                    plank);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "stick", 2, 0, missing),
+                            getModItem(BiomesOPlenty.ID, "planks", 2, woodType.ordinal()))
+                    .itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0, missing))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+        }
     }
 }

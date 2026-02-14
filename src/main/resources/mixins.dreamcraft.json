@@ -1,11 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8.5-GTNH",
-  "package": "com.dreammaster.mixin.mixins",
   "refmap": "mixins.dreamcraft.refmap.json",
   "target": "@env(DEFAULT)",
-  "compatibilityLevel": "JAVA_8",
-  "mixins": [],
-  "client": [],
-  "server": []
+  "compatibilityLevel": "JAVA_8"
 }

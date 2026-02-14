@@ -8,7 +8,6 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.ItemList;
@@ -98,9 +97,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 "circuitMaster");
         addShapedRecipe(
                 getModItem(GraviSuiteNEO.ID, "epicLappack", 1, 27, missing),
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                NHItemList.IridiumAlloyItemCasing.get(),
                 ItemList.Energy_LapotronicOrb2.get(1L),
-                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                NHItemList.IridiumAlloyItemCasing.get(),
                 ItemList.Energy_LapotronicOrb2.get(1L),
                 getModItem(GraviSuite.ID, "ultimateLappack", 1, wildcard, missing),
                 ItemList.Energy_LapotronicOrb2.get(1L),
@@ -121,7 +120,7 @@ public class ScriptGraviSuite implements IScriptLoader {
         addShapedRecipe(
                 createItemStack(GraviSuite.ID, "advDDrill", 1, 27, "{toolXP:0.0d,charge:0,toolMode:0}", missing),
                 "screwIridium",
-                NHItemList.ReinforcedIridiumDrillTip.getIS(1),
+                NHItemList.ReinforcedIridiumDrillTip.get(1),
                 "craftingToolScrewdriver",
                 "gearGtSmallIridium",
                 ItemList.Electric_Motor_EV.get(1L),

@@ -9,16 +9,17 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
-import gtPlusPlus.core.util.minecraft.FluidUtils;
+import gregtech.api.util.GTModHandler;
 
 public class FluidHeaterRecipes implements Runnable {
 
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().fluidInputs(FluidUtils.getSteam(3840))
-                .fluidOutputs(FluidUtils.getSuperHeatedSteam(3840)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
+        GTValues.RA.stdBuilder().fluidInputs(Materials.Steam.getGas(3840))
+                .fluidOutputs(GTModHandler.getSuperHeatedSteam(3840)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(fluidHeaterRecipes);
         if (PamsHarvestCraft.isModLoaded()) {
             GTValues.RA.stdBuilder().circuit(24).fluidInputs(getFluidStack("milk", 250))

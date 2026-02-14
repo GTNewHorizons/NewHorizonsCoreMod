@@ -23,7 +23,7 @@ import java.util.Objects;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -31,6 +31,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
@@ -610,12 +611,12 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
                 ItemList.Emitter_MV.get(1L),
-                CustomItemList.ReinforcedGlassLense.get(1L),
+                NHItemList.ReinforcedGlassLense.get(),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                CustomItemList.ReinforcedGlassLense.get(1L),
+                NHItemList.ReinforcedGlassLense.get(),
                 ItemList.Emitter_MV.get(1L));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.Overchanter",
@@ -677,7 +678,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 'a',
                 "screwStainlessSteel",
                 'b',
-                CustomItemList.LichBone.get(1L),
+                NHItemList.LichBone.get(),
                 'c',
                 "screwStainlessSteel",
                 'd',
@@ -704,7 +705,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 'a',
                 "screwStainlessSteel",
                 'b',
-                CustomItemList.LichBone.get(1L),
+                NHItemList.LichBone.get(),
                 'c',
                 "screwStainlessSteel",
                 'd',
@@ -972,7 +973,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("alienis"), 32),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 4, missing),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing),
-                CustomItemList.SnowQueenBlood.get(1L),
+                NHItemList.SnowQueenBlood.get(),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 5, missing),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 6, missing),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 7, missing),
@@ -982,7 +983,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 8, missing),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 9, missing),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 10, missing),
-                CustomItemList.SnowQueenBlood.get(1L));
+                NHItemList.SnowQueenBlood.get());
         TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Bright",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 0, missing),
@@ -1309,15 +1310,19 @@ public class ScriptThaumicBases implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1L, blockMeta, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(2)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
     }
 }

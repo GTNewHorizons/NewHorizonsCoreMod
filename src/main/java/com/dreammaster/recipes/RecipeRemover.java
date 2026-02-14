@@ -128,7 +128,7 @@ public class RecipeRemover {
                 return false;
             }
             if (output.getItem() == null) {
-                MainRegistry.Logger.warn("Someone is adding recipes with null items!");
+                MainRegistry.LOGGER.warn("Someone is adding recipes with null items!");
                 return true;
             }
             final ItemStack copyStack;
@@ -152,7 +152,7 @@ public class RecipeRemover {
             }
             return false;
         });
-        MainRegistry.Logger.info("Removed " + (i - list.size()) + " recipes!");
+        MainRegistry.LOGGER.info("Removed {} recipes!", i - list.size());
     }
 
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
@@ -760,7 +760,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "diamondChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "netherStarChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "cloudinabottle", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Chisel.ID, "ballomoss", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "smashingrock", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "autoChisel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "upgrade", 1, 0, missing));
@@ -2675,7 +2674,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "voidFAS", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "voidShears", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "wireless.essentia.terminal", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "part.base", 1, 7, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "part.base", 1, 8, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing));
@@ -2690,8 +2688,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 9, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10, missing));
-        removeRecipeByOutputDelayed(
-                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicExploration.ID, "blankSeal", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0, missing));
@@ -3453,6 +3449,6 @@ public class RecipeRemover {
         flushBuffer();
         bufferMap = null;
         final long timeToLoad = System.currentTimeMillis() - timeStart;
-        MainRegistry.Logger.info("Recipes removal took " + timeToLoad + " ms.");
+        MainRegistry.LOGGER.info("Recipes removal took {} ms.", timeToLoad);
     }
 }

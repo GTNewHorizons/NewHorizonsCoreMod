@@ -12,7 +12,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -26,7 +26,8 @@ public class CuttingMachineRecipes implements Runnable {
     public void run() {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_ILC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_ILC.get(8L)).duration(45 * SECONDS).eut(64).addTo(cutterRecipes);
+                .itemOutputs(ItemList.Circuit_Chip_ILC.get(8L)).duration(45 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Ram.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Ram.get(32L)).duration(45 * SECONDS).eut(96).addTo(cutterRecipes);
@@ -44,7 +45,7 @@ public class CuttingMachineRecipes implements Runnable {
                 .eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Simple_SoC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_Simple_SoC.get(6L)).duration(45 * SECONDS).eut(64)
+                .itemOutputs(ItemList.Circuit_Chip_Simple_SoC.get(6L)).duration(45 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                 .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_SoC.get(1L))
@@ -52,8 +53,8 @@ public class CuttingMachineRecipes implements Runnable {
                 .eut(TierEU.RECIPE_HV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_SoC2.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_SoC2.get(6L)).requiresCleanRoom().duration(45 * SECONDS).eut(1024)
-                .addTo(cutterRecipes);
+                .itemOutputs(ItemList.Circuit_Chip_SoC2.get(6L)).requiresCleanRoom().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_EV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_ULPIC.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_ULPIC.get(6L)).duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -102,12 +103,12 @@ public class CuttingMachineRecipes implements Runnable {
         if (IndustrialCraft2.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0))
-                    .itemOutputs(CustomItemList.ReinforcedGlassPLate.get(2L)).duration(60 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                    .itemOutputs(NHItemList.ReinforcedGlassPlate.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(cutterRecipes);
 
         }
 
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.NandChipBoard.get(1)).circuit(1)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.NandChipArray.get(1)).circuit(1)
                 .itemOutputs(ItemList.NandChip.get(8)).requiresCleanRoom().duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(cutterRecipes);
 
@@ -134,6 +135,13 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            GTModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16))
+                    .itemOutputs(GTModHandler.getModItem(ZTones.ID, "lampf", 4L, 0))
+                    .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(5)).duration(2 * SECONDS).eut(4)
+                    .addTo(cutterRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
                             GTModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24))
                     .itemOutputs(GTModHandler.getModItem(ZTones.ID, "lampt", 4L, 0))
                     .fluidInputs(Materials.Water.getFluid(100L)).duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
@@ -153,6 +161,13 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            GTModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24))
+                    .itemOutputs(GTModHandler.getModItem(ZTones.ID, "lampt", 4L, 0))
+                    .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(5)).duration(2 * SECONDS).eut(4)
+                    .addTo(cutterRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
                             GTModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23))
                     .itemOutputs(GTModHandler.getModItem(ZTones.ID, "lampb", 4L, 0))
                     .fluidInputs(Materials.Water.getFluid(100L)).duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
@@ -169,6 +184,12 @@ public class CuttingMachineRecipes implements Runnable {
                             GTModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23))
                     .itemOutputs(GTModHandler.getModItem(ZTones.ID, "lampb", 4L, 0))
                     .fluidInputs(Materials.Lubricant.getFluid(25L)).duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23))
+                    .itemOutputs(GTModHandler.getModItem(ZTones.ID, "lampb", 4L, 0))
+                    .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(5)).duration(2 * SECONDS).eut(4)
+                    .addTo(cutterRecipes);
 
         }
 
@@ -177,11 +198,11 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.crafting_table, 1))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L))
-                    .duration(5 * SECONDS).eut(16).addTo(cutterRecipes);
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1L)).duration(5 * SECONDS)
-                    .eut(16).addTo(cutterRecipes);
+                    .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
         }
 
         // Photonically Prepared Wafer
@@ -211,6 +232,10 @@ public class CuttingMachineRecipes implements Runnable {
                 GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(Materials.Lubricant.getFluid(1L))
                         .itemOutputs(GTModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(50).eut(7)
+                        .addTo(cutterRecipes);
+                GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Chisel.ID, "carpet_block", 1, meta))
+                        .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1L))
+                        .itemOutputs(GTModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(20).eut(7)
                         .addTo(cutterRecipes);
             }
         }

@@ -7,7 +7,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -23,11 +23,11 @@ public class WiremillRecipes implements Runnable {
     @Override
     public void run() {
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MeteoricIron, 1L))
-                .itemOutputs(CustomItemList.MeteoricIronString.get(4L)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(NHItemList.MeteoricIronString.get(4)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(wiremillRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Tungsten, 1L))
-                .itemOutputs(CustomItemList.TungstenString.get(4L)).duration(60 * SECONDS).eut(1024)
+                .itemOutputs(NHItemList.TungstenString.get(4)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(wiremillRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getIngots(1)).circuit(3)
@@ -39,7 +39,7 @@ public class WiremillRecipes implements Runnable {
         if (Natura.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "barleyFood", 2L, 3))
-                    .itemOutputs(new ItemStack(Items.string, 1, 0)).duration(10 * SECONDS).eut(8)
+                    .itemOutputs(new ItemStack(Items.string, 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                     .addTo(wiremillRecipes);
         }
     }
