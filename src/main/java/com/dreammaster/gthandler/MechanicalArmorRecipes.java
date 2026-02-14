@@ -53,7 +53,6 @@ public class MechanicalArmorRecipes {
                         NHItemList.MoldHelmet.get(0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 5),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 5, 0, missing))
-                .fluidInputs(Materials.StainlessSteel.getMolten(INGOTS * 2))
                 .itemOutputs(ItemList.Mechanical_Helmet.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
 
@@ -62,7 +61,6 @@ public class MechanicalArmorRecipes {
                         NHItemList.MoldChestplate.get(0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 8),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 8, 0, missing))
-                .fluidInputs(Materials.StainlessSteel.getMolten(INGOTS * 2))
                 .itemOutputs(ItemList.Mechanical_Chestplate.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
 
@@ -71,7 +69,6 @@ public class MechanicalArmorRecipes {
                         NHItemList.MoldLeggings.get(0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 7),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 7, 0, missing))
-                .fluidInputs(Materials.StainlessSteel.getMolten(INGOTS * 2))
                 .itemOutputs(ItemList.Mechanical_Leggings.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
 
@@ -80,7 +77,6 @@ public class MechanicalArmorRecipes {
                         NHItemList.MoldBoots.get(0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 4, 0, missing))
-                .fluidInputs(Materials.StainlessSteel.getMolten(INGOTS * 2))
                 .itemOutputs(ItemList.Mechanical_Boots.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
 
