@@ -3781,7 +3781,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4))
                 .circuit(1).itemOutputs(ItemList.Field_Generator_MV.get(1))
-                .fluidInputs(Materials.VibrantAlloy.getMolten(288)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.Titanium.getMolten(288)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
