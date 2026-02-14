@@ -19,6 +19,7 @@ import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -672,7 +673,8 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.RedSteel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlueSteel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1L))
-                .circuit(4).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ElectrumFlux, 4L))
+                .fluidInputs(Materials.Redstone.getMolten(20 * INGOTS)).circuit(4)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ElectrumFlux, 4L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(900).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
