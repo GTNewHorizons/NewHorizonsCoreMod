@@ -795,20 +795,20 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Pico
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        CircuitComponent.ProcessedFoilRadoxPolymer.getFakeStack(16),
                         CircuitComponent.ProcessedFrameboxCelestialTungsten.getFakeStack(2),
                         CircuitComponent.ScrewAstralTitanium.getFakeStack(4),
-                        CircuitComponent.CasingUEVSuperconductor.getFakeStack(1),
-                        CircuitComponent.ProcessedFoilRadoxPolymer.getFakeStack(16))
+                        CircuitComponent.CasingUEVSuperconductor.getFakeStack(1))
                 .itemOutputs(CircuitComponent.ProcessedPicoCircuitCasing.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Quantum
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(48),
                         CircuitComponent.ProcessedFrameboxHypogen.getFakeStack(2),
                         CircuitComponent.ScrewSixPhasedCopper.getFakeStack(4),
-                        CircuitComponent.CasingCreon.getFakeStack(1),
-                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(48))
+                        CircuitComponent.CasingCreon.getFakeStack(1))
                 .itemOutputs(CircuitComponent.ProcessedQuantumCircuitCasing.getFakeStack(1)).duration(20 * SECONDS)
                 .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipEncasementWrapper);
 
