@@ -1,14 +1,7 @@
 package com.dreammaster.coremod;
 
-import java.io.BufferedInputStream;
 import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.security.KeyStore;
-import java.security.cert.CertificateFactory;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,18 +9,18 @@ import java.util.regex.Pattern;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Adds the Let's encrypt X3 root SSL certificate to fix HTTPS connection problems. <br>
+ * Updates the ca-certificates roots to fix HTTPS connection problems with e.g. Let's Encrypt and Azure certificates.
+ * <br>
  *
  * Taken from: <a href=
  * "https://github.com/Cloudhunter/LetsEncryptCraft/blob/master/src/main/java/uk/co/cloudhunter/letsencryptcraft/LetsEncryptAdder.java">LetsEncryptCraft</a>
  * <br>
  * Original code license:
- * 
+ *
  * <pre>
  * MIT License
  *
@@ -58,21 +51,11 @@ public class LetsEncryptAdder {
     private static final Logger LOGGER = LogManager.getLogger(LetsEncryptAdder.class);
 
     private static void trustLetsEncryptRoots() throws Exception {
-        final InputStream cert1 = Objects.requireNonNull(
-                LetsEncryptAdder.class.getResourceAsStream("/assets/letsencryptroot/isrg-root-x1.der"),
-                "Embedded let's encrypt certificate X1 not found");
-        final InputStream cert2 = Objects.requireNonNull(
-                LetsEncryptAdder.class.getResourceAsStream("/assets/letsencryptroot/isrg-root-x2.der"),
-                "Embedded let's encrypt certificate X2 not found");
-
         KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-        Path ksPath = Paths.get(System.getProperty("java.home"), "lib", "security", "cacerts");
-        keyStore.load(Files.newInputStream(ksPath), "changeit".toCharArray());
-
-        CertificateFactory cf = CertificateFactory.getInstance("X.509");
-
-        keyStore.setCertificateEntry("isrg-root-x1", cf.generateCertificate(new BufferedInputStream(cert1)));
-        keyStore.setCertificateEntry("isrg-root-x2", cf.generateCertificate(new BufferedInputStream(cert2)));
+        try (final InputStream keystoreBytes = Objects.requireNonNull(
+                LetsEncryptAdder.class.getResourceAsStream("/assets/dreamcraft/ssl/java-cacerts.jks"))) {
+            keyStore.load(keystoreBytes, "changeit".toCharArray());
+        }
 
         TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
         tmf.init(keyStore);
@@ -117,29 +100,15 @@ public class LetsEncryptAdder {
                 break;
         }
 
-        String body = "";
         try {
-            LOGGER.info("Adding Let's Encrypt certificate...");
             LetsEncryptAdder.trustLetsEncryptRoots();
-            LOGGER.info("Done, attempting to connect to https://helloworld.letsencrypt.org...");
-            URL url = new URL("https://helloworld.letsencrypt.org");
-            URLConnection conn = url.openConnection();
-            conn.setConnectTimeout(5000);
-            conn.setReadTimeout(5000);
-            InputStream inputStream = conn.getInputStream();
-            body = IOUtils.toString(inputStream);
+            LOGGER.info("Added Let's Encrypt certificate to the Java SSL trust store.");
         } catch (Exception e) {
             LOGGER.error(
                     "An error occurred whilst adding the Let's Encrypt root certificate. I'm afraid you wont be able to access resources with a Let's Encrypt certificate D:",
                     e);
         }
 
-        if (body.isEmpty()) {
-            LOGGER.error(
-                    "An unknown error occurred whilst adding the Let's Encrypt root certificate. I'm afraid you may not be able to access resources with a Let's Encrypt certificate D:");
-        } else {
-            LOGGER.info("Done - you are now able to access resources with a Let's Encrypt certificate :D");
-        }
         alreadyAdded = true;
     }
 }
