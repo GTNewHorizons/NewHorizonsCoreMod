@@ -520,6 +520,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Elite Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardMultifiberglassElite.getFakeStack(1))
                 .fluidInputs(Materials.IronIIIChloride.getFluid(0))
+                .fluidOutputs(Materials.IronIIIChloride.getFluid(0))
                 .itemOutputs(CircuitComponent.ProcessedBoardMultifiberglassElite.getFakeStack(1)).duration(5 * SECONDS)
                 .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
@@ -532,6 +533,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Wetware Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardWetwareLifesupport.getFakeStack(1))
                 .fluidInputs(Materials.GrowthMediumSterilized.getFluid(0))
+                .fluidOutputs(Materials.GrowthMediumRaw.getFluid(0))
                 .itemOutputs(CircuitComponent.ProcessedBoardWetwareLifesupport.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(ModuleRecipeInfo.HighTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
@@ -544,6 +546,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Bio Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardBioMutated.getFakeStack(1))
                 .fluidInputs(Materials.BioMediumSterilized.getFluid(0))
+                .fluidOutputs(Materials.BioMediumRaw.getFluid(0))
                 .itemOutputs(CircuitComponent.ProcessedBoardBioMutated.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
@@ -556,6 +559,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Optical Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardOptical.getFakeStack(1))
                 .fluidInputs(Materials.PrismaticAcid.getFluid(0))
+                .fluidOutputs(Materials.PrismaticGas.getFluid(0))
                 .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(20 * SECONDS)
                 .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
     }
