@@ -1557,6 +1557,48 @@ public class AssemblingLineRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UMV).addTo(AssemblyLine);
         }
 
+        // Piko Circuit
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                ItemList.Circuit_OpticalMainframe.get(1L),
+                384000,
+                1024,
+                4000000,
+                64,
+                new Object[] { ItemList.Circuit_Board_Optical.get(1L), NHItemList.PicoWafer.get(4),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2L },
+                        ItemList.Circuit_Parts_TransistorXSMD.get(48L), ItemList.Circuit_Parts_ResistorXSMD.get(48L),
+                        ItemList.Circuit_Parts_CapacitorXSMD.get(48L), ItemList.Circuit_Parts_DiodeXSMD.get(48L),
+                        ItemList.Circuit_Chip_PPIC.get(64L), GTOreDictUnificator.get("foilRadoxPoly", 16L),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.TranscendentMetal, 32),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Neutronium, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64) },
+                new FluidStack[] { new FluidStack(solderUEV, 3744), Materials.UUMatter.getFluid(8000L),
+                        Materials.Osmium.getMolten(1152L) },
+                NHItemList.PikoCircuit.get(1),
+                10000,
+                (int) TierEU.RECIPE_UMV);
+
+        // Quantum Circuit
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                NHItemList.PikoCircuit.get(),
+                720000,
+                2048,
+                (int) TierEU.RECIPE_UEV,
+                128,
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 16),
+                        NHItemList.PikoCircuit.get(2), ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
+                        ItemList.Circuit_Parts_DiodeXSMD.get(64L), ItemList.Circuit_Parts_TransistorXSMD.get(64L),
+                        ItemList.Circuit_Parts_ResistorXSMD.get(64L), ItemList.Circuit_Chip_QPIC.get(64L),
+                        GTOreDictUnificator.get("foilShirabon", 64),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Indium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SpaceTime, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 16) },
+                new FluidStack[] { new FluidStack(solderUEV, 3744), Materials.UUMatter.getFluid(24000L),
+                        Materials.Osmium.getMolten(2304L) },
+                NHItemList.QuantumCircuit.get(1),
+                20000,
+                (int) TierEU.RECIPE_UMV);
+
         // Miniature Wormhole Generator
         GTValues.RA.stdBuilder()
                 .metadata(RESEARCH_ITEM, AEApi.instance().definitions().materials().singularity().maybeStack(1).get())
