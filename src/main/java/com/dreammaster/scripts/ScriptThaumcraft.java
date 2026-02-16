@@ -49,6 +49,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -4044,44 +4045,24 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'i',
                 "screwThaumium");
 
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "ENCHFABRIC",
+        ThaumcraftApi.addShapelessArcaneCraftingRecipe(
+                "THAUMONOMICON",
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
                         .add(Aspect.getAspect("terra"), 2),
-                "aba",
-                "cde",
-                "aba",
-                'a',
-                new ItemStack(Items.gold_nugget, 1),
-                'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
-                'c',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                'd',
-                new ItemStack(Items.writable_book, 1),
-                'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 9, missing));
+                new ItemStack(Blocks.bookshelf));
         TCHelper.addResearchPage(
-                "ENCHFABRIC",
+                "THAUMONOMICON",
                 new ResearchPage(
                         Objects.requireNonNull(
                                 TCHelper.findArcaneRecipe(
                                         getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing)))));
 
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "blockTable", 1, 15, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
                         .add(Aspect.getAspect("terra"), 2),
-                "aba",
-                "aca",
-                "ada",
-                'b',
-                getModItem(Chisel.ID, "carpet", 1, 13, missing),
-                'c',
-                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
-                'd',
                 getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing));
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
@@ -4089,22 +4070,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                         Objects.requireNonNull(
                                 TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockTable", 1, 15, missing)))));
 
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
                         .add(Aspect.getAspect("ignis"), 2),
-                "aba",
-                "cdc",
-                "ccc",
-                'a',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                'b',
-                "screwAnyIron",
-                'c',
-                "plateThaumium",
-                'd',
-                "gemFlawlessAmber");
+                new ItemStack(Items.cauldron));
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
                 new ResearchPage(
