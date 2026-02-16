@@ -49,7 +49,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -4050,7 +4049,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
                         .add(Aspect.getAspect("terra"), 2),
-                new ItemStack(Blocks.bookshelf));
+                new ItemStack(Items.book),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
         TCHelper.addResearchPage(
                 "THAUMONOMICON",
                 new ResearchPage(
@@ -4063,7 +4065,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockTable", 1, 15, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
                         .add(Aspect.getAspect("terra"), 2),
-                getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
                 new ResearchPage(
@@ -4075,7 +4080,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
                         .add(Aspect.getAspect("ignis"), 2),
-                new ItemStack(Items.cauldron));
+                new ItemStack(Items.cauldron),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
                 new ResearchPage(
