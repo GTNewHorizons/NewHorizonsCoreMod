@@ -2222,8 +2222,8 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 1),
                 getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 2));
         addCopperOxidationRecipes(
-                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 3),
-                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 4));
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 2),
+                getModItem(EtFuturumRequiem.ID, "copper_grate", 1L, 3));
     }
 
     // Shulker Box NBT Grabbing Function
