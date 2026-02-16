@@ -528,10 +528,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 "plateStone",
                 null);
-        addShapelessRecipe(
-                getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0, missing),
-                "craftingToolMortar",
-                "cropCoffee");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 3, missing),
                 "screwSteel",
@@ -637,14 +633,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwIron",
                 "chestIron",
                 "screwIron");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockCrop", 1, 0, missing),
-                "stickLongWood",
-                null,
-                "stickLongWood",
-                "stickLongWood",
-                null,
-                "stickLongWood");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemFoamSprayer", 1, 0, missing),
                 "pipeSmallSteel",
@@ -1414,9 +1402,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 8L))
-                .circuit(2).itemOutputs(getModItem(IndustrialCraft2.ID, "blockCrop", 16, 0, missing))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
