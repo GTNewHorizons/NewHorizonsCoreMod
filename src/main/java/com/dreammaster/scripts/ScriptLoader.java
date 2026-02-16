@@ -92,6 +92,7 @@ public class ScriptLoader {
                         new ScriptMatterManipulator(),
                         new ScriptMechworks(),
                         new ScriptMinecraft(),
+                        new ScriptNanochipRecipes(),
                         new ScriptNatura(),
                         new ScriptNuclearControl(),
                         new ScriptOpenBlocks(),
