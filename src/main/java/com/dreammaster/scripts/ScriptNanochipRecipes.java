@@ -91,7 +91,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 (int) TierEU.RECIPE_UHV,
                 4,
                 new Object[] { ItemList.ReinforcementNanochipCasing.get(1), ItemList.MobRep_UV.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUHVBase, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUHVBase, 2),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TengamAttuned, 8),
                         ItemList.Emitter_UEV.get(2), ItemList.Sensor_UEV.get(2),
                         getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24), // Nether Star
