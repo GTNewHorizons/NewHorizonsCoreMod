@@ -1735,10 +1735,10 @@ public class AssemblingLineRecipes implements Runnable {
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
 
-        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Centrifuge.get(1))
-                .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_EV)).itemInputs(
-
-                        GregtechItemList.Industrial_Centrifuge.get(64),
+        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.IndustrialCentrifuge.get(1))
+                .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_EV))
+                .itemInputs(
+                        ItemList.IndustrialCentrifuge.get(64),
                         ItemRefer.SC_Fluid_Turbine.get(4),
                         GregtechItemList.Hatch_Turbine_Rotor.get(4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
