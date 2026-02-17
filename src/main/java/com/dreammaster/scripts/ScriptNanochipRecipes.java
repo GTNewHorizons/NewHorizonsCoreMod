@@ -337,7 +337,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Motor_UEV.get(1),
-                        GregtechItemList.Industrial_WireFactory.get(1),
+                        ItemList.IndustrialWireFactory.get(1),
                         GregtechItemList.Industrial_PlatePress.get(1), // forming press specifically
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Draconium, 16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 16))
@@ -405,7 +405,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Piston_UEV.get(1),
-                        GregtechItemList.Amazon_Warehouse_Controller.get(1),
+                        ItemList.IndustrialPackager.get(1),
                         ItemList.LATEX.get(1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 16),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polybenzimidazole, 64))
