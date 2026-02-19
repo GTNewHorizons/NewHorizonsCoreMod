@@ -88,7 +88,7 @@ public class ScriptWitchery implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(Witchery.ID, "ingredient", 2, 130, missing),
                 new ItemStack(Items.nether_star, 1),
-                getModItem(Botania.ID, "manaResource", 1, 2, missing),
+                new ItemStack(Items.diamond, 1),
                 new ItemStack(Items.flint, 1),
                 new ItemStack(Items.magma_cream, 1),
                 new ItemStack(Items.magma_cream, 1),
@@ -102,7 +102,7 @@ public class ScriptWitchery implements IScriptLoader {
                         new ItemStack(Items.magma_cream, 6),
                         new ItemStack(Items.nether_star, 1),
                         new ItemStack(Items.flint, 1),
-                        getModItem(Botania.ID, "manaResource", 1, 2, missing))
+                        new ItemStack(Items.diamond, 1))
                 .circuit(3).itemOutputs(getModItem(Witchery.ID, "ingredient", 2, 130, missing)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
