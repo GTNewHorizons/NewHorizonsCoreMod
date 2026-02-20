@@ -24,16 +24,12 @@ public class BendingMachineRecipes implements Runnable {
     public void run() {
         ItemStack missing = new ItemStack(Blocks.fire);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(NHItemList.MicaInsulatorSheet.get(), ItemList.Circuit_Integrated.getWithDamage(0, 1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MicaInsulatorSheet.get()).circuit(1)
                 .itemOutputs(NHItemList.MicaInsulatorFoil.get(4)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(benderRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Steel, 1L),
-                        ItemList.Circuit_Integrated.getWithDamage(0, 1))
-                .itemOutputs(ItemList.Shape_Empty.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Steel, 1L))
+                .circuit(1).itemOutputs(ItemList.Shape_Empty.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(benderRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 1L))
