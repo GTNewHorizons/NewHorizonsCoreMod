@@ -130,22 +130,6 @@ public class ExtractorRecipes implements Runnable {
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "florasapling", 2L, 6))
-                    .itemOutputs(ItemList.IC2_Fertilizer.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(extractorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "Dark Leaves", 8L, 0))
-                    .itemOutputs(ItemList.IC2_Fertilizer.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(extractorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "Dark Tree", 2L, 0))
-                    .itemOutputs(ItemList.IC2_Fertilizer.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(extractorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "Natura.netherfood", 1L, 0))
-                    .itemOutputs(ItemList.IC2_Fertilizer.get(4)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(extractorRecipes);
-
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "florasapling", 2L, 4))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);

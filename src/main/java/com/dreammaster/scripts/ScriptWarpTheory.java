@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.CropsNH;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -18,7 +19,6 @@ import java.util.List;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import thaumcraft.api.ThaumcraftApi;
@@ -124,13 +124,13 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.getAspect("venenum"), 32),
                 getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing),
                 getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
-                ItemList.Crop_Drop_MTomato.get(1L),
+                getModItem(CropsNH.ID, "berry", 1, 2),
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
                 OrePrefixes.cell.get(Materials.LifeEssence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 36, missing),
                 getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
-                ItemList.Crop_Drop_MTomato.get(1L),
+                getModItem(CropsNH.ID, "berry", 1, 2),
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
                 OrePrefixes.cell.get(Materials.LifeEssence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0, missing),

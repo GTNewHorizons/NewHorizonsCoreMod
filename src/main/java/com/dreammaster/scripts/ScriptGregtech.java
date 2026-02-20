@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
-import static gregtech.api.enums.Mods.CropsPlusPlus;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MCFrames;
@@ -77,7 +76,6 @@ public class ScriptGregtech implements IScriptLoader {
                 Avaritia.ID,
                 BiomesOPlenty.ID,
                 BloodArsenal.ID,
-                CropsPlusPlus.ID,
                 DraconicEvolution.ID,
                 IndustrialCraft2.ID,
                 MCFrames.ID,
@@ -126,10 +124,6 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L),
                 "craftingToolMortar",
                 "listAllfishraw");
-        addShapelessRecipe(
-                getModItem(Minecraft.ID, "sugar", 4, 0, missing),
-                "craftingToolMortar",
-                getModItem(CropsPlusPlus.ID, "foodBerries", 1, 1, missing));
         List<ItemStack> cookedMeatItems = new ArrayList<>(OreDictionary.getOres("listAllmeatcooked")).stream()
                 .filter(
                         itemStack -> !ItemStack.areItemStacksEqual(

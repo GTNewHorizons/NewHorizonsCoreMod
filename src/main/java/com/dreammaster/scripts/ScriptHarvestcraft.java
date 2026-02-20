@@ -771,9 +771,6 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "strawberryItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberryjuiceItem", 1, 0, missing))
                 .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Crop_Drop_Grapes.get(1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapejuiceItem", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "grapeItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapejuiceItem", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(extractorRecipes);
@@ -942,9 +939,6 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "tomatoItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "ketchupItem", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Crop_Drop_Tomato.get(1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "ketchupItem", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "peanutItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "peanutbutterItem", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(extractorRecipes);
@@ -1022,12 +1016,6 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "lemonItem", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "lemonsmoothieItem", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Crop_Drop_Lemon.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "lemonsmoothieItem", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
@@ -1322,12 +1310,6 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "grapeItem", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapesmoothieItem", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Crop_Drop_Grapes.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapesmoothieItem", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);

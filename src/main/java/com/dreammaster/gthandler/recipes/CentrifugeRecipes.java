@@ -586,12 +586,6 @@ public class CentrifugeRecipes implements Runnable {
                 .fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
 
-        // Liquid Fertilizer reverse recipe
-
-        GTValues.RA.stdBuilder().circuit(1).itemOutputs(ItemList.IC2_Fertilizer.get(1L))
-                .fluidInputs(FluidRegistry.getFluidStack("fluid.fertiliser", 144)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(centrifugeRecipes);
-
         if (PamsHarvestCraft.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "coconutItem", 1L, 0))

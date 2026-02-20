@@ -1,9 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
+import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -106,5 +109,14 @@ public class ExtruderRecipes implements Runnable {
                         ItemList.Shape_Extruder_Gear.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gear, Materials.Carbon, 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64))
+                .itemOutputs(NHItemList.NANCertificate.get(1))
+                .duration(29826 * HOURS + 9 * MINUTES + 7 * SECONDS + 7 * TICKS)
+                // not using recipe EUt on purpose
+                .eut(TierEU.ULV).addTo(extruderRecipes);
     }
 }
