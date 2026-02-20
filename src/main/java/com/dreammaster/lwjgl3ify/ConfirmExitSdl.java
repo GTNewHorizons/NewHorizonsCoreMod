@@ -10,6 +10,7 @@ import org.lwjgl.sdl.SDLError;
 import org.lwjgl.sdl.SDL_MessageBoxButtonData;
 import org.lwjgl.sdl.SDL_MessageBoxData;
 import org.lwjgl.system.MemoryStack;
+import org.lwjgl.system.Platform;
 import org.lwjglx.opengl.Display;
 
 import com.dreammaster.coremod.DreamCoreMod;
@@ -49,14 +50,17 @@ public class ConfirmExitSdl {
                     "Are you sure you want to exit the game?");
 
             box.flags(SDL_MESSAGEBOX_WARNING);
-            box.window(Display.getWindow());
+            // Work around macOS bug hiding message box windows from Mission Control
+            if (Platform.get() != Platform.MACOSX) {
+                box.window(Display.getWindow());
+            }
             box.title(stack.UTF8(Refstrings.NAME));
             box.message(stack.UTF8(messageText));
 
             final SDL_MessageBoxButtonData.Buffer buttons = SDL_MessageBoxButtonData.calloc(3, stack);
-            buttons.get(BUTTON_YES).set(SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT, BUTTON_YES, stack.UTF8(yesText));
-            buttons.get(BUTTON_NO).set(SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT, BUTTON_NO, stack.UTF8(noText));
-            buttons.get(BUTTON_NEVER).set(0, BUTTON_NEVER, stack.UTF8(neverText));
+            buttons.get(0).set(0, BUTTON_NEVER, stack.UTF8(neverText));
+            buttons.get(1).set(SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT, BUTTON_NO, stack.UTF8(noText));
+            buttons.get(2).set(SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT, BUTTON_YES, stack.UTF8(yesText));
             box.buttons(buttons);
 
             if (!SDL_ShowMessageBox(box, selectedOption)) {
