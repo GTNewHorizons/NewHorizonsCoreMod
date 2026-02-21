@@ -86,7 +86,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import gtnhlanth.common.register.LanthItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -116,6 +115,7 @@ import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
+import gtnhlanth.common.register.LanthItemList;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
 import kekztech.common.TileEntities;
 
@@ -10366,21 +10366,16 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Sensor_UV.get(1),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(16))
                 .itemOutputs(ItemList.ColliderCasing.get(16))
-                .fluidInputs(MaterialsAlloy.PIKYONIUM.getFluidStack(144 * 64))
-                .duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_ZPM)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialsAlloy.PIKYONIUM.getFluidStack(144 * 64)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(LanthItemList.NIOBIUM_CAVITY_CASING, 8),
                         GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2),
                         Field_Restriction_Coil_T1.get(1))
-                .itemOutputs(ItemList.BeamStabilizer.get(1))
-                .fluidInputs(Materials.Grade6PurifiedWater.getFluid(1000L))
-                .duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UHV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.BeamStabilizer.get(1)).fluidInputs(Materials.Grade6PurifiedWater.getFluid(1000L))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -10388,22 +10383,16 @@ public class AssemblerRecipes implements Runnable {
                         copyAmount(8, LanthItemList.BEAMLINE_PIPE),
                         CHRONOMATIC_GLASS.getPlateDense(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2))
-                .itemOutputs(ItemList.BeamMirror.get(1))
-                .fluidInputs(Materials.Grade6PurifiedWater.getFluid(1000L))
-                .duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UHV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.BeamMirror.get(1)).fluidInputs(Materials.Grade6PurifiedWater.getFluid(1000L))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(LanthItemList.NIOBIUM_CAVITY_CASING, 8),
                         GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2),
                         Field_Restriction_Coil_T1.get(1))
-                .itemOutputs(ItemList.BeamStabilizer.get(1))
-                .fluidInputs(Materials.Grade5PurifiedWater.getFluid(2000L))
-                .duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UHV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.BeamStabilizer.get(1)).fluidInputs(Materials.Grade5PurifiedWater.getFluid(2000L))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -10411,11 +10400,8 @@ public class AssemblerRecipes implements Runnable {
                         copyAmount(8, LanthItemList.BEAMLINE_PIPE),
                         CHRONOMATIC_GLASS.getPlateDense(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2))
-                .itemOutputs(ItemList.BeamMirror.get(1))
-                .fluidInputs(Materials.Grade5PurifiedWater.getFluid(2000L))
-                .duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UHV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.BeamMirror.get(1)).fluidInputs(Materials.Grade5PurifiedWater.getFluid(2000L))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
     }
 }
