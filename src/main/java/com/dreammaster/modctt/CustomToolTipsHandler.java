@@ -7,6 +7,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
 import com.dreammaster.lib.Refstrings;
@@ -34,6 +35,7 @@ public class CustomToolTipsHandler {
         _mInitialized = false;
     }
 
+    @Deprecated
     public void setConfigFileLocation() {
         String locale = FMLCommonHandler.instance().getCurrentLanguage();
         String localeAwareFileName = String.format("config/%s/CustomToolTips_%s.xml", Refstrings.COLLECTIONID, locale);
@@ -156,7 +158,14 @@ public class CustomToolTipsHandler {
         }
         CustomToolTips.ItemToolTip itt = _mCustomToolTips.FindItemToolTip(pEvent.itemStack);
         if (itt != null) {
-            String[] tToolTips = itt.getToolTip().split("\\\\n");
+            final String[] formatArgs = itt.getFormatArgs();
+            final String tooltip;
+            if (formatArgs == null) {
+                tooltip = StatCollector.translateToLocal(itt.getToolTip());
+            } else {
+                tooltip = StatCollector.translateToLocalFormatted(itt.getToolTip(), (Object[]) formatArgs);
+            }
+            String[] tToolTips = tooltip.split("\\\\n");
 
             for (String tPartTip : tToolTips) {
                 pEvent.toolTip.add(tPartTip.replace("&", "§"));
