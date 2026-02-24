@@ -56,7 +56,6 @@ public class ScriptAE2FC implements IScriptLoader {
     @Override
     public void loadRecipes() {
         final ItemStack AE2_INTERFACE = getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1);
-        final ItemStack AE2_PROCESS_ENG = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24);
         final ItemStack AE2_STORAGE_BUS = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220);
         final ItemStack AE2_GLASS_CABLE = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16);
         final ItemStack AE2_PROCESS_CAL = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23);
