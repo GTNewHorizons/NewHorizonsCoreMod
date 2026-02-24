@@ -108,7 +108,7 @@ public class TiCoLoader {
     }
 
     private static void convertMoltenAluminumBrassInSmeltery() {
-        TileEntityReplacementManager.tileEntityTransformer("TConstruct.Smeltery", (tags, world) -> {
+        TileEntityReplacementManager.tileEntityTransformer("TConstruct.Smeltery", (tags, world, chunk) -> {
             NBTTagList liquidTag = tags.getTagList("Liquids", 10);
             for (int i = 0; i < liquidTag.tagCount(); i++) {
                 NBTTagCompound nbt = liquidTag.getCompoundTagAt(i);

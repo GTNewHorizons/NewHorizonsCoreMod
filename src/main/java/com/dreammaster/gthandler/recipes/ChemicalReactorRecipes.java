@@ -17,6 +17,7 @@ import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
 import net.minecraft.init.Blocks;
@@ -318,7 +319,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            new ItemStack(Items.spawn_egg, 1, GTValues.W),
+                            new ItemStack(Items.spawn_egg, 1, WILDCARD),
                             GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
                     .itemOutputs(NHItemList.TheBigEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
