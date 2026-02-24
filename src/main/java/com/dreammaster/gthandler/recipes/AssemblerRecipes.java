@@ -6525,12 +6525,13 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(1).itemOutputs(GTModHandler.getModItem(ZTones.ID, "stoneTile", 8L, 0)).duration(8 * SECONDS)
                 .eut(4).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glass, 4), new ItemStack(Items.dye, 1, WILDCARD)).circuit(1)
-                .itemOutputs(GTModHandler.getModItem(ZTones.ID, "auroraBlock", 8L, 0)).duration(8 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glass, 4), new ItemStack(Items.dye, 1, WILDCARD))
+                .circuit(1).itemOutputs(GTModHandler.getModItem(ZTones.ID, "auroraBlock", 8L, 0)).duration(8 * SECONDS)
+                .eut(4).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 4, WILDCARD), new ItemStack(Blocks.dirt, 4, WILDCARD))
-                .circuit(2).itemOutputs(GTModHandler.getModItem(ZTones.ID, "cleanDirt", 8L, 0))
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.sand, 4, WILDCARD), new ItemStack(Blocks.dirt, 4, WILDCARD)).circuit(2)
+                .itemOutputs(GTModHandler.getModItem(ZTones.ID, "cleanDirt", 8L, 0))
                 .fluidInputs(Materials.SeedOil.getFluid(5L)).duration(8 * SECONDS).eut(4).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_pressure_plate, 1)).circuit(1)

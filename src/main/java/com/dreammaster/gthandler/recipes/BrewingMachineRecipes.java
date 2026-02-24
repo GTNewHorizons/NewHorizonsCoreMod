@@ -53,7 +53,8 @@ public class BrewingMachineRecipes implements Runnable {
         // Add fermenter recipes from forestry into gregtech
         if (Forestry.isModLoaded()) {
             try {
-                Class<?> forestryFermenterRecipeManager = Class.forName("forestry.factory.recipes.FermenterRecipeManager");
+                Class<?> forestryFermenterRecipeManager = Class
+                        .forName("forestry.factory.recipes.FermenterRecipeManager");
                 Field fieldFermenterRecipes = forestryFermenterRecipeManager.getDeclaredField("recipes");
                 fieldFermenterRecipes.setAccessible(true);
 

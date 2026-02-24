@@ -711,8 +711,9 @@ public class MixerRecipes implements Runnable {
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 2L))
-                .circuit(2).itemOutputs(new ItemStack(Items.clay_ball, 1, 0)).fluidInputs(Materials.Water.getFluid(250L))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
+                .circuit(2).itemOutputs(new ItemStack(Items.clay_ball, 1, 0))
+                .fluidInputs(Materials.Water.getFluid(250L)).duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
+                .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
