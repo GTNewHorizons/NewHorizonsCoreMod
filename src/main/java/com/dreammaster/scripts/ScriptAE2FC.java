@@ -186,6 +186,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         "plateStainlessSteel", 'A', "plateAluminium" });
         for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
 
+            private static final long serialVersionUID = 5585769446339004448L;
+
             {
                 put(CELL_1, COMPONENT_1);
                 put(CELL_4, COMPONENT_4);
@@ -218,6 +220,8 @@ public class ScriptAE2FC implements IScriptLoader {
                 new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
                         "plateTungstenSteel", 'A', "plateStainlessSteel" });
         for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
+
+            private static final long serialVersionUID = -6886947297309675364L;
 
             {
                 put(CELL_1M, COMPONENT_1);
@@ -252,6 +256,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         nitinolPlate, 'A', "plateStainlessSteel" });
         for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
 
+            private static final long serialVersionUID = 2433689749171011256L;
+
             {
                 put(CELL_256, COMPONENT_256);
                 put(CELL_1024, COMPONENT_1024);
@@ -284,6 +290,8 @@ public class ScriptAE2FC implements IScriptLoader {
                 new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S', zeronPlate,
                         'A', "plateTungstenSteel" });
         for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
+
+            private static final long serialVersionUID = 355478429917412239L;
 
             {
                 put(CELL_256M, COMPONENT_256);
