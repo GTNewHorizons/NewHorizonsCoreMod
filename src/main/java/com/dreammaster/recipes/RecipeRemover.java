@@ -155,6 +155,7 @@ public class RecipeRemover {
         MainRegistry.LOGGER.info("Removed {} recipes!", i - list.size());
     }
 
+    @SuppressWarnings("unchecked")
     private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
         HashSet<GTUtility.ItemId> hashedItems = new HashSet<>();
         if (item instanceof ItemStack stack) {

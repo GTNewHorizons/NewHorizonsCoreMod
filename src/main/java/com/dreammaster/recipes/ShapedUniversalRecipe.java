@@ -130,6 +130,7 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
         return false;
     }
 
+    @SuppressWarnings("unchecked")
     private boolean matches(InventoryCrafting inv, int offsetX, int offsetY) {
         for (int y = 0; y < 3; y++) {
             for (int x = 0; x < 3; x++) {

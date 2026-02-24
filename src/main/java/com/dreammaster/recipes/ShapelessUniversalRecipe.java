@@ -95,6 +95,7 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
         }
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public boolean matches(InventoryCrafting inv, World world) {
         ArrayList<Object> required = new ArrayList<>(recipe);
