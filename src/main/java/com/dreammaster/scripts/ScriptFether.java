@@ -19,6 +19,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTRecipeBuilder;
 
 public class ScriptFether implements IScriptLoader {
 
@@ -35,7 +36,7 @@ public class ScriptFether implements IScriptLoader {
     @Override
     public void loadRecipes() {
         final ItemStack netherPlanks = getModItem(Fether.ID, "nether_planks", 1, 0, missing);
-        final ItemStack netherLog = getModItem(Fether.ID, "nether_log", 1, 0, missing);
+        final ItemStack netherLog = getModItem(Fether.ID, "nether_log", 1, GTRecipeBuilder.WILDCARD, missing);
         final ItemStack bloodLeaf = getModItem(Fether.ID, "blood_leaf", 1, 0, missing);
         final ItemStack quartzIngot = getModItem(Fether.ID, "quartz_ingot", 1, 0, missing);
         final ItemStack netherQuartzPlate = GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
@@ -65,7 +66,7 @@ public class ScriptFether implements IScriptLoader {
                 quartzIngot,
                 null,
                 netherQuartzPlate,
-                (quartzIngot.stackSize = 64),
+                quartzIngot,
                 netherQuartzPlate,
                 "craftingToolFile",
                 Items.stick,
@@ -74,7 +75,7 @@ public class ScriptFether implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_shovel", 1, 0, missing),
                 netherQuartzPlate,
-                getModItem(Fether.ID, "quartz_ingot", 64, 0, missing),
+                quartzIngot,
                 netherQuartzPlate,
                 "craftingToolFile",
                 Items.stick,
