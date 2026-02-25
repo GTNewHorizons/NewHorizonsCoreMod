@@ -3125,26 +3125,26 @@ public class ScriptEMT implements IScriptLoader {
                 "MagicalMaintenanceHatch",
                 ItemList.MagicalMaintenanceHatch.get(1),
                 9,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("machina"), 48)
+                new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("machina"), 48)
                         .add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("aequalitas"), 32)
                         .add(Aspect.getAspect("nebrisum"), 16),
                 ItemList.Hatch_Maintenance.get(1L),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
-                "plateDoubleIridium",
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 2, missing),
+                OrePrefixes.plateDouble.get(Materials.Iridium),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                "plateDoubleVoid",
-                "craftingDuctTape",
-                "plateDoubleVoid",
+                OrePrefixes.plateDouble.get(Materials.Void),
+                ItemList.Duct_Tape.get(1),
+                OrePrefixes.plateDouble.get(Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                "plateDoubleIridium",
+                OrePrefixes.plateDouble.get(Materials.Iridium),
                 getModItem(ElectroMagicTools.ID, "MaintenanceFocus", 1, 0, missing),
-                "plateDoubleIridium",
+                OrePrefixes.plateDouble.get(Materials.Iridium),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                "plateDoubleVoid",
-                "craftingDuctTape",
-                "plateDoubleVoid",
+                OrePrefixes.plateDouble.get(Materials.Void),
+                ItemList.Duct_Tape.get(1),
+                OrePrefixes.plateDouble.get(Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                "plateDoubleIridium");
+                OrePrefixes.plateDouble.get(Materials.Iridium));
         TCHelper.addResearchPage(
                 "MagicalMaintenanceHatch",
                 new ResearchPage(TCHelper.findInfusionRecipe(ItemList.MagicalMaintenanceHatch.get(1))));
