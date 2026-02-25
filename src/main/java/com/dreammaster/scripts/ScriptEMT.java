@@ -3109,5 +3109,44 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ResearchCompleter",
                 new ResearchPage(TCHelper.findArcaneRecipe(ItemList.ResearchCompleter.get(1))));
+
+        TCHelper.orphanResearch("MagicalMaintenanceHatch");
+        new ResearchItem(
+                "MagicalMaintenanceHatch",
+                "EMT",
+                new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("machina"), 8)
+                        .add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("aequalitas"), 6).add(Aspect.getAspect("nebrisum"), 4),
+                7,
+                5,
+                1,
+                ItemList.MagicalMaintenanceHatch.get(1)).setParents("Wand Focus: Maintenance").setRound()
+                .setPages(new ResearchPage("tc.research_page.MagicalMaintenanceHatch")).registerResearchItem();
+        TCHelper.addInfusionCraftingRecipe(
+                "MagicalMaintenanceHatch",
+                ItemList.MagicalMaintenanceHatch.get(1),
+                9,
+                new AspectList().add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("machina"), 48)
+                        .add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("aequalitas"), 32)
+                        .add(Aspect.getAspect("nebrisum"), 16),
+                ItemList.Hatch_Maintenance.get(1L),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
+                "plateDoubleIridium",
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                "plateDoubleVoid",
+                "craftingDuctTape",
+                "plateDoubleVoid",
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                "plateDoubleIridium",
+                getModItem(ElectroMagicTools.ID, "MaintenanceFocus", 1, 0, missing),
+                "plateDoubleIridium",
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                "plateDoubleVoid",
+                "craftingDuctTape",
+                "plateDoubleVoid",
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                "plateDoubleIridium");
+        TCHelper.addResearchPage(
+                "MagicalMaintenanceHatch",
+                new ResearchPage(TCHelper.findInfusionRecipe(ItemList.MagicalMaintenanceHatch.get(1))));
     }
 }
