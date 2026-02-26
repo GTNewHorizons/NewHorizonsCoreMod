@@ -13,9 +13,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -184,28 +182,21 @@ public class ScriptAE2FC implements IScriptLoader {
                 RecipeBits.BUFFERED,
                 new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
                         "plateStainlessSteel", 'A', "plateAluminium" });
-        for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
 
-            private static final long serialVersionUID = 5585769446339004448L;
-
-            {
-                put(CELL_1, COMPONENT_1);
-                put(CELL_4, COMPONENT_4);
-                put(CELL_16, COMPONENT_16);
-                put(CELL_64, COMPONENT_64);
-            }
-        }.entrySet()) {
+        ItemStack[][] stacksSmallCells = { { CELL_1, COMPONENT_1 }, { CELL_4, COMPONENT_4 }, { CELL_16, COMPONENT_16 },
+                { CELL_64, COMPONENT_64 } };
+        for (ItemStack[] stacks : stacksSmallCells) {
             GTModHandler.addCraftingRecipe(
-                    entry.getKey(),
+                    stacks[0],
                     RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
                     new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateStainlessSteel", 'A', "plateAluminium", 'K', entry.getValue() });
+                            "plateStainlessSteel", 'A', "plateAluminium", 'K', stacks[1] });
             GTModHandler.addCraftingRecipe(
-                    entry.getKey(),
+                    stacks[0],
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateStainlessSteel", 'A', "plateAluminium", 'K', entry.getValue() });
-            addShapelessRecipe(entry.getKey(), AE2FC_FLUID_STORAGE_HOUSING, entry.getValue());
+                            "plateStainlessSteel", 'A', "plateAluminium", 'K', stacks[1] });
+            addShapelessRecipe(stacks[0], AE2FC_FLUID_STORAGE_HOUSING, stacks[1]);
         }
 
         // AE2FC_MULTI_FLUID_STORAGE_HOUSING
@@ -219,28 +210,21 @@ public class ScriptAE2FC implements IScriptLoader {
                 RecipeBits.BUFFERED,
                 new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
                         "plateTungstenSteel", 'A', "plateStainlessSteel" });
-        for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
 
-            private static final long serialVersionUID = -6886947297309675364L;
-
-            {
-                put(CELL_1M, COMPONENT_1);
-                put(CELL_4M, COMPONENT_4);
-                put(CELL_16M, COMPONENT_16);
-                put(CELL_64M, COMPONENT_64);
-            }
-        }.entrySet()) {
+        ItemStack[][] stacksSmallMultiCells = { { CELL_1M, COMPONENT_1 }, { CELL_4M, COMPONENT_4 },
+                { CELL_16M, COMPONENT_16 }, { CELL_64M, COMPONENT_64 } };
+        for (ItemStack[] stacks : stacksSmallMultiCells) {
             GTModHandler.addCraftingRecipe(
-                    entry.getKey(),
+                    stacks[0],
                     RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
                     new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateTungstenSteel", 'A', "plateStainlessSteel", 'K', entry.getValue() });
+                            "plateTungstenSteel", 'A', "plateStainlessSteel", 'K', stacks[1] });
             GTModHandler.addCraftingRecipe(
-                    entry.getKey(),
+                    stacks[0],
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateTungstenSteel", 'A', "plateStainlessSteel", 'K', entry.getValue() });
-            addShapelessRecipe(entry.getKey(), AE2FC_MULTI_FLUID_STORAGE_HOUSING, entry.getValue());
+                            "plateTungstenSteel", 'A', "plateStainlessSteel", 'K', stacks[1] });
+            addShapelessRecipe(stacks[0], AE2FC_MULTI_FLUID_STORAGE_HOUSING, stacks[1]);
         }
 
         // AE2FC_ADVANCED_FLUID_STORAGE_HOUSING
@@ -254,28 +238,21 @@ public class ScriptAE2FC implements IScriptLoader {
                 RecipeBits.BUFFERED,
                 new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
                         nitinolPlate, 'A', "plateStainlessSteel" });
-        for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
 
-            private static final long serialVersionUID = 2433689749171011256L;
-
-            {
-                put(CELL_256, COMPONENT_256);
-                put(CELL_1024, COMPONENT_1024);
-                put(CELL_4096, COMPONENT_4096);
-                put(CELL_16384, COMPONENT_16384);
-            }
-        }.entrySet()) {
+        ItemStack[][] stacksBigCells = { { CELL_256, COMPONENT_256 }, { CELL_1024, COMPONENT_1024 },
+                { CELL_4096, COMPONENT_4096 }, { CELL_16384, COMPONENT_16384 } };
+        for (ItemStack[] stacks : stacksBigCells) {
             GTModHandler.addCraftingRecipe(
-                    entry.getKey(),
+                    stacks[0],
                     RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
                     new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            nitinolPlate, 'A', "plateStainlessSteel", 'K', entry.getValue() });
+                            nitinolPlate, 'A', "plateStainlessSteel", 'K', stacks[1] });
             GTModHandler.addCraftingRecipe(
-                    entry.getKey(),
+                    stacks[0],
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            nitinolPlate, 'A', "plateStainlessSteel", 'K', entry.getValue() });
-            addShapelessRecipe(entry.getKey(), AE2FC_ADVANCED_FLUID_STORAGE_HOUSING, entry.getValue());
+                            nitinolPlate, 'A', "plateStainlessSteel", 'K', stacks[1] });
+            addShapelessRecipe(stacks[0], AE2FC_ADVANCED_FLUID_STORAGE_HOUSING, stacks[1]);
         }
 
         // AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING
@@ -289,28 +266,21 @@ public class ScriptAE2FC implements IScriptLoader {
                 RecipeBits.BUFFERED,
                 new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S', zeronPlate,
                         'A', "plateTungstenSteel" });
-        for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
 
-            private static final long serialVersionUID = 355478429917412239L;
-
-            {
-                put(CELL_256M, COMPONENT_256);
-                put(CELL_1024M, COMPONENT_1024);
-                put(CELL_4096M, COMPONENT_4096);
-                put(CELL_16384M, COMPONENT_16384);
-            }
-        }.entrySet()) {
+        ItemStack[][] stacksBigMultiCells = { { CELL_256M, COMPONENT_256 }, { CELL_1024M, COMPONENT_1024 },
+                { CELL_4096M, COMPONENT_4096 }, { CELL_16384M, COMPONENT_16384 } };
+        for (ItemStack[] stacks : stacksBigMultiCells) {
             GTModHandler.addCraftingRecipe(
-                    entry.getKey(),
+                    stacks[0],
                     RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
                     new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            zeronPlate, 'A', "plateTungstenSteel", 'K', entry.getValue() });
+                            zeronPlate, 'A', "plateTungstenSteel", 'K', stacks[1] });
             GTModHandler.addCraftingRecipe(
-                    entry.getKey(),
+                    stacks[0],
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            zeronPlate, 'A', "plateTungstenSteel", 'K', entry.getValue() });
-            addShapelessRecipe(entry.getKey(), AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING, entry.getValue());
+                            zeronPlate, 'A', "plateTungstenSteel", 'K', stacks[1] });
+            addShapelessRecipe(stacks[0], AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING, stacks[1]);
         }
 
         // recursive components for those who want to do this weird stuff
