@@ -3124,7 +3124,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addInfusionCraftingRecipe(
                 "MagicalMaintenanceHatch",
                 ItemList.MagicalMaintenanceHatch.get(1),
-                9,
+                25,
                 new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("praecantatio"), 64)
                         .add(Aspect.getAspect("machina"), 48).add(Aspect.getAspect("alienis"), 32)
                         .add(Aspect.getAspect("custom1"), 32).add(Aspect.getAspect("nebrisum"), 16),
