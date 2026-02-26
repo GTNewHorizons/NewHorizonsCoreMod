@@ -35,48 +35,45 @@ public class ScriptFether implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        final ItemStack netherPlanks = getModItem(Fether.ID, "nether_planks", 1, 0, missing);
-        final ItemStack netherLog = getModItem(Fether.ID, "nether_log", 1, GTRecipeBuilder.WILDCARD, missing);
-        final ItemStack bloodLeaf = getModItem(Fether.ID, "blood_leaf", 1, 0, missing);
-        final ItemStack quartzIngot = getModItem(Fether.ID, "quartz_ingot", 1, 0, missing);
-        final ItemStack netherQuartzPlate = GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
+        addShapelessRecipe(
+                getModItem(Fether.ID, "nether_planks", 2, 0, missing),
+                getModItem(Fether.ID, "nether_log", 1, GTRecipeBuilder.WILDCARD, missing));
 
-        netherPlanks.stackSize = 2;
-        addShapelessRecipe(netherPlanks, netherLog);
+        addShapedRecipe(
+                getModItem(Fether.ID, "nether_planks", 4, 0, missing),
+                "craftingToolSaw",
+                getModItem(Fether.ID, "nether_log", 1, GTRecipeBuilder.WILDCARD, missing),
+                null);
 
-        netherPlanks.stackSize = 4;
-        addShapedRecipe(netherPlanks, "craftingToolSaw", netherLog, null);
-
-        netherPlanks.stackSize = 1;
         addShapedRecipe(
                 getModItem(Fether.ID, "nether_bed", 1, 0, missing),
-                bloodLeaf,
-                bloodLeaf,
-                bloodLeaf,
-                netherPlanks,
-                netherPlanks,
-                netherPlanks,
-                quartzIngot,
+                getModItem(Fether.ID, "blood_leaf", 1, 0, missing),
+                getModItem(Fether.ID, "blood_leaf", 1, 0, missing),
+                getModItem(Fether.ID, "blood_leaf", 1, 0, missing),
+                getModItem(Fether.ID, "nether_planks", 1, 0, missing),
+                getModItem(Fether.ID, "nether_planks", 1, 0, missing),
+                getModItem(Fether.ID, "nether_planks", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
                 "craftingToolHardHammer",
-                quartzIngot);
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing));
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_sword", 1, 0, missing),
                 null,
-                quartzIngot,
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
                 null,
-                netherQuartzPlate,
-                quartzIngot,
-                netherQuartzPlate,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolFile",
                 Items.stick,
                 "craftingToolHardHammer");
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_shovel", 1, 0, missing),
-                netherQuartzPlate,
-                quartzIngot,
-                netherQuartzPlate,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolFile",
                 Items.stick,
                 "craftingToolHardHammer",
@@ -84,12 +81,11 @@ public class ScriptFether implements IScriptLoader {
                 Items.stick,
                 null);
 
-        quartzIngot.stackSize = 1;
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_pickaxe", 1, 0, missing),
-                netherQuartzPlate,
-                quartzIngot,
-                quartzIngot,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
                 "craftingToolFile",
                 Items.stick,
                 "craftingToolHardHammer",
@@ -99,10 +95,10 @@ public class ScriptFether implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_axe", 1, 0, missing),
-                netherQuartzPlate,
-                quartzIngot,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
                 "craftingToolHardHammer",
-                netherQuartzPlate,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 Items.stick,
                 null,
                 "craftingToolFile",
@@ -111,8 +107,8 @@ public class ScriptFether implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_hoe", 1, 0, missing),
-                netherQuartzPlate,
-                quartzIngot,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
                 "craftingToolHardHammer",
                 "craftingToolFile",
                 Items.stick,
@@ -123,48 +119,48 @@ public class ScriptFether implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_helmet", 1, 0, missing),
-                quartzIngot,
-                quartzIngot,
-                quartzIngot,
-                netherQuartzPlate,
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolHardHammer",
-                netherQuartzPlate,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 null,
                 null,
                 null);
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_chestplate", 1, 0, missing),
-                netherQuartzPlate,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolHardHammer",
-                netherQuartzPlate,
-                netherQuartzPlate,
-                netherQuartzPlate,
-                netherQuartzPlate,
-                quartzIngot,
-                quartzIngot,
-                quartzIngot);
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing));
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_leggings", 1, 0, missing),
-                quartzIngot,
-                quartzIngot,
-                quartzIngot,
-                netherQuartzPlate,
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolHardHammer",
-                netherQuartzPlate,
-                netherQuartzPlate,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 null,
-                netherQuartzPlate);
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_boots", 1, 0, missing),
-                quartzIngot,
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
                 null,
-                quartzIngot,
-                netherQuartzPlate,
+                getModItem(Fether.ID, "quartz_ingot", 1, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolHardHammer",
-                netherQuartzPlate,
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 null,
                 null,
                 null);
@@ -173,20 +169,23 @@ public class ScriptFether implements IScriptLoader {
                 getModItem(Fether.ID, "glow_flower_seeds", 1, 0, missing),
                 getModItem(Fether.ID, "glow_flower", 1, 0, missing));
 
-        quartzIngot.stackSize = 2;
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7)).itemOutputs(quartzIngot)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
+                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0, missing))
                 .fluidInputs(Materials.Water.getFluid(5)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(cutterRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7)).itemOutputs(quartzIngot)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
+                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7)).itemOutputs(quartzIngot)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
+                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0, missing))
                 .fluidInputs(Materials.Lubricant.getFluid(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(cutterRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7)).itemOutputs(quartzIngot)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
+                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0, missing))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
