@@ -3109,7 +3109,6 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ResearchCompleter",
                 new ResearchPage(TCHelper.findArcaneRecipe(ItemList.ResearchCompleter.get(1))));
-
         TCHelper.orphanResearch("MagicalMaintenanceHatch");
         new ResearchItem(
                 "MagicalMaintenanceHatch",
