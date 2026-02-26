@@ -1450,7 +1450,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Reactor_Coolant_Sp_3.get(1),
                             ItemList.Reactor_Coolant_Sp_3.get(1),
                             ItemList.Electric_Pump_LuV.get(1))
-                    .fluidInputs(new FluidStack(solderIndalloy, (int) (INGOTS * 4)))
+                    .fluidInputs(new FluidStack(solderIndalloy, INGOTS * 4))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_LuV.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
@@ -1466,7 +1466,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Reactor_Coolant_Sp_6.get(1),
                             ItemList.Reactor_Coolant_Sp_6.get(1),
                             ItemList.Electric_Pump_ZPM.get(1))
-                    .fluidInputs(new FluidStack(solderIndalloy, (int) (INGOTS * 4)))
+                    .fluidInputs(new FluidStack(solderIndalloy, INGOTS * 4))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_ZPM.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
 
@@ -1483,7 +1483,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Pump_UV.get(1))
                     .fluidInputs(
                             new FluidStack(Materials.SuperCoolant.mFluid, 16000),
-                            new FluidStack(solderIndalloy, (int) (INGOTS * 16)))
+                            new FluidStack(solderIndalloy, INGOTS * 16))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_UV.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(AssemblyLine);
 
@@ -1500,7 +1500,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Pump_UHV.get(1))
                     .fluidInputs(
                             new FluidStack(Materials.SuperCoolant.mFluid, 64000),
-                            new FluidStack(solderIndalloy, (int) (INGOTS * 64)))
+                            new FluidStack(solderIndalloy, INGOTS * 64))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_UHV.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UHV).addTo(AssemblyLine);
 
@@ -1517,7 +1517,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Pump_UEV.get(1))
                     .fluidInputs(
                             new FluidStack(Materials.SuperCoolant.mFluid, 256000),
-                            new FluidStack(solderUEV, (int) (INGOTS * 8)))
+                            new FluidStack(solderUEV, INGOTS * 8))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_UEV.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UEV).addTo(AssemblyLine);
 
@@ -1533,8 +1533,8 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Large_Fluid_Cell_Neutronium.get(1),
                             ItemList.Electric_Pump_UIV.get(1))
                     .fluidInputs(
-                            new FluidStack(Materials.TranscendentMetal.mStandardMoltenFluid, (int) (INGOTS * 32)),
-                            new FluidStack(solderUEV, (int) (INGOTS * 32)))
+                            new FluidStack(Materials.TranscendentMetal.mStandardMoltenFluid, INGOTS * 32),
+                            new FluidStack(solderUEV, INGOTS * 32))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_UIV.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
 
@@ -1550,8 +1550,8 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Large_Fluid_Cell_Neutronium.get(1),
                             ItemList.Electric_Pump_UMV.get(1))
                     .fluidInputs(
-                            new FluidStack(Materials.SpaceTime.mStandardMoltenFluid, (int) (INGOTS * 16)),
-                            new FluidStack(solderUEV, (int) (INGOTS * 128)))
+                            new FluidStack(Materials.SpaceTime.mStandardMoltenFluid, INGOTS * 16),
+                            new FluidStack(solderUEV, INGOTS * 128))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_UMV.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).addTo(AssemblyLine);
         }
