@@ -180,7 +180,6 @@ public class RecipeRemover {
                 }
             }
         } else if (item instanceof ArrayList) {
-            // noinspection unchecked
             for (ItemStack stack : (ArrayList<ItemStack>) item) {
                 // avoid copying the tag to remove it right after
                 final NBTTagCompound nbt = stack.stackTagCompound;
