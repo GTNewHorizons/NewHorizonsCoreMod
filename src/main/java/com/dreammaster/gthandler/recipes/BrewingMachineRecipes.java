@@ -8,13 +8,12 @@ import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
-import java.lang.reflect.Field;
-
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import forestry.api.recipes.IFermenterRecipe;
+import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
@@ -52,46 +51,33 @@ public class BrewingMachineRecipes implements Runnable {
 
         // Add fermenter recipes from forestry into gregtech
         if (Forestry.isModLoaded()) {
-            try {
-                Class<?> forestryFermenterRecipeManager = Class
-                        .forName("forestry.factory.recipes.FermenterRecipeManager");
-                Field fieldFermenterRecipes = forestryFermenterRecipeManager.getDeclaredField("recipes");
-                fieldFermenterRecipes.setAccessible(true);
+            for (IFermenterRecipe recipe : RecipeManagers.fermenterManager.recipes()) {
+                ItemStack resource = recipe.getResource();
 
-                @SuppressWarnings("unchecked")
-                Iterable<IFermenterRecipe> recipes = (Iterable<IFermenterRecipe>) fieldFermenterRecipes.get(null);
+                boolean alreadyHasRecipe = brewingRecipes.containsInput(resource);
+                boolean resultsInBiomass = recipe.getOutput().equals(FluidRegistry.getFluid("biomass"));
 
-                for (IFermenterRecipe recipe : recipes) {
-                    ItemStack resource = recipe.getResource();
+                if (!alreadyHasRecipe && resultsInBiomass) {
+                    int amountIn = recipe.getFermentationValue() * 2;
+                    int amountOut = amountIn;
 
-                    boolean alreadyHasRecipe = brewingRecipes.containsInput(resource);
-                    boolean resultsInBiomass = recipe.getOutput().equals(FluidRegistry.getFluid("biomass"));
+                    GTValues.RA.stdBuilder().itemInputs(resource)
+                            .fluidInputs(FluidRegistry.getFluidStack("water", amountIn))
+                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
+                            .eut(3).addTo(brewingRecipes);
 
-                    if (!alreadyHasRecipe && resultsInBiomass) {
-                        int amountIn = recipe.getFermentationValue() * 2;
-                        int amountOut = amountIn;
+                    amountOut = (int) (amountOut * 1.5);
 
-                        GTValues.RA.stdBuilder().itemInputs(resource)
-                                .fluidInputs(FluidRegistry.getFluidStack("water", amountIn))
-                                .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
-                                .eut(3).addTo(brewingRecipes);
+                    GTValues.RA.stdBuilder().itemInputs(resource)
+                            .fluidInputs(FluidRegistry.getFluidStack("juice", amountIn))
+                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
+                            .eut(3).addTo(brewingRecipes);
 
-                        amountOut = (int) (amountOut * 1.5);
+                    GTValues.RA.stdBuilder().itemInputs(resource).fluidInputs(Materials.Honey.getFluid(amountIn))
+                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
+                            .eut(3).addTo(brewingRecipes);
 
-                        GTValues.RA.stdBuilder().itemInputs(resource)
-                                .fluidInputs(FluidRegistry.getFluidStack("juice", amountIn))
-                                .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
-                                .eut(3).addTo(brewingRecipes);
-
-                        GTValues.RA.stdBuilder().itemInputs(resource).fluidInputs(Materials.Honey.getFluid(amountIn))
-                                .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
-                                .eut(3).addTo(brewingRecipes);
-
-                    }
                 }
-
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         }
     }
