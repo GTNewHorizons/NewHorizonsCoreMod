@@ -5142,6 +5142,16 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
+        // Pattern Provider (for LMA)
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Hatch_Input_Bus_IV.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+
         if (AE2FluidCraft.isModLoaded()) {
             // Dual Interface
             GTValues.RA.stdBuilder()
