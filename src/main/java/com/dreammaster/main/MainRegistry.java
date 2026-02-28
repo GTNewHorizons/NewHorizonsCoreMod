@@ -37,6 +37,7 @@ import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
+import com.dreammaster.berriespp.BPPConverter;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.client.util.GTNHPauseScreen;
 import com.dreammaster.command.CustomDropsCommand;
@@ -82,6 +83,7 @@ import com.dreammaster.witchery.WitcheryPlugin;
 import bartworks.system.material.WerkstoffLoader;
 import betterquesting.api.storage.BQ_Settings;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.SidedProxy;
@@ -404,6 +406,8 @@ public class MainRegistry {
         if (TinkerConstruct.isModLoaded()) TiCoLoader.doPostInitialization();
 
         if (!TravellersGear.isModLoaded()) TGConverter.doPostInitialization();
+
+        if (!Loader.isModLoaded(BPPConverter.BPP_MOD_ID)) BPPConverter.doPostInitialization();
     }
 
     @Mod.EventHandler
