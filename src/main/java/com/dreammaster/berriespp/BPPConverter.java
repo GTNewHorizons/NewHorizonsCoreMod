@@ -11,6 +11,6 @@ public class BPPConverter {
     public static void doPostInitialization() {
         MissingMappingHandler.addIgnore(BPP_MOD_ID + ":Modifier");
         ItemStackReplacementManager
-                .addSimpleReplacement(BPP_MOD_ID + ":Modifier", 1, NHItemList.NANCertificate.get(1), true);
+                .addSimpleReplacement(BPP_MOD_ID + ":Modifier", 2, NHItemList.NANCertificate.get(1), true);
     }
 }
