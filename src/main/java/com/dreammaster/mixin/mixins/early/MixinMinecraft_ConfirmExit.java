@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.launchwrapper.Launch;
 import net.minecraft.util.StatCollector;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import com.dreammaster.client.util.IconLoader;
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.lib.Refstrings;
+import com.dreammaster.lwjgl3ify.ConfirmExitSdl;
 
 @Mixin(Minecraft.class)
 public abstract class MixinMinecraft_ConfirmExit {
@@ -40,6 +42,22 @@ public abstract class MixinMinecraft_ConfirmExit {
         if (!this.dreamcraft$waitingDialogQuit) {
             this.dreamcraft$waitingDialogQuit = true;
             new Thread(() -> {
+                // Do not use Swing when lwjgl3ify 3.x is active
+                if ((Integer) Launch.blackboard.getOrDefault("lwjgl3ify:major-version", Integer.MIN_VALUE) >= 3) {
+                    final int choice = ConfirmExitSdl.showExitDialog();
+                    if (choice == ConfirmExitSdl.BUTTON_YES) {
+                        this.dreamcraft$isCloseRequested = true;
+                        this.shutdown();
+                    } else if (choice == ConfirmExitSdl.BUTTON_NEVER) {
+                        this.dreamcraft$isCloseRequested = true;
+                        DreamCoreMod.disableShowConfirmExitWindow();
+                        this.shutdown();
+                    }
+                    this.dreamcraft$waitingDialogQuit = false;
+
+                    return;
+                }
+
                 final JFrame frame = new JFrame();
                 frame.setAlwaysOnTop(true);
                 final URL resource = IconLoader.class.getClassLoader()
