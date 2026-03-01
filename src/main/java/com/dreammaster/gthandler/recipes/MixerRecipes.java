@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Chisel;
+import static gregtech.api.enums.Mods.CropsNH;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraTrees;
@@ -724,14 +725,6 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L),
-                        new ItemStack(Blocks.sand, 4, 0))
-                .itemOutputs(ItemList.IC2_Fertilizer.get(4)).fluidInputs(Materials.Water.getFluid(1000L))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lead, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Antimony, 1L))
                 .circuit(1).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.BatteryAlloy, 5L))
@@ -1103,7 +1096,7 @@ public class MixerRecipes implements Runnable {
                             Materials.ExcitedDTEC.getFluid(128000))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerNonCellRecipes);
         }
-        if (EnderIO.isModLoaded() && BiomesOPlenty.isModLoaded() && Witchery.isModLoaded()) {
+        if (EnderIO.isModLoaded() && BiomesOPlenty.isModLoaded() && Witchery.isModLoaded() && CropsNH.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             kubatech.api.enums.ItemList.EarlGrayTea.get(1),
@@ -1122,7 +1115,7 @@ public class MixerRecipes implements Runnable {
                     .fluidInputs(
                             FluidRegistry.getFluidStack("potion.diablosauce", 7500),
                             FluidRegistry.getFluidStack("potion.piratebrew", 2500),
-                            FluidRegistry.getFluidStack("potion.jagi", 2500),
+                            FluidRegistry.getFluidStack(CropsNH.ID + ":jagi", 2500),
                             FluidRegistry.getFluidStack("potion.alcopops", 2500),
                             FluidRegistry.getFluidStack("potion.goldencider", 2500),
                             FluidRegistry.getFluidStack("potion.chocolatemilk", 7500))
