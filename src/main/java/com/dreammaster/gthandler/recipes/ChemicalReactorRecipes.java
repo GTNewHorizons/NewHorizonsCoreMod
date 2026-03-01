@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
@@ -339,50 +338,6 @@ public class ChemicalReactorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(NHItemList.TheBigEgg.get(), ItemList.IC2_Uranium_238.get(64))
                     .itemOutputs(NHItemList.MutatedEgg.get()).fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000))
                     .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV / 2).addTo(UniversalChemical);
-
-        }
-
-        if (Natura.isModLoaded()) {
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTModHandler.getModItem(Natura.ID, "florasapling", 2L, 6),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
-                    .itemOutputs(
-                            ItemList.IC2_Fertilizer.get(2),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L))
-                    .fluidInputs(Materials.Water.getFluid(1000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(UniversalChemical);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTModHandler.getModItem(Natura.ID, "Dark Leaves", 8L, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
-                    .itemOutputs(
-                            ItemList.IC2_Fertilizer.get(2),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L))
-                    .fluidInputs(Materials.Water.getFluid(1000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(UniversalChemical);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTModHandler.getModItem(Natura.ID, "Dark Tree", 2L, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
-                    .itemOutputs(
-                            ItemList.IC2_Fertilizer.get(8),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.TricalciumPhosphate, 1L))
-                    .fluidInputs(Materials.Water.getFluid(1000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(UniversalChemical);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTModHandler.getModItem(Natura.ID, "Natura.netherfood", 1L, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
-                    .itemOutputs(
-                            ItemList.IC2_Fertilizer.get(32),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.TricalciumPhosphate, 1L))
-                    .fluidInputs(Materials.Water.getFluid(1000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(UniversalChemical);
 
         }
 

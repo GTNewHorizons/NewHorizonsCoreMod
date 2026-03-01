@@ -177,6 +177,7 @@ public enum NHItemList {
     CoinTechnicianIII("CoinTechnicianIII", GENERIC),
     CoinTechnicianIV("CoinTechnicianIV", GENERIC),
     CoinDonation("CoinDonation", GENERIC),
+    NANCertificate("NANCertificate", GENERIC),
     CokeOvenBrick("CokeOvenBrick", GENERIC),
     CokeOvenBrickDust("CokeOvenBrickDust", GENERIC),
     ConductiveIronBars("ConductiveIronBars", BARS_AND_CASINGS),
