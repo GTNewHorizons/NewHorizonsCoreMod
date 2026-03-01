@@ -138,7 +138,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .fluidInputs(
                         Materials.GrowthMediumSterilized.getFluid(250L),
                         Materials.UUMatter.getFluid(250L),
-                        new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000))
+                        FluidRegistry.getFluidStack("ic2coolant", 1000))
                 .itemOutputs(ItemList.Circuit_Chip_NeuroCPU.get(1L)).eut(TierEU.RECIPE_ZPM).duration(30 * SECONDS)
                 .addTo(AssemblyLine);
 
@@ -156,7 +156,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .fluidInputs(
                         Materials.BioMediumSterilized.getFluid(500L),
                         Materials.UUMatter.getFluid(500L),
-                        new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
+                        FluidRegistry.getFluidStack("ic2coolant", 2000))
                 .itemOutputs(ItemList.Circuit_Chip_BioCPU.get(1L)).eut(TierEU.RECIPE_UHV / 2).duration(30 * SECONDS)
                 .addTo(AssemblyLine);
 
