@@ -111,10 +111,8 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                 } else if (r instanceof HashSet) {
                     ItemStack copy = stack.copy();
                     copy.stackTagCompound = null;
-                    // noinspection unchecked
                     if (!((HashSet<GTUtility.ItemId>) r).contains(GTUtility.ItemId.createNoCopy(copy))) {
                         Items.feather.setDamage(copy, wildcard);
-                        // noinspection unchecked
                         if (!((HashSet<GTUtility.ItemId>) r).contains(GTUtility.ItemId.createNoCopy(copy))) continue;
                     }
                     iterator.remove();
