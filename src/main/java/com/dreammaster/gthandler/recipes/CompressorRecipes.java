@@ -182,11 +182,6 @@ public class CompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 9L, 8))
                     .itemOutputs(BlockList.PixieDust.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
         }
-
-        if (IndustrialCraft2.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemWeed", 16L))
-                    .itemOutputs(ItemList.IC2_Plantball.get(1L)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
-        }
         if (GalacticraftCore.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.cheeseCurd", 9, 0, missing))
                     .itemOutputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 2, missing))
