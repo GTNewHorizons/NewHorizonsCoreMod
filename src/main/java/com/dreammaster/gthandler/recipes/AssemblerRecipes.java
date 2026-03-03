@@ -985,6 +985,15 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Casing_Pyrolyse.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
+        // Engine Intake Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_StableTitanium.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 2),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Titanium, 4))
+                .itemOutputs(ItemList.Casing_EngineIntake.get(4)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
         // Extreme Engine Intake Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
