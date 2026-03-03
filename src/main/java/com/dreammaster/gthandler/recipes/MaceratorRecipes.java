@@ -16,6 +16,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -165,11 +166,11 @@ public class MaceratorRecipes implements Runnable {
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "woodPattern", 1L, GTValues.W))
+                    .itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "woodPattern", 1L, WILDCARD))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)).outputChances(10000)
                     .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Pattern", 1L, GTValues.W))
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Pattern", 1L, WILDCARD))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)).outputChances(10000)
                     .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
             // Oreberries

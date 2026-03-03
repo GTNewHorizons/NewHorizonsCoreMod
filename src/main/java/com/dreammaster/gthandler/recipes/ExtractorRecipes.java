@@ -11,6 +11,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -31,7 +32,7 @@ public class ExtractorRecipes implements Runnable {
     public void run() {
         if (IndustrialCraft2.isModLoaded()) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, GTValues.W))
+                    .itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, WILDCARD))
                     .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(extractorRecipes);
         }
 
