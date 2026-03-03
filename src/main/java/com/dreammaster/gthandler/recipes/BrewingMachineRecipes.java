@@ -1,9 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -44,7 +44,7 @@ public class BrewingMachineRecipes implements Runnable {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteriapoly", 100)).duration(5 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestTheNether.ID, "ignisfruitItem", 45L, 0))
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Fether.ID, "ignis_fruit", 45L, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("potion.awkward", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("potion.fireresistance", 750)).duration(6 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(brewingRecipes);
