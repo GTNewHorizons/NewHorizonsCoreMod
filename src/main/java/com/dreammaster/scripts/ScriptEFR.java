@@ -1289,6 +1289,10 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing))
                 .itemOutputs(NHItemList.TuffDust.get(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(4))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "tuff", 3, 0, missing)).duration(5 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.VolcanicAsh, 9L),
