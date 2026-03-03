@@ -870,17 +870,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing),
-                "screwSteel",
-                "stickSteel",
-                "craftingToolScrewdriver",
-                "plateAnyRubber",
-                "stickSteel",
-                "stickSteel",
-                "stickSteel",
-                "plateAnyRubber",
-                "screwSteel");
-        addShapedRecipe(
                 ItemList.Cover_SolarPanel.get(1L),
                 "craftingToolCrowbar",
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing),
@@ -1195,17 +1184,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(20)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L)).circuit(2)
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Cover_Screen.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_Screen.get(1L),
