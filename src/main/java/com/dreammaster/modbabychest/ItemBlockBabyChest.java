@@ -25,7 +25,7 @@ public class ItemBlockBabyChest extends ItemBlock {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack pItemStack, EntityPlayer pEntityPlayer, List pList, boolean pFlag) {
+    public void addInformation(ItemStack pItemStack, EntityPlayer pEntityPlayer, List<String> pList, boolean pFlag) {
         if (Block.getBlockFromItem(pItemStack.getItem()) != Blocks.air
                 && Block.getBlockFromItem(pItemStack.getItem()) instanceof BlockBabyChest) {
             pList.add("Aww, so tiny!");

@@ -77,7 +77,7 @@ public class ScriptLoader {
                         new ScriptGregtechPlusPlus(),
                         new ScriptHardcoreEnderExpansion(),
                         new ScriptHarvestcraft(),
-                        new ScriptHarvestcraftNether(),
+                        new ScriptFether(),
                         new ScriptHoloInventory(),
                         new ScriptIguanaTweaks(),
                         new ScriptIndustrialApiary(),
