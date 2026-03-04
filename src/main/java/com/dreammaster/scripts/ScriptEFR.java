@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -19,7 +20,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -122,13 +122,13 @@ public class ScriptEFR implements IScriptLoader {
                 EnderIO.ID,
                 EtFuturumRequiem.ID,
                 ExtraUtilities.ID,
+                Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,
                 MagicBees.ID,
                 PamsHarvestCraft.ID,
-                PamsHarvestTheNether.ID,
                 StevesCarts2.ID,
                 TaintedMagic.ID,
                 Thaumcraft.ID,
@@ -1906,7 +1906,7 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
-                getModItem(PamsHarvestTheNether.ID, "Quartz Hoe", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_hoe", 1, 0, missing),
                 'e',
                 GTOreDictUnificator.get("plateManaDiamond", 1));
         // Shovel
