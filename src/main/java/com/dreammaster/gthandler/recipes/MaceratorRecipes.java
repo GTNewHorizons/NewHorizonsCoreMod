@@ -5,12 +5,12 @@ import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
@@ -263,10 +263,9 @@ public class MaceratorRecipes implements Runnable {
 
         }
 
-        if (PamsHarvestTheNether.isModLoaded()) {
+        if (Fether.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTModHandler.getModItem(PamsHarvestTheNether.ID, "fleshrootItem", 9L, 0))
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Fether.ID, "flesh_root", 9L, 0))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
                     .duration(5 * SECONDS).eut(2).addTo(maceratorRecipes);
 

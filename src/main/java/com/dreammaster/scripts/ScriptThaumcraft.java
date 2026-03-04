@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -19,7 +20,6 @@ import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
@@ -91,6 +91,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 BuildCraftFactory.ID,
                 Chisel.ID,
                 ExtraUtilities.ID,
+                Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 GalacticraftCore.ID,
@@ -101,7 +102,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 MalisisDoors.ID,
                 Natura.ID,
                 PamsHarvestCraft.ID,
-                PamsHarvestTheNether.ID,
                 ProjectRedIntegration.ID,
                 Railcraft.ID,
                 RandomThings.ID,
@@ -147,13 +147,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
+                        getModItem(Fether.ID, "glow_flower_seeds", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Blaze, 8L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
+                        getModItem(Fether.ID, "glow_flower_seeds", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemNugget", 8, 5, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 2, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
