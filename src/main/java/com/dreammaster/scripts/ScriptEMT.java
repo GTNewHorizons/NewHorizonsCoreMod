@@ -3119,8 +3119,9 @@ public class ScriptEMT implements IScriptLoader {
                 7,
                 6,
                 3,
-                ItemList.MagicalMaintenanceHatch.get(1)).setParents("Wand Focus: Maintenance")
-                        .setPages(new ResearchPage("tc.research_page.MagicalMaintenanceHatch")).registerResearchItem();
+                ItemList.MagicalMaintenanceHatch.get(1)).setParents("Wand Focus: Maintenance", "OCULUS", "VOIDMETAL")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.MagicalMaintenanceHatch"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "MagicalMaintenanceHatch",
                 ItemList.MagicalMaintenanceHatch.get(1),
