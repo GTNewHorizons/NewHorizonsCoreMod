@@ -11,6 +11,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -31,7 +32,7 @@ public class ExtractorRecipes implements Runnable {
     public void run() {
         if (IndustrialCraft2.isModLoaded()) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, GTValues.W))
+                    .itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, WILDCARD))
                     .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(extractorRecipes);
         }
 
@@ -129,22 +130,6 @@ public class ExtractorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "Dark Tree", 2L, 1))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "florasapling", 2L, 6))
-                    .itemOutputs(ItemList.IC2_Fertilizer.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(extractorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "Dark Leaves", 8L, 0))
-                    .itemOutputs(ItemList.IC2_Fertilizer.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(extractorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "Dark Tree", 2L, 0))
-                    .itemOutputs(ItemList.IC2_Fertilizer.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(extractorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "Natura.netherfood", 1L, 0))
-                    .itemOutputs(ItemList.IC2_Fertilizer.get(4)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "florasapling", 2L, 4))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L)).duration(5 * SECONDS)

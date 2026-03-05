@@ -25,6 +25,7 @@ import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
 import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
 import static gtPlusPlus.core.material.MaterialsAlloy.LEAGRISIUM;
@@ -64,7 +65,6 @@ import gregtech.api.util.GTLog;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gregtech.common.GTProxy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
 import gtneioreplugin.util.DimensionHelper;
@@ -386,7 +386,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Field_Generator_MV.get(1L),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { "WCW", "CGC", "WCW", 'G', OrePrefixes.plate.get(Materials.EnderEye), 'C',
-                        OrePrefixes.circuit.get(Materials.EV), 'W', OrePrefixes.plate.get(Materials.TungstenSteel) });
+                        OrePrefixes.circuit.get(Materials.EV), 'W', OrePrefixes.plate.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Field_Generator_HV.get(1L),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
@@ -1078,15 +1078,15 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 NHItemList.UnfiredClayBrick.get(8),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "CCC", "CFC", "CCC", 'C', new ItemStack(Items.clay_ball, 1, 0), 'F',
-                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
+                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
         GTModHandler.addShapelessCraftingRecipe(
                 NHItemList.UnfiredClayBrick.get(),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { new ItemStack(Items.clay_ball, 1, 0),
-                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
+                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
         if (TinkerConstruct.isModLoaded()) {
             Recipe.of(
-                    new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W),
+                    new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD),
                     ToolDictNames.craftingToolKnife,
                     GTModHandler.getModItem(aTextTConstruct, "blankPattern", 1L, 0))
                     .provideTo(shapelessUnremovableGtRecipes())
@@ -1096,11 +1096,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { "GGG", "GFG", "GGG", 'G',
                             GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1), 'F',
-                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
+                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
             Recipe.of(
                     NHItemList.UnfiredSearedBrick.get(),
                     GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1),
-                    new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W))
+                    new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD))
                     .provideTo(shapelessUnremovableGtRecipes())
                     .provideTo(MANTLE.manualShapedCraftingRecipeNamed("unfiredsearedbrick"));
             GTModHandler.addCraftingRecipe(
@@ -1108,19 +1108,19 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { "SSS", "SFS", "SSS", 'S',
                             GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6), 'F',
-                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
+                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
             GTModHandler.addShapelessCraftingRecipe(
                     NHItemList.UnfiredSlimeSoilBrick.get(),
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { GTModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6),
-                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
+                            new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
         }
         GTModHandler.addCraftingRecipe(
                 NHItemList.UnfiredCokeOvenBrick.get(3),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "CCC", "SFS", "SSS", 'C', new ItemStack(Items.clay_ball, 1, 0), 'S',
                         GTOreDictUnificator.get("sand", 1L), 'F',
-                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, GTValues.W) });
+                        new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
 
         GTModHandler.addCraftingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
@@ -1159,44 +1159,44 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { ToolDictNames.craftingToolMortar,
-                        new ItemStack(Blocks.stained_hardened_clay, 1, GTValues.W) });
+                        new ItemStack(Blocks.stained_hardened_clay, 1, WILDCARD) });
         GTModHandler.addShapelessCraftingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { ToolDictNames.craftingToolMortar, new ItemStack(Blocks.hardened_clay, 1) });
 
         GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, GTValues.W),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, WILDCARD),
                 bits,
                 new Object[] { "RCR", "RAR", "RTR", 'R',
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0), 'C',
                         OrePrefixes.circuit.get(Materials.LV), 'A', OrePrefixes.itemCasing.get(Materials.Aluminium),
                         'T', OrePrefixes.wireGt02.get(Materials.Tin) });
         GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, GTValues.W),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, WILDCARD),
                 bits,
                 new Object[] { "RCR", "RAR", "RTR", 'R',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, GTValues.W), 'C',
+                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, WILDCARD), 'C',
                         OrePrefixes.circuit.get(Materials.MV), 'A',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, GTValues.W), 'T',
+                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, WILDCARD), 'T',
                         OrePrefixes.wireGt04.get(Materials.AnnealedCopper) });
         GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorEnergypack", 1, GTValues.W),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorEnergypack", 1, WILDCARD),
                 bits,
                 new Object[] { "CSC", "EXE", "STS", 'E',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, GTValues.W), 'C',
+                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, WILDCARD), 'C',
                         OrePrefixes.circuit.get(Materials.HV), 'X',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, GTValues.W), 'T',
+                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, WILDCARD), 'T',
                         OrePrefixes.wireGt08.get(Materials.Gold), 'S',
                         OrePrefixes.itemCasing.get(Materials.StainlessSteel) });
         GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, GTValues.W),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, WILDCARD),
                 bits,
                 new Object[] { "WdW", "HBH", "HXH", 'W', OrePrefixes.wireGt02.get(Materials.Copper), 'H',
                         OrePrefixes.itemCasing.get(Materials.Copper), 'X', OrePrefixes.itemCasing.get(Materials.Lead),
                         'B', ItemList.Battery_Hull_MV });
         if (GalacticraftCore.isModLoaded()) GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, GTValues.W),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, WILDCARD),
                 bits,
                 new Object[] { "AXA", "RBR", "SdS", 'A',
                         GTModHandler.getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1), 'X',
@@ -1207,13 +1207,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         if (OpenComputers.isModLoaded()) GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(OpenComputers.ID, "wrench", 1, 0),
-                GTProxy.tBits,
+                GTModHandler.RecipeBits.BITS_STD,
                 new Object[] { "IwI", "ICI", " I ", 'I', OrePrefixes.ingot.get(Materials.Iron), 'C',
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1, 24) });
 
         if (OpenPrinters.isModLoaded()) GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(OpenPrinters.ID, "openprinter.folder", 1L, 0),
-                GTProxy.tBits,
+                GTModHandler.RecipeBits.BITS_STD,
                 new Object[] { "PGP", " P ", 'P', new ItemStack(Items.paper, 1, 0), 'G',
                         new ItemStack(Items.slime_ball, 1, 0) });
 
@@ -1244,7 +1244,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             }
             GTModHandler.addCraftingRecipe(
                     new ItemStack(Items.clay_ball, 3, 0),
-                    GTProxy.tBits,
+                    GTModHandler.RecipeBits.BITS_STD,
                     new Object[] { "CCC", "CBC", "CCC", 'C', OrePrefixes.dustSmall.get(Materials.Clay), 'B',
                             waterBucket });
         }
@@ -1446,15 +1446,15 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         if (Mods.GraviSuite.isModLoaded()) {
             GTModHandler.addCraftingRecipe(
-                    GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1, GTValues.W),
+                    GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1, WILDCARD),
                     bits,
                     new Object[] { "SCS", "MBM", "EWE", 'S', OrePrefixes.itemCasing.get(Materials.StainlessSteel), 'C',
                             OrePrefixes.circuit.get(Materials.HV), 'M', ItemList.Electric_Motor_HV, 'B',
-                            GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, GTValues.W), 'W',
+                            GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, WILDCARD), 'W',
                             OrePrefixes.wireGt04.get(Materials.AnnealedCopper), 'E',
                             GTModHandler.getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 6) });
             if ((BuildCraftFactory.isModLoaded()) && (AdventureBackpack.isModLoaded())) GTModHandler.addCraftingRecipe(
-                    GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpack", 1, GTValues.W),
+                    GTModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpack", 1, WILDCARD),
                     bits,
                     new Object[] { "SXS", "TCT", "EZE", 'S', OrePrefixes.itemCasing.get(Materials.StainlessSteel), 'X',
                             OrePrefixes.circuit.get(Materials.HV), 'T',
@@ -1776,14 +1776,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     GTModHandler.getModItem(ZTones.ID, "auroraBlock", 8L, 0),
                     GTModHandler.RecipeBits.REVERSIBLE,
                     new Object[] { " G ", "GDG", " G ", 'G', new ItemStack(Blocks.glass, 1), 'D',
-                            new ItemStack(Items.dye, 1, GTValues.W) });
+                            new ItemStack(Items.dye, 1, WILDCARD) });
             GTModHandler.removeRecipeByOutput(GTModHandler.getModItem(ZTones.ID, "auroraBlock", 8L, 0));
             // actual
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(ZTones.ID, "auroraBlock", 8L, 0),
                     bits4,
                     new Object[] { "GGG", "GDG", "GGG", 'G', new ItemStack(Blocks.glass, 1), 'D',
-                            new ItemStack(Items.dye, 1, GTValues.W) });
+                            new ItemStack(Items.dye, 1, WILDCARD) });
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(ZTones.ID, "minicharcoal", 7L, 0),
                     bits,
