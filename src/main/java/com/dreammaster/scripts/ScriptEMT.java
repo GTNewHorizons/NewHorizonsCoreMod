@@ -3136,15 +3136,15 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                 OrePrefixes.plateDouble.get(Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
+                OrePrefixes.plateDouble.get(Materials.HSSG),
                 ItemList.Cover_NeedsMaintainance.get(1),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
+                OrePrefixes.plateDouble.get(Materials.HSSG),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 OrePrefixes.plateDouble.get(Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                 OrePrefixes.plateDouble.get(Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                ItemList.Sensor_IV.get(1));
+                ItemList.Sensor_EV.get(1));
         TCHelper.addResearchPage(
                 "MagicalMaintenanceHatch",
                 new ResearchPage(TCHelper.findInfusionRecipe(ItemList.MagicalMaintenanceHatch.get(1))));
