@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
@@ -12,7 +13,6 @@ import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.IronChestsMinecarts;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -45,6 +45,7 @@ public class ScriptIronChests implements IScriptLoader {
                 BiomesOPlenty.ID,
                 ExtraTrees.ID,
                 ExtraUtilities.ID,
+                Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 GalacticraftAmunRa.ID,
@@ -53,7 +54,6 @@ public class ScriptIronChests implements IScriptLoader {
                 IronChests.ID,
                 IronChestsMinecarts.ID,
                 Natura.ID,
-                PamsHarvestTheNether.ID,
                 TaintedMagic.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
@@ -776,7 +776,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 1, 0, missing),
+                        getModItem(Fether.ID, "nether_planks", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -1196,7 +1196,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 1, 0, missing),
+                        getModItem(Fether.ID, "nether_planks", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);

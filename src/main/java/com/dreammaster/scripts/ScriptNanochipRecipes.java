@@ -91,7 +91,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 (int) TierEU.RECIPE_UHV,
                 4,
                 new Object[] { ItemList.ReinforcementNanochipCasing.get(1), ItemList.MobRep_UV.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUHVBase, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUHVBase, 2),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TengamAttuned, 8),
                         ItemList.Emitter_UEV.get(2), ItemList.Sensor_UEV.get(2),
                         getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24), // Nether Star
@@ -200,7 +200,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Nanochip Assembly Complex
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Circuit_OpticalProcessor.get(1),
+                ItemList.Optically_Perfected_CPU.get(1),
                 16777216,
                 4096,
                 (int) TierEU.RECIPE_UHV,
@@ -337,7 +337,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Motor_UEV.get(1),
-                        GregtechItemList.Industrial_WireFactory.get(1),
+                        ItemList.IndustrialWireFactory.get(1),
                         GregtechItemList.Industrial_PlatePress.get(1), // forming press specifically
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Draconium, 16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 16))
@@ -405,7 +405,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Piston_UEV.get(1),
-                        GregtechItemList.Amazon_Warehouse_Controller.get(1),
+                        ItemList.IndustrialPackager.get(1),
                         ItemList.LATEX.get(1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 16),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polybenzimidazole, 64))

@@ -521,18 +521,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "ringIron",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L));
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing),
-                "plateStone",
-                "craftingToolHardHammer",
-                "plateStone",
-                null,
-                "plateStone",
-                null);
-        addShapelessRecipe(
-                getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0, missing),
-                "craftingToolMortar",
-                "cropCoffee");
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 3, missing),
                 "screwSteel",
                 "plateSteel",
@@ -637,14 +625,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwIron",
                 "chestIron",
                 "screwIron");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockCrop", 1, 0, missing),
-                "stickLongWood",
-                null,
-                "stickLongWood",
-                "stickLongWood",
-                null,
-                "stickLongWood");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemFoamSprayer", 1, 0, missing),
                 "pipeSmallSteel",
@@ -889,17 +869,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing),
-                "screwSteel",
-                "stickSteel",
-                "craftingToolScrewdriver",
-                "plateAnyRubber",
-                "stickSteel",
-                "stickSteel",
-                "stickSteel",
-                "plateAnyRubber",
-                "screwSteel");
         addShapedRecipe(
                 ItemList.Cover_SolarPanel.get(1L),
                 "craftingToolCrowbar",
@@ -1215,17 +1184,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(20)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L)).circuit(2)
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Cover_Screen.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_Screen.get(1L),
@@ -1414,9 +1372,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 8L))
-                .circuit(2).itemOutputs(getModItem(IndustrialCraft2.ID, "blockCrop", 16, 0, missing))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1536,12 +1491,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0, missing))
                 .duration(1 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.coffee", 500)).duration(8).eut(1).addTo(cannerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.latte", 500)).duration(8).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFoamSprayer", 1, 0, missing))
                 .itemOutputs(
                         createItemStack(
