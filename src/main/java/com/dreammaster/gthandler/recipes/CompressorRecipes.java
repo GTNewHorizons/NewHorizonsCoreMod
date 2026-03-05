@@ -35,7 +35,6 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -181,11 +180,6 @@ public class CompressorRecipes implements Runnable {
             // Pixie Dust Block
             GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 9L, 8))
                     .itemOutputs(BlockList.PixieDust.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
-        }
-
-        if (IndustrialCraft2.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemWeed", 16L))
-                    .itemOutputs(ItemList.IC2_Plantball.get(1L)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
         }
         if (GalacticraftCore.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.cheeseCurd", 9, 0, missing))

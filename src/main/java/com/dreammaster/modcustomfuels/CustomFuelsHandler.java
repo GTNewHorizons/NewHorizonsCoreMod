@@ -106,8 +106,6 @@ public class CustomFuelsHandler implements IFuelHandler {
         if (fuelValue != null) return fuelValue;
 
         try {
-            int tReturnValue = 0;
-
             CustomFuels.FuelItem tFI = _mCustomFuels.FindFuelValue(pIS);
             if (tFI != null) {
                 return tFI.getBurnTime();

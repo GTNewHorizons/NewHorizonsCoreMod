@@ -16,11 +16,11 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.Translocator;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.util.GTModHandler;
 
@@ -257,13 +257,12 @@ public class GT_Recipe_Remover implements Runnable {
         GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemAdvBat", 1L));
         GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1L));
         GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1L));
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemArmorJetpack", 1L, GTValues.W));
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1L, GTValues.W));
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1L, GTValues.W));
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemArmorJetpack", 1L, WILDCARD));
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1L, WILDCARD));
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1L, WILDCARD));
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeCrystal", 1L, WILDCARD));
         GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeCrystal", 1L, GTValues.W));
-        GTModHandler.removeRecipeByOutputDelayed(
-                getModItem(IndustrialCraft2.ID, "itemBatChargeLamaCrystal", 1L, GTValues.W));
+                .removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeLamaCrystal", 1L, WILDCARD));
         // Natural Compass
         GTModHandler
                 .removeRecipeByOutputDelayed(getModItem(NaturesCompass.ID, "NaturesCompass", 1L, 0), true, false, true);
