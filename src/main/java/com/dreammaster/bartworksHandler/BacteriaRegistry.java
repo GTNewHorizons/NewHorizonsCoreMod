@@ -70,6 +70,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.item.NHItemList;
@@ -512,11 +513,13 @@ public class BacteriaRegistry {
                 .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 8000)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(BioItemList.getPetriDish(null), new OreDictItemStack("cropTcetiESeaweed", 1))
-                .itemOutputs(BioItemList.getPetriDish(CultureSet.get("TcetiEBac"))).outputChances(2_50)
-                .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 8000)).duration(25 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);
+        if (!OreDictionary.getOres("cropTcetiESeaweed").isEmpty()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(BioItemList.getPetriDish(null), new OreDictItemStack("cropTcetiESeaweed", 1))
+                    .itemOutputs(BioItemList.getPetriDish(CultureSet.get("TcetiEBac"))).outputChances(2_50)
+                    .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 8000)).duration(25 * SECONDS)
+                    .eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);
+        }
 
         GTValues.RA.stdBuilder().itemInputs(BioItemList.getPetriDish(null), new ItemStack(Items.egg, 1, 0))
                 .itemOutputs(BioItemList.getPetriDish(CultureSet.get("OvumBac"))).outputChances(15_00)
