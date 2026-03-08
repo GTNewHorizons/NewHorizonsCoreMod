@@ -89,6 +89,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -336,7 +337,7 @@ public class ScriptEFR implements IScriptLoader {
                 "lime_bed", "pink_bed", "gray_bed", "light_gray_bed", "cyan_bed", "purple_bed", "blue_bed", "brown_bed",
                 "green_bed", "black_bed" };
         final int[] bedCarpetMetas = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15 };
-        final List<ItemStack> allPlanks = net.minecraftforge.oredict.OreDictionary.getOres("plankWood");
+        OreDictItemStack plankWood = new OreDictItemStack("plankWood", 2);
 
         for (int i = 0; i < colorBeds.length; i++) {
             String bedType = colorBeds[i];
@@ -349,19 +350,13 @@ public class ScriptEFR implements IScriptLoader {
                             getModItem(Minecraft.ID, "carpet", 1L, carpetType, missing), 'B', "plankWood", 'C',
                             "fenceWood", 'D', "craftingToolSoftMallet" });
 
-            for (ItemStack plank : allPlanks) {
-                if (plank == null) continue;
-                ItemStack plank2 = plank.copy();
-                plank2.stackSize = 2;
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(Minecraft.ID, "carpet", 2L, carpetType, missing),
-                                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                                plank2)
-                        .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, bedType, 1L, 0, missing))
-                        .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "carpet", 2L, carpetType, missing),
+                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
+                            plankWood)
+                    .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, bedType, 1L, 0, missing))
+                    .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
         }
 
         // Regular Minecraft Bed
@@ -371,19 +366,13 @@ public class ScriptEFR implements IScriptLoader {
                 bits,
                 new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1L, 14, missing), 'B',
                         "plankWood", 'C', "fenceWood", 'D', "craftingToolSoftMallet" });
-        for (ItemStack plank : allPlanks) {
-            if (plank == null) continue;
-            ItemStack plank2 = plank.copy();
-            plank2.stackSize = 2;
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Minecraft.ID, "carpet", 2L, 14, missing),
-                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                            plank2)
-                    .circuit(1).itemOutputs(getModItem(Minecraft.ID, "bed", 1L, 0, missing)).duration(5 * SECONDS)
-                    .eut(24).addTo(assemblerRecipes);
-        }
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "carpet", 2L, 14, missing),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
+                        plankWood)
+                .circuit(1).itemOutputs(getModItem(Minecraft.ID, "bed", 1L, 0, missing)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
 
         // Regular Copper Trapdoors
 
@@ -2102,10 +2091,9 @@ public class ScriptEFR implements IScriptLoader {
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
 
         // Red sand
-        for (ItemStack item : OreDictionary.getOres("stoneRedSand")) {
-            GTValues.RA.stdBuilder().itemInputs(item).itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1))
-                    .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
-        }
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("stoneRedSand", 1))
+                .itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1)).duration(20 * SECONDS).eut(2)
+                .addTo(maceratorRecipes);
 
         // Red Sandstone
 
