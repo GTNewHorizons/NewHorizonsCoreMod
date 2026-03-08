@@ -79,8 +79,9 @@ import static tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import net.minecraft.init.Blocks;
@@ -90,7 +91,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
@@ -105,6 +105,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.MetaGeneratedTool01;
@@ -1478,15 +1479,9 @@ public class AssemblerRecipes implements Runnable {
         }
 
         if (PamsHarvestCraft.isModLoaded()) {
-            for (int i = 0; i < OreDictionary.getOres("cropCotton").size(); ++i) {
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Items.string, 4),
-                                OreDictionary.getOres("cropCotton").get(i).splitStack(3))
-                        .itemOutputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1L, 0))
-                        .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-            }
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.string, 4), new OreDictItemStack("cropCotton", 3))
+                    .itemOutputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1L, 0))
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
 
         if (PamsHarvestCraft.isModLoaded() && Forestry.isModLoaded() && OpenComputers.isModLoaded()) {
@@ -4692,16 +4687,12 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(1).itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 2))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        for (int i = 0; i < OreDictionary.getOres("dyeBlack").size(); i++) {
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
-                            OreDictionary.getOres("dyeBlack").get(i).splitStack(4))
-                    .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 4)).duration(25 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-        }
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
+                        new OreDictItemStack("dyeBlack", 4))
+                .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 4)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -5381,20 +5372,17 @@ public class AssemblerRecipes implements Runnable {
                 .addTo(assemblerRecipes);
 
         // Apiary
-        List<ItemStack> fence = OreDictionary.getOres("fenceWood");
-        for (ItemStack stack : fence) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1L, 0),
-                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.slab, Materials.Wood, 2L),
-                            GTModHandler.getModItem(Forestry.ID, "beeCombs", 1L, WILDCARD),
-                            GTModHandler.getModItem(Forestry.ID, "apiculture", 2L, 2),
-                            stack.splitStack(2))
-                    .itemOutputs(GTModHandler.getModItem(Forestry.ID, "apiculture", 1L, 0))
-                    .fluidInputs(Materials.SeedOil.getFluid(1000L)).duration(60 * SECONDS).eut(TierEU.RECIPE_MV / 2)
-                    .addTo(assemblerRecipes);
-        }
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1L, 0),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.slab, Materials.Wood, 2L),
+                        GTModHandler.getModItem(Forestry.ID, "beeCombs", 1L, WILDCARD),
+                        GTModHandler.getModItem(Forestry.ID, "apiculture", 2L, 2),
+                        new OreDictItemStack("fenceWood", 2))
+                .itemOutputs(GTModHandler.getModItem(Forestry.ID, "apiculture", 1L, 0))
+                .fluidInputs(Materials.SeedOil.getFluid(1000L)).duration(60 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                .addTo(assemblerRecipes);
 
         // Scented Paneling
 
@@ -8559,314 +8547,55 @@ public class AssemblerRecipes implements Runnable {
 
     private void makePistonRecipes() {
         // Vanilla Piston Assembler recipe
-        List<ItemStack> fenceWood = OreDictionary.getOres("fenceWood");
-        for (ItemStack oreStack : fenceWood) {
+        ArrayList<ItemList> planks = new ArrayList<>(
+                Arrays.asList(
+                        ItemList.Plank_Oak,
+                        ItemList.Plank_Spruce,
+                        ItemList.Plank_Birch,
+                        ItemList.Plank_Jungle,
+                        ItemList.Plank_Acacia,
+                        ItemList.Plank_DarkOak));
 
-            ItemStack stack = oreStack.splitStack(1);
+        if (Forestry.isModLoaded()) {
+            planks.add(ItemList.Plank_Larch);
+            planks.add(ItemList.Plank_Teak);
+            planks.add(ItemList.Plank_Acacia_Green);
+            planks.add(ItemList.Plank_Lime);
+            planks.add(ItemList.Plank_Chestnut);
+            planks.add(ItemList.Plank_Wenge);
+            planks.add(ItemList.Plank_Baobab);
+            planks.add(ItemList.Plank_Sequoia);
+            planks.add(ItemList.Plank_Kapok);
+            planks.add(ItemList.Plank_Ebony);
+            planks.add(ItemList.Plank_Mahagony);
+            planks.add(ItemList.Plank_Balsa);
+            planks.add(ItemList.Plank_Willow);
+            planks.add(ItemList.Plank_Walnut);
+            planks.add(ItemList.Plank_Greenheart);
+            planks.add(ItemList.Plank_Cherry);
+            planks.add(ItemList.Plank_Mahoe);
+            planks.add(ItemList.Plank_Poplar);
+            planks.add(ItemList.Plank_Palm);
+            planks.add(ItemList.Plank_Papaya);
+            planks.add(ItemList.Plank_Pine);
+            planks.add(ItemList.Plank_Plum);
+            planks.add(ItemList.Plank_Maple);
+            planks.add(ItemList.Plank_Citrus);
+        }
 
+        OreDictItemStack fenceWood = new OreDictItemStack("fenceWood", 1);
+        OreDictItemStack cobblestone = new OreDictItemStack("cobblestone", 1);
+        ItemStack piston = new ItemStack(Blocks.piston, 1);
+
+        for (int i = 0; i < planks.size(); i++) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            new ItemStack(Blocks.cobblestone, 1, 0),
+                            cobblestone,
                             GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                            stack,
-                            ItemList.Plank_Oak.get(6L))
-                    .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                    .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(assemblerRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            new ItemStack(Blocks.cobblestone, 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                            stack,
-                            ItemList.Plank_Spruce.get(6L))
-                    .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                    .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(assemblerRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            new ItemStack(Blocks.cobblestone, 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                            stack,
-                            ItemList.Plank_Birch.get(6L))
-                    .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                    .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(assemblerRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            new ItemStack(Blocks.cobblestone, 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                            stack,
-                            ItemList.Plank_Jungle.get(6L))
-                    .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                    .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(assemblerRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            new ItemStack(Blocks.cobblestone, 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                            stack,
-                            ItemList.Plank_Acacia.get(6L))
-                    .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                    .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(assemblerRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            new ItemStack(Blocks.cobblestone, 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                            stack,
-                            ItemList.Plank_DarkOak.get(6L))
-                    .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                    .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(assemblerRecipes);
-
-            if (Forestry.isModLoaded()) {
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Larch.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Teak.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Acacia_Green.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Lime.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Chestnut.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Wenge.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Baobab.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Sequoia.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Kapok.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Ebony.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Mahagony.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Balsa.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Willow.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Walnut.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Greenheart.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Cherry.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Mahoe.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Poplar.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Palm.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Papaya.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Pine.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Plum.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Maple.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.cobblestone, 1, 0),
-                                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                                stack,
-                                ItemList.Plank_Citrus.get(6L))
-                        .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1, 0))
-                        .fluidInputs(Materials.Redstone.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-            }
+                            fenceWood,
+                            planks.get(i).get(6L))
+                    .circuit(1).itemOutputs(piston).fluidInputs(Materials.Redstone.getMolten(72L))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
     }
 

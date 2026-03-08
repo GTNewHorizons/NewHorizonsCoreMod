@@ -12,7 +12,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.item.NHItemList;
 
@@ -21,6 +20,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -228,16 +228,12 @@ public class AlloySmelterRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 3)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
-            for (int i = 0; i < OreDictionary.getOres("dyeBlack").size(); i++) {
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 1),
-                                OreDictionary.getOres("dyeBlack").get(i).splitStack(4))
-                        .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 5))
-                        .duration(25 * SECONDS).eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
-
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 1),
+                            new OreDictItemStack("dyeBlack", 4))
+                    .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 5)).duration(25 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         }
 
         // Sunnarium Alloys
