@@ -79,8 +79,6 @@ import static tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8547,56 +8545,14 @@ public class AssemblerRecipes implements Runnable {
 
     private void makePistonRecipes() {
         // Vanilla Piston Assembler recipe
-        ArrayList<ItemList> planks = new ArrayList<>(
-                Arrays.asList(
-                        ItemList.Plank_Oak,
-                        ItemList.Plank_Spruce,
-                        ItemList.Plank_Birch,
-                        ItemList.Plank_Jungle,
-                        ItemList.Plank_Acacia,
-                        ItemList.Plank_DarkOak));
-
-        if (Forestry.isModLoaded()) {
-            planks.add(ItemList.Plank_Larch);
-            planks.add(ItemList.Plank_Teak);
-            planks.add(ItemList.Plank_Acacia_Green);
-            planks.add(ItemList.Plank_Lime);
-            planks.add(ItemList.Plank_Chestnut);
-            planks.add(ItemList.Plank_Wenge);
-            planks.add(ItemList.Plank_Baobab);
-            planks.add(ItemList.Plank_Sequoia);
-            planks.add(ItemList.Plank_Kapok);
-            planks.add(ItemList.Plank_Ebony);
-            planks.add(ItemList.Plank_Mahagony);
-            planks.add(ItemList.Plank_Balsa);
-            planks.add(ItemList.Plank_Willow);
-            planks.add(ItemList.Plank_Walnut);
-            planks.add(ItemList.Plank_Greenheart);
-            planks.add(ItemList.Plank_Cherry);
-            planks.add(ItemList.Plank_Mahoe);
-            planks.add(ItemList.Plank_Poplar);
-            planks.add(ItemList.Plank_Palm);
-            planks.add(ItemList.Plank_Papaya);
-            planks.add(ItemList.Plank_Pine);
-            planks.add(ItemList.Plank_Plum);
-            planks.add(ItemList.Plank_Maple);
-            planks.add(ItemList.Plank_Citrus);
-        }
-
-        OreDictItemStack fenceWood = new OreDictItemStack("fenceWood", 1);
-        OreDictItemStack cobblestone = new OreDictItemStack("cobblestone", 1);
-        ItemStack piston = new ItemStack(Blocks.piston, 1);
-
-        for (int i = 0; i < planks.size(); i++) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            cobblestone,
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                            fenceWood,
-                            planks.get(i).get(6L))
-                    .circuit(1).itemOutputs(piston).fluidInputs(Materials.Redstone.getMolten(72L))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        }
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new OreDictItemStack("cobblestone", 1),
+                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
+                        new OreDictItemStack("fenceWood", 1),
+                        new OreDictItemStack("sidingWood", 6))
+                .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1)).fluidInputs(Materials.Redstone.getMolten(72L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
     }
 
     private void makeCoilRecipes() {
