@@ -139,7 +139,6 @@ public class AssemblerRecipes implements Runnable {
         makeLootBagRecipes();
         makeCoinRecipes();
         makeCoilRecipes();
-        makePistonRecipes();
         makeAirFilterRecipes();
         makeMixedMetalIngotRecipes();
         makeReinforcedIronPlateRecipes();
@@ -196,6 +195,16 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_UV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                     .addTo(assemblerRecipes);
         }
+
+        // Vanilla Piston
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new OreDictItemStack("cobblestone", 1),
+                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
+                        new OreDictItemStack("fenceWood", 1),
+                        new OreDictItemStack("coverPlank", 6))
+                .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1)).fluidInputs(Materials.Redstone.getMolten(72L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 8)).circuit(8)
                 .itemOutputs(ItemList.Hull_Bronze.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2)
@@ -8541,18 +8550,6 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(NHItemList.CoinFlowerIII.get(10)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
-    }
-
-    private void makePistonRecipes() {
-        // Vanilla Piston Assembler recipe
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new OreDictItemStack("cobblestone", 1),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                        new OreDictItemStack("fenceWood", 1),
-                        new OreDictItemStack("sidingWood", 6))
-                .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1)).fluidInputs(Materials.Redstone.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
     }
 
     private void makeCoilRecipes() {
