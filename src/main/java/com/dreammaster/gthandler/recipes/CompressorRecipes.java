@@ -70,7 +70,8 @@ public class CompressorRecipes implements Runnable {
         }
 
         // Custom Plate -> Block compression
-        Materials[] plateToBlockList = new Materials[] { Materials.GraniteBlack, Materials.GraniteRed, Materials.Stone };
+        Materials[] plateToBlockList = new Materials[] { Materials.GraniteBlack, Materials.GraniteRed,
+                Materials.Stone };
         for (Materials material : plateToBlockList) {
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 4L))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stone, material, 3L)).duration(15 * SECONDS).eut(2)
