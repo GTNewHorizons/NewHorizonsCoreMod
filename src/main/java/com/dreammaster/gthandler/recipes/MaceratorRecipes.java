@@ -5,17 +5,18 @@ import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -165,11 +166,11 @@ public class MaceratorRecipes implements Runnable {
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "woodPattern", 1L, GTValues.W))
+                    .itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "woodPattern", 1L, WILDCARD))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)).outputChances(10000)
                     .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Pattern", 1L, GTValues.W))
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Pattern", 1L, WILDCARD))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)).outputChances(10000)
                     .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
             // Oreberries
@@ -262,10 +263,9 @@ public class MaceratorRecipes implements Runnable {
 
         }
 
-        if (PamsHarvestTheNether.isModLoaded()) {
+        if (Fether.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTModHandler.getModItem(PamsHarvestTheNether.ID, "fleshrootItem", 9L, 0))
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Fether.ID, "flesh_root", 9L, 0))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
                     .duration(5 * SECONDS).eut(2).addTo(maceratorRecipes);
 

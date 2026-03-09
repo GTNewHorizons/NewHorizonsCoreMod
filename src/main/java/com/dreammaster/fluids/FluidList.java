@@ -1,7 +1,6 @@
 package com.dreammaster.fluids;
 
 import net.minecraft.block.material.Material;
-import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.creativetab.ModTabList;
@@ -38,7 +37,6 @@ public enum FluidList {
     }
 
     public static boolean AddToItemManager(ModFluidManager pFluidManager) {
-        Fluid t = null;
         boolean tResult = true;
         for (FluidList il : FluidList.values()) {
             if (il.Fluid != null) {

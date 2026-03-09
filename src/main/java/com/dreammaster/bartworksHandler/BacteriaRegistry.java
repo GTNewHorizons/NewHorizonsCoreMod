@@ -85,6 +85,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.recipe.Sievert;
 
@@ -512,9 +513,9 @@ public class BacteriaRegistry {
                 .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 8000)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);
 
-        for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
+        if (!OreDictionary.getOres("cropTcetiESeaweed").isEmpty()) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(BioItemList.getPetriDish(null), OreDictionary.getOres("cropTcetiESeaweed").get(i))
+                    .itemInputs(BioItemList.getPetriDish(null), new OreDictItemStack("cropTcetiESeaweed", 1))
                     .itemOutputs(BioItemList.getPetriDish(CultureSet.get("TcetiEBac"))).outputChances(2_50)
                     .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 8000)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);

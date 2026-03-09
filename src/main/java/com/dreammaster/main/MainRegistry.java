@@ -1,18 +1,6 @@
 package com.dreammaster.main;
 
-import static gregtech.api.enums.Mods.AmazingTrophies;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.DetravScannerMod;
-import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.SGCraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TravellersGear;
-import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -37,6 +25,7 @@ import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
+import com.dreammaster.berriespp.BPPConverter;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.client.util.GTNHPauseScreen;
 import com.dreammaster.command.CustomDropsCommand;
@@ -82,6 +71,7 @@ import com.dreammaster.witchery.WitcheryPlugin;
 import bartworks.system.material.WerkstoffLoader;
 import betterquesting.api.storage.BQ_Settings;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.SidedProxy;
@@ -404,6 +394,8 @@ public class MainRegistry {
         if (TinkerConstruct.isModLoaded()) TiCoLoader.doPostInitialization();
 
         if (!TravellersGear.isModLoaded()) TGConverter.doPostInitialization();
+
+        if (!Loader.isModLoaded(BPPConverter.BPP_MOD_ID)) BPPConverter.doPostInitialization();
     }
 
     @Mod.EventHandler

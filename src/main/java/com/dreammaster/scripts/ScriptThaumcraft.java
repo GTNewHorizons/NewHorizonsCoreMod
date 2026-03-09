@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -19,7 +20,6 @@ import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
@@ -91,6 +91,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 BuildCraftFactory.ID,
                 Chisel.ID,
                 ExtraUtilities.ID,
+                Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 GalacticraftCore.ID,
@@ -101,7 +102,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 MalisisDoors.ID,
                 Natura.ID,
                 PamsHarvestCraft.ID,
-                PamsHarvestTheNether.ID,
                 ProjectRedIntegration.ID,
                 Railcraft.ID,
                 RandomThings.ID,
@@ -147,13 +147,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
+                        getModItem(Fether.ID, "glow_flower_seeds", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Blaze, 8L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
+                        getModItem(Fether.ID, "glow_flower_seeds", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemNugget", 8, 5, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 2, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -6302,13 +6302,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemFertilizer", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("sano"), 2)
-                        .add(Aspect.getAspect("herba"), 1));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemWeed", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
-        ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("ignis"), 2)
                         .add(Aspect.getAspect("terra"), 1).add(Aspect.getAspect("instrumentum"), 1));
@@ -6494,16 +6487,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing),
-                new AspectList().add(Aspect.getAspect("cognitio"), 8).add(Aspect.getAspect("lux"), 2)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("instrumentum"), 4));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemHops", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("herba"), 4));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemCofeeBeans", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("sensus"), 2));
-        ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemDynamite", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 8).add(Aspect.getAspect("strontio"), 4));
         ThaumcraftApi.registerObjectTag(
@@ -6511,22 +6494,9 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("perditio"), 8).add(Aspect.getAspect("limus"), 2)
                         .add(Aspect.getAspect("strontio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 1, missing),
-                new AspectList().add(Aspect.getAspect("sensus"), 2).add(Aspect.getAspect("tenebrae"), 1));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 2, missing),
-                new AspectList().add(Aspect.getAspect("sensus"), 4));
-        ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRemote", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 4)
                         .add(Aspect.getAspect("sensus"), 4).add(Aspect.getAspect("perditio"), 2));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemWeedEx", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("venenum"), 8).add(Aspect.getAspect("cognitio"), 2));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemTerraWart", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("auram"), 8).add(Aspect.getAspect("praecantatio"), 4)
-                        .add(Aspect.getAspect("victus"), 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 2)
@@ -7309,6 +7279,9 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "tobaccoPowder", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("humanus"), 1)
                         .add(Aspect.getAspect("perditio"), 1));
+        ThaumcraftApi.registerObjectTag(
+                NHItemList.NANCertificate.get(1),
+                new AspectList().add(Aspect.METAL, 64).add(Aspect.CRAFT, 64).add(Aspect.CRYSTAL, 64));
 
     }
 

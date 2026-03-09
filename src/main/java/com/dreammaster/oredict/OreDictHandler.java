@@ -1,12 +1,12 @@
 package com.dreammaster.oredict;
 
 import static gregtech.api.enums.Mods.ExtraTrees;
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
 import net.minecraft.block.Block;
@@ -171,8 +171,8 @@ public class OreDictHandler {
             }
         }
 
-        if (PamsHarvestTheNether.isModLoaded()) {
-            OreDictionary.registerOre("logWood", GameRegistry.findBlock(PamsHarvestTheNether.ID, "netherLog"));
+        if (Fether.isModLoaded()) {
+            OreDictionary.registerOre("logWood", GameRegistry.findBlock(Fether.ID, "nether_log"));
         }
 
         OreDictionary.registerOre("foodSalt", NHItemList.EdibleSalt.get());

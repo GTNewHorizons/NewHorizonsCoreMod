@@ -50,7 +50,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
@@ -63,9 +62,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class ScriptProjectRed implements IScriptLoader {
@@ -2698,31 +2697,23 @@ public class ScriptProjectRed implements IScriptLoader {
                     .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                     .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
             // Light Sensor
-            for (ItemStack itemStack : OreDictionary.getOres("dyeBlue")) {
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 0),
-                                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
-                                GTUtility.copyAmount(3, itemStack))
-                        .circuit(14)
-                        .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15))
-                        .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                        .addTo(circuitAssemblerRecipes);
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 0),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                            new OreDictItemStack("dyeBlue", 3))
+                    .circuit(14).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
             // Rain Sensor
-            for (ItemStack itemStack : OreDictionary.getOres("slimeball")) {
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 0),
-                                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
-                                GTUtility.copyAmount(3, itemStack))
-                        .circuit(15)
-                        .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16))
-                        .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                        .addTo(circuitAssemblerRecipes);
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 0),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                            new OreDictItemStack("slimeball", 3))
+                    .circuit(15).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
             // Timer
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -2851,19 +2842,15 @@ public class ScriptProjectRed implements IScriptLoader {
                     .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                     .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
             // Bus Input Pannel
-            for (ItemStack itemStack : OreDictionary.getOres("projredIllumar")) {
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
-                                getModItem(ProjectRedCore.ID, "projectred.core.part", 7, 3),
-                                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7),
-                                GTUtility.copyAmount(1, itemStack))
-                        .circuit(17)
-                        .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30))
-                        .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                        .addTo(circuitAssemblerRecipes);
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 7, 3),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7),
+                            new OreDictItemStack("projredIllumar", 1))
+                    .circuit(17).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
             // Data Cell
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -2916,30 +2903,24 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 8)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(formingPressRecipes);
-        for (ItemStack itemStack : OreDictionary.getOres("craftingLensRed")) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42),
-                            GTUtility.copyAmount(0, itemStack))
-                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(laserEngraverRecipes);
-        }
-        for (ItemStack itemStack : OreDictionary.getOres("craftingLensYellow")) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43),
-                            GTUtility.copyAmount(0, itemStack))
-                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(laserEngraverRecipes);
-        }
-        for (ItemStack itemStack : OreDictionary.getOres("craftingLensBlue")) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58),
-                            GTUtility.copyAmount(0, itemStack))
-                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(laserEngraverRecipes);
-        }
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42),
+                        new OreDictItemStack("craftingLensRed", 0))
+                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43),
+                        new OreDictItemStack("craftingLensYellow", 0))
+                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58),
+                        new OreDictItemStack("craftingLensBlue", 0))
+                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Silicon_Wafer.get(1L), getModItem(Minecraft.ID, "redstone", 8, 0))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42)).duration(20 * SECONDS)

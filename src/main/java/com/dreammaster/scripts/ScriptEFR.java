@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -19,7 +20,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -89,6 +89,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -122,13 +123,13 @@ public class ScriptEFR implements IScriptLoader {
                 EnderIO.ID,
                 EtFuturumRequiem.ID,
                 ExtraUtilities.ID,
+                Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,
                 MagicBees.ID,
                 PamsHarvestCraft.ID,
-                PamsHarvestTheNether.ID,
                 StevesCarts2.ID,
                 TaintedMagic.ID,
                 Thaumcraft.ID,
@@ -336,7 +337,7 @@ public class ScriptEFR implements IScriptLoader {
                 "lime_bed", "pink_bed", "gray_bed", "light_gray_bed", "cyan_bed", "purple_bed", "blue_bed", "brown_bed",
                 "green_bed", "black_bed" };
         final int[] bedCarpetMetas = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15 };
-        final List<ItemStack> allPlanks = net.minecraftforge.oredict.OreDictionary.getOres("plankWood");
+        OreDictItemStack plankWood = new OreDictItemStack("plankWood", 2);
 
         for (int i = 0; i < colorBeds.length; i++) {
             String bedType = colorBeds[i];
@@ -349,19 +350,13 @@ public class ScriptEFR implements IScriptLoader {
                             getModItem(Minecraft.ID, "carpet", 1L, carpetType, missing), 'B', "plankWood", 'C',
                             "fenceWood", 'D', "craftingToolSoftMallet" });
 
-            for (ItemStack plank : allPlanks) {
-                if (plank == null) continue;
-                ItemStack plank2 = plank.copy();
-                plank2.stackSize = 2;
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(Minecraft.ID, "carpet", 2L, carpetType, missing),
-                                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                                plank2)
-                        .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, bedType, 1L, 0, missing))
-                        .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "carpet", 2L, carpetType, missing),
+                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
+                            plankWood)
+                    .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, bedType, 1L, 0, missing))
+                    .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
         }
 
         // Regular Minecraft Bed
@@ -371,19 +366,13 @@ public class ScriptEFR implements IScriptLoader {
                 bits,
                 new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1L, 14, missing), 'B',
                         "plankWood", 'C', "fenceWood", 'D', "craftingToolSoftMallet" });
-        for (ItemStack plank : allPlanks) {
-            if (plank == null) continue;
-            ItemStack plank2 = plank.copy();
-            plank2.stackSize = 2;
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Minecraft.ID, "carpet", 2L, 14, missing),
-                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                            plank2)
-                    .circuit(1).itemOutputs(getModItem(Minecraft.ID, "bed", 1L, 0, missing)).duration(5 * SECONDS)
-                    .eut(24).addTo(assemblerRecipes);
-        }
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "carpet", 2L, 14, missing),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
+                        plankWood)
+                .circuit(1).itemOutputs(getModItem(Minecraft.ID, "bed", 1L, 0, missing)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
 
         // Regular Copper Trapdoors
 
@@ -1289,6 +1278,10 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing))
                 .itemOutputs(NHItemList.TuffDust.get(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(4))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "tuff", 3, 0, missing)).duration(5 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.VolcanicAsh, 9L),
@@ -1902,7 +1895,7 @@ public class ScriptEFR implements IScriptLoader {
                 'c',
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
-                getModItem(PamsHarvestTheNether.ID, "Quartz Hoe", 1, 0, missing),
+                getModItem(Fether.ID, "quartz_hoe", 1, 0, missing),
                 'e',
                 GTOreDictUnificator.get("plateManaDiamond", 1));
         // Shovel
@@ -2098,10 +2091,9 @@ public class ScriptEFR implements IScriptLoader {
         OreDictionary.registerOre("stoneRedSand", getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0));
 
         // Red sand
-        for (ItemStack item : OreDictionary.getOres("stoneRedSand")) {
-            GTValues.RA.stdBuilder().itemInputs(item).itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1))
-                    .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
-        }
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("stoneRedSand", 1))
+                .itemOutputs(getModItem(Minecraft.ID, "sand", 1, 1)).duration(20 * SECONDS).eut(2)
+                .addTo(maceratorRecipes);
 
         // Red Sandstone
 
