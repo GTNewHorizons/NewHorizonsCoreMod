@@ -70,7 +70,7 @@ public class CompressorRecipes implements Runnable {
         }
 
         // Custom Plate -> Block compression
-        Materials[] plateToBlockList = new Materials[] { Materials.GraniteBlack, Materials.GraniteRed };
+        Materials[] plateToBlockList = new Materials[] { Materials.GraniteBlack, Materials.GraniteRed, Materials.Stone };
         for (Materials material : plateToBlockList) {
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 4L))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stone, material, 3L)).duration(15 * SECONDS).eut(2)
@@ -92,6 +92,10 @@ public class CompressorRecipes implements Runnable {
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, material, 1L)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
         }
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 4L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stone, Materials.Stone, 3L)).duration(15 * SECONDS)
+                .eut(2).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Marble, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Marble, 1L)).duration(15 * SECONDS)
