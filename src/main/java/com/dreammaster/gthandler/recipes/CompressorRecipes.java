@@ -62,10 +62,19 @@ public class CompressorRecipes implements Runnable {
 
         // custom dust to plate compression
         Materials[] dustToPlateList = new Materials[] { Materials.NetherQuartz, Materials.Quartzite, Materials.Lazurite,
-                Materials.Sodalite };
+                Materials.Sodalite, Materials.GraniteBlack, Materials.GraniteRed };
         for (Materials material : dustToPlateList) {
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, material, 1L))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 1L)).duration(15 * SECONDS).eut(2)
+                    .addTo(compressorRecipes);
+        }
+
+        // Custom Plate -> Block compression
+        Materials[] plateToBlockList = new Materials[] { Materials.GraniteBlack, Materials.GraniteRed,
+                Materials.Stone };
+        for (Materials material : plateToBlockList) {
+            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 4L))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stone, material, 3L)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
         }
 
@@ -84,6 +93,14 @@ public class CompressorRecipes implements Runnable {
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, material, 1L)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
         }
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 4L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stone, Materials.Stone, 3L)).duration(15 * SECONDS)
+                .eut(2).addTo(compressorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Marble, 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Marble, 1L)).duration(15 * SECONDS)
+                .eut(2).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.nugget, Materials.WroughtIron, 9L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L))
