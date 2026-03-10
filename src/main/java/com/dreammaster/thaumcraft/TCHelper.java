@@ -1,21 +1,25 @@
 package com.dreammaster.thaumcraft;
 
 import java.lang.reflect.Field;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import net.glease.tc4tweak.api.infusionrecipe.InfusionRecipeExt;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.oredict.OreDictionary;
 
 import org.apache.commons.lang3.ArrayUtils;
 
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.IArcaneRecipe;
@@ -343,6 +347,58 @@ public class TCHelper {
                     .addInfusionCraftingRecipe(research, result, instability, safeAspects, safeInput, safeRecipe);
         } catch (RuntimeException e) {
             return null;
+        }
+    }
+
+    public static void registerMaterialAspects(String primaryAspect, String material) {
+
+        // Cache common aspects
+        Aspect metallum = Aspect.getAspect("metallum");
+        Aspect perditio = Aspect.getAspect("perditio");
+        Aspect perfodio = Aspect.getAspect("perfodio");
+        Aspect fabrico = Aspect.getAspect("fabrico");
+        Aspect primary = Aspect.getAspect(primaryAspect);
+
+        // Shared suppliers
+        Supplier<AspectList> perditio1 = () -> new AspectList().add(perditio, 1);
+        Supplier<AspectList> perfodio1 = () -> new AspectList().add(perfodio, 1);
+
+        Supplier<AspectList> plateAspects = () -> new AspectList().add(metallum, 2).add(primary, 1);
+
+        // Declarative rules
+        Map<String, Supplier<AspectList>> rules = new LinkedHashMap<>();
+
+        rules.put("dustImpure", perditio1);
+        rules.put("dustPure", perditio1);
+
+        rules.put("dust", () -> new AspectList().add(metallum, 2).add(perditio, 1).add(primary, 1));
+        rules.put("dustSmall", perditio1);
+        rules.put("dustTiny", perditio1);
+
+        rules.put("nugget", () -> new AspectList().add(metallum, 1));
+        rules.put("ingot", () -> new AspectList().add(metallum, 3).add(primary, 1));
+        rules.put("ingotHot", () -> new AspectList().add(metallum, 2).add(primary, 1));
+
+        rules.put("foil", () -> new AspectList().add(fabrico, 1));
+
+        // All plate variants share the same aspect list
+        String[] plateVariants = { "plate", "plateDouble", "plateTriple", "plateQuadruple", "plateQuintuple",
+                "plateDense" };
+        for (String p : plateVariants) rules.put(p, plateAspects);
+
+        rules.put("rawOre", plateAspects);
+
+        rules.put("crushed", perfodio1);
+        rules.put("crushedPurified", perfodio1);
+        rules.put("crushedCentrifuged", perfodio1);
+
+        // Apply all rules
+        for (Map.Entry<String, Supplier<AspectList>> entry : rules.entrySet()) {
+            String key = entry.getKey() + material;
+
+            if (!OreDictionary.getOres(key).isEmpty()) {
+                ThaumcraftApi.registerObjectTag(key, entry.getValue().get());
+            }
         }
     }
 }
