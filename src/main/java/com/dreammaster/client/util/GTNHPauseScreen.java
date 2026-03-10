@@ -3,6 +3,7 @@ package com.dreammaster.client.util;
 import java.net.URI;
 import java.util.Arrays;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiIngameMenu;
@@ -86,11 +87,20 @@ public class GTNHPauseScreen {
     @SubscribeEvent
     public void onActionPerformed(GuiScreenEvent.ActionPerformedEvent.Post event) {
         if (!(event.gui instanceof GuiIngameMenu)) return;
+
         if (event.button.id == BUG_BUTTON_ID) {
             gtnh$openUrl(Refstrings.ISSUE_TRACKER_LINK);
         } else if (event.button.id == WIKI_BUTTON_ID) {
-            gtnh$openUrl(Refstrings.WIKI_LINK);
+            gtnh$openUrl(gtnh$getWikiLink());
         }
+    }
+
+    private static String gtnh$getWikiLink() {
+        String lang = Minecraft.getMinecraft().getLanguageManager().getCurrentLanguage().getLanguageCode();
+        return switch (lang) {
+            case "zh_CN", "zh_TW", "zh_HK" -> Refstrings.WIKI_LINK_CN;
+            default -> Refstrings.WIKI_LINK;
+        };
     }
 
     private static void gtnh$openUrl(String address) {
