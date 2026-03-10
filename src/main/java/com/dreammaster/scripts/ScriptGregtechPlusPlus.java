@@ -343,30 +343,30 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
     }
 
     private void addThaumcraftAspects() {
-        TCHelper.registerMaterialAspects("Selenium", true, "custom2");
-        TCHelper.registerMaterialAspects("Iodine", true, "sano");
-        TCHelper.registerMaterialAspects("Rhenium", true, "alienis");
-        TCHelper.registerMaterialAspects("Thallium", true, "strontio");
-        TCHelper.registerMaterialAspects("Germanium", true, "custom1");
-        TCHelper.registerMaterialAspects("Polonium", true, "radio");
-        TCHelper.registerMaterialAspects("Radium", true, "radio");
-        TCHelper.registerMaterialAspects("Protactinium", true, "radio");
-        TCHelper.registerMaterialAspects("Curium", true, "radio");
-        TCHelper.registerMaterialAspects("Neptunium", true, "radio");
-        TCHelper.registerMaterialAspects("Fermium", true, "radio");
-        TCHelper.registerMaterialAspects("Lithium7", true, "custom1");
-        TCHelper.registerMaterialAspects("Uranium232", true, "radio");
-        TCHelper.registerMaterialAspects("Uranium233", true, "radio");
-        TCHelper.registerMaterialAspects("Plutonium238", true, "radio");
-        TCHelper.registerMaterialAspects("AdvancedNitinol", true, "custom2");
-        TCHelper.registerMaterialAspects("AstralTitanium", true, "custom4");
-        TCHelper.registerMaterialAspects("CelestialTungsten", true, "custom4");
-        TCHelper.registerMaterialAspects("Hypogen", true, "custom5");
-        TCHelper.registerMaterialAspects("ChromaticGlass", false, "custom3");
-        TCHelper.registerMaterialAspects("BlackMetal", true, "radio");
-        TCHelper.registerMaterialAspects("WhiteMetal", true, "custom5");
-        TCHelper.registerMaterialAspects("AncientGranite", true, "custom3");
-        TCHelper.registerMaterialAspects("Runite", true, "custom3");
-        TCHelper.registerMaterialAspects("Dragonblood", true, "terminus");
+        TCHelper.registerMaterialAspects("Selenium", "metallum", "custom2");
+        TCHelper.registerMaterialAspects("Iodine", "metallum", "sano");
+        TCHelper.registerMaterialAspects("Rhenium", "metallum", "alienis");
+        TCHelper.registerMaterialAspects("Thallium", "metallum", "strontio");
+        TCHelper.registerMaterialAspects("Germanium", "metallum", "custom1");
+        TCHelper.registerMaterialAspects("Polonium", "metallum", "radio");
+        TCHelper.registerMaterialAspects("Radium", "metallum", "radio");
+        TCHelper.registerMaterialAspects("Protactinium", "metallum", "radio");
+        TCHelper.registerMaterialAspects("Curium", "metallum", "radio");
+        TCHelper.registerMaterialAspects("Neptunium", "metallum", "radio");
+        TCHelper.registerMaterialAspects("Fermium", "metallum", "radio");
+        TCHelper.registerMaterialAspects("Lithium7", "metallum", "custom1");
+        TCHelper.registerMaterialAspects("Uranium232", "metallum", "radio");
+        TCHelper.registerMaterialAspects("Uranium233", "metallum", "radio");
+        TCHelper.registerMaterialAspects("Plutonium238", "metallum", "radio");
+        TCHelper.registerMaterialAspects("AdvancedNitinol", "metallum", "custom2");
+        TCHelper.registerMaterialAspects("AstralTitanium", "metallum", "custom4");
+        TCHelper.registerMaterialAspects("CelestialTungsten", "metallum", "custom4");
+        TCHelper.registerMaterialAspects("Hypogen", "metallum", "custom5");
+        TCHelper.registerMaterialAspects("ChromaticGlass", "vitreus", "custom3");
+        TCHelper.registerMaterialAspects("BlackMetal", "metallum", "radio");
+        TCHelper.registerMaterialAspects("WhiteMetal", "metallum", "custom5");
+        TCHelper.registerMaterialAspects("AncientGranite", "perditio", "custom3");
+        TCHelper.registerMaterialAspects("Runite", "perditio", "custom3");
+        TCHelper.registerMaterialAspects("Dragonblood", "metallum", "terminus");
     }
 }

@@ -352,7 +352,7 @@ public class TCHelper {
         }
     }
 
-    public static void registerMaterialAspects(String material, Boolean isMetallic, String... specialAspects) {
+    public static void registerMaterialAspects(String material, String mainAspect, String... specialAspects) {
 
         // Convert varargs → Aspect[]
         List<Aspect> specials = new ArrayList<>();
@@ -372,9 +372,7 @@ public class TCHelper {
         Aspect meto = Aspect.getAspect("meto");
         Aspect arbor = Aspect.getAspect("arbor");
         Aspect electrum = Aspect.getAspect("electrum");
-
-        // metals or gems?
-        Aspect main = isMetallic ? Aspect.getAspect("metallum") : Aspect.getAspect("vitreus");
+        Aspect main = Aspect.getAspect(mainAspect);
 
         // main 2 + specials
         Supplier<AspectList> main2special = () -> {
