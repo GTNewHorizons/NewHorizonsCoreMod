@@ -357,29 +357,45 @@ public class TCHelper {
         Aspect perditio = Aspect.getAspect("perditio");
         Aspect perfodio = Aspect.getAspect("perfodio");
         Aspect fabrico = Aspect.getAspect("fabrico");
+        Aspect motus = Aspect.getAspect("motus");
+        Aspect machina = Aspect.getAspect("machina");
+        Aspect instrumentum = Aspect.getAspect("instrumentum");
+        Aspect ordo = Aspect.getAspect("ordo");
+        Aspect meto = Aspect.getAspect("meto");
+        Aspect arbor = Aspect.getAspect("arbor");
+        Aspect electrum = Aspect.getAspect("electrum");
         Aspect primary = Aspect.getAspect(primaryAspect);
-
-        // Shared suppliers
-        Supplier<AspectList> perditio1 = () -> new AspectList().add(perditio, 1);
-        Supplier<AspectList> perfodio1 = () -> new AspectList().add(perfodio, 1);
 
         Supplier<AspectList> plateAspects = () -> new AspectList().add(metallum, 2).add(primary, 1);
 
         // Declarative rules
         Map<String, Supplier<AspectList>> rules = new LinkedHashMap<>();
 
-        rules.put("dustImpure", perditio1);
-        rules.put("dustPure", perditio1);
+        rules.put("dustImpure", () -> new AspectList().add(perditio, 1));
+        rules.put("dustPure", () -> new AspectList().add(perditio, 1));
 
         rules.put("dust", () -> new AspectList().add(metallum, 2).add(perditio, 1).add(primary, 1));
-        rules.put("dustSmall", perditio1);
-        rules.put("dustTiny", perditio1);
+        rules.put("dustSmall", () -> new AspectList().add(perditio, 1));
+        rules.put("dustTiny", () -> new AspectList().add(perditio, 1));
 
         rules.put("nugget", () -> new AspectList().add(metallum, 1));
         rules.put("ingot", () -> new AspectList().add(metallum, 3).add(primary, 1));
         rules.put("ingotHot", () -> new AspectList().add(metallum, 2).add(primary, 1));
 
+        rules.put("stick", () -> new AspectList().add(metallum, 2).add(instrumentum, 1));
+        rules.put("stickLong", () -> new AspectList().add(metallum, 2).add(primary, 1));
+        rules.put("gear", () -> new AspectList().add(metallum, 2).add(primary, 2).add(motus, 1).add(machina, 1));
+        rules.put("gearSmall", () -> new AspectList().add(metallum, 2).add(primary, 2).add(motus, 1).add(machina, 1));
+        rules.put("bolt", () -> new AspectList().add(instrumentum, 1));
+        rules.put("screw", () -> new AspectList().add(instrumentum, 3).add(fabrico, 1).add(ordo, 1));
+        rules.put("ring", () -> new AspectList().add(instrumentum, 3).add(fabrico, 3).add(ordo, 3).add(metallum, 1));
+        rules.put("rotor", () -> new AspectList().add(metallum, 2).add(primary, 2));
+        rules.put("spring", () -> new AspectList().add(metallum, 2).add(primary, 2));
+        rules.put(
+                "springSmall",
+                () -> new AspectList().add(instrumentum, 5).add(fabrico, 3).add(ordo, 3).add(meto, 1).add(arbor, 1));
         rules.put("foil", () -> new AspectList().add(fabrico, 1));
+        rules.put("wireFine", () -> new AspectList().add(electrum, 1));
 
         // All plate variants share the same aspect list
         String[] plateVariants = { "plate", "plateDouble", "plateTriple", "plateQuadruple", "plateQuintuple",
@@ -388,9 +404,9 @@ public class TCHelper {
 
         rules.put("rawOre", plateAspects);
 
-        rules.put("crushed", perfodio1);
-        rules.put("crushedPurified", perfodio1);
-        rules.put("crushedCentrifuged", perfodio1);
+        rules.put("crushed", () -> new AspectList().add(perfodio, 1));
+        rules.put("crushedPurified", () -> new AspectList().add(perfodio, 1));
+        rules.put("crushedCentrifuged", () -> new AspectList().add(perfodio, 1));
 
         // Apply all rules
         for (Map.Entry<String, Supplier<AspectList>> entry : rules.entrySet()) {
