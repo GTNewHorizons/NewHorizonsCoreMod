@@ -352,17 +352,16 @@ public class TCHelper {
         }
     }
 
-    public static void registerMaterialAspects(String material, String... primaryAspects) {
+    public static void registerMaterialAspects(String material, Boolean isMetallic, String... specialAspects) {
 
         // Convert varargs → Aspect[]
-        List<Aspect> primaries = new ArrayList<>();
-        for (String pa : primaryAspects) {
+        List<Aspect> specials = new ArrayList<>();
+        for (String pa : specialAspects) {
             Aspect a = Aspect.getAspect(pa);
-            if (a != null) primaries.add(a);
+            if (a != null) specials.add(a);
         }
 
         // Cache common aspects
-        Aspect metallum = Aspect.getAspect("metallum");
         Aspect perditio = Aspect.getAspect("perditio");
         Aspect perfodio = Aspect.getAspect("perfodio");
         Aspect fabrico = Aspect.getAspect("fabrico");
@@ -374,17 +373,20 @@ public class TCHelper {
         Aspect arbor = Aspect.getAspect("arbor");
         Aspect electrum = Aspect.getAspect("electrum");
 
-        // metallum 2 + primaries
-        Supplier<AspectList> metallum2Primary = () -> {
-            AspectList list = new AspectList().add(metallum, 2);
-            for (Aspect a : primaries) list.add(a, 1);
+        // metals or gems?
+        Aspect main = isMetallic ? Aspect.getAspect("metallum") : Aspect.getAspect("vitreus");
+
+        // main 2 + specials
+        Supplier<AspectList> main2special = () -> {
+            AspectList list = new AspectList().add(main, 2);
+            for (Aspect a : specials) list.add(a, 1);
             return list;
         };
 
-        // metallum 3 + primaries
-        Supplier<AspectList> metallum3Primary = () -> {
-            AspectList list = new AspectList().add(metallum, 3);
-            for (Aspect a : primaries) list.add(a, 1);
+        // main 3 + specials
+        Supplier<AspectList> main3special = () -> {
+            AspectList list = new AspectList().add(main, 3);
+            for (Aspect a : specials) list.add(a, 1);
             return list;
         };
 
@@ -395,30 +397,30 @@ public class TCHelper {
         rules.put("dustPure", () -> new AspectList().add(perditio, 1));
 
         rules.put("dust", () -> {
-            AspectList list = new AspectList().add(metallum, 2).add(perditio, 1);
-            for (Aspect a : primaries) list.add(a, 1);
+            AspectList list = new AspectList().add(main, 2).add(perditio, 1);
+            for (Aspect a : specials) list.add(a, 1);
             return list;
         });
 
         rules.put("dustSmall", () -> new AspectList().add(perditio, 1));
         rules.put("dustTiny", () -> new AspectList().add(perditio, 1));
 
-        rules.put("nugget", () -> new AspectList().add(metallum, 1));
-        rules.put("ingot", metallum3Primary);
-        rules.put("ingotHot", metallum2Primary);
+        rules.put("nugget", () -> new AspectList().add(main, 1));
+        rules.put("ingot", main3special);
+        rules.put("ingotHot", main2special);
 
-        rules.put("stick", () -> new AspectList().add(metallum, 2).add(instrumentum, 1));
-        rules.put("stickLong", metallum2Primary);
+        rules.put("stick", () -> new AspectList().add(main, 2).add(instrumentum, 1));
+        rules.put("stickLong", main2special);
 
         rules.put("gear", () -> {
-            AspectList list = new AspectList().add(metallum, 2).add(motus, 1).add(machina, 1);
-            for (Aspect a : primaries) list.add(a, 2);
+            AspectList list = new AspectList().add(main, 2).add(motus, 1).add(machina, 1);
+            for (Aspect a : specials) list.add(a, 2);
             return list;
         });
 
         rules.put("gearSmall", () -> {
-            AspectList list = new AspectList().add(metallum, 2).add(motus, 1).add(machina, 1);
-            for (Aspect a : primaries) list.add(a, 2);
+            AspectList list = new AspectList().add(main, 2).add(motus, 1).add(machina, 1);
+            for (Aspect a : specials) list.add(a, 2);
             return list;
         });
 
@@ -426,17 +428,17 @@ public class TCHelper {
 
         rules.put("screw", () -> new AspectList().add(instrumentum, 3).add(fabrico, 1).add(ordo, 1));
 
-        rules.put("ring", () -> new AspectList().add(instrumentum, 3).add(fabrico, 3).add(ordo, 3).add(metallum, 1));
+        rules.put("ring", () -> new AspectList().add(instrumentum, 3).add(fabrico, 3).add(ordo, 3).add(main, 1));
 
         rules.put("rotor", () -> {
-            AspectList list = new AspectList().add(metallum, 2);
-            for (Aspect a : primaries) list.add(a, 2);
+            AspectList list = new AspectList().add(main, 2);
+            for (Aspect a : specials) list.add(a, 2);
             return list;
         });
 
         rules.put("spring", () -> {
-            AspectList list = new AspectList().add(metallum, 2);
-            for (Aspect a : primaries) list.add(a, 2);
+            AspectList list = new AspectList().add(main, 2);
+            for (Aspect a : specials) list.add(a, 2);
             return list;
         });
 
@@ -450,9 +452,9 @@ public class TCHelper {
         // All plate variants share the same aspect list
         String[] plateVariants = { "plate", "plateDouble", "plateTriple", "plateQuadruple", "plateQuintuple",
                 "plateDense" };
-        for (String p : plateVariants) rules.put(p, metallum2Primary);
+        for (String p : plateVariants) rules.put(p, main2special);
 
-        rules.put("rawOre", metallum2Primary);
+        rules.put("rawOre", main2special);
 
         rules.put("crushed", () -> new AspectList().add(perfodio, 1));
         rules.put("crushedPurified", () -> new AspectList().add(perfodio, 1));
