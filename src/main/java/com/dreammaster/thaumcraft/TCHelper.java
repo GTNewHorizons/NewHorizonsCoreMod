@@ -1,7 +1,9 @@
 package com.dreammaster.thaumcraft;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -350,7 +352,14 @@ public class TCHelper {
         }
     }
 
-    public static void registerMaterialAspects(String primaryAspect, String material) {
+    public static void registerMaterialAspects(String material, String... primaryAspects) {
+
+        // Convert varargs → Aspect[]
+        List<Aspect> primaries = new ArrayList<>();
+        for (String pa : primaryAspects) {
+            Aspect a = Aspect.getAspect(pa);
+            if (a != null) primaries.add(a);
+        }
 
         // Cache common aspects
         Aspect metallum = Aspect.getAspect("metallum");
@@ -364,9 +373,20 @@ public class TCHelper {
         Aspect meto = Aspect.getAspect("meto");
         Aspect arbor = Aspect.getAspect("arbor");
         Aspect electrum = Aspect.getAspect("electrum");
-        Aspect primary = Aspect.getAspect(primaryAspect);
 
-        Supplier<AspectList> plateAspects = () -> new AspectList().add(metallum, 2).add(primary, 1);
+        // metallum 2 + primaries
+        Supplier<AspectList> metallum2Primary = () -> {
+            AspectList list = new AspectList().add(metallum, 2);
+            for (Aspect a : primaries) list.add(a, 1);
+            return list;
+        };
+
+        // metallum 3 + primaries
+        Supplier<AspectList> metallum3Primary = () -> {
+            AspectList list = new AspectList().add(metallum, 3);
+            for (Aspect a : primaries) list.add(a, 1);
+            return list;
+        };
 
         // Declarative rules
         Map<String, Supplier<AspectList>> rules = new LinkedHashMap<>();
@@ -374,35 +394,65 @@ public class TCHelper {
         rules.put("dustImpure", () -> new AspectList().add(perditio, 1));
         rules.put("dustPure", () -> new AspectList().add(perditio, 1));
 
-        rules.put("dust", () -> new AspectList().add(metallum, 2).add(perditio, 1).add(primary, 1));
+        rules.put("dust", () -> {
+            AspectList list = new AspectList().add(metallum, 2).add(perditio, 1);
+            for (Aspect a : primaries) list.add(a, 1);
+            return list;
+        });
+
         rules.put("dustSmall", () -> new AspectList().add(perditio, 1));
         rules.put("dustTiny", () -> new AspectList().add(perditio, 1));
 
         rules.put("nugget", () -> new AspectList().add(metallum, 1));
-        rules.put("ingot", () -> new AspectList().add(metallum, 3).add(primary, 1));
-        rules.put("ingotHot", () -> new AspectList().add(metallum, 2).add(primary, 1));
+        rules.put("ingot", metallum3Primary);
+        rules.put("ingotHot", metallum2Primary);
 
         rules.put("stick", () -> new AspectList().add(metallum, 2).add(instrumentum, 1));
-        rules.put("stickLong", () -> new AspectList().add(metallum, 2).add(primary, 1));
-        rules.put("gear", () -> new AspectList().add(metallum, 2).add(primary, 2).add(motus, 1).add(machina, 1));
-        rules.put("gearSmall", () -> new AspectList().add(metallum, 2).add(primary, 2).add(motus, 1).add(machina, 1));
+        rules.put("stickLong", metallum2Primary);
+
+        rules.put("gear", () -> {
+            AspectList list = new AspectList().add(metallum, 2).add(motus, 1).add(machina, 1);
+            for (Aspect a : primaries) list.add(a, 2);
+            return list;
+        });
+
+        rules.put("gearSmall", () -> {
+            AspectList list = new AspectList().add(metallum, 2).add(motus, 1).add(machina, 1);
+            for (Aspect a : primaries) list.add(a, 2);
+            return list;
+        });
+
         rules.put("bolt", () -> new AspectList().add(instrumentum, 1));
+
         rules.put("screw", () -> new AspectList().add(instrumentum, 3).add(fabrico, 1).add(ordo, 1));
+
         rules.put("ring", () -> new AspectList().add(instrumentum, 3).add(fabrico, 3).add(ordo, 3).add(metallum, 1));
-        rules.put("rotor", () -> new AspectList().add(metallum, 2).add(primary, 2));
-        rules.put("spring", () -> new AspectList().add(metallum, 2).add(primary, 2));
+
+        rules.put("rotor", () -> {
+            AspectList list = new AspectList().add(metallum, 2);
+            for (Aspect a : primaries) list.add(a, 2);
+            return list;
+        });
+
+        rules.put("spring", () -> {
+            AspectList list = new AspectList().add(metallum, 2);
+            for (Aspect a : primaries) list.add(a, 2);
+            return list;
+        });
+
         rules.put(
                 "springSmall",
                 () -> new AspectList().add(instrumentum, 5).add(fabrico, 3).add(ordo, 3).add(meto, 1).add(arbor, 1));
+
         rules.put("foil", () -> new AspectList().add(fabrico, 1));
         rules.put("wireFine", () -> new AspectList().add(electrum, 1));
 
         // All plate variants share the same aspect list
         String[] plateVariants = { "plate", "plateDouble", "plateTriple", "plateQuadruple", "plateQuintuple",
                 "plateDense" };
-        for (String p : plateVariants) rules.put(p, plateAspects);
+        for (String p : plateVariants) rules.put(p, metallum2Primary);
 
-        rules.put("rawOre", plateAspects);
+        rules.put("rawOre", metallum2Primary);
 
         rules.put("crushed", () -> new AspectList().add(perfodio, 1));
         rules.put("crushedPurified", () -> new AspectList().add(perfodio, 1));
