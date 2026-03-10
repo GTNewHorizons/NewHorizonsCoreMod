@@ -22,6 +22,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptNuclearControl implements IScriptLoader {
@@ -304,9 +305,9 @@ public class ScriptNuclearControl implements IScriptLoader {
 
         GTValues.RA.stdBuilder() // Color upgrade
                 .itemInputs(
-                        ItemList.Color_01.get(1L),
-                        ItemList.Color_02.get(1L),
-                        ItemList.Color_04.get(1L),
+                        new OreDictItemStack("dyeRed", 1),
+                        new OreDictItemStack("dyeGreen", 1),
+                        new OreDictItemStack("dyeBlue", 1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
