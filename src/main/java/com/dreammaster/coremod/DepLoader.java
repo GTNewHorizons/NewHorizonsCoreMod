@@ -6,8 +6,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.channels.Channels;
@@ -291,8 +289,7 @@ public class DepLoader implements IFMLCallHook {
 
     private static InputStream openStream(String url) throws IOException {
         URL urlObj = new URL(url);
-        URLConnection conn = urlObj
-                .openConnection(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 1080)));
+        URLConnection conn = urlObj.openConnection();
         conn.setRequestProperty("user-agent", DreamCoreMod.downloadUA);
         return conn.getInputStream();
     }
