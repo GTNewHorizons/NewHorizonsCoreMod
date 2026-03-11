@@ -1349,10 +1349,10 @@ public class ScriptRailcraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(Railcraft.ID, "brick.sandy", 1, 2, missing),
-                getModItem(Railcraft.ID, "slab", 1, 21, missing),
+                getModItem(Railcraft.ID, "slab", 1, 22, missing),
                 null,
                 null,
-                getModItem(Railcraft.ID, "slab", 1, 21, missing),
+                getModItem(Railcraft.ID, "slab", 1, 22, missing),
                 null,
                 null,
                 null,
