@@ -458,6 +458,18 @@ public class TCHelper {
         rules.put("crushedPurified", () -> new AspectList().add(perfodio, 1));
         rules.put("crushedCentrifuged", () -> new AspectList().add(perfodio, 1));
 
+        rules.put("block", () -> {
+            AspectList list = new AspectList().add(main, 10);
+            for (Aspect a : specials) list.add(a, 7);
+            return list;
+        });
+
+        rules.put("frameGt", () -> {
+            AspectList list = new AspectList().add(main, 6);
+            for (Aspect a : specials) list.add(a, 3);
+            return list;
+        });
+
         // Apply all rules
         for (Map.Entry<String, Supplier<AspectList>> entry : rules.entrySet()) {
             String key = entry.getKey() + material;

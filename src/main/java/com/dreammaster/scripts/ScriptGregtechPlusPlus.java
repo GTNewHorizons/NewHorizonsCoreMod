@@ -354,7 +354,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         TCHelper.registerMaterialAspects("Curium", "metallum", "radio");
         TCHelper.registerMaterialAspects("Neptunium", "metallum", "radio");
         TCHelper.registerMaterialAspects("Fermium", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Lithium7", "metallum", "custom1");
+        TCHelper.registerMaterialAspects("Lithium7", "potentia", "custom1");
         TCHelper.registerMaterialAspects("Uranium232", "metallum", "radio");
         TCHelper.registerMaterialAspects("Uranium233", "metallum", "radio");
         TCHelper.registerMaterialAspects("Plutonium238", "metallum", "radio");
@@ -368,5 +368,6 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         TCHelper.registerMaterialAspects("AncientGranite", "perditio", "custom3");
         TCHelper.registerMaterialAspects("Runite", "perditio", "custom3");
         TCHelper.registerMaterialAspects("Dragonblood", "metallum", "terminus");
+        TCHelper.registerMaterialAspects("Rhugnor", "terminus", "tempus");
     }
 }
