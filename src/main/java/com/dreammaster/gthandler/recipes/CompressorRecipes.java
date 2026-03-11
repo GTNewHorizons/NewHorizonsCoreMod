@@ -62,7 +62,7 @@ public class CompressorRecipes implements Runnable {
 
         // custom dust to plate compression
         Materials[] dustToPlateList = new Materials[] { Materials.NetherQuartz, Materials.Quartzite, Materials.Lazurite,
-                Materials.Sodalite, Materials.GraniteBlack, Materials.GraniteRed };
+                Materials.Sodalite, Materials.GraniteBlack, Materials.GraniteRed, Materials.Stone };
         for (Materials material : dustToPlateList) {
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, material, 1L))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 1L)).duration(15 * SECONDS).eut(2)
@@ -93,10 +93,6 @@ public class CompressorRecipes implements Runnable {
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, material, 1L)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
         }
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 4L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stone, Materials.Stone, 3L)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Marble, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Marble, 1L)).duration(15 * SECONDS)
