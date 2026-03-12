@@ -3543,7 +3543,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.orphanResearch("ROD_blood_wood_staff");
         TCHelper.removeResearch("ROD_blood_wood_staff");
         new ResearchItem(
-                "RODBLOODWOODSTAFF",
+                "ROD_blood_wood_staff",
                 "FORBIDDEN",
                 new AspectList().add(Aspect.getAspect("victus"), 18).add(Aspect.getAspect("instrumentum"), 15)
                         .add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("praecantatio"), 9)
@@ -3556,7 +3556,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .setPages(new ResearchPage("blood_arsenal.research_page.ROD_blood_wood_staff.1"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
-                "RODBLOODWOODSTAFF",
+                "ROD_blood_wood_staff",
                 getModItem(BloodArsenal.ID, "wand_cores", 1, 1, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("victus"), 64).add(Aspect.getAspect("aqua"), 64)
@@ -3579,10 +3579,10 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0, missing),
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0, missing));
         TCHelper.addResearchPage(
-                "RODBLOODWOODSTAFF",
+                "ROD_blood_wood_staff",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "wand_cores", 1, 1, missing))));
-        ThaumcraftApi.addWarpToResearch("RODBLOODWOODSTAFF", 7);
+        ThaumcraftApi.addWarpToResearch("ROD_blood_wood_staff", 7);
         TCHelper.refreshResearchPages("CAP_blood_iron");
         TCHelper.refreshResearchPages("ROD_blood_wood");
         new ResearchItem(
