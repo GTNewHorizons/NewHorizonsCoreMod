@@ -20,7 +20,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.thaumcraft.TCHelper;
+import com.dreammaster.thaumcraft.TCMaterialAspectHelper;
 
 import cpw.mods.fml.common.Optional;
 import forestry.api.recipes.RecipeManagers;
@@ -343,31 +343,32 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
     }
 
     private void addThaumcraftAspects() {
-        TCHelper.registerMaterialAspects("Selenium", "metallum", "custom2");
-        TCHelper.registerMaterialAspects("Iodine", "metallum", "sano");
-        TCHelper.registerMaterialAspects("Rhenium", "metallum", "alienis");
-        TCHelper.registerMaterialAspects("Thallium", "metallum", "strontio");
-        TCHelper.registerMaterialAspects("Germanium", "metallum", "custom1");
-        TCHelper.registerMaterialAspects("Polonium", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Radium", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Protactinium", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Curium", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Neptunium", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Fermium", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Lithium7", "potentia", "custom1");
-        TCHelper.registerMaterialAspects("Uranium232", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Uranium233", "metallum", "radio");
-        TCHelper.registerMaterialAspects("Plutonium238", "metallum", "radio");
-        TCHelper.registerMaterialAspects("AdvancedNitinol", "metallum", "custom2");
-        TCHelper.registerMaterialAspects("AstralTitanium", "metallum", "custom4");
-        TCHelper.registerMaterialAspects("CelestialTungsten", "metallum", "custom4");
-        TCHelper.registerMaterialAspects("Hypogen", "metallum", "custom5");
-        TCHelper.registerMaterialAspects("ChromaticGlass", "vitreus", "custom3");
-        TCHelper.registerMaterialAspects("BlackMetal", "metallum", "radio");
-        TCHelper.registerMaterialAspects("WhiteMetal", "metallum", "custom5");
-        TCHelper.registerMaterialAspects("AncientGranite", "perditio", "custom3");
-        TCHelper.registerMaterialAspects("Runite", "perditio", "custom3");
-        TCHelper.registerMaterialAspects("Dragonblood", "metallum", "terminus");
-        TCHelper.registerMaterialAspects("Rhugnor", "terminus", "tempus");
+        TCMaterialAspectHelper.registerMaterialAspects("Selenium", "metallum", "custom2");
+        TCMaterialAspectHelper.registerMaterialAspects("Iodine", "metallum", "sano");
+        TCMaterialAspectHelper.registerMaterialAspects("Rhenium", "metallum", "alienis");
+        TCMaterialAspectHelper.registerMaterialAspects("Thallium", "metallum", "strontio");
+        TCMaterialAspectHelper.registerMaterialAspects("Germanium", "metallum", "custom1");
+        TCMaterialAspectHelper.registerMaterialAspects("Polonium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Radium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Protactinium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Curium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Neptunium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Fermium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Lithium7", "potentia", "custom1");
+        TCMaterialAspectHelper.registerMaterialAspects("Uranium232", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Uranium233", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Plutonium238", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("AdvancedNitinol", "metallum", "custom2");
+        TCMaterialAspectHelper.registerMaterialAspects("AstralTitanium", "metallum", "custom4");
+        TCMaterialAspectHelper.registerMaterialAspects("CelestialTungsten", "metallum", "custom4");
+        TCMaterialAspectHelper.registerMaterialAspects("Hypogen", "metallum", "custom5");
+        TCMaterialAspectHelper.registerMaterialAspects("ChromaticGlass", "vitreus", "custom3");
+        TCMaterialAspectHelper.registerMaterialAspects("BlackMetal", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("WhiteMetal", "metallum", "custom5");
+        TCMaterialAspectHelper.registerMaterialAspects("AncientGranite", "perditio", "custom3");
+        TCMaterialAspectHelper.registerMaterialAspects("Runite", "perditio", "custom3");
+        TCMaterialAspectHelper.registerMaterialAspects("Dragonblood", "metallum", "terminus");
+        TCMaterialAspectHelper.registerMaterialAspects("Staballoy", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Rhugnor", "terminus", "tempus");
     }
 }
