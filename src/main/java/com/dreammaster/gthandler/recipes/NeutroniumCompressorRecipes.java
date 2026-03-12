@@ -14,6 +14,9 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
+import static toxiceverglades.dimension.DimensionEverglades.blockSecondLayer;
+
+import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
@@ -224,6 +227,9 @@ public class NeutroniumCompressorRecipes implements Runnable {
                             12345,
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.PolyvinylChloride, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 4))
+                    .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder().itemInputsUnsafe(GTUtility.copyAmountUnsafe(4321, new ItemStack(blockSecondLayer)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.toxic.singularity"))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
 
             if (ThaumicBases.isModLoaded()) {
