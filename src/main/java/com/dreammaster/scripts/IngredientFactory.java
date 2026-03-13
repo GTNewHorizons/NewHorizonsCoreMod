@@ -9,14 +9,11 @@ import net.minecraft.util.EnumChatFormatting;
 
 import org.jetbrains.annotations.NotNull;
 
-import com.dreammaster.coremod.DreamCoreMod;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public final class IngredientFactory {
 
-    private static final boolean DEBUG = !DreamCoreMod.isObf()
-            || Boolean.parseBoolean(System.getProperty("dreamcraft.debug.recipe"));
+    private static final boolean DEBUG = Boolean.parseBoolean(System.getProperty("dreamcraft.debug.recipe"));
 
     private static @NotNull ItemStack invalidItem(String modId, String item) {
         if (DEBUG) {
