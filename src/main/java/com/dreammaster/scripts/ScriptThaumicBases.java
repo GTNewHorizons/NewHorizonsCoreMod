@@ -37,6 +37,7 @@ import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
@@ -1155,6 +1156,35 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 1).add(Aspect.getAspect("venenum"), 1));
+        CrucibleRecipe leatherHelmetBP = ThaumcraftApi.addCrucibleRecipe(
+                "TB.Backprocessing",
+                getModItem(Minecraft.ID, "leather", 5, 1, missing),
+                getModItem(Minecraft.ID, "leather_helmet", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
+                        .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 2));
+        CrucibleRecipe leatherChestplateBP = ThaumcraftApi.addCrucibleRecipe(
+                "TB.Backprocessing",
+                getModItem(Minecraft.ID, "leather", 8, 1, missing),
+                getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
+                        .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 2));
+        CrucibleRecipe leatherLeggingsBP = ThaumcraftApi.addCrucibleRecipe(
+                "TB.Backprocessing",
+                getModItem(Minecraft.ID, "leather", 7, 1, missing),
+                getModItem(Minecraft.ID, "leather_leggings", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
+                        .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 2));
+        CrucibleRecipe leatherBootsBP = ThaumcraftApi.addCrucibleRecipe(
+                "TB.Backprocessing",
+                getModItem(Minecraft.ID, "leather", 4, 1, missing),
+                getModItem(Minecraft.ID, "leather_boots", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
+                        .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 2));
+
+        TCHelper.addResearchPage("TB.Backprocessing", new ResearchPage(Objects.requireNonNull(leatherHelmetBP)));
+        TCHelper.addResearchPage("TB.Backprocessing", new ResearchPage(Objects.requireNonNull(leatherChestplateBP)));
+        TCHelper.addResearchPage("TB.Backprocessing", new ResearchPage(Objects.requireNonNull(leatherLeggingsBP)));
+        TCHelper.addResearchPage("TB.Backprocessing", new ResearchPage(Objects.requireNonNull(leatherBootsBP)));
         TCHelper.refreshResearchPages("TB.Relocator");
         TCHelper.clearPages("TB.Knose");
         TCHelper.addResearchPage("TB.Knose", new ResearchPage("tb.rec.knose.page.0"));
