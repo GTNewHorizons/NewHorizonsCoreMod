@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -20,7 +21,6 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.FUEL_TYPE;
@@ -139,52 +139,48 @@ public class ScriptForestry implements IScriptLoader {
         recipes2();
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "bucketShortMead", 1, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "bucket", 1, 0)).metadata(FUEL_VALUE, 4)
-                .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GTRecipeConstants.Fuel);
+                .itemOutputs(getModItem(Minecraft.ID, "bucket", 1, 0)).metadata(FUEL_VALUE, 4).metadata(FUEL_TYPE, 0)
+                .duration(0).eut(0).addTo(GTRecipeConstants.Fuel);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.cell, Materials.FishOil, 1L))
                 .itemOutputs(ItemList.Cell_Empty.get(1)).metadata(FUEL_VALUE, 2).metadata(FUEL_TYPE, 0).duration(0)
                 .eut(0).addTo(GTRecipeConstants.Fuel);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "canBiomass", 1, 0))
-                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0)).metadata(FUEL_VALUE, 8)
-                .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GTRecipeConstants.Fuel);
+                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0)).metadata(FUEL_VALUE, 8).metadata(FUEL_TYPE, 0)
+                .duration(0).eut(0).addTo(GTRecipeConstants.Fuel);
 
         OreDictionary.registerOre("foodHoneydrop", getModItem(Forestry.ID, "honeyDrop", 1, 0));
         OreDictionary.registerOre("listAllsugar", getModItem(Forestry.ID, "honeyDrop", 1, 0));
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "beeswax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeswax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Forestry.ID, "refractoryWax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 1), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 2), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(alloySmelterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(alloySmelterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 1), ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(alloySmelterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 2), ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 6L))
-                .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "impregnatedCasing", 1, 0),
                         getModItem(Forestry.ID, "craftingMaterial", 8, 6))
-                .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 0)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 0)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV / 2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Casing_LV.get(1L),
@@ -201,8 +197,8 @@ public class ScriptForestry implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 2L),
                         getModItem(Minecraft.ID, "glass_pane", 1, 0))
-                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0)).duration(6 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0)).duration(6 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "craftingMaterial", 5, 3)).circuit(5)
                 .itemOutputs(getModItem(Forestry.ID, "apiaristHelmet", 1, 0)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
@@ -216,15 +212,11 @@ public class ScriptForestry implements IScriptLoader {
                 .itemOutputs(getModItem(Forestry.ID, "apiaristBoots", 1, 0)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "apiculture", 1, 2),
-                        getModItem(Minecraft.ID, "minecart", 1, 0))
+                .itemInputs(getModItem(Forestry.ID, "apiculture", 1, 2), getModItem(Minecraft.ID, "minecart", 1, 0))
                 .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "apiculture", 1, 0),
-                        getModItem(Minecraft.ID, "minecart", 1, 0))
+                .itemInputs(getModItem(Forestry.ID, "apiculture", 1, 0), getModItem(Minecraft.ID, "minecart", 1, 0))
                 .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -235,32 +227,28 @@ public class ScriptForestry implements IScriptLoader {
                 .circuit(1).itemOutputs(getModItem(Forestry.ID, "factory2", 1, 2)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1))
-                .itemOutputs(getModItem(Forestry.ID, "propolis", 1, 0)).outputChances(500)
-                .duration(20 * SECONDS).eut(40).addTo(centrifugeRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "propolis", 1, 0)).outputChances(500).duration(20 * SECONDS)
+                .eut(40).addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Nugget.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "honeyDrop", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(fluidSolidifierRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "beeswax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeswax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Forestry.ID, "refractoryWax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 1), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 2), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 0), ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 1), ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 2), ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
 
         new ResearchItem(
                 "PROVENFRAME",
@@ -523,12 +511,8 @@ public class ScriptForestry implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(Forestry.ID, "apiculture", 1, 2),
                 getModItem(PamsHarvestCraft.ID, "apiary", 1, 0));
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "beealyzer", 1, 0),
-                getModItem(Forestry.ID, "beealyzer", 1, 0));
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "treealyzer", 1, 0),
-                getModItem(Forestry.ID, "treealyzer", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "beealyzer", 1, 0), getModItem(Forestry.ID, "beealyzer", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "treealyzer", 1, 0), getModItem(Forestry.ID, "treealyzer", 1, 0));
         addShapelessRecipe(
                 getModItem(Forestry.ID, "flutterlyzer", 1, 0),
                 getModItem(Forestry.ID, "flutterlyzer", 1, 0));
@@ -587,9 +571,7 @@ public class ScriptForestry implements IScriptLoader {
                 "itemLeather",
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "itemLeather");
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "apiaristBag", 1, 0),
-                getModItem(Forestry.ID, "apiaristBag", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "apiaristBag", 1, 0), getModItem(Forestry.ID, "apiaristBag", 1, 0));
         addShapedRecipe(
                 getModItem(Forestry.ID, "lepidopteristBag", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
@@ -615,9 +597,7 @@ public class ScriptForestry implements IScriptLoader {
                 "itemLeather",
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "itemLeather");
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "minerBag", 1, 0),
-                getModItem(Forestry.ID, "minerBag", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "minerBag", 1, 0), getModItem(Forestry.ID, "minerBag", 1, 0));
         addShapedRecipe(
                 getModItem(Forestry.ID, "diggerBag", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
@@ -629,9 +609,7 @@ public class ScriptForestry implements IScriptLoader {
                 "itemLeather",
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "itemLeather");
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "diggerBag", 1, 0),
-                getModItem(Forestry.ID, "diggerBag", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "diggerBag", 1, 0), getModItem(Forestry.ID, "diggerBag", 1, 0));
         addShapedRecipe(
                 getModItem(Forestry.ID, "foresterBag", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
@@ -643,9 +621,7 @@ public class ScriptForestry implements IScriptLoader {
                 "itemLeather",
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "itemLeather");
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "foresterBag", 1, 0),
-                getModItem(Forestry.ID, "foresterBag", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "foresterBag", 1, 0), getModItem(Forestry.ID, "foresterBag", 1, 0));
         addShapedRecipe(
                 getModItem(Forestry.ID, "hunterBag", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
@@ -657,9 +633,7 @@ public class ScriptForestry implements IScriptLoader {
                 "itemLeather",
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "itemLeather");
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "hunterBag", 1, 0),
-                getModItem(Forestry.ID, "hunterBag", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "hunterBag", 1, 0), getModItem(Forestry.ID, "hunterBag", 1, 0));
         addShapedRecipe(
                 getModItem(Forestry.ID, "builderBag", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
@@ -671,9 +645,7 @@ public class ScriptForestry implements IScriptLoader {
                 "itemLeather",
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "itemLeather");
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "builderBag", 1, 0),
-                getModItem(Forestry.ID, "builderBag", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "builderBag", 1, 0), getModItem(Forestry.ID, "builderBag", 1, 0));
         addShapedRecipe(
                 getModItem(Forestry.ID, "coinBag", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
@@ -685,9 +657,7 @@ public class ScriptForestry implements IScriptLoader {
                 "itemLeather",
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "itemLeather");
-        addShapelessRecipe(
-                getModItem(Forestry.ID, "coinBag", 1, 0),
-                getModItem(Forestry.ID, "coinBag", 1, 0));
+        addShapelessRecipe(getModItem(Forestry.ID, "coinBag", 1, 0), getModItem(Forestry.ID, "coinBag", 1, 0));
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 0),
                 "stickWood",
@@ -2627,12 +2597,8 @@ public class ScriptForestry implements IScriptLoader {
                 "screwSteel",
                 getModItem(Minecraft.ID, "minecart", 1, 0),
                 "screwSteel");
-        addShapelessRecipe(
-                getModItem(Minecraft.ID, "minecart", 1, 0),
-                getModItem(Forestry.ID, "cart.beehouse", 1, 0));
-        addShapelessRecipe(
-                getModItem(Minecraft.ID, "minecart", 1, 0),
-                getModItem(Forestry.ID, "cart.beehouse", 1, 1));
+        addShapelessRecipe(getModItem(Minecraft.ID, "minecart", 1, 0), getModItem(Forestry.ID, "cart.beehouse", 1, 0));
+        addShapelessRecipe(getModItem(Minecraft.ID, "minecart", 1, 0), getModItem(Forestry.ID, "cart.beehouse", 1, 1));
     }
 
     private void recipes1() {

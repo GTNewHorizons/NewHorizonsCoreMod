@@ -6,7 +6,6 @@ import static gregtech.api.enums.GTValues.RA;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Railcraft;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static gregtech.api.util.GTRecipeBuilder.EIGHTH_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
@@ -23,7 +22,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -170,9 +168,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             ItemList.Wrap_GoodCircuitBoards.get(1),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                             ItemList.Cover_Controller.get(16))
-                    .itemOutputs(
-                            GTUtility
-                                    .copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 0)))
+                    .itemOutputs(GTUtility.copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 0)))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                     .special(ItemList.CircuitImprint_ControllerCircuit.get(0)).eut(TierEU.RECIPE_LV)
                     .duration(4 * MINUTES).requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -183,9 +179,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             ItemList.Wrap_GoodCircuitBoards.get(1),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                             ItemList.Sensor_LV.get(16))
-                    .itemOutputs(
-                            GTUtility
-                                    .copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 1)))
+                    .itemOutputs(GTUtility.copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 1)))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                     .special(ItemList.CircuitImprint_ReceiverCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(4 * MINUTES)
                     .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -196,9 +190,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             ItemList.Wrap_GoodCircuitBoards.get(1),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                             getModItem(Railcraft.ID, "part.signal.lamp", 16))
-                    .itemOutputs(
-                            GTUtility
-                                    .copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 2)))
+                    .itemOutputs(GTUtility.copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 2)))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                     .special(ItemList.CircuitImprint_SignalCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(4 * MINUTES)
                     .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -209,9 +201,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             ItemList.Wrap_AdvancedCircuitBoards.get(1),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                             ItemList.Cover_Controller.get(16))
-                    .itemOutputs(
-                            GTUtility
-                                    .copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 0)))
+                    .itemOutputs(GTUtility.copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 0)))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                     .special(ItemList.CircuitImprint_ControllerCircuit.get(0)).eut(TierEU.RECIPE_LV)
                     .duration(5 * MINUTES).requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -222,9 +212,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             ItemList.Wrap_AdvancedCircuitBoards.get(1),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                             ItemList.Sensor_LV.get(16))
-                    .itemOutputs(
-                            GTUtility
-                                    .copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 1)))
+                    .itemOutputs(GTUtility.copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 1)))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                     .special(ItemList.CircuitImprint_ReceiverCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(5 * MINUTES)
                     .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);
@@ -235,9 +223,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                             ItemList.Wrap_AdvancedCircuitBoards.get(1),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                             getModItem(Railcraft.ID, "part.signal.lamp", 16))
-                    .itemOutputs(
-                            GTUtility
-                                    .copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 2)))
+                    .itemOutputs(GTUtility.copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 2)))
                     .fluidInputs(Materials.SolderingAlloy.getMolten(1 * HALF_INGOTS))
                     .special(ItemList.CircuitImprint_SignalCircuit.get(0)).eut(TierEU.RECIPE_LV).duration(5 * MINUTES)
                     .requireMods(Railcraft).addTo(circuitAssemblyLineRecipes);

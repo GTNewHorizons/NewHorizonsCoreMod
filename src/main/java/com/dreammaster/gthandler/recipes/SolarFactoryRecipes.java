@@ -1,12 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.dreammaster.scripts.IScriptLoader.missing;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.recipe.RecipeMaps.solarFactoryRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.common.tileentities.machines.multi.MTESolarFactory.validWafers;

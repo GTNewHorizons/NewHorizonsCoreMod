@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -10,7 +11,6 @@ import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -49,9 +49,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "barleyFood", 1, 3),
                 getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "barley.seed", 1, 1),
-                getModItem(Natura.ID, "barleyFood", 1, 3));
+        addShapelessRecipe(getModItem(Natura.ID, "barley.seed", 1, 1), getModItem(Natura.ID, "barleyFood", 1, 3));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "leather", 1, 0),
                 getModItem(Minecraft.ID, "string", 1, 0),
@@ -67,9 +65,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 0),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "tree", 1, 0));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 0),
-                getModItem(Natura.ID, "tree", 1, 0));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 0), getModItem(Natura.ID, "tree", 1, 0));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 0),
                 getModItem(Natura.ID, "planks", 1, 0),
@@ -215,9 +211,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 1),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "tree", 1, 1));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 1),
-                getModItem(Natura.ID, "tree", 1, 1));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 1), getModItem(Natura.ID, "tree", 1, 1));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 1),
                 getModItem(Natura.ID, "planks", 1, 1),
@@ -378,9 +372,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 2),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "tree", 1, 2));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 2),
-                getModItem(Natura.ID, "tree", 1, 2));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 2), getModItem(Natura.ID, "tree", 1, 2));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 2),
                 getModItem(Natura.ID, "planks", 1, 2),
@@ -537,9 +529,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 3),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "redwood", 1, 1));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 3),
-                getModItem(Natura.ID, "redwood", 1, 1));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 3), getModItem(Natura.ID, "redwood", 1, 1));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 3),
                 getModItem(Natura.ID, "planks", 1, 3),
@@ -696,16 +686,12 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 4),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "bloodwood", 1, 0));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 4),
-                getModItem(Natura.ID, "bloodwood", 1, 0));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 4), getModItem(Natura.ID, "bloodwood", 1, 0));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "bloodwood", 1, 15));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 4),
-                getModItem(Natura.ID, "bloodwood", 1, 15));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 4), getModItem(Natura.ID, "bloodwood", 1, 15));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4),
                 "craftingToolSaw",
@@ -876,9 +862,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 5),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "tree", 1, 3));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 5),
-                getModItem(Natura.ID, "tree", 1, 3));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 5), getModItem(Natura.ID, "tree", 1, 3));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 5),
                 getModItem(Natura.ID, "planks", 1, 5),
@@ -1035,9 +1019,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 6),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "Rare Tree", 1, 0));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 6),
-                getModItem(Natura.ID, "Rare Tree", 1, 0));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 6), getModItem(Natura.ID, "Rare Tree", 1, 0));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 6),
                 getModItem(Natura.ID, "planks", 1, 6),
@@ -1194,9 +1176,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 7),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "Rare Tree", 1, 1));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 7),
-                getModItem(Natura.ID, "Rare Tree", 1, 1));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 7), getModItem(Natura.ID, "Rare Tree", 1, 1));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 7),
                 getModItem(Natura.ID, "planks", 1, 7),
@@ -1353,9 +1333,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 8),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "Rare Tree", 1, 2));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 8),
-                getModItem(Natura.ID, "Rare Tree", 1, 2));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 8), getModItem(Natura.ID, "Rare Tree", 1, 2));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 8),
                 getModItem(Natura.ID, "planks", 1, 8),
@@ -1512,9 +1490,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 9),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "Rare Tree", 1, 3));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 9),
-                getModItem(Natura.ID, "Rare Tree", 1, 3));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 9), getModItem(Natura.ID, "Rare Tree", 1, 3));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 9),
                 getModItem(Natura.ID, "planks", 1, 9),
@@ -1671,9 +1647,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 10),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "willow", 1, 0));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 10),
-                getModItem(Natura.ID, "willow", 1, 0));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 10), getModItem(Natura.ID, "willow", 1, 0));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 10),
                 getModItem(Natura.ID, "planks", 1, 10),
@@ -1830,9 +1804,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 11),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "Dark Tree", 1, 0));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 11),
-                getModItem(Natura.ID, "Dark Tree", 1, 0));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 11), getModItem(Natura.ID, "Dark Tree", 1, 0));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 11),
                 getModItem(Natura.ID, "planks", 1, 11),
@@ -1993,9 +1965,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 4, 12),
                 "craftingToolSaw",
                 getModItem(Natura.ID, "Dark Tree", 1, 1));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "planks", 2, 12),
-                getModItem(Natura.ID, "Dark Tree", 1, 1));
+        addShapelessRecipe(getModItem(Natura.ID, "planks", 2, 12), getModItem(Natura.ID, "Dark Tree", 1, 1));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 12),
                 getModItem(Natura.ID, "planks", 1, 12),
@@ -2164,9 +2134,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "blackberryjuiceItem", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0));
-        addShapelessRecipe(
-                getModItem(Natura.ID, "barley.seed", 1, 0),
-                getModItem(Natura.ID, "barleyFood", 1, 0));
+        addShapelessRecipe(getModItem(Natura.ID, "barley.seed", 1, 0), getModItem(Natura.ID, "barleyFood", 1, 0));
         addShapedRecipe(
                 getModItem(Natura.ID, "NetherFurnace", 1, 0),
                 "stoneNetherBrick",
@@ -2543,15 +2511,11 @@ public class ScriptNatura implements IScriptLoader {
         ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 12));
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glass", 1, 0),
-                        getModItem(Minecraft.ID, "soul_sand", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "glass", 1, 0), getModItem(Minecraft.ID, "soul_sand", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "NetherGlass", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glass", 1, 0),
-                        getModItem(Natura.ID, "heatsand", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "glass", 1, 0), getModItem(Natura.ID, "heatsand", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "NetherGlass", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "flint_and_steel", 1, 0)).circuit(3)
@@ -2559,81 +2523,55 @@ public class ScriptNatura implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 432)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 0),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 0), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 1),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 1), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 2),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 2), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 2)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 3),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 3), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 3)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 4),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 4), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 4)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 5),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 5), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 5)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 6),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 6), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 6)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 7),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 7), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 7)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 8),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 8), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 8)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 9),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 9), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 9)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 10),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 10), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 10)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 11),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 11), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 11)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 6, 12),
-                        getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 12), getModItem(Minecraft.ID, "book", 3, 0))
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 12)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -2897,125 +2835,89 @@ public class ScriptNatura implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "redwood", 4, 1),
-                        getModItem(Natura.ID, "trapdoor.redwood", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "redwood", 4, 1), getModItem(Natura.ID, "trapdoor.redwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "redwood", 4, 1),
-                        getModItem(Natura.ID, "trapdoor.redwood", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "redwood", 4, 1), getModItem(Natura.ID, "trapdoor.redwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 0),
-                        getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 0), getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 0),
-                        getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 0), getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 5),
-                        getModItem(Natura.ID, "trapdoor.hopseed", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 5), getModItem(Natura.ID, "trapdoor.hopseed", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 5),
-                        getModItem(Natura.ID, "trapdoor.hopseed", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 5), getModItem(Natura.ID, "trapdoor.hopseed", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 1),
-                        getModItem(Natura.ID, "trapdoor.sakura", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 1), getModItem(Natura.ID, "trapdoor.sakura", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 1),
-                        getModItem(Natura.ID, "trapdoor.sakura", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 1), getModItem(Natura.ID, "trapdoor.sakura", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 2),
-                        getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 2), getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 2),
-                        getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 2), getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 4),
-                        getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 4), getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "planks", 4, 4),
-                        getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 4, 4), getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "redwood", 4, 0),
-                        getModItem(Natura.ID, "trapdoor.redwood", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "redwood", 4, 0), getModItem(Natura.ID, "trapdoor.redwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "redwood", 4, 0),
-                        getModItem(Natura.ID, "trapdoor.redwood", 1, 0))
+                .itemInputs(getModItem(Natura.ID, "redwood", 4, 0), getModItem(Natura.ID, "trapdoor.redwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "redwoodDoorItem", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 2),
-                        getModItem(Natura.ID, "barleyFood", 3, 7))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 2), getModItem(Natura.ID, "barleyFood", 3, 7))
                 .itemOutputs(getModItem(Natura.ID, "natura.bow.ghostwood", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 4),
-                        getModItem(Natura.ID, "barleyFood", 3, 7))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 4), getModItem(Natura.ID, "barleyFood", 3, 7))
                 .itemOutputs(getModItem(Natura.ID, "natura.bow.bloodwood", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 11),
-                        getModItem(Natura.ID, "barleyFood", 3, 7))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 11), getModItem(Natura.ID, "barleyFood", 3, 7))
                 .itemOutputs(getModItem(Natura.ID, "natura.bow.darkwood", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 12),
-                        getModItem(Natura.ID, "barleyFood", 3, 7))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 12), getModItem(Natura.ID, "barleyFood", 3, 7))
                 .itemOutputs(getModItem(Natura.ID, "natura.bow.fusewood", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -3178,14 +3080,14 @@ public class ScriptNatura implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                .circuit(9).itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+                .circuit(9).itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .circuit(9).itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+                .circuit(9).itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.eucalyptus", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
@@ -3440,34 +3342,20 @@ public class ScriptNatura implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("sulfurdioxide", 4000)).duration(20 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "NetherPressurePlate", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.sakura", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.ghostwood", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.redwood", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.bloodwood", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.hopseed", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.maple", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.amaranth", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.silverbell", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.tiger", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.willow", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.darkwood", 1, 0), (short) 75);
-        Module_CustomFuels
-                .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.fusewood", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "NetherPressurePlate", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.sakura", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.ghostwood", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.redwood", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.bloodwood", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.hopseed", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.maple", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.amaranth", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.silverbell", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.tiger", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.willow", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.darkwood", 1, 0), (short) 75);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.fusewood", 1, 0), (short) 75);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Bluebells", 1, 0))
                 .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
 

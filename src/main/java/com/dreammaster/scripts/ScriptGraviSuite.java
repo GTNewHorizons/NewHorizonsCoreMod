@@ -1,10 +1,10 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.*;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GraviSuiteNEO;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;

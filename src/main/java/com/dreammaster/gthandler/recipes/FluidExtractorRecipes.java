@@ -19,7 +19,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
-import gregtech.api.util.GTModHandler;
 
 public class FluidExtractorRecipes implements Runnable {
 

@@ -31,7 +31,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
 
@@ -44,8 +43,7 @@ public class MaceratorRecipes implements Runnable {
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
 
         if (IndustrialCraft2.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 2, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 2, 0))
                     .itemOutputs(
                             NHItemList.MaceratedPlantmass.get(),
                             NHItemList.MaceratedPlantmass.get(),
@@ -113,8 +111,7 @@ public class MaceratorRecipes implements Runnable {
 
             // Open Printers
             // Paper shreds
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(OpenPrinters.ID, "openprinter.paperShreds", 1, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(OpenPrinters.ID, "openprinter.paperShreds", 1, 0))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Paper, 1L)).outputChances(10000)
                     .duration(20 * TICKS).eut(2).addTo(maceratorRecipes);
 
@@ -166,8 +163,7 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 9L))
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(TinkerConstruct.ID, "woodPattern", 1, WILDCARD))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "woodPattern", 1, WILDCARD))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)).outputChances(10000)
                     .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
 
@@ -201,64 +197,62 @@ public class MaceratorRecipes implements Runnable {
         if (Avaritia.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_11, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_13, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_cat, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_blocks, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_chirp, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_far, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_mellohi, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_mall, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_stal, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_strad, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_ward, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_wait, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
+                    .eut(2).addTo(maceratorRecipes);
 
         }
 
         if (AdvancedSolarPanel.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L))
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 9))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 9))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sunnarium, 1L))
                     .outputChances(10000).duration(1 * SECONDS + 10 * TICKS).eut(2).addTo(maceratorRecipes);
 
@@ -324,8 +318,7 @@ public class MaceratorRecipes implements Runnable {
                     .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 0))
                     .itemOutputs(
                             NHItemList.AsteroidsStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
@@ -333,8 +326,7 @@ public class MaceratorRecipes implements Runnable {
                     .outputChances(10000, 1000, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 1))
                     .itemOutputs(
                             NHItemList.AsteroidsStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
@@ -342,8 +334,7 @@ public class MaceratorRecipes implements Runnable {
                     .outputChances(10000, 1000, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 2))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 2))
                     .itemOutputs(
                             NHItemList.AsteroidsStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
@@ -414,8 +405,7 @@ public class MaceratorRecipes implements Runnable {
                     .outputChances(10000, 1250, 625).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(GalaxySpace.ID, "europaunderwatergeyser", 1, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "europaunderwatergeyser", 1, 0))
                     .itemOutputs(
                             NHItemList.EuropaIceDust.get(2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 2),

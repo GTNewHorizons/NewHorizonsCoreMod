@@ -1,9 +1,9 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersDefence;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -37,16 +37,14 @@ public class ScriptTinkersDefence implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1, 0),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201))
-                .duration(1 * MINUTES + 28 * SECONDS).eut(TierEU.RECIPE_MV)
-                .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201)).duration(1 * MINUTES + 28 * SECONDS)
+                .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203))
-                .duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
-                .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203)).duration(1 * MINUTES + 4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1, 0),

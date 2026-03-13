@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Diamond;
 import static gregtech.api.enums.Materials.HV;
 import static gregtech.api.enums.Materials.IV;
@@ -28,7 +29,6 @@ import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static thaumcraft.api.aspects.Aspect.getAspect;
 
@@ -130,12 +130,9 @@ public class ScriptEMT implements IScriptLoader {
 
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0));
-        TCHelper.removeInfusionRecipe(
-                createItemStack(ElectroMagicTools.ID, "NanosuitWing", 1, 26, "{charge:10.0d}"));
-        TCHelper.removeInfusionRecipe(
-                createItemStack(ElectroMagicTools.ID, "QuantumWing", 1, 26, "{charge:10.0d}"));
-        TCHelper.removeArcaneRecipe(
-                createItemStack(ElectroMagicTools.ID, "Diamond Omnitool", 1, 26, "{charge:10.0d}"));
+        TCHelper.removeInfusionRecipe(createItemStack(ElectroMagicTools.ID, "NanosuitWing", 1, 26, "{charge:10.0d}"));
+        TCHelper.removeInfusionRecipe(createItemStack(ElectroMagicTools.ID, "QuantumWing", 1, 26, "{charge:10.0d}"));
+        TCHelper.removeArcaneRecipe(createItemStack(ElectroMagicTools.ID, "Diamond Omnitool", 1, 26, "{charge:10.0d}"));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "Diamond Omnitool", 1, 0));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "ThaumiumOmnitool", 1, 26, "{charge:10.0d}"));
@@ -146,14 +143,12 @@ public class ScriptEMT implements IScriptLoader {
                 createItemStack(ElectroMagicTools.ID, "NanoBootsTraveller", 1, 26, "{charge:10.0d}"));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "QuantumBootsTraveller", 1, 26, "{charge:10.0d}"));
-        TCHelper.removeInfusionRecipe(
-                createItemStack(ElectroMagicTools.ID, "ThaumiumDrill", 1, 26, "{charge:10.0d}"));
+        TCHelper.removeInfusionRecipe(createItemStack(ElectroMagicTools.ID, "ThaumiumDrill", 1, 26, "{charge:10.0d}"));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "DrillRockbreaker", 1, 26, "{charge:10.0d}"));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, 26, "{charge:10.0d}"));
-        TCHelper.removeInfusionRecipe(
-                createItemStack(ElectroMagicTools.ID, "ChainsawStream", 1, 26, "{charge:10.0d}"));
+        TCHelper.removeInfusionRecipe(createItemStack(ElectroMagicTools.ID, "ChainsawStream", 1, 26, "{charge:10.0d}"));
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 1));
         TCHelper.removeArcaneRecipe(
@@ -237,9 +232,8 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 -2,
                 2,
-                getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27)).setParents("ElectricMagicTools")
-                        .setRound().setPages(new ResearchPage("tc.research_page.DiamondChainsaw"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27)).setParents("ElectricMagicTools").setRound()
+                        .setPages(new ResearchPage("tc.research_page.DiamondChainsaw")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiamondChainsaw",
                 getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27),
@@ -270,8 +264,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "DiamondChainsaw",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27))));
+                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 27))));
         TCHelper.removeResearch("Thaumium Plate");
         new ResearchItem(
                 "ThaumiumPlate",
@@ -308,8 +301,8 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 2,
                 3,
-                getModItem(ElectroMagicTools.ID, "FeatherWing", 1, 0)).setParents("ElectricMagicTools")
-                        .setRound().setPages(new ResearchPage("tc.research_page.FeatherWings")).registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "FeatherWing", 1, 0)).setParents("ElectricMagicTools").setRound()
+                        .setPages(new ResearchPage("tc.research_page.FeatherWings")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FeatherWings",
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
@@ -353,8 +346,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8));
         TCHelper.addResearchPage(
                 "FeatherWings",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 11))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 11))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FeatherWings",
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 12),
@@ -382,8 +374,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 11));
         TCHelper.addResearchPage(
                 "FeatherWings",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 12))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 12))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FeatherWings",
                 getModItem(ElectroMagicTools.ID, "FeatherWing", 1, 0),
@@ -413,8 +404,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 12));
         TCHelper.addResearchPage(
                 "FeatherWings",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "FeatherWing", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "FeatherWing", 1, 0))));
         TCHelper.orphanResearch("Thaumium Reinforced Wings");
         TCHelper.removeResearch("Thaumium Reinforced Wings");
         new ResearchItem(
@@ -427,9 +417,9 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 4,
                 3,
-                getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0)).setParents("FeatherWings")
-                        .setConcealed().setRound()
-                        .setPages(new ResearchPage("tc.research_page.ThaumiumReinforcedWings")).registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0)).setParents("FeatherWings").setConcealed()
+                        .setRound().setPages(new ResearchPage("tc.research_page.ThaumiumReinforcedWings"))
+                        .registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "ThaumiumReinforcedWings",
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 13),
@@ -438,8 +428,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("fames"), 4));
         TCHelper.addResearchPage(
                 "ThaumiumReinforcedWings",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 13))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 13))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ThaumiumReinforcedWings",
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14),
@@ -469,8 +458,7 @@ public class ScriptEMT implements IScriptLoader {
                 "plateStainlessSteel");
         TCHelper.addResearchPage(
                 "ThaumiumReinforcedWings",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ThaumiumReinforcedWings",
                 getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0),
@@ -494,8 +482,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14));
         TCHelper.addResearchPage(
                 "ThaumiumReinforcedWings",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ThaumiumReinforcedWings", 1);
         TCHelper.orphanResearch("Nanosuit Wings");
         TCHelper.removeResearch("Nanosuit Wings");
@@ -533,8 +520,7 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.wireFine.get(Materials.Titanium));
         TCHelper.addResearchPage(
                 "NanosuitWings",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "NanosuitWing", 1, 27))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "NanosuitWing", 1, 27))));
         ThaumcraftApi.addWarpToResearch("NanosuitWings", 2);
         TCHelper.orphanResearch("Quantum Wings");
         TCHelper.removeResearch("Quantum Wings");
@@ -549,9 +535,8 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 8,
                 3,
-                getModItem(ElectroMagicTools.ID, "QuantumWing", 1, 0)).setParents("NanosuitWings")
-                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.QuantumWings"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "QuantumWing", 1, 0)).setParents("NanosuitWings").setConcealed()
+                        .setRound().setPages(new ResearchPage("tc.research_page.QuantumWings")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "QuantumWings",
                 getModItem(ElectroMagicTools.ID, "QuantumWing", 1, 27),
@@ -573,8 +558,7 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.wireFine.get(Materials.Osmium));
         TCHelper.addResearchPage(
                 "QuantumWings",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "QuantumWing", 1, 27))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "QuantumWing", 1, 27))));
         ThaumcraftApi.addWarpToResearch("QuantumWings", 3);
         TCHelper.orphanResearch("Infused Quantum Armor");
         TCHelper.removeResearch("Infused Quantum Armor");
@@ -589,9 +573,9 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 10,
                 3,
-                getModItem(ElectroMagicTools.ID, "itemArmorQuantumChestplate", 1, 0))
-                        .setParents("QuantumWings").setConcealed().setRound()
-                        .setPages(new ResearchPage("tc.research_page.InfusedQuantumArmor")).registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "itemArmorQuantumChestplate", 1, 0)).setParents("QuantumWings")
+                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.InfusedQuantumArmor"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "InfusedQuantumArmor",
                 getModItem(ElectroMagicTools.ID, "itemArmorQuantumChestplate", 1, 27),
@@ -661,8 +645,7 @@ public class ScriptEMT implements IScriptLoader {
                 "craftingToolWrench");
         TCHelper.addResearchPage(
                 "IronOmnitool",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "Omnitool", 1, 27))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "Omnitool", 1, 27))));
         TCHelper.orphanResearch("Diamond Omnitool");
         TCHelper.removeResearch("Diamond Omnitool");
         new ResearchItem(
@@ -682,9 +665,14 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "Diamond Omnitool", 1, 27),
                 6,
                 new AspectList().add(getAspect("instrumentum"), 32).add(getAspect("perfodio"), 24)
-                        .add(getAspect("potentia"), 24).add(getAspect("metallum"), 16)
-                        .add(getAspect("telum"), 16).add(getAspect("terra"), 8),
-                createItemStack(GregTech.ID, "gt.metatool.01", 1, 102, "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Titanium\"},GT.ItemCharge:400000L}"),
+                        .add(getAspect("potentia"), 24).add(getAspect("metallum"), 16).add(getAspect("telum"), 16)
+                        .add(getAspect("terra"), 8),
+                createItemStack(
+                        GregTech.ID,
+                        "gt.metatool.01",
+                        1,
+                        102,
+                        "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Titanium\"},GT.ItemCharge:400000L}"),
                 getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard),
                 plate.get(Diamond),
                 circuit.get(HV),
@@ -698,8 +686,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "DiamondOmnitool",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "Diamond Omnitool", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "Diamond Omnitool", 1, 27))));
         TCHelper.orphanResearch("Thaumium Omnitool");
         TCHelper.removeResearch("Thaumium Omnitool");
         new ResearchItem(
@@ -736,8 +723,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ThaumiumOmnitool",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "ThaumiumOmnitool", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ThaumiumOmnitool", 1, 27))));
         ThaumcraftApi.addWarpToResearch("ThaumiumOmnitool", 1);
         TCHelper.orphanResearch("Electric Boots of the Traveller");
         TCHelper.removeResearch("Electric Boots of the Traveller");
@@ -786,8 +772,8 @@ public class ScriptEMT implements IScriptLoader {
                 4,
                 2,
                 3,
-                getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1, 0))
-                        .setParents("ElectricBootsoftheTraveller").setConcealed().setRound()
+                getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1, 0)).setParents("ElectricBootsoftheTraveller")
+                        .setConcealed().setRound()
                         .setPages(new ResearchPage("tc.research_page.NanoBootsoftheTraveller")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "NanoBootsoftheTraveller",
@@ -808,8 +794,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "NanoBootsoftheTraveller",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1, 27))));
         ThaumcraftApi.addWarpToResearch("NanoBootsoftheTraveller", 1);
         TCHelper.orphanResearch("Quantum Boots of the Traveller");
         TCHelper.removeResearch("Quantum Boots of the Traveller");
@@ -823,8 +808,8 @@ public class ScriptEMT implements IScriptLoader {
                 6,
                 2,
                 3,
-                getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller", 1, 0))
-                        .setParents("NanoBootsoftheTraveller").setConcealed().setRound()
+                getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller", 1, 0)).setParents("NanoBootsoftheTraveller")
+                        .setConcealed().setRound()
                         .setPages(new ResearchPage("tc.research_page.QuantumBootsoftheTraveller"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
@@ -849,8 +834,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "QuantumBootsoftheTraveller",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller", 1, 27))));
         ThaumcraftApi.addWarpToResearch("QuantumBootsoftheTraveller", 2);
         TCHelper.orphanResearch("Thaumium Drill");
         TCHelper.removeResearch("Thaumium Drill");
@@ -863,17 +847,20 @@ public class ScriptEMT implements IScriptLoader {
                 2,
                 0,
                 3,
-                getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, 0)).setParents("ElectricMagicTools")
-                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.ThaumiumDrill"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, 0)).setParents("ElectricMagicTools").setConcealed()
+                        .setRound().setPages(new ResearchPage("tc.research_page.ThaumiumDrill")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ThaumiumDrill",
                 getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, 27),
                 7,
                 new AspectList().add(getAspect("instrumentum"), 32).add(getAspect("perfodio"), 16)
-                        .add(getAspect("potentia"), 32).add(getAspect("lucrum"), 24)
-                        .add(getAspect("praecantatio"), 8),
-                createItemStack(GregTech.ID, "gt.metatool.01", 1, 102, "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Aluminium\"},GT.ItemCharge:400000L}"),
+                        .add(getAspect("potentia"), 32).add(getAspect("lucrum"), 24).add(getAspect("praecantatio"), 8),
+                createItemStack(
+                        GregTech.ID,
+                        "gt.metatool.01",
+                        1,
+                        102,
+                        "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Aluminium\"},GT.ItemCharge:400000L}"),
                 screw.get(Titanium),
                 plate.get(Thaumium),
                 circuit.get(IV),
@@ -885,8 +872,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ThaumiumDrill",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, 27))));
         ThaumcraftApi.addWarpToResearch("ThaumiumDrill", 1);
         TCHelper.orphanResearch("Drill of the Rockbreaker");
         TCHelper.removeResearch("Drill of the Rockbreaker");
@@ -900,8 +886,8 @@ public class ScriptEMT implements IScriptLoader {
                 4,
                 0,
                 3,
-                getModItem(ElectroMagicTools.ID, "DrillRockbreaker", 1, 0)).setParents("ThaumiumDrill")
-                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.DrilloftheRockbreaker"))
+                getModItem(ElectroMagicTools.ID, "DrillRockbreaker", 1, 0)).setParents("ThaumiumDrill").setConcealed()
+                        .setRound().setPages(new ResearchPage("tc.research_page.DrilloftheRockbreaker"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "DrilloftheRockbreaker",
@@ -924,8 +910,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "DrilloftheRockbreaker",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "DrillRockbreaker", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "DrillRockbreaker", 1, 27))));
         ThaumcraftApi.addWarpToResearch("DrilloftheRockbreaker", 2);
         TCHelper.orphanResearch("Thaumium Chainsaw");
         TCHelper.removeResearch("Thaumium Chainsaw");
@@ -938,8 +923,8 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 -4,
                 3,
-                getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, 0)).setParents("DiamondChainsaw")
-                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.ThaumiumChainsaw"))
+                getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, 0)).setParents("DiamondChainsaw").setConcealed()
+                        .setRound().setPages(new ResearchPage("tc.research_page.ThaumiumChainsaw"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ThaumiumChainsaw",
@@ -960,8 +945,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ThaumiumChainsaw",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, 27))));
         ThaumcraftApi.addWarpToResearch("ThaumiumChainsaw", 1);
         TCHelper.orphanResearch("Chainsaw of the Stream");
         TCHelper.removeResearch("Chainsaw of the Stream");
@@ -974,8 +958,8 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 -6,
                 3,
-                getModItem(ElectroMagicTools.ID, "ChainsawStream", 1, 0)).setParents("ThaumiumChainsaw")
-                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.ChainsawoftheStream"))
+                getModItem(ElectroMagicTools.ID, "ChainsawStream", 1, 0)).setParents("ThaumiumChainsaw").setConcealed()
+                        .setRound().setPages(new ResearchPage("tc.research_page.ChainsawoftheStream"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ChainsawoftheStream",
@@ -998,8 +982,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ChainsawoftheStream",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "ChainsawStream", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ChainsawStream", 1, 27))));
         ThaumcraftApi.addWarpToResearch("ChainsawoftheStream", 2);
         TCHelper.orphanResearch("Inventory Charging Ring");
         TCHelper.removeResearch("Inventory Charging Ring");
@@ -1035,8 +1018,7 @@ public class ScriptEMT implements IScriptLoader {
                 ItemList.Cover_SolarPanel_LV.get(1));
         TCHelper.addResearchPage(
                 "InventoryChargingRing",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 1))));
         ThaumcraftApi.addWarpToResearch("InventoryChargingRing", 2);
         TCHelper.orphanResearch("Armor Charging Ring");
         TCHelper.removeResearch("Armor Charging Ring");
@@ -1049,8 +1031,8 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 -10,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 0)).setParents("InventoryChargingRing")
-                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.ArmorChargingRing"))
+                getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 0)).setParents("InventoryChargingRing").setConcealed()
+                        .setRound().setPages(new ResearchPage("tc.research_page.ArmorChargingRing"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ArmorChargingRing",
@@ -1072,8 +1054,7 @@ public class ScriptEMT implements IScriptLoader {
                 ItemList.Cover_SolarPanel_LV.get(1));
         TCHelper.addResearchPage(
                 "ArmorChargingRing",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTBaubles", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ArmorChargingRing", 2);
         TCHelper.orphanResearch("Electric Goggles");
         TCHelper.removeResearch("Electric Goggles");
@@ -1090,8 +1071,8 @@ public class ScriptEMT implements IScriptLoader {
                 -6,
                 -2,
                 3,
-                getModItem(ElectroMagicTools.ID, "ElectricGogglesRevealing", 1, 0)).setParents("GOGGLES")
-                        .setConcealed().setParentsHidden("ElectricMagicTools").setRound()
+                getModItem(ElectroMagicTools.ID, "ElectricGogglesRevealing", 1, 0)).setParents("GOGGLES").setConcealed()
+                        .setParentsHidden("ElectricMagicTools").setRound()
                         .setPages(new ResearchPage("tc.research_page.ElectricGogglesofRevealing"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -1243,8 +1224,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "SolarHelmetofRevealing",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "SolarHelmetRevealing", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "SolarHelmetRevealing", 1, 27))));
         ThaumcraftApi.addWarpToResearch("SolarHelmetofRevealing", 3);
         TCHelper.orphanResearch("Compressed Solars");
         TCHelper.removeResearch("Compressed Solars");
@@ -1288,8 +1268,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3));
         TCHelper.addResearchPage(
                 "CompressedSolars",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CompressedSolars",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1),
@@ -1319,8 +1298,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 0));
         TCHelper.addResearchPage(
                 "CompressedSolars",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1))));
         TCHelper.addInfusionCraftingRecipe(
                 "CompressedSolars",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2),
@@ -1341,8 +1319,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1));
         TCHelper.addResearchPage(
                 "CompressedSolars",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2))));
         TCHelper.addInfusionCraftingRecipe(
                 "CompressedSolars",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 0),
@@ -1363,8 +1340,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 2));
         TCHelper.addResearchPage(
                 "CompressedSolars",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 0))));
         TCHelper.addInfusionCraftingRecipe(
                 "CompressedSolars",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7),
@@ -1385,8 +1361,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 0));
         TCHelper.addResearchPage(
                 "CompressedSolars",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7))));
         TCHelper.addInfusionCraftingRecipe(
                 "CompressedSolars",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14),
@@ -1407,8 +1382,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 7));
         TCHelper.addResearchPage(
                 "CompressedSolars",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14))));
         TCHelper.addInfusionCraftingRecipe(
                 "CompressedSolars",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 5),
@@ -1429,8 +1403,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 14));
         TCHelper.addResearchPage(
                 "CompressedSolars",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 5))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 5))));
         TCHelper.addInfusionCraftingRecipe(
                 "CompressedSolars",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 12),
@@ -1451,8 +1424,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 5));
         TCHelper.addResearchPage(
                 "CompressedSolars",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 12))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 12))));
         TCHelper.orphanResearch("Water Infused Solar Panels");
         TCHelper.removeResearch("Water Infused Solar Panels");
         new ResearchItem(
@@ -1464,9 +1436,8 @@ public class ScriptEMT implements IScriptLoader {
                 -7,
                 -7,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 3)).setParents("CompressedSolars")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.WaterInfusedSolarPanels"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 3)).setParents("CompressedSolars").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.WaterInfusedSolarPanels")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "WaterInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 3),
@@ -1475,8 +1446,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("lux"), 16));
         TCHelper.addResearchPage(
                 "WaterInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 3))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 3))));
         ThaumcraftApi.addCrucibleRecipe(
                 "WaterInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 4),
@@ -1485,8 +1455,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("lux"), 32));
         TCHelper.addResearchPage(
                 "WaterInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 4))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 4))));
         ThaumcraftApi.addCrucibleRecipe(
                 "WaterInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 5),
@@ -1495,8 +1464,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 128).add(Aspect.getAspect("lux"), 64));
         TCHelper.addResearchPage(
                 "WaterInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 5))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 5))));
         ThaumcraftApi.addCrucibleRecipe(
                 "WaterInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 5),
@@ -1505,8 +1473,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("lux"), 128));
         TCHelper.addResearchPage(
                 "WaterInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 5))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 5))));
         ThaumcraftApi.addCrucibleRecipe(
                 "WaterInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 12),
@@ -1515,8 +1482,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("lux"), 256));
         TCHelper.addResearchPage(
                 "WaterInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 12))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 12))));
         ThaumcraftApi.addCrucibleRecipe(
                 "WaterInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 3),
@@ -1525,8 +1491,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 1024).add(Aspect.getAspect("lux"), 512));
         TCHelper.addResearchPage(
                 "WaterInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 3))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 3))));
         ThaumcraftApi.addCrucibleRecipe(
                 "WaterInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 10),
@@ -1535,8 +1500,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 2048).add(Aspect.getAspect("lux"), 1024));
         TCHelper.addResearchPage(
                 "WaterInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 10))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 10))));
         ThaumcraftApi.addCrucibleRecipe(
                 "WaterInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 1),
@@ -1545,8 +1509,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 4096).add(Aspect.getAspect("lux"), 2048));
         TCHelper.addResearchPage(
                 "WaterInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 1))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 1))));
         TCHelper.orphanResearch("Entropy Infused Solar Panels");
         TCHelper.removeResearch("Entropy Infused Solar Panels");
         new ResearchItem(
@@ -1558,8 +1521,8 @@ public class ScriptEMT implements IScriptLoader {
                 -8,
                 -6,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 6)).setParents("CompressedSolars")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.EntropyInfusedSolarPanels"))
+                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 6)).setParents("CompressedSolars").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.EntropyInfusedSolarPanels"))
                         .registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "EntropyInfusedSolarPanels",
@@ -1569,8 +1532,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("lux"), 16));
         TCHelper.addResearchPage(
                 "EntropyInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 6))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 6))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EntropyInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 7),
@@ -1579,8 +1541,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("lux"), 32));
         TCHelper.addResearchPage(
                 "EntropyInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 7))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 7))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EntropyInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 8),
@@ -1589,8 +1550,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 128).add(Aspect.getAspect("lux"), 64));
         TCHelper.addResearchPage(
                 "EntropyInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 8))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 8))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EntropyInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 2),
@@ -1599,8 +1559,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("lux"), 128));
         TCHelper.addResearchPage(
                 "EntropyInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 2))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 2))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EntropyInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 9),
@@ -1609,8 +1568,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("lux"), 256));
         TCHelper.addResearchPage(
                 "EntropyInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 9))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 9))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EntropyInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 0),
@@ -1619,8 +1577,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 1024).add(Aspect.getAspect("lux"), 512));
         TCHelper.addResearchPage(
                 "EntropyInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 0))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 0))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EntropyInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 7),
@@ -1629,8 +1586,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 2048).add(Aspect.getAspect("lux"), 1024));
         TCHelper.addResearchPage(
                 "EntropyInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 7))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 7))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EntropyInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 14),
@@ -1639,8 +1595,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 4096).add(Aspect.getAspect("lux"), 2048));
         TCHelper.addResearchPage(
                 "EntropyInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 14))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 14))));
         TCHelper.orphanResearch("Order Infused Solar Panels");
         TCHelper.removeResearch("Order Infused Solar Panels");
         new ResearchItem(
@@ -1652,9 +1607,8 @@ public class ScriptEMT implements IScriptLoader {
                 -6,
                 -8,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 9)).setParents("CompressedSolars")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.OrderInfusedSolarPanels"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 9)).setParents("CompressedSolars").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.OrderInfusedSolarPanels")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "OrderInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 9),
@@ -1663,8 +1617,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("lux"), 16));
         TCHelper.addResearchPage(
                 "OrderInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 9))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 9))));
         ThaumcraftApi.addCrucibleRecipe(
                 "OrderInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 10),
@@ -1673,8 +1626,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("lux"), 32));
         TCHelper.addResearchPage(
                 "OrderInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 10))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 10))));
         ThaumcraftApi.addCrucibleRecipe(
                 "OrderInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 11),
@@ -1683,8 +1635,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 128).add(Aspect.getAspect("lux"), 64));
         TCHelper.addResearchPage(
                 "OrderInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 11))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 11))));
         ThaumcraftApi.addCrucibleRecipe(
                 "OrderInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 1),
@@ -1693,8 +1644,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("lux"), 128));
         TCHelper.addResearchPage(
                 "OrderInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 1))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 1))));
         ThaumcraftApi.addCrucibleRecipe(
                 "OrderInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 8),
@@ -1703,8 +1653,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("lux"), 256));
         TCHelper.addResearchPage(
                 "OrderInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 8))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 8))));
         ThaumcraftApi.addCrucibleRecipe(
                 "OrderInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 15),
@@ -1713,8 +1662,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 1024).add(Aspect.getAspect("lux"), 512));
         TCHelper.addResearchPage(
                 "OrderInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 15))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 15))));
         ThaumcraftApi.addCrucibleRecipe(
                 "OrderInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 6),
@@ -1723,8 +1671,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 2048).add(Aspect.getAspect("lux"), 1024));
         TCHelper.addResearchPage(
                 "OrderInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 6))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 6))));
         ThaumcraftApi.addCrucibleRecipe(
                 "OrderInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 13),
@@ -1733,8 +1680,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 4096).add(Aspect.getAspect("lux"), 2048));
         TCHelper.addResearchPage(
                 "OrderInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 13))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 13))));
         TCHelper.orphanResearch("Fire Infused Solar Panels");
         TCHelper.removeResearch("Fire Infused Solar Panels");
         new ResearchItem(
@@ -1746,9 +1692,8 @@ public class ScriptEMT implements IScriptLoader {
                 -5,
                 -7,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 12)).setParents("CompressedSolars")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.FireInfusedSolarPanels"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 12)).setParents("CompressedSolars").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.FireInfusedSolarPanels")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "FireInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 12),
@@ -1757,8 +1702,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("lux"), 16));
         TCHelper.addResearchPage(
                 "FireInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 12))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 12))));
         ThaumcraftApi.addCrucibleRecipe(
                 "FireInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 13),
@@ -1767,8 +1711,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("lux"), 32));
         TCHelper.addResearchPage(
                 "FireInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 13))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 13))));
         ThaumcraftApi.addCrucibleRecipe(
                 "FireInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 14),
@@ -1777,8 +1720,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 128).add(Aspect.getAspect("lux"), 64));
         TCHelper.addResearchPage(
                 "FireInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 14))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 14))));
         ThaumcraftApi.addCrucibleRecipe(
                 "FireInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 6),
@@ -1787,8 +1729,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("lux"), 128));
         TCHelper.addResearchPage(
                 "FireInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 6))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 6))));
         ThaumcraftApi.addCrucibleRecipe(
                 "FireInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 13),
@@ -1797,8 +1738,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("lux"), 256));
         TCHelper.addResearchPage(
                 "FireInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 13))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 13))));
         ThaumcraftApi.addCrucibleRecipe(
                 "FireInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 4),
@@ -1807,8 +1747,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 1024).add(Aspect.getAspect("lux"), 512));
         TCHelper.addResearchPage(
                 "FireInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 4))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 4))));
         ThaumcraftApi.addCrucibleRecipe(
                 "FireInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 11),
@@ -1817,8 +1756,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 2048).add(Aspect.getAspect("lux"), 1024));
         TCHelper.addResearchPage(
                 "FireInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 11))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 11))));
         ThaumcraftApi.addCrucibleRecipe(
                 "FireInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 2),
@@ -1827,8 +1765,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 4096).add(Aspect.getAspect("lux"), 2048));
         TCHelper.addResearchPage(
                 "FireInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 2))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 2))));
         TCHelper.orphanResearch("Air Infused Solar Panels");
         TCHelper.removeResearch("Air Infused Solar Panels");
         new ResearchItem(
@@ -1840,9 +1777,8 @@ public class ScriptEMT implements IScriptLoader {
                 -4,
                 -6,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 15)).setParents("CompressedSolars")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.AirInfusedSolarPanels"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 15)).setParents("CompressedSolars").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.AirInfusedSolarPanels")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "AirInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 15),
@@ -1851,8 +1787,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("lux"), 16));
         TCHelper.addResearchPage(
                 "AirInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 15))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 15))));
         ThaumcraftApi.addCrucibleRecipe(
                 "AirInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 0),
@@ -1861,8 +1796,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("lux"), 32));
         TCHelper.addResearchPage(
                 "AirInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 0))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 0))));
         ThaumcraftApi.addCrucibleRecipe(
                 "AirInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 1),
@@ -1871,8 +1805,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 128).add(Aspect.getAspect("lux"), 64));
         TCHelper.addResearchPage(
                 "AirInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 1))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 1))));
         ThaumcraftApi.addCrucibleRecipe(
                 "AirInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 3),
@@ -1881,8 +1814,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("lux"), 128));
         TCHelper.addResearchPage(
                 "AirInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 3))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 3))));
         ThaumcraftApi.addCrucibleRecipe(
                 "AirInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 10),
@@ -1891,8 +1823,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("lux"), 256));
         TCHelper.addResearchPage(
                 "AirInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 10))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 10))));
         ThaumcraftApi.addCrucibleRecipe(
                 "AirInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 1),
@@ -1901,8 +1832,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 1024).add(Aspect.getAspect("lux"), 512));
         TCHelper.addResearchPage(
                 "AirInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 1))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 1))));
         ThaumcraftApi.addCrucibleRecipe(
                 "AirInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 8),
@@ -1911,8 +1841,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 2048).add(Aspect.getAspect("lux"), 1024));
         TCHelper.addResearchPage(
                 "AirInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 8))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 8))));
         ThaumcraftApi.addCrucibleRecipe(
                 "AirInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 15),
@@ -1921,8 +1850,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 4096).add(Aspect.getAspect("lux"), 2048));
         TCHelper.addResearchPage(
                 "AirInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 15))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 15))));
         TCHelper.orphanResearch("Earth Infused Solar Panels");
         TCHelper.removeResearch("Earth Infused Solar Panels");
         new ResearchItem(
@@ -1934,9 +1862,8 @@ public class ScriptEMT implements IScriptLoader {
                 -6,
                 -7,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 2)).setParents("CompressedSolars")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.EarthInfusedSolarPanels"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 2)).setParents("CompressedSolars").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.EarthInfusedSolarPanels")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "EarthInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 2),
@@ -1945,8 +1872,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("lux"), 16));
         TCHelper.addResearchPage(
                 "EarthInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 2))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 2))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EarthInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 3),
@@ -1955,8 +1881,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("lux"), 32));
         TCHelper.addResearchPage(
                 "EarthInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 3))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 3))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EarthInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 4),
@@ -1965,8 +1890,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 128).add(Aspect.getAspect("lux"), 64));
         TCHelper.addResearchPage(
                 "EarthInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 4))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars2", 1, 4))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EarthInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 4),
@@ -1975,8 +1899,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("lux"), 128));
         TCHelper.addResearchPage(
                 "EarthInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 4))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 4))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EarthInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 11),
@@ -1985,8 +1908,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("lux"), 256));
         TCHelper.addResearchPage(
                 "EarthInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 11))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1, 11))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EarthInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 2),
@@ -1995,8 +1917,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 1024).add(Aspect.getAspect("lux"), 512));
         TCHelper.addResearchPage(
                 "EarthInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 2))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 2))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EarthInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 9),
@@ -2005,8 +1926,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 2048).add(Aspect.getAspect("lux"), 1024));
         TCHelper.addResearchPage(
                 "EarthInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 9))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1, 9))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EarthInfusedSolarPanels",
                 getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 0),
@@ -2015,8 +1935,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 4096).add(Aspect.getAspect("lux"), 2048));
         TCHelper.addResearchPage(
                 "EarthInfusedSolarPanels",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 0))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTSolars5", 1, 0))));
         TCHelper.orphanResearch("Electric Hoe of Growth");
         TCHelper.removeResearch("Electric Hoe of Growth");
         new ResearchItem(
@@ -2052,8 +1971,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ElectricHoeofGrowth",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "ElectricHoeGrowth", 1, 1561))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ElectricHoeGrowth", 1, 1561))));
         TCHelper.orphanResearch("Electric Scribing Tools");
         TCHelper.removeResearch("Electric Scribing Tools");
         new ResearchItem(
@@ -2065,8 +1983,8 @@ public class ScriptEMT implements IScriptLoader {
                 6,
                 -4,
                 3,
-                getModItem(ElectroMagicTools.ID, "ElectricScribingTools", 1, 0))
-                        .setParentsHidden("ElectricMagicTools").setParents("RESEARCH").setConcealed().setRound()
+                getModItem(ElectroMagicTools.ID, "ElectricScribingTools", 1, 0)).setParentsHidden("ElectricMagicTools")
+                        .setParents("RESEARCH").setConcealed().setRound()
                         .setPages(new ResearchPage("tc.research_page.ElectricScribingTools")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ElectricScribingTools",
@@ -2097,8 +2015,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ElectricScribingTools",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ElectroMagicTools.ID, "ElectricScribingTools", 1, 400))));
+                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "ElectricScribingTools", 1, 400))));
         TCHelper.orphanResearch("Mjolnir");
         TCHelper.removeResearch("Mjolnir");
         new ResearchItem(
@@ -2140,8 +2057,7 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Rubber));
         TCHelper.addResearchPage(
                 "Mjolnirnew",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "Mjolnir", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "Mjolnir", 1, 0))));
         TCHelper.orphanResearch("Supercharged Mjolnir");
         TCHelper.removeResearch("Supercharged Mjolnir");
         new ResearchItem(
@@ -2181,8 +2097,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "SuperchargedMjolnir",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "SuperchargedMjolnir", 1, 27))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "SuperchargedMjolnir", 1, 27))));
         TCHelper.orphanResearch("Lightning Summoner");
         TCHelper.removeResearch("Lightning Summoner");
         new ResearchItem(
@@ -2194,9 +2109,9 @@ public class ScriptEMT implements IScriptLoader {
                 6,
                 -5,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6))
-                        .setParents("FOCUSSHOCK", "NITOR", "ALUMENTUM").setConcealed().setRound()
-                        .setPages(new ResearchPage("tc.research_page.LightningSummoner")).registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6)).setParents("FOCUSSHOCK", "NITOR", "ALUMENTUM")
+                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.LightningSummoner"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "LightningSummoner",
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6),
@@ -2216,8 +2131,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Minecraft.ID, "tnt", 1, 0));
         TCHelper.addResearchPage(
                 "LightningSummoner",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6))));
         TCHelper.orphanResearch("Tiny Uranium");
         TCHelper.removeResearch("Tiny Uranium");
         new ResearchItem(
@@ -2253,9 +2167,8 @@ public class ScriptEMT implements IScriptLoader {
                 5,
                 -3,
                 3,
-                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15)).setParentsHidden("ElectricMagicTools")
-                        .setRound().setPages(new ResearchPage("tc.research_page.UUMatterInfusion"))
-                        .registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15)).setParentsHidden("ElectricMagicTools").setRound()
+                        .setPages(new ResearchPage("tc.research_page.UUMatterInfusion")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "UUMatterInfusion",
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
@@ -2264,8 +2177,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 8).add(Aspect.getAspect("permutatio"), 8));
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 getModItem(Minecraft.ID, "coal", 16, 0),
@@ -2494,8 +2406,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15));
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0))));
         TCHelper.orphanResearch("Portable Node");
         TCHelper.removeResearch("Portable Node");
         new ResearchItem(
@@ -2549,8 +2460,7 @@ public class ScriptEMT implements IScriptLoader {
                 ItemList.Block_TungstenSteelReinforced.get(1L));
         TCHelper.addResearchPage(
                 "ShieldFocus",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ShieldFocus", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ShieldFocus", 1, 0))));
         TCHelper.orphanResearch("Shield Block");
         TCHelper.removeResearch("Shield Block");
         new ResearchItem(
@@ -2593,8 +2503,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1));
         TCHelper.addResearchPage(
                 "ShieldBlock",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "ShieldBlock", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "ShieldBlock", 1, 0))));
         TCHelper.orphanResearch("Kris-tmas Focus");
         TCHelper.removeResearch("Kris-tmas Focus");
         new ResearchItem(
@@ -2606,8 +2515,8 @@ public class ScriptEMT implements IScriptLoader {
                 3,
                 4,
                 3,
-                getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1, 0))
-                        .setParentsHidden("ElectricMagicTools").setParents("FOCUSSHOCK").setConcealed()
+                getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1, 0)).setParentsHidden("ElectricMagicTools")
+                        .setParents("FOCUSSHOCK").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.KristmasFocus")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KristmasFocus",
@@ -2637,8 +2546,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Minecraft.ID, "pumpkin", 1, 0));
         TCHelper.addResearchPage(
                 "KristmasFocus",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1, 0))));
         TCHelper.orphanResearch("Energy Ball Focus");
         TCHelper.removeResearch("Energy Ball Focus");
         new ResearchItem(
@@ -2649,8 +2557,8 @@ public class ScriptEMT implements IScriptLoader {
                 4,
                 4,
                 3,
-                getModItem(ElectroMagicTools.ID, "EnergyBallFocus", 1, 0))
-                        .setParentsHidden("ElectricMagicTools").setParents("FOCUSSHOCK").setConcealed()
+                getModItem(ElectroMagicTools.ID, "EnergyBallFocus", 1, 0)).setParentsHidden("ElectricMagicTools")
+                        .setParents("FOCUSSHOCK").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.EnergyBallFocus")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "EnergyBallFocus",
@@ -2670,8 +2578,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "EnergyBallFocus",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "EnergyBallFocus", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EnergyBallFocus", 1, 0))));
         ThaumcraftApi.addWarpToResearch("EnergyBallFocus", 1);
         TCHelper.orphanResearch("Explosion Focus");
         TCHelper.removeResearch("Explosion Focus");
@@ -2684,8 +2591,8 @@ public class ScriptEMT implements IScriptLoader {
                 5,
                 4,
                 3,
-                getModItem(ElectroMagicTools.ID, "ExplosionFocus", 1, 0))
-                        .setParentsHidden("ElectricMagicTools").setParents("FOCUSHELLBAT").setConcealed()
+                getModItem(ElectroMagicTools.ID, "ExplosionFocus", 1, 0)).setParentsHidden("ElectricMagicTools")
+                        .setParents("FOCUSHELLBAT").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.ExplosionFocus")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ExplosionFocus",
@@ -2708,8 +2615,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ExplosionFocus",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "ExplosionFocus", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ExplosionFocus", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ExplosionFocus", 1);
         TCHelper.orphanResearch("Wand Focus: Charging");
         TCHelper.removeResearch("Wand Focus: Charging");
@@ -2745,8 +2651,7 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.rotor.get(Materials.Thaumium));
         TCHelper.addResearchPage(
                 "WandFocusCharging",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ChargingFocus", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "ChargingFocus", 1, 0))));
         TCHelper.orphanResearch("Wand Focus: Wand Charging");
         TCHelper.removeResearch("Wand Focus: Wand Charging");
         new ResearchItem(
@@ -2758,8 +2663,8 @@ public class ScriptEMT implements IScriptLoader {
                 6,
                 6,
                 3,
-                getModItem(ElectroMagicTools.ID, "WandChargingFocus", 1, 0))
-                        .setParentsHidden("ElectricMagicTools").setParents("WandFocusCharging").registerResearchItem();
+                getModItem(ElectroMagicTools.ID, "WandChargingFocus", 1, 0)).setParentsHidden("ElectricMagicTools")
+                        .setParents("WandFocusCharging").registerResearchItem();
         TCHelper.addResearchPrereq("WandFocusWandCharging", "IndustrialWandChargingStation", true);
         ResearchCategories.getResearch("WandFocusWandCharging").setConcealed();
         TCHelper.addResearchPage("WandFocusWandCharging", new ResearchPage("tc.research_page.WandFocusWandCharging"));
@@ -2785,8 +2690,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "WandFocusWandCharging",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "WandChargingFocus", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "WandChargingFocus", 1, 0))));
         ThaumcraftApi.addWarpToResearch("WandFocusWandCharging", 2);
         TCHelper.orphanResearch("Industrial Wand Charging Station");
         TCHelper.removeResearch("Industrial Wand Charging Station");
@@ -2803,8 +2707,8 @@ public class ScriptEMT implements IScriptLoader {
                 -4,
                 2,
                 3,
-                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 0))
-                        .setParentsHidden("ElectricMagicTools").setParents("JARLABEL", "FOCUSTRADE").setConcealed()
+                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 0)).setParentsHidden("ElectricMagicTools")
+                        .setParents("JARLABEL", "FOCUSTRADE").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.PotentiaGenerator")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "PotentiaGenerator",
@@ -2829,8 +2733,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "PotentiaGenerator",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 0))));
         TCHelper.orphanResearch("Ignis Generator");
         TCHelper.removeResearch("Ignis Generator");
         new ResearchItem(
@@ -2841,8 +2744,8 @@ public class ScriptEMT implements IScriptLoader {
                 -6,
                 4,
                 3,
-                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 1))
-                        .setParentsHidden("ElectricMagicTools").setParents("PotentiaGenerator").setConcealed()
+                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 1)).setParentsHidden("ElectricMagicTools")
+                        .setParents("PotentiaGenerator").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.IgnisGenerator")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "IgnisGenerator",
@@ -2853,8 +2756,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "IgnisGenerator",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(
-                                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 1))));
+                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 1))));
         TCHelper.orphanResearch("Auram Generator");
         TCHelper.removeResearch("Auram Generator");
         new ResearchItem(
@@ -2865,8 +2767,8 @@ public class ScriptEMT implements IScriptLoader {
                 -4,
                 4,
                 3,
-                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 2))
-                        .setParentsHidden("ElectricMagicTools").setParents("PotentiaGenerator").setConcealed()
+                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 2)).setParentsHidden("ElectricMagicTools")
+                        .setParents("PotentiaGenerator").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.AuramGenerator")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "AuramGenerator",
@@ -2877,8 +2779,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "AuramGenerator",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(
-                                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 2))));
+                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 2))));
         TCHelper.orphanResearch("Arbor Generator");
         TCHelper.removeResearch("Arbor Generator");
         new ResearchItem(
@@ -2889,8 +2790,8 @@ public class ScriptEMT implements IScriptLoader {
                 -2,
                 4,
                 3,
-                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 3))
-                        .setParentsHidden("ElectricMagicTools").setParents("PotentiaGenerator").setConcealed()
+                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 3)).setParentsHidden("ElectricMagicTools")
+                        .setParents("PotentiaGenerator").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.ArborGenerator")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "ArborGenerator",
@@ -2901,8 +2802,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ArborGenerator",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(
-                                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 3))));
+                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 3))));
         TCHelper.orphanResearch("Aer Generator");
         TCHelper.removeResearch("Aer Generator");
         new ResearchItem(
@@ -2913,8 +2813,8 @@ public class ScriptEMT implements IScriptLoader {
                 -4,
                 6,
                 3,
-                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 4))
-                        .setParentsHidden("ElectricMagicTools").setParents("PotentiaGenerator").setConcealed()
+                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 4)).setParentsHidden("ElectricMagicTools")
+                        .setParents("PotentiaGenerator").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.AerGenerator")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "AerGenerator",
@@ -2925,8 +2825,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "AerGenerator",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(
-                                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 4))));
+                        TCHelper.findCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 4))));
         TCHelper.orphanResearch("Lucrum Generator");
         TCHelper.removeResearch("Lucrum Generator");
         new ResearchItem(
@@ -2969,8 +2868,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "LucrumGenerator",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 5))));
+                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1, 5))));
         ThaumcraftApi.addWarpToResearch("LucrumGenerator", 5);
         new ResearchItem(
                 "IndustrialWandChargingStation",
@@ -3003,8 +2901,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
         TCHelper.addResearchPage(
                 "IndustrialWandChargingStation",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTMachines", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTMachines", 1, 0))));
         ThaumcraftApi.addWarpToResearch("IndustrialWandChargingStation", 3);
         new ResearchItem(
                 "EtheralProcessor",
@@ -3036,8 +2933,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9));
         TCHelper.addResearchPage(
                 "EtheralProcessor",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTMachines", 1, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTMachines", 1, 1))));
         TCHelper.orphanResearch("ResearchCompleter");
         new ResearchItem(
                 "ResearchCompleter",

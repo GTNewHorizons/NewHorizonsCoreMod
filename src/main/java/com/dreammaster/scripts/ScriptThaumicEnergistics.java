@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.EternalSingularity;
@@ -12,7 +13,6 @@ import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.enums.Mods.ThaumicInsurgence;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static thaumcraft.api.aspects.Aspect.getAspect;
 
@@ -198,8 +198,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.removeInfusionRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0));
         TCHelper.removeArcaneRecipe(IronGear);
-        TCHelper.removeArcaneRecipe(
-                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.gear.box", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.gear.box", 1, 0));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 5));
         TCHelper.removeArcaneRecipe(DiffusionCore);
         TCHelper.removeArcaneRecipe(CoalescenceCore);
@@ -227,7 +226,12 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.removeCrucibleRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.golem.gear.box", 1, 0));
         TCHelper.removeInfusionRecipe(
-                createItemStack(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0, "{stored_vis:[0:{amount:1500,key:\"aer\"},1:{amount:1500,key:\"aqua\"},2:{amount:1500,key:\"ignis\"},3:{amount:1500,key:\"ordo\"},4:{amount:1500,key:\"perditio\"},5:{amount:1500,key:\"terra\"}]}"));
+                createItemStack(
+                        ThaumicEnergistics.ID,
+                        "thaumicenergistics.block.arcane.assembler",
+                        1,
+                        0,
+                        "{stored_vis:[0:{amount:1500,key:\"aer\"},1:{amount:1500,key:\"aqua\"},2:{amount:1500,key:\"ignis\"},3:{amount:1500,key:\"ordo\"},4:{amount:1500,key:\"perditio\"},5:{amount:1500,key:\"terra\"}]}"));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "knowledge.core", 1, 0));
         TCHelper.removeArcaneRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.knowledge.inscriber", 1, 0));
@@ -893,8 +897,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateThaumium");
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 0),
@@ -931,8 +934,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 1),
@@ -969,8 +971,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 1))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 1))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 2),
@@ -1007,8 +1008,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 2))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 2))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3),
@@ -1045,8 +1045,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 5),
@@ -1083,8 +1082,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 5))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 5))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 6),
@@ -1121,8 +1119,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 6))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 6))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7),
@@ -1159,8 +1156,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8),
@@ -1197,8 +1193,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8))));
 
         // Fluid Quantum Drive
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1279,12 +1274,16 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "thaumicenergistics.TEARCANEASSEMBLER",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0),
                 16,
-                new AspectList().add(getAspect("auram"), 16).add(getAspect("fabrico"), 64)
-                        .add(getAspect("metallum"), 8).add(getAspect("permutatio"), 32)
-                        .add(getAspect("lucrum"), 16).add(getAspect("praecantatio"), 48)
-                        .add(getAspect("vitreus"), 16),
+                new AspectList().add(getAspect("auram"), 16).add(getAspect("fabrico"), 64).add(getAspect("metallum"), 8)
+                        .add(getAspect("permutatio"), 32).add(getAspect("lucrum"), 16)
+                        .add(getAspect("praecantatio"), 48).add(getAspect("vitreus"), 16),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1, 0),
-                createItemStack(Thaumcraft.ID, "WandCasting", 1, wildcard, "{aqua:15000,ignis:15000,terra:15000,cap:\"thaumium\",rod:\"silverwood\",ordo:15000,sceptre:1b,perditio:15000,aer:15000}"),
+                createItemStack(
+                        Thaumcraft.ID,
+                        "WandCasting",
+                        1,
+                        wildcard,
+                        "{aqua:15000,ignis:15000,terra:15000,cap:\"thaumium\",rod:\"silverwood\",ordo:15000,sceptre:1b,perditio:15000,aer:15000}"),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),

@@ -25,7 +25,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class BlastFurnaceRecipes implements Runnable {
@@ -803,10 +802,10 @@ public class BlastFurnaceRecipes implements Runnable {
 
         if (TinkerConstruct.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 12))
-                    .circuit(11).itemOutputs(Materials.Aluminium.getIngots(1)).duration(60 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1300).metadata(ADDITIVE_AMOUNT, 1000)
-                    .metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 12)).circuit(11)
+                    .itemOutputs(Materials.Aluminium.getIngots(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_MV)
+                    .metadata(COIL_HEAT, 1300).metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true)
+                    .metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glass, 1, 0)).circuit(1)
                     .itemOutputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0)).duration(5 * SECONDS)
@@ -873,9 +872,8 @@ public class BlastFurnaceRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.get().splitStack(64))
                     .fluidInputs(Materials.MHDCSM.getMolten(128_000_000L))
-                    .itemOutputs(getModItem(SGCraft.ID, "sgControllerCrystal", 1))
-                    .duration(7 * 24 * HOURS * 2).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000)
-                    .addTo(blastFurnaceRecipes);
+                    .itemOutputs(getModItem(SGCraft.ID, "sgControllerCrystal", 1)).duration(7 * 24 * HOURS * 2)
+                    .eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000).addTo(blastFurnaceRecipes);
 
         }
     }

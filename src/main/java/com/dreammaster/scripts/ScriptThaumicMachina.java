@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicMachina;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -81,8 +81,7 @@ public class ScriptThaumicMachina implements IScriptLoader {
         TCHelper.addResearchPage(
                 "@WAND_AUGMENTATION",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicMachina.ID, "wandAugmentationCore", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicMachina.ID, "wandAugmentationCore", 1, 0))));
         TCHelper.setResearchAspects(
                 "@WAND_AUGMENTATION",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 3).add(Aspect.getAspect("praecantatio"), 6)

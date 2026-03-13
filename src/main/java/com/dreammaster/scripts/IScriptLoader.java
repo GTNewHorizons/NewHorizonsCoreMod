@@ -20,8 +20,6 @@ import gregtech.api.objects.ItemData;
 import gregtech.common.items.MetaGeneratedItem01;
 import gregtech.common.items.MetaGeneratedItem02;
 
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
-
 public interface IScriptLoader {
     // todo: cache the lookups for the itemstacks
     // todo: make an error for the itemstack lookup if it returns null

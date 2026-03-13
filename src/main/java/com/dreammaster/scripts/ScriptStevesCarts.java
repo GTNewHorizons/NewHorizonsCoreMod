@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botany;
@@ -30,7 +31,6 @@ import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -1403,9 +1403,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "blockReactorChamber", 1, 0));
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "detector_rail", 1, 0),
-                        getModItem(Railcraft.ID, "detector", 1, 9))
+                .itemInputs(getModItem(Minecraft.ID, "detector_rail", 1, 0), getModItem(Railcraft.ID, "detector", 1, 9))
                 .itemOutputs(getModItem(StevesCarts2.ID, "BlockAdvDetector", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1418,14 +1416,14 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Wood, 2L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0)).duration(10 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0)).duration(10 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Reinforced, 1L),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Reinforced, 2L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 23)).duration(20 * SECONDS)
-                .eut(4).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 23)).duration(20 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Galgadorian, 1L),
@@ -1457,9 +1455,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 81)).duration(20 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.SteelBars.get(5),
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 4, 19))
+                .itemInputs(NHItemList.SteelBars.get(5), getModItem(StevesCarts2.ID, "ModuleComponents", 4, 19))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 20)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1475,8 +1471,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 81))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iron, 2L))
-                .circuit(1).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Iron, 1L),
@@ -1484,9 +1480,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Cover_SolarPanel.get(1L),
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9))
+                .itemInputs(ItemList.Cover_SolarPanel.get(1L), getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1654,128 +1648,128 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 1))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         ItemList.Color_01.get(4L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 11))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 14))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 19))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 59))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 2))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 22))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 13))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 12))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         ItemList.Color_02.get(4L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(BiomesOPlenty.ID, "misc", 4, 7))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 28))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 4))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 24))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 21))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Natura.ID, "barleyFood", 4, 8))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 11))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 14))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         ItemList.Color_04.get(4L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(BiomesOPlenty.ID, "misc", 4, 5))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "CartModule", 1, 41),
@@ -1783,9 +1777,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 101)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Cover_Crafting.get(1L),
-                        getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9))
+                .itemInputs(ItemList.Cover_Crafting.get(1L), getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 87)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1845,11 +1837,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "string", 1, 0),
-                        getModItem(Minecraft.ID, "gunpowder", 1, 0))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 43))
-                .duration(2 * SECONDS + 10 * TICKS).eut(2).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Minecraft.ID, "string", 1, 0), getModItem(Minecraft.ID, "gunpowder", 1, 0))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 43)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 7, 0),
@@ -1875,9 +1865,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 57)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 81),
-                        ItemList.Quantum_Chest_IV.get(1L))
+                .itemInputs(getModItem(StevesCarts2.ID, "CartModule", 1, 81), ItemList.Quantum_Chest_IV.get(1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 76))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.americium", 1440)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);

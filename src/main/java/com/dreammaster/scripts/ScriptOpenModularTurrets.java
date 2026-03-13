@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.*;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -11,7 +12,6 @@ import static gregtech.api.enums.Mods.OpenModularTurrets;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -411,62 +411,62 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                         ItemList.Battery_Hull_LV.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierOne", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierOne", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L),
                         ItemList.Battery_Hull_MV.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierTwo", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierTwo", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L),
                         ItemList.Battery_Hull_HV.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierThree", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierThree", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.EnergeticAlloy, 1L),
                         ItemList.BatteryHull_EV.get(1))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFour", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFour", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.VibrantAlloy, 1L),
                         ItemList.BatteryHull_IV.get(1))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFive", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFive", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                         getModItem(Minecraft.ID, "chest", 1, 0))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierOne", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierOne", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 0))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierTwo", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierTwo", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 4))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierThree", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierThree", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.EnergeticAlloy, 1L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierFour", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierFour", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.VibrantAlloy, 1L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 5))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierFive", 1, 0))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierFive", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
@@ -513,8 +513,8 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .itemInputs(
                         ItemList.Electric_Piston_MV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.StainlessSteel, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Piston_HV.get(1L),
@@ -566,14 +566,14 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         NHItemList.ReinforcedGlassLense.get())
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "accuraccyUpgradeItem", 1, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "accuraccyUpgradeItem", 1, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(Minecraft.ID, "magma_cream", 1, 0))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "fireRateUpgradeItem", 1, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "fireRateUpgradeItem", 1, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
@@ -584,14 +584,14 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         NHItemList.StainlessSteelBars.get())
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "scattershotUpgradeItem", 1, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "scattershotUpgradeItem", 1, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 2L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "efficiencyUpgradeItem", 1, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "efficiencyUpgradeItem", 1, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
@@ -632,15 +632,15 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(OpenModularTurrets.ID, "ioBus", 4, 0))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "redstoneReactorAddon", 1, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "redstoneReactorAddon", 1, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 4L),
                         getModItem(Minecraft.ID, "redstone", 4, 0),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "blazingClayCraftable", 32, 0))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "blazingClayCraftable", 32, 0)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
 
     }
 }

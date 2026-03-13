@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ExtraTrees;
@@ -14,7 +15,6 @@ import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.common.items.IDMetaTool01.KNIFE;
@@ -748,224 +748,224 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "food", 1, 9));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "food", 1, 9))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "honeyItem", 1, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "apple", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "applejuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "applejuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "applejuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "applejuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "melon", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "melonjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "melonjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "carrot", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "carrotjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "carrotjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "food", 2, 2))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "carrotjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "carrotjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "strawberryItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "grapeItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapejuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapejuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 45))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "blueberryItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "berry", 1, 1))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 5))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherryjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "cherryItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherryjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "fruits", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherryjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 43))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "berry", 1, 2))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "raspberryItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 44))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "berry", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "fruits", 1, 6))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayajuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayajuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "papayaItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayajuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayajuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 58))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "starfruitjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "starfruitjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "starfruitItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "starfruitjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "starfruitjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "pomegranateItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pomegranatejuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pomegranatejuiceItem", 1, 0)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 57))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangojuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangojuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "mangoItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangojuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangojuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "limeItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limejuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limejuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 3))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limejuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limejuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 17))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limejuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limejuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "orangeItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangejuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangejuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 1))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangejuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangejuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "food", 1, 3))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 12))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "peachItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "kiwiItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "kiwijuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "kiwijuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 46))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "cranberryItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberryjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberryjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "cactusfruitItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cactusfruitjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cactusfruitjuiceItem", 1, 0)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "plumItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 8))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "fruits", 1, 4))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "pearItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "food", 1, 12))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 22))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 23))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 10))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "apricotItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "persimmonItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "food", 1, 8))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 11))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "grapefruitItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitjuiceItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 32))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "figjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "figjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "figItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "figjuiceItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "figjuiceItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 35))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "oliveItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "sunflowerseedsItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "walnutItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "fruits", 1, 1))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "waxcombItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "beeswaxItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "beeswaxItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "candleberryItem", 4, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "beeswaxItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "beeswaxItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "egg", 1, 0))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "mayoItem", 1, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "tomatoItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "ketchupItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "ketchupItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "peanutItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peanutbutterItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peanutbutterItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "mustardseedsItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mustardItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mustardItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "almondItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "almondbutterItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "almondbutterItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 9))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "almondbutterItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "almondbutterItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "cashewItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cashewbutterItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cashewbutterItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 1, 51))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cashewbutterItem", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cashewbutterItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "chestnutItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "chestnutbutterItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "chestnutbutterItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "fruits", 1, 2))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "chestnutbutterItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "chestnutbutterItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "pistachioItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pistachiobutterItem", 1, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pistachiobutterItem", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
 
         GTModHandler.addSmeltingRecipe(
                 getModItem(PamsHarvestCraft.ID, "venisonrawItem", 1, 0),
@@ -987,14 +987,14 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Backpack.ID, "tannedLeather", 2, 0),
                         getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "cornItem", 1, 0))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cornmealItem", 1, 0)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0)).duration(1 * MINUTES)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0)).duration(1 * MINUTES).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0),
@@ -1005,375 +1005,375 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "melon", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "melonsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "melonsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "strawberryItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "lemonItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "lemonsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "lemonsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "blueberryItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 1),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "cherryItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 5),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 6),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "starfruitItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "starfruitsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "starfruitsmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "bananaItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 28),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 29),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "orangeItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 1),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 18),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 13),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 21),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "papayaItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayasmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "fruits", 1, 6),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayasmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "peachItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 12),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 3),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "limeItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 3),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 17),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 16),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "mangoItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangosmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangosmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 57),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangosmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangosmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pomegranateItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pomegranatesmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pomegranatesmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 2),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 43),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "raspberryItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 44),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "kiwiItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "kiwismoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "kiwismoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "apricotItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 10),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "grapefruitItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitsmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 11),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitsmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "persimmonItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonsmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 8),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonsmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "gooseberryItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "gooseberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "gooseberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 48),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "gooseberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "gooseberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "apple", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "applesmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "applesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "applesmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "applesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "coconutItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 50),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutsmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "cranberryItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 46),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberrysmoothieItem", 1, 0))
-                .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
+                .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "grapeItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapesmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pearItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 22),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 12),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 23),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "plumItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "fruits", 1, 4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 8),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "figItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "figsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "figsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 32),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "figsmoothieItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "figsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0),
                         getModItem(PamsHarvestCraft.ID, "vinegarItem", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Salt, 2L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "saladdressingItem", 1, 0)).duration(20 * SECONDS)
-                .eut(2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "saladdressingItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
 
     }
 }

@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Void;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -17,7 +18,6 @@ import static gregtech.api.enums.OrePrefixes.plate;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static thaumcraft.api.aspects.Aspect.getAspect;
 
@@ -398,8 +398,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "spike", 1, 4),
                 5,
                 new AspectList().add(getAspect("telum"), 32).add(getAspect("instrumentum"), 32)
-                        .add(getAspect("tenebrae"), 16).add(getAspect("alienis"), 16)
-                        .add(getAspect("metallum"), 16).add(getAspect("mortuus"), 16),
+                        .add(getAspect("tenebrae"), 16).add(getAspect("alienis"), 16).add(getAspect("metallum"), 16)
+                        .add(getAspect("mortuus"), 16),
                 getModItem(ThaumicBases.ID, "spike", 1, 2),
                 plate.get(Void),
                 createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}"),
@@ -1167,8 +1167,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         TCHelper.addResearchPage("TB.AdvAlc", new ResearchPage("tb.rec.advAlc.page.0"));
         TCHelper.addResearchPage(
                 "TB.AdvAlc",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicBases.ID, "advAlchFurnace", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicBases.ID, "advAlchFurnace", 1, 0))));
         TCHelper.refreshResearchPages("TB.ThaumicAnvil");
         ThaumcraftApi.addWarpToResearch("TB.ThaumicAnvil", 1);
         TCHelper.clearPages("ROD_tbthaumium");
@@ -1212,50 +1211,42 @@ public class ScriptThaumicBases implements IScriptLoader {
         TCHelper.addResearchPage("TB.Bracelet.Silverwood", new ResearchPage("tb.rec.bracelet.silverwood.page.0"));
         TCHelper.addResearchPage(
                 "TB.Bracelet.Silverwood",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 4))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 4))));
         TCHelper.clearPages("TB.Bracelet.Void");
         TCHelper.addResearchPage("TB.Bracelet.Void", new ResearchPage("tb.rec.bracelet.void.page.0"));
         TCHelper.addResearchPage(
                 "TB.Bracelet.Void",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 11))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 11))));
         TCHelper.clearPages("TB.Bracelet.Blaze");
         TCHelper.addResearchPage("TB.Bracelet.Blaze", new ResearchPage("tb.rec.bracelet.blaze.page.0"));
         TCHelper.addResearchPage(
                 "TB.Bracelet.Blaze",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 8))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 8))));
         TCHelper.clearPages("TB.Bracelet.Reed");
         TCHelper.addResearchPage("TB.Bracelet.Reed", new ResearchPage("tb.rec.bracelet.reed.page.0"));
         TCHelper.addResearchPage(
                 "TB.Bracelet.Reed",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 5))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 5))));
         TCHelper.clearPages("TB.Bracelet.Bone");
         TCHelper.addResearchPage("TB.Bracelet.Bone", new ResearchPage("tb.rec.bracelet.bone.page.0"));
         TCHelper.addResearchPage(
                 "TB.Bracelet.Bone",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 6))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 6))));
         TCHelper.clearPages("TB.Bracelet.Obsidian");
         TCHelper.addResearchPage("TB.Bracelet.Obsidian", new ResearchPage("tb.rec.bracelet.obsidian.page.0"));
         TCHelper.addResearchPage(
                 "TB.Bracelet.Obsidian",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 7))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 7))));
         TCHelper.clearPages("TB.Bracelet.Quartz");
         TCHelper.addResearchPage("TB.Bracelet.Quartz", new ResearchPage("tb.rec.bracelet.quartz.page.0"));
         TCHelper.addResearchPage(
                 "TB.Bracelet.Quartz",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 10))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 10))));
         TCHelper.clearPages("TB.Bracelet.Ice");
         TCHelper.addResearchPage("TB.Bracelet.Ice", new ResearchPage("tb.rec.bracelet.ice.page.0"));
         TCHelper.addResearchPage(
                 "TB.Bracelet.Ice",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 9))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "castingBracelet", 1, 9))));
         TCHelper.refreshResearchPages("TB.NodeMan");
         TCHelper.refreshResearchPages("TB.NodeFoci.Bright");
         TCHelper.refreshResearchPages("TB.NodeFoci.Speed");
@@ -1275,12 +1266,10 @@ public class ScriptThaumicBases implements IScriptLoader {
                 1,
                 -1,
                 3,
-                getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0))
-                        .setPages(
-                                new ResearchPage("tb.rec.TB.TaintFlask.page.NH.0"),
-                                new ResearchPage(
-                                        TCHelper.findInfusionRecipe(
-                                                getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0))))
+                getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0)).setPages(
+                        new ResearchPage("tb.rec.TB.TaintFlask.page.NH.0"),
+                        new ResearchPage(
+                                TCHelper.findInfusionRecipe(getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0))))
                         .setParents("TB.INFUSION").setParentsHidden("BOTTLETAINT").registerResearchItem();
         ThaumcraftApi.addWarpToResearch("TB.TaintFlask", 5);
         ThaumcraftApi.addWarpToItem(getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0), 3);
@@ -1293,8 +1282,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         TCHelper.addResearchPage("TB.NodeLinker", new ResearchPage("tb.rec.nodeLink.page.2"));
         TCHelper.addResearchPage(
                 "TB.NodeLinker",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicBases.ID, "nodeLinker", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicBases.ID, "nodeLinker", 1, 0))));
         TCHelper.refreshResearchPages("TB.SM");
         TCHelper.refreshResearchPages("TB.Overchanter");
     }

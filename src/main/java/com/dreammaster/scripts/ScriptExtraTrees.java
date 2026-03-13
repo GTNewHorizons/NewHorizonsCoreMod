@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.Forestry;
@@ -8,7 +9,6 @@ import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -50,9 +50,7 @@ public class ScriptExtraTrees implements IScriptLoader {
 
     public void recipes1() {
 
-        addShapelessRecipe(
-                getModItem(ExtraTrees.ID, "database", 1, 0),
-                getModItem(ExtraTrees.ID, "database", 1, 0));
+        addShapelessRecipe(getModItem(ExtraTrees.ID, "database", 1, 0), getModItem(ExtraTrees.ID, "database", 1, 0));
         addShapelessRecipe(
                 getModItem(ExtraTrees.ID, "databaseMoth", 1, 0),
                 getModItem(ExtraTrees.ID, "databaseMoth", 1, 0));

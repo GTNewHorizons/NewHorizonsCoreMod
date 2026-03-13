@@ -33,7 +33,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
@@ -306,9 +305,7 @@ public class ChemicalReactorRecipes implements Runnable {
         if (DraconicEvolution.isModLoaded()) {
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.DraconiumEgg.get(),
-                            getModItem(DraconicEvolution.ID, "dragonHeart", 0, 0))
+                    .itemInputs(NHItemList.DraconiumEgg.get(), getModItem(DraconicEvolution.ID, "dragonHeart", 0, 0))
                     .itemOutputs(new ItemStack(Blocks.dragon_egg, 1, 0))
                     .fluidInputs(Materials.Enderium.getMolten(7 * INGOTS)).requiresCleanRoom().duration(60 * MINUTES)
                     .eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
@@ -318,17 +315,13 @@ public class ChemicalReactorRecipes implements Runnable {
         if (Genetics.isModLoaded()) {
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            new ItemStack(Items.spawn_egg, 1, WILDCARD),
-                            getModItem(Genetics.ID, "misc", 64, 4))
+                    .itemInputs(new ItemStack(Items.spawn_egg, 1, WILDCARD), getModItem(Genetics.ID, "misc", 64, 4))
                     .itemOutputs(NHItemList.TheBigEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "cocoon", 1, 0),
-                            getModItem(Genetics.ID, "misc", 64, 4))
+                    .itemInputs(getModItem(Botania.ID, "cocoon", 1, 0), getModItem(Genetics.ID, "misc", 64, 4))
                     .itemOutputs(NHItemList.TheBigEgg.get())
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);

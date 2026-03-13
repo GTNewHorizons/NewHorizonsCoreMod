@@ -1,10 +1,10 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -19,7 +19,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -104,12 +103,8 @@ public class ScriptOpenComputers implements IScriptLoader {
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-        addShapelessRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 23),
-                ItemList.Circuit_Parts_Transistor.get(1));
-        addShapelessRecipe(
-                ItemList.Circuit_Parts_Transistor.get(1),
-                getModItem(OpenComputers.ID, "item", 1, 23));
+        addShapelessRecipe(getModItem(OpenComputers.ID, "item", 1, 23), ItemList.Circuit_Parts_Transistor.get(1));
+        addShapelessRecipe(ItemList.Circuit_Parts_Transistor.get(1), getModItem(OpenComputers.ID, "item", 1, 23));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(OpenComputers.ID, "item", 1, 69),
                 "---------",

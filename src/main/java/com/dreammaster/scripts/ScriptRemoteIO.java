@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -13,7 +14,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -186,9 +186,7 @@ public class ScriptRemoteIO implements IScriptLoader {
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.BlankPlatedChip.get(1),
-                        getModItem(EnderStorage.ID, "enderChest", 1, 4096))
+                .itemInputs(NHItemList.BlankPlatedChip.get(1), getModItem(EnderStorage.ID, "enderChest", 1, 4096))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -202,9 +200,7 @@ public class ScriptRemoteIO implements IScriptLoader {
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.BlankPlatedChip.get(1),
-                        getModItem(ExtraUtilities.ID, "extractor_base", 2, 12))
+                .itemInputs(NHItemList.BlankPlatedChip.get(1), getModItem(ExtraUtilities.ID, "extractor_base", 2, 12))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 12)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

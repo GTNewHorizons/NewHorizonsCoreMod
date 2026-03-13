@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -8,7 +9,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkersGregworks;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
@@ -118,8 +118,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("vacuos"), 4));
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ShadowmetalGTNH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
@@ -142,8 +141,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "stickWood");
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalHoe", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalHoe", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalPick", 1, 0),
@@ -167,8 +165,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "stickWood");
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalPick", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalPick", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalAxe", 1, 0),
@@ -192,8 +189,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "stickWood");
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalAxe", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalAxe", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSpade", 1, 0),
@@ -213,8 +209,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "stickWood");
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalSpade", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalSpade", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0),
@@ -234,8 +229,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "stickWood");
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0))));
         TCHelper.orphanResearch("EVILSHARDS");
         TCHelper.removeResearch("EVILSHARDS");
         new ResearchItem(
@@ -257,8 +251,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("permutatio"), 8));
         TCHelper.addResearchPage(
                 "EvilshardsGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EvilshardsGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4),
@@ -267,8 +260,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("permutatio"), 8));
         TCHelper.addResearchPage(
                 "EvilshardsGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4))));
         ThaumcraftApi.addWarpToResearch("EvilshardsGTNH", 2);
         TCHelper.orphanResearch("MAGICFUNGUAR");
         TCHelper.removeResearch("MAGICFUNGUAR");
@@ -281,8 +273,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 3,
                 -2,
                 3,
-                getModItem(TaintedMagic.ID, "ItemMagicFunguar", 1, 0)).setParents("TAINTEDMAGIC")
-                        .setConcealed().setPages(new ResearchPage("tm.text.MAGICFUNGUAR.1")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemMagicFunguar", 1, 0)).setParents("TAINTEDMAGIC").setConcealed()
+                        .setPages(new ResearchPage("tm.text.MAGICFUNGUAR.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MagicFunguarGTNH",
                 getModItem(TaintedMagic.ID, "ItemMagicFunguar", 4, 0),
@@ -312,8 +304,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0));
         TCHelper.addResearchPage(
                 "MagicFunguarGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMagicFunguar", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMagicFunguar", 1, 0))));
         ThaumcraftApi.addWarpToResearch("MagicFunguarGTNH", 1);
         TCHelper.orphanResearch("WARPTREE");
         TCHelper.removeResearch("WARPTREE");
@@ -348,13 +339,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "WarpTreeGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "BlockWarpwoodSapling", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "BlockWarpwoodSapling", 1, 0))));
         TCHelper.addResearchPage(
                 "WarpTreeGTNH",
                 new ResearchPage(
-                        TCHelper.findCraftingRecipe(
-                                getModItem(TaintedMagic.ID, "BlockWarpwoodPlanks", 1, 0))));
+                        TCHelper.findCraftingRecipe(getModItem(TaintedMagic.ID, "BlockWarpwoodPlanks", 1, 0))));
         ThaumcraftApi.addWarpToResearch("WarpTreeGTNH", 3);
         TCHelper.orphanResearch("WARPEDGOGGLES");
         TCHelper.removeResearch("WARPEDGOGGLES");
@@ -392,8 +381,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Shadow));
         TCHelper.addResearchPage(
                 "WarpedGogglesGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0))));
         ThaumcraftApi.addWarpToResearch("WarpedGogglesGTNH", 1);
         TCHelper.orphanResearch("FOCUSSHARD");
         TCHelper.removeResearch("FOCUSSHARD");
@@ -406,9 +394,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 3,
                 1,
                 3,
-                getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0))
-                        .setParents("EvilshardsGTNH", "FOCUSFIRE").setConcealed()
-                        .setPages(new ResearchPage("tm.text.FOCUSSHARD.1")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0)).setParents("EvilshardsGTNH", "FOCUSFIRE")
+                        .setConcealed().setPages(new ResearchPage("tm.text.FOCUSSHARD.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FocusShardGTNH",
                 getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0),
@@ -437,8 +424,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4));
         TCHelper.addResearchPage(
                 "FocusShardGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0))));
         ThaumcraftApi.addWarpToResearch("FocusShardGTNH", 1);
         TCHelper.orphanResearch("MACEFOCUS");
         TCHelper.removeResearch("MACEFOCUS");
@@ -474,8 +460,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.screw.get(Materials.Shadow));
         TCHelper.addResearchPage(
                 "MaceFocusGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1, 0))));
         ThaumcraftApi.addWarpToResearch("MaceFocusGTNH", 1);
         TCHelper.orphanResearch("SHADOWCLOTH");
         TCHelper.removeResearch("SHADOWCLOTH");
@@ -519,8 +504,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.addResearchPage(
                 "ShadowClothGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1))));
         ThaumcraftApi.addWarpToResearch("ShadowClothGTNH", 2);
         TCHelper.orphanResearch("CREATIONSHARD");
         TCHelper.removeResearch("CREATIONSHARD");
@@ -566,8 +550,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6));
         TCHelper.addResearchPage(
                 "CreationShardGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5))));
         ThaumcraftApi.addWarpToResearch("CreationShardGTNH", 10);
         TCHelper.orphanResearch("ELDRITCHFOCUS");
         TCHelper.removeResearch("ELDRITCHFOCUS");
@@ -606,8 +589,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void));
         TCHelper.addResearchPage(
                 "EldritchFocusGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0))));
         TCHelper.addResearchPage("EldritchFocusGTNH", new ResearchPage("tm.text.ELDRITCHFOCUS.2"));
         ThaumcraftApi.addWarpToResearch("EldritchFocusGTNH", 4);
         TCHelper.orphanResearch("CRYSTALDAGGER");
@@ -632,8 +614,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "CrystalDaggerGTNH",
                 getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0),
                 new AspectList().add(getAspect("terra"), 100).add(getAspect("ignis"), 100)
-                        .add(getAspect("perditio"), 100).add(getAspect("ordo"), 50)
-                        .add(getAspect("aer"), 50),
+                        .add(getAspect("perditio"), 100).add(getAspect("ordo"), 50).add(getAspect("aer"), 50),
                 "abc",
                 "def",
                 "ghi",
@@ -653,8 +634,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "screwThaumium");
         TCHelper.addResearchPage(
                 "CrystalDaggerGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0))));
         ThaumcraftApi.addWarpToResearch("CrystalDaggerGTNH", 3);
         TCHelper.orphanResearch("CRIMSONROBES");
         TCHelper.removeResearch("CRIMSONROBES");
@@ -702,8 +682,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "foilVoid");
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2))));
         ThaumcraftApi.addWarpToResearch("CrimsonRobesGTNH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
@@ -730,8 +709,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "plateVoid");
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistRobe", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistRobe", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemChestplateCultistRobe", 1, 0),
@@ -762,8 +740,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(Thaumcraft.ID, "ItemChestplateCultistRobe", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateCultistRobe", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemLeggingsCultistRobe", 1, 0),
@@ -794,8 +771,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(Thaumcraft.ID, "ItemLeggingsCultistRobe", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsCultistRobe", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemBootsCultist", 1, 0),
@@ -819,8 +795,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2));
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBootsCultist", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBootsCultist", 1, 0))));
         TCHelper.addResearchPrereq("BLOODLUSTUPGRADE", "CrystalDaggerGTNH", false);
         ResearchCategories.getResearch("BLOODLUSTUPGRADE").setConcealed();
         TCHelper.setResearchAspects(
@@ -842,9 +817,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -4,
                 -4,
                 3,
-                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8))
-                        .setParents("ELDRITCHMINOR", "CrimsonRobesGTNH").setConcealed()
-                        .setPages(new ResearchPage("tm.text.KNIGHTROBES.1")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8)).setParents("ELDRITCHMINOR", "CrimsonRobesGTNH")
+                        .setConcealed().setPages(new ResearchPage("tm.text.KNIGHTROBES.1")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "KnightRobesGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
@@ -872,8 +846,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7));
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8))));
         ThaumcraftApi.addWarpToResearch("KnightRobesGTNH", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
@@ -900,8 +873,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "plateShadow");
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0),
@@ -932,8 +904,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0),
@@ -964,8 +935,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0))));
         TCHelper.orphanResearch("PRAETORARMOR");
         TCHelper.removeResearch("PRAETORARMOR");
         new ResearchItem(
@@ -1003,8 +973,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(Thaumcraft.ID, "ItemHelmetCultistLeaderPlate", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistLeaderPlate", 1, 0))));
         ThaumcraftApi.addWarpToResearch("PraetorarmorGTNH", 5);
         TCHelper.addInfusionCraftingRecipe(
                 "PraetorarmorGTNH",
@@ -1067,8 +1036,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -7,
                 -5,
                 3,
-                getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0)).setParents("PraetorarmorGTNH")
-                        .setConcealed().setPages(new ResearchPage("tm.text.VOIDSENTBLOOD.1")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0)).setParents("PraetorarmorGTNH").setConcealed()
+                        .setPages(new ResearchPage("tm.text.VOIDSENTBLOOD.1")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "VoidsentGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0),
@@ -1078,8 +1047,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("alienis"), 16));
         TCHelper.addResearchPage(
                 "VoidsentGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0))));
         ThaumcraftApi.addWarpToResearch("VoidsentGTNH", 2);
         TCHelper.orphanResearch("CRIMSONBLADE");
         TCHelper.removeResearch("CRIMSONBLADE");
@@ -1092,8 +1060,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -7,
                 -3,
                 3,
-                getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0)).setParents("PraetorarmorGTNH")
-                        .setConcealed().setPages(new ResearchPage("tm.text.CRIMSONBLADE.1")).registerResearchItem();
+                getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0)).setParents("PraetorarmorGTNH").setConcealed()
+                        .setPages(new ResearchPage("tm.text.CRIMSONBLADE.1")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "CrimsonBladeGTNH",
                 getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0),
@@ -1116,8 +1084,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7));
         TCHelper.addResearchPage(
                 "CrimsonBladeGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0))));
         ThaumcraftApi.addWarpToResearch("CrimsonBladeGTNH", 5);
         TCHelper.orphanResearch("VOIDGOGGLES");
         TCHelper.removeResearch("VOIDGOGGLES");
@@ -1131,9 +1098,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 3,
                 5,
                 3,
-                getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0))
-                        .setParents("WarpedGogglesGTNH", "VOIDMETAL").setConcealed()
-                        .setPages(new ResearchPage("tm.text.VOIDGOGGLES.1")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0)).setParents("WarpedGogglesGTNH", "VOIDMETAL")
+                        .setConcealed().setPages(new ResearchPage("tm.text.VOIDGOGGLES.1")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "VoidgogglesGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0),
@@ -1156,8 +1122,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "VoidgogglesGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0))));
         ThaumcraftApi.addWarpToResearch("VoidgogglesGTNH", 5);
         TCHelper.orphanResearch("TAINTFOCUS");
         TCHelper.removeResearch("TAINTFOCUS");
@@ -1196,8 +1161,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 11));
         TCHelper.addResearchPage(
                 "TaintFocusGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0))));
         ThaumcraftApi.addWarpToResearch("TaintFocusGTNH", 4);
         TCHelper.orphanResearch("FOCUSTAINTEDBLAST");
         TCHelper.removeResearch("FOCUSTAINTEDBLAST");
@@ -1236,8 +1200,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "FocusTaintedBlastGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemFocusTaintedBlast", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTaintedBlast", 1, 0))));
         ThaumcraftApi.addWarpToResearch("FocusTaintedBlastGTNH", 6);
         TCHelper.orphanResearch("THAUMICDISASSEMBLER");
         TCHelper.removeResearch("THAUMICDISASSEMBLER");
@@ -1250,9 +1213,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 5,
                 -6,
                 3,
-                getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0))
-                        .setParents("TMELDRITCHMAJOR", "VOIDMETAL").setConcealed()
-                        .setPages(new ResearchPage("tm.text.THAUMICDISASSEMBLER.1")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0)).setParents("TMELDRITCHMAJOR", "VOIDMETAL")
+                        .setConcealed().setPages(new ResearchPage("tm.text.THAUMICDISASSEMBLER.1"))
+                        .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ThaumicdisassemblerGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6),
@@ -1281,8 +1244,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "plateVoid");
         TCHelper.addResearchPage(
                 "ThaumicdisassemblerGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6))));
         ThaumcraftApi.addWarpToResearch("ThaumicdisassemblerGTNH", 4);
         TCHelper.addResearchPage("ThaumicdisassemblerGTNH", new ResearchPage("tm.text.THAUMICDISASSEMBLER.2"));
         TCHelper.addInfusionCraftingRecipe(
@@ -1304,8 +1266,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ThaumicdisassemblerGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0))));
         TCHelper.orphanResearch("VOIDWALKERBOOTS");
         TCHelper.removeResearch("VOIDWALKERBOOTS");
         new ResearchItem(
@@ -1347,8 +1308,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "VoidWalkerBootsGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1, 0))));
         ThaumcraftApi.addWarpToResearch("VoidWalkerBootsGTNH", 4);
         TCHelper.orphanResearch("VOIDSASH");
         TCHelper.removeResearch("VOIDSASH");
@@ -1362,8 +1322,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 3,
                 -8,
                 3,
-                getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0))
-                        .setParents("VoidWalkerBootsGTNH", "RUNICARMOR")
+                getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0)).setParents("VoidWalkerBootsGTNH", "RUNICARMOR")
                         .setParentsHidden("TAINTEDMAGIC", "ShadowmetalGTNH").registerResearchItem();
         TCHelper.addResearchPrereq("VoidSashGTNH", "VOIDMETAL", false);
         ResearchCategories.getResearch("VoidSashGTNH").setConcealed();
@@ -1391,8 +1350,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void));
         TCHelper.addResearchPage(
                 "VoidSashGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0))));
         ThaumcraftApi.addWarpToResearch("VoidSashGTNH", 4);
         TCHelper.orphanResearch("VOIDFORTRESS");
         TCHelper.removeResearch("VOIDFORTRESS");
@@ -1431,8 +1389,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0))));
         ThaumcraftApi.addWarpToResearch("VoidFortressGTNH", 5);
         TCHelper.addInfusionCraftingRecipe(
                 "VoidFortressGTNH",
@@ -1460,8 +1417,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0))));
         TCHelper.addInfusionCraftingRecipe(
                 "VoidFortressGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0),
@@ -1484,8 +1440,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0))));
         TCHelper.orphanResearch("SHADOWFORTRESSARMOR");
         TCHelper.removeResearch("SHADOWFORTRESSARMOR");
         new ResearchItem(
@@ -1523,8 +1478,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemShadowFortressHelmet", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemShadowFortressHelmet", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ShadowFortressArmorGTNH", 10);
         TCHelper.addInfusionCraftingRecipe(
                 "ShadowFortressArmorGTNH",
@@ -1576,8 +1530,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemShadowFortressLeggings", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemShadowFortressLeggings", 1, 0))));
         TCHelper.orphanResearch("THAUMIUMKATANA");
         TCHelper.removeResearch("THAUMIUMKATANA");
         new ResearchItem(
@@ -1614,8 +1567,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Thaumium));
         TCHelper.addResearchPage(
                 "ThaumiumKatanaGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ThaumiumKatanaGTNH", 3);
         TCHelper.orphanResearch("VOIDMETALKATANA");
         TCHelper.removeResearch("VOIDMETALKATANA");
@@ -1655,8 +1607,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void));
         TCHelper.addResearchPage(
                 "VoidMetalKatanaGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 1))));
         ThaumcraftApi.addWarpToResearch("VoidMetalKatanaGTNH", 6);
         TCHelper.orphanResearch("SHADOWMETALKATANA");
         TCHelper.removeResearch("SHADOWMETALKATANA");
@@ -1697,8 +1648,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Shadow));
         TCHelper.addResearchPage(
                 "ShadowMetalKatanaGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 2))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 2))));
         ThaumcraftApi.addWarpToResearch("ShadowMetalKatanaGTNH", 9);
         TCHelper.addResearchPrereq("INSCRIPTIONFIRE", "ThaumiumKatanaGTNH", false);
         ResearchCategories.getResearch("INSCRIPTIONFIRE").setConcealed();
@@ -1767,8 +1717,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.ring.get(Materials.Tungsten));
         TCHelper.addResearchPage(
                 "ROD_warpwood",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ROD_warpwood", 3);
         TCHelper.addResearchPage("ROD_warpwood", new ResearchPage("tm.text.ROD_warpwood.2"));
         TCHelper.orphanResearch("ROD_warpwood_staff");
@@ -1854,8 +1803,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.addResearchPage(
                 "FocusTimeGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0))));
         ThaumcraftApi.addWarpToResearch("FocusTimeGTNH", 10);
         TCHelper.orphanResearch("FOCUSWEATHER");
         TCHelper.removeResearch("FOCUSWEATHER");
@@ -1897,8 +1845,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "FocusWeatherGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0))));
         ThaumcraftApi.addWarpToResearch("FocusWeatherGTNH", 10);
         TCHelper.orphanResearch("PRIMALBLADE");
         TCHelper.removeResearch("PRIMALBLADE");
@@ -1944,8 +1891,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Shadow));
         TCHelper.addResearchPage(
                 "PrimalBladeGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0))));
         ThaumcraftApi.addWarpToResearch("PrimalBladeGTNH", 10);
         TCHelper.orphanResearch("CAP_cloth");
         TCHelper.removeResearch("CAP_cloth");
@@ -1957,8 +1903,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 7,
                 5,
                 3,
-                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1)).setParents("CAP_gold", "ENCHFABRIC")
-                        .setConcealed().setPages(new ResearchPage("tm.text.CAP_cloth.1")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1)).setParents("CAP_gold", "ENCHFABRIC").setConcealed()
+                        .setPages(new ResearchPage("tm.text.CAP_cloth.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_cloth",
                 getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1),
@@ -2090,9 +2036,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -4,
                 4,
                 3,
-                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0))
-                        .setParents("CAP_shadowcloth", "CAP_void", "PRIMPEARL").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.CAP_shadowmetal")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0)).setParents("CAP_shadowcloth", "CAP_void", "PRIMPEARL")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.CAP_shadowmetal"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "CAP_shadowmetal",
                 getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0),
@@ -2116,8 +2062,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3));
         TCHelper.addResearchPage(
                 "CAP_shadowmetal",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0))));
         ThaumcraftApi.addWarpToResearch("CAP_shadowmetal", 8);
     }
 }

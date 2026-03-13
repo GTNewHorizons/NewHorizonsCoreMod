@@ -42,13 +42,11 @@ public class CircuitAssemblerRecipes implements Runnable {
     public final Materials[] solderingMaterials = new Materials[] { Materials.Lead, Materials.SolderingAlloy,
             Materials.Tin };
 
-    public final ItemStack[] RocketMaterial = new ItemStack[] {
-            getModItem(GalacticraftCore.ID, "item.heavyPlating", 1),
+    public final ItemStack[] RocketMaterial = new ItemStack[] { getModItem(GalacticraftCore.ID, "item.heavyPlating", 1),
             getModItem(GalacticraftMars.ID, "item.null", 1, 3),
-            getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1),
-            NHItemList.HeavyDutyPlateTier4.get(), NHItemList.HeavyDutyPlateTier5.get(),
-            NHItemList.HeavyDutyPlateTier6.get(), NHItemList.HeavyDutyPlateTier7.get(),
-            NHItemList.HeavyDutyPlateTier8.get() };
+            getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1), NHItemList.HeavyDutyPlateTier4.get(),
+            NHItemList.HeavyDutyPlateTier5.get(), NHItemList.HeavyDutyPlateTier6.get(),
+            NHItemList.HeavyDutyPlateTier7.get(), NHItemList.HeavyDutyPlateTier8.get() };
 
     public final ItemStack[] RocketChip = new ItemStack[] { NHItemList.SchematicsTier1.get(),
             NHItemList.SchematicsTier2.get(), NHItemList.SchematicsTier3.get(), NHItemList.SchematicsTier4.get(),
@@ -849,8 +847,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         NHItemList.ChargedCertusQuartzDust.get(2),
                         NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Basic.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
                 .fluidInputs(Materials.Lead.getMolten(288)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .requireMods(AppliedEnergistics2).addTo(circuitAssemblerRecipes);
 
@@ -860,8 +857,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         NHItemList.ChargedCertusQuartzDust.get(2),
                         NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Basic.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
                 .fluidInputs(Materials.Tin.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .requireMods(AppliedEnergistics2).addTo(circuitAssemblerRecipes);
 
@@ -871,8 +867,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         NHItemList.ChargedCertusQuartzDust.get(2),
                         NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Basic.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .requireMods(AppliedEnergistics2).addTo(circuitAssemblerRecipes);
         // 4k ME Storage Component
@@ -883,8 +878,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
@@ -894,8 +888,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
@@ -905,8 +898,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
         // 16k ME Storage Component
@@ -917,8 +909,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
@@ -928,8 +919,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
@@ -939,8 +929,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
         // 64k ME Storage Component
@@ -951,8 +940,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -962,8 +950,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -973,8 +960,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
-                .circuit(1)
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
     }
@@ -1183,12 +1169,13 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .requireMods(OpenComputers).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
             // Internet Crad
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(OpenComputers.ID, "item", 1, 13),
-                    getModItem(OpenComputers.ID, "item", 1, 48),
-                    getModItem(OpenComputers.ID, "item", 1, 26),
-                    GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                    getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, 14))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(OpenComputers.ID, "item", 1, 13),
+                            getModItem(OpenComputers.ID, "item", 1, 48),
+                            getModItem(OpenComputers.ID, "item", 1, 26),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, 14))
                     .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 44))
                     .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(20 * SECONDS)
                     .requireMods(OpenComputers).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);

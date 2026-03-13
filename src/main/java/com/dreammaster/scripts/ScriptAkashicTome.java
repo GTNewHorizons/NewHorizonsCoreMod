@@ -1,9 +1,9 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AkashicTome;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.Minecraft;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;

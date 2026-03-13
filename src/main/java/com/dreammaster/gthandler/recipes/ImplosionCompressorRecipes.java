@@ -20,7 +20,6 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ImplosionCompressorRecipes implements Runnable {
@@ -130,8 +129,7 @@ public class ImplosionCompressorRecipes implements Runnable {
         }
         if (GalacticraftMars.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 6))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 6))
                     .itemOutputs(
                             NHItemList.TitaniumDualCompressedPlates.get(),
                             GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
@@ -195,8 +193,7 @@ public class ImplosionCompressorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 2, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 2, 1))
                     .itemOutputs(
                             NHItemList.MeteoricIronDualCompressedPlates.get(),
                             GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
@@ -232,12 +229,12 @@ public class ImplosionCompressorRecipes implements Runnable {
         if (Avaritia.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 9, 2))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 3)).duration(20 * TICKS)
-                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 3)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
+                    .metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 9, 3))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 4)).duration(20 * TICKS)
-                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 4).addTo(implosionRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 4)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
+                    .metadata(ADDITIVE_AMOUNT, 4).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 9, 4))
                     .itemOutputs(getModItem(Avaritia.ID, "Resource_Block", 1, 0)).duration(20 * TICKS)
@@ -252,80 +249,68 @@ public class ImplosionCompressorRecipes implements Runnable {
         if (ExtraUtilities.isModLoaded()) {
             // CC
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 0))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 1))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 0))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 1)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 1))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 2))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 1))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 2)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 2))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 3))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 2))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 3)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 3))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 4))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 3))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 4)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 4))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 5))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 8).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 4))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 5)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 8).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 5))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 6))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 10).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 5))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 6)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 10).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 6))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 16).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 6))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 16).addTo(implosionRecipes);
             // CD
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 8))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 9))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 8))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 9)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 9))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 10))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 9))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 10)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 10))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 11))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 4).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 10))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 11)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 4).addTo(implosionRecipes);
             // CG
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 12))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 13))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 12))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 13)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
             // CS
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 14))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 14))
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "bedrockiumIngot", 9))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "block_bedrockium", 1))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 8).addTo(implosionRecipes);
+                    .itemOutputs(getModItem(ExtraUtilities.ID, "block_bedrockium", 1)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 8).addTo(implosionRecipes);
 
         }
 
         if (StevesCarts2.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18))
-                    .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 19))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
+                    .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 19)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
         }
 
@@ -342,16 +327,16 @@ public class ImplosionCompressorRecipes implements Runnable {
         if (DraconicEvolution.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 2))
-                    .itemOutputs(getModItem(DraconicEvolution.ID, "chaosShard", 1, 0))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 8).addTo(implosionRecipes);
+                    .itemOutputs(getModItem(DraconicEvolution.ID, "chaosShard", 1, 0)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 8).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 1))
-                    .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 2))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 4).addTo(implosionRecipes);
+                    .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 2)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 4).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 0))
-                    .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 1))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
+                    .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 1)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }
 

@@ -1,9 +1,9 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;

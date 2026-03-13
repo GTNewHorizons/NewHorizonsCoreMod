@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Californium;
-import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
@@ -13,7 +12,6 @@ import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.UniversalSingularities;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -888,8 +886,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Universium, 8L),
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 8L),
                             GTOreDictUnificator.get("plateDenseShirabon", 8L), ItemList.Sensor_UXV.get(16L),
-                            ItemList.Emitter_UXV.get(16L),
-                            getModItem(EternalSingularity.ID, "eternal_singularity", 16),
+                            ItemList.Emitter_UXV.get(16L), getModItem(EternalSingularity.ID, "eternal_singularity", 16),
                             Materials.Universium.getNanite(16), Materials.BlackDwarfMatter.getNanite(16),
                             Materials.WhiteDwarfMatter.getNanite(16) },
                     new FluidStack[] { Materials.Neutronium.getMolten(32_768_000L),
@@ -958,8 +955,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UMV);
         }
 
-        GTValues.RA.stdBuilder()
-                .metadata(RESEARCH_ITEM, getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1))
+        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1))
                 .metadata(SCANNING, new Scanning(1 * MINUTES + 40 * SECONDS, TierEU.RECIPE_EV))
                 .itemInputs(
                         ItemList.Hatch_Input_Bus_ME.get(1L),
@@ -994,8 +990,8 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Motor_ZPM.get(2L),
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.Duranium, 4))
                     .fluidInputs(new FluidStack(solderIndalloy, 2304), Materials.Tritanium.getMolten(1440L))
-                    .itemOutputs(getModItem(GraviSuite.ID, "graviChestPlate", 1, 26))
-                    .eut(TierEU.RECIPE_LuV / 2).duration(1 * MINUTES + 15 * SECONDS).addTo(AssemblyLine);
+                    .itemOutputs(getModItem(GraviSuite.ID, "graviChestPlate", 1, 26)).eut(TierEU.RECIPE_LuV / 2)
+                    .duration(1 * MINUTES + 15 * SECONDS).addTo(AssemblyLine);
 
             // Relocator
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Casing_Coil_Superconductor.get(1L))

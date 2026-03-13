@@ -1,7 +1,7 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.ForgeMicroblocks;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.ForgeMicroblocks;
 
 import java.util.Collections;
 import java.util.List;

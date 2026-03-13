@@ -1,11 +1,11 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersMechworks;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -77,32 +77,32 @@ public class ScriptMechworks implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
                         getModItem(TinkersMechworks.ID, "LengthWire", 1, 0))
-                .circuit(1).itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 256))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 256)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0),
                         getModItem(TinkersMechworks.ID, "SpoolWire", 1, 256))
-                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 192))
-                .duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 192)).duration(1 * MINUTES + 4 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0),
                         getModItem(TinkersMechworks.ID, "SpoolWire", 1, 192))
-                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 128))
-                .duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 128)).duration(1 * MINUTES + 4 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0),
                         getModItem(TinkersMechworks.ID, "SpoolWire", 1, 128))
-                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 64))
-                .duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 64)).duration(1 * MINUTES + 4 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0),
                         getModItem(TinkersMechworks.ID, "SpoolWire", 1, 64))
-                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 0))
-                .duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 0)).duration(1 * MINUTES + 4 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
@@ -121,8 +121,8 @@ public class ScriptMechworks implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Brass, 1)).circuit(5)
-                .itemOutputs(getModItem(TinkersMechworks.ID, "LengthWire", 2, 0))
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(wiremillRecipes);
+                .itemOutputs(getModItem(TinkersMechworks.ID, "LengthWire", 2, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(wiremillRecipes);
 
     }
 }

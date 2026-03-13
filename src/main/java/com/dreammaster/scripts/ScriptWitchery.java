@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.*;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
@@ -16,7 +17,6 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -278,14 +278,14 @@ public class ScriptWitchery implements IScriptLoader {
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+                .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+                .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(5 * SECONDS).eut(24)
@@ -304,8 +304,8 @@ public class ScriptWitchery implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0), ItemList.Shape_Mold_Bottle.get(0L))
-                .itemOutputs(getModItem(Witchery.ID, "ingredient", 1, 26)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(getModItem(Witchery.ID, "ingredient", 1, 26)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Witchery.ID, "seedsbelladonna", 1, 0),
@@ -345,8 +345,7 @@ public class ScriptWitchery implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ANOINTINGPASTE",
                 new ResearchPage(
-                        Objects.requireNonNull(
-                                TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "cauldron", 1, 0)))));
+                        Objects.requireNonNull(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "cauldron", 1, 0)))));
         new ResearchItem(
                 "OVEN",
                 "WITCHERY",
@@ -592,8 +591,8 @@ public class ScriptWitchery implements IScriptLoader {
                 6,
                 -2,
                 3,
-                getModItem(Witchery.ID, "rubyslippers", 1, 0)).setParents("BLOODALTAR", "SPINNINGWHEELW")
-                        .setConcealed()
+                getModItem(Witchery.ID, "rubyslippers", 1, 0))
+                        .setParents("BLOODALTAR", "SPINNINGWHEELW").setConcealed()
                         .setPages(
                                 new ResearchPage("Witchery.research_page.RUBYSLIPPERS.1"),
                                 new ResearchPage("Witchery.research_page.RUBYSLIPPERS.2"))
@@ -947,9 +946,9 @@ public class ScriptWitchery implements IScriptLoader {
                 2,
                 2,
                 3,
-                getModItem(Witchery.ID, "ingredient", 1, 73))
-                        .setParents("DISTILESSENTIA", "FUMEFUNNEL", "ATTUNEDSTONE").setConcealed()
-                        .setPages(new ResearchPage("Witchery.research_page.FUMEFILTER")).registerResearchItem();
+                getModItem(Witchery.ID, "ingredient", 1, 73)).setParents("DISTILESSENTIA", "FUMEFUNNEL", "ATTUNEDSTONE")
+                        .setConcealed().setPages(new ResearchPage("Witchery.research_page.FUMEFILTER"))
+                        .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FUMEFILTER",
                 getModItem(Witchery.ID, "ingredient", 1, 73),
@@ -1004,8 +1003,7 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8));
         TCHelper.addResearchPage(
                 "FILTEREDFUMEFUNNEL",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "filteredfumefunnel", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "filteredfumefunnel", 1, 0))));
         ThaumcraftApi.addWarpToResearch("FILTEREDFUMEFUNNEL", 2);
         new ResearchItem(
                 "WAYSTONE",

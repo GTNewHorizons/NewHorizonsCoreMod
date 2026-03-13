@@ -1,12 +1,12 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -315,14 +315,14 @@ public class ScriptGendustry implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3))
-                .itemOutputs(getModItem(Gendustry.ID, "EjectCover", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Gendustry.ID, "EjectCover", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6))
-                .itemOutputs(getModItem(Gendustry.ID, "ImportCover", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Gendustry.ID, "ImportCover", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),

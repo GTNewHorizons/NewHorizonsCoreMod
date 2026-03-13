@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiblioCraft;
 import static gregtech.api.enums.Mods.BuildCraftCore;
@@ -20,7 +21,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
@@ -280,9 +280,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
                 "plateEnderEye",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0));
-        addShapelessRecipe(
-                getModItem(OpenBlocks.ID, "sky", 1, 0),
-                getModItem(OpenBlocks.ID, "sky", 1, 1));
+        addShapelessRecipe(getModItem(OpenBlocks.ID, "sky", 1, 0), getModItem(OpenBlocks.ID, "sky", 1, 1));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "projector", 1, 0),
                 "screwSteel",
@@ -366,51 +364,47 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(OpenBlocks.ID, "ropeladder", 64, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "trapdoor", 1, 0),
-                        getModItem(Minecraft.ID, "ladder", 1, 0))
-                .itemOutputs(getModItem(OpenBlocks.ID, "ladder", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Minecraft.ID, "trapdoor", 1, 0), getModItem(Minecraft.ID, "ladder", 1, 0))
+                .itemOutputs(getModItem(OpenBlocks.ID, "ladder", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(OpenBlocks.ID, "sky", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Machine_LV_Mixer.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4))
-                .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemInputs(ItemList.Machine_LV_Mixer.get(1L), getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4))
+                .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
-                .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 4))
-                .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4))
-                .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
-                .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 4))
-                .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0),
@@ -428,8 +422,8 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "generic", 1, 11),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L))
-                .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 0, "{Uses:10.0f}"))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 0, "{Uses:10.0f}")).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
@@ -445,11 +439,9 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(OpenBlocks.ID, "generic", 1, 6),
-                        getModItem(OpenBlocks.ID, "generic", 4, 7))
-                .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:0b}"))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemInputs(getModItem(OpenBlocks.ID, "generic", 1, 6), getModItem(OpenBlocks.ID, "generic", 4, 7))
+                .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:0b}")).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:0b}"),
@@ -479,9 +471,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(OpenBlocks.ID, "generic", 1, 9),
-                        getModItem(Minecraft.ID, "ender_eye", 1, 0))
+                .itemInputs(getModItem(OpenBlocks.ID, "generic", 1, 9), getModItem(Minecraft.ID, "ender_eye", 1, 0))
                 .itemOutputs(getModItem(OpenBlocks.ID, "cartographer", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
@@ -505,8 +495,8 @@ public class ScriptOpenBlocks implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
                         GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1))
-                .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "elevator", 1, 0),
@@ -711,16 +701,12 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "wool", 1, 0),
-                        getModItem(Minecraft.ID, "slime_ball", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "wool", 1, 0), getModItem(Minecraft.ID, "slime_ball", 1, 0))
                 .itemOutputs(getModItem(OpenBlocks.ID, "sponge", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "clay_ball", 1, 0),
-                        getModItem(Minecraft.ID, "dye", 1, 3))
+                .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0), getModItem(Minecraft.ID, "dye", 1, 3))
                 .itemOutputs(getModItem(OpenBlocks.ID, "tastyClay", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("milk", 500)).duration(5 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
@@ -733,9 +719,8 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 -4,
                 5,
                 3,
-                getModItem(OpenBlocks.ID, "goldenegg", 1, 0)).setParents("MB_DimensionalSingularity")
-                        .setConcealed().setPages(new ResearchPage("OpenBlocks.research_page.GOLDENEGG"))
-                        .registerResearchItem();
+                getModItem(OpenBlocks.ID, "goldenegg", 1, 0)).setParents("MB_DimensionalSingularity").setConcealed()
+                        .setPages(new ResearchPage("OpenBlocks.research_page.GOLDENEGG")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "GOLDENEGG",
                 getModItem(OpenBlocks.ID, "goldenegg", 1, 0),

@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Chisel;
@@ -15,7 +16,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -321,15 +321,9 @@ public class ScriptChisel implements IScriptLoader {
                 "basalts",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 4));
         ChiselHelper.addVariationFromStack("basalts", getModItem(IndustrialCraft2.ID, "blockBasalt", 1, 0));
-        ChiselHelper.addVariationFromStack(
-                "basalts",
-                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 0));
-        ChiselHelper.addVariationFromStack(
-                "basalts",
-                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 1));
-        ChiselHelper.addVariationFromStack(
-                "basalts",
-                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 7));
+        ChiselHelper.addVariationFromStack("basalts", getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 0));
+        ChiselHelper.addVariationFromStack("basalts", getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 1));
+        ChiselHelper.addVariationFromStack("basalts", getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 7));
         ChiselHelper.addGroup("redgranite");
         ChiselHelper.addVariationFromStack(
                 "redgranite",
@@ -361,12 +355,9 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("endstone", getModItem(Chisel.ID, "end_Stone", 1, 11));
         ChiselHelper.addVariationFromStack("endstone", getModItem(Chisel.ID, "end_Stone", 1, 12));
         ChiselHelper.addVariationFromStack("endstone", getModItem(Chisel.ID, "end_Stone", 1, 13));
-        ChiselHelper.addVariationFromStack(
-                "endstone",
-                getModItem(TinkerConstruct.ID, "decoration.multibrick", 1, 12));
-        ChiselHelper.addVariationFromStack(
-                "endstone",
-                getModItem(TinkerConstruct.ID, "decoration.multibrickfancy", 1, 12));
+        ChiselHelper.addVariationFromStack("endstone", getModItem(TinkerConstruct.ID, "decoration.multibrick", 1, 12));
+        ChiselHelper
+                .addVariationFromStack("endstone", getModItem(TinkerConstruct.ID, "decoration.multibrickfancy", 1, 12));
         ChiselHelper.addVariationFromStack("concrete", new ItemStack(GregTechAPI.sBlockConcretes, 1, 8));
         ChiselHelper.addGroup("glowstoneGTNH");
         ChiselHelper.addVariationFromStack("glowstoneGTNH", getModItem(Minecraft.ID, "glowstone", 1, 0));
@@ -385,33 +376,24 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("glowstoneGTNH", getModItem(Chisel.ID, "glowstone", 1, 13));
         ChiselHelper.addVariationFromStack("glowstoneGTNH", getModItem(Chisel.ID, "glowstone", 1, 14));
         ChiselHelper.addVariationFromStack("glowstoneGTNH", getModItem(Chisel.ID, "glowstone", 1, 15));
-        ChiselHelper
-                .addVariationFromStack("torch", getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0));
+        ChiselHelper.addVariationFromStack("torch", getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0));
         ChiselHelper.addVariationFromStack("aluminumblock", new ItemStack(GregTechAPI.sBlockMetal1, 1, 1));
         ChiselHelper.addGroup("searedStoneTCon");
-        ChiselHelper
-                .addVariationFromStack("searedStoneTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 4));
-        ChiselHelper
-                .addVariationFromStack("searedStoneTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 6));
-        ChiselHelper
-                .addVariationFromStack("searedStoneTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 11));
+        ChiselHelper.addVariationFromStack("searedStoneTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 4));
+        ChiselHelper.addVariationFromStack("searedStoneTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 6));
+        ChiselHelper.addVariationFromStack("searedStoneTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 11));
         ChiselHelper.addGroup("searedStoneNetherTCon");
-        ChiselHelper.addVariationFromStack(
-                "searedStoneNetherTCon",
-                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 4));
-        ChiselHelper.addVariationFromStack(
-                "searedStoneNetherTCon",
-                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 6));
+        ChiselHelper
+                .addVariationFromStack("searedStoneNetherTCon", getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 4));
+        ChiselHelper
+                .addVariationFromStack("searedStoneNetherTCon", getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 6));
         ChiselHelper.addVariationFromStack(
                 "searedStoneNetherTCon",
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 11));
         ChiselHelper.addGroup("searedBricksTCon");
-        ChiselHelper
-                .addVariationFromStack("searedBricksTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 2));
-        ChiselHelper
-                .addVariationFromStack("searedBricksTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 8));
-        ChiselHelper
-                .addVariationFromStack("searedBricksTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 9));
+        ChiselHelper.addVariationFromStack("searedBricksTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 2));
+        ChiselHelper.addVariationFromStack("searedBricksTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 8));
+        ChiselHelper.addVariationFromStack("searedBricksTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 9));
         ChiselHelper.addGroup("searedBricksNetherTCon");
         ChiselHelper.addVariationFromStack(
                 "searedBricksNetherTCon",
@@ -423,32 +405,23 @@ public class ScriptChisel implements IScriptLoader {
                 "searedBricksNetherTCon",
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 9));
         ChiselHelper.addGroup("speedBlockTCon");
-        ChiselHelper
-                .addVariationFromStack("speedBlockTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0));
-        ChiselHelper
-                .addVariationFromStack("speedBlockTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 1));
+        ChiselHelper.addVariationFromStack("speedBlockTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0));
+        ChiselHelper.addVariationFromStack("speedBlockTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 1));
         ChiselHelper.addGroup("brownStoneTCon");
-        ChiselHelper
-                .addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 2));
-        ChiselHelper
-                .addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 3));
-        ChiselHelper
-                .addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 4));
-        ChiselHelper
-                .addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 5));
-        ChiselHelper
-                .addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 6));
+        ChiselHelper.addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 2));
+        ChiselHelper.addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 3));
+        ChiselHelper.addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 4));
+        ChiselHelper.addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 5));
+        ChiselHelper.addVariationFromStack("brownStoneTCon", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 6));
         ChiselHelper.addGroup("ironBricksTCon");
-        ChiselHelper.addVariationFromStack(
-                "ironBricksTCon",
-                getModItem(TinkerConstruct.ID, "decoration.multibrick", 1, 4));
+        ChiselHelper
+                .addVariationFromStack("ironBricksTCon", getModItem(TinkerConstruct.ID, "decoration.multibrick", 1, 4));
         ChiselHelper.addVariationFromStack(
                 "ironBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickfancy", 1, 4));
         ChiselHelper.addGroup("goldBricksTCon");
-        ChiselHelper.addVariationFromStack(
-                "goldBricksTCon",
-                getModItem(TinkerConstruct.ID, "decoration.multibrick", 1, 5));
+        ChiselHelper
+                .addVariationFromStack("goldBricksTCon", getModItem(TinkerConstruct.ID, "decoration.multibrick", 1, 5));
         ChiselHelper.addVariationFromStack(
                 "goldBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickfancy", 1, 5));
@@ -474,9 +447,8 @@ public class ScriptChisel implements IScriptLoader {
                 "redstoneBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickfancy", 1, 8));
         ChiselHelper.addGroup("boneBricksTCon");
-        ChiselHelper.addVariationFromStack(
-                "boneBricksTCon",
-                getModItem(TinkerConstruct.ID, "decoration.multibrick", 1, 9));
+        ChiselHelper
+                .addVariationFromStack("boneBricksTCon", getModItem(TinkerConstruct.ID, "decoration.multibrick", 1, 9));
         ChiselHelper.addVariationFromStack(
                 "boneBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickfancy", 1, 9));
@@ -502,9 +474,7 @@ public class ScriptChisel implements IScriptLoader {
                 "obsidianBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickfancy", 1, 13));
         ChiselHelper.addGroup("alumiteBricksTCon");
-        ChiselHelper.addVariationFromStack(
-                "alumiteBricksTCon",
-                getModItem(TinkerConstruct.ID, "MetalBlock", 1, 8));
+        ChiselHelper.addVariationFromStack("alumiteBricksTCon", getModItem(TinkerConstruct.ID, "MetalBlock", 1, 8));
         ChiselHelper.addVariationFromStack(
                 "alumiteBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickmetal", 1, 0));
@@ -512,8 +482,7 @@ public class ScriptChisel implements IScriptLoader {
                 "alumiteBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickmetal", 1, 4));
         ChiselHelper.addGroup("arditeBricksTCon");
-        ChiselHelper
-                .addVariationFromStack("arditeBricksTCon", getModItem(TinkerConstruct.ID, "MetalBlock", 1, 1));
+        ChiselHelper.addVariationFromStack("arditeBricksTCon", getModItem(TinkerConstruct.ID, "MetalBlock", 1, 1));
         ChiselHelper.addVariationFromStack(
                 "arditeBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickmetal", 1, 1));
@@ -521,8 +490,7 @@ public class ScriptChisel implements IScriptLoader {
                 "arditeBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickmetal", 1, 5));
         ChiselHelper.addGroup("cobaltBricksTCon");
-        ChiselHelper
-                .addVariationFromStack("cobaltBricksTCon", getModItem(TinkerConstruct.ID, "MetalBlock", 1, 0));
+        ChiselHelper.addVariationFromStack("cobaltBricksTCon", getModItem(TinkerConstruct.ID, "MetalBlock", 1, 0));
         ChiselHelper.addVariationFromStack(
                 "cobaltBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickmetal", 1, 2));
@@ -530,9 +498,7 @@ public class ScriptChisel implements IScriptLoader {
                 "cobaltBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickmetal", 1, 6));
         ChiselHelper.addGroup("manyullynBricksTCon");
-        ChiselHelper.addVariationFromStack(
-                "manyullynBricksTCon",
-                getModItem(TinkerConstruct.ID, "MetalBlock", 1, 2));
+        ChiselHelper.addVariationFromStack("manyullynBricksTCon", getModItem(TinkerConstruct.ID, "MetalBlock", 1, 2));
         ChiselHelper.addVariationFromStack(
                 "manyullynBricksTCon",
                 getModItem(TinkerConstruct.ID, "decoration.multibrickmetal", 1, 3));
@@ -541,86 +507,38 @@ public class ScriptChisel implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "decoration.multibrickmetal", 1, 7));
         ChiselHelper.addGroup("brown_mushroom");
         ChiselHelper.addGroup("red_mushroom");
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 0));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 0));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 1));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 1));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 2));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 2));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 3));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 3));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 4));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 4));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 5));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 5));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 6));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 6));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 7));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 7));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 8));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 8));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 9));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 9));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 10));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 10));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 11));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 11));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 12));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 12));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 13));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 13));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 14));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 14));
-        ChiselHelper.addVariationFromStack(
-                "brown_mushroom",
-                getModItem(Minecraft.ID, "brown_mushroom_block", 1, 15));
-        ChiselHelper
-                .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 15));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 0));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 0));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 1));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 1));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 2));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 2));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 3));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 3));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 4));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 4));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 5));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 5));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 6));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 6));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 7));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 7));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 8));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 8));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 9));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 9));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 10));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 10));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 11));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 11));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 12));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 12));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 13));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 13));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 14));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 14));
+        ChiselHelper.addVariationFromStack("brown_mushroom", getModItem(Minecraft.ID, "brown_mushroom_block", 1, 15));
+        ChiselHelper.addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 15));
 
         ChiselHelper.addGroup("blazeblock");
         ChiselHelper.addVariationFromStack("blazeblock", getModItem(Botania.ID, "blazeBlock", 1, 0));
@@ -634,13 +552,10 @@ public class ScriptChisel implements IScriptLoader {
                 getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0));
         ChiselHelper.addVariationFromStack("knightmetalblock", new ItemStack(GregTechAPI.sBlockMetal4, 1, 0));
         ChiselHelper.addGroup("ironwoodblock");
-        ChiselHelper.addVariationFromStack(
-                "ironwoodblock",
-                getModItem(TwilightForest.ID, "tile.IronwoodBlock", 1, 0));
+        ChiselHelper.addVariationFromStack("ironwoodblock", getModItem(TwilightForest.ID, "tile.IronwoodBlock", 1, 0));
         ChiselHelper.addVariationFromStack("ironwoodblock", new ItemStack(GregTechAPI.sBlockMetal3, 1, 14));
         ChiselHelper.addGroup("fieryblock");
-        ChiselHelper
-                .addVariationFromStack("fieryblock", getModItem(TwilightForest.ID, "tile.FieryBlock", 1, 0));
+        ChiselHelper.addVariationFromStack("fieryblock", getModItem(TwilightForest.ID, "tile.FieryBlock", 1, 0));
         ChiselHelper.addVariationFromStack("fieryblock", new ItemStack(GregTechAPI.sBlockMetal3, 1, 4));
     }
 }

@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.item.NHItemList.MeteoricIronString;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
@@ -26,7 +27,6 @@ import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -1232,13 +1232,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "wireFineSteel",
                 "wireFineSteel",
                 "wireFineSteel");
-        addShapelessRecipe(
-                getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0),
-                "rawOreMeteoricIron");
-        addShapelessRecipe(
-                getModItem(GalacticraftCore.ID, "item.null", 3, 0),
-                "rawOreMeteoricIron",
-                "craftingToolSaw");
+        addShapelessRecipe(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0), "rawOreMeteoricIron");
+        addShapelessRecipe(getModItem(GalacticraftCore.ID, "item.null", 3, 0), "rawOreMeteoricIron", "craftingToolSaw");
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0),
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, wildcard));
@@ -1725,8 +1720,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.basicItem", 4, 9),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 4L))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0),
@@ -1740,9 +1735,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .circuit(5).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 720)).duration(37 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0))
-                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7))
-                .duration(9 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0)).circuit(1)
+                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7)).duration(9 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7),
@@ -1750,9 +1745,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .circuit(8).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 1152)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1))
-                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1)).circuit(1)
+                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7),
@@ -1760,9 +1755,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .circuit(7).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 1008)).duration(52 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2))
-                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7))
-                .duration(13 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2)).circuit(1)
+                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7)).duration(13 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7),
@@ -1770,8 +1765,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .circuit(4).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 576)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3))
-                .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3)).circuit(1)
+                .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1795,9 +1790,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Cover_SolarPanel.get(1L),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9))
+                .itemInputs(ItemList.Cover_SolarPanel.get(1L), getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1816,8 +1809,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0),
                         getModItem(GalacticraftMars.ID, "tile.walkway", 1, 0))
-                .itemOutputs(getModItem(GalacticraftMars.ID, "tile.walkwayOxygenPipe", 1, 0))
-                .duration(1 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(GalacticraftMars.ID, "tile.walkwayOxygenPipe", 1, 0)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0),
@@ -1847,28 +1840,27 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "apple", 6, 0),
                         getModItem(GalacticraftCore.ID, "item.canister", 1, 0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 15)).duration(40 * SECONDS)
-                .eut(1).addTo(cannerRecipes);
+                .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 15)).duration(40 * SECONDS).eut(1)
+                .addTo(cannerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carrot", 8, 0),
                         getModItem(GalacticraftCore.ID, "item.canister", 1, 0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 16)).duration(40 * SECONDS)
-                .eut(1).addTo(cannerRecipes);
+                .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 16)).duration(40 * SECONDS).eut(1)
+                .addTo(cannerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "melon", 8, 0),
                         getModItem(GalacticraftCore.ID, "item.canister", 1, 0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 17)).duration(40 * SECONDS)
-                .eut(1).addTo(cannerRecipes);
+                .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 17)).duration(40 * SECONDS).eut(1)
+                .addTo(cannerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "potato", 16, 0),
                         getModItem(GalacticraftCore.ID, "item.canister", 1, 0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 18)).duration(40 * SECONDS)
-                .eut(1).addTo(cannerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1001))
+                .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 18)).duration(40 * SECONDS).eut(1)
+                .addTo(cannerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1001))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("fuel", 1000)).duration(16).eut(1).addTo(cannerRecipes);
     }
@@ -1902,8 +1894,8 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void maceratorRecipes() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 2, 0))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 2, 0)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
     }
 
     private void plasmaArcFurnaceRecipes() {
@@ -2664,54 +2656,42 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "tile.moonBlock", 4, 4),
                         NHItemList.ReinforcedGlassLense.get(0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 14))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 14)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 
         for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensRed")) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(GalacticraftMars.ID, "tile.mars", 4, 9),
-                            GTUtility.copyAmount(0, lens))
+                    .itemInputs(getModItem(GalacticraftMars.ID, "tile.mars", 4, 9), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalacticraftMars.ID, "tile.mars", 1, 7)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_EV).addTo(laserEngraverRecipes);
         }
         for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensCyan")) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(GalaxySpace.ID, "ceresblocks", 4, 1),
-                            GTUtility.copyAmount(0, lens))
+                    .itemInputs(getModItem(GalaxySpace.ID, "ceresblocks", 4, 1), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "ceresblocks", 1, 2)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
         }
         for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensYellow")) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(GalaxySpace.ID, "ioblocks", 4, 2),
-                            GTUtility.copyAmount(0, lens))
+                    .itemInputs(getModItem(GalaxySpace.ID, "ioblocks", 4, 2), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "ioblocks", 1, 3)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).addTo(laserEngraverRecipes);
         }
         for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensWhite")) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(GalaxySpace.ID, "enceladusblocks", 4, 1),
-                            GTUtility.copyAmount(0, lens))
+                    .itemInputs(getModItem(GalaxySpace.ID, "enceladusblocks", 4, 1), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "enceladusblocks", 1, 2)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_ZPM).addTo(laserEngraverRecipes);
         }
         for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensLightGray")) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(GalaxySpace.ID, "proteusblocks", 4, 2),
-                            GTUtility.copyAmount(0, lens))
+                    .itemInputs(getModItem(GalaxySpace.ID, "proteusblocks", 4, 2), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "proteusblocks", 1, 3)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(laserEngraverRecipes);
         }
         for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensBrown")) {
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(GalaxySpace.ID, "plutoblocks", 4, 5),
-                            GTUtility.copyAmount(0, lens))
+                    .itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 4, 5), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 6)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_UHV).addTo(laserEngraverRecipes);
         }
@@ -2787,21 +2767,21 @@ public class ScriptGalacticraft implements IScriptLoader {
 
         // Glowstone dusts
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.CeresStoneDust.get(2))
-                .circuit(8).itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 0))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+                .circuit(8).itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 0)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.IoStoneDust.get(2))
-                .circuit(8).itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 1))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+                .circuit(8).itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 1)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.EnceladusStoneDust.get(2)).circuit(8)
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.ProteusStoneDust.get(2))
-                .circuit(8).itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 3))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+                .circuit(8).itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 3)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 2), NHItemList.PlutoStoneDust.get(2))
-                .circuit(8).itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 4))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+                .circuit(8).itemOutputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 4)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
     }
 
     @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)

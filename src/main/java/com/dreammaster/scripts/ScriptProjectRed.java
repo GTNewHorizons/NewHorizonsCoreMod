@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
@@ -40,7 +41,6 @@ import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
 import static gregtech.api.recipe.RecipeMaps.unpackagerRecipes;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -3535,8 +3535,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WoodSealed, 4L))
-                .circuit(5)
-                .itemOutputs(getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1, 0))
+                .circuit(5).itemOutputs(getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1, 0))
                 .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedExploration)
                 .addTo(assemblerRecipes);
 
@@ -3703,8 +3702,7 @@ public class ScriptProjectRed implements IScriptLoader {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17))
-                    .itemOutputs(
-                            getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta))
+                    .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, outputMeta))
                     .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed." + cableDyes[i], 36))
                     .duration(1 * SECONDS + 5 * TICKS).eut(2).requireMods(ProjectRedTransmission)
                     .addTo(chemicalBathRecipes);

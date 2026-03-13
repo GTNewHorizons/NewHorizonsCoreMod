@@ -16,7 +16,6 @@ import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.Translocator;
 import static gregtech.api.enums.Mods.ZTones;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Blocks;
@@ -56,11 +55,8 @@ public class GT_Recipe_Remover implements Runnable {
                 false,
                 true);
         // BG2
-        GTModHandler.removeRecipeByOutputDelayed(
-                getModItem(MineAndBladeBattleGear2.ID, "quiver", 1, 0),
-                true,
-                false,
-                true);
+        GTModHandler
+                .removeRecipeByOutputDelayed(getModItem(MineAndBladeBattleGear2.ID, "quiver", 1, 0), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(
                 getModItem(MineAndBladeBattleGear2.ID, "shield.wood", 1, 0),
                 true,
@@ -207,24 +203,15 @@ public class GT_Recipe_Remover implements Runnable {
                 false,
                 true);
         // Ender IO
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 3), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 4), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 5), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 3), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 4), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 5), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemMEConduit", 1), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemMEConduit", 1, 1), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "itemMEConduit", 1, 2), true, false, true);
@@ -317,11 +304,8 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
-        GTModHandler.removeRecipeByOutputDelayed(
-                getModItem(OpenSecurity.ID, "energyTurretBlock", 1, 0),
-                true,
-                false,
-                true);
+        GTModHandler
+                .removeRecipeByOutputDelayed(getModItem(OpenSecurity.ID, "energyTurretBlock", 1, 0), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(OpenSecurity.ID, "keypadLock", 1, 0), true, false, true);
         GTModHandler
                 .removeRecipeByOutputDelayed(getModItem(OpenSecurity.ID, "biometricScanner", 1, 0), true, false, true);
@@ -400,18 +384,12 @@ public class GT_Recipe_Remover implements Runnable {
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 6), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 8), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 9), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 10), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 11), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 12), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 13), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 14), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 15), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 10), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 11), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 12), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 13), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 14), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1, 15), true, false, true);
 
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "tool.crowbar", 1, 0), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(
@@ -429,8 +407,7 @@ public class GT_Recipe_Remover implements Runnable {
                 .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "part.turbine.rotor", 1, 0), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "borehead.iron", 1, 0), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "borehead.steel", 1, 0), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "borehead.diamond", 1, 0), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "borehead.diamond", 1, 0), true, false, true);
 
         GTModHandler.removeRecipeByOutputDelayed(
                 getModItem(Railcraft.ID, "cart.loco.steam.solid", 1, 0),
@@ -447,30 +424,16 @@ public class GT_Recipe_Remover implements Runnable {
         // Steve Carts
         GTModHandler
                 .removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9), true, false, true);
-        GTModHandler.removeRecipeByOutputDelayed(
-                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16),
-                true,
-                false,
-                true);
-        GTModHandler.removeRecipeByOutputDelayed(
-                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18),
-                true,
-                false,
-                true);
-        GTModHandler.removeRecipeByOutputDelayed(
-                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 19),
-                true,
-                false,
-                true);
-        // Thaumcraft
-        GTModHandler.removeRecipeByOutputDelayed(
-                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0),
-                true,
-                false,
-                true);
-        // Translocator
         GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Translocator.ID, "diamondNugget", 2, 0), true, false, true);
+                .removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16), true, false, true);
+        GTModHandler
+                .removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18), true, false, true);
+        GTModHandler
+                .removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 19), true, false, true);
+        // Thaumcraft
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "ItemEssence", 1, 0), true, false, true);
+        // Translocator
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Translocator.ID, "diamondNugget", 2, 0), true, false, true);
         // Ztones
         GTModHandler.removeRecipeByOutputDelayed(getModItem(ZTones.ID, "ofanix", 1, 0), true, false, true);
         GTModHandler.removeRecipeDelayed(getModItem(ZTones.ID, "ofanix", 1, 0));

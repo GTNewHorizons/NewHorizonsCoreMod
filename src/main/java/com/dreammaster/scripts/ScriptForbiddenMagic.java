@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -16,7 +17,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -196,9 +196,8 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -3,
                 1,
                 3,
-                getModItem(BiomesOPlenty.ID, "food", 1, 7))
-                        .setPages(new ResearchPage("derp.research_page.JOURNEY")).setParents("SCHOOLS").setRound()
-                        .setStub().setAutoUnlock().registerResearchItem();
+                getModItem(BiomesOPlenty.ID, "food", 1, 7)).setPages(new ResearchPage("derp.research_page.JOURNEY"))
+                        .setParents("SCHOOLS").setRound().setStub().setAutoUnlock().registerResearchItem();
         new ResearchItem(
                 "ROD_livingwood",
                 "FORBIDDEN",
@@ -275,8 +274,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.addResearchPrereq("ROD_dreamwood_staff", "ROD_dreamwood", false);
         TCHelper.addResearchPage(
                 "ROD_dreamwood_staff",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 13))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 13))));
         ResearchCategories.getResearch("ROD_dreamwood_staff").setSpecial();
         ResearchCategories.getResearch("ROD_dreamwood_staff").setConcealed();
         TCHelper.addResearchPrereq("ROD_dreamwood_staff", "ROD_silverwood_staff", false);
@@ -313,8 +311,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.addResearchPage("CAP_manasteel", new ResearchPage("derp.research_page.CAP_manasteel"));
         TCHelper.addResearchPage(
                 "CAP_manasteel",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 4))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 4))));
         ResearchCategories.getResearch("CAP_manasteel").setConcealed();
         TCHelper.addResearchPrereq("CAP_manasteel", "ROD_livingwood", false);
         TCHelper.addResearchPrereq("CAP_manasteel", "CAP_silver", false);
@@ -351,8 +348,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.addResearchPage("CAP_terrasteel", new ResearchPage("derp.research_page.CAP_terrasteel"));
         TCHelper.addResearchPage(
                 "CAP_terrasteel",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2))));
         ResearchCategories.getResearch("CAP_terrasteel").setConcealed();
         TCHelper.addResearchPrereq("CAP_terrasteel", "CAP_manasteel", false);
         TCHelper.addResearchPrereq("CAP_terrasteel", "TRANSEMERALD", true);
@@ -401,8 +397,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 6))));
         TCHelper.addResearchPage(
                 "CAP_elementium",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5))));
         ResearchCategories.getResearch("CAP_elementium").setConcealed();
         new ResearchItem(
                 "VINTEUM",
@@ -432,8 +427,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 3,
                 getModItem(ForbiddenMagic.ID, "WandCaps", 1, 1)).setPages(
                         new ResearchPage("derp.research_page.CAP_vinteum"),
-                        new ResearchPage(
-                                TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 1))))
+                        new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 1))))
                         .setConcealed().setParents("VINTEUM", "CAP_thaumium").registerResearchItem();
         ThaumcraftApi.addWarpToResearch("CAP_vinteum", 3);
         new ResearchItem(
@@ -447,8 +441,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 3,
                 getModItem(ForbiddenMagic.ID, "WandCores", 1, 4)).setPages(
                         new ResearchPage("derp.research_page.ROD_witchwood"),
-                        new ResearchPage(
-                                TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 4))))
+                        new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 4))))
                         .setConcealed().setParents("VINTEUM", "ANOINTINGPASTE", "OVEN").registerResearchItem();
         ThaumcraftApi.addWarpToResearch("ROD_witchwood", 2);
         new ResearchItem(
@@ -462,8 +455,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 3,
                 getModItem(ForbiddenMagic.ID, "WandCores", 1, 10)).setPages(
                         new ResearchPage("derp.research_page.ROD_witchwood_staff"),
-                        new ResearchPage(
-                                TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 10))))
+                        new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 10))))
                         .setSpecial().setConcealed().setParents("ROD_witchwood", "ROD_silverwood_staff")
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("ROD_witchwood_staff", 4);
@@ -534,8 +526,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 ToolDictNames.craftingToolSoftMallet.name());
         TCHelper.addResearchPage(
                 "RIDINGCROP",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "RidingCrop", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "RidingCrop", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CRYSTALWELL",
                 getModItem(ForbiddenMagic.ID, "Crystalwell", 1, 0),
@@ -1259,8 +1250,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 OrePrefixes.dust.get(Materials.Thaumium));
         TCHelper.addResearchPage(
                 "CAP_alchemical",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0))));
         TCHelper.setResearchAspects(
                 "CAP_alchemical",
                 new AspectList().add(Aspect.getAspect("victus"), 15).add(Aspect.getAspect("aqua"), 12)

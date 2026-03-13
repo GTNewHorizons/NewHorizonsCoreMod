@@ -18,7 +18,6 @@ import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.recipe.Scanning;
 

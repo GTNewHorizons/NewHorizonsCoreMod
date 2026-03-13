@@ -14,7 +14,6 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -281,8 +280,7 @@ public class ChemicalBathRecipes implements Runnable {
                     .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
         }
         if (LogisticsPipes.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, WILDCARD))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, WILDCARD))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0))
                     .fluidInputs(FluidRegistry.getFluidStack("chlorine", 1000)).duration(1 * MINUTES + 20 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);

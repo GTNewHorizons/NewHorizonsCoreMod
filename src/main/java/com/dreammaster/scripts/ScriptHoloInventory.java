@@ -1,7 +1,7 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.HoloInventory;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.HoloInventory;
 
 import java.util.Collections;
 import java.util.List;

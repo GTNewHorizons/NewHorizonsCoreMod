@@ -24,7 +24,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ExtractorRecipes implements Runnable {
@@ -32,8 +31,7 @@ public class ExtractorRecipes implements Runnable {
     @Override
     public void run() {
         if (IndustrialCraft2.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1, WILDCARD))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1, WILDCARD))
                     .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(extractorRecipes);
         }
 
@@ -50,16 +48,16 @@ public class ExtractorRecipes implements Runnable {
         if (TinkerConstruct.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "Smeltery", 1, 2))
-                    .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 4, 2)).duration(15 * SECONDS)
-                    .eut(2).addTo(extractorRecipes);
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 4, 2)).duration(15 * SECONDS).eut(2)
+                    .addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.sapling", 1, 0))
-                    .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
-                    .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0)).duration(15 * SECONDS).eut(2)
+                    .addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 0))
-                    .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 4, 0))
-                    .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 4, 0)).duration(15 * SECONDS).eut(2)
+                    .addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 1))
                     .itemOutputs(new ItemStack(Items.slime_ball, 4, 0)).duration(15 * SECONDS).eut(2)
@@ -97,8 +95,8 @@ public class ExtractorRecipes implements Runnable {
         if (PamsHarvestCraft.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "pamMaple", 1, 0))
-                    .itemOutputs(getModItem(PamsHarvestCraft.ID, "maplesyrupItem", 1, 0))
-                    .duration(10 * SECONDS).eut(2).addTo(extractorRecipes);
+                    .itemOutputs(getModItem(PamsHarvestCraft.ID, "maplesyrupItem", 1, 0)).duration(10 * SECONDS).eut(2)
+                    .addTo(extractorRecipes);
 
         }
 
@@ -159,10 +157,9 @@ public class ExtractorRecipes implements Runnable {
         }
 
         if (GalacticraftAmunRa.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14))
-                    .itemOutputs(getModItem(GalacticraftAmunRa.ID, "item.baseItem", 64, 26))
-                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(extractorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14))
+                    .itemOutputs(getModItem(GalacticraftAmunRa.ID, "item.baseItem", 64, 26)).duration(15 * SECONDS)
+                    .eut(TierEU.RECIPE_UMV).addTo(extractorRecipes);
         }
 
     }

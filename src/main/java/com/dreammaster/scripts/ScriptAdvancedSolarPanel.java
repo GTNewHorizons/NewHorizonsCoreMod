@@ -1,11 +1,11 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -128,18 +128,18 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
                         getModItem(Minecraft.ID, "glowstone", 4, 0))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 2))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3))
-                .duration(1 * MINUTES).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9, 9))
-                .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9, 9)).duration(2 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
 
     }
 }

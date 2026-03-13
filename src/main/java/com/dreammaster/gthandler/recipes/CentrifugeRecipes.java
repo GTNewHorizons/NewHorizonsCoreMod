@@ -30,7 +30,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
@@ -573,8 +572,8 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(5000, 2000, 1000).duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MaceratedPlantmass.get())
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0)).duration(15 * SECONDS)
-                .eut(4).addTo(centrifugeRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0)).duration(15 * SECONDS).eut(4)
+                .addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrotine, 8L))
                 .itemOutputs(
@@ -590,8 +589,8 @@ public class CentrifugeRecipes implements Runnable {
         if (PamsHarvestCraft.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "coconutItem", 1, 0))
-                    .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutmilkItem", 9, 0))
-                    .duration(5 * SECONDS).eut(2).addTo(centrifugeRecipes);
+                    .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutmilkItem", 9, 0)).duration(5 * SECONDS).eut(2)
+                    .addTo(centrifugeRecipes);
 
         }
 

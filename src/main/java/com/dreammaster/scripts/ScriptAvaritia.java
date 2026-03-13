@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodArsenal;
@@ -30,7 +31,6 @@ import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -134,8 +134,7 @@ public class ScriptAvaritia implements IScriptLoader {
 
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Neutron_Collector", 1, 0));
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0));
-        AvaritiaHelper
-                .removeExtremeCraftingRecipe(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0));
+        AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0));
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Orb_Armok", 1, 0));
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Infinity_Sword", 1, 0));
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Infinity_Pickaxe", 1, 0));
@@ -455,7 +454,12 @@ public class ScriptAvaritia implements IScriptLoader {
                 'a',
                 "plateInfinity",
                 'b',
-                createItemStack(TinkersGregworks.ID, "tGregToolPartLargeSwordBlade", 1, 1511, "{material:\"Neutronium\"}"),
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargeSwordBlade",
+                        1,
+                        1511,
+                        "{material:\"Neutronium\"}"),
                 'c',
                 getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0),
                 'd',
@@ -887,14 +891,12 @@ public class ScriptAvaritia implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource_Block", 1, 0), ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4)).duration(4 * MINUTES)
-                .eut(TierEU.RECIPE_HV).addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4)).duration(4 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 4, 0),
-                        getModItem(Minecraft.ID, "nether_star", 2, 0))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 1)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Avaritia.ID, "Resource", 4, 0), getModItem(Minecraft.ID, "nether_star", 2, 0))
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 1)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Double_Craft", 1, 0))
                 .itemOutputs(new ItemStack(Blocks.crafting_table, 9)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
@@ -905,26 +907,22 @@ public class ScriptAvaritia implements IScriptLoader {
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 1)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Resource_Block", 1, 0),
-                        ItemList.Shape_Extruder_Ingot.get(0L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(extruderRecipes);
+                .itemInputs(getModItem(Avaritia.ID, "Resource_Block", 1, 0), ItemList.Shape_Extruder_Ingot.get(0L))
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4)).duration(50 * SECONDS).eut(TierEU.RECIPE_UV)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Resource_Block", 1, 1),
-                        ItemList.Shape_Extruder_Ingot.get(0L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 6)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_UV).addTo(extruderRecipes);
+                .itemInputs(getModItem(Avaritia.ID, "Resource_Block", 1, 1), ItemList.Shape_Extruder_Ingot.get(0L))
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 6)).duration(1 * MINUTES).eut(TierEU.RECIPE_UV)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
                         NHItemList.StainlessSteelBars.get())
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 3))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 2)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 2)).outputChances(10000).duration(15 * SECONDS)
+                .eut(2).addTo(maceratorRecipes);
 
         TCHelper.removeInfusionRecipe(getModItem(Avaritia.ID, "Akashic_Record", 1, 0));
         TCHelper.addInfusionCraftingRecipe(

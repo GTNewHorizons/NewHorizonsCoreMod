@@ -1,12 +1,12 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Gadomancy;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -76,7 +76,12 @@ public class ScriptGadomancy implements IScriptLoader {
 
         TCHelper.removeInfusionRecipe(getModItem(Gadomancy.ID, "itemSilverwoodGolemPlacer", 1, 8));
         TCHelper.removeInfusionRecipe(
-                createItemStack(Gadomancy.ID, "itemSilverwoodGolemPlacer", 1, 8, "{gadomancy:{upgrades:{runicShield:1b}}}"));
+                createItemStack(
+                        Gadomancy.ID,
+                        "itemSilverwoodGolemPlacer",
+                        1,
+                        8,
+                        "{gadomancy:{upgrades:{runicShield:1b}}}"));
         TCHelper.removeInfusionRecipe(getModItem(Gadomancy.ID, "ItemGolemCoreBreak", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(Gadomancy.ID, "ItemGolemCoreBreak", 1, 1));
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4, 11));
@@ -400,8 +405,7 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0));
         TCHelper.addResearchPage(
                 "GADOMANCY.BLOCK_PROTECTOR",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Gadomancy.ID, "BlockStoneMachine", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Gadomancy.ID, "BlockStoneMachine", 1, 2))));
         TCHelper.addResearchPage(
                 "GADOMANCY.BLOCK_PROTECTOR",
                 new ResearchPage("gadomancy.research_page.BLOCK_PROTECTOR.3"));

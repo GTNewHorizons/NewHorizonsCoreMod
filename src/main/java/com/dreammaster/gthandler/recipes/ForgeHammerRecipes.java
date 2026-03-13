@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -24,7 +23,6 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 
 public class ForgeHammerRecipes implements Runnable {
 
@@ -54,8 +52,7 @@ public class ForgeHammerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.get(1)).itemOutputs(Materials.Coal.getBlocks(9))
                 .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.get(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCharcoal.get(1))
                 .itemOutputs(BlockList.CompressedCharcoal.get(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
@@ -105,12 +102,12 @@ public class ForgeHammerRecipes implements Runnable {
 
         if (ZTones.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.coal, 1, 0))
-                    .itemOutputs(getModItem(ZTones.ID, "minicoal", 9, 0))
-                    .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV).addTo(hammerRecipes);
+                    .itemOutputs(getModItem(ZTones.ID, "minicoal", 9, 0)).duration(2 * SECONDS + 10 * TICKS)
+                    .eut(TierEU.RECIPE_ULV).addTo(hammerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.coal, 1, 1))
-                    .itemOutputs(getModItem(ZTones.ID, "minicharcoal", 9, 0))
-                    .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV).addTo(hammerRecipes);
+                    .itemOutputs(getModItem(ZTones.ID, "minicharcoal", 9, 0)).duration(2 * SECONDS + 10 * TICKS)
+                    .eut(TierEU.RECIPE_ULV).addTo(hammerRecipes);
         }
 
         if (Thaumcraft.isModLoaded()) {
@@ -138,8 +135,8 @@ public class ForgeHammerRecipes implements Runnable {
         }
         if (Railcraft.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1))
-                    .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 4)).duration(2 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(hammerRecipes);
+                    .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 4)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(hammerRecipes);
         }
 
         // Raw optical chip

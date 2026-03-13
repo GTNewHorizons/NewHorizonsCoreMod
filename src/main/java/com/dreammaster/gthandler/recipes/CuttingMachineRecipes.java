@@ -116,78 +116,63 @@ public class CuttingMachineRecipes implements Runnable {
         if (ZTones.isModLoaded() && ProjectRedCore.isModLoaded()) {
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
-                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
-                    .fluidInputs(Materials.Water.getFluid(100L)).duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
+                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0)).fluidInputs(Materials.Water.getFluid(100L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
-                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
-                    .fluidInputs(GTModHandler.getDistilledWater(75L)).duration(10 * SECONDS).eut(4)
-                    .addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
+                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0)).fluidInputs(GTModHandler.getDistilledWater(75L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
-                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
-                    .fluidInputs(Materials.Lubricant.getFluid(25L)).duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
+                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0)).fluidInputs(Materials.Lubricant.getFluid(25L))
+                    .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
                     .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
                     .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(5)).duration(2 * SECONDS).eut(4)
                     .addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
-                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
-                    .fluidInputs(Materials.Water.getFluid(100L)).duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
+                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0)).fluidInputs(Materials.Water.getFluid(100L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
-                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
-                    .fluidInputs(GTModHandler.getDistilledWater(75L)).duration(10 * SECONDS).eut(4)
-                    .addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
+                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0)).fluidInputs(GTModHandler.getDistilledWater(75L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
-                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
-                    .fluidInputs(Materials.Lubricant.getFluid(25L)).duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
+                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0)).fluidInputs(Materials.Lubricant.getFluid(25L))
+                    .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
                     .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
                     .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(5)).duration(2 * SECONDS).eut(4)
                     .addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
-                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
-                    .fluidInputs(Materials.Water.getFluid(100L)).duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
+                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0)).fluidInputs(Materials.Water.getFluid(100L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
-                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
-                    .fluidInputs(GTModHandler.getDistilledWater(75L)).duration(10 * SECONDS).eut(4)
-                    .addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
+                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0)).fluidInputs(GTModHandler.getDistilledWater(75L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
-                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
-                    .fluidInputs(Materials.Lubricant.getFluid(25L)).duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
+                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0)).fluidInputs(Materials.Lubricant.getFluid(25L))
+                    .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
+                    .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
                     .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
                     .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(5)).duration(2 * SECONDS).eut(4)
                     .addTo(cutterRecipes);
@@ -198,8 +183,8 @@ public class CuttingMachineRecipes implements Runnable {
             // Cutting Saw
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.crafting_table, 1))
-                    .itemOutputs(getModItem(TinkerConstruct.ID, "CraftingStation", 1))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "CraftingStation", 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "CraftingStation", 1))
                     .itemOutputs(getModItem(TinkerConstruct.ID, "CraftingSlab", 1)).duration(5 * SECONDS)
@@ -223,21 +208,18 @@ public class CuttingMachineRecipes implements Runnable {
             // Floor Carpet
             for (int meta = 0; meta < 16; ++meta) {
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
-                        .fluidInputs(Materials.Water.getFluid(4L))
-                        .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS).eut(7)
-                        .addTo(cutterRecipes);
+                        .fluidInputs(Materials.Water.getFluid(4L)).itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta))
+                        .duration(5 * SECONDS).eut(7).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(GTModHandler.getDistilledWater(3L))
                         .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS).eut(7)
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(Materials.Lubricant.getFluid(1L))
-                        .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(50).eut(7)
-                        .addTo(cutterRecipes);
+                        .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(50).eut(7).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1L))
-                        .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(20).eut(7)
-                        .addTo(cutterRecipes);
+                        .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(20).eut(7).addTo(cutterRecipes);
             }
         }
     }

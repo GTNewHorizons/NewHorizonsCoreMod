@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static bartworks.system.material.WerkstoffLoader.Fluorspar;
 import static bartworks.system.material.WerkstoffLoader.RedZircon;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
@@ -39,7 +40,6 @@ import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -183,13 +183,11 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.1"));
         TCHelper.addResearchPage(
                 "PLANTS",
-                new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6))));
+                new ResearchPage(TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6))));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.2"));
         TCHelper.addResearchPage(
                 "PLANTS",
-                new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 7))));
+                new ResearchPage(TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 7))));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.3"));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.4"));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.5"));
@@ -455,14 +453,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("perditio"), 6).add(Aspect.getAspect("potentia"), 3));
         TCHelper.setResearchComplexity("RESEARCHDUPE", 3);
         TCHelper.refreshResearchPages("DECONSTRUCTOR");
-        new ResearchItem(
-                "WARPWARNING",
-                "BASICS",
-                new AspectList(),
-                1,
-                1,
-                1,
-                getModItem(Minecraft.ID, "skull", 1, 1)).registerResearchItem();
+        new ResearchItem("WARPWARNING", "BASICS", new AspectList(), 1, 1, 1, getModItem(Minecraft.ID, "skull", 1, 1))
+                .registerResearchItem();
         TCHelper.addResearchSibling("WARP", "WARPWARNING");
         TCHelper.addResearchSibling("RESEARCH", "WARPWARNING");
         ResearchCategories.getResearch("WARPWARNING").setAutoUnlock();
@@ -781,7 +773,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "SCEPTRE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                createItemStack(Thaumcraft.ID, "WandCasting", 1, 45, "{cap:\"thaumium\",rod:\"reed\",sceptre:1b}"))));
+                                createItemStack(
+                                        Thaumcraft.ID,
+                                        "WandCasting",
+                                        1,
+                                        45,
+                                        "{cap:\"thaumium\",rod:\"reed\",sceptre:1b}"))));
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_blaze",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 6),
@@ -1026,7 +1023,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "ROD_obsidian_staff",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                createItemStack(Thaumcraft.ID, "WandCasting", 1, 84, "{cap:\"thaumium\",rod:\"obsidian_staff\"}"))));
+                                createItemStack(
+                                        Thaumcraft.ID,
+                                        "WandCasting",
+                                        1,
+                                        84,
+                                        "{cap:\"thaumium\",rod:\"obsidian_staff\"}"))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_ice_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 53),
@@ -1164,7 +1166,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "SCEPTRE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                createItemStack(Thaumcraft.ID, "WandCasting", 1, 216, "{cap:\"thaumium\",rod:\"silverwood_staff\",sceptre:1b}"))));
+                                createItemStack(
+                                        Thaumcraft.ID,
+                                        "WandCasting",
+                                        1,
+                                        216,
+                                        "{cap:\"thaumium\",rod:\"silverwood_staff\",sceptre:1b}"))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSFIRE",
                 getModItem(Thaumcraft.ID, "FocusFire", 1, 0),
@@ -1790,8 +1797,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 4));
         TCHelper.addResearchPage(
                 "TALLOW",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 4))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 4))));
         TCHelper.addResearchPage(
                 "TALLOW",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCandle", 1, 0))));
@@ -2348,8 +2354,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "quartz_block", 1, 0));
         TCHelper.addResearchPage(
                 "ARCANESPA",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12))));
         TCHelper.setResearchAspects(
                 "ARCANESPA",
                 new AspectList().add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("aqua"), 9)
@@ -2499,15 +2504,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        RedZircon.get(OrePrefixes.lens, 0))
+                .itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6), RedZircon.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        Fluorspar.get(OrePrefixes.lens, 0))
+                .itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6), Fluorspar.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
@@ -2584,8 +2585,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.2"));
         TCHelper.addResearchPage(
                 "RESEARCH",
-                new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0))));
+                new ResearchPage(TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0))));
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.3"));
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.4"));
         TCHelper.addResearchPage(
@@ -2691,8 +2691,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwGold");
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1),
@@ -2721,8 +2720,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwGold");
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
@@ -2751,8 +2749,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwGold");
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
@@ -2813,18 +2810,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("ARCANESTONE", new ResearchPage("tc.research_page.ARCANESTONE.1"));
         TCHelper.addResearchPage(
                 "ARCANESTONE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6))));
         TCHelper.addResearchPage(
                 "ARCANESTONE",
                 new ResearchPage(
-                        TCHelper.findCraftingRecipe(
-                                getModItem(Thaumcraft.ID, "blockStairsArcaneStone", 1, 0))));
+                        TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "blockStairsArcaneStone", 1, 0))));
         TCHelper.addResearchPage(
                 "ARCANESTONE",
                 new ResearchPage(
-                        TCHelper.findCraftingRecipe(
-                                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1, 0))));
+                        TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INFUSION",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2),
@@ -2909,8 +2903,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "PAVETRAVEL",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2))));
         TCHelper.setResearchAspects(
                 "PAVETRAVEL",
                 new AspectList().add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("volatus"), 6)
@@ -2946,8 +2939,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateInfusedOrder");
         TCHelper.addResearchPage(
                 "PAVEWARD",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 3))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 3))));
         TCHelper.addResearchPage("PAVEWARD", new ResearchPage("tc.research_page.PAVEWARD.2"));
         TCHelper.setResearchAspects(
                 "PAVEWARD",
@@ -2984,8 +2976,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwSteel");
         TCHelper.addResearchPage(
                 "GRATE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 5))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 5))));
         TCHelper.clearPages("ENCHFABRIC");
         TCHelper.addResearchPage("ENCHFABRIC", new ResearchPage("tc.research_page.ENCHFABRIC.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -3052,8 +3043,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.addResearchPage(
                 "ENCHFABRIC",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
                 getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0),
@@ -3082,8 +3072,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.addResearchPage(
                 "ENCHFABRIC",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
                 getModItem(Thaumcraft.ID, "ItemBootsRobe", 1, 0),
@@ -3438,8 +3427,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 NHItemList.SteelBars.get());
         TCHelper.addResearchPage(
                 "FLUXSCRUB",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14))));
         TCHelper.setResearchAspects(
                 "FLUXSCRUB",
                 new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("praecantatio"), 12)
@@ -4034,8 +4022,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "THAUMONOMICON",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findArcaneRecipe(
-                                        getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0)))));
+                                TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0)))));
 
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "BASICARTIFACE",
@@ -4065,8 +4052,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "BASICARTIFACE",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findArcaneRecipe(
-                                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0)))));
+                                TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0)))));
 
         TCHelper.setResearchAspects(
                 "BONEBOW",
@@ -4274,8 +4260,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 26));
         TCHelper.addResearchPage(
                 "GOLEMTALLOW",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 2))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 2))));
         TCHelper.setResearchAspects(
                 "GOLEMTALLOW",
                 new AspectList().add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("permutatio"), 12)
@@ -4304,8 +4289,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 20));
         TCHelper.addResearchPage(
                 "GOLEMFLESH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 4))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 4))));
         TCHelper.setResearchAspects(
                 "GOLEMFLESH",
                 new AspectList().add(Aspect.getAspect("corpus"), 12).add(Aspect.getAspect("permutatio"), 12)
@@ -4347,8 +4331,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 40));
         TCHelper.addResearchPage(
                 "GOLEMTHAUMIUM",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 7))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 7))));
         TCHelper.setResearchAspects(
                 "GOLEMTHAUMIUM",
                 new AspectList().add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("spiritus"), 12)
@@ -4431,8 +4414,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Gold));
         TCHelper.addResearchPage(
                 "COREHARVEST",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3))));
         TCHelper.addResearchPage("COREHARVEST", new ResearchPage("tc.research_page.COREHARVEST.2"));
         TCHelper.setResearchAspects(
                 "COREHARVEST",
@@ -4455,8 +4437,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Gold));
         TCHelper.addResearchPage(
                 "COREGUARD",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4))));
         TCHelper.addResearchPage("COREGUARD", new ResearchPage("tc.research_page.COREGUARD.2"));
         TCHelper.setResearchAspects(
                 "COREGUARD",
@@ -4519,8 +4500,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 Materials.Empty.getCells(1));
         TCHelper.addResearchPage(
                 "CORELIQUID",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5))));
         TCHelper.addResearchPage("CORELIQUID", new ResearchPage("tc.research_page.CORELIQUID.2"));
         TCHelper.setResearchAspects(
                 "CORELIQUID",
@@ -4566,8 +4546,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "arrow", 1, 0));
         TCHelper.addResearchPage(
                 "COREBUTCHER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 9))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 9))));
         TCHelper.setResearchAspects(
                 "COREBUTCHER",
                 new AspectList().add(Aspect.getAspect("meto"), 12).add(Aspect.getAspect("telum"), 12)
@@ -5107,8 +5086,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 8));
         TCHelper.addResearchPage(
                 "ELDRITCHMINOR",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 17))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 17))));
         TCHelper.clearPages("VOIDMETAL");
         TCHelper.addResearchPage("VOIDMETAL", new ResearchPage("tc.research_page.VOIDMETAL.1"));
         ThaumcraftApi.addCrucibleRecipe(
@@ -5118,8 +5096,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("metallum"), 16));
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 16))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 16))));
         TCHelper.addResearchPage("VOIDMETAL", new ResearchPage("tc.research_page.VOIDMETAL.2"));
         TCHelper.setResearchAspects(
                 "VOIDMETAL",
@@ -5215,8 +5192,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "stickVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemHoeVoid", 1, 0),
@@ -5260,8 +5236,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0),
@@ -5289,8 +5264,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0),
@@ -5316,8 +5290,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemBootsVoid", 1, 0),
@@ -5679,9 +5652,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 -3,
                 -3,
                 5,
-                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1)).setParents("ELDRITCHMAJOR")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.CRIMSONRITES"))
-                        .registerResearchItem();
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1)).setParents("ELDRITCHMAJOR").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.CRIMSONRITES")).registerResearchItem();
         ThaumcraftApi.addWarpToResearch("CRIMSONRITES", 10);
         TCHelper.addInfusionCraftingRecipe(
                 "CRIMSONRITES",
@@ -5708,8 +5680,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15));
         TCHelper.addResearchPage(
                 "CRIMSONRITES",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CRIMSONRITES",
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 8),
@@ -5729,9 +5700,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage(
                 "CRIMSONRITES",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 8),
-                                false)));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 8), false)));
         TCHelper.refreshResearchPages("CRIMSONRITES");
         TCHelper.refreshResearchPages("ELDRITCHMINOR");
         TCHelper.refreshResearchPages("VOIDMETAL");
@@ -5782,8 +5751,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "INFUSION",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findArcaneRecipe(
-                                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2)))));
+                                TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2)))));
     }
 
     private void aspectAdds() {

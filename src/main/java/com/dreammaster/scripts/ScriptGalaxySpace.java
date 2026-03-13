@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -16,7 +17,6 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.vacuumFreezerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -325,15 +325,11 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(new ItemStack(GCItems.schematic)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
-                        NHItemList.SchematicsTier2.get())
+                .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier2.get())
                 .itemOutputs(new ItemStack(GCItems.schematic, 1, 1)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
-                        NHItemList.SchematicsTier3.get())
+                .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier3.get())
                 .itemOutputs(new ItemStack(MarsItems.schematic)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
@@ -349,33 +345,23 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(new ItemStack(MarsItems.schematic, 1, 2)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
-                        NHItemList.SchematicsTier4.get())
+                .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier4.get())
                 .itemOutputs(getGSItem("item.SchematicTier4", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
-                        NHItemList.SchematicsTier5.get())
+                .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier5.get())
                 .itemOutputs(getGSItem("item.SchematicTier5", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
-                        NHItemList.SchematicsTier6.get())
+                .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier6.get())
                 .itemOutputs(getGSItem("item.SchematicTier6", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
-                        NHItemList.SchematicsTier7.get())
+                .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier7.get())
                 .itemOutputs(getGSItem("item.SchematicTier7", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
-                        NHItemList.SchematicsTier8.get())
+                .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier8.get())
                 .itemOutputs(getGSItem("item.SchematicTier8", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 

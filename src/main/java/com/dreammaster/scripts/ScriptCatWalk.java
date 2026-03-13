@@ -1,9 +1,9 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.CatWalks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -61,9 +61,7 @@ public class ScriptCatWalk implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "frameGtSteel",
                 "craftingToolWrench");
-        addShapelessRecipe(
-                getModItem(CatWalks.ID, "scaffold", 1, 0),
-                getModItem(CatWalks.ID, "scaffold", 1, 1));
+        addShapelessRecipe(getModItem(CatWalks.ID, "scaffold", 1, 0), getModItem(CatWalks.ID, "scaffold", 1, 1));
         addShapedRecipe(
                 getModItem(CatWalks.ID, "support_column", 3, 0),
                 "stickSteel",
@@ -102,8 +100,8 @@ public class ScriptCatWalk implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 5L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 3L))
-                .itemOutputs(getModItem(CatWalks.ID, "steelgrate", 10, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "steelgrate", 10, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 6L),
@@ -120,44 +118,38 @@ public class ScriptCatWalk implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
                         getModItem(CatWalks.ID, "steelgrate", 1, 0))
-                .itemOutputs(getModItem(CatWalks.ID, "scaffold", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "scaffold", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(CatWalks.ID, "steelgrate", 4, 0),
-                        getModItem(Minecraft.ID, "ladder", 1, 0))
+                .itemInputs(getModItem(CatWalks.ID, "steelgrate", 4, 0), getModItem(Minecraft.ID, "ladder", 1, 0))
                 .itemOutputs(getModItem(CatWalks.ID, "cagedLadder_north_unlit", 6, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "rail", 1, 0),
-                        getModItem(CatWalks.ID, "steelgrate", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "rail", 1, 0), getModItem(CatWalks.ID, "steelgrate", 1, 0))
                 .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "activator_rail", 1, 0),
                         getModItem(CatWalks.ID, "steelgrate", 1, 0))
-                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_activator", 1, 0))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_activator", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "detector_rail", 1, 0),
                         getModItem(CatWalks.ID, "steelgrate", 1, 0))
-                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_detector", 1, 0))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_detector", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "golden_rail", 1, 0),
-                        getModItem(CatWalks.ID, "steelgrate", 1, 0))
-                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_powered", 1, 0))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Minecraft.ID, "golden_rail", 1, 0), getModItem(CatWalks.ID, "steelgrate", 1, 0))
+                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_powered", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Steel, 2L),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0))
-                .itemOutputs(getModItem(CatWalks.ID, "ropeLight", 8, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "ropeLight", 8, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(assemblerRecipes);
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "steelgrate", 1, 0),
                 new ItemData(Materials.Steel, 2 * GTValues.M / 9)); // GTValues.M equals one dust or ingot

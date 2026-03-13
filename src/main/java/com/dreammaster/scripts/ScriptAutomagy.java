@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -10,7 +11,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -121,8 +121,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 getModItem(Automagy.ID, "shardSliver", 1, 4));
         TCHelper.addResearchPage(
                 "REDSTONETHEORY",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTorchInversion", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTorchInversion", 1, 0))));
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.4"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDSTONETHEORY",
@@ -684,8 +683,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 "plateAmber");
         TCHelper.addResearchPage(
                 "NITORLIGHT",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 0))));
         TCHelper.clearPages("ENCHANT_FISHING");
         TCHelper.addResearchPage("ENCHANT_FISHING", new ResearchPage("Automagy.research_page.ENCHANT_FISHING.1"));
         ThaumcraftApi.addInfusionEnchantmentRecipe(
@@ -696,8 +694,7 @@ public class ScriptAutomagy implements IScriptLoader {
                         .add(Aspect.getAspect("fames"), 10).add(Aspect.getAspect("meto"), 15)
                         .add(Aspect.getAspect("praecantatio"), 10),
                 new ItemStack[] { getModItem(Minecraft.ID, "carrot_on_a_stick", 1, 0),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                        getModItem(Minecraft.ID, "sugar", 1, 0),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14), getModItem(Minecraft.ID, "sugar", 1, 0),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14), });
         ThaumcraftApi.addInfusionEnchantmentRecipe(
                 "ENCHANT_FISHING",

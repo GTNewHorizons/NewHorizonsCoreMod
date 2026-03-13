@@ -22,7 +22,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
@@ -498,8 +497,8 @@ public class DTPFRecipes implements Runnable {
                             .calculateNonEBFRecipe(32_000_000, base_time);
 
                     // Tier 5
-                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 4, 5))
-                            .circuit(4).fluidInputs(Materials.ExcitedDTSC.getFluid(infinity.getCatalystAmount(4)))
+                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 4, 5)).circuit(4)
+                            .fluidInputs(Materials.ExcitedDTSC.getFluid(infinity.getCatalystAmount(4)))
                             .fluidOutputs(
                                     Materials.DTR.getFluid(infinity.getResidueAmount(4)),
                                     Materials.Infinity.getMolten(256L * 144L))
@@ -507,8 +506,8 @@ public class DTPFRecipes implements Runnable {
                             .addTo(plasmaForgeRecipes);
 
                     // Tier 4
-                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 2, 5))
-                            .circuit(4).fluidInputs(Materials.ExcitedDTEC.getFluid(infinity.getCatalystAmount(3)))
+                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 2, 5)).circuit(4)
+                            .fluidInputs(Materials.ExcitedDTEC.getFluid(infinity.getCatalystAmount(3)))
                             .fluidOutputs(
                                     Materials.DTR.getFluid(infinity.getResidueAmount(3)),
                                     Materials.Infinity.getMolten(128L * 144L))
@@ -516,8 +515,8 @@ public class DTPFRecipes implements Runnable {
                             .addTo(plasmaForgeRecipes);
 
                     // Tier 3
-                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 5))
-                            .circuit(4).fluidInputs(Materials.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2) / 64))
+                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 5)).circuit(4)
+                            .fluidInputs(Materials.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2) / 64))
                             .fluidOutputs(
                                     Materials.DTR.getFluid(infinity.getResidueAmount(2) / 64),
                                     Materials.Infinity.getMolten(144L))
@@ -525,8 +524,8 @@ public class DTPFRecipes implements Runnable {
                             .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
 
                     // Tier 3.5
-                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 5))
-                            .circuit(5).fluidInputs(Materials.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2)))
+                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 5)).circuit(5)
+                            .fluidInputs(Materials.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2)))
                             .fluidOutputs(
                                     Materials.DTR.getFluid(infinity.getResidueAmount(2)),
                                     Materials.Infinity.getMolten(64L * 144L))

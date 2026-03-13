@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.recipes.CustomItem.EnchantedBookMatcher;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnhancedLootBags;
@@ -18,7 +19,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.Witchery;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -89,8 +89,7 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(29, ItemList.Food_Large_Sandwich_Bacon.get(1L));
         metaExtraItemMap.put(30, getModItem(PamsHarvestCraft.ID, "delightedmealItem", 1, 0));
         metaExtraItemMap.put(32, new ItemStack(Items.minecart));
-        metaExtraItemMap
-                .put(33, createItemStack(Railcraft.ID, "track", 1, 816, "{track:\"railcraft:track.speed\"}"));
+        metaExtraItemMap.put(33, createItemStack(Railcraft.ID, "track", 1, 816, "{track:\"railcraft:track.speed\"}"));
         metaExtraItemMap.put(37, NHItemList.LogicProcessorItemGoldCore.get());
         metaExtraItemMap.put(38, NHItemList.EngineeringProcessorItemDiamondCore.get());
         metaExtraItemMap.put(41, ItemList.Electric_Motor_LuV.get(1L));
@@ -110,7 +109,12 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         for (Map.Entry<Integer, ItemStack> entry : metaExtraItemMap.entrySet()) {
             GameRegistry.addRecipe(
                     new ShapelessUniversalRecipe(
-                            createItemStack(EnhancedLootBags.ID, "lootbag", 1, entry.getKey(), "{ench:[0:{lvl:3s,id:35s}],RepairCost:2}"),
+                            createItemStack(
+                                    EnhancedLootBags.ID,
+                                    "lootbag",
+                                    1,
+                                    entry.getKey(),
+                                    "{ench:[0:{lvl:3s,id:35s}],RepairCost:2}"),
                             getModItem(EnhancedLootBags.ID, "lootbag", 1, entry.getKey()),
                             new EnchantedBookMatcher().addEnchantment(35, 3),
                             entry.getValue()));

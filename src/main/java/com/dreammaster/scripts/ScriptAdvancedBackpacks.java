@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -11,7 +12,6 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SleepingBags;
 import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
@@ -202,7 +202,12 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 "craftingToolScrewdriver",
                 null);
         addShapedRecipe(
-                createItemStack(AdventureBackpack.ID, "backpackHose", 1, 0, "{mode:-1L,amount:0,fluid:\"None\",tank:-1L}"),
+                createItemStack(
+                        AdventureBackpack.ID,
+                        "backpackHose",
+                        1,
+                        0,
+                        "{mode:-1L,amount:0,fluid:\"None\",tank:-1L}"),
                 "plateAnyRubber",
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 3),
                 "plateAnyRubber",

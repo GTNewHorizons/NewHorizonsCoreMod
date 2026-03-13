@@ -1,10 +1,10 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;

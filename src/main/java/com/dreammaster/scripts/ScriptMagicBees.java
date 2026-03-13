@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.Botania;
@@ -15,7 +16,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -141,8 +141,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3),
                 'i',
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3));
-        BotaniaHelper
-                .removePetalRecipe(createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"beegonia\"}"));
+        BotaniaHelper.removePetalRecipe(createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"beegonia\"}"));
         BotaniaAPI.registerPetalRecipe(
                 createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"beegonia\"}"),
                 "flowerIngredientWhite",
@@ -153,8 +152,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 "powderMana",
                 "powderMana",
                 "flowerAnemoneWhite");
-        BotaniaHelper.removePetalRecipe(
-                createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"hiveacynth\"}"));
+        BotaniaHelper.removePetalRecipe(createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"hiveacynth\"}"));
         BotaniaAPI.registerPetalRecipe(
                 createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"hiveacynth\"}"),
                 "flowerIngredientLightBlue",
@@ -168,8 +166,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 "redstoneRoot",
                 "runeSpringB",
                 "flowerIcyIris");
-        BotaniaHelper
-                .removePetalRecipe(createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"hibeescus\"}"));
+        BotaniaHelper.removePetalRecipe(createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"hibeescus\"}"));
         BotaniaAPI.registerPetalRecipe(
                 createItemStack(Botania.ID, "specialFlower", 1, 0, "{type:\"hibeescus\"}"),
                 "flowerIngredientOrange",
@@ -211,9 +208,7 @@ public class ScriptMagicBees implements IScriptLoader {
         OreDictionary.registerOre("beeComb", getModItem(MagicBees.ID, "comb", 1, 20));
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Genetics.ID, "misc", 2, 8),
-                        getModItem(MagicBees.ID, "miscResources", 1, 17))
+                .itemInputs(getModItem(Genetics.ID, "misc", 2, 8), getModItem(MagicBees.ID, "miscResources", 1, 17))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.void", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
@@ -240,123 +235,89 @@ public class ScriptMagicBees implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 576)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 0))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 0))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 1))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 1))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 2))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 2))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 3))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 3))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 4))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 4))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 5))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 5))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 6))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 6))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 8))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 7))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 7))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 8))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 8))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 8))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 10))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 9))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 9))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 10))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 10))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 10))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 12))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 11))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 11))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 12))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 12))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 12))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 14))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 10 * SECONDS)
                 .eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 13))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 13))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 14))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 10 * SECONDS)
                 .eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 14))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 14))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 16))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 1, 17),
-                        getModItem(MagicBees.ID, "magnet", 2, 15))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 1, 17), getModItem(MagicBees.ID, "magnet", 2, 15))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 16))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "wax", 3, 0), ItemList.Shape_Extruder_Cell.get(0L))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 3, 0), ItemList.Shape_Extruder_Cell.get(0L))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.magic", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(MagicBees.ID, "wax", 3, 2), ItemList.Shape_Extruder_Cell.get(0L))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 3, 2), ItemList.Shape_Extruder_Cell.get(0L))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.magic", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
@@ -388,9 +349,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(CropsNH.ID, "fertilizer", 8, 0),
-                        getModItem(MagicBees.ID, "miscResources", 1, 2))
+                .itemInputs(getModItem(CropsNH.ID, "fertilizer", 8, 0), getModItem(MagicBees.ID, "miscResources", 1, 2))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 32, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
@@ -426,8 +385,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 1,
                 7,
                 3,
-                getModItem(MagicBees.ID, "magicApiary", 1, 0)).setParents("MB_DimensionalSingularity")
-                        .setConcealed().setRound().setPages(new ResearchPage("MagicBees.research_page.MAGICAPIARY"))
+                getModItem(MagicBees.ID, "magicApiary", 1, 0)).setParents("MB_DimensionalSingularity").setConcealed()
+                        .setRound().setPages(new ResearchPage("MagicBees.research_page.MAGICAPIARY"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "MAGICAPIARY",
@@ -487,8 +446,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L));
         TCHelper.addResearchPage(
                 "MB_VisAuraProvider",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "visAuraProvider", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "visAuraProvider", 1, 0))));
         new ResearchItem(
                 "CONCENTRATEDCOMPOUND",
                 "MAGICBEES",
@@ -497,8 +455,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 2,
                 -3,
                 3,
-                getModItem(MagicBees.ID, "miscResources", 1, 2)).setParents("MB_Root", "MB_EssenceLife")
-                        .setConcealed().setPages(new ResearchPage("MagicBees.research_page.CONCENTRATEDCOMPOUND"))
+                getModItem(MagicBees.ID, "miscResources", 1, 2)).setParents("MB_Root", "MB_EssenceLife").setConcealed()
+                        .setPages(new ResearchPage("MagicBees.research_page.CONCENTRATEDCOMPOUND"))
                         .registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "CONCENTRATEDCOMPOUND",
@@ -507,8 +465,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("messis"), 6).add(Aspect.getAspect("vitreus"), 3));
         TCHelper.addResearchPage(
                 "CONCENTRATEDCOMPOUND",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 2))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 2))));
         TCHelper.clearPages("MB_EssenceLife");
         TCHelper.addResearchPage("MB_EssenceLife", new ResearchPage("tc.research_page.MB_EssenceLife.1"));
         ThaumcraftApi.addCrucibleRecipe(
@@ -519,8 +476,7 @@ public class ScriptMagicBees implements IScriptLoader {
                         .add(Aspect.getAspect("herba"), 16).add(Aspect.getAspect("terra"), 16));
         TCHelper.addResearchPage(
                 "MB_EssenceLife",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 7))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 7))));
         TCHelper.setResearchAspects(
                 "MB_EssenceLife",
                 new AspectList().add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("permutatio"), 9)
@@ -536,8 +492,7 @@ public class ScriptMagicBees implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 16).add(Aspect.getAspect("exanimis"), 16));
         TCHelper.addResearchPage(
                 "MB_EssenceDeath",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 8))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 8))));
         TCHelper.setResearchAspects(
                 "MB_EssenceDeath",
                 new AspectList().add(Aspect.getAspect("mortuus"), 12).add(Aspect.getAspect("perditio"), 9)
@@ -553,8 +508,7 @@ public class ScriptMagicBees implements IScriptLoader {
                         .add(Aspect.getAspect("vinculum"), 16).add(Aspect.getAspect("tempus"), 16));
         TCHelper.addResearchPage(
                 "MB_EssenceTime",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 9))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 9))));
         TCHelper.setResearchAspects(
                 "MB_EssenceTime",
                 new AspectList().add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("vacuos"), 9)
@@ -570,8 +524,7 @@ public class ScriptMagicBees implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("fabrico"), 16));
         TCHelper.addResearchPage(
                 "MB_EssenceArmor",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 10))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 10))));
         TCHelper.setResearchAspects(
                 "MB_EssenceArmor",
                 new AspectList().add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("praecantatio"), 9)
@@ -587,8 +540,7 @@ public class ScriptMagicBees implements IScriptLoader {
                         .add(Aspect.getAspect("limus"), 16).add(Aspect.getAspect("potentia"), 16));
         TCHelper.addResearchPage(
                 "MB_EssenceUnstable",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 12))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 12))));
         TCHelper.setResearchAspects(
                 "MB_EssenceUnstable",
                 new AspectList().add(Aspect.getAspect("perditio"), 12).add(Aspect.getAspect("permutatio"), 9)
@@ -615,8 +567,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 getModItem(Minecraft.ID, "ender_eye", 1, 0));
         TCHelper.addResearchPage(
                 "MB_DimensionalSingularity",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 1, 17))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 1, 17))));
         TCHelper.setResearchAspects(
                 "MB_DimensionalSingularity",
                 new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("permutatio"), 12)
@@ -637,8 +588,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 getModItem(MagicBees.ID, "miscResources", 1, 17));
         TCHelper.addResearchPage(
                 "MB_EssenceOblivion",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 1, 11))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 1, 11))));
         TCHelper.setResearchAspects(
                 "MB_EssenceOblivion",
                 new AspectList().add(Aspect.getAspect("alienis"), 5).add(Aspect.getAspect("praecantatio"), 5)
@@ -735,9 +685,9 @@ public class ScriptMagicBees implements IScriptLoader {
                 -7,
                 1,
                 3,
-                getModItem(MagicBees.ID, "frameResilient", 1, 0))
-                        .setParents("MB_FrameMagic", "MB_EssenceArmor").setConcealed()
-                        .setPages(new ResearchPage("MagicBees.research_page.RESILIENTFRAME")).registerResearchItem();
+                getModItem(MagicBees.ID, "frameResilient", 1, 0)).setParents("MB_FrameMagic", "MB_EssenceArmor")
+                        .setConcealed().setPages(new ResearchPage("MagicBees.research_page.RESILIENTFRAME"))
+                        .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RESILIENTFRAME",
                 getModItem(MagicBees.ID, "frameResilient", 1, 0),
@@ -819,9 +769,9 @@ public class ScriptMagicBees implements IScriptLoader {
                 -7,
                 -1,
                 3,
-                getModItem(MagicBees.ID, "frameMetabolic", 1, 0))
-                        .setParents("MB_FrameMagic", "MB_EssenceUnstable").setConcealed()
-                        .setPages(new ResearchPage("MagicBees.research_page.METABOLICFRAME")).registerResearchItem();
+                getModItem(MagicBees.ID, "frameMetabolic", 1, 0)).setParents("MB_FrameMagic", "MB_EssenceUnstable")
+                        .setConcealed().setPages(new ResearchPage("MagicBees.research_page.METABOLICFRAME"))
+                        .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "METABOLICFRAME",
                 getModItem(MagicBees.ID, "frameMetabolic", 1, 0),
@@ -974,8 +924,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
                 "MB_Scoop",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.thaumiumScoop", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.thaumiumScoop", 1, 0))));
         TCHelper.setResearchAspects(
                 "MB_Scoop",
                 new AspectList().add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("terra"), 6)
@@ -1042,8 +991,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
                 "MB_Grafter",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.thaumiumGrafter", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.thaumiumGrafter", 1, 0))));
         TCHelper.setResearchAspects(
                 "MB_Grafter",
                 new AspectList().add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("terra"), 9)
@@ -1073,8 +1021,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
                 "MB_GrafterVoid",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.voidGrafter", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.voidGrafter", 1, 0))));
         TCHelper.setResearchAspects(
                 "MB_GrafterVoid",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("ordo"), 12)
@@ -1089,9 +1036,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 5,
                 -3,
                 2,
-                getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0)).setParents("MB_EssenceLife")
-                        .setConcealed().setPages(new ResearchPage("MagicBees.research_page.ENCHANTEDEARTH"))
-                        .registerResearchItem();
+                getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0)).setParents("MB_EssenceLife").setConcealed()
+                        .setPages(new ResearchPage("MagicBees.research_page.ENCHANTEDEARTH")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHANTEDEARTH",
                 getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0),
@@ -1113,8 +1059,7 @@ public class ScriptMagicBees implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ENCHANTEDEARTH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0))));
         TCHelper.moveResearch("MB_ApimancersDrainer", "MAGICBEES", -1, 7);
         TCHelper.addResearchPrereq("MB_ApimancersDrainer", "MB_DimensionalSingularity", false);
         TCHelper.setResearchComplexity("MB_ApimancersDrainer", 5);

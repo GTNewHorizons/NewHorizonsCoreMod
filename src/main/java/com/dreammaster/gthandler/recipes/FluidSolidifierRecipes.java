@@ -24,7 +24,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class FluidSolidifierRecipes implements Runnable {
@@ -132,8 +131,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     .eut(TierEU.RECIPE_ULV).addTo(fluidSolidifierRecipes);
             // maybe Materials.Glue.getFluid(144L) instead
 
-            GTValues.RA.stdBuilder().circuit(1)
-                    .itemOutputs(getModItem(TinkerConstruct.ID, "blankPattern", 1, 1))
+            GTValues.RA.stdBuilder().circuit(1).itemOutputs(getModItem(TinkerConstruct.ID, "blankPattern", 1, 1))
                     .fluidInputs(FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144))
                     .duration(20 * TICKS).eut(48).addTo(fluidSolidifierRecipes);
 
@@ -149,14 +147,12 @@ public class FluidSolidifierRecipes implements Runnable {
 
             if (ExtraUtilities.isModLoaded()) {
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
                         .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
                         .fluidInputs(Materials.Tin.getMolten(144L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                         .addTo(fluidSolidifierRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
                         .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
                         .fluidInputs(Materials.Electrum.getMolten(48L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                         .addTo(fluidSolidifierRecipes);

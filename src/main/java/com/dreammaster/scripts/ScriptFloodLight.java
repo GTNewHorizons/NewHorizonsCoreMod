@@ -1,10 +1,10 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -97,11 +97,9 @@ public class ScriptFloodLight implements IScriptLoader {
                 "plateTitanium");
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "redstone", 1, 0),
-                        getModItem(Minecraft.ID, "string", 8, 0))
-                .itemOutputs(getModItem(FloodLights.ID, "mantle", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Minecraft.ID, "redstone", 1, 0), getModItem(Minecraft.ID, "string", 8, 0))
+                .itemOutputs(getModItem(FloodLights.ID, "mantle", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tungsten, 1L),

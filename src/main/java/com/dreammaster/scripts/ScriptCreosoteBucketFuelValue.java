@@ -2,9 +2,9 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.CoreConfig;
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Railcraft;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.ArrayList;
 import java.util.Collections;

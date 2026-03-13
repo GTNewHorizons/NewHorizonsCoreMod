@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.MagicBees;
@@ -10,7 +11,6 @@ import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.mixerNonCellRecipes;
@@ -195,8 +195,8 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steeleaf, 1L),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TwilightForest.ID, "item.steeleafIngot", 1, 0)).duration(5 * SECONDS)
-                .eut(4).addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(TwilightForest.ID, "item.steeleafIngot", 1, 0)).duration(5 * SECONDS).eut(4)
+                .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14),
@@ -219,8 +219,8 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "ItemResource", 8, 14),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 3))
-                .itemOutputs(getModItem(TwilightForest.ID, "item.carminite", 1, 0))
-                .duration(1 * MINUTES + 15 * SECONDS).eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(TwilightForest.ID, "item.carminite", 1, 0)).duration(1 * MINUTES + 15 * SECONDS)
+                .eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "item.tfFeather", 1, 0),
@@ -229,15 +229,14 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemOutputs(getModItem(TwilightForest.ID, "item.magicMapFocus", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0), NHItemList.StonePlate.get(16))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0), NHItemList.StonePlate.get(16))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0))
                 .fluidInputs(Materials.Helium3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "item.carminite", 9, 0))
-                .itemOutputs(getModItem(TwilightForest.ID, "tile.CarminiteBlock", 1, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.CarminiteBlock", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(

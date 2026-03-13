@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderStorage;
@@ -15,7 +16,6 @@ import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.latheRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -461,8 +461,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0),
                         getModItem(HardcoreEnderExpansion.ID, "auricion", 8, 0))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "energy_wand_core", 1, 0))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "energy_wand_core", 1, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0),
@@ -497,8 +497,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "golden_pickaxe", 1, 0),
                         getModItem(HardcoreEnderExpansion.ID, "fire_shard", 8, 0))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "schorching_pickaxe", 1, 0))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "schorching_pickaxe", 1, 0)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_powder", 4, 0))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
@@ -517,18 +517,15 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(centrifugeRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lava", 144)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2hotcoolant", 72)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
@@ -770,20 +767,19 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(Minecraft.ID, "end_stone", 2, 0),
                         getModItem(Minecraft.ID, "gravel", 2, 0),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0))
-                .circuit(24).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "persegrit", 8, 0))
-                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+                .circuit(24).itemOutputs(getModItem(HardcoreEnderExpansion.ID, "persegrit", 8, 0)).duration(5 * SECONDS)
+                .eut(24).addTo(assemblerRecipes);
 
         ChiselHelper.addGroup("HEEPersegrit");
         for (int meta = 0; meta < 16; ++meta) {
-            ChiselHelper.addVariationFromStack(
-                    "HEEPersegrit",
-                    getModItem(HardcoreEnderExpansion.ID, "persegrit", 1, meta));
+            ChiselHelper
+                    .addVariationFromStack("HEEPersegrit", getModItem(HardcoreEnderExpansion.ID, "persegrit", 1, meta));
 
             // Death flower
         }
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 0))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 15))
-                .eut(TierEU.RECIPE_HV).duration(10 * MINUTES).addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 15)).eut(TierEU.RECIPE_HV)
+                .duration(10 * MINUTES).addTo(chemicalDehydratorRecipes);
 
     }
 }

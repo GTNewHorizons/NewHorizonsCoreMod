@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
@@ -9,7 +10,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -55,9 +55,7 @@ public class ScriptExtraBees implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapelessRecipe(
-                getModItem(ExtraBees.ID, "dictionary", 1, 0),
-                getModItem(ExtraBees.ID, "dictionary", 1, 0));
+        addShapelessRecipe(getModItem(ExtraBees.ID, "dictionary", 1, 0), getModItem(ExtraBees.ID, "dictionary", 1, 0));
 
         ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "dictionary", 1, 0));
         ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "misc", 1, 0));
@@ -437,8 +435,8 @@ public class ScriptExtraBees implements IScriptLoader {
                 7,
                 2,
                 3,
-                getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0)).setParents("MB_EssenceUnstable")
-                        .setConcealed()
+                getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0))
+                        .setParents("MB_EssenceUnstable").setConcealed()
                         .setPages(
                                 new ResearchPage("ExtraBees.research_page.CHOCOLATEFRAME_1"),
                                 new ResearchPage("ExtraBees.research_page.CHOCOLATEFRAME_2"))
@@ -472,8 +470,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 "screwIron");
         TCHelper.addResearchPage(
                 "CHOCOLATEFRAME",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0))));
         new ResearchItem(
                 "RESTRAINTFRAME",
                 "MAGICBEES",

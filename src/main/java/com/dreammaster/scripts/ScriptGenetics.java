@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraBees;
@@ -10,7 +11,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -51,9 +51,7 @@ public class ScriptGenetics implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessRecipe(
-                getModItem(Genetics.ID, "database", 1, 0),
-                getModItem(Genetics.ID, "database", 1, 0));
+        addShapelessRecipe(getModItem(Genetics.ID, "database", 1, 0), getModItem(Genetics.ID, "database", 1, 0));
         addShapedRecipe(
                 getModItem(Genetics.ID, "misc", 1, 9),
                 "screwStainlessSteel",
@@ -264,8 +262,8 @@ public class ScriptGenetics implements IScriptLoader {
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 6, 0)).circuit(6)
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 8)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 2, 0)).circuit(2)
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(10 * SECONDS)
@@ -286,9 +284,7 @@ public class ScriptGenetics implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "hardenedMachine", 1, 0),
-                        getModItem(Genetics.ID, "misc", 2, 10))
+                .itemInputs(getModItem(Forestry.ID, "hardenedMachine", 1, 0), getModItem(Genetics.ID, "misc", 2, 10))
                 .circuit(2).itemOutputs(getModItem(Genetics.ID, "misc", 1, 11))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

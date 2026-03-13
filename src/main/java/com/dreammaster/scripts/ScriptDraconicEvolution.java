@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
@@ -25,7 +26,6 @@ import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
 import static gregtech.api.util.GTModHandler.RecipeBits.BITS;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -1220,9 +1220,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.enderium", 864)).duration(2 * MINUTES)
                 .eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "arrow", 1, 0),
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "arrow", 1, 0), getModItem(Minecraft.ID, "ender_pearl", 1, 0))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "enderArrow", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1237,21 +1235,18 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "rainSensor", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 3),
-                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 11),
-                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 13),
-                        getModItem(OpenComputers.ID, "hologram2", 1, 0),
-                        createItemStack(ExtraUtilities.ID, "microblocks", 1, 3, "{mat:\"tile.extrautils:decorativeBlock1_5\"}"))
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                getModItem(ExtraUtilities.ID, "greenscreen", 64, 3),
+                getModItem(ExtraUtilities.ID, "greenscreen", 64, 11),
+                getModItem(ExtraUtilities.ID, "greenscreen", 64, 13),
+                getModItem(OpenComputers.ID, "hologram2", 1, 0),
+                createItemStack(ExtraUtilities.ID, "microblocks", 1, 3, "{mat:\"tile.extrautils:decorativeBlock1_5\"}"))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 10000))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "earth", 1, 0)).duration(6 * SECONDS).eut(200)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "obsidian", 1, 0),
-                        getModItem(Minecraft.ID, "blaze_powder", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "obsidian", 1, 0), getModItem(Minecraft.ID, "blaze_powder", 1, 0))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infusedObsidian", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.draconium", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_EV).specialValue(7500).addTo(blastFurnaceRecipes);
@@ -1259,17 +1254,17 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 2)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 2))
-                .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 1))
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(hammerRecipes);
+                .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 1)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_HV).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 1))
-                .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 0))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_HV).addTo(hammerRecipes);
+                .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 0)).duration(1 * SECONDS + 5 * TICKS)
+                .eut(TierEU.RECIPE_HV).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "safetyMatch", 16, 1000),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
-                .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0))
-                .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(packagerRecipes);
+                .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0)).duration(3 * SECONDS + 4 * TICKS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(packagerRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(DraconicEvolution.ID, "dislocatorInhibitor", 1, 0),

@@ -20,7 +20,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -1057,8 +1056,7 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                    .circuit(4)
-                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
+                    .circuit(4).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
                     .fluidInputs(Materials.Water.getFluid(500L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -1067,8 +1065,7 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                    .circuit(4)
-                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
+                    .circuit(4).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
                     .fluidInputs(GTModHandler.getDistilledWater(500L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 

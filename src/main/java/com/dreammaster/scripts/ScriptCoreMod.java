@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static com.dreammaster.tinkersConstruct.SmelteryFluidTypes.getMoltenPatternFluidTypeName;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
@@ -40,7 +41,6 @@ import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.latheRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -1069,21 +1069,15 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2)).duration(20 * SECONDS).eut(384)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "materials", 2, 4),
-                        ItemList.Shape_Extruder_Saw.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 2, 4), ItemList.Shape_Extruder_Saw.get(0L))
                 .itemOutputs(NHItemList.SawBladeArdite.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "materials", 2, 5),
-                        ItemList.Shape_Extruder_Saw.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 2, 5), ItemList.Shape_Extruder_Saw.get(0L))
                 .itemOutputs(NHItemList.SawBladeManyullyn.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "materials", 1, 5),
-                        ItemList.Shape_Extruder_Plate.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 5), ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
@@ -1091,15 +1085,11 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "materials", 1, 1),
-                        NHItemList.BowFletchingCast.get(0))
+                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 1), NHItemList.BowFletchingCast.get(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 2)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "materials", 1, 17),
-                        NHItemList.BowFletchingCast.get(0))
+                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 17), NHItemList.BowFletchingCast.get(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
@@ -1107,17 +1097,13 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "slime.leaves", 1, 0),
-                        NHItemList.BowFletchingCast.get(0))
+                .itemInputs(getModItem(TinkerConstruct.ID, "slime.leaves", 1, 0), NHItemList.BowFletchingCast.get(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "string", 3, 0), NHItemList.BowStringCast.get(0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "string", 3, 0), NHItemList.BowStringCast.get(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "barleyFood", 3, 7), NHItemList.BowStringCast.get(0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 3, 7), NHItemList.BowStringCast.get(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 2)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
@@ -1212,8 +1198,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(formingPressRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_ZPM).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),

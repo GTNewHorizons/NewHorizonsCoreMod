@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -10,7 +11,6 @@ import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -130,8 +130,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 1,
                 3,
                 2,
-                getModItem(ThaumicExploration.ID, "discountRing", 1, 2)).setParents("TXBASICARTIFACE")
-                        .setConcealed().setPages(new ResearchPage("te.text.DISCOUNTRINGS.1")).registerResearchItem();
+                getModItem(ThaumicExploration.ID, "discountRing", 1, 2)).setParents("TXBASICARTIFACE").setConcealed()
+                        .setPages(new ResearchPage("te.text.DISCOUNTRINGS.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 0),
@@ -159,8 +159,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "screwInfusedAir");
         TCHelper.addResearchPage(
                 "DiacountringsGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 1),
@@ -188,8 +187,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "screwInfusedEarth");
         TCHelper.addResearchPage(
                 "DiacountringsGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 1))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 2),
@@ -217,8 +215,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "screwInfusedFire");
         TCHelper.addResearchPage(
                 "DiacountringsGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 2))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 3),
@@ -246,8 +243,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "screwInfusedWater");
         TCHelper.addResearchPage(
                 "DiacountringsGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 3))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 3))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 4),
@@ -275,8 +271,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "screwInfusedOrder");
         TCHelper.addResearchPage(
                 "DiacountringsGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 4))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 4))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 5),
@@ -304,8 +299,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "screwInfusedEntropy");
         TCHelper.addResearchPage(
                 "DiacountringsGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 5))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "discountRing", 1, 5))));
         TCHelper.orphanResearch("JARSEAL");
         TCHelper.removeResearch("JARSEAL");
         new ResearchItem(
@@ -317,8 +311,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 -7,
                 -2,
                 3,
-                getModItem(ThaumicExploration.ID, "jarSeal", 1, 1)).setParents("TALLOW", "JARLABEL")
-                        .setConcealed()
+                getModItem(ThaumicExploration.ID, "jarSeal", 1, 1))
+                        .setParents("TALLOW", "JARLABEL").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.JarsealGTNH.1"),
                                 new ResearchPage("tc.research_page.JarsealGTNH.2"))
@@ -358,12 +352,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 15))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 15))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 15))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 15))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 0),
@@ -399,12 +391,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 0))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 0))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 1),
@@ -440,12 +430,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 1))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 1))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 1))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 2),
@@ -481,12 +469,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 2))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 2))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 2))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 3),
@@ -522,12 +508,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 3))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 3))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 3))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 3))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 4),
@@ -563,12 +547,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 4))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 4))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 4))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 4))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 5),
@@ -604,12 +586,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 5))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 5))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 5))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 5))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 6),
@@ -645,12 +625,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 6))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 6))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 6))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 6))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 7),
@@ -686,12 +664,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 7))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 7))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 7))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 7))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 8),
@@ -727,12 +703,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 8))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 8))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 8))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 8))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 9),
@@ -768,12 +742,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 9))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 9))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 9))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 9))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 10),
@@ -809,12 +781,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 10))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 10))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 10))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 10))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 11),
@@ -850,12 +820,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 11))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 11))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 11))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 11))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 12),
@@ -891,12 +859,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 12))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 12))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 12))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 12))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 13),
@@ -932,12 +898,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 13))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 13))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 13))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 13))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 14),
@@ -973,12 +937,10 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 14))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 14))));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 14))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicExploration.ID, "jarSeal", 1, 14))));
         TCHelper.orphanResearch("FLOATCANDLE");
         TCHelper.removeResearch("FLOATCANDLE");
         new ResearchItem(
@@ -1012,8 +974,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 1),
@@ -1035,8 +996,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 1))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 2),
@@ -1058,8 +1018,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 2))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 3),
@@ -1081,8 +1040,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 3))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 3))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 4),
@@ -1104,8 +1062,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 4))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 4))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 5),
@@ -1127,8 +1084,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 5))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 5))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 6),
@@ -1150,8 +1106,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 6))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 6))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 7),
@@ -1173,8 +1128,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 7))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 7))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 8),
@@ -1196,8 +1150,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 8))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 8))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 9),
@@ -1219,8 +1172,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 9))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 9))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 10),
@@ -1242,8 +1194,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 10))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 10))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 11),
@@ -1265,8 +1216,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 11))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 11))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 12),
@@ -1288,8 +1238,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 12))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 12))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 13),
@@ -1311,8 +1260,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 13))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 13))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 14),
@@ -1334,8 +1282,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 14))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 14))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 15),
@@ -1357,8 +1304,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "plateInfusedAir");
         TCHelper.addResearchPage(
                 "FloatingcandleGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 15))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 1, 15))));
         TCHelper.orphanResearch("REPLICATOR");
         TCHelper.removeResearch("REPLICATOR");
         new ResearchItem(
@@ -1394,8 +1340,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Gold));
         TCHelper.addResearchPage(
                 "ReplicatorGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "replicator", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "replicator", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ReplicatorGTNH", 2);
         TCHelper.orphanResearch("TRASHJAR");
         TCHelper.removeResearch("TRASHJAR");
@@ -1434,8 +1379,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2));
         TCHelper.addResearchPage(
                 "TrashjarGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "trashJar", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "trashJar", 1, 0))));
         ThaumcraftApi.addWarpToResearch("TrashjarGTNH", 1);
         TCHelper.orphanResearch("METEORBOOTS");
         TCHelper.removeResearch("METEORBOOTS");
@@ -1469,8 +1413,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Firestone));
         TCHelper.addResearchPage(
                 "MeteorbootsGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "bootsMeteor", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "bootsMeteor", 1, 0))));
         TCHelper.orphanResearch("COMETBOOTS");
         TCHelper.removeResearch("COMETBOOTS");
         new ResearchItem(
@@ -1503,8 +1446,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "hardIce", 1, 0));
         TCHelper.addResearchPage(
                 "CometsbootsGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "bootsComet", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "bootsComet", 1, 0))));
         TCHelper.orphanResearch("SOULBRAZIER");
         TCHelper.removeResearch("SOULBRAZIER");
         new ResearchItem(
@@ -1539,8 +1481,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0));
         TCHelper.addResearchPage(
                 "SoulbraizerGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "soulBrazier", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "soulBrazier", 1, 0))));
         TCHelper.orphanResearch("URN");
         TCHelper.removeResearch("URN");
         new ResearchItem(
@@ -1576,8 +1517,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Minecraft.ID, "brick", 1, 0));
         TCHelper.addResearchPage(
                 "UrnGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0))));
         TCHelper.orphanResearch("BURN");
         TCHelper.removeResearch("BURN");
         new ResearchItem(
@@ -1617,8 +1557,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Minecraft.ID, "brick", 1, 0));
         TCHelper.addResearchPage(
                 "BurnGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "everburnUrn", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "everburnUrn", 1, 0))));
         TCHelper.orphanResearch("CAP_SOJOURNER");
         TCHelper.removeResearch("CAP_SOJOURNER");
         new ResearchItem(
@@ -1662,8 +1601,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPage(
                 "CAP_SOJOURNER",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicExploration.ID, "sojournerCapUncharged", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "sojournerCapUncharged", 1, 0))));
         TCHelper.addInfusionCraftingRecipe(
                 "CAP_SOJOURNER",
                 getModItem(ThaumicExploration.ID, "sojournerCap", 1, 0),
@@ -1680,8 +1618,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 OrePrefixes.dust.get(Materials.Diamond));
         TCHelper.addResearchPage(
                 "CAP_SOJOURNER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "sojournerCap", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "sojournerCap", 1, 0))));
         TCHelper.orphanResearch("CAP_MECHANIST");
         TCHelper.removeResearch("CAP_MECHANIST");
         new ResearchItem(
@@ -1725,8 +1662,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPage(
                 "CAP_MECHANIST",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicExploration.ID, "mechanistCapUncharged", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "mechanistCapUncharged", 1, 0))));
         TCHelper.addInfusionCraftingRecipe(
                 "CAP_MECHANIST",
                 getModItem(ThaumicExploration.ID, "mechanistCap", 1, 0),
@@ -1743,8 +1679,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Minecraft.ID, "redstone", 1, 0));
         TCHelper.addResearchPage(
                 "CAP_MECHANIST",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "mechanistCap", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "mechanistCap", 1, 0))));
         TCHelper.orphanResearch("STABILIZERBELT");
         TCHelper.removeResearch("STABILIZERBELT");
         new ResearchItem(
@@ -1756,9 +1691,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 1,
                 -10,
                 3,
-                getModItem(ThaumicExploration.ID, "stabilizerBelt", 1, 0))
-                        .setParents("TXHOVERHARNESS", "TXINFUSION").setConcealed()
-                        .setPages(new ResearchPage("te.text.STABILIZERBELT.1")).registerResearchItem();
+                getModItem(ThaumicExploration.ID, "stabilizerBelt", 1, 0)).setParents("TXHOVERHARNESS", "TXINFUSION")
+                        .setConcealed().setPages(new ResearchPage("te.text.STABILIZERBELT.1")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "StabilizerbeltGTNH",
                 getModItem(ThaumicExploration.ID, "stabilizerBelt", 1, 0),
@@ -1778,8 +1712,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPage(
                 "StabilizerbeltGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ThaumicExploration.ID, "stabilizerBelt", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "stabilizerBelt", 1, 0))));
         TCHelper.setResearchAspects(
                 "ENCHBINDING",
                 new AspectList().add(Aspect.getAspect("vinculum"), 15).add(Aspect.getAspect("perditio"), 12)
@@ -1854,8 +1787,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPage(
                 "BraincureGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0))));
         TCHelper.orphanResearch("TALISMANFOOD");
         TCHelper.removeResearch("TALISMANFOOD");
         new ResearchItem(
@@ -1867,9 +1799,9 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 -1,
                 -11,
                 3,
-                getModItem(ThaumicExploration.ID, "talismanFood", 1, 0))
-                        .setParents("FleshcureGTNH", "TXINFUSION").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.TalismanfoodtGTNH")).registerResearchItem();
+                getModItem(ThaumicExploration.ID, "talismanFood", 1, 0)).setParents("FleshcureGTNH", "TXINFUSION")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.TalismanfoodtGTNH"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "TalismanfoodtGTNH",
                 getModItem(ThaumicExploration.ID, "talismanFood", 1, 0),
@@ -1889,8 +1821,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "delightedmealItem", 1, 0));
         TCHelper.addResearchPage(
                 "TalismanfoodtGTNH",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "talismanFood", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "talismanFood", 1, 0))));
         TCHelper.addResearchPrereq("THINKTANK", "BraincureGTNH", false);
         ThaumcraftApi.addWarpToResearch("THINKTANK", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -1921,8 +1852,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 -7,
                 2,
                 3,
-                getModItem(ThaumicExploration.ID, "charmNoTaint", 1, 0)).setParents("TAINTBASICS")
-                        .setConcealed().setPages(new ResearchPage("te.text.DREAMCATCHER.1")).registerResearchItem();
+                getModItem(ThaumicExploration.ID, "charmNoTaint", 1, 0)).setParents("TAINTBASICS").setConcealed()
+                        .setPages(new ResearchPage("te.text.DREAMCATCHER.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DreamcatcherGTNH",
                 getModItem(ThaumicExploration.ID, "charmNoTaint", 1, 0),
@@ -1951,8 +1882,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Minecraft.ID, "feather", 1, 0));
         TCHelper.addResearchPage(
                 "DreamcatcherGTNH",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "charmNoTaint", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "charmNoTaint", 1, 0))));
         TCHelper.orphanResearch("CRUCSOULS");
         TCHelper.removeResearch("CRUCSOULS");
         new ResearchItem(
@@ -1994,8 +1924,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPage(
                 "CrucsoulGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ThaumicExploration.ID, "crucibleSouls", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "crucibleSouls", 1, 0))));
         ThaumcraftApi.addWarpToResearch("CrucsoulGTNH", 4);
         // SPAWNER
 
@@ -2024,8 +1953,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "CrucsoulGTNH",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
-                                        getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0)))));
+                                TCHelper.findInfusionRecipe(getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0)))));
 
         TCHelper.addResearchPrereq("TENTACLERING", "BraincureGTNH", true);
         TCHelper.setResearchAspects(
@@ -2068,8 +1996,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ROD_TRANSMUTATION",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ThaumicExploration.ID, "transmutationCore", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "transmutationCore", 1, 0))));
         TCHelper.orphanResearch("ROD_TRANSMUTATION_staff");
         TCHelper.removeResearch("ROD_TRANSMUTATION_staff");
         new ResearchItem(
@@ -2114,8 +2041,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ROD_TRANSMUTATION_staff",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicExploration.ID, "transmutationStaffCore", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "transmutationStaffCore", 1, 0))));
         TCHelper.orphanResearch("ROD_AMBER");
         TCHelper.removeResearch("ROD_AMBER");
         new ResearchItem(
@@ -2127,8 +2053,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 -5,
                 -1,
                 3,
-                getModItem(ThaumicExploration.ID, "amberCore", 1, 0)).setParents("TXROD_greatwood")
-                        .setConcealed().setPages(new ResearchPage("te.text.ROD_AMBER.1")).registerResearchItem();
+                getModItem(ThaumicExploration.ID, "amberCore", 1, 0)).setParents("TXROD_greatwood").setConcealed()
+                        .setPages(new ResearchPage("te.text.ROD_AMBER.1")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_AMBER",
                 getModItem(ThaumicExploration.ID, "amberCore", 1, 0),
@@ -2151,8 +2077,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 6));
         TCHelper.addResearchPage(
                 "ROD_AMBER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "amberCore", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "amberCore", 1, 0))));
         TCHelper.orphanResearch("ROD_AMBER_staff");
         TCHelper.removeResearch("ROD_AMBER_staff");
         new ResearchItem(
@@ -2196,8 +2121,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.addResearchPage(
                 "ROD_AMBER_staff",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "amberStaffCore", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "amberStaffCore", 1, 0))));
         TCHelper.orphanResearch("ROD_NECROMANCER_staff");
         TCHelper.removeResearch("ROD_NECROMANCER_staff");
         new ResearchItem(
@@ -2233,8 +2157,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ROD_NECROMANCER_staff",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(ThaumicExploration.ID, "necroStaffCore", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "necroStaffCore", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ROD_NECROMANCER_staff", 3);
         TCHelper.refreshResearchPages("ENCHBINDING");
         TCHelper.refreshResearchPages("ENCHNIGHTVISION");

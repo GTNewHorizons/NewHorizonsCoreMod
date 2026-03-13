@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
 import static gregtech.api.enums.Mods.BuildCraftCompat;
@@ -24,7 +25,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -445,16 +445,12 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .itemOutputs(getModItem(BuildCraftCore.ID, "pathMarkerBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 1, 0),
-                        getModItem(Minecraft.ID, "redstone", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "paper", 1, 0), getModItem(Minecraft.ID, "redstone", 1, 0))
                 .itemOutputs(getModItem(BuildCraftBuilders.ID, "templateItem", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("squidink", 144)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 1, 0),
-                        getModItem(Minecraft.ID, "redstone", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "paper", 1, 0), getModItem(Minecraft.ID, "redstone", 1, 0))
                 .itemOutputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblue", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -484,21 +480,15 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 8, 0),
-                        getModItem(Minecraft.ID, "dye", 1, 11))
+                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0), getModItem(Minecraft.ID, "dye", 1, 11))
                 .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 8, 0),
-                        getModItem(Botany.ID, "pigment", 1, 78))
+                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0), getModItem(Botany.ID, "pigment", 1, 78))
                 .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 8, 0),
-                        getModItem(ExtraBees.ID, "misc", 1, 20))
+                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0), getModItem(ExtraBees.ID, "misc", 1, 20))
                 .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -535,8 +525,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0),
                         ItemList.Robot_Arm_HV.get(1L))
-                .itemOutputs(
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsobsidian", 16, 0))
+                .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsobsidian", 16, 0))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -550,8 +539,8 @@ public class ScriptBuildCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 2),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),

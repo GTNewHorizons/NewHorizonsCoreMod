@@ -1,9 +1,9 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.oredict.OreDictHelper.removeOreDict;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Collections;
@@ -170,9 +170,8 @@ public class ScriptFether implements IScriptLoader {
                 getModItem(Fether.ID, "glow_flower", 1, 0));
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
-                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
-                .fluidInputs(Materials.Water.getFluid(5)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0)).fluidInputs(Materials.Water.getFluid(5))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
                 .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
@@ -180,9 +179,8 @@ public class ScriptFether implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
-                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0)).fluidInputs(Materials.Lubricant.getFluid(1))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
                 .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))

@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.item.NHItemList.EngravedGoldChip;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Iridium;
 import static gregtech.api.enums.Materials.Tritanium;
 import static gregtech.api.enums.Mods.Avaritia;
@@ -28,7 +29,6 @@ import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -1061,50 +1061,50 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "cobblestone", 9, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 1))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 0))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 0)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 2))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 1))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 1)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 3))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 2))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 2)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 4))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 3))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 3)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 5))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 4))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 4)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 6))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 5))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 5)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 6))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 6)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8))
                 .itemOutputs(getModItem(Minecraft.ID, "dirt", 9, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 9))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 8))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 8)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 10))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 9))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 9)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 11))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 10))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 10)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
                 .itemOutputs(getModItem(Minecraft.ID, "gravel", 9, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 13))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 12))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 12)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14))
                 .itemOutputs(getModItem(Minecraft.ID, "sand", 9, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 14))
-                .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 14)).duration(15 * SECONDS)
+                .eut(2).addTo(extractorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1176,8 +1176,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "chestMini", 1, 0))
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "chestMini", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 2),
@@ -1193,17 +1193,15 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Railcraft.ID, "detector", 1, 2),
-                        getModItem(Minecraft.ID, "sticky_piston", 1, 0))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Railcraft.ID, "detector", 1, 2), getModItem(Minecraft.ID, "sticky_piston", 1, 0))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "budoff", 1, 0),
                         getModItem(Minecraft.ID, "redstone_block", 4, 0))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 3)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 5, 0),
@@ -1212,11 +1210,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "stone", 4, 0),
-                        getModItem(Minecraft.ID, "stonebrick", 5, 0))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 9, 0)).duration(9 * SECONDS)
-                .eut(4).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Minecraft.ID, "stone", 4, 0), getModItem(Minecraft.ID, "stonebrick", 5, 0))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 9, 0)).duration(9 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 0)).circuit(4)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
@@ -1227,29 +1223,23 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 6)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "stone", 1, 0),
-                        getModItem(Minecraft.ID, "ice", 4, 0))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 3)).duration(4 * SECONDS)
-                .eut(4).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Minecraft.ID, "stone", 1, 0), getModItem(Minecraft.ID, "ice", 4, 0))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 3)).duration(4 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "sand", 1, 0),
-                        getModItem(Minecraft.ID, "glass", 1, 0))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2, 9)).duration(2 * SECONDS)
-                .eut(4).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Minecraft.ID, "sand", 1, 0), getModItem(Minecraft.ID, "glass", 1, 0))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2, 9)).duration(2 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "sandstone", 1, 0),
-                        getModItem(Minecraft.ID, "end_stone", 1, 0))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2, 13)).duration(2 * SECONDS)
-                .eut(4).addTo(assemblerRecipes);
+                .itemInputs(getModItem(Minecraft.ID, "sandstone", 1, 0), getModItem(Minecraft.ID, "end_stone", 1, 0))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2, 13)).duration(2 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 5, 6),
                         getModItem(Minecraft.ID, "stone_slab", 5, 5))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 5, 10)).duration(5 * SECONDS)
-                .eut(4).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 5, 10)).duration(5 * SECONDS).eut(4)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 1),
@@ -1257,8 +1247,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6), ItemList.Plank_Oak.get(4L))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6), ItemList.Plank_Oak.get(4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "trading_post", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L)).circuit(2)
@@ -1357,22 +1346,21 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "golden_lasso", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "scanner", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         for (int i = 0; i < 16; i++) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "color_lightgem", 1, i))
@@ -1385,9 +1373,14 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 30,
                 new AspectList().add(getAspect("praecantatio"), 200).add(getAspect("volatus"), 200)
-                        .add(getAspect("tempestas"), 200).add(getAspect("nebrisum"), 200)
-                        .add(getAspect("motus"), 200).add(getAspect("terminus"), 200),
-                createItemStack(TinkerConstruct.ID, "travelWings", 1, 0, "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
+                        .add(getAspect("tempestas"), 200).add(getAspect("nebrisum"), 200).add(getAspect("motus"), 200)
+                        .add(getAspect("terminus"), 200),
+                createItemStack(
+                        TinkerConstruct.ID,
+                        "travelWings",
+                        1,
+                        0,
+                        "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
                 ring.get(Iridium),
                 screw.get(Tritanium),
                 EngravedGoldChip.get(1),
@@ -1476,25 +1469,20 @@ public class ScriptExtraUtilities implements IScriptLoader {
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.1"));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 0))));
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.2"));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 1))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 2))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 2))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 3))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 3))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4))));
     }
 
     private static class FilterRecipe extends ShapelessOreRecipe {

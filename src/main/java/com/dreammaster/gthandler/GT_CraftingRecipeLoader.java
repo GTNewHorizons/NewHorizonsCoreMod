@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler;
 
 import static com.dreammaster.item.NHItemList.CokeOvenBrick;
-import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Bronze;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
@@ -28,7 +27,6 @@ import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.pipeMedium;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
 import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
@@ -1092,14 +1090,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             Recipe.of(
                     new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD),
                     ToolDictNames.craftingToolKnife,
-                    getModItem(aTextTConstruct, "blankPattern", 1, 0))
-                    .provideTo(shapelessUnremovableGtRecipes())
+                    getModItem(aTextTConstruct, "blankPattern", 1, 0)).provideTo(shapelessUnremovableGtRecipes())
                     .provideTo(MANTLE.manualShapedCraftingRecipeNamed("woodenformbrick"));
             GTModHandler.addCraftingRecipe(
                     NHItemList.UnfiredSearedBrick.get(8),
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
-                    new Object[] { "GGG", "GFG", "GGG", 'G',
-                            getModItem(aTextTConstruct, "CraftedSoil", 1, 1), 'F',
+                    new Object[] { "GGG", "GFG", "GGG", 'G', getModItem(aTextTConstruct, "CraftedSoil", 1, 1), 'F',
                             new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
             Recipe.of(
                     NHItemList.UnfiredSearedBrick.get(),
@@ -1110,8 +1106,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     NHItemList.UnfiredSlimeSoilBrick.get(8),
                     GTModHandler.RecipeBits.NOT_REMOVABLE,
-                    new Object[] { "SSS", "SFS", "SSS", 'S',
-                            getModItem(aTextTConstruct, "CraftedSoil", 1, 6), 'F',
+                    new Object[] { "SSS", "SFS", "SSS", 'S', getModItem(aTextTConstruct, "CraftedSoil", 1, 6), 'F',
                             new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
             GTModHandler.addShapelessCraftingRecipe(
                     NHItemList.UnfiredSlimeSoilBrick.get(),
@@ -1172,24 +1167,22 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, WILDCARD),
                 bits,
-                new Object[] { "RCR", "RAR", "RTR", 'R',
-                        getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0), 'C',
-                        OrePrefixes.circuit.get(Materials.LV), 'A', OrePrefixes.itemCasing.get(Materials.Aluminium),
-                        'T', OrePrefixes.wireGt02.get(Materials.Tin) });
+                new Object[] { "RCR", "RAR", "RTR", 'R', getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0),
+                        'C', OrePrefixes.circuit.get(Materials.LV), 'A',
+                        OrePrefixes.itemCasing.get(Materials.Aluminium), 'T',
+                        OrePrefixes.wireGt02.get(Materials.Tin) });
         GTModHandler.addCraftingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, WILDCARD),
                 bits,
-                new Object[] { "RCR", "RAR", "RTR", 'R',
-                        getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, WILDCARD), 'C',
-                        OrePrefixes.circuit.get(Materials.MV), 'A',
+                new Object[] { "RCR", "RAR", "RTR", 'R', getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, WILDCARD),
+                        'C', OrePrefixes.circuit.get(Materials.MV), 'A',
                         getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, WILDCARD), 'T',
                         OrePrefixes.wireGt04.get(Materials.AnnealedCopper) });
         GTModHandler.addCraftingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorEnergypack", 1, WILDCARD),
                 bits,
-                new Object[] { "CSC", "EXE", "STS", 'E',
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, WILDCARD), 'C',
-                        OrePrefixes.circuit.get(Materials.HV), 'X',
+                new Object[] { "CSC", "EXE", "STS", 'E', getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, WILDCARD),
+                        'C', OrePrefixes.circuit.get(Materials.HV), 'X',
                         getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, WILDCARD), 'T',
                         OrePrefixes.wireGt08.get(Materials.Gold), 'S',
                         OrePrefixes.itemCasing.get(Materials.StainlessSteel) });
@@ -1333,17 +1326,15 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftCore.ID, "item.engine", 1, 0),
                     bits,
-                    new Object[] { "SCS", "HFH", "HAH", 'S',
-                            getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0), 'C',
-                            getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001), 'H',
+                    new Object[] { "SCS", "HFH", "HAH", 'S', getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0),
+                            'C', getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001), 'H',
                             getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0), 'F',
                             ItemList.Casing_Firebox_Steel, 'A', ItemList.Cover_ActivityDetector });
 
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 1),
                     bits,
-                    new Object[] { "BPB", "PPP", "EPE", 'B',
-                            getModItem(GalacticraftCore.ID, "item.engine", 1, 1), 'P',
+                    new Object[] { "BPB", "PPP", "EPE", 'B', getModItem(GalacticraftCore.ID, "item.engine", 1, 1), 'P',
                             getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0), 'E',
                             getModItem(GalacticraftCore.ID, "item.engine", 1, 0) });
 
@@ -1363,8 +1354,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(GalacticraftCore.ID, "item.noseCone", 1, 0),
                     bits,
                     new Object[] { "dNh", "CPC", "PPP", 'N',
-                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.cagelamp2.inv", 1, 14),
-                            'P', getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0), 'C',
+                            getModItem(ProjectRedIllumination.ID, "projectred.illumination.cagelamp2.inv", 1, 14), 'P',
+                            getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0), 'C',
                             OrePrefixes.screw.get(Materials.StainlessSteel) });
 
             GTModHandler.addCraftingRecipe(
@@ -1394,15 +1385,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftCore.ID, "item.rocketFins", 1, 0),
                     bits,
-                    new Object[] { "hPf", "QPQ", "QsQ", 'P',
-                            getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9), 'Q',
-                            getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0) });
+                    new Object[] { "hPf", "QPQ", "QsQ", 'P', getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9),
+                            'Q', getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0) });
 
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 2),
                     bits,
-                    new Object[] { "hPf", "QPQ", "QsQ", 'P',
-                            getModItem(GalacticraftMars.ID, "item.null", 1, 3), 'Q',
+                    new Object[] { "hPf", "QPQ", "QsQ", 'P', getModItem(GalacticraftMars.ID, "item.null", 1, 3), 'Q',
                             getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.HeavyDutyRocketFinsTier3.get(),
@@ -1620,8 +1609,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 8),
                     bits,
                     new Object[] { "GPG", "PXP", "hCf", 'P', OreDictNames.craftingPiston, 'G',
-                            OrePrefixes.gear.get(Materials.Iron), 'C',
-                            getModItem(Forestry.ID, "factory2", 1, 2), 'X',
+                            OrePrefixes.gear.get(Materials.Iron), 'C', getModItem(Forestry.ID, "factory2", 1, 2), 'X',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 9),
@@ -1633,8 +1621,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     bits,
                     new Object[] { " h ", "SHS", "PDP", 'S', OrePrefixes.stick.get(Materials.RedAlloy), 'H',
                             getModItem(Railcraft.ID, aTextMachineAlpha, 1, 9), 'D',
-                            getModItem(Railcraft.ID, "detector", 1, 1), 'P',
-                            OrePrefixes.plate.get(Materials.Steel) });
+                            getModItem(Railcraft.ID, "detector", 1, 1), 'P', OrePrefixes.plate.get(Materials.Steel) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 11),
                     bits,
@@ -1695,8 +1682,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "part.turbine.rotor", 1, 0),
                     bits,
-                    new Object[] { "SSS", " w ", 'S',
-                            getModItem(Railcraft.ID, "part.turbine.disk", 1, 0) });
+                    new Object[] { "SSS", " w ", 'S', getModItem(Railcraft.ID, "part.turbine.disk", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "borehead.iron", 1, 0),
                     bits,
@@ -1724,10 +1710,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     bits,
                     new Object[] { "LFB", "MCM", "WTW", 'L',
                             getModItem(Computronics.ID, "computronics.colorfulLamp", 1, 0), 'F',
-                            getModItem(Railcraft.ID, "machine.epsilon", 1, 0), 'B',
-                            ItemList.Casing_SolidSteel, 'M', ItemList.Electric_Motor_MV, 'C',
-                            GTModHandler.getIC2Item("coil", 1L), 'W', ItemList.Component_Minecart_Wheels_Steel, 'T',
-                            new ItemStack(Items.minecart, 1, 0) });
+                            getModItem(Railcraft.ID, "machine.epsilon", 1, 0), 'B', ItemList.Casing_SolidSteel, 'M',
+                            ItemList.Electric_Motor_MV, 'C', GTModHandler.getIC2Item("coil", 1L), 'W',
+                            ItemList.Component_Minecart_Wheels_Steel, 'T', new ItemStack(Items.minecart, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "cart.bore", 1, 0),
                     bits,

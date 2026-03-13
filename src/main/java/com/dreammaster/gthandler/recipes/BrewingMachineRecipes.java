@@ -18,7 +18,6 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 
 public class BrewingMachineRecipes implements Runnable {
 

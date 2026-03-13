@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
@@ -12,7 +13,6 @@ import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.WarpTheory;
 import static gregtech.api.enums.Mods.Witchery;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -79,8 +79,7 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14));
         TCHelper.addResearchPage(
                 "warptheory.paper",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0))));
         TCHelper.setResearchAspects(
                 "warptheory.paper",
                 new AspectList().add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("praecantatio"), 6)
@@ -138,8 +137,7 @@ public class ScriptWarpTheory implements IScriptLoader {
         TCHelper.addResearchPage(
                 "PURETEARMINOR",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0))));
         TCHelper.orphanResearch("warptheory.cleanser");
         TCHelper.removeResearch("warptheory.cleanser");
         new ResearchItem(
@@ -174,8 +172,7 @@ public class ScriptWarpTheory implements IScriptLoader {
         TCHelper.addResearchPage(
                 "PURETEAR",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0))));
         TCHelper.orphanResearch("warptheory.amulet");
         TCHelper.clearPrereq("warptheory.amulet");
         TCHelper.addResearchPrereq("warptheory.amulet", "PURETEAR", false);

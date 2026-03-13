@@ -1,7 +1,7 @@
 package com.dreammaster.recipes;
 
-import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
@@ -78,8 +78,6 @@ import static gregtech.api.enums.Mods.WirelessRedstoneCBEAddons;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
 import static gregtech.api.enums.Mods.Witchery;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -438,8 +436,7 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43));
         GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57));
         GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58));
-        GTModHandler.removeFurnaceSmelting(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.ore", 1, 6));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedExploration.ID, "projectred.exploration.ore", 1, 6));
         GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46));
         GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48));
         GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18));
@@ -693,30 +690,18 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "blockCrucible", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "blockConduit", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "bloodMagicIncenseItem", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellParadigm", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellParadigm", 1, 1));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellParadigm", 1, 2));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellParadigm", 1, 3));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 1));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 2));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 3));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 1));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 2));
-        removeRecipeByOutputDelayed(
-                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellParadigm", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellParadigm", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellParadigm", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellParadigm", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 3));
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "trowelWood", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "trowelStone", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "trowelIron", 1, 0));
@@ -2109,50 +2094,36 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 3));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 4));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 5));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.battery", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 56));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.backpack", 1, wildcard));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, wildcard));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, wildcard));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, wildcard));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.sawruby", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.sawsapphire", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.sawperidot", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyboots", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawruby", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawsapphire", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawperidot", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyboots", 1, 0));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.rubychestplate", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyhelmet", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyleggings", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphireboots", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyhelmet", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyleggings", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphireboots", 1, 0));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphirechestplate", 1, 0));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphirehelmet", 1, 0));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphireleggings", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.peridotboots", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.peridotboots", 1, 0));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.peridotchestplate", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.peridothelmet", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.peridothelmet", 1, 0));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.peridotleggings", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1));
@@ -2203,78 +2174,43 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 7));
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 8));
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 9));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 10));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 11));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 12));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 13));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 14));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 17));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 18));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 19));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 20));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 22));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 23));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 24));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 25));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 27));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 28));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 29));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 31));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 33));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 12));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 13));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 14));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 17));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 18));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 19));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 20));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 22));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 23));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 24));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 25));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 27));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 28));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 29));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 31));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 33));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.electric_screwdriver", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 2));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 3));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 4));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 5));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 6));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 7));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 8));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 9));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 5));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 8));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 9));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 10));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0));
         removeRecipeByOutputDelayed(
@@ -2299,19 +2235,13 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 7));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 8));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 9));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 1));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0));
         removeRecipeByOutputDelayed(getModItem(MCFrames.ID, "mcframes.frame", 1, 0));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "stair", 1, 6));
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "stair", 1, 43));
@@ -3108,9 +3038,7 @@ public class RecipeRemover {
                 getModItem(Minecraft.ID, "coal", 1, 1),
                 getModItem(Minecraft.ID, "coal", 1, 1),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0));
-        removeRecipeShapelessDelayed(
-                getModItem(Minecraft.ID, "dye", 3, 15),
-                getModItem(Minecraft.ID, "bone", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 3, 15), getModItem(Minecraft.ID, "bone", 1, 0));
         removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "nether_star", 1, 0));
         removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "sand", 1, 0));
         removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "glowstone_dust", 1, 0));
@@ -3151,8 +3079,7 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "wheat", 1, 0),
                 new Object[] { getModItem(BiomesOPlenty.ID, "plants", 1, 6),
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 6),
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 6) },
+                        getModItem(BiomesOPlenty.ID, "plants", 1, 6), getModItem(BiomesOPlenty.ID, "plants", 1, 6) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(
@@ -3163,14 +3090,11 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(
                 getModItem(EnderIO.ID, "itemAlloy", 1, 8),
                 new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
                 new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
                 new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11) });
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "ender_pearl", 1, 0),
                 new Object[] { getModItem(EnderIO.ID, "itemPowderIngot", 1, 5),
@@ -3258,10 +3182,10 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "packed_ice", 4, 0));
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "gunpowder", 1, 0),
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4),
-                        getModItem(Natura.ID, "barleyFood", 1, 4), null },
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4),
-                        getModItem(Natura.ID, "barleyFood", 1, 4), null },
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4), getModItem(Natura.ID, "barleyFood", 1, 4),
+                        null },
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4), getModItem(Natura.ID, "barleyFood", 1, 4),
+                        null },
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "chest_minecart", 1, 0));
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "furnace_minecart", 1, 0));
@@ -3280,8 +3204,7 @@ public class RecipeRemover {
                 new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "wooden_slab", 6, 0),
-                new Object[] { getModItem(Minecraft.ID, "planks", 1, 0),
-                        getModItem(Minecraft.ID, "planks", 1, 0),
+                new Object[] { getModItem(Minecraft.ID, "planks", 1, 0), getModItem(Minecraft.ID, "planks", 1, 0),
                         getModItem(Minecraft.ID, "planks", 1, 0) },
                 new Object[0],
                 new Object[0]);
@@ -3337,29 +3260,23 @@ public class RecipeRemover {
                         getModItem(ForbiddenMagic.ID, "FMResource", 1, 0) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "diamond", 1, 0),
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5),
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
                         getModItem(MagicBees.ID, "beeNugget", 1, 5) },
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5),
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
                         getModItem(MagicBees.ID, "beeNugget", 1, 5) },
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5),
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
                         getModItem(MagicBees.ID, "beeNugget", 1, 5) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "paper", 2, 0),
-                new Object[] { getModItem(Minecraft.ID, "reeds", 1, 0),
-                        getModItem(Minecraft.ID, "reeds", 1, 0),
+                new Object[] { getModItem(Minecraft.ID, "reeds", 1, 0), getModItem(Minecraft.ID, "reeds", 1, 0),
                         getModItem(Minecraft.ID, "reeds", 1, 0) },
                 new Object[0],
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem(Minecraft.ID, "sand", 1, 0));
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "leather", 1, 0),
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6),
-                        getModItem(Natura.ID, "barleyFood", 1, 6) },
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6),
-                        getModItem(Natura.ID, "barleyFood", 1, 6) },
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6), getModItem(Natura.ID, "barleyFood", 1, 6) },
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6), getModItem(Natura.ID, "barleyFood", 1, 6) },
                 new Object[0]);
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "leather", 1, 0),

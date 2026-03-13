@@ -1,11 +1,11 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.IronTanksMinecarts;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -37,7 +37,11 @@ public class ScriptIronTankMinecarts implements IScriptLoader {
                 continue;
             }
             ItemStack tank = getModItem(IronTanks.ID, type.name, 1, 0);
-            ItemStack cart = getModItem(IronTanksMinecarts.ID, "minecart_tank_" + secondderivative.irontankminecarts.IronTankMinecarts.tankTypeName(type), 1, 0);
+            ItemStack cart = getModItem(
+                    IronTanksMinecarts.ID,
+                    "minecart_tank_" + secondderivative.irontankminecarts.IronTankMinecarts.tankTypeName(type),
+                    1,
+                    0);
             addShapedRecipe(
                     cart,
                     "craftingToolHardHammer",

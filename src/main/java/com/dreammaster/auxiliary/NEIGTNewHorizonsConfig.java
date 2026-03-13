@@ -1,9 +1,7 @@
 package com.dreammaster.auxiliary;
 
-import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.*;
-import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
@@ -13,7 +11,6 @@ import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 
 import codechicken.nei.api.IConfigureNEI;
-import gregtech.api.util.GTModHandler;
 
 public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 

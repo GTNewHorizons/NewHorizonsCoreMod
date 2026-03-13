@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -11,7 +12,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesAddons;
 import static gregtech.api.enums.Mods.StevesFactoryManager;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -84,16 +84,12 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 144))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0),
-                        ItemList.Sensor_HV.get(1L))
+                .itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0), ItemList.Sensor_HV.get(1L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableInputName", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0),
-                        ItemList.Emitter_HV.get(1L))
+                .itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0), ItemList.Emitter_HV.get(1L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableOutputName", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -133,9 +129,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0),
-                        ItemList.Robot_Arm_HV.get(1L))
+                .itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0), ItemList.Robot_Arm_HV.get(1L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableBreakerName", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -146,9 +140,9 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableSignName", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 8, 0))
-                .circuit(1).itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 8))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 8, 0)).circuit(1)
+                .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 8)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0),
@@ -157,9 +151,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0),
-                        ItemList.Cover_Screen.get(2L))
+                .itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0), ItemList.Cover_Screen.get(2L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

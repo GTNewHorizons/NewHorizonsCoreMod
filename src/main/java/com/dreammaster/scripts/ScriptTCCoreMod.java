@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;
@@ -23,7 +24,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.STACKS;
 import static gregtech.api.util.GTRecipeConstants.DEFC_CASING_TIER;
@@ -153,8 +153,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L));
         TCHelper.addResearchPage(
                 "EMINENCESTONE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 14))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 14))));
         new ResearchItem(
                 "PORTALMILLENIUM",
                 "NEWHORIZONS",
@@ -163,8 +162,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 2,
                 6,
                 3,
-                getModItem(ExtraUtilities.ID, "dark_portal", 1, 2)).setParents("EMINENCESTONE", "OCULUS")
-                        .setConcealed().setPages(new ResearchPage("ExtraUtilities.research_page.PORTALMILLENIUM"))
+                getModItem(ExtraUtilities.ID, "dark_portal", 1, 2)).setParents("EMINENCESTONE", "OCULUS").setConcealed()
+                        .setPages(new ResearchPage("ExtraUtilities.research_page.PORTALMILLENIUM"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "PORTALMILLENIUM",
@@ -184,8 +183,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2));
         TCHelper.addResearchPage(
                 "PORTALMILLENIUM",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "dark_portal", 1, 2))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "dark_portal", 1, 2))));
         ThaumcraftApi.addWarpToResearch("PORTALMILLENIUM", 2);
         new ResearchItem(
                 "PORTALDEEPDARK",
@@ -218,8 +216,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0));
         TCHelper.addResearchPage(
                 "PORTALDEEPDARK",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "dark_portal", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "dark_portal", 1, 0))));
         ThaumcraftApi.addWarpToResearch("PORTALDEEPDARK", 64);
         new ResearchItem(
                 "MAGICALWOOD",
@@ -230,9 +227,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 -2,
                 6,
                 3,
-                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8)).setParents("EMINENCESTONE")
-                        .setConcealed().setPages(new ResearchPage("ExtraUtilities.research_page.MAGICALWOOD"))
-                        .registerResearchItem();
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8)).setParents("EMINENCESTONE").setConcealed()
+                        .setPages(new ResearchPage("ExtraUtilities.research_page.MAGICALWOOD")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MAGICALWOOD",
                 getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 8),
@@ -262,8 +258,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1));
         TCHelper.addResearchPage(
                 "MAGICALWOOD",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8))));
         new ResearchItem(
                 "ANGELBLOCK",
                 "NEWHORIZONS",
@@ -301,8 +296,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L));
         TCHelper.addResearchPage(
                 "ANGELBLOCK",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelBlock", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelBlock", 1, 0))));
         new ResearchItem(
                 "DEZILSMARSHMALLOW",
                 "NEWHORIZONS",
@@ -312,9 +306,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 -2,
                 2,
                 3,
-                getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0)).setParents("INFUSION")
-                        .setSpecial().setPages(new ResearchPage("de.research_page.DEZILSMARSHMALLOW"))
-                        .registerResearchItem();
+                getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0)).setParents("INFUSION").setSpecial()
+                        .setPages(new ResearchPage("de.research_page.DEZILSMARSHMALLOW")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "DEZILSMARSHMALLOW",
                 getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0),
@@ -332,8 +325,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
         TCHelper.addResearchPage(
                 "DEZILSMARSHMALLOW",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0))));
         ThaumcraftApi.addWarpToResearch("DEZILSMARSHMALLOW", 8);
         new ResearchItem(
                 "ENCHANTINGTABLE",
@@ -348,9 +340,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHANTINGTABLE",
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0),
-                new AspectList().add(getAspect("aer"), 45).add(getAspect("aqua"), 45)
-                        .add(getAspect("terra"), 45).add(getAspect("ignis"), 45)
-                        .add(getAspect("ordo"), 45).add(getAspect("perditio"), 45),
+                new AspectList().add(getAspect("aer"), 45).add(getAspect("aqua"), 45).add(getAspect("terra"), 45)
+                        .add(getAspect("ignis"), 45).add(getAspect("ordo"), 45).add(getAspect("perditio"), 45),
                 "abc",
                 "def",
                 "ghi",
@@ -374,8 +365,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 createItemStack(ForgeMicroblocks.ID, "microblock", 1, 516, "{mat:\"minecraft:diamond_block\"}"));
         TCHelper.addResearchPage(
                 "ENCHANTINGTABLE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Minecraft.ID, "enchanting_table", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Minecraft.ID, "enchanting_table", 1, 0))));
         new ResearchItem(
                 "DISENCHANTINGTABLE",
                 "NEWHORIZONS",
@@ -385,8 +375,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 2,
                 2,
                 3,
-                getModItem(DraconicEvolution.ID, "dissEnchanter", 1, 0)).setParents("ENCHANTINGTABLE")
-                        .setConcealed().setPages(new ResearchPage("DraconicEvolution.research_page.DISENCHANTINGTABLE"))
+                getModItem(DraconicEvolution.ID, "dissEnchanter", 1, 0)).setParents("ENCHANTINGTABLE").setConcealed()
+                        .setPages(new ResearchPage("DraconicEvolution.research_page.DISENCHANTINGTABLE"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISENCHANTINGTABLE",
@@ -417,8 +407,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "blockThaumium");
         TCHelper.addResearchPage(
                 "DISENCHANTINGTABLE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(DraconicEvolution.ID, "dissEnchanter", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(DraconicEvolution.ID, "dissEnchanter", 1, 0))));
         ThaumcraftApi.addWarpToResearch("DISENCHANTINGTABLE", 3);
         new ResearchItem(
                 "BREWINGSTAND",
@@ -539,8 +528,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 -2,
                 -2,
                 3,
-                getModItem(TinkerConstruct.ID, "materials", 1, 26)).setParents("ENCHANTINGTABLE")
-                        .setConcealed().setRound().setPages(new ResearchPage("TConstruct.research_page.SILKYCRYSTAL"))
+                getModItem(TinkerConstruct.ID, "materials", 1, 26)).setParents("ENCHANTINGTABLE").setConcealed()
+                        .setRound().setPages(new ResearchPage("TConstruct.research_page.SILKYCRYSTAL"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SILKYCRYSTAL",
@@ -571,8 +560,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0));
         TCHelper.addResearchPage(
                 "SILKYCRYSTAL",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 25))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 25))));
         TCHelper.addInfusionCraftingRecipe(
                 "SILKYCRYSTAL",
                 getModItem(TinkerConstruct.ID, "materials", 1, 26),
@@ -589,8 +577,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4));
         TCHelper.addResearchPage(
                 "SILKYCRYSTAL",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 26))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 26))));
         new ResearchItem(
                 "LAVACRYSTAL",
                 "NEWHORIZONS",
@@ -619,8 +606,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 1));
         TCHelper.addResearchPage(
                 "LAVACRYSTAL",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 7))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 7))));
         new ResearchItem(
                 "BALLOFMOSS",
                 "NEWHORIZONS",
@@ -647,8 +633,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0));
         TCHelper.addResearchPage(
                 "BALLOFMOSS",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 6))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 6))));
         new ResearchItem(
                 "NECROTICBONE",
                 "NEWHORIZONS",
@@ -670,8 +655,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("venenum"), 20).add(Aspect.getAspect("corpus"), 5));
         TCHelper.addResearchPage(
                 "NECROTICBONE",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 8))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 8))));
         ThaumcraftApi.addWarpToResearch("NECROTICBONE", 2);
         new ResearchItem(
                 "REDHEART",
@@ -682,9 +666,9 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 0,
                 -6,
                 3,
-                getModItem(TinkerConstruct.ID, "heartCanister", 1, 1))
-                        .setParents("RUNICAUGMENTATION", "BALLOFMOSS").setConcealed().setRound()
-                        .setPages(new ResearchPage("TConstruct.research_page.REDHEART.1")).registerResearchItem();
+                getModItem(TinkerConstruct.ID, "heartCanister", 1, 1)).setParents("RUNICAUGMENTATION", "BALLOFMOSS")
+                        .setConcealed().setRound().setPages(new ResearchPage("TConstruct.research_page.REDHEART.1"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "REDHEART",
                 getModItem(TinkerConstruct.ID, "heartCanister", 1, 1),
@@ -705,8 +689,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "jerky", 1, 5));
         TCHelper.addResearchPage(
                 "REDHEART",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 1))));
         ThaumcraftApi.addWarpToResearch("REDHEARTCANISTER", 1);
         new ResearchItem(
                 "REDHEARTCANISTER",
@@ -739,8 +722,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "heartCanister", 1, 1));
         TCHelper.addResearchPage(
                 "REDHEARTCANISTER",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 2))));
         ThaumcraftApi.addWarpToResearch("REDHEARTCANISTER", 2);
         new ResearchItem(
                 "YELLOWHEART",
@@ -751,9 +733,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 -2,
                 -7,
                 3,
-                getModItem(TinkerConstruct.ID, "heartCanister", 1, 3)).setParents("REDHEART").setConcealed()
-                        .setRound().setPages(new ResearchPage("TConstruct.research_page.YELLOWHEART.1"))
-                        .registerResearchItem();
+                getModItem(TinkerConstruct.ID, "heartCanister", 1, 3)).setParents("REDHEART").setConcealed().setRound()
+                        .setPages(new ResearchPage("TConstruct.research_page.YELLOWHEART.1")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "YELLOWHEART",
                 getModItem(TinkerConstruct.ID, "heartCanister", 1, 3),
@@ -774,8 +755,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 8));
         TCHelper.addResearchPage(
                 "YELLOWHEART",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 3))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 3))));
         ThaumcraftApi.addWarpToResearch("YELLOWHEARTCANISTER", 2);
         new ResearchItem(
                 "YELLOWHEARTCANISTER",
@@ -812,8 +792,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "golden_apple", 1, 1));
         TCHelper.addResearchPage(
                 "YELLOWHEARTCANISTER",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 4))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 4))));
         ThaumcraftApi.addWarpToResearch("YELLOWHEARTCANISTER", 3);
         new ResearchItem(
                 "GREENHEART",
@@ -847,8 +826,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 8));
         TCHelper.addResearchPage(
                 "GREENHEART",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 5))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 5))));
         ThaumcraftApi.addWarpToResearch("GREENHEART", 3);
         new ResearchItem(
                 "GREENHEARTCANISTER",
@@ -895,8 +873,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 8));
         TCHelper.addResearchPage(
                 "GREENHEARTCANISTER",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 6))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TinkerConstruct.ID, "heartCanister", 1, 6))));
         ThaumcraftApi.addWarpToResearch("GREENHEARTCANISTER", 4);
         new ResearchItem(
                 "ENDERCHEST",
@@ -978,8 +955,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L));
         TCHelper.addResearchPage(
                 "ENDERTANK",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(EnderStorage.ID, "enderChest", 1, 4096))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(EnderStorage.ID, "enderChest", 1, 4096))));
         new ResearchItem(
                 "ENDERPOUCHE",
                 "NEWHORIZONS",
@@ -1029,8 +1005,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 0,
                 2,
                 3,
-                getModItem(OpenBlocks.ID, "autoenchantmenttable", 1, 0)).setParents("ENCHANTINGTABLE")
-                        .setConcealed()
+                getModItem(OpenBlocks.ID, "autoenchantmenttable", 1, 0))
+                        .setParents("ENCHANTINGTABLE").setConcealed()
                         .setPages(
                                 new ResearchPage("OpenBlocks.research_page.AUTOENCHANTINGTABLE.1"),
                                 new ResearchPage("OpenBlocks.research_page.AUTOENCHANTINGTABLE.2"))
@@ -1063,8 +1039,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L));
         TCHelper.addResearchPage(
                 "AUTOENCHANTINGTABLE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(OpenBlocks.ID, "autoenchantmenttable", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(OpenBlocks.ID, "autoenchantmenttable", 1, 0))));
         ThaumcraftApi.addWarpToResearch("AUTOENCHANTINGTABLE", 1);
         new ResearchItem(
                 "LUGGAGE",
@@ -1151,8 +1126,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
         TCHelper.addResearchPage(
                 "GHOSTAMULET",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(HardcoreEnderExpansion.ID, "ghost_amulet", 1, 1))));
+                        TCHelper.findInfusionRecipe(getModItem(HardcoreEnderExpansion.ID, "ghost_amulet", 1, 1))));
         ThaumcraftApi.addWarpToResearch("GHOSTAMULET", 3);
         new ResearchItem(
                 "SFSWORD",
@@ -1215,8 +1189,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Minecraft.ID, "obsidian", 1, 0));
         TCHelper.addResearchPage(
                 "MAGICOBSIDIAN",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1))));
         TCHelper.addInfusionCraftingRecipe(
                 "MAGICOBSIDIAN",
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4, 0),
@@ -1229,8 +1202,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1));
         TCHelper.addResearchPage(
                 "MAGICOBSIDIAN",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0))));
         ThaumcraftApi.addWarpToResearch("MAGICOBSIDIAN", 1);
 
         new ResearchItem(

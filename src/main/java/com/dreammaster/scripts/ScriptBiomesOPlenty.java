@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Saltpeter;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
@@ -27,7 +28,6 @@ import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -134,15 +134,9 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1));
-        addShapelessRecipe(
-                getModItem(Minecraft.ID, "bucket", 1, 0),
-                getModItem(BiomesOPlenty.ID, "bopBucket", 1, 0));
-        addShapelessRecipe(
-                getModItem(BiomesOPlenty.ID, "rocks", 1, 1),
-                getModItem(BiomesOPlenty.ID, "rocks", 1, 0));
-        addShapelessRecipe(
-                getModItem(BiomesOPlenty.ID, "rocks", 1, 0),
-                getModItem(BiomesOPlenty.ID, "rocks", 1, 1));
+        addShapelessRecipe(getModItem(Minecraft.ID, "bucket", 1, 0), getModItem(BiomesOPlenty.ID, "bopBucket", 1, 0));
+        addShapelessRecipe(getModItem(BiomesOPlenty.ID, "rocks", 1, 1), getModItem(BiomesOPlenty.ID, "rocks", 1, 0));
+        addShapelessRecipe(getModItem(BiomesOPlenty.ID, "rocks", 1, 0), getModItem(BiomesOPlenty.ID, "rocks", 1, 1));
         addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 15),
                 getModItem(BiomesOPlenty.ID, "coral2", 1, 8),
@@ -189,8 +183,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 4L))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "rocks", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "rocks", 1, 0)).duration(2 * SECONDS + 10 * TICKS).eut(2)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0))
                 .itemOutputs(
                         getModItem(Forestry.ID, "honeyDrop", 7, 0),
@@ -200,20 +194,16 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .outputChances(10000, 5000, 2500, 1200).duration(3 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2))
-                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0)).outputChances(10000)
-                .duration(6 * SECONDS).eut(5).addTo(centrifugeRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0)).outputChances(10000).duration(6 * SECONDS).eut(5)
+                .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "waxcombItem", 1, 0))
-                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0)).outputChances(10000)
-                .duration(6 * SECONDS).eut(5).addTo(centrifugeRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0)).outputChances(10000).duration(6 * SECONDS).eut(5)
+                .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "food", 1, 9))
-                .itemOutputs(
-                        getModItem(Forestry.ID, "beeswax", 1, 0),
-                        getModItem(Forestry.ID, "honeyDrop", 1, 0))
+                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0), getModItem(Forestry.ID, "honeyDrop", 1, 0))
                 .outputChances(10000, 9000).duration(6 * SECONDS).eut(5).addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "honeycombItem", 1, 0))
-                .itemOutputs(
-                        getModItem(Forestry.ID, "beeswax", 1, 0),
-                        getModItem(Forestry.ID, "honeyDrop", 1, 0))
+                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0), getModItem(Forestry.ID, "honeyDrop", 1, 0))
                 .outputChances(10000, 9000).duration(6 * SECONDS).eut(5).addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 6)).duration(15 * SECONDS).eut(2)
@@ -271,8 +261,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "plants", 1, 7))
                 .itemOutputs(ItemList.Color_03.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mud", 1, 0))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(extractorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1, 1))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0)).outputChances(10000)
                 .fluidOutputs(FluidRegistry.getFluidStack("poison", 1000)).duration(1 * SECONDS).eut(2)
@@ -288,14 +278,14 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(20 * SECONDS).eut(40)
                 .addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 1, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 8, 15)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 8, 15)).outputChances(10000).duration(15 * SECONDS).eut(2)
+                .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 1, 1))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 12, 15)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 12, 15)).outputChances(10000).duration(15 * SECONDS).eut(2)
+                .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 1, 2))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 24, 15)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 24, 15)).outputChances(10000).duration(15 * SECONDS).eut(2)
+                .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardSand", 1, 0))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 2),
@@ -338,20 +328,20 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1)).fluidInputs(Materials.Honey.getFluid(1000L))
                 .duration(2 * SECONDS).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.get(1)).circuit(16)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1)).eut(TierEU.RECIPE_LV)
-                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 3)).circuit(16)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2)).eut(TierEU.RECIPE_LV)
-                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0)).circuit(11)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1)).eut(TierEU.RECIPE_LV)
-                .duration(15 * SECONDS).addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1)).eut(TierEU.RECIPE_LV).duration(15 * SECONDS)
+                .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 1, 8)).circuit(11)
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11)).eut(TierEU.RECIPE_LV)
-                .duration(15 * SECONDS).addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11)).eut(TierEU.RECIPE_LV).duration(15 * SECONDS)
+                .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0)).eut(TierEU.RECIPE_LV)
-                .duration(15 * SECONDS).addTo(compressorRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0)).eut(TierEU.RECIPE_LV).duration(15 * SECONDS)
+                .addTo(compressorRecipes);
 
         // BOP renovable flora
 
@@ -385,24 +375,24 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 4))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 4)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 4)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 5))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 6)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 6)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 0)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 0)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
@@ -417,8 +407,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 15)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 15)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
@@ -433,48 +423,48 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 10))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 3)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 3)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 0))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 1)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 1)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 5)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 5)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 12))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 12)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 12)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 13))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "foliage", 16, 13)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "foliage", 16, 13)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "shinyFlower", 16, 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 8)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 8)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),
@@ -489,8 +479,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Botania.ID, "virus", 16, 0))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 13)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 16, 13)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
 
         GTValues.RA.stdBuilder()
                 .fluidInputs(
@@ -498,8 +488,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         FluidRegistry.getFluidStack("fluiddeath", 800))
                 .itemInputs(getModItem(Witchery.ID, "ingredient", 64, 78))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 396))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 7)).eut(TierEU.RECIPE_HV)
-                .duration(10).metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 16, 7)).eut(TierEU.RECIPE_HV).duration(10)
+                .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 800),

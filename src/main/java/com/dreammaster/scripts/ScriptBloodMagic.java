@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -31,7 +32,6 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -363,9 +363,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BloodMagic.ID, "blankSlate", 4, 0),
-                        getModItem(Avaritia.ID, "Orb_Armok", 0, 0))
+                .itemInputs(getModItem(BloodMagic.ID, "blankSlate", 4, 0), getModItem(Avaritia.ID, "Orb_Armok", 0, 0))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
@@ -507,8 +505,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 OrePrefixes.stickLong.get(Materials.BloodInfusedIron));
         TCHelper.addResearchPage(
                 "LIFEINFUSER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "life_infuser", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "life_infuser", 1, 0))));
         ThaumcraftApi.addWarpToResearch("LIFEINFUSER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "LIFEINFUSER",
@@ -538,8 +535,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 251));
         TCHelper.addResearchPage(
                 "LIFEINFUSER",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodArsenal.ID, "lp_materializer", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodArsenal.ID, "lp_materializer", 1, 0))));
         new ResearchItem(
                 "SOULCOMPACTER",
                 "BLOODMAGIC",
@@ -625,8 +621,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "screwSteel");
         TCHelper.addResearchPage(
                 "SACRIFICIALKNIFE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "sacrificialKnife", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "sacrificialKnife", 1, 0))));
         new ResearchItem(
                 "ALCHEMICCHEMSTRYSET",
                 "BLOODMAGIC",
@@ -636,8 +631,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 4,
                 -4,
                 3,
-                getModItem(BloodMagic.ID, "blockWritingTable", 1, 0))
-                        .setParents("INFUSION", "SACRIFICIALKNIFE").setConcealed()
+                getModItem(BloodMagic.ID, "blockWritingTable", 1, 0)).setParents("INFUSION", "SACRIFICIALKNIFE")
+                        .setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.ALCHEMICCHEMSTRYSET.1"),
                                 new ResearchPage("tc.research_page.ALCHEMICCHEMSTRYSET.2"))
@@ -664,8 +659,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0));
         TCHelper.addResearchPage(
                 "ALCHEMICCHEMSTRYSET",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "blockWritingTable", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "blockWritingTable", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ALCHEMICCHEMSTRYSET", 3);
         new ResearchItem(
                 "AMORPHICCATALYST",
@@ -676,9 +670,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 6,
                 -4,
                 3,
-                getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0))
-                        .setParents("INFUSION", "ALCHEMICCHEMSTRYSET").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.AMORPHICCATALYST")).registerResearchItem();
+                getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0)).setParents("INFUSION", "ALCHEMICCHEMSTRYSET")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.AMORPHICCATALYST"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "AMORPHICCATALYST",
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0),
@@ -699,8 +693,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0));
         TCHelper.addResearchPage(
                 "AMORPHICCATALYST",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0))));
         ThaumcraftApi.addWarpToResearch("AMORPHICCATALYST", 2);
         new ResearchItem(
                 "BIDIAMONDBLOCK",
@@ -734,8 +727,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "BIDIAMONDBLOCK",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0))));
         ThaumcraftApi.addWarpToResearch("BIDIAMONDBLOCK", 3);
         new ResearchItem(
                 "DIVINATIONSIGIL",
@@ -746,8 +738,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 0,
                 2,
                 3,
-                getModItem(BloodMagic.ID, "divinationSigil", 1, 0))
-                        .setParents("INFUSION", "NITOR", "BLOODALTAR").setConcealed()
+                getModItem(BloodMagic.ID, "divinationSigil", 1, 0)).setParents("INFUSION", "NITOR", "BLOODALTAR")
+                        .setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.DIVINATIONSIGIL.1"),
                                 new ResearchPage("tc.research_page.DIVINATIONSIGIL.2"))
@@ -770,8 +762,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0));
         TCHelper.addResearchPage(
                 "DIVINATIONSIGIL",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "divinationSigil", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "divinationSigil", 1, 0))));
         new ResearchItem(
                 "SPEEDRUNE",
                 "BLOODMAGIC",
@@ -781,8 +772,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 0,
                 3,
-                getModItem(BloodMagic.ID, "speedRune", 1, 0)).setParents("INFUSION", "BLOODALTAR")
-                        .setConcealed()
+                getModItem(BloodMagic.ID, "speedRune", 1, 0))
+                        .setParents("INFUSION", "BLOODALTAR").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.SPEEDRUNE.1"),
                                 new ResearchPage("tc.research_page.SPEEDRUNE.2"))
@@ -864,8 +855,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Minecraft.ID, "obsidian", 1, 0));
         TCHelper.addResearchPage(
                 "IMPERFECTRITUALSTONE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "imperfectRitualStone", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "imperfectRitualStone", 1, 0))));
         new ResearchItem(
                 "RITUALSTONE",
                 "BLOODMAGIC",
@@ -931,9 +921,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -4,
                 -4,
                 3,
-                getModItem(BloodMagic.ID, "blockHomHeart", 1, 0)).setParents("INFUSION", "RITUALSTONE")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.SPELLTABLE"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "blockHomHeart", 1, 0)).setParents("INFUSION", "RITUALSTONE").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.SPELLTABLE")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SPELLTABLE",
                 getModItem(BloodMagic.ID, "blockHomHeart", 1, 0),
@@ -974,9 +963,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 -6,
                 3,
-                getModItem(BloodMagic.ID, "masterStone", 1, 0)).setParents("INFUSION", "RITUALSTONE")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.MASTERRITUALSTONE"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "masterStone", 1, 0)).setParents("INFUSION", "RITUALSTONE").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.MASTERRITUALSTONE")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "MASTERRITUALSTONE",
                 getModItem(BloodMagic.ID, "masterStone", 1, 0),
@@ -1008,9 +996,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 0,
                 4,
                 3,
-                getModItem(BloodMagic.ID, "waterSigil", 1, 0)).setParents("INFUSION", "DIVINATIONSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.WATERSIGIL"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "waterSigil", 1, 0)).setParents("INFUSION", "DIVINATIONSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.WATERSIGIL")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "WATERSIGIL",
                 getModItem(BloodMagic.ID, "waterSigil", 1, 0),
@@ -1105,8 +1092,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2));
         TCHelper.addResearchPage(
                 "EMPTYCORE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 1))));
         new ResearchItem(
                 "BMLAVACRYSTAL",
                 "BLOODMAGIC",
@@ -1143,9 +1129,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -4,
                 0,
                 3,
-                getModItem(BloodMagic.ID, "runeOfSacrifice", 1, 0)).setParents("INFUSION", "SPEEDRUNE")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.RUNESACRIFICE"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "runeOfSacrifice", 1, 0)).setParents("INFUSION", "SPEEDRUNE").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.RUNESACRIFICE")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "RUNESACRIFICE",
                 getModItem(BloodMagic.ID, "runeOfSacrifice", 1, 0),
@@ -1164,8 +1149,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0));
         TCHelper.addResearchPage(
                 "RUNESACRIFICE",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "runeOfSacrifice", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "runeOfSacrifice", 1, 0))));
         new ResearchItem(
                 "RUNESELFSACRIFICE",
                 "BLOODMAGIC",
@@ -1196,8 +1180,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0));
         TCHelper.addResearchPage(
                 "RUNESELFSACRIFICE",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "runeOfSelfSacrifice", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "runeOfSelfSacrifice", 1, 0))));
         new ResearchItem(
                 "AIRSIGIL",
                 "BLOODMAGIC",
@@ -1244,9 +1227,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 4,
                 3,
-                getModItem(BloodMagic.ID, "sigilOfTheFastMiner", 1, 0))
-                        .setParents("INFUSION", "DIVINATIONSIGIL").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.FASTERMINING")).registerResearchItem();
+                getModItem(BloodMagic.ID, "sigilOfTheFastMiner", 1, 0)).setParents("INFUSION", "DIVINATIONSIGIL")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.FASTERMINING"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "FASTERMINING",
                 getModItem(BloodMagic.ID, "sigilOfTheFastMiner", 1, 0),
@@ -1266,8 +1249,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "aether", 1, 0));
         TCHelper.addResearchPage(
                 "FASTERMINING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfTheFastMiner", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfTheFastMiner", 1, 0))));
         ThaumcraftApi.addWarpToResearch("FASTERMINING", 2);
         new ResearchItem(
                 "GREENGROW",
@@ -1278,8 +1260,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 4,
                 3,
-                getModItem(BloodMagic.ID, "growthSigil", 1, 0)).setParents("INFUSION", "DIVINATIONSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.GREENGROW")).registerResearchItem();
+                getModItem(BloodMagic.ID, "growthSigil", 1, 0)).setParents("INFUSION", "DIVINATIONSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.GREENGROW")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "GREENGROW",
                 getModItem(BloodMagic.ID, "growthSigil", 1, 0),
@@ -1311,8 +1293,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 6,
                 3,
-                getModItem(BloodMagic.ID, "voidSigil", 1, 0)).setParents("INFUSION", "WATERSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.VOIDSIGIL")).registerResearchItem();
+                getModItem(BloodMagic.ID, "voidSigil", 1, 0)).setParents("INFUSION", "WATERSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.VOIDSIGIL")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "VOIDSIGIL",
                 getModItem(BloodMagic.ID, "voidSigil", 1, 0),
@@ -1371,8 +1353,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 Materials.FishOil.getCells(1));
         TCHelper.addResearchPage(
                 "SIGILOFSWIMMING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_swimming", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_swimming", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFSWIMMING", 6);
         new ResearchItem(
                 "BLOODLETTERSPACK",
@@ -1777,9 +1758,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 14,
                 0,
                 3,
-                getModItem(BloodArsenal.ID, "transparent_orb", 1, 0)).setParents("TRANSCENDENTORB")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.TRANSPARENTORB"))
-                        .registerResearchItem();
+                getModItem(BloodArsenal.ID, "transparent_orb", 1, 0)).setParents("TRANSCENDENTORB").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.TRANSPARENTORB")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TRANSPARENTORB",
                 getModItem(BloodArsenal.ID, "transparent_orb", 1, 0),
@@ -1809,8 +1789,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0));
         TCHelper.addResearchPage(
                 "TRANSPARENTORB",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodArsenal.ID, "transparent_orb", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodArsenal.ID, "transparent_orb", 1, 0))));
         ThaumcraftApi.addWarpToResearch("TRANSPARENTORB", 7);
         new ResearchItem(
                 "EMPTYSOCKET",
@@ -1863,8 +1842,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 -8,
                 3,
-                getModItem(BloodMagic.ID, "armourForge", 1, 0)).setParents("INFUSION", "EMPTYSOCKET")
-                        .setConcealed()
+                getModItem(BloodMagic.ID, "armourForge", 1, 0))
+                        .setParents("INFUSION", "EMPTYSOCKET").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.SOULARMORFORGE.1"),
                                 new ResearchPage("tc.research_page.SOULARMORFORGE.2"))
@@ -1902,9 +1881,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -6,
                 0,
                 3,
-                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 1))
-                        .setParents("INFUSION", "RUNESACRIFICE").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.RUNEOFARGUMENTEDCAPACITY")).registerResearchItem();
+                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 1)).setParents("INFUSION", "RUNESACRIFICE")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.RUNEOFARGUMENTEDCAPACITY"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "RUNEOFARGUMENTEDCAPACITY",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 1),
@@ -1926,8 +1905,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "RUNEOFARGUMENTEDCAPACITY",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 1))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 1))));
         new ResearchItem(
                 "RUNEOFDISLOCATION",
                 "BLOODMAGIC",
@@ -1936,9 +1914,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -6,
                 2,
                 3,
-                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 2))
-                        .setParents("INFUSION", "RUNESACRIFICE").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.RUNEOFDISLOCATION")).registerResearchItem();
+                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 2)).setParents("INFUSION", "RUNESACRIFICE")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.RUNEOFDISLOCATION"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "RUNEOFDISLOCATION",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 2),
@@ -1960,8 +1938,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "RUNEOFDISLOCATION",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 2))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 2))));
         new ResearchItem(
                 "SIGILOFELEMENTALAFFINITY",
                 "BLOODMAGIC",
@@ -2001,8 +1978,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "SIGILOFELEMENTALAFFINITY",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "sigilOfElementalAffinity", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfElementalAffinity", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFELEMENTALAFFINITY", 8);
         new ResearchItem(
                 "SIGILOFLIGHTNING",
@@ -2039,8 +2015,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0));
         TCHelper.addResearchPage(
                 "SIGILOFLIGHTNING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_lightning", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_lightning", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFLIGHTNING", 12);
         new ResearchItem(
                 "SIGILOFHOLDING",
@@ -2074,8 +2049,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0));
         TCHelper.addResearchPage(
                 "SIGILOFHOLDING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfHolding", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfHolding", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFHOLDING", 2);
         new ResearchItem(
                 "SIGILOFAUGMENTETHOLDING",
@@ -2114,8 +2088,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "SIGILOFAUGMENTETHOLDING",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodArsenal.ID, "sigil_of_augmented_holding", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_augmented_holding", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFAUGMENTETHOLDING", 4);
         new ResearchItem(
                 "SIGILOFPHANTOMBRIDGE",
@@ -2126,9 +2099,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -4,
                 6,
                 3,
-                getModItem(BloodMagic.ID, "sigilOfTheBridge", 1, 0)).setParents("INFUSION", "VOIDSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.SIGILOFPHANTOMBRIDGE"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "sigilOfTheBridge", 1, 0)).setParents("INFUSION", "VOIDSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.SIGILOFPHANTOMBRIDGE")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "SIGILOFPHANTOMBRIDGE",
                 getModItem(BloodMagic.ID, "sigilOfTheBridge", 1, 0),
@@ -2151,8 +2123,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(EnderIO.ID, "blockIngotStorage", 1, 7));
         TCHelper.addResearchPage(
                 "SIGILOFPHANTOMBRIDGE",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfTheBridge", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfTheBridge", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFPHANTOMBRIDGE", 4);
         new ResearchItem(
                 "SIGILOFMAGNETISM",
@@ -2163,9 +2134,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 6,
                 3,
-                getModItem(BloodMagic.ID, "sigilOfMagnetism", 1, 0)).setParents("INFUSION", "WATERSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.SIGILOFMAGNETISM"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "sigilOfMagnetism", 1, 0)).setParents("INFUSION", "WATERSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.SIGILOFMAGNETISM")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "SIGILOFMAGNETISM",
                 getModItem(BloodMagic.ID, "sigilOfMagnetism", 1, 0),
@@ -2188,8 +2158,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0));
         TCHelper.addResearchPage(
                 "SIGILOFMAGNETISM",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfMagnetism", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfMagnetism", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFMAGNETISM", 2);
         new ResearchItem(
                 "SIGILOFTHEBLOODLAMP",
@@ -2221,8 +2190,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 6));
         TCHelper.addResearchPage(
                 "SIGILOFTHEBLOODLAMP",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemBloodLightSigil", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemBloodLightSigil", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFTHEBLOODLAMP", 3);
         new ResearchItem(
                 "SIGILOFSIGHT",
@@ -2233,9 +2201,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 2,
                 3,
-                getModItem(BloodMagic.ID, "seerSigil", 1, 0)).setParents("INFUSION", "DIVINATIONSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.SIGILOFSIGHT"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "seerSigil", 1, 0)).setParents("INFUSION", "DIVINATIONSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.SIGILOFSIGHT")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "SIGILOFSIGHT",
                 getModItem(BloodMagic.ID, "seerSigil", 1, 0),
@@ -2264,9 +2231,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 -8,
                 3,
-                getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0))
-                        .setParents("INFUSION", "MASTERRITUALSTONE").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.RITUALDIVINER.1")).registerResearchItem();
+                getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0)).setParents("INFUSION", "MASTERRITUALSTONE")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.RITUALDIVINER.1"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "RITUALDIVINER",
                 getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0),
@@ -2286,8 +2253,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 OrePrefixes.gemFlawless.get(Materials.Emerald));
         TCHelper.addResearchPage(
                 "RITUALDIVINER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0))));
         ThaumcraftApi.addWarpToResearch("RITUALDIVINER", 3);
         TCHelper.addResearchPage("RITUALDIVINER", new ResearchPage("tc.research_page.RITUALDIVINER.2"));
         TCHelper.addInfusionCraftingRecipe(
@@ -2308,8 +2274,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0));
         TCHelper.addResearchPage(
                 "RITUALDIVINER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 1))));
         TCHelper.addInfusionCraftingRecipe(
                 "RITUALDIVINER",
                 getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 2),
@@ -2328,8 +2293,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "dawnScribeTool", 1, 0));
         TCHelper.addResearchPage(
                 "RITUALDIVINER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 2))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 2))));
         new ResearchItem(
                 "RUNEOFTHEORB",
                 "BLOODMAGIC",
@@ -2339,9 +2303,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -6,
                 -2,
                 3,
-                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 3))
-                        .setParents("INFUSION", "RUNESACRIFICE").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.RUNEOFTHEORB")).registerResearchItem();
+                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 3)).setParents("INFUSION", "RUNESACRIFICE")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.RUNEOFTHEORB"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "RUNEOFTHEORB",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 3),
@@ -2363,8 +2327,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "RUNEOFTHEORB",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 3))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 3))));
         new ResearchItem(
                 "RUNEOFSUPERIORCAPACITY",
                 "BLOODMAGIC",
@@ -2403,8 +2366,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "RUNEOFSUPERIORCAPACITY",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 4))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 4))));
         new ResearchItem(
                 "RUNEOFACCELERATION",
                 "BLOODMAGIC",
@@ -2442,8 +2404,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "RUNEOFACCELERATION",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 5))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 5))));
         new ResearchItem(
                 "RUNEOFQUICKNESS",
                 "BLOODMAGIC",
@@ -2484,8 +2445,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "RUNEOFQUICKNESS",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 6))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 6))));
         new ResearchItem(
                 "ARCANEPEDESTALANDPLINTH",
                 "BLOODMAGIC",
@@ -2569,9 +2529,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -4,
                 -8,
                 3,
-                getModItem(BloodMagic.ID, "blockAlchemicCalcinator", 1, 0))
-                        .setParents("ARCANEPEDESTALANDPLINTH").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.ALCHEMICCALCINATOR")).registerResearchItem();
+                getModItem(BloodMagic.ID, "blockAlchemicCalcinator", 1, 0)).setParents("ARCANEPEDESTALANDPLINTH")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.ALCHEMICCALCINATOR"))
+                        .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMICCALCINATOR",
                 getModItem(BloodMagic.ID, "blockAlchemicCalcinator", 1, 0),
@@ -2602,8 +2562,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ALCHEMICCALCINATOR",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(BloodMagic.ID, "blockAlchemicCalcinator", 1, 0))));
+                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockAlchemicCalcinator", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ALCHEMICCALCINATOR", 3);
         new ResearchItem(
                 "ALCHEMICTOOLS",
@@ -2614,9 +2573,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -4,
                 -12,
                 3,
-                getModItem(BloodMagic.ID, "itemAttunedCrystal", 1, 0)).setParents("ALCHEMICCALCINATOR")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.ALCHEMICTOOLS.1"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "itemAttunedCrystal", 1, 0)).setParents("ALCHEMICCALCINATOR").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.ALCHEMICTOOLS.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMICTOOLS",
                 getModItem(BloodMagic.ID, "itemAttunedCrystal", 1, 0),
@@ -2639,8 +2597,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0));
         TCHelper.addResearchPage(
                 "ALCHEMICTOOLS",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "itemAttunedCrystal", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "itemAttunedCrystal", 1, 0))));
         TCHelper.addResearchPage("ALCHEMICTOOLS", new ResearchPage("tc.research_page.ALCHEMICTOOLS.2"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMICTOOLS",
@@ -2668,8 +2625,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0));
         TCHelper.addResearchPage(
                 "ALCHEMICTOOLS",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "itemDestinationClearer", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "itemDestinationClearer", 1, 0))));
         TCHelper.addResearchPage("ALCHEMICTOOLS", new ResearchPage("tc.research_page.ALCHEMICTOOLS.3"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMICTOOLS",
@@ -2695,8 +2651,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Witchery.ID, "chalkheart", 1, 0));
         TCHelper.addResearchPage(
                 "ALCHEMICTOOLS",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "itemTankSegmenter", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "itemTankSegmenter", 1, 0))));
         new ResearchItem(
                 "BELLJAR",
                 "BLOODMAGIC",
@@ -2706,8 +2661,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -6,
                 -12,
                 3,
-                getModItem(BloodMagic.ID, "blockCrystalBelljar", 1, 0)).setParents("ALCHEMICCALCINATOR")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.BELLJAR")).registerResearchItem();
+                getModItem(BloodMagic.ID, "blockCrystalBelljar", 1, 0)).setParents("ALCHEMICCALCINATOR").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.BELLJAR")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BELLJAR",
                 getModItem(BloodMagic.ID, "blockCrystalBelljar", 1, 0),
@@ -2736,8 +2691,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0));
         TCHelper.addResearchPage(
                 "BELLJAR",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockCrystalBelljar", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockCrystalBelljar", 1, 0))));
         new ResearchItem(
                 "ALCHEMYRELAY",
                 "BLOODMAGIC",
@@ -2747,9 +2701,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 -12,
                 3,
-                getModItem(BloodMagic.ID, "blockReagentConduit", 1, 0)).setParents("ALCHEMICCALCINATOR")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.ALCHEMYRELAY"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "blockReagentConduit", 1, 0)).setParents("ALCHEMICCALCINATOR").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.ALCHEMYRELAY")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMYRELAY",
                 getModItem(BloodMagic.ID, "blockReagentConduit", 1, 0),
@@ -2778,8 +2731,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0));
         TCHelper.addResearchPage(
                 "ALCHEMYRELAY",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockReagentConduit", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockReagentConduit", 1, 0))));
         new ResearchItem(
                 "CRYSTALCLUSTER",
                 "BLOODMAGIC",
@@ -2814,8 +2766,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 29));
         TCHelper.addResearchPage(
                 "CRYSTALCLUSTER",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "blockCrystal", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "blockCrystal", 1, 0))));
         ThaumcraftApi.addWarpToResearch("CRYSTALCLUSTER", 5);
         new ResearchItem(
                 "ICHORIUMBLOCK",
@@ -2866,8 +2817,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 -10,
                 3,
-                getModItem(BloodMagic.ID, "blockStabilityGlyph", 1, 0))
-                        .setParents("INFUSION", "SOULARMORFORGE").setConcealed()
+                getModItem(BloodMagic.ID, "blockStabilityGlyph", 1, 0)).setParents("INFUSION", "SOULARMORFORGE")
+                        .setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.GLYPHSTONE.1"),
                                 new ResearchPage("tc.research_page.GLYPHSTONE.2"))
@@ -2901,8 +2852,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 1));
         TCHelper.addResearchPage(
                 "GLYPHSTONE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockStabilityGlyph", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockStabilityGlyph", 1, 0))));
         ThaumcraftApi.addWarpToResearch("GLYPHSTONE", 3);
         TCHelper.addResearchPage("GLYPHSTONE", new ResearchPage("tc.research_page.GLYPHSTONE.2"));
         TCHelper.addResearchPage("GLYPHSTONE", new ResearchPage("tc.research_page.GLYPHSTONE.3"));
@@ -2935,8 +2885,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "magicales", 1, 0));
         TCHelper.addResearchPage(
                 "GLYPHSTONE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GLYPHSTONE",
                 getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1, 1),
@@ -2966,8 +2915,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "magicales", 1, 0));
         TCHelper.addResearchPage(
                 "GLYPHSTONE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1, 1))));
         new ResearchItem(
                 "KEYOFBINDING",
                 "BLOODMAGIC",
@@ -2977,9 +2925,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 4,
                 -2,
                 3,
-                getModItem(BloodMagic.ID, "itemKeyOfDiablo", 1, 0)).setParents("SACRIFICIALKNIFE")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.KEYOFBINDING"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "itemKeyOfDiablo", 1, 0)).setParents("SACRIFICIALKNIFE").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.KEYOFBINDING")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KEYOFBINDING",
                 getModItem(BloodMagic.ID, "itemKeyOfDiablo", 1, 0),
@@ -3004,8 +2951,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "plateRoseGold");
         TCHelper.addResearchPage(
                 "KEYOFBINDING",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "itemKeyOfDiablo", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "itemKeyOfDiablo", 1, 0))));
         new ResearchItem(
                 "ARMORINHIBITOR",
                 "BLOODMAGIC",
@@ -3041,8 +2987,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "weakBloodShard", 1, 0));
         TCHelper.addResearchPage(
                 "ARMORINHIBITOR",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "armourInhibitor", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "armourInhibitor", 1, 0))));
         new ResearchItem(
                 "SIGILOFHASTE",
                 "BLOODMAGIC",
@@ -3053,9 +2998,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 12,
                 3,
-                getModItem(BloodMagic.ID, "sigilOfHaste", 1, 0)).setParents("INFUSION", "AIRSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.SIGILOFHASTE"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "sigilOfHaste", 1, 0)).setParents("INFUSION", "AIRSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.SIGILOFHASTE")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "SIGILOFHASTE",
                 getModItem(BloodMagic.ID, "sigilOfHaste", 1, 0),
@@ -3077,8 +3021,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Botania.ID, "manaCookie", 1, 0));
         TCHelper.addResearchPage(
                 "SIGILOFHASTE",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfHaste", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfHaste", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFHASTE", 3);
         new ResearchItem(
                 "SIGILOFWHIRLWIND",
@@ -3090,9 +3033,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 12,
                 3,
-                getModItem(BloodMagic.ID, "sigilOfWind", 1, 0)).setParents("INFUSION", "AIRSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.SIGILOFWHIRLWIND"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "sigilOfWind", 1, 0)).setParents("INFUSION", "AIRSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.SIGILOFWHIRLWIND")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "SIGILOFWHIRLWIND",
                 getModItem(BloodMagic.ID, "sigilOfWind", 1, 0),
@@ -3128,9 +3070,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 8,
                 3,
-                getModItem(BloodMagic.ID, "sigilOfSupression", 1, 0)).setParents("INFUSION", "VOIDSIGIL")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.SIGILOFSUPRESSION"))
-                        .registerResearchItem();
+                getModItem(BloodMagic.ID, "sigilOfSupression", 1, 0)).setParents("INFUSION", "VOIDSIGIL").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.SIGILOFSUPRESSION")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "SIGILOFSUPRESSION",
                 getModItem(BloodMagic.ID, "sigilOfSupression", 1, 0),
@@ -3154,8 +3095,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Minecraft.ID, "bucket", 1, 0));
         TCHelper.addResearchPage(
                 "SIGILOFSUPRESSION",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfSupression", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfSupression", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFSUPRESSION", 5);
         new ResearchItem(
                 "SIGILOFENDERSEVERANCE",
@@ -3192,8 +3132,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "SIGILOFENDERSEVERANCE",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFENDERSEVERANCE", 6);
         new ResearchItem(
                 "ENDERSIGIL",
@@ -3205,9 +3144,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -2,
                 16,
                 3,
-                getModItem(BloodArsenal.ID, "sigil_of_ender", 1, 0))
-                        .setParents("INFUSION", "SIGILOFENDERSEVERANCE").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.ENDERSIGIL")).registerResearchItem();
+                getModItem(BloodArsenal.ID, "sigil_of_ender", 1, 0)).setParents("INFUSION", "SIGILOFENDERSEVERANCE")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.ENDERSIGIL"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ENDERSIGIL",
                 getModItem(BloodArsenal.ID, "sigil_of_ender", 1, 0),
@@ -3228,8 +3167,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 ItemList.Gravistar.get(1L));
         TCHelper.addResearchPage(
                 "ENDERSIGIL",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_ender", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_ender", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ENDERSIGIL", 8);
         new ResearchItem(
                 "SIGILOFDIVINITY",
@@ -3241,9 +3179,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 16,
                 3,
-                getModItem(BloodArsenal.ID, "sigil_of_divinity", 1, 0))
-                        .setParents("INFUSION", "SIGILOFENDERSEVERANCE").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.SIGILOFDIVINITY")).registerResearchItem();
+                getModItem(BloodArsenal.ID, "sigil_of_divinity", 1, 0)).setParents("INFUSION", "SIGILOFENDERSEVERANCE")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.SIGILOFDIVINITY"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "SIGILOFDIVINITY",
                 getModItem(BloodArsenal.ID, "sigil_of_divinity", 1, 0),
@@ -3267,8 +3205,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0));
         TCHelper.addResearchPage(
                 "SIGILOFDIVINITY",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_divinity", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_divinity", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFDIVINITY", 10);
         new ResearchItem(
                 "HARVESTGODDESSSIGIL",
@@ -3280,9 +3217,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 0,
                 16,
                 3,
-                getModItem(BloodMagic.ID, "itemHarvestSigil", 1, 0))
-                        .setParents("INFUSION", "SIGILOFENDERSEVERANCE").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.HARVESTGODDESSSIGIL")).registerResearchItem();
+                getModItem(BloodMagic.ID, "itemHarvestSigil", 1, 0)).setParents("INFUSION", "SIGILOFENDERSEVERANCE")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.HARVESTGODDESSSIGIL"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "HARVESTGODDESSSIGIL",
                 getModItem(BloodMagic.ID, "itemHarvestSigil", 1, 0),
@@ -3302,8 +3239,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 2));
         TCHelper.addResearchPage(
                 "HARVESTGODDESSSIGIL",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemHarvestSigil", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemHarvestSigil", 1, 0))));
         ThaumcraftApi.addWarpToResearch("HARVESTGODDESSSIGIL", 7);
         new ResearchItem(
                 "SIGILOFCOMPRESSION",
@@ -3314,9 +3250,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 8,
                 3,
-                getModItem(BloodMagic.ID, "itemCompressionSigil", 1, 0))
-                        .setParents("INFUSION", "SIGILOFMAGNETISM").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.SIGILOFCOMPRESSION")).registerResearchItem();
+                getModItem(BloodMagic.ID, "itemCompressionSigil", 1, 0)).setParents("INFUSION", "SIGILOFMAGNETISM")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.SIGILOFCOMPRESSION"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "SIGILOFCOMPRESSION",
                 getModItem(BloodMagic.ID, "itemCompressionSigil", 1, 0),
@@ -3335,8 +3271,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 ItemList.Electric_Piston_IV.get(1L));
         TCHelper.addResearchPage(
                 "SIGILOFCOMPRESSION",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemCompressionSigil", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemCompressionSigil", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SIGILOFCOMPRESSION", 2);
         new ResearchItem(
                 "ENERGYBAZOOKAI",
@@ -3392,9 +3327,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -14,
                 0,
                 3,
-                getModItem(BloodMagic.ID, "energyBazookaSecondTier", 1, 0))
-                        .setParents("INFUSION", "ENERGYBAZOOKAI").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.ENERGYBAZOOKAII")).registerResearchItem();
+                getModItem(BloodMagic.ID, "energyBazookaSecondTier", 1, 0)).setParents("INFUSION", "ENERGYBAZOOKAI")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.ENERGYBAZOOKAII"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ENERGYBAZOOKAII",
                 getModItem(BloodMagic.ID, "energyBazookaSecondTier", 1, 0),
@@ -3417,8 +3352,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ENERGYBAZOOKAII",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "energyBazookaSecondTier", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "energyBazookaSecondTier", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ENERGYBAZOOKAII", 10);
         new ResearchItem(
                 "ENERGYBAZOOKAIII",
@@ -3431,9 +3365,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -16,
                 0,
                 3,
-                getModItem(BloodMagic.ID, "energyBazookaThirdTier", 1, 0))
-                        .setParents("INFUSION", "ENERGYBAZOOKAII").setConcealed()
-                        .setPages(new ResearchPage("tc.research_page.ENERGYBAZOOKAIII")).registerResearchItem();
+                getModItem(BloodMagic.ID, "energyBazookaThirdTier", 1, 0)).setParents("INFUSION", "ENERGYBAZOOKAII")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.ENERGYBAZOOKAIII"))
+                        .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ENERGYBAZOOKAIII",
                 getModItem(BloodMagic.ID, "energyBazookaThirdTier", 1, 0),
@@ -3456,8 +3390,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ENERGYBAZOOKAIII",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(BloodMagic.ID, "energyBazookaThirdTier", 1, 0))));
+                        TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "energyBazookaThirdTier", 1, 0))));
         ThaumcraftApi.addWarpToResearch("ENERGYBAZOOKAIII", 20);
         TCHelper.clearPages("CAP_blood_iron");
         TCHelper.addResearchPage("CAP_blood_iron", new ResearchPage("blood_arsenal.research_page.CAP_blood_iron.1"));
@@ -3514,8 +3447,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0));
         TCHelper.addResearchPage(
                 "ROD_blood_wood",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "wand_cores", 1, 0))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "wand_cores", 1, 0))));
         TCHelper.setResearchAspects(
                 "ROD_blood_wood",
                 new AspectList().add(Aspect.getAspect("victus"), 18).add(Aspect.getAspect("praecantatio"), 15)
@@ -3534,8 +3466,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 7,
                 -5,
                 3,
-                getModItem(BloodArsenal.ID, "wand_cores", 1, 1))
-                        .setParents("ROD_blood_staff", "ROD_blood_wood").setConcealed().setSpecial()
+                getModItem(BloodArsenal.ID, "wand_cores", 1, 1)).setParents("ROD_blood_staff", "ROD_blood_wood")
+                        .setConcealed().setSpecial()
                         .setPages(new ResearchPage("blood_arsenal.research_page.ROD_blood_wood_staff.1"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
@@ -3563,8 +3495,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0));
         TCHelper.addResearchPage(
                 "ROD_blood_wood_staff",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "wand_cores", 1, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "wand_cores", 1, 1))));
         ThaumcraftApi.addWarpToResearch("ROD_blood_wood_staff", 7);
         TCHelper.refreshResearchPages("CAP_blood_iron");
         TCHelper.refreshResearchPages("ROD_blood_wood");
@@ -3886,7 +3817,12 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "magicales", 1, 0),
                         'b',
-                        createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}"),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1520,
+                                "{material:\"Titanium\"}"),
                         'c',
                         getModItem(BloodMagic.ID, "magicales", 1, 0),
                         'd',
@@ -4672,8 +4608,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "boundShovel", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0));
-        BindingRegistry
-                .registerRecipe(getModItem(BloodMagic.ID, "energyBlaster", 1, 0), NHItemList.Blaster.get(1));
+        BindingRegistry.registerRecipe(getModItem(BloodMagic.ID, "energyBlaster", 1, 0), NHItemList.Blaster.get(1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 1L));
@@ -4691,18 +4626,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "largeBloodStoneBrick", 4, 0),
                 25,
                 new ItemStack[] { getModItem(BloodMagic.ID, "ritualStone", 1, 0),
-                        getModItem(BloodMagic.ID, "ritualStone", 1, 0),
-                        getModItem(BloodMagic.ID, "ritualStone", 1, 0),
+                        getModItem(BloodMagic.ID, "ritualStone", 1, 0), getModItem(BloodMagic.ID, "ritualStone", 1, 0),
                         getModItem(BloodMagic.ID, "ritualStone", 1, 0),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
                 5,
-                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEssence", 1, 0),
-                        getModItem(Genetics.ID, "misc", 1, 4),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                        getModItem(Minecraft.ID, "redstone", 1, 0),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEssence", 1, 0), getModItem(Genetics.ID, "misc", 1, 4),
+                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0), getModItem(Minecraft.ID, "redstone", 1, 0),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0) },
                 1);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4727,10 +4659,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "weakFillingAgent", 1, 0),
                 20,
                 new ItemStack[] { getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                        getModItem(Minecraft.ID, "redstone", 1, 0),
-                        getModItem(Minecraft.ID, "nether_wart", 1, 0),
-                        getModItem(Minecraft.ID, "blaze_powder", 1, 0) },
+                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0), getModItem(Minecraft.ID, "redstone", 1, 0),
+                        getModItem(Minecraft.ID, "nether_wart", 1, 0), getModItem(Minecraft.ID, "blaze_powder", 1, 0) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0),
@@ -4745,8 +4675,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "mundaneLengtheningCatalyst", 1, 0),
                 40,
                 new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
-                        getModItem(Minecraft.ID, "redstone", 1, 0),
-                        getModItem(Minecraft.ID, "redstone", 1, 0),
+                        getModItem(Minecraft.ID, "redstone", 1, 0), getModItem(Minecraft.ID, "redstone", 1, 0),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
                         getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0) },
                 3);
@@ -4796,45 +4725,37 @@ public class ScriptBloodMagic implements IScriptLoader {
                 40,
                 new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
                         getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0),
-                        getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0),
-                        getModItem(BloodMagic.ID, "sanctus", 1, 0),
+                        getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0), getModItem(BloodMagic.ID, "sanctus", 1, 0),
                         getModItem(BloodMagic.ID, "crystallos", 1, 0) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "aether", 1, 0),
                 10,
                 new ItemStack[] { getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8),
-                        getModItem(Minecraft.ID, "feather", 1, 0),
-                        getModItem(Minecraft.ID, "feather", 1, 0),
+                        getModItem(Minecraft.ID, "feather", 1, 0), getModItem(Minecraft.ID, "feather", 1, 0),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(Minecraft.ID, "web", 1, 0),
                 5,
-                new ItemStack[] { getModItem(Minecraft.ID, "string", 1, 0),
-                        getModItem(Minecraft.ID, "string", 1, 0),
-                        getModItem(Minecraft.ID, "string", 1, 0),
-                        getModItem(Minecraft.ID, "string", 1, 0),
+                new ItemStack[] { getModItem(Minecraft.ID, "string", 1, 0), getModItem(Minecraft.ID, "string", 1, 0),
+                        getModItem(Minecraft.ID, "string", 1, 0), getModItem(Minecraft.ID, "string", 1, 0),
                         getModItem(Minecraft.ID, "string", 1, 0) },
                 1);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 5),
                 5,
-                new ItemStack[] { getModItem(Minecraft.ID, "bone", 1, 0),
-                        getModItem(Minecraft.ID, "bone", 1, 0),
-                        getModItem(Minecraft.ID, "bone", 1, 0),
-                        getModItem(Minecraft.ID, "bone", 1, 0),
+                new ItemStack[] { getModItem(Minecraft.ID, "bone", 1, 0), getModItem(Minecraft.ID, "bone", 1, 0),
+                        getModItem(Minecraft.ID, "bone", 1, 0), getModItem(Minecraft.ID, "bone", 1, 0),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0) },
                 1);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(Minecraft.ID, "leather", 3, 0),
                 6,
                 new ItemStack[] { getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
-                        getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
-                        getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0),
-                        getModItem(Minecraft.ID, "flint", 1, 0) },
+                        getModItem(Minecraft.ID, "rotten_flesh", 1, 0), getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
+                        getModItem(Minecraft.ID, "water_bucket", 1, 0), getModItem(Minecraft.ID, "flint", 1, 0) },
                 1);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(Minecraft.ID, "fire_charge", 1, 0),
@@ -4865,8 +4786,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "crepitous", 1, 0),
                 10,
                 new ItemStack[] { getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                        getModItem(Minecraft.ID, "gunpowder", 1, 0),
-                        getModItem(Minecraft.ID, "gunpowder", 1, 0),
+                        getModItem(Minecraft.ID, "gunpowder", 1, 0), getModItem(Minecraft.ID, "gunpowder", 1, 0),
                         getModItem(BloodMagic.ID, "blankSlate", 1, 0),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
@@ -4885,8 +4805,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(Minecraft.ID, "potion", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L),
-                        getModItem(Minecraft.ID, "dye", 1, 0),
-                        getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
+                        getModItem(Minecraft.ID, "dye", 1, 0), getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0),
@@ -4903,33 +4822,27 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "activationCrystal", 1, 0),
                         getModItem(BloodMagic.ID, "demonBloodShard", 1, 0),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 0),
-                        getModItem(BloodMagic.ID, "aquasalus", 1, 0),
-                        getModItem(BloodMagic.ID, "aether", 1, 0) },
+                        getModItem(BloodMagic.ID, "aquasalus", 1, 0), getModItem(BloodMagic.ID, "aether", 1, 0) },
                 4);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "standardFillingAgent", 1, 0),
                 40,
                 new ItemStack[] { getModItem(BloodMagic.ID, "weakFillingAgent", 1, 0),
-                        getModItem(BloodMagic.ID, "terrae", 1, 0),
-                        getModItem(BloodMagic.ID, "aquasalus", 1, 0) },
+                        getModItem(BloodMagic.ID, "terrae", 1, 0), getModItem(BloodMagic.ID, "aquasalus", 1, 0) },
                 4);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "enhancedFillingAgent", 1, 0),
                 60,
                 new ItemStack[] { getModItem(BloodMagic.ID, "standardFillingAgent", 1, 0),
-                        getModItem(BloodMagic.ID, "magicales", 1, 0),
-                        getModItem(BloodMagic.ID, "crystallos", 1, 0),
-                        getModItem(BloodMagic.ID, "aether", 1, 0),
-                        getModItem(BloodMagic.ID, "sanctus", 1, 0) },
+                        getModItem(BloodMagic.ID, "magicales", 1, 0), getModItem(BloodMagic.ID, "crystallos", 1, 0),
+                        getModItem(BloodMagic.ID, "aether", 1, 0), getModItem(BloodMagic.ID, "sanctus", 1, 0) },
                 4);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
                 15,
                 new ItemStack[] { getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
-                        getModItem(BloodMagic.ID, "terrae", 1, 0),
-                        getModItem(BloodMagic.ID, "terrae", 1, 0),
-                        getModItem(Minecraft.ID, "dye", 1, 15),
-                        getModItem(Minecraft.ID, "nether_wart", 1, 0) },
+                        getModItem(BloodMagic.ID, "terrae", 1, 0), getModItem(BloodMagic.ID, "terrae", 1, 0),
+                        getModItem(Minecraft.ID, "dye", 1, 15), getModItem(Minecraft.ID, "nether_wart", 1, 0) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 4),
@@ -4952,17 +4865,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2, 15),
                 20,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 4),
-                        getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
-                        getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
-                        getModItem(BloodMagic.ID, "magicales", 1, 0),
-                        getModItem(BloodMagic.ID, "magicales", 1, 0) },
+                        getModItem(BloodMagic.ID, "imbuedSlate", 1, 0), getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0), getModItem(BloodMagic.ID, "magicales", 1, 0) },
                 4);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 16),
                 60,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 15),
-                        getModItem(BloodMagic.ID, "terrae", 1, 0),
-                        getModItem(BloodMagic.ID, "terrae", 1, 0),
+                        getModItem(BloodMagic.ID, "terrae", 1, 0), getModItem(BloodMagic.ID, "terrae", 1, 0),
                         getModItem(BloodMagic.ID, "demonicSlate", 1, 0) },
                 5);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4971,8 +4881,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 16),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 16),
-                        getModItem(BloodMagic.ID, "aquasalus", 1, 0),
-                        getModItem(BloodMagic.ID, "incendium", 1, 0) },
+                        getModItem(BloodMagic.ID, "aquasalus", 1, 0), getModItem(BloodMagic.ID, "incendium", 1, 0) },
                 5);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 30),
@@ -4987,26 +4896,32 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 0),
                 20,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
-                        getModItem(BloodMagic.ID, "incendium", 1, 0),
-                        getModItem(BloodMagic.ID, "incendium", 1, 0),
-                        createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}"),
-                        createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}") },
+                        getModItem(BloodMagic.ID, "incendium", 1, 0), getModItem(BloodMagic.ID, "incendium", 1, 0),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1520,
+                                "{material:\"Titanium\"}"),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1520,
+                                "{material:\"Titanium\"}") },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 1),
                 20,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
-                        getModItem(BloodMagic.ID, "tennebrae", 1, 0),
-                        getModItem(BloodMagic.ID, "tennebrae", 1, 0),
-                        getModItem(Witchery.ID, "ingredient", 1, 56),
-                        getModItem(Witchery.ID, "ingredient", 1, 56) },
+                        getModItem(BloodMagic.ID, "tennebrae", 1, 0), getModItem(BloodMagic.ID, "tennebrae", 1, 0),
+                        getModItem(Witchery.ID, "ingredient", 1, 56), getModItem(Witchery.ID, "ingredient", 1, 56) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 2),
                 20,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
-                        getModItem(BloodMagic.ID, "terrae", 1, 0),
-                        getModItem(BloodMagic.ID, "terrae", 1, 0),
+                        getModItem(BloodMagic.ID, "terrae", 1, 0), getModItem(BloodMagic.ID, "terrae", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L) },
                 3);

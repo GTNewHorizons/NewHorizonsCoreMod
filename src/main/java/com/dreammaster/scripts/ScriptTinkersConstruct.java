@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.GameRegistryProxy.shapedRecipes;
 import static com.dreammaster.scripts.GameRegistryProxy.shapelessRecipes;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static com.dreammaster.tinkersConstruct.SmelteryFluidTypes.getMoltenPatternFluidTypeName;
 import static gregtech.api.enums.ItemList.Electric_Piston_HV;
 import static gregtech.api.enums.Mods.Backpack;
@@ -31,7 +32,6 @@ import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
-import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -1412,7 +1412,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0));
         addShapedRecipe(
-                createItemStack(TinkerConstruct.ID, "travelGoggles", 1, 0, "{TinkerArmor:{BaseDurability:1035,BaseDefense:0.0d,Built:1b,MaxDefense:4.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
+                createItemStack(
+                        TinkerConstruct.ID,
+                        "travelGoggles",
+                        1,
+                        0,
+                        "{TinkerArmor:{BaseDurability:1035,BaseDefense:0.0d,Built:1b,MaxDefense:4.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 "boltElectrum",
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
@@ -1423,7 +1428,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "circuitAdvanced",
                 "lensDiamond");
         addShapedRecipe(
-                createItemStack(TinkerConstruct.ID, "travelVest", 1, 0, "{TinkerArmor:{BaseDurability:1035,BaseDefense:4.0d,Built:1b,MaxDefense:10.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
+                createItemStack(
+                        TinkerConstruct.ID,
+                        "travelVest",
+                        1,
+                        0,
+                        "{TinkerArmor:{BaseDurability:1035,BaseDefense:4.0d,Built:1b,MaxDefense:10.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 "circuitAdvanced",
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
@@ -1434,7 +1444,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "plateObsidian",
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0));
         addShapedRecipe(
-                createItemStack(TinkerConstruct.ID, "travelGlove", 1, 0, "{TinkerAccessory:{BaseDurability:500,Built:1b,Damage:0,BonusDurability:0,TotalDurability:500,ModDurability:0.0f,Modifiers:5,Broken:0b}}"),
+                createItemStack(
+                        TinkerConstruct.ID,
+                        "travelGlove",
+                        1,
+                        0,
+                        "{TinkerAccessory:{BaseDurability:500,Built:1b,Damage:0,BonusDurability:0,TotalDurability:500,ModDurability:0.0f,Modifiers:5,Broken:0b}}"),
                 null,
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 "plateDiamond",
@@ -1445,7 +1460,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 "circuitAdvanced");
         addShapedRecipe(
-                createItemStack(TinkerConstruct.ID, "travelWings", 1, 0, "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
+                createItemStack(
+                        TinkerConstruct.ID,
+                        "travelWings",
+                        1,
+                        0,
+                        "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
                 "plateDiamond",
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 "plateDiamond",
@@ -1456,7 +1476,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "diamond_leggings", 1, 0),
                 getModItem(TinkerConstruct.ID, "fletching", 1, 0));
         addShapedRecipe(
-                createItemStack(TinkerConstruct.ID, "travelBelt", 1, 0, "{TinkerAccessory:{BaseDurability:500,Built:1b,Damage:0,BonusDurability:0,TotalDurability:500,ModDurability:0.0f,Modifiers:5,Broken:0b}}"),
+                createItemStack(
+                        TinkerConstruct.ID,
+                        "travelBelt",
+                        1,
+                        0,
+                        "{TinkerAccessory:{BaseDurability:500,Built:1b,Damage:0,BonusDurability:0,TotalDurability:500,ModDurability:0.0f,Modifiers:5,Broken:0b}}"),
                 null,
                 "circuitAdvanced",
                 null,
@@ -1467,7 +1492,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null,
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0));
         addShapedRecipe(
-                createItemStack(TinkerConstruct.ID, "travelBoots", 1, 0, "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:6.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
+                createItemStack(
+                        TinkerConstruct.ID,
+                        "travelBoots",
+                        1,
+                        0,
+                        "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:6.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
                 null,
                 "plateDiamond",
                 "plateDiamond",
@@ -2075,45 +2105,31 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 NHItemList.UnfiredSlimeSoilBrick.get(),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37));
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 0),
-                        ItemList.Shape_Mold_Ball.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 0), ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 1)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 2),
-                        ItemList.Shape_Mold_Ball.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 2), ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 17)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "materials", 9, 32),
-                        ItemList.Shape_Mold_Ingot.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 32), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "materials", 9, 27),
-                        ItemList.Shape_Mold_Ingot.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 27), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 18)).duration(10 * SECONDS).eut(4)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "materials", 9, 24),
-                        ItemList.Shape_Mold_Ingot.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 24), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 14)).duration(10 * SECONDS).eut(2)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1),
-                        ItemList.Shape_Mold_Ingot.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 2)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6),
-                        ItemList.Shape_Mold_Ingot.get(0L))
+                .itemInputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 37)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
@@ -2129,14 +2145,14 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .circuit(6).itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7)).eut(TierEU.RECIPE_LV)
-                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6)).eut(TierEU.RECIPE_LV)
-                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0)).circuit(16)
-                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3)).eut(TierEU.RECIPE_LV)
-                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.get(16)).circuit(16)
                 .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1)).eut(TierEU.RECIPE_LV)
                 .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
