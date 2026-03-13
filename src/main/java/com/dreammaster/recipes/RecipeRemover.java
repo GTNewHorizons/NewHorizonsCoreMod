@@ -458,7 +458,8 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L));
         GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDust", 1, 11));
         GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemPlates", 1, 7));
-        GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "dust", 1, 0));
+        // FIXME: Fix Railcraft so it registers its items at a reasonable time, instead of registering them whenever.
+        // GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "dust", 1, 0));
         GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, wildcard));
         GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "machine.beta", 1, 10));
         GTModHandler.removeFurnaceSmelting(getModItem(EnderIO.ID, "itemPowderIngot", 1, 7));
