@@ -3,7 +3,7 @@ package com.dreammaster.tinkersConstruct;
 import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -86,12 +86,7 @@ public class TiCoLoader {
     }
 
     private static void convertAluminumBrassSingularity() {
-        ItemStack roseGoldSingularity = getModItem(
-                UniversalSingularities.ID,
-                "universal.general.singularity",
-                1,
-                32,
-                missing);
+        ItemStack roseGoldSingularity = getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 32);
         ItemStackReplacementManager.addSimpleReplacement(
                 "universalsingularities:universal.tinkersConstruct.singularity",
                 0,

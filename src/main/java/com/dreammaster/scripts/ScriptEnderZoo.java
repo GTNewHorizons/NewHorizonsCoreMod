@@ -3,7 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.EnderZoo;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Collections;

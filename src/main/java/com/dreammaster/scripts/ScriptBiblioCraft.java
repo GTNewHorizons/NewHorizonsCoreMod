@@ -9,7 +9,7 @@ import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -893,41 +893,41 @@ public class ScriptBiblioCraft implements IScriptLoader {
         // --- Frame Sheet
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
-                .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
                 .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
-                .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
                 .fluidInputs(GTModHandler.getDistilledWater(2)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
-                .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
                 .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
-                .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
         // --- Frame Board
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
-                .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
                 .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
-                .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
                 .fluidInputs(GTModHandler.getDistilledWater(2)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
-                .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
                 .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
-                .itemOutputs(GTModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
 

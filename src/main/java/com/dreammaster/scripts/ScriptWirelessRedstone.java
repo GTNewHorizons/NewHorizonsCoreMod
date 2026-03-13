@@ -6,7 +6,7 @@ import static gregtech.api.enums.Mods.WirelessRedstoneCBEAddons;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
@@ -43,7 +43,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0, missing),
+                getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0),
                 "plateStone",
                 null,
                 "plateStone",
@@ -54,9 +54,9 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 "plateStone",
                 "plateStone");
         addShapedRecipe(
-                getModItem(WirelessRedstoneCBEAddons.ID, "remote", 1, 0, missing),
+                getModItem(WirelessRedstoneCBEAddons.ID, "remote", 1, 0),
                 "craftingToolScrewdriver",
-                getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
+                getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0),
                 "craftingToolFile",
                 "circuitAdvanced",
                 NHItemList.Display.get(),
@@ -65,110 +65,110 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 "screwTungstenSteel",
                 "itemCasingTungstenSteel");
         addShapedRecipe(
-                getModItem(WirelessRedstoneCBEAddons.ID, "sniffer", 1, 0, missing),
-                getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing),
-                getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
-                getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing),
+                getModItem(WirelessRedstoneCBEAddons.ID, "sniffer", 1, 0),
+                getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0),
+                getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0),
+                getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0),
                 "itemCasingTungstenSteel",
                 "stickTungstenSteel",
                 "itemCasingTungstenSteel",
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing));
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0));
         addShapedRecipe(
-                getModItem(WirelessRedstoneCBEAddons.ID, "psniffer", 1, 0, missing),
-                getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0, missing),
-                getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0, missing),
-                getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0, missing),
+                getModItem(WirelessRedstoneCBEAddons.ID, "psniffer", 1, 0),
+                getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0),
+                getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0),
+                getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0),
                 "itemCasingTungstenSteel",
                 "stickTungstenSteel",
                 "itemCasingTungstenSteel",
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing));
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 1L),
-                        getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing))
+                        getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0, missing))
+                        getModItem(Minecraft.ID, "blaze_rod", 1, 0),
+                        getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing))
+                        getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0),
+                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0, missing))
+                        getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0),
+                        getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 0, missing))
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 0),
+                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 500)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 1, missing))
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 0),
+                        getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 500)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 2, missing))
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 0),
+                        getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "compass", 1, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "triangulator", 1, 0, missing))
+                        getModItem(Minecraft.ID, "compass", 1, 0),
+                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "triangulator", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(WirelessRedstoneCBEAddons.ID, "triangulator", 1, 0, missing),
-                        getModItem(Minecraft.ID, "paper", 8, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "map", 1, 0, missing))
+                        getModItem(WirelessRedstoneCBEAddons.ID, "triangulator", 1, 0),
+                        getModItem(Minecraft.ID, "paper", 8, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "map", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 3L),
-                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "tracker", 1, 0, missing))
+                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "tracker", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 2, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 2, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "rep", 1, 0, missing))
+                        getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 2, 0),
+                        getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 2, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "rep", 1, 0))
                 .fluidInputs(Materials.Obsidian.getMolten(1440)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing))
-                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0, missing))
+                        getModItem(Minecraft.ID, "ender_pearl", 1, 0),
+                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
 

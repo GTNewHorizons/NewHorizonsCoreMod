@@ -3,7 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.ArchitectureCraft;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;

@@ -4,7 +4,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;

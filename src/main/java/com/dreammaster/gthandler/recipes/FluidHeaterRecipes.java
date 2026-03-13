@@ -1,10 +1,10 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.fluidHeaterRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
@@ -23,11 +23,11 @@ public class FluidHeaterRecipes implements Runnable {
                 .addTo(fluidHeaterRecipes);
         if (PamsHarvestCraft.isModLoaded()) {
             GTValues.RA.stdBuilder().circuit(24).fluidInputs(getFluidStack("milk", 250))
-                    .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing)).duration(2 * SECONDS)
+                    .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0)).duration(2 * SECONDS)
                     .eut(TierEU.RECIPE_ULV).addTo(fluidHeaterRecipes);
             if (Automagy.isModLoaded()) {
                 GTValues.RA.stdBuilder().circuit(24).fluidInputs(getFluidStack("fluidmilk", 250))
-                        .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing))
+                        .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0))
                         .duration(2 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(fluidHeaterRecipes);
             }
         }

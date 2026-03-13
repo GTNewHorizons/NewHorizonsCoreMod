@@ -1,7 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.util.GTModHandler.getModItem;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,8 +7,6 @@ import java.util.List;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.JsonToNBT;
-import net.minecraft.nbt.NBTTagCompound;
 
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.recipes.CustomItem;
@@ -23,6 +19,8 @@ import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
 import gregtech.common.items.MetaGeneratedItem01;
 import gregtech.common.items.MetaGeneratedItem02;
+
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 public interface IScriptLoader {
     // todo: cache the lookups for the itemstacks
@@ -118,32 +116,6 @@ public interface IScriptLoader {
      */
     default ItemStack getMeta01(int meta) {
         return new ItemStack(MetaGeneratedItem01.INSTANCE, 1, meta);
-    }
-
-    /**
-     * Helper function to get a new ItemStack with specified damage (meta) value and NBT tags. Calls
-     * {@link gregtech.api.util.GTModHandler#getModItem(java.lang.String, java.lang.String, long, int)} internally
-     *
-     * @param aModID       Mod ID of an the item
-     * @param aItem        Item registry name
-     * @param aAmount      Amount to get
-     * @param aMeta        the meta id of the item to look at.
-     * @param aNBTString   NBT data that the created stack should get, in format that {@link NBTTagCompound#toString()}
-     *                     returns. Can be checked in-game with `/iih` command
-     * @param aReplacement Replacement stack to return if the item is not found. NBT data is not applied to it.
-     * @return Created ItemStack or replacement stack
-     * @throws RuntimeException if the NBT string parsing fails
-     */
-    default ItemStack createItemStack(String aModID, String aItem, long aAmount, int aMeta, String aNBTString,
-            ItemStack aReplacement) {
-        ItemStack s = getModItem(aModID, aItem, aAmount, aMeta);
-        if (s == null) return aReplacement;
-        try {
-            s.stackTagCompound = (NBTTagCompound) JsonToNBT.func_150315_a(aNBTString);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return s;
     }
 
     /**

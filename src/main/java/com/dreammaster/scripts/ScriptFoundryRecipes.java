@@ -7,7 +7,7 @@ import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.PRECISE_ASSEMBLER_CASING_TIER;
@@ -253,7 +253,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.FluidRegulator_UEV.get(8), new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Netherite, 4),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.CosmicNeutronium, 8),
-                        getModItem(EternalSingularity.ID, "eternal_singularity", 1L),
+                        getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                         GregtechItemList.Laser_Lens_Special.get(1) },
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 64),
                         GGMaterial.preciousMetalAlloy.getMolten(INGOTS * 32),
@@ -310,8 +310,8 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 64,
                 new Object[] { ItemRefer.Compact_Fusion_Coil_T4.get(1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Ichorium, 64),
-                        getModItem(EternalSingularity.ID, "combined_singularity", 1L, 2),
-                        getModItem(EternalSingularity.ID, "combined_singularity", 1L, 4),
+                        getModItem(EternalSingularity.ID, "combined_singularity", 1, 2),
+                        getModItem(EternalSingularity.ID, "combined_singularity", 1, 4),
                         new Object[] { OrePrefixes.circuit.get(Materials.UIV), 4L },
                         GTOreDictUnificator.get(OrePrefixes.nanite, Materials.TranscendentMetal, 2),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SixPhasedCopper, 1),
@@ -334,7 +334,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         new ItemStack(lscLapotronicEnergyUnit, 1, 5),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Universium, 4),
                         getModItem(DraconicEvolution.ID, "chaoticCore", 2),
-                        getModItem(EternalSingularity.ID, "combined_singularity", 64, 15, missing),
+                        getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
                         new Object[] { OrePrefixes.circuit.get(Materials.UXV), 16L },
                         ItemList.Field_Generator_UMV.get(8),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SpaceTime, 64),

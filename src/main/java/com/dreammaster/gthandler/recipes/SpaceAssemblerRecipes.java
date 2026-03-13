@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
@@ -10,7 +11,7 @@ import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicEnergistics;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
@@ -52,8 +53,8 @@ public class SpaceAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Emitter_UHV.get(1),
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
+                        getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
+                        getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         ItemList.Emitter_UHV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
                         ItemList.EnergisedTesseract.get(1),
@@ -64,8 +65,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.EnergisedTesseract.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
                         ItemList.Emitter_UHV.get(1),
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
+                        getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
+                        getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         ItemList.Emitter_UHV.get(1))
                 .fluidInputs(
                         Materials.Plutonium.getMolten(64 * 144),
@@ -248,34 +249,34 @@ public class SpaceAssemblerRecipes implements Runnable {
         if (OpenComputers.isModLoaded() && SuperSolarPanels.isModLoaded()) {
             // Optically Compatible Memory
             GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(OpenComputers.ID, "item", 1L, 39), // Memory tier 3.5
+                    getModItem(OpenComputers.ID, "item", 1, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(4L),
                     GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 4L),
                     GTOreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 8L),
-                    getModItem(SuperSolarPanels.ID, "solarsplitter", 1L, 0)) // Solar Light Splitter
+                    getModItem(SuperSolarPanels.ID, "solarsplitter", 1, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 288))
                     .itemOutputs(ItemList.Optically_Compatible_Memory.get(2)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(20 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(OpenComputers.ID, "item", 4L, 39), // Memory tier 3.5
+                    getModItem(OpenComputers.ID, "item", 4, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(16L),
                     GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 4L),
                     GTOreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 16L),
-                    getModItem(SuperSolarPanels.ID, "solarsplitter", 4L, 0)) // Solar Light Splitter
+                    getModItem(SuperSolarPanels.ID, "solarsplitter", 4, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 576))
                     .itemOutputs(ItemList.Optically_Compatible_Memory.get(8)).metadata(IGRecipeMaps.MODULE_TIER, 2)
                     .duration(20 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(OpenComputers.ID, "item", 16L, 39), // Memory tier 3.5
+                    getModItem(OpenComputers.ID, "item", 16, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(64L),
                     GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 4L),
                     GTOreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 32L),
-                    getModItem(SuperSolarPanels.ID, "solarsplitter", 16L, 0)) // Solar Light Splitter
+                    getModItem(SuperSolarPanels.ID, "solarsplitter", 16, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 1152))
                     .itemOutputs(ItemList.Optically_Compatible_Memory.get(32)).metadata(IGRecipeMaps.MODULE_TIER, 2)
                     .duration(20 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -292,7 +293,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2L),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L))
                     .fluidInputs(new FluidStack(solderIndalloy, 1152))
-                    .itemOutputs(getModItem(OpenComputers.ID, "item", 64L, 39)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 64, 39)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
 
@@ -316,13 +317,13 @@ public class SpaceAssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Hatch_Input_Multi_2x2_UHV.get(4L),
-                            getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
+                            getModItem(AE2FluidCraft.ID, "fluid_interface", 1),
                             ItemList.Circuit_Chip_BioCPU.get(1),
                             ItemList.Electric_Pump_UHV.get(1L),
                             // 16384k Me Fluid Storage Component
                             getModItem(AE2FluidCraft.ID, "fluid_part", 4, 7),
                             // Hyper-Acceleration Card
-                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56))
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 56))
                     .fluidInputs(new FluidStack(solderUEV, 2304)).itemOutputs(ItemList.Hatch_Input_ME_Advanced.get(1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);

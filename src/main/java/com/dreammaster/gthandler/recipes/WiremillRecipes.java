@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -38,7 +39,7 @@ public class WiremillRecipes implements Runnable {
 
         if (Natura.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Natura.ID, "barleyFood", 2L, 3))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 2, 3))
                     .itemOutputs(new ItemStack(Items.string, 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                     .addTo(wiremillRecipes);
         }

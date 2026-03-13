@@ -2,7 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Arrays;
 import java.util.List;

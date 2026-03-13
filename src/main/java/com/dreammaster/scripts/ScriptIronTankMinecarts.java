@@ -5,7 +5,7 @@ import static gregtech.api.enums.Mods.IronTanksMinecarts;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -36,25 +36,20 @@ public class ScriptIronTankMinecarts implements IScriptLoader {
             if (type == TankType.GLASS) {
                 continue;
             }
-            ItemStack tank = getModItem(IronTanks.ID, type.name, 1, 0, missing);
-            ItemStack cart = getModItem(
-                    IronTanksMinecarts.ID,
-                    "minecart_tank_" + secondderivative.irontankminecarts.IronTankMinecarts.tankTypeName(type),
-                    1,
-                    0,
-                    missing);
+            ItemStack tank = getModItem(IronTanks.ID, type.name, 1, 0);
+            ItemStack cart = getModItem(IronTanksMinecarts.ID, "minecart_tank_" + secondderivative.irontankminecarts.IronTankMinecarts.tankTypeName(type), 1, 0);
             addShapedRecipe(
                     cart,
                     "craftingToolHardHammer",
                     tank,
                     "craftingToolWrench",
                     null,
-                    getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                    getModItem(Minecraft.ID, "minecart", 1, 0),
                     null,
                     null,
                     "craftingToolScrewdriver",
                     null);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "minecart", 1, 0, missing), tank).circuit(1)
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "minecart", 1, 0), tank).circuit(1)
                     .itemOutputs(cart).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         }
     }

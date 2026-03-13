@@ -1,7 +1,7 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BinnieCore;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 
 import java.util.Collections;
 import java.util.List;
@@ -28,7 +28,7 @@ public class ScriptBinniesCore implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem(BinnieCore.ID, "fieldKit", 1, 63, missing),
+                getModItem(BinnieCore.ID, "fieldKit", 1, 63),
                 "lensGlass",
                 "ringSteel",
                 "screwSteel",
@@ -43,7 +43,7 @@ public class ScriptBinniesCore implements IScriptLoader {
                 5,
                 FluidRegistry.getFluidStack("creosote", 1000),
                 null,
-                getModItem(BinnieCore.ID, "storage", 1, 0, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 0),
                 "abc",
                 "def",
                 "ghi",
@@ -68,8 +68,8 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 10,
                 FluidRegistry.getFluidStack("creosote", 2000),
-                getModItem(BinnieCore.ID, "storage", 1, 0, missing),
-                getModItem(BinnieCore.ID, "storage", 1, 1, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 0),
+                getModItem(BinnieCore.ID, "storage", 1, 1),
                 "abc",
                 "def",
                 "ghi",
@@ -95,7 +95,7 @@ public class ScriptBinniesCore implements IScriptLoader {
                 10,
                 FluidRegistry.getFluidStack("creosote", 2000),
                 ItemList.Casing_Gearbox_Steel.get(1L),
-                getModItem(BinnieCore.ID, "storage", 1, 1, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 1),
                 "abc",
                 "def",
                 "ghi",
@@ -120,8 +120,8 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 15,
                 FluidRegistry.getFluidStack("creosote", 3000),
-                getModItem(BinnieCore.ID, "storage", 1, 1, missing),
-                getModItem(BinnieCore.ID, "storage", 1, 2, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 1),
+                getModItem(BinnieCore.ID, "storage", 1, 2),
                 "abc",
                 "def",
                 "ghi",
@@ -146,8 +146,8 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 15,
                 FluidRegistry.getFluidStack("creosote", 3000),
-                getModItem(BinnieCore.ID, "storage", 1, 1, missing),
-                getModItem(BinnieCore.ID, "storage", 1, 3, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 1),
+                getModItem(BinnieCore.ID, "storage", 1, 3),
                 "abc",
                 "def",
                 "ghi",
@@ -173,7 +173,7 @@ public class ScriptBinniesCore implements IScriptLoader {
                 15,
                 FluidRegistry.getFluidStack("creosote", 3000),
                 ItemList.Casing_Gearbox_Steel.get(1L),
-                getModItem(BinnieCore.ID, "storage", 1, 3, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 3),
                 "abc",
                 "def",
                 "ghi",
@@ -198,8 +198,8 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("creosote", 4000),
-                getModItem(BinnieCore.ID, "storage", 1, 2, missing),
-                getModItem(BinnieCore.ID, "storage", 1, 4, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 2),
+                getModItem(BinnieCore.ID, "storage", 1, 4),
                 "abc",
                 "def",
                 "ghi",
@@ -224,8 +224,8 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("creosote", 4000),
-                getModItem(BinnieCore.ID, "storage", 1, 3, missing),
-                getModItem(BinnieCore.ID, "storage", 1, 4, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 3),
+                getModItem(BinnieCore.ID, "storage", 1, 4),
                 "abc",
                 "def",
                 "ghi",
@@ -251,7 +251,7 @@ public class ScriptBinniesCore implements IScriptLoader {
                 20,
                 FluidRegistry.getFluidStack("creosote", 4000),
                 ItemList.Casing_Gearbox_Steel.get(1L),
-                getModItem(BinnieCore.ID, "storage", 1, 4, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 4),
                 "abc",
                 "def",
                 "ghi",
@@ -276,8 +276,8 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 25,
                 FluidRegistry.getFluidStack("creosote", 5000),
-                getModItem(BinnieCore.ID, "storage", 1, 4, missing),
-                getModItem(BinnieCore.ID, "storage", 1, 5, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 4),
+                getModItem(BinnieCore.ID, "storage", 1, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -303,7 +303,7 @@ public class ScriptBinniesCore implements IScriptLoader {
                 25,
                 FluidRegistry.getFluidStack("creosote", 5000),
                 ItemList.Casing_Gearbox_Steel.get(1L),
-                getModItem(BinnieCore.ID, "storage", 1, 5, missing),
+                getModItem(BinnieCore.ID, "storage", 1, 5),
                 "abc",
                 "def",
                 "ghi",

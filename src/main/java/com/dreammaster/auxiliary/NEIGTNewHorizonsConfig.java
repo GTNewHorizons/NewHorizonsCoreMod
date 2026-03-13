@@ -1,7 +1,9 @@
 package com.dreammaster.auxiliary;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.*;
+import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
@@ -19,7 +21,7 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
     public void loadConfig() {
 
         if (EnderIO.isModLoaded()) {
-            ItemStack creativeBank = GTModHandler.getModItem(EnderIO.ID, "blockCapBank", 1, 0, missing);
+            ItemStack creativeBank = getModItem(EnderIO.ID, "blockCapBank", 1, 0);
             creativeBank.setTagInfo("type", new NBTTagString("CREATIVE"));
             creativeBank.setTagInfo("storedEnergyRF", new NBTTagInt(2500000));
         }
