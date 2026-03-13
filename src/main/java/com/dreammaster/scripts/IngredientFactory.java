@@ -15,7 +15,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public final class IngredientFactory {
 
-    private static final boolean DEBUG = !DreamCoreMod.isObf();
+    private static final boolean DEBUG = !DreamCoreMod.isObf()
+            || Boolean.parseBoolean(System.getProperty("dreamcraft.debug.recipe"));
 
     private static @NotNull ItemStack invalidItem(String modId, String item) {
         if (DEBUG) {
