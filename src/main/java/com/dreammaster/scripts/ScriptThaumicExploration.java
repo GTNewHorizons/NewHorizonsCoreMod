@@ -106,7 +106,6 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.removeCrucibleRecipe(getModItem(Minecraft.ID, "leather", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem(Minecraft.ID, "leather", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem(Minecraft.ID, "leather", 1, 0, missing));
-
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0, missing));

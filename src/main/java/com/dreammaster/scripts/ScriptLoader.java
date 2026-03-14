@@ -113,9 +113,10 @@ public class ScriptLoader {
                         new ScriptTaintedMagic(),
                         new ScriptTCCoreMod(),
                         new ScriptThaumcraft(),
-                        new ScriptThaumicBases(),
                         new ScriptThaumicEnergistics(),
                         new ScriptThaumicExploration(),
+                        new ScriptThaumicBases(), // ThaumicBases has to come AFTER ThaumicExploration to resolve recipe
+                                                  // conflict
                         new ScriptThaumicHorizons(),
                         new ScriptThaumicMachina(),
                         new ScriptThaumicTinkerer(),
@@ -128,7 +129,6 @@ public class ScriptLoader {
                         new ScriptWirelessRedstone(),
                         new ScriptWitchery(),
                         new ScriptTB(),
-                        new ScriptZThaumicBases(),
                         ScriptZZClientOnly.instance));
 
         // Java somehow tries to load XU / TiC class when instantiating this class
