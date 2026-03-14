@@ -5,7 +5,7 @@ dependencies {
     api("com.github.GTNewHorizons:Yamcl:0.7.4:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.11-GTNH:dev")
 
-    implementation("com.github.GTNewHorizons:GTNHLib:0.9.40:dev")
+    implementation("com.github.GTNewHorizons:GTNHLib:0.9.42:dev")
 
     implementation("net.glease:tc4recipelib:1.5.37:dev")
 
@@ -15,7 +15,7 @@ dependencies {
     compileOnly("secondderivative.irontankminecarts:IronTankMinecarts:1.0.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.7.23:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.5.1:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.35-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.37-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.11:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
@@ -26,7 +26,7 @@ dependencies {
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.8.8:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.4.20-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.8:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.11:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:MatterManipulator:0.1.15-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.7.1:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.10-GTNH:dev")
@@ -42,7 +42,7 @@ dependencies {
 
     //uncomment to test RC and Forestry recipes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Railcraft:9.17.24:dev")
-    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:ForestryMC:4.11.8:dev")
+    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:ForestryMC:4.11.11:dev")
 
     // RecEx, for testing purposes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:RecEx:1.1.5:dev")
