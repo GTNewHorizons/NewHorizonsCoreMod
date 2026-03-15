@@ -37,6 +37,9 @@ public class OilGeneratorFix extends ModFixBase {
     }
 
     @Config(modid = Refstrings.MODID, configSubDirectory = Refstrings.COLLECTIONID, category = "ModFixes.OilGen")
+    @Config.Comment("""
+        The OilgenChance is based on height of the biome. On high-y biomes, the basic chance is divided by 2, on low-y biomes like oceans, it is multiplied by 1.8.
+        The multiplier set here for -OilBoostBiomes- Biomes is applied after those multipliers are set.""")
     public static class OilConfig {
 
         @Config.Comment("The minimum distance of 2 Oil-Deposits in chunks. Modulo-Based; A 2 here means an deposit can only spawn in chunks that have a number that is a multiple of 2 (Chunknumber * 16 = X/Z coord)")
