@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.config.CoreModConfig;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -405,7 +406,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).duration(30 * SECONDS)
                         .eut(TierEU.RECIPE_LuV).disabled().hidden().addTo(assemblerRecipes));
 
-        if (MainRegistry.isServer() && CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
+        if (MainRegistry.isServer() && CoreModConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
             stamps(true);
             coins.forEach(r -> {
                 r.mEnabled = true;
@@ -426,11 +427,11 @@ public class ScriptZZClientOnly implements IScriptLoader {
             // this runs on the server thread of a client
             // -> we are playing single player (TODO: Does this work correctly on LAN?)
             MainRegistry.dispatcher.sendTo(
-                    new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsEnabled),
+                    new ZZClientOnlySyncMessage(CoreModConfig.ForestryStampsAndChunkLoaderCoinsEnabled),
                     (EntityPlayerMP) pEvent.player);
         } else {
             MainRegistry.dispatcher.sendTo(
-                    new ZZClientOnlySyncMessage(CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled),
+                    new ZZClientOnlySyncMessage(CoreModConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled),
                     (EntityPlayerMP) pEvent.player);
         }
     }

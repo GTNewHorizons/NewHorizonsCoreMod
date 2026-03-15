@@ -12,6 +12,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import com.dreammaster.config.CoreModConfig;
 import net.minecraft.item.ItemStack;
 
 public class ScriptCreosoteBucketFuelValue implements IScriptLoader {
@@ -28,7 +29,7 @@ public class ScriptCreosoteBucketFuelValue implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        if (!CoreConfig.ModCustomFuels_Enabled) return;
+        if (!CoreModConfig.ModCustomFuels_Enabled) return;
 
         for (ItemStack creosoteBucket : getCreosoteBuckets()) {
             Module_CustomFuels.registerCustomFuelValue(creosoteBucket, (short) 6400);

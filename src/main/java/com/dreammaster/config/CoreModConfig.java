@@ -5,31 +5,70 @@ import java.io.File;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 
+import com.gtnewhorizon.gtnhlib.config.Config;
 import eu.usrv.yamcore.config.ConfigManager;
 
-public class CoreModConfig extends ConfigManager {
+@Config(modid = Refstrings.MODID, configSubDirectory = Refstrings.COLLECTIONID)
+@Config.RequiresMcRestart
+public final class CoreModConfig extends ConfigManager {
 
     public CoreModConfig(File pConfigBaseDirectory, String pModCollectionDirectory, String pModID) {
         super(pConfigBaseDirectory, pModCollectionDirectory, pModID);
     }
 
-    public boolean OreDictItems_Enabled = true;
-    public static boolean ModLoginMessage_Enabled = true;
-    public boolean gtnhPauseMenuButtons = true;
-    public static String ModPackVersion = Refstrings.MODPACKPACK_VERSION;
+    @Config.Comment("Set to false to prevent the OreDict register for SpaceStones and SpaceDusts")
+    @Config.DefaultBoolean(true)
+    public static boolean OreDictItems_Enabled = true;
 
-    public boolean ModHazardousItems_Enabled = false;
-    public boolean ModDebugVersionDisplay_Enabled = true;
-    public boolean ModCustomToolTips_Enabled = false;
-    public boolean ModCustomFuels_Enabled = false;
-    public boolean ModCustomDrops_Enabled = false;
-    public boolean ModBabyChest_Enabled = true;
-    public boolean ForestryStampsAndChunkLoaderCoinsEnabled = true;
-    public boolean ForestryStampsAndChunkLoaderCoinsServerEnabled = false;
+    @Config.Comment("Set to true to show login message with modpack version")
+    @Config.DefaultBoolean(true)
+    public static boolean ModLoginMessage_Enabled;
 
-    public boolean MinetweakerFurnaceFixEnabled = true;
+    @Config.Comment("Set to true to display GTNH buttons in the pause menu")
+    @Config.DefaultBoolean(true)
+    public static boolean gtnhPauseMenuButtons;
 
-    public OilGeneratorFix.OilConfig OilFixConfig;
+    @Config.Comment("Version of the Modpack")
+    @Config.DefaultString(Refstrings.MODPACKPACK_VERSION)
+    public static String ModPackVersion;
+
+    @Config.Comment("Set to true to enable HazardousItems module. This needs a separate config file which is created once you start with this setting enabled")
+    @Config.DefaultBoolean(false)
+    public static boolean ModHazardousItems_Enabled;
+
+    @Config.Comment("Set to true to display modpack version on debug GUI (F3)")
+    @Config.DefaultBoolean(true)
+    public static boolean ModDebugVersionDisplay_Enabled;
+
+    @Config.Comment("Set to true to enable CustomToolTips module. This needs a separate config file which is created once you start with this setting enabled")
+    @Config.DefaultBoolean(false)
+    public static boolean ModCustomToolTips_Enabled;
+
+    @Config.Comment("Set to true to enable CustomFuels module. Allows you to set burn-time values to almost any item")
+    @Config.DefaultBoolean(false)
+    public static boolean ModCustomFuels_Enabled;
+
+    @Config.Comment("Set to true to enable CustomDrops module. This needs a separate config file which is created once you start with this setting enabled")
+    @Config.DefaultBoolean(false)
+    public static boolean ModCustomDrops_Enabled;
+
+    @Config.Comment("A complete, full working example for a custom chest, with its own renderer for items and blocks, custom sound and a GUI")
+    @Config.DefaultBoolean(true)
+    public static boolean ModBabyChest_Enabled;
+
+    @Config.Comment("Enables crafting recipes for Forestry stamps and Chunk Loader Coins. Only works on single player")
+    @Config.DefaultBoolean(true)
+    public static boolean ForestryStampsAndChunkLoaderCoinsEnabled;
+
+    @Config.Comment("Enables crafting recipes for Forestry stamps and Chunk Loader Coins on server")
+    @Config.DefaultBoolean(false)
+    public static boolean ForestryStampsAndChunkLoaderCoinsServerEnabled;
+
+    @Config.Comment("Set to true to allow Minetweaker to override the vanilla furnace fuel handler, allowing the burn value of WOOD material items to be changed.")
+    @Config.DefaultBoolean(true)
+    public static boolean MinetweakerFurnaceFixEnabled;
+
+    public static OilGeneratorFix.OilConfig OilFixConfig;
 
     @Override
     protected void PreInit() {}

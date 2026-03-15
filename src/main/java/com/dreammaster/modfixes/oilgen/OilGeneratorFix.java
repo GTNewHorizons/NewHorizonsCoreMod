@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.dreammaster.config.CoreModConfig;
+import com.dreammaster.lib.Refstrings;
+import com.gtnewhorizon.gtnhlib.config.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockGravel;
@@ -35,21 +38,69 @@ public class OilGeneratorFix extends ModFixBase {
         LARGE
     }
 
+    @Config(modid = Refstrings.MODID, configSubDirectory = Refstrings.COLLECTIONID, category = "ModFixes.OilGen")
     public static class OilConfig {
 
-        public boolean OilFixEnabled = false;
-        public int OilDepostMinDistance = 2;
-        public double OilSphereChance = 30.0D;
-        public int OilSphereMinRadius = 8;
-        public int OilSphereMaxSize = 15;
-        public int OilDepositThresholdLarge = 14;
-        public int OilDepositThresholdMedium = 11;
-        public int OilFountainSizeSmall = 5;
-        public int OilFountainSizeLarge = 16;
-        public double OilBiomeBoostFactor = 2.5D;
-        public List<Integer> OilDimensionWhitelist = new ArrayList<>();
-        public List<Integer> OilBiomeIDBlackList = new ArrayList<>();
-        public List<Integer> OilBoostBiomes = new ArrayList<>();
+        @Config.Comment("Set to true to enable OilSpawn from this Mod. Make sure to disable Oil-Spawn in BuildCraft if you do")
+        @Config.DefaultBoolean(false)
+        public static boolean OilFixEnabled;
+
+        @Config.Comment("The minimum distance of 2 Oil-Deposits in chunks. Modulo-Based; A 2 here means an deposit can only spawn in chunks that have a number that is a multiple of 2 (Chunknumber * 16 = X/Z coord)")
+        @Config.RangeInt(min = 0, max = 1024)
+        @Config.DefaultInt(2)
+        public static int OilDepostMinDistance;
+
+        @Config.Comment("General OilGen factor")
+        @Config.RangeDouble(min = 0D, max = 2000D)
+        @Config.DefaultDouble(30.0D)
+        public static double OilSphereChance;
+
+        @Config.Comment("The minimum radius of an underground OilSphere")
+        @Config.RangeInt(min = 0, max = 20)
+        @Config.DefaultInt(8)
+        public static int OilSphereMinRadius;
+
+        @Config.Comment("The maximum radius of an underground OilSphere. The final size is calculated by OilSphereMinRadius + Random(OilSphereMaxSize-OilSphereMinRadius)")
+        @Config.RangeInt(min = 3, max = 50)
+        @Config.DefaultInt(15)
+        public static int OilSphereMaxSize;
+
+        @Config.Comment("Threshold at which an oil-deposit will be considered as 'large' and the fountain will be higher and thicker.")
+        @Config.RangeInt(min = 0, max = 100)
+        @Config.DefaultInt(14)
+        public static int OilDepositThresholdLarge;
+
+        @Config.Comment("Threshold at which an oil-deposit will be considered as 'medium' and the fountain will be higher and thicker.")
+        @Config.RangeInt(min = 0, max = 100)
+        @Config.DefaultInt(11)
+        public static int OilDepositThresholdMedium;
+
+        @Config.Comment("Visible height of the fountain above the oil-deposit for MEDIUM deposits")
+        @Config.RangeInt(min = 0, max = 100)
+        @Config.DefaultInt(5)
+        public static int OilFountainSizeSmall;
+
+        @Config.Comment("Visible height of the fountain above the oil-deposit for LARGE deposits")
+        @Config.RangeInt(min = 0, max = 100)
+        @Config.DefaultInt(16)
+        public static int OilFountainSizeLarge;
+
+        @Config.Comment("Boost factor of oil spheres in certain Biomes that are listed in -OilBoostBiomes-")
+        @Config.RangeDouble(min = 0D, max = 50D)
+        @Config.DefaultDouble(2.5D)
+        public static double OilBiomeBoostFactor;
+
+        @Config.Comment("List DimensionIDs (Numbers only; One per line!) here where the OilGenerator should do its work")
+        @Config.DefaultIntList({0})
+        public static List<Integer> OilDimensionWhitelist = new ArrayList<>();
+
+        @Config.Comment("List BiomeIDs (Numbers only; One per line!) where no oil should be generated")
+        @Config.DefaultIntList({})
+        public static List<Integer> OilBiomeIDBlackList = new ArrayList<>();
+
+        @Config.Comment("List BiomeIDs (Numbers only; One per line!) where the boost multiplicator is applied. Leave empty to disable Biome-Boost")
+        @Config.DefaultIntList({})
+        public static List<Integer> OilBoostBiomes = new ArrayList<>();
 
         public OilConfig(Configuration pConfigObject) {
             pConfigObject.addCustomCategoryComment(
@@ -157,7 +208,7 @@ public class OilGeneratorFix extends ModFixBase {
         }
     }
 
-    private Block _mBuildCraftOilBlock;
+    private final Block _mBuildCraftOilBlock;
     public static String ModFixName = "OilGeneratorFix";
 
     public OilGeneratorFix() {
@@ -198,7 +249,7 @@ public class OilGeneratorFix extends ModFixBase {
                 return;
             }
 
-            int tMinDist = MainRegistry.CoreConfig.OilFixConfig.OilDepostMinDistance;
+            int tMinDist = OilConfig.OilDepostMinDistance;
             if (tMinDist > 1) {
                 if (event.chunkX % tMinDist != 0 || event.chunkZ % tMinDist != 0) {
                     return;
@@ -239,8 +290,8 @@ public class OilGeneratorFix extends ModFixBase {
             int cy = (int) pos.yCoord;
             int z = (int) pos.zCoord;
 
-            int tMinRadius = MainRegistry.CoreConfig.OilFixConfig.OilSphereMinRadius;
-            int tMaxRadius = MainRegistry.CoreConfig.OilFixConfig.OilSphereMaxSize;
+            int tMinRadius = OilConfig.OilSphereMinRadius;
+            int tMaxRadius = OilConfig.OilSphereMaxSize;
 
             int r = rand.nextInt(tMaxRadius + 1 - tMinRadius) + tMinRadius;
 
@@ -269,11 +320,11 @@ public class OilGeneratorFix extends ModFixBase {
         EDEPOSIT_SIZE eSize;
         int tSpringHeight = 0;
 
-        if (pRadius >= MainRegistry.CoreConfig.OilFixConfig.OilDepositThresholdLarge) {
-            tSpringHeight = MainRegistry.CoreConfig.OilFixConfig.OilFountainSizeLarge;
+        if (pRadius >= OilConfig.OilDepositThresholdLarge) {
+            tSpringHeight = OilConfig.OilFountainSizeLarge;
             eSize = EDEPOSIT_SIZE.LARGE;
-        } else if (pRadius >= MainRegistry.CoreConfig.OilFixConfig.OilDepositThresholdMedium) {
-            tSpringHeight = MainRegistry.CoreConfig.OilFixConfig.OilFountainSizeSmall;
+        } else if (pRadius >= OilConfig.OilDepositThresholdMedium) {
+            tSpringHeight = OilConfig.OilFountainSizeSmall;
             eSize = EDEPOSIT_SIZE.MEDIUM;
         } else {
             eSize = EDEPOSIT_SIZE.SMALL;
@@ -425,16 +476,13 @@ public class OilGeneratorFix extends ModFixBase {
         if (tBlock instanceof BlockSand) {
             return true;
         }
-        if (tBlock instanceof BlockGravel) {
-            return true;
-        }
-        return false;
+        return tBlock instanceof BlockGravel;
     }
 
     // Check if given location is valid for spawning oil, and return the actual position in pPos
     private boolean shouldSpawnOil(World pWorld, Random pRand, int pX, int pZ, Vec3 pPos) {
         // Limited to Whitelisted Dimensions
-        if (!MainRegistry.CoreConfig.OilFixConfig.OilDimensionWhitelist.contains(pWorld.provider.dimensionId)) {
+        if (!OilConfig.OilDimensionWhitelist.contains(pWorld.provider.dimensionId)) {
             MainRegistry.LOGGER
                     .debug("Not generating OilDeposit; Dimension is not Whitelisted {}", pWorld.provider.dimensionId);
             return false;
@@ -443,7 +491,7 @@ public class OilGeneratorFix extends ModFixBase {
         BiomeGenBase biomegenbase = pWorld.getBiomeGenForCoords(pX + 8, pZ + 8);
 
         // Skip blacklisted DimensionIDs
-        if (MainRegistry.CoreConfig.OilFixConfig.OilBiomeIDBlackList.contains(biomegenbase.biomeID)) {
+        if (OilConfig.OilBiomeIDBlackList.contains(biomegenbase.biomeID)) {
             MainRegistry.LOGGER.debug("Not generating OilDeposit; BiomeID {} is Blacklisted", biomegenbase.biomeID);
             return false;
         }
@@ -453,7 +501,7 @@ public class OilGeneratorFix extends ModFixBase {
         long j1 = pRand.nextInt() / 2L * 2L + 1L;
         pRand.setSeed(pX * i1 + pZ * j1 ^ pWorld.getSeed());
 
-        double randMod = Math.min(0.2D, 0.0001D * MainRegistry.CoreConfig.OilFixConfig.OilSphereChance);
+        double randMod = Math.min(0.2D, 0.0001D * OilConfig.OilSphereChance);
 
         if (biomegenbase.rootHeight >= 0.45F) {
             randMod /= 2.0D;
@@ -462,8 +510,8 @@ public class OilGeneratorFix extends ModFixBase {
             randMod *= 1.8D;
         }
 
-        if (MainRegistry.CoreConfig.OilFixConfig.OilBoostBiomes.contains(biomegenbase.biomeID)) {
-            randMod *= MainRegistry.CoreConfig.OilFixConfig.OilBiomeBoostFactor;
+        if (OilConfig.OilBoostBiomes.contains(biomegenbase.biomeID)) {
+            randMod *= OilConfig.OilBiomeBoostFactor;
         }
 
         boolean flag1 = pRand.nextDouble() <= randMod;
