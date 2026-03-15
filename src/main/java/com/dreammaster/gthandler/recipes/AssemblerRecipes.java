@@ -4962,6 +4962,25 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 1))
                 .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialIOPort", 1))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        // Spatial Link Chamber
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialPylon", 2), // spatial pylon
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41), // wireless receiver (component)
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16), // glass cable
+                getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0), // me chest
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34)) // 128^3 spatial component
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialLinkChamber", 1))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        // Spatial Network Relay
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24), // Engineering processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41), // wireless receiver (component)
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3L),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12), // Pure fluix crystal
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16)) // glass cable
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         // ME IO Port
         GTValues.RA.stdBuilder()
                 .itemInputs(

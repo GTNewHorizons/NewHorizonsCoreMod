@@ -756,6 +756,32 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateTitanium",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
                 "plateTitanium");
+        // Spatial Link Chamber
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialLinkChamber", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialPylon", 1, 0, missing), // spatial pylon
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing), // wireless receiver
+                                                                                              // (component)
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialPylon", 1, 0, missing), // spatial pylon
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), // glass cable
+                getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing), // me chest
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), // glass cable
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), // glass cable
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing), // 128^3 spatial component
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing)); // glass cable
+        // Spatial Network Relay
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing), // Engineering processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing), // wireless receiver
+                                                                                              // (component)
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing), // Engineering processor
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing), // Pure fluix crystal
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), // glass cable
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing)); // glass cable
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
                 "plateTitanium",
