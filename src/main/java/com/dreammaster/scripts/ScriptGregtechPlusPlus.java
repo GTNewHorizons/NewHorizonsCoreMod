@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.QFT_CATALYST;
@@ -19,6 +20,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
+import com.dreammaster.thaumcraft.TCMaterialAspectHelper;
 
 import cpw.mods.fml.common.Optional;
 import forestry.api.recipes.RecipeManagers;
@@ -41,7 +43,13 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(EternalSingularity.ID, Forestry.ID, IndustrialCraft2.ID, IronTanks.ID, RemoteIO.ID);
+        return Arrays.asList(
+                EternalSingularity.ID,
+                Forestry.ID,
+                IndustrialCraft2.ID,
+                IronTanks.ID,
+                RemoteIO.ID,
+                Thaumcraft.ID);
     }
 
     @Override
@@ -71,6 +79,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .metadata(QFT_CATALYST, GregtechItemList.TemporalHarmonyCatalyst.get(0)).metadata(QFT_FOCUS_TIER, 4)
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(quantumForceTransformerRecipes);
         addForestryRecipes();
+        addThaumcraftAspects();
     }
 
     @Optional.Method(modid = Mods.ModIDs.FORESTRY)
@@ -330,5 +339,35 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
                 'i',
                 GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L));
+    }
+
+    private void addThaumcraftAspects() {
+        TCMaterialAspectHelper.registerMaterialAspects("Selenium", "metallum", "custom2");
+        TCMaterialAspectHelper.registerMaterialAspects("Iodine", "metallum", "sano");
+        TCMaterialAspectHelper.registerMaterialAspects("Rhenium", "metallum", "alienis");
+        TCMaterialAspectHelper.registerMaterialAspects("Thallium", "metallum", "strontio");
+        TCMaterialAspectHelper.registerMaterialAspects("Germanium", "metallum", "custom1");
+        TCMaterialAspectHelper.registerMaterialAspects("Polonium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Radium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Protactinium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Curium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Neptunium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Fermium", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Lithium7", "potentia", "custom1");
+        TCMaterialAspectHelper.registerMaterialAspects("Uranium232", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Uranium233", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Plutonium238", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("AdvancedNitinol", "metallum", "custom2");
+        TCMaterialAspectHelper.registerMaterialAspects("AstralTitanium", "metallum", "custom4");
+        TCMaterialAspectHelper.registerMaterialAspects("CelestialTungsten", "metallum", "custom4");
+        TCMaterialAspectHelper.registerMaterialAspects("Hypogen", "metallum", "custom5");
+        TCMaterialAspectHelper.registerMaterialAspects("ChromaticGlass", "vitreus", "custom3");
+        TCMaterialAspectHelper.registerMaterialAspects("BlackMetal", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("WhiteMetal", "metallum", "custom5");
+        TCMaterialAspectHelper.registerMaterialAspects("AncientGranite", "perditio", "custom3");
+        TCMaterialAspectHelper.registerMaterialAspects("Runite", "perditio", "custom3");
+        TCMaterialAspectHelper.registerMaterialAspects("Dragonblood", "metallum", "terminus");
+        TCMaterialAspectHelper.registerMaterialAspects("Staballoy", "metallum", "radio");
+        TCMaterialAspectHelper.registerMaterialAspects("Rhugnor", "terminus", "tempus");
     }
 }
