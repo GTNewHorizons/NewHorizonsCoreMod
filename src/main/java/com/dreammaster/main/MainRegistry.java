@@ -67,6 +67,8 @@ import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.travellersgear.TGConverter;
 import com.dreammaster.witchery.WitcheryPlugin;
+import com.gtnewhorizon.gtnhlib.config.ConfigException;
+import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 
 import bartworks.system.material.WerkstoffLoader;
 import betterquesting.api.storage.BQ_Settings;
@@ -124,7 +126,6 @@ public class MainRegistry {
     public static CustomFuelsHandler Module_CustomFuels;
     public static CustomDropsHandler Module_CustomDrops;
     public static GT_CustomLoader GTCustomLoader;
-    public static CoreModConfig CoreConfig;
     public static SimpleNetworkWrapper dispatcher;
     public static Random Rnd;
     public static final Logger LOGGER = LogManager.getLogger(Refstrings.MODID);
@@ -157,12 +158,12 @@ public class MainRegistry {
 
         // ------------------------------------------------------------
         // Init coremod config file. Create it if it's not there
-        CoreConfig = new CoreModConfig(
-                PreEvent.getModConfigurationDirectory(),
-                Refstrings.COLLECTIONID,
-                Refstrings.MODID);
-        if (!CoreConfig.LoadConfig()) {
-            LOGGER.error("{} could not load its config file. Things are going to be weird!", Refstrings.MODID);
+        try {
+            ConfigurationManager.registerConfig(CoreModConfig.Modules.class);
+            ConfigurationManager.registerConfig(CoreModConfig.ModFixes.class);
+            ConfigurationManager.registerConfig(OilGeneratorFix.OilConfig.class);
+        } catch (ConfigException e) {
+            throw new RuntimeException(e);
         }
         // ------------------------------------------------------------
 
@@ -188,23 +189,23 @@ public class MainRegistry {
         // Init Modules
         LOGGER.debug("PRELOAD Init Modules");
 
-        if (CoreConfig.ModHazardousItems_Enabled) {
+        if (CoreModConfig.Modules.HazardousItems) {
             LOGGER.debug("Module_HazardousItems is enabled");
             Module_HazardousItems = new HazardousItemsHandler();
         }
 
-        if (CoreConfig.ModCustomToolTips_Enabled) {
+        if (CoreModConfig.Modules.CustomToolTips) {
             LOGGER.debug("Module_CustomToolTips is enabled");
             Module_CustomToolTips = new CustomToolTipsHandler();
             proxy.registerResourceReload();
         }
 
-        if (CoreConfig.ModCustomFuels_Enabled) {
+        if (CoreModConfig.Modules.CustomFuels) {
             LOGGER.debug("Module_CustomFuels is enabled");
             Module_CustomFuels = new CustomFuelsHandler();
         }
 
-        if (CoreConfig.ModCustomDrops_Enabled) {
+        if (CoreModConfig.Modules.CustomDrops) {
             LOGGER.debug("Module_CustomDrops is enabled");
             Module_CustomDrops = new CustomDropsHandler(PreEvent.getModConfigurationDirectory());
         }
@@ -235,11 +236,11 @@ public class MainRegistry {
             new WitcheryPlugin();
         }
 
-        if (CoreModConfig.ModLoginMessage_Enabled) {
+        if (CoreModConfig.Modules.LoginMessage) {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
         }
         LOGGER.warn("==================================================");
-        LOGGER.warn("Welcome to Gregtech:New Horizons {}", CoreModConfig.ModPackVersion);
+        LOGGER.warn("Welcome to Gregtech:New Horizons {}", CoreModConfig.Modules.ModPackVersion);
         LOGGER.warn("Please bring comments to " + "https://discord.gg/gtnh");
         LOGGER.warn("==================================================");
 
@@ -255,12 +256,12 @@ public class MainRegistry {
         // register events in modules
         RegisterModuleEvents();
 
-        if (CoreConfig.ModBabyChest_Enabled) {
+        if (CoreModConfig.Modules.BabyChest) {
             InitAdditionalBlocks();
         }
 
         // Register additional OreDictionary Names
-        if (CoreConfig.OreDictItems_Enabled) OreDictHandler.register_all();
+        if (CoreModConfig.Modules.OreDictItems) OreDictHandler.register_all();
 
         GregTechAPI.sAfterGTPostload.add(() -> {
             LOGGER.debug("Add Runnable to GT to create pyrolyse oven logWood recipes");
@@ -271,7 +272,7 @@ public class MainRegistry {
             TF_Loot_Chests.init();
         }
 
-        if (CoreConfig.gtnhPauseMenuButtons && event.getSide().isClient()) {
+        if (CoreModConfig.Modules.gtnhPauseMenuButtons && event.getSide().isClient()) {
             MinecraftForge.EVENT_BUS.register(new GTNHPauseScreen());
         }
 
@@ -304,20 +305,20 @@ public class MainRegistry {
     }
 
     private void RegisterModuleEvents() {
-        if (CoreConfig.ModHazardousItems_Enabled) {
+        if (CoreModConfig.Modules.HazardousItems) {
             FMLCommonHandler.instance().bus().register(Module_HazardousItems);
         }
 
-        if (CoreConfig.ModCustomToolTips_Enabled) {
+        if (CoreModConfig.Modules.CustomToolTips) {
             MinecraftForge.EVENT_BUS.register(Module_CustomToolTips);
             FMLCommonHandler.instance().bus().register(Module_CustomToolTips);
         }
 
-        if (CoreConfig.ModCustomFuels_Enabled) {
+        if (CoreModConfig.Modules.CustomFuels) {
             GameRegistry.registerFuelHandler(Module_CustomFuels);
         }
 
-        if (CoreConfig.ModCustomDrops_Enabled) {
+        if (CoreModConfig.Modules.CustomDrops) {
             MinecraftForge.EVENT_BUS.register(Module_CustomDrops);
         }
 
@@ -350,19 +351,19 @@ public class MainRegistry {
                 FluidContainerRegistry
                         .fillFluidContainer(FluidList.Pollution.getFluidStack(), new ItemStack(Items.bucket)));
 
-        if (CoreConfig.ModHazardousItems_Enabled) {
+        if (CoreModConfig.Modules.HazardousItems) {
             Module_HazardousItems.LoadConfig();
         }
 
-        if (CoreConfig.ModCustomToolTips_Enabled) {
+        if (CoreModConfig.Modules.CustomToolTips) {
             Module_CustomToolTips.LoadConfig();
         }
 
-        if (CoreConfig.ModCustomFuels_Enabled) {
+        if (CoreModConfig.Modules.CustomFuels) {
             Module_CustomFuels.LoadConfig();
         }
 
-        if (CoreConfig.ModCustomDrops_Enabled) {
+        if (CoreModConfig.Modules.CustomDrops) {
             Module_CustomDrops.LoadConfig();
         }
 
@@ -423,10 +424,10 @@ public class MainRegistry {
      * Register your mod-fixes here
      */
     private void registerModFixes() {
-        if (CoreConfig.OilFixConfig.OilFixEnabled) {
+        if (CoreModConfig.ModFixes.GenerateOil) {
             ModFixesMaster.registerModFix(new OilGeneratorFix());
         }
-        if (CoreConfig.MinetweakerFurnaceFixEnabled) {
+        if (CoreModConfig.ModFixes.MinetweakerFurnaceFixEnabled) {
             ModFixesMaster.registerModFix(new MinetweakerFurnaceFix());
         }
         if (ZTones.isModLoaded()) {
@@ -444,16 +445,16 @@ public class MainRegistry {
      */
     @Mod.EventHandler
     public void serverLoad(FMLServerStartingEvent event) {
-        if (CoreConfig.ModHazardousItems_Enabled) {
+        if (CoreModConfig.Modules.HazardousItems) {
             event.registerServerCommand(new HazardousItemsCommand());
         }
-        if (CoreConfig.ModCustomToolTips_Enabled) {
+        if (CoreModConfig.Modules.CustomToolTips) {
             event.registerServerCommand(new CustomToolTipsCommand());
         }
-        if (CoreConfig.ModCustomFuels_Enabled) {
+        if (CoreModConfig.Modules.CustomFuels) {
             event.registerServerCommand(new CustomFuelsCommand());
         }
-        if (CoreConfig.ModCustomDrops_Enabled) {
+        if (CoreModConfig.Modules.CustomDrops) {
             event.registerServerCommand(new CustomDropsCommand());
         }
         if (Mods.BetterQuesting.isModLoaded()) {
