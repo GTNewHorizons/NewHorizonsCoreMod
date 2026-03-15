@@ -6175,7 +6175,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("ignis"), 2)
                         .add(Aspect.getAspect("vitreus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0),
+                ItemList.ToolBox.get(1L),
                 new AspectList().add(Aspect.getAspect("fabrico"), 3).add(Aspect.getAspect("metallum"), 3)
                         .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(

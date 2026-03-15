@@ -1319,12 +1319,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "chest", 1, 0),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 5, 2))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lead, 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0)).duration(10 * SECONDS)
