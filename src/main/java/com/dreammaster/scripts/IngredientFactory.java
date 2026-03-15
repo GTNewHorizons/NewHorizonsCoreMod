@@ -55,7 +55,7 @@ public final class IngredientFactory {
      * @param name   Item registry name
      * @param amount The amount of items in the ItemStack
      * @return Created ItemStack or a placeholder fire ItemStack if lookup fails & debug mode is enabled.
-     * @throws RuntimeException If the item is cannot be found and debug mode is disabled.
+     * @throws RuntimeException If the item cannot be found and debug mode is disabled.
      */
     public static @NotNull ItemStack getModItem(String modId, String name, int amount) {
         final var item = GameRegistry.findItem(modId, name);
