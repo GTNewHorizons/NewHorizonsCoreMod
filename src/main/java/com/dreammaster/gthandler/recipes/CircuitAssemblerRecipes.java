@@ -969,30 +969,27 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         Materials.Glowstone.getPlates(2),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get())
-                .circuit(1)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 32))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         Materials.Glowstone.getPlates(2),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get())
-                .circuit(1)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 32))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         Materials.Glowstone.getPlates(2),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get())
-                .circuit(1)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 32))
+                .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -1002,10 +999,9 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         Materials.EnderPearl.getPlates(4),
                         Materials.Glowstone.getPlates(16),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get(2))
-                .circuit(2)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 33))
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -1013,10 +1009,9 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         Materials.EnderPearl.getPlates(4),
                         Materials.Glowstone.getPlates(16),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get(2))
-                .circuit(2)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 33))
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -1024,10 +1019,9 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         Materials.EnderPearl.getPlates(4),
                         Materials.Glowstone.getPlates(16),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get(2))
-                .circuit(2)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 33))
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -1037,10 +1031,9 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         Materials.EnderEye.getPlates(4),
                         Materials.EnderPearl.getPlates(16),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get(4))
-                .circuit(2)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 34))
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -1048,10 +1041,9 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         Materials.EnderEye.getPlates(4),
                         Materials.EnderPearl.getPlates(16),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get(4))
-                .circuit(2)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 34))
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -1059,10 +1051,9 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         Materials.EnderEye.getPlates(4),
                         Materials.EnderPearl.getPlates(16),
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8L, 9), // fluix pearl
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get(4))
-                .circuit(2)
-                .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 34))
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .requireMods(AppliedEnergistics2).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
     }
