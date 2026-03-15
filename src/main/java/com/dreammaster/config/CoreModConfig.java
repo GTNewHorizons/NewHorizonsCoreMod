@@ -6,6 +6,7 @@ import com.gtnewhorizon.gtnhlib.config.Config;
 public final class CoreModConfig {
 
     @Config(modid = Refstrings.MODID, configSubDirectory = Refstrings.COLLECTIONID, category = "Modules")
+    @Config.Comment("Enable or disable parts of the GTNH CoreMod")
     @Config.RequiresMcRestart
     public static class Modules {
 
@@ -60,6 +61,7 @@ public final class CoreModConfig {
     }
 
     @Config(modid = Refstrings.MODID, configSubDirectory = Refstrings.COLLECTIONID, category = "ModFixes")
+    @Config.Comment("Fixes to various mods that allow GTNH to function properly")
     @Config.RequiresMcRestart
     public static class ModFixes {
 
