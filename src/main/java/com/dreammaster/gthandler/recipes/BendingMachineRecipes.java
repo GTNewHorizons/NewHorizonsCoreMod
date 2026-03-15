@@ -1,8 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.recipe.RecipeMaps.benderRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -50,12 +50,12 @@ public class BendingMachineRecipes implements Runnable {
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
 
         if (GalacticraftCore.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7, missing))
-                    .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6, missing))
-                    .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7)).circuit(2)
+                    .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6)).circuit(2)
+                    .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
         }
     }
 }

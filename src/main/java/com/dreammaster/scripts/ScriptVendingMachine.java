@@ -1,10 +1,10 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.VendingMachine;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -45,7 +45,7 @@ public class ScriptVendingMachine implements IScriptLoader {
                 null);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
                         getModItem(Minecraft.ID, "dispenser", 1, 0))
                 .duration(5 * SECONDS).itemOutputs(VMItems.uplinkHatch).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
     }

@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicMachina;
-import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +31,7 @@ public class ScriptThaumicMachina implements IScriptLoader {
     public void loadRecipes() {
         TCHelper.orphanResearch("@TMTHAUMATURGY");
         TCHelper.removeResearch("@TMTHAUMATURGY");
-        TCHelper.removeArcaneRecipe(getModItem(ThaumicMachina.ID, "wandAugmentationCore", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicMachina.ID, "wandAugmentationCore", 1, 0));
         TCHelper.orphanResearch("@WAND_AUGMENTATION_TAINTED_CORE");
         TCHelper.removeResearch("@WAND_AUGMENTATION_TAINTED_CORE");
         TCHelper.orphanResearch("@WAND_AUGMENTATION_TAINT_CAPPING");
@@ -55,34 +55,33 @@ public class ScriptThaumicMachina implements IScriptLoader {
         TCHelper.addResearchPage("@WAND_AUGMENTATION", new ResearchPage("tm.research.page.WAND_AUGMENTATION.3"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "@WAND_AUGMENTATION",
-                getModItem(ThaumicMachina.ID, "wandAugmentationCore", 1, 0, missing),
+                getModItem(ThaumicMachina.ID, "wandAugmentationCore", 1, 0),
                 new AspectList().add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("perditio"), 35),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'b',
                 "plateEnergeticAlloy",
                 'c',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'd',
                 "plateEnergeticAlloy",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 'f',
                 "plateEnergeticAlloy",
                 'g',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'h',
                 "plateEnergeticAlloy",
                 'i',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14));
         TCHelper.addResearchPage(
                 "@WAND_AUGMENTATION",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(ThaumicMachina.ID, "wandAugmentationCore", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicMachina.ID, "wandAugmentationCore", 1, 0))));
         TCHelper.setResearchAspects(
                 "@WAND_AUGMENTATION",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 3).add(Aspect.getAspect("praecantatio"), 6)
