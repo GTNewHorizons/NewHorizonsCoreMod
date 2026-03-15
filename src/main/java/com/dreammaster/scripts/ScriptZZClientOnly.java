@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.main.MainRegistry.CoreConfig;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -406,7 +405,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).duration(30 * SECONDS)
                         .eut(TierEU.RECIPE_LuV).disabled().hidden().addTo(assemblerRecipes));
 
-        if (MainRegistry.isServer() && CoreModConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
+        if (MainRegistry.isServer() && CoreModConfig.Modules.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
             stamps(true);
             coins.forEach(r -> {
                 r.mEnabled = true;
@@ -427,11 +426,11 @@ public class ScriptZZClientOnly implements IScriptLoader {
             // this runs on the server thread of a client
             // -> we are playing single player (TODO: Does this work correctly on LAN?)
             MainRegistry.dispatcher.sendTo(
-                    new ZZClientOnlySyncMessage(CoreModConfig.ForestryStampsAndChunkLoaderCoinsEnabled),
+                    new ZZClientOnlySyncMessage(CoreModConfig.Modules.ForestryStampsAndChunkLoaderCoinsEnabled),
                     (EntityPlayerMP) pEvent.player);
         } else {
             MainRegistry.dispatcher.sendTo(
-                    new ZZClientOnlySyncMessage(CoreModConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled),
+                    new ZZClientOnlySyncMessage(CoreModConfig.Modules.ForestryStampsAndChunkLoaderCoinsServerEnabled),
                     (EntityPlayerMP) pEvent.player);
         }
     }

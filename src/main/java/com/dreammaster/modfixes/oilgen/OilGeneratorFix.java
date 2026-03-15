@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.lib.Refstrings;
 import com.gtnewhorizon.gtnhlib.config.Config;
 import net.minecraft.block.Block;
@@ -39,10 +40,6 @@ public class OilGeneratorFix extends ModFixBase {
 
     @Config(modid = Refstrings.MODID, configSubDirectory = Refstrings.COLLECTIONID, category = "ModFixes.OilGen")
     public static class OilConfig {
-
-        @Config.Comment("Set to true to enable OilSpawn from this Mod. Make sure to disable Oil-Spawn in BuildCraft if you do")
-        @Config.DefaultBoolean(false)
-        public static boolean GenerateOil;
 
         @Config.Comment("The minimum distance of 2 Oil-Deposits in chunks. Modulo-Based; A 2 here means an deposit can only spawn in chunks that have a number that is a multiple of 2 (Chunknumber * 16 = X/Z coord)")
         @Config.RangeInt(min = 0, max = 1024)
@@ -105,10 +102,10 @@ public class OilGeneratorFix extends ModFixBase {
             pConfigObject.addCustomCategoryComment(
                     "ModFixes.OilGen",
                     "The OilgenChance is based on height of the biome. On high-y biomes, the basic chance is divided by 2, on low-y biomes like oceans, it is multiplied by 1.8.\nThe multiplier set here for -OilBoostBiomes- Biomes is applied after those multipliers are set.");
-            GenerateOil = pConfigObject.getBoolean(
+            CoreModConfig.ModFixes.GenerateOil = pConfigObject.getBoolean(
                     "GenerateOil",
                     "ModFixes",
-                    GenerateOil,
+                    CoreModConfig.ModFixes.GenerateOil,
                     "Set to true to enable OilSpawn from this Mod. Make sure to disable Oil-Spawn in BuildCraft if you do");
             OilDepostMinDistance = pConfigObject.getInt(
                     "OilDepostMinDistance",

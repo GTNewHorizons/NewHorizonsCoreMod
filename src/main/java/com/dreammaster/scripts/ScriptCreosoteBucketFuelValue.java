@@ -28,7 +28,7 @@ public class ScriptCreosoteBucketFuelValue implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        if (!CoreModConfig.CustomFuels) return;
+        if (!CoreModConfig.Modules.CustomFuels) return;
 
         for (ItemStack creosoteBucket : getCreosoteBuckets()) {
             Module_CustomFuels.registerCustomFuelValue(creosoteBucket, (short) 6400);
