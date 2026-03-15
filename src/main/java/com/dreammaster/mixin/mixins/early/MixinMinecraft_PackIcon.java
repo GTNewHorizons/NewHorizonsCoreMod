@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import com.dreammaster.client.util.IconLoader;
-import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.lib.Refstrings;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 
