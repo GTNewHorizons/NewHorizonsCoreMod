@@ -29,6 +29,7 @@ import com.dreammaster.modfixes.ModFixBase;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class OilGeneratorFix extends ModFixBase {
 
@@ -88,15 +89,15 @@ public class OilGeneratorFix extends ModFixBase {
 
         @Config.Comment("List DimensionIDs (Numbers only; One per line!) here where the OilGenerator should do its work")
         @Config.DefaultIntList({0})
-        public static List<Integer> OilDimensionWhitelist = new ArrayList<>();
+        public static int[] OilDimensionWhitelist;
 
         @Config.Comment("List BiomeIDs (Numbers only; One per line!) where no oil should be generated")
         @Config.DefaultIntList({})
-        public static List<Integer> OilBiomeIDBlackList = new ArrayList<>();
+        public static int[] OilBiomeIDBlackList;
 
         @Config.Comment("List BiomeIDs (Numbers only; One per line!) where the boost multiplicator is applied. Leave empty to disable Biome-Boost")
         @Config.DefaultIntList({})
-        public static List<Integer> OilBoostBiomes = new ArrayList<>();
+        public static int[] OilBoostBiomes;
     }
 
     private final Block _mBuildCraftOilBlock;
@@ -373,7 +374,7 @@ public class OilGeneratorFix extends ModFixBase {
     // Check if given location is valid for spawning oil, and return the actual position in pPos
     private boolean shouldSpawnOil(World pWorld, Random pRand, int pX, int pZ, Vec3 pPos) {
         // Limited to Whitelisted Dimensions
-        if (!OilConfig.OilDimensionWhitelist.contains(pWorld.provider.dimensionId)) {
+        if (!ArrayUtils.contains(OilConfig.OilDimensionWhitelist, pWorld.provider.dimensionId)) {
             MainRegistry.LOGGER
                     .debug("Not generating OilDeposit; Dimension is not Whitelisted {}", pWorld.provider.dimensionId);
             return false;
@@ -382,7 +383,7 @@ public class OilGeneratorFix extends ModFixBase {
         BiomeGenBase biomegenbase = pWorld.getBiomeGenForCoords(pX + 8, pZ + 8);
 
         // Skip blacklisted DimensionIDs
-        if (OilConfig.OilBiomeIDBlackList.contains(biomegenbase.biomeID)) {
+        if (ArrayUtils.contains(OilConfig.OilBiomeIDBlackList, biomegenbase.biomeID)) {
             MainRegistry.LOGGER.debug("Not generating OilDeposit; BiomeID {} is Blacklisted", biomegenbase.biomeID);
             return false;
         }
@@ -401,7 +402,7 @@ public class OilGeneratorFix extends ModFixBase {
             randMod *= 1.8D;
         }
 
-        if (OilConfig.OilBoostBiomes.contains(biomegenbase.biomeID)) {
+        if (ArrayUtils.contains(OilConfig.OilBoostBiomes, biomegenbase.biomeID)) {
             randMod *= OilConfig.OilBiomeBoostFactor;
         }
 
