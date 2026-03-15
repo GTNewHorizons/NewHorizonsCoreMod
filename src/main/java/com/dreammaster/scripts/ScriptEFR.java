@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Materials.MeatCooked;
+import static gregtech.api.enums.Materials.MeatRaw;
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
@@ -55,6 +57,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -64,6 +67,7 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
@@ -84,6 +88,7 @@ import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import forestry.core.fluids.Fluids;
+import ganymedes01.etfuturum.recipes.SmokerRecipes;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -2143,6 +2148,21 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "smooth_red_sandstone", 1, 0),
                 Fluids.GLASS.getFluid(4000),
                 4800);
+
+        List<ItemStack> smokerExtraRecipes = new ArrayList<ItemStack>();
+        smokerExtraRecipes.add(ItemList.Food_Potato_On_Stick.get(1L));
+        smokerExtraRecipes.add(ItemList.Food_Raw_PotatoChips.get(1L));
+        smokerExtraRecipes.add(ItemList.Food_Raw_Pizza_Veggie.get(1L));
+        smokerExtraRecipes.add(ItemList.Food_Raw_Pizza_Cheese.get(1L));
+        smokerExtraRecipes.add(ItemList.Food_Raw_Pizza_Meat.get(1L));
+        smokerExtraRecipes.add(ItemList.Food_Raw_Bun.get(1L));
+        smokerExtraRecipes.add(ItemList.Food_Raw_Baguette.get(1L));
+        smokerExtraRecipes.add(ItemList.Food_Raw_Cake.get(1L));
+        for (ItemStack input : smokerExtraRecipes) {
+            SmokerRecipes.smelting().addRecipe(input, FurnaceRecipes.smelting().getSmeltingResult(input), 0);
+        }
+        // getSmeltingResult for mince meat is null here for some reason, so adding explicitly
+        SmokerRecipes.smelting().addRecipe(MeatRaw.getDust(1), MeatCooked.getDust(1), 0);
 
     }
 
