@@ -11,8 +11,9 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.dreammaster.config.CoreModConfig;
 import net.minecraft.item.ItemStack;
+
+import com.dreammaster.config.CoreModConfig;
 
 public class ScriptCreosoteBucketFuelValue implements IScriptLoader {
 

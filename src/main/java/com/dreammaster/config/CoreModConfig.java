@@ -1,11 +1,7 @@
 package com.dreammaster.config;
 
-import java.io.File;
-
 import com.dreammaster.lib.Refstrings;
-
 import com.gtnewhorizon.gtnhlib.config.Config;
-import eu.usrv.yamcore.config.ConfigManager;
 
 public final class CoreModConfig {
 

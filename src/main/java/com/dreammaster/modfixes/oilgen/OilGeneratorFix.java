@@ -1,12 +1,7 @@
 package com.dreammaster.modfixes.oilgen;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import com.dreammaster.config.CoreModConfig;
-import com.dreammaster.lib.Refstrings;
-import com.gtnewhorizon.gtnhlib.config.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockGravel;
@@ -18,18 +13,20 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.IFluidBlock;
 
+import org.apache.commons.lang3.ArrayUtils;
+
+import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.modfixes.ModFixBase;
+import com.gtnewhorizon.gtnhlib.config.Config;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import org.apache.commons.lang3.ArrayUtils;
 
 public class OilGeneratorFix extends ModFixBase {
 
@@ -88,7 +85,7 @@ public class OilGeneratorFix extends ModFixBase {
         public static double OilBiomeBoostFactor;
 
         @Config.Comment("List DimensionIDs (Numbers only; One per line!) here where the OilGenerator should do its work")
-        @Config.DefaultIntList({0})
+        @Config.DefaultIntList({ 0 })
         public static int[] OilDimensionWhitelist;
 
         @Config.Comment("List BiomeIDs (Numbers only; One per line!) where no oil should be generated")

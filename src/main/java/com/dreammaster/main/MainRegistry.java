@@ -7,8 +7,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.HashMap;
 import java.util.Random;
 
-import com.gtnewhorizon.gtnhlib.config.ConfigException;
-import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -69,6 +67,8 @@ import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.travellersgear.TGConverter;
 import com.dreammaster.witchery.WitcheryPlugin;
+import com.gtnewhorizon.gtnhlib.config.ConfigException;
+import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 
 import bartworks.system.material.WerkstoffLoader;
 import betterquesting.api.storage.BQ_Settings;
