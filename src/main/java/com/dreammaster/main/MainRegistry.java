@@ -7,6 +7,8 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.HashMap;
 import java.util.Random;
 
+import com.gtnewhorizon.gtnhlib.config.ConfigException;
+import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -124,7 +126,6 @@ public class MainRegistry {
     public static CustomFuelsHandler Module_CustomFuels;
     public static CustomDropsHandler Module_CustomDrops;
     public static GT_CustomLoader GTCustomLoader;
-    public static CoreModConfig CoreConfig;
     public static SimpleNetworkWrapper dispatcher;
     public static Random Rnd;
     public static final Logger LOGGER = LogManager.getLogger(Refstrings.MODID);
@@ -157,12 +158,12 @@ public class MainRegistry {
 
         // ------------------------------------------------------------
         // Init coremod config file. Create it if it's not there
-        CoreConfig = new CoreModConfig(
-                PreEvent.getModConfigurationDirectory(),
-                Refstrings.COLLECTIONID,
-                Refstrings.MODID);
-        if (!CoreConfig.LoadConfig()) {
-            LOGGER.error("{} could not load its config file. Things are going to be weird!", Refstrings.MODID);
+        try {
+            ConfigurationManager.registerConfig(CoreModConfig.Modules.class);
+            ConfigurationManager.registerConfig(CoreModConfig.ModFixes.class);
+            ConfigurationManager.registerConfig(OilGeneratorFix.OilConfig.class);
+        } catch (ConfigException e) {
+            throw new RuntimeException(e);
         }
         // ------------------------------------------------------------
 

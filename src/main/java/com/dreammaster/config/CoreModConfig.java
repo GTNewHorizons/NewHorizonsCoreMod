@@ -3,12 +3,11 @@ package com.dreammaster.config;
 import java.io.File;
 
 import com.dreammaster.lib.Refstrings;
-import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 
 import com.gtnewhorizon.gtnhlib.config.Config;
 import eu.usrv.yamcore.config.ConfigManager;
 
-public final class CoreModConfig extends ConfigManager {
+public final class CoreModConfig {
 
     @Config(modid = Refstrings.MODID, configSubDirectory = Refstrings.COLLECTIONID, category = "Modules")
     @Config.RequiresMcRestart
@@ -76,84 +75,4 @@ public final class CoreModConfig extends ConfigManager {
         @Config.DefaultBoolean(false)
         public static boolean GenerateOil;
     }
-
-    public CoreModConfig(File pConfigBaseDirectory, String pModCollectionDirectory, String pModID) {
-        super(pConfigBaseDirectory, pModCollectionDirectory, pModID);
-    }
-
-    public static OilGeneratorFix.OilConfig OilFixConfig;
-
-    @Override
-    protected void PreInit() {}
-
-    @Override
-    protected void Init() {
-        Modules.OreDictItems = _mainConfig.getBoolean(
-                "OreDictItems",
-                "Modules",
-                Modules.OreDictItems,
-                "Set to false to prevent the OreDict register for SpaceStones and SpaceDusts");
-        Modules.LoginMessage = _mainConfig.getBoolean(
-                "LoginMessage",
-                "Modules",
-                Modules.LoginMessage,
-                "Set to true to show login message with modpack version");
-        Modules.gtnhPauseMenuButtons = _mainConfig.getBoolean(
-                "GTNH Pause menu buttons",
-                "Modules",
-                Modules.gtnhPauseMenuButtons,
-                "Set to true to display GTNH buttons in the pause menu");
-        Modules.ModPackVersion = _mainConfig.getString("ModPackVersion", "Modules", Modules.ModPackVersion, "Version of the Modpack");
-        Modules.DebugVersionDisplay = _mainConfig.getBoolean(
-                "DebugVersionDisplay",
-                "Modules",
-                Modules.DebugVersionDisplay,
-                "Set to true to display modpack version on debug GUI (F3)");
-        Modules.HazardousItems = _mainConfig.getBoolean(
-                "HazardousItems",
-                "Modules",
-                Modules.HazardousItems,
-                "Set to true to enable HazardousItems module. This needs a separate config file which is created once you start with this setting enabled");
-        Modules.CustomToolTips = _mainConfig.getBoolean(
-                "CustomToolTips",
-                "Modules",
-                Modules.CustomToolTips,
-                "Set to true to enable CustomToolTips module. This needs a separate config file which is created once you start with this setting enabled");
-        Modules.CustomDrops = _mainConfig.getBoolean(
-                "CustomDrops",
-                "Modules",
-                Modules.CustomDrops,
-                "Set to true to enable CustomDrops module. This needs a separate config file which is created once you start with this setting enabled");
-        Modules.CustomFuels = _mainConfig.getBoolean(
-                "CustomFuels",
-                "Modules",
-                Modules.CustomFuels,
-                "Set to true to enable CustomFuels module. Allows you to set burn-time values to almost any item");
-        Modules.BabyChest = _mainConfig.getBoolean(
-                "BabyChest",
-                "Modules",
-                Modules.BabyChest,
-                "A complete, full working example for a custom chest, with its own renderer for items and blocks, custom sound and a GUI");
-        Modules.ForestryStampsAndChunkLoaderCoinsEnabled = _mainConfig.getBoolean(
-                "ForestryStampsAndChunkLoaderCoinsEnabled",
-                "Modules",
-                Modules.ForestryStampsAndChunkLoaderCoinsEnabled,
-                "Enables crafting recipes for Forestry stamps and Chunk Loader Coins. Only works on single player");
-        Modules.ForestryStampsAndChunkLoaderCoinsServerEnabled = _mainConfig.getBoolean(
-                "ForestryStampsAndChunkLoaderCoinsServerEnabled",
-                "Modules",
-                Modules.ForestryStampsAndChunkLoaderCoinsServerEnabled,
-                "Enables crafting recipes for Forestry stamps and Chunk Loader Coins on server");
-
-        ModFixes.MinetweakerFurnaceFixEnabled = _mainConfig.getBoolean(
-                "MinetweakerFurnaceFixEnabled",
-                "ModFixes",
-                ModFixes.MinetweakerFurnaceFixEnabled,
-                "Set to true to allow Minetweaker to override the vanilla furnace fuel handler, allowing the burn value of WOOD material items to be changed.");
-
-        OilFixConfig = new OilGeneratorFix.OilConfig(_mainConfig);
-    }
-
-    @Override
-    protected void PostInit() {}
 }
