@@ -18,13 +18,14 @@ public final class CoreModConfig extends ConfigManager {
 
     @Config.Comment("Set to false to prevent the OreDict register for SpaceStones and SpaceDusts")
     @Config.DefaultBoolean(true)
-    public static boolean OreDictItems_Enabled = true;
+    public static boolean OreDictItems = true;
 
     @Config.Comment("Set to true to show login message with modpack version")
     @Config.DefaultBoolean(true)
-    public static boolean ModLoginMessage_Enabled;
+    public static boolean LoginMessage;
 
     @Config.Comment("Set to true to display GTNH buttons in the pause menu")
+    @Config.Name("GTNH Pause menu buttons")
     @Config.DefaultBoolean(true)
     public static boolean gtnhPauseMenuButtons;
 
@@ -34,27 +35,27 @@ public final class CoreModConfig extends ConfigManager {
 
     @Config.Comment("Set to true to enable HazardousItems module. This needs a separate config file which is created once you start with this setting enabled")
     @Config.DefaultBoolean(false)
-    public static boolean ModHazardousItems_Enabled;
+    public static boolean HazardousItems;
 
     @Config.Comment("Set to true to display modpack version on debug GUI (F3)")
     @Config.DefaultBoolean(true)
-    public static boolean ModDebugVersionDisplay_Enabled;
+    public static boolean DebugVersionDisplay;
 
     @Config.Comment("Set to true to enable CustomToolTips module. This needs a separate config file which is created once you start with this setting enabled")
     @Config.DefaultBoolean(false)
-    public static boolean ModCustomToolTips_Enabled;
+    public static boolean CustomToolTips;
 
     @Config.Comment("Set to true to enable CustomFuels module. Allows you to set burn-time values to almost any item")
     @Config.DefaultBoolean(false)
-    public static boolean ModCustomFuels_Enabled;
+    public static boolean CustomFuels;
 
     @Config.Comment("Set to true to enable CustomDrops module. This needs a separate config file which is created once you start with this setting enabled")
     @Config.DefaultBoolean(false)
-    public static boolean ModCustomDrops_Enabled;
+    public static boolean CustomDrops;
 
     @Config.Comment("A complete, full working example for a custom chest, with its own renderer for items and blocks, custom sound and a GUI")
     @Config.DefaultBoolean(true)
-    public static boolean ModBabyChest_Enabled;
+    public static boolean BabyChest;
 
     @Config.Comment("Enables crafting recipes for Forestry stamps and Chunk Loader Coins. Only works on single player")
     @Config.DefaultBoolean(true)
@@ -75,15 +76,15 @@ public final class CoreModConfig extends ConfigManager {
 
     @Override
     protected void Init() {
-        OreDictItems_Enabled = _mainConfig.getBoolean(
+        OreDictItems = _mainConfig.getBoolean(
                 "OreDictItems",
                 "Modules",
-                OreDictItems_Enabled,
+                OreDictItems,
                 "Set to false to prevent the OreDict register for SpaceStones and SpaceDusts");
-        ModLoginMessage_Enabled = _mainConfig.getBoolean(
+        LoginMessage = _mainConfig.getBoolean(
                 "LoginMessage",
                 "Modules",
-                ModLoginMessage_Enabled,
+                LoginMessage,
                 "Set to true to show login message with modpack version");
         gtnhPauseMenuButtons = _mainConfig.getBoolean(
                 "GTNH Pause menu buttons",
@@ -91,35 +92,35 @@ public final class CoreModConfig extends ConfigManager {
                 gtnhPauseMenuButtons,
                 "Set to true to display GTNH buttons in the pause menu");
         ModPackVersion = _mainConfig.getString("ModPackVersion", "Modules", ModPackVersion, "Version of the Modpack");
-        ModDebugVersionDisplay_Enabled = _mainConfig.getBoolean(
+        DebugVersionDisplay = _mainConfig.getBoolean(
                 "DebugVersionDisplay",
                 "Modules",
-                ModDebugVersionDisplay_Enabled,
+                DebugVersionDisplay,
                 "Set to true to display modpack version on debug GUI (F3)");
-        ModHazardousItems_Enabled = _mainConfig.getBoolean(
+        HazardousItems = _mainConfig.getBoolean(
                 "HazardousItems",
                 "Modules",
-                ModHazardousItems_Enabled,
+                HazardousItems,
                 "Set to true to enable HazardousItems module. This needs a separate config file which is created once you start with this setting enabled");
-        ModCustomToolTips_Enabled = _mainConfig.getBoolean(
+        CustomToolTips = _mainConfig.getBoolean(
                 "CustomToolTips",
                 "Modules",
-                ModCustomToolTips_Enabled,
+                CustomToolTips,
                 "Set to true to enable CustomToolTips module. This needs a separate config file which is created once you start with this setting enabled");
-        ModCustomDrops_Enabled = _mainConfig.getBoolean(
+        CustomDrops = _mainConfig.getBoolean(
                 "CustomDrops",
                 "Modules",
-                ModCustomDrops_Enabled,
+                CustomDrops,
                 "Set to true to enable CustomDrops module. This needs a separate config file which is created once you start with this setting enabled");
-        ModCustomFuels_Enabled = _mainConfig.getBoolean(
+        CustomFuels = _mainConfig.getBoolean(
                 "CustomFuels",
                 "Modules",
-                ModCustomFuels_Enabled,
+                CustomFuels,
                 "Set to true to enable CustomFuels module. Allows you to set burn-time values to almost any item");
-        ModBabyChest_Enabled = _mainConfig.getBoolean(
+        BabyChest = _mainConfig.getBoolean(
                 "BabyChest",
                 "Modules",
-                ModBabyChest_Enabled,
+                BabyChest,
                 "A complete, full working example for a custom chest, with its own renderer for items and blocks, custom sound and a GUI");
         ForestryStampsAndChunkLoaderCoinsEnabled = _mainConfig.getBoolean(
                 "ForestryStampsAndChunkLoaderCoinsEnabled",
