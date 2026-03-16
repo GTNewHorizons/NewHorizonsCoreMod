@@ -1,9 +1,9 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BetterQuesting;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.QuestBook;
-import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,22 +35,22 @@ public class ScriptBetterQuesting implements IScriptLoader {
                 "plateWood");
 
         addShapedRecipe(
-                getModItem(QuestBook.ID, "ItemQuestBook", 1, 0, missing),
+                getModItem(QuestBook.ID, "ItemQuestBook", 1, 0),
                 "stickWood",
                 "stickWood",
                 "stickWood",
                 "stickWood",
-                getModItem(Minecraft.ID, "book", 1, 0, missing),
+                getModItem(Minecraft.ID, "book", 1, 0),
                 "stickWood",
                 "stickWood",
                 "stickWood",
                 "stickWood");
         addShapelessRecipe(
-                getModItem(BetterQuesting.ID, "submit_station", 1, 0, missing),
-                getModItem(BetterQuesting.ID, "observation_station", 1, 0, missing));
+                getModItem(BetterQuesting.ID, "submit_station", 1, 0),
+                getModItem(BetterQuesting.ID, "observation_station", 1, 0));
         addShapelessRecipe(
-                getModItem(BetterQuesting.ID, "observation_station", 1, 0, missing),
-                getModItem(BetterQuesting.ID, "submit_station", 1, 0, missing));
+                getModItem(BetterQuesting.ID, "observation_station", 1, 0),
+                getModItem(BetterQuesting.ID, "submit_station", 1, 0));
 
     }
 }
