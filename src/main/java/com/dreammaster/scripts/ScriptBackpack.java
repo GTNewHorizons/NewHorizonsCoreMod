@@ -1,11 +1,11 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -38,80 +38,80 @@ public class ScriptBackpack implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 0, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 1, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 2, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 3, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 4, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 5, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 6, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 7, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 8, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 9, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 10, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 11, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 12, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 13, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 14, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 15, missing));
-        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 16, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 100, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 101, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 102, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 103, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 104, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 105, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 106, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 107, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 108, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 109, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 110, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 111, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 112, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 113, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 114, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 115, missing));
-        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 116, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 200, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 201, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 202, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 203, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 204, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 205, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 206, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 207, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 208, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 209, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 210, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 211, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 212, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 213, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 214, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 215, missing));
-        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 216, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 0));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 1));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 2));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 3));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 4));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 5));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 6));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 7));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 8));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 9));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 10));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 11));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 12));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 13));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 14));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 15));
+        OreDictionary.registerOre("SmallBackpacks", getModItem(Backpack.ID, "backpack", 1, 16));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 100));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 101));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 102));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 103));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 104));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 105));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 106));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 107));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 108));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 109));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 110));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 111));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 112));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 113));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 114));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 115));
+        OreDictionary.registerOre("MediumBackpacks", getModItem(Backpack.ID, "backpack", 1, 116));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 200));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 201));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 202));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 203));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 204));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 205));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 206));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 207));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 208));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 209));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 210));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 211));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 212));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 213));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 214));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 215));
+        OreDictionary.registerOre("BigBackpacks", getModItem(Backpack.ID, "backpack", 1, 216));
 
         addShapedRecipe(
-                getModItem(Backpack.ID, "boundLeather", 1, 0, missing),
-                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Backpack.ID, "boundLeather", 1, 0),
+                getModItem(Minecraft.ID, "string", 1, 0),
                 "itemLeather",
-                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0),
                 "itemLeather",
                 "materialCloth",
                 "itemLeather",
-                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0),
                 "itemLeather",
-                getModItem(Minecraft.ID, "string", 1, 0, missing));
+                getModItem(Minecraft.ID, "string", 1, 0));
         addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 0, missing),
+                getModItem(Backpack.ID, "backpack", 1, 0),
                 "materialCloth",
                 "ringSteel",
                 "materialCloth",
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "materialCloth",
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing));
+                getModItem(Backpack.ID, "tannedLeather", 1, 0),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0));
 
         HashMap<Integer, String> IDOffsetToDyeMap = new HashMap<>();
         IDOffsetToDyeMap.put(1, "dyeBlack");
@@ -134,17 +134,17 @@ public class ScriptBackpack implements IScriptLoader {
         for (Map.Entry<Integer, String> entry : IDOffsetToDyeMap.entrySet()) {
             GameRegistry.addRecipe(
                     new ColoredBackpackRecipe(
-                            getModItem(Backpack.ID, "backpack", 1, entry.getKey(), missing),
+                            getModItem(Backpack.ID, "backpack", 1, entry.getKey()),
                             "SmallBackpacks",
                             entry.getValue()));
             GameRegistry.addRecipe(
                     new ColoredBackpackRecipe(
-                            getModItem(Backpack.ID, "backpack", 1, 100 + entry.getKey(), missing),
+                            getModItem(Backpack.ID, "backpack", 1, 100 + entry.getKey()),
                             "MediumBackpacks",
                             entry.getValue()));
             GameRegistry.addRecipe(
                     new ColoredBackpackRecipe(
-                            getModItem(Backpack.ID, "backpack", 1, 200 + entry.getKey(), missing),
+                            getModItem(Backpack.ID, "backpack", 1, 200 + entry.getKey()),
                             "BigBackpacks",
                             entry.getValue()));
         }
@@ -152,56 +152,56 @@ public class ScriptBackpack implements IScriptLoader {
         for (Integer offset : IntStream.rangeClosed(0, 16).toArray()) {
             GameRegistry.addRecipe(
                     new UpgradeBackpackRecipe(
-                            getModItem(Backpack.ID, "backpack", 1, 100 + offset, missing),
+                            getModItem(Backpack.ID, "backpack", 1, 100 + offset),
                             "aba",
                             "bcb",
                             "aba",
                             'a',
                             "ringStainlessSteel",
                             'b',
-                            getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                            getModItem(Backpack.ID, "tannedLeather", 1, 0),
                             'c',
-                            getModItem(Backpack.ID, "backpack", 1, offset, missing)));
+                            getModItem(Backpack.ID, "backpack", 1, offset)));
             GameRegistry.addRecipe(
                     new UpgradeBackpackRecipe(
-                            getModItem(Backpack.ID, "backpack", 1, 200 + offset, missing),
+                            getModItem(Backpack.ID, "backpack", 1, 200 + offset),
                             "aba",
                             "bcb",
                             "aba",
                             'a',
                             "ringTitanium",
                             'b',
-                            getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                            getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                             'c',
-                            getModItem(Backpack.ID, "backpack", 1, 100 + offset, missing)));
+                            getModItem(Backpack.ID, "backpack", 1, 100 + offset)));
         }
         addShapedRecipe(
-                getModItem(Backpack.ID, "workbenchbackpack", 1, 17, missing),
+                getModItem(Backpack.ID, "workbenchbackpack", 1, 17),
                 "materialCloth",
                 "ringSteel",
                 "materialCloth",
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 "materialCloth",
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing));
+                getModItem(Backpack.ID, "tannedLeather", 1, 0),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0),
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0));
         addShapedRecipe(
-                getModItem(Backpack.ID, "workbenchbackpack", 1, 217, missing),
+                getModItem(Backpack.ID, "workbenchbackpack", 1, 217),
                 "ringTitanium",
-                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 "ringTitanium",
-                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                getModItem(Backpack.ID, "backpack", 1, 100, missing),
-                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
+                getModItem(Backpack.ID, "backpack", 1, 100),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 "ringTitanium",
-                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0),
                 "ringTitanium");
 
         DryingRackRecipes.addDryingRecipe(
-                getModItem(Backpack.ID, "boundLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "boundLeather", 1, 0),
                 12000,
-                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing));
+                getModItem(Backpack.ID, "tannedLeather", 1, 0));
 
     }
 
@@ -210,7 +210,7 @@ public class ScriptBackpack implements IScriptLoader {
         private final int backpackMatch;
 
         public ColoredBackpackRecipe(ItemStack result, String backpack, String dye) {
-            super(result, backpack, dye, getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing));
+            super(result, backpack, dye, getModItem(ExtraUtilities.ID, "paintbrush", 1, 0));
             backpackMatch = OreDictionary.getOreID(backpack);
         }
 

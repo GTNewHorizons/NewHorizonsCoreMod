@@ -6,6 +6,7 @@ import static bartworks.API.BioObjectAdder.getBacteriaTierFromVoltageTier;
 import static bartworks.API.BioObjectAdder.regenerateBioFluids;
 import static bartworks.API.recipe.BartWorksRecipeMaps.bacterialVatRecipes;
 import static bartworks.API.recipe.BartWorksRecipeMaps.bioLabRecipes;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Aluminium;
 import static gregtech.api.enums.Materials.AntimonyTrioxide;
 import static gregtech.api.enums.Materials.Ash;
@@ -249,7 +250,7 @@ public class BacteriaRegistry {
     }
 
     private void runGTRecipes() {
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 64L)).circuit(24)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaClog", 64)).circuit(24)
                 .itemOutputs(Ash.getDust(8)).fluidInputs(Materials.Xenoxene.getFluid(1000))
                 .fluidOutputs(Materials.RadoxRaw.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
                 .addTo(pyrolyseRecipes);
@@ -307,7 +308,7 @@ public class BacteriaRegistry {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Chip_Stemcell.get(64L),
-                        GTModHandler.getModItem(GalaxySpace.ID, "item.UnknowCrystal", 16L),
+                        getModItem(GalaxySpace.ID, "item.UnknowCrystal", 16),
                         NHItemList.TCetiESeaweedExtract.get(4),
                         Tritanium.getDust(4))
                 .special(BioItemList.getPetriDish(CultureSet.get("StemCellBac")))
@@ -318,7 +319,7 @@ public class BacteriaRegistry {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Chip_Stemcell.get(16L),
-                        GTModHandler.getModItem(GalaxySpace.ID, "item.UnknowCrystal", 16L),
+                        getModItem(GalaxySpace.ID, "item.UnknowCrystal", 16),
                         NHItemList.TCetiESeaweedExtract.get(8),
                         InfinityCatalyst.getDustTiny(4))
                 .special(BioItemList.getPetriDish(CultureSet.get("BioCellBac")))
@@ -337,7 +338,7 @@ public class BacteriaRegistry {
                 .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Naquadria), true)).requiresCleanRoom()
                 .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Genetics.ID, "misc", 2L, 4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Genetics.ID, "misc", 2, 4))
                 .special(BioItemList.getPetriDish(CultureSet.get("BinniGrowthMedium")))
                 .fluidInputs(GTModHandler.getDistilledWater(4L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 2)).duration(7 * SECONDS + 10 * TICKS)
@@ -364,7 +365,7 @@ public class BacteriaRegistry {
                 .duration(9 * (7 * SECONDS + 10 * TICKS)).eut(TierEU.RECIPE_IV).metadata(GLASS, 5)
                 .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false)).addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 4L, 0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 4, 0))
                 .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
                 .fluidInputs(GTModHandler.getDistilledWater(4L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 2)).duration(15 * SECONDS)
@@ -445,7 +446,7 @@ public class BacteriaRegistry {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(Thaumcraft.ID, "ItemZombieBrain", 4L, 0),
+                            getModItem(Thaumcraft.ID, "ItemZombieBrain", 4, 0),
                             new ItemStack(Items.fermented_spider_eye, 4))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
                     .fluidInputs(FluidRegistry.getFluidStack("potion.mineralwater", 40))
@@ -465,9 +466,7 @@ public class BacteriaRegistry {
                     .eut(TierEU.RECIPE_EV).metadata(GLASS, 2).addTo(bacterialVatRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            new ItemStack(Blocks.glowstone, 4),
-                            GTModHandler.getModItem(Botania.ID, "quartz", 4L, 6))
+                    .itemInputs(new ItemStack(Blocks.glowstone, 4), getModItem(Botania.ID, "quartz", 4, 6))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
                     .fluidInputs(FluidRegistry.getFluidStack("fire_water", 10))
                     .fluidOutputs(FluidRegistry.getFluidStack("liquid_sunshine", 10)).duration(30 * SECONDS)
@@ -487,8 +486,8 @@ public class BacteriaRegistry {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 4L, 14),
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 4L, 16))
+                            getModItem(EnderIO.ID, "itemMaterial", 4, 14),
+                            getModItem(EnderIO.ID, "itemMaterial", 4, 16))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
                     .fluidInputs(FluidRegistry.getFluidStack("nutrient_distillation", 40))
                     .fluidOutputs(FluidRegistry.getFluidStack("ender_distillation", 40)).duration(30 * SECONDS)
@@ -496,8 +495,8 @@ public class BacteriaRegistry {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 4L, 15),
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 4L, 17))
+                            getModItem(EnderIO.ID, "itemMaterial", 4, 15),
+                            getModItem(EnderIO.ID, "itemMaterial", 4, 17))
                     .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
                     .fluidInputs(FluidRegistry.getFluidStack("ender_distillation", 10))
                     .fluidOutputs(FluidRegistry.getFluidStack("vapor_of_levity", 10)).duration(30 * SECONDS)
@@ -508,7 +507,7 @@ public class BacteriaRegistry {
 
     private void bioLabRecipes() {
         GTValues.RA.stdBuilder()
-                .itemInputs(BioItemList.getPetriDish(null), GTModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 1L))
+                .itemInputs(BioItemList.getPetriDish(null), getModItem(GalaxySpace.ID, "barnardaClog", 1))
                 .itemOutputs(BioItemList.getPetriDish(CultureSet.get("BarnadaCBac"))).outputChances(2_50)
                 .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 8000)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);
@@ -536,20 +535,17 @@ public class BacteriaRegistry {
                 .fluidInputs(Materials.BioMediumRaw.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
                 .requiresCleanRoom().addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(BioItemList.getPetriDish(null), GTModHandler.getModItem(Genetics.ID, "misc", 1L, 4))
+        GTValues.RA.stdBuilder().itemInputs(BioItemList.getPetriDish(null), getModItem(Genetics.ID, "misc", 1, 4))
                 .itemOutputs(BioItemList.getPetriDish(CultureSet.get("BinniGrowthMedium"))).outputChances(50_00)
                 .fluidInputs(Water.getFluid(4000)).duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV)
                 .addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(BioItemList.getPetriDish(null), GTModHandler.getModItem(Genetics.ID, "misc", 1L, 4))
+        GTValues.RA.stdBuilder().itemInputs(BioItemList.getPetriDish(null), getModItem(Genetics.ID, "misc", 1, 4))
                 .itemOutputs(BioItemList.getPetriDish(CultureSet.get("BinniGrowthMedium"))).outputChances(75_00)
                 .fluidInputs(GTModHandler.getDistilledWater(2000L)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(BioItemList.getPetriDish(null), GTModHandler.getModItem(Genetics.ID, "misc", 1L, 4))
+        GTValues.RA.stdBuilder().itemInputs(BioItemList.getPetriDish(null), getModItem(Genetics.ID, "misc", 1, 4))
                 .itemOutputs(BioItemList.getPetriDish(CultureSet.get("BinniGrowthMedium"))).outputChances(90_00)
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 1000))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);
@@ -560,9 +556,7 @@ public class BacteriaRegistry {
                 .eut(TierEU.RECIPE_EV).addTo(bioLabRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        BioItemList.getPetriDish(null),
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 16L, 0))
+                .itemInputs(BioItemList.getPetriDish(null), getModItem(IndustrialCraft2.ID, "itemBiochaff", 16, 0))
                 .itemOutputs(BioItemList.getPetriDish(CultureSet.get("BinniBacteria"))).outputChances(60_00)
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);
