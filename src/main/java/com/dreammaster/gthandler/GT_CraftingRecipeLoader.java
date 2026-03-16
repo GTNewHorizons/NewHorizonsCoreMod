@@ -1721,27 +1721,27 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                             ItemList.Machine_Steel_Boiler });
 
             addRollingMachineRecipe(
-                    getModItem(Railcraft.ID, "post.metal.light.blue", 8),
+                    getModItem(Railcraft.ID, "post.metal", 8, 12),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Aluminium).toString() });
             addRollingMachineRecipe(
-                    getModItem(Railcraft.ID, "post.metal.purple", 64),
+                    getModItem(Railcraft.ID, "post.metal", 64, 5),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Titanium).toString() });
             addRollingMachineRecipe(
-                    getModItem(Railcraft.ID, "post.metal.black", 64),
+                    getModItem(Railcraft.ID, "post.metal", 64),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Tungsten).toString() });
             addRollingMachineRecipe(
-                    getModItem(Railcraft.ID, "post.metal.light.blue", 8),
+                    getModItem(Railcraft.ID, "post.metal", 8, 12),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Aluminium).toString() });
             addRollingMachineRecipe(
-                    getModItem(Railcraft.ID, "post.metal.purple", 64),
+                    getModItem(Railcraft.ID, "post.metal", 64, 5),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Titanium).toString() });
             addRollingMachineRecipe(
-                    getModItem(Railcraft.ID, "post.metal.black", 64),
+                    getModItem(Railcraft.ID, "post.metal", 64),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Tungsten).toString() });
         }
