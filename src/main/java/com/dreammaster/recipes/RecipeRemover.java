@@ -462,7 +462,6 @@ public class RecipeRemover {
         // GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "dust", 1, 0));
         GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, wildcard));
         GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "machine.beta", 1, 10));
-        GTModHandler.removeFurnaceSmelting(getModItem(EnderIO.ID, "itemPowderIngot", 1, 7));
         GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7));
         GTModHandler.removeFurnaceSmelting(ItemList.Conveyor_Module_LV.get(1L));
         GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 36));
@@ -2815,12 +2814,12 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 1));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 2));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 3));
-        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "AeonSteelIngot", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "AeonSteelBlock", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "QueensGoldIngot", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "QueensGoldBlock", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "aeonsteelblock", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "QueensGoldblock", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "DogbeariumBlock", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "Dogbeariumblock", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "item.carminite", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 12));
         removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "item.emptyMagicMap", 1, 0));
@@ -3096,17 +3095,6 @@ public class RecipeRemover {
                         getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
                 new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) });
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "ender_pearl", 1, 0),
-                new Object[] { getModItem(EnderIO.ID, "itemPowderIngot", 1, 5),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5) },
-                new Object[] { getModItem(EnderIO.ID, "itemPowderIngot", 1, 5),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5) },
-                new Object[] { getModItem(EnderIO.ID, "itemPowderIngot", 1, 5),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5),
-                        getModItem(EnderIO.ID, "itemPowderIngot", 1, 5) });
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "ender_pearl", 1, 0),
                 new Object[] { null, getModItem(EnderZoo.ID, "enderFragment", 1, 0), null },

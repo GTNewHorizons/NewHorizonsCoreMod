@@ -1253,20 +1253,20 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0),
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, wildcard));
         addShapelessRecipe(
-                getModItem(GalaxySpace.ID, "item.itemTier4Rocket", 1, 0),
-                getModItem(GalaxySpace.ID, "item.itemTier4Rocket", 1, wildcard));
+                getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 0),
+                getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, wildcard));
         addShapelessRecipe(
-                getModItem(GalaxySpace.ID, "item.itemTier5Rocket", 1, 0),
-                getModItem(GalaxySpace.ID, "item.itemTier5Rocket", 1, wildcard));
+                getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 0),
+                getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, wildcard));
         addShapelessRecipe(
-                getModItem(GalaxySpace.ID, "item.itemTier6Rocket", 1, 0),
-                getModItem(GalaxySpace.ID, "item.itemTier6Rocket", 1, wildcard));
+                getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 0),
+                getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, wildcard));
         addShapelessRecipe(
-                getModItem(GalaxySpace.ID, "item.itemTier7Rocket", 1, 0),
-                getModItem(GalaxySpace.ID, "item.itemTier7Rocket", 1, wildcard));
+                getModItem(GalaxySpace.ID, "item.Tier7Rocket", 1, 0),
+                getModItem(GalaxySpace.ID, "item.Tier7Rocket", 1, wildcard));
         addShapelessRecipe(
-                getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, 0),
-                getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, wildcard));
+                getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 0),
+                getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, wildcard));
         addShapelessRecipe(
                 getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, 0),
                 getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, wildcard));
