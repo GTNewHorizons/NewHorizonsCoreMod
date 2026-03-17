@@ -79,7 +79,6 @@ public class TF_Loot_Chests {
             TFTreasure.hill3.uncommon.add(getModItem(Thaumcraft.ID, "ItemShard", 4, 5), 12);
             TFTreasure.hill3.uncommon.add(getModItem(Thaumcraft.ID, "ItemShard", 2, 6), 12);
         }
-
         TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.DamascusSteel, 4L), 12);
         TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.ElectricalSteel, 4L), 12);
         TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 4L), 12);
