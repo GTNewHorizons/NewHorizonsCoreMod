@@ -934,10 +934,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // ===================================================================================================
 
         // Recycle deprecated Railcraft casings
-        GTModHandler.addShapelessCraftingRecipe(
-                NHItemList.CokeOvenBrick.get().splitStack(4),
-                bits4,
-                new Object[] { getModItem(Railcraft.ID, "machine.alpha", 1, 7) });
+        if (Railcraft.isModLoaded()) {
+            GTModHandler.addShapelessCraftingRecipe(
+                    NHItemList.CokeOvenBrick.get().splitStack(4),
+                    bits4,
+                    new Object[] { getModItem(Railcraft.ID, "machine.alpha", 1, 7) });
+        }
 
         GTModHandler.addCraftingRecipe(
                 ItemList.CokeOvenCasing.get(1),
@@ -2055,67 +2057,72 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         }
 
         // Add storage component recipes to pre-apply cache upgrades
+        if (AppliedEnergistics2.isModLoaded() && AE2FluidCraft.isModLoaded()) {
+            final ItemStack COMPONENT_1 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35);
+            final ItemStack COMPONENT_4 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36);
+            final ItemStack COMPONENT_16 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37);
+            final ItemStack COMPONENT_64 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38);
+            final ItemStack COMPONENT_256 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 57);
+            final ItemStack COMPONENT_1024 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 58);
+            final ItemStack COMPONENT_4096 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 59);
+            final ItemStack COMPONENT_16384 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60);
+            final ItemStack FLUIDCOMPONENT_1 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 0);
+            final ItemStack FLUIDCOMPONENT_4 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 1);
+            final ItemStack FLUIDCOMPONENT_16 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 2);
+            final ItemStack FLUIDCOMPONENT_64 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 3);
+            final ItemStack FLUIDCOMPONENT_256 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 4);
+            final ItemStack FLUIDCOMPONENT_1024 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 5);
+            final ItemStack FLUIDCOMPONENT_4096 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 6);
+            final ItemStack FLUIDCOMPONENT_16384 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 7);
 
-        final ItemStack COMPONENT_1 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35);
-        final ItemStack COMPONENT_4 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36);
-        final ItemStack COMPONENT_16 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37);
-        final ItemStack COMPONENT_64 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38);
-        final ItemStack COMPONENT_256 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 57);
-        final ItemStack COMPONENT_1024 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 58);
-        final ItemStack COMPONENT_4096 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 59);
-        final ItemStack COMPONENT_16384 = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60);
-        final ItemStack FLUIDCOMPONENT_1 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 0);
-        final ItemStack FLUIDCOMPONENT_4 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 1);
-        final ItemStack FLUIDCOMPONENT_16 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 2);
-        final ItemStack FLUIDCOMPONENT_64 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 3);
-        final ItemStack FLUIDCOMPONENT_256 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 4);
-        final ItemStack FLUIDCOMPONENT_1024 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 5);
-        final ItemStack FLUIDCOMPONENT_4096 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 6);
-        final ItemStack FLUIDCOMPONENT_16384 = getModItem(AE2FluidCraft.ID, "fluid_part", 1, 7);
+            ItemStack[] itemComponents = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64,
+                    COMPONENT_256, COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
+            ItemStack[] fluidComponents = new ItemStack[] { FLUIDCOMPONENT_1, FLUIDCOMPONENT_4, FLUIDCOMPONENT_16,
+                    FLUIDCOMPONENT_64, FLUIDCOMPONENT_256, FLUIDCOMPONENT_1024, FLUIDCOMPONENT_4096,
+                    FLUIDCOMPONENT_16384 };
+            long[] capacities = { 8192, 32768, 131072, 524288, 2097152, 8388608, 33554432, 134217728 };
 
-        ItemStack[] itemComponents = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64,
-                COMPONENT_256, COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
-        ItemStack[] fluidComponents = new ItemStack[] { FLUIDCOMPONENT_1, FLUIDCOMPONENT_4, FLUIDCOMPONENT_16,
-                FLUIDCOMPONENT_64, FLUIDCOMPONENT_256, FLUIDCOMPONENT_1024, FLUIDCOMPONENT_4096, FLUIDCOMPONENT_16384 };
-        long[] capacities = { 8192, 32768, 131072, 524288, 2097152, 8388608, 33554432, 134217728 };
+            for (int i = 0; i <= 7; i++) {
+                ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
+                NBTTagCompound hatchNBT = new NBTTagCompound();
+                hatchNBT.setLong("baseCapacity", capacities[i] * 256);
+                modifiedHatch.setTagCompound(hatchNBT);
 
-        for (int i = 0; i <= 7; i++) {
+                ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
+                NBTTagCompound busNBT = new NBTTagCompound();
+                busNBT.setLong("baseCapacity", capacities[i]);
+                modifiedBus.setTagCompound(busNBT);
+
+                GTModHandler.addShapelessCraftingRecipe(
+                        modifiedHatch,
+                        new Object[] { ItemList.Hatch_Output_ME.get(1L), fluidComponents[i] });
+                GTModHandler.addShapelessCraftingRecipe(
+                        modifiedBus,
+                        new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), itemComponents[i] });
+            }
+            final ItemStack SINGULARITY = getModItem(
+                    AppliedEnergistics2.ID,
+                    "item.ItemExtremeStorageCell.Singularity",
+                    1);
+            final ItemStack FLUID_SINGULARITY = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
+
             ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
             NBTTagCompound hatchNBT = new NBTTagCompound();
-            hatchNBT.setLong("baseCapacity", capacities[i] * 256);
+            hatchNBT.setLong("baseCapacity", Long.MAX_VALUE);
             modifiedHatch.setTagCompound(hatchNBT);
 
             ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
             NBTTagCompound busNBT = new NBTTagCompound();
-            busNBT.setLong("baseCapacity", capacities[i]);
+            busNBT.setLong("baseCapacity", Long.MAX_VALUE);
             modifiedBus.setTagCompound(busNBT);
 
             GTModHandler.addShapelessCraftingRecipe(
-                    modifiedHatch,
-                    new Object[] { ItemList.Hatch_Output_ME.get(1L), fluidComponents[i] });
-            GTModHandler.addShapelessCraftingRecipe(
                     modifiedBus,
-                    new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), itemComponents[i] });
+                    new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), SINGULARITY });
+            GTModHandler.addShapelessCraftingRecipe(
+                    modifiedHatch,
+                    new Object[] { ItemList.Hatch_Output_ME.get(1L), FLUID_SINGULARITY });
         }
-        final ItemStack SINGULARITY = getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1);
-        final ItemStack FLUID_SINGULARITY = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
-
-        ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
-        NBTTagCompound hatchNBT = new NBTTagCompound();
-        hatchNBT.setLong("baseCapacity", Long.MAX_VALUE);
-        modifiedHatch.setTagCompound(hatchNBT);
-
-        ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
-        NBTTagCompound busNBT = new NBTTagCompound();
-        busNBT.setLong("baseCapacity", Long.MAX_VALUE);
-        modifiedBus.setTagCompound(busNBT);
-
-        GTModHandler.addShapelessCraftingRecipe(
-                modifiedBus,
-                new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), SINGULARITY });
-        GTModHandler.addShapelessCraftingRecipe(
-                modifiedHatch,
-                new Object[] { ItemList.Hatch_Output_ME.get(1L), FLUID_SINGULARITY });
 
         // Pre-add planet block to EOH controller
         for (String dimAbbreviation : DimensionHelper.getAllDisplayedNames()) {

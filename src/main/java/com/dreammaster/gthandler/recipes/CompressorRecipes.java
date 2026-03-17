@@ -117,9 +117,11 @@ public class CompressorRecipes implements Runnable {
                 .addTo(compressorRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Coal, 9))
                 .itemOutputs(BlockList.CompressedCoal.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 9, 0))
-                .itemOutputs(BlockList.CompressedCoalCoke.get(1)).duration(15 * SECONDS).eut(2)
-                .addTo(compressorRecipes);
+        if (Railcraft.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 9, 0))
+                    .itemOutputs(BlockList.CompressedCoalCoke.get(1)).duration(15 * SECONDS).eut(2)
+                    .addTo(compressorRecipes);
+        }
 
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCharcoal.get(9))
                 .itemOutputs(BlockList.DoubleCompressedCharcoal.get(1)).duration(15 * SECONDS).eut(2)

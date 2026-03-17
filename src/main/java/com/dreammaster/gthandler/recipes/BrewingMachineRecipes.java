@@ -24,10 +24,12 @@ public class BrewingMachineRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Genetics.ID, "misc", 6, 4))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);
+        if (Genetics.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Genetics.ID, "misc", 6, 4))
+                    .fluidInputs(FluidRegistry.getFluidStack("water", 750))
+                    .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);
+        }
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 16, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750))
@@ -44,10 +46,12 @@ public class BrewingMachineRecipes implements Runnable {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteriapoly", 100)).duration(5 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Fether.ID, "ignis_fruit", 45, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.awkward", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("potion.fireresistance", 750)).duration(6 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(brewingRecipes);
+        if (Fether.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Fether.ID, "ignis_fruit", 45, 0))
+                    .fluidInputs(FluidRegistry.getFluidStack("potion.awkward", 750))
+                    .fluidOutputs(FluidRegistry.getFluidStack("potion.fireresistance", 750)).duration(6 * SECONDS)
+                    .eut(TierEU.RECIPE_ULV).addTo(brewingRecipes);
+        }
 
         // Add fermenter recipes from forestry into gregtech
         if (Forestry.isModLoaded()) {

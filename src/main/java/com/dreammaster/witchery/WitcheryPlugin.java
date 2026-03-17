@@ -190,11 +190,13 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 Witchery.Items.GENERIC.itemFancifulThread.createStack(1),
                 new ItemStack[] { new ItemStack(Witchery.Blocks.WISPY_COTTON, 4),
                         Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1) });
-        SpinningWheel.addRecipe(
-                getModItem(BloodArsenal.ID, "blood_burned_string", 1),
-                Witchery.Items.GENERIC.itemTormentedTwine.createStack(1),
-                new ItemStack[] { Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4),
-                        Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1) });
+        if (BloodArsenal.isModLoaded()) {
+            SpinningWheel.addRecipe(
+                    getModItem(BloodArsenal.ID, "blood_burned_string", 1),
+                    Witchery.Items.GENERIC.itemTormentedTwine.createStack(1),
+                    new ItemStack[] { Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4),
+                            Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1) });
+        }
         SpinningWheel.addRecipe(
                 new ItemStack(Items.string, 8, 0),
                 new ItemStack(Blocks.web, 1, 0),
@@ -204,20 +206,22 @@ public class WitcheryPlugin extends BasePluginWitchery {
         removeAllKettleRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack());
 
         // add a Kettle recipes
-        Kettle.addRecipe(
-                Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2),
-                0,
-                0,
-                6000.0F,
-                -7128833,
-                0,
-                true,
-                Witchery.Items.GENERIC.itemRedstoneSoup.createStack(),
-                Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(),
-                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45),
-                getModItem(HardcoreEnderExpansion.ID, "end_powder", 1),
-                Witchery.Items.GENERIC.itemDropOfLuck.createStack(),
-                Witchery.Items.GENERIC.itemBatWool.createStack());
+        if (BloodArsenal.isModLoaded() && HardcoreEnderExpansion.isModLoaded()) {
+            Kettle.addRecipe(
+                    Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2),
+                    0,
+                    0,
+                    6000.0F,
+                    -7128833,
+                    0,
+                    true,
+                    Witchery.Items.GENERIC.itemRedstoneSoup.createStack(),
+                    Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(),
+                    getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45),
+                    getModItem(HardcoreEnderExpansion.ID, "end_powder", 1),
+                    Witchery.Items.GENERIC.itemDropOfLuck.createStack(),
+                    Witchery.Items.GENERIC.itemBatWool.createStack());
+        }
 
         // remove a Cauldron recipe
         removeAllBrewRecipes(new ItemStack(Witchery.Items.CHALK_RITUAL));

@@ -3,7 +3,6 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
@@ -113,7 +112,7 @@ public class CuttingMachineRecipes implements Runnable {
                 .itemOutputs(ItemList.NandChip.get(8)).requiresCleanRoom().duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(cutterRecipes);
 
-        if (ZTones.isModLoaded() && ProjectRedCore.isModLoaded()) {
+        if (ZTones.isModLoaded() && ProjectRedIllumination.isModLoaded()) {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))

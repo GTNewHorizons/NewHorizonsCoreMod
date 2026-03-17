@@ -51,8 +51,11 @@ public class ForgeHammerRecipes implements Runnable {
                 .itemOutputs(Materials.Charcoal.getBlocks(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.get(1)).itemOutputs(Materials.Coal.getBlocks(9))
                 .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.get(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        if (Railcraft.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.get(1))
+                    .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0)).duration(15 * SECONDS).eut(2)
+                    .addTo(hammerRecipes);
+        }
 
         GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCharcoal.get(1))
                 .itemOutputs(BlockList.CompressedCharcoal.get(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);

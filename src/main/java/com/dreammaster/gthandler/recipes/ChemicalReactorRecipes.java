@@ -320,11 +320,13 @@ public class ChemicalReactorRecipes implements Runnable {
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(Botania.ID, "cocoon", 1, 0), getModItem(Genetics.ID, "misc", 64, 4))
-                    .itemOutputs(NHItemList.TheBigEgg.get())
-                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
-                    .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+            if (Botania.isModLoaded()) {
+                GTValues.RA.stdBuilder()
+                        .itemInputs(getModItem(Botania.ID, "cocoon", 1, 0), getModItem(Genetics.ID, "misc", 64, 4))
+                        .itemOutputs(NHItemList.TheBigEgg.get())
+                        .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
+                        .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+            }
 
         }
 
@@ -347,7 +349,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
         }
 
-        if (Botania.isModLoaded()) {
+        if (Botania.isModLoaded() && HardcoreEnderExpansion.isModLoaded()) {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(

@@ -85,6 +85,7 @@ public class TiCoLoader {
     }
 
     private static void convertAluminumBrassSingularity() {
+        if (!UniversalSingularities.isModLoaded()) return;
         ItemStack roseGoldSingularity = getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 32);
         ItemStackReplacementManager.addSimpleReplacement(
                 "universalsingularities:universal.tinkersConstruct.singularity",

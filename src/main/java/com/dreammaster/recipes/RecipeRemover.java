@@ -338,167 +338,138 @@ public class RecipeRemover {
         bufferMap = new HashMap<>();
         final long timeStart = System.currentTimeMillis();
 
-        if (EtFuturumRequiem.isModLoaded()) {
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "wooden_armorstand", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "smoker", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "end_crystal", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "smithing_table", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_ingot", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_block", 1, 0));
-            for (int i = 0; i < 16; i++) {
-                removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "banner", 1, i));
-            }
-            for (int i = 0; i < 9; i++) {
-                removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, i));
-            }
-            for (int i = 0; i < 16; i++) {
-                removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "shulker_box", 1, i));
-            }
-            for (int i = 0; i < 11; i++) {
-                removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, i));
-            }
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_barrel", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "tinted_glass", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "chain", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 1));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 2));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 3));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 4));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 5));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 6));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 7));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_block", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+        // mod agnostic
+        removeOreDictionaryRecipes();
 
-            removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_brick_stairs", 4, 0));
+        // mod specific
+        removeAdvancedSolarPanelRecipes();
+        removeAE2StuffRecipes();
+        removeAkashicTomeRecipes();
+        removeAutomagyRecipes();
+        removeAvaritiaRecipes();
+        removeBackpackRecipes();
+        removeBetterBuildersWandsRecipes();
+        removeBinnieCoreRecipes();
+        removeBiomesOPlentyRecipes();
+        removeBloodArsenalRecipes();
+        removeBloodMagicRecipes();
+        removeBotanyRecipes();
+        removeCarpentersBlocksRecipes();
+        removeCatWalksRecipes();
+        removeChiselRecipes();
+        removeCompactKineticGeneratorsRecipes();
+        removeDraconicEvolutionRecipes();
+        removeElectroMagicToolsRecipes();
+        removeEnderIORecipes();
+        removeEnderZooRecipes();
+        removeEternalSingularityRecipes();
+        removeEtFuturumRequiemRecipes();
+        removeExtraBeesRecipes();
+        removeExtraTreesRecipes();
+        removeExtraUtilitiesRecipes();
+        removeFetherRecipes();
+        removeFloodLightsRecipes();
+        removeForbiddenMagicRecipes();
+        removeForestryRecipes();
+        removeGalacticraftCoreRecipes();
+        removeGendustryRecipes();
+        removeGeneticsRecipes();
+        removeGraviSuiteRecipes();
+        removeGraviSuiteNEORecipes();
+        removeGregTechRecipes();
+        removeHardcoreEnderExpansionRecipes();
+        removeIC2NuclearControlRecipes();
+        removeIndustrialCraft2Recipes();
+        removeIronTanksMinecartsRecipes();
+        removeMagicBeesRecipes();
+        removeMalisisDoorsRecipes();
+        removeMCFramesRecipes();
+        removeMinecraftRecipes();
+        removeNaturaRecipes();
+        removeOpenBlocksRecipes();
+        removeOpenGlassesRecipes();
+        removeOpenModularTurretsRecipes();
+        removePamsHarvestCraftRecipes();
+        removeProjectRedCoreRecipes();
+        removeProjectRedExpansionRecipes();
+        removeProjectRedExplorationRecipes();
+        removeProjectRedFabricationRecipes();
+        removeProjectRedIntegrationRecipes();
+        removeProjectRedTransmissionRecipes();
+        removeProjectRedTransportationRecipes();
+        removeQuestBookRecipes();
+        removeRailcraftRecipes();
+        removeRandomThingsRecipes();
+        removeRemoteIORecipes();
+        removeSGCraftRecipes();
+        removeStevesCarts2Recipes();
+        removeStevesAddonsRecipes();
+        removeTaintedMagicRecipes();
+        removeThaumcraftRecipes();
+        removeThaumicBasesRecipes();
+        removeThaumicEnergisticsRecipes();
+        removeThaumicExplorationRecipes();
+        removeThaumicTinkererRecipes();
+        removeTinkerConstructRecipes();
+        removeTinkersDefenceRecipes();
+        removeTinkersMechworksRecipes();
+        removeTwilightForestRecipes();
+        removeWirelessRedstoneCBECoreRecipes();
+        removeWirelessRedstoneCBELogicRecipes();
+        removeWirelessRedstoneCBEAddonsRecipes();
+        removeWitcheryRecipes();
 
-            GTModHandler.removeFurnaceSmelting(getModItem(EtFuturumRequiem.ID, "deepslate", 1));
-        }
+        flushBuffer();
+        bufferMap = null;
+        final long timeToLoad = System.currentTimeMillis() - timeStart;
+        MainRegistry.LOGGER.info("Recipes removal took {} ms.", timeToLoad);
+    }
 
-        // AUTOGENERATED FROM SCRIPTS
-
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 1L));
-
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.spring, Materials.Sunnarium, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Sunnarium, 1L));
-        GTModHandler.removeFurnaceSmelting(getModItem(Backpack.ID, "boundLeather", 1, wildcard));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "gravel", 1, wildcard));
-        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10));
-        GTModHandler.removeFurnaceSmelting(getModItem(EnderIO.ID, "itemMaterial", 1, 2));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "quartz_block", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7));
-        GTModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 9));
-        GTModHandler.removeFurnaceSmelting(getModItem(FloodLights.ID, "rawFilament", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "chainmail_boots", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "slime_ball", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, wildcard));
-        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 4));
-        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "obsidian", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "clay_ball", 1, wildcard));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "netherrack", 1, wildcard));
-        GTModHandler.removeFurnaceSmelting(ItemList.Food_Raw_Bread.get(1L));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 1));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 2));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 3));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 4));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "sand", 1, wildcard));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "soul_sand", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "heatsand", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 1));
-        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 2));
-        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 3));
-        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 1));
-        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 2));
-        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "stone", 1, wildcard));
-        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 41));
-        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42));
-        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43));
-        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57));
-        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58));
-        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedExploration.ID, "projectred.exploration.ore", 1, 6));
-        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46));
-        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48));
-        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18));
-        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11));
-        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21));
-        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 1));
-        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 2));
-        GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "blockCustomOre", 1, 7));
-        GTModHandler.removeFurnaceSmelting(getModItem(BiomesOPlenty.ID, "gemOre", 1, 14));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBasalt, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(new ItemStack(sBlockOres1, 1, 514));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreMarble, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "ItemShard", 1, 6));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L));
-        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDust", 1, 11));
-        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemPlates", 1, 7));
-        // FIXME: Fix Railcraft so it registers its items at a reasonable time, instead of registering them whenever.
-        // GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "dust", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, wildcard));
-        GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "machine.beta", 1, 10));
-        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7));
-        GTModHandler.removeFurnaceSmelting(ItemList.Conveyor_Module_LV.get(1L));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 36));
-        GTModHandler.removeFurnaceSmelting(ItemList.Automation_ItemDistributor_ULV.get(1L));
-        GTModHandler.removeFurnaceSmelting(ItemList.Automation_ItemDistributor_LV.get(1L));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 2));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 39));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 38));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 41));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 42));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 5));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "GravelOre", 1, 4));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 40));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1));
-        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6));
-        GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "item.ironwoodRaw", 1, wildcard));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Encoder", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Grower", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Inscriber", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Wireless", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "WirelessKit", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Visualiser", 1, 0));
+    private static void removeAdvancedSolarPanelRecipes() {
+        if (AdvancedSolarPanel.isModLoaded()) return;
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "BlockMolecularTransformer", 1, 0));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5));
+        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 8));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 12));
+        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 13));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "advanced_solar_helmet", 1, 0));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, 0));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "ultimate_solar_helmet", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5));
-        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 13));
+    }
+
+    private static void removeAE2StuffRecipes() {
+        if (!AE2Stuff.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Encoder", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Grower", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Inscriber", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Wireless", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "WirelessKit", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Visualiser", 1, 0));
+    }
+
+    private static void removeAkashicTomeRecipes() {
+        if (!AkashicTome.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(AkashicTome.ID, "tome", 1, 0));
+    }
+
+    private static void removeAutomagyRecipes() {
+        if (!Automagy.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(Automagy.ID, "blockHourglass", 1, 0));
+    }
+
+    private static void removeAvaritiaRecipes() {
+        if (!Avaritia.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(Avaritia.ID, "Double_Craft", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Avaritia.ID, "Triple_Craft", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Avaritia.ID, "Resource", 1, 0));
@@ -512,16 +483,45 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Avaritia.ID, "Resource", 1, 4));
         removeRecipeByOutputDelayed(getModItem(Avaritia.ID, "Resource", 1, 6));
         removeRecipeByOutputDelayed(getModItem(Avaritia.ID, "Resource", 1, 7));
-        removeRecipeByOutputDelayed(getModItem(EternalSingularity.ID, "combined_singularity", 1, wildcard));
+    }
+
+    private static void removeBackpackRecipes() {
+        if (!Backpack.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(Backpack.ID, "boundLeather", 1, wildcard));
+
         removeRecipeByOutputDelayed(getModItem(Backpack.ID, "backpack", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(Backpack.ID, "workbenchbackpack", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(Backpack.ID, "boundLeather", 1, 0));
+    }
+
+    private static void removeBetterBuildersWandsRecipes() {
+        if (!BetterBuildersWands.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(BetterBuildersWands.ID, "wandStone", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BetterBuildersWands.ID, "wandIron", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BetterBuildersWands.ID, "wandDiamond", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, wildcard));
-        removeRecipeByOutputDelayed(getModItem(QuestBook.ID, "ItemQuestBook", 1, 0));
+    }
+
+    private static void removeBinnieCoreRecipes() {
+        if (!BinnieCore.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(BinnieCore.ID, "fieldKit", 1, wildcard));
+
+        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 0));
+        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 1));
+        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 2));
+        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 3));
+        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 4));
+        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 5));
+    }
+
+    private static void removeBiomesOPlentyRecipes() {
+        if (!BiomesOPlenty.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(BiomesOPlenty.ID, "gemOre", 1, 14));
+
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "gemOre", 1, 11));
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "gems", 1, 5));
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0));
@@ -529,11 +529,57 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "dart", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "scytheDiamond", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "ash", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "coal", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "gems", 1, 1));
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "gemOre", 1, 3));
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "gemOre", 1, 13));
         removeRecipeByOutputDelayed(getModItem(BiomesOPlenty.ID, "gemOre", 1, 5));
+        // non bop item recipes added by BoP
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "coal", 1, 0));
+        removeRecipeShapelessDelayed(
+                getModItem(Minecraft.ID, "dye", 3, 15),
+                getModItem(BiomesOPlenty.ID, "bones", 1, 0));
+        removeRecipeShapelessDelayed(
+                getModItem(Minecraft.ID, "dye", 6, 15),
+                getModItem(BiomesOPlenty.ID, "bones", 1, 1));
+        removeRecipeShapelessDelayed(
+                getModItem(Minecraft.ID, "dye", 12, 15),
+                getModItem(BiomesOPlenty.ID, "bones", 1, 2));
+        removeRecipeShapelessDelayed(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 9),
+                getModItem(BiomesOPlenty.ID, "flowers", 1, 2));
+        removeRecipeShapelessDelayed(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 8),
+                getModItem(BiomesOPlenty.ID, "flowers", 1, 9));
+        removeRecipeShapelessDelayed(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 8),
+                getModItem(BiomesOPlenty.ID, "flowers2", 1, 1));
+        removeRecipeShapelessDelayed(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 5),
+                getModItem(BiomesOPlenty.ID, "flowers2", 1, 5));
+        removeRecipeShapelessDelayed(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 5),
+                getModItem(BiomesOPlenty.ID, "mushrooms", 1, 2));
+        removeRecipeShapelessDelayed(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 7),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0));
+        removeRecipeShapelessDelayed(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 6),
+                getModItem(BiomesOPlenty.ID, "mushrooms", 1, 4));
+        removeRecipeShapelessDelayed(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 6),
+                getModItem(BiomesOPlenty.ID, "plants", 1, 7));
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "wheat", 1, 0),
+                new Object[] { getModItem(BiomesOPlenty.ID, "plants", 1, 6),
+                        getModItem(BiomesOPlenty.ID, "plants", 1, 6), getModItem(BiomesOPlenty.ID, "plants", 1, 6) },
+                new Object[0],
+                new Object[0]);
+    }
+
+    private static void removeBloodArsenalRecipes() {
+        if (!BloodArsenal.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_infused_planks", 1, 0));
@@ -582,22 +628,27 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "glass_sacrificial_dagger", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "glass_dagger_of_sacrifice", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "vampire_ring", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 4));
+    }
+
+    private static void removeBloodMagicRecipes() {
+        if (!BloodMagic.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "Altar", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "sacrificialKnife", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "blankSlate", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "blockWritingTable", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "waterSigil", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "lavaSigil", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 1));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "imbuedSlate", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 2));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "demonicSlate", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 3));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27));
-        removeRecipeByOutputDelayed(getModItem(BloodArsenal.ID, "blood_stone", 1, 4));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "divinationSigil", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "speedRune", 1, 0));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "ritualStone", 1, 0));
@@ -702,6 +753,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 1));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 2));
         removeRecipeByOutputDelayed(getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 3));
+    }
+
+    private static void removeBotanyRecipes() {
+        if (!Botany.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "trowelWood", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "trowelStone", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "trowelIron", 1, 0));
@@ -709,6 +765,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "trowelDiamond", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "insulatedTube", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(Botany.ID, "soilMeter", 1, 0));
+    }
+
+    private static void removeCarpentersBlocksRecipes() {
+        if (!CarpentersBlocks.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CarpentersBlocks.ID, "itemCarpentersChisel", 1, 0));
@@ -730,6 +791,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CarpentersBlocks.ID, "itemCarpentersTile", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CarpentersBlocks.ID, "itemCarpentersDoor", 1, 0));
+    }
+
+    private static void removeCatWalksRecipes() {
+        if (!CatWalks.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(CatWalks.ID, "support_column", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CatWalks.ID, "sturdy_rail_powered", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CatWalks.ID, "cagedLadder_north_unlit", 1, 0));
@@ -741,6 +807,10 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(CatWalks.ID, "ropeLight", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CatWalks.ID, "steelgrate", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CatWalks.ID, "blowtorch", 1, 0));
+    }
+
+    private static void removeChiselRecipes() {
+
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "chisel", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "obsidianChisel", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "diamondChisel", 1, 0));
@@ -753,6 +823,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "upgrade", 1, 2));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "upgrade", 1, 3));
         removeRecipeByOutputDelayed(getModItem(Chisel.ID, "voidstone2", 1, 0));
+    }
+
+    private static void removeCompactKineticGeneratorsRecipes() {
+        if (!CompactKineticGenerators.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 1));
         removeRecipeByOutputDelayed(getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 2));
@@ -767,11 +842,21 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 11));
         removeRecipeByOutputDelayed(getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0));
         removeRecipeByOutputDelayed(getModItem(CompactKineticGenerators.ID, "IridiumRotor", 1, 0));
+    }
+
+    private static void removeDraconicEvolutionRecipes() {
+        if (!DraconicEvolution.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(DraconicEvolution.ID, "dissEnchanter", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6));
-        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 7));
-        removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 8));
-        removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1));
+    }
+
+    private static void removeElectroMagicToolsRecipes() {
+        if (!ElectroMagicTools.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 1));
+        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 2));
+        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10));
+
         removeRecipeByOutputDelayed(getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 5));
         removeRecipeByOutputDelayed(getModItem(ElectroMagicTools.ID, "FeatherWing", 1, 0));
@@ -782,6 +867,13 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10));
         removeRecipeByOutputDelayed(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 13));
         removeRecipeByOutputDelayed(getModItem(ElectroMagicTools.ID, "Omnitool", 1, wildcard));
+    }
+
+    private static void removeEnderIORecipes() {
+        if (!EnderIO.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(EnderIO.ID, "itemMaterial", 1, 2));
+
         removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "blockStirlingGenerator", 1, 0));
         removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "blockCombustionGenerator", 1, 0));
         removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "blockZombieGenerator", 1, 0));
@@ -930,6 +1022,107 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "item.stellar_chestplate", 1, 0));
         removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "item.stellar_leggings", 1, 0));
         removeRecipeByOutputDelayed(getModItem(EnderIO.ID, "item.stellar_boots", 1, 0));
+
+        removeRecipeShapedDelayed(
+                getModItem(EnderIO.ID, "itemAlloy", 1, 6),
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" });
+
+        removeRecipeShapedDelayed(
+                getModItem(EnderIO.ID, "itemAlloy", 1, 8),
+                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
+                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
+                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
+                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) });
+    }
+
+    private static void removeEnderZooRecipes() {
+        if (!EnderZoo.isModLoaded()) return;
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "ender_pearl", 1, 0),
+                new Object[] { null, getModItem(EnderZoo.ID, "enderFragment", 1, 0), null },
+                new Object[] { getModItem(EnderZoo.ID, "enderFragment", 1, 0),
+                        getModItem(EnderZoo.ID, "enderFragment", 1, 0),
+                        getModItem(EnderZoo.ID, "enderFragment", 1, 0) },
+                new Object[] { null, getModItem(EnderZoo.ID, "enderFragment", 1, 0), null });
+    }
+
+    private static void removeEternalSingularityRecipes() {
+        if (!EternalSingularity.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(EternalSingularity.ID, "combined_singularity", 1, wildcard));
+    }
+
+    private static void removeEtFuturumRequiemRecipes() {
+        if (!EtFuturumRequiem.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "wooden_armorstand", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "smoker", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "end_crystal", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "smithing_table", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_ingot", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_block", 1, 0));
+        for (int i = 0; i < 16; i++) {
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "banner", 1, i));
+        }
+        for (int i = 0; i < 9; i++) {
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, i));
+        }
+        for (int i = 0; i < 16; i++) {
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "shulker_box", 1, i));
+        }
+        for (int i = 0; i < 11; i++) {
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, i));
+        }
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_barrel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "tinted_glass", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "chain", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 5));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_grate", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_block", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_brick_stairs", 4, 0));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1, 1), "cropBeetroot");
+
+        GTModHandler.removeFurnaceSmelting(getModItem(EtFuturumRequiem.ID, "deepslate", 1));
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "leather", 1, 0),
+                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0),
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0) },
+                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0),
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0) },
+                new Object[0]);
+    }
+
+    private static void removeExtraBeesRecipes() {
+        if (!ExtraBees.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ExtraBees.ID, "alveary", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraBees.ID, "alveary", 1, 1));
         removeRecipeByOutputDelayed(getModItem(ExtraBees.ID, "alveary", 1, 2));
@@ -945,6 +1138,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0));
+    }
+
+    private static void removeExtraTreesRecipes() {
+        if (!ExtraTrees.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ExtraTrees.ID, "machine", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraTrees.ID, "machine", 1, 1));
         removeRecipeByOutputDelayed(getModItem(ExtraTrees.ID, "machine", 1, 2));
@@ -968,6 +1166,14 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ExtraTrees.ID, "gate", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(ExtraTrees.ID, "fence", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(ExtraTrees.ID, "multifence", 1, wildcard));
+    }
+
+    private static void removeExtraUtilitiesRecipes() {
+        if (!ExtraUtilities.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7));
+        GTModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 9));
+
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "angelRing", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "angelRing", 1, 1));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "angelRing", 1, 2));
@@ -1100,6 +1306,35 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "destructionpickaxe", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "defoliageAxe", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "temporalHoe", 1, 0));
+
+        removeRecipeShapedDelayed(
+                getModItem(ExtraUtilities.ID, "unstableingot", 1, 0),
+                new Object[] { getModItem(Minecraft.ID, "iron_ingot", 1, 0) },
+                new Object[] { getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0) },
+                new Object[] { getModItem(Minecraft.ID, "diamond", 1, 0) });
+    }
+
+    private static void removeFetherRecipes() {
+        if (!Fether.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "nether_planks", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "nether_bed", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_sword", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_shovel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_pickaxe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_axe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_hoe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_helmet", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_chestplate", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_leggings", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_boots", 1, 0));
+    }
+
+    private static void removeFloodLightsRecipes() {
+        if (!FloodLights.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(FloodLights.ID, "rawFilament", 1, 0));
+
         removeRecipeByOutputDelayed(getModItem(FloodLights.ID, "electricFloodlight", 1, 0));
         removeRecipeByOutputDelayed(getModItem(FloodLights.ID, "carbonFloodlight", 1, 0));
         removeRecipeByOutputDelayed(getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 0));
@@ -1111,8 +1346,38 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(FloodLights.ID, "carbonLantern", 1, 0));
         removeRecipeByOutputDelayed(getModItem(FloodLights.ID, "mantle", 1, 0));
         removeRecipeByOutputDelayed(getModItem(FloodLights.ID, "growLight", 1, 0));
+    }
+
+    private static void removeForbiddenMagicRecipes() {
+        if (!ForbiddenMagic.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ForbiddenMagic.ID, "RidingCrop", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2));
+
+        removeRecipeShapedDelayed(
+                getModItem(ForbiddenMagic.ID, "FMResource", 9, 0),
+                new Object[] { getModItem(Minecraft.ID, "emerald", 1, 0) },
+                new Object[0],
+                new Object[0]);
+
+        removeRecipeShapedDelayed(getModItem(ForbiddenMagic.ID, "FMResource", 2, 1));
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "emerald", 1, 0),
+                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0) },
+                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0) },
+                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
+                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0) });
+    }
+
+    private static void removeForestryRecipes() {
+        if (!Forestry.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "sturdyMachine", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "core", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "factory", 1, 0));
@@ -1201,7 +1466,17 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "lepidopterology", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard));
+    }
+
+    private static void removeGalacticraftCoreRecipes() {
+        if (!GalacticraftCore.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(GalacticraftCore.ID, "item.null", 3, 0));
+    }
+
+    private static void removeGendustryRecipes() {
+        if (!Gendustry.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "Mutatron", 1, 0));
@@ -1231,6 +1506,14 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "EjectCover", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "ImportCover", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "ErrorSensorCover", 1, 0));
+
+        removeRecipeShapedDelayed(getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Gendustry.ID, "GeneTemplate", 1, 0));
+    }
+
+    private static void removeGeneticsRecipes() {
+        if (!Genetics.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(Genetics.ID, "misc", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Genetics.ID, "misc", 1, 1));
         removeRecipeByOutputDelayed(getModItem(Genetics.ID, "misc", 1, 2));
@@ -1254,6 +1537,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Genetics.ID, "misc", 1, 10));
         removeRecipeByOutputDelayed(getModItem(Genetics.ID, "analyst", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Genetics.ID, "registry", 1, 0));
+    }
+
+    private static void removeGraviSuiteRecipes() {
+        if (!GraviSuite.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0));
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "itemSimpleItem", 1, 1));
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2));
@@ -1265,11 +1553,27 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "advDDrill", 1, 0));
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "graviTool", 1, 0));
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "ultimateLappack", 1, 0));
+    }
+
+    private static void removeGraviSuiteNEORecipes() {
+        if (!GraviSuiteNEO.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(GraviSuiteNEO.ID, "epicLappack", 1, wildcard));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "resource", 1, 0));
-        removeRecipeByOutputDelayed(ItemList.Teleporter.get(1L));
+    }
+
+    private static void removeGregTechRecipes() {
+        // GT5u should always be loaded
+
+        GTModHandler.removeFurnaceSmelting(new ItemStack(sBlockOres1, 1, 514));
+        GTModHandler.removeFurnaceSmelting(ItemList.Food_Raw_Bread.get(1L));
+        GTModHandler.removeFurnaceSmelting(ItemList.Conveyor_Module_LV.get(1L));
+        GTModHandler.removeFurnaceSmelting(ItemList.Automation_ItemDistributor_ULV.get(1L));
+        GTModHandler.removeFurnaceSmelting(ItemList.Automation_ItemDistributor_LV.get(1L));
+    }
+
+    private static void removeHardcoreEnderExpansionRecipes() {
+        if (!HardcoreEnderExpansion.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(HardcoreEnderExpansion.ID, "altar_nexus", 1, 0));
         removeRecipeByOutputDelayed(getModItem(HardcoreEnderExpansion.ID, "essence_altar", 1, 0));
         removeRecipeByOutputDelayed(getModItem(HardcoreEnderExpansion.ID, "void_chest", 1, 0));
@@ -1315,63 +1619,54 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(HardcoreEnderExpansion.ID, "curse", 1, 265));
         removeRecipeByOutputDelayed(getModItem(HardcoreEnderExpansion.ID, "curse", 1, 10));
         removeRecipeByOutputDelayed(getModItem(HardcoreEnderExpansion.ID, "curse", 1, 266));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "sink", 1, wildcard));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "market", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "spamcompressedsaltBlockalt", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "oven", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "cuttingboardItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "mortarandpestleItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "bakewareItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "apiary", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "mortarandpestleItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "potItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "presser", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "skilletItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "saucepanItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherhelmItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherchestItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherleggingsItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherbootsItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco2", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco3", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco4", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco5", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco6", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco7", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco8", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco9", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco10", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco11", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco12", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco13", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco14", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco15", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco16", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco16", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "churn", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "quern", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "boiledeggItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "onionsoupItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "honeycombchocolatebarItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "nether_planks", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "nether_bed", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_sword", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_shovel", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_pickaxe", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_axe", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_hoe", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_helmet", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_chestplate", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_leggings", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Fether.ID, "quartz_boots", 1, 0));
+    }
+
+    private static void removeIC2NuclearControlRecipes() {
+        if (!IC2NuclearControl.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 8));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 9));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemToolThermometer", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemToolDigitalThermometer", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemEnergySensorKit", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "KitAppeng", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemTimeCard", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemTextCard", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "networkLink", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "remoteMonitor", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0));
+    }
+
+    private static void removeIndustrialCraft2Recipes() {
+        if (!IndustrialCraft2.isModLoaded()) return;
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
+
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 4));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDust", 1, 11));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemPlates", 1, 7));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7));
+
+        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 0));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 1));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 3));
@@ -1577,6 +1872,30 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 0));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemPartCFPowder", 1, 0));
+
+        removeRecipeShapelessDelayed(
+                getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0),
+                getModItem(IndustrialCraft2.ID, "itemCofeeBeans", 1, 0));
+    }
+
+    private static void removeIronTanksMinecartsRecipes() {
+        if (!IronTanksMinecarts.isModLoaded()) return;
+
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_iron", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_gold", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_steel", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_copper", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_diamond", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_aluminium", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_obsidian", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_stainlesssteel", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_titanium", 1, 0));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_tungstensteel", 1, 0));
+    }
+
+    private static void removeMagicBeesRecipes() {
+        if (!MagicBees.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0));
         removeRecipeByOutputDelayed(getModItem(MagicBees.ID, "capsule.magic", 1, 0));
         removeRecipeByOutputDelayed(getModItem(MagicBees.ID, "capsule.void", 1, 0));
@@ -1602,6 +1921,29 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(MagicBees.ID, "moonDial", 1, 0));
         removeRecipeByOutputDelayed(getModItem(MagicBees.ID, "magnet", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0));
+
+        removeRecipeShapedDelayed(
+                GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 7) },
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 7) },
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 7) });
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "diamond", 1, 0),
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 5) },
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 5) },
+                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
+                        getModItem(MagicBees.ID, "beeNugget", 1, 5) });
+    }
+
+    private static void removeMalisisDoorsRecipes() {
+        if (!MalisisDoors.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0));
         removeRecipeByOutputDelayed(getModItem(MalisisDoors.ID, "sliding_trapdoor", 1, 0));
         removeRecipeByOutputDelayed(getModItem(MalisisDoors.ID, "player_sensor", 1, 0));
@@ -1654,106 +1996,50 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(MalisisDoors.ID, "trapdoor_dark_oak", 1, 0));
         removeRecipeByOutputDelayed(getModItem(MalisisDoors.ID, "trapdoor_jungle", 1, 0));
         removeRecipeByOutputDelayed(getModItem(MalisisDoors.ID, "trapdoor_spruce", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 3));
-        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "SignalBus", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "SignalTerminal", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "LengthWire", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "SpoolWire", 1, wildcard));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "chest", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "trapped_chest", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "crafting_table", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "furnace", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bedrock", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dispenser", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dropper", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "piston", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sticky_piston", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "rail", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_rail", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "detector_rail", 1, 0));
+    }
+
+    private static void removeMCFramesRecipes() {
+        if (!MCFrames.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(MCFrames.ID, "mcframes.frame", 1, 0));
+    }
+
+    private static void removeMinecraftRecipes() {
+        // minecraft should always be loaded
+
+        // smelting
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "gravel", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "chainmail_boots", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "obsidian", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "clay_ball", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "netherrack", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "sand", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "soul_sand", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "quartz_block", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "slime_ball", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "stone", 1, wildcard));
+
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "activator_rail", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "noteblock", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "jukebox", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bookshelf", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "mossy_cobblestone", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stonebrick", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lit_pumpkin", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "trapdoor", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "torch", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lever", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "glass_pane", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "redstone_torch", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "ladder", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fence", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fence_gate", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "enchanting_table", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "redstone_lamp", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "ender_chest", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "tripwire_hook", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "beacon", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "anvil", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "daylight_detector", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "hopper", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "beacon", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bed", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bedrock", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "boat", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "book", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bookshelf", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bookshelf", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bow", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "brewing_stand", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "brick_block", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "saddle", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 3));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 4));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 5));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 6));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 7));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 8));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 9));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 10));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 11));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 12));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 13));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 14));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 15));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 3));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 4));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 5));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 6));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 7));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 8));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 9));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 10));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 11));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 12));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 13));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 14));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 15));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 3));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 4));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 5));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 6));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 7));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 8));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 9));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 10));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 11));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 12));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 13));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 14));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 15));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "cake", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 12));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 13));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 14));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 15));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 2));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 3));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 4));
@@ -1762,14 +2048,126 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 7));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 8));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 9));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 10));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 11));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 12));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 13));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 14));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "carpet", 1, 15));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "chest", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "clay", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "clock", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "comparator", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "compass", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "crafting_table", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "daylight_detector", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "detector_rail", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_axe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_boots", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_chestplate", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_helmet", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_hoe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_leggings", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_shovel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_sword", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dispenser", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dragon_egg", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dropper", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "enchanting_table", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "ender_chest", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "ender_eye", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fence", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fence_gate", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fermented_spider_eye", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fire_charge", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fishing_rod", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "flint_and_steel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "flower_pot", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "furnace", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "glass_pane", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_apple", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_apple", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_carrot", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_rail", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "hay_block", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "hopper", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "item_frame", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "jukebox", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "ladder", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lead", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lever", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lit_pumpkin", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "magma_cream", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "melon_block", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "melon_seeds", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "mossy_cobblestone", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "name_tag", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_brick", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_brick_fence", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_star", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "noteblock", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "painting", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "piston", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "poisonous_potato", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "pumpkin_pie", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "pumpkin_seeds", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "quartz_block", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "quartz_block", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "rail", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "redstone_lamp", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "redstone_torch", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "repeater", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "saddle", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sandstone", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sandstone", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sandstone", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "shears", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sign", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "slime_ball", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "snow", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "soul_sand", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 12));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 13));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 14));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 15));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 5));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 8));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass", 1, 9));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 12));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 13));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 14));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 15));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 5));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 8));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_glass_pane", 1, 9));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 12));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 13));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 14));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 15));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 2));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 3));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 4));
@@ -1778,81 +2176,101 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 7));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 8));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 9));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 10));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 11));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 12));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 13));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 14));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stained_hardened_clay", 1, 15));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sandstone", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sandstone", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sandstone", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "tnt", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "snow", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "clay", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_brick", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "quartz_block", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "quartz_block", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bookshelf", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "brewing_stand", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "clock", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "compass", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_sword", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_shovel", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_pickaxe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sticky_piston", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_axe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_hoe", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_sword", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_shovel", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_axe", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_hoe", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_helmet", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_chestplate", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_leggings", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_boots", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "ender_eye", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_apple", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_apple", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_carrot", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "cake", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "pumpkin_seeds", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "melon_seeds", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fermented_spider_eye", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "magma_cream", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fire_charge", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "melon_block", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "soul_sand", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_brick_fence", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "name_tag", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lead", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "pumpkin_pie", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "comparator", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "repeater", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 4));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "flower_pot", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "hay_block", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_pickaxe", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_shovel", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_sword", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stonebrick", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "string", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "tnt", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "torch", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "trapdoor", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "trapped_chest", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "tripwire_hook", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wheat", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "slime_ball", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "item_frame", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bed", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fishing_rod", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "poisonous_potato", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sign", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "boat", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "painting", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "flint_and_steel", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dragon_egg", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "shears", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_star", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1, 1), "cropBeetroot");
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 12));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 13));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 14));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 15));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 5));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 8));
+        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 9));
+
+        // modded recipe, no clue where from
+        removeRecipeShapelessDelayed(
+                getModItem(Minecraft.ID, "gunpowder", 1, 0),
+                getModItem(Minecraft.ID, "coal", 1, 1),
+                getModItem(Minecraft.ID, "coal", 1, 1),
+                getModItem(Minecraft.ID, "coal", 1, 1),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0));
+
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 3, 15), getModItem(Minecraft.ID, "bone", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "nether_star", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "sand", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "glowstone_dust", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "glass", 1, 0));
+
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "speckled_melon", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 1));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 3));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 4));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 5));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 6));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 7));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "bookshelf", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "packed_ice", 4, 0));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "chest_minecart", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "furnace_minecart", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "hopper_minecart", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "tnt_minecart", 1, 0));
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "wooden_slab", 6, 0),
+                new Object[] { getModItem(Minecraft.ID, "planks", 1, 0), getModItem(Minecraft.ID, "planks", 1, 0),
+                        getModItem(Minecraft.ID, "planks", 1, 0) },
+                new Object[0],
+                new Object[0]);
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "paper", 2, 0),
+                new Object[] { getModItem(Minecraft.ID, "reeds", 1, 0), getModItem(Minecraft.ID, "reeds", 1, 0),
+                        getModItem(Minecraft.ID, "reeds", 1, 0) },
+                new Object[0],
+                new Object[0]);
+
+        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "sand", 1, 0));
+    }
+
+    private static void removeNaturaRecipes() {
+        if (!Natura.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "heatsand", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 1));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 2));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 3));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 1));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 2));
+
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "planks", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "natura.stick", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "Natura.workbench", 1, wildcard));
@@ -1916,9 +2334,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "fenceGate.fusewood", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "natura.emptybowl", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "redwoodDoorItem", 1, wildcard));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "blueberryItem", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "raspberryItem", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "Blazerail", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "BrailPowered", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "BrailDetector", 1, 0));
@@ -1932,34 +2347,29 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "natura.bow.darkwood", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "natura.bow.fusewood", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "barleyFood", 1, 4));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 3));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 6));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 7));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 8));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 9));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 10));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemToolThermometer", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemToolDigitalThermometer", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemEnergySensorKit", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "KitAppeng", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemTimeCard", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemTextCard", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "networkLink", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "remoteMonitor", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0));
+
+        removeRecipeShapelessDelayed(
+                getModItem(Natura.ID, "barleyFood", 1, 8),
+                getModItem(Natura.ID, "Bluebells", 1, 0));
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "gunpowder", 1, 0),
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4), getModItem(Natura.ID, "barleyFood", 1, 4),
+                        null },
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4), getModItem(Natura.ID, "barleyFood", 1, 4),
+                        null },
+                new Object[0]);
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "leather", 1, 0),
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6), getModItem(Natura.ID, "barleyFood", 1, 6) },
+                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6), getModItem(Natura.ID, "barleyFood", 1, 6) },
+                new Object[0]);
+    }
+
+    private static void removeOpenBlocksRecipes() {
+        if (!OpenBlocks.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(OpenBlocks.ID, "hangglider", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenBlocks.ID, "generic", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenBlocks.ID, "luggage", 1, 0));
@@ -2015,8 +2425,21 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(OpenBlocks.ID, "pedometer", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenBlocks.ID, "tastyClay", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenBlocks.ID, "cursor", 1, 0));
+
+        removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "paintBrush", 1, 0));
+        removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "goldenEye", 1, wildcard));
+    }
+
+    private static void removeOpenGlassesRecipes() {
+        if (!OpenGlasses.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(OpenGlasses.ID, "openglassesterminal", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenGlasses.ID, "openglasses", 1, wildcard));
+    }
+
+    private static void removeOpenModularTurretsRecipes() {
+        if (!OpenModularTurrets.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(OpenModularTurrets.ID, "baseTierWood", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenModularTurrets.ID, "baseTierOneBlock", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenModularTurrets.ID, "baseTierTwoBlock", 1, 0));
@@ -2086,6 +2509,153 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(OpenModularTurrets.ID, "recyclerAddon", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenModularTurrets.ID, "potentiaAddon", 1, 0));
         removeRecipeByOutputDelayed(getModItem(OpenModularTurrets.ID, "redstoneReactorAddon", 1, 0));
+    }
+
+    private static void removePamsHarvestCraftRecipes() {
+        if (!PamsHarvestCraft.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "sink", 1, wildcard));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "market", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "spamcompressedsaltBlockalt", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "oven", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "cuttingboardItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "mortarandpestleItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "bakewareItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "apiary", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "mortarandpestleItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "potItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "presser", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "skilletItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "saucepanItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherhelmItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherchestItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherleggingsItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "hardenedleatherbootsItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco2", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco3", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco4", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco5", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco6", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco7", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco8", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco9", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco10", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco11", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco12", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco13", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco14", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco15", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco16", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "pamcandleDeco16", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "churn", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "quern", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "boiledeggItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "onionsoupItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "honeycombchocolatebarItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "blueberryItem", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(PamsHarvestCraft.ID, "raspberryItem", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0));
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "leather_helmet", 1, 0),
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
+                new Object[0]);
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "leather_chestplate", 1, 0),
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) });
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "leather_leggings", 1, 0),
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) });
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "leather_boots", 1, 0),
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
+                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
+                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
+                new Object[0]);
+    }
+
+    private static void removeProjectRedCoreRecipes() {
+        if (!ProjectRedCore.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 41));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58));
+
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 56));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 8));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 41));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 40));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 15));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 19));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 22));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 23));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 25));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 31));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 34));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.screwdriver", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.wiredebugger", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.datacard", 1, 0));
+    }
+
+    private static void removeProjectRedExpansionRecipes() {
+        if (!ProjectRedExpansion.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine1", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine1", 1, 1));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 0));
@@ -2096,14 +2666,27 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 5));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.battery", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 56));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.jetpack", 1, 0));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.electric_screwdriver", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 6));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 7));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 8));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 9));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0));
+    }
+
+    private static void removeProjectRedExplorationRecipes() {
+        if (!ProjectRedExploration.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedExploration.ID, "projectred.exploration.ore", 1, 6));
+
         removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.backpack", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, wildcard));
-        removeRecipeByOutputDelayed(
-                getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawruby", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawsapphire", 1, 0));
@@ -2126,44 +2709,20 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.peridothelmet", 1, 0));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.peridotleggings", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 3));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 8));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 41));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 40));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 15));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.jetpack", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 19));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 22));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 23));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 25));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 31));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 34));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.screwdriver", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.wiredebugger", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.datacard", 1, 0));
+    }
+
+    private static void removeProjectRedFabricationRecipes() {
+        if (!ProjectRedFabrication.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0));
+    }
+
+    private static void removeProjectRedIntegrationRecipes() {
+        if (!ProjectRedIntegration.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1));
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 2));
@@ -2198,8 +2757,19 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 31));
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32));
         removeRecipeByOutputDelayed(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 33));
+    }
+
+    private static void removeProjectRedTransmissionRecipes() {
+        if (!ProjectRedTransmission.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, wildcard));
         removeRecipeByOutputDelayed(
-                getModItem(ProjectRedExpansion.ID, "projectred.expansion.electric_screwdriver", 1, 0));
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, wildcard));
+    }
+
+    private static void removeProjectRedTransportationRecipes() {
+        if (!ProjectRedTransportation.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1));
         removeRecipeByOutputDelayed(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 2));
@@ -2231,18 +2801,21 @@ public class RecipeRemover {
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routerutil", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 6));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 7));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 8));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 9));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 1));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(MCFrames.ID, "mcframes.frame", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0));
+    }
+
+    private static void removeQuestBookRecipes() {
+        if (!QuestBook.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(QuestBook.ID, "ItemQuestBook", 1, 0));
+    }
+
+    private static void removeRailcraftRecipes() {
+        if (!Railcraft.isModLoaded()) return;
+
+        // FIXME: Fix Railcraft so it registers its items at a reasonable time, instead of registering them whenever.
+        // GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "dust", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "machine.beta", 1, 10));
+
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "stair", 1, 6));
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "stair", 1, 43));
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "stair", 1, 40));
@@ -2354,6 +2927,24 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "machine.gamma", 1, 10));
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "machine.gamma", 1, 11));
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "brick.bloodstained", 1, 2));
+
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.energy.batbox", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.energy.cesu", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.energy.mfe", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.tank", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.anchor.personal", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.anchor", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.work", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.electric.meter", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "armor.goggles", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.magnifying.glass", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.signal.tuner", 1, 0));
+        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.surveyor", 1, 0));
+    }
+
+    private static void removeRandomThingsRecipes() {
+        if (!RandomThings.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(RandomThings.ID, "onlineDetector", 1, 0));
         removeRecipeByOutputDelayed(getModItem(RandomThings.ID, "moonSensor", 1, 0));
         removeRecipeByOutputDelayed(getModItem(RandomThings.ID, "bloodMoonSensor", 1, 0));
@@ -2374,6 +2965,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(RandomThings.ID, "voidStone", 1, 0));
         removeRecipeByOutputDelayed(getModItem(RandomThings.ID, "dropFilter", 1, 1));
         removeRecipeByOutputDelayed(getModItem(RandomThings.ID, "spectreKey", 1, 0));
+    }
+
+    private static void removeRemoteIORecipes() {
+        if (!RemoteIO.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(RemoteIO.ID, "tile.remote_interface", 1, 0));
         removeRecipeByOutputDelayed(getModItem(RemoteIO.ID, "tile.machine", 1, 0));
         removeRecipeByOutputDelayed(getModItem(RemoteIO.ID, "tile.machine", 1, 1));
@@ -2388,6 +2984,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(RemoteIO.ID, "item.pda", 1, 0));
         removeRecipeByOutputDelayed(getModItem(RemoteIO.ID, "item.remoteAccessor", 1, 0));
         removeRecipeByOutputDelayed(getModItem(RemoteIO.ID, "item.linker", 1, 0));
+    }
+
+    private static void removeSGCraftRecipes() {
+        if (!SGCraft.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(SGCraft.ID, "stargateRing", 1, 0));
         removeRecipeByOutputDelayed(getModItem(SGCraft.ID, "stargateRing", 1, 1));
         removeRecipeByOutputDelayed(getModItem(SGCraft.ID, "stargateBase", 1, 0));
@@ -2403,6 +3004,17 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(SGCraft.ID, "sgIrisUpgrade", 1, 0));
         removeRecipeByOutputDelayed(getModItem(SGCraft.ID, "sgIrisBlade", 1, 0));
         removeRecipeByOutputDelayed(getModItem(SGCraft.ID, "ic2Capacitor", 1, 0));
+    }
+
+    private static void removeStevesCarts2Recipes() {
+        if (!StevesCarts2.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21));
+
         removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "BlockCartAssembler", 1, 0));
         removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "BlockCargoManager", 1, 0));
         removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "BlockDistributor", 1, 0));
@@ -2562,15 +3174,34 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "CartModule", 1, 94));
         removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "CartModule", 1, 99));
         removeRecipeByOutputDelayed(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17));
+    }
+
+    private static void removeStevesAddonsRecipes() {
+        if (!StevesAddons.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(StevesAddons.ID, "cable_rf", 1, 0));
         removeRecipeByOutputDelayed(getModItem(StevesAddons.ID, "cable_ae", 1, 0));
         removeRecipeByOutputDelayed(getModItem(StevesAddons.ID, "duplicator", 1, 0));
         removeRecipeByOutputDelayed(getModItem(StevesAddons.ID, "labeler", 1, 0));
+    }
+
+    private static void removeTaintedMagicRecipes() {
+        if (!TaintedMagic.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(TaintedMagic.ID, "ItemShadowmetalHoe", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TaintedMagic.ID, "ItemShadowmetalPick", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TaintedMagic.ID, "ItemShadowmetalAxe", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TaintedMagic.ID, "ItemShadowmetalSpade", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0));
+    }
+
+    private static void removeThaumcraftRecipes() {
+        if (!Thaumcraft.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "blockCustomOre", 1, 7));
+        GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "ItemShard", 1, 6));
+
+        removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1));
         removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "blockCrystal", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 1));
@@ -2602,9 +3233,68 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Thaumcraft.ID, "ItemBootsVoid", 1, 0));
+
+        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 0));
+        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 1));
+        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 2));
+        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 3));
+        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 4));
+        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 5));
+
+        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemResource", 1, 6));
+        removeRecipeShapelessDelayed(
+                getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0),
+                getModItem(Minecraft.ID, "glass_bottle", 1, 0),
+                getModItem(Minecraft.ID, "feather", 1, 0),
+                "dyeBlack");
+
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "blaze_powder", 1, 0),
+                new Object[] { getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3) },
+                new Object[0],
+                new Object[0]);
+
+        removeRecipeShapedDelayed(
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 6),
+                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0) },
+                new Object[0],
+                new Object[0]);
+
+        removeRecipeShapedDelayed(
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 6),
+                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 1) },
+                new Object[0],
+                new Object[0]);
+    }
+
+    private static void removeThaumicBasesRecipes() {
+        if (!ThaumicBases.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "resource", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "voidFAS", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "voidShears", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0));
+
+        removeRecipeShapelessDelayed(
+                "ingotThauminite",
+                getModItem(ThaumicBases.ID, "resource", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 0));
+
+        removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "crystalSlab", 1, wildcard));
+        removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "genericSlab", 1, wildcard));
+        removeRecipeShapelessDelayed(getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0));
+    }
+
+    private static void removeThaumicEnergisticsRecipes() {
+        if (!ThaumicEnergistics.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "part.base", 1, 7));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "part.base", 1, 8));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0));
@@ -2619,7 +3309,17 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 9));
         removeRecipeByOutputDelayed(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10));
+    }
+
+    private static void removeThaumicExplorationRecipes() {
+        if (!ThaumicExploration.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ThaumicExploration.ID, "blankSeal", 1, wildcard));
+    }
+
+    private static void removeThaumicTinkererRecipes() {
+        if (!ThaumicTinkerer.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0));
@@ -2627,6 +3327,29 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 3));
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 3));
+    }
+
+    private static void removeTinkerConstructRecipes() {
+        if (!TinkerConstruct.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 1));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 2));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 3));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 4));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 36));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 2));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 39));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 38));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 41));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 42));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 5));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "GravelOre", 1, 4));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 40));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6));
+
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 1));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 2));
@@ -2814,12 +3537,56 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 1));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 2));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 3));
+
+        removeRecipeShapedDelayed(
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
+                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22),
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22),
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22) },
+                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22),
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22),
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22) },
+                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22),
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22),
+                        getModItem(TinkerConstruct.ID, "materials", 1, 22) });
+
+        removeRecipeShapedDelayed(
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
+                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 12), null, null },
+                new Object[0],
+                new Object[0]);
+    }
+
+    private static void removeTinkersDefenceRecipes() {
+        if (!TinkersDefence.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "aeonsteelblock", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "QueensGoldblock", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TinkersDefence.ID, "Dogbeariumblock", 1, 0));
+    }
+
+    private static void removeTinkersMechworksRecipes() {
+        if (!TinkersMechworks.isModLoaded()) return;
+
+        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 2));
+        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 3));
+        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "SignalBus", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "SignalTerminal", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "LengthWire", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "SpoolWire", 1, wildcard));
+    }
+
+    private static void removeTwilightForestRecipes() {
+        if (!TwilightForest.isModLoaded()) return;
+
+        GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "item.ironwoodRaw", 1, wildcard));
+
         removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "item.carminite", 1, 0));
         removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 12));
         removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "item.emptyMagicMap", 1, 0));
@@ -2833,6 +3600,12 @@ public class RecipeRemover {
             removeRecipeByOutputDelayed(getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0));
         }
 
+        removeRecipeShapelessDelayed(getModItem(TwilightForest.ID, "item.fieryIngot", 1, 0));
+    }
+
+    private static void removeWirelessRedstoneCBECoreRecipes() {
+        if (!WirelessRedstoneCBECore.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBECore.ID, "obsidianStick", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0));
@@ -2840,9 +3613,19 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0));
+    }
+
+    private static void removeWirelessRedstoneCBELogicRecipes() {
+        if (!WirelessRedstoneCBELogic.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 1));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 2));
+    }
+
+    private static void removeWirelessRedstoneCBEAddonsRecipes() {
+        if (!WirelessRedstoneCBEAddons.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBEAddons.ID, "triangulator", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBEAddons.ID, "remote", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBEAddons.ID, "sniffer", 1, 0));
@@ -2850,6 +3633,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBEAddons.ID, "tracker", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBEAddons.ID, "rep", 1, 0));
         removeRecipeByOutputDelayed(getModItem(WirelessRedstoneCBEAddons.ID, "psniffer", 1, 0));
+    }
+
+    private static void removeWitcheryRecipes() {
+        if (!Witchery.isModLoaded()) return;
+
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "witchesovenidle", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "fumefunnel", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "filteredfumefunnel", 1, 0));
@@ -2885,6 +3673,29 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "snowpressureplate", 1, 0));
         removeRecipeByOutputDelayed(getModItem(Witchery.ID, "ingredient", 2, 130));
 
+        removeRecipeShapelessDelayed(
+                getModItem(Witchery.ID, "ingredient", 1, 130),
+                getModItem(Witchery.ID, "ingredient", 1, 130),
+                getModItem(Minecraft.ID, "magma_cream", 1, 0),
+                getModItem(Minecraft.ID, "blaze_powder", 1, 0));
+    }
+
+    private static void removeOreDictionaryRecipes() {
+        // for recipes that directly target ore dictionaries instead of items
+
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBasalt, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.spring, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreMarble, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L));
+
         removeRecipeByOutputDelayed("nuggetLead");
         removeRecipeByOutputDelayed("nuggetSilver");
         removeRecipeByOutputDelayed("nuggetTin");
@@ -2899,53 +3710,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed("nuggetIron");
         removeRecipeByOutputDelayed("torchStone");
 
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1, 4));
-        removeRecipeShapelessDelayed(
-                getModItem(Minecraft.ID, "dye", 3, 15),
-                getModItem(BiomesOPlenty.ID, "bones", 1, 0));
-        removeRecipeShapelessDelayed(
-                getModItem(Minecraft.ID, "dye", 6, 15),
-                getModItem(BiomesOPlenty.ID, "bones", 1, 1));
-        removeRecipeShapelessDelayed(
-                getModItem(Minecraft.ID, "dye", 12, 15),
-                getModItem(BiomesOPlenty.ID, "bones", 1, 2));
-        removeRecipeShapelessDelayed(
-                getModItem(BiomesOPlenty.ID, "misc", 1, 9),
-                getModItem(BiomesOPlenty.ID, "flowers", 1, 2));
-        removeRecipeShapelessDelayed(
-                getModItem(BiomesOPlenty.ID, "misc", 1, 8),
-                getModItem(BiomesOPlenty.ID, "flowers", 1, 9));
-        removeRecipeShapelessDelayed(
-                getModItem(BiomesOPlenty.ID, "misc", 1, 8),
-                getModItem(BiomesOPlenty.ID, "flowers2", 1, 1));
-        removeRecipeShapelessDelayed(
-                getModItem(BiomesOPlenty.ID, "misc", 1, 5),
-                getModItem(BiomesOPlenty.ID, "flowers2", 1, 5));
-        removeRecipeShapelessDelayed(
-                getModItem(BiomesOPlenty.ID, "misc", 1, 5),
-                getModItem(BiomesOPlenty.ID, "mushrooms", 1, 2));
-        removeRecipeShapelessDelayed(
-                getModItem(BiomesOPlenty.ID, "misc", 1, 7),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0));
-        removeRecipeShapelessDelayed(
-                getModItem(BiomesOPlenty.ID, "misc", 1, 6),
-                getModItem(BiomesOPlenty.ID, "mushrooms", 1, 4));
-        removeRecipeShapelessDelayed(
-                getModItem(BiomesOPlenty.ID, "misc", 1, 6),
-                getModItem(BiomesOPlenty.ID, "plants", 1, 7));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1, 4));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L));
         removeRecipeShapelessDelayed("dustEnderPearl");
         removeRecipeShapelessDelayed("gemEnderPearl");
         removeRecipeShapelessDelayed("dustEnderEye");
@@ -3013,349 +3777,113 @@ public class RecipeRemover {
         removeRecipeShapelessDelayed("dustInfusedWater");
         removeRecipeShapelessDelayed("gemInfusedWater");
         removeRecipeShapelessDelayed("dustCoal"/* ERRORSTACK <- itemcount */, "blockCoal");
+
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1L));
+
+        removeRecipeShapedDelayed("nuggetIron");
+
         removeRecipeShapelessDelayed(
                 getModItem(Minecraft.ID, "coal", 9, 1),
                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
         removeRecipeShapelessDelayed(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 9L),
                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
-        removeRecipeShapelessDelayed(getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0));
-        removeRecipeShapelessDelayed(
-                getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCofeeBeans", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 1));
-        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 2));
-        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 3));
-        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 4));
-        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 5));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "string", 1, 0));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L));
-        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1L));
-        removeRecipeShapelessDelayed(
-                getModItem(Minecraft.ID, "gunpowder", 1, 0),
-                getModItem(Minecraft.ID, "coal", 1, 1),
-                getModItem(Minecraft.ID, "coal", 1, 1),
-                getModItem(Minecraft.ID, "coal", 1, 1),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 3, 15), getModItem(Minecraft.ID, "bone", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "nether_star", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "sand", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "glowstone_dust", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "glass", 1, 0));
-        removeRecipeShapelessDelayed(
-                getModItem(Natura.ID, "barleyFood", 1, 8),
-                getModItem(Natura.ID, "Bluebells", 1, 0));
-        removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemResource", 1, 6));
-        removeRecipeShapelessDelayed(
-                getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0),
-                getModItem(Minecraft.ID, "glass_bottle", 1, 0),
-                getModItem(Minecraft.ID, "feather", 1, 0),
-                "dyeBlack");
-        removeRecipeShapelessDelayed(getModItem(TwilightForest.ID, "item.fieryIngot", 1, 0));
-        removeRecipeShapelessDelayed(
-                getModItem(Witchery.ID, "ingredient", 1, 130),
-                getModItem(Witchery.ID, "ingredient", 1, 130),
-                getModItem(Minecraft.ID, "magma_cream", 1, 0),
-                getModItem(Minecraft.ID, "blaze_powder", 1, 0));
-        removeRecipeShapelessDelayed(
-                "ingotThauminite",
-                getModItem(ThaumicBases.ID, "resource", 1, 0),
-                getModItem(ThaumicBases.ID, "resource", 1, 0),
-                getModItem(ThaumicBases.ID, "resource", 1, 0),
-                getModItem(ThaumicBases.ID, "resource", 1, 0),
-                getModItem(ThaumicBases.ID, "resource", 1, 0),
-                getModItem(ThaumicBases.ID, "resource", 1, 0),
-                getModItem(ThaumicBases.ID, "resource", 1, 0),
-                getModItem(ThaumicBases.ID, "resource", 1, 0),
-                getModItem(ThaumicBases.ID, "resource", 1, 0));
 
-        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 0));
-        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 1));
-        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 2));
-        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 3));
-        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 4));
-        removeRecipeShapedDelayed(getModItem(BinnieCore.ID, "storage", 1, 5));
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "wheat", 1, 0),
-                new Object[] { getModItem(BiomesOPlenty.ID, "plants", 1, 6),
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 6), getModItem(BiomesOPlenty.ID, "plants", 1, 6) },
-                new Object[0],
-                new Object[0]);
-        removeRecipeShapedDelayed(
-                getModItem(EnderIO.ID, "itemAlloy", 1, 6),
-                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
-                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
-                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" });
-        removeRecipeShapedDelayed(
-                getModItem(EnderIO.ID, "itemAlloy", 1, 8),
-                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
-                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) },
-                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 11),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 11), getModItem(EnderIO.ID, "itemMaterial", 1, 11) });
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "ender_pearl", 1, 0),
-                new Object[] { null, getModItem(EnderZoo.ID, "enderFragment", 1, 0), null },
-                new Object[] { getModItem(EnderZoo.ID, "enderFragment", 1, 0),
-                        getModItem(EnderZoo.ID, "enderFragment", 1, 0),
-                        getModItem(EnderZoo.ID, "enderFragment", 1, 0) },
-                new Object[] { null, getModItem(EnderZoo.ID, "enderFragment", 1, 0), null });
-        removeRecipeShapedDelayed(
-                getModItem(ExtraUtilities.ID, "unstableingot", 1, 0),
-                new Object[] { getModItem(Minecraft.ID, "iron_ingot", 1, 0) },
-                new Object[] { getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0) },
-                new Object[] { getModItem(Minecraft.ID, "diamond", 1, 0) });
-        removeRecipeShapedDelayed(
-                getModItem(ForbiddenMagic.ID, "FMResource", 9, 0),
-                new Object[] { getModItem(Minecraft.ID, "emerald", 1, 0) },
-                new Object[0],
-                new Object[0]);
-        removeRecipeShapedDelayed(getModItem(ForbiddenMagic.ID, "FMResource", 2, 1));
-        removeRecipeShapedDelayed(getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Gendustry.ID, "GeneTemplate", 1, 0));
-        removeRecipeShapedDelayed(
-                GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 7) },
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 7) },
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 7) });
         removeRecipeShapedDelayed(
                 "ingotSilver",
                 new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
                 new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
                 new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" });
+
         removeRecipeShapedDelayed(
                 "ingotLead",
                 new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" },
                 new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" },
                 new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" });
+
         removeRecipeShapedDelayed(
                 "ingotDraconium",
                 new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" },
                 new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" },
                 new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" });
+
         removeRecipeShapedDelayed(
                 "ingotDraconiumAwakened",
                 new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" },
                 new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" },
                 new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" });
+
         removeRecipeShapedDelayed(
                 "ingotVibrantAlloy",
                 new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" },
                 new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" },
                 new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" });
+
         removeRecipeShapedDelayed(
                 "ingotPulsatingIron",
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" });
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0));
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "string", 1, 0),
-                new Object[] { "cropCotton", "cropCotton", "cropCotton" },
-                new Object[0],
-                new Object[0]);
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "speckled_melon", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 1));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 3));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 4));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 5));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 6));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_slab", 1, 7));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "bookshelf", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "packed_ice", 4, 0));
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "gunpowder", 1, 0),
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4), getModItem(Natura.ID, "barleyFood", 1, 4),
-                        null },
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 4), getModItem(Natura.ID, "barleyFood", 1, 4),
-                        null },
-                new Object[0]);
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "chest_minecart", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "furnace_minecart", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "hopper_minecart", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "tnt_minecart", 1, 0));
+
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0),
                 new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" },
                 new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" },
                 new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" });
-        removeRecipeShapedDelayed("nuggetIron");
+
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "gold_ingot", 1, 0),
                 new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" },
                 new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" },
                 new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" });
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "wooden_slab", 6, 0),
-                new Object[] { getModItem(Minecraft.ID, "planks", 1, 0), getModItem(Minecraft.ID, "planks", 1, 0),
-                        getModItem(Minecraft.ID, "planks", 1, 0) },
-                new Object[0],
-                new Object[0]);
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                new Object[] { getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3) },
-                new Object[0],
-                new Object[0]);
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "leather_helmet", 1, 0),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
-                new Object[0]);
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "leather_chestplate", 1, 0),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) });
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "leather_leggings", 1, 0),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) });
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "leather_boots", 1, 0),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0), null,
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0) },
-                new Object[0]);
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "emerald", 1, 0),
-                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0) },
-                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0) },
-                new Object[] { getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0),
-                        getModItem(ForbiddenMagic.ID, "FMResource", 1, 0) });
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "diamond", 1, 0),
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5) },
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5) },
-                new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 5), getModItem(MagicBees.ID, "beeNugget", 1, 5),
-                        getModItem(MagicBees.ID, "beeNugget", 1, 5) });
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "paper", 2, 0),
-                new Object[] { getModItem(Minecraft.ID, "reeds", 1, 0), getModItem(Minecraft.ID, "reeds", 1, 0),
-                        getModItem(Minecraft.ID, "reeds", 1, 0) },
-                new Object[0],
-                new Object[0]);
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "sand", 1, 0));
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "leather", 1, 0),
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6), getModItem(Natura.ID, "barleyFood", 1, 6) },
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6), getModItem(Natura.ID, "barleyFood", 1, 6) },
-                new Object[0]);
-        removeRecipeShapedDelayed(
-                getModItem(Minecraft.ID, "leather", 1, 0),
-                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0),
-                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0) },
-                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0),
-                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0) },
-                new Object[0]);
-        removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "paintBrush", 1, 0));
-        removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "goldenEye", 1, wildcard));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.energy.batbox", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.energy.cesu", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.energy.mfe", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.tank", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.anchor.personal", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.anchor", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.work", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.electric.meter", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "armor.goggles", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.magnifying.glass", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.signal.tuner", 1, 0));
-        removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.surveyor", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_iron", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_gold", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_steel", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_copper", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_diamond", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_aluminium", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_obsidian", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_stainlesssteel", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_titanium", 1, 0));
-        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_tungstensteel", 1, 0));
-        removeRecipeShapedDelayed(
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 6),
-                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0) },
-                new Object[0],
-                new Object[0]);
-        removeRecipeShapedDelayed(
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 6),
-                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 1) },
-                new Object[0],
-                new Object[0]);
+
         removeRecipeShapedDelayed(
                 "ingotThaumium",
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" });
-        removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "crystalSlab", 1, wildcard));
-        removeRecipeShapedDelayed(getModItem(ThaumicBases.ID, "genericSlab", 1, wildcard));
-        removeRecipeShapelessDelayed(getModItem(ThaumicBases.ID, "thauminiteBlock", 1, 0));
+
         removeRecipeShapedDelayed(
                 "ingotTin",
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" });
+
         removeRecipeShapedDelayed(
                 "ingotCopper",
                 new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" },
                 new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" },
                 new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" });
+
         removeRecipeShapedDelayed(
                 "ingotSteel",
                 new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" },
                 new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" },
                 new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" });
+
         removeRecipeShapedDelayed(
                 "ingotBronze",
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" });
+
         removeRecipeShapedDelayed(
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22) },
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22) },
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 22) });
-        removeRecipeShapedDelayed(
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 12), null, null },
+                getModItem(Minecraft.ID, "string", 1, 0),
+                new Object[] { "cropCotton", "cropCotton", "cropCotton" },
                 new Object[0],
                 new Object[0]);
-
-        flushBuffer();
-        bufferMap = null;
-        final long timeToLoad = System.currentTimeMillis() - timeStart;
-        MainRegistry.LOGGER.info("Recipes removal took {} ms.", timeToLoad);
     }
 }

@@ -441,17 +441,19 @@ public class DTPFRecipes implements Runnable {
                         .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
                 // V2
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTOreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
-                                GGMaterial.tairitsu.get(OrePrefixes.stick, 12),
-                                GTOreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 8L),
-                                MaterialsAlloy.BOTMIUM.getPlate(24),
-                                MaterialsAlloy.ARCANITE.getScrew(16),
-                                getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1))
-                        .itemOutputs(ItemList.Tesseract.get(8)).fluidInputs(Materials.ExcitedDTEC.getFluid(1000))
-                        .fluidOutputs(Materials.DTR.getFluid(1000)).duration(40 * SECONDS).eut(128_000_000)
-                        .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                if (SuperSolarPanels.isModLoaded()) {
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTOreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
+                                    GGMaterial.tairitsu.get(OrePrefixes.stick, 12),
+                                    GTOreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 8L),
+                                    MaterialsAlloy.BOTMIUM.getPlate(24),
+                                    MaterialsAlloy.ARCANITE.getScrew(16),
+                                    getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1))
+                            .itemOutputs(ItemList.Tesseract.get(8)).fluidInputs(Materials.ExcitedDTEC.getFluid(1000))
+                            .fluidOutputs(Materials.DTR.getFluid(1000)).duration(40 * SECONDS).eut(128_000_000)
+                            .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                }
 
                 // V1
                 GTValues.RA.stdBuilder()

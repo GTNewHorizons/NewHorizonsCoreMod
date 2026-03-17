@@ -46,14 +46,16 @@ public class ChemicalBathRecipes implements Runnable {
         ItemStack missing = new ItemStack(Blocks.fire);
 
         // tanned leather
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.leather, 2, 0))
-                .itemOutputs(getModItem(Backpack.ID, "tannedLeather", 1, 0))
-                .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(chemicalBathRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.ArtificialLeather.get(2))
-                .itemOutputs(getModItem(Backpack.ID, "tannedLeather", 1, 0))
-                .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(chemicalBathRecipes);
+        if (Backpack.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.leather, 2, 0))
+                    .itemOutputs(getModItem(Backpack.ID, "tannedLeather", 1, 0))
+                    .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(chemicalBathRecipes);
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.ArtificialLeather.get(2))
+                    .itemOutputs(getModItem(Backpack.ID, "tannedLeather", 1, 0))
+                    .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(chemicalBathRecipes);
+        }
 
         // Chlorine cleaning of pistons
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sticky_piston, 1, 0))
@@ -207,17 +209,21 @@ public class ChemicalBathRecipes implements Runnable {
                             getModItem(Minecraft.ID, "gunpowder", 2, 0))
                     .outputChances(10000, 7500, 5000).fluidInputs(getFluidStack("hell_blood", 1000))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0))
-                    .itemOutputs(
-                            getModItem(Minecraft.ID, "ender_pearl", 1, 0),
-                            getModItem(Minecraft.ID, "ender_pearl", 1, 0),
-                            getModItem(Minecraft.ID, "ender_pearl", 1, 0))
-                    .outputChances(10000, 5000, 2500).fluidInputs(getFluidStack("hell_blood", 1000))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 3))
-                    .itemOutputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0)).outputChances(1000)
-                    .fluidInputs(getFluidStack("hell_blood", 1000)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(chemicalBathRecipes);
+            if (HardcoreEnderExpansion.isModLoaded()) {
+                GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0))
+                        .itemOutputs(
+                                getModItem(Minecraft.ID, "ender_pearl", 1, 0),
+                                getModItem(Minecraft.ID, "ender_pearl", 1, 0),
+                                getModItem(Minecraft.ID, "ender_pearl", 1, 0))
+                        .outputChances(10000, 5000, 2500).fluidInputs(getFluidStack("hell_blood", 1000))
+                        .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
+            }
+            if (Thaumcraft.isModLoaded()) {
+                GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 3))
+                        .itemOutputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0)).outputChances(1000)
+                        .fluidInputs(getFluidStack("hell_blood", 1000)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                        .addTo(chemicalBathRecipes);
+            }
             GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 2))
                     .itemOutputs(
                             getModItem(Minecraft.ID, "rotten_flesh", 4, 0),

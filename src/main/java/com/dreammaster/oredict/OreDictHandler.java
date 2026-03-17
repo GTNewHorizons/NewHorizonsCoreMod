@@ -185,14 +185,16 @@ public class OreDictHandler {
     }
 
     private static void reg_fenceWood() {
-        for (ItemStack itemStack : new ItemStack[] { new ItemStack(Blocks.fence),
-                getModItem(ExtraTrees.ID, "fence", 1, WILDCARD_VALUE),
-                getModItem(Forestry.ID, "fences", 1, WILDCARD_VALUE),
-                getModItem(Forestry.ID, "fencesFireproof", 1, WILDCARD_VALUE),
-                getModItem(Natura.ID, "Natura.fence", 1, WILDCARD_VALUE) }) {
-            if (itemStack != null) {
-                OreDictionary.registerOre("fenceWood", itemStack);
-            }
+        OreDictionary.registerOre("fenceWood", new ItemStack(Blocks.fence));
+        if (ExtraTrees.isModLoaded()) {
+            OreDictionary.registerOre("fenceWood", getModItem(ExtraTrees.ID, "fence", 1, WILDCARD_VALUE));
+        }
+        if (Forestry.isModLoaded()) {
+            OreDictionary.registerOre("fenceWood", getModItem(Forestry.ID, "fences", 1, WILDCARD_VALUE));
+            OreDictionary.registerOre("fenceWood", getModItem(Forestry.ID, "fencesFireproof", 1, WILDCARD_VALUE));
+        }
+        if (Natura.isModLoaded()) {
+            OreDictionary.registerOre("fenceWood", getModItem(Natura.ID, "Natura.fence", 1, WILDCARD_VALUE));
         }
     }
 

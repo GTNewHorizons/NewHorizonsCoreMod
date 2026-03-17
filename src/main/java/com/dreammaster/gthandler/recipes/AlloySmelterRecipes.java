@@ -228,24 +228,27 @@ public class AlloySmelterRecipes implements Runnable {
         }
 
         // Sunnarium Alloys
-        GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
-                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1)).duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LuV).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)
-                .itemInputs(
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 3))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4))
-                .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)
-                .itemInputs(
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 1L))
-                .itemOutputs(NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1)).duration(1 * MINUTES + 40 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(alloySmelterRecipes);
+        if (AdvancedSolarPanel.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
+                            getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0))
+                    .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1)).duration(40 * SECONDS)
+                    .eut(TierEU.RECIPE_LuV).addTo(alloySmelterRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 3))
+                    .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4))
+                    .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(alloySmelterRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4),
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 1L))
+                    .itemOutputs(NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1)).duration(1 * MINUTES + 40 * SECONDS)
+                    .eut(TierEU.RECIPE_UV).addTo(alloySmelterRecipes);
+        }
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1),

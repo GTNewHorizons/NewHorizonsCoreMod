@@ -8,6 +8,11 @@ import static gregtech.api.enums.Materials.NaquadahEnriched;
 import static gregtech.api.enums.Materials.Plutonium;
 import static gregtech.api.enums.Materials.Uranium;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
@@ -105,69 +110,109 @@ public class BioItemLoader {
                 .fluidOutputs(new FluidStack(BIOFLUIDS[1], 125)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(fluidExtractionRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(BIOTEMS, 8, 2),
-                        ItemList.Circuit_Chip_Stemcell.get(16),
-                        Materials.Salt.getDust(64))
-                .fluidInputs(
-                        FluidRegistry.getFluidStack("unknowwater", 4000),
-                        Materials.PhthalicAcid.getFluid(3000),
-                        new FluidStack(BIOFLUIDS[1], 1000))
-                .fluidOutputs(new FluidStack(BIOFLUIDS[2], 8000)).duration(60 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(multiblockChemicalReactorRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.IC2_Energium_Dust.get(8),
-                        Materials.Mytryl.getDust(1),
-                        getModItem(PamsHarvestCraft.ID, "seaweedItem", 64))
-                .special(BioItemList.getPetriDish(CultureSet.get("TcetiEBac")))
-                .fluidInputs(new FluidStack(BIOFLUIDS[2], 50)).fluidOutputs(new FluidStack(BIOFLUIDS[3], 50))
-                .duration(1 * MINUTES).eut(TierEU.RECIPE_UV).metadata(GLASS, 8)
-                .metadata(SIEVERT, new Sievert(100, false)).addTo(bacterialVatRecipes);
-
-        for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
-            GTValues.RA.stdBuilder().circuit(i + 1)
-                    .itemOutputs(OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64))
-                    .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000)).duration(2 * SECONDS).eut(TierEU.RECIPE_UV)
-                    .addTo(centrifugeRecipes);
+        if (GalaxySpace.isModLoaded()) {
+            // spotless:off
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(BIOTEMS, 8, 2),
+                            ItemList.Circuit_Chip_Stemcell.get(16),
+                            Materials.Salt.getDust(64))
+                    .fluidInputs(
+                            FluidRegistry.getFluidStack("unknowwater", 4000),
+                            Materials.PhthalicAcid.getFluid(3000),
+                            new FluidStack(BIOFLUIDS[1], 1000))
+                    .fluidOutputs(new FluidStack(BIOFLUIDS[2], 8000))
+                    .duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UV)
+                    .addTo(multiblockChemicalReactorRecipes);
+            // spotless:on
         }
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        Materials.MeatRaw.getDust(4),
-                        Materials.Salt.getDust(4),
-                        Materials.Calcium.getDust(4),
-                        new ItemStack(BIOTEMS, 4, 2))
-                .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
-                .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 4))
-                .fluidOutputs(Materials.GrowthMediumRaw.getFluid(1)).duration(1 * MINUTES).eut(TierEU.RECIPE_IV)
-                .metadata(GLASS, 5).metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false))
-                .addTo(bacterialVatRecipes);
+        if (PamsHarvestCraft.isModLoaded() && IndustrialCraft2.isModLoaded()) {
+            // spotless:off
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.IC2_Energium_Dust.get(8),
+                            Materials.Mytryl.getDust(1),
+                            getModItem(PamsHarvestCraft.ID, "seaweedItem", 64))
+                    .special(BioItemList.getPetriDish(CultureSet.get("TcetiEBac")))
+                    .fluidInputs(new FluidStack(BIOFLUIDS[2], 50))
+                    .fluidOutputs(new FluidStack(BIOFLUIDS[3], 50))
+                    .duration(1 * MINUTES)
+                    .eut(TierEU.RECIPE_UV)
+                    .metadata(GLASS, 8)
+                    .metadata(SIEVERT, new Sievert(100, false))
+                    .addTo(bacterialVatRecipes);
+            // spotless:on
+        }
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        Materials.MeatRaw.getDust(8),
-                        Materials.Salt.getDust(8),
-                        Materials.Calcium.getDust(8),
-                        new ItemStack(BIOTEMS, 4, 2))
-                .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
-                .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 4))
-                .fluidOutputs(Materials.GrowthMediumRaw.getFluid(2)).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
-                .metadata(GLASS, 6).metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false))
-                .addTo(bacterialVatRecipes);
+        for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
+            // spotless:off
+            GTValues.RA.stdBuilder()
+                    .circuit(i + 1)
+                    .itemOutputs(OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64))
+                    .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000))
+                    .duration(2 * SECONDS)
+                    .eut(TierEU.RECIPE_UV)
+                    .addTo(centrifugeRecipes);
+            // spotless:on
+        }
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        Materials.MeatRaw.getDust(12),
-                        Materials.Salt.getDust(12),
-                        Materials.Calcium.getDust(12),
-                        new ItemStack(BIOTEMS, 4, 2))
-                .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
-                .fluidInputs(FluidRegistry.getFluidStack("mutagen", 4))
-                .fluidOutputs(Materials.GrowthMediumRaw.getFluid(4)).duration(1 * MINUTES).eut(TierEU.RECIPE_ZPM)
-                .metadata(GLASS, 7).metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), true))
-                .addTo(bacterialVatRecipes);
+        if (Genetics.isModLoaded()) {
+            // spotless:off
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            Materials.MeatRaw.getDust(4),
+                            Materials.Salt.getDust(4),
+                            Materials.Calcium.getDust(4),
+                            new ItemStack(BIOTEMS, 4, 2))
+                    .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
+                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 4))
+                    .fluidOutputs(Materials.GrowthMediumRaw.getFluid(1))
+                    .duration(1 * MINUTES)
+                    .eut(TierEU.RECIPE_IV)
+                    .metadata(GLASS, 5)
+                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false))
+                    .addTo(bacterialVatRecipes);
+            // spotless:on
+        }
+
+        if (GalacticraftMars.isModLoaded()) {
+            // spotless:off
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            Materials.MeatRaw.getDust(8),
+                            Materials.Salt.getDust(8),
+                            Materials.Calcium.getDust(8),
+                            new ItemStack(BIOTEMS, 4, 2))
+                    .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
+                    .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 4))
+                    .fluidOutputs(Materials.GrowthMediumRaw.getFluid(2))
+                    .duration(1 * MINUTES)
+                    .eut(TierEU.RECIPE_LuV)
+                    .metadata(GLASS, 6)
+                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false))
+                    .addTo(bacterialVatRecipes);
+            // spotless:on
+        }
+
+        if (Gendustry.isModLoaded()) {
+            // spotless:off
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            Materials.MeatRaw.getDust(12),
+                            Materials.Salt.getDust(12),
+                            Materials.Calcium.getDust(12),
+                            new ItemStack(BIOTEMS, 4, 2))
+                    .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
+                    .fluidInputs(FluidRegistry.getFluidStack("mutagen", 4))
+                    .fluidOutputs(Materials.GrowthMediumRaw.getFluid(4))
+                    .duration(1 * MINUTES)
+                    .eut(TierEU.RECIPE_ZPM)
+                    .metadata(GLASS, 7)
+                    .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), true))
+                    .addTo(bacterialVatRecipes);
+            // spotless:on
+        }
     }
 }

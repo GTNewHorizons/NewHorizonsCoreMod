@@ -394,17 +394,37 @@ public class SpaceAssemblerRecipes implements Runnable {
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
-            // Digital Singularity ME Storage Cell
+            if (Avaritia.isModLoaded()) {
+                // Digital Singularity ME Storage Cell
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(EternalSingularity.ID, "eternal_singularity", 1),
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 12, 60),
+                                ItemList.Quantum_Chest_IV.get(8L),
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                                getModItem(Avaritia.ID, "Resource", 4, 5),
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
+                        .fluidInputs(new FluidStack(solderUEV, 2304))
+                        .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1))
+                        .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
+                        .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+            }
+        }
+
+        // ME Essentia Digital Singularity Storage Cell
+        if (Thaumcraft.isModLoaded() && ThaumicEnergistics.isModLoaded()
+                && EternalSingularity.isModLoaded()
+                && Avaritia.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(EternalSingularity.ID, "eternal_singularity", 1),
-                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 12, 60),
-                            ItemList.Quantum_Chest_IV.get(8L),
+                            getModItem(ThaumicEnergistics.ID, "storage.component", 12, 8),
+                            getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 8, 0),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
                             getModItem(Avaritia.ID, "Resource", 4, 5),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
                     .fluidInputs(new FluidStack(solderUEV, 2304))
-                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1))
+                    .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10))
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
@@ -426,55 +446,61 @@ public class SpaceAssemblerRecipes implements Runnable {
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
-            // ME Fluid Digital Singularity Storage Cell
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(EternalSingularity.ID, "eternal_singularity", 1),
-                            new ItemStack(Loaders.yottaFluidTankCell, 4, 6),
-                            getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
-                            ItemList.Quantum_Tank_IV.get(8L),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
-                            getModItem(Avaritia.ID, "Resource", 4, 5),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
-                    .fluidInputs(new FluidStack(solderUEV, 2304))
-                    .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0))
-                    .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
-                    .addTo(IGRecipeMaps.spaceAssemblerRecipes);
-
-            // ME Essentia Digital Singularity Storage Cell
-            if (ThaumicEnergistics.isModLoaded()) {
+            if (EternalSingularity.isModLoaded() && Avaritia.isModLoaded()) {
+                // ME Fluid Digital Singularity Storage Cell
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(EternalSingularity.ID, "eternal_singularity", 1),
-                                getModItem(ThaumicEnergistics.ID, "storage.component", 12, 8),
-                                getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 8, 0),
+                                new ItemStack(Loaders.yottaFluidTankCell, 4, 6),
+                                getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                                ItemList.Quantum_Tank_IV.get(8L),
                                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
                                 getModItem(Avaritia.ID, "Resource", 4, 5),
                                 GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
                         .fluidInputs(new FluidStack(solderUEV, 2304))
-                        .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10))
+                        .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0))
                         .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
             }
-            // Pseudo-Inversion Sigil Ritual
-            /*
-             * if (ExtraUtilities.isModLoaded()) { GTValues.RA.stdBuilder() .itemInputs(
-             * getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2), getModItem(Avaritia.ID,
-             * "Singularity", 1, 0), getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24),
-             * getModItem(Avaritia.ID, "Singularity", 1, 3), getModItem(Avaritia.ID, "Resource", 64, 7),
-             * getModItem(Avaritia.ID, "Ultimate_Stew", 1, 0), getModItem(Avaritia.ID, "Cosmic_Meatballs", 1, 0),
-             * getModItem(StevesCarts2.ID, "CartModule", 1, 82), getModItem(ExtraUtilities.ID, "decorativeBlock1", 16,
-             * 12), getModItem(BiomesOPlenty.ID, "petals", 64, 0), getModItem(Witchery.ID, "ingredient", 64, 56),
-             * getModItem(Avaritia.ID, "Endest_Pearl", 16, 0), getModItem(EtFuturumRequiem.ID, "chorus_flower", 64, 0),
-             * getModItem(Witchery.ID, "cauldronbook", 1, 0), getModItem(AvaritiaAddons.ID, "CompressedChest", 4, 0),
-             * getModItem(ExtraUtilities.ID, "block_bedrockium", 16, 0)) .fluidInputs( new
-             * FluidStack(FluidRegistry.getFluid("ender"), 16000), new FluidStack(FluidRegistry.getFluid("endergoo"),
-             * 8000), new FluidStack(FluidRegistry.getFluid("radon"), 4000), new
-             * FluidStack(FluidRegistry.getFluid("potion.diablosauce.strong"), 2000)) .itemOutputs( new
-             * NBTItem(getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0)) .setNBT("{stable:1b}"))
-             * .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
-             * .addTo(IGRecipeMaps.spaceAssemblerRecipes); }
-             */
         }
+
+        // Pseudo-Inversion Sigil Ritual
+        // if (ExtraUtilities.isModLoaded() && UniversalSingularities.isModLoaded()
+        // && Avaritia.isModLoaded()
+        // && StevesCarts2.isModLoaded()
+        // && BiomesOPlenty.isModLoaded()
+        // && Witchery.isModLoaded()
+        // && EtFuturumRequiem.isModLoaded()
+        // && AvaritiaAddons.isModLoaded()) {
+        // GTValues.RA.stdBuilder()
+        // .itemInputs(
+        // getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2),
+        // getModItem(Avaritia.ID, "Singularity", 1, 0),
+        // getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24),
+        // getModItem(Avaritia.ID, "Singularity", 1, 3),
+        // getModItem(Avaritia.ID, "Resource", 64, 7),
+        // getModItem(Avaritia.ID, "Ultimate_Stew", 1, 0),
+        // getModItem(Avaritia.ID, "Cosmic_Meatballs", 1, 0),
+        // getModItem(StevesCarts2.ID, "CartModule", 1, 82),
+        // getModItem(ExtraUtilities.ID, "decorativeBlock1", 16, 12),
+        // getModItem(BiomesOPlenty.ID, "petals", 64, 0),
+        // getModItem(Witchery.ID, "ingredient", 64, 56),
+        // getModItem(Avaritia.ID, "Endest_Pearl", 16, 0),
+        // getModItem(EtFuturumRequiem.ID, "chorus_flower", 64, 0),
+        // getModItem(Witchery.ID, "cauldronbook", 1, 0),
+        // getModItem(AvaritiaAddons.ID, "CompressedChest", 4, 0),
+        // getModItem(ExtraUtilities.ID, "block_bedrockium", 16, 0))
+        // .fluidInputs(
+        // new FluidStack(FluidRegistry.getFluid("ender"), 16000),
+        // new FluidStack(FluidRegistry.getFluid("endergoo"), 8000),
+        // new FluidStack(FluidRegistry.getFluid("radon"), 4000),
+        // new FluidStack(FluidRegistry.getFluid("potion.diablosauce.strong"), 2000))
+        // .itemOutputs(
+        // new CustomItem.NBTItem(getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0))
+        // .setNBT("{stable:1b}").getStack())
+        // .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
+        // .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+        // }
+
     }
 }

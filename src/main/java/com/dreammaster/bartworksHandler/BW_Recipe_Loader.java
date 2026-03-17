@@ -31,16 +31,18 @@ public class BW_Recipe_Loader implements Runnable {
                 .addTo(implosionRecipes);
 
         // Heavy Duty Alloy Ingot T4
-        GTValues.RA.stdBuilder()
-                .metadata(RESEARCH_ITEM, getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0))
-                .metadata(SCANNING, new Scanning(1 * MINUTES + 30 * SECONDS, TierEU.RECIPE_EV))
-                .itemInputs(
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0),
-                        NHItemList.IceCompressedPlate.get(3),
-                        NHItemList.IceCompressedPlate.get(3),
-                        Ruridit.get(bolt, 4))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 36))
-                .itemOutputs(NHItemList.HeavyDutyAlloyIngotT4.get()).eut(TierEU.RECIPE_LuV).duration(15 * SECONDS)
-                .addTo(AssemblyLine);
+        if (GalacticraftMars.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .metadata(RESEARCH_ITEM, getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0))
+                    .metadata(SCANNING, new Scanning(1 * MINUTES + 30 * SECONDS, TierEU.RECIPE_EV))
+                    .itemInputs(
+                            getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0),
+                            NHItemList.IceCompressedPlate.get(3),
+                            NHItemList.IceCompressedPlate.get(3),
+                            Ruridit.get(bolt, 4))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 36))
+                    .itemOutputs(NHItemList.HeavyDutyAlloyIngotT4.get()).eut(TierEU.RECIPE_LuV).duration(15 * SECONDS)
+                    .addTo(AssemblyLine);
+        }
     }
 }
