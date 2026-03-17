@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.recipe.RecipeMaps.electrolyzerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -10,7 +11,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ElectrolyzerRecipes implements Runnable {
@@ -21,9 +21,7 @@ public class ElectrolyzerRecipes implements Runnable {
         if (TwilightForest.isModLoaded()) {
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Cell_Empty.get(1),
-                            GTModHandler.getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 1L, 0))
+                    .itemInputs(ItemList.Cell_Empty.get(1), getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 1, 0))
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
@@ -31,9 +29,7 @@ public class ElectrolyzerRecipes implements Runnable {
                     .addTo(electrolyzerRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Cell_Empty.get(1),
-                            GTModHandler.getModItem(TwilightForest.ID, "tile.AuroraPillar", 1L, 0))
+                    .itemInputs(ItemList.Cell_Empty.get(1), getModItem(TwilightForest.ID, "tile.AuroraPillar", 1, 0))
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
@@ -41,9 +37,7 @@ public class ElectrolyzerRecipes implements Runnable {
                     .addTo(electrolyzerRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Cell_Empty.get(1),
-                            GTModHandler.getModItem(TwilightForest.ID, "tile.AuroraSlab", 2L, 0))
+                    .itemInputs(ItemList.Cell_Empty.get(1), getModItem(TwilightForest.ID, "tile.AuroraSlab", 2, 0))
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
@@ -53,7 +47,7 @@ public class ElectrolyzerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cell_Empty.get(1),
-                            GTModHandler.getModItem(TwilightForest.ID, "tile.AuroraDoubleSlab", 1L, 0))
+                            getModItem(TwilightForest.ID, "tile.AuroraDoubleSlab", 1, 0))
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
