@@ -9,11 +9,6 @@ tasks.test.configure {
     }
 }
 
-minecraft {
-    // Use fire placeholders in recipes instead of crashing the game. (See `IngredientFactory.java`)
-    extraRunJvmArguments.add("-Ddreamcraft.debug.recipe=true")
-}
-
 configurations {
     testImplementation.get().extendsFrom(compileOnly.get())
 }
