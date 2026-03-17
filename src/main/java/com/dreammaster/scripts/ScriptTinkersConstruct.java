@@ -1616,7 +1616,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Cobalt, 1L));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 3));
         TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 1L));
-        TConstructHelper.removeMeltingRecipe(getModItem(GalaxySpace.ID, "item.Ingots", 1, 1));
         TConstructHelper.removeMeltingRecipe(new ItemStack(GregTechAPI.sBlockMetal2, 1, 5));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 0));
         TConstructHelper.removeBasinRecipe(getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0));

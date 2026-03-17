@@ -1632,10 +1632,6 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(Materials.Creosote.getCells(1)).metadata(FUEL_VALUE, 8)
                 .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GTRecipeConstants.Fuel);
 
-        RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 0));
-        RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 1));
-        RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 2));
-        RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 3));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.rail", 8, 0));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.rail", 6, 0));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.rail", 16, 0));
@@ -1881,7 +1877,6 @@ public class ScriptRailcraft implements IScriptLoader {
                         "stickSteel",
                         'i',
                         "stickSteel"));
-        RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 4));
         RecipeManagers.fabricatorManager.addRecipe(
                 getModItem(Forestry.ID, "waxCast", 1, wildcard),
                 FluidRegistry.getFluidStack("glass", 2000),
