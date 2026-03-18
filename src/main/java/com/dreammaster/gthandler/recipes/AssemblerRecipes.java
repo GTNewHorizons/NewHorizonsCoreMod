@@ -10063,5 +10063,12 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.BeamMirror.get(1)).fluidInputs(Materials.Grade5PurifiedWater.getFluid(2000L))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(LanthItemList.NIOBIUM_CAVITY_CASING, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lead, 4L))
+                .itemOutputs(ItemList.StableEmptyContainmentUnit.get(64))
+                .fluidInputs(MaterialMisc.ETHYL_CYANOACRYLATE.getFluidStack(10)).duration(30 * SECONDS).eut(TierEU.LuV)
+                .addTo(assemblerRecipes);
     }
 }
