@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GTRecipeBuilder.PANIC_MODE_NULL;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
@@ -12,8 +14,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public final class IngredientFactory {
 
-    private static final boolean DEBUG = Boolean.parseBoolean(System.getProperty("dreamcraft.debug.recipe"));
-
     /**
      * Handle what happens when an item cannot be found in the runtime environment.
      *
@@ -24,7 +24,7 @@ public final class IngredientFactory {
      * @throws RuntimeException If debug mode is disabled.
      */
     private static @NotNull ItemStack invalidItem(String modId, String name) {
-        if (DEBUG) {
+        if (!PANIC_MODE_NULL) {
             final var fire = new ItemStack(Blocks.fire);
             fire.setStackDisplayName(EnumChatFormatting.RED + "Missing Item: " + modId + ":" + name);
             return fire;
