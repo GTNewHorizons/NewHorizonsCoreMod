@@ -1,8 +1,13 @@
 package com.dreammaster.lwjgl3ify;
 
-import static org.lwjgl.sdl.SDLMessageBox.*;
+import static org.lwjgl.sdl.SDLInit.SDL_RunOnMainThread;
+import static org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT;
+import static org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT;
+import static org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_WARNING;
+import static org.lwjgl.sdl.SDLMessageBox.SDL_ShowMessageBox;
 
 import java.nio.IntBuffer;
+import java.util.function.IntConsumer;
 
 import net.minecraft.util.StatCollector;
 
@@ -34,7 +39,7 @@ public class ConfirmExitSdl {
      * @return 0 for Yes, 1 for No,
      */
     @SuppressWarnings("resource")
-    public static int showExitDialog() {
+    private static int showExitDialog() {
         try (MemoryStack stack = MemoryStack.stackPush()) {
             final IntBuffer selectedOption = stack.ints(1);
             final SDL_MessageBoxData box = SDL_MessageBoxData.calloc(stack);
@@ -70,6 +75,15 @@ public class ConfirmExitSdl {
                 return BUTTON_YES;
             }
             return selectedOption.get(0);
+        }
+    }
+
+    // SDL requires running its dialogs from the main thread
+    public static void showExitDialogFromMainThread(IntConsumer callback) {
+        boolean success = SDL_RunOnMainThread((long userdata) -> callback.accept(showExitDialog()), 0L, false);
+
+        if (!success) {
+            callback.accept(BUTTON_YES);
         }
     }
 }
