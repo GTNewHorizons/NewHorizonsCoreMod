@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.GalacticraftCore;
