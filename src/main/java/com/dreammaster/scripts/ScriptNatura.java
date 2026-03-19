@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -2496,19 +2497,21 @@ public class ScriptNatura implements IScriptLoader {
                 null,
                 null);
 
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 0));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 1));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 2));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 3));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 4));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 5));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 6));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 7));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 8));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 9));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 10));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 11));
-        ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 12));
+        if (Chisel.isModLoaded()) {
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 0));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 1));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 2));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 3));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 4));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 5));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 6));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 7));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 8));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 9));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 10));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 11));
+            ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 12));
+        }
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "glass", 1, 0), getModItem(Minecraft.ID, "soul_sand", 1, 0))
