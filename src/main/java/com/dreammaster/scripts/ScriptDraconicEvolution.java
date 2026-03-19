@@ -1017,7 +1017,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'e',
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowercobblestone", 1, 0),
                 'f',
-                "craftingIronFurnace");
+                "craftingBlastFurnace");
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(DraconicEvolution.ID, "playerDetectorAdvanced", 1, 0),
                 "---------",

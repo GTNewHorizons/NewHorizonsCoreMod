@@ -1518,13 +1518,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 5),
                     bits,
                     new Object[] { "PCP", "BFB", "PUP", 'B', new ItemStack(Blocks.brick_block), 'P',
-                            OrePrefixes.plate.get(Materials.AnyIron), 'U', OreDictNames.craftingIronFurnace, 'C',
+                            OrePrefixes.plate.get(Materials.AnyIron), 'U', OreDictNames.craftingBlastFurnace, 'C',
                             new ItemStack(Items.cauldron, 1, 0), 'F', ItemList.Casing_Firebox_Bronze });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 6),
                     bits,
                     new Object[] { "PCP", "BFB", "PUP", 'B', NHItemList.SteelBars.get(), 'P',
-                            OrePrefixes.plate.get(Materials.Steel), 'U', OreDictNames.craftingIronFurnace, 'C',
+                            OrePrefixes.plate.get(Materials.Steel), 'U', OreDictNames.craftingBlastFurnace, 'C',
                             new ItemStack(Items.cauldron, 1, 0), 'F', ItemList.Casing_Firebox_Bronze });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 7),

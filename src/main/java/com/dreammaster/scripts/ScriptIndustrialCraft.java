@@ -816,7 +816,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 ItemList.Casing_Firebox_Steel.get(1L),
                 "screwSteel",
                 "itemCasingSteel",
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 "itemCasingSteel");
         addShapelessRecipe(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1), ItemList.Electric_Motor_LV.get(1L));
         addShapelessRecipe(ItemList.Electric_Motor_LV.get(1L), getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1));
