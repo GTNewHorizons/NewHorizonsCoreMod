@@ -290,8 +290,5 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         // Add ore dictionary entries for sand and red sand to craft unfired coke oven bricks.
         GTOreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 0));
         GTOreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 1));
-
-        // Allow EFR blast furnace to be used instead of GT iron furnace.
-        GTOreDictUnificator.registerOre("craftingIronFurnace", getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0));
     }
 }

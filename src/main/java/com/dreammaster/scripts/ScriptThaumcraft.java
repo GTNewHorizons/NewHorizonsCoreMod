@@ -1868,7 +1868,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "plateThaumium",
                 'e',
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 'f',
                 "plateThaumium",
                 'g',

@@ -205,7 +205,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                 "rotorIron",
                 ItemList.Electric_Motor_LV.get(1L),
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockCombustionGenerator", 1, 0),
@@ -331,11 +331,11 @@ public class ScriptEnderIO implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockAlloySmelter", 1, 0),
                 "circuitBasic",
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 "circuitBasic",
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 ItemList.Electric_Motor_LV.get(1L),
                 getModItem(Minecraft.ID, "cauldron", 1, 0),
                 ItemList.Electric_Motor_LV.get(1L));
@@ -524,7 +524,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                 getModItem(EnderIO.ID, "blockTank", 1, 0),
                 ItemList.Electric_Motor_LV.get(1L),
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPowerMonitor", 1, 0),

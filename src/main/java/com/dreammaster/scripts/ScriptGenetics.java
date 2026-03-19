@@ -121,7 +121,7 @@ public class ScriptGenetics implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 2),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 getModItem(Genetics.ID, "misc", 1, 9),
                 getModItem(Genetics.ID, "misc", 1, 0),
