@@ -654,7 +654,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'g',
                 "plateDenseThaumium",
                 'h',
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 'i',
                 "plateDenseThaumium");
         TCHelper.addResearchPage(
