@@ -10010,12 +10010,12 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(LanthItemList.SHIELDED_ACCELERATOR_CASING, 16),
-                        new ItemStack(LanthItemList.NIOBIUM_CAVITY_CASING, 16),
+                        new ItemStack(LanthItemList.SHIELDED_ACCELERATOR_CASING, 32),
+                        new ItemStack(LanthItemList.NIOBIUM_CAVITY_CASING, 32),
                         GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.NiobiumTitanium, 64),
                         ItemList.Sensor_UV.get(1),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(16))
-                .itemOutputs(ItemList.ColliderCasing.get(16))
+                .itemOutputs(ItemList.ColliderCasing.get(32))
                 .fluidInputs(MaterialsAlloy.PIKYONIUM.getFluidStack(144 * 64)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
 
