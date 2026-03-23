@@ -5,59 +5,7 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static com.gtnewhorizon.gtnhlib.util.ItemUtil.copyAmount;
 import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
 import static goodgenerator.util.ItemRefer.Field_Restriction_Coil_T1;
-import static gregtech.api.enums.Mods.AE2FluidCraft;
-import static gregtech.api.enums.Mods.AE2Stuff;
-import static gregtech.api.enums.Mods.AdvancedSolarPanel;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.BuildCraftCore;
-import static gregtech.api.enums.Mods.BuildCraftFactory;
-import static gregtech.api.enums.Mods.BuildCraftTransport;
-import static gregtech.api.enums.Mods.Chisel;
-import static gregtech.api.enums.Mods.Computronics;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EnhancedLootBags;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.FloodLights;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.ForgeMicroblocks;
-import static gregtech.api.enums.Mods.GalacticraftAmunRa;
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.Gendustry;
-import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.IronChests;
-import static gregtech.api.enums.Mods.IronTanks;
-import static gregtech.api.enums.Mods.JABBA;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NaturesCompass;
-import static gregtech.api.enums.Mods.OpenBlocks;
-import static gregtech.api.enums.Mods.OpenComputers;
-import static gregtech.api.enums.Mods.OpenGlasses;
-import static gregtech.api.enums.Mods.OpenModularTurrets;
-import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.OpenSecurity;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.StorageDrawers;
-import static gregtech.api.enums.Mods.SuperSolarPanels;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.enums.Mods.VisualProspecting;
-import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -5138,6 +5086,20 @@ public class AssemblerRecipes implements Runnable {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
                 ItemList.Casing_EV.get(1L)).circuit(3)
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // ME Wireless Access Point
+        GTValues.RA.stdBuilder().itemInputs(
+
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
+                // Calculation Processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
+                // Wireless Receiver
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16),
+                // Fluix Cable
+                getModItem(GregTech.ID, "gt.metaitem.01", 2, 27028)).circuit(2)
+                // Titanium Screw
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Pattern Provider (for LMA)
