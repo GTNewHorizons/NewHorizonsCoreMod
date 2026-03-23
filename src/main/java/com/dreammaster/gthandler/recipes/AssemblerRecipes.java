@@ -5150,7 +5150,6 @@ public class AssemblerRecipes implements Runnable {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16),
                 // Titanium Screw
                 GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 2))
-                // Titanium Screw
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
