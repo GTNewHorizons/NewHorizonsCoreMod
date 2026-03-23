@@ -5140,6 +5140,19 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
+        // ME Wireless Access Point
+        GTValues.RA.stdBuilder().itemInputs(
+                // Calculation Processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
+                // Wireless Receiver
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
+                // Fluix Cable
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16),
+                // Titanium Screw
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1)).duration(3 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         // Pattern Provider (for LMA)
         GTValues.RA.stdBuilder().itemInputs(
                 ItemList.Hatch_Input_Bus_IV.get(1L),
