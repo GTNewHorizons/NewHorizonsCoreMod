@@ -5090,14 +5090,14 @@ public class AssemblerRecipes implements Runnable {
 
         // ME Wireless Access Point
         GTValues.RA.stdBuilder().itemInputs(
-
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
                 // Calculation Processor
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
                 // Wireless Receiver
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
                 // Fluix Cable
-                getModItem(GregTech.ID, "gt.metaitem.01", 2, 27028)).circuit(2)
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16),
+                // Titanium Screw
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 2))
                 // Titanium Screw
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
