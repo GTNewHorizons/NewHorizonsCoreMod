@@ -61,7 +61,6 @@ import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
-import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
 import tectech.recipe.TTRecipeAdder;
@@ -1361,10 +1360,13 @@ public class AssemblingLineRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
 
             // Quark exclusion casing
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.STRANGE))
-                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UHV))
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUHVBase, 32),
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.StableBaryonContainmentUnit.get(1),
+                    512 * 40 * SECONDS,
+                    512,
+                    2000000,
+                    4,
+                    new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUHVBase, 32),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Ledox, 32),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CallistoIce, 32),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.EnrichedHolmium, 32),
@@ -1375,20 +1377,22 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Field_Generator_UHV.get(1),
                             new Object[] { OrePrefixes.circuit.get(Materials.UEV), 8 },
                             new Object[] { OrePrefixes.circuit.get(Materials.UIV), 4 },
-                            GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 32))
-                    .fluidInputs(
-                            Materials.SuperconductorUHVBase.getMolten(64 * 144),
-                            Materials.Ledox.getMolten(64 * 144),
-                            Materials.CallistoIce.getMolten(64 * 144),
-                            Materials.ExcitedDTRC.getFluid(8000L))
-                    .itemOutputs(ItemList.BlockQuarkContainmentCasing.get(8)).duration(60 * SECONDS)
-                    .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
+                            GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 32) },
+                    new FluidStack[] { Materials.SuperconductorUHVBase.getMolten(64 * 144),
+                            Materials.Ledox.getMolten(64 * 144), Materials.CallistoIce.getMolten(64 * 144),
+                            Materials.ExcitedDTRC.getFluid(8000L) },
+                    ItemList.BlockQuarkContainmentCasing.get(8),
+                    60 * SECONDS,
+                    (int) TierEU.RECIPE_UIV);
 
             // Femtometer-calibrated particle beam casing
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.TOP))
-                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UHV))
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.StableLeptonContainmentUnit.get(1),
+                    512 * 40 * SECONDS,
+                    512,
+                    2000000,
+                    4,
+                    new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 16),
@@ -1399,20 +1403,21 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Field_Generator_UHV.get(1),
                             new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                             new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
-                            GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 16))
-                    .fluidInputs(
-                            Materials.Infinity.getMolten(32 * 144),
-                            Materials.Tritanium.getMolten(32 * 144),
-                            new FluidStack(solderUEV, 32 * 144),
-                            Materials.ExcitedDTRC.getFluid(4000L))
-                    .itemOutputs(ItemList.BlockQuarkReleaseChamber.get(4)).duration(60 * SECONDS).eut(TierEU.RECIPE_UIV)
-                    .addTo(AssemblyLine);
+                            GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 16) },
+                    new FluidStack[] { Materials.Infinity.getMolten(32 * 144), Materials.Tritanium.getMolten(32 * 144),
+                            new FluidStack(solderUEV, 32 * 144), Materials.ExcitedDTRC.getFluid(4000L) },
+                    ItemList.BlockQuarkReleaseChamber.get(4),
+                    60 * SECONDS,
+                    (int) TierEU.RECIPE_UIV);
 
             // Particle beam guidance pipe casing
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.BOTTOM))
-                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UHV))
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.StableMesonContainmentUnit.get(1),
+                    512 * 40 * SECONDS,
+                    512,
+                    2000000,
+                    4,
+                    new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Bedrockium, 16),
@@ -1423,14 +1428,12 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Pump_UEV.get(1),
                             new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                             new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
-                            GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 16))
-                    .fluidInputs(
-                            Materials.Infinity.getMolten(32 * 144),
-                            Materials.Tritanium.getMolten(32 * 144),
-                            new FluidStack(solderUEV, 32 * 144),
-                            Materials.ExcitedDTRC.getFluid(4000L))
-                    .itemOutputs(ItemList.BlockQuarkPipe.get(4)).duration(60 * SECONDS).eut(TierEU.RECIPE_UIV)
-                    .addTo(AssemblyLine);
+                            GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 16) },
+                    new FluidStack[] { Materials.Infinity.getMolten(32 * 144), Materials.Tritanium.getMolten(32 * 144),
+                            new FluidStack(solderUEV, 32 * 144), Materials.ExcitedDTRC.getFluid(4000L) },
+                    ItemList.BlockQuarkPipe.get(4),
+                    60 * SECONDS,
+                    (int) TierEU.RECIPE_UIV);
         }
 
         // Superconducting Solenoids
