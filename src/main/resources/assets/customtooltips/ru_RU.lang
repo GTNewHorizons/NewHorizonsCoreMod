@@ -1,0 +1,68 @@
+## Misc
+customtooltip.quest_reset_warning=§4Этот блок СБРОСИТ ВСЕ ВАШИ КВЕСТЫ, начав заново с Tier 0. Не создавайте и не используйте его, если вы действительно этого не хотите!
+customtooltip.blast_resistance_warning=§4Взрывоустойчивость теперь %s. НЕ ЗАЩИЩАЕТ ОТ ЯДЕРНЫХ ВЗРЫВОВ!
+customtooltip.cooldown_seconds=Перезарядка %s секунд
+customtooltip.infinite_energy=§dБесконечная энергия
+customtooltip.expensive_device=§3Теперь: довольно дорогой механизм
+customtooltip.riches_imagination=§3Богатства, превосходящие ваше воображение
+customtooltip.ender_collector_warning=§4Внимание: при разрушении мощный эндер-сборщик может исчезнуть, пытаясь собрать самого себя!... и утащить с собой ближайшие предметы!
+customtooltip.max_voltage_eu=§4Максимальное входное напряжение: %s EU/t
+customtooltip.need_gloves=§4Тебе нужны перчатки для этого?
+customtooltip.prolonged_use_warning=§4Длительное использование не рекомендуется...
+customtooltip.perpetual_locomotion=§dВечное движение
+
+customtooltip.disabled_item=§4Предмет отключён; рецепта нет
+customtooltip.personal_use=§3Только для личного использования
+customtooltip.left_click_disabled=§4ЛКМ отключена
+customtooltip.recharge_tier_machine=Перезарядка в машине уровня %s
+
+## Bags
+customtooltip.backpack_slots=%s слотов
+customtooltip.crafting_backpack_slots=Рюкзак для крафта с %s слотами инвентаря
+
+## Chisel
+customtooltip.chisel_mod=§5Долото из мода Chisel
+
+## Core Mod
+customtooltip.oven_gloves_slot=§3Поместите обе перчатки в слот кольца Baubles
+customtooltip.cannot_wear=§4Не пытайтесь это надеть, нельзя
+customtooltip.very_toxic=§4Очень токсично
+customtooltip.blood_altar_pillar=§5Используется для столбов алтаря крови уровня %s
+customtooltip.reinforced_stone_stats=§3Твёрдость %s §4Взрывоустойчивость %s
+customtooltip.chunkloader_coin=%s%s ч чанклодер-монета, %s ч в пассивном чанклодере, %s ч в персональном чанклодере
+customtooltip.chunkloader_ender_fragment=§11 ч использования в персональном чанклодере
+customtooltip.ender_pearl_chunkloader=§81 ч использования в пассивном и 4 ч в персональном чанклодере
+customtooltip.donation_servers=§4Можно использовать только для доната на серверах
+
+## Draconic Evolution
+customtooltip.slush_warning=§2Надеюсь, ты не собираешься это потом есть.
+customtooltip.slush_cooking=§4Нагрев делает еду лучше?
+customtooltip.marshmallow_glow=§5Мне кажется или он получил пиксели от этого жара.
+customtooltip.marshmallow_wired=§6У меня очень странное чувство.
+
+## Gregtech
+customtooltip.deprecated_furnace=§4Эта печь устарела, используйте кирпичную доменную печь
+customtooltip.coolant_steam_5x=§4Выход горячего парового хладагента увеличен в 5 раз
+customtooltip.black_gold_rip=§bПусть у тебя будет всё чёрное золото, RIP Cerulean
+customtooltip.crystallized_shards=§b§lКристаллизованные осколки, стабилизированные максимизированной Godforge
+
+## IC2
+customtooltip.battery_tier=%s уровень
+
+## OMT
+customtooltip.omt_hardness_resistance=Твёрдость: %s - Взрывоустойчивость: %s
+
+## Tinkers Construct
+customtooltip.smeltery_purity_warning=§3Некоторые металлы, обработанные в плавильне, не соответствуют требованиям чистоты для обработки в GregTech.
+customtooltip.ic2_crop_berries=Можно разместить на пустом IC2 Crop.\nТребуется низкий уровень освещения для установки.
+
+## GG
+customtooltip.check_ebf_recipe=§3Проверь рецепт Flawed Crystal в EBF
+customtooltip.check_press_recipe=§3Проверь рецепт пластины в Forming Press
+
+## Bee Housings
+customtooltip.bee_apiary=Эффективный шанс производства (в процентах):\n2.8 * b^0.52 * (p + t)^0.52 * s^0.37\nгде b — базовый шанс производства (в процентах),\np — модификатор производства (аддитивный, начинается с -0.9 для пасеки),\nt — 1 для пасеки,\ns — скорость пчелы\nВыходы генерируются в конце каждого тика пчелы (27.5 секунд)\nОсновные выходы рассчитываются один раз с базовым шансом и один раз с половинным
+customtooltip.bee_house=Эффективный шанс производства (в процентах):\n2.8 * b^0.52 * (p + t)^0.52 * s^0.37\nгде b — базовый шанс производства (в процентах),\np — модификатор производства (всегда -0.75 для улья),\nt — 1 для улья,\ns — скорость пчелы\nВыходы генерируются в конце каждого тика пчелы (27.5 секунд)\nОсновные выходы рассчитываются один раз с базовым шансом и один раз с половинным\nПчёлы не могут мутировать в улье
+customtooltip.bee_alveary=Эффективный шанс производства (в процентах):\n2.8 * b^0.52 * (p + t)^0.52 * s^0.37\nгде b — базовый шанс производства (в процентах),\np — модификатор производства (аддитивный, начинается с 0 для альвеария),\nt — 1 для альвеария,\ns — скорость пчелы\nВыходы генерируются в конце каждого тика пчелы (27.5 секунд)\nОсновные выходы рассчитываются один раз с базовым шансом и один раз с половинным
+customtooltip.bee_magic_apiary=Эффективный шанс производства (в процентах):\n2.8 * b^0.52 * (p + t)^0.52 * s^0.37\nгде b — базовый шанс производства (в процентах),\np — модификатор производства (аддитивный, начинается с -0.1 для магической пасеки),\nt — 1 для магической пасеки,\ns — скорость пчелы\nВыходы генерируются в конце каждого тика пчелы (27.5 секунд)\nОсновные выходы рассчитываются один раз с базовым шансом и один раз с половинным\nПри усилении: базовый p становится 0.8, мутация: x2, длительность жизни: 0.5x
+customtooltip.magic_aura_range=Должно находиться в пределах 6 блоков от магической пасеки
