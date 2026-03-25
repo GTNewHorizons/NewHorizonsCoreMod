@@ -627,27 +627,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "WandCap", 1, 5),
                 new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("ignis"), 25)
                         .add(Aspect.getAspect("aer"), 25),
-                "abc",
-                "def",
-                "ghi",
+                "aba",
+                "bcb",
+                "aba",
                 'a',
                 "screwSteeleaf",
                 'b',
                 "foilSilver",
                 'c',
-                "screwSteeleaf",
-                'd',
-                "foilSilver",
-                'e',
-                "ringSilver",
-                'f',
-                "foilSilver",
-                'g',
-                "screwSteeleaf",
-                'h',
-                "foilSilver",
-                'i',
-                "screwSteeleaf");
+                "ringSilver");
         TCHelper.addResearchPage(
                 "CAP_silver",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 5))));
