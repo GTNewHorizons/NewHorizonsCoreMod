@@ -45,10 +45,10 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.block.BlockList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;

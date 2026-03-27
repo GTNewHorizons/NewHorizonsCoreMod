@@ -29,12 +29,12 @@ import static gregtech.api.util.GTRecipeConstants.FUEL_VALUE;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.block.BlockList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;

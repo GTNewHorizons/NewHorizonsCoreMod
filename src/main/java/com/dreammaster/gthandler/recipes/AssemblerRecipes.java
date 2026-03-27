@@ -362,8 +362,8 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(BlockList.SteelBars.get(4)).duration(20 * SECONDS).eut(48).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 3L))
-                .circuit(3).itemOutputs(BlockList.AluminiumBars.get(4)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+                .circuit(3).itemOutputs(BlockList.AluminiumBars.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 3L))
                 .circuit(3).itemOutputs(BlockList.StainlessSteelBars.get(4)).duration(20 * SECONDS).eut(96)

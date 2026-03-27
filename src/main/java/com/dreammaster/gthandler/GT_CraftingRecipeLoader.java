@@ -39,13 +39,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import com.dreammaster.block.BlockList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;

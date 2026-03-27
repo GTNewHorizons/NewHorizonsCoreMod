@@ -112,8 +112,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Osmium, BlockList.OsmiumBars.get());
         GTOreDictUnificator
                 .registerOre(OrePrefixes.bars, Materials.Soularium, getModItem(EnderIO.ID, "blockSoulariumBars", 1, 0));
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.bars, Materials.StainlessSteel, BlockList.StainlessSteelBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.StainlessSteel, BlockList.StainlessSteelBars.get());
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Steel, BlockList.SteelBars.get());
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Titanium, BlockList.TitaniumBars.get());
         GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.TungstenSteel, BlockList.TungstenSteelBars.get());

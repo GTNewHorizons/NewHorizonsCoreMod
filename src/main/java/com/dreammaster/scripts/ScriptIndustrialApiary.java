@@ -16,14 +16,13 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.block.BlockList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.item.NHItemList;
+import com.dreammaster.block.BlockList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
