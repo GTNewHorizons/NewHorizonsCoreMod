@@ -45,6 +45,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -573,11 +574,11 @@ public class ScriptEnderIO implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTank", 1, 0),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel");
