@@ -44,6 +44,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -286,13 +287,13 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 8),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "screwSteel",
                 "craftingToolScrewdriver",
                 "blockSteel",
                 getModItem(StevesCarts2.ID, "CartModule", 1, 42),
                 NHItemList.DiamondDrillTip.get(1),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "screwSteel",
                 "craftingToolHardHammer");
         addShapedRecipe(
@@ -359,7 +360,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 0),
                 "itemCasingSteel",
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 "itemCasingSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "screwSteel",
@@ -403,7 +404,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 69),
                 "itemCasingSteel",
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 "itemCasingSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 getModItem(IronTanks.ID, "obsidianTank", 1, 0),
@@ -619,15 +620,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 40),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "dustRedstone",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "dustCoal",
                 "rotorSteel",
                 "dustCoal",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "dustRedstone",
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get());
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59),
                 "itemCasingSteel",
@@ -708,7 +709,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "upgrade", 1, 6),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 ItemList.Electric_Motor_LV.get(1L),
                 "rotorSteel",
@@ -722,7 +723,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 ItemList.Electric_Piston_LV.get(1L),
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 ItemList.Electric_Piston_LV.get(1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59),
@@ -931,7 +932,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "stoneNetherBrick",
                 getModItem(Minecraft.ID, "glowstone", 1, 0),
                 getModItem(IronTanks.ID, "ironTank", 1, 0),
-                "craftingIronFurnace",
+                "craftingBlastFurnace",
                 getModItem(IronTanks.ID, "ironTank", 1, 0),
                 "bucketLava",
                 "stoneNetherBrick",
@@ -1043,15 +1044,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "screwIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 57),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "craftingToolHardHammer",
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get());
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 12),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
@@ -1455,7 +1456,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 81)).duration(20 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(NHItemList.SteelBars.get(5), getModItem(StevesCarts2.ID, "ModuleComponents", 4, 19))
+                .itemInputs(BlockList.SteelBars.get(5), getModItem(StevesCarts2.ID, "ModuleComponents", 4, 19))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 20)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1861,7 +1862,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(NHItemList.SteelBars.get(5), getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9))
+                .itemInputs(BlockList.SteelBars.get(5), getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 57)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

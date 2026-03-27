@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -106,30 +105,17 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         GTOreDictUnificator.registerOre(OrePrefixes.stickLong, Materials.Obsidian, NHItemList.LongObsidianRod.get());
 
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Aluminium, NHItemList.AluminiumBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Chrome, NHItemList.ChromeBars.get());
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.bars, Materials.ConductiveIron, NHItemList.ConductiveIronBars.get());
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.bars, Materials.ElectricalSteel, NHItemList.ElectricalSteelBars.get());
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.bars, Materials.EnergeticAlloy, NHItemList.EnergeticAlloyBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Enderium, NHItemList.EnderiumBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.EnderiumBase, NHItemList.EnderiumBaseBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Iridium, NHItemList.IridiumBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Neutronium, NHItemList.NeutroniumBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Osmium, NHItemList.OsmiumBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.PulsatingIron, NHItemList.PulsatingIronBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.RedstoneAlloy, NHItemList.RedstoneAlloyBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Soularium, NHItemList.SoulariumBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Aluminium, BlockList.AluminiumBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Chrome, BlockList.ChromeBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Iridium, BlockList.IridiumBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Neutronium, BlockList.NeutroniumBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Osmium, BlockList.OsmiumBars.get());
         GTOreDictUnificator
                 .registerOre(OrePrefixes.bars, Materials.Soularium, getModItem(EnderIO.ID, "blockSoulariumBars", 1, 0));
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.bars, Materials.StainlessSteel, NHItemList.StainlessSteelBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Steel, NHItemList.SteelBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Titanium, NHItemList.TitaniumBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Tungsten, NHItemList.TungstenBars.get());
-        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.TungstenSteel, NHItemList.TungstenSteelBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.StainlessSteel, BlockList.StainlessSteelBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Steel, BlockList.SteelBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.Titanium, BlockList.TitaniumBars.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.bars, Materials.TungstenSteel, BlockList.TungstenSteelBars.get());
 
         GTOreDictUnificator.registerOre(
                 OrePrefixes.rawOre,
@@ -290,8 +276,5 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         // Add ore dictionary entries for sand and red sand to craft unfired coke oven bricks.
         GTOreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 0));
         GTOreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 1));
-
-        // Allow EFR blast furnace to be used instead of GT iron furnace.
-        GTOreDictUnificator.registerOre("craftingIronFurnace", getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0));
     }
 }

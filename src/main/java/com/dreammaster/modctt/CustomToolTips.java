@@ -1,6 +1,7 @@
 package com.dreammaster.modctt;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -89,6 +90,9 @@ public class CustomToolTips {
         @XmlAttribute(name = "MetaEnd")
         protected String mMetaEnd;
 
+        @XmlAttribute(name = "FormatArgs")
+        protected String formatArgs;
+
         public String getUnlocalizedName() {
             return mUnlocalizedName;
         }
@@ -107,6 +111,14 @@ public class CustomToolTips {
 
         public String getMetaEnd() {
             return mMetaEnd;
+        }
+
+        public String[] getFormatArgs() {
+            if (formatArgs == null) {
+                return null;
+            }
+            return Arrays.stream(formatArgs.replace("\\,", "\u0000").replace("\\\\", "\u0001").split(","))
+                    .map(s -> s.replace('\u0000', ',').replace('\u0001', '\\')).toArray(String[]::new);
         }
     }
 }

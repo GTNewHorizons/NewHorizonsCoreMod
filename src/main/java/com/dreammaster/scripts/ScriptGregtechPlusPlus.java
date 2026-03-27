@@ -18,6 +18,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.Optional;
@@ -50,15 +51,15 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Fish Trap
         addShapedRecipe(
                 GregtechItemList.FishTrap.get(1),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get());
 
         // Shirabon and Eternity
         GTValues.RA.stdBuilder()
