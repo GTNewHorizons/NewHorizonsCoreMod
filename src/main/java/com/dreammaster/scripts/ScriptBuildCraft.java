@@ -32,6 +32,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -312,11 +313,11 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserBlock", 1, 0),

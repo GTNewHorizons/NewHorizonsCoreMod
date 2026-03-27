@@ -49,7 +49,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import com.dreammaster.item.NHItemList;
+import com.dreammaster.block.BlockList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
@@ -287,13 +287,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10),
                 "plateLapis",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateLapis",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateLapis",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateLapis");
         addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10),
