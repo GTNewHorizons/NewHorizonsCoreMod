@@ -288,13 +288,13 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.orphanResearch("ROD_dreamwood");
         TCHelper.removeResearch("ROD_dreamwood");
         InfusionRecipe ROD_dreamwood_recipe = TCHelper.addInfusionCraftingRecipe(
-                "ROD_livingwood",
+                "ROD_dreamwood",
                 getModItem(ForbiddenMagic.ID, "WandCores", 1, 8),
                 9,
                 new AspectList().add(Aspect.getAspect("arbor"), 64).add(Aspect.getAspect("praecantatio"), 48)
                         .add(Aspect.getAspect("auram"), 32).add(Aspect.getAspect("victus"), 24)
                         .add(Aspect.getAspect("sensus"), 16).add(Aspect.getAspect("herba"), 8),
-                getModItem(Botania.ID, "livingwood", 1, 0), // livingwood log
+                getModItem(Botania.ID, "dreamwood", 1, 0), // dreamwood log
                 getModItem(Botania.ID, "manaResource", 1, 9), // dragon stone
                 getModItem(Botania.ID, "rune", 1, 0), // water rune
                 getModItem(Botania.ID, "rune", 1, 1), // fire rune
