@@ -386,8 +386,8 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 6,
                 new AspectList().add(Aspect.getAspect("potentia"), 40).add(Aspect.getAspect("praecantatio"), 24)
                         .add(Aspect.getAspect("auram"), 24).add(Aspect.getAspect("sensus"), 8),
-                // inert silver cap, 6 manasteel, 6 salis mundus
-                getModItem(Thaumcraft.ID, "WandCap", 1, 5), // inert silver cap
+                // gold cap, 6 manasteel, 6 salis mundus
+                getModItem(Thaumcraft.ID, "WandCap", 1, 1), // gold cap
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14), // salis
                 getModItem(Botania.ID, "manaResource", 1, 0), // manasteel
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
@@ -406,7 +406,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 4))));
         ResearchCategories.getResearch("CAP_manasteel").setConcealed();
         TCHelper.addResearchPrereq("CAP_manasteel", "ROD_livingwood", false);
-        TCHelper.addResearchPrereq("CAP_manasteel", "CAP_silver", false);
+        TCHelper.addResearchPrereq("CAP_manasteel", "CAP_gold", false);
         TCHelper.addResearchPrereq("CAP_manasteel", "THAUMIUM", false);
         ThaumcraftApi.addWarpToResearch("CAP_manasteel", 2);
         new ResearchItem(

@@ -632,7 +632,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "bcb",
                 "aba",
                 'a',
-                "screwSteeleaf",
+                "screwStainlessSteel",
                 'b',
                 "foilSilver",
                 'c',
