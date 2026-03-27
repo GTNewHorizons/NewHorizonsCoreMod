@@ -4,13 +4,12 @@ import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
-import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidContainerRegistry;
@@ -475,69 +474,14 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void onMissingMappings(FMLMissingMappingsEvent event) {
-        HashMap<String, Item> itemListRemaps = null;
-        HashMap<String, Block> blockListRemaps = null;
-
-        for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
-            // Remap all the old Yamcl names (for Blocks & their ItemBlocks)
-            if (mapping.name.startsWith("dreamcraft:tile.")) {
-                if (blockListRemaps == null) {
-                    blockListRemaps = createBlockListRemaps();
-                }
-
-                final Block newBlockID = blockListRemaps.get(mapping.name.substring(16));
-                if (mapping.type == GameRegistry.Type.ITEM) {
-                    mapping.remap(Item.getItemFromBlock(newBlockID));
-                } else {
-                    mapping.remap(newBlockID);
-                }
-                continue;
-            }
-
-            if (mapping.type != GameRegistry.Type.ITEM) continue;
-
-            // Remap all the old Yamcl names (for Items)
-            if (mapping.name.startsWith("dreamcraft:item.")) {
-                if (itemListRemaps == null) {
-                    itemListRemaps = createNHItemListRemaps();
-                }
-
-                mapping.remap(itemListRemaps.get(mapping.name.substring(16)));
-                continue;
-            }
-
-            if ("dreamcraft:itemQuantumToast".equals(mapping.name)) {
-                // Replace the old Quantum Bread declaration with the new one.
-                mapping.remap(NHItemList.QuantumBread.item);
+        List<FMLMissingMappingsEvent.MissingMapping> missingMappings = event.get();
+        for (int i = 0, size = missingMappings.size(); i < size; i++) {
+            FMLMissingMappingsEvent.MissingMapping mapping = missingMappings.get(i);
+            if (mapping.name.startsWith("dreamcraft:")) {
+                NHRemapper.remapAll(missingMappings, i);
+                break;
             }
         }
-    }
-
-    private static HashMap<String, Item> createNHItemListRemaps() {
-        final HashMap<String, Item> itemListData = new HashMap<>();
-
-        // Remap all the old Yamcl names to the new names.
-        for (var entry : NHItemList.values()) {
-            itemListData.put(entry.name, entry.item);
-        }
-
-        // Remaps the old "UnfiredSlimeSoulBrick" (with a typo) to the new, correct "UnfiredSlimeSoilBrick".
-        itemListData.put("UnfiredSlimeSoulBrick", NHItemList.UnfiredSlimeSoilBrick.item);
-
-        return itemListData;
-    }
-
-    private static HashMap<String, Block> createBlockListRemaps() {
-        final HashMap<String, Block> blockListData = new HashMap<>();
-
-        for (var entry : BlockList.values()) {
-            blockListData.put(entry.name, entry.block);
-        }
-
-        // Remaps MysteriousCrystal to MysteriousCrystalBlock in order to not conflict with the item
-        blockListData.put("MysteriousCrystal", BlockList.MysteriousCrystalBlock.block);
-
-        return blockListData;
     }
 
     @Optional.Method(modid = Mods.ModIDs.BETTER_QUESTING)
