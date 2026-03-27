@@ -79,7 +79,6 @@ public class BlockBabyChest extends BlockContainer implements ITileEntityProvide
             return true;
         } else {
             if (pWorld.getTileEntity(pX, pY, pZ) instanceof TileEntityBabyChest) {
-                TileEntityBabyChest tileEntity = (TileEntityBabyChest) pWorld.getTileEntity(pX, pY, pZ);
                 pPlayer.openGui(MainRegistry.instance, GuiHandler.GUI_BABYCHEST, pWorld, pX, pY, pZ);
             }
             return true;

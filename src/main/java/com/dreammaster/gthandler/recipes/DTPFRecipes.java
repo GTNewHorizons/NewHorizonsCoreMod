@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.plasmaForgeRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -21,7 +22,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
@@ -448,7 +448,7 @@ public class DTPFRecipes implements Runnable {
                                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 8L),
                                 MaterialsAlloy.BOTMIUM.getPlate(24),
                                 MaterialsAlloy.ARCANITE.getScrew(16),
-                                GTModHandler.getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1L))
+                                getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1))
                         .itemOutputs(ItemList.Tesseract.get(8)).fluidInputs(Materials.ExcitedDTEC.getFluid(1000))
                         .fluidOutputs(Materials.DTR.getFluid(1000)).duration(40 * SECONDS).eut(128_000_000)
                         .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
@@ -474,14 +474,14 @@ public class DTPFRecipes implements Runnable {
                     GTValues.RA.stdBuilder()
                             .itemInputs(
                                     GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 16),
-                                    GTModHandler.getModItem(Avaritia.ID, "Resource", 16L, 8),
+                                    getModItem(Avaritia.ID, "Resource", 16, 8),
                                     GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
                             .fluidInputs(
                                     Materials.ExcitedDTEC.getFluid(1797693L),
                                     Materials.CosmicNeutronium.getMolten(16384 * 144),
                                     GGMaterial.tairitsu.getMolten(16384 * 144),
                                     MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
-                            .itemOutputs(GTModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1L, 14))
+                            .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14))
                             .duration(80 * SECONDS).fluidOutputs(Materials.DTR.getFluid(1797693L))
                             .eut(TierEU.RECIPE_UMV).metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
                 }
@@ -497,8 +497,8 @@ public class DTPFRecipes implements Runnable {
                             .calculateNonEBFRecipe(32_000_000, base_time);
 
                     // Tier 5
-                    GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5))
-                            .circuit(4).fluidInputs(Materials.ExcitedDTSC.getFluid(infinity.getCatalystAmount(4)))
+                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 4, 5)).circuit(4)
+                            .fluidInputs(Materials.ExcitedDTSC.getFluid(infinity.getCatalystAmount(4)))
                             .fluidOutputs(
                                     Materials.DTR.getFluid(infinity.getResidueAmount(4)),
                                     Materials.Infinity.getMolten(256L * 144L))
@@ -506,8 +506,8 @@ public class DTPFRecipes implements Runnable {
                             .addTo(plasmaForgeRecipes);
 
                     // Tier 4
-                    GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5))
-                            .circuit(4).fluidInputs(Materials.ExcitedDTEC.getFluid(infinity.getCatalystAmount(3)))
+                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 2, 5)).circuit(4)
+                            .fluidInputs(Materials.ExcitedDTEC.getFluid(infinity.getCatalystAmount(3)))
                             .fluidOutputs(
                                     Materials.DTR.getFluid(infinity.getResidueAmount(3)),
                                     Materials.Infinity.getMolten(128L * 144L))
@@ -515,8 +515,8 @@ public class DTPFRecipes implements Runnable {
                             .addTo(plasmaForgeRecipes);
 
                     // Tier 3
-                    GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5))
-                            .circuit(4).fluidInputs(Materials.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2) / 64))
+                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 5)).circuit(4)
+                            .fluidInputs(Materials.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2) / 64))
                             .fluidOutputs(
                                     Materials.DTR.getFluid(infinity.getResidueAmount(2) / 64),
                                     Materials.Infinity.getMolten(144L))
@@ -524,8 +524,8 @@ public class DTPFRecipes implements Runnable {
                             .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
 
                     // Tier 3.5
-                    GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5))
-                            .circuit(5).fluidInputs(Materials.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2)))
+                    GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 5)).circuit(5)
+                            .fluidInputs(Materials.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2)))
                             .fluidOutputs(
                                     Materials.DTR.getFluid(infinity.getResidueAmount(2)),
                                     Materials.Infinity.getMolten(64L * 144L))
@@ -541,7 +541,7 @@ public class DTPFRecipes implements Runnable {
                         // Tier 5 - Combs
                         GTValues.RA.stdBuilder()
                                 .itemInputs(
-                                        GTModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5),
+                                        getModItem(Avaritia.ID, "Resource", 4, 5),
                                         GTBees.combs.getStackForType(CombType.INFINITY))
                                 .circuit(3)
                                 .fluidInputs(Materials.ExcitedDTSC.getFluid(infinity_bee.getCatalystAmount(4)))
@@ -554,7 +554,7 @@ public class DTPFRecipes implements Runnable {
                         // Tier 4 - Combs
                         GTValues.RA.stdBuilder()
                                 .itemInputs(
-                                        GTModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
+                                        getModItem(Avaritia.ID, "Resource", 2, 5),
                                         GTBees.combs.getStackForType(CombType.INFINITY))
                                 .circuit(3)
                                 .fluidInputs(Materials.ExcitedDTEC.getFluid(infinity_bee.getCatalystAmount(3)))
@@ -567,7 +567,7 @@ public class DTPFRecipes implements Runnable {
                         // Tier 3.5 - Combs
                         GTValues.RA.stdBuilder()
                                 .itemInputs(
-                                        GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
+                                        getModItem(Avaritia.ID, "Resource", 1, 5),
                                         GTBees.combs.getStackForType(CombType.INFINITY))
                                 .circuit(2)
                                 .fluidInputs(Materials.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2)))
@@ -580,7 +580,7 @@ public class DTPFRecipes implements Runnable {
                         // Tier 3 - Combs
                         GTValues.RA.stdBuilder()
                                 .itemInputs(
-                                        GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
+                                        getModItem(Avaritia.ID, "Resource", 1, 5),
                                         GTBees.combs.getStackForType(CombType.INFINITY))
                                 .circuit(3)
                                 .fluidInputs(Materials.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2) / 64))
@@ -1167,6 +1167,18 @@ public class DTPFRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GregtechItemList.Laser_Lens_Special.get(1),
+                            ItemList.StableBosonContainmentUnit.get(4),
+                            NHItemList.MysteriousCrystalLens.get(0),
+                            ItemRefer.HiC_T5.get(0))
+                    .fluidInputs(Materials.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
+                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
+                    .fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
+                    .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+
+            // TODO: remove this old recipe Quantum anomaly
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GregtechItemList.Laser_Lens_Special.get(1),
                             new ItemStack(Particle.getBaseParticle(Particle.GRAVITON).getItem(), 4),
                             NHItemList.MysteriousCrystalLens.get(0),
                             ItemRefer.HiC_T5.get(0))
@@ -1174,6 +1186,7 @@ public class DTPFRecipes implements Runnable {
                     .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
                     .fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
                     .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+
         }
     }
 }
