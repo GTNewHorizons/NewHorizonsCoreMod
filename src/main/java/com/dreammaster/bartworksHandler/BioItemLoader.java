@@ -2,6 +2,7 @@ package com.dreammaster.bartworksHandler;
 
 import static bartworks.API.recipe.BartWorksRecipeMaps.bacterialVatRecipes;
 import static com.dreammaster.bartworksHandler.BacteriaRegistry.CultureSet;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.GTValues.*;
 import static gregtech.api.enums.Materials.NaquadahEnriched;
 import static gregtech.api.enums.Materials.Plutonium;
@@ -120,7 +121,7 @@ public class BioItemLoader {
                 .itemInputs(
                         ItemList.IC2_Energium_Dust.get(8),
                         Materials.Mytryl.getDust(1),
-                        GTModHandler.getModItem(PamsHarvestCraft.ID, "seaweedItem", 64))
+                        getModItem(PamsHarvestCraft.ID, "seaweedItem", 64))
                 .special(BioItemList.getPetriDish(CultureSet.get("TcetiEBac")))
                 .fluidInputs(new FluidStack(BIOFLUIDS[2], 50)).fluidOutputs(new FluidStack(BIOFLUIDS[3], 50))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_UV).metadata(GLASS, 8)

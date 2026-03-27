@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
@@ -17,7 +18,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
 
@@ -25,7 +25,7 @@ public class ArcFurnaceRecipes implements Runnable {
 
     @Override
     public void run() {
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1L))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
 
@@ -51,9 +51,9 @@ public class ArcFurnaceRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Dilithium, 32L),
                             GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Ichorium, 16L),
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 64L),
-                            GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4L, 3),
+                            getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4, 3),
                             NHItemList.ChaoticDust.get(2),
-                            GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L, 26))
+                            getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 26))
                     .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 500, 250)
                     .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144))
                     .fluidOutputs(Materials.Tungsten.getMolten(144)).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)

@@ -1,10 +1,10 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -19,7 +19,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -37,7 +36,7 @@ public class ScriptOpenComputers implements IScriptLoader {
     }
 
     private static ItemStack getTransposer(int aAmount, int rate) {
-        ItemStack transposer = GTModHandler.getModItem(OpenComputers.ID, "transposer", aAmount, 0);
+        ItemStack transposer = getModItem(OpenComputers.ID, "transposer", aAmount, 0);
         transposer.setTagCompound(new NBTTagCompound());
         transposer.getTagCompound().setInteger("oc:fluidTransferRate", rate);
         return transposer;
@@ -49,10 +48,10 @@ public class ScriptOpenComputers implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Automation_ChestBuffer_LV.get(1L),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 61),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 77),
+                        getModItem(OpenComputers.ID, "item", 1, 61),
+                        getModItem(OpenComputers.ID, "item", 1, 77),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2),
-                        GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0))
+                        getModItem(OpenComputers.ID, "cable", 2, 0))
                 .circuit(1).itemOutputs(getTransposer(2, 2_560)).fluidInputs(Materials.Polyethylene.getMolten(72L))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -104,14 +103,10 @@ public class ScriptOpenComputers implements IScriptLoader {
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-        addShapelessRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 23, missing),
-                ItemList.Circuit_Parts_Transistor.get(1));
-        addShapelessRecipe(
-                ItemList.Circuit_Parts_Transistor.get(1),
-                getModItem(OpenComputers.ID, "item", 1, 23, missing));
+        addShapelessRecipe(getModItem(OpenComputers.ID, "item", 1, 23), ItemList.Circuit_Parts_Transistor.get(1));
+        addShapelessRecipe(ItemList.Circuit_Parts_Transistor.get(1), getModItem(OpenComputers.ID, "item", 1, 23));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 69, missing),
+                getModItem(OpenComputers.ID, "item", 1, 69),
                 "---------",
                 "---------",
                 "--aaaaa--",
@@ -128,11 +123,11 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'c',
                 "circuitSuperconductor",
                 'd',
-                getModItem(OpenComputers.ID, "item", 1, 103, missing),
+                getModItem(OpenComputers.ID, "item", 1, 103),
                 'e',
-                getModItem(OpenComputers.ID, "case3", 1, 0, missing));
+                getModItem(OpenComputers.ID, "case3", 1, 0));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 103, missing),
+                getModItem(OpenComputers.ID, "item", 1, 103),
                 "---------",
                 "---------",
                 "--aaaaa--",
@@ -149,13 +144,13 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'c',
                 "circuitSuperconductor",
                 'd',
-                getModItem(OpenComputers.ID, "item", 1, 10, missing),
+                getModItem(OpenComputers.ID, "item", 1, 10),
                 'e',
-                getModItem(OpenComputers.ID, "item", 1, 102, missing),
+                getModItem(OpenComputers.ID, "item", 1, 102),
                 'f',
-                getModItem(OpenComputers.ID, "item", 1, 43, missing));
+                getModItem(OpenComputers.ID, "item", 1, 43));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 90, missing),
+                getModItem(OpenComputers.ID, "item", 1, 90),
                 "---------",
                 "---------",
                 "--abcbd--",
@@ -176,11 +171,11 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'e',
                 "plateDenseObsidian",
                 'f',
-                getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0),
                 'g',
-                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6, missing));
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 93, missing),
+                getModItem(OpenComputers.ID, "item", 1, 93),
                 "---------",
                 "---------",
                 "--abcba--",
@@ -199,13 +194,13 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'd',
                 "plateDenseChrome",
                 'e',
-                getModItem(OpenComputers.ID, "screen3", 1, 0, missing),
+                getModItem(OpenComputers.ID, "screen3", 1, 0),
                 'f',
-                getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0),
                 'g',
-                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6, missing));
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 91, missing),
+                getModItem(OpenComputers.ID, "item", 1, 91),
                 "---------",
                 "---------",
                 "--ababa--",
@@ -226,11 +221,11 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'e',
                 "circuitSuperconductor",
                 'f',
-                getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 0),
                 'g',
-                getModItem(OpenComputers.ID, "item", 1, 90, missing));
+                getModItem(OpenComputers.ID, "item", 1, 90));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 114, missing),
+                getModItem(OpenComputers.ID, "item", 1, 114),
                 "aaaaaaaaa",
                 "abacdcaba",
                 "aaaaaaaaa",
@@ -241,19 +236,19 @@ public class ScriptOpenComputers implements IScriptLoader {
                 "abacdcaba",
                 "aaaaaaaaa",
                 'a',
-                getModItem(OpenComputers.ID, "item", 1, 72, missing),
+                getModItem(OpenComputers.ID, "item", 1, 72),
                 'b',
-                getModItem(OpenComputers.ID, "item", 1, 39, missing),
+                getModItem(OpenComputers.ID, "item", 1, 39),
                 'c',
-                getModItem(OpenComputers.ID, "item", 1, 26, missing),
+                getModItem(OpenComputers.ID, "item", 1, 26),
                 'd',
-                getModItem(OpenComputers.ID, "item", 1, 106, missing),
+                getModItem(OpenComputers.ID, "item", 1, 106),
                 'e',
                 ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                 'f',
                 "circuitSuperconductor",
                 'g',
-                getModItem(OpenComputers.ID, "item", 1, 7, missing));
+                getModItem(OpenComputers.ID, "item", 1, 7));
 
     }
 }

@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -8,7 +9,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MatterManipulator;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -39,7 +39,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.recipe.Scanning;
-import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import tectech.recipe.TTRecipeAdder;
@@ -339,7 +338,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         ItemList.Emitter_ZPM.get(2),
                         ItemList.Field_Generator_ZPM.get(1),
                         ItemList.Gravistar.get(4),
-                        new ItemStack(ModItems.itemStandarParticleBase, 16, 0), // gravitons
+                        ItemList.StableBaryonContainmentUnit.get(8),
+                        ItemList.StableLeptonContainmentUnit.get(8),
                         getModItem(GraviSuite.ID, "itemSimpleItem", 16, 3), // gravitation engine
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Trinium, 8),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Trinium, 16))
