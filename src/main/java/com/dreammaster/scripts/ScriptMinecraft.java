@@ -45,6 +45,7 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -215,7 +216,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0)).fluidInputs(Materials.Copper.getMolten(16))
                 .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L), NHItemList.SteelBars.get())
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L), BlockList.SteelBars.get())
                 .itemOutputs(getModItem(Minecraft.ID, "iron_door", 1, 0)).fluidInputs(Materials.Steel.getMolten(16))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -2924,7 +2925,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0),
                 "plateAnyIron",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "craftingToolHardHammer",
                 "plateAnyIron",
                 "ringSteel",
@@ -2935,7 +2936,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0),
                 "plateAnyIron",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "craftingToolScrewdriver",
                 "plateAnyIron",
                 "ringSteel",

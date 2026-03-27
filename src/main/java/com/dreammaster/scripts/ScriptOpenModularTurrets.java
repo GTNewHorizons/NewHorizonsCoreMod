@@ -17,6 +17,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
@@ -385,7 +386,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.SteelBars.get(),
+                        BlockList.SteelBars.get(),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierTwo", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -397,13 +398,13 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.TungstenSteelBars.get(),
+                        BlockList.TungstenSteelBars.get(),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Titanium, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFour", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        NHItemList.IridiumBars.get(),
+                        BlockList.IridiumBars.get(),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.TungstenSteel, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFive", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
@@ -583,7 +584,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
-                        NHItemList.StainlessSteelBars.get())
+                        BlockList.StainlessSteelBars.get())
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "scattershotUpgradeItem", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

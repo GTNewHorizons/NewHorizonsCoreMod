@@ -29,6 +29,7 @@ import static gregtech.api.util.GTRecipeConstants.FUEL_VALUE;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -370,9 +371,9 @@ public class ScriptForestry implements IScriptLoader {
                 "plateCupronickel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "plateCupronickel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "gearGtSmallSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
@@ -478,7 +479,7 @@ public class ScriptForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Forestry.ID, "mail", 1, 1),
                 getModItem(Forestry.ID, "thermionicTubes", 1, 9),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Forestry.ID, "thermionicTubes", 1, 9),
                 "plateSteel",
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
@@ -2793,15 +2794,15 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11),
                 'b',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11),
                 'd',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'e',
                 ItemList.Rotor_MV.get(1L),
                 'f',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11),
                 'h',
@@ -2819,7 +2820,7 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7),
                 'b',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7),
                 'd',

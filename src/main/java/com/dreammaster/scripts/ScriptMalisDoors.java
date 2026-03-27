@@ -613,11 +613,11 @@ public class ScriptMalisDoors implements IScriptLoader {
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.jail_door", 1, 0),
                 null,
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 null,
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Minecraft.ID, "iron_door", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 null,
                 "craftingToolSaw",
                 null);
@@ -1182,7 +1182,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.iron_sliding_door", 1, 0)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "iron_door", 1, 0), NHItemList.SteelBars.get(2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "iron_door", 1, 0), BlockList.SteelBars.get(2))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.jail_door", 1, 0)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

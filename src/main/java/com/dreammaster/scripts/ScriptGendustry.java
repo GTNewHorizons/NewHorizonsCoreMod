@@ -12,6 +12,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
@@ -114,7 +115,7 @@ public class ScriptGendustry implements IScriptLoader {
                 GTBees.combs.getStackForType(CombType.PLUTONIUM),
                 "screwHSSS",
                 NHItemList.IridiumAlloyItemCasing.get(),
-                NHItemList.OsmiumBars.get(),
+                BlockList.OsmiumBars.get(),
                 NHItemList.IridiumAlloyItemCasing.get(),
                 "screwHSSS",
                 "craftingToolScrewdriver",

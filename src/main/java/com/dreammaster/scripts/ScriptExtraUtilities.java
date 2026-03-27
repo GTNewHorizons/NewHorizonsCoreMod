@@ -40,6 +40,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
@@ -287,13 +288,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10),
                 "plateLapis",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateLapis",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateLapis",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateLapis");
         addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10),

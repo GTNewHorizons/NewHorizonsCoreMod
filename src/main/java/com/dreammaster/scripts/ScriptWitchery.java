@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -374,11 +375,11 @@ public class ScriptWitchery implements IScriptLoader {
                 'c',
                 "plateSteel",
                 'd',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'e',
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0),
                 'f',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'g',
                 getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0),
                 'h',
@@ -522,7 +523,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'a',
                 "craftingToolScrewdriver",
                 'b',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'c',
                 "craftingToolHardHammer",
                 'd',
@@ -919,7 +920,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'a',
                 "plateThaumium",
                 'b',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'c',
                 "plateThaumium",
                 'd',
@@ -931,7 +932,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'g',
                 "blockSteel",
                 'h',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'i',
                 "blockSteel");
         TCHelper.addResearchPage(
@@ -995,11 +996,11 @@ public class ScriptWitchery implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("vitreus"), 8)
                         .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("lux"), 16),
                 getModItem(Witchery.ID, "fumefunnel", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Witchery.ID, "ingredient", 1, 73),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8));
         TCHelper.addResearchPage(
                 "FILTEREDFUMEFUNNEL",

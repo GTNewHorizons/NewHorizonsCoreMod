@@ -39,6 +39,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -126,7 +127,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 "plateDiamond",
                 "screwDiamond",
                 "plateDiamond",
-                NHItemList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
                 "plateDiamond",
                 "screwDiamond",
                 "plateDiamond",
@@ -917,7 +918,7 @@ public class ScriptAvaritia implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
-                        NHItemList.StainlessSteelBars.get())
+                        BlockList.SteelBars.get())
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 3))

@@ -40,6 +40,7 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -573,11 +574,11 @@ public class ScriptEnderIO implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTank", 1, 0),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel");

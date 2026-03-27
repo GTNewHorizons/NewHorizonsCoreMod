@@ -16,6 +16,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -81,7 +82,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemStack LVRobotArm = ItemList.Robot_Arm_LV.get(1);
         final Block Cactus = Blocks.cactus;
         final Item WaterBucket = Items.water_bucket;
-        final ItemStack SteelBars = NHItemList.SteelBars.get();
+        final ItemStack SteelBars = BlockList.SteelBars.get();
         final ItemData TitaniumRotor = (ItemData) OrePrefixes.rotor.get(Materials.Titanium);
         final Block Snow = Blocks.snow;
         final Item FermentedSpiderEye = Items.fermented_spider_eye;

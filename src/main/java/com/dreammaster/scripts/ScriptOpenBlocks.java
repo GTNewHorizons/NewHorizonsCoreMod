@@ -28,6 +28,7 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -199,15 +200,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateObsidian");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "sprinkler", 1, 0),
-                NHItemList.AluminiumBars.get(),
+                BlockList.AluminiumBars.get(),
                 "stickGold",
-                NHItemList.AluminiumBars.get(),
+                BlockList.AluminiumBars.get(),
                 "pipeSmallDarkSteel",
                 "rotorDarkSteel",
                 "pipeSmallDarkSteel",
-                NHItemList.AluminiumBars.get(),
+                BlockList.AluminiumBars.get(),
                 "stickGold",
-                NHItemList.AluminiumBars.get());
+                BlockList.AluminiumBars.get());
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "guide", 1, 0),
                 "stoneObsidian",
@@ -238,15 +239,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateStone");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "beartrap", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "craftingToolHardHammer",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "screwSteel",
                 "plateSteel",
                 "screwSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "craftingToolScrewdriver",
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get());
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "cannon", 1, 0),
                 "craftingToolSaw",

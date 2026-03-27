@@ -30,6 +30,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
@@ -312,11 +313,11 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserBlock", 1, 0),
