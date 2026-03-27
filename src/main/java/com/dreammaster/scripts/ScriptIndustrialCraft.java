@@ -37,6 +37,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.oredict.OreDictHelper;
 
@@ -369,15 +370,15 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateDoubleCopper");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1),
-                NHItemList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1),
-                NHItemList.StainlessSteelBars.get(),
-                NHItemList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0),
-                NHItemList.StainlessSteelBars.get(),
-                NHItemList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1),
-                NHItemList.StainlessSteelBars.get());
+                BlockList.StainlessSteelBars.get());
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentGold", 1, 1),
                 "screwStainlessSteel",
@@ -391,15 +392,15 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentSpread", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateDenseTin",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateDenseTin",
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1),
                 "plateDenseTin",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateDenseTin",
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get());
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1),
                 "plateSilver",
