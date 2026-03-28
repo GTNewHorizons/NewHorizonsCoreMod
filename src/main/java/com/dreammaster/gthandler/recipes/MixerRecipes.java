@@ -858,7 +858,7 @@ public class MixerRecipes implements Runnable {
                 .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
 
-        // Stargate-Crystal Dust
+        // TODO: remove for 2.10
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.StableAdhesive.get(64),
@@ -869,6 +869,21 @@ public class MixerRecipes implements Runnable {
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.ETA_MESON)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.LAMBDA)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 4))
+                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
+                .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
+                .addTo(mixerRecipes);
+        // Stargate-Crystal Dust
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.StableAdhesive.get(64),
+                        ItemList.SuperconductorComposite.get(64),
+                        ItemList.NaquadriaSupersolid.get(64),
+                        ItemList.Timepiece.get(64),
+                        ItemList.StableBaryonContainmentUnit.get(8),
+                        ItemList.StableLeptonContainmentUnit.get(8),
+                        ItemList.StableMesonContainmentUnit.get(8),
+                        ItemList.StableBosonContainmentUnit.get(8),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 4))
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
                 .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
