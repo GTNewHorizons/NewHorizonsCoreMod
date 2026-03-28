@@ -470,12 +470,26 @@ public class DTPFRecipes implements Runnable {
 
             if (Avaritia.isModLoaded()) {
                 if (GalacticraftAmunRa.isModLoaded()) {
-                    // Dark Matter
+                    // TODO: remove for 2.10
                     GTValues.RA.stdBuilder()
                             .itemInputs(
                                     GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 16),
                                     getModItem(Avaritia.ID, "Resource", 16, 8),
                                     GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
+                            .fluidInputs(
+                                    Materials.ExcitedDTEC.getFluid(1797693L),
+                                    Materials.CosmicNeutronium.getMolten(16384 * 144),
+                                    GGMaterial.tairitsu.getMolten(16384 * 144),
+                                    MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
+                            .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14))
+                            .duration(80 * SECONDS).fluidOutputs(Materials.DTR.getFluid(1797693L))
+                            .eut(TierEU.RECIPE_UMV).metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
+                    // Dark Matter
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 16),
+                                    getModItem(Avaritia.ID, "Resource", 16, 8),
+                                    ItemList.StableBosonContainmentUnit.get(1))
                             .fluidInputs(
                                     Materials.ExcitedDTEC.getFluid(1797693L),
                                     Materials.CosmicNeutronium.getMolten(16384 * 144),
