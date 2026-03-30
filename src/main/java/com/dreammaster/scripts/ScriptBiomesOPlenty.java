@@ -46,11 +46,13 @@ import com.dreammaster.biomesoplenty.BOPWoodTypes;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 
+import biomesoplenty.api.content.BOPCBlocks;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -342,6 +344,9 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0)).eut(TierEU.RECIPE_LV).duration(15 * SECONDS)
                 .addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 1))
+                .itemOutputs(new ItemStack(BOPCBlocks.logs3, 1, 2)).eut(TierEU.RECIPE_LV).duration(10 * TICKS)
+                .addTo(chemicalDehydratorRecipes);
 
         // BOP renovable flora
 
