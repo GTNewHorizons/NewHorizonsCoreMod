@@ -375,9 +375,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 2,
                 2,
                 3,
-                getModItem(DraconicEvolution.ID, "dissEnchanter", 1, 0)).setParents("ENCHANTINGTABLE").setConcealed()
-                        .setPages(new ResearchPage("DraconicEvolution.research_page.DISENCHANTINGTABLE"),
-                                  new ResearchPage("DraconicEvolution.research_page.DISENCHANTINGTABLE.2"))
+                getModItem(DraconicEvolution.ID, "dissEnchanter", 1, 0)).setParents("ENCHANTINGTABLE")
+                        .setConcealed()
+                        .setPages(
+                                new ResearchPage("DraconicEvolution.research_page.DISENCHANTINGTABLE"),
+                                new ResearchPage("DraconicEvolution.research_page.DISENCHANTINGTABLE.2"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISENCHANTINGTABLE",
