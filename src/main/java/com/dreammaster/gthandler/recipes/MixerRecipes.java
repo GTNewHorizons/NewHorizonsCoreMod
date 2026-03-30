@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -19,7 +20,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -853,12 +853,12 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16L, 0),
+                        getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 2L))
                 .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
 
-        // Stargate-Crystal Dust
+        // TODO: remove for 2.10
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.StableAdhesive.get(64),
@@ -869,6 +869,21 @@ public class MixerRecipes implements Runnable {
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.ETA_MESON)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.LAMBDA)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 4))
+                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
+                .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
+                .addTo(mixerRecipes);
+        // Stargate-Crystal Dust
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.StableAdhesive.get(64),
+                        ItemList.SuperconductorComposite.get(64),
+                        ItemList.NaquadriaSupersolid.get(64),
+                        ItemList.Timepiece.get(64),
+                        ItemList.StableBaryonContainmentUnit.get(8),
+                        ItemList.StableLeptonContainmentUnit.get(8),
+                        ItemList.StableMesonContainmentUnit.get(8),
+                        ItemList.StableBosonContainmentUnit.get(8),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 4))
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
                 .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
@@ -900,11 +915,11 @@ public class MixerRecipes implements Runnable {
 
         if (PamsHarvestCraft.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
                     .itemOutputs(NHItemList.WetTofu.get()).fluidInputs(Materials.Water.getFluid(100L))
                     .duration(30 * SECONDS).eut(2).addTo(mixerRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))
                     .itemOutputs(NHItemList.WetTofu.get()).fluidInputs(GTModHandler.getDistilledWater(50L))
                     .duration(20 * SECONDS).eut(2).addTo(mixerRecipes);
         }
@@ -913,7 +928,7 @@ public class MixerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Terrasteel, 1L),
-                            GTModHandler.getModItem(Botania.ID, "manaResource", 4, 5))
+                            getModItem(Botania.ID, "manaResource", 4, 5))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.GaiaSpirit, 1L))
                     .duration(30 * SECONDS).eut(200).addTo(mixerRecipes);
 
@@ -926,7 +941,7 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 4L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 4L))
-                    .circuit(2).itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "item", 9L, 96))
+                    .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 9, 96))
                     .fluidInputs(Materials.Water.getFluid(1000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(mixerRecipes);
         }
@@ -934,7 +949,7 @@ public class MixerRecipes implements Runnable {
         if (BiomesOPlenty.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.dirt, 1, 0)).circuit(4)
-                    .itemOutputs(GTModHandler.getModItem(BiomesOPlenty.ID, "mudball", 4L, 0))
+                    .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0))
                     .fluidInputs(Materials.Water.getFluid(1000L)).duration(2 * SECONDS + 10 * TICKS)
                     .eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
@@ -944,7 +959,7 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(EnderIO.ID, "itemMaterial", 1L, 14),
+                            getModItem(EnderIO.ID, "itemMaterial", 1, 14),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1L))
                     .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.CrystallineAlloy, 3L))
@@ -954,7 +969,7 @@ public class MixerRecipes implements Runnable {
 
         if (ExtraTrees.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(ExtraTrees.ID, "misc", 4L, 2)).circuit(1)
+            GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "misc", 4, 2)).circuit(1)
                     .itemOutputs(ItemList.FR_Mulch.get(1L)).fluidInputs(Materials.Water.getFluid(500L))
                     .duration(30 * SECONDS).eut(2).addTo(mixerRecipes);
 
@@ -964,7 +979,7 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 2),
+                            getModItem(TinkerConstruct.ID, "slime.gel", 1, 2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.CrystallineAlloy, 1L))
                     .circuit(2)
@@ -976,7 +991,7 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Blocks.sand, 3, 0),
                             new ItemStack(Blocks.gravel, 3, 0),
                             new ItemStack(Blocks.clay, 2, 0))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 8L, 1))
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 8, 1))
                     .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -985,7 +1000,7 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Blocks.sand, 3, 1),
                             new ItemStack(Blocks.gravel, 3, 0),
                             new ItemStack(Blocks.clay, 2, 0))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 8L, 1))
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 8, 1))
                     .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -994,8 +1009,8 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Items.nether_wart, 1, 0),
                             new ItemStack(Blocks.soul_sand, 1, 0),
                             new ItemStack(Blocks.gravel, 1, 0),
-                            GTModHandler.getModItem(Natura.ID, "soil.tainted", 1L, 0))
-                    .circuit(1).itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 2L, 6))
+                            getModItem(Natura.ID, "soil.tainted", 1, 0))
+                    .circuit(1).itemOutputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 6))
                     .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -1005,7 +1020,7 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Blocks.soul_sand, 1, 0),
                             new ItemStack(Blocks.gravel, 1, 0),
                             new ItemStack(Blocks.sand, 1, 32767))
-                    .circuit(2).itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 2L, 6))
+                    .circuit(2).itemOutputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 6))
                     .fluidInputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -1018,8 +1033,8 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Items.sugar, 1, 0),
                             new ItemStack(Items.bone, 1, 0),
                             ItemList.FR_Mulch.get(1L),
-                            GTModHandler.getModItem(Witchery.ID, "ingredient", 1L, 18))
-                    .circuit(2).itemOutputs(GTModHandler.getModItem(Genetics.ID, "misc", 1L, 4))
+                            getModItem(Witchery.ID, "ingredient", 1, 18))
+                    .circuit(2).itemOutputs(getModItem(Genetics.ID, "misc", 1, 4))
                     .fluidInputs(Materials.Water.getFluid(1000L)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -1028,8 +1043,8 @@ public class MixerRecipes implements Runnable {
                             new ItemStack(Items.sugar, 1, 0),
                             new ItemStack(Items.bone, 1, 0),
                             ItemList.FR_Mulch.get(1L),
-                            GTModHandler.getModItem(Witchery.ID, "ingredient", 1L, 18))
-                    .circuit(3).itemOutputs(GTModHandler.getModItem(Genetics.ID, "misc", 1L, 4))
+                            getModItem(Witchery.ID, "ingredient", 1, 18))
+                    .circuit(3).itemOutputs(getModItem(Genetics.ID, "misc", 1, 4))
                     .fluidInputs(GTModHandler.getDistilledWater(800L)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -1040,9 +1055,9 @@ public class MixerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L),
-                            GTModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
+                            getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                             new ItemStack(Items.sugar, 1, 0),
-                            GTModHandler.getModItem(DraconicEvolution.ID, "draconiumDust", 1L, 0))
+                            getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0))
                     .circuit(2).itemOutputs(NHItemList.MalformedSlush.get(2))
                     .fluidInputs(FluidRegistry.getFluidStack("witchery:fluidspirit", 1000)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(mixerRecipes);
@@ -1056,8 +1071,7 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                    .circuit(4)
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 8))
+                    .circuit(4).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
                     .fluidInputs(Materials.Water.getFluid(500L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -1066,8 +1080,7 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L))
-                    .circuit(4)
-                    .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 8))
+                    .circuit(4).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
                     .fluidInputs(GTModHandler.getDistilledWater(500L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
@@ -1075,9 +1088,9 @@ public class MixerRecipes implements Runnable {
 
         if (Chisel.isModLoaded()) {
             for (int meta = 0; meta < 16; ++meta) {
-                GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Chisel.ID, "hempcretesand", 1L, meta))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "hempcretesand", 1, meta))
                         .fluidInputs(Materials.Water.getFluid(100L))
-                        .itemOutputs(GTModHandler.getModItem(Chisel.ID, "hempcrete", 1L, meta)).duration(5 * SECONDS)
+                        .itemOutputs(getModItem(Chisel.ID, "hempcrete", 1, meta)).duration(5 * SECONDS)
                         .eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
             }
         }
@@ -1089,8 +1102,8 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 64L),
                             // Diamond Singularity
-                            getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1L, 2))
-                    .itemOutputs(GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 8))
+                            getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2))
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 8))
                     .fluidInputs(
                             GGMaterial.naquadahBasedFuelMkV.getFluidOrGas(1000),
                             Materials.ExcitedDTEC.getFluid(128000))
@@ -1103,11 +1116,11 @@ public class MixerRecipes implements Runnable {
                             kubatech.api.enums.ItemList.LemonTea.get(1),
                             kubatech.api.enums.ItemList.MilkTea.get(1),
                             kubatech.api.enums.ItemList.PeppermintTea.get(1),
-                            GTModHandler.getModItem(EnderIO.ID, "bucketVapor_of_levity", 1L),
+                            getModItem(EnderIO.ID, "bucketVapor_of_levity", 1),
                             ItemList.ThermosCan_Ice_Tea.get(1L),
-                            GTModHandler.getModItem(BiomesOPlenty.ID, "food", 1L, 10),
-                            GTModHandler.getModItem(Witchery.ID, "potion", 1L),
-                            GTModHandler.getModItem(Witchery.ID, "ingredient", 1L, 40))
+                            getModItem(BiomesOPlenty.ID, "food", 1, 10),
+                            getModItem(Witchery.ID, "potion", 1),
+                            getModItem(Witchery.ID, "ingredient", 1, 40))
                     .itemOutputs(
                             new ItemStack(Items.glass_bottle, 2, 0),
                             new ItemStack(Items.bucket, 1, 0),

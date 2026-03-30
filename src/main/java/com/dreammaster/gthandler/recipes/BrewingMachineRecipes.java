@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
@@ -17,19 +18,18 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 
 public class BrewingMachineRecipes implements Runnable {
 
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Genetics.ID, "misc", 6L, 4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Genetics.ID, "misc", 6, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 16L, 0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 16, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 750)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);
@@ -44,7 +44,7 @@ public class BrewingMachineRecipes implements Runnable {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteriapoly", 100)).duration(5 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Fether.ID, "ignis_fruit", 45L, 0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Fether.ID, "ignis_fruit", 45, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("potion.awkward", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("potion.fireresistance", 750)).duration(6 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(brewingRecipes);
