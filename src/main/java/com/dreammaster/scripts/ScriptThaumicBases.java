@@ -1157,25 +1157,25 @@ public class ScriptThaumicBases implements IScriptLoader {
         CrucibleRecipe leatherHelmetBP = ThaumcraftApi.addCrucibleRecipe(
                 "TB.Backprocessing",
                 getModItem(Minecraft.ID, "leather", 5),
-                getModItem(Minecraft.ID, "leather_helmet", 1, 0, missing),
+                getModItem(Minecraft.ID, "leather_helmet", 1, 0),
                 new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
                         .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 1));
         CrucibleRecipe leatherChestplateBP = ThaumcraftApi.addCrucibleRecipe(
                 "TB.Backprocessing",
                 getModItem(Minecraft.ID, "leather", 8),
-                getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
+                getModItem(Minecraft.ID, "leather_chestplate", 1, 0),
                 new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
                         .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 1));
         CrucibleRecipe leatherLeggingsBP = ThaumcraftApi.addCrucibleRecipe(
                 "TB.Backprocessing",
                 getModItem(Minecraft.ID, "leather", 7),
-                getModItem(Minecraft.ID, "leather_leggings", 1, 0, missing),
+                getModItem(Minecraft.ID, "leather_leggings", 1, 0),
                 new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
                         .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 1));
         CrucibleRecipe leatherBootsBP = ThaumcraftApi.addCrucibleRecipe(
                 "TB.Backprocessing",
                 getModItem(Minecraft.ID, "leather", 4),
-                getModItem(Minecraft.ID, "leather_boots", 1, 0, missing),
+                getModItem(Minecraft.ID, "leather_boots", 1, 0),
                 new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
                         .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 1));
 
