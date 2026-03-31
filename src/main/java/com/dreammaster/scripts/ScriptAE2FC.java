@@ -919,6 +919,38 @@ public class ScriptAE2FC implements IScriptLoader {
                 .circuit(2).itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
+        //ME EXPORT BUS
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        AE2_CORE_FOM,
+                        ItemList.Electric_Piston_LV.get(1))
+                .circuit(2)
+                .itemOutputs(AE2FC_EXPORTBUS)
+                .duration(3 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        //ME IMPORT BUS
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        AE2_CORE_ANN,
+                        ItemList.Electric_Piston_LV.get(1))
+                .circuit(2)
+                .itemOutputs(AE2FC_IMPORTBUS)
+                .duration(3 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+
+
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
