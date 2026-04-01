@@ -919,7 +919,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .circuit(2).itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        // ME EXPORT BUS
+        // ME FLUID EXPORT BUS
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
@@ -931,7 +931,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .circuit(2).itemOutputs(AE2FC_EXPORTBUS).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        // ME IMPORT BUS
+        // ME FLUID IMPORT BUS
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
