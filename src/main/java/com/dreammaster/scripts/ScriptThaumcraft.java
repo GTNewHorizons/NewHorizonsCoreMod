@@ -55,6 +55,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
@@ -627,27 +628,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "WandCap", 1, 5),
                 new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("ignis"), 25)
                         .add(Aspect.getAspect("aer"), 25),
-                "abc",
-                "def",
-                "ghi",
+                "aba",
+                "bcb",
+                "aba",
                 'a',
                 "screwStainlessSteel",
                 'b',
                 "foilSilver",
                 'c',
-                "screwStainlessSteel",
-                'd',
-                "foilSilver",
-                'e',
-                "ringSilver",
-                'f',
-                "foilSilver",
-                'g',
-                "screwStainlessSteel",
-                'h',
-                "foilSilver",
-                'i',
-                "screwStainlessSteel");
+                "ringSilver");
         TCHelper.addResearchPage(
                 "CAP_silver",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 5))));
@@ -2344,7 +2333,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("aqua"), 32)
                         .add(Aspect.getAspect("machina"), 8),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
-                NHItemList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
                 getModItem(Minecraft.ID, "quartz_block", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
@@ -2959,19 +2948,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "screwSteel",
                 'b',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'c',
                 "screwSteel",
                 'd',
                 "wireGt01RedAlloy",
                 'e',
-                NHItemList.AluminiumBars.get(),
+                BlockList.AluminiumBars.get(),
                 'f',
                 "craftingToolScrewdriver",
                 'g',
                 "screwSteel",
                 'h',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'i',
                 "screwSteel");
         TCHelper.addResearchPage(
@@ -3418,13 +3407,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("vitium"), 5),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get());
         TCHelper.addResearchPage(
                 "FLUXSCRUB",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14))));
@@ -4954,11 +4943,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'b',
                 getModItem(Minecraft.ID, "iron_helmet", 1, 0),
                 'c',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'd',
                 "plateSteel",
                 'e',

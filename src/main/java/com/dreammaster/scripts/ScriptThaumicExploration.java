@@ -102,10 +102,6 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem(ThaumicExploration.ID, "mechanistCapUncharged", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "mechanistCap", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "stabilizerBelt", 1, 0));
-        TCHelper.removeCrucibleRecipe(getModItem(Minecraft.ID, "leather", 2, 0));
-        TCHelper.removeCrucibleRecipe(getModItem(Minecraft.ID, "leather", 1, 0));
-        TCHelper.removeCrucibleRecipe(getModItem(Minecraft.ID, "leather", 1, 0));
-        TCHelper.removeCrucibleRecipe(getModItem(Minecraft.ID, "leather", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0));
@@ -120,6 +116,15 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "amberCore", 1, 0));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicExploration.ID, "amberStaffCore", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "necroStaffCore", 1, 0));
+        TCHelper.removeCrucibleRecipe(
+                getModItem(Minecraft.ID, "leather", 2, 0),
+                getModItem(Minecraft.ID, "rotten_flesh", 1, 0));
+        TCHelper.removeCrucibleRecipe(
+                getModItem(Minecraft.ID, "leather", 1, 0),
+                getModItem(Minecraft.ID, "beef", 1, 0));
+        TCHelper.removeCrucibleRecipe(
+                getModItem(Minecraft.ID, "leather", 1, 0),
+                getModItem(Minecraft.ID, "porkchop", 1, 0));
         TCHelper.orphanResearch("DISCOUNTRINGS");
         TCHelper.removeResearch("DISCOUNTRINGS");
         new ResearchItem(
