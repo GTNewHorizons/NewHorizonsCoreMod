@@ -34,7 +34,6 @@ import static gregtech.api.util.GTRecipeConstants.FUEL_VALUE;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.util.GTModHandler;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
@@ -50,6 +49,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
@@ -2071,9 +2071,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 1L, 14))
-                .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS))
-                .duration(10 * SECONDS)
-                .eut(8)
+                .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS)).duration(10 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -2081,9 +2079,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 2L, 14))
-                .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS))
-                .duration(10 * SECONDS)
-                .eut(8)
+                .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS)).duration(10 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -2091,9 +2087,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 4))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 4L, 14))
-                .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS))
-                .duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -2101,9 +2095,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 8))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 8L, 14))
-                .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS))
-                .duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
