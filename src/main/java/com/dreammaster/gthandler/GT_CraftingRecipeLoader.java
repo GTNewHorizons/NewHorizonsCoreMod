@@ -1638,25 +1638,18 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 14),
                     bits,
                     new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                            OrePrefixes.stick.get(Materials.AnyIron), 'S', ItemList.IC2_Resin.get(1L, o) });
+                            OrePrefixes.stick.get(Materials.Iron), 'S', ItemList.IC2_Resin.get(1L, o) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 2, 14),
                     bits4,
                     new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                            OrePrefixes.stick.get(Materials.Steel), 'S',
-                            getModItem(aTextTConstruct, "slime.gel", 1, 0) });
-            GTModHandler.addCraftingRecipe(
-                    getModItem(Railcraft.ID, aTextMachineAlpha, 2, 14),
-                    bits4,
-                    new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                            OrePrefixes.stick.get(Materials.Steel), 'S',
-                            getModItem(aTextTConstruct, "slime.gel", 1, 1) });
+                            OrePrefixes.stick.get(Materials.Iron), 'S', OrePrefixes.plate.get(Materials.Rubber) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 4, 14),
                     bits4,
                     new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                            OrePrefixes.stick.get(Materials.StainlessSteel), 'S',
-                            getModItem(aTextTConstruct, "slime.gel", 1, 2) });
+                            OrePrefixes.stick.get(Materials.WroughtIron), 'S',
+                            OrePrefixes.plate.get(Materials.Rubber) });;
 
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "tool.crowbar", 1, 0),
