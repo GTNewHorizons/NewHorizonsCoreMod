@@ -1634,22 +1634,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     new Object[] { "IOI", "GEG", "IOI", 'G', OrePrefixes.plateDouble.get(Materials.Steel), 'I',
                             OrePrefixes.plate.get(Materials.Diamond), 'E', OrePrefixes.gem.get(Materials.EnderPearl),
                             'O', OrePrefixes.plateDense.get(Materials.Obsidian) });
-            GTModHandler.addCraftingRecipe(
-                    getModItem(Railcraft.ID, aTextMachineAlpha, 1, 14),
-                    bits,
-                    new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                            OrePrefixes.stick.get(Materials.Iron), 'S', ItemList.IC2_Resin.get(1L, o) });
-            GTModHandler.addCraftingRecipe(
-                    getModItem(Railcraft.ID, aTextMachineAlpha, 2, 14),
-                    bits4,
-                    new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                            OrePrefixes.stick.get(Materials.Iron), 'S', OrePrefixes.plate.get(Materials.Rubber) });
-            GTModHandler.addCraftingRecipe(
-                    getModItem(Railcraft.ID, aTextMachineAlpha, 4, 14),
-                    bits4,
-                    new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                            OrePrefixes.stick.get(Materials.WroughtIron), 'S',
-                            OrePrefixes.plate.get(Materials.Rubber) });
 
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "tool.crowbar", 1, 0),
