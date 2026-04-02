@@ -2074,12 +2074,12 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "machine.alpha", 2, 14),
 
                 new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.Iron), 'S', OrePrefixes.plate.get(Materials.Rubber) });
+                        OrePrefixes.stick.get(Materials.Iron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 4, 14),
 
                 new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.WroughtIron), 'S', OrePrefixes.plate.get(Materials.Rubber) });
+                        OrePrefixes.stick.get(Materials.WroughtIron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
