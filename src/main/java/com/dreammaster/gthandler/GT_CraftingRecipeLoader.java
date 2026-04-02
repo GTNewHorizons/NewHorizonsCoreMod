@@ -1649,7 +1649,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     bits4,
                     new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
                             OrePrefixes.stick.get(Materials.WroughtIron), 'S',
-                            OrePrefixes.plate.get(Materials.Rubber) });;
+                            OrePrefixes.plate.get(Materials.Rubber) });
 
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "tool.crowbar", 1, 0),
