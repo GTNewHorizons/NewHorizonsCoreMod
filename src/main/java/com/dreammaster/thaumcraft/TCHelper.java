@@ -277,6 +277,19 @@ public class TCHelper {
     }
 
     @SuppressWarnings("unchecked")
+    public static void removeCrucibleRecipe(final ItemStack output, final ItemStack catalyst) {
+        ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
+            if (recipe instanceof CrucibleRecipe crucibleRecipe) {
+                final ItemStack stack = crucibleRecipe.getRecipeOutput();
+                return stack != null && GTUtility.areStacksEqual(stack, output)
+                        && catalyst != null
+                        && crucibleRecipe.catalystMatches(catalyst);
+            }
+            return false;
+        });
+    }
+
+    @SuppressWarnings("unchecked")
     public static void removeInfusionRecipe(final ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof InfusionRecipe infusionRecipe) {

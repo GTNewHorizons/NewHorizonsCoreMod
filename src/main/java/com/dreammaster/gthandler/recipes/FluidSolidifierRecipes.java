@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -23,7 +24,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class FluidSolidifierRecipes implements Runnable {
@@ -118,7 +118,7 @@ public class FluidSolidifierRecipes implements Runnable {
                 .fluidInputs(Materials.ExcitedDTRC.getFluid(1000L)).itemOutputs(ItemList.GlassQuarkContainment.get(1))
                 .eut(TierEU.RECIPE_UEV).duration(5 * SECONDS).addTo(fluidSolidifierRecipes);
         if (Botania.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "bifrostPerm", 1))
                     .itemOutputs(BlockList.Gaia.get(1)).fluidInputs(Materials.GaiaSpirit.getMolten(1296L))
                     .duration(2 * SECONDS).eut(TierEU.RECIPE_IV).addTo(fluidSolidifierRecipes);
         }
@@ -126,37 +126,34 @@ public class FluidSolidifierRecipes implements Runnable {
         if (TinkerConstruct.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 36))
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 36))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(20 * TICKS)
                     .eut(TierEU.RECIPE_ULV).addTo(fluidSolidifierRecipes);
             // maybe Materials.Glue.getFluid(144L) instead
 
-            GTValues.RA.stdBuilder().circuit(1)
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "blankPattern", 1L, 1))
+            GTValues.RA.stdBuilder().circuit(1).itemOutputs(getModItem(TinkerConstruct.ID, "blankPattern", 1, 1))
                     .fluidInputs(FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144))
                     .duration(20 * TICKS).eut(48).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.gravel, 1, 0))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0))
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0))
                     .fluidInputs(Materials.Tin.getMolten(16L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                     .addTo(fluidSolidifierRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1, 43))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6))
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 43))
                     .fluidInputs(Materials.Steel.getMolten(288L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                     .addTo(fluidSolidifierRecipes);
 
             if (ExtraUtilities.isModLoaded()) {
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
-                        .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
+                        .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
                         .fluidInputs(Materials.Tin.getMolten(144L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                         .addTo(fluidSolidifierRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
-                        .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
+                        .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
                         .fluidInputs(Materials.Electrum.getMolten(48L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                         .addTo(fluidSolidifierRecipes);
 

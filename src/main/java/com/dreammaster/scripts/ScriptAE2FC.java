@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
@@ -9,7 +10,6 @@ import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -917,6 +917,30 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
                         AE2_SINGULARITY)
                 .circuit(2).itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        // ME FLUID EXPORT BUS
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        AE2_CORE_FOM,
+                        ItemList.Electric_Piston_LV.get(1))
+                .circuit(2).itemOutputs(AE2FC_EXPORTBUS).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        // ME FLUID IMPORT BUS
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        AE2_CORE_ANN,
+                        ItemList.Electric_Piston_LV.get(1))
+                .circuit(2).itemOutputs(AE2FC_IMPORTBUS).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         // Interface from Small to Block and opposite

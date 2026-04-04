@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -18,7 +19,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
-import gregtech.api.util.GTModHandler;
 
 public class FluidExtractorRecipes implements Runnable {
 
@@ -35,7 +35,7 @@ public class FluidExtractorRecipes implements Runnable {
 
         if (OpenBlocks.isModLoaded() && TinkerConstruct.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 1L, 5))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "oreBerries", 1, 5))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("xpjuice"), 250)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
@@ -47,15 +47,15 @@ public class FluidExtractorRecipes implements Runnable {
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ender"), 250)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 10))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ender"), 2250)).duration(10 * SECONDS).eut(48)
                     .addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 2))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 2))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("stone.seared"), 18)).duration(10 * SECONDS)
                     .eut(48).addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Thaumcraft.ID, "blockTaint", 1L, 2))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 45)).duration(50 * SECONDS).eut(48)
                     .addTo(fluidExtractionRecipes);
 
@@ -63,30 +63,30 @@ public class FluidExtractorRecipes implements Runnable {
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 36))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 36))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0))
                     .fluidOutputs(Materials.Glass.getMolten(144L)).duration(24 * TICKS).eut(54)
                     .recipeCategory(RecipeCategories.fluidExtractorRecycling).addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 1L, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
                     .fluidOutputs(Materials.Glass.getMolten(54L)).duration(9 * TICKS).eut(54)
                     .recipeCategory(RecipeCategories.fluidExtractorRecycling).addTo(fluidExtractionRecipes);
 
         }
 
         if (GalacticraftAmunRa.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalacticraftAmunRa.ID, "tile.wood1", 8, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.wood1", 8, 1))
                     .fluidOutputs(Materials.LumipodExtract.getFluid(250))
 
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(fluidExtractionRecipes);
