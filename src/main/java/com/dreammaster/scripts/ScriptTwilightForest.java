@@ -258,7 +258,7 @@ public class ScriptTwilightForest implements IScriptLoader {
                 "treeLeaves");
 
         addShapedRecipe(
-                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 9, 0),
                 "stoneMarble",
                 "stoneMarble",
                 "stoneMarble",
