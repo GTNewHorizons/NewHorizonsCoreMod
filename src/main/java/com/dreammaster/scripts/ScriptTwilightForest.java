@@ -196,7 +196,7 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 64, 0),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 1))
-                .itemOutputs(getModItem(TwilightForest.ID, "tile.TFNagastone", 64, 0)).duration(30 * SECONDS)
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.TFNagastoneHead", 64, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()

@@ -559,7 +559,6 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("fieryblock", new ItemStack(GregTechAPI.sBlockMetal3, 1, 4));
 
         ChiselHelper.addGroup("nagastone");
-        ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastone", 1, 0));
         ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastoneBody", 1, 0));
         ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastoneHead", 1, 0));
         ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastoneEtched", 1, 0));
