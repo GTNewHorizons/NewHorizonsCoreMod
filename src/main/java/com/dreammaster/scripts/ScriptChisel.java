@@ -557,5 +557,44 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addGroup("fieryblock");
         ChiselHelper.addVariationFromStack("fieryblock", getModItem(TwilightForest.ID, "tile.FieryBlock", 1, 0));
         ChiselHelper.addVariationFromStack("fieryblock", new ItemStack(GregTechAPI.sBlockMetal3, 1, 4));
+
+        ChiselHelper.addGroup("nagastone");
+        ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastone", 1, 0));
+        ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastoneBody", 1, 0));
+        ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastoneHead", 1, 0));
+        ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastoneEtched", 1, 0));
+        ChiselHelper.addVariationFromStack(
+                "nagastone",
+                getModItem(TwilightForest.ID, "tile.TFNagastoneEtchedWeathered", 1, 0));
+        ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastonePillar", 1, 0));
+        ChiselHelper.addVariationFromStack(
+                "nagastone",
+                getModItem(TwilightForest.ID, "tile.TFNagastonePillarWeathered", 1, 0));
+
+        ChiselHelper.addGroup("mossy_nagastone");
+        ChiselHelper.addVariationFromStack(
+                "mossy_nagastone",
+                getModItem(TwilightForest.ID, "tile.TFNagastoneEtchedMossy", 1, 0));
+        ChiselHelper.addVariationFromStack(
+                "mossy_nagastone",
+                getModItem(TwilightForest.ID, "tile.TFNagastonePillarMossy", 1, 0));
+
+        ChiselHelper.addGroup("castle_door");
+        ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 0));
+        ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 1));
+        ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 2));
+        ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 3));
+
+        ChiselHelper.addGroup("castle_brick");
+        ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0));
+        ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 1));
+        ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 2));
+        ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 0));
+        ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 1));
+        ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 2));
+        ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 3));
+
+        ChiselHelper.addVariationFromStack("cloud", getModItem(TwilightForest.ID, "tile.WispyCloud", 1, 0));
+        ChiselHelper.addVariationFromStack("cloud", getModItem(TwilightForest.ID, "tile.FluffyCloud", 1, 0));
     }
 }
