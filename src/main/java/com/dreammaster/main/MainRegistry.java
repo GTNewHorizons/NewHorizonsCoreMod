@@ -301,6 +301,12 @@ public class MainRegistry {
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
         proxy.registerRenderInfo();
+
+        // Baby chest burns for 33 ticks (prevents fuel dupe)
+        GameRegistry.registerFuelHandler(fuel -> {
+            if (Block.getBlockFromItem(fuel.getItem()) instanceof BlockBabyChest) return 33;
+            return 0;
+        });
     }
 
     private void RegisterModuleEvents() {
