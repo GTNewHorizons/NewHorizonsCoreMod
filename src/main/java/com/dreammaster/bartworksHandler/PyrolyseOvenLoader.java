@@ -1,10 +1,5 @@
 package com.dreammaster.bartworksHandler;
 
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-
-import gregtech.loaders.oreprocessing.ProcessingLog;
-
 /**
  * Helper class to create pyrolyse oven recipes for all woods.
  * <p>
@@ -18,8 +13,8 @@ public class PyrolyseOvenLoader {
     private PyrolyseOvenLoader() {}
 
     public static void registerRecipes() {
-        for (ItemStack log : OreDictionary.getOres("logWood")) {
-            ProcessingLog.addPyrolyeOvenRecipes(log);
-        }
+        // for (ItemStack log : OreDictionary.getOres("logWood")) {
+        // ProcessingLog.addPyrolyeOvenRecipes(log);
+        // }
     }
 }
