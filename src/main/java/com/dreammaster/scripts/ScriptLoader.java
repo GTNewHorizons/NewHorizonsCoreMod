@@ -114,9 +114,8 @@ public class ScriptLoader {
                         new ScriptTCCoreMod(),
                         new ScriptThaumcraft(),
                         new ScriptThaumicEnergistics(),
+                        new ScriptThaumicBases(),
                         new ScriptThaumicExploration(),
-                        new ScriptThaumicBases(), // ThaumicBases has to come AFTER ThaumicExploration to resolve recipe
-                                                  // conflict
                         new ScriptThaumicHorizons(),
                         new ScriptThaumicMachina(),
                         new ScriptThaumicTinkerer(),

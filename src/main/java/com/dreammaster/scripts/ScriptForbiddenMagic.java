@@ -289,7 +289,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.removeResearch("ROD_dreamwood");
         InfusionRecipe ROD_dreamwood_recipe = TCHelper.addInfusionCraftingRecipe(
                 "ROD_dreamwood",
-                getModItem(ForbiddenMagic.ID, "WandCores", 1, 8),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 12),
                 9,
                 new AspectList().add(Aspect.getAspect("arbor"), 64).add(Aspect.getAspect("praecantatio"), 48)
                         .add(Aspect.getAspect("auram"), 32).add(Aspect.getAspect("victus"), 24)
