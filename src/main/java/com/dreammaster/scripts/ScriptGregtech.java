@@ -305,6 +305,9 @@ public class ScriptGregtech implements IScriptLoader {
         addShapelessRecipe(
                 ItemList.Cover_SolarPanel.get(1L),
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0));
+        addShapelessRecipe(
+                ItemList.Machine_ULV_SolarPanel.get(1L),
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3));
         addShapedRecipe(
                 ItemList.Cover_SolarPanel.get(1L),
                 "craftingToolCrowbar",
