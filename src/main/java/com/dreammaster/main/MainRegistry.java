@@ -39,6 +39,7 @@ import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
+import com.dreammaster.ic2.IC2Converter;
 import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
@@ -395,6 +396,8 @@ public class MainRegistry {
         if (!TravellersGear.isModLoaded()) TGConverter.doPostInitialization();
 
         if (!Loader.isModLoaded(BPPConverter.BPP_MOD_ID)) BPPConverter.doPostInitialization();
+
+        if (IndustrialCraft2.isModLoaded()) IC2Converter.doPostInitialization();
     }
 
     @Mod.EventHandler
