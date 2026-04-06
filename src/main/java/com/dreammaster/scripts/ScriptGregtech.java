@@ -305,6 +305,18 @@ public class ScriptGregtech implements IScriptLoader {
         addShapelessRecipe(
                 ItemList.Cover_SolarPanel.get(1L),
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0));
+        // TODO: REMOVE BEFORE 2.10 RELEASE
+        addShapelessRecipe(
+                ItemList.Machine_ULV_SolarPanel.get(1L),
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3));
+        addShapedRecipe(
+                ItemList.Cover_SolarPanel.get(1L),
+                "craftingToolCrowbar",
+                ItemList.Machine_ULV_SolarPanel.get(1L),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
         addShapelessRecipe(
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0));
