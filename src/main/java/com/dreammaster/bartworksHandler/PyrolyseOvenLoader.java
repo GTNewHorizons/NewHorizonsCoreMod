@@ -13,8 +13,5 @@ public class PyrolyseOvenLoader {
     private PyrolyseOvenLoader() {}
 
     public static void registerRecipes() {
-        // for (ItemStack log : OreDictionary.getOres("logWood")) {
-        // ProcessingLog.addPyrolyeOvenRecipes(log);
-        // }
     }
 }
