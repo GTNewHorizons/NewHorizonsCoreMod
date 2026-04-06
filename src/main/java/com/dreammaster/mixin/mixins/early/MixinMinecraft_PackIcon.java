@@ -26,7 +26,7 @@ public class MixinMinecraft_PackIcon {
                     remap = false))
     private String dreamcraft$changeWindowTitle(String original) {
         this.dreamcraft$loadedGTNHIcon = IconLoader.setCustomIcon("assets/dreamcraft/textures/icon/GTNH_42x42.png");
-        return Refstrings.NAME + " " + Refstrings.VERSION;
+        return Refstrings.NAME + " " + Refstrings.MODPACKPACK_VERSION;
     }
 
     @ModifyExpressionValue(
