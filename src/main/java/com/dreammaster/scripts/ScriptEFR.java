@@ -1202,7 +1202,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 13L),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Void.getMolten(36)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
