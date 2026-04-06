@@ -14,6 +14,7 @@ import static gregtech.api.enums.Materials.BioMediumRaw;
 import static gregtech.api.enums.Materials.Bismuth;
 import static gregtech.api.enums.Materials.Boron;
 import static gregtech.api.enums.Materials.Creosote;
+import static gregtech.api.enums.Materials.FermentedBacterialSludge;
 import static gregtech.api.enums.Materials.FermentedBiomass;
 import static gregtech.api.enums.Materials.Fluorine;
 import static gregtech.api.enums.Materials.GrowthMediumRaw;
@@ -261,7 +262,7 @@ public class BacteriaRegistry {
                         Oil.getFluid(300),
                         Creosote.getFluid(1000),
                         Water.getFluid(1400),
-                        FluidList.FermentedBacterialSludge.getFluidStack(50),
+                        FermentedBacterialSludge.getFluid(50),
                         FermentedBiomass.getFluid(50),
                         RadoxSuperHeavy.getFluid(100),
                         RadoxHeavy.getFluid(150),
