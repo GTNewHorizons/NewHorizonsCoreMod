@@ -45,7 +45,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 4L))
                 .outputChances(8000, 10000, 10000)
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 100)).duration(60 * SECONDS)
+                .fluidOutputs(Materials.Pollution.getFluid(100)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(2)
@@ -54,7 +54,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 8L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 8L))
                 .outputChances(9000, 10000, 10000)
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 250)).duration(60 * SECONDS)
+                .fluidOutputs(Materials.Pollution.getFluid(250)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(3)
@@ -62,7 +62,7 @@ public class CentrifugeRecipes implements Runnable {
                         NHItemList.AdsorptionFilterCasing.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 12L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 12L))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 500)).duration(60 * SECONDS)
+                .fluidOutputs(Materials.Pollution.getFluid(500)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(4)
@@ -70,7 +70,7 @@ public class CentrifugeRecipes implements Runnable {
                         NHItemList.AdsorptionFilterCasing.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 16L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 16L))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 1000)).duration(60 * SECONDS)
+                .fluidOutputs(Materials.Pollution.getFluid(1000)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().circuit(1)
