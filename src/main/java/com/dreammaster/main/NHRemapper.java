@@ -73,12 +73,11 @@ public final class NHRemapper {
                         "dreamcraft_SodiumPotassium", "dreamcraft_SodiumPotassium_bucket",
                         "dreamcraft_EnrichedBacterialSludge", "dreamcraft_EnrichedBacterialSludge_bucket",
                         "dreamcraft_FermentedBacterialSludge", "dreamcraft_FermentedBacterialSludge_bucket",
-                        "dreamcraft_NitricAcid", "dreamcraft_NitricAcid_bucket",
-                        "dreamcraft_Ammonia", "dreamcraft_Ammonia_bucket",
-                        "dreamcraft_CompressedOxygen", "dreamcraft_CompressedOxygen_bucket",
-                        "dreamcraft_CompressedNitrogen", "dreamcraft_CompressedNitrogen_bucket",
-                        "dreamcraft_Pollution", "dreamcraft_Pollution_bucket",
-                });
+                        "dreamcraft_NitricAcid", "dreamcraft_NitricAcid_bucket", "dreamcraft_Ammonia",
+                        "dreamcraft_Ammonia_bucket", "dreamcraft_CompressedOxygen",
+                        "dreamcraft_CompressedOxygen_bucket", "dreamcraft_CompressedNitrogen",
+                        "dreamcraft_CompressedNitrogen_bucket", "dreamcraft_Pollution",
+                        "dreamcraft_Pollution_bucket", });
     }
 
     public static void remapAll(List<FMLMissingMappingsEvent.MissingMapping> missingMappings, int startFrom) {

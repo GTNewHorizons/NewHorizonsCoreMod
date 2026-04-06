@@ -31,18 +31,17 @@ public class CannerRecipes implements Runnable {
         // NAK and Helium Cooling Cells
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TenKCell.get())
                 .itemOutputs(ItemList.Reactor_Coolant_NaK_1.get(1L))
-                .fluidInputs(Materials.SodiumPotassium.getFluid(1000)).duration(16 * TICKS)
-                .eut(1).addTo(cannerRecipes);
+                .fluidInputs(Materials.SodiumPotassium.getFluid(1000)).duration(16 * TICKS).eut(1).addTo(cannerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.ThirtyKCell.get())
                 .itemOutputs(ItemList.Reactor_Coolant_NaK_3.get(1L))
-                .fluidInputs(Materials.SodiumPotassium.getFluid(3000))
-                .duration(2 * SECONDS + 8 * TICKS).eut(1).addTo(cannerRecipes);
+                .fluidInputs(Materials.SodiumPotassium.getFluid(3000)).duration(2 * SECONDS + 8 * TICKS).eut(1)
+                .addTo(cannerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.SixtyKCell.get())
                 .itemOutputs(ItemList.Reactor_Coolant_NaK_6.get(1L))
-                .fluidInputs(Materials.SodiumPotassium.getFluid(6000))
-                .duration(4 * SECONDS + 16 * TICKS).eut(1).addTo(cannerRecipes);
+                .fluidInputs(Materials.SodiumPotassium.getFluid(6000)).duration(4 * SECONDS + 16 * TICKS).eut(1)
+                .addTo(cannerRecipes);
 
         // Space Cooling Cells
         GTValues.RA.stdBuilder().itemInputs(NHItemList.Empty180SpCell.get())

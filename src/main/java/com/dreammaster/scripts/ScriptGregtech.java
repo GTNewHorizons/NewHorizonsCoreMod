@@ -1110,8 +1110,8 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
@@ -1122,8 +1122,8 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
@@ -1134,8 +1134,8 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
@@ -1146,8 +1146,8 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
@@ -1158,8 +1158,8 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
@@ -1170,13 +1170,12 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.get(3)).circuit(1)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 5L))
-                .fluidInputs(Materials.NitricAcid.getFluid(5000))
-                .fluidOutputs(Materials.Steam.getGas(16000)).duration(10).eut(TierEU.RECIPE_LV)
-                .addTo(UniversalChemical);
+                .fluidInputs(Materials.NitricAcid.getFluid(5000)).fluidOutputs(Materials.Steam.getGas(16000))
+                .duration(10).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),

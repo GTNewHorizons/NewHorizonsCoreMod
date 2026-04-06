@@ -74,7 +74,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.dreammaster.fluids.FluidList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.common.loaders.BioItemList;
