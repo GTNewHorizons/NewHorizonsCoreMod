@@ -24,6 +24,8 @@ import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
+import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
+import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.FUEL_TYPE;
@@ -47,6 +49,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
@@ -2060,6 +2063,55 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "compass", 1, 0))
                 .circuit(1).itemOutputs(getModItem(Railcraft.ID, "tool.surveyor", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // Water Tank
+        GTModHandler.addCraftingRecipe(
+                getModItem(Railcraft.ID, "machine.alpha", 1, 14),
+
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
+                        OrePrefixes.stick.get(Materials.Iron), 'S', ItemList.IC2_Resin.get(1L) });
+        GTModHandler.addCraftingRecipe(
+                getModItem(Railcraft.ID, "machine.alpha", 2, 14),
+
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
+                        OrePrefixes.stick.get(Materials.Iron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
+        GTModHandler.addCraftingRecipe(
+                getModItem(Railcraft.ID, "machine.alpha", 4, 14),
+
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
+                        OrePrefixes.stick.get(Materials.WroughtIron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1))
+                .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 1L, 14))
+                .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS)).duration(10 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2))
+                .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 2L, 14))
+                .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS)).duration(10 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 4))
+                .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 4L, 14))
+                .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 8))
+                .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 8L, 14))
+                .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
