@@ -984,16 +984,19 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.red_flower, 1, 0), getModItem(MagicBees.ID, "miscResources", 1, 3))
+                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0)).duration(20 * SECONDS)
+                .eut(28).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 2L),
                         new ItemStack(Blocks.red_flower, 1, 0),
-                        getModItem(MagicBees.ID, "miscResources", 1, 4))
+                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.NetherStar, 2L))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TaintedMagic.ID, "BlockWarpwoodLeaves", 4, 0),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 2L),
                         getModItem(EtFuturumRequiem.ID, "nether_wart", 4, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
@@ -1087,8 +1090,9 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "smithing_table", 1, 0),
                 bits,
-                new Object[] { "TT ", "GG ", "GG ", 'T', getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 5), 'G',
-                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6), });
+                new Object[] { "TT ", "GG ", "GG ", 'T',
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L), 'G',
+                        OrePrefixes.plank.get(Materials.Wood) });
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.magma_cream, 4))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
@@ -1124,7 +1128,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Blocks.stone_slab, 1),
-                        getModItem(Forestry.ID, "oakStick", 5),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 5L),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 3L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L))
                 .circuit(21).itemOutputs(getModItem(EtFuturumRequiem.ID, "wooden_armorstand", 1)).duration(5 * SECONDS)

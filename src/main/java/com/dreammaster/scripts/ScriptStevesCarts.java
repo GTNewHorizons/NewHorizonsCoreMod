@@ -1892,9 +1892,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                         new ItemStack(Items.fermented_spider_eye, 8),
                         new ItemStack(Items.ghast_tear, 8),
                         new ItemStack(Items.ender_eye, 4))
-                .circuit(24).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 45))
-                .fluidInputs(Materials.Glowstone.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(multiblockChemicalReactorRecipes);
+                .circuit(24).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 45)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
         //
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22)).duration(50 * SECONDS)
