@@ -902,11 +902,11 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
+                .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750))
                 .duration(6 * SECONDS + 8 * TICKS).eut(4).addTo(brewingRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Uranium235, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
+                .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750))
                 .duration(6 * SECONDS + 8 * TICKS).eut(4).addTo(brewingRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
@@ -924,8 +924,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(12 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 75)).duration(2 * MINUTES).eut(2)
+        GTValues.RA.stdBuilder().fluidInputs(Materials.EnrichedBacterialSludge.getFluid(750))
+                .fluidOutputs(Materials.FermentedBacterialSludge.getFluid(75)).duration(2 * MINUTES).eut(2)
                 .addTo(fermentingRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1059,7 +1059,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder().circuit(3).fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 10))
+        GTValues.RA.stdBuilder().circuit(3).fluidInputs(Materials.FermentedBacterialSludge.getFluid(10))
                 .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1)).duration(3 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(distilleryRecipes);
         GTValues.RA.stdBuilder()
