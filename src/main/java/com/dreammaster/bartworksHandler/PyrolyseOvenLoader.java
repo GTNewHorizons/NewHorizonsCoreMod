@@ -12,6 +12,5 @@ public class PyrolyseOvenLoader {
 
     private PyrolyseOvenLoader() {}
 
-    public static void registerRecipes() {
-    }
+    public static void registerRecipes() {}
 }
