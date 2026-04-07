@@ -3336,9 +3336,11 @@ public class ScriptNatura implements IScriptLoader {
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("cloud_seed_concentrated", 1000)).duration(20 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1)).circuit(4)
-                .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 2))
-                .fluidInputs(FluidRegistry.getFluidStack("woodtar", 2000)).duration(20 * TICKS)
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Natura.ID, "Cloud", 4, 1),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L))
+                .circuit(4).itemOutputs(getModItem(Natura.ID, "Cloud", 4, 2)).duration(20 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1)).circuit(4)
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 3))
