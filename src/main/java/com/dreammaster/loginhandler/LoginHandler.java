@@ -1,6 +1,6 @@
 package com.dreammaster.loginhandler;
 
-import static com.dreammaster.config.CoreModConfig.ModPackVersion;
+import static com.dreammaster.config.CoreModConfig.Modules.ModPackVersion;
 import static net.minecraft.util.EnumChatFormatting.*;
 
 import net.minecraft.event.ClickEvent;
