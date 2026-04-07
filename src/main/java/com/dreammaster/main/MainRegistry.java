@@ -23,7 +23,6 @@ import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
-import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
 import com.dreammaster.berriespp.BPPConverter;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.client.util.GTNHPauseScreen;
@@ -262,11 +261,6 @@ public class MainRegistry {
 
         // Register additional OreDictionary Names
         if (CoreModConfig.Modules.OreDictItems) OreDictHandler.register_all();
-
-        GregTechAPI.sAfterGTPostload.add(() -> {
-            LOGGER.debug("Add Runnable to GT to create pyrolyse oven logWood recipes");
-            PyrolyseOvenLoader.registerRecipes();
-        });
 
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
