@@ -866,14 +866,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapedRecipe(
-                ItemList.Cover_SolarPanel.get(1L),
-                "craftingToolCrowbar",
-                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3),
-                "craftingToolScrewdriver",
-                "craftingToolWrench",
-                "craftingToolHardHammer",
-                "craftingToolFile");
         addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0));
@@ -1095,18 +1087,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5),

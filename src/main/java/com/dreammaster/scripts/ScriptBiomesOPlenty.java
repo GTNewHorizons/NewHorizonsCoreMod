@@ -341,7 +341,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 1, 8)).circuit(11)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11)).eut(TierEU.RECIPE_LV).duration(15 * SECONDS)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 4, 1))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0)).eut(TierEU.RECIPE_LV).duration(15 * SECONDS)
                 .addTo(compressorRecipes);
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 1))
