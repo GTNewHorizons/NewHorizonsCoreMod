@@ -84,7 +84,6 @@ import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 import java.util.HashMap;
 import java.util.Map;
 
-import gregtech.api.enums.Materials;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
