@@ -84,6 +84,7 @@ import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 import java.util.HashMap;
 import java.util.Map;
 
+import gregtech.api.enums.Materials;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -3753,6 +3754,17 @@ public class AssemblerRecipes implements Runnable {
 
     private void makeCircuitPartRecipes() {
         // Circuits and Boards
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4),
+                        new OreDictItemStack("slimeball", 8))
+                .circuit(5).itemOutputs(ItemList.Circuit_Board_Basic.get(4)).duration(10 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4), ItemList.IC2_Resin.get(8))
+                .circuit(5).itemOutputs(ItemList.Circuit_Board_Basic.get(4)).duration(10 * SECONDS).eut(8)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
