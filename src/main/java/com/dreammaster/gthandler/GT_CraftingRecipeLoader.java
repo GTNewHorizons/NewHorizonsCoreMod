@@ -214,7 +214,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Super_Tank_MV.get(1L),
                 bits,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_HV, 'M', ItemList.Casing_Tank_2, 'G',
-                        OrePrefixes.plate.get(Materials.EnergeticSilver), 'D', OrePrefixes.circuit.get(Materials.MV),
+                        OrePrefixes.plate.get(Materials.EnergeticAlloy), 'D', OrePrefixes.circuit.get(Materials.MV),
                         'P', OrePrefixes.plate.get(Materials.StainlessSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Tank_HV.get(1L),
@@ -276,8 +276,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Super_Chest_MV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_MV, 'G',
-                        OrePrefixes.plate.get(Materials.VibrantAlloy), 'D', OrePrefixes.circuit.get(Materials.MV), 'P',
-                        OrePrefixes.plateQuadruple.get(Materials.Steel) });
+                        OrePrefixes.plate.get(Materials.EnergeticAlloy), 'D', OrePrefixes.circuit.get(Materials.MV),
+                        'P', OrePrefixes.plateQuadruple.get(Materials.Steel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_HV.get(1L),
                 bits,
