@@ -3753,17 +3753,6 @@ public class AssemblerRecipes implements Runnable {
 
     private void makeCircuitPartRecipes() {
         // Circuits and Boards
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 8),
-                        new OreDictItemStack("slimeball", 8))
-                .circuit(5).itemOutputs(ItemList.Circuit_Board_Basic.get(8)).duration(20 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 8), ItemList.IC2_Resin.get(8))
-                .circuit(5).itemOutputs(ItemList.Circuit_Board_Basic.get(8)).duration(20 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
