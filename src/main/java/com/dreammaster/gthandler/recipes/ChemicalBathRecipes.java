@@ -37,7 +37,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialMisc;
 
 public class ChemicalBathRecipes implements Runnable {
 
@@ -67,16 +66,24 @@ public class ChemicalBathRecipes implements Runnable {
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).addTo(chemicalBathRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
-                .itemOutputs(ItemList.Circuit_Board_Basic.get(1)).duration(50 * TICKS).eut(8)
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(1)).duration(100 * TICKS).eut(8)
                 .fluidInputs(Materials.Glue.getFluid(72)).addTo(chemicalBathRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2))
-                .itemOutputs(ItemList.Circuit_Board_Basic.get(2)).duration(25 * TICKS).eut(8)
-                .fluidInputs(Materials.GlueAdvanced.getFluid(36)).addTo(chemicalBathRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(2)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Polyethylene.getMolten(36)).addTo(chemicalBathRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 8))
-                .itemOutputs(ItemList.Circuit_Board_Basic.get(8)).duration(25 * TICKS).eut(8)
-                .fluidInputs(MaterialMisc.ETHYL_CYANOACRYLATE.getFluidStack(18)).addTo(chemicalBathRecipes);
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(2)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(18)).addTo(chemicalBathRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(3)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Epoxid.getMolten(18)).addTo(chemicalBathRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(4)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(9)).addTo(chemicalBathRecipes);
 
         // Cooling Hot Netherrack Bricks
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HotNetherrackBrick.get())
