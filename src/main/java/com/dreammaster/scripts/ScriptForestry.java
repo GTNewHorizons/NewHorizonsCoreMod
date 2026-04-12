@@ -5771,11 +5771,11 @@ public class ScriptForestry implements IScriptLoader {
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("water", 1));
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mulch", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mulch", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("short.mead", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("mead", 500)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
                 .addTo(brewingRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mulch", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mulch", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("resin", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("turpentine", 600)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV).addTo(brewingRecipes);

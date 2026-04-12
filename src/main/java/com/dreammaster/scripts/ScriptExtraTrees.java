@@ -7502,8 +7502,8 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "dustSodalite",
                 "dustSugar",
                 "dustLazurite");
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeswax", 2, 0, missing))
-                .itemOutputs(getModItem(ExtraTrees.ID, "misc", 8, 4, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeswax", 2, 0))
+                .itemOutputs(getModItem(ExtraTrees.ID, "misc", 8, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("turpentine", 100)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
     }
