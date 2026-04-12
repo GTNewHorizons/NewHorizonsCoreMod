@@ -1,8 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.recipe.RecipeMaps.benderRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -24,16 +24,12 @@ public class BendingMachineRecipes implements Runnable {
     public void run() {
         ItemStack missing = new ItemStack(Blocks.fire);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(NHItemList.MicaInsulatorSheet.get(), ItemList.Circuit_Integrated.getWithDamage(0, 1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MicaInsulatorSheet.get()).circuit(1)
                 .itemOutputs(NHItemList.MicaInsulatorFoil.get(4)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(benderRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Steel, 1L),
-                        ItemList.Circuit_Integrated.getWithDamage(0, 1))
-                .itemOutputs(ItemList.Shape_Empty.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Steel, 1L))
+                .circuit(1).itemOutputs(ItemList.Shape_Empty.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(benderRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 1L))
@@ -54,12 +50,12 @@ public class BendingMachineRecipes implements Runnable {
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
 
         if (GalacticraftCore.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7, missing))
-                    .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6, missing))
-                    .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7)).circuit(2)
+                    .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6)).circuit(2)
+                    .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_ULV).addTo(benderRecipes);
         }
     }
 }

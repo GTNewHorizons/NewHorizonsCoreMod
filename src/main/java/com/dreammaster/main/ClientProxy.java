@@ -44,6 +44,6 @@ public class ClientProxy extends CommonProxy implements IResourceManagerReloadLi
     @Override
     public void onResourceManagerReload(IResourceManager p_110549_1_) {
         MainRegistry.Module_CustomToolTips.setConfigFileLocation();
-        MainRegistry.Module_CustomToolTips.ReloadCustomToolTips("");
+        MainRegistry.Module_CustomToolTips.ReloadCustomToolTips();
     }
 }
