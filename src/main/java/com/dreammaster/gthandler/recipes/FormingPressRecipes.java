@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.ProjectRedCore;
@@ -17,7 +18,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
@@ -369,9 +369,7 @@ public class FormingPressRecipes implements Runnable {
         if (BloodArsenal.isModLoaded()) {
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTModHandler.getModItem(BloodArsenal.ID, "glass_shard", 2L, 0),
-                            ItemList.Shape_Mold_Block.get(0L))
+                    .itemInputs(getModItem(BloodArsenal.ID, "glass_shard", 2, 0), ItemList.Shape_Mold_Block.get(0L))
                     .itemOutputs(new ItemStack(Blocks.glass, 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                     .addTo(formingPressRecipes);
 
@@ -382,7 +380,7 @@ public class FormingPressRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
-                            GTModHandler.getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1L, 4))
+                            getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 4))
                     .itemOutputs(NHItemList.EssentiaCircuit.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(formingPressRecipes);
 
@@ -393,8 +391,8 @@ public class FormingPressRecipes implements Runnable {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
                             NHItemList.EtchedLowVoltageWiring.get())
-                    .itemOutputs(GTModHandler.getModItem(ProjectRedCore.ID, "projectred.core.part", 1L, 0))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(formingPressRecipes);
+                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV / 2).addTo(formingPressRecipes);
 
         }
 

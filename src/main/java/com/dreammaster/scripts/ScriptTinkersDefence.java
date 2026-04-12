@@ -1,9 +1,9 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersDefence;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -30,28 +30,26 @@ public class ScriptTinkersDefence implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing));
-        TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing));
-        TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing));
+        TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201));
+        TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203));
+        TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202));
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing))
-                .duration(1 * MINUTES + 28 * SECONDS).eut(TierEU.RECIPE_MV)
-                .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
+                        getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1, 0),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 0, 25))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201)).duration(1 * MINUTES + 28 * SECONDS)
+                .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing))
-                .duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
-                .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
+                        getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 0, 25))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203)).duration(1 * MINUTES + 4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing)).duration(10 * SECONDS)
+                        getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1, 0),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 0, 25))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
 
     }

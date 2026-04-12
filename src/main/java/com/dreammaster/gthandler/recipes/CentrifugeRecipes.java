@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Forestry;
@@ -29,7 +30,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
@@ -373,7 +373,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 4L),
-                        GTModHandler.getModItem(Avaritia.ID, "Resource", 36L, 2),
+                        getModItem(Avaritia.ID, "Resource", 36, 2),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 4L))
                 .outputChances(5000, 3000, 1000, 1000, 100, 50).fluidOutputs(Materials.Mercury.getFluid(3600L))
                 .duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
@@ -384,7 +384,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 4L),
-                        GTModHandler.getModItem(Avaritia.ID, "Resource", 36L, 2),
+                        getModItem(Avaritia.ID, "Resource", 36, 2),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 4L))
                 .outputChances(5000, 2000, 500, 2500, 150, 80).fluidOutputs(Materials.Mercury.getFluid(7200L))
                 .duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
@@ -448,99 +448,99 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(10000, 9000, 7500, 6500).duration(60 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "newBopGrass", 1L, 0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopGrass", 1, 0))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 0))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 1))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 2))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 3))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 3))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "newBopGrass", 1L, 2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopGrass", 1, 2))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.QuartzSand, 1L))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 4))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.QuartzSand, 1L))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 5))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 5))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.QuartzSand, 1L))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(BiomesOPlenty.ID, "driedDirt", 1L, 0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "driedDirt", 1, 0))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L),
                         new ItemStack(Blocks.sand, 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L))
                 .outputChances(9000, 5000, 277).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Thaumcraft.ID, "blockEldritch", 1L, 4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockEldritch", 1, 4))
                 .itemOutputs(
                         new ItemStack(Items.glowstone_dust, 1, 0),
-                        GTModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
-                        GTModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
-                        GTModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1L, 14))
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14))
                 .outputChances(10000, 3300, 1000, 200).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 0))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 0))
                 .itemOutputs(
                         new ItemStack(Items.glowstone_dust, 2, 0),
                         NHItemList.CeresStoneDust.get(),
                         NHItemList.CeresStoneDust.get())
                 .outputChances(10000, 9000, 7500).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 4))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 4))
                 .itemOutputs(
                         new ItemStack(Items.glowstone_dust, 2, 0),
                         NHItemList.PlutoStoneDust.get(),
                         NHItemList.PlutoStoneDust.get())
                 .outputChances(10000, 9000, 7500).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 1))
                 .itemOutputs(
                         new ItemStack(Items.glowstone_dust, 2, 0),
                         NHItemList.IoStoneDust.get(),
                         NHItemList.IoStoneDust.get())
                 .outputChances(10000, 9000, 7500).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 2))
                 .itemOutputs(
                         new ItemStack(Items.glowstone_dust, 2, 0),
                         NHItemList.EnceladusStoneDust.get(),
                         NHItemList.EnceladusStoneDust.get())
                 .outputChances(10000, 9000, 7500).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 3))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 3))
                 .itemOutputs(
                         new ItemStack(Items.glowstone_dust, 2, 0),
                         NHItemList.ProteusStoneDust.get(),
@@ -566,14 +566,14 @@ public class CentrifugeRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 1L))
                 .itemOutputs(
-                        GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 2),
-                        GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 2),
-                        GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 2))
+                        getModItem(Avaritia.ID, "Resource", 1, 2),
+                        getModItem(Avaritia.ID, "Resource", 1, 2),
+                        getModItem(Avaritia.ID, "Resource", 1, 2))
                 .outputChances(5000, 2000, 1000).duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MaceratedPlantmass.get())
-                .itemOutputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 1L, 0)).duration(15 * SECONDS)
-                .eut(4).addTo(centrifugeRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0)).duration(15 * SECONDS).eut(4)
+                .addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrotine, 8L))
                 .itemOutputs(
@@ -586,24 +586,18 @@ public class CentrifugeRecipes implements Runnable {
                 .fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
 
-        // Liquid Fertilizer reverse recipe
-
-        GTValues.RA.stdBuilder().circuit(1).itemOutputs(ItemList.IC2_Fertilizer.get(1L))
-                .fluidInputs(FluidRegistry.getFluidStack("fluid.fertiliser", 144)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(centrifugeRecipes);
-
         if (PamsHarvestCraft.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "coconutItem", 1L, 0))
-                    .itemOutputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "coconutmilkItem", 9L, 0))
-                    .duration(5 * SECONDS).eut(2).addTo(centrifugeRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "coconutItem", 1, 0))
+                    .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutmilkItem", 9, 0)).duration(5 * SECONDS).eut(2)
+                    .addTo(centrifugeRecipes);
 
         }
 
         if (TinkerConstruct.isModLoaded()) {
             // Centrifuge
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
                     .fluidOutputs(Materials.Glue.getFluid(50)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
@@ -611,23 +605,23 @@ public class CentrifugeRecipes implements Runnable {
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
                     .fluidOutputs(Materials.Glue.getFluid(50)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 2))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 2))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 8L))
                     .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 1))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 8L))
                     .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 0))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 8L))
                     .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 1L, 0))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0))
                     .itemOutputs(
                             new ItemStack(Blocks.dirt, 1, 32767),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 1L),
-                            GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0))
+                            getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
                     .outputChances(10000, 10000, 1000).fluidOutputs(Materials.Glue.getFluid(25)).duration(15 * SECONDS)
                     .eut(5).addTo(centrifugeRecipes);
 
@@ -639,9 +633,9 @@ public class CentrifugeRecipes implements Runnable {
                     .addTo(centrifugeRecipes);
         }
         if (Forestry.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Forestry.ID, "beeCombs", 1L, 9))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeCombs", 1, 9))
                     .itemOutputs(
-                            GTModHandler.getModItem(Forestry.ID, "beeswax", 1L, 0),
+                            getModItem(Forestry.ID, "beeswax", 1, 0),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L))
                     .outputChances(10000, 11).duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
             GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.INDIUM, 8)).circuit(2)

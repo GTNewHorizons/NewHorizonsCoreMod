@@ -1,6 +1,7 @@
 package com.dreammaster.bartworksHandler;
 
 import static bartworks.system.material.WerkstoffLoader.Ruridit;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.OrePrefixes.bolt;
 import static gregtech.api.enums.OrePrefixes.dustTiny;
@@ -17,7 +18,6 @@ import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.recipe.Scanning;
 
@@ -32,10 +32,10 @@ public class BW_Recipe_Loader implements Runnable {
 
         // Heavy Duty Alloy Ingot T4
         GTValues.RA.stdBuilder()
-                .metadata(RESEARCH_ITEM, GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0))
+                .metadata(RESEARCH_ITEM, getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0))
                 .metadata(SCANNING, new Scanning(1 * MINUTES + 30 * SECONDS, TierEU.RECIPE_EV))
                 .itemInputs(
-                        GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),
+                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0),
                         NHItemList.IceCompressedPlate.get(3),
                         NHItemList.IceCompressedPlate.get(3),
                         Ruridit.get(bolt, 4))
