@@ -16,7 +16,9 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.fermentingRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -5801,5 +5803,17 @@ public class ScriptForestry implements IScriptLoader {
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("water", 1));
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mulch", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("short.mead", 1000))
+                .fluidOutputs(FluidRegistry.getFluidStack("mead", 500)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
+                .addTo(brewingRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mulch", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("resin", 1000))
+                .fluidOutputs(FluidRegistry.getFluidStack("turpentine", 600)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(brewingRecipes);
+        GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("for.honey", 500))
+                .fluidOutputs(FluidRegistry.getFluidStack("short.mead", 500)).duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(fermentingRecipes);
+
     }
 }
