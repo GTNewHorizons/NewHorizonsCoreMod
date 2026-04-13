@@ -71,6 +71,8 @@ import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
 import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
 import static gtPlusPlus.core.material.MaterialsAlloy.INDALLOY_140;
 import static gtPlusPlus.core.material.MaterialsAlloy.LEAGRISIUM;
+import static gtPlusPlus.core.material.MaterialsAlloy.MARAGING250;
+import static gtPlusPlus.core.material.MaterialsAlloy.MARAGING300;
 import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
 import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
@@ -990,8 +992,8 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.log, Materials.Wood, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.treeSapling, 4L),
+                        new OreDictItemStack("logWood", 4),
+                        new OreDictItemStack("treeSapling", 4),
                         new ItemStack(Items.compass, 1, 0))
                 .itemOutputs(getModItem(NaturesCompass.ID, "NaturesCompass", 1, 0))
                 .fluidInputs(Materials.Glue.getFluid(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2585,6 +2587,15 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Spinmatron_Chamber_Grate.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
+        // Mixer Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Polytetrafluoroethylene, 1),
+                        MARAGING300.getPlate(4),
+                        MARAGING250.getPlate(2))
+                .circuit(1).itemOutputs(ItemList.CasingMixer.get(1)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
             GTValues.RA.stdBuilder()
@@ -2601,9 +2612,9 @@ public class AssemblerRecipes implements Runnable {
         if (StorageDrawers.isModLoaded()) {
             // Alternate Storage Template Recipe
             GTValues.RA.stdBuilder()
-                    .itemInputs(ItemList.Electric_Piston_LV.get(1), GTOreDictUnificator.get("drawerBasic", 1))
-                    .circuit(2).itemOutputs(getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0))
-                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                    .itemInputs(ItemList.Electric_Piston_LV.get(1), new OreDictItemStack("drawerBasic", 1)).circuit(2)
+                    .itemOutputs(getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0)).duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
         // Display
         GTValues.RA.stdBuilder()
