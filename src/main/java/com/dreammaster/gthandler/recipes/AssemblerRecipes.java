@@ -992,8 +992,8 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.log, Materials.Wood, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.treeSapling, 4L),
+                        new OreDictItemStack("logWood", 4),
+                        new OreDictItemStack("treeSapling", 4),
                         new ItemStack(Items.compass, 1, 0))
                 .itemOutputs(getModItem(NaturesCompass.ID, "NaturesCompass", 1, 0))
                 .fluidInputs(Materials.Glue.getFluid(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2612,9 +2612,9 @@ public class AssemblerRecipes implements Runnable {
         if (StorageDrawers.isModLoaded()) {
             // Alternate Storage Template Recipe
             GTValues.RA.stdBuilder()
-                    .itemInputs(ItemList.Electric_Piston_LV.get(1), GTOreDictUnificator.get("drawerBasic", 1))
-                    .circuit(2).itemOutputs(getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0))
-                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                    .itemInputs(ItemList.Electric_Piston_LV.get(1), new OreDictItemStack("drawerBasic", 1)).circuit(2)
+                    .itemOutputs(getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0)).duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
         // Display
         GTValues.RA.stdBuilder()
