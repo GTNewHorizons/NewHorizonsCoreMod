@@ -2601,9 +2601,9 @@ public class AssemblerRecipes implements Runnable {
         if (StorageDrawers.isModLoaded()) {
             // Alternate Storage Template Recipe
             GTValues.RA.stdBuilder()
-                    .itemInputs(ItemList.Electric_Piston_LV.get(1), GTOreDictUnificator.get("drawerBasic", 1))
-                    .circuit(2).itemOutputs(getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0))
-                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                    .itemInputs(ItemList.Electric_Piston_LV.get(1), new OreDictItemStack("drawerBasic", 1)).circuit(2)
+                    .itemOutputs(getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0)).duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
         // Display
         GTValues.RA.stdBuilder()
