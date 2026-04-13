@@ -2354,7 +2354,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
-                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple.get(Materials.Americium), 3),
+                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Americium), 3),
                         ItemList.Field_Generator_UV.get(1),
                         ItemList.Automation_ChestBuffer_UEV.get(1L))
                 .itemOutputs(ItemList.Quantum_Chest_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
