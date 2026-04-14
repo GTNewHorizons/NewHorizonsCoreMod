@@ -10,10 +10,10 @@ import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
-import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -246,7 +246,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
             GTValues.RA.stdBuilder().itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15))
                     .fluidInputs(Materials.Eternity.getMolten(144)).fluidOutputs(Materials.Infinity.getMolten(576))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(plasmaArcFurnaceRecipes);
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(arcFurnaceRecipes);
 
             // Spaghettic Singularity
             GTValues.RA.stdBuilder().itemInputs(
