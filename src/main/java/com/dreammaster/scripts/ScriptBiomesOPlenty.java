@@ -638,15 +638,13 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                     "stickWood",
                     plank);
 
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "stick", 2, 0),
+                            getModItem(BiomesOPlenty.ID, "planks", 2, woodType.ordinal()))
+                    .itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         }
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "stick", 2, 0),
-                        getModItem(BiomesOPlenty.ID, "planks", 2, woodType.ordinal()))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "gemOre", 1, 0))
                 .itemOutputs(
                         getModItem(BiomesOPlenty.ID, "gems", 2, 0),
