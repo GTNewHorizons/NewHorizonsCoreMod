@@ -3328,8 +3328,8 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.IronMagnetic, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
+                        new OreDictItemStack("stickAnyIron", 2),
+                        new OreDictItemStack("wireGt01AnyCopper", 4),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L))
                 .itemOutputs(ItemList.Electric_Motor_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3338,25 +3338,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.SteelMagnetic, 1L),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L))
-                .itemOutputs(ItemList.Electric_Motor_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.IronMagnetic, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L))
-                .itemOutputs(ItemList.Electric_Motor_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.SteelMagnetic, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 4L),
+                        new OreDictItemStack("wireGt01AnyCopper", 4),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L))
                 .itemOutputs(ItemList.Electric_Motor_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3366,16 +3348,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.SteelMagnetic, 1L),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 2L))
-                .itemOutputs(ItemList.Electric_Motor_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.SteelMagnetic, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnnealedCopper, 2L))
+                        new OreDictItemStack("cablegt01AnyCopper", 2))
                 .itemOutputs(ItemList.Electric_Motor_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -3410,29 +3383,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_LV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Tin, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tin, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Bronze, 1))
-                .itemOutputs(ItemList.Electric_Pump_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_LV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Tin, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tin, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Bronze, 1))
-                .itemOutputs(ItemList.Electric_Pump_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_LV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.StyreneButadieneRubber, 2),
+                        new OreDictItemStack("ringAnyRubber", 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Tin, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tin, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
@@ -3443,29 +3394,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_MV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Bronze, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Bronze, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1))
-                .itemOutputs(ItemList.Electric_Pump_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_MV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Bronze, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Bronze, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1))
-                .itemOutputs(ItemList.Electric_Pump_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_MV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.StyreneButadieneRubber, 2),
+                        new OreDictItemStack("ringAnyRubber", 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Bronze, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Bronze, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1),
@@ -3476,29 +3405,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_HV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1))
-                .itemOutputs(ItemList.Electric_Pump_HV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_HV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1))
-                .itemOutputs(ItemList.Electric_Pump_HV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_HV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.StyreneButadieneRubber, 2),
+                        new OreDictItemStack("ringAnyRubber", 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
@@ -3509,29 +3416,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_EV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1))
-                .itemOutputs(ItemList.Electric_Pump_EV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_EV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1))
-                .itemOutputs(ItemList.Electric_Pump_EV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_EV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.StyreneButadieneRubber, 2),
+                        new OreDictItemStack("ringAnyRubber", 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1),
@@ -3542,18 +3427,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_IV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.RubberSilicone, 2),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 1))
-                .itemOutputs(ItemList.Electric_Pump_IV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_IV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.StyreneButadieneRubber, 2),
+                        new OreDictItemStack("ringAnySyntheticRubber", 2),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1),
@@ -3565,23 +3439,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_LV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1))
-                .itemOutputs(ItemList.Conveyor_Module_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_LV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1))
-                .itemOutputs(ItemList.Conveyor_Module_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_LV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 6),
+                        new OreDictItemStack("plateAnyRubber", 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1))
                 .itemOutputs(ItemList.Conveyor_Module_LV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3589,23 +3447,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_MV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 1))
-                .itemOutputs(ItemList.Conveyor_Module_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_MV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 1))
-                .itemOutputs(ItemList.Conveyor_Module_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_MV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 6),
+                        new OreDictItemStack("plateAnyRubber", 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 1))
                 .itemOutputs(ItemList.Conveyor_Module_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3613,23 +3455,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_HV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1))
-                .itemOutputs(ItemList.Conveyor_Module_HV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_HV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1))
-                .itemOutputs(ItemList.Conveyor_Module_HV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_HV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 6),
+                        new OreDictItemStack("plateAnyRubber", 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1))
                 .itemOutputs(ItemList.Conveyor_Module_HV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3637,23 +3463,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_EV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1))
-                .itemOutputs(ItemList.Conveyor_Module_EV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_EV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1))
-                .itemOutputs(ItemList.Conveyor_Module_EV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_EV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 6),
+                        new OreDictItemStack("plateAnyRubber", 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1))
                 .itemOutputs(ItemList.Conveyor_Module_EV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3661,15 +3471,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_IV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 6),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1))
-                .itemOutputs(ItemList.Conveyor_Module_IV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_IV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 6),
+                        new OreDictItemStack("plateAnySyntheticRubber", 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1))
                 .itemOutputs(ItemList.Conveyor_Module_IV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
