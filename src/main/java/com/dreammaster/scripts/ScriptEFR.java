@@ -994,10 +994,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(Minecraft.ID, "furnace", 1, 0),
                 "plateAnyIron");
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new OreDictItemStack("plateAnyIron", 5),
-                        new ItemStack(Blocks.furnace, 1))
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("plateAnyIron", 5), new ItemStack(Blocks.furnace, 1))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 

@@ -39,7 +39,6 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.objects.OreDictItemStack;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -55,6 +54,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptStevesCarts implements IScriptLoader {
