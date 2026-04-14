@@ -2299,6 +2299,47 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Transformer_HV_MV.get(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Super Tank I
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.LV), 4),
+                        Materials.Aluminium.getPlates(2),
+                        ItemList.Electric_Pump_MV.get(1),
+                        Materials.PulsatingIron.getPlates(1),
+                        ItemList.Casing_Tank_1.get(1))
+                .itemOutputs(ItemList.Super_Tank_LV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Super Tank II
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.MV), 4),
+                        Materials.StainlessSteel.getPlates(2),
+                        ItemList.Electric_Pump_HV.get(1),
+                        Materials.EnergeticAlloy.getPlates(1),
+                        ItemList.Casing_Tank_2.get(1))
+                .itemOutputs(ItemList.Super_Tank_MV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Super Tank III
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.HV), 4),
+                        Materials.VibrantAlloy.getPlates(2),
+                        ItemList.Electric_Pump_HV.get(1),
+                        ItemList.Field_Generator_LV.get(1),
+                        ItemList.Casing_Tank_3.get(1))
+                .itemOutputs(ItemList.Super_Tank_HV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Super Tank IV
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.EV), 4),
+                        Materials.Titanium.getPlates(2),
+                        ItemList.Electric_Pump_EV.get(1),
+                        ItemList.Field_Generator_MV.get(1),
+                        ItemList.Casing_Tank_4.get(1))
+                .itemOutputs(ItemList.Super_Tank_EV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         // Super Tank V
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2307,9 +2348,96 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_EV.get(1),
                         ItemList.Field_Generator_HV.get(1),
                         ItemList.Casing_Tank_5.get(1))
-                .itemOutputs(ItemList.Super_Tank_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.Super_Tank_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
+        // Quantum Tank I
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 4),
+                        Materials.TungstenSteel.getPlates(2),
+                        ItemList.Electric_Pump_IV.get(1),
+                        ItemList.Field_Generator_EV.get(1),
+                        ItemList.Casing_Tank_6.get(1))
+                .itemOutputs(ItemList.Quantum_Tank_LV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Quantum Tank II
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.ZPM), 4),
+                        Materials.HSSG.getPlates(2),
+                        ItemList.Electric_Pump_IV.get(1),
+                        ItemList.Field_Generator_IV.get(1),
+                        ItemList.Casing_Tank_7.get(1))
+                .itemOutputs(ItemList.Quantum_Tank_MV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Quantum Tank III
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 4),
+                        Materials.HSSS.getPlates(2),
+                        ItemList.Electric_Pump_LuV.get(1),
+                        ItemList.Field_Generator_LuV.get(1),
+                        ItemList.Casing_Tank_8.get(1))
+                .itemOutputs(ItemList.Quantum_Tank_HV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Quantum Tank IV
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 4),
+                        Materials.Europium.getPlates(2),
+                        ItemList.Electric_Pump_ZPM.get(1),
+                        ItemList.Field_Generator_ZPM.get(1),
+                        ItemList.Casing_Tank_9.get(1))
+                .itemOutputs(ItemList.Quantum_Tank_EV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Quantum Tank V
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
+                        Materials.Americium.getPlates(2),
+                        ItemList.Electric_Pump_UV.get(1),
+                        ItemList.Field_Generator_UV.get(1),
+                        ItemList.Casing_Tank_10.get(1))
+                .itemOutputs(ItemList.Quantum_Tank_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // Super Chest I
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.LV), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 3),
+                        Materials.PulsatingIron.getPlates(1),
+                        ItemList.Automation_ChestBuffer_LV.get(1))
+                .itemOutputs(ItemList.Super_Chest_LV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Super Chest II
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.MV), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 3),
+                        Materials.EnergeticAlloy.getPlates(1),
+                        ItemList.Automation_ChestBuffer_MV.get(1))
+                .itemOutputs(ItemList.Super_Chest_MV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Super Chest III
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.HV), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 3),
+                        ItemList.Field_Generator_LV.get(1),
+                        ItemList.Automation_ChestBuffer_HV.get(1))
+                .itemOutputs(ItemList.Super_Chest_HV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Super Chest IV
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.EV), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3),
+                        ItemList.Field_Generator_MV.get(1),
+                        ItemList.Automation_ChestBuffer_EV.get(1))
+                .itemOutputs(ItemList.Super_Chest_EV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
         // Super Chest V
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2317,7 +2445,53 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 3),
                         ItemList.Field_Generator_HV.get(1),
                         ItemList.Automation_ChestBuffer_IV.get(1))
-                .itemOutputs(ItemList.Super_Chest_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.Super_Chest_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // Quantum Chest I
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.TungstenSteel), 3),
+                        ItemList.Field_Generator_EV.get(1),
+                        ItemList.Automation_ChestBuffer_LuV.get(1L))
+                .itemOutputs(ItemList.Quantum_Chest_LV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Quantum Chest II
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.ZPM), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.HSSG), 3),
+                        ItemList.Field_Generator_IV.get(1),
+                        ItemList.Automation_ChestBuffer_ZPM.get(1L))
+                .itemOutputs(ItemList.Quantum_Chest_MV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Quantum Chest III
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.HSSS), 3),
+                        ItemList.Field_Generator_LuV.get(1),
+                        ItemList.Automation_ChestBuffer_UV.get(1L))
+                .itemOutputs(ItemList.Quantum_Chest_HV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Quantum Chest IV
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Europium), 3),
+                        ItemList.Field_Generator_ZPM.get(1),
+                        ItemList.Automation_ChestBuffer_UHV.get(1L))
+                .itemOutputs(ItemList.Quantum_Chest_EV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        // Quantum Chest V
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Americium), 3),
+                        ItemList.Field_Generator_UV.get(1),
+                        ItemList.Automation_ChestBuffer_UEV.get(1L))
+                .itemOutputs(ItemList.Quantum_Chest_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         // Chest Buffer IV
@@ -2330,35 +2504,6 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Automation_ChestBuffer_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        // Quantum Tank V
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
-                        Materials.Americium.getPlates(2),
-                        ItemList.Electric_Pump_UV.get(1),
-                        ItemList.Field_Generator_UV.get(1),
-                        ItemList.Casing_Tank_10.get(1))
-                .itemOutputs(ItemList.Quantum_Tank_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(assemblerRecipes);
-        // Quantum Tank IV
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 4),
-                        Materials.Europium.getPlates(2),
-                        ItemList.Electric_Pump_ZPM.get(1),
-                        ItemList.Field_Generator_ZPM.get(1),
-                        ItemList.Casing_Tank_9.get(1))
-                .itemOutputs(ItemList.Quantum_Tank_EV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(assemblerRecipes);
-        // Quantum Chest V
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Americium), 3),
-                        ItemList.Field_Generator_UV.get(1),
-                        ItemList.Automation_ChestBuffer_UEV.get(1L))
-                .itemOutputs(ItemList.Quantum_Chest_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(assemblerRecipes);
         // Ultra High Voltage Chest Buffer
         GTValues.RA.stdBuilder()
                 .itemInputs(
