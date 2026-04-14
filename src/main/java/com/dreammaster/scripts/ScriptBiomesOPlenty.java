@@ -645,5 +645,11 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                     .itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0))
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         }
+        // BoP Honey
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2))
+                .itemOutputs(getModItem(Forestry.ID, "honeydew", 1, 0)).outputChances(1200)
+                .fluidOutputs(FluidRegistry.getFluidStack("honey", 4)).duration(8 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(fluidExtractionRecipes);
+
     }
 }
