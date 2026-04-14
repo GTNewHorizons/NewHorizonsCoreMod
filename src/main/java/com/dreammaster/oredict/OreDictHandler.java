@@ -11,9 +11,6 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Natura;
 import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -24,6 +21,9 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class OreDictHandler {
 
@@ -184,8 +184,10 @@ public class OreDictHandler {
         if (GregTech.isModLoaded()) {
             OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Carbon, OrePrefixes.dust));
             OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Coal, OrePrefixes.dust));
-            OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Lignite, OrePrefixes.dust));
-            OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Charcoal, OrePrefixes.dust));
+            OreDictionary
+                    .registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Lignite, OrePrefixes.dust));
+            OreDictionary
+                    .registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Charcoal, OrePrefixes.dust));
         }
     }
 
