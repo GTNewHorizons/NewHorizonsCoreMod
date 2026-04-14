@@ -246,7 +246,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
             GTValues.RA.stdBuilder().itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15))
                     .fluidInputs(Materials.Eternity.getMolten(144)).fluidOutputs(Materials.Infinity.getMolten(576))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(arcFurnaceRecipes);
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(arcFurnaceRecipes);
 
             // Spaghettic Singularity
             GTValues.RA.stdBuilder().itemInputs(
