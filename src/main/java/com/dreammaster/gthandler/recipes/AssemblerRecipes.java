@@ -1800,15 +1800,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 4),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1),
-                        ItemList.Hull_LV.get(1))
-                .itemOutputs(ItemList.Transformer_MV_LV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 4),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnnealedCopper, 1),
+                        new OreDictItemStack("cableGt01AnyCopper", 1),
                         ItemList.Hull_LV.get(1))
                 .itemOutputs(ItemList.Transformer_MV_LV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -1816,16 +1808,7 @@ public class AssemblerRecipes implements Runnable {
         // MV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 4),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
-                        ItemList.Hull_MV.get(1),
-                        ItemList.Circuit_Parts_InductorSMD.get(2))
-                .itemOutputs(ItemList.Transformer_HV_MV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnnealedCopper, 4),
+                        new OreDictItemStack("cableGt01AnyCopper", 4),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
                         ItemList.Hull_MV.get(1),
                         ItemList.Circuit_Parts_InductorSMD.get(2))
@@ -1955,15 +1938,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1),
-                        ItemList.Transformer_MV_LV.get(1))
-                .itemOutputs(GregtechItemList.Transformer_HA_MV_LV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Tin, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 1),
+                        new OreDictItemStack("wireGt04AnyCopper", 1),
                         ItemList.Transformer_MV_LV.get(1))
                 .itemOutputs(GregtechItemList.Transformer_HA_MV_LV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -1971,15 +1946,7 @@ public class AssemblerRecipes implements Runnable {
         // 16A MV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1),
-                        ItemList.Transformer_HV_MV.get(1))
-                .itemOutputs(GregtechItemList.Transformer_HA_HV_MV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.AnnealedCopper, 4),
+                        new OreDictItemStack("wireGt04AnyCopper", 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1),
                         ItemList.Transformer_HV_MV.get(1))
                 .itemOutputs(GregtechItemList.Transformer_HA_HV_MV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2111,19 +2078,8 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Tin, 2),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Copper, 1),
-                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Tin, 1),
-                        GregtechItemList.Transformer_HA_MV_LV.get(1),
-                        ItemList.Electric_Pump_LV.get(1))
-                .fluidInputs(Materials.Lubricant.getFluid(2000)).itemOutputs(ItemList.WetTransformer_MV_LV.get(1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Tin, 2),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.AnnealedCopper, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.AnnealedCopper, 1),
+                        new OreDictItemStack("cableGt08AnyCopper", 1),
+                        new OreDictItemStack("springAnyCopper", 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Tin, 1),
                         GregtechItemList.Transformer_HA_MV_LV.get(1),
                         ItemList.Electric_Pump_LV.get(1))
@@ -2133,21 +2089,10 @@ public class AssemblerRecipes implements Runnable {
         // 64A MV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Copper, 2),
+                        new OreDictItemStack("cableGt16AnyCopper", 2),
                         GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Gold, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Gold, 1),
-                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Copper, 1),
-                        GregtechItemList.Transformer_HA_HV_MV.get(1),
-                        ItemList.Electric_Pump_LV.get(1))
-                .fluidInputs(Materials.Lubricant.getFluid(2000)).itemOutputs(ItemList.WetTransformer_HV_MV.get(1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.AnnealedCopper, 2),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Gold, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Gold, 1),
-                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.AnnealedCopper, 1),
+                        new OreDictItemStack("springSmallAnyCopper", 1),
                         GregtechItemList.Transformer_HA_HV_MV.get(1),
                         ItemList.Electric_Pump_LV.get(1))
                 .fluidInputs(Materials.Lubricant.getFluid(2000)).itemOutputs(ItemList.WetTransformer_HV_MV.get(1))
