@@ -178,13 +178,6 @@ public class OreDictHandler {
         for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {
             OreDictionary.registerOre("blockPeridot", stack);
         }
-
-        // TODO: Please deport us to GT5U repo
-        OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Carbon, OrePrefixes.dust));
-        OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Coal, OrePrefixes.dust));
-        OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Lignite, OrePrefixes.dust));
-        OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Charcoal, OrePrefixes.dust));
-
     }
 
     public static void register_all() {
