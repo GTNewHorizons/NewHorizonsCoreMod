@@ -7142,31 +7142,31 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L))
-                .itemOutputs(getModItem(Chisel.ID, "chisel", 1, 0)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(Chisel.ID, "chisel", 1, 0)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Obsidian Chisel
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 2L))
-                .itemOutputs(getModItem(Chisel.ID, "obsidianChisel", 1, 0)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(Chisel.ID, "obsidianChisel", 1, 0)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Diamond Chisel
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L))
-                .itemOutputs(getModItem(Chisel.ID, "diamondChisel", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(Chisel.ID, "diamondChisel", 1, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Nether Star Chisel
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Bedrockium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.VanadiumSteel, 2L))
-                .itemOutputs(getModItem(Chisel.ID, "netherStarChisel", 1, 0)).duration(20 * MINUTES)
+                .circuit(1).itemOutputs(getModItem(Chisel.ID, "netherStarChisel", 1, 0)).duration(20 * MINUTES)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // --- Blocks
         // Factory Block
