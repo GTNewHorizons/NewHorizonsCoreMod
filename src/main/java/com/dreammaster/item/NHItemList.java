@@ -571,7 +571,8 @@ public enum NHItemList {
     ChevronHarmonic("HarmonicChevron", SPACE),
     FramePartHarmonic("HarmonicFramePart", SPACE),
     StargateDustAncients("StargateDustAncients", SPACE),
-    StargateCrystalAncients("StargateCrystalAncients", SPACE);
+    StargateCrystalAncients("StargateCrystalAncients", SPACE),
+    PlanckCircuit("PlanckCircuit", SPACE);
 
     static {
         CoinChunkloaderTierI.item.setMaxStackSize(4);
