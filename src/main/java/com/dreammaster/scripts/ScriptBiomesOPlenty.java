@@ -651,6 +651,11 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         getModItem(BiomesOPlenty.ID, "gems", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endstone, 3))
                 .outputChances(10000, 2500, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
+        // BoP Honey
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2))
+                .itemOutputs(getModItem(Forestry.ID, "honeydew", 1, 0)).outputChances(1200)
+                .fluidOutputs(FluidRegistry.getFluidStack("honey", 4)).duration(8 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(fluidExtractionRecipes);
 
     }
 }
