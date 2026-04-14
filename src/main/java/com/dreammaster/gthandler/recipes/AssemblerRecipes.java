@@ -4738,9 +4738,10 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.SolderingAlloy.getMolten(144L)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
 
+        // ME Storage Housing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Blocks.glass_pane, 1, 0),
+                        new OreDictItemStack("paneGlass", 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L))
@@ -5155,18 +5156,6 @@ public class AssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(AE2Stuff.ID, "Wireless", 8, 0), ItemList.Emitter_LuV.get(1))
                     .itemOutputs(getModItem(AE2Stuff.ID, "Wireless", 1, 17)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
-        }
-
-        if (TinkerConstruct.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L))
-                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-
         }
     }
 
