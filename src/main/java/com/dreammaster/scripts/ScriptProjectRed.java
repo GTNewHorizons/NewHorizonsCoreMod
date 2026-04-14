@@ -3548,21 +3548,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
-                .addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
-                .addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 1L))
+                        new OreDictItemStack("plateAnyRubber", 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
                 .addTo(packagerRecipes);
