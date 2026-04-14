@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Natura;
 import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
@@ -180,15 +179,12 @@ public class OreDictHandler {
             OreDictionary.registerOre("blockPeridot", stack);
         }
 
-        // TODO: Please deport me to GT5U repo
-        if (GregTech.isModLoaded()) {
-            OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Carbon, OrePrefixes.dust));
-            OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Coal, OrePrefixes.dust));
-            OreDictionary
-                    .registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Lignite, OrePrefixes.dust));
-            OreDictionary
-                    .registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Charcoal, OrePrefixes.dust));
-        }
+        // TODO: Please deport us to GT5U repo
+        OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Carbon, OrePrefixes.dust));
+        OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Coal, OrePrefixes.dust));
+        OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Lignite, OrePrefixes.dust));
+        OreDictionary.registerOre("dustAnyCarbon", GTOreDictUnificator.getDust(Materials.Charcoal, OrePrefixes.dust));
+
     }
 
     public static void register_all() {
