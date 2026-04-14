@@ -438,7 +438,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "leather", 4, 0),
+                        new OreDictItemStack("leather", 4),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
                 .circuit(1).itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0)).duration(5 * SECONDS).eut(24)
                 .addTo(assemblerRecipes);
@@ -450,13 +450,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.dirt, 16), getModItem(Botania.ID, "grassSeeds", 1, 2))
                 .circuit(1).itemOutputs(new ItemStack(Blocks.mycelium, 16)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.ArtificialLeather.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
-                .circuit(1).itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0)).duration(5 * SECONDS).eut(24)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0)).fluidInputs(Materials.Water.getFluid(4))
