@@ -66,6 +66,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaGeneratedItem98;
@@ -160,21 +161,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Glass Phial
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glass_bottle),
-                        GTOreDictUnificator.get(OrePrefixes.round, Materials.Rubber, 1))
-                .itemOutputs(getModItem(Thaumcraft.ID, "ItemEssence", 1, 0)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glass_bottle),
-                        GTOreDictUnificator.get(OrePrefixes.round, Materials.RubberSilicone, 1))
-                .itemOutputs(getModItem(Thaumcraft.ID, "ItemEssence", 1, 0)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glass_bottle),
-                        GTOreDictUnificator.get(OrePrefixes.round, Materials.StyreneButadieneRubber, 1))
+                .itemInputs(new ItemStack(Items.glass_bottle), new OreDictItemStack("roundAnyRubber", 1))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemEssence", 1, 0)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 

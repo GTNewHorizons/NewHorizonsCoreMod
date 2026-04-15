@@ -9,6 +9,9 @@ import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
+import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,9 +21,11 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.forestry.ForestryHelper;
 
 import forestry.api.recipes.RecipeManagers;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptExtraTrees implements IScriptLoader {
@@ -7497,5 +7502,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "dustSodalite",
                 "dustSugar",
                 "dustLazurite");
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeswax", 2, 0))
+                .itemOutputs(getModItem(ExtraTrees.ID, "misc", 8, 4))
+                .fluidInputs(FluidRegistry.getFluidStack("turpentine", 100)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
     }
 }

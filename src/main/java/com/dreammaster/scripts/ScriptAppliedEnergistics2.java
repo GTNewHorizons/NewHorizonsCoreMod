@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
@@ -2223,6 +2224,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolPortableCell", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        // Pattern repeater
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, 0),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220),
+                        getModItem(AE2FluidCraft.ID, "part_fluid_storage_bus", 1, 0),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 1))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 473)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // Quartz Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2278,6 +2288,14 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Quartzite, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
+
+        // Certus Pickaxe
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "stick", 2),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.CertusQuartz, 3))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
     }
 }
