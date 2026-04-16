@@ -1621,7 +1621,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 42L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
-
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
     }
 
