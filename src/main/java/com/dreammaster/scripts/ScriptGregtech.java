@@ -1122,7 +1122,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1)).outputChances(8000)
@@ -1134,7 +1134,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2)).outputChances(8000)
@@ -1146,7 +1146,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3)).outputChances(8000)
@@ -1158,7 +1158,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4)).outputChances(8000)
@@ -1170,7 +1170,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(8000)
@@ -1182,7 +1182,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(10000)
-                .fluidInputs(Materials.Void.getFluid(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.get(3)).circuit(1)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 5L))
