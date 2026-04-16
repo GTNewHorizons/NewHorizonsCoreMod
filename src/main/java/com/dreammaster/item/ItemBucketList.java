@@ -6,12 +6,7 @@ import gregtech.api.util.GTUtility;
 
 public enum ItemBucketList {
 
-    SodiumPotassium,
-    NitricAcid,
-    RadioactiveBacterialSludge,
-    FermentedBacterialSludge,
-    Concrete,
-    Pollution;
+    Concrete;
 
     private ItemStack stack;
     private boolean hasNotBeenSet = true;

@@ -18,8 +18,6 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
 
@@ -44,34 +42,32 @@ public class CentrifugeRecipes implements Runnable {
                         NHItemList.AdsorptionFilterCasing.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 4L))
-                .outputChances(8000, 10000, 10000)
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 100)).duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
+                .outputChances(8000, 10000, 10000).fluidOutputs(Materials.Pollution.getFluid(100))
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(2)
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 8L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 8L))
-                .outputChances(9000, 10000, 10000)
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 250)).duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
+                .outputChances(9000, 10000, 10000).fluidOutputs(Materials.Pollution.getFluid(250))
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(3)
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 12L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 12L))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 500)).duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
+                .fluidOutputs(Materials.Pollution.getFluid(500)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(4)
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 16L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 16L))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("pollution"), 1000)).duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
+                .fluidOutputs(Materials.Pollution.getFluid(1000)).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().circuit(1)
                 .itemOutputs(
