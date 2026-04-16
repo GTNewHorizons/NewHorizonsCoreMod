@@ -25,7 +25,7 @@ public class DistillationRecipes implements Runnable {
 
     public static void distillationTowerRecipes() {
         GTValues.RA.stdBuilder().circuit(1).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("pollution"), 1000))
+                .fluidInputs(Materials.Pollution.getFluid(1000))
                 .fluidOutputs(
                         Materials.SulfuricAcid.getFluid(150),
                         Materials.NitrogenDioxide.getGas(150),
@@ -34,7 +34,7 @@ public class DistillationRecipes implements Runnable {
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(distillationTowerRecipes);
 
         GTValues.RA.stdBuilder().circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 10))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("pollution"), 10000))
+                .fluidInputs(Materials.Pollution.getFluid(10000))
                 .fluidOutputs(
                         Materials.SulfuricAcid.getFluid(3000),
                         Materials.NitrogenDioxide.getGas(3000),
@@ -46,8 +46,8 @@ public class DistillationRecipes implements Runnable {
     public static void distilleryRecipes() {
         // Sodium Potassium
         GTValues.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.Sodium.getFluid(1000))
-                .fluidOutputs(FluidRegistry.getFluidStack("sodiumpotassium", 1000)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(distilleryRecipes);
+                .fluidOutputs(Materials.SodiumPotassium.getFluid(1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(distilleryRecipes);
 
         GTValues.RA.stdBuilder().circuit(1).fluidInputs(Materials.Biomass.getFluid(40))
                 .fluidOutputs(Materials.Ethanol.getFluid(20)).duration(16 * TICKS).eut(24).addTo(distilleryRecipes);
