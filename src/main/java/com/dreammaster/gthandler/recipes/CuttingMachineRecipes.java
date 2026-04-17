@@ -113,6 +113,15 @@ public class CuttingMachineRecipes implements Runnable {
                 .itemOutputs(ItemList.NandChip.get(8)).requiresCleanRoom().duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(cutterRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_FPIC.get(1))
+                .itemOutputs(ItemList.Circuit_Chip_FPIC.get(2)).fluidInputs(Materials.Lubricant.getFluid(250L))
+                .requiresCleanRoom().duration(45 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(cutterRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_FPIC.get(1))
+                .itemOutputs(ItemList.Circuit_Chip_FPIC.get(2))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10L)).requiresCleanRoom()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(cutterRecipes);
+
         if (ZTones.isModLoaded() && ProjectRedCore.isModLoaded()) {
 
             GTValues.RA.stdBuilder()
