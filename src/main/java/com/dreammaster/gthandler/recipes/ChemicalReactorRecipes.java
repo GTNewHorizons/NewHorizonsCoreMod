@@ -19,6 +19,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
+import static gtnhlanth.common.register.WerkstoffMaterialPool.Iodine;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -262,6 +263,20 @@ public class ChemicalReactorRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 64))
                 .itemOutputs(ItemList.Circuit_Wafer_PPIC.get(1L)).fluidInputs(Materials.Sunnarium.getMolten(1440L))
                 .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(UniversalChemical);
+
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_QPIC.get(1L), Iodine.get(OrePrefixes.dust, 64))
+                .itemOutputs(ItemList.Circuit_Wafer_FPIC.get(1L))
+                .fluidInputs(Materials.InfinityCatalyst.getMolten(576L)).requiresCleanRoom().duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_UHV).addTo(UniversalChemical);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_Bioware.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tartarite, 2),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 1),
+                        NHItemList.TCetiESeaweedExtract.get(1))
+                .itemOutputs(ItemList.Circuit_Wafer_APIC.get(1L)).fluidInputs(Materials.DTR.getFluid(1000L))
+                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Wafer_CPU.get(1L), GTUtility.copyAmount(16, Ic2Items.carbonFiber))
