@@ -270,15 +270,6 @@ public class ChemicalReactorRecipes implements Runnable {
                 .eut(TierEU.RECIPE_UHV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Wafer_Bioware.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tartarite, 2),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 1),
-                        NHItemList.TCetiESeaweedExtract.get(1))
-                .itemOutputs(ItemList.Circuit_Wafer_APIC.get(1L)).fluidInputs(Materials.DTR.getFluid(1000L))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(UniversalChemical);
-
-        GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Wafer_CPU.get(1L), GTUtility.copyAmount(16, Ic2Items.carbonFiber))
                 .itemOutputs(ItemList.Circuit_Wafer_NanoCPU.get(1L)).fluidInputs(Materials.Glowstone.getMolten(576L))
                 .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
@@ -534,6 +525,16 @@ public class ChemicalReactorRecipes implements Runnable {
                 .fluidInputs(FluidRegistry.getFluidStack("blood", 1000), FluidRegistry.getFluidStack("netherair", 100))
                 .fluidOutputs(FluidRegistry.getFluidStack("hell_blood", 1000)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_Bioware.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tartarite, 2),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 1),
+                        NHItemList.TCetiESeaweedExtract.get(1))
+                .itemOutputs(ItemList.Circuit_Wafer_APIC.get(1L)).fluidInputs(Materials.DTR.getFluid(1000L))
+                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UEV)
+                .addTo(multiblockChemicalReactorRecipes);
 
         if (Forestry.isModLoaded()) {
             GTValues.RA.stdBuilder()
