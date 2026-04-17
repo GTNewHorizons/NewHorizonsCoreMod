@@ -27,6 +27,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class LaserEngraverRecipes implements Runnable {
 
@@ -282,6 +283,18 @@ public class LaserEngraverRecipes implements Runnable {
                 .fluidOutputs(Materials.Antimatter.getFluid(1L)).requiresCleanRoom().addTo(laserEngraverRecipes);
 
         // APIC+ laser cutting recipes
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_APIC.get(1),
+                        ItemList.EnergisedTesseract.get(1),
+                        NHItemList.ChromaticLens.get(0))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(30L)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_UIV)
+                .itemOutputs(
+                        ItemList.Circuit_Chip_APIC.get(1),
+                        WerkstoffMaterialPool.SeaweedAsh.get(OrePrefixes.dust, 2))
+                .outputChances(10000, 6700).requiresCleanRoom().addTo(laserEngraverRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Wafer_APIC.get(1),
