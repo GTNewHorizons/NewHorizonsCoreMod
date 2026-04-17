@@ -428,9 +428,10 @@ public class FluidSolidifierRecipes implements Runnable {
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), 1152)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Hawking_Glass.get(1)).addTo(fluidSolidifierRecipes);
 
+            //TODO: move into exo-foundry when special uiv+ module is finished
             GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer8.get(1))
                     .fluidInputs(Materials.QuarkGluonPlasma.getFluid(1500L))
-                    .itemOutputs(ItemList.Circuit_Wafer_YPIC.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UXV)
+                    .itemOutputs(ItemList.Circuit_Wafer_YPIC.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MAX)
                     .addTo(fluidSolidifierRecipes);
         }
     }
