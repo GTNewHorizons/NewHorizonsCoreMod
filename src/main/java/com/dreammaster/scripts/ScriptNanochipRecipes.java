@@ -1438,7 +1438,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.ProcessedPicoCircuitCasing, 1),
-                        new CircuitComponentStack(CircuitComponent.ProcessedChipPico, 4),
+                        new CircuitComponentStack(CircuitComponent.ProcessedChipAttoPIC, 4),
                         new CircuitComponentStack(CircuitComponent.OpticalMainframe, 2),
                         new CircuitComponentStack(CircuitComponent.ProcessedChipPikoPIC, 64),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDInductor, 48),
