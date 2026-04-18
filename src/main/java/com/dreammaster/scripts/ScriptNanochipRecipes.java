@@ -628,9 +628,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Pico
         addSimpleProcessingRecipe(
-                CircuitComponent.WaferPico,
+                CircuitComponent.ChipAttoPIC,
                 Materials.DimensionallyShiftedSuperfluid.getFluid(10),
-                CircuitComponent.ProcessedChipPico,
+                CircuitComponent.ProcessedChipAttoPIC,
                 ModuleRecipeInfo.ExtremeTier,
                 20 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
