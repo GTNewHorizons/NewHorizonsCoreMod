@@ -20,6 +20,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
 
+import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -799,6 +800,14 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(Materials.Aluminiumoxide.getDust(1), Materials.AshDark.getDust(1))
                 .outputChances(10000, 1111).duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200)
                 .addTo(blastFurnaceRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer7.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Eternity, 4L),
+                        GGMaterial.shirabon.get(OrePrefixes.dust, 4))
+                .fluidInputs(Materials.Infinity.getPlasma(576L)).itemOutputs(ItemList.Circuit_Silicon_Wafer8.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COIL_HEAT, 33500).addTo(blastFurnaceRecipes);
 
         if (TinkerConstruct.isModLoaded()) {
 
