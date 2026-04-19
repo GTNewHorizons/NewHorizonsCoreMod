@@ -886,7 +886,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Plantball.get(16))
                 .itemOutputs(NHItemList.RawBioFiber.get()).outputChances(3300)
-                .fluidInputs(FluidRegistry.getFluidStack("ic2biomass", 8)).duration(10 * SECONDS).eut(20)
+                .fluidInputs(Materials.Biomass.getFluid(8)).duration(10 * SECONDS).eut(20)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Plantball.get(16))
                 .itemOutputs(NHItemList.RawBioFiber.get()).outputChances(5000)

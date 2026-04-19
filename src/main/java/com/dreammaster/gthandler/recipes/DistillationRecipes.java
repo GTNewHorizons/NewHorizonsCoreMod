@@ -49,9 +49,6 @@ public class DistillationRecipes implements Runnable {
                 .fluidOutputs(Materials.SodiumPotassium.getFluid(1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(distilleryRecipes);
 
-        GTValues.RA.stdBuilder().circuit(1).fluidInputs(Materials.Biomass.getFluid(40))
-                .fluidOutputs(Materials.Ethanol.getFluid(20)).duration(16 * TICKS).eut(24).addTo(distilleryRecipes);
-
         // unify milk from Automagy
 
         if (Automagy.isModLoaded()) {

@@ -56,7 +56,7 @@ public class BrewingMachineRecipes implements Runnable {
                 ItemStack resource = recipe.getResource();
 
                 boolean alreadyHasRecipe = brewingRecipes.containsInput(resource);
-                boolean resultsInBiomass = recipe.getOutput().equals(FluidRegistry.getFluid("biomass"));
+                boolean resultsInBiomass = recipe.getOutput().equals(Materials.Biomass.mFluid);
 
                 if (!alreadyHasRecipe && resultsInBiomass) {
                     int amountIn = recipe.getFermentationValue() * 2;
@@ -64,18 +64,18 @@ public class BrewingMachineRecipes implements Runnable {
 
                     GTValues.RA.stdBuilder().itemInputs(resource)
                             .fluidInputs(FluidRegistry.getFluidStack("water", amountIn))
-                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
+                            .fluidOutputs(Materials.Biomass.getFluid(amountOut)).duration(8 * amountOut)
                             .eut(3).addTo(brewingRecipes);
 
                     amountOut = (int) (amountOut * 1.5);
 
                     GTValues.RA.stdBuilder().itemInputs(resource)
                             .fluidInputs(FluidRegistry.getFluidStack("juice", amountIn))
-                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
+                            .fluidOutputs(Materials.Biomass.getFluid(amountOut)).duration(8 * amountOut)
                             .eut(3).addTo(brewingRecipes);
 
                     GTValues.RA.stdBuilder().itemInputs(resource).fluidInputs(Materials.Honey.getFluid(amountIn))
-                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
+                            .fluidOutputs(Materials.Biomass.getFluid(amountOut)).duration(8 * amountOut)
                             .eut(3).addTo(brewingRecipes);
 
                 }
