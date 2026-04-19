@@ -2133,9 +2133,8 @@ public class ScriptRailcraft implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8))
-                .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38))
-                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38)).fluidInputs(GTModHandler.getDistilledWater(3))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8))
                 .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)

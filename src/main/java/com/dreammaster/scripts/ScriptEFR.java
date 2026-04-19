@@ -295,8 +295,8 @@ public class ScriptEFR implements IScriptLoader {
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
-                        .fluidInputs(GTModHandler.getDistilledWater(3))
-                        .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
+                        .fluidInputs(GTModHandler.getDistilledWater(3)).duration(50 * TICKS).eut(4)
+                        .addTo(cutterRecipes);
             } else {
                 if (!ignoreShapeless.contains(slabInputs[i])) {
                     if (inName.equals("wood_planks")) {
@@ -325,8 +325,8 @@ public class ScriptEFR implements IScriptLoader {
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
-                        .fluidInputs(GTModHandler.getDistilledWater(3))
-                        .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
+                        .fluidInputs(GTModHandler.getDistilledWater(3)).duration(50 * TICKS).eut(4)
+                        .addTo(cutterRecipes);
             }
         }
 
@@ -547,8 +547,7 @@ public class ScriptEFR implements IScriptLoader {
                     .addTo(cutterRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
-                    .fluidInputs(GTModHandler.getDistilledWater(3)).duration(50 * TICKS)
-                    .eut(4).addTo(cutterRecipes);
+                    .fluidInputs(GTModHandler.getDistilledWater(3)).duration(50 * TICKS).eut(4).addTo(cutterRecipes);
         }
 
         // Boats & Boats w/ Chests

@@ -18,7 +18,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.util.GTModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -36,6 +35,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptBloodArsenal implements IScriptLoader {
@@ -725,8 +725,8 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 4, 0))
-                .fluidInputs(GTModHandler.getDistilledWater(6)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(6)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)

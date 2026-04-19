@@ -24,7 +24,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import gregtech.api.util.GTModHandler;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -39,6 +38,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -294,8 +294,7 @@ public class ScriptWitchery implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7))
-                .fluidInputs(GTModHandler.getDistilledWater(16)).duration(5 * SECONDS).eut(24)
-                .addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(16)).duration(5 * SECONDS).eut(24).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(2 * SECONDS + 10 * TICKS).eut(24)

@@ -50,7 +50,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import gregtech.api.util.GTModHandler;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -68,6 +67,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaGeneratedItem98;
@@ -143,8 +143,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(9000)
-                .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(24).addTo(autoclaveRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS).eut(24)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(10000)
                 .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(24).addTo(autoclaveRecipes);
@@ -2439,8 +2439,8 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
-                .fluidInputs(GTModHandler.getDistilledWater(20)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(20)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)

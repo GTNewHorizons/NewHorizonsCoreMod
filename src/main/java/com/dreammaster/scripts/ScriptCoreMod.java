@@ -909,9 +909,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("water", 288)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV / 2)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
-                .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
-                .fluidInputs(GTModHandler.getDistilledWater(160)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
+                .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2)).fluidInputs(GTModHandler.getDistilledWater(160))
+                .duration(1 * MINUTES).eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 64)).duration(30 * SECONDS)

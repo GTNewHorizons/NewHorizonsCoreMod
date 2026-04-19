@@ -25,7 +25,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import gregtech.api.util.GTModHandler;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -49,6 +48,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
@@ -534,8 +534,8 @@ public class ScriptAmunRa implements IScriptLoader {
                 .duration(1 * SECONDS + 5 * TICKS).eut(eut).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.Water.getFluid(4)).itemOutputs(slab)
                 .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(GTModHandler.getDistilledWater(3))
-                .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(GTModHandler.getDistilledWater(3)).itemOutputs(slab)
+                .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
     }
 
 }
