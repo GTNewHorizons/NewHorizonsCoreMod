@@ -807,7 +807,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Eternity, 4L),
                         GGMaterial.shirabon.get(OrePrefixes.dust, 4))
                 .fluidInputs(Materials.Infinity.getPlasma(576L)).itemOutputs(ItemList.Circuit_Silicon_Wafer8.get(1))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COIL_HEAT, 33500).addTo(blastFurnaceRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COIL_HEAT, 22000).addTo(blastFurnaceRecipes);
 
         if (TinkerConstruct.isModLoaded()) {
 
