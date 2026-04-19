@@ -366,7 +366,7 @@ public class BacteriaRegistry {
                 .duration(9 * (7 * SECONDS + 10 * TICKS)).eut(TierEU.RECIPE_IV).metadata(GLASS, 5)
                 .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false)).addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 4, 0))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Chaff.get(4))
                 .special(BioItemList.getPetriDish(CultureSet.get("BinniBacteria")))
                 .fluidInputs(GTModHandler.getDistilledWater(4L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 2)).duration(15 * SECONDS)
@@ -557,7 +557,7 @@ public class BacteriaRegistry {
                 .eut(TierEU.RECIPE_EV).addTo(bioLabRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(BioItemList.getPetriDish(null), getModItem(IndustrialCraft2.ID, "itemBiochaff", 16, 0))
+                .itemInputs(BioItemList.getPetriDish(null), ItemList.Chaff.get(16))
                 .itemOutputs(BioItemList.getPetriDish(CultureSet.get("BinniBacteria"))).outputChances(60_00)
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);

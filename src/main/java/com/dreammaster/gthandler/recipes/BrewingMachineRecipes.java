@@ -9,6 +9,7 @@ import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
+import gregtech.api.enums.ItemList;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -29,7 +30,7 @@ public class BrewingMachineRecipes implements Runnable {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 16, 0))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Chaff.get(16))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 750)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);

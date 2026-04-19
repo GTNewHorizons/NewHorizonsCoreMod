@@ -853,7 +853,7 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16, 0),
+                        ItemList.Plantball.get(16),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 2L))
                 .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);

@@ -568,7 +568,7 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(5000, 2000, 1000).duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MaceratedPlantmass.get())
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0)).duration(15 * SECONDS).eut(4)
+                .itemOutputs(ItemList.Chaff.get(1)).duration(15 * SECONDS).eut(4)
                 .addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrotine, 8L))

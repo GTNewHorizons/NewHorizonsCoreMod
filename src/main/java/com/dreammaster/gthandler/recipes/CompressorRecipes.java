@@ -169,7 +169,7 @@ public class CompressorRecipes implements Runnable {
                 .itemOutputs(NHItemList.BioCarbonPlate.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "reeds", 8, 0))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(ItemList.Plantball.get(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(BlockGodforgeGlass.INSTANCE, 1))

@@ -7303,7 +7303,7 @@ public class AssemblerRecipes implements Runnable {
                         new ItemStack(Blocks.gravel, 3, 0),
                         GTOreDictUnificator.get("sand", 3L),
                         GTOreDictUnificator.get("itemWheat", 2L),
-                        ItemList.IC2_Plantball.get(1L))
+                        ItemList.Plantball.get(1L))
                 .itemOutputs(getModItem(Chisel.ID, "hempcretesand", 12)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 

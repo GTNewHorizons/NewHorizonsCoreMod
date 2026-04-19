@@ -1767,7 +1767,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { "SSS", "WBW", "GGG", 'G', new ItemStack(Blocks.gravel, 1, 0), 'S',
                             GTOreDictUnificator.get("sand", 1L), 'W', GTOreDictUnificator.get("itemWheat", 1L), 'B',
-                            ItemList.IC2_Plantball.get(1L) });
+                            ItemList.Plantball.get(1L) });
         }
 
         if (TinkerConstruct.isModLoaded()) {
