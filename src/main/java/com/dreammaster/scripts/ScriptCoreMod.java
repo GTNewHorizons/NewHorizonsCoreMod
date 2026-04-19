@@ -884,16 +884,16 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0)).outputChances(10000)
                 .fluidInputs(Materials.Void.getMolten(288)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
+        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
                 .outputChances(3300).fluidInputs(Materials.Biomass.getFluid(8)).duration(10 * SECONDS).eut(20)
                 .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
+        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
                 .outputChances(5000).fluidInputs(FluidRegistry.getFluidStack("methanol", 8))
                 .duration(7 * SECONDS + 10 * TICKS).eut(20).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
+        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
                 .outputChances(9000).fluidInputs(FluidRegistry.getFluidStack("fuel", 8)).duration(5 * SECONDS).eut(20)
                 .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
+        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("nitrofuel", 8))
                 .duration(2 * SECONDS + 10 * TICKS).eut(20).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1L))

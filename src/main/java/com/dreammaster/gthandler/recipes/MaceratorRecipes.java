@@ -43,7 +43,7 @@ public class MaceratorRecipes implements Runnable {
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
 
         if (IndustrialCraft2.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(ItemList.Plantball.get(2))
+            GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Plantball.get(2))
                     .itemOutputs(
                             NHItemList.MaceratedPlantmass.get(),
                             NHItemList.MaceratedPlantmass.get(),

@@ -851,7 +851,9 @@ public class MixerRecipes implements Runnable {
                 .duration(24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Plantball.get(16), GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 2L))
+                .itemInputs(
+                        ItemList.IC2_Plantball.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 2L))
                 .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
 
