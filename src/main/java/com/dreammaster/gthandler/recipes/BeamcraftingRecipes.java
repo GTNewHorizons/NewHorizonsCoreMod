@@ -27,7 +27,7 @@ public class BeamcraftingRecipes implements Runnable {
                 .metadata(
                         BEAMCRAFTER_METADATA,
                         BeamCrafterMetadata.builder().particleID_A(GRAVITON.getId()).particleID_B(GRAVITON.getId())
-                                .amount_A(20).amount_B(20).energy_A(1).energy_B(1).build())
+                                .amount_A(20).amount_B(20).build())
                 .eut(TierEU.RECIPE_UIV).duration(2 * SECONDS).addTo(beamcrafterRecipes);
 
     }
