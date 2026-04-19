@@ -295,7 +295,7 @@ public class ScriptEFR implements IScriptLoader {
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
-                        .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
+                        .fluidInputs(GTModHandler.getDistilledWater(3))
                         .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
             } else {
                 if (!ignoreShapeless.contains(slabInputs[i])) {
@@ -325,7 +325,7 @@ public class ScriptEFR implements IScriptLoader {
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
-                        .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3))
+                        .fluidInputs(GTModHandler.getDistilledWater(3))
                         .duration(50 * TICKS).eut(4).addTo(cutterRecipes);
             }
         }
@@ -547,7 +547,7 @@ public class ScriptEFR implements IScriptLoader {
                     .addTo(cutterRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
-                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 3)).duration(50 * TICKS)
+                    .fluidInputs(GTModHandler.getDistilledWater(3)).duration(50 * TICKS)
                     .eut(4).addTo(cutterRecipes);
         }
 
@@ -1154,7 +1154,7 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "laboratory_obsidian", 16),
                         getModItem(HardcoreEnderExpansion.ID, "spectral_tear", 1, 0))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 4000))
+                .fluidInputs(GTModHandler.getDistilledWater(4000))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "crying_obsidian", 16)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 

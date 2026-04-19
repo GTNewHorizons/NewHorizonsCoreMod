@@ -9,6 +9,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Collections;
 import java.util.List;
 
+import gregtech.api.util.GTModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -175,7 +176,7 @@ public class ScriptFether implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
                 .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(5 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))

@@ -13,6 +13,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.util.GTModHandler;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GTValues;
@@ -413,7 +414,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(10)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0))
@@ -429,7 +430,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(10)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0))
@@ -445,7 +446,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 10)).duration(5 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(10)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0))

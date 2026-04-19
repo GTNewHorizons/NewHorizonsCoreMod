@@ -39,6 +39,7 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.util.GTModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -1919,7 +1920,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(5 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
@@ -1935,7 +1936,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 4)).duration(5 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
@@ -1951,7 +1952,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(5 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(6)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31))
@@ -1967,7 +1968,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(10 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(6)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
@@ -1983,7 +1984,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 8)).duration(10 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
@@ -1999,7 +2000,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 12)).duration(10 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(12)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35))
@@ -2015,7 +2016,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 24)).duration(15 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(24)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37))
@@ -2031,7 +2032,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 48)).duration(15 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(48)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38))
@@ -2047,7 +2048,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 12)).duration(10 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(12)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62))
@@ -2063,7 +2064,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(10 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(6)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
@@ -2079,7 +2080,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(10 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(6)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
@@ -2095,7 +2096,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 8)).duration(10 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))

@@ -476,7 +476,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0))
-                .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0)).fluidInputs(getFluidStack("lubricant", 1))
@@ -490,7 +490,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0))
-                .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0)).fluidInputs(getFluidStack("lubricant", 1))

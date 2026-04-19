@@ -1330,7 +1330,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1, blockMeta))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS)
+                .fluidInputs(GTModHandler.getDistilledWater(20)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1, blockMeta))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta))
