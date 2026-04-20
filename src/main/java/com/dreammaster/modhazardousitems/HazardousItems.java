@@ -437,7 +437,11 @@ public class HazardousItems {
         protected void apply(HazardCause cause, EntityPlayer player) {
             Function<HazardCause, DamageSource> sourceFactory = HazardDamageSources
                     .getDamageSourceFactoryOrFail(getDamageSource());
-            player.attackEntityFrom(sourceFactory.apply(cause), getAmount());
+
+            DamageSource source = sourceFactory.apply(cause);
+            if (source.isFireDamage() && player.isImmuneToFire()) return;
+
+            player.attackEntityFrom(source, getAmount());
         }
     }
 

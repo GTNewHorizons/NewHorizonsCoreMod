@@ -675,21 +675,21 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UIV, 'C',
                         OrePrefixes.wireGt01.get(Materials.Quantium), 'B',
-                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Circuit_Chip_QPIC });
+                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Circuit_Chip_FPIC });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UXV_UMV.get(1L),
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UMV, 'C',
                         OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'B',
-                        OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_QPIC });
+                        OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_APIC });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_MAX_UXV.get(1L),
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UXV, 'C',
                         OrePrefixes.wireGt01.get(Materials.Infinity), 'B',
-                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Circuit_Chip_QPIC });
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Circuit_Chip_ZPIC });
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_4by4_UEV.get(1L),
                 GTModHandler.RecipeBits.BITSD,
