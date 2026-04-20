@@ -878,8 +878,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemInputs(
                         CircuitComponent.ThermalSuperconductor.getFakeStack(1),
                         CircuitComponent.ProcessedSuperconductorUMV.getFakeStack(8))
-                .itemOutputs(CircuitComponent.ProcessedCoiledThermalSuperconductor.getFakeStack(1)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_UMV).addTo(RecipeMaps.nanochipEncasementWrapper);
+                .itemOutputs(CircuitComponent.ProcessedCoiledThermalSuperconductor.getFakeStack(1))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Planck manifold
         GTValues.RA.stdBuilder()
@@ -900,7 +900,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.CasingBlackDwarfMatter.getFakeStack(2))
                 .itemOutputs(CircuitComponent.ProcessedPlanckCircuitCasing.getFakeStack(1)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_UMV).addTo(RecipeMaps.nanochipEncasementWrapper);
-
 
         // Foil processing recipes
         addSimpleProcessingRecipe(
@@ -1550,9 +1549,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.ProcessedPicoCircuitCasing, 1),
-                        new CircuitComponentStack(CircuitComponent.ProcessedChipAttoPIC, 4),
+                        new CircuitComponentStack(CircuitComponent.ProcessedPlateRhugnor, 2),
                         new CircuitComponentStack(CircuitComponent.OpticalMainframe, 2),
-                        new CircuitComponentStack(CircuitComponent.ProcessedChipPikoPIC, 64),
+                        new CircuitComponentStack(CircuitComponent.ProcessedChipAttoPIC, 8),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDInductor, 48),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDCapacitor, 48),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDResistor, 48),
@@ -1575,7 +1574,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedQuantumCircuitCasing, 1),
                         new CircuitComponentStack(CircuitComponent.ProcessedPlateMetastableOganesson, 2),
                         new CircuitComponentStack(CircuitComponent.PicoCircuit, 2),
-                        new CircuitComponentStack(CircuitComponent.ProcessedChipQuantumPIC, 64),
+                        new CircuitComponentStack(CircuitComponent.ProcessedChipZeptoPIC, 8),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDInductor, 64),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDCapacitor, 64),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDResistor, 64),
