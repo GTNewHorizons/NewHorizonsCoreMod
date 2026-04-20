@@ -113,6 +113,10 @@ public class CompressorRecipes implements Runnable {
                 .fluidInputs(Materials.UUMatter.getFluid(750L)).duration(2 * MINUTES)
                 .metadata(CompressionTierKey.INSTANCE, 1).eut(TierEU.RECIPE_UV).addTo(compressorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 9L))
+                .itemOutputs(BlockList.Sulfur.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(compressorRecipes);
+
         // compressed coal variants
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 9))
                 .itemOutputs(BlockList.CompressedCharcoal.get(1)).duration(15 * SECONDS).eut(2)
