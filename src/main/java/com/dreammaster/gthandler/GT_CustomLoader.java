@@ -152,5 +152,6 @@ public class GT_CustomLoader {
         OreDictionary.run();
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
+        MechanicalArmorRecipes.run();
     }
 }
