@@ -1116,9 +1116,9 @@ public class AssemblingLineRecipes implements Runnable {
                         .itemInputs(
                                 ItemList.Machine_Multi_HIPCompressor.get(1),
                                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),
-                                GregtechItemList.Machine_Adv_ImplosionCompressor.get(16),
+                                ItemList.AdvancedImplosionCompressor.get(16),
                                 ItemList.CompressorUIV.get(8L),
-                                GTUtility.copyAmount(4, ItemRegistry.eic.copy()),
+                                ItemList.ElectricImplosionCompressor.get(4),
                                 ItemList.Field_Generator_UEV.get(4),
                                 ItemList.ZPM3.get(2),
                                 new Object[] { OrePrefixes.circuit.get(Materials.UIV), 4 },
@@ -1578,7 +1578,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Antimatter Forge - Antimatter Sequencer - SSASS
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemRefer.Naquadah_Fuel_Refinery.get(1),
+                ItemList.NaquadahFuelRefinery.get(1),
                 512000,
                 2048,
                 8000000,
