@@ -881,15 +881,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemOutputs(CircuitComponent.ProcessedCoiledThermalSuperconductor.getFakeStack(1))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
-        // Planck manifold
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        CircuitComponent.ProcessedBoardOptical.getFakeStack(16),
-                        CircuitComponent.ProcessedWireMagMatter.getFakeStack(8),
-                        CircuitComponent.ProcessedPlateHexanite.getFakeStack(8),
-                        CircuitComponent.CasingEternity.getFakeStack(4))
-                .itemOutputs(CircuitComponent.ProcessedPlanckScaleManifold.getFakeStack(1)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_UMV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Planck
         GTValues.RA.stdBuilder()
@@ -1592,10 +1583,29 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UIV);
 
+        // Planck manifold
+        addAssemblyMatrixRecipe(
+                Arrays.asList(
+                        new CircuitComponentStack(CircuitComponent.ProcessedFrameboxHypogen, 2),
+                        new CircuitComponentStack(CircuitComponent.ProcessedBoardOptical, 16),
+                        new CircuitComponentStack(CircuitComponent.ProcessedWireMagMatter, 8),
+                        new CircuitComponentStack(CircuitComponent.ProcessedPlateHexanite, 8),
+                        new CircuitComponentStack(CircuitComponent.CasingEternity, 4),
+                        new CircuitComponentStack(CircuitComponent.ProcessedFoilShirabon, 64)),
+                Arrays.asList(
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(16 * INGOTS),
+                        Materials.RadoxPolymer.getMolten(16 * INGOTS),
+                        Materials.PrimordialMatter.getFluid(1000),
+                        Materials.ExcitedDTSC.getFluid(4000)),
+                CircuitComponent.PlanckManifold,
+                50 * SECONDS,
+                TierEU.RECIPE_MAX,
+                VoltageIndex.UMV);
+
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.ProcessedPlanckCircuitCasing, 1),
-                        new CircuitComponentStack(CircuitComponent.ProcessedPlanckScaleManifold, 1),
+                        new CircuitComponentStack(CircuitComponent.PlanckManifold, 1),
                         new CircuitComponentStack(CircuitComponent.QuantumCircuit, 2),
                         new CircuitComponentStack(CircuitComponent.ProcessedChipYoctoPIC, 8),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDInductor, 64),
@@ -1608,7 +1618,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedCoiledThermalSuperconductor, 8)),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(64 * INGOTS),
-                        Materials.UUMatter.getFluid(32000),
+                        Materials.PrimordialMatter.getFluid(4000),
                         Materials.Space.getMolten(4000),
                         Materials.PhononMedium.getFluid(1000)),
                 CircuitComponent.PlanckCircuit,
