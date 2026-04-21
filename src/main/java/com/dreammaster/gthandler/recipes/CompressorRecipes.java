@@ -35,12 +35,14 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
+import tectech.thing.block.BlockGodforgeGlass;
 
 public class CompressorRecipes implements Runnable {
 
@@ -111,6 +113,10 @@ public class CompressorRecipes implements Runnable {
                 .fluidInputs(Materials.UUMatter.getFluid(750L)).duration(2 * MINUTES)
                 .metadata(CompressionTierKey.INSTANCE, 1).eut(TierEU.RECIPE_UV).addTo(compressorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 9L))
+                .itemOutputs(BlockList.Sulfur.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(compressorRecipes);
+
         // compressed coal variants
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 9))
                 .itemOutputs(BlockList.CompressedCharcoal.get(1)).duration(15 * SECONDS).eut(2)
@@ -168,6 +174,11 @@ public class CompressorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "reeds", 8, 0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(BlockGodforgeGlass.INSTANCE, 1))
+                .itemOutputs(ItemList.Gravitational_Lens.get(1)).fluidInputs(Materials.Space.getMolten(5760L))
+                .duration(2 * MINUTES).metadata(CompressionTierKey.INSTANCE, 2).eut(TierEU.RECIPE_UMV)
                 .addTo(compressorRecipes);
 
         if (StevesCarts2.isModLoaded()) {

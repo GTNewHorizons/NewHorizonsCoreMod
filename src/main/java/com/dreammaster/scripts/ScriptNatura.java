@@ -3236,6 +3236,10 @@ public class ScriptNatura implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("sulfurdioxide", 4000)).duration(20 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cactus", 1, 0))
+                .itemOutputs(getModItem(Natura.ID, "waterdrop", 2, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(extractorRecipes);
+
         Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "NetherPressurePlate", 1, 0), (short) 75);
         Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0), (short) 75);
         Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.sakura", 1, 0), (short) 75);
