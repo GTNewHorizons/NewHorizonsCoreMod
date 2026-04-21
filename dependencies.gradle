@@ -48,8 +48,6 @@ dependencies {
     //uncomment to test RC and Forestry recipes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Railcraft:9.17.26:dev")
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:ForestryMC:4.11.13:dev")
-    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Railcraft:9.17.26:dev")
-    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:ForestryMC:4.11.13:dev")
 
     // RecEx, for testing purposes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:RecEx:1.1.5:dev")
