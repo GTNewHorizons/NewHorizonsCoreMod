@@ -287,7 +287,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.FluidRegulator_UEV.get(1),
                         ItemList.PCBFactory.get(1),
-                        GregtechItemList.Industrial_WashPlant.get(1),
+                        ItemList.IndustrialChemicalBath.get(1),
                         ItemList.Circuit_Board_Bio_Ultra.get(16),
                         ItemList.Circuit_Board_Wetware_Extreme.get(16))
                 .fluidInputs(
@@ -338,7 +338,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Motor_UEV.get(1),
                         ItemList.IndustrialWireFactory.get(1),
-                        GregtechItemList.Industrial_PlatePress.get(1), // forming press specifically
+                        ItemList.IndustrialFormingPress.get(1), // forming press specifically
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Draconium, 16),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 16))
                 .fluidInputs(
