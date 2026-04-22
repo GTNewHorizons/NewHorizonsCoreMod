@@ -881,7 +881,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemOutputs(CircuitComponent.ProcessedCoiledThermalSuperconductor.getFakeStack(1))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
-
         // Planck
         GTValues.RA.stdBuilder()
                 .itemInputs(
