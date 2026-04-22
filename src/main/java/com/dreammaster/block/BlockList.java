@@ -38,6 +38,7 @@ public enum BlockList {
     Mytryl("Mytryl", metal(2, 30f)),
     Quantinum("Quantinum", metal(3, 50f)),
     BlackPlutonium("BlackPlutonium", metal(3, 50f)),
+    Sulfur("Sulfur", crystal(2, 25f)),
 
     // ===== Plated Reinforced Stone =====
     BronzePlatedReinforcedStone("BronzePlatedReinforcedStone", platedStone(4, 60f)),
