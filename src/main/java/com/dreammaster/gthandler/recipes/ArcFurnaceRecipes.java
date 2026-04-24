@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
-import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalArcFurnace;
