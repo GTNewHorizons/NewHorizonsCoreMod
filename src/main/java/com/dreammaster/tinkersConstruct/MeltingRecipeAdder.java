@@ -23,16 +23,13 @@ public class MeltingRecipeAdder {
         this.renderBlockMeta = renderBlockMeta;
         this.meltingTemperature = meltingTemperature;
         this.fluidName = fluidName;
-        addMelting = itemStack -> {
-            if (itemStack != null) {
-                Smeltery.addMelting(
-                        itemStack,
-                        renderBlock,
-                        renderBlockMeta,
-                        meltingTemperature,
-                        FluidRegistry.getFluidStack(fluidName, amount));
-            }
-        };
+        addMelting = itemStack -> Smeltery.addMelting(
+                itemStack,
+                renderBlock,
+                renderBlockMeta,
+                meltingTemperature,
+                FluidRegistry.getFluidStack(fluidName, amount));
+
     }
 
     public MeltingRecipeAdder withAmount(int newAmount) {
@@ -46,6 +43,11 @@ public class MeltingRecipeAdder {
 
     public MeltingRecipeAdder add(Stream<ItemStack> itemStackStream) {
         itemStackStream.forEach(addMelting);
+        return this;
+    }
+
+    public MeltingRecipeAdder add(Iterable<ItemStack> itemStackIterable) {
+        itemStackIterable.forEach(addMelting);
         return this;
     }
 
