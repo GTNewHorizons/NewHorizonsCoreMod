@@ -10187,7 +10187,7 @@ public class AssemblerRecipes implements Runnable {
                         new ItemStack(LanthItemList.NIOBIUM_CAVITY_CASING, 1),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lead, 4L))
                 .itemOutputs(ItemList.StableEmptyContainmentUnit.get(64))
-                .fluidInputs(MaterialMisc.ETHYL_CYANOACRYLATE.getFluidStack(10)).duration(30 * SECONDS).eut(TierEU.LuV)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialMisc.ETHYL_CYANOACRYLATE.getFluidStack(10)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
     }
 }
