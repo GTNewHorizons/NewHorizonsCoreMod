@@ -153,8 +153,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .eut(24).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(50 * SECONDS).eut(24)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(24).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Fether.ID, "glow_flower_seeds", 1, 0),
