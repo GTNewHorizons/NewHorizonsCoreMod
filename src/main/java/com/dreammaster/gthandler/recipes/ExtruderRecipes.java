@@ -115,7 +115,8 @@ public class ExtruderRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64),
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64))
                 .itemOutputs(NHItemList.NANCertificate.get(1))
-                .duration(29826 * HOURS + 9 * MINUTES + 7 * SECONDS + 7 * TICKS).eut(TierEU.RECIPE_ULV)
-                .addTo(extruderRecipes);
+                .duration(29826 * HOURS + 9 * MINUTES + 7 * SECONDS + 7 * TICKS)
+                // not using recipe EUt on purpose
+                .eut(TierEU.ULV).addTo(extruderRecipes);
     }
 }
