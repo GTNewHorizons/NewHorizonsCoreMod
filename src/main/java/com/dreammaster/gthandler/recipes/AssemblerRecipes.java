@@ -1918,7 +1918,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.NetherStar, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Quantium, 1),
                         ItemList.Hull_UIV.get(1),
-                        ItemList.Circuit_Chip_QPIC.get(2))
+                        ItemList.Circuit_Chip_FPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UMV_UIV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -1928,7 +1928,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Quantium, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackPlutonium, 1),
                         ItemList.Hull_UMV.get(1),
-                        ItemList.Circuit_Chip_QPIC.get(2))
+                        ItemList.Circuit_Chip_APIC.get(2))
                 .itemOutputs(ItemList.Transformer_UXV_UMV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -1938,7 +1938,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.BlackPlutonium, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Infinity, 1),
                         ItemList.Hull_UXV.get(1),
-                        ItemList.Circuit_Chip_QPIC.get(2))
+                        ItemList.Circuit_Chip_ZPIC.get(2))
                 .itemOutputs(ItemList.Transformer_MAX_UXV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -7150,7 +7150,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 2L))
-                .circuit(1).itemOutputs(getModItem(Chisel.ID, "obsidianChisel", 1, 0)).duration(20 * SECONDS)
+                .circuit(2).itemOutputs(getModItem(Chisel.ID, "obsidianChisel", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Diamond Chisel
 

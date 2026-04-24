@@ -21,6 +21,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -4802,7 +4803,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "aquasalus", 1, 0),
                 10,
-                new ItemStack[] { getModItem(Minecraft.ID, "potion", 1, 0),
+                new ItemStack[] { getModItem(Natura.ID, "waterdrop", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L),
                         getModItem(Minecraft.ID, "dye", 1, 0), getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
