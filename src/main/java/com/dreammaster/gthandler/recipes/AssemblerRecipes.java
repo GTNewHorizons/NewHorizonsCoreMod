@@ -3293,7 +3293,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.SteelMagnetic, 1L),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel, 4L),
-                        new OreDictItemStack("cablegt01AnyCopper", 2))
+                        new OreDictItemStack("cableGt01AnyCopper", 2))
                 .itemOutputs(ItemList.Electric_Motor_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
