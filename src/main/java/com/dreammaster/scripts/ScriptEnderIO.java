@@ -54,6 +54,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
@@ -1702,14 +1703,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7),
+                        new OreDictItemStack("capacitorBasic", 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 2L),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0)).duration(10 * SECONDS)
@@ -1761,7 +1755,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                         getModItem(EnderIO.ID, "itemMaterial", 2, 6),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 4, 2),
+                        new OreDictItemStack("capacitorEnder", 4),
                         ItemList.BatteryHull_EV_Full.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
@@ -1771,27 +1765,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                         getModItem(EnderIO.ID, "itemMaterial", 2, 6),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 4, 9),
-                        ItemList.BatteryHull_EV_Full.get(1))
-                .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
-                        getModItem(EnderIO.ID, "itemMaterial", 2, 6),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 4, 2),
-                        GregtechItemList.Battery_RE_EV_Lithium.get(1))
-                .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
-                        getModItem(EnderIO.ID, "itemMaterial", 2, 6),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 4, 9),
+                        new OreDictItemStack("capacitorEnder", 4),
                         GregtechItemList.Battery_RE_EV_Lithium.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);

@@ -477,16 +477,7 @@ public class ScriptEFR implements IScriptLoader {
                     bits,
                     new Object[] { "ABA", "CDC", "AEA", 'A', "screwWood", 'B', "craftingToolHardHammer", 'C', inParts,
                             'D', "springAnyIron", 'E', "craftingToolScrewdriver" });
-            GTValues.RA.stdBuilder()
-                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1L))
-                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1L))
+            GTValues.RA.stdBuilder().itemInputs(inParts, new OreDictItemStack("springAnyIron", 1))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         }
@@ -500,19 +491,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1L))
+                        new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
@@ -1015,22 +994,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(Minecraft.ID, "furnace", 1, 0),
                 "plateAnyIron");
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
-                        new ItemStack(Blocks.furnace, 1))
-                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5L),
-                        new ItemStack(Blocks.furnace, 1))
-                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PigIron, 5L),
-                        new ItemStack(Blocks.furnace, 1))
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("plateAnyIron", 5), new ItemStack(Blocks.furnace, 1))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
