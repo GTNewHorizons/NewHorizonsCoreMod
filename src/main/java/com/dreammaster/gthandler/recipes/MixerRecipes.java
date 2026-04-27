@@ -910,7 +910,7 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(Materials.CosmicNeutronium.getDust(4), Materials.Glowstone.getNanite(2))
                 .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), Materials.LumipodExtract.getFluid(1000))
                 .fluidOutputs(Materials.BiocatalyzedPropulsionFluid.getFluid(5000)).duration(15 * SECONDS)
-                .eut(TierEU.UHV).addTo(mixerNonCellRecipes);
+                .eut(TierEU.RECIPE_UHV).addTo(mixerNonCellRecipes);
 
         if (PamsHarvestCraft.isModLoaded()) {
 

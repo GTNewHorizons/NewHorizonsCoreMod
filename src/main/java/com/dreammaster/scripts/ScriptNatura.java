@@ -30,6 +30,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -2925,171 +2926,59 @@ public class ScriptNatura implements IScriptLoader {
                 .itemOutputs(getModItem(Natura.ID, "natura.bow.fusewood", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 0), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 1), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.sakura", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.sakura", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 2),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 2), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.ghostwood", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 2),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.ghostwood", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 3),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 3), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.redwood", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 3),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.redwood", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 4),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 4), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.bloodwood", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 4),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.bloodwood", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 5),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 5), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.hopseed", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 5),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.hopseed", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 6),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 6), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.maple", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 6),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.maple", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 7),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 7), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.silverbell", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab1", 2, 7),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.silverbell", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab2", 2, 0), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.amaranth", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.amaranth", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab2", 2, 1), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.tiger", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.tiger", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 2),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab2", 2, 2), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.willow", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 2),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.willow", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 3),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab2", 2, 3), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.darkwood", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 3),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.darkwood", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 4),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
+                .itemInputs(getModItem(Natura.ID, "plankSlab2", 2, 4), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.fusewood", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "plankSlab2", 2, 4),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .itemOutputs(getModItem(Natura.ID, "pressureplate.fusewood", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "netherrack", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                .circuit(9).itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "netherrack", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
+                .itemInputs(getModItem(Minecraft.ID, "netherrack", 2, 0), new OreDictItemStack("springAnyIron", 1))
                 .circuit(9).itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0))
@@ -3344,6 +3233,10 @@ public class ScriptNatura implements IScriptLoader {
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("sulfurdioxide", 4000)).duration(20 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cactus", 1, 0))
+                .itemOutputs(getModItem(Natura.ID, "waterdrop", 2, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(extractorRecipes);
 
         Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "NetherPressurePlate", 1, 0), (short) 75);
         Module_CustomFuels.registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0), (short) 75);

@@ -50,6 +50,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.block.BlockList;
+import com.dreammaster.extraUtilities.ExtraUtilitiesHelper;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
@@ -1483,6 +1484,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4))));
+
+        ExtraUtilitiesHelper.fixColorBlockOreDictionary();
     }
 
     private static class FilterRecipe extends ShapelessOreRecipe {
