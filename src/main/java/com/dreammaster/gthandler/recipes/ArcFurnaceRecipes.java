@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
-import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalArcFurnace;
@@ -64,7 +63,7 @@ public class ArcFurnaceRecipes implements Runnable {
                     .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 500, 250)
                     .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144))
                     .fluidOutputs(Materials.Tungsten.getMolten(144)).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
-                    .addTo(plasmaArcFurnaceRecipes);
+                    .addTo(arcFurnaceRecipes);
         }
     }
 }
