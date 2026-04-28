@@ -430,8 +430,7 @@ public class SpaceAssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(EternalSingularity.ID, "eternal_singularity", 1),
-                            new ItemStack(Loaders.yottaFluidTankCell, 4, 6),
-                            getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                            getModItem(AE2FluidCraft.ID, "fluid_part", 12, 7),
                             ItemList.Quantum_Tank_IV.get(8L),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
                             getModItem(Avaritia.ID, "Resource", 4, 5),
