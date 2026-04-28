@@ -192,13 +192,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         'N', OrePrefixes.stick.get(Materials.NaquadahAlloy) });
 
         GTModHandler.addCraftingRecipe(
-                ItemList.LargeHPSteamTurbine.get(1L),
+                ItemList.HPSteamTurbine.get(1L),
                 bits,
                 new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_IV, 'B',
                         OrePrefixes.pipeLarge.get(Materials.Titanium), 'C', OrePrefixes.circuit.get(Materials.IV), 'P',
                         OrePrefixes.gearGt.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
-                ItemList.LargePlasmaTurbine.get(1L),
+                ItemList.PlasmaTurbine.get(1L),
                 bits,
                 new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_UV, 'B',
                         OrePrefixes.pipeHuge.get(Materials.Naquadah), 'C', OrePrefixes.circuit.get(Materials.ZPM), 'P',
