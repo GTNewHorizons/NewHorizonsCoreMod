@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.MagicBees;
@@ -32,6 +33,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -82,7 +84,6 @@ public class ScriptTwilightForest implements IScriptLoader {
                 getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1),
                 getModItem(TwilightForest.ID, "item.carminite", 1, 0),
                 getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1));
-
         String[] materials = new String[] { "Twilight", "Canopy", "Mangrove", "Darkwood", "Time", "Trans", "Mine",
                 "Sort" };
 
@@ -191,6 +192,107 @@ public class ScriptTwilightForest implements IScriptLoader {
                     .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 6, 0))
                     .fluidInputs(Materials.Steel.getMolten(16)).duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
         }
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "stone", 64, 0),
+                        getModItem(TwilightForest.ID, "item.trophy", 0, 1))
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.TFNagastoneHead", 64, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "stone", 64, 0),
+                        getModItem(TwilightForest.ID, "item.trophy", 0, 5))
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.TFMazestone", 64, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "stone", 64, 0),
+                        getModItem(TwilightForest.ID, "item.trophy", 0, 6))
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.TFUnderBrick", 64, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "item.arcticFur", 9, 0))
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.ArcticFurBlock", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 64, 0)).circuit(12)
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.GiantCobble", 1, 0)).duration(64 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "obsidian", 64, 0)).circuit(12)
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, 0)).duration(64 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 64)).circuit(12)
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.GiantLog", 1, 0)).duration(64 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("treeLeaves", 64)).circuit(12)
+                .itemOutputs(getModItem(TwilightForest.ID, "tile.GiantLeaves", 1, 0)).duration(64 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        addShapedRecipe(
+                getModItem(TwilightForest.ID, "tile.CastleDoor", 8, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
+                getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0));
+
+        addShapedRecipe(
+                getModItem(TwilightForest.ID, "tile.TFHedge", 1, 0),
+                "treeLeaves",
+                "treeLeaves",
+                "treeLeaves",
+                "treeLeaves",
+                "stickWood",
+                "treeLeaves",
+                "treeLeaves",
+                "treeLeaves",
+                "treeLeaves");
+
+        addShapedRecipe(
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 9, 0),
+                "stoneMarble",
+                "stoneMarble",
+                "stoneMarble",
+                "stoneMarble",
+                "stoneBricks",
+                "stoneMarble",
+                "stoneMarble",
+                "stoneMarble",
+                "stoneMarble");
+
+        addShapedRecipe(
+                getModItem(TwilightForest.ID, "tile.TFNagastoneEtchedMossy", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(TwilightForest.ID, "tile.TFNagastoneEtched"),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0));
+
+        addShapedRecipe(
+                getModItem(TwilightForest.ID, "tile.TFNagastonePillarMossy", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(TwilightForest.ID, "tile.TFNagastonePillar"),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
