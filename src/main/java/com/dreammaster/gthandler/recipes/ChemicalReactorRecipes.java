@@ -52,16 +52,9 @@ public class ChemicalReactorRecipes implements Runnable {
                 .fluidInputs(Materials.Oxygen.getGas(2000))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChromiumDioxide, 3))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
-
-        // Potassium Hydroxide
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L))
-                .circuit(1).itemOutputs(NHItemList.PotassiumHydroxideDust.get(3))
-                .fluidInputs(Materials.Water.getFluid(3000)).fluidOutputs(Materials.Hydrogen.getGas(1000))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         // Rock Salt
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.get()).circuit(2)
+        GTValues.RA.stdBuilder().itemInputs(Materials.PotassiumHydroxide.getDust(1)).circuit(2)
                 .itemOutputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);

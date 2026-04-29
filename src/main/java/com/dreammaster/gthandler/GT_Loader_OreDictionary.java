@@ -101,7 +101,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator.registerOre("ingotCokeOvenBrick", NHItemList.CokeOvenBrick.get(1));
         GTOreDictUnificator.registerOre("leather", NHItemList.ArtificialLeather.get(1));
         GTOreDictUnificator.registerOre("itemLeather", NHItemList.ArtificialLeather.get(1));
-        GTOreDictUnificator.registerOre("dustPotassiumHydroxide", NHItemList.PotassiumHydroxideDust.get(1));
 
         GTOreDictUnificator.registerOre(OrePrefixes.stickLong, Materials.Obsidian, NHItemList.LongObsidianRod.get());
 
