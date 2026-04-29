@@ -31,6 +31,7 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptNatura implements IScriptLoader {
@@ -2986,8 +2987,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.eucalyptus", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.eucalyptus", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3002,8 +3003,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.sakura", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.sakura", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.sakura", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.sakura", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3018,8 +3019,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.ghostwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.ghostwood", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.ghostwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.ghostwood", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3034,8 +3035,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.redwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.redwood", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.redwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.redwood", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3050,8 +3051,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.bloodwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.bloodwood", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.bloodwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.bloodwood", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3066,8 +3067,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.hopseed", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.hopseed", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.hopseed", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.hopseed", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3081,9 +3082,8 @@ public class ScriptNatura implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.maple", 1, 0))
-                .itemOutputs(getModItem(Natura.ID, "button.maple", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .itemOutputs(getModItem(Natura.ID, "button.maple", 2, 0)).fluidInputs(GTModHandler.getDistilledWater(3))
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.maple", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.maple", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3098,8 +3098,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.silverbell", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.silverbell", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.silverbell", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.silverbell", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3114,8 +3114,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.amaranth", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.amaranth", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.amaranth", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.amaranth", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3129,9 +3129,8 @@ public class ScriptNatura implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.tiger", 1, 0))
-                .itemOutputs(getModItem(Natura.ID, "button.tiger", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .itemOutputs(getModItem(Natura.ID, "button.tiger", 2, 0)).fluidInputs(GTModHandler.getDistilledWater(3))
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.tiger", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.tiger", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3146,8 +3145,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.willow", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.willow", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.willow", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.willow", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3162,8 +3161,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.darkwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.darkwood", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.darkwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.darkwood", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3178,8 +3177,8 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.fusewood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.fusewood", 2, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.fusewood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.fusewood", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
@@ -3198,8 +3197,7 @@ public class ScriptNatura implements IScriptLoader {
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 3),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(20 * SECONDS).eut(4)
-                .addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(3)).duration(20 * SECONDS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 3),

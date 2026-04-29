@@ -292,9 +292,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .fluidInputs(Materials.Water.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1))
-                .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 1000)).duration(2 * MINUTES)
-                .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
+                .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0)).fluidInputs(GTModHandler.getDistilledWater(1000))
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfNanoparticles.get(1))
                 .itemOutputs(ItemList.TaHfCNanofibers.get(5))
                 .fluidInputs(WerkstoffLoader.TantalumHafniumCarbide.getMolten(576)).duration(50 * SECONDS)
