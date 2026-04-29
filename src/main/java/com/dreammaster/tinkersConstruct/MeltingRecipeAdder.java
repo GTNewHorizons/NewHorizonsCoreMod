@@ -29,6 +29,7 @@ public class MeltingRecipeAdder {
                 renderBlockMeta,
                 meltingTemperature,
                 FluidRegistry.getFluidStack(fluidName, amount));
+
     }
 
     public MeltingRecipeAdder withAmount(int newAmount) {
@@ -42,6 +43,11 @@ public class MeltingRecipeAdder {
 
     public MeltingRecipeAdder add(Stream<ItemStack> itemStackStream) {
         itemStackStream.forEach(addMelting);
+        return this;
+    }
+
+    public MeltingRecipeAdder add(Iterable<ItemStack> itemStackIterable) {
+        itemStackIterable.forEach(addMelting);
         return this;
     }
 

@@ -83,7 +83,9 @@ import static tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import net.minecraft.init.Blocks;
@@ -101,6 +103,7 @@ import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
+import gregtech.GTMod;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -8367,8 +8370,14 @@ public class AssemblerRecipes implements Runnable {
             return;
         }
 
-        final OrePrefixes[] allOrePrefixes = { OrePrefixes.ore, OrePrefixes.oreNetherrack, OrePrefixes.oreEndstone,
-                OrePrefixes.oreBlackgranite, OrePrefixes.oreRedgranite, OrePrefixes.oreMarble, OrePrefixes.oreBasalt };
+        List<OrePrefixes> allOrePrefixes = new ArrayList<>();
+        allOrePrefixes.add(OrePrefixes.ore);
+        allOrePrefixes.add(OrePrefixes.oreNetherrack);
+        allOrePrefixes.add(OrePrefixes.oreEndstone);
+        if (GTMod.proxy.enableBlackGraniteOres) allOrePrefixes.add(OrePrefixes.oreBlackgranite);
+        if (GTMod.proxy.enableRedGraniteOres) allOrePrefixes.add(OrePrefixes.oreRedgranite);
+        if (GTMod.proxy.enableMarbleOres) allOrePrefixes.add(OrePrefixes.oreMarble);
+        if (GTMod.proxy.enableBasaltOres) allOrePrefixes.add(OrePrefixes.oreBasalt);
 
         // NEI Ore Plugin planets
         // T0 Planets
