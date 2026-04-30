@@ -1525,7 +1525,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         NHItemList.HeavyDutyAlloyIngotT6.get(18),
                         NHItemList.HeavyDutyAlloyIngotT5.get(64),
                         NHItemList.HeavyDutyAlloyIngotT5.get(50))
-
                 .duration(7 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 0))
                 .itemOutputs(
@@ -1533,7 +1532,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         NHItemList.HeavyDutyAlloyIngotT7.get(64),
                         NHItemList.HeavyDutyAlloyIngotT7.get(53),
                         NHItemList.HeavyDutyAlloyIngotT6.get(20))
-
                 .duration(8 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 1))
                 .itemOutputs(
@@ -1541,7 +1539,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         NHItemList.HeavyDutyAlloyIngotT7.get(64),
                         NHItemList.HeavyDutyAlloyIngotT7.get(53),
                         NHItemList.HeavyDutyAlloyIngotT6.get(20))
-
                 .duration(8 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 2))
                 .itemOutputs(
@@ -1549,7 +1546,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         NHItemList.HeavyDutyAlloyIngotT7.get(64),
                         NHItemList.HeavyDutyAlloyIngotT7.get(53),
                         NHItemList.HeavyDutyAlloyIngotT6.get(20))
-
                 .duration(8 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier8Rocket", 1, 3))
                 .itemOutputs(
@@ -1557,7 +1553,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         NHItemList.HeavyDutyAlloyIngotT7.get(64),
                         NHItemList.HeavyDutyAlloyIngotT7.get(53),
                         NHItemList.HeavyDutyAlloyIngotT6.get(20))
-
                 .duration(8 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11))
                 .itemOutputs(
@@ -1565,7 +1560,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(24L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0))
-
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12))
                 .itemOutputs(
@@ -1573,7 +1567,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(24L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0))
-
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13))
                 .itemOutputs(
@@ -1581,7 +1574,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy1.get(24L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0))
-
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemAstroMiner", 1, 0))
                 .itemOutputs(
@@ -1589,7 +1581,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy2.get(8L),
                         ItemList.Ingot_Heavy1.get(3L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 10L))
-
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0))
                 .itemOutputs(
@@ -1597,7 +1588,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 21L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
-
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1))
                 .itemOutputs(
@@ -1605,7 +1595,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 28L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
-
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2))
                 .itemOutputs(
@@ -1613,7 +1602,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 35L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
-
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3))
                 .itemOutputs(
