@@ -65,10 +65,11 @@ public final class NHRemapper {
                         "item.ConductiveIronBars", "item.ElectricalSteelBars", "item.EnderiumBars",
                         "item.EnderiumBaseBars", "item.EnergeticAlloyBars", "item.PulsatingIronBars",
                         "item.RedstoneAlloyBars", "item.SoulariumBars", "item.TungstenBars", "item.VibrantAlloyBars",
+                        "item.PotassiumHydroxideDust",
                         // For people updating from the dailies
                         "ConductiveIronBars", "ElectricalSteelBars", "EnderiumBars", "EnderiumBaseBars",
                         "EnergeticAlloyBars", "PulsatingIronBars", "RedstoneAlloyBars", "SoulariumBars", "TungstenBars",
-                        "VibrantAlloyBars",
+                        "VibrantAlloyBars", "PotassiumHydroxideDust",
                         // Removed fluid blocks & fluid buckets
                         "dreamcraft_SodiumPotassium", "dreamcraft_SodiumPotassium_bucket",
                         "dreamcraft_EnrichedBacterialSludge", "dreamcraft_EnrichedBacterialSludge_bucket",

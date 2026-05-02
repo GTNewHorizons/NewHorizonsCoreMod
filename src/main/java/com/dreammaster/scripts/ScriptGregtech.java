@@ -1184,7 +1184,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(10000)
                 .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.get(3)).circuit(1)
+        GTValues.RA.stdBuilder().itemInputs(Materials.PotassiumHydroxide.getDust(3)).circuit(1)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 5L))
                 .fluidInputs(Materials.NitricAcid.getFluid(5000)).fluidOutputs(Materials.Steam.getGas(16000))
                 .duration(10).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
