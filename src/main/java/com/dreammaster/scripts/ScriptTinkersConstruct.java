@@ -38,6 +38,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -56,6 +57,7 @@ import com.dreammaster.recipes.Recipe;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -1690,115 +1692,52 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "Cast", 1, 1),
                 getModItem(TinkerConstruct.ID, "Cast", 1, 2),
                 getModItem(TinkerConstruct.ID, "Cast", 1, 3));
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Iron"), 100, 144).add(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 32),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.BrownLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.BrownLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.BrownLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.BrownLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.BrownLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.BrownLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.YellowLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.YellowLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.YellowLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.YellowLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.YellowLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.YellowLimonite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.BandedIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.BandedIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.BandedIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.BandedIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.BandedIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.BandedIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.GraniticMineralSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.GraniticMineralSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.GraniticMineralSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.GraniticMineralSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.GraniticMineralSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.GraniticMineralSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Magnetite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Magnetite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Magnetite, 1L),
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 28706),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Magnetite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Pyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Pyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Pyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Pyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Pyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Pyrite, 1L));
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Copper"), 50, 144).add(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 35),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Copper, 1L),
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 871),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Malachite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Malachite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Malachite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Malachite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Malachite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Tetrahedrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Tetrahedrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Tetrahedrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Tetrahedrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Tetrahedrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Tetrahedrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Chalcopyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Chalcopyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Chalcopyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Chalcopyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Chalcopyrite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Chalcopyrite, 1L));
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 0, 144).add(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 57),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Tin, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Tin, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Tin, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Tin, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Tin, 1L));
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 200, 288).add(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Cassiterite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Cassiterite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Cassiterite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Cassiterite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Cassiterite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Cassiterite, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.CassiteriteSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.CassiteriteSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.CassiteriteSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.CassiteriteSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.CassiteriteSand, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.CassiteriteSand, 1L));
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Gold"), 200, 144).add(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 86),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Gold, 1L));
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Aluminum"), 50, 144).add(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 19),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Aluminium, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Aluminium, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Aluminium, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Aluminium, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Aluminium, 1L));
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Emerald"), 225, 640).add(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 501),
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Emerald, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Emerald, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Emerald, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Emerald, 1L),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Emerald, 1L));
+
+        // Iron
+        List<ItemStack> melterStacksIron = new ArrayList<>();
+        addOresForMaterial(Materials.Iron, melterStacksIron);
+        addOresForMaterial(Materials.BrownLimonite, melterStacksIron);
+        addOresForMaterial(Materials.YellowLimonite, melterStacksIron);
+        addOresForMaterial(Materials.BandedIron, melterStacksIron);
+        addOresForMaterial(Materials.GraniticMineralSand, melterStacksIron);
+        addOresForMaterial(Materials.Magnetite, melterStacksIron);
+        addOresForMaterial(Materials.Pyrite, melterStacksIron);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Iron"), 100, 144).add(melterStacksIron);
+
+        // Copper
+        List<ItemStack> melterStacksCopper = new ArrayList<>();
+        addOresForMaterial(Materials.Copper, melterStacksCopper);
+        addOresForMaterial(Materials.Malachite, melterStacksCopper);
+        addOresForMaterial(Materials.Tetrahedrite, melterStacksCopper);
+        addOresForMaterial(Materials.Chalcopyrite, melterStacksCopper);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Copper"), 50, 144).add(melterStacksCopper);
+
+        // Tin
+        List<ItemStack> melterStacksTin = new ArrayList<>();
+        addOresForMaterial(Materials.Tin, melterStacksTin);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 0, 144).add(melterStacksTin);
+
+        // Cassiterite
+        List<ItemStack> melterStacksCassiterite = new ArrayList<>();
+        addOresForMaterial(Materials.Cassiterite, melterStacksCassiterite);
+        addOresForMaterial(Materials.CassiteriteSand, melterStacksCassiterite);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 200, 288).add(melterStacksCassiterite);
+
+        // Gold
+        List<ItemStack> melterStacksGold = new ArrayList<>();
+        addOresForMaterial(Materials.Gold, melterStacksGold);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Gold"), 200, 144).add(melterStacksGold);
+
+        // Aluminum
+        List<ItemStack> melterStacksAluminum = new ArrayList<>();
+        addOresForMaterial(Materials.Aluminium, melterStacksAluminum);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Aluminum"), 50, 144).add(melterStacksAluminum);
+
+        // Emerald
+        List<ItemStack> melterStacksEmerald = new ArrayList<>();
+        addOresForMaterial(Materials.Emerald, melterStacksEmerald);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Emerald"), 225, 640).add(melterStacksEmerald);
+
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Steel"), 100, 576).add(
                 ItemList.Shape_Empty.get(1L),
                 ItemList.Shape_Mold_Plate.get(1L),
@@ -2132,6 +2071,19 @@ public class ScriptTinkersConstruct implements IScriptLoader {
     private void registerManualIcons() {
         MantleClientRegistry.registerManualIcon("paper", new ItemStack(Items.paper, 64, 0));
         MantleClientRegistry.registerManualIcon("steam_compressor", ItemList.Machine_Bronze_Compressor.get(1));
+    }
+
+    private void addOresForMaterial(Materials material, List<ItemStack> stacks) {
+        stacks.add(GTOreDictUnificator.get(OrePrefixes.rawOre, material, 1L));
+        stacks.add(GTOreDictUnificator.get(OrePrefixes.ore, material, 1L));
+        stacks.add(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, material, 1L));
+        stacks.add(GTOreDictUnificator.get(OrePrefixes.oreEndstone, material, 1L));
+        if (GTMod.proxy.enableBlackGraniteOres) {
+            stacks.add(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, material, 1L));
+        }
+        if (GTMod.proxy.enableRedGraniteOres) {
+            stacks.add(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, material, 1L));
+        }
     }
 
 }
