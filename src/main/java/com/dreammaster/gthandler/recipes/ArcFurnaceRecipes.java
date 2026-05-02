@@ -31,7 +31,7 @@ public class ArcFurnaceRecipes implements Runnable {
                 .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 0))
-                .itemOutputs(new ItemStack(Blocks.glass, 2)).duration(1 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                .itemOutputs(new ItemStack(Blocks.glass, 2)).duration(2 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(UniversalArcFurnace);
 
         // red sand
@@ -39,7 +39,7 @@ public class ArcFurnaceRecipes implements Runnable {
                 .itemOutputs(
                         new ItemStack(Blocks.glass, 2),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1))
-                .duration(1 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(UniversalArcFurnace);
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_MV).addTo(UniversalArcFurnace);
 
         // Awful dimensionally transcendent residue recipe for mk5 fusion pre-dtpf (mostly a meme)
         GTValues.RA.stdBuilder().itemInputs(ItemRefer.Radioactive_Waste.get(64))
