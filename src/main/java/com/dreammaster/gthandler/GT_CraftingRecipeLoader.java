@@ -26,7 +26,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.pipeMedium;
 import static gregtech.api.enums.OrePrefixes.screw;
-import static gregtech.api.util.GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
 import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
@@ -82,19 +81,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
     private static final String aTextIron2 = "XXX";
     private static final String aTextTConstruct = TinkerConstruct.ID;
 
-    private static final long bits = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE
-            | GTModHandler.RecipeBits.DISMANTLEABLE
-            | GTModHandler.RecipeBits.BUFFERED;
-    private static final long bits2 = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE
-            | GTModHandler.RecipeBits.DISMANTLEABLE
-            | GTModHandler.RecipeBits.BUFFERED
-            | DELETE_ALL_OTHER_RECIPES;
-    private static final long bits3 = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.DISMANTLEABLE
-            | GTModHandler.RecipeBits.BUFFERED;
-    private static final long bits4 = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED;
-    private static final long tBitMask = GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
-            | GTModHandler.RecipeBits.REVERSIBLE;
-
     /**
      * Rolling Machine Crafting Recipe
      */
@@ -115,20 +101,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // UEV, UIV, UMV, UXV casings
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UEV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UIV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UMV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SpaceTime) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UXV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PSP", "SwS", "PSP", 'P', OrePrefixes.plate.get(Materials.MHDCSM), 'S',
                         OrePrefixes.plate.get(Materials.MagMatter) });
 
@@ -162,168 +148,168 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Naquadah_Mark_I.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "UCU", "FMF", "WCW", 'M', ItemList.Hull_EV, 'F', ItemList.Field_Generator_EV, 'C',
                         OrePrefixes.circuit.get(Materials.IV), 'W', OrePrefixes.cableGt04.get(Materials.Aluminium), 'U',
                         OrePrefixes.stick.get(Materials.Uranium235) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Naquadah_Mark_II.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PCP", "FMF", "WCW", 'M', ItemList.Hull_IV, 'F', ItemList.Field_Generator_IV, 'C',
                         OrePrefixes.circuit.get(Materials.LuV), 'W', OrePrefixes.cableGt04.get(Materials.Tungsten), 'P',
                         OrePrefixes.stick.get(Materials.Plutonium241) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Naquadah_Mark_III.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "NCN", "FMF", "WCW", 'M', ItemList.Hull_LuV, 'F', ItemList.Field_Generator_LuV, 'C',
                         OrePrefixes.circuit.get(Materials.ZPM), 'W', OrePrefixes.cableGt04.get(Materials.HSSG), 'N',
                         OrePrefixes.stick.get(Materials.Europium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Naquadah_Mark_IV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "NCN", "FMF", "WCW", 'M', ItemList.Hull_ZPM, 'F', ItemList.Field_Generator_ZPM, 'C',
                         OrePrefixes.circuit.get(Materials.UV), 'W', OrePrefixes.cableGt04.get(Materials.Naquadah), 'N',
                         OrePrefixes.stick.get(Materials.Americium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Naquadah_Mark_V.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "NCN", "FMF", "WCW", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'C',
                         OrePrefixes.circuit.get(Materials.UHV), 'W', OrePrefixes.cableGt04.get(Materials.ElectrumFlux),
                         'N', OrePrefixes.stick.get(Materials.NaquadahAlloy) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.LargeHPSteamTurbine.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_IV, 'B',
                         OrePrefixes.pipeLarge.get(Materials.Titanium), 'C', OrePrefixes.circuit.get(Materials.IV), 'P',
                         OrePrefixes.gearGt.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.LargePlasmaTurbine.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_UV, 'B',
                         OrePrefixes.pipeHuge.get(Materials.Naquadah), 'C', OrePrefixes.circuit.get(Materials.ZPM), 'P',
                         OrePrefixes.gearGt.get(Materials.NaquadahAlloy) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Tank_LV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_MV, 'M', ItemList.Casing_Tank_1, 'G',
                         OrePrefixes.plate.get(Materials.PulsatingIron), 'D', OrePrefixes.circuit.get(Materials.LV), 'P',
                         OrePrefixes.plate.get(Materials.Aluminium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Tank_MV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_HV, 'M', ItemList.Casing_Tank_2, 'G',
                         OrePrefixes.plate.get(Materials.EnergeticAlloy), 'D', OrePrefixes.circuit.get(Materials.MV),
                         'P', OrePrefixes.plate.get(Materials.StainlessSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Tank_HV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_HV, 'M', ItemList.Casing_Tank_3, 'G',
                         ItemList.Field_Generator_LV, 'D', OrePrefixes.circuit.get(Materials.HV), 'P',
                         OrePrefixes.plate.get(Materials.VibrantAlloy) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Tank_EV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_EV, 'M', ItemList.Casing_Tank_4, 'G',
                         ItemList.Field_Generator_MV, 'D', OrePrefixes.circuit.get(Materials.EV), 'P',
                         OrePrefixes.plate.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Tank_IV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_EV, 'M', ItemList.Casing_Tank_5, 'G',
                         ItemList.Field_Generator_HV, 'D', OrePrefixes.circuit.get(Materials.IV), 'P',
                         OrePrefixes.plate.get(Materials.NiobiumTitanium) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Tank_LV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_IV, 'M', ItemList.Casing_Tank_6, 'G',
                         ItemList.Field_Generator_EV, 'D', OrePrefixes.circuit.get(Materials.LuV), 'P',
                         OrePrefixes.plate.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Tank_MV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_IV, 'M', ItemList.Casing_Tank_7, 'G',
                         ItemList.Field_Generator_IV, 'D', OrePrefixes.circuit.get(Materials.ZPM), 'P',
                         OrePrefixes.plate.get(Materials.HSSG) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Tank_HV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_LuV, 'M', ItemList.Casing_Tank_8, 'G',
                         ItemList.Field_Generator_LuV, 'D', OrePrefixes.circuit.get(Materials.UV), 'P',
                         OrePrefixes.plate.get(Materials.HSSS) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Tank_EV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_ZPM, 'M', ItemList.Casing_Tank_9, 'G',
                         ItemList.Field_Generator_ZPM, 'D', OrePrefixes.circuit.get(Materials.UHV), 'P',
                         OrePrefixes.plate.get(Materials.Europium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Tank_IV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_UV, 'M', ItemList.Casing_Tank_10, 'G',
                         ItemList.Field_Generator_UV, 'D', OrePrefixes.circuit.get(Materials.UEV), 'P',
                         OrePrefixes.plate.get(Materials.Americium) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_LV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_LV, 'G',
                         OrePrefixes.plate.get(Materials.PulsatingIron), 'D', OrePrefixes.circuit.get(Materials.LV), 'P',
                         OrePrefixes.plate.get(Materials.Aluminium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_MV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_MV, 'G',
                         OrePrefixes.plate.get(Materials.EnergeticAlloy), 'D', OrePrefixes.circuit.get(Materials.MV),
                         'P', OrePrefixes.plate.get(Materials.StainlessSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_HV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_HV, 'G',
                         ItemList.Field_Generator_LV, 'D', OrePrefixes.circuit.get(Materials.HV), 'P',
                         OrePrefixes.plate.get(Materials.VibrantAlloy) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_EV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_EV, 'G',
                         ItemList.Field_Generator_MV, 'D', OrePrefixes.circuit.get(Materials.EV), 'P',
                         OrePrefixes.plate.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_IV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_IV, 'G',
                         ItemList.Field_Generator_HV, 'D', OrePrefixes.circuit.get(Materials.IV), 'P',
                         OrePrefixes.plate.get(Materials.NiobiumTitanium) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_LV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_LuV, 'G',
                         ItemList.Field_Generator_EV, 'D', OrePrefixes.circuit.get(Materials.LuV), 'P',
                         OrePrefixes.plate.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_MV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_ZPM, 'G',
                         ItemList.Field_Generator_IV, 'D', OrePrefixes.circuit.get(Materials.ZPM), 'P',
                         OrePrefixes.plate.get(Materials.HSSG) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_HV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UV, 'G',
                         ItemList.Field_Generator_LuV, 'D', OrePrefixes.circuit.get(Materials.UV), 'P',
                         OrePrefixes.plate.get(Materials.HSSS) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_EV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UHV, 'G',
                         ItemList.Field_Generator_ZPM, 'D', OrePrefixes.circuit.get(Materials.UHV), 'P',
                         OrePrefixes.plate.get(Materials.Europium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_IV.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UEV, 'G',
                         ItemList.Field_Generator_UV, 'D', OrePrefixes.circuit.get(Materials.UEV), 'P',
                         OrePrefixes.plate.get(Materials.Americium) });
@@ -331,52 +317,52 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Hermetic casings
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_1.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Steel), 'I',
                         OrePrefixes.pipeLarge.get(Materials.Polyethylene) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_2.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Aluminium), 'I',
                         OrePrefixes.pipeLarge.get(Materials.PolyvinylChloride) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_3.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.StainlessSteel), 'I',
                         OrePrefixes.pipeLarge.get(Materials.Polytetrafluoroethylene) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_4.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Titanium), 'I',
                         OrePrefixes.pipeLarge.get(Materials.StainlessSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_5.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.TungstenSteel), 'I',
                         OrePrefixes.pipeLarge.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_6.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Chrome), 'I',
                         OrePrefixes.pipeLarge.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_7.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Iridium), 'I',
                         OrePrefixes.pipeLarge.get(Materials.NiobiumTitanium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_8.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Osmium), 'I',
                         OrePrefixes.pipeLarge.get(Materials.Enderium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_9.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Neutronium), 'I',
                         OrePrefixes.pipeLarge.get(Materials.Naquadah) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_10.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium), 'I',
                         OrePrefixes.pipeLarge.get(Materials.MysteriousCrystal) });
 
@@ -410,16 +396,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Solar Panels 1-8 EU. Higher tier ones are in script because they're DCT crafts
         GTModHandler.addCraftingRecipe(
                 ItemList.Cover_SolarPanel.get(1L, o),
-                GTModHandler.RecipeBits.DISMANTLEABLE | GTModHandler.RecipeBits.NOT_REMOVABLE
-                        | GTModHandler.RecipeBits.REVERSIBLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { "SGS", "CPC", "TRT", 'C', OrePrefixes.circuit.get(Materials.LV), 'G',
                         GTModHandler.getIC2Item("reinforcedGlass", 1L), 'P',
                         OrePrefixes.plateAlloy.get(Materials.Carbon), 'S', ItemList.Circuit_Silicon_Wafer, 'T',
                         OrePrefixes.wireGt01.get(Materials.RedAlloy), 'R', NHItemList.AluminiumIronPlate.get() });
         GTModHandler.addCraftingRecipe(
                 ItemList.Cover_SolarPanel_8V.get(1L, o),
-                GTModHandler.RecipeBits.DISMANTLEABLE | GTModHandler.RecipeBits.NOT_REMOVABLE
-                        | GTModHandler.RecipeBits.REVERSIBLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { "GSG", "CRC", "PAP", 'C', OrePrefixes.circuit.get(Materials.MV), 'G',
                         ItemList.Cover_SolarPanel.get(1L, o), 'P', OrePrefixes.wireGt01.get(Materials.Tin), 'S',
                         ItemList.Circuit_Silicon_Wafer, 'R', OrePrefixes.plate.get(Materials.GalliumArsenide), 'A',
@@ -598,7 +582,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Filter Machine Casing for cleanroom
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Vent.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "SSS", "MFV", 'P', BlockList.SteelBars.get(), 'F',
                         OrePrefixes.frameGt.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_MV, 'V',
                         OrePrefixes.rotor.get(Materials.Aluminium), 'S', ItemList.Component_Filter });
@@ -606,54 +590,54 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Air filter multi blocks
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Vent_T1.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "ThT", "TFT", "TwT", 'T', BlockList.SteelBars.get(), 'F',
                         OrePrefixes.frameGt.get(Materials.Steel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Turbine_T1.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "SSS", "RVR", "MSM", 'V', ItemList.Casing_AirFilter_Vent_T1, 'S',
                         OrePrefixes.stickLong.get(Materials.Steel), 'R', OrePrefixes.rotor.get(Materials.Steel), 'M',
                         ItemList.Electric_Motor_LV, 'R', OrePrefixes.screw.get(Materials.Steel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_AirFilterT1.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "RPR", "MBM", "CGC", 'B', ItemList.Hull_LV, 'R', OrePrefixes.rotor.get(Materials.Steel),
                         'P', ItemList.Electric_Pump_LV, 'M', ItemList.Electric_Motor_LV, 'C',
                         OrePrefixes.cableGt01.get(Materials.Copper), 'G', ItemList.Casing_AirFilter_Turbine_T1 });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Vent_T2.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "ThT", "TFT", "TwT", 'T', BlockList.TitaniumBars.get(), 'F',
                         OrePrefixes.frameGt.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Turbine_T2.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "SSS", "RVR", "MSM", 'V', ItemList.Casing_AirFilter_Vent_T2, 'S',
                         OrePrefixes.stickLong.get(Materials.Titanium), 'R', OrePrefixes.rotor.get(Materials.Titanium),
                         'M', ItemList.Electric_Motor_HV, 'R', OrePrefixes.screw.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_AirFilterT2.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "RPR", "MBM", "CGC", 'B', ItemList.Hull_HV, 'R',
                         OrePrefixes.rotor.get(Materials.Titanium), 'P', ItemList.Electric_Pump_HV, 'M',
                         ItemList.Electric_Motor_HV, 'C', OrePrefixes.cableGt01.get(Materials.Gold), 'G',
                         ItemList.Casing_AirFilter_Turbine_T2 });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Vent_T3.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "ThT", "TFT", "TwT", 'T', BlockList.TungstenSteelBars.get(), 'F',
                         OrePrefixes.frameGt.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_AirFilter_Turbine_T3.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "SSS", "RVR", "MSM", 'V', ItemList.Casing_AirFilter_Vent_T3, 'S',
                         OrePrefixes.stickLong.get(Materials.TungstenSteel), 'R',
                         OrePrefixes.rotor.get(Materials.TungstenSteel), 'M', ItemList.Electric_Motor_IV, 'R',
                         OrePrefixes.screw.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_AirFilterT3.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "RPR", "MBM", "CGC", 'B', ItemList.Hull_IV, 'R',
                         OrePrefixes.rotor.get(Materials.TungstenSteel), 'P', ItemList.Electric_Pump_IV, 'M',
                         ItemList.Electric_Motor_IV, 'C', OrePrefixes.cableGt01.get(Materials.Tungsten), 'G',
@@ -661,27 +645,27 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Pyrolyse.get(1L),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PhP", "SFS", "PwP", 'P', OrePrefixes.plate.get(Materials.Steel), 'S',
                         OrePrefixes.plate.get(Materials.Iron), 'F', ItemList.Casing_BronzePlatedBricks });
 
         // For making bee houses
         GTModHandler.addCraftingRecipe(
                 NHItemList.WoodenCasing.get(),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "SSS", "UCU", "SdS", 'S', OrePrefixes.slab.get(Materials.Wood), 'U',
                         OrePrefixes.screw.get(Materials.Iron), 'C', OrePrefixes.frameGt.get(Materials.Wood) });
         // For making gendustry upgrades
         GTModHandler.addCraftingRecipe(
                 NHItemList.IndustryFrame.get(),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PPP", "SBS", "SSS", 'P', OrePrefixes.plate.get(Materials.Palladium), 'S',
                         OrePrefixes.stick.get(Materials.Osmium), 'B', BlockList.IridiumBars.get() });
 
         // Magnetic Flux Exhibitor
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_IndustrialElectromagneticSeparator.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CBC", "FMF", "CBC", 'M', ItemList.Machine_IV_ElectromagneticSeparator, 'B',
                         OrePrefixes.circuit.get(Materials.IV), 'C', OrePrefixes.plate.get(Materials.TungstenSteel), 'F',
                         ItemList.Conveyor_Module_IV });
@@ -689,21 +673,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // MagTech Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Electromagnetic_Separator.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PhP", "PFP", "PwP", 'P', OrePrefixes.plate.get(Materials.TungstenSteel), 'F',
                         OrePrefixes.frameGt.get(Materials.Titanium) });
 
         // Electromagnet Housing
         GTModHandler.addCraftingRecipe(
                 ItemList.Hatch_Electromagnet.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CFC", "FMF", "CFC", 'M', ItemList.Hatch_Input_Bus_IV, 'C',
                         OrePrefixes.plate.get(Materials.Polystyrene), 'F', BlockList.TungstenSteelBars.get() });
 
         // TurboCan Pro
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_Canner.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CFC", "MAM", "CFC", 'A', ItemList.Machine_HV_Canner, 'F',
                         OrePrefixes.circuit.get(Materials.HV), 'C', OrePrefixes.pipeLarge.get(Materials.Steel), 'M',
                         ItemList.Electric_Pump_HV });
@@ -711,7 +695,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // High Energy Laser Emitter
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_IndustrialLaserEngraver.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CFC", "EAE", "CEC", 'A', ItemList.Machine_IV_LaserEngraver, 'F',
                         OrePrefixes.circuit.get(Materials.LuV), 'C', NITINOL_60.getPlate(1), 'E',
                         ItemList.Emitter_IV });
@@ -719,13 +703,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Laser Containment Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Laser.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PhP", "PFP", "PwP", 'P', STELLITE.getPlate(1), 'F', NITINOL_60.getFrameBox(1) });
 
         // Dissection Apparatus
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_IndustrialExtractor.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CFC", "EAE", "CBC", 'A', ItemList.Machine_HV_Extractor, 'F', ItemList.Robot_Arm_HV, 'C',
                         OrePrefixes.plate.get(Materials.StainlessSteel), 'E', OrePrefixes.circuit.get(Materials.EV),
                         'B', ItemList.Electric_Piston_HV });
@@ -734,13 +718,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // REMOVE AFTER 2.9
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Machine_Mass_Solidifier.get(1),
-                bits4,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { ItemList.Machine_Fluid_Shaper.get(1) });
 
         // Mass Solidifier
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Mass_Solidifier.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CFC", "EAE", "CFC", 'A', ItemList.Machine_IV_FluidSolidifier, 'E',
                         ItemList.Electric_Pump_IV, 'F', OrePrefixes.circuit.get(Materials.LuV), 'C',
                         INCONEL_792.getPlate(1) });
@@ -748,21 +732,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Solidifier Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Fluid_Solidifier.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PhP", "TFT", "PwP", 'P', INCONEL_792.getPlate(1), 'F', AQUATIC_STEEL.getFrameBox(1),
                         'T', TALONITE.getPlate(1) });
 
         // Solidifier Radiator Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Radiator_Fluid_Solidifier.get(2),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "BBB", "BPB", "BKB", 'P', ItemList.Casing_Fluid_Solidifier, 'K',
                         ItemList.Electric_Pump_IV, 'B', LEAGRISIUM.getPlate(1) });
 
         // Large Electric Compressor
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_IndustrialCompressor.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "BCB", "EAE", "CCC", 'A', ItemList.Machine_EV_Compressor, 'C',
                         GGMaterial.incoloy903.get(OrePrefixes.plate), 'E', OrePrefixes.circuit.get(Materials.IV), 'B',
                         ItemList.Electric_Piston_EV });
@@ -770,14 +754,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Electric Compressor Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Casing.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PhP", "SFS", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
                         OrePrefixes.frameGt.get(Materials.Titanium), 'S', OrePrefixes.plate.get(Materials.Steel) });
 
         // Compression Pipe Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Pipe_Casing.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
                         GGMaterial.incoloy903.get(OrePrefixes.pipeSmall), 'F',
                         OrePrefixes.gearGt.get(Materials.Titanium) });
@@ -785,7 +769,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Industrial Precision Lathe
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_Lathe.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CFC", "EAE", "CFC", 'A', ItemList.Machine_EV_Lathe, 'F',
                         OrePrefixes.circuit.get(Materials.IV), 'C', OrePrefixes.plate.get(Materials.TungstenSteel), 'E',
                         ItemList.Electric_Motor_EV });
@@ -793,7 +777,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Large Fluid Extractor
         GTModHandler.addCraftingRecipe(
                 ItemList.LargeFluidExtractor.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "TCT", "VMP", "TCT", 'M', ItemList.Machine_EV_FluidExtractor, 'V',
                         ItemList.Conveyor_Module_EV, 'P', ItemList.Electric_Pump_EV, 'T',
                         OrePrefixes.plate.get(Materials.TungstenSteel), 'C', OrePrefixes.circuit.get(Materials.IV) });
@@ -801,21 +785,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Big Barrel Brewery
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_IndustrialBrewery.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "TCT", "PMP", "TCT", 'M', ItemList.Machine_HV_Brewery, 'P', ItemList.Electric_Pump_HV,
                         'T', OrePrefixes.plate.get(Materials.WoodSealed), 'C', OrePrefixes.circuit.get(Materials.EV) });
 
         // Solar Factory
         GTModHandler.addCraftingRecipe(
                 ItemList.SolarFactory.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "TTT", "PMP", "CTC", 'M', ItemList.Machine_HV_Assembler, 'P',
                         ItemList.Cover_SolarPanel_8V, 'T', OrePrefixes.plate.get(Materials.StainlessSteel), 'C',
                         OrePrefixes.circuit.get(Materials.EV) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.LATEX.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "SPS", "CMC", "SPS", 'S',
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 1L), 'P',
                         ItemList.Electric_Pump_HV.get(1L), 'C', OrePrefixes.circuit.get(Materials.EV), 'M',
@@ -823,7 +807,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         GTModHandler.addCraftingRecipe(
                 ItemList.LATEX.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "SPS", "CMC", "SPS", 'S',
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L), 'P',
                         ItemList.Electric_Pump_HV.get(1L), 'C', OrePrefixes.circuit.get(Materials.EV), 'M',
@@ -832,7 +816,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Reinforced Wooden Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Reinforced_Wood.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PhP", "PFP", "PwP", 'P', OrePrefixes.plate.get(Materials.WoodSealed), 'F',
                         OrePrefixes.frameGt.get(Materials.StainlessSteel) });
 
@@ -840,21 +824,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Tin
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Item_Pipe_Tin.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Tin), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Tin), 'F', OrePrefixes.frameGt.get(Materials.Tin) });
 
         // Brass
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Item_Pipe_Brass.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Brass), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Brass), 'F', OrePrefixes.frameGt.get(Materials.Brass) });
 
         // Electrum
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Item_Pipe_Electrum.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Electrum), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Electrum), 'F',
                         OrePrefixes.frameGt.get(Materials.Electrum) });
@@ -862,7 +846,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Platinum
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Item_Pipe_Platinum.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Platinum), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Platinum), 'F',
                         OrePrefixes.frameGt.get(Materials.Platinum) });
@@ -870,14 +854,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Osmium
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Item_Pipe_Osmium.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Osmium), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Osmium), 'F', OrePrefixes.frameGt.get(Materials.Osmium) });
 
         // Quantium
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Item_Pipe_Quantium.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Quantium), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Quantium), 'F',
                         OrePrefixes.frameGt.get(Materials.Quantium) });
@@ -885,7 +869,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Fluxed Electrum
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Item_Pipe_Fluxed_Electrum.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.ElectrumFlux), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.ElectrumFlux), 'F',
                         OrePrefixes.frameGt.get(Materials.ElectrumFlux) });
@@ -893,7 +877,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Black Plutonium
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Item_Pipe_Black_Plutonium.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.BlackPlutonium), 'F',
                         OrePrefixes.frameGt.get(Materials.BlackPlutonium) });
@@ -901,32 +885,32 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // BM raw orbs
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier1.get(),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Aluminium), 'P',
                         OrePrefixes.plate.get(Materials.AnnealedCopper), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier2.get(),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.StainlessSteel), 'P',
                         OrePrefixes.plate.get(Materials.RoseGold), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier3.get(),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Titanium), 'P',
                         OrePrefixes.plate.get(Materials.PulsatingIron), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier4.get(),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.TungstenSteel), 'P',
                         OrePrefixes.plate.get(Materials.EnergeticAlloy), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier5.get(),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.LuVTierMaterial.get(screw), 'P',
                         OrePrefixes.plate.get(Materials.FierySteel), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier6.get(),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "XdX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Iridium), 'P',
                         OrePrefixes.plate.get(Materials.Plutonium241), 'O', NHItemList.ReinforcedGlassLense.get() });
 
@@ -937,12 +921,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Recycle deprecated Railcraft casings
         GTModHandler.addShapelessCraftingRecipe(
                 NHItemList.CokeOvenBrick.get().splitStack(4),
-                bits4,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { getModItem(Railcraft.ID, "machine.alpha", 1, 7) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.CokeOvenCasing.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] {
                         // spotless:off
                         "BB ",
@@ -954,7 +938,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         GTModHandler.addCraftingRecipe(
                 ItemList.CokeOvenController.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] {
                         // spotless:off
                         "BBB",
@@ -967,7 +951,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         GTModHandler.addCraftingRecipe(
                 ItemList.CokeOvenHatch.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] {
                         // spotless:off
                         "BHB",
@@ -993,8 +977,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 Materials.DraconiumAwakened, // MAX
         };
 
-        final long BITSD = GTModHandler.RecipeBits.DISMANTLEABLE | GTModHandler.RecipeBits.NOT_REMOVABLE
-                | GTModHandler.RecipeBits.REVERSIBLE;
+        final long BITSD = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE;
 
         for (int i = 9; i < GTValues.VN.length - 1; i++) {
             try {
@@ -1167,21 +1150,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         GTModHandler.addCraftingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, WILDCARD),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "RCR", "RAR", "RTR", 'R', getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0),
                         'C', OrePrefixes.circuit.get(Materials.LV), 'A',
                         OrePrefixes.itemCasing.get(Materials.Aluminium), 'T',
                         OrePrefixes.wireGt02.get(Materials.Tin) });
         GTModHandler.addCraftingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, WILDCARD),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "RCR", "RAR", "RTR", 'R', getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, WILDCARD),
                         'C', OrePrefixes.circuit.get(Materials.MV), 'A',
                         getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, WILDCARD), 'T',
                         OrePrefixes.wireGt04.get(Materials.AnnealedCopper) });
         GTModHandler.addCraftingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorEnergypack", 1, WILDCARD),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "CSC", "EXE", "STS", 'E', getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, WILDCARD),
                         'C', OrePrefixes.circuit.get(Materials.HV), 'X',
                         getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, WILDCARD), 'T',
@@ -1189,13 +1172,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         OrePrefixes.itemCasing.get(Materials.StainlessSteel) });
         GTModHandler.addCraftingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, WILDCARD),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "WdW", "HBH", "HXH", 'W', OrePrefixes.wireGt02.get(Materials.Copper), 'H',
                         OrePrefixes.itemCasing.get(Materials.Copper), 'X', OrePrefixes.itemCasing.get(Materials.Lead),
                         'B', ItemList.Battery_Hull_MV });
         if (GalacticraftCore.isModLoaded()) GTModHandler.addCraftingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, WILDCARD),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { "AXA", "RBR", "SdS", 'A',
                         getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1), 'X',
                         OrePrefixes.screw.get(Materials.StainlessSteel), 'B',
@@ -1226,7 +1209,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         for (ItemStack concreteBucket : concreteBuckets) {
             GTModHandler.addCraftingRecipe(
                     ItemList.Casing_Firebricks.get(1L),
-                    tBitMask,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C',
                             OrePrefixes.dust.get(Materials.Gypsum), 'W', concreteBucket });
         }
@@ -1235,7 +1218,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemStack emptyBucket = concreteBucket.getItem().getContainerItem(concreteBucket);
                 GTModHandler.addCraftingRecipe(
                         concreteBucket,
-                        bits4,
+                        GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                         new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
                                 OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
                                 OrePrefixes.dust.get(Materials.QuartzSand), 'W', waterBucket, 'B', emptyBucket });
@@ -1250,7 +1233,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         if (Forestry.isModLoaded()) {
             GTModHandler.addCraftingRecipe(
                     getModItem(Forestry.ID, "engine", 1, 0),
-                    bits2,
+                    GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.StainlessSteel), 'L',
                             OrePrefixes.plate.get(Materials.Lapis), 'S',
                             OrePrefixes.spring.get(Materials.StainlessSteel), 'P', OreDictNames.craftingPiston, 'G',
@@ -1258,21 +1241,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Forestry.ID, "engine", 1, 1),
-                    bits2,
+                    GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Iron), 'L',
                             OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Iron), 'P',
                             OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Iron), 'C',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Forestry.ID, "engine", 1, 2),
-                    bits2,
+                    GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Bronze), 'L',
                             OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Bronze), 'P',
                             OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Bronze), 'C',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Forestry.ID, "engine", 1, 4),
-                    bits2,
+                    GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Gold), 'L',
                             OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.WroughtIron),
                             'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.WroughtIron), 'C',
@@ -1284,7 +1267,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     NHItemList.RawSDHCAlloy.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.StainlessSteel), 'T',
                             getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1, 0), 'D',
                             getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1, 0), 'C',
@@ -1292,32 +1275,32 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             // fuel canisters
             GTModHandler.addCraftingRecipe(
                     getModItem(GalaxySpace.ID, "item.ModuleSmallCanister", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "PPP", "PCP", "PPP", 'P', OrePrefixes.compressed.get(Materials.Steel), 'C',
                             getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001) });
             GTModHandler.addCraftingRecipe(
                     getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.StainlessSteel), 'T',
                             getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1, 0), 'D',
                             getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1, 0), 'C',
                             getModItem(GalaxySpace.ID, "item.ModuleSmallCanister", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.MediumFuelCanister.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.Titanium), 'T',
                             NHItemList.TitaniumDualCompressedPlates.get(), 'D',
                             NHItemList.DeshDualCompressedPlates.get(), 'C',
                             getModItem(GalaxySpace.ID, "item.ModuleSmallFuelCanister", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.LargeFuelCanister.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.Chrome), 'T',
                             NHItemList.QuantinumDualCompressedPlates.get(), 'D',
                             NHItemList.IceDualCompressedPlates.get(), 'C', NHItemList.MediumFuelCanister.get() });
             GTModHandler.addCraftingRecipe(
                     NHItemList.ExtraLargeFuelCanister.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SdS", "TCD", "ShS", 'S', OrePrefixes.screw.get(Materials.Iridium), 'T',
                             NHItemList.MytrylDualCompressedPlates.get(), 'D',
                             NHItemList.MysteriousCrystalDualCompressedPlates.get(), 'C',
@@ -1326,7 +1309,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftCore.ID, "item.engine", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SCS", "HFH", "HAH", 'S', getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0),
                             'C', getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001), 'H',
                             getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0), 'F',
@@ -1334,26 +1317,26 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 1),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "BPB", "PPP", "EPE", 'B', getModItem(GalacticraftCore.ID, "item.engine", 1, 1), 'P',
                             getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0), 'E',
                             getModItem(GalacticraftCore.ID, "item.engine", 1, 0) });
 
             GTModHandler.addCraftingRecipe(
                     NHItemList.HeavyDutyRocketEngineTier3.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "BPB", "PPP", "EPE", 'B', NHItemList.Tier2Booster.get(), 'P',
                             NHItemList.HeavyDutyPlateTier5.get(), 'E',
                             getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 1) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.HeavyDutyRocketEngineTier4.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "BPB", "PPP", "EPE", 'B', NHItemList.Tier3Booster.get(), 'P',
                             NHItemList.HeavyDutyPlateTier7.get(), 'E', NHItemList.HeavyDutyRocketEngineTier3.get() });
             // nose cones
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftCore.ID, "item.noseCone", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "dNh", "CPC", "PPP", 'N',
                             getModItem(ProjectRedIllumination.ID, "projectred.illumination.cagelamp2.inv", 1, 14), 'P',
                             getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0), 'C',
@@ -1361,7 +1344,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftMars.ID, "item.heavyNoseCone", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "dNh", "CPC", "PPP", 'N',
 
                             getModItem(GalacticraftCore.ID, "item.noseCone", 1, 0), 'P',
@@ -1370,14 +1353,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     NHItemList.HeavyDutyNoseConeTier3.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "dNh", "CPC", "PPP", 'N',
                             getModItem(GalacticraftMars.ID, "item.heavyNoseCone", 1, 0), 'P',
                             NHItemList.HeavyDutyPlateTier5.get(), 'C',
                             OrePrefixes.screw.get(Materials.TungstenSteel) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.HeavyDutyNoseConeTier4.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "dNh", "CPC", "PPP", 'N', NHItemList.HeavyDutyNoseConeTier3.get(), 'P',
                             NHItemList.HeavyDutyPlateTier7.get(), 'C',
                             OrePrefixes.screw.get(Materials.NaquadahAlloy) });
@@ -1385,24 +1368,24 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftCore.ID, "item.rocketFins", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "hPf", "QPQ", "QsQ", 'P', getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9),
                             'Q', getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0) });
 
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 2),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "hPf", "QPQ", "QsQ", 'P', getModItem(GalacticraftMars.ID, "item.null", 1, 3), 'Q',
                             getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.HeavyDutyRocketFinsTier3.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "hPf", "QPQ", "QSQ", 'P', NHItemList.HeavyDutyPlateTier4.get(), 'Q',
                             NHItemList.HeavyDutyPlateTier5.get(), 'S',
                             getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.HeavyDutyRocketFinsTier4.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "hPf", "QPQ", "QSQ", 'P', NHItemList.HeavyDutyPlateTier6.get(), 'Q',
                             NHItemList.HeavyDutyPlateTier7.get(), 'S',
                             getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0) });
@@ -1410,7 +1393,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     getModItem(GalacticraftCore.ID, "item.engine", 1, 1),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "LLL", "PBP", "PVP", 'L',
                             getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1), 'P',
                             getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0), 'B',
@@ -1419,20 +1402,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     NHItemList.Tier2Booster.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "LLL", "PBP", "PVP", 'L', NHItemList.LedoxCompressedPlate.get(), 'P',
                             getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0), 'B',
                             getModItem(GalacticraftCore.ID, "item.engine", 1, 1), 'V',
                             getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.Tier3Booster.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "LLL", "PBP", "PVP", 'L', NHItemList.MytrylCompressedPlate.get(), 'P',
                             NHItemList.HeavyDutyPlateTier5.get(), 'B', NHItemList.Tier2Booster.get(), 'V',
                             getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     NHItemList.Tier4Booster.get(),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "LLL", "PBP", "PVP", 'L', NHItemList.BlackPlutoniumCompressedPlate.get(), 'P',
                             NHItemList.HeavyDutyPlateTier7.get(), 'B', NHItemList.Tier3Booster.get(), 'V',
                             getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0) });
@@ -1441,7 +1424,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         if (Mods.GraviSuite.isModLoaded()) {
             GTModHandler.addCraftingRecipe(
                     getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1, WILDCARD),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SCS", "MBM", "EWE", 'S', OrePrefixes.itemCasing.get(Materials.StainlessSteel), 'C',
                             OrePrefixes.circuit.get(Materials.HV), 'M', ItemList.Electric_Motor_HV, 'B',
                             getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, WILDCARD), 'W',
@@ -1449,7 +1432,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                             getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 6) });
             if ((BuildCraftFactory.isModLoaded()) && (AdventureBackpack.isModLoaded())) GTModHandler.addCraftingRecipe(
                     getModItem(IndustrialCraft2.ID, "itemArmorJetpack", 1, WILDCARD),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SXS", "TCT", "EZE", 'S', OrePrefixes.itemCasing.get(Materials.StainlessSteel), 'X',
                             OrePrefixes.circuit.get(Materials.HV), 'T',
                             getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0), 'C',
@@ -1471,24 +1454,24 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 2, 0),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "PdP", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S',
                             OrePrefixes.screw.get(Materials.AnyIron) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 2, 1),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S',
                             OrePrefixes.screw.get(Materials.AnyIron), 'L',
                             new ItemStack(Blocks.glass_pane, 1, 32767) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 2, 1),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S',
                             OrePrefixes.screw.get(Materials.AnyIron), 'L',
                             getModItem(aTextTConstruct, "GlassPane", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 2),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "BdB", "SPS", 'S', OrePrefixes.screw.get(Materials.AnyIron), 'B',
                             new ItemStack(Blocks.iron_bars, 1, 0), 'P', OrePrefixes.pipeLarge.get(Materials.Bronze) });
             // for recycling
@@ -1500,7 +1483,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             // actual
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 3),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "PPP", "ShS", "PPP", 'P', OrePrefixes.itemCasing.get(Materials.Iron), 'S',
                             OrePrefixes.screw.get(Materials.AnyIron) });
             // for recycling
@@ -1512,172 +1495,172 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             // actual
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 4),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "PPP", "ShS", "PPP", 'P', OrePrefixes.itemCasing.get(Materials.Steel), 'S',
                             OrePrefixes.screw.get(Materials.Steel) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 5),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "PCP", "BFB", "PUP", 'B', new ItemStack(Blocks.brick_block), 'P',
                             OrePrefixes.plate.get(Materials.AnyIron), 'U', OreDictNames.craftingBlastFurnace, 'C',
                             new ItemStack(Items.cauldron, 1, 0), 'F', ItemList.Casing_Firebox_Bronze });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 6),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "PCP", "BFB", "PUP", 'B', BlockList.SteelBars.get(), 'P',
                             OrePrefixes.plate.get(Materials.Steel), 'U', OreDictNames.craftingBlastFurnace, 'C',
                             new ItemStack(Items.cauldron, 1, 0), 'F', ItemList.Casing_Firebox_Bronze });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 7),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.AnyCopper), 'L',
                             OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.AnyCopper),
                             'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.AnyCopper), 'C',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 8),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Steel), 'L',
                             OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Steel), 'P',
                             OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Steel), 'C',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 9),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Aluminium), 'L',
                             OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Aluminium),
                             'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Aluminium), 'C',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 10),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "PEP", "GOG", "OOO", 'P', OrePrefixes.plate.get(Materials.Obsidian), 'E',
                             OrePrefixes.gem.get(Materials.EnderPearl), 'O', OrePrefixes.stone.get(Materials.Obsidian),
                             'G', OrePrefixes.plate.get(Materials.Gold), });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 11),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "PRP", "SPS", 'S', OrePrefixes.screw.get(Materials.Steel), 'P',
                             OrePrefixes.plate.get(Materials.Obsidian), 'R',
                             getModItem(ExtraUtilities.ID, "trashcan", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 2, 13),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "PdP", "SPS", 'P', OrePrefixes.plate.get(Materials.Steel), 'S',
                             OrePrefixes.screw.get(Materials.Steel) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 2, 14),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.Steel), 'S',
                             OrePrefixes.screw.get(Materials.Steel), 'L', new ItemStack(Blocks.glass_pane, 1, 32767) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 2, 14),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.Steel), 'S',
                             OrePrefixes.screw.get(Materials.Steel), 'L',
                             getModItem(aTextTConstruct, "GlassPane", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 15),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "BdB", "SPS", 'S', OrePrefixes.screw.get(Materials.Steel), 'B',
                             BlockList.SteelBars.get(), 'P', OrePrefixes.pipeLarge.get(Materials.Steel) });
 
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 2, 1),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "CSC", "SwS", "CSC", 'S', ItemList.Casing_SolidSteel, 'C',
                             getModItem(Railcraft.ID, aTextMachineBeta, 1, 4) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 2),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "IOI", "GEG", "IOI", 'G', OrePrefixes.plateDouble.get(Materials.Gold), 'I',
                             OrePrefixes.plate.get(Materials.Emerald), 'E', OrePrefixes.gem.get(Materials.EnderPearl),
                             'O', OrePrefixes.plate.get(Materials.Obsidian) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 5),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "PBP", "PwP", "LHW", 'P', OrePrefixes.plate.get(Materials.Steel), 'H',
                             getModItem(Railcraft.ID, aTextMachineBeta, 1, 4), 'B',
                             new ItemStack(Blocks.iron_bars, 1, 0), 'L', new ItemStack(Items.lava_bucket, 1, 0), 'W',
                             new ItemStack(Items.water_bucket, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 6),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SGS", "EDE", "SGS", 'E', OrePrefixes.plate.get(Materials.Emerald), 'S',
                             OrePrefixes.plate.get(Materials.Steel), 'G', new ItemStack(Blocks.glass_pane, 1, 32767),
                             'D', new ItemStack(Blocks.dispenser, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 8),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "GPG", "PXP", "hCf", 'P', OreDictNames.craftingPiston, 'G',
                             OrePrefixes.gear.get(Materials.Iron), 'C', getModItem(Forestry.ID, "factory2", 1, 2), 'X',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 9),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "PBP", "PDP", "PPP", 'B', new ItemStack(Blocks.iron_bars, 1, 0), 'P',
                             OrePrefixes.plate.get(Materials.Steel), 'D', new ItemStack(Blocks.dispenser, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 10),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { " h ", "SHS", "PDP", 'S', OrePrefixes.stick.get(Materials.RedAlloy), 'H',
                             getModItem(Railcraft.ID, aTextMachineAlpha, 1, 9), 'D',
                             getModItem(Railcraft.ID, "detector", 1, 1), 'P', OrePrefixes.plate.get(Materials.Steel) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 11),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "PCP", "CSC", "PCP", 'P', OrePrefixes.plate.get(Materials.Wood), 'S',
                             OrePrefixes.plate.get(Materials.Steel), 'C', new ItemStack(Items.golden_carrot, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineAlpha, 1, 13),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "IOI", "GEG", "IOI", 'G', OrePrefixes.plateDouble.get(Materials.Steel), 'I',
                             OrePrefixes.plate.get(Materials.Diamond), 'E', OrePrefixes.gem.get(Materials.EnderPearl),
                             'O', OrePrefixes.plateDense.get(Materials.Obsidian) });
 
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "tool.crowbar", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "hDS", "DSD", "SDf", 'S', OrePrefixes.stick.get(Materials.Iron), 'D', Dyes.dyeRed });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "tool.crowbar.reinforced", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "hDS", "DSD", "SDf", 'S', OrePrefixes.stick.get(Materials.Steel), 'D',
                             Dyes.dyeRed });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "tool.whistle.tuner", 1, 0),
-                    bits | GTModHandler.RecipeBits.MIRRORED,
+                    GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.MIRRORED,
                     new Object[] { "ShS", "SSS", " Sh", 'S', OrePrefixes.stick.get(Materials.Iron) });
             GTModHandler.addShapelessCraftingRecipe(
                     getModItem(Railcraft.ID, "part.turbine.blade", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { GTModHandler.getIC2Item("steelshaft", 1) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "part.turbine.disk", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SSS", "SBS", "SSS", 'B', OrePrefixes.block.get(Materials.Steel), 'S',
                             getModItem(Railcraft.ID, "part.turbine.blade", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "part.turbine.rotor", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "SSS", " w ", 'S', getModItem(Railcraft.ID, "part.turbine.disk", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "borehead.iron", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "GPG", "PBP", "GPG", 'B', OrePrefixes.block.get(Materials.Iron), 'G',
                             OrePrefixes.gear.get(Materials.Iron), 'P', OrePrefixes.plate.get(Materials.Iron) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "borehead.steel", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "GPG", "PBP", "GPG", 'B', OrePrefixes.block.get(Materials.Steel), 'G',
                             OrePrefixes.gear.get(Materials.Steel), 'P', OrePrefixes.plate.get(Materials.Steel) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "borehead.diamond", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "DD ", 'D', ItemList.Component_Grinder_Diamond });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "cart.loco.steam.solid", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "TTh", "TTX", "BCZ", 'C', new ItemStack(Items.minecart, 1), 'X',
                             ItemList.Machine_Steel_Boiler, 'Z', new ItemStack(Items.chest_minecart, 1), 'T',
                             getModItem(Railcraft.ID, aTextMachineBeta, 1, 4), 'F',
@@ -1685,7 +1668,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                             new ItemStack(Blocks.iron_bars, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "cart.loco.electric", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "LFB", "MCM", "WTW", 'L',
                             getModItem(Computronics.ID, "computronics.colorfulLamp", 1, 0), 'F',
                             getModItem(Railcraft.ID, "machine.epsilon", 1, 0), 'B', ItemList.Casing_SolidSteel, 'M',
@@ -1693,7 +1676,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                             ItemList.Component_Minecart_Wheels_Steel, 'T', new ItemStack(Items.minecart, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "cart.bore", 1, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "FCF", "BCB", "hTw", 'C', new ItemStack(Items.minecart, 1), 'T',
                             new ItemStack(Items.chest_minecart, 1), 'F', ItemList.Hull_HP, 'B',
                             ItemList.Machine_Steel_Boiler });
@@ -1735,7 +1718,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             // actual
             GTModHandler.addCraftingRecipe(
                     getModItem(ZTones.ID, "stoneTile", 8, 0),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SSS", "STS", "SSS", 'S', new ItemStack(Blocks.stone_slab, 1), 'T',
                             new ItemStack(Blocks.stone, 1) });
             // for recycling
@@ -1748,16 +1731,16 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             // actual
             GTModHandler.addCraftingRecipe(
                     getModItem(ZTones.ID, "auroraBlock", 8, 0),
-                    bits4,
+                    GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "GGG", "GDG", "GGG", 'G', new ItemStack(Blocks.glass, 1), 'D',
                             new ItemStack(Items.dye, 1, WILDCARD) });
             GTModHandler.addCraftingRecipe(
                     getModItem(ZTones.ID, "minicharcoal", 7, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "r  ", "C  ", "   ", 'C', OrePrefixes.dust.get(Materials.Charcoal) });
             GTModHandler.addCraftingRecipe(
                     getModItem(ZTones.ID, "minicoal", 7, 0),
-                    bits,
+                    GTModHandler.RecipeBits.BITS,
                     new Object[] { "r  ", "C  ", "   ", 'C', OrePrefixes.dust.get(Materials.Coal) });
         }
 
@@ -2118,268 +2101,268 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Input bus to Output bus
         GTModHandler.addShapelessCraftingRecipe(
                 GregtechItemList.Hatch_Output_Bus_Steam.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { GregtechItemList.Hatch_Input_Bus_Steam.get(1), ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_ULV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_ULV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_LV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_LV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_MV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_MV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_HV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_HV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_EV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_EV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_IV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_IV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_LuV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_LuV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_ZPM.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_ZPM, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_UV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_UV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_MAX.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_Bus_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // Output bus to Input bus
         GTModHandler.addShapelessCraftingRecipe(
                 GregtechItemList.Hatch_Input_Bus_Steam.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { GregtechItemList.Hatch_Output_Bus_Steam.get(1),
                         ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_ULV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_ULV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_LV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_LV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_MV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_MV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_HV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_HV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_EV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_EV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_IV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_IV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_LuV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_LuV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_ZPM.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_ZPM, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_UV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_UV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_MAX.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_Bus_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // Input hatch to Output Hatch
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_ULV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_ULV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_LV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_LV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_MV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_MV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_HV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_HV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_EV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_EV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_IV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_IV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_LuV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_LuV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_ZPM.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_ZPM, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_UV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UHV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_UHV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UEV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_UEV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UIV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_UIV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UMV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_UMV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UXV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_UXV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_MAX.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Input_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // Output hatch to Input Hatch
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_ULV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_ULV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_LV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_LV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_MV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_MV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_HV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_HV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_EV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_EV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_IV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_IV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_LuV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_LuV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_ZPM.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_ZPM, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_UV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UHV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_UHV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UEV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_UEV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UIV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_UIV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UMV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_UMV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UXV.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_UXV, ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_MAX.get(1),
-                bits,
+                GTModHandler.RecipeBits.BITS,
                 new Object[] { ItemList.Hatch_Output_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // add various plank recipes

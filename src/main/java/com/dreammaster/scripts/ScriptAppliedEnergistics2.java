@@ -1669,23 +1669,23 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 "gemCertusQuartz");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35));
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36));
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37));
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0),
@@ -1711,7 +1711,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0),
@@ -1737,7 +1737,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0),
@@ -1763,10 +1763,10 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34));
         addShapedRecipe(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 "craftingToolHardHammer",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
@@ -1777,7 +1777,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateAluminium",
                 "craftingToolScrewdriver");
         addShapedRecipe(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",

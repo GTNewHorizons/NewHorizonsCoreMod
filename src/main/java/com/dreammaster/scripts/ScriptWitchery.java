@@ -38,6 +38,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -276,16 +277,8 @@ public class ScriptWitchery implements IScriptLoader {
                 "screwWood");
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Railcraft.ID, "slab", 2, 3),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Railcraft.ID, "slab", 2, 3),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
-                .circuit(9).itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0)).duration(5 * SECONDS)
+                .itemInputs(getModItem(Railcraft.ID, "slab", 2, 3), new OreDictItemStack("springAnyIron", 1)).circuit(9)
+                .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7))
