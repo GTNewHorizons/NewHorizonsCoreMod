@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GTNHTCWands;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
@@ -59,6 +60,9 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.gtnewhorizons.tcwands.api.TCWandAPI;
+import com.gtnewhorizons.tcwands.api.wrappers.AbstractWandWrapper;
+import com.gtnewhorizons.tcwands.api.wrappers.CapWrapper;
 
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
@@ -77,6 +81,8 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import thaumcraft.api.wands.WandCap;
+import thaumcraft.api.wands.WandRod;
 
 public class ScriptThaumcraft implements IScriptLoader {
 
@@ -99,6 +105,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 Forestry.ID,
                 GalacticraftCore.ID,
                 GalacticraftMars.ID,
+                GTNHTCWands.ID,
                 IguanaTweaksTinkerConstruct.ID,
                 IndustrialCraft2.ID,
                 MagicBees.ID,
@@ -570,7 +577,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("instrumentum"), 3).add(Aspect.getAspect("metallum"), 6)
                         .add(Aspect.getAspect("permutatio"), 6));
         TCHelper.setResearchComplexity("CAP_copper", 1);
-        TCHelper.addResearchPage("SCEPTRE", new ResearchPage("tc.research_page.RESEARCH.1"));
         TCHelper.clearPages("CAP_gold");
         TCHelper.addResearchPage("CAP_gold", new ResearchPage("tc.research_page.CAP_gold.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -696,6 +702,21 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("CAP_thaumium", 3);
         TCHelper.clearPages("SCEPTRE");
         TCHelper.addResearchPage("SCEPTRE", new ResearchPage("tc.research_page.SCEPTRE.1"));
+        AbstractWandWrapper wood_rod = TCWandAPI.getWrapperForRod(WandRod.rods.get("wood"), true);
+        CapWrapper iron_cap = TCWandAPI.getWrapperForCap(WandCap.caps.get("iron"));
+        if (wood_rod != null && iron_cap != null) {
+            TCHelper.addResearchPage("SCEPTRE", new ResearchPage(wood_rod.getRecipe(iron_cap)));
+        }
+        AbstractWandWrapper greatwood_rod = TCWandAPI.getWrapperForRod(WandRod.rods.get("greatwood"), true);
+        CapWrapper gold_cap = TCWandAPI.getWrapperForCap(WandCap.caps.get("gold"));
+        if (greatwood_rod != null && gold_cap != null) {
+            TCHelper.addResearchPage("SCEPTRE", new ResearchPage(greatwood_rod.getRecipe(gold_cap)));
+        }
+        AbstractWandWrapper silverwood_rod = TCWandAPI.getWrapperForRod(WandRod.rods.get("silverwood"), true);
+        CapWrapper thaumium_cap = TCWandAPI.getWrapperForCap(WandCap.caps.get("thaumium"));
+        if (silverwood_rod != null && thaumium_cap != null) {
+            TCHelper.addResearchPage("SCEPTRE", new ResearchPage(silverwood_rod.getRecipe(thaumium_cap)));
+        }
         TCHelper.setResearchAspects(
                 "SCEPTRE",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("fabrico"), 12)
@@ -744,16 +765,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("herba"), 6)
                         .add(Aspect.getAspect("arbor"), 3));
         TCHelper.setResearchComplexity("ROD_reed", 2);
-        TCHelper.addResearchPage(
-                "SCEPTRE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                createItemStack(
-                                        Thaumcraft.ID,
-                                        "WandCasting",
-                                        1,
-                                        45,
-                                        "{cap:\"thaumium\",rod:\"reed\",sceptre:1b}"))));
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_blaze",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 6),
@@ -994,16 +1005,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("ignis"), 6)
                         .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("potentia"), 3));
         TCHelper.setResearchComplexity("ROD_obsidian_staff", 3);
-        TCHelper.addResearchPage(
-                "ROD_obsidian_staff",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                createItemStack(
-                                        Thaumcraft.ID,
-                                        "WandCasting",
-                                        1,
-                                        84,
-                                        "{cap:\"thaumium\",rod:\"obsidian_staff\"}"))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_ice_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 53),
@@ -1137,16 +1138,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("arbor"), 12).add(Aspect.getAspect("ordo"), 9)
                         .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("terra"), 3));
         TCHelper.setResearchComplexity("ROD_silverwood_staff", 4);
-        TCHelper.addResearchPage(
-                "SCEPTRE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                createItemStack(
-                                        Thaumcraft.ID,
-                                        "WandCasting",
-                                        1,
-                                        216,
-                                        "{cap:\"thaumium\",rod:\"silverwood_staff\",sceptre:1b}"))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSFIRE",
                 getModItem(Thaumcraft.ID, "FocusFire", 1, 0),
