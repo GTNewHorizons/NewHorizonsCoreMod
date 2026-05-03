@@ -171,6 +171,7 @@ public class OreDictHandler {
 
         OreDictionary.registerOre("oreZinc", BlockList.ZincGravelOre.get());
 
+        OreDictionary.registerOre("blockSulfur", BlockList.Sulfur.get());
         // Olivine = Peridot
         for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {
             OreDictionary.registerOre("blockPeridot", stack);
