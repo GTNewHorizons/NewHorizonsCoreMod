@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
@@ -1668,23 +1669,23 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 "gemCertusQuartz");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35));
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36));
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37));
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0),
@@ -1710,7 +1711,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0),
@@ -1736,7 +1737,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0),
@@ -1762,10 +1763,10 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34));
         addShapedRecipe(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 "craftingToolHardHammer",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
@@ -1776,7 +1777,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateAluminium",
                 "craftingToolScrewdriver");
         addShapedRecipe(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39),
+                AE2_HOUSING,
                 "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
@@ -2223,6 +2224,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolPortableCell", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        // Pattern repeater
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, 0),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220),
+                        getModItem(AE2FluidCraft.ID, "part_fluid_storage_bus", 1, 0),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 1))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 473)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // Quartz Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2278,6 +2288,14 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Quartzite, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
+
+        // Certus Pickaxe
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "stick", 2),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.CertusQuartz, 3))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
     }
 }

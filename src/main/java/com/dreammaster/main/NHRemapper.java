@@ -65,10 +65,20 @@ public final class NHRemapper {
                         "item.ConductiveIronBars", "item.ElectricalSteelBars", "item.EnderiumBars",
                         "item.EnderiumBaseBars", "item.EnergeticAlloyBars", "item.PulsatingIronBars",
                         "item.RedstoneAlloyBars", "item.SoulariumBars", "item.TungstenBars", "item.VibrantAlloyBars",
+                        "item.PotassiumHydroxideDust",
                         // For people updating from the dailies
                         "ConductiveIronBars", "ElectricalSteelBars", "EnderiumBars", "EnderiumBaseBars",
                         "EnergeticAlloyBars", "PulsatingIronBars", "RedstoneAlloyBars", "SoulariumBars", "TungstenBars",
-                        "VibrantAlloyBars" });
+                        "VibrantAlloyBars", "PotassiumHydroxideDust",
+                        // Removed fluid blocks & fluid buckets
+                        "dreamcraft_SodiumPotassium", "dreamcraft_SodiumPotassium_bucket",
+                        "dreamcraft_EnrichedBacterialSludge", "dreamcraft_EnrichedBacterialSludge_bucket",
+                        "dreamcraft_FermentedBacterialSludge", "dreamcraft_FermentedBacterialSludge_bucket",
+                        "dreamcraft_NitricAcid", "dreamcraft_NitricAcid_bucket", "dreamcraft_Ammonia",
+                        "dreamcraft_Ammonia_bucket", "dreamcraft_CompressedOxygen",
+                        "dreamcraft_CompressedOxygen_bucket", "dreamcraft_CompressedNitrogen",
+                        "dreamcraft_CompressedNitrogen_bucket", "dreamcraft_Pollution",
+                        "dreamcraft_Pollution_bucket", });
     }
 
     public static void remapAll(List<FMLMissingMappingsEvent.MissingMapping> missingMappings, int startFrom) {

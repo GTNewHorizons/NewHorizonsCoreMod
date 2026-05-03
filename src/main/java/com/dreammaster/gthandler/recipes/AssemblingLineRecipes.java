@@ -330,15 +330,15 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Dyson Swarm Energy Receiver Base Casing
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Circuit_Chip_QPIC.get(1),
+                ItemList.Circuit_Chip_FPIC.get(1),
                 192_000,
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
                 new ItemStack[] { GTUtility.copyAmount(4, ItemRegistry.energyDistributor[9]),
-                        ItemList.Circuit_Chip_QPIC.get(64),
+                        ItemList.Circuit_Chip_FPIC.get(32),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 4),
-                        ItemList.UHV_Coil.get(64), ItemList.UHV_Coil.get(64), },
+                        ItemList.UEV_Coil.get(64), },
                 new FluidStack[] { new FluidStack(FluidRegistry.getFluid("liquid helium"), 50_000),
                         Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                         Materials.UUMatter.getFluid(8_000) },
@@ -410,7 +410,7 @@ public class AssemblingLineRecipes implements Runnable {
                 32,
                 new Object[] { ItemList.Hull_UIV.get(4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 16),
-                        ItemList.Circuit_Chip_QPIC.get(64),
+                        ItemList.Circuit_Chip_FPIC.get(32),
                         new Object[] { OrePrefixes.circuit.get(Materials.UMV), 8L } },
                 new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                         Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
@@ -442,7 +442,7 @@ public class AssemblingLineRecipes implements Runnable {
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
-                new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4),
+                new ItemStack[] { ItemList.Circuit_Chip_FPIC.get(2),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(24),
                         tectech.thing.CustomItemList.eM_Coil.get(4) },
                 new FluidStack[] { Materials.RadoxPolymer.getMolten(3_456), Materials.SuperCoolant.getFluid(16_000),
@@ -458,7 +458,7 @@ public class AssemblingLineRecipes implements Runnable {
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
-                new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4),
+                new ItemStack[] { ItemList.Circuit_Chip_FPIC.get(2),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(24),
                         ItemList.Casing_Coil_AwakenedDraconium.get(4) },
                 new FluidStack[] { Materials.RadoxPolymer.getMolten(3_240), Materials.SuperCoolant.getFluid(16_000),
@@ -1116,9 +1116,9 @@ public class AssemblingLineRecipes implements Runnable {
                         .itemInputs(
                                 ItemList.Machine_Multi_HIPCompressor.get(1),
                                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),
-                                GregtechItemList.Machine_Adv_ImplosionCompressor.get(16),
+                                ItemList.AdvancedImplosionCompressor.get(16),
                                 ItemList.CompressorUIV.get(8L),
-                                GTUtility.copyAmount(4, ItemRegistry.eic.copy()),
+                                ItemList.ElectricImplosionCompressor.get(4),
                                 ItemList.Field_Generator_UEV.get(4),
                                 ItemList.ZPM3.get(2),
                                 new Object[] { OrePrefixes.circuit.get(Materials.UIV), 4 },
@@ -1578,7 +1578,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Antimatter Forge - Antimatter Sequencer - SSASS
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemRefer.Naquadah_Fuel_Refinery.get(1),
+                ItemList.NaquadahFuelRefinery.get(1),
                 512000,
                 2048,
                 8000000,

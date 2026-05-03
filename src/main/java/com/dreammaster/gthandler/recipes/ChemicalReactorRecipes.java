@@ -19,6 +19,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
+import static gtnhlanth.common.register.WerkstoffMaterialPool.Iodine;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -51,16 +52,9 @@ public class ChemicalReactorRecipes implements Runnable {
                 .fluidInputs(Materials.Oxygen.getGas(2000))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChromiumDioxide, 3))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
-
-        // Potassium Hydroxide
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L))
-                .circuit(1).itemOutputs(NHItemList.PotassiumHydroxideDust.get(3))
-                .fluidInputs(Materials.Water.getFluid(3000)).fluidOutputs(Materials.Hydrogen.getGas(1000))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         // Rock Salt
 
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.PotassiumHydroxideDust.get()).circuit(2)
+        GTValues.RA.stdBuilder().itemInputs(Materials.PotassiumHydroxide.getDust(1)).circuit(2)
                 .itemOutputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
@@ -262,6 +256,11 @@ public class ChemicalReactorRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 64))
                 .itemOutputs(ItemList.Circuit_Wafer_PPIC.get(1L)).fluidInputs(Materials.Sunnarium.getMolten(1440L))
                 .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(UniversalChemical);
+
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_QPIC.get(1L), Iodine.get(OrePrefixes.dust, 64))
+                .itemOutputs(ItemList.Circuit_Wafer_FPIC.get(1L))
+                .fluidInputs(Materials.InfinityCatalyst.getMolten(576L)).requiresCleanRoom().duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_UHV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Wafer_CPU.get(1L), GTUtility.copyAmount(16, Ic2Items.carbonFiber))
@@ -519,6 +518,16 @@ public class ChemicalReactorRecipes implements Runnable {
                 .fluidInputs(FluidRegistry.getFluidStack("blood", 1000), FluidRegistry.getFluidStack("netherair", 100))
                 .fluidOutputs(FluidRegistry.getFluidStack("hell_blood", 1000)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_Bioware.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tartarite, 2),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 1),
+                        NHItemList.TCetiESeaweedExtract.get(1))
+                .itemOutputs(ItemList.Circuit_Wafer_APIC.get(1L)).fluidInputs(Materials.DTR.getFluid(1000L))
+                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UEV)
+                .addTo(multiblockChemicalReactorRecipes);
 
         if (Forestry.isModLoaded()) {
             GTValues.RA.stdBuilder()

@@ -23,6 +23,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptJABBA implements IScriptLoader {
@@ -47,51 +48,12 @@ public class ScriptJABBA implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("plankWood", 8), getModItem(Minecraft.ID, "chest", 1))
                 .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(BiomesOPlenty.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ExtraTrees.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "planksFireproof", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "barrel", 1), getModItem(Minecraft.ID, "piston", 1))
-                .circuit(1).itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1)).duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(JABBA.ID, "barrel", 1), getModItem(Minecraft.ID, "sticky_piston", 1)).circuit(1)
+                .itemInputs(getModItem(JABBA.ID, "barrel", 1), new OreDictItemStack("craftingPiston", 1)).circuit(1)
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
 

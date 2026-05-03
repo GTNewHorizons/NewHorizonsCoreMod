@@ -60,6 +60,31 @@ public class ChemicalBathRecipes implements Runnable {
                 .itemOutputs(new ItemStack(Blocks.piston, 1, 0)).fluidInputs(Materials.Chlorine.getGas(10L))
                 .duration(1 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
 
+        // Coated Circuit Board
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(1)).duration(100 * TICKS).eut(8)
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).addTo(chemicalBathRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(1)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Glue.getFluid(72)).addTo(chemicalBathRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(2)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Polyethylene.getMolten(36)).addTo(chemicalBathRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(2)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(18)).addTo(chemicalBathRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(3)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Epoxid.getMolten(18)).addTo(chemicalBathRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1))
+                .itemOutputs(ItemList.Circuit_Board_Basic.get(4)).duration(100 * TICKS).eut(8)
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(9)).addTo(chemicalBathRecipes);
+
         // Cooling Hot Netherrack Bricks
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HotNetherrackBrick.get())
                 .itemOutputs(NHItemList.InfernalBrick.get())

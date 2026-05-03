@@ -108,7 +108,7 @@ public class AutoclaveRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Silicon_Wafer6.get(1L), MaterialsElements.STANDALONE.HYPOGEN.getDust(1))
                 .itemOutputs(ItemList.Circuit_Wafer_Bioware.get(1L)).outputChances(10000)
-                .fluidInputs(Materials.BioMediumSterilized.getFluid(8_000L)).duration(60 * SECONDS)
+                .fluidInputs(Materials.BioMediumSterilized.getFluid(8_000L)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).addTo(autoclaveRecipes);
 
     }

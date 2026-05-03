@@ -1800,7 +1800,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -3548,21 +3548,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
-                .addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
-                .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
-                .addTo(packagerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, 1L))
+                        new OreDictItemStack("plateAnyRubber", 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
                 .addTo(packagerRecipes);

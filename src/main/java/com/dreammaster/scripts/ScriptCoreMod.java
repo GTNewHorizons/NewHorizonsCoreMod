@@ -882,8 +882,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 288)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Void.getMolten(288)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16, 0))
                 .itemOutputs(NHItemList.RawBioFiber.get()).outputChances(3300)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2biomass", 8)).duration(10 * SECONDS).eut(20)
@@ -902,12 +902,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
-                .duration(6 * SECONDS + 8 * TICKS).eut(4).addTo(brewingRecipes);
+                .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
+                .addTo(brewingRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Uranium235, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
-                .duration(6 * SECONDS + 8 * TICKS).eut(4).addTo(brewingRecipes);
+                .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
+                .addTo(brewingRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 288)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV / 2)
@@ -924,8 +924,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(12 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 75)).duration(2 * MINUTES).eut(2)
+        GTValues.RA.stdBuilder().fluidInputs(Materials.EnrichedBacterialSludge.getFluid(750))
+                .fluidOutputs(Materials.FermentedBacterialSludge.getFluid(75)).duration(2 * MINUTES).eut(2)
                 .addTo(fermentingRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1059,7 +1059,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder().circuit(3).fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 10))
+        GTValues.RA.stdBuilder().circuit(3).fluidInputs(Materials.FermentedBacterialSludge.getFluid(10))
                 .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1)).duration(3 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(distilleryRecipes);
         GTValues.RA.stdBuilder()

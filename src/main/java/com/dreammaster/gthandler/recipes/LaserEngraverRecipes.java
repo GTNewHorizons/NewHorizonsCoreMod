@@ -27,6 +27,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class LaserEngraverRecipes implements Runnable {
 
@@ -280,6 +281,43 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.HotProtoHalkonite, 1))
                 .fluidInputs(Materials.Protomatter.getFluid(100L)).duration(10000 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .fluidOutputs(Materials.Antimatter.getFluid(1L)).requiresCleanRoom().addTo(laserEngraverRecipes);
+
+        // APIC+ laser cutting recipes
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_APIC.get(1),
+                        ItemList.EnergisedTesseract.get(1),
+                        NHItemList.ChromaticLens.get(0))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(30L)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_UIV)
+                .itemOutputs(
+                        ItemList.Circuit_Chip_APIC.get(1),
+                        WerkstoffMaterialPool.SeaweedAsh.get(OrePrefixes.dust, 2))
+                .outputChances(10000, 6700).requiresCleanRoom().addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_APIC.get(1),
+                        GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(15L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Circuit_Chip_APIC.get(2)).requiresCleanRoom()
+                .addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_ZPIC.get(1),
+                        GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(20L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).itemOutputs(ItemList.Circuit_Chip_ZPIC.get(2)).requiresCleanRoom()
+                .addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_YPIC.get(1),
+                        GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(25L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).itemOutputs(ItemList.Circuit_Chip_YPIC.get(2)).requiresCleanRoom()
+                .addTo(laserEngraverRecipes);
 
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT

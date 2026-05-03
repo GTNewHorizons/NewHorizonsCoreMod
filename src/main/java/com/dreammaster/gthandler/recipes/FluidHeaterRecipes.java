@@ -21,11 +21,11 @@ public class FluidHeaterRecipes implements Runnable {
                 .fluidOutputs(GTModHandler.getSuperHeatedSteam(3840)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(fluidHeaterRecipes);
         if (PamsHarvestCraft.isModLoaded()) {
-            GTValues.RA.stdBuilder().circuit(24).fluidInputs(getFluidStack("milk", 250))
+            GTValues.RA.stdBuilder().fluidInputs(getFluidStack("milk", 250))
                     .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0)).duration(2 * SECONDS)
                     .eut(TierEU.RECIPE_ULV).addTo(fluidHeaterRecipes);
             if (Automagy.isModLoaded()) {
-                GTValues.RA.stdBuilder().circuit(24).fluidInputs(getFluidStack("fluidmilk", 250))
+                GTValues.RA.stdBuilder().fluidInputs(getFluidStack("fluidmilk", 250))
                         .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0)).duration(2 * SECONDS)
                         .eut(TierEU.RECIPE_ULV).addTo(fluidHeaterRecipes);
             }

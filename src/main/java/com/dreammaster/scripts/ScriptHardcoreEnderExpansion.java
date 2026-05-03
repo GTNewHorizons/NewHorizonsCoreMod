@@ -16,6 +16,7 @@ import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.latheRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.sifterRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -25,6 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.chisel.ChiselHelper;
 
@@ -780,6 +782,57 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 0))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 15)).eut(TierEU.RECIPE_HV)
                 .duration(10 * MINUTES).addTo(chemicalDehydratorRecipes);
+
+        // Sifter decorative flora
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 0))
+                .itemOutputs(
+                        getModItem(HardcoreEnderExpansion.ID, "dry_splinter", 1, 0),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 2),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 3),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 4),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 5))
+                .outputChances(3500, 3500, 3500, 3500, 3500).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(sifterRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 1))
+                .itemOutputs(
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 6),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 10),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 11),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 12))
+                .outputChances(3500, 3500, 3500, 3500).duration(2 * MINUTES).eut(TierEU.RECIPE_HV).addTo(sifterRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 2))
+                .itemOutputs(
+                        getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 0),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 13),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 7),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 8),
+                        getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 9))
+                .outputChances(3500, 3500, 3500, 3500, 3500).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(sifterRecipes);
+
+        // Auricion
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(HardcoreEnderExpansion.ID, "transference_gem", 1, 0),
+                        getModItem(HardcoreEnderExpansion.ID, "stardust", 32, 0),
+                        getModItem(HardcoreEnderExpansion.ID, "obsidian_fragment", 16, 0),
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 64, 0),
+                        getModItem(HardcoreEnderExpansion.ID, "essence", 64, 1))
+                .circuit(1).fluidInputs(new FluidStack(FluidRegistry.getFluid("endergoo"), 5790))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "auricion", 1, 0)).duration(150 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+
+        // Stardust
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "stardust_ore", 1, 0))
+                .itemOutputs(
+                        getModItem(HardcoreEnderExpansion.ID, "stardust", 3, 0),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endstone, 1))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
 
     }
 }

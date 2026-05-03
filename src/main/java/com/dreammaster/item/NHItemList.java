@@ -379,7 +379,6 @@ public enum NHItemList {
     PhobosStoneDust("PhobosStoneDust", SPACE),
     PlutoIceDust("PlutoIceDust", SPACE),
     PlutoStoneDust("PlutoStoneDust", SPACE),
-    PotassiumHydroxideDust("PotassiumHydroxideDust", GENERIC),
     PrimordialPearlFragment("PrimordialPearlFragment", THAUMCRAFT),
     ProteusStoneDust("ProteusStoneDust", SPACE),
     PulsatingSpatialCoreChip("PulsatingSpatialCoreChip", CIRCUITS),
@@ -571,7 +570,8 @@ public enum NHItemList {
     ChevronHarmonic("HarmonicChevron", SPACE),
     FramePartHarmonic("HarmonicFramePart", SPACE),
     StargateDustAncients("StargateDustAncients", SPACE),
-    StargateCrystalAncients("StargateCrystalAncients", SPACE);
+    StargateCrystalAncients("StargateCrystalAncients", SPACE),
+    PlanckCircuit("PlanckCircuit", SPACE);
 
     static {
         CoinChunkloaderTierI.item.setMaxStackSize(4);

@@ -101,7 +101,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator.registerOre("ingotCokeOvenBrick", NHItemList.CokeOvenBrick.get(1));
         GTOreDictUnificator.registerOre("leather", NHItemList.ArtificialLeather.get(1));
         GTOreDictUnificator.registerOre("itemLeather", NHItemList.ArtificialLeather.get(1));
-        GTOreDictUnificator.registerOre("dustPotassiumHydroxide", NHItemList.PotassiumHydroxideDust.get(1));
 
         GTOreDictUnificator.registerOre(OrePrefixes.stickLong, Materials.Obsidian, NHItemList.LongObsidianRod.get());
 
@@ -267,11 +266,13 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator
                 .registerOre(OrePrefixes.log, Materials.Wood, getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
 
-        // oreDict UMV and UXV circuits
+        // oreDict UMV - MAX circuits
         GTOreDictUnificator.registerOre(OrePrefixes.circuit, Materials.UMV, NHItemList.PikoCircuit.get());
         GTOreDictUnificator.registerOre(OrePrefixes.circuit, Materials.UXV, NHItemList.QuantumCircuit.get());
+        GTOreDictUnificator.registerOre(OrePrefixes.circuit, Materials.MAX, NHItemList.PlanckCircuit.get());
         GTOreDictUnificator.addToBlacklist(NHItemList.PikoCircuit.get());
         GTOreDictUnificator.addToBlacklist(NHItemList.QuantumCircuit.get());
+        GTOreDictUnificator.addToBlacklist(NHItemList.PlanckCircuit.get());
 
         // Add ore dictionary entries for sand and red sand to craft unfired coke oven bricks.
         GTOreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 0));

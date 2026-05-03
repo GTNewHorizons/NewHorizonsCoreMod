@@ -11,6 +11,7 @@ import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.mixerNonCellRecipes;
@@ -233,6 +234,14 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0))
                 .fluidInputs(Materials.Helium3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TwilightForest.ID, "item.fieryBlood", 1, 0),
+                        getModItem(MagicBees.ID, "comb", 4, 7))
+                .itemOutputs(getModItem(TwilightForest.ID, "item.fieryTears", 1, 0))
+                .fluidInputs(FluidRegistry.getFluidStack("hell_blood", 1000)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "item.carminite", 9, 0))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.CarminiteBlock", 1, 0)).duration(15 * SECONDS).eut(2)
