@@ -96,6 +96,7 @@ public class TiCoLoader {
     private static void registerGravelOrePosteaTransformers() {
         ItemStackReplacementManager.addSimpleReplacement(
                 "TConstruct:GravelOre",
+                4,
                 Item.getItemFromBlock(BlockList.ZincGravelOre.block),
                 0,
                 false);

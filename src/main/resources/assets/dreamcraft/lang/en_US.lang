@@ -299,7 +299,6 @@ item.OvenGlove_1_3.name=BBQ Glove (Right hand)
 item.OvenGlove.desc.1=Protecting your fingers since 1890
 item.OvenGlove.desc.2=Durability: %s/%s
 item.OvenGlove.desc.broken=This glove is too damaged to protect you. You need to repair it.
-item.PotassiumHydroxideDust.name=Potassium Hydroxide Dust
 item.ElectrotineWire.name=Electrotine Wire
 item.AluminiumIronPlate.name=Aluminium-Iron Plate
 item.BedrockiumIronPlate.name=Bedrockium-Iron Plate
