@@ -971,8 +971,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .duration(30 * SECONDS).addTo(AssemblyLine);
 
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1))
-                .metadata(SCANNING, new Scanning(1 * MINUTES + 40 * SECONDS, TierEU.RECIPE_LuV))
-                .itemInputs(
+                .metadata(SCANNING, new Scanning(1 * MINUTES + 40 * SECONDS, TierEU.RECIPE_LuV)).itemInputs(
                         // Crafting Input Bus
                         ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1),
                         // 16-Core Co-Processing Unit
@@ -982,12 +981,8 @@ public class AssemblingLineRecipes implements Runnable {
                         // Wireless Connector
                         getModItem(AE2Stuff.ID, "Wireless", 2, 0),
                         // Sensor (UV)
-                        ItemList.Sensor_UV.get(1)
-                )
-                .fluidInputs(
-                        new FluidStack(solderIndalloy, 1152),
-                        Materials.Lubricant.getFluid(2000)
-                )
+                        ItemList.Sensor_UV.get(1))
+                .fluidInputs(new FluidStack(solderIndalloy, 1152), Materials.Lubricant.getFluid(2000))
                 .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave_ItemOnly.get(1L)).eut(TierEU.RECIPE_UV)
                 .duration(15 * SECONDS).addTo(AssemblyLine);
 
