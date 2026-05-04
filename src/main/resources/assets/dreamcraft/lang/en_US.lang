@@ -1833,3 +1833,22 @@ dreamcraft.customdrops.debug.on=Death-Debug is now enabled
 dreamcraft.customdrops.debug.off=Death-Debug is now disabled
 
 fluid.Concrete=Concrete
+
+# BW Bio Name
+bw.bioname.barnadafis_arboriatoris=Barnadafis Arboriatoris
+bw.bioname.tcetieis_fucus_serratus=TCetiEis Fucus Serratus
+bw.bioname.xenoxene_xenoxsis=Xenoxene Xenoxsis
+bw.bioname.ovumbac=Ova Evolutionis
+bw.bioname.ova_evolutionis=Ova Evolutionis
+bw.bioname.stemcellbac=Derivantur Cellula Evolutionis
+bw.bioname.derivantur_cellula_evolutionis=Derivantur Cellula Evolutionis
+bw.bioname.biocellbac=Cellula Biologicum Evolutione
+bw.bioname.cellula_biologicum_evolutione=Cellula Biologicum Evolutione
+bw.bioname.binnigrowthmedium=Binni Growth Medium
+bw.bioname.binni_growth_medium=Binni Growth Medium
+bw.bioname.binnibacteria=Binni Bacteria
+bw.bioname.binni_bacteria=Binni Bacteria
+bw.bioname.bacterialsludgebac=Corynebacterium Sludge Marsensis
+bw.bioname.corynebacterium_sludge_marsensis=Corynebacterium Sludge Marsensis
+bw.bioname.mutagen=Mutagen Bacteria a Spatio
+bw.bioname.mutagen_bacteria_a_spatio=Mutagen Bacteria a Spatio
