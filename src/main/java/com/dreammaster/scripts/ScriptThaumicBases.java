@@ -19,7 +19,6 @@ import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,10 +30,12 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -163,8 +164,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Relocator",
                 getModItem(ThaumicBases.ID, "relocator", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("aqua"), 5),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.EARTH, 10).add(Aspect.WATER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -189,8 +189,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Relocator",
                 getModItem(ThaumicBases.ID, "relocator", 1, 6),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("aqua"), 5),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.EARTH, 10).add(Aspect.WATER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -216,9 +215,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.AdvAlc",
                 getModItem(ThaumicBases.ID, "advAlchFurnace", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("ignis"), 48).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("machina"), 16).add(Aspect.getAspect("metallum"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 24),
+                new AspectList().add(Aspect.FIRE, 48).add(Aspect.ENERGY, 32).add(Aspect.MECHANISM, 16)
+                        .add(Aspect.METAL, 16).add(Aspect.MAGIC, 24),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 0),
                 getModItem(Railcraft.ID, "machine.beta", 1, 4),
                 OrePrefixes.plateDense.get(Materials.Steel),
@@ -230,9 +228,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.ThaumicAnvil",
                 getModItem(ThaumicBases.ID, "thaumicAnvil", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("aqua"), 50).add(Aspect.getAspect("terra"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.WATER, 50).add(Aspect.EARTH, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -258,9 +255,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "ROD_tbthaumium",
                 getModItem(ThaumicBases.ID, "resource", 1, 3),
                 6,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("auram"), 16)
-                        .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("vitreus"), 16)
-                        .add(Aspect.getAspect("instrumentum"), 32),
+                new AspectList().add(Aspect.MAGIC, 32).add(Aspect.AURA, 16).add(Aspect.METAL, 16)
+                        .add(Aspect.CRYSTAL, 16).add(Aspect.TOOL, 32),
                 OrePrefixes.stick.get(Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 OrePrefixes.dust.get(Materials.Thaumium),
@@ -277,8 +273,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.BloodyRobes",
                 getModItem(ThaumicBases.ID, "bloodyChest", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.AIR, 25).add(Aspect.FIRE, 25).add(Aspect.WATER, 25).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -303,8 +298,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.BloodyRobes",
                 getModItem(ThaumicBases.ID, "bloodyLeggings", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.AIR, 25).add(Aspect.FIRE, 25).add(Aspect.WATER, 25).add(Aspect.ENTROPY, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -329,8 +323,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.BloodyRobes",
                 getModItem(ThaumicBases.ID, "bloodyBoots", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("terra"), 25),
+                new AspectList().add(Aspect.AIR, 25).add(Aspect.FIRE, 25).add(Aspect.WATER, 25).add(Aspect.EARTH, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -349,8 +342,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Spike.Iron",
                 getModItem(ThaumicBases.ID, "spike", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("terra"), 10),
+                new AspectList().add(Aspect.ENTROPY, 20).add(Aspect.FIRE, 20).add(Aspect.AIR, 15).add(Aspect.EARTH, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -373,8 +365,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Spike.Thaumic",
                 getModItem(ThaumicBases.ID, "spike", 1, 2),
-                new AspectList().add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.ENTROPY, 50).add(Aspect.FIRE, 50).add(Aspect.AIR, 30).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -398,9 +389,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.Spike.Void",
                 getModItem(ThaumicBases.ID, "spike", 1, 4),
                 5,
-                new AspectList().add(getAspect("telum"), 32).add(getAspect("instrumentum"), 32)
-                        .add(getAspect("tenebrae"), 16).add(getAspect("alienis"), 16).add(getAspect("metallum"), 16)
-                        .add(getAspect("mortuus"), 16),
+                new AspectList().add(Aspect.WEAPON, 32).add(Aspect.TOOL, 32).add(Aspect.DARKNESS, 16)
+                        .add(Aspect.ELDRITCH, 16).add(Aspect.METAL, 16).add(Aspect.DEATH, 16),
                 getModItem(ThaumicBases.ID, "spike", 1, 2),
                 plate.get(Void),
                 createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}"),
@@ -415,10 +405,9 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.VoidAnvil",
                 getModItem(ThaumicBases.ID, "voidAnvil", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("telum"), 32).add(Aspect.getAspect("instrumentum"), 32)
-                        .add(Aspect.getAspect("fabrico"), 32).add(Aspect.getAspect("alienis"), 32)
-                        .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("vacuos"), 16)
-                        .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.WEAPON, 32).add(Aspect.TOOL, 32).add(Aspect.CRAFT, 32)
+                        .add(Aspect.ELDRITCH, 32).add(Aspect.DARKNESS, 16).add(Aspect.VOID, 16).add(Aspect.METAL, 16)
+                        .add(Aspect.MAGIC, 16),
                 getModItem(ThaumicBases.ID, "thaumicAnvil", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0),
@@ -433,11 +422,9 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.VoidSeed",
                 getModItem(ThaumicBases.ID, "voidSeed", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("messis"), 64).add(Aspect.getAspect("herba"), 64)
-                        .add(Aspect.getAspect("victus"), 32).add(Aspect.getAspect("auram"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("alienis"), 16)
-                        .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("desidia"), 8)
-                        .add(Aspect.getAspect("nebrisum"), 8),
+                new AspectList().add(Aspect.CROP, 64).add(Aspect.PLANT, 64).add(Aspect.LIFE, 32).add(Aspect.AURA, 32)
+                        .add(Aspect.MAGIC, 16).add(Aspect.ELDRITCH, 16).add(Aspect.DARKNESS, 16)
+                        .add(DarkAspects.SLOTH, 8).add(TCAspects.NEBRISUM.getAspect(), 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
                 getModItem(ThaumicBases.ID, "lazulliaSeeds", 1, 0),
                 getModItem(ThaumicBases.ID, "lucriteSeeds", 1, 0),
@@ -455,9 +442,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "CAP_thauminite",
                 getModItem(ThaumicBases.ID, "resource", 1, 2),
                 6,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("auram"), 16)
-                        .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("vitreus"), 16)
-                        .add(Aspect.getAspect("instrumentum"), 32),
+                new AspectList().add(Aspect.MAGIC, 32).add(Aspect.AURA, 16).add(Aspect.METAL, 16)
+                        .add(Aspect.CRYSTAL, 16).add(Aspect.TOOL, 32),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 2),
                 getModItem(ThaumicBases.ID, "resource", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
@@ -472,8 +458,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.Foci.Experience",
                 getModItem(ThaumicBases.ID, "fociExperience", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("lucrum"), 32).add(Aspect.getAspect("vitreus"), 32)
-                        .add(Aspect.getAspect("cognitio"), 16).add(Aspect.getAspect("permutatio"), 16),
+                new AspectList().add(Aspect.GREED, 32).add(Aspect.CRYSTAL, 32).add(Aspect.MIND, 16)
+                        .add(Aspect.EXCHANGE, 16),
                 OrePrefixes.lens.get(Materials.Emerald),
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
@@ -486,8 +472,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.Foci.Activation",
                 getModItem(ThaumicBases.ID, "fociActivation", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("vitreus"), 32)
-                        .add(Aspect.getAspect("iter"), 16).add(Aspect.getAspect("sensus"), 16),
+                new AspectList().add(Aspect.MOTION, 32).add(Aspect.CRYSTAL, 32).add(Aspect.TRAVEL, 16)
+                        .add(Aspect.SENSES, 16),
                 OrePrefixes.lens.get(Materials.InfusedOrder),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
                 ItemList.Emitter_LV.get(1L),
@@ -499,8 +485,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.Foci.Drain",
                 getModItem(ThaumicBases.ID, "fociDrain", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("perditio"), 32)
-                        .add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.VOID, 32).add(Aspect.ENTROPY, 32).add(Aspect.WATER, 16),
                 OrePrefixes.lens.get(Materials.InfusedWater),
                 getModItem(Minecraft.ID, "bucket", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
@@ -514,9 +499,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.Foci.Flux",
                 getModItem(ThaumicBases.ID, "fociFlux", 1, 0),
                 7,
-                new AspectList().add(Aspect.getAspect("vitium"), 32).add(Aspect.getAspect("perditio"), 32)
-                        .add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("sano"), 16),
+                new AspectList().add(Aspect.TAINT, 32).add(Aspect.ENTROPY, 32).add(Aspect.ORDER, 16)
+                        .add(Aspect.MAGIC, 16).add(Aspect.HEAL, 16),
                 OrePrefixes.lens.get(Materials.EnderEye),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 4),
@@ -529,8 +513,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.CryingObs",
                 getModItem(ThaumicBases.ID, "cryingObsidian", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("vinculum"), 32)
-                        .add(Aspect.getAspect("desidia"), 16).add(Aspect.getAspect("sensus"), 16),
+                new AspectList().add(Aspect.TRAVEL, 32).add(Aspect.TRAP, 32).add(DarkAspects.SLOTH, 16)
+                        .add(Aspect.SENSES, 16),
                 GregtechItemList.DoubleCompressedObsidian.get(1),
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8),
                 getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0),
@@ -540,8 +524,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.TaintFlask",
                 getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("vitium"), 64).add(Aspect.getAspect("venenum"), 32)
-                        .add(Aspect.getAspect("perditio"), 16),
+                new AspectList().add(Aspect.TAINT, 64).add(Aspect.POISON, 32).add(Aspect.ENTROPY, 16),
                 getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 7),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
@@ -552,8 +535,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.EntityDec",
                 getModItem(ThaumicBases.ID, "entityDeconstructor", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("cognitio"), 32).add(Aspect.getAspect("spiritus"), 24)
-                        .add(Aspect.getAspect("mortuus"), 16).add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.MIND, 32).add(Aspect.SOUL, 24).add(Aspect.DEATH, 16).add(Aspect.MAGIC, 16),
                 getModItem(Thaumcraft.ID, "blockTable", 1, 14),
                 getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0),
                 OrePrefixes.lens.get(Materials.InfusedAir),
@@ -567,9 +549,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "ROD_tbvoid",
                 getModItem(ThaumicBases.ID, "resource", 1, 4),
                 8,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("auram"), 32)
-                        .add(Aspect.getAspect("vitreus"), 16).add(Aspect.getAspect("instrumentum"), 32)
-                        .add(Aspect.getAspect("potentia"), 40).add(Aspect.getAspect("vacuos"), 24),
+                new AspectList().add(Aspect.MAGIC, 64).add(Aspect.AURA, 32).add(Aspect.CRYSTAL, 16).add(Aspect.TOOL, 32)
+                        .add(Aspect.ENERGY, 40).add(Aspect.VOID, 24),
                 getModItem(ThaumicBases.ID, "resource", 1, 3),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 7),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 7),
@@ -584,9 +565,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeMan",
                 getModItem(ThaumicBases.ID, "nodeManipulator", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("auram"), 48)
-                        .add(Aspect.getAspect("praecantatio"), 40).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 24),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.AURA, 48).add(Aspect.MAGIC, 40)
+                        .add(Aspect.ENERGY, 32).add(Aspect.VOID, 32).add(Aspect.DARKNESS, 24),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11),
                 getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0),
                 ItemList.Emitter_EV.get(1L),
@@ -604,9 +584,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeLinker",
                 getModItem(ThaumicBases.ID, "nodeLinker", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("machina"), 48)
-                        .add(Aspect.getAspect("instrumentum"), 40).add(Aspect.getAspect("ordo"), 32)
-                        .add(Aspect.getAspect("electrum"), 32),
+                new AspectList().add(Aspect.ENERGY, 64).add(Aspect.MECHANISM, 48).add(Aspect.TOOL, 40)
+                        .add(Aspect.ORDER, 32).add(TCAspects.ELECTRUM.getAspect(), 32),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14),
                 ItemList.Emitter_MV.get(1L),
@@ -621,11 +600,9 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.Overchanter",
                 getModItem(ThaumicBases.ID, "overchanter", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("aqua"), 32)
-                        .add(Aspect.getAspect("terra"), 32).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("perditio"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("machina"), 32)
-                        .add(Aspect.getAspect("cognitio"), 32),
+                new AspectList().add(Aspect.AIR, 32).add(Aspect.WATER, 32).add(Aspect.EARTH, 32).add(Aspect.FIRE, 32)
+                        .add(Aspect.ORDER, 32).add(Aspect.ENTROPY, 32).add(Aspect.MAGIC, 32).add(Aspect.MECHANISM, 32)
+                        .add(Aspect.MIND, 32),
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 0),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 1),
@@ -641,9 +618,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Iron",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("aqua"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.FIRE, 30).add(Aspect.WATER, 30).add(Aspect.EARTH, 30)
+                        .add(Aspect.ORDER, 30).add(Aspect.ENTROPY, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -668,9 +644,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Gold",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 60).add(Aspect.getAspect("ignis"), 60)
-                        .add(Aspect.getAspect("aqua"), 60).add(Aspect.getAspect("terra"), 60)
-                        .add(Aspect.getAspect("ordo"), 60).add(Aspect.getAspect("perditio"), 60),
+                new AspectList().add(Aspect.AIR, 60).add(Aspect.FIRE, 60).add(Aspect.WATER, 60).add(Aspect.EARTH, 60)
+                        .add(Aspect.ORDER, 60).add(Aspect.ENTROPY, 60),
                 "abc",
                 "def",
                 "ghi",
@@ -695,9 +670,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Greatwood",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 90).add(Aspect.getAspect("ignis"), 90)
-                        .add(Aspect.getAspect("aqua"), 90).add(Aspect.getAspect("terra"), 90)
-                        .add(Aspect.getAspect("ordo"), 90).add(Aspect.getAspect("perditio"), 90),
+                new AspectList().add(Aspect.AIR, 90).add(Aspect.FIRE, 90).add(Aspect.WATER, 90).add(Aspect.EARTH, 90)
+                        .add(Aspect.ORDER, 90).add(Aspect.ENTROPY, 90),
                 "abc",
                 "def",
                 "ghi",
@@ -722,9 +696,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Reed",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 5),
-                new AspectList().add(Aspect.getAspect("aer"), 120).add(Aspect.getAspect("ignis"), 120)
-                        .add(Aspect.getAspect("aqua"), 120).add(Aspect.getAspect("terra"), 120)
-                        .add(Aspect.getAspect("ordo"), 120).add(Aspect.getAspect("perditio"), 120),
+                new AspectList().add(Aspect.AIR, 120).add(Aspect.FIRE, 120).add(Aspect.WATER, 120)
+                        .add(Aspect.EARTH, 120).add(Aspect.ORDER, 120).add(Aspect.ENTROPY, 120),
                 "abc",
                 "def",
                 "ghi",
@@ -749,9 +722,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Bone",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 6),
-                new AspectList().add(Aspect.getAspect("aer"), 120).add(Aspect.getAspect("ignis"), 120)
-                        .add(Aspect.getAspect("aqua"), 120).add(Aspect.getAspect("terra"), 120)
-                        .add(Aspect.getAspect("ordo"), 120).add(Aspect.getAspect("perditio"), 120),
+                new AspectList().add(Aspect.AIR, 120).add(Aspect.FIRE, 120).add(Aspect.WATER, 120)
+                        .add(Aspect.EARTH, 120).add(Aspect.ORDER, 120).add(Aspect.ENTROPY, 120),
                 "abc",
                 "def",
                 "ghi",
@@ -776,9 +748,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Obsidian",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 7),
-                new AspectList().add(Aspect.getAspect("aer"), 120).add(Aspect.getAspect("ignis"), 120)
-                        .add(Aspect.getAspect("aqua"), 120).add(Aspect.getAspect("terra"), 120)
-                        .add(Aspect.getAspect("ordo"), 120).add(Aspect.getAspect("perditio"), 120),
+                new AspectList().add(Aspect.AIR, 120).add(Aspect.FIRE, 120).add(Aspect.WATER, 120)
+                        .add(Aspect.EARTH, 120).add(Aspect.ORDER, 120).add(Aspect.ENTROPY, 120),
                 "abc",
                 "def",
                 "ghi",
@@ -803,9 +774,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Blaze",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 8),
-                new AspectList().add(Aspect.getAspect("aer"), 120).add(Aspect.getAspect("ignis"), 120)
-                        .add(Aspect.getAspect("aqua"), 120).add(Aspect.getAspect("terra"), 120)
-                        .add(Aspect.getAspect("ordo"), 120).add(Aspect.getAspect("perditio"), 120),
+                new AspectList().add(Aspect.AIR, 120).add(Aspect.FIRE, 120).add(Aspect.WATER, 120)
+                        .add(Aspect.EARTH, 120).add(Aspect.ORDER, 120).add(Aspect.ENTROPY, 120),
                 "abc",
                 "def",
                 "ghi",
@@ -830,9 +800,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Ice",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 9),
-                new AspectList().add(Aspect.getAspect("aer"), 120).add(Aspect.getAspect("ignis"), 120)
-                        .add(Aspect.getAspect("aqua"), 120).add(Aspect.getAspect("terra"), 120)
-                        .add(Aspect.getAspect("ordo"), 120).add(Aspect.getAspect("perditio"), 120),
+                new AspectList().add(Aspect.AIR, 120).add(Aspect.FIRE, 120).add(Aspect.WATER, 120)
+                        .add(Aspect.EARTH, 120).add(Aspect.ORDER, 120).add(Aspect.ENTROPY, 120),
                 "abc",
                 "def",
                 "ghi",
@@ -857,9 +826,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Quartz",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 10),
-                new AspectList().add(Aspect.getAspect("aer"), 120).add(Aspect.getAspect("ignis"), 120)
-                        .add(Aspect.getAspect("aqua"), 120).add(Aspect.getAspect("terra"), 120)
-                        .add(Aspect.getAspect("ordo"), 120).add(Aspect.getAspect("perditio"), 120),
+                new AspectList().add(Aspect.AIR, 120).add(Aspect.FIRE, 120).add(Aspect.WATER, 120)
+                        .add(Aspect.EARTH, 120).add(Aspect.ORDER, 120).add(Aspect.ENTROPY, 120),
                 "abc",
                 "def",
                 "ghi",
@@ -884,9 +852,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Thaumium",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 3),
-                new AspectList().add(Aspect.getAspect("aer"), 135).add(Aspect.getAspect("ignis"), 135)
-                        .add(Aspect.getAspect("aqua"), 135).add(Aspect.getAspect("terra"), 135)
-                        .add(Aspect.getAspect("ordo"), 135).add(Aspect.getAspect("perditio"), 135),
+                new AspectList().add(Aspect.AIR, 135).add(Aspect.FIRE, 135).add(Aspect.WATER, 135)
+                        .add(Aspect.EARTH, 135).add(Aspect.ORDER, 135).add(Aspect.ENTROPY, 135),
                 "abc",
                 "def",
                 "ghi",
@@ -911,9 +878,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Silverwood",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 4),
-                new AspectList().add(Aspect.getAspect("aer"), 150).add(Aspect.getAspect("ignis"), 150)
-                        .add(Aspect.getAspect("aqua"), 150).add(Aspect.getAspect("terra"), 150)
-                        .add(Aspect.getAspect("ordo"), 150).add(Aspect.getAspect("perditio"), 150),
+                new AspectList().add(Aspect.AIR, 150).add(Aspect.FIRE, 150).add(Aspect.WATER, 150)
+                        .add(Aspect.EARTH, 150).add(Aspect.ORDER, 150).add(Aspect.ENTROPY, 150),
                 "abc",
                 "def",
                 "ghi",
@@ -938,9 +904,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Void",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 11),
-                new AspectList().add(Aspect.getAspect("aer"), 150).add(Aspect.getAspect("ignis"), 150)
-                        .add(Aspect.getAspect("aqua"), 150).add(Aspect.getAspect("terra"), 150)
-                        .add(Aspect.getAspect("ordo"), 150).add(Aspect.getAspect("perditio"), 150),
+                new AspectList().add(Aspect.AIR, 150).add(Aspect.FIRE, 150).add(Aspect.WATER, 150)
+                        .add(Aspect.EARTH, 150).add(Aspect.ORDER, 150).add(Aspect.ENTROPY, 150),
                 "abc",
                 "def",
                 "ghi",
@@ -966,10 +931,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.Bracelet.Primal",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 12),
                 10,
-                new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("ignis"), 64)
-                        .add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("terra"), 64)
-                        .add(Aspect.getAspect("ordo"), 64).add(Aspect.getAspect("perditio"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("alienis"), 32),
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.FIRE, 64).add(Aspect.WATER, 64).add(Aspect.EARTH, 64)
+                        .add(Aspect.ORDER, 64).add(Aspect.ENTROPY, 64).add(Aspect.MAGIC, 32).add(Aspect.ELDRITCH, 32),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 4),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4),
                 NHItemList.SnowQueenBlood.get(),
@@ -987,9 +950,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Bright",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("auram"), 256).add(Aspect.getAspect("lux"), 192)
-                        .add(Aspect.getAspect("potentia"), 128).add(Aspect.getAspect("superbia"), 64)
-                        .add(Aspect.getAspect("nebrisum"), 32),
+                new AspectList().add(Aspect.AURA, 256).add(Aspect.LIGHT, 192).add(Aspect.ENERGY, 128)
+                        .add(DarkAspects.PRIDE, 64).add(TCAspects.NEBRISUM.getAspect(), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0),
@@ -1003,8 +965,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Destr",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 1),
                 8,
-                new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("perditio"), 96)
-                        .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("mortuus"), 32),
+                new AspectList().add(Aspect.AURA, 128).add(Aspect.ENTROPY, 96).add(Aspect.VOID, 64)
+                        .add(Aspect.DEATH, 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 5),
@@ -1018,8 +980,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Efficiency",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 2),
                 7,
-                new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("potentia"), 96)
-                        .add(Aspect.getAspect("electrum"), 64).add(Aspect.getAspect("machina"), 64),
+                new AspectList().add(Aspect.AURA, 128).add(Aspect.ENERGY, 96).add(TCAspects.ELECTRUM.getAspect(), 64)
+                        .add(Aspect.MECHANISM, 64),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 1),
@@ -1033,9 +995,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Hunger",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 3),
                 10,
-                new AspectList().add(Aspect.getAspect("auram"), 256).add(Aspect.getAspect("fames"), 192)
-                        .add(Aspect.getAspect("lucrum"), 128).add(Aspect.getAspect("vacuos"), 96)
-                        .add(Aspect.getAspect("gula"), 64),
+                new AspectList().add(Aspect.AURA, 256).add(Aspect.HUNGER, 192).add(Aspect.GREED, 128)
+                        .add(Aspect.VOID, 96).add(DarkAspects.GLUTTONY, 64),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0),
@@ -1049,8 +1010,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Unstable",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 4),
                 8,
-                new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("alienis"), 96)
-                        .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("perditio"), 32),
+                new AspectList().add(Aspect.AURA, 128).add(Aspect.ELDRITCH, 96).add(Aspect.VOID, 64)
+                        .add(Aspect.ENTROPY, 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Minecraft.ID, "ender_pearl", 1, 0),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 2),
@@ -1064,8 +1025,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Purity",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 5),
                 8,
-                new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("sano"), 96)
-                        .add(Aspect.getAspect("victus"), 64).add(Aspect.getAspect("vitreus"), 32),
+                new AspectList().add(Aspect.AURA, 128).add(Aspect.HEAL, 96).add(Aspect.LIFE, 64)
+                        .add(Aspect.CRYSTAL, 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 6),
@@ -1079,8 +1040,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Sinister",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 6),
                 9,
-                new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("tenebrae"), 96)
-                        .add(Aspect.getAspect("exanimis"), 64).add(Aspect.getAspect("spiritus"), 32),
+                new AspectList().add(Aspect.AURA, 128).add(Aspect.DARKNESS, 96).add(Aspect.UNDEAD, 64)
+                        .add(Aspect.SOUL, 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Thaumcraft.ID, "ItemCompassStone", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1),
@@ -1094,8 +1055,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Speed",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 7),
                 8,
-                new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("potentia"), 96)
-                        .add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("aer"), 32),
+                new AspectList().add(Aspect.AURA, 128).add(Aspect.ENERGY, 96).add(Aspect.MOTION, 64)
+                        .add(Aspect.AIR, 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Minecraft.ID, "sugar", 1, 0),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 0),
@@ -1109,8 +1070,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Stability",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 8),
                 7,
-                new AspectList().add(Aspect.getAspect("auram"), 128).add(Aspect.getAspect("cognitio"), 96)
-                        .add(Aspect.getAspect("instrumentum"), 64).add(Aspect.getAspect("ordo"), 32),
+                new AspectList().add(Aspect.AURA, 128).add(Aspect.MIND, 96).add(Aspect.TOOL, 64).add(Aspect.ORDER, 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 4),
@@ -1124,9 +1084,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.NodeFoci.Taint",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 9),
                 10,
-                new AspectList().add(Aspect.getAspect("auram"), 256).add(Aspect.getAspect("vitium"), 192)
-                        .add(Aspect.getAspect("venenum"), 128).add(Aspect.getAspect("perditio"), 64)
-                        .add(Aspect.getAspect("strontio"), 32),
+                new AspectList().add(Aspect.AURA, 256).add(Aspect.TAINT, 192).add(Aspect.POISON, 128)
+                        .add(Aspect.ENTROPY, 64).add(TCAspects.STRONTIO.getAspect(), 32),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 11),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 7),
@@ -1140,44 +1099,38 @@ public class ScriptThaumicBases implements IScriptLoader {
                 "TB.SM",
                 getModItem(Thaumcraft.ID, "ItemResource", 2, 14),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                new AspectList().add(Aspect.getAspect("aer"), 4).add(Aspect.getAspect("aqua"), 4)
-                        .add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("praecantatio"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("perditio"), 4)
-                        .add(Aspect.getAspect("terra"), 4));
+                new AspectList().add(Aspect.AIR, 4).add(Aspect.WATER, 4).add(Aspect.FIRE, 4).add(Aspect.MAGIC, 4)
+                        .add(Aspect.ORDER, 4).add(Aspect.ENTROPY, 4).add(Aspect.EARTH, 4));
         ThaumcraftApi.addCrucibleRecipe(
                 "TB.Amber",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 6),
                 getModItem(Minecraft.ID, "sapling", 1, 1),
-                new AspectList().add(Aspect.getAspect("vinculum"), 4));
+                new AspectList().add(Aspect.TRAP, 4));
         ThaumcraftApi.addCrucibleRecipe(
                 "TB.Quicksilver",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
-                new AspectList().add(Aspect.getAspect("ordo"), 1).add(Aspect.getAspect("venenum"), 1));
+                new AspectList().add(Aspect.ORDER, 1).add(Aspect.POISON, 1));
         CrucibleRecipe leatherHelmetBP = ThaumcraftApi.addCrucibleRecipe(
                 "TB.Backprocessing",
                 getModItem(Minecraft.ID, "leather", 5),
                 getModItem(Minecraft.ID, "leather_helmet", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
-                        .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.CLOTH, 2).add(Aspect.BEAST, 1).add(Aspect.ARMOR, 1).add(Aspect.ENTROPY, 1));
         CrucibleRecipe leatherChestplateBP = ThaumcraftApi.addCrucibleRecipe(
                 "TB.Backprocessing",
                 getModItem(Minecraft.ID, "leather", 8),
                 getModItem(Minecraft.ID, "leather_chestplate", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
-                        .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.CLOTH, 2).add(Aspect.BEAST, 1).add(Aspect.ARMOR, 1).add(Aspect.ENTROPY, 1));
         CrucibleRecipe leatherLeggingsBP = ThaumcraftApi.addCrucibleRecipe(
                 "TB.Backprocessing",
                 getModItem(Minecraft.ID, "leather", 7),
                 getModItem(Minecraft.ID, "leather_leggings", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
-                        .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.CLOTH, 2).add(Aspect.BEAST, 1).add(Aspect.ARMOR, 1).add(Aspect.ENTROPY, 1));
         CrucibleRecipe leatherBootsBP = ThaumcraftApi.addCrucibleRecipe(
                 "TB.Backprocessing",
                 getModItem(Minecraft.ID, "leather", 4),
                 getModItem(Minecraft.ID, "leather_boots", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 1)
-                        .add(Aspect.getAspect("tutamen"), 1).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.CLOTH, 2).add(Aspect.BEAST, 1).add(Aspect.ARMOR, 1).add(Aspect.ENTROPY, 1));
 
         TCHelper.addResearchPage("TB.Backprocessing", new ResearchPage(Objects.requireNonNull(leatherHelmetBP)));
         TCHelper.addResearchPage("TB.Backprocessing", new ResearchPage(Objects.requireNonNull(leatherChestplateBP)));
@@ -1291,8 +1244,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         new ResearchItem(
                 "TB.TaintFlask",
                 "THAUMICBASES",
-                new AspectList().add(Aspect.getAspect("vitium"), 10).add(Aspect.getAspect("alienis"), 15)
-                        .add(Aspect.getAspect("perditio"), 8).add(Aspect.getAspect("permutatio"), 12),
+                new AspectList().add(Aspect.TAINT, 10).add(Aspect.ELDRITCH, 15).add(Aspect.ENTROPY, 8)
+                        .add(Aspect.EXCHANGE, 12),
                 1,
                 -1,
                 3,

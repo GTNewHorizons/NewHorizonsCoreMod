@@ -10,6 +10,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.github.bsideup.jabel.Desugar;
 
+import gregtech.api.enums.TCAspects;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -20,18 +21,7 @@ public class TCMaterialAspectHelper {
     @Desugar
     public record RuleContext(Aspect main, Aspect[] specials) {}
 
-    // Pre-cached common aspects
-    private static final Aspect PERDITIO = Aspect.getAspect("perditio");
-    private static final Aspect PERFODIO = Aspect.getAspect("perfodio");
-    private static final Aspect FABRICO = Aspect.getAspect("fabrico");
-    private static final Aspect MOTUS = Aspect.getAspect("motus");
-    private static final Aspect MACHINA = Aspect.getAspect("machina");
-    private static final Aspect INSTRUMENT = Aspect.getAspect("instrumentum");
-    private static final Aspect ORDO = Aspect.getAspect("ordo");
-    private static final Aspect METO = Aspect.getAspect("meto");
-    private static final Aspect ARBOR = Aspect.getAspect("arbor");
-    private static final Aspect ELECTRUM = Aspect.getAspect("electrum");
-    private static final Aspect TERRA = Aspect.getAspect("terra");
+    private static final Aspect ELECTRUM = TCAspects.ELECTRUM.getAspect();
 
     // Static cached rule table
     private static final Map<String, Function<RuleContext, AspectList>> RULES = new LinkedHashMap<>();
@@ -52,28 +42,31 @@ public class TCMaterialAspectHelper {
 
         // --- Declarative rules ---
         RULES.put("dust", ctx -> {
-            AspectList list = new AspectList().add(ctx.main(), 2).add(PERDITIO, 1);
+            AspectList list = new AspectList().add(ctx.main(), 2).add(Aspect.ENTROPY, 1);
             for (Aspect a : ctx.specials()) list.add(a, 1);
             return list;
         });
 
-        RULES.put("dustSmall", ctx -> new AspectList().add(PERDITIO, 1));
-        RULES.put("dustTiny", ctx -> new AspectList().add(PERDITIO, 1));
+        RULES.put("dustSmall", ctx -> new AspectList().add(Aspect.ENTROPY, 1));
+        RULES.put("dustTiny", ctx -> new AspectList().add(Aspect.ENTROPY, 1));
 
         RULES.put("ingot", main3special);
         RULES.put("ingotHot", main2special);
         RULES.put("nugget", ctx -> new AspectList().add(ctx.main(), 1));
 
-        RULES.put("stick", ctx -> new AspectList().add(ctx.main(), 2).add(INSTRUMENT, 1));
+        RULES.put("stick", ctx -> new AspectList().add(ctx.main(), 2).add(Aspect.TOOL, 1));
         RULES.put("stickLong", main2special);
 
-        RULES.put("bolt", ctx -> new AspectList().add(INSTRUMENT, 1));
-        RULES.put("screw", ctx -> new AspectList().add(INSTRUMENT, 3).add(FABRICO, 1).add(ORDO, 1));
-        RULES.put("ring", ctx -> new AspectList().add(INSTRUMENT, 3).add(FABRICO, 3).add(ORDO, 3).add(ctx.main(), 1));
-        RULES.put("foil", ctx -> new AspectList().add(FABRICO, 1));
+        RULES.put("bolt", ctx -> new AspectList().add(Aspect.TOOL, 1));
+        RULES.put("screw", ctx -> new AspectList().add(Aspect.TOOL, 3).add(Aspect.CRAFT, 1).add(Aspect.ORDER, 1));
+        RULES.put(
+                "ring",
+                ctx -> new AspectList().add(Aspect.TOOL, 3).add(Aspect.CRAFT, 3).add(Aspect.ORDER, 3)
+                        .add(ctx.main(), 1));
+        RULES.put("foil", ctx -> new AspectList().add(Aspect.CRAFT, 1));
         RULES.put("wireFine", ctx -> new AspectList().add(ELECTRUM, 1));
         RULES.put("gear", ctx -> {
-            AspectList list = new AspectList().add(ctx.main(), 2).add(MOTUS, 1).add(MACHINA, 1);
+            AspectList list = new AspectList().add(ctx.main(), 2).add(Aspect.MOTION, 1).add(Aspect.MECHANISM, 1);
             for (Aspect a : ctx.specials()) list.add(a, 2);
             return list;
         });
@@ -86,14 +79,15 @@ public class TCMaterialAspectHelper {
         RULES.put("spring", RULES.get("rotor"));
         RULES.put(
                 "springSmall",
-                ctx -> new AspectList().add(INSTRUMENT, 5).add(FABRICO, 3).add(ORDO, 3).add(METO, 1).add(ARBOR, 1));
+                ctx -> new AspectList().add(Aspect.TOOL, 5).add(Aspect.CRAFT, 3).add(Aspect.ORDER, 3)
+                        .add(Aspect.HARVEST, 1).add(Aspect.TREE, 1));
 
         // Plate variants
         String[] plateVariants = { "plate", "plateDouble", "plateTriple", "plateQuadruple", "plateQuintuple",
                 "plateDense", "plateSuperdense" };
         for (String p : plateVariants) {
             RULES.put(p, ctx -> {
-                AspectList list = new AspectList().add(ctx.main(), 2).add(FABRICO, 1);
+                AspectList list = new AspectList().add(ctx.main(), 2).add(Aspect.CRAFT, 1);
                 for (Aspect a : ctx.specials()) list.add(a, 1);
                 return list;
             });
@@ -104,26 +98,27 @@ public class TCMaterialAspectHelper {
                 "toolHeadWrench", "toolHeadBuzzSaw" };
         for (String t : toolVariants) {
             RULES.put(t, ctx -> {
-                AspectList list = new AspectList().add(ctx.main(), 2).add(INSTRUMENT, 2);
+                AspectList list = new AspectList().add(ctx.main(), 2).add(Aspect.TOOL, 2);
                 for (Aspect a : ctx.specials()) list.add(a, 1);
                 return list;
             });
         }
 
         RULES.put("rawOre", main2special);
-        RULES.put("crushed", ctx -> new AspectList().add(PERFODIO, 1));
+        RULES.put("crushed", ctx -> new AspectList().add(Aspect.MINE, 1));
         RULES.put("crushedPurified", RULES.get("crushed"));
         RULES.put("crushedCentrifuged", RULES.get("crushed"));
-        RULES.put("dustImpure", ctx -> new AspectList().add(PERDITIO, 1));
+        RULES.put("dustImpure", ctx -> new AspectList().add(Aspect.ENTROPY, 1));
         RULES.put("dustPure", RULES.get("dustImpure"));
 
         RULES.put("frameGt", ctx -> {
-            AspectList list = new AspectList().add(INSTRUMENT, 3).add(FABRICO, 3).add(ORDO, 3).add(ctx.main(), 3);
+            AspectList list = new AspectList().add(Aspect.TOOL, 3).add(Aspect.CRAFT, 3).add(Aspect.ORDER, 3)
+                    .add(ctx.main(), 3);
             for (Aspect a : ctx.specials()) list.add(a, 1);
             return list;
         });
         RULES.put("ore", ctx -> {
-            AspectList list = new AspectList().add(ctx.main(), 3).add(TERRA, 1);
+            AspectList list = new AspectList().add(ctx.main(), 3).add(Aspect.EARTH, 1);
             for (Aspect a : ctx.specials()) list.add(a, 1);
             return list;
         });
@@ -134,69 +129,70 @@ public class TCMaterialAspectHelper {
         });
 
         RULES.put("pipeTiny", ctx -> new AspectList().add(ctx.main(), 1));
-        RULES.put("pipeSmall", ctx -> new AspectList().add(FABRICO, 1).add(ctx.main(), 1));
-        RULES.put("pipeNonuple", ctx -> new AspectList().add(FABRICO, 6).add(ctx.main(), 6));
+        RULES.put("pipeSmall", ctx -> new AspectList().add(Aspect.CRAFT, 1).add(ctx.main(), 1));
+        RULES.put("pipeNonuple", ctx -> new AspectList().add(Aspect.CRAFT, 6).add(ctx.main(), 6));
 
         RULES.put(
                 "wireGt01",
-                ctx -> new AspectList().add(FABRICO, 2).add(ctx.main(), 1).add(INSTRUMENT, 1).add(ORDO, 1));
+                ctx -> new AspectList().add(Aspect.CRAFT, 2).add(ctx.main(), 1).add(Aspect.TOOL, 1)
+                        .add(Aspect.ORDER, 1));
         RULES.put("pipeMedium", ctx -> {
-            AspectList list = new AspectList().add(ctx.main(), 4).add(FABRICO, 3);
+            AspectList list = new AspectList().add(ctx.main(), 4).add(Aspect.CRAFT, 3);
             for (Aspect a : ctx.specials()) list.add(a, 2);
-            list.add(INSTRUMENT, 1);
-            list.add(ORDO, 1);
+            list.add(Aspect.TOOL, 1);
+            list.add(Aspect.ORDER, 1);
             return list;
         });
         RULES.put("pipeLarge", ctx -> {
-            AspectList list = new AspectList().add(ctx.main(), 9).add(FABRICO, 6);
+            AspectList list = new AspectList().add(ctx.main(), 9).add(Aspect.CRAFT, 6);
             for (Aspect a : ctx.specials()) list.add(a, 4);
-            list.add(INSTRUMENT, 3);
-            list.add(ORDO, 3);
-            list.add(MACHINA, 1);
+            list.add(Aspect.TOOL, 3);
+            list.add(Aspect.ORDER, 3);
+            list.add(Aspect.MECHANISM, 1);
             return list;
         });
         RULES.put("pipeHuge", RULES.get("pipeLarge"));
 
         RULES.put("pipeQuadruple", ctx -> {
-            AspectList list = new AspectList().add(ctx.main(), 12).add(FABRICO, 9);
+            AspectList list = new AspectList().add(ctx.main(), 12).add(Aspect.CRAFT, 9);
             for (Aspect a : ctx.specials()) list.add(a, 6);
-            list.add(INSTRUMENT, 3);
-            list.add(ORDO, 3);
+            list.add(Aspect.TOOL, 3);
+            list.add(Aspect.ORDER, 3);
             return list;
         });
         RULES.put("wireGt02", ctx -> {
-            AspectList list = new AspectList().add(FABRICO, 3).add(ctx.main(), 1);
+            AspectList list = new AspectList().add(Aspect.CRAFT, 3).add(ctx.main(), 1);
             for (Aspect a : ctx.specials()) list.add(a, 1);
-            list.add(INSTRUMENT, 1);
-            list.add(ORDO, 1);
+            list.add(Aspect.TOOL, 1);
+            list.add(Aspect.ORDER, 1);
             return list;
         });
         RULES.put("wireGt04", ctx -> {
-            AspectList list = new AspectList().add(FABRICO, 5).add(ctx.main(), 2);
+            AspectList list = new AspectList().add(Aspect.CRAFT, 5).add(ctx.main(), 2);
             for (Aspect a : ctx.specials()) list.add(a, 2);
-            list.add(INSTRUMENT, 2);
-            list.add(ORDO, 2);
+            list.add(Aspect.TOOL, 2);
+            list.add(Aspect.ORDER, 2);
             return list;
         });
         RULES.put("wireGt08", ctx -> {
-            AspectList list = new AspectList().add(FABRICO, 7).add(ctx.main(), 4);
+            AspectList list = new AspectList().add(Aspect.CRAFT, 7).add(ctx.main(), 4);
             for (Aspect a : ctx.specials()) list.add(a, 4);
-            list.add(INSTRUMENT, 4);
-            list.add(ORDO, 4);
+            list.add(Aspect.TOOL, 4);
+            list.add(Aspect.ORDER, 4);
             return list;
         });
         RULES.put("wireGt12", ctx -> {
-            AspectList list = new AspectList().add(FABRICO, 10).add(ctx.main(), 5);
+            AspectList list = new AspectList().add(Aspect.CRAFT, 10).add(ctx.main(), 5);
             for (Aspect a : ctx.specials()) list.add(a, 5);
-            list.add(INSTRUMENT, 5);
-            list.add(ORDO, 5);
+            list.add(Aspect.TOOL, 5);
+            list.add(Aspect.ORDER, 5);
             return list;
         });
         RULES.put("wireGt16", ctx -> {
-            AspectList list = new AspectList().add(FABRICO, 12).add(ctx.main(), 7);
+            AspectList list = new AspectList().add(Aspect.CRAFT, 12).add(ctx.main(), 7);
             for (Aspect a : ctx.specials()) list.add(a, 7);
-            list.add(INSTRUMENT, 7);
-            list.add(ORDO, 7);
+            list.add(Aspect.TOOL, 7);
+            list.add(Aspect.ORDER, 7);
             return list;
         });
     }

@@ -52,9 +52,11 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.rwtema.extrautils.ExtraUtils;
 
+import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.CompressorManager;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -62,6 +64,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTOreDictUnificator;
+import magicbees.api.MagicBeesAPI;
 import tconstruct.smeltery.TinkerSmeltery;
 import tconstruct.tools.TinkerTools;
 import tconstruct.tools.items.Pattern;
@@ -929,9 +932,9 @@ public class ScriptAvaritia implements IScriptLoader {
                 "AKASHIC",
                 getModItem(Avaritia.ID, "Akashic_Record", 1, 0),
                 24,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("cognitio"), 128)
-                        .add(Aspect.getAspect("sensus"), 96).add(Aspect.getAspect("luxuria"), 96)
-                        .add(Aspect.getAspect("tempus"), 64).add(Aspect.getAspect("terminus"), 128),
+                new AspectList().add(Aspect.MAGIC, 512).add(Aspect.MIND, 128).add(Aspect.SENSES, 96)
+                        .add(DarkAspects.LUST, 96).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 64)
+                        .add(Lucrum.ULTRA_DEATH, 128),
                 OrePrefixes.plate.get(Materials.Infinity),
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 6),

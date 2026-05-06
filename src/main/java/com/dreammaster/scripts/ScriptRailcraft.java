@@ -2179,8 +2179,7 @@ public class ScriptRailcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RC_Crowbar",
                 getModItem(Railcraft.ID, "tool.crowbar.magic", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("ignis"), 24)
-                        .add(Aspect.getAspect("aer"), 24),
+                new AspectList().add(Aspect.ORDER, 24).add(Aspect.FIRE, 24).add(Aspect.AIR, 24),
                 "abc",
                 "def",
                 "ghi",
@@ -2215,8 +2214,7 @@ public class ScriptRailcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RC_Crowbar_Void",
                 getModItem(Railcraft.ID, "tool.crowbar.void", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50),
+                new AspectList().add(Aspect.ENTROPY, 50).add(Aspect.FIRE, 50).add(Aspect.AIR, 50).add(Aspect.EARTH, 50),
                 "abc",
                 "def",
                 "ghi",
