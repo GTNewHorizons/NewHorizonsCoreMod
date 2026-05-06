@@ -263,5 +263,8 @@ public class ScriptWarpTheory implements IScriptLoader {
         ThaumcraftApi.registerObjectTag(
                 getModItem(WarpTheory.ID, "item.warptheory.oblivionpotion", 1, 0),
                 new AspectList().add(TCAspects.STRONTIO.getAspect(), 8));
+        ThaumcraftApi.registerObjectTag(
+                getModItem(WarpTheory.ID, "item.warptheory.something", 1, 0),
+                new AspectList().add(TCAspects.VESANIA.getAspect(), 2).add(Aspect.HUNGER, 4).add(Aspect.FLESH, 4));
     }
 }
