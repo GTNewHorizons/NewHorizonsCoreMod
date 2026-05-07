@@ -21,7 +21,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.SCANNING;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -76,16 +75,15 @@ public class ScriptAmunRa implements IScriptLoader {
                 RandomThings.ID);
     }
 
-    private static Object[] OreVariants(OrePrefixes prefix, Materials material, int amount) {
-        ArrayList<ItemStack> ores = GTOreDictUnificator.getOres(prefix, material);
-        int size = ores.size();
+    private static Object[] createOreVariants(Materials material) {
+        ItemStack baseOre = GTOreDictUnificator.get(OrePrefixes.ore, material, 1);
+        if (baseOre == null) return new Object[0];
 
-        if (size == 0) return new Object[0];
+        List<ItemStack> variants = GTOreDictUnificator.getNonUnifiedStacks(baseOre);
+        Object[] result = new Object[variants.size()];
 
-        Object[] result = new Object[size];
-
-        for (int i = 0; i < size; i++) {
-            result[i] = GTUtility.copyAmount(amount, ores.get(i));
+        for (int i = 0; i < variants.size(); i++) {
+            result[i] = GTUtility.copyAmount(64, variants.get(i));
         }
 
         return result;
@@ -473,12 +471,9 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { OreVariants(OrePrefixes.ore, Materials.Samarium, 64),
-                        OreVariants(OrePrefixes.ore, Materials.Tartarite, 64),
-                        OreVariants(OrePrefixes.ore, Materials.Cadmium, 64),
-                        OreVariants(OrePrefixes.ore, Materials.Caesium, 64),
-                        OreVariants(OrePrefixes.ore, Materials.Lanthanum, 64),
-                        OreVariants(OrePrefixes.ore, Materials.Cerium, 64),
+                new Object[] { createOreVariants(Materials.Samarium), createOreVariants(Materials.Tartarite),
+                        createOreVariants(Materials.Cadmium), createOreVariants(Materials.Caesium),
+                        createOreVariants(Materials.Lanthanum), createOreVariants(Materials.Cerium),
 
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 64),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.DraconiumAwakened, 64),
