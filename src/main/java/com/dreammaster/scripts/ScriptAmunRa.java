@@ -21,6 +21,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.SCANNING;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -41,6 +42,7 @@ import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.katzenpapst.amunra.block.ARBlocks;
 import de.katzenpapst.amunra.crafting.RecipeHelper;
+import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -75,18 +77,48 @@ public class ScriptAmunRa implements IScriptLoader {
                 RandomThings.ID);
     }
 
-    private static Object[] createOreVariants(Materials material, int amount) {
-        ItemStack baseOre = GTOreDictUnificator.get(OrePrefixes.ore, material, 1);
-        if (baseOre == null) return new Object[0];
-
-        List<ItemStack> variants = GTOreDictUnificator.getNonUnifiedStacks(baseOre);
-        Object[] result = new Object[variants.size()];
-
-        for (int i = 0; i < variants.size(); i++) {
-            result[i] = GTUtility.copyAmount(amount, variants.get(i));
+    private static ItemStack[] createOreVariants(Materials material, int amount) {
+        List<ItemStack> variants = new ArrayList<>();
+        addOrePrefixVariants(variants, OrePrefixes.ore, material, amount);
+        addOrePrefixVariants(variants, OrePrefixes.oreNetherrack, material, amount);
+        addOrePrefixVariants(variants, OrePrefixes.oreEndstone, material, amount);
+        if (GTMod.proxy.enableBlackGraniteOres) {
+            addOrePrefixVariants(variants, OrePrefixes.oreBlackgranite, material, amount);
         }
+        if (GTMod.proxy.enableRedGraniteOres) {
+            addOrePrefixVariants(variants, OrePrefixes.oreRedgranite, material, amount);
+        }
+        if (GTMod.proxy.enableMarbleOres) {
+            addOrePrefixVariants(variants, OrePrefixes.oreMarble, material, amount);
+        }
+        if (GTMod.proxy.enableBasaltOres) {
+            addOrePrefixVariants(variants, OrePrefixes.oreBasalt, material, amount);
+        }
+        return variants.toArray(new ItemStack[0]);
+    }
 
-        return result;
+    private static void addOrePrefixVariants(List<ItemStack> variants, OrePrefixes prefix, Materials material,
+            int amount) {
+        ItemStack ore = GTOreDictUnificator.get(prefix, material, 1L);
+        if (!GTUtility.isStackValid(ore)) {
+            return;
+        }
+        for (ItemStack variant : GTOreDictUnificator.getNonUnifiedStacks(ore)) {
+            ItemStack sizedVariant = GTUtility.copyAmount(amount, variant);
+            if (!GTUtility.isStackValid(sizedVariant) || containsStack(variants, sizedVariant)) {
+                continue;
+            }
+            variants.add(sizedVariant);
+        }
+    }
+
+    private static boolean containsStack(List<ItemStack> stacks, ItemStack candidate) {
+        for (ItemStack stack : stacks) {
+            if (GTUtility.areStacksEqual(stack, candidate, true)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
