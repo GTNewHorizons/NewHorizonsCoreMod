@@ -48,6 +48,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
@@ -456,17 +457,19 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { new Object[] { OrePrefixes.ore.get(Materials.Samarium), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Tartarite), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Cadmium), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Caesium), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Lanthanum), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Cerium), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.Bedrockium), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.DraconiumAwakened), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.CosmicNeutronium), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.InfinityCatalyst), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.Infinity), 64 },
+                new Object[] { GTOreDictUnificator.get(OrePrefixes.ore, Materials.Samarium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Tartarite, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Cadmium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Caesium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Lanthanum, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Cerium, 64),
+
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.DraconiumAwakened, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CosmicNeutronium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfinityCatalyst, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Infinity, 64),
+
                         ItemList.Electric_Pump_UHV.get(8), ItemList.Conveyor_Module_UHV.get(8),
                         ItemList.Robot_Arm_UHV.get(8), ItemList.Field_Generator_UHV.get(8),
                         ItemList.Sensor_UHV.get(8) },
