@@ -75,7 +75,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 RandomThings.ID);
     }
 
-    private static Object[] createOreVariants(Materials material) {
+    private static Object[] createOreVariants(Materials material, int amount) {
         ItemStack baseOre = GTOreDictUnificator.get(OrePrefixes.ore, material, 1);
         if (baseOre == null) return new Object[0];
 
@@ -83,7 +83,7 @@ public class ScriptAmunRa implements IScriptLoader {
         Object[] result = new Object[variants.size()];
 
         for (int i = 0; i < variants.size(); i++) {
-            result[i] = GTUtility.copyAmount(64, variants.get(i));
+            result[i] = GTUtility.copyAmount(amount, variants.get(i));
         }
 
         return result;
@@ -471,9 +471,9 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { createOreVariants(Materials.Samarium), createOreVariants(Materials.Tartarite),
-                        createOreVariants(Materials.Cadmium), createOreVariants(Materials.Caesium),
-                        createOreVariants(Materials.Lanthanum), createOreVariants(Materials.Cerium),
+                new Object[] { createOreVariants(Materials.Samarium, 64), createOreVariants(Materials.Tartarite, 64),
+                        createOreVariants(Materials.Cadmium, 64), createOreVariants(Materials.Caesium, 64),
+                        createOreVariants(Materials.Lanthanum, 64), createOreVariants(Materials.Cerium, 64),
 
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 64),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.DraconiumAwakened, 64),
