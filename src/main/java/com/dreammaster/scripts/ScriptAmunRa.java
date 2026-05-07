@@ -42,8 +42,8 @@ import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.katzenpapst.amunra.block.ARBlocks;
 import de.katzenpapst.amunra.crafting.RecipeHelper;
-import gregtech.api.GregTechAPI;
 import gregtech.GTMod;
+import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -97,7 +97,8 @@ public class ScriptAmunRa implements IScriptLoader {
         return variants.toArray(new ItemStack[0]);
     }
 
-    private static void addOrePrefixVariants(List<ItemStack> variants, OrePrefixes prefix, Materials material, int amount) {
+    private static void addOrePrefixVariants(List<ItemStack> variants, OrePrefixes prefix, Materials material,
+            int amount) {
         ItemStack ore = GTOreDictUnificator.get(prefix, material, 1L);
         if (!GTUtility.isStackValid(ore)) {
             return;
