@@ -82,7 +82,6 @@ public class ScriptAmunRa implements IScriptLoader {
         addOrePrefixVariants(variants, OrePrefixes.ore, material, amount);
         addOrePrefixVariants(variants, OrePrefixes.oreNetherrack, material, amount);
         addOrePrefixVariants(variants, OrePrefixes.oreEndstone, material, amount);
-        addOrePrefixVariants(variants, OrePrefixes.rawOre, material, amount);
         if (GTMod.proxy.enableBlackGraniteOres) {
             addOrePrefixVariants(variants, OrePrefixes.oreBlackgranite, material, amount);
         }
