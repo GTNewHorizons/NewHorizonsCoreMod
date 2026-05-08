@@ -888,14 +888,6 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(GTUtility.copyAmount(8, AE2_QUARTZ_GLASS)).circuit(8)
                 .itemOutputs(AE2FC_TANK).duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        // Fluid Storage Monitor
-        GTValues.RA.stdBuilder().itemInputs(AE2_MON, GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
-                .itemOutputs(AE2FC_MON).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-        // Fluid Conversion Monitor
-        GTValues.RA.stdBuilder().itemInputs(AE2_CON, GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
-                .itemOutputs(AE2FC_CON).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
         // Wireless Pattern Terminal
         GTValues.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_TERM).itemOutputs(AE2FC_PATTERN_WIRELESS)
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -975,5 +967,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GameRegistry.addShapelessRecipe(AE2_TERM, AE2FC_FLUID_TERMINAL);
         GameRegistry.addShapelessRecipe(AE2_ITEM_WIRELESS, AE2FC_FLUID_WIRELESS);
         GameRegistry.addShapelessRecipe(AE2_LEVEL_MAIN, AE2FC_LEVEL_MAIN);
+        GameRegistry.addShapelessRecipe(AE2_MON, AE2FC_MON);
+        GameRegistry.addShapelessRecipe(AE2_CON, AE2FC_CON);
     }
 }
