@@ -1,6 +1,5 @@
 package com.dreammaster.lwjgl3ify;
 
-import static org.lwjgl.sdl.SDLInit.SDL_RunOnMainThread;
 import static org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT;
 import static org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT;
 import static org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_WARNING;
@@ -22,6 +21,7 @@ import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.lib.Refstrings;
 
 import me.eigenraven.lwjgl3ify.api.Lwjgl3Aware;
+import me.eigenraven.lwjgl3ify.client.MainThreadExec;
 
 @Lwjgl3Aware
 public class ConfirmExitSdl {
@@ -80,10 +80,6 @@ public class ConfirmExitSdl {
 
     // SDL requires running its dialogs from the main thread
     public static void showExitDialogFromMainThread(IntConsumer callback) {
-        boolean success = SDL_RunOnMainThread((long userdata) -> callback.accept(showExitDialog()), 0L, false);
-
-        if (!success) {
-            callback.accept(BUTTON_YES);
-        }
+        MainThreadExec.runOnMainThread(() -> callback.accept(showExitDialog()));
     }
 }
