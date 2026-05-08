@@ -5,7 +5,7 @@ dependencies {
     api("com.github.GTNewHorizons:Yamcl:0.7.5:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.14-GTNH:dev")
 
-    implementation("com.github.GTNewHorizons:GTNHLib:0.9.59:dev")
+    implementation("com.github.GTNewHorizons:GTNHLib:0.9.62:dev")
 
     implementation("net.glease:tc4recipelib:1.5.37:dev")
 
@@ -15,12 +15,12 @@ dependencies {
     compileOnly("secondderivative.irontankminecarts:IronTankMinecarts:1.0.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.7.30:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.5.2:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.62-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.14:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.66-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.15:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
     compileOnly("com.github.GTNewHorizons:Chisel:2.17.26-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Botania:1.13.16-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Botania:1.13.17-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.8.15:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
@@ -33,7 +33,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Backhand:1.8.9:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Backhand:1.8.9:dev") { transitive = false }
     compileOnly("com.cubefury.vendingmachine:VendingMachine:0.4.2:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:BetterQuesting:3.8.44-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:BetterQuesting:3.8.45-GTNH:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
     //compileOnly("com.github.Roadhog360:Et-Futurum-Requiem:2.6.2:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Postea:1.2.5:dev") { transitive = false }
