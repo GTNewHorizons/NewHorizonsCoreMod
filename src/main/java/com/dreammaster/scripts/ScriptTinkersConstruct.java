@@ -974,13 +974,13 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "blood.channel", 1, 0),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
-                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
-                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
                 "dustRedstone",
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
                 "dustRedstone",
-                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
-                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 1));
         Recipe.of(
                 getModItem(TinkerConstruct.ID, "slime.pad", 1, 0),

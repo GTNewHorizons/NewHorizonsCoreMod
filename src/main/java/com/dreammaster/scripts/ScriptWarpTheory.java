@@ -17,10 +17,14 @@ import static gregtech.api.enums.Mods.Witchery;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TCAspects;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -52,6 +56,7 @@ public class ScriptWarpTheory implements IScriptLoader {
     @Override
     public void loadRecipes() {
         TCHelper.removeArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.oblivionpotion", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0));
@@ -77,6 +82,23 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "warptheory.oblivionpotion",
+                getModItem(WarpTheory.ID, "item.warptheory.oblivionpotion", 1, 0),
+                TCHelper.equalPrimalList(25),
+                "eze",
+                "pbp",
+                "gpg",
+                'e',
+                getModItem(OpenBlocks.ID, "epicEraser", 1),
+                'z',
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1),
+                'b',
+                new ItemStack(Items.potionitem), // Water bottle
+                'p',
+                Materials.InfusedEntropy.getDust(1), // Perditio crystal dust
+                'g',
+                new ItemStack(Items.ghast_tear));
         TCHelper.addResearchPage(
                 "warptheory.paper",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0))));
@@ -237,5 +259,12 @@ public class ScriptWarpTheory implements IScriptLoader {
         TCHelper.refreshResearchPages("warptheory.something");
         TCHelper.refreshResearchPages("warptheory.amulet");
         TCHelper.refreshResearchPages("warptheory.portableshower");
+        TCHelper.refreshResearchPages("warptheory.oblivionpotion");
+        ThaumcraftApi.registerObjectTag(
+                getModItem(WarpTheory.ID, "item.warptheory.oblivionpotion", 1, 0),
+                new AspectList().add(TCAspects.STRONTIO.getAspect(), 8));
+        ThaumcraftApi.registerObjectTag(
+                getModItem(WarpTheory.ID, "item.warptheory.something", 1, 0),
+                new AspectList().add(TCAspects.VESANIA.getAspect(), 2).add(Aspect.HUNGER, 4).add(Aspect.FLESH, 4));
     }
 }

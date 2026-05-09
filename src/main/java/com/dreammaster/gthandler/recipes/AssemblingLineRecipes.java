@@ -1738,7 +1738,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_EV))
                 .itemInputs(
                         ItemList.IndustrialCentrifuge.get(64),
-                        ItemRefer.SC_Fluid_Turbine.get(4),
+                        ItemList.SCSteamTurbine.get(4),
                         GregtechItemList.Hatch_Turbine_Rotor.get(4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         MaterialsAlloy.PIKYONIUM.getRotor(4),
