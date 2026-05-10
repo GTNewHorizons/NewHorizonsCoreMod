@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -51,6 +52,7 @@ public class ScriptTwilightForest implements IScriptLoader {
         return Arrays.asList(
                 ElectroMagicTools.ID,
                 EtFuturumRequiem.ID,
+                ForbiddenMagic.ID,
                 MagicBees.ID,
                 Thaumcraft.ID,
                 TwilightForest.ID,

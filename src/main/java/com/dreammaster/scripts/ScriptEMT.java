@@ -11,6 +11,7 @@ import static gregtech.api.enums.Materials.TungstenSteel;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -69,6 +70,7 @@ public class ScriptEMT implements IScriptLoader {
                 AdvancedSolarPanel.ID,
                 Avaritia.ID,
                 ElectroMagicTools.ID,
+                ForbiddenMagic.ID,
                 GalacticraftCore.ID,
                 IndustrialCraft2.ID,
                 ProjectRedIntegration.ID,

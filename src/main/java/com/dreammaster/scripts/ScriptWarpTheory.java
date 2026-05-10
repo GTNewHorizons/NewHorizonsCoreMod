@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.CropsNH;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -45,6 +46,7 @@ public class ScriptWarpTheory implements IScriptLoader {
                 AppliedEnergistics2.ID,
                 BiomesOPlenty.ID,
                 BloodMagic.ID,
+                ForbiddenMagic.ID,
                 OpenBlocks.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,

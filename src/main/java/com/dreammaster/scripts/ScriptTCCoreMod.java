@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -71,6 +72,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 EnderStorage.ID,
                 EternalSingularity.ID,
                 ExtraUtilities.ID,
+                ForbiddenMagic.ID,
                 ForgeMicroblocks.ID,
                 HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,

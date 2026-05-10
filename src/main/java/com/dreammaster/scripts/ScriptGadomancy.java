@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Gadomancy;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -37,7 +38,7 @@ public class ScriptGadomancy implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Gadomancy.ID, Thaumcraft.ID, ThaumicTinkerer.ID);
+        return Arrays.asList(ForbiddenMagic.ID, Gadomancy.ID, Thaumcraft.ID, ThaumicTinkerer.ID);
     }
 
     @Override

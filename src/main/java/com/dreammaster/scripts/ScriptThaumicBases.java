@@ -5,6 +5,7 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Void;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -58,6 +59,7 @@ public class ScriptThaumicBases implements IScriptLoader {
         return Arrays.asList(
                 CarpentersBlocks.ID,
                 ExtraUtilities.ID,
+                ForbiddenMagic.ID,
                 IndustrialCraft2.ID,
                 IronTanks.ID,
                 Railcraft.ID,

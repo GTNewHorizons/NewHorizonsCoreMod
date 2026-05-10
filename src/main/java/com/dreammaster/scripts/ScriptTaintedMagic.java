@@ -5,6 +5,7 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -41,6 +42,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 TaintedMagic.ID,
                 Thaumcraft.ID,
                 TinkersGregworks.ID);

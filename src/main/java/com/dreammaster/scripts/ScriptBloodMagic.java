@@ -20,6 +20,7 @@ import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.IronTanks;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -99,6 +100,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 IndustrialCraft2.ID,
                 IronChests.ID,
                 IronTanks.ID,
+                MagicBees.ID,
                 Railcraft.ID,
                 StevesCarts2.ID,
                 Thaumcraft.ID,

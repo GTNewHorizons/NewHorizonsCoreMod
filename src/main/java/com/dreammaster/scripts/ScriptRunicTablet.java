@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
 
@@ -27,7 +28,8 @@ public class ScriptRunicTablet implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Automagy.ID, DraconicEvolution.ID, Thaumcraft.ID, ThaumicExploration.ID);
+        return Arrays
+                .asList(Automagy.ID, DraconicEvolution.ID, ForbiddenMagic.ID, Thaumcraft.ID, ThaumicExploration.ID);
     }
 
     @Override

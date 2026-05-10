@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
@@ -88,6 +89,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 BuildCraftFactory.ID,
                 BuildCraftTransport.ID,
                 ExtraUtilities.ID,
+                ForbiddenMagic.ID,
                 HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,

@@ -16,6 +16,7 @@ import static gregtech.api.enums.Mods.Gadomancy;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -99,6 +100,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 GalaxySpace.ID,
                 GraviSuite.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 TaintedMagic.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,

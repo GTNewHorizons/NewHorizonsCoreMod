@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
@@ -67,6 +68,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 PamsHarvestCraft.ID,
                 StevesCarts2.ID,
                 Thaumcraft.ID,
