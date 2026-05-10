@@ -81,8 +81,6 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumcraft.api.wands.WandCap;
-import thaumcraft.api.wands.WandRod;
 
 public class ScriptThaumcraft implements IScriptLoader {
 
@@ -702,18 +700,18 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("CAP_thaumium", 3);
         TCHelper.clearPages("SCEPTRE");
         TCHelper.addResearchPage("SCEPTRE", new ResearchPage("tc.research_page.SCEPTRE.1"));
-        AbstractWandWrapper wood_rod = TCWandAPI.getWrapperForRod(WandRod.rods.get("wood"), true);
-        CapWrapper iron_cap = TCWandAPI.getWrapperForCap(WandCap.caps.get("iron"));
+        AbstractWandWrapper wood_rod = TCWandAPI.getWrapperForRod("wood", true);
+        CapWrapper iron_cap = TCWandAPI.getWrapperForCap("iron");
         if (wood_rod != null && iron_cap != null) {
             TCHelper.addResearchPage("SCEPTRE", new ResearchPage(wood_rod.getRecipe(iron_cap)));
         }
-        AbstractWandWrapper greatwood_rod = TCWandAPI.getWrapperForRod(WandRod.rods.get("greatwood"), true);
-        CapWrapper gold_cap = TCWandAPI.getWrapperForCap(WandCap.caps.get("gold"));
+        AbstractWandWrapper greatwood_rod = TCWandAPI.getWrapperForRod("greatwood", true);
+        CapWrapper gold_cap = TCWandAPI.getWrapperForCap("gold");
         if (greatwood_rod != null && gold_cap != null) {
             TCHelper.addResearchPage("SCEPTRE", new ResearchPage(greatwood_rod.getRecipe(gold_cap)));
         }
-        AbstractWandWrapper silverwood_rod = TCWandAPI.getWrapperForRod(WandRod.rods.get("silverwood"), true);
-        CapWrapper thaumium_cap = TCWandAPI.getWrapperForCap(WandCap.caps.get("thaumium"));
+        AbstractWandWrapper silverwood_rod = TCWandAPI.getWrapperForRod("silverwood", true);
+        CapWrapper thaumium_cap = TCWandAPI.getWrapperForCap("thaumium");
         if (silverwood_rod != null && thaumium_cap != null) {
             TCHelper.addResearchPage("SCEPTRE", new ResearchPage(silverwood_rod.getRecipe(thaumium_cap)));
         }
