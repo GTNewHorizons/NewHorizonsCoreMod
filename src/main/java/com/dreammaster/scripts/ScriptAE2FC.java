@@ -117,24 +117,17 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_DECODER = getModItem(AE2FluidCraft.ID, "fluid_packet_decoder", 1, 0);
         final ItemStack AE2FC_BUFFER = getModItem(AE2FluidCraft.ID, "ingredient_buffer", 1, 0);
         final ItemStack AE2FC_BUFFER_LARGE = getModItem(AE2FluidCraft.ID, "large_ingredient_buffer", 1, 0);
-        final ItemStack AE2FC_TERMINAL = getModItem(AE2FluidCraft.ID, "part_fluid_pattern_terminal", 1, 0);
-        final ItemStack AE2FC_TERMINAL_PRO = getModItem(AE2FluidCraft.ID, "part_fluid_pattern_terminal_ex", 1, 0);
         final ItemStack AE2FC_EXPORTBUS = getModItem(AE2FluidCraft.ID, "part_fluid_export", 1, 0);
         final ItemStack AE2FC_IMPORTBUS = getModItem(AE2FluidCraft.ID, "part_fluid_import", 1, 0);
         final ItemStack AE2FC_OCEDITOR = getModItem(AE2FluidCraft.ID, "oc_pattern_editor", 1, 0);
         final ItemStack AE2FC_MAINTAIN = getModItem(AE2FluidCraft.ID, "level_maintainer", 1, 0);
-        final ItemStack AE2FC_FLUID_TERMINAL = getModItem(AE2FluidCraft.ID, "part_fluid_terminal", 1, 0);
         final ItemStack AE2FC_FLUID_BUFFER = getModItem(AE2FluidCraft.ID, "fluid_buffer", 1, 0);
         final ItemStack AE2FC_FLUID_STORAGE_BUS = getModItem(AE2FluidCraft.ID, "part_fluid_storage_bus", 1, 0);
         final ItemStack AE2FC_AUTO_FILLER = getModItem(AE2FluidCraft.ID, "fluid_auto_filler", 1, 0);
         final ItemStack AE2FC_LEVEL_TERMINAL = getModItem(AE2FluidCraft.ID, "part_level_terminal", 1, 0);
-        final ItemStack AE2FC_LEVEL_MAIN = getModItem(AE2FluidCraft.ID, "part_fluid_level_emitter", 1, 0);
         final ItemStack AE2FC_PORTABLE_CELL = getModItem(AE2FluidCraft.ID, "portable_fluid_cell", 1, 0);
         final ItemStack AE2FC_TANK = getModItem(AE2FluidCraft.ID, "certus_quartz_tank", 1, 0);
         final ItemStack AE2FC_WALRUS = getModItem(AE2FluidCraft.ID, "walrus", 1, 0);
-        final ItemStack AE2FC_MON = getModItem(AE2FluidCraft.ID, "part_fluid_storage_monitor", 1, 0);
-        final ItemStack AE2FC_CON = getModItem(AE2FluidCraft.ID, "part_fluid_conversion_monitor", 1, 0);
-        final ItemStack AE2FC_FLUID_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_fluid_terminal", 1, 0);
         final ItemStack AE2FC_PATTERN_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_fluid_pattern_terminal", 1, 0);
         final ItemStack AE2FC_INTERFACE_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_interface_terminal", 1, 0);
         final ItemStack AE2FC_LEVEL_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_level_terminal", 1, 0);
@@ -888,14 +881,6 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(GTUtility.copyAmount(8, AE2_QUARTZ_GLASS)).circuit(8)
                 .itemOutputs(AE2FC_TANK).duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        // Fluid Storage Monitor
-        GTValues.RA.stdBuilder().itemInputs(AE2_MON, GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
-                .itemOutputs(AE2FC_MON).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-        // Fluid Conversion Monitor
-        GTValues.RA.stdBuilder().itemInputs(AE2_CON, GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
-                .itemOutputs(AE2FC_CON).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
         // Wireless Pattern Terminal
         GTValues.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_TERM).itemOutputs(AE2FC_PATTERN_WIRELESS)
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -968,12 +953,5 @@ public class ScriptAE2FC implements IScriptLoader {
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE_SMALL);
         GameRegistry.addShapelessRecipe(AE2FC_ENERGY_CARD, AE2_ADV_CARD, AE2_NEUTRONIUM_ENERGY_CELL);
-
-        // Deprecated
-        GameRegistry.addShapelessRecipe(AE2_PATTERN_TERM, AE2FC_TERMINAL);
-        GameRegistry.addShapelessRecipe(AE2_PATTERN_TERM_EX, AE2FC_TERMINAL_PRO);
-        GameRegistry.addShapelessRecipe(AE2_TERM, AE2FC_FLUID_TERMINAL);
-        GameRegistry.addShapelessRecipe(AE2_ITEM_WIRELESS, AE2FC_FLUID_WIRELESS);
-        GameRegistry.addShapelessRecipe(AE2_LEVEL_MAIN, AE2FC_LEVEL_MAIN);
     }
 }
