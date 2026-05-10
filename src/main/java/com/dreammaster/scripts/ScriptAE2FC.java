@@ -125,7 +125,6 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_FLUID_STORAGE_BUS = getModItem(AE2FluidCraft.ID, "part_fluid_storage_bus", 1, 0);
         final ItemStack AE2FC_AUTO_FILLER = getModItem(AE2FluidCraft.ID, "fluid_auto_filler", 1, 0);
         final ItemStack AE2FC_LEVEL_TERMINAL = getModItem(AE2FluidCraft.ID, "part_level_terminal", 1, 0);
-        final ItemStack AE2FC_LEVEL_MAIN = getModItem(AE2FluidCraft.ID, "part_fluid_level_emitter", 1, 0);
         final ItemStack AE2FC_PORTABLE_CELL = getModItem(AE2FluidCraft.ID, "portable_fluid_cell", 1, 0);
         final ItemStack AE2FC_TANK = getModItem(AE2FluidCraft.ID, "certus_quartz_tank", 1, 0);
         final ItemStack AE2FC_WALRUS = getModItem(AE2FluidCraft.ID, "walrus", 1, 0);
@@ -954,8 +953,5 @@ public class ScriptAE2FC implements IScriptLoader {
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE_SMALL);
         GameRegistry.addShapelessRecipe(AE2FC_ENERGY_CARD, AE2_ADV_CARD, AE2_NEUTRONIUM_ENERGY_CELL);
-
-        // Deprecated
-        GameRegistry.addShapelessRecipe(AE2_LEVEL_MAIN, AE2FC_LEVEL_MAIN);
     }
 }
