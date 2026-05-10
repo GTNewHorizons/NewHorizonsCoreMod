@@ -167,11 +167,16 @@ public class OreDictHandler {
 
         OreDictionary.registerOre("foodSalt", NHItemList.EdibleSalt.get());
 
+        OreDictionary.registerOre("dustRawNeutronium", NHItemList.RawNeutronium.get());
+
+        OreDictionary.registerOre("dustLapotron", NHItemList.LapotronDust.get());
+
         OreDictionary.registerOre("ingotHotBrickNether", NHItemList.HotNetherrackBrick.get());
 
         OreDictionary.registerOre("oreZinc", BlockList.ZincGravelOre.get());
 
         OreDictionary.registerOre("blockSulfur", BlockList.Sulfur.get());
+
         // Olivine = Peridot
         for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {
             OreDictionary.registerOre("blockPeridot", stack);
