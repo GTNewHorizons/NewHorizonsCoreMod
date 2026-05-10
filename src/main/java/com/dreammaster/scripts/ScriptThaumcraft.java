@@ -78,6 +78,7 @@ import gregtech.common.items.MetaGeneratedTool01;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.IArcaneRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
@@ -703,17 +704,25 @@ public class ScriptThaumcraft implements IScriptLoader {
         AbstractWandWrapper wood_rod = TCWandAPI.getWrapperForRod("wood", true);
         CapWrapper iron_cap = TCWandAPI.getWrapperForCap("iron");
         if (wood_rod != null && iron_cap != null) {
-            TCHelper.addResearchPage("SCEPTRE", new ResearchPage(wood_rod.getRecipe(iron_cap)));
+            TCHelper.addResearchPage(
+                    "SCEPTRE",
+                    // Casting (IArcaneRecipe) (Object) is required to avoid a bug where it tries to load IArcaneRecipe
+                    // when it is not present during bytecode verification.
+                    new ResearchPage((IArcaneRecipe) (Object) wood_rod.getRecipe(iron_cap)));
         }
         AbstractWandWrapper greatwood_rod = TCWandAPI.getWrapperForRod("greatwood", true);
         CapWrapper gold_cap = TCWandAPI.getWrapperForCap("gold");
         if (greatwood_rod != null && gold_cap != null) {
-            TCHelper.addResearchPage("SCEPTRE", new ResearchPage(greatwood_rod.getRecipe(gold_cap)));
+            TCHelper.addResearchPage(
+                    "SCEPTRE",
+                    new ResearchPage((IArcaneRecipe) (Object) greatwood_rod.getRecipe(gold_cap)));
         }
         AbstractWandWrapper silverwood_rod = TCWandAPI.getWrapperForRod("silverwood", true);
         CapWrapper thaumium_cap = TCWandAPI.getWrapperForCap("thaumium");
         if (silverwood_rod != null && thaumium_cap != null) {
-            TCHelper.addResearchPage("SCEPTRE", new ResearchPage(silverwood_rod.getRecipe(thaumium_cap)));
+            TCHelper.addResearchPage(
+                    "SCEPTRE",
+                    new ResearchPage((IArcaneRecipe) (Object) silverwood_rod.getRecipe(thaumium_cap)));
         }
         TCHelper.setResearchAspects(
                 "SCEPTRE",
