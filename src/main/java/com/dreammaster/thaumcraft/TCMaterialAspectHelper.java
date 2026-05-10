@@ -1,9 +1,7 @@
 package com.dreammaster.thaumcraft;
 
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Function;
 
 import net.minecraftforge.oredict.OreDictionary;
@@ -200,17 +198,12 @@ public class TCMaterialAspectHelper {
     /**
      * Aspect helper method for adding TC Aspects to GT5 Materials
      *
-     * @param material       (String format of Material name)
-     * @param mainAspect     (String format of Aspect name)
-     * @param specialAspects (String format of Aspect name, Accepts multiple aspects in seperate Strings)
+     * @param material       Material name as a String.
+     * @param mainAspect     The main Aspect for this material.
+     * @param specialAspects Special Aspects for this material, accepts multiple aspects separated by commas.
      */
-    public static void registerMaterialAspects(String material, String mainAspect, String... specialAspects) {
-        Aspect main = Aspect.getAspect(mainAspect);
-
-        Aspect[] specials = Arrays.stream(specialAspects).map(Aspect::getAspect).filter(Objects::nonNull)
-                .toArray(Aspect[]::new);
-
-        RuleContext ctx = new RuleContext(main, specials);
+    public static void registerMaterialAspects(String material, Aspect mainAspect, Aspect... specialAspects) {
+        RuleContext ctx = new RuleContext(mainAspect, specialAspects);
 
         for (Map.Entry<String, Function<RuleContext, AspectList>> entry : RULES.entrySet()) {
             String key = entry.getKey() + material;

@@ -34,7 +34,6 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList.MagicFeather;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -1378,8 +1377,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 30,
-                new AspectList().add(getAspect("praecantatio"), 200).add(Aspect.FLIGHT, 200).add(Aspect.WEATHER, 200)
-                        .add(getAspect("nebrisum"), 200).add(Aspect.MOTION, 200).add(getAspect("terminus"), 200),
+                new AspectList().add(Aspect.MAGIC, 200).add(Aspect.FLIGHT, 200).add(Aspect.WEATHER, 200)
+                        .add(TCAspects.NEBRISUM.getAspect(), 200).add(Aspect.MOTION, 200).add(Lucrum.ULTRA_DEATH, 200),
                 createItemStack(
                         TinkerConstruct.ID,
                         "travelWings",

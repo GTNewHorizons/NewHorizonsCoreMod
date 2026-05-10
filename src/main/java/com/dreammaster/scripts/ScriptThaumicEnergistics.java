@@ -14,7 +14,6 @@ import static gregtech.api.enums.Mods.ThaumicInsurgence;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1222,8 +1221,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0),
                 16,
                 new AspectList().add(Aspect.AURA, 16).add(Aspect.CRAFT, 64).add(Aspect.METAL, 8)
-                        .add(getAspect("permutatio"), 32).add(Aspect.GREED, 16).add(getAspect("praecantatio"), 48)
-                        .add(Aspect.CRYSTAL, 16),
+                        .add(Aspect.EXCHANGE, 32).add(Aspect.GREED, 16).add(Aspect.MAGIC, 48).add(Aspect.CRYSTAL, 16),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1, 0),
                 createItemStack(
                         Thaumcraft.ID,

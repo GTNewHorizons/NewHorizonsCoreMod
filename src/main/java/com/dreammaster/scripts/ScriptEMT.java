@@ -31,7 +31,6 @@ import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -821,7 +820,7 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, 27),
                 7,
                 new AspectList().add(Aspect.TOOL, 32).add(Aspect.MINE, 16).add(Aspect.ENERGY, 32).add(Aspect.GREED, 24)
-                        .add(getAspect("praecantatio"), 8),
+                        .add(Aspect.MAGIC, 8),
                 createItemStack(
                         GregTech.ID,
                         "gt.metatool.01",

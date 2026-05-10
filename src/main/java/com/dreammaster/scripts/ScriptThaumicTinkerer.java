@@ -24,7 +24,6 @@ import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -602,7 +601,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "fireChaos", 1, 0),
                 16,
                 new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.LIGHT, 10).add(Aspect.AIR, 10)
-                        .add(getAspect("praecantatio"), 10),
+                        .add(Aspect.MAGIC, 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"perditio\"}]}"),
                 getModItem(Botania.ID, "manaResource", 1, 23),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
@@ -617,8 +616,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "INFUSEDSEED",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.ENTROPY, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9)
-                        .add(getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.ENTROPY, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9).add(Aspect.MAGIC, 3),
                 7,
                 -5,
                 3,
