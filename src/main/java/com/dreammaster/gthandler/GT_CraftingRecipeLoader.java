@@ -929,9 +929,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 GTModHandler.RecipeBits.BITS,
                 new Object[] {
                         // spotless:off
-                        "BB ",
-                        "BB ",
-                        "   ",
+                        "BB",
+                        "BB",
                         'B', NHItemList.CokeOvenBrick.get().splitStack(1)
                         // spotless:on
                 });
