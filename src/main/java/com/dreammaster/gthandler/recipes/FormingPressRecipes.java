@@ -4,7 +4,9 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.ProjectRedCore;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
+import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -408,5 +410,46 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
 
+        // Music Discs
+
+        // Flora
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.PolyvinylChloride, 1L),
+                        new ItemStack(Blocks.tallgrass, 64, 1),
+                        new ItemStack(Blocks.waterlily, 64),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 64L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 64L),
+                        ItemList.Shape_Mold_Cylinder.get(0L))
+                .fluidInputs(Materials.Grade1PurifiedWater.getFluid(INGOTS * 16))
+                .itemOutputs(NHItemList.FloraDisc.get(1)).duration(100 * SECONDS).eut(TierEU.RECIPE_ZPM / 2)
+                .addTo(formingPressRecipes);
+
+        // Absolute Zero
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.PolyvinylChloride, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 64L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 64L),
+                        NHItemList.EuropaIceDust.get(64),
+                        NHItemList.PlutoIceDust.get(64),
+                        ItemList.Shape_Mold_Cylinder.get(0L))
+                .fluidInputs(Materials.Infinity.getMolten(INGOTS * 16)).itemOutputs(NHItemList.AbsoluteZeroDisc.get(1))
+                .duration(100 * SECONDS).eut(TierEU.RECIPE_UIV / 2).addTo(formingPressRecipes);
+
+        // Sweet Dreams
+        if (UniversalSingularities.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.PolyvinylChloride, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Gold, 64L),
+                            new ItemStack(Blocks.grass, 64),
+                            new ItemStack(Blocks.sand, 64),
+                            getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 64, 3),
+                            ItemList.Shape_Mold_Cylinder.get(0L))
+                    .fluidInputs(Materials.Universium.getMolten(INGOTS * 16))
+                    .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(100 * SECONDS).eut(TierEU.RECIPE_MAX / 2)
+                    .addTo(formingPressRecipes);
+        }
     }
 }
