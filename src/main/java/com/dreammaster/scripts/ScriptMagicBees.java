@@ -38,6 +38,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -380,8 +381,7 @@ public class ScriptMagicBees implements IScriptLoader {
         new ResearchItem(
                 "MAGICAPIARY",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("sano"), 12)
-                        .add(Aspect.getAspect("ignis"), 9).add(Aspect.getAspect("lucrum"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.HEAL, 12).add(Aspect.FIRE, 9).add(Aspect.GREED, 6),
                 1,
                 7,
                 3,
@@ -392,9 +392,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MAGICAPIARY",
                 getModItem(MagicBees.ID, "magicApiary", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 75).add(Aspect.getAspect("sano"), 75)
-                        .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("lucrum"), 50)
-                        .add(Aspect.getAspect("exanimis"), 25).add(Aspect.getAspect("herba"), 20),
+                new AspectList().add(Aspect.MAGIC, 75).add(Aspect.HEAL, 75).add(Aspect.FIRE, 50).add(Aspect.GREED, 50)
+                        .add(Aspect.UNDEAD, 25).add(Aspect.PLANT, 20),
                 getModItem(Forestry.ID, "apiculture", 1, 0),
                 getModItem(MagicBees.ID, "wax", 1, 0),
                 getModItem(MagicBees.ID, "wax", 1, 1),
@@ -410,9 +409,8 @@ public class ScriptMagicBees implements IScriptLoader {
         TCHelper.addResearchPrereq("MB_VisAuraProvider", "MB_DimensionalSingularity", false);
         TCHelper.setResearchAspects(
                 "MB_VisAuraProvider",
-                new AspectList().add(Aspect.getAspect("lucrum"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("vitreus"), 12).add(Aspect.getAspect("ordo"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("machina"), 3));
+                new AspectList().add(Aspect.GREED, 15).add(Aspect.METAL, 12).add(Aspect.CRYSTAL, 12)
+                        .add(Aspect.ORDER, 9).add(Aspect.MOTION, 6).add(Aspect.MECHANISM, 3));
         TCHelper.setResearchComplexity("MB_VisAuraProvider", 4);
         ResearchCategories.getResearch("MB_VisAuraProvider").setConcealed();
         ThaumcraftApi.addWarpToResearch("MB_VisAuraProvider", 2);
@@ -421,8 +419,8 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MB_VisAuraProvider",
                 getModItem(MagicBees.ID, "visAuraProvider", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.ORDER, 75).add(Aspect.WATER, 75).add(Aspect.AIR, 75)
+                        .add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -450,8 +448,8 @@ public class ScriptMagicBees implements IScriptLoader {
         new ResearchItem(
                 "CONCENTRATEDCOMPOUND",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("messis"), 15).add(Aspect.getAspect("sano"), 12)
-                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("perditio"), 6),
+                new AspectList().add(Aspect.CROP, 15).add(Aspect.HEAL, 12).add(Aspect.CRYSTAL, 9)
+                        .add(Aspect.ENTROPY, 6),
                 2,
                 -3,
                 3,
@@ -462,7 +460,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 "CONCENTRATEDCOMPOUND",
                 getModItem(MagicBees.ID, "miscResources", 1, 2),
                 GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
-                new AspectList().add(Aspect.getAspect("messis"), 6).add(Aspect.getAspect("vitreus"), 3));
+                new AspectList().add(Aspect.CROP, 6).add(Aspect.CRYSTAL, 3));
         TCHelper.addResearchPage(
                 "CONCENTRATEDCOMPOUND",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 2))));
@@ -472,15 +470,15 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_EssenceLife",
                 getModItem(MagicBees.ID, "miscResources", 1, 7),
                 getModItem(Minecraft.ID, "red_flower", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("permutatio"), 16)
-                        .add(Aspect.getAspect("herba"), 16).add(Aspect.getAspect("terra"), 16));
+                new AspectList().add(Aspect.METAL, 16).add(Aspect.EXCHANGE, 16).add(Aspect.PLANT, 16)
+                        .add(Aspect.EARTH, 16));
         TCHelper.addResearchPage(
                 "MB_EssenceLife",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 7))));
         TCHelper.setResearchAspects(
                 "MB_EssenceLife",
-                new AspectList().add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("herba"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.METAL, 12).add(Aspect.EXCHANGE, 9).add(Aspect.PLANT, 6)
+                        .add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("MB_EssenceLife", 3);
         TCHelper.clearPages("MB_EssenceDeath");
         TCHelper.addResearchPage("MB_EssenceDeath", new ResearchPage("tc.research_page.MB_EssenceDeath.1"));
@@ -488,15 +486,15 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_EssenceDeath",
                 getModItem(MagicBees.ID, "miscResources", 1, 8),
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
-                new AspectList().add(Aspect.getAspect("mortuus"), 16).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("spiritus"), 16).add(Aspect.getAspect("exanimis"), 16));
+                new AspectList().add(Aspect.DEATH, 16).add(Aspect.ENTROPY, 16).add(Aspect.SOUL, 16)
+                        .add(Aspect.UNDEAD, 16));
         TCHelper.addResearchPage(
                 "MB_EssenceDeath",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 8))));
         TCHelper.setResearchAspects(
                 "MB_EssenceDeath",
-                new AspectList().add(Aspect.getAspect("mortuus"), 12).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("spiritus"), 6).add(Aspect.getAspect("exanimis"), 3));
+                new AspectList().add(Aspect.DEATH, 12).add(Aspect.ENTROPY, 9).add(Aspect.SOUL, 6)
+                        .add(Aspect.UNDEAD, 3));
         TCHelper.setResearchComplexity("MB_EssenceDeath", 3);
         TCHelper.clearPages("MB_EssenceTime");
         TCHelper.addResearchPage("MB_EssenceTime", new ResearchPage("tc.research_page.MB_EssenceTime.1"));
@@ -504,15 +502,15 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_EssenceTime",
                 getModItem(MagicBees.ID, "miscResources", 1, 9),
                 getModItem(Minecraft.ID, "clock", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("vacuos"), 16)
-                        .add(Aspect.getAspect("vinculum"), 16).add(Aspect.getAspect("tempus"), 16));
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.VOID, 16).add(Aspect.TRAP, 16)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 16));
         TCHelper.addResearchPage(
                 "MB_EssenceTime",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 9))));
         TCHelper.setResearchAspects(
                 "MB_EssenceTime",
-                new AspectList().add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("vacuos"), 9)
-                        .add(Aspect.getAspect("vinculum"), 6).add(Aspect.getAspect("tempus"), 3));
+                new AspectList().add(Aspect.ORDER, 12).add(Aspect.VOID, 9).add(Aspect.TRAP, 6)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 3));
         TCHelper.setResearchComplexity("MB_EssenceTime", 3);
         TCHelper.clearPages("MB_EssenceArmor");
         TCHelper.addResearchPage("MB_EssenceArmor", new ResearchPage("tc.research_page.MB_EssenceArmor.1"));
@@ -520,15 +518,14 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_EssenceArmor",
                 getModItem(MagicBees.ID, "miscResources", 1, 10),
                 getModItem(Minecraft.ID, "iron_chestplate", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 16).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("fabrico"), 16));
+                new AspectList().add(Aspect.ARMOR, 16).add(Aspect.MAGIC, 16).add(Aspect.METAL, 16)
+                        .add(Aspect.CRAFT, 16));
         TCHelper.addResearchPage(
                 "MB_EssenceArmor",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 10))));
         TCHelper.setResearchAspects(
                 "MB_EssenceArmor",
-                new AspectList().add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("fabrico"), 3));
+                new AspectList().add(Aspect.ARMOR, 12).add(Aspect.MAGIC, 9).add(Aspect.METAL, 6).add(Aspect.CRAFT, 3));
         TCHelper.setResearchComplexity("MB_EssenceArmor", 3);
         TCHelper.clearPages("MB_EssenceUnstable");
         TCHelper.addResearchPage("MB_EssenceUnstable", new ResearchPage("tc.research_page.MB_EssenceUnstable.1"));
@@ -536,15 +533,15 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_EssenceUnstable",
                 getModItem(MagicBees.ID, "miscResources", 1, 12),
                 getModItem(MagicBees.ID, "propolis", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("permutatio"), 16)
-                        .add(Aspect.getAspect("limus"), 16).add(Aspect.getAspect("potentia"), 16));
+                new AspectList().add(Aspect.ENTROPY, 16).add(Aspect.EXCHANGE, 16).add(Aspect.SLIME, 16)
+                        .add(Aspect.ENERGY, 16));
         TCHelper.addResearchPage(
                 "MB_EssenceUnstable",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 12))));
         TCHelper.setResearchAspects(
                 "MB_EssenceUnstable",
-                new AspectList().add(Aspect.getAspect("perditio"), 12).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("limus"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.ENTROPY, 12).add(Aspect.EXCHANGE, 9).add(Aspect.SLIME, 6)
+                        .add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("MB_EssenceUnstable", 3);
         TCHelper.clearPages("MB_DimensionalSingularity");
         TCHelper.addResearchPrereq("MB_DimensionalSingularity", "INFUSION", false);
@@ -556,8 +553,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_DimensionalSingularity",
                 getModItem(MagicBees.ID, "miscResources", 1, 17),
                 6,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("permutatio"), 24)
-                        .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("tenebrae"), 16),
+                new AspectList().add(Aspect.MAGIC, 24).add(Aspect.EXCHANGE, 24).add(Aspect.ELDRITCH, 16)
+                        .add(Aspect.DARKNESS, 16),
                 getModItem(Minecraft.ID, "gold_block", 1, 0),
                 getModItem(MagicBees.ID, "propolis", 1, 0),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
@@ -570,8 +567,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 1, 17))));
         TCHelper.setResearchAspects(
                 "MB_DimensionalSingularity",
-                new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("limus"), 9).add(Aspect.getAspect("potentia"), 6));
+                new AspectList().add(Aspect.ENTROPY, 15).add(Aspect.EXCHANGE, 12).add(Aspect.SLIME, 9)
+                        .add(Aspect.ENERGY, 6));
         TCHelper.setResearchComplexity("MB_DimensionalSingularity", 3);
         TCHelper.moveResearch("MB_EssenceOblivion", "MAGICBEES", -7, 4);
         TCHelper.clearPages("MB_EssenceOblivion");
@@ -580,8 +577,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_EssenceOblivion",
                 getModItem(MagicBees.ID, "miscResources", 1, 11),
                 8,
-                new AspectList().add(Aspect.getAspect("alienis"), 100).add(Aspect.getAspect("praecantatio"), 100)
-                        .add(Aspect.getAspect("lucrum"), 75).add(Aspect.getAspect("bestia"), 75),
+                new AspectList().add(Aspect.ELDRITCH, 100).add(Aspect.MAGIC, 100).add(Aspect.GREED, 75)
+                        .add(Aspect.BEAST, 75),
                 getModItem(Minecraft.ID, "dragon_egg", 1, 0),
                 getModItem(MagicBees.ID, "miscResources", 1, 17),
                 getModItem(MagicBees.ID, "miscResources", 1, 17),
@@ -591,8 +588,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 1, 11))));
         TCHelper.setResearchAspects(
                 "MB_EssenceOblivion",
-                new AspectList().add(Aspect.getAspect("alienis"), 5).add(Aspect.getAspect("praecantatio"), 5)
-                        .add(Aspect.getAspect("lucrum"), 5).add(Aspect.getAspect("bestia"), 5));
+                new AspectList().add(Aspect.ELDRITCH, 5).add(Aspect.MAGIC, 5).add(Aspect.GREED, 5)
+                        .add(Aspect.BEAST, 5));
         TCHelper.setResearchComplexity("MB_EssenceOblivion", 3);
         TCHelper.moveResearch("MB_FrameMagic", "MAGICBEES", -4, 0);
         TCHelper.addResearchPrereq("MB_FrameMagic", "MB_Root", false);
@@ -602,9 +599,8 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MB_FrameMagic",
                 getModItem(MagicBees.ID, "frameMagic", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("terra"), 8)
-                        .add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("perditio"), 8)
-                        .add(Aspect.getAspect("ignis"), 8).add(Aspect.getAspect("aqua"), 8),
+                new AspectList().add(Aspect.ORDER, 8).add(Aspect.EARTH, 8).add(Aspect.AIR, 8).add(Aspect.ENTROPY, 8)
+                        .add(Aspect.FIRE, 8).add(Aspect.WATER, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -631,15 +627,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "frameMagic", 1, 0))));
         TCHelper.setResearchAspects(
                 "MB_FrameMagic",
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("perditio"), 6));
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.EARTH, 12).add(Aspect.AIR, 9).add(Aspect.ENTROPY, 6));
         TCHelper.setResearchComplexity("MB_FrameMagic", 4);
         new ResearchItem(
                 "GENTLEFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("victus"), 15).add(Aspect.getAspect("instrumentum"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aqua"), 3),
+                new AspectList().add(Aspect.LIFE, 15).add(Aspect.TOOL, 15).add(Aspect.AIR, 12).add(Aspect.FIRE, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.WATER, 3),
                 -7,
                 2,
                 3,
@@ -649,9 +643,8 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GENTLEFRAME",
                 getModItem(MagicBees.ID, "frameGentle", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.EARTH, 16).add(Aspect.AIR, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.FIRE, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -679,9 +672,8 @@ public class ScriptMagicBees implements IScriptLoader {
         new ResearchItem(
                 "RESILIENTFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("pannus"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aqua"), 3),
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.CLOTH, 15).add(Aspect.AIR, 12).add(Aspect.FIRE, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.WATER, 3),
                 -7,
                 1,
                 3,
@@ -691,9 +683,8 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RESILIENTFRAME",
                 getModItem(MagicBees.ID, "frameResilient", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.EARTH, 16).add(Aspect.AIR, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.FIRE, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -721,9 +712,8 @@ public class ScriptMagicBees implements IScriptLoader {
         new ResearchItem(
                 "NECROTICFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("mortuus"), 15).add(Aspect.getAspect("fabrico"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aqua"), 3),
+                new AspectList().add(Aspect.DEATH, 15).add(Aspect.CRAFT, 15).add(Aspect.AIR, 12).add(Aspect.FIRE, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.WATER, 3),
                 -7,
                 0,
                 3,
@@ -733,9 +723,8 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NECROTICFRAME",
                 getModItem(MagicBees.ID, "frameNecrotic", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.EARTH, 16).add(Aspect.AIR, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.FIRE, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -763,9 +752,8 @@ public class ScriptMagicBees implements IScriptLoader {
         new ResearchItem(
                 "METABOLICFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("limus"), 15).add(Aspect.getAspect("potentia"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aqua"), 3),
+                new AspectList().add(Aspect.SLIME, 15).add(Aspect.ENERGY, 15).add(Aspect.AIR, 12).add(Aspect.FIRE, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.WATER, 3),
                 -7,
                 -1,
                 3,
@@ -775,9 +763,8 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "METABOLICFRAME",
                 getModItem(MagicBees.ID, "frameMetabolic", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.EARTH, 16).add(Aspect.AIR, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.FIRE, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -805,9 +792,8 @@ public class ScriptMagicBees implements IScriptLoader {
         new ResearchItem(
                 "TEMPORALFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("tempus"), 15).add(Aspect.getAspect("vacuos"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aqua"), 3),
+                new AspectList().add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 15).add(Aspect.VOID, 15)
+                        .add(Aspect.AIR, 12).add(Aspect.FIRE, 9).add(Aspect.EARTH, 6).add(Aspect.WATER, 3),
                 -7,
                 -2,
                 3,
@@ -817,9 +803,8 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TEMPORALFRAME",
                 getModItem(MagicBees.ID, "frameTemporal", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.EARTH, 16).add(Aspect.AIR, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.FIRE, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -847,9 +832,8 @@ public class ScriptMagicBees implements IScriptLoader {
         new ResearchItem(
                 "OBLIVIONFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("pannus"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aqua"), 3),
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.CLOTH, 15).add(Aspect.AIR, 12).add(Aspect.FIRE, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.WATER, 3),
                 -10,
                 0,
                 3,
@@ -867,9 +851,8 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "OBLIVIONFRAME",
                 getModItem(MagicBees.ID, "frameOblivion", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("terra"), 32)
-                        .add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("perditio"), 32),
+                new AspectList().add(Aspect.ORDER, 32).add(Aspect.EARTH, 32).add(Aspect.AIR, 32).add(Aspect.FIRE, 32)
+                        .add(Aspect.WATER, 32).add(Aspect.ENTROPY, 32),
                 "abc",
                 "def",
                 "ghi",
@@ -899,8 +882,7 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MB_Scoop",
                 getModItem(MagicBees.ID, "item.thaumiumScoop", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("aer"), 10),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.AIR, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -927,16 +909,14 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.thaumiumScoop", 1, 0))));
         TCHelper.setResearchAspects(
                 "MB_Scoop",
-                new AspectList().add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("terra"), 6)
-                        .add(Aspect.getAspect("aer"), 3));
+                new AspectList().add(Aspect.ORDER, 9).add(Aspect.EARTH, 6).add(Aspect.AIR, 3));
         TCHelper.setResearchComplexity("MB_Scoop", 3);
         TCHelper.clearPages("MB_ScoopVoid");
         TCHelper.addResearchPage("MB_ScoopVoid", new ResearchPage("tc.research_page.MB_ScoopVoid.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MB_ScoopVoid",
                 getModItem(MagicBees.ID, "item.voidScoop", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("aer"), 20),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.EARTH, 20).add(Aspect.AIR, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -963,8 +943,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.voidScoop", 1, 0))));
         TCHelper.setResearchAspects(
                 "MB_ScoopVoid",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("ordo"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aer"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.ORDER, 9).add(Aspect.EARTH, 6).add(Aspect.AIR, 3));
         TCHelper.setResearchComplexity("MB_ScoopVoid", 3);
         ThaumcraftApi.addWarpToResearch("MB_ScoopVoid", 3);
         TCHelper.clearPages("MB_Grafter");
@@ -972,8 +951,7 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MB_Grafter",
                 getModItem(MagicBees.ID, "item.thaumiumGrafter", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.EARTH, 15).add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -994,16 +972,14 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.thaumiumGrafter", 1, 0))));
         TCHelper.setResearchAspects(
                 "MB_Grafter",
-                new AspectList().add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("terra"), 9)
-                        .add(Aspect.getAspect("aer"), 6));
+                new AspectList().add(Aspect.ORDER, 12).add(Aspect.EARTH, 9).add(Aspect.AIR, 6));
         TCHelper.setResearchComplexity("MB_Grafter", 3);
         TCHelper.clearPages("MB_GrafterVoid");
         TCHelper.addResearchPage("MB_GrafterVoid", new ResearchPage("tc.research_page.MB_GrafterVoid.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MB_GrafterVoid",
                 getModItem(MagicBees.ID, "item.voidGrafter", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("aer"), 30),
+                new AspectList().add(Aspect.ORDER, 30).add(Aspect.EARTH, 30).add(Aspect.AIR, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -1024,15 +1000,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "item.voidGrafter", 1, 0))));
         TCHelper.setResearchAspects(
                 "MB_GrafterVoid",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("aer"), 6));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.ORDER, 12).add(Aspect.EARTH, 9).add(Aspect.AIR, 6));
         TCHelper.setResearchComplexity("MB_GrafterVoid", 3);
         ThaumcraftApi.addWarpToResearch("MB_GrafterVoid", 3);
         new ResearchItem(
                 "ENCHANTEDEARTH",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("victus"), 9)
-                        .add(Aspect.getAspect("sano"), 6).add(Aspect.getAspect("ordo"), 3),
+                new AspectList().add(Aspect.EARTH, 9).add(Aspect.LIFE, 9).add(Aspect.HEAL, 6).add(Aspect.ORDER, 3),
                 5,
                 -3,
                 2,
@@ -1041,8 +1015,7 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHANTEDEARTH",
                 getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("terra"), 10),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 10).add(Aspect.EARTH, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -1069,7 +1042,8 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_ApimancersDrainer",
                 getModItem(MagicBees.ID, "apimancersDrainer", 1, 0),
                 5,
-                new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("tempus"), 50),
+                new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 50),
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 2),
                 getModItem(MagicBees.ID, "pollen", 1, 0),

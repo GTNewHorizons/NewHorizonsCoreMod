@@ -256,8 +256,7 @@ public class ScriptForestry implements IScriptLoader {
         new ResearchItem(
                 "PROVENFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("potentia"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.ENERGY, 6),
                 7,
                 0,
                 3,
@@ -266,9 +265,8 @@ public class ScriptForestry implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "PROVENFRAME",
                 getModItem(Forestry.ID, "frameProven", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aqua"), 15),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.EARTH, 15).add(Aspect.AIR, 15).add(Aspect.ENTROPY, 15)
+                        .add(Aspect.FIRE, 15).add(Aspect.WATER, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -296,8 +294,7 @@ public class ScriptForestry implements IScriptLoader {
         new ResearchItem(
                 "PROVENGRAFTER",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("arbor"), 6),
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.EXCHANGE, 12).add(Aspect.METAL, 9).add(Aspect.TREE, 6),
                 -5,
                 -3,
                 3,
@@ -307,8 +304,8 @@ public class ScriptForestry implements IScriptLoader {
                 "PROVENGRAFTER",
                 getModItem(Forestry.ID, "grafterProven", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 25).add(Aspect.getAspect("permutatio"), 25)
-                        .add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("arbor"), 10),
+                new AspectList().add(Aspect.TOOL, 25).add(Aspect.EXCHANGE, 25).add(Aspect.METAL, 20)
+                        .add(Aspect.TREE, 10),
                 getModItem(Forestry.ID, "grafter", 1, 0),
                 getModItem(Minecraft.ID, "sapling", 1, 1),
                 getModItem(Minecraft.ID, "sapling", 1, 2),
