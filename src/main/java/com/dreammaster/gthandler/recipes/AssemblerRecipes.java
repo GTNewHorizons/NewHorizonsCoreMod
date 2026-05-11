@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
-import static bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
+import static bartworks.system.material.WerkstoffLoader.RhodiumPlatedPalladium;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static com.gtnewhorizon.gtnhlib.util.ItemUtil.copyAmount;
 import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
@@ -740,7 +740,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Motor_LuV.get(4L),
                         ItemList.Electric_Pump_LuV.get(4L),
                         ItemList.Conveyor_Module_LuV.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.gearGt, LuVTierMaterial.getBridgeMaterial(), 4L))
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, RhodiumPlatedPalladium.getBridgeMaterial(), 4L))
                 .circuit(2).itemOutputs(ItemList.OreDrill3.get(1L)).fluidInputs(Materials.SolderingAlloy.getMolten(288))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
@@ -6205,8 +6205,8 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(JABBA.ID, "barrel", 1, 0),
-                        LuVTierMaterial.get(OrePrefixes.plate, 2),
-                        LuVTierMaterial.get(OrePrefixes.stick, 2))
+                        RhodiumPlatedPalladium.get(OrePrefixes.plate, 2),
+                        RhodiumPlatedPalladium.get(OrePrefixes.stick, 2))
                 .circuit(13).itemOutputs(getModItem(JABBA.ID, "upgradeStructural", 1, 9)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 

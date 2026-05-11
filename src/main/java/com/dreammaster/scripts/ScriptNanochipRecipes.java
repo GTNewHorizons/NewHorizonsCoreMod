@@ -148,7 +148,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iridium, 8),
-                        WerkstoffLoader.LuVTierMaterial.get(OrePrefixes.foil, 48),
+                        WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.foil, 48),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Adamantium, 4),
                         ItemList.VacuumConveyorPipe.get(8))
                 .fluidInputs(
