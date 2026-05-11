@@ -390,8 +390,7 @@ public class ScriptExtraBees implements IScriptLoader {
         new ResearchItem(
                 "HEALINGFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("victus"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.LIFE, 6),
                 7,
                 -2,
                 3,
@@ -400,9 +399,8 @@ public class ScriptExtraBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "HEALINGFRAME",
                 getModItem(ExtraBees.ID, "hiveFrame.clay", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("terra"), 4)
-                        .add(Aspect.getAspect("aer"), 4).add(Aspect.getAspect("perditio"), 4)
-                        .add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("aqua"), 4),
+                new AspectList().add(Aspect.ORDER, 4).add(Aspect.EARTH, 4).add(Aspect.AIR, 4).add(Aspect.ENTROPY, 4)
+                        .add(Aspect.FIRE, 4).add(Aspect.WATER, 4),
                 "abc",
                 "def",
                 "ghi",
@@ -430,8 +428,7 @@ public class ScriptExtraBees implements IScriptLoader {
         new ResearchItem(
                 "CHOCOLATEFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("fames"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.HUNGER, 6),
                 7,
                 2,
                 3,
@@ -444,9 +441,8 @@ public class ScriptExtraBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CHOCOLATEFRAME",
                 getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("terra"), 4)
-                        .add(Aspect.getAspect("aer"), 4).add(Aspect.getAspect("perditio"), 4)
-                        .add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("aqua"), 4),
+                new AspectList().add(Aspect.ORDER, 4).add(Aspect.EARTH, 4).add(Aspect.AIR, 4).add(Aspect.ENTROPY, 4)
+                        .add(Aspect.FIRE, 4).add(Aspect.WATER, 4),
                 "abc",
                 "def",
                 "ghi",
@@ -474,8 +470,7 @@ public class ScriptExtraBees implements IScriptLoader {
         new ResearchItem(
                 "RESTRAINTFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("metallum"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.METAL, 6),
                 9,
                 0,
                 3,
@@ -485,9 +480,8 @@ public class ScriptExtraBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RESTRAINTFRAME",
                 getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("terra"), 8)
-                        .add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("perditio"), 8)
-                        .add(Aspect.getAspect("ignis"), 8).add(Aspect.getAspect("aqua"), 8),
+                new AspectList().add(Aspect.ORDER, 8).add(Aspect.EARTH, 8).add(Aspect.AIR, 8).add(Aspect.ENTROPY, 8)
+                        .add(Aspect.FIRE, 8).add(Aspect.WATER, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -515,8 +509,7 @@ public class ScriptExtraBees implements IScriptLoader {
         new ResearchItem(
                 "SOULFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("spiritus"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.SOUL, 6),
                 11,
                 0,
                 3,
@@ -525,9 +518,8 @@ public class ScriptExtraBees implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SOULFRAME",
                 getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.EARTH, 16).add(Aspect.AIR, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.FIRE, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",

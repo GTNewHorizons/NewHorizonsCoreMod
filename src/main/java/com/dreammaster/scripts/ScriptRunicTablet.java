@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import fox.spiteful.forbidden.DarkAspects;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -26,7 +28,8 @@ public class ScriptRunicTablet implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Automagy.ID, DraconicEvolution.ID, Thaumcraft.ID, ThaumicExploration.ID);
+        return Arrays
+                .asList(Automagy.ID, DraconicEvolution.ID, ForbiddenMagic.ID, Thaumcraft.ID, ThaumicExploration.ID);
     }
 
     @Override
@@ -34,9 +37,8 @@ public class ScriptRunicTablet implements IScriptLoader {
         new ResearchItem(
                 "RUNEDTABLET",
                 "ELDRITCH",
-                new AspectList().add(Aspect.getAspect("alienis"), 30).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("superbia"), 18).add(Aspect.getAspect("spiritus"), 12)
-                        .add(Aspect.getAspect("infernus"), 6),
+                new AspectList().add(Aspect.ELDRITCH, 30).add(Aspect.MAGIC, 24).add(DarkAspects.PRIDE, 18)
+                        .add(Aspect.SOUL, 12).add(DarkAspects.NETHER, 6),
                 -5,
                 0,
                 3,
@@ -47,9 +49,8 @@ public class ScriptRunicTablet implements IScriptLoader {
                 "RUNEDTABLET",
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 2),
                 10,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("iter"), 32)
-                        .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("vacuos"), 32)
-                        .add(Aspect.getAspect("cognitio"), 64).add(Aspect.getAspect("praecantatio"), 128),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.TRAVEL, 32).add(Aspect.DARKNESS, 32)
+                        .add(Aspect.VOID, 32).add(Aspect.MIND, 64).add(Aspect.MAGIC, 128),
                 getModItem(DraconicEvolution.ID, "infoTablet", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
