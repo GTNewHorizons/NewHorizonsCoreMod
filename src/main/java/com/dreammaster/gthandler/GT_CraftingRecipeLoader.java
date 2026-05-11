@@ -906,7 +906,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier5.get(),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.LuVTierMaterial.get(screw), 'P',
+                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.RhodiumPlatedPalladium.get(screw), 'P',
                         OrePrefixes.plate.get(Materials.FierySteel), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier6.get(),
