@@ -912,7 +912,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L),
+                        new OreDictItemStack(OrePrefixes.gem.get(Materials.Diamond).toString(), 1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4L))
                 .itemOutputs(NHItemList.TwilightCrystal.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
