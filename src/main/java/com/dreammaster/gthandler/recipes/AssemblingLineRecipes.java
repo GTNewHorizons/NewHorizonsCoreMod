@@ -1161,7 +1161,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
             // Clarifier Purification Unit
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Sifter.get(1))
+            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.LargeSifter.get(1))
                     .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             ItemList.ActivatedCarbonFilterMesh.get(16),
@@ -1601,7 +1601,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Antimatter Generator - SLAM
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemRefer.Large_Naquadah_Reactor.get(1),
+                ItemList.LargeNaquadahReactor.get(1),
                 512000,
                 2048,
                 8000000,
