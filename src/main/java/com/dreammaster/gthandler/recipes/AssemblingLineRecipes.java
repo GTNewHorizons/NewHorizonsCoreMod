@@ -1617,7 +1617,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64),
                         MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64) },
                 new FluidStack[] { Materials.Antimatter.getFluid(1000), Materials.SixPhasedCopper.getMolten(9216),
-                        Materials.TranscendentMetal.getMolten(9216), Materials.SuperconductorUMVBase.getMolten(9216) },
+                        Materials.TranscendentMetal.getMolten(9216), Materials.SuperconductorUIVBase.getMolten(9216) },
                 ItemRefer.AntimatterGenerator.get(1),
                 6 * MINUTES,
                 (int) TierEU.RECIPE_UMV);
