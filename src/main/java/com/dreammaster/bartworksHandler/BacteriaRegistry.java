@@ -14,6 +14,7 @@ import static gregtech.api.enums.Materials.BioMediumRaw;
 import static gregtech.api.enums.Materials.Bismuth;
 import static gregtech.api.enums.Materials.Boron;
 import static gregtech.api.enums.Materials.Creosote;
+import static gregtech.api.enums.Materials.FermentedBacterialSludge;
 import static gregtech.api.enums.Materials.FermentedBiomass;
 import static gregtech.api.enums.Materials.Fluorine;
 import static gregtech.api.enums.Materials.GrowthMediumRaw;
@@ -62,6 +63,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.FUSION_THRESHOLD;
 import static gregtech.api.util.GTRecipeConstants.GLASS;
 import static gregtech.api.util.GTRecipeConstants.SIEVERT;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.cokeOvenRecipes;
 
 import java.awt.Color;
 import java.util.LinkedHashMap;
@@ -73,7 +75,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.dreammaster.fluids.FluidList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.common.loaders.BioItemList;
@@ -253,7 +254,7 @@ public class BacteriaRegistry {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaClog", 64)).circuit(24)
                 .itemOutputs(Ash.getDust(8)).fluidInputs(Materials.Xenoxene.getFluid(1000))
                 .fluidOutputs(Materials.RadoxRaw.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
-                .addTo(pyrolyseRecipes);
+                .addTo(pyrolyseRecipes, cokeOvenRecipes);
 
         GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(5)).fluidInputs(Materials.RadoxRaw.getFluid(5000))
                 .fluidOutputs(
@@ -261,7 +262,7 @@ public class BacteriaRegistry {
                         Oil.getFluid(300),
                         Creosote.getFluid(1000),
                         Water.getFluid(1400),
-                        FluidList.FermentedBacterialSludge.getFluidStack(50),
+                        FermentedBacterialSludge.getFluid(50),
                         FermentedBiomass.getFluid(50),
                         RadoxSuperHeavy.getFluid(100),
                         RadoxHeavy.getFluid(150),

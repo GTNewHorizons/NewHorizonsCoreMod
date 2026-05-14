@@ -19,6 +19,17 @@ public enum BlockList {
     CompressedGraphite("CompressedGraphite", stoneLike(1, 5f)),
     ZincGravelOre("ZincGravelOre", new ZincGravelOre()),
 
+    // ===== Metal Bars =====
+    AluminiumBars("AluminiumBars", new MetalBars("AluminiumBars")),
+    ChromeBars("ChromeBars", new MetalBars("ChromeBars")),
+    IridiumBars("IridiumBars", new MetalBars("IridiumBars")),
+    NeutroniumBars("NeutroniumBars", new MetalBars("NeutroniumBars")),
+    OsmiumBars("OsmiumBars", new MetalBars("OsmiumBars")),
+    StainlessSteelBars("StainlessSteelBars", new MetalBars("StainlessSteelBars")),
+    SteelBars("SteelBars", new MetalBars("SteelBars")),
+    TitaniumBars("TitaniumBars", new MetalBars("TitaniumBars")),
+    TungstenSteelBars("TungstenSteelBars", new MetalBars("TungstenSteelBars")),
+
     // ===== Resource Blocks =====
     // FIXME: Move these to GT5-Unofficial
     CallistoColdIce("CallistoColdIce", crystal(2, 25f)),
@@ -27,6 +38,7 @@ public enum BlockList {
     Mytryl("Mytryl", metal(2, 30f)),
     Quantinum("Quantinum", metal(3, 50f)),
     BlackPlutonium("BlackPlutonium", metal(3, 50f)),
+    Sulfur("Sulfur", crystal(2, 25f)),
 
     // ===== Plated Reinforced Stone =====
     BronzePlatedReinforcedStone("BronzePlatedReinforcedStone", platedStone(4, 60f)),

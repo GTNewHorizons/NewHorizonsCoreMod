@@ -12,16 +12,7 @@ import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
 
 public enum FluidList {
 
-    SodiumPotassium(new ModSimpleBaseFluid(ModFluidManager.GetNewFluid("SodiumPotassium"), Material.water),
-            ModTabList.ModFluidsTab),
     Concrete(new ModSimpleBaseFluid(ModFluidManager.GetNewFluid("Concrete"), Material.water), ModTabList.ModFluidsTab),
-    EnrichedBacterialSludge(ExtendedFluidCollection.getEnrichedBacterialSludge(), ModTabList.ModFluidsTab),
-    FermentedBacterialSludge(ExtendedFluidCollection.getFermentedBacterialSludge(), ModTabList.ModFluidsTab),
-    NitricAcid(ExtendedFluidCollection.getNitricAcid(), ModTabList.ModFluidsTab),
-    Ammonia(ExtendedFluidCollection.getAmmonia(), ModTabList.ModFluidsTab),
-    CompressedOxygen(ExtendedFluidCollection.getCompressedOxygen(), ModTabList.ModFluidsTab),
-    CompressedNitrogen(ExtendedFluidCollection.getCompressedNitrogen(), ModTabList.ModFluidsTab),
-    Pollution(ExtendedFluidCollection.getPollution(), ModTabList.ModFluidsTab),
     // Do not delete this
     EndOfList(null, null);
 

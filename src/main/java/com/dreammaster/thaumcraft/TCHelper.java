@@ -16,6 +16,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.IArcaneRecipe;
@@ -277,6 +278,19 @@ public class TCHelper {
     }
 
     @SuppressWarnings("unchecked")
+    public static void removeCrucibleRecipe(final ItemStack output, final ItemStack catalyst) {
+        ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
+            if (recipe instanceof CrucibleRecipe crucibleRecipe) {
+                final ItemStack stack = crucibleRecipe.getRecipeOutput();
+                return stack != null && GTUtility.areStacksEqual(stack, output)
+                        && catalyst != null
+                        && crucibleRecipe.catalystMatches(catalyst);
+            }
+            return false;
+        });
+    }
+
+    @SuppressWarnings("unchecked")
     public static void removeInfusionRecipe(final ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof InfusionRecipe infusionRecipe) {
@@ -344,5 +358,14 @@ public class TCHelper {
         } catch (RuntimeException e) {
             return null;
         }
+    }
+
+    /**
+     * @param size How much of every primal aspect to put in the AspectList
+     * @return An AspectList with all primals equal to size
+     */
+    public static AspectList equalPrimalList(int size) {
+        return new AspectList().add(Aspect.AIR, size).add(Aspect.FIRE, size).add(Aspect.WATER, size)
+                .add(Aspect.EARTH, size).add(Aspect.ORDER, size).add(Aspect.ENTROPY, size);
     }
 }

@@ -56,7 +56,7 @@ public class GT_Loader_Wires {
                 new MTECable(
                         aStartID + 0,
                         "wire." + aMaterial.mName.toLowerCase() + ".01",
-                        "1x " + displayName + " Wire",
+                        "gt.oreprefix.1x_material_wire",
                         0.125F,
                         aMaterial,
                         aLoss,
@@ -70,7 +70,7 @@ public class GT_Loader_Wires {
                 new MTECable(
                         aStartID + 1,
                         "wire." + aMaterial.mName.toLowerCase() + ".02",
-                        "2x " + displayName + " Wire",
+                        "gt.oreprefix.2x_material_wire",
                         0.25F,
                         aMaterial,
                         aLoss,
@@ -84,7 +84,7 @@ public class GT_Loader_Wires {
                 new MTECable(
                         aStartID + 2,
                         "wire." + aMaterial.mName.toLowerCase() + ".04",
-                        "4x " + displayName + " Wire",
+                        "gt.oreprefix.4x_material_wire",
                         0.375F,
                         aMaterial,
                         aLoss,
@@ -98,7 +98,7 @@ public class GT_Loader_Wires {
                 new MTECable(
                         aStartID + 3,
                         "wire." + aMaterial.mName.toLowerCase() + ".08",
-                        "8x " + displayName + " Wire",
+                        "gt.oreprefix.8x_material_wire",
                         0.5F,
                         aMaterial,
                         aLoss,
@@ -112,7 +112,7 @@ public class GT_Loader_Wires {
                 new MTECable(
                         aStartID + 4,
                         "wire." + aMaterial.mName.toLowerCase() + ".12",
-                        "12x " + displayName + " Wire",
+                        "gt.oreprefix.12x_material_wire",
                         0.625F,
                         aMaterial,
                         aLoss,
@@ -126,7 +126,7 @@ public class GT_Loader_Wires {
                 new MTECable(
                         aStartID + 5,
                         "wire." + aMaterial.mName.toLowerCase() + ".16",
-                        "16x " + displayName + " Wire",
+                        "gt.oreprefix.16x_material_wire",
                         0.75F,
                         aMaterial,
                         aLoss,
@@ -141,7 +141,7 @@ public class GT_Loader_Wires {
                     new MTECable(
                             aStartID + 6,
                             "cable." + aMaterial.mName.toLowerCase() + ".01",
-                            "1x " + displayName + " Cable",
+                            "gt.oreprefix.1x_material_cable",
                             0.25F,
                             aMaterial,
                             aLossInsulated,
@@ -155,7 +155,7 @@ public class GT_Loader_Wires {
                     new MTECable(
                             aStartID + 7,
                             "cable." + aMaterial.mName.toLowerCase() + ".02",
-                            "2x " + displayName + " Cable",
+                            "gt.oreprefix.2x_material_cable",
                             0.375F,
                             aMaterial,
                             aLossInsulated,
@@ -169,7 +169,7 @@ public class GT_Loader_Wires {
                     new MTECable(
                             aStartID + 8,
                             "cable." + aMaterial.mName.toLowerCase() + ".04",
-                            "4x " + displayName + " Cable",
+                            "gt.oreprefix.4x_material_cable",
                             0.5F,
                             aMaterial,
                             aLossInsulated,
@@ -183,7 +183,7 @@ public class GT_Loader_Wires {
                     new MTECable(
                             aStartID + 9,
                             "cable." + aMaterial.mName.toLowerCase() + ".08",
-                            "8x " + displayName + " Cable",
+                            "gt.oreprefix.8x_material_cable",
                             0.625F,
                             aMaterial,
                             aLossInsulated,
@@ -197,7 +197,7 @@ public class GT_Loader_Wires {
                     new MTECable(
                             aStartID + 10,
                             "cable." + aMaterial.mName.toLowerCase() + ".12",
-                            "12x " + displayName + " Cable",
+                            "gt.oreprefix.12x_material_cable",
                             0.75F,
                             aMaterial,
                             aLossInsulated,
@@ -211,7 +211,7 @@ public class GT_Loader_Wires {
                     new MTECable(
                             aStartID + 11,
                             "cable." + aMaterial.mName.toLowerCase() + ".16",
-                            "16x " + displayName + " Cable",
+                            "gt.oreprefix.16x_material_cable",
                             0.875F,
                             aMaterial,
                             aLossInsulated,

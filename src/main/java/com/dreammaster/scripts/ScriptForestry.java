@@ -18,7 +18,9 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.fermentingRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -34,6 +36,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
@@ -253,8 +256,7 @@ public class ScriptForestry implements IScriptLoader {
         new ResearchItem(
                 "PROVENFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("potentia"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.ENERGY, 6),
                 7,
                 0,
                 3,
@@ -263,9 +265,8 @@ public class ScriptForestry implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "PROVENFRAME",
                 getModItem(Forestry.ID, "frameProven", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aqua"), 15),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.EARTH, 15).add(Aspect.AIR, 15).add(Aspect.ENTROPY, 15)
+                        .add(Aspect.FIRE, 15).add(Aspect.WATER, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -293,8 +294,7 @@ public class ScriptForestry implements IScriptLoader {
         new ResearchItem(
                 "PROVENGRAFTER",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("arbor"), 6),
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.EXCHANGE, 12).add(Aspect.METAL, 9).add(Aspect.TREE, 6),
                 -5,
                 -3,
                 3,
@@ -304,8 +304,8 @@ public class ScriptForestry implements IScriptLoader {
                 "PROVENGRAFTER",
                 getModItem(Forestry.ID, "grafterProven", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 25).add(Aspect.getAspect("permutatio"), 25)
-                        .add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("arbor"), 10),
+                new AspectList().add(Aspect.TOOL, 25).add(Aspect.EXCHANGE, 25).add(Aspect.METAL, 20)
+                        .add(Aspect.TREE, 10),
                 getModItem(Forestry.ID, "grafter", 1, 0),
                 getModItem(Minecraft.ID, "sapling", 1, 1),
                 getModItem(Minecraft.ID, "sapling", 1, 2),
@@ -370,9 +370,9 @@ public class ScriptForestry implements IScriptLoader {
                 "plateCupronickel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "plateCupronickel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "gearGtSmallSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
@@ -478,7 +478,7 @@ public class ScriptForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Forestry.ID, "mail", 1, 1),
                 getModItem(Forestry.ID, "thermionicTubes", 1, 9),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(Forestry.ID, "thermionicTubes", 1, 9),
                 "plateSteel",
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
@@ -2793,15 +2793,15 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11),
                 'b',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11),
                 'd',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'e',
                 ItemList.Rotor_MV.get(1L),
                 'f',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11),
                 'h',
@@ -2819,7 +2819,7 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7),
                 'b',
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7),
                 'd',
@@ -5768,5 +5768,17 @@ public class ScriptForestry implements IScriptLoader {
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("water", 1));
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mulch", 1, 0))
+                .fluidInputs(FluidRegistry.getFluidStack("short.mead", 1000))
+                .fluidOutputs(FluidRegistry.getFluidStack("mead", 500)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
+                .addTo(brewingRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mulch", 1, 0))
+                .fluidInputs(FluidRegistry.getFluidStack("resin", 1000))
+                .fluidOutputs(FluidRegistry.getFluidStack("turpentine", 600)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(brewingRecipes);
+        GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("for.honey", 500))
+                .fluidOutputs(FluidRegistry.getFluidStack("short.mead", 500)).duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(fermentingRecipes);
+
     }
 }

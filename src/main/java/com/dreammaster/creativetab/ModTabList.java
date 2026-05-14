@@ -78,14 +78,6 @@ public final class ModTabList {
         }
     };
 
-    public static final CreativeTabs BARS_AND_CASINGS = new CreativeTabs("tabDreamCraftBars_Casings") {
-
-        @Override
-        public Item getTabIconItem() {
-            return NHItemList.ChromeBars.item;
-        }
-    };
-
     private ModTabList() {}
 
     public static void InitModTabs(CreativeTabsManager tabManager) {

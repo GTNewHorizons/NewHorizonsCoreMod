@@ -32,6 +32,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -39,6 +40,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -312,11 +314,11 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "itemCasingSteel");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserBlock", 1, 0),
@@ -476,19 +478,8 @@ public class ScriptBuildCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4L))
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "paper", 8, 0), ItemList.Color_11.get(1L))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0), getModItem(Minecraft.ID, "dye", 1, 11))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0), getModItem(Botany.ID, "pigment", 1, 78))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0), getModItem(ExtraBees.ID, "misc", 1, 20))
+                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0), new OreDictItemStack("dyeYellow", 1))
                 .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

@@ -37,6 +37,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.oredict.OreDictHelper;
 
@@ -369,15 +370,15 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateDoubleCopper");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1),
-                NHItemList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1),
-                NHItemList.StainlessSteelBars.get(),
-                NHItemList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0),
-                NHItemList.StainlessSteelBars.get(),
-                NHItemList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
+                BlockList.StainlessSteelBars.get(),
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1),
-                NHItemList.StainlessSteelBars.get());
+                BlockList.StainlessSteelBars.get());
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentGold", 1, 1),
                 "screwStainlessSteel",
@@ -391,15 +392,15 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentSpread", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateDenseTin",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateDenseTin",
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1),
                 "plateDenseTin",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "plateDenseTin",
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get());
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1),
                 "plateSilver",
@@ -865,14 +866,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapedRecipe(
-                ItemList.Cover_SolarPanel.get(1L),
-                "craftingToolCrowbar",
-                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3),
-                "craftingToolScrewdriver",
-                "craftingToolWrench",
-                "craftingToolHardHammer",
-                "craftingToolFile");
         addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0));
@@ -1094,18 +1087,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5),

@@ -236,7 +236,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Cover_SolarPanel_ZPM.get(1),
                             NHItemList.IrradiantReinforcedNaquadriaPlate.get(4),
                             ItemList.Circuit_Silicon_Wafer5.get(4),
-                            NHItemList.PicoWafer.get(6),
+                            ItemList.Circuit_Wafer_FPIC.get(12),
                             ItemList.Circuit_Chip_PPIC.get(4),
                             ItemList.Circuit_Chip_CrystalSoC2.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 36),
@@ -360,7 +360,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .itemInputs(
                             NHItemList.IrradiantReinforcedNeutroniumPlate.get(8),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
-                            NHItemList.PicoWafer.get(12),
+                            ItemList.Circuit_Wafer_FPIC.get(24),
                             ItemList.Circuit_Chip_UHPIC.get(16),
                             ItemList.Circuit_Chip_PPIC.get(8),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 32),

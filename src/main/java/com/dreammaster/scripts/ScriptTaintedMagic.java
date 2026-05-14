@@ -5,11 +5,11 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkersGregworks;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,9 +17,11 @@ import java.util.List;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
+import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -40,6 +42,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 TaintedMagic.ID,
                 Thaumcraft.ID,
                 TinkersGregworks.ID);
@@ -103,8 +106,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "ShadowmetalGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("tenebrae"), 6).add(Aspect.getAspect("potentia"), 3),
+                new AspectList().add(Aspect.METAL, 12).add(Aspect.MAGIC, 9).add(Aspect.DARKNESS, 6)
+                        .add(Aspect.ENERGY, 3),
                 0,
                 1,
                 2,
@@ -114,8 +117,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0),
                 getModItem(Minecraft.ID, "stone", 1, 0),
-                new AspectList().add(Aspect.getAspect("tenebrae"), 6).add(Aspect.getAspect("praecantatio"), 8)
-                        .add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("vacuos"), 4));
+                new AspectList().add(Aspect.DARKNESS, 6).add(Aspect.MAGIC, 8).add(Aspect.METAL, 8).add(Aspect.VOID, 4));
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0))));
@@ -123,7 +125,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalHoe", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
+                new AspectList().add(Aspect.ENTROPY, 45).add(Aspect.EARTH, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -145,7 +147,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalPick", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
+                new AspectList().add(Aspect.ENTROPY, 45).add(Aspect.EARTH, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -169,7 +171,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalAxe", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
+                new AspectList().add(Aspect.ENTROPY, 45).add(Aspect.EARTH, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -193,7 +195,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSpade", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
+                new AspectList().add(Aspect.ENTROPY, 45).add(Aspect.EARTH, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -213,7 +215,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
+                new AspectList().add(Aspect.ENTROPY, 45).add(Aspect.EARTH, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -235,9 +237,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "EvilshardsGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("vitreus"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("tenebrae"), 6)
-                        .add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(DarkAspects.NETHER, 15).add(Aspect.CRYSTAL, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.DARKNESS, 6).add(Aspect.ELDRITCH, 3),
                 4,
                 0,
                 3,
@@ -247,8 +248,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "EvilshardsGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
-                new AspectList().add(Aspect.getAspect("alienis"), 8).add(Aspect.getAspect("praecantatio"), 8)
-                        .add(Aspect.getAspect("permutatio"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 8).add(Aspect.MAGIC, 8).add(Aspect.EXCHANGE, 8));
         TCHelper.addResearchPage(
                 "EvilshardsGTNH",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3))));
@@ -256,8 +256,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "EvilshardsGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
-                new AspectList().add(Aspect.getAspect("vitium"), 8).add(Aspect.getAspect("praecantatio"), 8)
-                        .add(Aspect.getAspect("permutatio"), 8));
+                new AspectList().add(Aspect.TAINT, 8).add(Aspect.MAGIC, 8).add(Aspect.EXCHANGE, 8));
         TCHelper.addResearchPage(
                 "EvilshardsGTNH",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4))));
@@ -267,9 +266,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "MagicFunguarGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("gula"), 15).add(Aspect.getAspect("fames"), 12)
-                        .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("herba"), 3),
+                new AspectList().add(DarkAspects.GLUTTONY, 15).add(Aspect.HUNGER, 12).add(Aspect.GREED, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.PLANT, 3),
                 3,
                 -2,
                 3,
@@ -278,9 +276,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MagicFunguarGTNH",
                 getModItem(TaintedMagic.ID, "ItemMagicFunguar", 4, 0),
-                new AspectList().add(Aspect.getAspect("aqua"), 10).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.WATER, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 10).add(Aspect.FIRE, 10)
+                        .add(Aspect.AIR, 10).add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -311,9 +308,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "WarpTreeGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("alienis"), 18).add(Aspect.getAspect("tenebrae"), 15)
-                        .add(Aspect.getAspect("vitium"), 12).add(Aspect.getAspect("arbor"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("herba"), 3),
+                new AspectList().add(Aspect.ELDRITCH, 18).add(Aspect.DARKNESS, 15).add(Aspect.TAINT, 12)
+                        .add(Aspect.TREE, 9).add(Aspect.MAGIC, 6).add(Aspect.PLANT, 3),
                 6,
                 -1,
                 3,
@@ -324,9 +320,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "WarpTreeGTNH",
                 getModItem(TaintedMagic.ID, "BlockWarpwoodSapling", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("arbor"), 16)
-                        .add(Aspect.getAspect("tenebrae"), 12).add(Aspect.getAspect("vitium"), 8)
-                        .add(Aspect.getAspect("permutatio"), 8),
+                new AspectList().add(Aspect.ELDRITCH, 16).add(Aspect.TREE, 16).add(Aspect.DARKNESS, 12)
+                        .add(Aspect.TAINT, 8).add(Aspect.EXCHANGE, 8),
                 getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
@@ -350,9 +345,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "WarpedGogglesGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("alienis"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("sensus"), 6)
-                        .add(Aspect.getAspect("aer"), 3),
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.ELDRITCH, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.SENSES, 6).add(Aspect.AIR, 3),
                 2,
                 3,
                 3,
@@ -365,9 +359,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "WarpedGogglesGTNH",
                 getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("tenebrae"), 24).add(Aspect.getAspect("tutamen"), 16)
-                        .add(Aspect.getAspect("sensus"), 8),
+                new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.MAGIC, 32).add(Aspect.DARKNESS, 24)
+                        .add(Aspect.ARMOR, 16).add(Aspect.SENSES, 8),
                 getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
                 OrePrefixes.plate.get(Materials.Shadow),
@@ -388,9 +381,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "FocusShardGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("motus"), 18).add(Aspect.getAspect("vitreus"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("aer"), 9)
-                        .add(Aspect.getAspect("perditio"), 6).add(Aspect.getAspect("ordo"), 3),
+                new AspectList().add(Aspect.MOTION, 18).add(Aspect.CRYSTAL, 15).add(Aspect.MAGIC, 12).add(Aspect.AIR, 9)
+                        .add(Aspect.ENTROPY, 6).add(Aspect.ORDER, 3),
                 3,
                 1,
                 3,
@@ -399,8 +391,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FocusShardGTNH",
                 getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("aer"), 50)
-                        .add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.ORDER, 50).add(Aspect.AIR, 50).add(Aspect.ENTROPY, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -431,9 +422,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "MaceFocusGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("perditio"), 18).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("telum"), 9)
-                        .add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.ENTROPY, 18).add(Aspect.EARTH, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.WEAPON, 9).add(Aspect.METAL, 6).add(Aspect.MIND, 3),
                 0,
                 4,
                 3,
@@ -444,9 +434,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "MaceFocusGTNH",
                 getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("perditio"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("telum"), 64)
-                        .add(Aspect.getAspect("cognitio"), 8),
+                new AspectList().add(Aspect.METAL, 16).add(Aspect.ENTROPY, 32).add(Aspect.MAGIC, 48)
+                        .add(Aspect.WEAPON, 64).add(Aspect.MIND, 8),
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0),
                 OrePrefixes.block.get(Materials.Shadow),
                 OrePrefixes.screw.get(Materials.Shadow),
@@ -467,9 +456,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "ShadowClothGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("pannus"), 15).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("tutamen"), 3),
+                new AspectList().add(Aspect.CLOTH, 15).add(Aspect.DARKNESS, 12).add(Aspect.MAGIC, 9).add(Aspect.AIR, 6)
+                        .add(Aspect.ARMOR, 3),
                 -1,
                 2,
                 3,
@@ -478,9 +466,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowClothGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -511,9 +498,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "CreationShardGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("aer"), 21).add(Aspect.getAspect("aqua"), 21)
-                        .add(Aspect.getAspect("ignis"), 21).add(Aspect.getAspect("terra"), 21)
-                        .add(Aspect.getAspect("ordo"), 21).add(Aspect.getAspect("perditio"), 21),
+                new AspectList().add(Aspect.AIR, 21).add(Aspect.WATER, 21).add(Aspect.FIRE, 21).add(Aspect.EARTH, 21)
+                        .add(Aspect.ORDER, 21).add(Aspect.ENTROPY, 21),
                 8,
                 -5,
                 3,
@@ -523,8 +509,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "CreationShardGTNH",
                 NHItemList.VoidEssence.get(2),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 16),
-                new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("vacuos"), 16)
-                        .add(Aspect.getAspect("tenebrae"), 16));
+                new AspectList().add(Aspect.ELDRITCH, 16).add(Aspect.VOID, 16).add(Aspect.DARKNESS, 16));
         TCHelper.addResearchPage(
                 "CreationShardGTNH",
                 new ResearchPage(TCHelper.findCrucibleRecipe(NHItemList.VoidEssence.get(1))));
@@ -532,9 +517,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "CreationShardGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 2, 5),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("vacuos"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("auram"), 64)
-                        .add(Aspect.getAspect("tenebrae"), 64),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.VOID, 64).add(Aspect.MAGIC, 64)
+                        .add(Aspect.AURA, 64).add(Aspect.DARKNESS, 64),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -557,9 +541,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "EldritchFocusGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("alienis"), 18).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("tenebrae"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("ira"), 3),
+                new AspectList().add(Aspect.ELDRITCH, 18).add(Aspect.ENTROPY, 15).add(Aspect.AIR, 12)
+                        .add(Aspect.DARKNESS, 9).add(Aspect.ENERGY, 6).add(DarkAspects.WRATH, 3),
                 8,
                 -4,
                 3,
@@ -571,9 +554,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "EldritchFocusGTNH",
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("aer"), 84).add(Aspect.getAspect("alienis"), 72)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("tenebrae"), 64)
-                        .add(Aspect.getAspect("ira"), 32).add(Aspect.getAspect("potentia"), 16),
+                new AspectList().add(Aspect.AIR, 84).add(Aspect.ELDRITCH, 72).add(Aspect.MAGIC, 64)
+                        .add(Aspect.DARKNESS, 64).add(DarkAspects.WRATH, 32).add(Aspect.ENERGY, 16),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
@@ -597,9 +579,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "CrystalDaggerGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("telum"), 18).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("sano"), 12).add(Aspect.getAspect("fames"), 9)
-                        .add(Aspect.getAspect("infernus"), 6).add(Aspect.getAspect("lucrum"), 3),
+                new AspectList().add(Aspect.WEAPON, 18).add(Aspect.FIRE, 15).add(Aspect.HEAL, 12).add(Aspect.HUNGER, 9)
+                        .add(DarkAspects.NETHER, 6).add(Aspect.GREED, 3),
                 0,
                 -3,
                 3,
@@ -613,8 +594,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrystalDaggerGTNH",
                 getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0),
-                new AspectList().add(getAspect("terra"), 100).add(getAspect("ignis"), 100)
-                        .add(getAspect("perditio"), 100).add(getAspect("ordo"), 50).add(getAspect("aer"), 50),
+                new AspectList().add(Aspect.EARTH, 100).add(Aspect.FIRE, 100).add(Aspect.ENTROPY, 100)
+                        .add(Aspect.ORDER, 50).add(Aspect.AIR, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -641,9 +622,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "CrimsonRobesGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("pannus"), 18).add(Aspect.getAspect("permutatio"), 15)
-                        .add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("tenebrae"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.CLOTH, 18).add(Aspect.EXCHANGE, 15).add(Aspect.ARMOR, 12)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.DARKNESS, 6).add(Aspect.MAGIC, 3),
                 -2,
                 -5,
                 3,
@@ -656,9 +636,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("perditio"), 25).add(Aspect.getAspect("aqua"), 25)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("aer"), 25),
+                new AspectList().add(Aspect.EARTH, 25).add(Aspect.FIRE, 25).add(Aspect.ENTROPY, 25)
+                        .add(Aspect.WATER, 25).add(Aspect.ORDER, 25).add(Aspect.AIR, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -687,9 +666,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemHelmetCultistRobe", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aqua"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30),
+                new AspectList().add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.ENTROPY, 30)
+                        .add(Aspect.WATER, 30).add(Aspect.ORDER, 30).add(Aspect.AIR, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -713,9 +691,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemChestplateCultistRobe", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aqua"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30),
+                new AspectList().add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.ENTROPY, 30)
+                        .add(Aspect.WATER, 30).add(Aspect.ORDER, 30).add(Aspect.AIR, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -744,9 +721,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemLeggingsCultistRobe", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aqua"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30),
+                new AspectList().add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.ENTROPY, 30)
+                        .add(Aspect.WATER, 30).add(Aspect.ORDER, 30).add(Aspect.AIR, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -775,9 +751,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemBootsCultist", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aqua"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30),
+                new AspectList().add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.ENTROPY, 30)
+                        .add(Aspect.WATER, 30).add(Aspect.ORDER, 30).add(Aspect.AIR, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -800,9 +775,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ResearchCategories.getResearch("BLOODLUSTUPGRADE").setConcealed();
         TCHelper.setResearchAspects(
                 "BLOODLUSTUPGRADE",
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("sano"), 12)
-                        .add(Aspect.getAspect("telum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("ira"), 3));
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.HEAL, 12).add(Aspect.WEAPON, 9).add(Aspect.MAGIC, 6)
+                        .add(DarkAspects.WRATH, 3));
         TCHelper.setResearchComplexity("BLOODLUSTUPGRADE", 3);
         ThaumcraftApi.addWarpToResearch("BLOODLUSTUPGRADE", 2);
         TCHelper.orphanResearch("KNIGHTROBES");
@@ -810,10 +784,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "KnightRobesGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("pannus"), 21).add(Aspect.getAspect("permutatio"), 18)
-                        .add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("alienis"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.CLOTH, 21).add(Aspect.EXCHANGE, 18).add(Aspect.ARMOR, 15)
+                        .add(Aspect.ELDRITCH, 12).add(Aspect.DARKNESS, 9).add(Aspect.MAGIC, 6).add(Aspect.METAL, 3),
                 -4,
                 -4,
                 3,
@@ -823,10 +795,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "KnightRobesGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 6,
-                new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("alienis"), 32)
-                        .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("fames"), 32),
+                new AspectList().add(Aspect.METAL, 32).add(Aspect.MAGIC, 32).add(Aspect.DARKNESS, 32)
+                        .add(Aspect.ELDRITCH, 32).add(Aspect.ARMOR, 32).add(Aspect.FIRE, 32).add(Aspect.HUNGER, 32),
                 OrePrefixes.plateQuadruple.get(Materials.Thaumium),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7),
@@ -851,9 +821,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("aer"), 50),
+                new AspectList().add(Aspect.EARTH, 50).add(Aspect.FIRE, 50).add(Aspect.ENTROPY, 50)
+                        .add(Aspect.WATER, 50).add(Aspect.ORDER, 50).add(Aspect.AIR, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -877,9 +846,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("aer"), 50),
+                new AspectList().add(Aspect.EARTH, 50).add(Aspect.FIRE, 50).add(Aspect.ENTROPY, 50)
+                        .add(Aspect.WATER, 50).add(Aspect.ORDER, 50).add(Aspect.AIR, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -908,9 +876,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
                 getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("aer"), 50),
+                new AspectList().add(Aspect.EARTH, 50).add(Aspect.FIRE, 50).add(Aspect.ENTROPY, 50)
+                        .add(Aspect.WATER, 50).add(Aspect.ORDER, 50).add(Aspect.AIR, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -941,10 +908,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "PraetorarmorGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("pannus"), 24).add(Aspect.getAspect("permutatio"), 21)
-                        .add(Aspect.getAspect("tutamen"), 18).add(Aspect.getAspect("alienis"), 15)
-                        .add(Aspect.getAspect("tenebrae"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("potentia"), 3),
+                new AspectList().add(Aspect.CLOTH, 24).add(Aspect.EXCHANGE, 21).add(Aspect.ARMOR, 18)
+                        .add(Aspect.ELDRITCH, 15).add(Aspect.DARKNESS, 12).add(Aspect.MAGIC, 9).add(Aspect.METAL, 6)
+                        .add(Aspect.ENERGY, 3),
                 -6,
                 -4,
                 3,
@@ -954,9 +920,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "PraetorarmorGTNH",
                 getModItem(Thaumcraft.ID, "ItemHelmetCultistLeaderPlate", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
-                        .add(Aspect.getAspect("tutamen"), 64),
+                new AspectList().add(Aspect.METAL, 64).add(Aspect.MAGIC, 64).add(Aspect.DARKNESS, 64)
+                        .add(Aspect.ELDRITCH, 64).add(Aspect.ARMOR, 64),
                 getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0),
                 OrePrefixes.plate.get(Materials.RoseGold),
                 OrePrefixes.ring.get(Materials.Shadow),
@@ -979,9 +944,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "PraetorarmorGTNH",
                 getModItem(Thaumcraft.ID, "ItemChestplateCultistLeaderPlate", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
-                        .add(Aspect.getAspect("tutamen"), 64),
+                new AspectList().add(Aspect.METAL, 64).add(Aspect.MAGIC, 64).add(Aspect.DARKNESS, 64)
+                        .add(Aspect.ELDRITCH, 64).add(Aspect.ARMOR, 64),
                 getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0),
                 OrePrefixes.plate.get(Materials.RoseGold),
                 OrePrefixes.ring.get(Materials.Shadow),
@@ -1004,9 +968,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "PraetorarmorGTNH",
                 getModItem(Thaumcraft.ID, "ItemLeggingsCultistLeaderPlate", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
-                        .add(Aspect.getAspect("tutamen"), 64),
+                new AspectList().add(Aspect.METAL, 64).add(Aspect.MAGIC, 64).add(Aspect.DARKNESS, 64)
+                        .add(Aspect.ELDRITCH, 64).add(Aspect.ARMOR, 64),
                 getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0),
                 OrePrefixes.plate.get(Materials.RoseGold),
                 OrePrefixes.ring.get(Materials.Shadow),
@@ -1030,9 +993,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "VoidsentGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("tenebrae"), 33).add(Aspect.getAspect("tutamen"), 18)
-                        .add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.DARKNESS, 33).add(Aspect.ARMOR, 18).add(Aspect.VOID, 15).add(Aspect.AURA, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3),
                 -7,
                 -5,
                 3,
@@ -1042,9 +1004,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "VoidsentGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7),
-                new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("vacuos"), 16)
-                        .add(Aspect.getAspect("alienis"), 16));
+                new AspectList().add(Aspect.AURA, 12).add(Aspect.DARKNESS, 12).add(Aspect.ARMOR, 12)
+                        .add(Aspect.VOID, 16).add(Aspect.ELDRITCH, 16));
         TCHelper.addResearchPage(
                 "VoidsentGTNH",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0))));
@@ -1054,9 +1015,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "CrimsonBladeGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("perditio"), 18).add(Aspect.getAspect("telum"), 15)
-                        .add(Aspect.getAspect("vacuos"), 12).add(Aspect.getAspect("tenebrae"), 9)
-                        .add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("potentia"), 3),
+                new AspectList().add(Aspect.ENTROPY, 18).add(Aspect.WEAPON, 15).add(Aspect.VOID, 12)
+                        .add(Aspect.DARKNESS, 9).add(Aspect.METAL, 6).add(Aspect.ENERGY, 3),
                 -7,
                 -3,
                 3,
@@ -1066,9 +1026,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "CrimsonBladeGTNH",
                 getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("metallum"), 24)
-                        .add(Aspect.getAspect("perditio"), 32).add(Aspect.getAspect("telum"), 64)
-                        .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("tenebrae"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 16).add(Aspect.METAL, 24).add(Aspect.ENTROPY, 32)
+                        .add(Aspect.WEAPON, 64).add(Aspect.VOID, 48).add(Aspect.DARKNESS, 32),
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7),
@@ -1091,10 +1050,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "VoidgogglesGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("sensus"), 21).add(Aspect.getAspect("vacuos"), 18)
-                        .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.SENSES, 21).add(Aspect.VOID, 18).add(Aspect.MAGIC, 15)
+                        .add(Aspect.DARKNESS, 12).add(Aspect.CRYSTAL, 9).add(Aspect.ELDRITCH, 6).add(Aspect.METAL, 3),
                 3,
                 5,
                 3,
@@ -1104,10 +1061,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "VoidgogglesGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("sensus"), 32).add(Aspect.getAspect("tenebrae"), 32)
-                        .add(Aspect.getAspect("tutamen"), 48).add(Aspect.getAspect("vacuos"), 64)
-                        .add(Aspect.getAspect("vitreus"), 24).add(Aspect.getAspect("alienis"), 8)
-                        .add(Aspect.getAspect("metallum"), 16),
+                new AspectList().add(Aspect.SENSES, 32).add(Aspect.DARKNESS, 32).add(Aspect.ARMOR, 48)
+                        .add(Aspect.VOID, 64).add(Aspect.CRYSTAL, 24).add(Aspect.ELDRITCH, 8).add(Aspect.METAL, 16),
                 getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
                 OrePrefixes.plate.get(Materials.Void),
@@ -1129,9 +1084,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "TaintFocusGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("vitium"), 18).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("limus"), 12).add(Aspect.getAspect("aer"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("potentia"), 3),
+                new AspectList().add(Aspect.TAINT, 18).add(Aspect.WATER, 15).add(Aspect.SLIME, 12).add(Aspect.AIR, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.ENERGY, 3),
                 5,
                 2,
                 3,
@@ -1142,9 +1096,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "TaintFocusGTNH",
                 getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("aqua"), 72).add(Aspect.getAspect("limus"), 72)
-                        .add(Aspect.getAspect("praecantatio"), 72).add(Aspect.getAspect("vitium"), 72)
-                        .add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("potentia"), 32),
+                new AspectList().add(Aspect.WATER, 72).add(Aspect.SLIME, 72).add(Aspect.MAGIC, 72).add(Aspect.TAINT, 72)
+                        .add(Aspect.AIR, 64).add(Aspect.ENERGY, 32),
                 getModItem(Thaumcraft.ID, "FocusPech", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 11),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4),
@@ -1168,9 +1121,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "FocusTaintedBlastGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 21).add(Aspect.getAspect("vitium"), 18)
-                        .add(Aspect.getAspect("motus"), 18).add(Aspect.getAspect("aer"), 12)
-                        .add(Aspect.getAspect("perditio"), 9).add(Aspect.getAspect("telum"), 6),
+                new AspectList().add(Aspect.MAGIC, 21).add(Aspect.TAINT, 18).add(Aspect.MOTION, 18).add(Aspect.AIR, 12)
+                        .add(Aspect.ENTROPY, 9).add(Aspect.WEAPON, 6),
                 5,
                 3,
                 3,
@@ -1181,9 +1133,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "FocusTaintedBlastGTNH",
                 getModItem(TaintedMagic.ID, "ItemFocusTaintedBlast", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("praecantatio"), 80)
-                        .add(Aspect.getAspect("telum"), 72).add(Aspect.getAspect("vitium"), 84)
-                        .add(Aspect.getAspect("cognitio"), 32).add(Aspect.getAspect("aer"), 48),
+                new AspectList().add(Aspect.MOTION, 64).add(Aspect.MAGIC, 80).add(Aspect.WEAPON, 72)
+                        .add(Aspect.TAINT, 84).add(Aspect.MIND, 32).add(Aspect.AIR, 48),
                 getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0),
                 getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0),
@@ -1207,9 +1158,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "ThaumicdisassemblerGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("telum"), 18).add(Aspect.getAspect("metallum"), 15)
-                        .add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("vitium"), 3),
+                new AspectList().add(Aspect.WEAPON, 18).add(Aspect.METAL, 15).add(Aspect.TOOL, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.TAINT, 3),
                 5,
                 -6,
                 3,
@@ -1219,8 +1169,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ThaumicdisassemblerGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6),
-                new AspectList().add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75)
-                        .add(Aspect.getAspect("terra"), 50),
+                new AspectList().add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75).add(Aspect.EARTH, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -1251,9 +1200,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "ThaumicdisassemblerGTNH",
                 getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 32).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("telum"), 24).add(Aspect.getAspect("vacuos"), 24)
-                        .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("potentia"), 16),
+                new AspectList().add(Aspect.TOOL, 32).add(Aspect.METAL, 32).add(Aspect.WEAPON, 24).add(Aspect.VOID, 24)
+                        .add(Aspect.MAGIC, 16).add(Aspect.ENERGY, 16),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0),
                 OrePrefixes.plate.get(Materials.Shadow),
@@ -1272,10 +1220,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "VoidWalkerBootsGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("tenebrae"), 21).add(Aspect.getAspect("tutamen"), 18)
-                        .add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("volatus"), 3),
+                new AspectList().add(Aspect.DARKNESS, 21).add(Aspect.ARMOR, 18).add(Aspect.ELDRITCH, 15)
+                        .add(Aspect.MAGIC, 12).add(Aspect.TRAVEL, 9).add(Aspect.AIR, 6).add(Aspect.FLIGHT, 3),
                 4,
                 -8,
                 3,
@@ -1287,9 +1233,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "VoidWalkerBootsGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("iter"), 84)
-                        .add(Aspect.getAspect("tenebrae"), 72).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("praecantatio"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.TRAVEL, 84).add(Aspect.DARKNESS, 72)
+                        .add(Aspect.ARMOR, 64).add(Aspect.VOID, 64).add(Aspect.MAGIC, 32),
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
@@ -1315,10 +1260,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "VoidSashGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("vacuos"), 21)
-                        .add(Aspect.getAspect("tutamen"), 18).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("tenebrae"), 9)
-                        .add(Aspect.getAspect("iter"), 6).add(Aspect.getAspect("aer"), 3),
+                new AspectList().add(Aspect.METAL, 24).add(Aspect.VOID, 21).add(Aspect.ARMOR, 18).add(Aspect.MAGIC, 15)
+                        .add(Aspect.ELDRITCH, 12).add(Aspect.DARKNESS, 9).add(Aspect.TRAVEL, 6).add(Aspect.AIR, 3),
                 3,
                 -8,
                 3,
@@ -1331,10 +1274,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "VoidSashGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("iter"), 48).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("tutamen"), 84).add(Aspect.getAspect("vacuos"), 72)
-                        .add(Aspect.getAspect("volatus"), 32).add(Aspect.getAspect("alienis"), 24)
-                        .add(Aspect.getAspect("aer"), 16),
+                new AspectList().add(Aspect.TRAVEL, 48).add(Aspect.MAGIC, 64).add(Aspect.ARMOR, 84).add(Aspect.VOID, 72)
+                        .add(Aspect.FLIGHT, 32).add(Aspect.ELDRITCH, 24).add(Aspect.AIR, 16),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
@@ -1357,10 +1298,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "VoidFortressGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("tutamen"), 21).add(Aspect.getAspect("vacuos"), 18)
-                        .add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("victus"), 9).add(Aspect.getAspect("cognitio"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.ARMOR, 21).add(Aspect.VOID, 18).add(Aspect.ELDRITCH, 15)
+                        .add(Aspect.DARKNESS, 12).add(Aspect.LIFE, 9).add(Aspect.MIND, 6).add(Aspect.EARTH, 3),
                 7,
                 -8,
                 3,
@@ -1371,10 +1310,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "VoidFortressGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("metallum"), 48)
-                        .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("tutamen"), 48)
-                        .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 16)
-                        .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("victus"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.METAL, 48).add(Aspect.MAGIC, 48)
+                        .add(Aspect.ARMOR, 48).add(Aspect.VOID, 32).add(Aspect.DARKNESS, 16).add(Aspect.ENERGY, 16)
+                        .add(Aspect.LIFE, 32),
                 getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0),
                 OrePrefixes.gemExquisite.get(Materials.Emerald),
                 OrePrefixes.plate.get(Materials.RoseGold),
@@ -1395,10 +1333,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "VoidFortressGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("metallum"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 16)
-                        .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("cognitio"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.METAL, 64).add(Aspect.MAGIC, 64)
+                        .add(Aspect.ARMOR, 64).add(Aspect.VOID, 32).add(Aspect.DARKNESS, 16).add(Aspect.ENERGY, 16)
+                        .add(Aspect.MIND, 32),
                 getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
                 OrePrefixes.plate.get(Materials.Void),
@@ -1422,10 +1359,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "VoidFortressGTNH",
                 getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("tutamen"), 32)
-                        .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 16)
-                        .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("terra"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.METAL, 32).add(Aspect.MAGIC, 32)
+                        .add(Aspect.ARMOR, 32).add(Aspect.VOID, 32).add(Aspect.DARKNESS, 16).add(Aspect.ENERGY, 16)
+                        .add(Aspect.EARTH, 32),
                 getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 OrePrefixes.plate.get(Materials.RoseGold),
@@ -1446,10 +1382,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "ShadowFortressArmorGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("tutamen"), 24).add(Aspect.getAspect("vacuos"), 21)
-                        .add(Aspect.getAspect("alienis"), 18).add(Aspect.getAspect("tenebrae"), 15)
-                        .add(Aspect.getAspect("victus"), 12).add(Aspect.getAspect("cognitio"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("superbia"), 3),
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.VOID, 21).add(Aspect.ELDRITCH, 18)
+                        .add(Aspect.DARKNESS, 15).add(Aspect.LIFE, 12).add(Aspect.MIND, 9).add(Aspect.EARTH, 6)
+                        .add(DarkAspects.PRIDE, 3),
                 8,
                 -9,
                 3,
@@ -1460,10 +1395,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "ShadowFortressArmorGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowFortressHelmet", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("metallum"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("tenebrae"), 32)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("victus"), 48),
+                new AspectList().add(Aspect.ELDRITCH, 48).add(Aspect.METAL, 64).add(Aspect.MAGIC, 64)
+                        .add(Aspect.ARMOR, 64).add(Aspect.VOID, 48).add(Aspect.DARKNESS, 32).add(Aspect.ENERGY, 32)
+                        .add(Aspect.LIFE, 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0),
                 OrePrefixes.gemExquisite.get(Materials.Emerald),
                 OrePrefixes.plate.get(Materials.InfusedGold),
@@ -1484,10 +1418,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "ShadowFortressArmorGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowFortressChestplate", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("metallum"), 84)
-                        .add(Aspect.getAspect("praecantatio"), 84).add(Aspect.getAspect("tutamen"), 84)
-                        .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("tenebrae"), 32)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("cognitio"), 48),
+                new AspectList().add(Aspect.ELDRITCH, 48).add(Aspect.METAL, 84).add(Aspect.MAGIC, 84)
+                        .add(Aspect.ARMOR, 84).add(Aspect.VOID, 48).add(Aspect.DARKNESS, 32).add(Aspect.ENERGY, 32)
+                        .add(Aspect.MIND, 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0),
                 OrePrefixes.block.get(Materials.Shadow),
                 OrePrefixes.block.get(Materials.Shadow),
@@ -1512,10 +1445,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "ShadowFortressArmorGTNH",
                 getModItem(TaintedMagic.ID, "ItemShadowFortressLeggings", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("metallum"), 48)
-                        .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("tutamen"), 48)
-                        .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 32)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("terra"), 48),
+                new AspectList().add(Aspect.ELDRITCH, 48).add(Aspect.METAL, 48).add(Aspect.MAGIC, 48)
+                        .add(Aspect.ARMOR, 48).add(Aspect.VOID, 32).add(Aspect.DARKNESS, 32).add(Aspect.ENERGY, 32)
+                        .add(Aspect.EARTH, 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 OrePrefixes.plate.get(Materials.InfusedGold),
@@ -1536,9 +1468,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "ThaumiumKatanaGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("telum"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("motus"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("mortuus"), 3),
+                new AspectList().add(Aspect.METAL, 18).add(Aspect.WEAPON, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.MOTION, 9).add(Aspect.ENERGY, 6).add(Aspect.DEATH, 3),
                 7,
                 1,
                 3,
@@ -1549,9 +1480,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "ThaumiumKatanaGTNH",
                 getModItem(TaintedMagic.ID, "ItemKatana", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("telum"), 48).add(Aspect.getAspect("mortuus"), 24)
-                        .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("motus"), 8),
+                new AspectList().add(Aspect.METAL, 64).add(Aspect.MAGIC, 32).add(Aspect.WEAPON, 48)
+                        .add(Aspect.DEATH, 24).add(Aspect.ENERGY, 16).add(Aspect.MOTION, 8),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0),
                 OrePrefixes.plate.get(Materials.Obsidian),
                 OrePrefixes.plate.get(Materials.Thaumium),
@@ -1574,10 +1504,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "VoidMetalKatanaGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("metallum"), 21).add(Aspect.getAspect("telum"), 18)
-                        .add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("motus"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("mortuus"), 3),
+                new AspectList().add(Aspect.METAL, 21).add(Aspect.WEAPON, 18).add(Aspect.VOID, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.MOTION, 9).add(Aspect.ENERGY, 6).add(Aspect.DEATH, 3),
                 7,
                 0,
                 3,
@@ -1588,10 +1516,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "VoidMetalKatanaGTNH",
                 getModItem(TaintedMagic.ID, "ItemKatana", 1, 1),
                 9,
-                new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("metallum"), 72)
-                        .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("telum"), 64)
-                        .add(Aspect.getAspect("mortuus"), 32).add(Aspect.getAspect("potentia"), 24)
-                        .add(Aspect.getAspect("motus"), 16).add(Aspect.getAspect("vacuos"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 48).add(Aspect.METAL, 72).add(Aspect.MAGIC, 48)
+                        .add(Aspect.WEAPON, 64).add(Aspect.DEATH, 32).add(Aspect.ENERGY, 24).add(Aspect.MOTION, 16)
+                        .add(Aspect.VOID, 32),
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
                 OrePrefixes.plate.get(Materials.Manyullyn),
                 OrePrefixes.plate.get(Materials.Void),
@@ -1614,10 +1541,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "ShadowMetalKatanaGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("tenebrae"), 24).add(Aspect.getAspect("metallum"), 21)
-                        .add(Aspect.getAspect("telum"), 18).add(Aspect.getAspect("vacuos"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("motus"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("mortuus"), 3),
+                new AspectList().add(Aspect.DARKNESS, 24).add(Aspect.METAL, 21).add(Aspect.WEAPON, 18)
+                        .add(Aspect.VOID, 15).add(Aspect.MAGIC, 12).add(Aspect.MOTION, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.DEATH, 3),
                 8,
                 -1,
                 3,
@@ -1628,11 +1554,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "ShadowMetalKatanaGTNH",
                 getModItem(TaintedMagic.ID, "ItemKatana", 1, 2),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("metallum"), 84)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("telum"), 72)
-                        .add(Aspect.getAspect("mortuus"), 48).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("motus"), 24).add(Aspect.getAspect("vacuos"), 48)
-                        .add(Aspect.getAspect("tenebrae"), 48),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.METAL, 84).add(Aspect.MAGIC, 64)
+                        .add(Aspect.WEAPON, 72).add(Aspect.DEATH, 48).add(Aspect.ENERGY, 32).add(Aspect.MOTION, 24)
+                        .add(Aspect.VOID, 48).add(Aspect.DARKNESS, 48),
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0),
                 OrePrefixes.plate.get(Materials.Shadow),
                 OrePrefixes.plate.get(Materials.Shadow),
@@ -1654,27 +1578,24 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ResearchCategories.getResearch("INSCRIPTIONFIRE").setConcealed();
         TCHelper.setResearchAspects(
                 "INSCRIPTIONFIRE",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("lux"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.METAL, 12).add(Aspect.LIGHT, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("INSCRIPTIONFIRE", 3);
         ThaumcraftApi.addWarpToResearch("INSCRIPTIONFIRE", 2);
         TCHelper.addResearchPrereq("INSCRIPTIONTAINT", "ThaumiumKatanaGTNH", false);
         ResearchCategories.getResearch("INSCRIPTIONTAINT").setConcealed();
         TCHelper.setResearchAspects(
                 "INSCRIPTIONTAINT",
-                new AspectList().add(Aspect.getAspect("vitium"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("corpus"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.TAINT, 15).add(Aspect.METAL, 12).add(Aspect.FLESH, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("INSCRIPTIONTAINT", 3);
         ThaumcraftApi.addWarpToResearch("INSCRIPTIONTAINT", 3);
         TCHelper.addResearchPrereq("INSCRIPTIONUNDEAD", "ThaumiumKatanaGTNH", false);
         ResearchCategories.getResearch("INSCRIPTIONUNDEAD").setConcealed();
         TCHelper.setResearchAspects(
                 "INSCRIPTIONUNDEAD",
-                new AspectList().add(Aspect.getAspect("sano"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("exanimis"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.HEAL, 15).add(Aspect.METAL, 12).add(Aspect.UNDEAD, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("INSCRIPTIONUNDEAD", 3);
         ThaumcraftApi.addWarpToResearch("INSCRIPTIONUNDEAD", 4);
         TCHelper.orphanResearch("ROD_warpwood");
@@ -1682,9 +1603,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "ROD_warpwood",
                 "TM",
-                new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("tenebrae"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.TREE, 18).add(Aspect.DARKNESS, 15).add(Aspect.ELDRITCH, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.TOOL, 6).add(Aspect.EARTH, 3),
                 8,
                 -2,
                 3,
@@ -1695,9 +1615,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "ROD_warpwood",
                 getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("arbor"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("tenebrae"), 48)
-                        .add(Aspect.getAspect("instrumentum"), 32).add(Aspect.getAspect("terra"), 24),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.TREE, 64).add(Aspect.MAGIC, 64)
+                        .add(Aspect.DARKNESS, 48).add(Aspect.TOOL, 32).add(Aspect.EARTH, 24),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(TaintedMagic.ID, "BlockWarpwoodLog", 1, 0),
                 OrePrefixes.ring.get(Materials.Tungsten),
@@ -1725,9 +1644,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "ROD_warpwood_staff",
                 "TM",
-                new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("tenebrae"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("instrumentum"), 3),
+                new AspectList().add(Aspect.TREE, 18).add(Aspect.DARKNESS, 15).add(Aspect.ELDRITCH, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.ENERGY, 6).add(Aspect.TOOL, 3),
                 9,
                 -2,
                 3,
@@ -1736,9 +1654,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_warpwood_staff",
                 getModItem(TaintedMagic.ID, "ItemWandRod", 1, 1),
-                new AspectList().add(Aspect.getAspect("aqua"), 150).add(Aspect.getAspect("terra"), 150)
-                        .add(Aspect.getAspect("ignis"), 150).add(Aspect.getAspect("aer"), 150)
-                        .add(Aspect.getAspect("ordo"), 150).add(Aspect.getAspect("perditio"), 150),
+                new AspectList().add(Aspect.WATER, 150).add(Aspect.EARTH, 150).add(Aspect.FIRE, 150)
+                        .add(Aspect.AIR, 150).add(Aspect.ORDER, 150).add(Aspect.ENTROPY, 150),
                 "abc",
                 "def",
                 "ghi",
@@ -1769,11 +1686,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "FocusTimeGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("tempus"), 27).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("aqua"), 21).add(Aspect.getAspect("ignis"), 18)
-                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("perditio"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3),
+                new AspectList().add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 27).add(Aspect.MAGIC, 24)
+                        .add(Aspect.WATER, 21).add(Aspect.FIRE, 18).add(Aspect.EARTH, 15).add(Aspect.ORDER, 12)
+                        .add(Aspect.ENTROPY, 9).add(Aspect.AIR, 6).add(Aspect.EXCHANGE, 3),
                 11,
                 -8,
                 3,
@@ -1784,10 +1699,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "FocusTimeGTNH",
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 84).add(Aspect.getAspect("lux"), 72)
-                        .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("vacuos"), 48)
-                        .add(Aspect.getAspect("tempus"), 24).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("permutatio"), 16),
+                new AspectList().add(Aspect.ELDRITCH, 84).add(Aspect.LIGHT, 72).add(Aspect.DARKNESS, 64)
+                        .add(Aspect.VOID, 48).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 24)
+                        .add(Aspect.MAGIC, 32).add(Aspect.EXCHANGE, 16),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -1810,11 +1724,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "FocusWeatherGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("volatus"), 27).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("aqua"), 21).add(Aspect.getAspect("ignis"), 18)
-                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("perditio"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("tempestas"), 3),
+                new AspectList().add(Aspect.FLIGHT, 27).add(Aspect.MAGIC, 24).add(Aspect.WATER, 21).add(Aspect.FIRE, 18)
+                        .add(Aspect.EARTH, 15).add(Aspect.ORDER, 12).add(Aspect.ENTROPY, 9).add(Aspect.AIR, 6)
+                        .add(Aspect.WEATHER, 3),
                 12,
                 -7,
                 3,
@@ -1825,10 +1737,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "FocusWeatherGTNH",
                 getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 84).add(Aspect.getAspect("aqua"), 72)
-                        .add(Aspect.getAspect("tempestas"), 64).add(Aspect.getAspect("vacuos"), 48)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("volatus"), 24)
-                        .add(Aspect.getAspect("perditio"), 16),
+                new AspectList().add(Aspect.ELDRITCH, 84).add(Aspect.WATER, 72).add(Aspect.WEATHER, 64)
+                        .add(Aspect.VOID, 48).add(Aspect.MAGIC, 32).add(Aspect.FLIGHT, 24).add(Aspect.ENTROPY, 16),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5),
                 getModItem(Thaumcraft.ID, "FocusShock", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
@@ -1852,10 +1762,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "PrimalBladeGTNH",
                 "TM",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("alienis"), 21)
-                        .add(Aspect.getAspect("telum"), 18).add(Aspect.getAspect("tenebrae"), 15)
-                        .add(Aspect.getAspect("vacuos"), 12).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.MAGIC, 24).add(Aspect.ELDRITCH, 21).add(Aspect.WEAPON, 18)
+                        .add(Aspect.DARKNESS, 15).add(Aspect.VOID, 12).add(Aspect.AURA, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.MIND, 3),
                 11,
                 -5,
                 3,
@@ -1869,10 +1778,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "PrimalBladeGTNH",
                 getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 96).add(Aspect.getAspect("metallum"), 84)
-                        .add(Aspect.getAspect("telum"), 72).add(Aspect.getAspect("tenebrae"), 64)
-                        .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("auram"), 32)
-                        .add(Aspect.getAspect("cognitio"), 24).add(Aspect.getAspect("potentia"), 16),
+                new AspectList().add(Aspect.ELDRITCH, 96).add(Aspect.METAL, 84).add(Aspect.WEAPON, 72)
+                        .add(Aspect.DARKNESS, 64).add(Aspect.VOID, 48).add(Aspect.AURA, 32).add(Aspect.MIND, 24)
+                        .add(Aspect.ENERGY, 16),
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemPrimalCrusher", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
@@ -1898,8 +1806,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "CAP_cloth",
                 "TM",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("pannus"), 9)
-                        .add(Aspect.getAspect("sano"), 6).add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.MAGIC, 12).add(Aspect.CLOTH, 9).add(Aspect.HEAL, 6).add(Aspect.ELDRITCH, 3),
                 7,
                 5,
                 3,
@@ -1908,8 +1815,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_cloth",
                 getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.EARTH, 25).add(Aspect.FIRE, 25).add(Aspect.ORDER, 25)
+                        .add(Aspect.ENTROPY, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -1940,9 +1847,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "CAP_shadowcloth",
                 "TM",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("pannus"), 15)
-                        .add(Aspect.getAspect("tenebrae"), 12).add(Aspect.getAspect("vacuos"), 9)
-                        .add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.MAGIC, 18).add(Aspect.CLOTH, 15).add(Aspect.DARKNESS, 12)
+                        .add(Aspect.VOID, 9).add(Aspect.METAL, 6).add(Aspect.ELDRITCH, 3),
                 -2,
                 3,
                 3,
@@ -1952,8 +1858,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_shadowcloth",
                 getModItem(TaintedMagic.ID, "ItemWandCap", 1, 3),
-                new AspectList().add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.EARTH, 50).add(Aspect.FIRE, 50).add(Aspect.ORDER, 50)
+                        .add(Aspect.ENTROPY, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -1984,9 +1890,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "CAP_crimsoncloth",
                 "TM",
-                new AspectList().add(Aspect.getAspect("tenebrae"), 18).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("pannus"), 12).add(Aspect.getAspect("sano"), 9)
-                        .add(Aspect.getAspect("aqua"), 6).add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.DARKNESS, 18).add(Aspect.MAGIC, 15).add(Aspect.CLOTH, 12)
+                        .add(Aspect.HEAL, 9).add(Aspect.WATER, 6).add(Aspect.ELDRITCH, 3),
                 -1,
                 -6,
                 3,
@@ -1996,9 +1901,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_crimsoncloth",
                 getModItem(TaintedMagic.ID, "ItemWandCap", 1, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("ignis"), 100)
-                        .add(Aspect.getAspect("aqua"), 100).add(Aspect.getAspect("terra"), 100)
-                        .add(Aspect.getAspect("ordo"), 100).add(Aspect.getAspect("perditio"), 100),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.FIRE, 100).add(Aspect.WATER, 100)
+                        .add(Aspect.EARTH, 100).add(Aspect.ORDER, 100).add(Aspect.ENTROPY, 100),
                 "abc",
                 "def",
                 "ghi",
@@ -2029,10 +1933,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         new ResearchItem(
                 "CAP_shadowmetal",
                 "TM",
-                new AspectList().add(Aspect.getAspect("metallum"), 21).add(Aspect.getAspect("tenebrae"), 18)
-                        .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("alienis"), 12)
-                        .add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.METAL, 21).add(Aspect.DARKNESS, 18).add(Aspect.MAGIC, 15)
+                        .add(Aspect.ELDRITCH, 12).add(Aspect.EARTH, 9).add(Aspect.GREED, 6).add(Aspect.MIND, 3),
                 -4,
                 4,
                 3,
@@ -2043,10 +1945,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "CAP_shadowmetal",
                 getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 96).add(Aspect.getAspect("praecantatio"), 96)
-                        .add(Aspect.getAspect("tenebrae"), 84).add(Aspect.getAspect("metallum"), 72)
-                        .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("cognitio"), 68)
-                        .add(Aspect.getAspect("lucrum"), 32).add(Aspect.getAspect("fames"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 96).add(Aspect.MAGIC, 96).add(Aspect.DARKNESS, 84)
+                        .add(Aspect.METAL, 72).add(Aspect.VOID, 64).add(Aspect.MIND, 68).add(Aspect.GREED, 32)
+                        .add(Aspect.HUNGER, 32),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 7),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),

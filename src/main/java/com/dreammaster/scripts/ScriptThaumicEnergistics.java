@@ -14,7 +14,6 @@ import static gregtech.api.enums.Mods.ThaumicInsurgence;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -243,10 +242,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "thaumicenergistics.TEESSPROV",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("machina"), 64).add(Aspect.getAspect("praecantatio"), 48)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("permutatio"), 24)
-                        .add(Aspect.getAspect("aqua"), 16).add(Aspect.getAspect("cognitio"), 8)
-                        .add(Aspect.getAspect("lucrum"), 4),
+                new AspectList().add(Aspect.MECHANISM, 64).add(Aspect.MAGIC, 48).add(Aspect.ORDER, 32)
+                        .add(Aspect.EXCHANGE, 24).add(Aspect.WATER, 16).add(Aspect.MIND, 8).add(Aspect.GREED, 4),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
@@ -260,16 +257,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",
-                new AspectList().add(Aspect.getAspect("sensus"), 21).add(Aspect.getAspect("praecantatio"), 18)
-                        .add(Aspect.getAspect("lucrum"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("machina"), 3));
+                new AspectList().add(Aspect.SENSES, 21).add(Aspect.MAGIC, 18).add(Aspect.GREED, 15)
+                        .add(Aspect.METAL, 12).add(Aspect.ORDER, 9).add(Aspect.ENERGY, 6).add(Aspect.MECHANISM, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEESSPROV", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIRONGEARBOX",
                 IronGear,
-                new AspectList().add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.EARTH, 10).add(Aspect.FIRE, 5).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -294,8 +288,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIRONGEARBOX",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.gear.box", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("ordo"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.ORDER, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -319,15 +312,14 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEIRONGEARBOX",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("metallum"), 15)
-                        .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("permutatio"), 6));
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.METAL, 15).add(Aspect.MECHANISM, 9)
+                        .add(Aspect.EXCHANGE, 6));
         TCHelper.setResearchComplexity("thaumicenergistics.TEIRONGEARBOX", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEARCANETERM",
                 getModItem(ThaumicEnergistics.ID, "part.base", 1, 5),
-                new AspectList().add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("terra"), 25)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.WATER, 25).add(Aspect.FIRE, 25).add(Aspect.AIR, 25).add(Aspect.EARTH, 25)
+                        .add(Aspect.ORDER, 25).add(Aspect.ENTROPY, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -351,19 +343,18 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANETERM",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("machina"), 6)
-                        .add(Aspect.getAspect("vacuos"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.CRAFT, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.MECHANISM, 6).add(Aspect.VOID, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEARCANETERM", 3);
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TECERTUSDUPE",
-                new AspectList().add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.CRYSTAL, 9).add(Aspect.MAGIC, 6).add(Aspect.GREED, 9)
+                        .add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TECERTUSDUPE", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TECORES",
                 DiffusionCore,
-                new AspectList().add(Aspect.getAspect("aqua"), 20).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.WATER, 20).add(Aspect.ENTROPY, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -388,7 +379,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TECORES",
                 CoalescenceCore,
-                new AspectList().add(Aspect.getAspect("aqua"), 20).add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.WATER, 20).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -412,15 +403,14 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TECORES",
-                new AspectList().add(Aspect.getAspect("cognitio"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("limus"), 9)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.MIND, 12).add(Aspect.MAGIC, 9).add(Aspect.MECHANISM, 6).add(Aspect.SLIME, 9)
+                        .add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TECORES", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEESSVIBCMBR",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.vibration.chamber", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 35).add(Aspect.getAspect("ordo"), 35)
-                        .add(Aspect.getAspect("perditio"), 35).add(Aspect.getAspect("aqua"), 35),
+                new AspectList().add(Aspect.FIRE, 35).add(Aspect.ORDER, 35).add(Aspect.ENTROPY, 35)
+                        .add(Aspect.WATER, 35),
                 "abc",
                 "def",
                 "ghi",
@@ -444,15 +434,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateInfusedEntropy");
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSVIBCMBR",
-                new AspectList().add(Aspect.getAspect("vitreus"), 18).add(Aspect.getAspect("machina"), 15)
-                        .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.CRYSTAL, 18).add(Aspect.MECHANISM, 15).add(Aspect.ENERGY, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.MOTION, 6).add(Aspect.WATER, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEESSVIBCMBR", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIO",
                 getModItem(ThaumicEnergistics.ID, "part.base", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("terra"), 15),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.WATER, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -477,8 +465,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIO",
                 getModItem(ThaumicEnergistics.ID, "part.base", 1, 3),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("terra"), 15),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.WATER, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -503,8 +490,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIO",
                 getModItem(ThaumicEnergistics.ID, "part.base", 1, 2),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.WATER, 20).add(Aspect.FIRE, 20).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -528,15 +514,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEIO",
-                new AspectList().add(Aspect.getAspect("motus"), 18).add(Aspect.getAspect("machina"), 15)
-                        .add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("vitreus"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.MOTION, 18).add(Aspect.MECHANISM, 15).add(Aspect.METAL, 12)
+                        .add(Aspect.CRYSTAL, 9).add(Aspect.AIR, 6).add(Aspect.WATER, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEIO", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEDISTILLATIONPATTERNENCODER",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.distillation.encoder", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25)
-                        .add(Aspect.getAspect("ignis"), 25),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.ENTROPY, 25).add(Aspect.FIRE, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -560,16 +544,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateInfusedOrder");
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEDISTILLATIONPATTERNENCODER",
-                new AspectList().add(Aspect.getAspect("ordo"), 21).add(Aspect.getAspect("fabrico"), 18)
-                        .add(Aspect.getAspect("permutatio"), 15).add(Aspect.getAspect("perditio"), 12)
-                        .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.ORDER, 21).add(Aspect.CRAFT, 18).add(Aspect.EXCHANGE, 15)
+                        .add(Aspect.ENTROPY, 12).add(Aspect.MECHANISM, 9).add(Aspect.GREED, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEDISTILLATIONPATTERNENCODER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEFOCUSWRENCH",
                 getModItem(ThaumicEnergistics.ID, "focus.aewrench", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("aer"), 25)
-                        .add(Aspect.getAspect("ignis"), 25),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.AIR, 25).add(Aspect.FIRE, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -593,15 +574,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEFOCUSWRENCH",
-                new AspectList().add(Aspect.getAspect("ignis"), 18).add(Aspect.getAspect("aer"), 15)
-                        .add(Aspect.getAspect("machina"), 12).add(Aspect.getAspect("instrumentum"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("metallum"), 3));
+                new AspectList().add(Aspect.FIRE, 18).add(Aspect.AIR, 15).add(Aspect.MECHANISM, 12).add(Aspect.TOOL, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.METAL, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEFOCUSWRENCH", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEGOLEMWIFIBACKPACK",
                 getModItem(ThaumicEnergistics.ID, "golem.wifi.backpack", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30)
-                        .add(Aspect.getAspect("ignis"), 30),
+                new AspectList().add(Aspect.ORDER, 30).add(Aspect.AIR, 30).add(Aspect.FIRE, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -625,10 +604,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEGOLEMWIFIBACKPACK",
-                new AspectList().add(Aspect.getAspect("vacuos"), 21).add(Aspect.getAspect("potentia"), 18)
-                        .add(Aspect.getAspect("auram"), 15).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("tutamen"), 9).add(Aspect.getAspect("motus"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.VOID, 21).add(Aspect.ENERGY, 18).add(Aspect.AURA, 15).add(Aspect.MIND, 12)
+                        .add(Aspect.ARMOR, 9).add(Aspect.MOTION, 6).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEGOLEMWIFIBACKPACK", 3);
         TCHelper.clearPages("thaumicenergistics.TESTORAGE");
         TCHelper.addResearchPage(
@@ -640,8 +617,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 EssentialComponent1K,
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("aqua"), 10),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.FIRE, 10).add(Aspect.WATER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -669,8 +645,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 EssentialComponent4K,
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("aqua"), 20),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.FIRE, 20).add(Aspect.WATER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -698,8 +673,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 EssentialComponent16K,
-                new AspectList().add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("aqua"), 30),
+                new AspectList().add(Aspect.ORDER, 30).add(Aspect.FIRE, 30).add(Aspect.WATER, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -727,8 +701,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 EssentialComponent64K,
-                new AspectList().add(Aspect.getAspect("ordo"), 40).add(Aspect.getAspect("ignis"), 40)
-                        .add(Aspect.getAspect("aqua"), 40),
+                new AspectList().add(Aspect.ORDER, 40).add(Aspect.FIRE, 40).add(Aspect.WATER, 40),
                 "abc",
                 "def",
                 "ghi",
@@ -756,8 +729,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 EssentialComponent256K,
-                new AspectList().add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("aqua"), 50),
+                new AspectList().add(Aspect.ORDER, 50).add(Aspect.FIRE, 50).add(Aspect.WATER, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -785,8 +757,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 EssentialComponent1024K,
-                new AspectList().add(Aspect.getAspect("ordo"), 60).add(Aspect.getAspect("ignis"), 60)
-                        .add(Aspect.getAspect("aqua"), 60),
+                new AspectList().add(Aspect.ORDER, 60).add(Aspect.FIRE, 60).add(Aspect.WATER, 60),
                 "abc",
                 "def",
                 "ghi",
@@ -814,8 +785,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 EssentialComponent4096K,
-                new AspectList().add(Aspect.getAspect("ordo"), 70).add(Aspect.getAspect("ignis"), 70)
-                        .add(Aspect.getAspect("aqua"), 70),
+                new AspectList().add(Aspect.ORDER, 70).add(Aspect.FIRE, 70).add(Aspect.WATER, 70),
                 "abc",
                 "def",
                 "ghi",
@@ -843,8 +813,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 EssentialComponent16384K,
-                new AspectList().add(Aspect.getAspect("ordo"), 80).add(Aspect.getAspect("ignis"), 80)
-                        .add(Aspect.getAspect("aqua"), 80),
+                new AspectList().add(Aspect.ORDER, 80).add(Aspect.FIRE, 80).add(Aspect.WATER, 80),
                 "abc",
                 "def",
                 "ghi",
@@ -872,8 +841,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("aqua"), 10),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -901,8 +869,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("aqua"), 15),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -927,8 +894,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("terra"), 5)
-                        .add(Aspect.getAspect("aqua"), 5),
+                new AspectList().add(Aspect.ORDER, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5),
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
                 EssentialComponent1K);
         TCHelper.addResearchPage(
@@ -938,8 +904,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 1),
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("terra"), 25)
-                        .add(Aspect.getAspect("aqua"), 25),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.EARTH, 25).add(Aspect.WATER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -964,8 +929,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 1),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("aqua"), 15),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15),
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
                 EssentialComponent4K);
         TCHelper.addResearchPage(
@@ -975,8 +939,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 2),
-                new AspectList().add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("terra"), 35)
-                        .add(Aspect.getAspect("aqua"), 35),
+                new AspectList().add(Aspect.ORDER, 35).add(Aspect.EARTH, 35).add(Aspect.WATER, 35),
                 "abc",
                 "def",
                 "ghi",
@@ -1001,8 +964,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 2),
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("terra"), 25)
-                        .add(Aspect.getAspect("aqua"), 25),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.EARTH, 25).add(Aspect.WATER, 25),
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
                 EssentialComponent16K);
         TCHelper.addResearchPage(
@@ -1012,8 +974,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3),
-                new AspectList().add(Aspect.getAspect("ordo"), 45).add(Aspect.getAspect("terra"), 45)
-                        .add(Aspect.getAspect("aqua"), 45),
+                new AspectList().add(Aspect.ORDER, 45).add(Aspect.EARTH, 45).add(Aspect.WATER, 45),
                 "abc",
                 "def",
                 "ghi",
@@ -1038,8 +999,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3),
-                new AspectList().add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("terra"), 35)
-                        .add(Aspect.getAspect("aqua"), 35),
+                new AspectList().add(Aspect.ORDER, 35).add(Aspect.EARTH, 35).add(Aspect.WATER, 35),
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
                 EssentialComponent64K);
         TCHelper.addResearchPage(
@@ -1049,8 +1009,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 5),
-                new AspectList().add(Aspect.getAspect("ordo"), 55).add(Aspect.getAspect("terra"), 55)
-                        .add(Aspect.getAspect("aqua"), 55),
+                new AspectList().add(Aspect.ORDER, 55).add(Aspect.EARTH, 55).add(Aspect.WATER, 55),
                 "abc",
                 "def",
                 "ghi",
@@ -1075,8 +1034,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 5),
-                new AspectList().add(Aspect.getAspect("ordo"), 45).add(Aspect.getAspect("terra"), 45)
-                        .add(Aspect.getAspect("aqua"), 45),
+                new AspectList().add(Aspect.ORDER, 45).add(Aspect.EARTH, 45).add(Aspect.WATER, 45),
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
                 EssentialComponent256K);
         TCHelper.addResearchPage(
@@ -1086,8 +1044,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 6),
-                new AspectList().add(Aspect.getAspect("ordo"), 65).add(Aspect.getAspect("terra"), 65)
-                        .add(Aspect.getAspect("aqua"), 65),
+                new AspectList().add(Aspect.ORDER, 65).add(Aspect.EARTH, 65).add(Aspect.WATER, 65),
                 "abc",
                 "def",
                 "ghi",
@@ -1112,8 +1069,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 6),
-                new AspectList().add(Aspect.getAspect("ordo"), 55).add(Aspect.getAspect("terra"), 55)
-                        .add(Aspect.getAspect("aqua"), 55),
+                new AspectList().add(Aspect.ORDER, 55).add(Aspect.EARTH, 55).add(Aspect.WATER, 55),
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
                 EssentialComponent1024K);
         TCHelper.addResearchPage(
@@ -1123,8 +1079,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7),
-                new AspectList().add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("aqua"), 75),
+                new AspectList().add(Aspect.ORDER, 75).add(Aspect.EARTH, 75).add(Aspect.WATER, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -1149,8 +1104,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7),
-                new AspectList().add(Aspect.getAspect("ordo"), 65).add(Aspect.getAspect("terra"), 65)
-                        .add(Aspect.getAspect("aqua"), 65),
+                new AspectList().add(Aspect.ORDER, 65).add(Aspect.EARTH, 65).add(Aspect.WATER, 65),
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
                 EssentialComponent4096K);
         TCHelper.addResearchPage(
@@ -1160,8 +1114,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8),
-                new AspectList().add(Aspect.getAspect("ordo"), 85).add(Aspect.getAspect("terra"), 85)
-                        .add(Aspect.getAspect("aqua"), 85),
+                new AspectList().add(Aspect.ORDER, 85).add(Aspect.EARTH, 85).add(Aspect.WATER, 85),
                 "abc",
                 "def",
                 "ghi",
@@ -1186,8 +1139,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8),
-                new AspectList().add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("aqua"), 75),
+                new AspectList().add(Aspect.ORDER, 75).add(Aspect.EARTH, 75).add(Aspect.WATER, 75),
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0),
                 EssentialComponent16384K);
         TCHelper.addResearchPage(
@@ -1220,17 +1172,14 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
 
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TESTORAGE",
-                new AspectList().add(Aspect.getAspect("vacuos"), 21).add(Aspect.getAspect("potentia"), 18)
-                        .add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("aqua"), 6)
-                        .add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.VOID, 21).add(Aspect.ENERGY, 18).add(Aspect.CRYSTAL, 15)
+                        .add(Aspect.METAL, 12).add(Aspect.MIND, 9).add(Aspect.WATER, 6).add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TESTORAGE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEVISINT",
                 getModItem(ThaumicEnergistics.ID, "part.base", 1, 6),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("aer"), 20),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.EARTH, 20).add(Aspect.FIRE, 20).add(Aspect.WATER, 20)
+                        .add(Aspect.ENTROPY, 20).add(Aspect.AIR, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -1254,29 +1203,25 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateInfusedOrder");
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEVISINT",
-                new AspectList().add(Aspect.getAspect("vacuos"), 21).add(Aspect.getAspect("potentia"), 18)
-                        .add(Aspect.getAspect("auram"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("machina"), 6)
-                        .add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.VOID, 21).add(Aspect.ENERGY, 18).add(Aspect.AURA, 15).add(Aspect.METAL, 12)
+                        .add(Aspect.MIND, 9).add(Aspect.MECHANISM, 6).add(Aspect.WATER, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEVISINT", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "thaumicenergistics.TETHAUMGBOX",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.golem.gear.box", 1, 0),
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.gear.box", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32));
+                new AspectList().add(Aspect.METAL, 32).add(Aspect.MAGIC, 32));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TETHAUMGBOX",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.MECHANISM, 12).add(Aspect.METAL, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TETHAUMGBOX", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEARCANEASSEMBLER",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0),
                 16,
-                new AspectList().add(getAspect("auram"), 16).add(getAspect("fabrico"), 64).add(getAspect("metallum"), 8)
-                        .add(getAspect("permutatio"), 32).add(getAspect("lucrum"), 16)
-                        .add(getAspect("praecantatio"), 48).add(getAspect("vitreus"), 16),
+                new AspectList().add(Aspect.AURA, 16).add(Aspect.CRAFT, 64).add(Aspect.METAL, 8)
+                        .add(Aspect.EXCHANGE, 32).add(Aspect.GREED, 16).add(Aspect.MAGIC, 48).add(Aspect.CRYSTAL, 16),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1, 0),
                 createItemStack(
                         Thaumcraft.ID,
@@ -1293,16 +1238,14 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANEASSEMBLER",
-                new AspectList().add(Aspect.getAspect("lucrum"), 24).add(Aspect.getAspect("fabrico"), 21)
-                        .add(Aspect.getAspect("machina"), 18).add(Aspect.getAspect("cognitio"), 15)
-                        .add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.GREED, 24).add(Aspect.CRAFT, 21).add(Aspect.MECHANISM, 18)
+                        .add(Aspect.MIND, 15).add(Aspect.EXCHANGE, 12).add(Aspect.AURA, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.WATER, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEARCANEASSEMBLER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEKNOWLEDGEINSCRIBER",
                 getModItem(ThaumicEnergistics.ID, "knowledge.core", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("aqua"), 10),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -1327,9 +1270,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEKNOWLEDGEINSCRIBER",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.knowledge.inscriber", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("aer"), 20),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.EARTH, 20).add(Aspect.FIRE, 20).add(Aspect.WATER, 20)
+                        .add(Aspect.ENTROPY, 20).add(Aspect.AIR, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -1353,17 +1295,15 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateThaumium");
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEKNOWLEDGEINSCRIBER",
-                new AspectList().add(Aspect.getAspect("cognitio"), 18).add(Aspect.getAspect("machina"), 15)
-                        .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.MIND, 18).add(Aspect.MECHANISM, 15).add(Aspect.CRAFT, 12)
+                        .add(Aspect.EXCHANGE, 9).add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEKNOWLEDGEINSCRIBER", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEINFPROV",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.infusion.provider", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("machina"), 64).add(Aspect.getAspect("ordo"), 48)
-                        .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("spiritus"), 8),
+                new AspectList().add(Aspect.MECHANISM, 64).add(Aspect.ORDER, 48).add(Aspect.EXCHANGE, 32)
+                        .add(Aspect.MAGIC, 16).add(Aspect.ELDRITCH, 24).add(Aspect.SOUL, 8),
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0),
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -1377,10 +1317,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEINFPROV",
-                new AspectList().add(Aspect.getAspect("permutatio"), 21).add(Aspect.getAspect("motus"), 18)
-                        .add(Aspect.getAspect("sensus"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("spiritus"), 3));
+                new AspectList().add(Aspect.EXCHANGE, 21).add(Aspect.MOTION, 18).add(Aspect.SENSES, 15)
+                        .add(Aspect.MECHANISM, 12).add(Aspect.MAGIC, 9).add(Aspect.ELDRITCH, 6).add(Aspect.SOUL, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TEINFPROV", 3);
 
         TCHelper.addInfusionCraftingRecipe(

@@ -14,6 +14,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -114,7 +115,7 @@ public class ScriptGendustry implements IScriptLoader {
                 GTBees.combs.getStackForType(CombType.PLUTONIUM),
                 "screwHSSS",
                 NHItemList.IridiumAlloyItemCasing.get(),
-                NHItemList.OsmiumBars.get(),
+                BlockList.OsmiumBars.get(),
                 NHItemList.IridiumAlloyItemCasing.get(),
                 "screwHSSS",
                 "craftingToolScrewdriver",

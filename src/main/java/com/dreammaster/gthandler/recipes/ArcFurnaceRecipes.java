@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -13,6 +14,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
 
+import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -39,6 +41,11 @@ public class ArcFurnaceRecipes implements Runnable {
                         new ItemStack(Blocks.glass, 2),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1))
                 .duration(1 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(UniversalArcFurnace);
+
+        // Awful dimensionally transcendent residue recipe for mk5 fusion pre-dtpf (mostly a meme)
+        GTValues.RA.stdBuilder().itemInputs(ItemRefer.Radioactive_Waste.get(64))
+                .fluidInputs(Materials.ExcitedDTEC.getFluid(1000L)).fluidOutputs(Materials.DTR.getFluid(50L))
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV / 2).addTo(arcFurnaceRecipes);
 
         if (GalacticraftAmunRa.isModLoaded()) {
             // Zero Point Module recycling

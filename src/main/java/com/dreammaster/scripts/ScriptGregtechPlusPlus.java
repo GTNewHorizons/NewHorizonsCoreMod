@@ -1,12 +1,15 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.QFT_CATALYST;
@@ -18,19 +21,25 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
+import com.dreammaster.thaumcraft.TCMaterialAspectHelper;
 
 import cpw.mods.fml.common.Optional;
 import forestry.api.recipes.RecipeManagers;
+import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import magicbees.api.MagicBeesAPI;
+import thaumcraft.api.aspects.Aspect;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
 
@@ -41,7 +50,15 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(EternalSingularity.ID, Forestry.ID, IndustrialCraft2.ID, IronTanks.ID, RemoteIO.ID);
+        return Arrays.asList(
+                Avaritia.ID,
+                EternalSingularity.ID,
+                Forestry.ID,
+                IndustrialCraft2.ID,
+                IronTanks.ID,
+                MagicBees.ID,
+                RemoteIO.ID,
+                Thaumcraft.ID);
     }
 
     @Override
@@ -50,15 +67,15 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Fish Trap
         addShapedRecipe(
                 GregtechItemList.FishTrap.get(1),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get(),
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get(),
+                BlockList.SteelBars.get());
 
         // Shirabon and Eternity
         GTValues.RA.stdBuilder()
@@ -71,6 +88,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .metadata(QFT_CATALYST, GregtechItemList.TemporalHarmonyCatalyst.get(0)).metadata(QFT_FOCUS_TIER, 4)
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(quantumForceTransformerRecipes);
         addForestryRecipes();
+        addThaumcraftAspects();
     }
 
     @Optional.Method(modid = Mods.ModIDs.FORESTRY)
@@ -330,5 +348,38 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
                 'i',
                 GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L));
+    }
+
+    private void addThaumcraftAspects() {
+        TCMaterialAspectHelper.registerMaterialAspects("Selenium", Aspect.METAL, TCAspects.VESANIA.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Iodine", Aspect.METAL, Aspect.HEAL);
+        TCMaterialAspectHelper.registerMaterialAspects("Rhenium", Aspect.METAL, Aspect.ELDRITCH);
+        TCMaterialAspectHelper.registerMaterialAspects("Thallium", Aspect.METAL, TCAspects.STRONTIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Germanium", Aspect.METAL, TCAspects.AEQUALITAS.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Polonium", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Radium", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Protactinium", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Curium", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Neptunium", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Fermium", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Lithium7", Aspect.ENERGY, TCAspects.AEQUALITAS.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Uranium232", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Uranium233", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Plutonium238", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("AdvancedNitinol", Aspect.METAL, TCAspects.VESANIA.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("AstralTitanium", Aspect.METAL, TCAspects.ASTRUM.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("CelestialTungsten", Aspect.METAL, TCAspects.ASTRUM.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Hypogen", Aspect.METAL, TCAspects.GLORIA.getAspect());
+        TCMaterialAspectHelper
+                .registerMaterialAspects("ChromaticGlass", Aspect.CRYSTAL, TCAspects.PRIMORDIUM.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("BlackMetal", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("WhiteMetal", Aspect.METAL, TCAspects.GLORIA.getAspect());
+        TCMaterialAspectHelper
+                .registerMaterialAspects("AncientGranite", Aspect.ENTROPY, TCAspects.PRIMORDIUM.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Runite", Aspect.ENTROPY, TCAspects.PRIMORDIUM.getAspect());
+        TCMaterialAspectHelper.registerMaterialAspects("Dragonblood", Aspect.METAL, Lucrum.ULTRA_DEATH);
+        TCMaterialAspectHelper.registerMaterialAspects("Staballoy", Aspect.METAL, TCAspects.RADIO.getAspect());
+        TCMaterialAspectHelper
+                .registerMaterialAspects("Rhugnor", Lucrum.ULTRA_DEATH, (Aspect) MagicBeesAPI.thaumcraftAspectTempus);
     }
 }

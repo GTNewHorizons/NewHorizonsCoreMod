@@ -32,7 +32,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.item.NHItemList;
+import com.dreammaster.block.BlockList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
@@ -199,15 +199,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateObsidian");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "sprinkler", 1, 0),
-                NHItemList.AluminiumBars.get(),
+                BlockList.AluminiumBars.get(),
                 "stickGold",
-                NHItemList.AluminiumBars.get(),
+                BlockList.AluminiumBars.get(),
                 "pipeSmallDarkSteel",
                 "rotorDarkSteel",
                 "pipeSmallDarkSteel",
-                NHItemList.AluminiumBars.get(),
+                BlockList.AluminiumBars.get(),
                 "stickGold",
-                NHItemList.AluminiumBars.get());
+                BlockList.AluminiumBars.get());
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "guide", 1, 0),
                 "stoneObsidian",
@@ -238,15 +238,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateStone");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "beartrap", 1, 0),
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "craftingToolHardHammer",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "screwSteel",
                 "plateSteel",
                 "screwSteel",
-                NHItemList.SteelBars.get(),
+                BlockList.SteelBars.get(),
                 "craftingToolScrewdriver",
-                NHItemList.SteelBars.get());
+                BlockList.SteelBars.get());
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "cannon", 1, 0),
                 "craftingToolSaw",
@@ -714,8 +714,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         new ResearchItem(
                 "GOLDENEGG",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("bestia"), 12)
-                        .add(Aspect.getAspect("victus"), 9).add(Aspect.getAspect("humanus"), 6),
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.BEAST, 12).add(Aspect.LIFE, 9).add(Aspect.MAN, 6),
                 -4,
                 5,
                 3,
@@ -725,8 +724,8 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "GOLDENEGG",
                 getModItem(OpenBlocks.ID, "goldenegg", 1, 0),
                 2,
-                new AspectList().add(Aspect.getAspect("alienis"), 75).add(Aspect.getAspect("bestia"), 50)
-                        .add(Aspect.getAspect("victus"), 50).add(Aspect.getAspect("humanus"), 25),
+                new AspectList().add(Aspect.ELDRITCH, 75).add(Aspect.BEAST, 50).add(Aspect.LIFE, 50)
+                        .add(Aspect.MAN, 25),
                 getModItem(Minecraft.ID, "egg", 1, 0),
                 OrePrefixes.plateDense.get(Materials.Gold),
                 getModItem(Minecraft.ID, "skull", 1, 3),

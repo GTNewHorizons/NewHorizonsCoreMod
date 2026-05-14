@@ -330,15 +330,15 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Dyson Swarm Energy Receiver Base Casing
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Circuit_Chip_QPIC.get(1),
+                ItemList.Circuit_Chip_FPIC.get(1),
                 192_000,
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
                 new ItemStack[] { GTUtility.copyAmount(4, ItemRegistry.energyDistributor[9]),
-                        ItemList.Circuit_Chip_QPIC.get(64),
+                        ItemList.Circuit_Chip_FPIC.get(32),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 4),
-                        ItemList.UHV_Coil.get(64), ItemList.UHV_Coil.get(64), },
+                        ItemList.UEV_Coil.get(64), },
                 new FluidStack[] { new FluidStack(FluidRegistry.getFluid("liquid helium"), 50_000),
                         Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                         Materials.UUMatter.getFluid(8_000) },
@@ -410,7 +410,7 @@ public class AssemblingLineRecipes implements Runnable {
                 32,
                 new Object[] { ItemList.Hull_UIV.get(4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 16),
-                        ItemList.Circuit_Chip_QPIC.get(64),
+                        ItemList.Circuit_Chip_FPIC.get(32),
                         new Object[] { OrePrefixes.circuit.get(Materials.UMV), 8L } },
                 new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                         Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
@@ -442,7 +442,7 @@ public class AssemblingLineRecipes implements Runnable {
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
-                new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4),
+                new ItemStack[] { ItemList.Circuit_Chip_FPIC.get(2),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(24),
                         tectech.thing.CustomItemList.eM_Coil.get(4) },
                 new FluidStack[] { Materials.RadoxPolymer.getMolten(3_456), Materials.SuperCoolant.getFluid(16_000),
@@ -458,7 +458,7 @@ public class AssemblingLineRecipes implements Runnable {
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
-                new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4),
+                new ItemStack[] { ItemList.Circuit_Chip_FPIC.get(2),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(24),
                         ItemList.Casing_Coil_AwakenedDraconium.get(4) },
                 new FluidStack[] { Materials.RadoxPolymer.getMolten(3_240), Materials.SuperCoolant.getFluid(16_000),
@@ -1116,9 +1116,9 @@ public class AssemblingLineRecipes implements Runnable {
                         .itemInputs(
                                 ItemList.Machine_Multi_HIPCompressor.get(1),
                                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),
-                                GregtechItemList.Machine_Adv_ImplosionCompressor.get(16),
+                                ItemList.AdvancedImplosionCompressor.get(16),
                                 ItemList.CompressorUIV.get(8L),
-                                GTUtility.copyAmount(4, ItemRegistry.eic.copy()),
+                                ItemList.ElectricImplosionCompressor.get(4),
                                 ItemList.Field_Generator_UEV.get(4),
                                 ItemList.ZPM3.get(2),
                                 new Object[] { OrePrefixes.circuit.get(Materials.UIV), 4 },
@@ -1161,7 +1161,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
             // Clarifier Purification Unit
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Sifter.get(1))
+            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.LargeSifter.get(1))
                     .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             ItemList.ActivatedCarbonFilterMesh.get(16),
@@ -1364,7 +1364,7 @@ public class AssemblingLineRecipes implements Runnable {
                     ItemList.StableBaryonContainmentUnit.get(1),
                     512 * 40 * SECONDS,
                     512,
-                    2000000,
+                    (int) TierEU.UHV,
                     4,
                     new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUHVBase, 32),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Ledox, 32),
@@ -1390,7 +1390,7 @@ public class AssemblingLineRecipes implements Runnable {
                     ItemList.StableLeptonContainmentUnit.get(1),
                     512 * 40 * SECONDS,
                     512,
-                    2000000,
+                    (int) TierEU.UHV,
                     4,
                     new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 16),
@@ -1415,7 +1415,7 @@ public class AssemblingLineRecipes implements Runnable {
                     ItemList.StableMesonContainmentUnit.get(1),
                     512 * 40 * SECONDS,
                     512,
-                    2000000,
+                    (int) TierEU.UHV,
                     4,
                     new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 16),
@@ -1578,7 +1578,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Antimatter Forge - Antimatter Sequencer - SSASS
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemRefer.Naquadah_Fuel_Refinery.get(1),
+                ItemList.NaquadahFuelRefinery.get(1),
                 512000,
                 2048,
                 8000000,
@@ -1601,7 +1601,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Antimatter Generator - SLAM
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemRefer.Large_Naquadah_Reactor.get(1),
+                ItemList.LargeNaquadahReactor.get(1),
                 512000,
                 2048,
                 8000000,
@@ -1617,7 +1617,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64),
                         MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64) },
                 new FluidStack[] { Materials.Antimatter.getFluid(1000), Materials.SixPhasedCopper.getMolten(9216),
-                        Materials.TranscendentMetal.getMolten(9216), Materials.SuperconductorUMVBase.getMolten(9216) },
+                        Materials.TranscendentMetal.getMolten(9216), Materials.SuperconductorUIVBase.getMolten(9216) },
                 ItemRefer.AntimatterGenerator.get(1),
                 6 * MINUTES,
                 (int) TierEU.RECIPE_UMV);
@@ -1738,7 +1738,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_EV))
                 .itemInputs(
                         ItemList.IndustrialCentrifuge.get(64),
-                        ItemRefer.SC_Fluid_Turbine.get(4),
+                        ItemList.SCSteamTurbine.get(4),
                         GregtechItemList.Hatch_Turbine_Rotor.get(4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         MaterialsAlloy.PIKYONIUM.getRotor(4),

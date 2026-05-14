@@ -58,7 +58,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -91,6 +90,7 @@ import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import forestry.core.fluids.Fluids;
+import fox.spiteful.forbidden.DarkAspects;
 import ganymedes01.etfuturum.recipes.SmokerRecipes;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -477,16 +477,7 @@ public class ScriptEFR implements IScriptLoader {
                     bits,
                     new Object[] { "ABA", "CDC", "AEA", 'A', "screwWood", 'B', "craftingToolHardHammer", 'C', inParts,
                             'D', "springAnyIron", 'E', "craftingToolScrewdriver" });
-            GTValues.RA.stdBuilder()
-                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1L))
-                    .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(inParts, GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1L))
+            GTValues.RA.stdBuilder().itemInputs(inParts, new OreDictItemStack("springAnyIron", 1))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         }
@@ -500,19 +491,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "blackstone_slab", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.PigIron, 1L))
+                        new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "polished_blackstone_pressure_plate", 2))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
@@ -603,19 +582,19 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 2)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -627,7 +606,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 4)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -645,7 +624,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 8))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -984,16 +963,19 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.red_flower, 1, 0), getModItem(MagicBees.ID, "miscResources", 1, 3))
+                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0)).duration(20 * SECONDS)
+                .eut(28).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 2L),
                         new ItemStack(Blocks.red_flower, 1, 0),
-                        getModItem(MagicBees.ID, "miscResources", 1, 4))
+                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.NetherStar, 2L))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TaintedMagic.ID, "BlockWarpwoodLeaves", 4, 0),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 2L),
                         getModItem(EtFuturumRequiem.ID, "nether_wart", 4, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
@@ -1012,22 +994,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(Minecraft.ID, "furnace", 1, 0),
                 "plateAnyIron");
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
-                        new ItemStack(Blocks.furnace, 1))
-                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5L),
-                        new ItemStack(Blocks.furnace, 1))
-                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PigIron, 5L),
-                        new ItemStack(Blocks.furnace, 1))
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("plateAnyIron", 5), new ItemStack(Blocks.furnace, 1))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1087,8 +1054,9 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "smithing_table", 1, 0),
                 bits,
-                new Object[] { "TT ", "GG ", "GG ", 'T', getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 5), 'G',
-                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6), });
+                new Object[] { "TT ", "GG ", "GG ", 'T',
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L), 'G',
+                        OrePrefixes.plank.get(Materials.Wood) });
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.magma_cream, 4))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
@@ -1124,7 +1092,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Blocks.stone_slab, 1),
-                        getModItem(Forestry.ID, "oakStick", 5),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 5L),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 3L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L))
                 .circuit(21).itemOutputs(getModItem(EtFuturumRequiem.ID, "wooden_armorstand", 1)).duration(5 * SECONDS)
@@ -1202,7 +1170,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 13L),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Void.getMolten(36)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1320,9 +1288,8 @@ public class ScriptEFR implements IScriptLoader {
         new ResearchItem(
                 "UNDYINGTOTEM",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("corpus"), 3),
+                new AspectList().add(DarkAspects.NETHER, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 12)
+                        .add(Aspect.SOUL, 9).add(Aspect.HUNGER, 6).add(Aspect.FLESH, 3),
                 -6,
                 -7,
                 3,
@@ -1333,9 +1300,8 @@ public class ScriptEFR implements IScriptLoader {
                 "UNDYINGTOTEM",
                 getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("exanimis"), 100).add(Aspect.getAspect("ignis"), 150)
-                        .add(Aspect.getAspect("lucrum"), 150).add(Aspect.getAspect("sano"), 200)
-                        .add(Aspect.getAspect("praecantatio"), 200),
+                new AspectList().add(Aspect.UNDEAD, 100).add(Aspect.FIRE, 150).add(Aspect.GREED, 150)
+                        .add(Aspect.HEAL, 200).add(Aspect.MAGIC, 200),
                 getModItem(TinkerConstruct.ID, "heartCanister", 1, 1),
                 OrePrefixes.plate.get(Materials.InfusedGold),
                 OrePrefixes.gemExquisite.get(Materials.Emerald),
@@ -1380,9 +1346,8 @@ public class ScriptEFR implements IScriptLoader {
         new ResearchItem(
                 "SHULKER",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("corpus"), 3),
+                new AspectList().add(DarkAspects.NETHER, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 12)
+                        .add(Aspect.SOUL, 9).add(Aspect.HUNGER, 6).add(Aspect.FLESH, 3),
                 -6,
                 6,
                 3,
@@ -1393,9 +1358,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 0), // Regular
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 "aba",
                 "cdc",
                 "aba",
@@ -1410,9 +1374,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 1), // Iron
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "abe",
                 "cdc",
                 "eba",
@@ -1429,9 +1392,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 2), // Gold
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("aqua"), 25)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.AIR, 25).add(Aspect.FIRE, 25).add(Aspect.EARTH, 25).add(Aspect.WATER, 25)
+                        .add(Aspect.ORDER, 25).add(Aspect.ENTROPY, 25),
                 "abe",
                 "cdc",
                 "eba",
@@ -1448,9 +1410,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 3), // Diamond
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abe",
                 "cdc",
                 "eba",
@@ -1467,9 +1428,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 4), // Copper
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 "abe",
                 "cdc",
                 "eba",
@@ -1486,9 +1446,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 5), // Silver
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.FIRE, 20).add(Aspect.EARTH, 20).add(Aspect.WATER, 20)
+                        .add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 20),
                 "abe",
                 "cdc",
                 "eba",
@@ -1505,9 +1464,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 6), // Crystal
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abe",
                 "cdc",
                 "eba",
@@ -1524,9 +1482,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 7), // Obsidian
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abe",
                 "cdc",
                 "eba",
@@ -1546,9 +1503,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 1), // Vanilla to Copper
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bab",
                 " a ",
@@ -1559,9 +1515,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 0), // Vanilla to Iron
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 " a ",
                 "bab",
                 " a ",
@@ -1572,9 +1527,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 6), // Copper to Iron
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bcb",
                 " a ",
@@ -1587,9 +1541,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 7), // Copper to Silver
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 " a ",
                 "bcb",
                 " a ",
@@ -1602,9 +1555,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 2), // Iron to Gold
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 " a ",
                 "bcb",
                 " a ",
@@ -1617,9 +1569,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 8), // Silver to Gold
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bcb",
                 " a ",
@@ -1632,9 +1583,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 3), // Gold to Diamond
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 " a ",
                 "bcb",
                 " a ",
@@ -1647,9 +1597,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 5), // Diamond to Crystal
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bcb",
                 " a ",
@@ -1662,9 +1611,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 4), // Diamond to Obsidian
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bcb",
                 " a ",
@@ -1723,9 +1671,8 @@ public class ScriptEFR implements IScriptLoader {
         new ResearchItem(
                 "NetheriteArmour",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("ignis"), 3),
+                new AspectList().add(DarkAspects.NETHER, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 12)
+                        .add(Aspect.SOUL, 9).add(Aspect.HUNGER, 6).add(Aspect.FIRE, 3),
                 6,
                 6,
                 3,
@@ -1736,8 +1683,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_helmet", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1755,8 +1702,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_chestplate", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1774,8 +1721,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_leggings", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1793,8 +1740,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_boots", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1812,8 +1759,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_pickaxe", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1831,8 +1778,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_hoe", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1850,8 +1797,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_spade", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1869,8 +1816,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_sword", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1888,8 +1835,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_axe", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1956,9 +1903,8 @@ public class ScriptEFR implements IScriptLoader {
         new ResearchItem(
                 "ELYTRA",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("tempestas"), 3),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 12).add(Aspect.SOUL, 9)
+                        .add(Aspect.MOTION, 12).add(Aspect.WEATHER, 3),
                 -4,
                 6,
                 3,
@@ -1968,9 +1914,8 @@ public class ScriptEFR implements IScriptLoader {
                 "ELYTRA",
                 getModItem(EtFuturumRequiem.ID, "elytra", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("praecantatio"), 150)
-                        .add(Aspect.getAspect("motus"), 150).add(Aspect.getAspect("tempestas"), 200)
-                        .add(Aspect.getAspect("praecantatio"), 200),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.MAGIC, 150).add(Aspect.MOTION, 150)
+                        .add(Aspect.WEATHER, 200).add(Aspect.MAGIC, 200),
                 getModItem(WitchingGadgets.ID, "item.WG_Kama", 1, 4),
                 getModItem(EnderIO.ID, "itemGliderWing", 1, 1),
                 GregtechItemList.MagicFeather.get(1),

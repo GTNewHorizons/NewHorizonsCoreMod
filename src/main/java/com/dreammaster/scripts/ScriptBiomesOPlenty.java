@@ -46,11 +46,13 @@ import com.dreammaster.biomesoplenty.BOPWoodTypes;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 
+import biomesoplenty.api.content.BOPCBlocks;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -339,9 +341,12 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "manaResource", 1, 8)).circuit(11)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 11)).eut(TierEU.RECIPE_LV).duration(15 * SECONDS)
                 .addTo(chemicalDehydratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 4, 1))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0)).eut(TierEU.RECIPE_LV).duration(15 * SECONDS)
                 .addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 1))
+                .itemOutputs(new ItemStack(BOPCBlocks.logs3, 1, 2)).eut(TierEU.RECIPE_LV).duration(10 * TICKS)
+                .addTo(chemicalDehydratorRecipes);
 
         // BOP renovable flora
 
@@ -640,5 +645,17 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                     .itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0))
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         }
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "gemOre", 1, 0))
+                .itemOutputs(
+                        getModItem(BiomesOPlenty.ID, "gems", 2, 0),
+                        getModItem(BiomesOPlenty.ID, "gems", 1, 0),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endstone, 3))
+                .outputChances(10000, 2500, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
+        // BoP Honey
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2))
+                .itemOutputs(getModItem(Forestry.ID, "honeydew", 1, 0)).outputChances(1200)
+                .fluidOutputs(FluidRegistry.getFluidStack("honey", 4)).duration(8 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(fluidExtractionRecipes);
+
     }
 }
