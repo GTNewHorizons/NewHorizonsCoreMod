@@ -6,7 +6,6 @@ import static com.gtnewhorizon.gtnhlib.util.ItemUtil.copyAmount;
 import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
 import static goodgenerator.util.ItemRefer.Field_Restriction_Coil_T1;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
@@ -4982,22 +4981,23 @@ public class AssemblerRecipes implements Runnable {
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         }
-        if (AE2Stuff.isModLoaded()) {
-            // Wireless Connector
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
-                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 12),
-                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24),
-                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41))
-                    .circuit(2).itemOutputs(getModItem(AE2Stuff.ID, "Wireless", 1)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        // Wireless Connector
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 12),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41))
+                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWirelessConnector", 1, 0))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
-            // Wireless Hub
-            GTValues.RA.stdBuilder().itemInputs(getModItem(AE2Stuff.ID, "Wireless", 8, 0), ItemList.Emitter_LuV.get(1))
-                    .itemOutputs(getModItem(AE2Stuff.ID, "Wireless", 1, 17)).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
-        }
+        // Wireless Hub
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockWirelessConnector", 8, 0),
+                        ItemList.Emitter_LuV.get(1))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWirelessHub", 1, 0)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
     }
 
     private void makeTinkersConstructRecipes() {

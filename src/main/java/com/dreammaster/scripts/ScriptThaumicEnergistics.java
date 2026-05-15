@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Gadomancy;
@@ -46,7 +45,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                AE2Stuff.ID,
                 AppliedEnergistics2.ID,
                 EternalSingularity.ID,
                 Gadomancy.ID,
@@ -533,7 +531,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 LogicProcessor,
                 'e',
-                getModItem(AE2Stuff.ID, "Encoder", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 340),
                 'f',
                 LogicProcessor,
                 'g',

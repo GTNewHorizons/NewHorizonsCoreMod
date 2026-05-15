@@ -1887,6 +1887,61 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "gemFluix",
                 "plateTitanium");
         addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCrystalGrowthChamber", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGrowthAccelerator", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGrowthAccelerator", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGrowthAccelerator", 1, 0),
+                "chestIron",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGrowthAccelerator", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGrowthAccelerator", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGrowthAccelerator", 1, 0));
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockWirelessConnector", 1, 0),
+                "crystalPureFluix",
+                "plateTitanium",
+                "crystalPureFluix",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                "crystalPureFluix",
+                "plateTitanium",
+                "crystalPureFluix");
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ToolWirelessKit", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                "crystalPureFluix",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16),
+                "crystalPureFluix");
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ToolNetworkVisualiser", 1, 0),
+                "crystalPureFluix",
+                getModItem(AppliedEnergistics2.ID, "item.ToolNetworkTool", 1, 0),
+                "crystalPureFluix",
+                "screwTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
+                "screwTitanium",
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                "craftingToolWrench");
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedInscriber", 1, 0),
+                "plateTungstenSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                "plateTungstenSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInscriber", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22),
+                "plateTungstenSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                "plateTungstenSteel");
+        addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzCuttingKnife", 1, 0),
                 "craftingToolHardHammer",
                 "screwTitanium",
