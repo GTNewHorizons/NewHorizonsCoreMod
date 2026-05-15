@@ -28,6 +28,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptRemoteIO implements IScriptLoader {
@@ -176,8 +177,8 @@ public class ScriptRemoteIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2))
+                        new OreDictItemStack(OrePrefixes.circuit.get(Materials.EV).toString(), 2),
+                        new OreDictItemStack(OrePrefixes.circuit.get(Materials.IV).toString(), 2))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
