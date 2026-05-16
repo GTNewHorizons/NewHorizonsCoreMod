@@ -1161,7 +1161,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
             // Clarifier Purification Unit
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Sifter.get(1))
+            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.LargeSifter.get(1))
                     .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             ItemList.ActivatedCarbonFilterMesh.get(16),
@@ -1601,7 +1601,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Antimatter Generator - SLAM
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemRefer.Large_Naquadah_Reactor.get(1),
+                ItemList.LargeNaquadahReactor.get(1),
                 512000,
                 2048,
                 8000000,
@@ -1617,7 +1617,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64),
                         MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64) },
                 new FluidStack[] { Materials.Antimatter.getFluid(1000), Materials.SixPhasedCopper.getMolten(9216),
-                        Materials.TranscendentMetal.getMolten(9216), Materials.SuperconductorUMVBase.getMolten(9216) },
+                        Materials.TranscendentMetal.getMolten(9216), Materials.SuperconductorUIVBase.getMolten(9216) },
                 ItemRefer.AntimatterGenerator.get(1),
                 6 * MINUTES,
                 (int) TierEU.RECIPE_UMV);
@@ -1738,7 +1738,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_EV))
                 .itemInputs(
                         ItemList.IndustrialCentrifuge.get(64),
-                        ItemRefer.SC_Fluid_Turbine.get(4),
+                        ItemList.SCSteamTurbine.get(4),
                         GregtechItemList.Hatch_Turbine_Rotor.get(4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         MaterialsAlloy.PIKYONIUM.getRotor(4),

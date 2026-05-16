@@ -178,13 +178,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         'N', OrePrefixes.stick.get(Materials.NaquadahAlloy) });
 
         GTModHandler.addCraftingRecipe(
-                ItemList.LargeHPSteamTurbine.get(1L),
+                ItemList.HPSteamTurbine.get(1L),
                 GTModHandler.RecipeBits.BITS,
                 new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_IV, 'B',
                         OrePrefixes.pipeLarge.get(Materials.Titanium), 'C', OrePrefixes.circuit.get(Materials.IV), 'P',
                         OrePrefixes.gearGt.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
-                ItemList.LargePlasmaTurbine.get(1L),
+                ItemList.PlasmaTurbine.get(1L),
                 GTModHandler.RecipeBits.BITS,
                 new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_UV, 'B',
                         OrePrefixes.pipeHuge.get(Materials.Naquadah), 'C', OrePrefixes.circuit.get(Materials.ZPM), 'P',
@@ -906,7 +906,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier5.get(),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.LuVTierMaterial.get(screw), 'P',
+                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.RhodiumPlatedPalladium.get(screw), 'P',
                         OrePrefixes.plate.get(Materials.FierySteel), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier6.get(),
@@ -929,9 +929,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 GTModHandler.RecipeBits.BITS,
                 new Object[] {
                         // spotless:off
-                        "BB ",
-                        "BB ",
-                        "   ",
+                        "BB",
+                        "BB",
                         'B', NHItemList.CokeOvenBrick.get().splitStack(1)
                         // spotless:on
                 });

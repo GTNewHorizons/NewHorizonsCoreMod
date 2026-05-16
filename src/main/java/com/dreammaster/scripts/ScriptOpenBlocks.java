@@ -714,8 +714,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         new ResearchItem(
                 "GOLDENEGG",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("bestia"), 12)
-                        .add(Aspect.getAspect("victus"), 9).add(Aspect.getAspect("humanus"), 6),
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.BEAST, 12).add(Aspect.LIFE, 9).add(Aspect.MAN, 6),
                 -4,
                 5,
                 3,
@@ -725,8 +724,8 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "GOLDENEGG",
                 getModItem(OpenBlocks.ID, "goldenegg", 1, 0),
                 2,
-                new AspectList().add(Aspect.getAspect("alienis"), 75).add(Aspect.getAspect("bestia"), 50)
-                        .add(Aspect.getAspect("victus"), 50).add(Aspect.getAspect("humanus"), 25),
+                new AspectList().add(Aspect.ELDRITCH, 75).add(Aspect.BEAST, 50).add(Aspect.LIFE, 50)
+                        .add(Aspect.MAN, 25),
                 getModItem(Minecraft.ID, "egg", 1, 0),
                 OrePrefixes.plateDense.get(Materials.Gold),
                 getModItem(Minecraft.ID, "skull", 1, 3),
