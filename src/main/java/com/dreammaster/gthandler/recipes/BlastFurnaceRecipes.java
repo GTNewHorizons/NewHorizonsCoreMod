@@ -498,7 +498,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .outputChances(10000, 1111).duration(150 * SECONDS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 2000)
                 .addTo(blastFurnaceRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.WroughtIron, 1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.CastIron, 1L))
                 .circuit(11)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 1L), Materials.Ash.getDust(1))
                 .outputChances(10000, 1111).fluidInputs(Materials.Oxygen.getGas(1000L))
@@ -539,7 +539,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 5L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CastIron, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rutile, 3L))
                 .fluidOutputs(Materials.CarbonMonoxide.getGas(1000L)).duration(2 * MINUTES + 40 * SECONDS)
                 .eut(TierEU.RECIPE_HV).metadata(COIL_HEAT, 1700).addTo(blastFurnaceRecipes);
