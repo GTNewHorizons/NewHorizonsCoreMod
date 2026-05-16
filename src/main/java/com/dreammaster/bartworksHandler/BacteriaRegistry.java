@@ -611,7 +611,7 @@ public class BacteriaRegistry {
                         BEAMCRAFTER_METADATA,
                         BeamCrafterMetadata.builder().particleID_A(TAU.getId()).particleID_B(TAUNEUTRINO.getId())
                                 .amount_A(300).amount_B(200).build())
-                .eut(TierEU.RECIPE_UHV).duration(2 * SECONDS).addTo(beamcrafterRecipes);
+                .outputChances(5000).eut(TierEU.RECIPE_UHV).duration(2 * SECONDS).addTo(beamcrafterRecipes);
     }
 
     private void runBWRecipes() {
