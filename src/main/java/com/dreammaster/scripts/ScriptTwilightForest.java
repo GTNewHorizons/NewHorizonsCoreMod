@@ -4,6 +4,7 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -28,6 +29,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
 
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -35,6 +37,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
+import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -51,6 +54,7 @@ public class ScriptTwilightForest implements IScriptLoader {
         return Arrays.asList(
                 ElectroMagicTools.ID,
                 EtFuturumRequiem.ID,
+                ForbiddenMagic.ID,
                 MagicBees.ID,
                 Thaumcraft.ID,
                 TwilightForest.ID,
@@ -369,266 +373,243 @@ public class ScriptTwilightForest implements IScriptLoader {
 
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFRoots", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2));
+                new AspectList().add(Aspect.TREE, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFRoots", 1, 1),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("praecantatio"), 2));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MAGIC, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.liveRoot", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("praecantatio"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MAGIC, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFFirefly", 1, 0),
-                new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.LIFE, 1).add(Aspect.FLIGHT, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFCicada", 1, 0),
-                new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("volatus"), 1));
+                new AspectList().add(Aspect.LIFE, 1).add(Aspect.FLIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPortal", 1, 0),
-                new AspectList().add(Aspect.getAspect("tempus"), 4).add(Aspect.getAspect("praecantatio"), 4)
-                        .add(Aspect.getAspect("iter"), 4));
+                new AspectList().add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 4).add(Aspect.MAGIC, 4)
+                        .add(Aspect.TRAVEL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 3),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 4),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 5),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 6),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 7),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFHedge", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFFireflyJar", 1, 0),
-                new AspectList().add(Aspect.getAspect("vitreus"), 2).add(Aspect.getAspect("arbor"), 1));
+                new AspectList().add(Aspect.CRYSTAL, 2).add(Aspect.TREE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 3),
-                new AspectList().add(Aspect.getAspect("herba"), 2).add(Aspect.getAspect("victus"), 1));
+                new AspectList().add(Aspect.PLANT, 2).add(Aspect.LIFE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 4),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 8),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 9),
-                new AspectList().add(Aspect.getAspect("herba"), 2));
+                new AspectList().add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 10),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 11),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 13),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 14),
-                new AspectList().add(Aspect.getAspect("arbor"), 1));
+                new AspectList().add(Aspect.TREE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFFireJet", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 2).add(Aspect.getAspect("aer"), 2)
-                        .add(Aspect.getAspect("machina"), 1));
+                new AspectList().add(Aspect.FIRE, 2).add(Aspect.AIR, 2).add(Aspect.MECHANISM, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFFireJet", 1, 8),
-                new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("motus"), 2)
-                        .add(Aspect.getAspect("machina"), 1));
+                new AspectList().add(Aspect.FIRE, 6).add(Aspect.MOTION, 2).add(Aspect.MECHANISM, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFNagastone", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.EARTH, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFNagastone", 1, 13),
-                new AspectList().add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.EARTH, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFSapling", 1, 5),
-                new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
-                        .add(Aspect.getAspect("tempus"), 2));
+                new AspectList().add(Aspect.PLANT, 4).add(Aspect.TREE, 2)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFSapling", 1, 6),
-                new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
-                        .add(Aspect.getAspect("praecantatio"), 2));
+                new AspectList().add(Aspect.PLANT, 4).add(Aspect.TREE, 2).add(Aspect.MAGIC, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFSapling", 1, 7),
-                new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
-                        .add(Aspect.getAspect("perfodio"), 2));
+                new AspectList().add(Aspect.PLANT, 4).add(Aspect.TREE, 2).add(Aspect.MINE, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFSapling", 1, 9),
-                new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
-                        .add(Aspect.getAspect("sensus"), 2));
+                new AspectList().add(Aspect.PLANT, 4).add(Aspect.TREE, 2).add(Aspect.SENSES, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMoonworm", 1, 0),
-                new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.LIFE, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("tempus"), 2).add(Aspect.getAspect("herba"), 2)
-                        .add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.MAGIC, 2)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 2).add(Aspect.PLANT, 2)
+                        .add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 1),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("aer"), 2).add(Aspect.getAspect("herba"), 2)
-                        .add(Aspect.getAspect("invidia"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.MAGIC, 2).add(Aspect.AIR, 2).add(Aspect.PLANT, 2)
+                        .add(DarkAspects.ENVY, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 2),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("perfodio"), 2).add(Aspect.getAspect("herba"), 2)
-                        .add(Aspect.getAspect("lucrum"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.MAGIC, 2).add(Aspect.MINE, 2).add(Aspect.PLANT, 2)
+                        .add(Aspect.GREED, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 3),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("motus"), 2).add(Aspect.getAspect("herba"), 2)
-                        .add(Aspect.getAspect("cognitio"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.MAGIC, 2).add(Aspect.MOTION, 2).add(Aspect.PLANT, 2)
+                        .add(Aspect.MIND, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 2),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("potentia"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 4),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("potentia"), 2));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 5),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("potentia"), 2));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 6),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("iter"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 2)
+                        .add(Aspect.TRAVEL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 9),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 2)
-                        .add(Aspect.getAspect("potentia"), 4).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 2).add(Aspect.ENERGY, 4)
+                        .add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 10),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 2)
-                        .add(Aspect.getAspect("potentia"), 4).add(Aspect.getAspect("vinculum"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 2).add(Aspect.ENERGY, 4)
+                        .add(Aspect.TRAP, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFShield", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("machina"), 1));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.MECHANISM, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTrophyPedestal", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 7).add(Aspect.getAspect("ordo"), 4)
-                        .add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("instrumentum"), 4));
+                new AspectList().add(Aspect.EARTH, 7).add(Aspect.ORDER, 4).add(Aspect.GREED, 4).add(Aspect.TOOL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTrophyPedestal", 1, 15),
-                new AspectList().add(Aspect.getAspect("terra"), 7).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("instrumentum"), 4));
+                new AspectList().add(Aspect.EARTH, 7).add(Aspect.ORDER, 12).add(Aspect.GREED, 12).add(Aspect.TOOL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFThorns", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("fabrico"), 1)
-                        .add(Aspect.getAspect("telum"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.CRAFT, 1).add(Aspect.WEAPON, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFThorns", 1, 1),
-                new AspectList().add(Aspect.getAspect("herba"), 3).add(Aspect.getAspect("fabrico"), 1)
-                        .add(Aspect.getAspect("telum"), 1).add(Aspect.getAspect("aqua"), 1));
+                new AspectList().add(Aspect.PLANT, 3).add(Aspect.CRAFT, 1).add(Aspect.WEAPON, 1).add(Aspect.WATER, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFBurntThorns", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFThornRose", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 2));
+                new AspectList().add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFLeaves3", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFLeaves3", 1, 1),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
+                new AspectList().add(Aspect.EARTH, 8).add(Aspect.FIRE, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
+                new AspectList().add(Aspect.EARTH, 8).add(Aspect.FIRE, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
+                new AspectList().add(Aspect.EARTH, 8).add(Aspect.FIRE, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.DarkLeaves", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.AuroraPillar", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.AuroraSlab", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 2).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 2).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.AuroraDoubleSlab", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TrollSteinn", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("potentia"), 2));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.ENERGY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.WispyCloud", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 1).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("aqua"), 1).add(Aspect.getAspect("tempestas"), 1));
+                new AspectList().add(Aspect.AIR, 1).add(Aspect.FLIGHT, 1).add(Aspect.WATER, 1).add(Aspect.WEATHER, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.FluffyCloud", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 1).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 1).add(Aspect.getAspect("tempestas"), 1));
+                new AspectList().add(Aspect.AIR, 1).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 1).add(Aspect.WEATHER, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeStalk", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 4));
+                new AspectList().add(Aspect.PLANT, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.UberousSoil", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("aqua"), 4)
-                        .add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("victus"), 10));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.WATER, 4).add(Aspect.PLANT, 4).add(Aspect.LIFE, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeGloomBlock", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("tenebrae"), 2)
-                        .add(Aspect.getAspect("herba"), 2));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.DARKNESS, 2).add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("lucrum"), 9));
+                new AspectList().add(Aspect.METAL, 18).add(Aspect.GREED, 9));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.UnripeTrollBer", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("terra"), 1)
-                        .add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.EARTH, 1).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TrollBer", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("terra"), 1)
-                        .add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.EARTH, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeLilyPad", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 8).add(Aspect.getAspect("aqua"), 4));
+                new AspectList().add(Aspect.PLANT, 8).add(Aspect.WATER, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeWaterLily", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 3));
+                new AspectList().add(Aspect.PLANT, 3));
 
         ThaumcraftApi.addCrucibleRecipe(
                 "ThaumiumReinforcedWings",
                 getModItem(TwilightForest.ID, "item.tfFeather", 1, 0),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 13),
-                new AspectList().add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("tenebrae"), 4)
-                        .add(Aspect.getAspect("tempus"), 4));
+                new AspectList().add(Aspect.FLIGHT, 2).add(Aspect.DARKNESS, 4)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 4));
 
     }
 }

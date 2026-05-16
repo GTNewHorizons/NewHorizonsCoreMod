@@ -379,7 +379,6 @@ public enum NHItemList {
     PhobosStoneDust("PhobosStoneDust", SPACE),
     PlutoIceDust("PlutoIceDust", SPACE),
     PlutoStoneDust("PlutoStoneDust", SPACE),
-    PotassiumHydroxideDust("PotassiumHydroxideDust", GENERIC),
     PrimordialPearlFragment("PrimordialPearlFragment", THAUMCRAFT),
     ProteusStoneDust("ProteusStoneDust", SPACE),
     PulsatingSpatialCoreChip("PulsatingSpatialCoreChip", CIRCUITS),

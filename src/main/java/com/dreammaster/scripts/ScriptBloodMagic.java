@@ -20,6 +20,7 @@ import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.IronTanks;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -54,12 +55,16 @@ import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 import WayofTime.alchemicalWizardry.api.bindingRegistry.UnbindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
+import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -95,6 +100,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 IndustrialCraft2.ID,
                 IronChests.ID,
                 IronTanks.ID,
+                MagicBees.ID,
                 Railcraft.ID,
                 StevesCarts2.ID,
                 Thaumcraft.ID,
@@ -428,9 +434,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "BLOODALTAR",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("fames"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.MAGIC, 12).add(Aspect.AURA, 9)
+                        .add(Aspect.HUNGER, 6).add(Aspect.EARTH, 3),
                 0,
                 0,
                 3,
@@ -443,9 +448,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BLOODALTAR",
                 getModItem(BloodMagic.ID, "Altar", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.FIRE, 20).add(Aspect.EARTH, 20).add(Aspect.WATER, 20)
+                        .add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -475,9 +479,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "LIFEINFUSER",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("victus"), 18).add(Aspect.getAspect("alienis"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.LIFE, 18).add(Aspect.ELDRITCH, 15).add(Aspect.MAGIC, 12).add(Aspect.AURA, 9)
+                        .add(Aspect.HUNGER, 6).add(Aspect.EARTH, 3),
                 -2,
                 2,
                 3,
@@ -491,9 +494,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "LIFEINFUSER",
                 getModItem(BloodArsenal.ID, "life_infuser", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("victus"), 32).add(Aspect.getAspect("alienis"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("auram"), 16)
-                        .add(Aspect.getAspect("fames"), 8).add(Aspect.getAspect("terra"), 8),
+                new AspectList().add(Aspect.LIFE, 32).add(Aspect.ELDRITCH, 32).add(Aspect.MAGIC, 24)
+                        .add(Aspect.AURA, 16).add(Aspect.HUNGER, 8).add(Aspect.EARTH, 8),
                 getModItem(BloodMagic.ID, "Altar", 1, 0),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 OrePrefixes.stickLong.get(Materials.BloodInfusedIron),
@@ -511,8 +513,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "LIFEINFUSER",
                 getModItem(BloodArsenal.ID, "lp_materializer", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("terra"), 50)
-                        .add(Aspect.getAspect("aqua"), 50).add(Aspect.getAspect("ordo"), 50),
+                new AspectList().add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50).add(Aspect.ORDER, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -540,9 +541,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SOULCOMPACTER",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("spiritus"), 18).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("lucrum"), 9)
-                        .add(Aspect.getAspect("vacuos"), 6).add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.SOUL, 18).add(Aspect.MAGIC, 15).add(Aspect.ELDRITCH, 12)
+                        .add(Aspect.GREED, 9).add(Aspect.VOID, 6).add(Aspect.MIND, 3),
                 0,
                 -6,
                 3,
@@ -551,9 +551,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SOULCOMPACTER",
                 getModItem(BloodArsenal.ID, "compacter", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("ignis"), 75)
-                        .add(Aspect.getAspect("terra"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.FIRE, 75).add(Aspect.EARTH, 75).add(Aspect.WATER, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -582,9 +581,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SACRIFICIALKNIFE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("telum"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("fames"), 6)
-                        .add(Aspect.getAspect("fabrico"), 3),
+                new AspectList().add(Aspect.WEAPON, 15).add(Aspect.GREED, 12).add(Aspect.TOOL, 9).add(Aspect.HUNGER, 6)
+                        .add(Aspect.CRAFT, 3),
                 2,
                 -2,
                 3,
@@ -597,8 +595,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SACRIFICIALKNIFE",
                 getModItem(BloodMagic.ID, "sacrificialKnife", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.EARTH, 20).add(Aspect.ORDER, 10)
+                        .add(Aspect.ENTROPY, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -626,9 +624,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ALCHEMICCHEMSTRYSET",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("fabrico"), 15).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("victus"), 3),
+                new AspectList().add(Aspect.CRAFT, 15).add(Aspect.FIRE, 12).add(Aspect.TOOL, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.LIFE, 3),
                 4,
                 -4,
                 3,
@@ -642,9 +639,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ALCHEMICCHEMSTRYSET",
                 getModItem(BloodMagic.ID, "blockWritingTable", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("fabrico"), 24).add(Aspect.getAspect("instrumentum"), 24)
-                        .add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("victus"), 12)
-                        .add(Aspect.getAspect("ignis"), 12),
+                new AspectList().add(Aspect.CRAFT, 24).add(Aspect.TOOL, 24).add(Aspect.MAGIC, 18).add(Aspect.LIFE, 12)
+                        .add(Aspect.FIRE, 12),
                 getModItem(Minecraft.ID, "brewing_stand", 1, 0),
                 Materials.LifeEssence.getCells(1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
@@ -665,9 +661,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "AMORPHICCATALYST",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("aqua"), 18).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("terra"), 12).add(Aspect.getAspect("aer"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("perditio"), 3),
+                new AspectList().add(Aspect.WATER, 18).add(Aspect.FIRE, 15).add(Aspect.EARTH, 12).add(Aspect.AIR, 9)
+                        .add(Aspect.ORDER, 6).add(Aspect.ENTROPY, 3),
                 6,
                 -4,
                 3,
@@ -678,9 +673,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "AMORPHICCATALYST",
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("aqua"), 16).add(Aspect.getAspect("ignis"), 16)
-                        .add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("aer"), 16)
-                        .add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("perditio"), 16),
+                new AspectList().add(Aspect.WATER, 16).add(Aspect.FIRE, 16).add(Aspect.EARTH, 16).add(Aspect.AIR, 16)
+                        .add(Aspect.ORDER, 16).add(Aspect.ENTROPY, 16),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
                 getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
@@ -699,9 +693,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "BIDIAMONDBLOCK",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("aqua"), 18).add(Aspect.getAspect("ignis"), 24)
-                        .add(Aspect.getAspect("victus"), 12).add(Aspect.getAspect("ira"), 6)
-                        .add(Aspect.getAspect("perditio"), 3),
+                new AspectList().add(Aspect.WATER, 18).add(Aspect.FIRE, 24).add(Aspect.LIFE, 12)
+                        .add(DarkAspects.WRATH, 6).add(Aspect.ENTROPY, 3),
                 8,
                 -4,
                 3,
@@ -712,9 +705,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "BIDIAMONDBLOCK",
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0),
                 7,
-                new AspectList().add(Aspect.getAspect("ira"), 32).add(Aspect.getAspect("alienis"), 16)
-                        .add(Aspect.getAspect("victus"), 24).add(Aspect.getAspect("ignis"), 48)
-                        .add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("perditio"), 16),
+                new AspectList().add(DarkAspects.WRATH, 32).add(Aspect.ELDRITCH, 16).add(Aspect.LIFE, 24)
+                        .add(Aspect.FIRE, 48).add(Aspect.WATER, 64).add(Aspect.ENTROPY, 16),
                 getModItem(Botania.ID, "storage", 1, 3),
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0),
@@ -733,9 +725,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "DIVINATIONSIGIL",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 15).add(Aspect.EARTH, 12).add(Aspect.TOOL, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.METAL, 3),
                 0,
                 2,
                 3,
@@ -749,9 +740,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "DIVINATIONSIGIL",
                 getModItem(BloodMagic.ID, "divinationSigil", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("vitreus"), 24).add(Aspect.getAspect("terra"), 18)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("instrumentum"), 6)
-                        .add(Aspect.getAspect("metallum"), 4),
+                new AspectList().add(Aspect.CRYSTAL, 24).add(Aspect.EARTH, 18).add(Aspect.MAGIC, 12).add(Aspect.TOOL, 6)
+                        .add(Aspect.METAL, 4),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
@@ -767,9 +757,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SPEEDRUNE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("volatus"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("fames"), 3),
+                new AspectList().add(Aspect.MOTION, 15).add(Aspect.FLIGHT, 12).add(Aspect.ENERGY, 9).add(Aspect.AIR, 6)
+                        .add(Aspect.HUNGER, 3),
                 -2,
                 0,
                 3,
@@ -783,9 +772,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SPEEDRUNE",
                 getModItem(BloodMagic.ID, "speedRune", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("motus"), 24).add(Aspect.getAspect("volatus"), 24)
-                        .add(Aspect.getAspect("potentia"), 18).add(Aspect.getAspect("aer"), 12)
-                        .add(Aspect.getAspect("fames"), 4),
+                new AspectList().add(Aspect.MOTION, 24).add(Aspect.FLIGHT, 24).add(Aspect.ENERGY, 18)
+                        .add(Aspect.AIR, 12).add(Aspect.HUNGER, 4),
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
@@ -799,8 +787,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "IMPERFECTRITUALSTONE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("tenebrae"), 3),
+                new AspectList().add(Aspect.AURA, 12).add(Aspect.MAGIC, 9).add(Aspect.EARTH, 6).add(Aspect.DARKNESS, 3),
                 -2,
                 -2,
                 3,
@@ -813,8 +800,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "IMPERFECTRITUALSTONE",
                 getModItem(BloodMagic.ID, "imperfectRitualStone", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 1).add(Aspect.getAspect("ignis"), 6)
-                        .add(Aspect.getAspect("terra"), 8),
+                new AspectList().add(Aspect.AIR, 1).add(Aspect.FIRE, 6).add(Aspect.EARTH, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -839,8 +825,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "IMPERFECTRITUALSTONE",
                 getModItem(BloodMagic.ID, "imperfectRitualStone", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 2).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("terra"), 16),
+                new AspectList().add(Aspect.AIR, 2).add(Aspect.FIRE, 12).add(Aspect.EARTH, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -860,9 +845,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RITUALSTONE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("aer"), 3),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.FIRE, 12).add(Aspect.DARKNESS, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.AIR, 3),
                 -2,
                 -4,
                 3,
@@ -873,9 +857,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RITUALSTONE",
                 getModItem(BloodMagic.ID, "ritualStone", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("terra"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("tenebrae"), 6).add(Aspect.getAspect("praecantatio"), 3)
-                        .add(Aspect.getAspect("aer"), 2),
+                new AspectList().add(Aspect.EARTH, 12).add(Aspect.FIRE, 9).add(Aspect.DARKNESS, 6).add(Aspect.MAGIC, 3)
+                        .add(Aspect.AIR, 2),
                 getModItem(BloodMagic.ID, "imperfectRitualStone", 1, 0),
                 getModItem(BloodMagic.ID, "terrae", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1),
@@ -886,8 +869,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RITUALSTONE",
                 getModItem(BloodMagic.ID, "ritualStone", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 3).add(Aspect.getAspect("ignis"), 18)
-                        .add(Aspect.getAspect("terra"), 24),
+                new AspectList().add(Aspect.AIR, 3).add(Aspect.FIRE, 18).add(Aspect.EARTH, 24),
                 "abc",
                 "def",
                 "ghi",
@@ -916,9 +898,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SPELLTABLE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("terra"), 18).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("tenebrae"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("infernus"), 3),
+                new AspectList().add(Aspect.EARTH, 18).add(Aspect.FIRE, 15).add(Aspect.DARKNESS, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.AIR, 6).add(DarkAspects.NETHER, 3),
                 -4,
                 -4,
                 3,
@@ -927,9 +908,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SPELLTABLE",
                 getModItem(BloodMagic.ID, "blockHomHeart", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("ignis"), 40)
-                        .add(Aspect.getAspect("terra"), 40).add(Aspect.getAspect("aqua"), 40)
-                        .add(Aspect.getAspect("ordo"), 40).add(Aspect.getAspect("perditio"), 40),
+                new AspectList().add(Aspect.AIR, 40).add(Aspect.FIRE, 40).add(Aspect.EARTH, 40).add(Aspect.WATER, 40)
+                        .add(Aspect.ORDER, 40).add(Aspect.ENTROPY, 40),
                 "abc",
                 "def",
                 "ghi",
@@ -958,9 +938,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "MASTERRITUALSTONE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("terra"), 18).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("tenebrae"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aer"), 6),
+                new AspectList().add(Aspect.EARTH, 18).add(Aspect.FIRE, 15).add(Aspect.DARKNESS, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.AIR, 6),
                 -2,
                 -6,
                 3,
@@ -970,9 +949,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "MASTERRITUALSTONE",
                 getModItem(BloodMagic.ID, "masterStone", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("terra"), 36).add(Aspect.getAspect("ignis"), 24)
-                        .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("cognitio"), 8),
+                new AspectList().add(Aspect.EARTH, 36).add(Aspect.FIRE, 24).add(Aspect.DARKNESS, 16)
+                        .add(Aspect.MAGIC, 16).add(Aspect.AIR, 8).add(Aspect.MIND, 8),
                 getModItem(BloodMagic.ID, "ritualStone", 1, 0),
                 getModItem(BloodMagic.ID, "terrae", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0),
@@ -991,9 +969,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "WATERSIGIL",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.EARTH, 12).add(Aspect.TOOL, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.METAL, 3),
                 0,
                 4,
                 3,
@@ -1003,9 +980,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "WATERSIGIL",
                 getModItem(BloodMagic.ID, "waterSigil", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("aqua"), 40).add(Aspect.getAspect("terra"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("instrumentum"), 16)
-                        .add(Aspect.getAspect("metallum"), 8),
+                new AspectList().add(Aspect.WATER, 40).add(Aspect.EARTH, 32).add(Aspect.MAGIC, 24).add(Aspect.TOOL, 16)
+                        .add(Aspect.METAL, 8),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
                 getModItem(Witchery.ID, "divinerwater", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 1),
@@ -1023,9 +999,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "LAVASIGIL",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.EARTH, 12).add(Aspect.TOOL, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.METAL, 3),
                 0,
                 8,
                 3,
@@ -1035,9 +1010,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "LAVASIGIL",
                 getModItem(BloodMagic.ID, "lavaSigil", 1, 0),
                 7,
-                new AspectList().add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("terra"), 40)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("instrumentum"), 24)
-                        .add(Aspect.getAspect("metallum"), 16),
+                new AspectList().add(Aspect.FIRE, 64).add(Aspect.EARTH, 40).add(Aspect.MAGIC, 32).add(Aspect.TOOL, 24)
+                        .add(Aspect.METAL, 16),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(Witchery.ID, "divinerlava", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 2),
@@ -1056,9 +1030,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "EMPTYCORE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 15).add(Aspect.EARTH, 12).add(Aspect.GREED, 9).add(Aspect.METAL, 6)
+                        .add(Aspect.MAGIC, 3),
                 0,
                 -2,
                 3,
@@ -1067,9 +1040,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "EMPTYCORE",
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1097,9 +1069,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "BMLAVACRYSTAL",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("infernus"), 12)
-                        .add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("aer"), 3),
+                new AspectList().add(Aspect.FIRE, 15).add(DarkAspects.NETHER, 12).add(Aspect.EARTH, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.AIR, 3),
                 0,
                 -4,
                 3,
@@ -1110,9 +1081,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "BMLAVACRYSTAL",
                 getModItem(BloodMagic.ID, "lavaCrystal", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("ignis"), 24).add(Aspect.getAspect("terra"), 18)
-                        .add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("infernus"), 6)
-                        .add(Aspect.getAspect("aer"), 6),
+                new AspectList().add(Aspect.FIRE, 24).add(Aspect.EARTH, 18).add(Aspect.MAGIC, 18)
+                        .add(DarkAspects.NETHER, 6).add(Aspect.AIR, 6),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 1),
                 getModItem(TinkerConstruct.ID, "materials", 1, 7),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
@@ -1124,9 +1094,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RUNESACRIFICE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("infernus"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.HUNGER, 15).add(DarkAspects.NETHER, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.EARTH, 3),
                 -4,
                 0,
                 3,
@@ -1136,9 +1105,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RUNESACRIFICE",
                 getModItem(BloodMagic.ID, "runeOfSacrifice", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("fames"), 24).add(Aspect.getAspect("infernus"), 24)
-                        .add(Aspect.getAspect("potentia"), 18).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("terra"), 4),
+                new AspectList().add(Aspect.HUNGER, 24).add(DarkAspects.NETHER, 24).add(Aspect.ENERGY, 18)
+                        .add(Aspect.MAGIC, 12).add(Aspect.EARTH, 4),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 1),
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
@@ -1154,9 +1122,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RUNESELFSACRIFICE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("infernus"), 12)
-                        .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.HUNGER, 15).add(DarkAspects.NETHER, 12).add(Aspect.GREED, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.EARTH, 3),
                 -4,
                 2,
                 3,
@@ -1167,9 +1134,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RUNESELFSACRIFICE",
                 getModItem(BloodMagic.ID, "runeOfSelfSacrifice", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("fames"), 24).add(Aspect.getAspect("infernus"), 24)
-                        .add(Aspect.getAspect("lucrum"), 18).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("terra"), 4),
+                new AspectList().add(Aspect.HUNGER, 24).add(DarkAspects.NETHER, 24).add(Aspect.GREED, 18)
+                        .add(Aspect.MAGIC, 12).add(Aspect.EARTH, 4),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 1),
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
@@ -1185,10 +1151,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "AIRSIGIL",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("volatus"), 21).add(Aspect.getAspect("aer"), 18)
-                        .add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.FLIGHT, 21).add(Aspect.AIR, 18).add(Aspect.MOTION, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.TRAVEL, 9).add(Aspect.ENERGY, 6).add(Aspect.MIND, 3),
                 0,
                 10,
                 3,
@@ -1198,10 +1162,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "AIRSIGIL",
                 getModItem(BloodMagic.ID, "airSigil", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("volatus"), 64).add(Aspect.getAspect("aer"), 48)
-                        .add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("iter"), 18).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("cognitio"), 6),
+                new AspectList().add(Aspect.FLIGHT, 64).add(Aspect.AIR, 48).add(Aspect.MOTION, 32).add(Aspect.MAGIC, 24)
+                        .add(Aspect.TRAVEL, 18).add(Aspect.ENERGY, 12).add(Aspect.MIND, 6),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
@@ -1222,9 +1184,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "FASTERMINING",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("perfodio"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("motus"), 3),
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.MINE, 12).add(Aspect.MAGIC, 9).add(Aspect.METAL, 6)
+                        .add(Aspect.MOTION, 3),
                 -2,
                 4,
                 3,
@@ -1235,9 +1196,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "FASTERMINING",
                 getModItem(BloodMagic.ID, "sigilOfTheFastMiner", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 36).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("perfodio"), 12)
-                        .add(Aspect.getAspect("motus"), 8),
+                new AspectList().add(Aspect.TOOL, 36).add(Aspect.MAGIC, 24).add(Aspect.METAL, 18).add(Aspect.MINE, 12)
+                        .add(Aspect.MOTION, 8),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
                 getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0),
@@ -1255,9 +1215,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "GREENGROW",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("herba"), 9).add(Aspect.getAspect("arbor"), 6)
-                        .add(Aspect.getAspect("victus"), 3),
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.EARTH, 12).add(Aspect.PLANT, 9).add(Aspect.TREE, 6)
+                        .add(Aspect.LIFE, 3),
                 2,
                 4,
                 3,
@@ -1267,9 +1226,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "GREENGROW",
                 getModItem(BloodMagic.ID, "growthSigil", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 36).add(Aspect.getAspect("terra"), 24)
-                        .add(Aspect.getAspect("herba"), 18).add(Aspect.getAspect("arbor"), 12)
-                        .add(Aspect.getAspect("victus"), 8),
+                new AspectList().add(Aspect.TOOL, 36).add(Aspect.EARTH, 24).add(Aspect.PLANT, 18).add(Aspect.TREE, 12)
+                        .add(Aspect.LIFE, 8),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
                 getModItem(Witchery.ID, "witchsapling", 1, 0),
                 getModItem(BloodMagic.ID, "terrae", 1, 0),
@@ -1288,9 +1246,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "VOIDSIGIL",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.VOID, 15).add(Aspect.EARTH, 12).add(Aspect.AURA, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.METAL, 3),
                 -2,
                 6,
                 3,
@@ -1300,9 +1257,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "VOIDSIGIL",
                 getModItem(BloodMagic.ID, "voidSigil", 1, 0),
                 7,
-                new AspectList().add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("terra"), 40)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("auram"), 24)
-                        .add(Aspect.getAspect("metallum"), 16),
+                new AspectList().add(Aspect.VOID, 64).add(Aspect.EARTH, 40).add(Aspect.MAGIC, 32).add(Aspect.AURA, 24)
+                        .add(Aspect.METAL, 16),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
@@ -1323,10 +1279,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFSWIMMING",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("aer"), 21).add(Aspect.getAspect("aqua"), 18)
-                        .add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.AIR, 21).add(Aspect.WATER, 18).add(Aspect.VOID, 15).add(Aspect.EARTH, 12)
+                        .add(Aspect.AURA, 9).add(Aspect.MAGIC, 6).add(Aspect.METAL, 3),
                 -4,
                 8,
                 3,
@@ -1337,10 +1291,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFSWIMMING",
                 getModItem(BloodArsenal.ID, "sigil_of_swimming", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("aqua"), 64)
-                        .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("terra"), 48)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("auram"), 24)
-                        .add(Aspect.getAspect("metallum"), 16),
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.WATER, 64).add(Aspect.VOID, 64).add(Aspect.EARTH, 48)
+                        .add(Aspect.MAGIC, 32).add(Aspect.AURA, 24).add(Aspect.METAL, 16),
                 getModItem(BloodMagic.ID, "voidSigil", 1, 0),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 Materials.FishOil.getCells(1),
@@ -1359,9 +1311,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "BLOODLETTERSPACK",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("telum"), 15).add(Aspect.getAspect("sano"), 12)
-                        .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("tutamen"), 6)
-                        .add(Aspect.getAspect("pannus"), 3),
+                new AspectList().add(Aspect.WEAPON, 15).add(Aspect.HEAL, 12).add(Aspect.GREED, 9).add(Aspect.ARMOR, 6)
+                        .add(Aspect.CLOTH, 3),
                 2,
                 -4,
                 3,
@@ -1374,9 +1325,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BLOODLETTERSPACK",
                 getModItem(BloodMagic.ID, "itemBloodPack", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("aqua"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 30).add(Aspect.WATER, 30)
+                        .add(Aspect.ORDER, 30).add(Aspect.ENTROPY, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -1404,9 +1354,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "IMBUEARMOR",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("sano"), 15).add(Aspect.getAspect("tutamen"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("potentia"), 3),
+                new AspectList().add(Aspect.HEAL, 15).add(Aspect.ARMOR, 12).add(Aspect.MAGIC, 9).add(Aspect.METAL, 6)
+                        .add(Aspect.ENERGY, 3),
                 4,
                 -6,
                 3,
@@ -1416,8 +1365,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "IMBUEARMOR",
                 createItemStack(BloodArsenal.ID, "life_imbued_helmet", 1, 0, "{LPStored:0}"),
-                new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.ORDER, 30)
+                        .add(Aspect.ENTROPY, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -1444,8 +1393,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "IMBUEARMOR",
                 createItemStack(BloodArsenal.ID, "life_imbued_chestplate", 1, 0, "{LPStored:0}"),
-                new AspectList().add(Aspect.getAspect("terra"), 60).add(Aspect.getAspect("ignis"), 60)
-                        .add(Aspect.getAspect("ordo"), 60).add(Aspect.getAspect("perditio"), 60),
+                new AspectList().add(Aspect.EARTH, 60).add(Aspect.FIRE, 60).add(Aspect.ORDER, 60)
+                        .add(Aspect.ENTROPY, 60),
                 "abc",
                 "def",
                 "ghi",
@@ -1475,8 +1424,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "IMBUEARMOR",
                 createItemStack(BloodArsenal.ID, "life_imbued_leggings", 1, 0, "{LPStored:0}"),
-                new AspectList().add(Aspect.getAspect("terra"), 45).add(Aspect.getAspect("ignis"), 45)
-                        .add(Aspect.getAspect("ordo"), 45).add(Aspect.getAspect("perditio"), 45),
+                new AspectList().add(Aspect.EARTH, 45).add(Aspect.FIRE, 45).add(Aspect.ORDER, 45)
+                        .add(Aspect.ENTROPY, 45),
                 "abc",
                 "def",
                 "ghi",
@@ -1506,8 +1455,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "IMBUEARMOR",
                 createItemStack(BloodArsenal.ID, "life_imbued_boots", 1, 0, "{LPStored:0}"),
-                new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.ORDER, 30)
+                        .add(Aspect.ENTROPY, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -1531,8 +1480,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "WEAKORB",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 9).add(Aspect.ENERGY, 6).add(Aspect.MAGIC, 3),
                 2,
                 0,
                 2,
@@ -1545,9 +1493,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WEAKORB",
                 NHItemList.WeakOrb.get(),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.WATER, 20).add(Aspect.FIRE, 20).add(Aspect.EARTH, 20)
+                        .add(Aspect.ENTROPY, 20).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -1566,8 +1513,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "APPRENTICEORB",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 12).add(Aspect.ENERGY, 9).add(Aspect.MAGIC, 6).add(Aspect.MIND, 3),
                 4,
                 0,
                 3,
@@ -1580,9 +1526,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "APPRENTICEORB",
                 NHItemList.ApprenticeOrb.get(),
-                new AspectList().add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("aqua"), 40)
-                        .add(Aspect.getAspect("ignis"), 40).add(Aspect.getAspect("terra"), 40)
-                        .add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("ordo"), 40),
+                new AspectList().add(Aspect.AIR, 40).add(Aspect.WATER, 40).add(Aspect.FIRE, 40).add(Aspect.EARTH, 40)
+                        .add(Aspect.ENTROPY, 40).add(Aspect.ORDER, 40),
                 "abc",
                 "def",
                 "ghi",
@@ -1603,9 +1548,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "MAGICANORB",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("cognitio"), 6)
-                        .add(Aspect.getAspect("sano"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 15).add(Aspect.ENERGY, 12).add(Aspect.MAGIC, 9).add(Aspect.MIND, 6)
+                        .add(Aspect.HEAL, 3),
                 6,
                 0,
                 3,
@@ -1618,9 +1562,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MAGICANORB",
                 NHItemList.MagicianOrb.get(),
-                new AspectList().add(Aspect.getAspect("aer"), 60).add(Aspect.getAspect("aqua"), 60)
-                        .add(Aspect.getAspect("ignis"), 60).add(Aspect.getAspect("terra"), 60)
-                        .add(Aspect.getAspect("perditio"), 60).add(Aspect.getAspect("ordo"), 60),
+                new AspectList().add(Aspect.AIR, 60).add(Aspect.WATER, 60).add(Aspect.FIRE, 60).add(Aspect.EARTH, 60)
+                        .add(Aspect.ENTROPY, 60).add(Aspect.ORDER, 60),
                 "abc",
                 "def",
                 "ghi",
@@ -1641,9 +1584,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "MASTERORB",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 18).add(Aspect.getAspect("potentia"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("cognitio"), 9)
-                        .add(Aspect.getAspect("sano"), 6).add(Aspect.getAspect("aqua"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 18).add(Aspect.ENERGY, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.MIND, 9).add(Aspect.HEAL, 6).add(Aspect.WATER, 3),
                 8,
                 0,
                 3,
@@ -1652,9 +1594,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MASTERORB",
                 NHItemList.MasterOrb.get(),
-                new AspectList().add(Aspect.getAspect("aer"), 80).add(Aspect.getAspect("aqua"), 80)
-                        .add(Aspect.getAspect("ignis"), 80).add(Aspect.getAspect("terra"), 80)
-                        .add(Aspect.getAspect("perditio"), 80).add(Aspect.getAspect("ordo"), 80),
+                new AspectList().add(Aspect.AIR, 80).add(Aspect.WATER, 80).add(Aspect.FIRE, 80).add(Aspect.EARTH, 80)
+                        .add(Aspect.ENTROPY, 80).add(Aspect.ORDER, 80),
                 "abc",
                 "def",
                 "ghi",
@@ -1673,10 +1614,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ARCHMAGEORB",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 21).add(Aspect.getAspect("potentia"), 18)
-                        .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("sano"), 9).add(Aspect.getAspect("aqua"), 6)
-                        .add(Aspect.getAspect("infernus"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 21).add(Aspect.ENERGY, 18).add(Aspect.MAGIC, 15)
+                        .add(Aspect.MIND, 12).add(Aspect.HEAL, 9).add(Aspect.WATER, 6).add(DarkAspects.NETHER, 3),
                 10,
                 0,
                 3,
@@ -1689,9 +1628,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCHMAGEORB",
                 NHItemList.ArchmageOrb.get(),
-                new AspectList().add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("aqua"), 100)
-                        .add(Aspect.getAspect("ignis"), 100).add(Aspect.getAspect("terra"), 100)
-                        .add(Aspect.getAspect("perditio"), 100).add(Aspect.getAspect("ordo"), 100),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.WATER, 100).add(Aspect.FIRE, 100)
+                        .add(Aspect.EARTH, 100).add(Aspect.ENTROPY, 100).add(Aspect.ORDER, 100),
                 "abc",
                 "def",
                 "ghi",
@@ -1712,10 +1650,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "TRANSCENDENTORB",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 24).add(Aspect.getAspect("potentia"), 21)
-                        .add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("cognitio"), 15)
-                        .add(Aspect.getAspect("sano"), 12).add(Aspect.getAspect("aqua"), 9)
-                        .add(Aspect.getAspect("infernus"), 6).add(Aspect.getAspect("electrum"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 24).add(Aspect.ENERGY, 21).add(Aspect.MAGIC, 18)
+                        .add(Aspect.MIND, 15).add(Aspect.HEAL, 12).add(Aspect.WATER, 9).add(DarkAspects.NETHER, 6)
+                        .add(TCAspects.ELECTRUM.getAspect(), 3),
                 12,
                 0,
                 3,
@@ -1728,9 +1665,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TRANSCENDENTORB",
                 NHItemList.TranscendentOrb.get(),
-                new AspectList().add(Aspect.getAspect("aer"), 150).add(Aspect.getAspect("aqua"), 150)
-                        .add(Aspect.getAspect("ignis"), 150).add(Aspect.getAspect("terra"), 150)
-                        .add(Aspect.getAspect("perditio"), 150).add(Aspect.getAspect("ordo"), 150),
+                new AspectList().add(Aspect.AIR, 150).add(Aspect.WATER, 150).add(Aspect.FIRE, 150)
+                        .add(Aspect.EARTH, 150).add(Aspect.ENTROPY, 150).add(Aspect.ORDER, 150),
                 "abc",
                 "def",
                 "ghi",
@@ -1751,11 +1687,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "TRANSPARENTORB",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 27).add(Aspect.getAspect("potentia"), 24)
-                        .add(Aspect.getAspect("praecantatio"), 21).add(Aspect.getAspect("cognitio"), 18)
-                        .add(Aspect.getAspect("sano"), 15).add(Aspect.getAspect("aqua"), 12)
-                        .add(Aspect.getAspect("infernus"), 9).add(Aspect.getAspect("electrum"), 6)
-                        .add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 27).add(Aspect.ENERGY, 24).add(Aspect.MAGIC, 21)
+                        .add(Aspect.MIND, 18).add(Aspect.HEAL, 15).add(Aspect.WATER, 12).add(DarkAspects.NETHER, 9)
+                        .add(TCAspects.ELECTRUM.getAspect(), 6).add(Aspect.ELDRITCH, 3),
                 14,
                 0,
                 3,
@@ -1764,9 +1698,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TRANSPARENTORB",
                 getModItem(BloodArsenal.ID, "transparent_orb", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 175).add(Aspect.getAspect("aqua"), 175)
-                        .add(Aspect.getAspect("ignis"), 175).add(Aspect.getAspect("terra"), 175)
-                        .add(Aspect.getAspect("perditio"), 175).add(Aspect.getAspect("ordo"), 175),
+                new AspectList().add(Aspect.AIR, 175).add(Aspect.WATER, 175).add(Aspect.FIRE, 175)
+                        .add(Aspect.EARTH, 175).add(Aspect.ENTROPY, 175).add(Aspect.ORDER, 175),
                 "abc",
                 "def",
                 "ghi",
@@ -1795,9 +1728,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "EMPTYSOCKET",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("tutamen"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("tenebrae"), 6)
-                        .add(Aspect.getAspect("sano"), 3),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.ARMOR, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.DARKNESS, 6).add(Aspect.HEAL, 3),
                 2,
                 -6,
                 3,
@@ -1806,9 +1738,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "EMPTYSOCKET",
                 getModItem(BloodMagic.ID, "emptySocket", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("terra"), 50)
-                        .add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("ordo"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.WATER, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50)
+                        .add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -1837,9 +1768,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SOULARMORFORGE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("tutamen"), 18).add(Aspect.getAspect("metallum"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 21).add(Aspect.getAspect("tenebrae"), 6)
-                        .add(Aspect.getAspect("exanimis"), 3),
+                new AspectList().add(Aspect.ARMOR, 18).add(Aspect.METAL, 15).add(Aspect.MAGIC, 21)
+                        .add(Aspect.DARKNESS, 6).add(Aspect.UNDEAD, 3),
                 2,
                 -8,
                 3,
@@ -1853,9 +1783,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SOULARMORFORGE",
                 getModItem(BloodMagic.ID, "armourForge", 1, 0),
                 7,
-                new AspectList().add(Aspect.getAspect("tutamen"), 64).add(Aspect.getAspect("metallum"), 40)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("auram"), 24)
-                        .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("exanimis"), 8),
+                new AspectList().add(Aspect.ARMOR, 64).add(Aspect.METAL, 40).add(Aspect.MAGIC, 32).add(Aspect.AURA, 24)
+                        .add(Aspect.DARKNESS, 16).add(Aspect.UNDEAD, 8),
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 6),
                 getModItem(BloodMagic.ID, "bloodSocket", 1, 0),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
@@ -1876,9 +1805,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RUNEOFARGUMENTEDCAPACITY",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("aqua"), 18).add(Aspect.getAspect("fames"), 15)
-                        .add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("vacuos"), 3),
+                new AspectList().add(Aspect.WATER, 18).add(Aspect.HUNGER, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.VOID, 3),
                 -6,
                 0,
                 3,
@@ -1889,9 +1817,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RUNEOFARGUMENTEDCAPACITY",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 1),
                 7,
-                new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("lucrum"), 24)
-                        .add(Aspect.getAspect("fames"), 18).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("vacuos"), 4),
+                new AspectList().add(Aspect.WATER, 32).add(Aspect.GREED, 24).add(Aspect.HUNGER, 18)
+                        .add(Aspect.MAGIC, 12).add(Aspect.EARTH, 8).add(Aspect.VOID, 4),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 1),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
@@ -1910,8 +1837,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RUNEOFDISLOCATION",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("aqua"), 18).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.WATER, 18).add(Aspect.MAGIC, 15).add(Aspect.EARTH, 9).add(Aspect.MIND, 3),
                 -6,
                 2,
                 3,
@@ -1922,9 +1848,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RUNEOFDISLOCATION",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 2),
                 7,
-                new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("motus"), 18).add(Aspect.getAspect("tempus"), 12)
-                        .add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("cognitio"), 4),
+                new AspectList().add(Aspect.WATER, 32).add(Aspect.MAGIC, 24).add(Aspect.MOTION, 18)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 12).add(Aspect.EARTH, 8).add(Aspect.MIND, 4),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 1),
                 ItemList.Electric_Pump_EV.get(1L),
                 getModItem(BloodMagic.ID, "aquasalus", 1, 0),
@@ -1943,11 +1868,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFELEMENTALAFFINITY",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("volatus"), 27).add(Aspect.getAspect("ignis"), 24)
-                        .add(Aspect.getAspect("aqua"), 21).add(Aspect.getAspect("aer"), 18)
-                        .add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.FLIGHT, 27).add(Aspect.FIRE, 24).add(Aspect.WATER, 21).add(Aspect.AIR, 18)
+                        .add(Aspect.MOTION, 15).add(Aspect.MAGIC, 12).add(Aspect.TRAVEL, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.MIND, 3),
                 0,
                 12,
                 3,
@@ -1958,11 +1881,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFELEMENTALAFFINITY",
                 getModItem(BloodMagic.ID, "sigilOfElementalAffinity", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("volatus"), 64).add(Aspect.getAspect("aer"), 48)
-                        .add(Aspect.getAspect("aqua"), 48).add(Aspect.getAspect("ignis"), 48)
-                        .add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("iter"), 18).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("cognitio"), 6),
+                new AspectList().add(Aspect.FLIGHT, 64).add(Aspect.AIR, 48).add(Aspect.WATER, 48).add(Aspect.FIRE, 48)
+                        .add(Aspect.MOTION, 32).add(Aspect.MAGIC, 24).add(Aspect.TRAVEL, 18).add(Aspect.ENERGY, 12)
+                        .add(Aspect.MIND, 6),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(BloodMagic.ID, "earthScribeTool", 1, 0),
                 getModItem(BloodMagic.ID, "weakBloodShard", 1, 0),
@@ -1984,10 +1905,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFLIGHTNING",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("tempestas"), 24).add(Aspect.getAspect("aer"), 21)
-                        .add(Aspect.getAspect("aqua"), 18).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("tenebrae"), 9)
-                        .add(Aspect.getAspect("ira"), 6).add(Aspect.getAspect("electrum"), 3),
+                new AspectList().add(Aspect.WEATHER, 24).add(Aspect.AIR, 21).add(Aspect.WATER, 18).add(Aspect.EARTH, 15)
+                        .add(Aspect.ENERGY, 12).add(Aspect.DARKNESS, 9).add(DarkAspects.WRATH, 6)
+                        .add(TCAspects.ELECTRUM.getAspect(), 3),
                 2,
                 14,
                 3,
@@ -2001,10 +1921,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFLIGHTNING",
                 getModItem(BloodArsenal.ID, "sigil_of_lightning", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("tempestas"), 32).add(Aspect.getAspect("aer"), 72)
-                        .add(Aspect.getAspect("aqua"), 72).add(Aspect.getAspect("terra"), 64)
-                        .add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("tenebrae"), 8)
-                        .add(Aspect.getAspect("ira"), 8).add(Aspect.getAspect("electrum"), 16),
+                new AspectList().add(Aspect.WEATHER, 32).add(Aspect.AIR, 72).add(Aspect.WATER, 72).add(Aspect.EARTH, 64)
+                        .add(Aspect.ENERGY, 48).add(Aspect.DARKNESS, 8).add(DarkAspects.WRATH, 8)
+                        .add(TCAspects.ELECTRUM.getAspect(), 16),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27),
                 getModItem(BloodMagic.ID, "airSigil", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 3),
@@ -2021,9 +1940,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFHOLDING",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("lucrum"), 18).add(Aspect.getAspect("cognitio"), 15)
-                        .add(Aspect.getAspect("gula"), 12).add(Aspect.getAspect("superbia"), 9)
-                        .add(Aspect.getAspect("limus"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.GREED, 18).add(Aspect.MIND, 15).add(DarkAspects.GLUTTONY, 12)
+                        .add(DarkAspects.PRIDE, 9).add(Aspect.SLIME, 6).add(Aspect.MAGIC, 3),
                 4,
                 6,
                 3,
@@ -2034,9 +1952,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFHOLDING",
                 getModItem(BloodMagic.ID, "sigilOfHolding", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("lucrum"), 32).add(Aspect.getAspect("cognitio"), 24)
-                        .add(Aspect.getAspect("gula"), 16).add(Aspect.getAspect("superbia"), 16)
-                        .add(Aspect.getAspect("limus"), 16).add(Aspect.getAspect("praecantatio"), 8),
+                new AspectList().add(Aspect.GREED, 32).add(Aspect.MIND, 24).add(DarkAspects.GLUTTONY, 16)
+                        .add(DarkAspects.PRIDE, 16).add(Aspect.SLIME, 16).add(Aspect.MAGIC, 8),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 0),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
@@ -2055,10 +1972,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFAUGMENTETHOLDING",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vacuos"), 21).add(Aspect.getAspect("lucrum"), 18)
-                        .add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("gula"), 12)
-                        .add(Aspect.getAspect("superbia"), 9).add(Aspect.getAspect("limus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.VOID, 21).add(Aspect.GREED, 18).add(Aspect.MIND, 15)
+                        .add(DarkAspects.GLUTTONY, 12).add(DarkAspects.PRIDE, 9).add(Aspect.SLIME, 6)
+                        .add(Aspect.MAGIC, 3),
                 4,
                 8,
                 3,
@@ -2069,10 +1985,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFAUGMENTETHOLDING",
                 getModItem(BloodArsenal.ID, "sigil_of_augmented_holding", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("lucrum"), 32)
-                        .add(Aspect.getAspect("cognitio"), 24).add(Aspect.getAspect("gula"), 16)
-                        .add(Aspect.getAspect("superbia"), 16).add(Aspect.getAspect("limus"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8),
+                new AspectList().add(Aspect.VOID, 48).add(Aspect.GREED, 32).add(Aspect.MIND, 24)
+                        .add(DarkAspects.GLUTTONY, 16).add(DarkAspects.PRIDE, 16).add(Aspect.SLIME, 16)
+                        .add(Aspect.MAGIC, 8),
                 getModItem(BloodMagic.ID, "sigilOfHolding", 1, 0),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
@@ -2094,9 +2009,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFPHANTOMBRIDGE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("terra"), 18).add(Aspect.getAspect("alienis"), 15)
-                        .add(Aspect.getAspect("iter"), 12).add(Aspect.getAspect("vitreus"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.EARTH, 18).add(Aspect.ELDRITCH, 15).add(Aspect.TRAVEL, 12)
+                        .add(Aspect.CRYSTAL, 9).add(Aspect.ENERGY, 6).add(Aspect.MAGIC, 3),
                 -4,
                 6,
                 3,
@@ -2106,9 +2020,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFPHANTOMBRIDGE",
                 getModItem(BloodMagic.ID, "sigilOfTheBridge", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("terra"), 48).add(Aspect.getAspect("alienis"), 32)
-                        .add(Aspect.getAspect("iter"), 24).add(Aspect.getAspect("vitreus"), 16)
-                        .add(Aspect.getAspect("potentia"), 8).add(Aspect.getAspect("praecantatio"), 8),
+                new AspectList().add(Aspect.EARTH, 48).add(Aspect.ELDRITCH, 32).add(Aspect.TRAVEL, 24)
+                        .add(Aspect.CRYSTAL, 16).add(Aspect.ENERGY, 8).add(Aspect.MAGIC, 8),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 1),
@@ -2129,9 +2042,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFMAGNETISM",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("magneto"), 21).add(Aspect.getAspect("potentia"), 18)
-                        .add(Aspect.getAspect("electrum"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(TCAspects.MAGNETO.getAspect(), 21).add(Aspect.ENERGY, 18)
+                        .add(TCAspects.ELECTRUM.getAspect(), 15).add(Aspect.MAGIC, 12).add(Aspect.AURA, 6)
+                        .add(Aspect.MIND, 3),
                 2,
                 6,
                 3,
@@ -2141,9 +2054,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFMAGNETISM",
                 getModItem(BloodMagic.ID, "sigilOfMagnetism", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("magneto"), 24)
-                        .add(Aspect.getAspect("electrum"), 24).add(Aspect.getAspect("auram"), 16)
-                        .add(Aspect.getAspect("cognitio"), 12).add(Aspect.getAspect("praecantatio"), 6),
+                new AspectList().add(Aspect.ENERGY, 32).add(TCAspects.MAGNETO.getAspect(), 24)
+                        .add(TCAspects.ELECTRUM.getAspect(), 24).add(Aspect.AURA, 16).add(Aspect.MIND, 12)
+                        .add(Aspect.MAGIC, 6),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 OrePrefixes.block.get(Materials.NeodymiumMagnetic),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
@@ -2164,9 +2077,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFTHEBLOODLAMP",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("lux"), 18).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("sensus"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.LIGHT, 18).add(Aspect.FIRE, 15).add(Aspect.AIR, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.SENSES, 6).add(Aspect.MAGIC, 3),
                 0,
                 6,
                 3,
@@ -2177,9 +2089,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFTHEBLOODLAMP",
                 getModItem(BloodMagic.ID, "itemBloodLightSigil", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("lux"), 48).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("potentia"), 24)
-                        .add(Aspect.getAspect("sensus"), 16).add(Aspect.getAspect("praecantatio"), 8),
+                new AspectList().add(Aspect.LIGHT, 48).add(Aspect.FIRE, 32).add(Aspect.AIR, 32).add(Aspect.ENERGY, 24)
+                        .add(Aspect.SENSES, 16).add(Aspect.MAGIC, 8),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "brightNitor", 1, 0),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 6),
@@ -2196,9 +2107,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFSIGHT",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("sensus"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.SENSES, 12).add(Aspect.MIND, 9).add(Aspect.CRYSTAL, 6)
+                        .add(Aspect.MAGIC, 3),
                 2,
                 2,
                 3,
@@ -2208,9 +2118,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFSIGHT",
                 getModItem(BloodMagic.ID, "seerSigil", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("sensus"), 18)
-                        .add(Aspect.getAspect("cognitio"), 12).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 4),
+                new AspectList().add(Aspect.ORDER, 24).add(Aspect.SENSES, 18).add(Aspect.MIND, 12)
+                        .add(Aspect.CRYSTAL, 6).add(Aspect.MAGIC, 4),
                 getModItem(BloodMagic.ID, "divinationSigil", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
@@ -2226,9 +2135,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RITUALDIVINER",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("aer"), 18).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("terra"), 12).add(Aspect.getAspect("aqua"), 9)
-                        .add(Aspect.getAspect("perditio"), 6).add(Aspect.getAspect("ordo"), 3),
+                new AspectList().add(Aspect.AIR, 18).add(Aspect.FIRE, 15).add(Aspect.EARTH, 12).add(Aspect.WATER, 9)
+                        .add(Aspect.ENTROPY, 6).add(Aspect.ORDER, 3),
                 -2,
                 -8,
                 3,
@@ -2239,9 +2147,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RITUALDIVINER",
                 getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("terra"), 32).add(Aspect.getAspect("aqua"), 32)
-                        .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("ordo"), 16),
+                new AspectList().add(Aspect.AIR, 32).add(Aspect.FIRE, 32).add(Aspect.EARTH, 32).add(Aspect.WATER, 32)
+                        .add(Aspect.ENTROPY, 16).add(Aspect.ORDER, 16),
                 getModItem(BloodMagic.ID, "seerSigil", 1, 0),
                 getModItem(Witchery.ID, "chalkritual", 1, 0),
                 getModItem(BloodMagic.ID, "waterScribeTool", 1, 0),
@@ -2261,9 +2168,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RITUALDIVINER",
                 getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 1),
                 6,
-                new AspectList().add(Aspect.getAspect("aer"), 48).add(Aspect.getAspect("ignis"), 48)
-                        .add(Aspect.getAspect("terra"), 48).add(Aspect.getAspect("aqua"), 48)
-                        .add(Aspect.getAspect("perditio"), 24).add(Aspect.getAspect("ordo"), 24),
+                new AspectList().add(Aspect.AIR, 48).add(Aspect.FIRE, 48).add(Aspect.EARTH, 48).add(Aspect.WATER, 48)
+                        .add(Aspect.ENTROPY, 24).add(Aspect.ORDER, 24),
                 getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0),
                 getModItem(BloodMagic.ID, "duskScribeTool", 1, 0),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
@@ -2280,9 +2186,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RITUALDIVINER",
                 getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 2),
                 9,
-                new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("ignis"), 64)
-                        .add(Aspect.getAspect("terra"), 64).add(Aspect.getAspect("aqua"), 64)
-                        .add(Aspect.getAspect("perditio"), 32).add(Aspect.getAspect("ordo"), 32),
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.FIRE, 64).add(Aspect.EARTH, 64).add(Aspect.WATER, 64)
+                        .add(Aspect.ENTROPY, 32).add(Aspect.ORDER, 32),
                 getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 1),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27),
                 getModItem(BloodMagic.ID, "dawnScribeTool", 1, 0),
@@ -2298,9 +2203,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RUNEOFTHEORB",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("potentia"), 15).add(Aspect.getAspect("victus"), 12)
-                        .add(Aspect.getAspect("motus"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.ENERGY, 15).add(Aspect.LIFE, 12).add(Aspect.MOTION, 9).add(Aspect.GREED, 6)
+                        .add(Aspect.MAGIC, 3),
                 -6,
                 -2,
                 3,
@@ -2311,9 +2215,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RUNEOFTHEORB",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 3),
                 6,
-                new AspectList().add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("victus"), 24)
-                        .add(Aspect.getAspect("motus"), 16).add(Aspect.getAspect("lucrum"), 8)
-                        .add(Aspect.getAspect("praecantatio"), 4),
+                new AspectList().add(Aspect.ENERGY, 32).add(Aspect.LIFE, 24).add(Aspect.MOTION, 16).add(Aspect.GREED, 8)
+                        .add(Aspect.MAGIC, 4),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 3),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 3),
@@ -2332,9 +2235,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RUNEOFSUPERIORCAPACITY",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("potentia"), 18).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("cognitio"), 12).add(Aspect.getAspect("lucrum"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.ENERGY, 18).add(Aspect.WATER, 15).add(Aspect.MIND, 12).add(Aspect.GREED, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3),
                 -8,
                 -2,
                 3,
@@ -2348,9 +2250,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RUNEOFSUPERIORCAPACITY",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 4),
                 8,
-                new AspectList().add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("aqua"), 32)
-                        .add(Aspect.getAspect("cognitio"), 24).add(Aspect.getAspect("lucrum"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8).add(Aspect.getAspect("alienis"), 4),
+                new AspectList().add(Aspect.ENERGY, 48).add(Aspect.WATER, 32).add(Aspect.MIND, 24).add(Aspect.GREED, 16)
+                        .add(Aspect.MAGIC, 8).add(Aspect.ELDRITCH, 4),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 3),
                 getModItem(IronTanks.ID, "diamondTank", 1, 0),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
@@ -2371,10 +2272,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RUNEOFACCELERATION",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("potentia"), 21).add(Aspect.getAspect("tempus"), 18)
-                        .add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("aqua"), 12)
-                        .add(Aspect.getAspect("motus"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.ENERGY, 21).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 18)
+                        .add(Aspect.MIND, 15).add(Aspect.WATER, 12).add(Aspect.MOTION, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.EARTH, 3),
                 -8,
                 0,
                 3,
@@ -2385,10 +2285,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RUNEOFACCELERATION",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 5),
                 10,
-                new AspectList().add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("aqua"), 48)
-                        .add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("cognitio"), 24)
-                        .add(Aspect.getAspect("tempus"), 16).add(Aspect.getAspect("praecantatio"), 8)
-                        .add(Aspect.getAspect("terra"), 4),
+                new AspectList().add(Aspect.ENERGY, 64).add(Aspect.WATER, 48).add(Aspect.MOTION, 32)
+                        .add(Aspect.MIND, 24).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 16).add(Aspect.MAGIC, 8)
+                        .add(Aspect.EARTH, 4),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 4),
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 2),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 24),
@@ -2409,10 +2308,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "RUNEOFQUICKNESS",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("tempus"), 35)
-                        .add(Aspect.getAspect("cognitio"), 35).add(Aspect.getAspect("machina"), 23)
-                        .add(Aspect.getAspect("motus"), 27).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("terra"), 7),
+                new AspectList().add(Aspect.ENERGY, 48).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 35)
+                        .add(Aspect.MIND, 35).add(Aspect.MECHANISM, 23).add(Aspect.MOTION, 27).add(Aspect.MAGIC, 15)
+                        .add(Aspect.EARTH, 7),
                 -10,
                 -2,
                 3,
@@ -2426,10 +2324,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "RUNEOFQUICKNESS",
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 6),
                 15,
-                new AspectList().add(Aspect.getAspect("potentia"), 96).add(Aspect.getAspect("machina"), 48)
-                        .add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("cognitio"), 32)
-                        .add(Aspect.getAspect("tempus"), 32).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("terra"), 8),
+                new AspectList().add(Aspect.ENERGY, 96).add(Aspect.MECHANISM, 48).add(Aspect.MOTION, 64)
+                        .add(Aspect.MIND, 32).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 32)
+                        .add(Aspect.MAGIC, 16).add(Aspect.EARTH, 8),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 4),
                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 5),
                 ItemList.AcceleratorLuV.get(1L, missing),
@@ -2450,9 +2347,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ARCANEPEDESTALANDPLINTH",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.EARTH, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.MAGIC, 3),
                 -4,
                 -6,
                 3,
@@ -2462,8 +2358,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANEPEDESTALANDPLINTH",
                 getModItem(BloodMagic.ID, "blockPedestal", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.FIRE, 30).add(Aspect.EARTH, 30).add(Aspect.ORDER, 30)
+                        .add(Aspect.ENTROPY, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -2495,9 +2391,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ARCANEPEDESTALANDPLINTH",
                 getModItem(BloodMagic.ID, "blockPlinth", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("ignis"), 48)
-                        .add(Aspect.getAspect("terra"), 32).add(Aspect.getAspect("tenebrae"), 24)
-                        .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("alienis"), 8),
+                new AspectList().add(Aspect.METAL, 64).add(Aspect.FIRE, 48).add(Aspect.EARTH, 32)
+                        .add(Aspect.DARKNESS, 24).add(Aspect.MAGIC, 16).add(Aspect.ELDRITCH, 8),
                 getModItem(BloodMagic.ID, "blockPedestal", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 130),
@@ -2524,9 +2419,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ALCHEMICCALCINATOR",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("vitreus"), 15)
-                        .add(Aspect.getAspect("terra"), 12).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("aqua"), 6).add(Aspect.getAspect("ignis"), 3),
+                new AspectList().add(Aspect.MAGIC, 18).add(Aspect.CRYSTAL, 15).add(Aspect.EARTH, 12)
+                        .add(Aspect.ENTROPY, 9).add(Aspect.WATER, 6).add(Aspect.FIRE, 3),
                 -4,
                 -8,
                 3,
@@ -2536,9 +2430,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMICCALCINATOR",
                 getModItem(BloodMagic.ID, "blockAlchemicCalcinator", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aer"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.FIRE, 50).add(Aspect.WATER, 50).add(Aspect.EARTH, 50).add(Aspect.AIR, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -2568,9 +2461,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ALCHEMICTOOLS",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("aer"), 3),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.MAGIC, 12).add(Aspect.TOOL, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.AIR, 3),
                 -4,
                 -12,
                 3,
@@ -2579,8 +2471,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMICTOOLS",
                 getModItem(BloodMagic.ID, "itemAttunedCrystal", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.ORDER, 15).add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -2603,8 +2494,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMICTOOLS",
                 getModItem(BloodMagic.ID, "itemDestinationClearer", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aer"), 15)
-                        .add(Aspect.getAspect("perditio"), 15),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.AIR, 15).add(Aspect.ENTROPY, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -2631,8 +2521,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMICTOOLS",
                 getModItem(BloodMagic.ID, "itemTankSegmenter", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aer"), 15)
-                        .add(Aspect.getAspect("ignis"), 15),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.AIR, 15).add(Aspect.FIRE, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -2656,9 +2545,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "BELLJAR",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 18).add(Aspect.getAspect("aer"), 15)
-                        .add(Aspect.getAspect("terra"), 12).add(Aspect.getAspect("ordo"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("arbor"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 18).add(Aspect.AIR, 15).add(Aspect.EARTH, 12).add(Aspect.ORDER, 9)
+                        .add(Aspect.GREED, 6).add(Aspect.TREE, 3),
                 -6,
                 -12,
                 3,
@@ -2667,8 +2555,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BELLJAR",
                 getModItem(BloodMagic.ID, "blockCrystalBelljar", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.EARTH, 15).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -2696,9 +2583,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ALCHEMYRELAY",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("bestia"), 15)
-                        .add(Aspect.getAspect("pannus"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("potentia"), 3),
+                new AspectList().add(Aspect.METAL, 18).add(Aspect.BEAST, 15).add(Aspect.CLOTH, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.ENERGY, 3),
                 -2,
                 -12,
                 3,
@@ -2707,8 +2593,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMYRELAY",
                 getModItem(BloodMagic.ID, "blockReagentConduit", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("ignis"), 10),
+                new AspectList().add(Aspect.AIR, 25).add(Aspect.EARTH, 15).add(Aspect.ORDER, 25).add(Aspect.FIRE, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -2736,10 +2621,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "CRYSTALCLUSTER",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("victus"), 21).add(Aspect.getAspect("spiritus"), 18)
-                        .add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("tenebrae"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.LIFE, 21).add(Aspect.SOUL, 18).add(Aspect.ELDRITCH, 15)
+                        .add(Aspect.ENERGY, 12).add(Aspect.MAGIC, 9).add(Aspect.DARKNESS, 6).add(Aspect.MIND, 3),
                 -10,
                 0,
                 3,
@@ -2750,10 +2633,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "CRYSTALCLUSTER",
                 getModItem(BloodMagic.ID, "blockCrystal", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("potentia"), 72).add(Aspect.getAspect("victus"), 64)
-                        .add(Aspect.getAspect("spiritus"), 64).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("alienis"), 16)
-                        .add(Aspect.getAspect("cognitio"), 16),
+                new AspectList().add(Aspect.ENERGY, 72).add(Aspect.LIFE, 64).add(Aspect.SOUL, 64).add(Aspect.MAGIC, 32)
+                        .add(Aspect.DARKNESS, 32).add(Aspect.ELDRITCH, 16).add(Aspect.MIND, 16),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 4),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 29),
@@ -2772,10 +2653,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ICHORIUMBLOCK",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("victus"), 21).add(Aspect.getAspect("fames"), 18)
-                        .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("infernus"), 12)
-                        .add(Aspect.getAspect("alienis"), 9).add(Aspect.getAspect("superbia"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.LIFE, 21).add(Aspect.HUNGER, 18).add(Aspect.MAGIC, 15)
+                        .add(DarkAspects.NETHER, 12).add(Aspect.ELDRITCH, 9).add(DarkAspects.PRIDE, 6)
+                        .add(Aspect.EARTH, 3),
                 -10,
                 2,
                 3,
@@ -2789,10 +2669,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ICHORIUMBLOCK",
                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
                 12,
-                new AspectList().add(Aspect.getAspect("victus"), 64).add(Aspect.getAspect("fames"), 48)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("infernus"), 24)
-                        .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("superbia"), 16)
-                        .add(Aspect.getAspect("terra"), 8),
+                new AspectList().add(Aspect.LIFE, 64).add(Aspect.HUNGER, 48).add(Aspect.MAGIC, 32)
+                        .add(DarkAspects.NETHER, 24).add(Aspect.ELDRITCH, 16).add(DarkAspects.PRIDE, 16)
+                        .add(Aspect.EARTH, 8),
                 BlockList.Mytryl.get(),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28),
@@ -2811,10 +2690,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "GLYPHSTONE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("terra"), 21).add(Aspect.getAspect("superbia"), 18)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.EARTH, 21).add(DarkAspects.PRIDE, 18).add(Aspect.ORDER, 15)
+                        .add(Aspect.MIND, 12).add(Aspect.AURA, 9).add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3),
                 2,
                 -10,
                 3,
@@ -2827,9 +2704,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GLYPHSTONE",
                 getModItem(BloodMagic.ID, "blockStabilityGlyph", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("aqua"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.EARTH, 20).add(Aspect.WATER, 20).add(Aspect.FIRE, 20)
+                        .add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -2860,9 +2736,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GLYPHSTONE",
                 getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("aqua"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.EARTH, 30).add(Aspect.WATER, 30).add(Aspect.FIRE, 30)
+                        .add(Aspect.ORDER, 30).add(Aspect.ENTROPY, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -2890,9 +2765,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GLYPHSTONE",
                 getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("aqua"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.EARTH, 30).add(Aspect.WATER, 30).add(Aspect.FIRE, 30)
+                        .add(Aspect.ORDER, 30).add(Aspect.ENTROPY, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -2920,9 +2794,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "KEYOFBINDING",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("terra"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 15).add(Aspect.GREED, 12).add(Aspect.METAL, 9).add(Aspect.EARTH, 6)
+                        .add(Aspect.MAGIC, 3),
                 4,
                 -2,
                 3,
@@ -2931,8 +2804,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KEYOFBINDING",
                 getModItem(BloodMagic.ID, "itemKeyOfDiablo", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("ignis"), 15),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.ORDER, 15).add(Aspect.FIRE, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -2956,9 +2828,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ARMORINHIBITOR",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("spiritus"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.GREED, 12).add(Aspect.SOUL, 9).add(Aspect.ELDRITCH, 6)
+                        .add(Aspect.MAGIC, 3),
                 4,
                 -8,
                 3,
@@ -2967,8 +2838,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARMORINHIBITOR",
                 getModItem(BloodMagic.ID, "armourInhibitor", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aer"), 30)
-                        .add(Aspect.getAspect("aqua"), 30),
+                new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.AIR, 30).add(Aspect.WATER, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -2992,10 +2862,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFHASTE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("iter"), 21).add(Aspect.getAspect("motus"), 18)
-                        .add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.TRAVEL, 21).add(Aspect.MOTION, 18).add(Aspect.AIR, 15)
+                        .add(Aspect.ENERGY, 12).add(Aspect.MAGIC, 9).add(Aspect.ELDRITCH, 6).add(Aspect.MIND, 3),
                 -2,
                 12,
                 3,
@@ -3005,10 +2873,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFHASTE",
                 getModItem(BloodMagic.ID, "sigilOfHaste", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("iter"), 64).add(Aspect.getAspect("motus"), 32)
-                        .add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("potentia"), 24)
-                        .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("alienis"), 8)
-                        .add(Aspect.getAspect("cognitio"), 8),
+                new AspectList().add(Aspect.TRAVEL, 64).add(Aspect.MOTION, 32).add(Aspect.AIR, 24)
+                        .add(Aspect.ENERGY, 24).add(Aspect.MAGIC, 16).add(Aspect.ELDRITCH, 8).add(Aspect.MIND, 8),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                 getModItem(Botania.ID, "manaCookie", 1, 0),
@@ -3027,10 +2893,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFWHIRLWIND",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("tutamen"), 21)
-                        .add(Aspect.getAspect("potentia"), 18).add(Aspect.getAspect("victus"), 15)
-                        .add(Aspect.getAspect("sano"), 12).add(Aspect.getAspect("cognitio"), 9)
-                        .add(Aspect.getAspect("superbia"), 6).add(Aspect.getAspect("nebrisum"), 3),
+                new AspectList().add(Aspect.AIR, 24).add(Aspect.ARMOR, 21).add(Aspect.ENERGY, 18).add(Aspect.LIFE, 15)
+                        .add(Aspect.HEAL, 12).add(Aspect.MIND, 9).add(DarkAspects.PRIDE, 6)
+                        .add(TCAspects.NEBRISUM.getAspect(), 3),
                 2,
                 12,
                 3,
@@ -3040,10 +2905,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFWHIRLWIND",
                 getModItem(BloodMagic.ID, "sigilOfWind", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("aer"), 72).add(Aspect.getAspect("tutamen"), 48)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("victus"), 32)
-                        .add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("cognitio"), 16)
-                        .add(Aspect.getAspect("superbia"), 8).add(Aspect.getAspect("nebrisum"), 8),
+                new AspectList().add(Aspect.AIR, 72).add(Aspect.ARMOR, 48).add(Aspect.ENERGY, 32).add(Aspect.LIFE, 32)
+                        .add(Aspect.HEAL, 16).add(Aspect.MIND, 16).add(DarkAspects.PRIDE, 8)
+                        .add(TCAspects.NEBRISUM.getAspect(), 8),
                 getModItem(BloodMagic.ID, "airSigil", 1, 0),
                 getModItem(TwilightForest.ID, "item.tfFeather", 1, 0),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
@@ -3064,10 +2928,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFSUPRESSION",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vacuos"), 21).add(Aspect.getAspect("auram"), 18)
-                        .add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("terra"), 6)
-                        .add(Aspect.getAspect("motus"), 3),
+                new AspectList().add(Aspect.VOID, 21).add(Aspect.AURA, 18).add(Aspect.WATER, 15).add(Aspect.METAL, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.EARTH, 6).add(Aspect.MOTION, 3),
                 -2,
                 8,
                 3,
@@ -3077,10 +2939,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFSUPRESSION",
                 getModItem(BloodMagic.ID, "sigilOfSupression", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("vacuos"), 72).add(Aspect.getAspect("auram"), 16)
-                        .add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("metallum"), 8)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("terra"), 32)
-                        .add(Aspect.getAspect("motus"), 16),
+                new AspectList().add(Aspect.VOID, 72).add(Aspect.AURA, 16).add(Aspect.WATER, 64).add(Aspect.METAL, 8)
+                        .add(Aspect.MAGIC, 32).add(Aspect.EARTH, 32).add(Aspect.MOTION, 16),
                 getModItem(BloodMagic.ID, "voidSigil", 1, 0),
                 getModItem(BloodMagic.ID, "blockTeleposer", 1, 0),
                 getModItem(Minecraft.ID, "bucket", 1, 0),
@@ -3101,10 +2961,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFENDERSEVERANCE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("alienis"), 21).add(Aspect.getAspect("cognitio"), 18)
-                        .add(Aspect.getAspect("humanus"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("vinculum"), 9).add(Aspect.getAspect("limus"), 6)
-                        .add(Aspect.getAspect("nebrisum"), 3),
+                new AspectList().add(Aspect.ELDRITCH, 21).add(Aspect.MIND, 18).add(Aspect.MAN, 15)
+                        .add(Aspect.ENERGY, 12).add(Aspect.TRAP, 9).add(Aspect.SLIME, 6)
+                        .add(TCAspects.NEBRISUM.getAspect(), 3),
                 0,
                 14,
                 3,
@@ -3115,10 +2974,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFENDERSEVERANCE",
                 getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0),
                 17,
-                new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("cognitio"), 72)
-                        .add(Aspect.getAspect("humanus"), 16).add(Aspect.getAspect("potentia"), 64)
-                        .add(Aspect.getAspect("vinculum"), 48).add(Aspect.getAspect("limus"), 32)
-                        .add(Aspect.getAspect("nebrisum"), 8),
+                new AspectList().add(Aspect.ELDRITCH, 16).add(Aspect.MIND, 72).add(Aspect.MAN, 16)
+                        .add(Aspect.ENERGY, 64).add(Aspect.TRAP, 48).add(Aspect.SLIME, 32)
+                        .add(TCAspects.NEBRISUM.getAspect(), 8),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
@@ -3138,10 +2996,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ENDERSIGIL",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("vacuos"), 24).add(Aspect.getAspect("alienis"), 21)
-                        .add(Aspect.getAspect("cognitio"), 18).add(Aspect.getAspect("humanus"), 15)
-                        .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("vinculum"), 9)
-                        .add(Aspect.getAspect("limus"), 6).add(Aspect.getAspect("nebrisum"), 3),
+                new AspectList().add(Aspect.VOID, 24).add(Aspect.ELDRITCH, 21).add(Aspect.MIND, 18).add(Aspect.MAN, 15)
+                        .add(Aspect.ENERGY, 12).add(Aspect.TRAP, 9).add(Aspect.SLIME, 6)
+                        .add(TCAspects.NEBRISUM.getAspect(), 3),
                 -2,
                 16,
                 3,
@@ -3152,10 +3009,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ENDERSIGIL",
                 getModItem(BloodArsenal.ID, "sigil_of_ender", 1, 0),
                 20,
-                new AspectList().add(Aspect.getAspect("vacuos"), 16).add(Aspect.getAspect("alienis"), 16)
-                        .add(Aspect.getAspect("cognitio"), 72).add(Aspect.getAspect("humanus"), 16)
-                        .add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("vinculum"), 48)
-                        .add(Aspect.getAspect("limus"), 32).add(Aspect.getAspect("nebrisum"), 8),
+                new AspectList().add(Aspect.VOID, 16).add(Aspect.ELDRITCH, 16).add(Aspect.MIND, 72).add(Aspect.MAN, 16)
+                        .add(Aspect.ENERGY, 64).add(Aspect.TRAP, 48).add(Aspect.SLIME, 32)
+                        .add(TCAspects.NEBRISUM.getAspect(), 8),
                 getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0),
                 getModItem(EnderStorage.ID, "enderChest", 1, 0),
                 ItemList.Gravistar.get(1L),
@@ -3173,10 +3029,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFDIVINITY",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("tutamen"), 24).add(Aspect.getAspect("aer"), 21)
-                        .add(Aspect.getAspect("ignis"), 18).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("terra"), 12).add(Aspect.getAspect("ordo"), 9)
-                        .add(Aspect.getAspect("perditio"), 6).add(Aspect.getAspect("sano"), 3),
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.AIR, 21).add(Aspect.FIRE, 18).add(Aspect.WATER, 15)
+                        .add(Aspect.EARTH, 12).add(Aspect.ORDER, 9).add(Aspect.ENTROPY, 6).add(Aspect.HEAL, 3),
                 2,
                 16,
                 3,
@@ -3187,10 +3041,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFDIVINITY",
                 getModItem(BloodArsenal.ID, "sigil_of_divinity", 1, 0),
                 25,
-                new AspectList().add(Aspect.getAspect("tutamen"), 64).add(Aspect.getAspect("aer"), 72)
-                        .add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("aqua"), 48)
-                        .add(Aspect.getAspect("terra"), 32).add(Aspect.getAspect("ordo"), 32)
-                        .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("sano"), 8),
+                new AspectList().add(Aspect.ARMOR, 64).add(Aspect.AIR, 72).add(Aspect.FIRE, 64).add(Aspect.WATER, 48)
+                        .add(Aspect.EARTH, 32).add(Aspect.ORDER, 32).add(Aspect.ENTROPY, 16).add(Aspect.HEAL, 8),
                 getModItem(BloodMagic.ID, "sigilOfElementalAffinity", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 4),
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0),
@@ -3211,10 +3063,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "HARVESTGODDESSSIGIL",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("herba"), 21).add(Aspect.getAspect("arbor"), 18)
-                        .add(Aspect.getAspect("meto"), 15).add(Aspect.getAspect("messis"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.PLANT, 21).add(Aspect.TREE, 18).add(Aspect.HARVEST, 15).add(Aspect.CROP, 12)
+                        .add(Aspect.MIND, 9).add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3),
                 0,
                 16,
                 3,
@@ -3225,10 +3075,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "HARVESTGODDESSSIGIL",
                 getModItem(BloodMagic.ID, "itemHarvestSigil", 1, 0),
                 20,
-                new AspectList().add(Aspect.getAspect("herba"), 72).add(Aspect.getAspect("arbor"), 64)
-                        .add(Aspect.getAspect("meto"), 8).add(Aspect.getAspect("messis"), 16)
-                        .add(Aspect.getAspect("cognitio"), 24).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("alienis"), 16),
+                new AspectList().add(Aspect.PLANT, 72).add(Aspect.TREE, 64).add(Aspect.HARVEST, 8).add(Aspect.CROP, 16)
+                        .add(Aspect.MIND, 24).add(Aspect.MAGIC, 32).add(Aspect.ELDRITCH, 16),
                 getModItem(BloodMagic.ID, "growthSigil", 1, 0),
                 getModItem(BloodArsenal.ID, "bound_sickle", 1, 0),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 2),
@@ -3245,9 +3093,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "SIGILOFCOMPRESSION",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("superbia"), 3),
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.ENERGY, 12).add(Aspect.MECHANISM, 9)
+                        .add(Aspect.GREED, 6).add(DarkAspects.PRIDE, 3),
                 2,
                 8,
                 3,
@@ -3258,9 +3105,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "SIGILOFCOMPRESSION",
                 getModItem(BloodMagic.ID, "itemCompressionSigil", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("potentia"), 24)
-                        .add(Aspect.getAspect("machina"), 16).add(Aspect.getAspect("lucrum"), 16)
-                        .add(Aspect.getAspect("superbia"), 8),
+                new AspectList().add(Aspect.METAL, 32).add(Aspect.ENERGY, 24).add(Aspect.MECHANISM, 16)
+                        .add(Aspect.GREED, 16).add(DarkAspects.PRIDE, 8),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 ItemList.Electric_Piston_IV.get(1L),
@@ -3277,10 +3123,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ENERGYBAZOOKAI",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("potentia"), 21).add(Aspect.getAspect("instrumentum"), 18)
-                        .add(Aspect.getAspect("telum"), 15).add(Aspect.getAspect("superbia"), 12)
-                        .add(Aspect.getAspect("fames"), 9).add(Aspect.getAspect("nebrisum"), 6)
-                        .add(Aspect.getAspect("ira"), 3),
+                new AspectList().add(Aspect.ENERGY, 21).add(Aspect.TOOL, 18).add(Aspect.WEAPON, 15)
+                        .add(DarkAspects.PRIDE, 12).add(Aspect.HUNGER, 9).add(TCAspects.NEBRISUM.getAspect(), 6)
+                        .add(DarkAspects.WRATH, 3),
                 -12,
                 0,
                 3,
@@ -3290,9 +3135,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENERGYBAZOOKAI",
                 getModItem(BloodMagic.ID, "energyBazooka", 1, 0),
-                new AspectList().add(Aspect.getAspect("aqua"), 150).add(Aspect.getAspect("ignis"), 150)
-                        .add(Aspect.getAspect("terra"), 150).add(Aspect.getAspect("aer"), 150)
-                        .add(Aspect.getAspect("perditio"), 150).add(Aspect.getAspect("ordo"), 150),
+                new AspectList().add(Aspect.WATER, 150).add(Aspect.FIRE, 150).add(Aspect.EARTH, 150)
+                        .add(Aspect.AIR, 150).add(Aspect.ENTROPY, 150).add(Aspect.ORDER, 150),
                 "abc",
                 "def",
                 "ghi",
@@ -3321,10 +3165,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ENERGYBAZOOKAII",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("potentia"), 24).add(Aspect.getAspect("instrumentum"), 21)
-                        .add(Aspect.getAspect("telum"), 18).add(Aspect.getAspect("infernus"), 15)
-                        .add(Aspect.getAspect("superbia"), 12).add(Aspect.getAspect("fames"), 9)
-                        .add(Aspect.getAspect("nebrisum"), 6).add(Aspect.getAspect("ira"), 3),
+                new AspectList().add(Aspect.ENERGY, 24).add(Aspect.TOOL, 21).add(Aspect.WEAPON, 18)
+                        .add(DarkAspects.NETHER, 15).add(DarkAspects.PRIDE, 12).add(Aspect.HUNGER, 9)
+                        .add(TCAspects.NEBRISUM.getAspect(), 6).add(DarkAspects.WRATH, 3),
                 -14,
                 0,
                 3,
@@ -3335,10 +3178,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ENERGYBAZOOKAII",
                 getModItem(BloodMagic.ID, "energyBazookaSecondTier", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("potentia"), 96).add(Aspect.getAspect("instrumentum"), 72)
-                        .add(Aspect.getAspect("telum"), 64).add(Aspect.getAspect("infernus"), 64)
-                        .add(Aspect.getAspect("superbia"), 32).add(Aspect.getAspect("fames"), 32)
-                        .add(Aspect.getAspect("nebrisum"), 16).add(Aspect.getAspect("ira"), 8),
+                new AspectList().add(Aspect.ENERGY, 96).add(Aspect.TOOL, 72).add(Aspect.WEAPON, 64)
+                        .add(DarkAspects.NETHER, 64).add(DarkAspects.PRIDE, 32).add(Aspect.HUNGER, 32)
+                        .add(TCAspects.NEBRISUM.getAspect(), 16).add(DarkAspects.WRATH, 8),
                 getModItem(BloodMagic.ID, "energyBazooka", 1, 0),
                 getModItem(DraconicEvolution.ID, "draconium", 1, 2),
                 getModItem(DraconicEvolution.ID, "draconicCore", 1, 0),
@@ -3358,11 +3200,9 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ENERGYBAZOOKAIII",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("potentia"), 27).add(Aspect.getAspect("instrumentum"), 24)
-                        .add(Aspect.getAspect("telum"), 21).add(Aspect.getAspect("terminus"), 18)
-                        .add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("superbia"), 12)
-                        .add(Aspect.getAspect("fames"), 9).add(Aspect.getAspect("nebrisum"), 6)
-                        .add(Aspect.getAspect("ira"), 3),
+                new AspectList().add(Aspect.ENERGY, 27).add(Aspect.TOOL, 24).add(Aspect.WEAPON, 21)
+                        .add(Lucrum.ULTRA_DEATH, 18).add(DarkAspects.NETHER, 15).add(DarkAspects.PRIDE, 12)
+                        .add(Aspect.HUNGER, 9).add(TCAspects.NEBRISUM.getAspect(), 6).add(DarkAspects.WRATH, 3),
                 -16,
                 0,
                 3,
@@ -3373,11 +3213,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ENERGYBAZOOKAIII",
                 getModItem(BloodMagic.ID, "energyBazookaThirdTier", 1, 0),
                 20,
-                new AspectList().add(Aspect.getAspect("potentia"), 128).add(Aspect.getAspect("instrumentum"), 96)
-                        .add(Aspect.getAspect("telum"), 72).add(Aspect.getAspect("terminus"), 64)
-                        .add(Aspect.getAspect("infernus"), 72).add(Aspect.getAspect("superbia"), 48)
-                        .add(Aspect.getAspect("fames"), 32).add(Aspect.getAspect("nebrisum"), 16)
-                        .add(Aspect.getAspect("ira"), 8),
+                new AspectList().add(Aspect.ENERGY, 128).add(Aspect.TOOL, 96).add(Aspect.WEAPON, 72)
+                        .add(Lucrum.ULTRA_DEATH, 64).add(DarkAspects.NETHER, 72).add(DarkAspects.PRIDE, 48)
+                        .add(Aspect.HUNGER, 32).add(TCAspects.NEBRISUM.getAspect(), 16).add(DarkAspects.WRATH, 8),
                 getModItem(BloodMagic.ID, "energyBazookaSecondTier", 1, 0),
                 getModItem(Avaritia.ID, "big_pearl", 1, 0),
                 getModItem(Avaritia.ID, "Resource", 1, 6),
@@ -3399,9 +3237,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "CAP_blood_iron",
                 getModItem(BloodArsenal.ID, "wand_caps", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("victus"), 24).add(Aspect.getAspect("metallum"), 16)
-                        .add(Aspect.getAspect("ignis"), 8),
+                new AspectList().add(Aspect.WATER, 32).add(Aspect.MAGIC, 24).add(Aspect.LIFE, 24).add(Aspect.METAL, 16)
+                        .add(Aspect.FIRE, 8),
                 getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0),
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0),
@@ -3420,9 +3257,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "wand_caps", 1, 0))));
         TCHelper.setResearchAspects(
                 "CAP_blood_iron",
-                new AspectList().add(Aspect.getAspect("victus"), 18).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("metallum"), 6));
+                new AspectList().add(Aspect.LIFE, 18).add(Aspect.WATER, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.DARKNESS, 12).add(Aspect.METAL, 6));
         TCHelper.setResearchComplexity("CAP_blood_iron", 3);
         ThaumcraftApi.addWarpToResearch("CAP_blood_iron", 3);
         TCHelper.clearPages("ROD_blood_wood");
@@ -3432,9 +3268,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ROD_blood_wood",
                 getModItem(BloodArsenal.ID, "wand_cores", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("instrumentum"), 24)
-                        .add(Aspect.getAspect("victus"), 32).add(Aspect.getAspect("arbor"), 16)
-                        .add(Aspect.getAspect("potentia"), 8),
+                new AspectList().add(Aspect.MAGIC, 32).add(Aspect.TOOL, 24).add(Aspect.LIFE, 32).add(Aspect.TREE, 16)
+                        .add(Aspect.ENERGY, 8),
                 getModItem(ForbiddenMagic.ID, "WandCores", 1, 3),
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0),
@@ -3451,9 +3286,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "wand_cores", 1, 0))));
         TCHelper.setResearchAspects(
                 "ROD_blood_wood",
-                new AspectList().add(Aspect.getAspect("victus"), 18).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("tenebrae"), 9)
-                        .add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.LIFE, 18).add(Aspect.MAGIC, 15).add(Aspect.WATER, 12)
+                        .add(Aspect.DARKNESS, 9).add(Aspect.TOOL, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ROD_blood_wood", 3);
         ThaumcraftApi.addWarpToResearch("ROD_blood_wood", 5);
         TCHelper.orphanResearch("ROD_blood_wood_staff");
@@ -3461,9 +3295,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "ROD_blood_wood_staff",
                 "FORBIDDEN",
-                new AspectList().add(Aspect.getAspect("victus"), 18).add(Aspect.getAspect("instrumentum"), 15)
-                        .add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("tenebrae"), 3),
+                new AspectList().add(Aspect.LIFE, 18).add(Aspect.TOOL, 15).add(Aspect.WATER, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.ENERGY, 6).add(Aspect.DARKNESS, 3),
                 7,
                 -5,
                 3,
@@ -3475,10 +3308,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ROD_blood_wood_staff",
                 getModItem(BloodArsenal.ID, "wand_cores", 1, 1),
                 12,
-                new AspectList().add(Aspect.getAspect("victus"), 64).add(Aspect.getAspect("aqua"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("instrumentum"), 48)
-                        .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("ignis"), 16)
-                        .add(Aspect.getAspect("infernus"), 8).add(Aspect.getAspect("arbor"), 32),
+                new AspectList().add(Aspect.LIFE, 64).add(Aspect.WATER, 64).add(Aspect.MAGIC, 64).add(Aspect.TOOL, 48)
+                        .add(Aspect.METAL, 16).add(Aspect.FIRE, 16).add(DarkAspects.NETHER, 8).add(Aspect.TREE, 32),
                 getModItem(ForbiddenMagic.ID, "WandCores", 1, 9),
                 getModItem(BloodArsenal.ID, "wand_cores", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0),
@@ -3503,8 +3334,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         new ResearchItem(
                 "INCENSECRUCIBLE",
                 "BLOODMAGIC",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("victus"), 18)
-                        .add(Aspect.getAspect("potentia"), 6),
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.LIFE, 18).add(Aspect.ENERGY, 6),
                 6,
                 -2,
                 3,
@@ -3513,8 +3343,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INCENSECRUCIBLE",
                 getModItem(BloodMagic.ID, "blockCrucible", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aer"), 15)
-                        .add(Aspect.getAspect("ordo"), 15),
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.AIR, 15).add(Aspect.ORDER, 15),
                 "abc",
                 "def",
                 "ghi",
