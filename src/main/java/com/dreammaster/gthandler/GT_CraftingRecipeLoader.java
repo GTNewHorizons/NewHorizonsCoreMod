@@ -1256,8 +1256,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(Forestry.ID, "engine", 1, 4),
                     GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Gold), 'L',
-                            OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.WroughtIron),
-                            'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.WroughtIron), 'C',
+                            OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.CastIron),
+                            'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.CastIron), 'C',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
         }
 

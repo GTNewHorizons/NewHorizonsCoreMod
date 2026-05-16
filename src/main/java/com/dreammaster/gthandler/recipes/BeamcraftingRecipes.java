@@ -22,6 +22,8 @@ public class BeamcraftingRecipes implements Runnable {
     @Override
     public void run() {
 
+        // note: xenoxene xenoxsis culture recipe is loaded in BacteriaRegistry.java
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Wafer_APIC.get(1),
