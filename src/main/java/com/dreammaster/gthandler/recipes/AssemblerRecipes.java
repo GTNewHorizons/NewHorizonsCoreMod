@@ -224,7 +224,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.CastIron, 5),
                         new ItemStack(Blocks.brick_block, 3))
                 .circuit(6).itemOutputs(ItemList.Hull_HP_Bricks.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -549,7 +549,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EngineCore.get(),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 10L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.CastIron, 10L))
                 .circuit(10).itemOutputs(getModItem(Forestry.ID, "engine", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
@@ -767,11 +767,11 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.WroughtIron, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.CastIron, 4L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
                 .itemOutputs(
                         MetaGeneratedTool01.INSTANCE
-                                .getToolWithStats(170, 1, Materials.WroughtIron, Materials.Steel, null))
+                                .getToolWithStats(170, 1, Materials.CastIron, Materials.Steel, null))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1465,7 +1465,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CastIron, 1L),
                         BlockList.SteelBars.get(6))
                 .circuit(1).itemOutputs(GregtechItemList.FishTrap.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
@@ -6773,7 +6773,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.CastIron, 2L))
                 .circuit(2).itemOutputs(getModItem(Chisel.ID, "obsidianChisel", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Diamond Chisel

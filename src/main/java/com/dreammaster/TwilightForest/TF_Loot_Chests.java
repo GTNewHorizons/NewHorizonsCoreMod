@@ -48,7 +48,7 @@ public class TF_Loot_Chests {
         TFTreasure.hill2.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 4L), 12);
         TFTreasure.hill2.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Molybdenum, 4L), 12);
         TFTreasure.hill2.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.RedAlloy, 4L), 12);
-        TFTreasure.hill2.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 4L), 12);
+        TFTreasure.hill2.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CastIron, 4L), 12);
         TFTreasure.hill2.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L), 12);
         TFTreasure.hill2.rare.add(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), 12);
         TFTreasure.hill2.rare.add(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 16L), 12);
@@ -76,7 +76,7 @@ public class TF_Loot_Chests {
         TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 4L), 12);
         TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Molybdenum, 4L), 12);
         TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.RedAlloy, 4L), 12);
-        TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 4L), 12);
+        TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CastIron, 4L), 12);
         TFTreasure.hill3.uncommon.add(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L), 12);
         TFTreasure.hill3.rare.add(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), 12);
         TFTreasure.hill3.rare.add(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 2L), 12);
