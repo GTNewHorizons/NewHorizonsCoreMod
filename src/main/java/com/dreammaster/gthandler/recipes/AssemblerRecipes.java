@@ -1750,6 +1750,30 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.StainlessSteel.getMolten(8 * 144)).itemOutputs(ItemList.Casing_Autoclave.get(1L))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
+        // Volcanus Controller
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GregtechItemList.Casing_Adv_BlastFurnace.get(1),
+                        MaterialsAlloy.HASTELLOY_N.getPlateDouble(2),
+                        MaterialsAlloy.HASTELLOY_W.getGear(2),
+                        ItemList.Robot_Arm_IV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
+                        GregtechItemList.Gregtech_Computer_Cube.get(1))
+                .itemOutputs(GregtechItemList.Machine_Adv_BlastFurnace.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+
+        // Cryogenic Freezer Controller
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GregtechItemList.Casing_AdvancedVacuum.get(1),
+                        MaterialsAlloy.LEAGRISIUM.getPlateDouble(2),
+                        MaterialsAlloy.INCOLOY_MA956.getGear(2),
+                        ItemList.Electric_Piston_IV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
+                        GregtechItemList.Gregtech_Computer_Cube.get(1))
+                .itemOutputs(ItemList.CryogenicFreezer.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(assemblerRecipes);
+
         if (GraviSuite.isModLoaded() && GalacticraftMars.isModLoaded()) {
             // Gravitational Engine
             GTValues.RA.stdBuilder()
