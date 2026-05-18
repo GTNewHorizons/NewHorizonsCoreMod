@@ -25,6 +25,7 @@ import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
+import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
@@ -36,7 +37,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
 import com.dreammaster.item.NHItemList;
@@ -48,6 +48,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -255,46 +256,43 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 components[3],
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitSuperconductor", 'P', components[2], 'X',
                         NHItemList.EngineeringProcessorItemAdvEmeraldCore.get() });
-        FluidStack[] solders = new FluidStack[] { Materials.Lead.getMolten(288), Materials.Tin.getMolten(144),
-                Materials.SolderingAlloy.getMolten(72), };
-        for (FluidStack solder : solders) {
-            // 256k
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
-                            NHItemList.EngineeringProcessorItemEmeraldCore.get(),
-                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
-                    .circuit(1).itemOutputs(components[0]).fluidInputs(solder).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_EV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
-            // 1024k
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
-                            NHItemList.EngineeringProcessorItemEmeraldCore.get(),
-                            ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
-                    .circuit(1).itemOutputs(components[1]).fluidInputs(solder).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_IV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
-            // 4096k
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
-                            NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
-                            ItemList.Circuit_Board_Wetware_Extreme.get(1))
-                    .circuit(1).itemOutputs(components[2]).fluidInputs(solder).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_LuV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
-            // 16384k
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
-                            NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
-                            ItemList.Circuit_Board_Bio_Ultra.get(1))
-                    .circuit(1).itemOutputs(components[3]).fluidInputs(solder).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_UV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
-        }
+
+        // 256k
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                        NHItemList.EngineeringProcessorItemEmeraldCore.get(),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
+                .circuit(1).itemOutputs(components[0]).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
+        // 1024k
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
+                        NHItemList.EngineeringProcessorItemEmeraldCore.get(),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
+                .circuit(1).itemOutputs(components[1]).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
+        // 4096k
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
+                        NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
+                        ItemList.Circuit_Board_Wetware_Extreme.get(1))
+                .circuit(1).itemOutputs(components[2]).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
+        // 16384k
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                        NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
+                        ItemList.Circuit_Board_Bio_Ultra.get(1))
+                .circuit(1).itemOutputs(components[3]).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
 
         // Advanced Crafting Storage
         ItemStack[] storage = new ItemStack[] {
