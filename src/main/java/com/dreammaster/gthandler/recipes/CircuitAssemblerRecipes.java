@@ -40,10 +40,6 @@ import gtPlusPlus.core.material.MaterialsElements;
 
 public class CircuitAssemblerRecipes implements Runnable {
 
-    // put the soldering Materials in this array
-    public final Materials[] solderingMaterials = new Materials[] { Materials.Lead, Materials.SolderingAlloy,
-            Materials.Tin };
-
     public final ItemStack[] RocketMaterial = new ItemStack[] { getModItem(GalacticraftCore.ID, "item.heavyPlating", 1),
             getModItem(GalacticraftMars.ID, "item.null", 1, 3),
             getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1), NHItemList.HeavyDutyPlateTier4.get(),

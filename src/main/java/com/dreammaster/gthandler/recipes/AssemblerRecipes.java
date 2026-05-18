@@ -3234,7 +3234,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             new ItemStack(Blocks.chest),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1))
-                    .circuit(1).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
+                    .circuit(1).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
                     .itemOutputs(ItemList.Cover_Chest_Basic.get(1)).duration(40 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(assemblerRecipes);
 
@@ -3242,7 +3242,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             getModItem(IronChests.ID, "BlockIronChest", 1, 3),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1))
-                    .circuit(1).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
+                    .circuit(1).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
                     .itemOutputs(ItemList.Cover_Chest_Good.get(1)).duration(40 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(assemblerRecipes);
 
@@ -3250,7 +3250,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             getModItem(IronChests.ID, "BlockIronChest", 1, 0),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1))
-                    .circuit(1).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
+                    .circuit(1).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
                     .itemOutputs(ItemList.Cover_Chest_Advanced.get(1)).duration(40 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(assemblerRecipes);
         }
