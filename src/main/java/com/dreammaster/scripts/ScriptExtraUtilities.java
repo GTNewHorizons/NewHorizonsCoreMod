@@ -900,6 +900,14 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null,
                 null);
 
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
+                        createItemStack(ExtraUtilities.ID, "divisionSigil", 0, 0, "{stable:1b}"),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2)).nbtSensitive().duration(42 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         // mods.extraUtils.QED.removeRecipe(<*>); // <- scripts
         EnderConstructorRecipesHandler.recipes.clear();
 
