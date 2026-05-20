@@ -21,6 +21,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.SCANNING;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -41,6 +42,7 @@ import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.katzenpapst.amunra.block.ARBlocks;
 import de.katzenpapst.amunra.crafting.RecipeHelper;
+import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -48,6 +50,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
@@ -72,6 +75,50 @@ public class ScriptAmunRa implements IScriptLoader {
                 GraviSuite.ID,
                 IronChests.ID,
                 RandomThings.ID);
+    }
+
+    private static ItemStack[] createOreVariants(Materials material, int amount) {
+        List<ItemStack> variants = new ArrayList<>();
+        addOrePrefixVariants(variants, OrePrefixes.ore, material, amount);
+        addOrePrefixVariants(variants, OrePrefixes.oreNetherrack, material, amount);
+        addOrePrefixVariants(variants, OrePrefixes.oreEndstone, material, amount);
+        if (GTMod.proxy.enableBlackGraniteOres) {
+            addOrePrefixVariants(variants, OrePrefixes.oreBlackgranite, material, amount);
+        }
+        if (GTMod.proxy.enableRedGraniteOres) {
+            addOrePrefixVariants(variants, OrePrefixes.oreRedgranite, material, amount);
+        }
+        if (GTMod.proxy.enableMarbleOres) {
+            addOrePrefixVariants(variants, OrePrefixes.oreMarble, material, amount);
+        }
+        if (GTMod.proxy.enableBasaltOres) {
+            addOrePrefixVariants(variants, OrePrefixes.oreBasalt, material, amount);
+        }
+        return variants.toArray(new ItemStack[0]);
+    }
+
+    private static void addOrePrefixVariants(List<ItemStack> variants, OrePrefixes prefix, Materials material,
+            int amount) {
+        ItemStack ore = GTOreDictUnificator.get(prefix, material, 1L);
+        if (!GTUtility.isStackValid(ore)) {
+            return;
+        }
+        for (ItemStack variant : GTOreDictUnificator.getNonUnifiedStacks(ore)) {
+            ItemStack sizedVariant = GTUtility.copyAmount(amount, variant);
+            if (!GTUtility.isStackValid(sizedVariant) || containsStack(variants, sizedVariant)) {
+                continue;
+            }
+            variants.add(sizedVariant);
+        }
+    }
+
+    private static boolean containsStack(List<ItemStack> stacks, ItemStack candidate) {
+        for (ItemStack stack : stacks) {
+            if (GTUtility.areStacksEqual(stack, candidate, true)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -456,17 +503,16 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { new Object[] { OrePrefixes.ore.get(Materials.Samarium), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Tartarite), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Cadmium), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Caesium), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Lanthanum), 64 },
-                        new Object[] { OrePrefixes.ore.get(Materials.Cerium), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.Bedrockium), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.DraconiumAwakened), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.CosmicNeutronium), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.InfinityCatalyst), 64 },
-                        new Object[] { OrePrefixes.ingot.get(Materials.Infinity), 64 },
+                new Object[] { createOreVariants(Materials.Samarium, 64), createOreVariants(Materials.Tartarite, 64),
+                        createOreVariants(Materials.Cadmium, 64), createOreVariants(Materials.Caesium, 64),
+                        createOreVariants(Materials.Lanthanum, 64), createOreVariants(Materials.Cerium, 64),
+
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.DraconiumAwakened, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CosmicNeutronium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfinityCatalyst, 64),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Infinity, 64),
+
                         ItemList.Electric_Pump_UHV.get(8), ItemList.Conveyor_Module_UHV.get(8),
                         ItemList.Robot_Arm_UHV.get(8), ItemList.Field_Generator_UHV.get(8),
                         ItemList.Sensor_UHV.get(8) },
