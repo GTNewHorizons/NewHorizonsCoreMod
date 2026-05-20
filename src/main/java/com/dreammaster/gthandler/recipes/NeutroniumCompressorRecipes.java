@@ -447,6 +447,16 @@ public class NeutroniumCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().fluidInputs(Materials.Copper.getMolten(3648 * 9 * 144L))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 5)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Tin Singularity
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Tin.getMolten(3648 * 9 * 144L))
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 6)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Leaden Singularity
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Lead.getMolten(3648 * 9 * 144L))
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 7)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
         }
     }
 }

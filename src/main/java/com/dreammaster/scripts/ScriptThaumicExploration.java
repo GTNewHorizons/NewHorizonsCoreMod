@@ -18,6 +18,7 @@ import java.util.Objects;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -130,8 +131,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "DiacountringsGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("vitreus"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 12).add(Aspect.MAGIC, 9).add(Aspect.GREED, 6)
+                        .add(Aspect.ELDRITCH, 3),
                 1,
                 3,
                 2,
@@ -140,7 +141,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 25),
+                new AspectList().add(Aspect.AIR, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -168,7 +169,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 25),
+                new AspectList().add(Aspect.EARTH, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -196,7 +197,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 2),
-                new AspectList().add(Aspect.getAspect("ignis"), 25),
+                new AspectList().add(Aspect.FIRE, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -224,7 +225,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 3),
-                new AspectList().add(Aspect.getAspect("aqua"), 25),
+                new AspectList().add(Aspect.WATER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -252,7 +253,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 4),
-                new AspectList().add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -280,7 +281,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DiacountringsGTNH",
                 getModItem(ThaumicExploration.ID, "discountRing", 1, 5),
-                new AspectList().add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.ENTROPY, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -310,9 +311,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "JarsealGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("vinculum"), 18).add(Aspect.getAspect("alienis"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("iter"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aqua"), 3),
+                new AspectList().add(Aspect.TRAP, 18).add(Aspect.ELDRITCH, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.TRAVEL, 9).add(Aspect.EARTH, 6).add(Aspect.WATER, 3),
                 -7,
                 -2,
                 3,
@@ -325,8 +325,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 15),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -352,9 +351,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 15),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 15),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 15))));
@@ -364,8 +362,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -391,9 +388,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 0),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 0),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 0))));
@@ -403,8 +399,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -430,9 +425,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 1),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 1),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 1))));
@@ -442,8 +436,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -469,9 +462,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 2),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 2),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 2))));
@@ -481,8 +473,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 3),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -508,9 +499,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 3),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 3),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 3))));
@@ -520,8 +510,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 4),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -547,9 +536,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 4),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 4),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 4))));
@@ -559,8 +547,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 5),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -586,9 +573,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 5),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 5),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 5))));
@@ -598,8 +584,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 6),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -625,9 +610,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 6),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 6),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 6))));
@@ -637,8 +621,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 7),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -664,9 +647,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 7),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 7),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 7))));
@@ -676,8 +658,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 8),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -703,9 +684,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 8),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 8),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 8))));
@@ -715,8 +695,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 9),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -742,9 +721,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 9),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 9),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 9))));
@@ -754,8 +732,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 10),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -781,9 +758,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 10),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 10),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 10))));
@@ -793,8 +769,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 11),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -820,9 +795,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 11),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 11),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 11))));
@@ -832,8 +806,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 12),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -859,9 +832,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 12),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 12),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 12))));
@@ -871,8 +843,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 13),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -898,9 +869,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 13),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 13),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 13))));
@@ -910,8 +880,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 14),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -937,9 +906,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "JarsealGTNH",
                 getModItem(ThaumicExploration.ID, "jarSeal", 1, 14),
                 getModItem(ThaumicExploration.ID, "blankSeal", 1, 14),
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("vinculum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.TRAVEL, 12).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.TRAP, 8).add(Aspect.CRYSTAL, 8));
         TCHelper.addResearchPage(
                 "JarsealGTNH",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicExploration.ID, "blankSeal", 1, 14))));
@@ -951,8 +919,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "FloatingcandleGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("pannus"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("volatus"), 3),
+                new AspectList().add(Aspect.AIR, 12).add(Aspect.CLOTH, 9).add(Aspect.MAGIC, 6).add(Aspect.FLIGHT, 3),
                 -7,
                 -9,
                 2,
@@ -961,7 +928,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -983,7 +950,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1005,7 +972,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1027,7 +994,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 3),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1049,7 +1016,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 4),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1071,7 +1038,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 5),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1093,7 +1060,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 6),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1115,7 +1082,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 7),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1137,7 +1104,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 8),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1159,7 +1126,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 9),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1181,7 +1148,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 10),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1203,7 +1170,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 11),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1225,7 +1192,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 12),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1247,7 +1214,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 13),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1269,7 +1236,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 14),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1291,7 +1258,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FloatingcandleGTNH",
                 getModItem(ThaumicExploration.ID, "floatCandle", 3, 15),
-                new AspectList().add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -1315,9 +1282,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "ReplicatorGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("lucrum"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.GREED, 15).add(Aspect.CRAFT, 12).add(Aspect.MECHANISM, 9)
+                        .add(Aspect.ORDER, 6).add(Aspect.MAGIC, 3),
                 4,
                 -5,
                 3,
@@ -1329,9 +1295,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "ReplicatorGTNH",
                 getModItem(ThaumicExploration.ID, "replicator", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("fabrico"), 64).add(Aspect.getAspect("instrumentum"), 48)
-                        .add(Aspect.getAspect("machina"), 48).add(Aspect.getAspect("ordo"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("lucrum"), 16),
+                new AspectList().add(Aspect.CRAFT, 64).add(Aspect.TOOL, 48).add(Aspect.MECHANISM, 48)
+                        .add(Aspect.ORDER, 32).add(Aspect.MAGIC, 24).add(Aspect.GREED, 16),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2),
                 getModItem(Thaumcraft.ID, "blockTable", 1, 15),
                 OrePrefixes.plate.get(Materials.Gold),
@@ -1352,9 +1317,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "TrashjarGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("vacuos"), 12)
-                        .add(Aspect.getAspect("fames"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.ENTROPY, 15).add(Aspect.VOID, 12).add(Aspect.HUNGER, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.MAGIC, 3),
                 5,
                 -9,
                 3,
@@ -1366,9 +1330,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "TrashjarGTNH",
                 getModItem(ThaumicExploration.ID, "trashJar", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("fames"), 14)
-                        .add(Aspect.getAspect("perditio"), 24).add(Aspect.getAspect("vacuos"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("tenebrae"), 8),
+                new AspectList().add(Aspect.ELDRITCH, 16).add(Aspect.HUNGER, 14).add(Aspect.ENTROPY, 24)
+                        .add(Aspect.VOID, 32).add(Aspect.MAGIC, 12).add(Aspect.DARKNESS, 8),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 3),
                 getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
@@ -1391,9 +1354,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "MeteorbootsGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("iter"), 15).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("volatus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.TRAVEL, 15).add(Aspect.FIRE, 12).add(Aspect.ENERGY, 9).add(Aspect.FLIGHT, 6)
+                        .add(Aspect.MAGIC, 3),
                 2,
                 -1,
                 3,
@@ -1404,9 +1366,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "MeteorbootsGTNH",
                 getModItem(ThaumicExploration.ID, "bootsMeteor", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("ignis"), 32).add(Aspect.getAspect("iter"), 32)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("volatus"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.FIRE, 32).add(Aspect.TRAVEL, 32).add(Aspect.ENERGY, 32)
+                        .add(Aspect.FLIGHT, 32).add(Aspect.MAGIC, 16),
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, wildcard),
                 getModItem(Thaumcraft.ID, "FocusFire", 1, 0),
                 OrePrefixes.plate.get(Materials.Firestone),
@@ -1424,9 +1385,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "CometsbootsGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("iter"), 15).add(Aspect.getAspect("aqua"), 12)
-                        .add(Aspect.getAspect("gelum"), 9).add(Aspect.getAspect("motus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.TRAVEL, 15).add(Aspect.WATER, 12).add(Aspect.COLD, 9).add(Aspect.MOTION, 6)
+                        .add(Aspect.MAGIC, 3),
                 5,
                 -3,
                 3,
@@ -1437,9 +1397,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "CometsbootsGTNH",
                 getModItem(ThaumicExploration.ID, "bootsComet", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("gelum"), 32).add(Aspect.getAspect("iter"), 32)
-                        .add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("motus"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.COLD, 32).add(Aspect.TRAVEL, 32).add(Aspect.WATER, 32)
+                        .add(Aspect.MOTION, 32).add(Aspect.MAGIC, 16),
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, wildcard),
                 getModItem(Thaumcraft.ID, "FocusFrost", 1, 0),
                 getModItem(BiomesOPlenty.ID, "hardIce", 1, 0),
@@ -1457,9 +1416,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "SoulbraizerGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("auram"), 15).add(Aspect.getAspect("alienis"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("mortuus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.AURA, 15).add(Aspect.ELDRITCH, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.DEATH, 6).add(Aspect.MAGIC, 3),
                 -6,
                 -10,
                 3,
@@ -1470,9 +1428,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "SoulbraizerGTNH",
                 getModItem(ThaumicExploration.ID, "soulBrazier", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("mortuus"), 48)
-                        .add(Aspect.getAspect("tenebrae"), 48).add(Aspect.getAspect("alienis"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.AURA, 64).add(Aspect.DEATH, 48).add(Aspect.DARKNESS, 48)
+                        .add(Aspect.ELDRITCH, 32).add(Aspect.MAGIC, 16),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0),
@@ -1492,9 +1449,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "UrnGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("vacuos"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("lucrum"), 3),
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.MAGIC, 12).add(Aspect.VOID, 9).add(Aspect.ELDRITCH, 6)
+                        .add(Aspect.GREED, 3),
                 3,
                 -10,
                 3,
@@ -1504,9 +1460,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "UrnGTNH",
                 getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("praecantatio"), 48)
-                        .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("alienis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 16),
+                new AspectList().add(Aspect.WATER, 64).add(Aspect.MAGIC, 48).add(Aspect.VOID, 32)
+                        .add(Aspect.ELDRITCH, 32).add(Aspect.GREED, 16),
                 getModItem(Minecraft.ID, "flower_pot", 1, 0),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
                 getModItem(Minecraft.ID, "netherbrick", 1, 0),
@@ -1528,9 +1483,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "BurnGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("vacuos"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("lucrum"), 3),
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.MAGIC, 12).add(Aspect.VOID, 9).add(Aspect.ELDRITCH, 6)
+                        .add(Aspect.GREED, 3),
                 4,
                 -11,
                 3,
@@ -1540,9 +1494,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "BurnGTNH",
                 getModItem(ThaumicExploration.ID, "everburnUrn", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("praecantatio"), 48)
-                        .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("alienis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 16),
+                new AspectList().add(Aspect.FIRE, 64).add(Aspect.MAGIC, 48).add(Aspect.VOID, 32)
+                        .add(Aspect.ELDRITCH, 32).add(Aspect.GREED, 16),
                 getModItem(Minecraft.ID, "flower_pot", 1, 0),
                 getModItem(Minecraft.ID, "lava_bucket", 1, 0),
                 getModItem(Minecraft.ID, "netherbrick", 1, 0),
@@ -1568,9 +1521,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "CAP_SOJOURNER",
                 "TX",
-                new AspectList().add(Aspect.getAspect("auram"), 15).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("instrumentum"), 3),
+                new AspectList().add(Aspect.AURA, 15).add(Aspect.EXCHANGE, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.GREED, 6).add(Aspect.TOOL, 3),
                 -5,
                 -8,
                 3,
@@ -1580,8 +1532,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_SOJOURNER",
                 getModItem(ThaumicExploration.ID, "sojournerCapUncharged", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 35).add(Aspect.getAspect("perditio"), 35)
-                        .add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("aqua"), 35),
+                new AspectList().add(Aspect.AIR, 35).add(Aspect.ENTROPY, 35).add(Aspect.ORDER, 35)
+                        .add(Aspect.WATER, 35),
                 "abc",
                 "def",
                 "ghi",
@@ -1611,9 +1563,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "CAP_SOJOURNER",
                 getModItem(ThaumicExploration.ID, "sojournerCap", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("auram"), 48).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("permutatio"), 24).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("ordo"), 16),
+                new AspectList().add(Aspect.AURA, 48).add(Aspect.MAGIC, 32).add(Aspect.EXCHANGE, 24)
+                        .add(Aspect.ENERGY, 32).add(Aspect.AIR, 16).add(Aspect.ORDER, 16),
                 getModItem(ThaumicExploration.ID, "sojournerCapUncharged", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 OrePrefixes.dust.get(Materials.Diamond),
@@ -1629,9 +1580,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "CAP_MECHANIST",
                 "TX",
-                new AspectList().add(Aspect.getAspect("auram"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("instrumentum"), 3),
+                new AspectList().add(Aspect.AURA, 15).add(Aspect.MECHANISM, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.GREED, 6).add(Aspect.TOOL, 3),
                 -9,
                 -6,
                 3,
@@ -1641,8 +1591,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_MECHANIST",
                 getModItem(ThaumicExploration.ID, "mechanistCapUncharged", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 35).add(Aspect.getAspect("perditio"), 35)
-                        .add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("aqua"), 35),
+                new AspectList().add(Aspect.AIR, 35).add(Aspect.ENTROPY, 35).add(Aspect.ORDER, 35)
+                        .add(Aspect.WATER, 35),
                 "abc",
                 "def",
                 "ghi",
@@ -1672,9 +1622,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "CAP_MECHANIST",
                 getModItem(ThaumicExploration.ID, "mechanistCap", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("auram"), 48).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("machina"), 24).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("ordo"), 16),
+                new AspectList().add(Aspect.AURA, 48).add(Aspect.MAGIC, 32).add(Aspect.MECHANISM, 24)
+                        .add(Aspect.ENERGY, 32).add(Aspect.AIR, 16).add(Aspect.ORDER, 16),
                 getModItem(ThaumicExploration.ID, "mechanistCapUncharged", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Minecraft.ID, "redstone", 1, 0),
@@ -1690,9 +1639,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "StabilizerbeltGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("ordo"), 18).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("iter"), 12).add(Aspect.getAspect("superbia"), 9)
-                        .add(Aspect.getAspect("tutamen"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.ORDER, 18).add(Aspect.EARTH, 15).add(Aspect.TRAVEL, 12)
+                        .add(DarkAspects.PRIDE, 9).add(Aspect.ARMOR, 6).add(Aspect.MAGIC, 3),
                 1,
                 -10,
                 3,
@@ -1702,9 +1650,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "StabilizerbeltGTNH",
                 getModItem(ThaumicExploration.ID, "stabilizerBelt", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("ordo"), 48).add(Aspect.getAspect("terra"), 32)
-                        .add(Aspect.getAspect("iter"), 12).add(Aspect.getAspect("superbia"), 24)
-                        .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.ORDER, 48).add(Aspect.EARTH, 32).add(Aspect.TRAVEL, 12)
+                        .add(DarkAspects.PRIDE, 24).add(Aspect.ARMOR, 32).add(Aspect.MAGIC, 16),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 ItemList.Electric_Piston_LV.get(1L),
                 OrePrefixes.springSmall.get(Materials.Thaumium),
@@ -1720,23 +1667,20 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "stabilizerBelt", 1, 0))));
         TCHelper.setResearchAspects(
                 "ENCHBINDING",
-                new AspectList().add(Aspect.getAspect("vinculum"), 15).add(Aspect.getAspect("perditio"), 12)
-                        .add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("superbia"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.TRAP, 15).add(Aspect.ENTROPY, 12).add(Aspect.TRAVEL, 9)
+                        .add(DarkAspects.PRIDE, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("ENCHBINDING", 3);
         ThaumcraftApi.addWarpToResearch("ENCHBINDING", 1);
         TCHelper.setResearchAspects(
                 "ENCHNIGHTVISION",
-                new AspectList().add(Aspect.getAspect("sensus"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("ignis"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.SENSES, 15).add(Aspect.LIGHT, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.FIRE, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("ENCHNIGHTVISION", 3);
         ThaumcraftApi.addWarpToResearch("ENCHNIGHTVISION", 1);
         TCHelper.setResearchAspects(
                 "ENCHDISARM",
-                new AspectList().add(Aspect.getAspect("vinculum"), 15).add(Aspect.getAspect("limus"), 12)
-                        .add(Aspect.getAspect("telum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.TRAP, 15).add(Aspect.SLIME, 12).add(Aspect.WEAPON, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("ENCHDISARM", 3);
         ThaumcraftApi.addWarpToResearch("ENCHDISARM", 1);
         TCHelper.orphanResearch("FLESHCURE");
@@ -1744,9 +1688,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "FleshcureGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("pannus"), 15).add(Aspect.getAspect("tutamen"), 12)
-                        .add(Aspect.getAspect("corpus"), 9).add(Aspect.getAspect("permutatio"), 6)
-                        .add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.CLOTH, 15).add(Aspect.ARMOR, 12).add(Aspect.FLESH, 9)
+                        .add(Aspect.EXCHANGE, 6).add(Aspect.ELDRITCH, 3),
                 -4,
                 -10,
                 2,
@@ -1756,8 +1699,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "FleshcureGTNH",
                 getModItem(Minecraft.ID, "leather", 1, 0),
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
-                new AspectList().add(Aspect.getAspect("corpus"), 4).add(Aspect.getAspect("pannus"), 4)
-                        .add(Aspect.getAspect("permutatio"), 4));
+                new AspectList().add(Aspect.FLESH, 4).add(Aspect.CLOTH, 4).add(Aspect.EXCHANGE, 4));
         TCHelper.addResearchPage(
                 "FleshcureGTNH",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Minecraft.ID, "leather", 1, 0))));
@@ -1766,9 +1708,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "BraincureGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("ordo"), 18).add(Aspect.getAspect("cognitio"), 15)
-                        .add(Aspect.getAspect("humanus"), 12).add(Aspect.getAspect("exanimis"), 9)
-                        .add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("permutatio"), 3),
+                new AspectList().add(Aspect.ORDER, 18).add(Aspect.MIND, 15).add(Aspect.MAN, 12).add(Aspect.UNDEAD, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.EXCHANGE, 3),
                 -2,
                 -8,
                 3,
@@ -1779,9 +1720,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "BraincureGTNH",
                 getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("sano"), 12)
-                        .add(Aspect.getAspect("humanus"), 12).add(Aspect.getAspect("alienis"), 24)
-                        .add(Aspect.getAspect("cognitio"), 16).add(Aspect.getAspect("praecantatio"), 8),
+                new AspectList().add(Aspect.ORDER, 32).add(Aspect.HEAL, 12).add(Aspect.MAN, 12).add(Aspect.ELDRITCH, 24)
+                        .add(Aspect.MIND, 16).add(Aspect.MAGIC, 8),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
@@ -1798,9 +1738,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "TalismanfoodtGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("fames"), 18).add(Aspect.getAspect("pannus"), 15)
-                        .add(Aspect.getAspect("messis"), 12).add(Aspect.getAspect("sano"), 9)
-                        .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("ordo"), 3),
+                new AspectList().add(Aspect.HUNGER, 18).add(Aspect.CLOTH, 15).add(Aspect.CROP, 12).add(Aspect.HEAL, 9)
+                        .add(Aspect.EXCHANGE, 6).add(Aspect.ORDER, 3),
                 -1,
                 -11,
                 3,
@@ -1811,9 +1750,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "TalismanfoodtGTNH",
                 getModItem(ThaumicExploration.ID, "talismanFood", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("fames"), 64).add(Aspect.getAspect("pannus"), 48)
-                        .add(Aspect.getAspect("messis"), 24).add(Aspect.getAspect("sano"), 24)
-                        .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("ordo"), 16),
+                new AspectList().add(Aspect.HUNGER, 64).add(Aspect.CLOTH, 48).add(Aspect.CROP, 24).add(Aspect.HEAL, 24)
+                        .add(Aspect.EXCHANGE, 32).add(Aspect.ORDER, 16),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 OrePrefixes.gemExquisite.get(Materials.Ruby),
                 getModItem(PamsHarvestCraft.ID, "heartybreakfastItem", 1, 0),
@@ -1832,9 +1770,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TalismanfoodtGTNH",
                 getModItem(ThaumicExploration.ID, "taintBerry", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.WATER, 20).add(Aspect.FIRE, 20).add(Aspect.EARTH, 20)
+                        .add(Aspect.ORDER, 25).add(Aspect.ENTROPY, 25),
                 "tft",
                 "gbg",
                 "ggg",
@@ -1851,9 +1788,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "DreamcatcherGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("vitium"), 15).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.TAINT, 15).add(Aspect.MIND, 12).add(Aspect.TOOL, 9).add(Aspect.METAL, 6)
+                        .add(Aspect.MAGIC, 3),
                 -7,
                 2,
                 3,
@@ -1862,8 +1798,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DreamcatcherGTNH",
                 getModItem(ThaumicExploration.ID, "charmNoTaint", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25)
-                        .add(Aspect.getAspect("terra"), 25),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.ENTROPY, 25).add(Aspect.EARTH, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -1893,9 +1828,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "CrucsoulGTNH",
                 "TX",
-                new AspectList().add(Aspect.getAspect("spiritus"), 18).add(Aspect.getAspect("mortuus"), 15)
-                        .add(Aspect.getAspect("fames"), 12).add(Aspect.getAspect("exanimis"), 9)
-                        .add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("alienis"), 3),
+                new AspectList().add(Aspect.SOUL, 18).add(Aspect.DEATH, 15).add(Aspect.HUNGER, 12).add(Aspect.UNDEAD, 9)
+                        .add(Aspect.WEAPON, 6).add(Aspect.ELDRITCH, 3),
                 5,
                 -7,
                 3,
@@ -1909,10 +1843,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "CrucsoulGTNH",
                 getModItem(ThaumicExploration.ID, "crucibleSouls", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("exanimis"), 24).add(Aspect.getAspect("fames"), 48)
-                        .add(Aspect.getAspect("spiritus"), 32).add(Aspect.getAspect("mortuus"), 64)
-                        .add(Aspect.getAspect("telum"), 24).add(Aspect.getAspect("vinculum"), 16)
-                        .add(Aspect.getAspect("alienis"), 8),
+                new AspectList().add(Aspect.UNDEAD, 24).add(Aspect.HUNGER, 48).add(Aspect.SOUL, 32)
+                        .add(Aspect.DEATH, 64).add(Aspect.WEAPON, 24).add(Aspect.TRAP, 16).add(Aspect.ELDRITCH, 8),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 0),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0),
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
@@ -1937,10 +1869,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "CrucsoulGTNH",
                 getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("exanimis"), 34).add(Aspect.getAspect("fames"), 18)
-                        .add(Aspect.getAspect("spiritus"), 62).add(Aspect.getAspect("mortuus"), 64)
-                        .add(Aspect.getAspect("telum"), 24).add(Aspect.getAspect("vinculum"), 46)
-                        .add(Aspect.getAspect("alienis"), 28),
+                new AspectList().add(Aspect.UNDEAD, 34).add(Aspect.HUNGER, 18).add(Aspect.SOUL, 62)
+                        .add(Aspect.DEATH, 64).add(Aspect.WEAPON, 24).add(Aspect.TRAP, 46).add(Aspect.ELDRITCH, 28),
                 getModItem(ThaumicExploration.ID, "crucibleSouls", 1, 0),
                 getModItem(Botania.ID, "cocoon", 1, 0),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 9),
@@ -1963,9 +1893,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.addResearchPrereq("TENTACLERING", "BraincureGTNH", true);
         TCHelper.setResearchAspects(
                 "TENTACLERING",
-                new AspectList().add(Aspect.getAspect("vitium"), 15).add(Aspect.getAspect("telum"), 12)
-                        .add(Aspect.getAspect("tutamen"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TAINT, 15).add(Aspect.WEAPON, 12).add(Aspect.ARMOR, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("TENTACLERING", 3);
         ThaumcraftApi.addWarpToResearch("TENTACLERING", 2);
         TCHelper.orphanResearch("ROD_TRANSMUTATION");
@@ -1973,9 +1902,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "ROD_TRANSMUTATION",
                 "TX",
-                new AspectList().add(Aspect.getAspect("permutatio"), 15).add(Aspect.getAspect("instrumentum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.EXCHANGE, 15).add(Aspect.TOOL, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.EARTH, 3),
                 -1,
                 -1,
                 3,
@@ -1986,9 +1914,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "ROD_TRANSMUTATION",
                 getModItem(ThaumicExploration.ID, "transmutationCore", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("permutatio"), 32)
-                        .add(Aspect.getAspect("auram"), 24).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("arbor"), 8).add(Aspect.getAspect("alienis"), 8),
+                new AspectList().add(Aspect.MAGIC, 32).add(Aspect.EXCHANGE, 32).add(Aspect.AURA, 24)
+                        .add(Aspect.EARTH, 16).add(Aspect.TREE, 8).add(Aspect.ELDRITCH, 8),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -2007,9 +1934,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "ROD_TRANSMUTATION_staff",
                 "TX",
-                new AspectList().add(Aspect.getAspect("permutatio"), 18).add(Aspect.getAspect("instrumentum"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("arbor"), 3),
+                new AspectList().add(Aspect.EXCHANGE, 18).add(Aspect.TOOL, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.EARTH, 6).add(Aspect.TREE, 3),
                 0,
                 0,
                 3,
@@ -2019,9 +1945,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_TRANSMUTATION_staff",
                 getModItem(ThaumicExploration.ID, "transmutationStaffCore", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 85).add(Aspect.getAspect("perditio"), 85)
-                        .add(Aspect.getAspect("terra"), 85).add(Aspect.getAspect("aqua"), 85)
-                        .add(Aspect.getAspect("ignis"), 85).add(Aspect.getAspect("aer"), 85),
+                new AspectList().add(Aspect.ORDER, 85).add(Aspect.ENTROPY, 85).add(Aspect.EARTH, 85)
+                        .add(Aspect.WATER, 85).add(Aspect.FIRE, 85).add(Aspect.AIR, 85),
                 "abc",
                 "def",
                 "ghi",
@@ -2052,9 +1977,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "ROD_AMBER",
                 "TX",
-                new AspectList().add(Aspect.getAspect("auram"), 15).add(Aspect.getAspect("instrumentum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("vinculum"), 6)
-                        .add(Aspect.getAspect("vitreus"), 3),
+                new AspectList().add(Aspect.AURA, 15).add(Aspect.TOOL, 12).add(Aspect.MAGIC, 9).add(Aspect.TRAP, 6)
+                        .add(Aspect.CRYSTAL, 3),
                 -5,
                 -1,
                 3,
@@ -2064,9 +1988,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "ROD_AMBER",
                 getModItem(ThaumicExploration.ID, "amberCore", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("vinculum"), 32)
-                        .add(Aspect.getAspect("auram"), 24).add(Aspect.getAspect("vitreus"), 16)
-                        .add(Aspect.getAspect("arbor"), 8).add(Aspect.getAspect("alienis"), 8),
+                new AspectList().add(Aspect.MAGIC, 32).add(Aspect.TRAP, 32).add(Aspect.AURA, 24).add(Aspect.CRYSTAL, 16)
+                        .add(Aspect.TREE, 8).add(Aspect.ELDRITCH, 8),
                 OrePrefixes.stick.get(Materials.Amber),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 6),
@@ -2088,9 +2011,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "ROD_AMBER_staff",
                 "TX",
-                new AspectList().add(Aspect.getAspect("vinculum"), 18).add(Aspect.getAspect("instrumentum"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("alienis"), 12)
-                        .add(Aspect.getAspect("auram"), 6),
+                new AspectList().add(Aspect.TRAP, 18).add(Aspect.TOOL, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.ELDRITCH, 12).add(Aspect.AURA, 6),
                 -6,
                 0,
                 3,
@@ -2100,9 +2022,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_AMBER_staff",
                 getModItem(ThaumicExploration.ID, "amberStaffCore", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 85).add(Aspect.getAspect("perditio"), 85)
-                        .add(Aspect.getAspect("terra"), 85).add(Aspect.getAspect("aqua"), 85)
-                        .add(Aspect.getAspect("ignis"), 85).add(Aspect.getAspect("aer"), 85),
+                new AspectList().add(Aspect.ORDER, 85).add(Aspect.ENTROPY, 85).add(Aspect.EARTH, 85)
+                        .add(Aspect.WATER, 85).add(Aspect.FIRE, 85).add(Aspect.AIR, 85),
                 "abc",
                 "def",
                 "ghi",
@@ -2132,10 +2053,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
         new ResearchItem(
                 "ROD_NECROMANCER_staff",
                 "TX",
-                new AspectList().add(Aspect.getAspect("mortuus"), 21).add(Aspect.getAspect("instrumentum"), 18)
-                        .add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("auram"), 12)
-                        .add(Aspect.getAspect("spiritus"), 9).add(Aspect.getAspect("exanimis"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3),
+                new AspectList().add(Aspect.DEATH, 21).add(Aspect.TOOL, 18).add(Aspect.ENTROPY, 15).add(Aspect.AURA, 12)
+                        .add(Aspect.SOUL, 9).add(Aspect.UNDEAD, 6).add(Aspect.MIND, 3),
                 -3,
                 1,
                 3,
@@ -2146,10 +2065,8 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 "ROD_NECROMANCER_staff",
                 getModItem(ThaumicExploration.ID, "necroStaffCore", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("mortuus"), 64).add(Aspect.getAspect("instrumentum"), 24)
-                        .add(Aspect.getAspect("perditio"), 48).add(Aspect.getAspect("auram"), 32)
-                        .add(Aspect.getAspect("spiritus"), 32).add(Aspect.getAspect("exanimis"), 16)
-                        .add(Aspect.getAspect("cognitio"), 16),
+                new AspectList().add(Aspect.DEATH, 64).add(Aspect.TOOL, 24).add(Aspect.ENTROPY, 48).add(Aspect.AURA, 32)
+                        .add(Aspect.SOUL, 32).add(Aspect.UNDEAD, 16).add(Aspect.MIND, 16),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 57),
                 getModItem(Minecraft.ID, "skull", 1, 1),
                 getModItem(ThaumicExploration.ID, "pureZombieBrain", 1, 0),

@@ -2301,7 +2301,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.CastIron, 1L),
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))

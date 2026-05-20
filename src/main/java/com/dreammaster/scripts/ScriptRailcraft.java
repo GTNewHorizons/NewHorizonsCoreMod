@@ -2079,7 +2079,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "machine.alpha", 4, 14),
 
                 new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.WroughtIron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
+                        OrePrefixes.stick.get(Materials.CastIron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2091,7 +2091,7 @@ public class ScriptRailcraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.CastIron, 1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 2L, 14))
                 .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS)).duration(10 * SECONDS).eut(8)
@@ -2107,7 +2107,7 @@ public class ScriptRailcraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.CastIron, 1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 8))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 8L, 14))
                 .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2179,8 +2179,7 @@ public class ScriptRailcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RC_Crowbar",
                 getModItem(Railcraft.ID, "tool.crowbar.magic", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("ignis"), 24)
-                        .add(Aspect.getAspect("aer"), 24),
+                new AspectList().add(Aspect.ORDER, 24).add(Aspect.FIRE, 24).add(Aspect.AIR, 24),
                 "abc",
                 "def",
                 "ghi",
@@ -2215,8 +2214,7 @@ public class ScriptRailcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RC_Crowbar_Void",
                 getModItem(Railcraft.ID, "tool.crowbar.void", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50),
+                new AspectList().add(Aspect.ENTROPY, 50).add(Aspect.FIRE, 50).add(Aspect.AIR, 50).add(Aspect.EARTH, 50),
                 "abc",
                 "def",
                 "ghi",
