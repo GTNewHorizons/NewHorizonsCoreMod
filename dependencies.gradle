@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.520-pre:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.524:dev")
     api("com.github.GTNewHorizons:Yamcl:0.7.5:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.17-GTNH:dev")
 
