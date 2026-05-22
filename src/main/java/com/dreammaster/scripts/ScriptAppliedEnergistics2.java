@@ -2285,7 +2285,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AE2FluidCraft.ID, "part_fluid_storage_bus", 1, 0),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 473)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
         // Quartz Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
