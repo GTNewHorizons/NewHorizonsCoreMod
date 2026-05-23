@@ -378,7 +378,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.CastIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -396,7 +396,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.CastIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

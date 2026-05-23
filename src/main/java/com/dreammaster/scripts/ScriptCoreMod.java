@@ -423,7 +423,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.WroughtIron, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.CastIron, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),

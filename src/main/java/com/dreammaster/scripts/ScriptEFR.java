@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.MeatCooked;
 import static gregtech.api.enums.Materials.MeatRaw;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -119,7 +118,6 @@ public class ScriptEFR implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                AE2Stuff.ID,
                 AdventureBackpack.ID,
                 AppliedEnergistics2.ID,
                 BiomesOPlenty.ID,
@@ -1001,7 +999,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "amethyst_block", 64, 0),
-                        getModItem(AE2Stuff.ID, "Grower", 6, 0),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCrystalGrowthChamber", 6, 0),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 6, 0),
                         getModItem(Thaumcraft.ID, "blockCrystal", 6, 7),
                         getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0),
