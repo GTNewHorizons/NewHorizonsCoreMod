@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Gadomancy;
@@ -13,13 +12,13 @@ import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.enums.Mods.ThaumicInsurgence;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
+import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
@@ -30,6 +29,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -46,7 +46,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                AE2Stuff.ID,
                 AppliedEnergistics2.ID,
                 EternalSingularity.ID,
                 Gadomancy.ID,
@@ -88,9 +87,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         final ItemStack ZPMEmitter = ItemList.Emitter_ZPM.get(1);
         final ItemStack ZPMSensor = ItemList.Sensor_ZPM.get(1);
 
-        final FluidStack[] solders = new FluidStack[] { Materials.Lead.getMolten(288), Materials.Tin.getMolten(144),
-                Materials.SolderingAlloy.getMolten(72) };
-
         // Creates ItemStack for CEC craft input
         Object[] CECInfusionItems = { ItemList.Field_Generator_UIV.get(1),
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1),
@@ -119,80 +115,86 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 DigitalSingularity,
                 CECInfusionItems);
 
-        for (FluidStack solder : solders) {
-            // 1k Essentia Storage Component
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
-                            getModItem(Thaumcraft.ID, "ItemResource", 2, 14),
-                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
-                            ItemList.Circuit_Board_Coated.get(1L))
-                    .circuit(1).itemOutputs(EssentialComponent1K).fluidInputs(solder).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
-            // 4k Essentia Storage Component
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
-                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
-                            ItemList.Circuit_Board_Coated_Basic.get(1L))
-                    .circuit(1).itemOutputs(EssentialComponent4K).fluidInputs(solder).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
-            // 16k Essentia Storage Component
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
-                            ItemList.Circuit_Board_Phenolic_Good.get(1L))
-                    .circuit(1).itemOutputs(EssentialComponent16K).fluidInputs(solder).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
-            // 64k Essentia Storage Component
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
-                            ItemList.Circuit_Board_Epoxy_Advanced.get(1L))
-                    .circuit(1).itemOutputs(EssentialComponent64K).fluidInputs(solder).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
-            // 256k Essentia Storage Component
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
-                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
-                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
-                    .circuit(1).itemOutputs(EssentialComponent256K).fluidInputs(solder).requiresCleanRoom()
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
-            // 1024k Essentia Storage Component
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
-                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
-                            ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
-                    .circuit(1).itemOutputs(EssentialComponent1024K).fluidInputs(solder).requiresCleanRoom()
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
-            // 4096k Essentia Storage Component
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
-                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
-                            ItemList.Circuit_Board_Wetware_Extreme.get(1))
-                    .circuit(1).itemOutputs(EssentialComponent4096K).fluidInputs(solder).requiresCleanRoom()
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
-            // 16384k Essentia Storage Component
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
-                            NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
-                            ItemList.Circuit_Board_Bio_Ultra.get(1))
-                    .circuit(1).itemOutputs(EssentialComponent16384K).fluidInputs(solder).requiresCleanRoom()
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
-        }
+        // 1k Essentia Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14),
+                        NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
+                        ItemList.Circuit_Board_Coated.get(1L))
+                .circuit(1).itemOutputs(EssentialComponent1K)
+                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+        // 4k Essentia Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L))
+                .circuit(1).itemOutputs(EssentialComponent4K)
+                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+        // 16k Essentia Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L))
+                .circuit(1).itemOutputs(EssentialComponent16K)
+                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+        // 64k Essentia Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L))
+                .circuit(1).itemOutputs(EssentialComponent64K)
+                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+        // 256k Essentia Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                        NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
+                .circuit(1).itemOutputs(EssentialComponent256K)
+                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
+        // 1024k Essentia Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
+                        NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
+                .circuit(1).itemOutputs(EssentialComponent1024K)
+                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
+        // 4096k Essentia Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
+                        NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
+                        ItemList.Circuit_Board_Wetware_Extreme.get(1))
+                .circuit(1).itemOutputs(EssentialComponent4096K)
+                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
+        // 16384k Essentia Storage Component
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                        NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
+                        ItemList.Circuit_Board_Bio_Ultra.get(1))
+                .circuit(1).itemOutputs(EssentialComponent16384K)
+                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
 
         TCHelper.removeInfusionRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0));
@@ -533,7 +535,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 LogicProcessor,
                 'e',
-                getModItem(AE2Stuff.ID, "Encoder", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 340),
                 'f',
                 LogicProcessor,
                 'g',
