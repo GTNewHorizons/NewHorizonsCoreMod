@@ -27,6 +27,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:amunra:0.8.12:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.4.28-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.26:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:HoloInventory:2.5.13-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:MatterManipulator:0.1.35-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.7.6:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.14-GTNH:dev")
