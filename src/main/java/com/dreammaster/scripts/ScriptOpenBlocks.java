@@ -378,7 +378,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.CastIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -396,7 +396,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.CastIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -714,8 +714,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         new ResearchItem(
                 "GOLDENEGG",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("bestia"), 12)
-                        .add(Aspect.getAspect("victus"), 9).add(Aspect.getAspect("humanus"), 6),
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.BEAST, 12).add(Aspect.LIFE, 9).add(Aspect.MAN, 6),
                 -4,
                 5,
                 3,
@@ -725,8 +724,8 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "GOLDENEGG",
                 getModItem(OpenBlocks.ID, "goldenegg", 1, 0),
                 2,
-                new AspectList().add(Aspect.getAspect("alienis"), 75).add(Aspect.getAspect("bestia"), 50)
-                        .add(Aspect.getAspect("victus"), 50).add(Aspect.getAspect("humanus"), 25),
+                new AspectList().add(Aspect.ELDRITCH, 75).add(Aspect.BEAST, 50).add(Aspect.LIFE, 50)
+                        .add(Aspect.MAN, 25),
                 getModItem(Minecraft.ID, "egg", 1, 0),
                 OrePrefixes.plateDense.get(Materials.Gold),
                 getModItem(Minecraft.ID, "skull", 1, 3),
