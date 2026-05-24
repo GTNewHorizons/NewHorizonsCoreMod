@@ -373,7 +373,6 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         TCMaterialAspectHelper
                 .registerMaterialAspects("ChromaticGlass", Aspect.CRYSTAL, TCAspects.PRIMORDIUM.getAspect());
         TCMaterialAspectHelper.registerMaterialAspects("BlackMetal", Aspect.METAL, TCAspects.RADIO.getAspect());
-        TCMaterialAspectHelper.registerMaterialAspects("WhiteMetal", Aspect.METAL, TCAspects.GLORIA.getAspect());
         TCMaterialAspectHelper
                 .registerMaterialAspects("AncientGranite", Aspect.ENTROPY, TCAspects.PRIMORDIUM.getAspect());
         TCMaterialAspectHelper.registerMaterialAspects("Runite", Aspect.ENTROPY, TCAspects.PRIMORDIUM.getAspect());
