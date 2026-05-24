@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.HoloInventory;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -326,6 +327,16 @@ public class MechanicalArmorRecipes {
                         OrePrefixes.plate.get(Materials.StainlessSteel), 'O',
                         OrePrefixes.stick.get(Materials.StainlessSteel), 'C', OrePrefixes.circuit.get(Materials.HV),
                         'R', ItemList.Armor_Chip_T1.get(1) });
+
+        if (HoloInventory.isModLoaded()) {
+            GTModHandler.addCraftingRecipe(
+                    ItemList.Augment_HoloInventory.get(1),
+                    new Object[] { "PGP", "ORO", "PCP", 'G',
+                            getModItem(HoloInventory.ID, "Hologlasses", 1, WILDCARD, missing), 'P',
+                            OrePrefixes.plate.get(Materials.StainlessSteel), 'O',
+                            OrePrefixes.stick.get(Materials.StainlessSteel), 'C', OrePrefixes.circuit.get(Materials.HV),
+                            'R', ItemList.Armor_Chip_T1.get(1) });
+        }
 
         if (GraviSuite.isModLoaded()) {
             GTModHandler.addCraftingRecipe(
