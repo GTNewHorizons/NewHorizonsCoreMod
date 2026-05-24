@@ -1,11 +1,11 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.533:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.52.541:dev")
     api("com.github.GTNewHorizons:Yamcl:0.7.5:dev")
-    api("com.github.GTNewHorizons:Baubles-Expanded:2.2.19-GTNH:dev")
+    api("com.github.GTNewHorizons:Baubles-Expanded:2.2.21-GTNH:dev")
 
-    implementation("com.github.GTNewHorizons:GTNHLib:0.10.2:dev")
+    implementation("com.github.GTNewHorizons:GTNHLib:0.10.3:dev")
 
     implementation("net.glease:tc4recipelib:1.5.37:dev")
 
@@ -26,7 +26,7 @@ dependencies {
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.8.12:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.4.28-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.23:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.26:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:HoloInventory:2.5.13-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:MatterManipulator:0.1.35-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.7.6:dev") { transitive = false }
@@ -46,7 +46,7 @@ dependencies {
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:Galacticraft:3.4.28-GTNH:dev")
     //uncomment to test RC and Forestry recipes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Railcraft:9.17.26:dev")
-    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:ForestryMC:4.11.23:dev")
+    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:ForestryMC:4.11.26:dev")
 
     // RecEx, for testing purposes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:RecEx:1.1.5:dev")
