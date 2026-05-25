@@ -55,5 +55,35 @@ public class ScriptComputronics implements IScriptLoader {
                 "ingotInfinity",
                 'i',
                 getModItem(Avaritia.ID, "big_pearl", 1));
+        // second replace recipe(big pearl->UIV field generator)
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(Computronics.ID, "computronics.ocSpecialParts", 1),
+                "aaaaaaaaa",
+                "abbbbbbbc",
+                "abdefedbc",
+                "abgggggbc",
+                "abdhihdbc",
+                "abgggggbc",
+                "abdefedbc",
+                "abbbbbbbc",
+                "aaaaaaaaa",
+                'a',
+                "plateNeutronium",
+                'b',
+                "oc:ram6",
+                'c',
+                "wireGt04ElectrumFlux",
+                'd',
+                "circuitBio",
+                'e',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
+                'f',
+                getModItem(OpenComputers.ID, "item", 1, 103),
+                'g',
+                ItemList.Circuit_Chip_PPIC.get(1L),
+                'h',
+                "ingotInfinity",
+                'i',
+                ItemList.Field_Generator_UIV.get(1L));
     }
 }
