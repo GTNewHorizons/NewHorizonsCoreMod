@@ -222,19 +222,19 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.ArcticFurBlock", 1, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 64, 0)).circuit(12)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 64, 0)).circuit(16)
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.GiantCobble", 1, 0)).duration(64 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "obsidian", 64, 0)).circuit(12)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "obsidian", 64, 0)).circuit(16)
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, 0)).duration(64 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 64)).circuit(12)
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 64)).circuit(16)
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.GiantLog", 1, 0)).duration(64 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("treeLeaves", 64)).circuit(12)
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("treeLeaves", 64)).circuit(16)
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.GiantLeaves", 1, 0)).duration(64 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
