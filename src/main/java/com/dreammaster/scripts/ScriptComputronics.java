@@ -55,7 +55,7 @@ public class ScriptComputronics implements IScriptLoader {
                 "ingotInfinity",
                 'i',
                 getModItem(Avaritia.ID, "big_pearl", 1));
-        // second replace recipe(big pearl->UIV field generator)
+        // Secondly replacement recipe(big pearl->UIV field generator)
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Computronics.ID, "computronics.ocSpecialParts", 1),
                 "aaaaaaaaa",
