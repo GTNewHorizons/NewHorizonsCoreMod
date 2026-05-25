@@ -49,8 +49,8 @@ public class ScriptJABBA implements IScriptLoader {
     @Override
     public void loadRecipes() {
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("plankWood", 8), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(JABBA.ID, "barrel", 1), new OreDictItemStack("craftingPiston", 1)).circuit(1)
