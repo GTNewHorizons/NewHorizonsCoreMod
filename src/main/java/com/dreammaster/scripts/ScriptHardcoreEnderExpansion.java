@@ -513,10 +513,12 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Tungstate, 1L),
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.EnderEye, 1L))
-                .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
+                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.EnderEye, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Tungstate, 1L))
+                .outputChances(9000, 8000, 700, 5000, 2500, 7500)
+                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))
