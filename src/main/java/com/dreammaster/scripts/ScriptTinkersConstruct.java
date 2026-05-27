@@ -1970,7 +1970,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 false,
                 400);
         Smeltery.addAlloyMixing(
-                FluidRegistry.getFluidStack("alumite.molten", TConstruct.nuggetLiquidValue * 2),
+                FluidRegistry.getFluidStack("alumite.molten", TConstruct.nuggetLiquidValue * 3),
                 FluidRegistry.getFluidStack("molten.zinc", TConstruct.nuggetLiquidValue * 5),
                 FluidRegistry.getFluidStack("steel.molten", TConstruct.nuggetLiquidValue * 2),
                 FluidRegistry.getFluidStack("obsidian.molten", TConstruct.nuggetLiquidValue * 2));
