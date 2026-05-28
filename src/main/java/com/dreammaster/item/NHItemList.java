@@ -73,6 +73,7 @@ public enum NHItemList {
     BloodVial("BloodVial", THAUMCRAFT),
     CompressedBioBall("CompressedBioBall", GENERIC),
     BlackPlutoniumCompressedPlate("BlackPlutoniumCompressedPlate", SPACE),
+    BlankMusicDisc("BlankMusicDisc", GENERIC),
     BlankPlatedChip("BlankPlatedChip", CIRCUITS),
     CallistoIceCompressedPlate("CallistoIceCompressedPlate", SPACE),
     CallistoStoneDust("CallistoStoneDust", SPACE),
