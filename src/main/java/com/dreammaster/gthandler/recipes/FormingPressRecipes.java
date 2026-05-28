@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.VendingMachine;
@@ -450,5 +451,16 @@ public class FormingPressRecipes implements Runnable {
                     .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(100 * SECONDS).eut(TierEU.RECIPE_MAX / 2)
                     .addTo(formingPressRecipes);
         }
+
+        // Lunch Break
+        if (PamsHarvestCraft.isModLoaded() && VendingMachine.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.BlankMusicDisc.get(1),
+                            getModItem(PamsHarvestCraft.ID, "frosteddonutItem", 1))
+                    .fluidInputs(Materials.Milk.getFluid(BUCKETS)).itemOutputs(NHItemList.LunchBreakDisc.get(1))
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        }
+
     }
 }
