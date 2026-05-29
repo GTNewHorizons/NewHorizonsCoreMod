@@ -1654,6 +1654,13 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .circuit(5).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 720)).duration(37 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7),
+                        NHItemList.MeteoricIronString.get(5))
+                .circuit(5).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 720))
+                .duration(37 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7)).duration(9 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
@@ -1663,6 +1670,13 @@ public class ScriptGalacticraft implements IScriptLoader {
                         NHItemList.MeteoricIronString.get(8))
                 .circuit(8).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 1152)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7),
+                        NHItemList.MeteoricIronString.get(8))
+                .circuit(8).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 1152)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1)).circuit(1)
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7)).duration(15 * SECONDS)
@@ -1674,6 +1688,13 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .circuit(7).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 1008)).duration(52 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7),
+                        NHItemList.MeteoricIronString.get(7))
+                .circuit(7).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 1008))
+                .duration(52 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2)).circuit(1)
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7)).duration(13 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
@@ -1683,6 +1704,13 @@ public class ScriptGalacticraft implements IScriptLoader {
                         NHItemList.MeteoricIronString.get(4))
                 .circuit(4).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 576)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7),
+                        NHItemList.MeteoricIronString.get(4))
+                .circuit(4).itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 576)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3)).circuit(1)
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7))
