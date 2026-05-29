@@ -3,9 +3,12 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.UniversalSingularities;
+import static gregtech.api.enums.Mods.VendingMachine;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
+import static gregtech.api.util.GTRecipeBuilder.BUCKETS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -412,30 +415,27 @@ public class FormingPressRecipes implements Runnable {
 
         // Music Discs
 
-        // Flora
+        // Blank Music Disc
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.PolyvinylChloride, 1L),
-                        new ItemStack(Blocks.tallgrass, 64, 1),
-                        new ItemStack(Blocks.waterlily, 64),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 64L),
-                        ItemList.Shape_Mold_Cylinder.get(0L))
-                .fluidInputs(Materials.Grade1PurifiedWater.getFluid(INGOTS * 16))
-                .itemOutputs(NHItemList.FloraDisc.get(1)).duration(100 * SECONDS).eut(TierEU.RECIPE_ZPM / 2)
+                .itemInputs(Materials.PolyvinylChloride.getPlates(1), ItemList.Shape_Mold_Cylinder.get(0L))
+                .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.LV / 4)
                 .addTo(formingPressRecipes);
+
+        // Vanilla discs
+
+        // Flora
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BlankMusicDisc.get(1), new ItemStack(Blocks.red_flower, 9, 1))
+                .fluidInputs(Materials.Ice.getFluid(BUCKETS)).itemOutputs(NHItemList.FloraDisc.get(1))
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         // Absolute Zero
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.PolyvinylChloride, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 64L),
-                        NHItemList.EuropaIceDust.get(64),
-                        NHItemList.PlutoIceDust.get(64),
-                        ItemList.Shape_Mold_Cylinder.get(0L))
-                .fluidInputs(Materials.Infinity.getMolten(INGOTS * 16)).itemOutputs(NHItemList.AbsoluteZeroDisc.get(1))
-                .duration(100 * SECONDS).eut(TierEU.RECIPE_UIV / 2).addTo(formingPressRecipes);
+                        NHItemList.BlankMusicDisc.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 9L))
+                .fluidInputs(Materials.Ice.getSolid(256_000)).itemOutputs(NHItemList.AbsoluteZeroDisc.get(1))
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(formingPressRecipes);
 
         // Sweet Dreams
         if (UniversalSingularities.isModLoaded()) {
@@ -451,5 +451,16 @@ public class FormingPressRecipes implements Runnable {
                     .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(100 * SECONDS).eut(TierEU.RECIPE_MAX / 2)
                     .addTo(formingPressRecipes);
         }
+
+        // Lunch Break
+        if (PamsHarvestCraft.isModLoaded() && VendingMachine.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.BlankMusicDisc.get(1),
+                            getModItem(PamsHarvestCraft.ID, "frosteddonutItem", 1))
+                    .fluidInputs(Materials.Milk.getFluid(BUCKETS)).itemOutputs(NHItemList.LunchBreakDisc.get(1))
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        }
+
     }
 }
