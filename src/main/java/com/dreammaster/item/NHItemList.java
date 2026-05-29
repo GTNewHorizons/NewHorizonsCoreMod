@@ -33,6 +33,7 @@ public enum NHItemList {
     // ===== Music Discs =====
     AbsoluteZeroDisc("AbsoluteZeroDisc", new NHMusicRecord("absolute_zero"), GENERIC),
     FloraDisc("FloraDisc", new NHMusicRecord("flora"), GENERIC),
+    LunchBreakDisc("LunchBreakDisc", new NHMusicRecord("lunch_break", "vendingmachine", "track.lunch_break"), GENERIC),
     SweetDreamsDisc("SweetDreamsDisc", new NHMusicRecord("sweet_dreams"), GENERIC),
 
     // ===== Simple Items =====
@@ -73,6 +74,7 @@ public enum NHItemList {
     BloodVial("BloodVial", THAUMCRAFT),
     CompressedBioBall("CompressedBioBall", GENERIC),
     BlackPlutoniumCompressedPlate("BlackPlutoniumCompressedPlate", SPACE),
+    BlankMusicDisc("BlankMusicDisc", GENERIC),
     BlankPlatedChip("BlankPlatedChip", CIRCUITS),
     CallistoIceCompressedPlate("CallistoIceCompressedPlate", SPACE),
     CallistoStoneDust("CallistoStoneDust", SPACE),

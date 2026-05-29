@@ -5,15 +5,29 @@ import net.minecraft.util.ResourceLocation;
 
 public class NHMusicRecord extends ItemRecord {
 
-    private final String sound;
+    private final String soundResourceMod;
+    private final String soundResourceName;
 
-    public NHMusicRecord(String sound) {
-        super("dreamcraft:" + sound);
-        this.sound = sound;
+    /**
+     * For use with musics registered in Dreamcraft's sounds.json
+     */
+    public NHMusicRecord(String soundName) {
+        super("dreamcraft:" + soundName);
+        this.soundResourceMod = "dreamcraft";
+        this.soundResourceName = "record." + soundName;
+    }
+
+    /**
+     * For use with music registered in other mods' sounds.json
+     */
+    public NHMusicRecord(String itemName, String soundResourceMod, String soundResourceName) {
+        super("dreamcraft:" + itemName);
+        this.soundResourceMod = soundResourceMod;
+        this.soundResourceName = soundResourceName;
     }
 
     @Override
     public ResourceLocation getRecordResource(String name) {
-        return new ResourceLocation("dreamcraft", "record." + this.sound);
+        return new ResourceLocation(soundResourceMod, soundResourceName);
     }
 }
