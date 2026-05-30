@@ -418,7 +418,7 @@ public class FormingPressRecipes implements Runnable {
         // Blank Music Disc
         GTValues.RA.stdBuilder()
                 .itemInputs(Materials.PolyvinylChloride.getPlates(1), ItemList.Shape_Mold_Cylinder.get(0L))
-                .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.LV / 4)
+                .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(formingPressRecipes);
 
         // Vanilla discs
