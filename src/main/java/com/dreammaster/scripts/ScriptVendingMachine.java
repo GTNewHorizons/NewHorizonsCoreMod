@@ -14,7 +14,6 @@ import net.minecraft.item.ItemStack;
 
 import com.cubefury.vendingmachine.items.VMItems;
 
-import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
@@ -42,7 +41,7 @@ public class ScriptVendingMachine implements IScriptLoader {
                 "craftingToolWrench",
                 getModItem(Minecraft.ID, "stone_button", 1, 0),
                 ironPlate,
-                new ItemStack(GregTechAPI.sBlockCasings11, 1, 0),
+                VMItems.casing,
                 ironPlate,
                 null,
                 getModItem(Minecraft.ID, "hopper", 1),
