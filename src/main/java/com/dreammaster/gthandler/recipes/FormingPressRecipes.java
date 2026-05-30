@@ -421,7 +421,7 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(formingPressRecipes);
 
-        // Vanilla discs 
+        // Vanilla discs
 
         // Flora
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BlankMusicDisc.get(1), new ItemStack(Blocks.red_flower, 9, 1))
