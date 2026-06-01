@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.CropsNH;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
@@ -40,6 +39,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -65,7 +65,6 @@ public class ScriptMagicBees implements IScriptLoader {
                 Botania.ID,
                 Forestry.ID,
                 Genetics.ID,
-                GTPlusPlus.ID,
                 IndustrialCraft2.ID,
                 MagicBees.ID,
                 Thaumcraft.ID,
@@ -1073,7 +1072,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 'd',
                 getModItem(Forestry.ID, "royalJelly", 1, 0),
                 'e',
-                getModItem(GTPlusPlus.ID, "frameMutagenic", 1, 0),
+                GregtechItemList.HiveFrameMutagenic.get(1),
                 'f',
                 getModItem(Forestry.ID, "royalJelly", 1, 0),
                 'g',
