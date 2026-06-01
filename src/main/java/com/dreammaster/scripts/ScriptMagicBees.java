@@ -2,17 +2,7 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.CropsNH;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MagicBees;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
@@ -59,6 +49,7 @@ public class ScriptMagicBees implements IScriptLoader {
         return Arrays.asList(
                 AppliedEnergistics2.ID,
                 Backpack.ID,
+                BloodMagic.ID,
                 Botania.ID,
                 Forestry.ID,
                 Genetics.ID,
@@ -1052,6 +1043,32 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ItemStack(Loaders.essentiaCell, 1, 0),
                 new ItemStack(Loaders.essentiaCell, 1, 0),
                 getModItem(MagicBees.ID, "pollen", 1, 1));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "MB_FrenziedFrame",
+                getModItem(MagicBees.ID, "item.frenziedFrame", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.FIRE, 100).add(Aspect.WATER, 100)
+                        .add(Aspect.EARTH, 100).add(Aspect.ORDER, 100).add(Aspect.ENTROPY, 100),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
+                'b',
+                getModItem(Forestry.ID, "royalJelly", 1, 0),
+                'c',
+                getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
+                'd',
+                getModItem(Forestry.ID, "royalJelly", 1, 0),
+                'e',
+                getModItem(GTPlusPlus.ID, "frameMutagenic", 1, 0),
+                'f',
+                getModItem(Forestry.ID, "royalJelly", 1, 0),
+                'g',
+                getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
+                'h',
+                getModItem(Forestry.ID, "royalJelly", 1, 0),
+                'i',
+                getModItem(BloodMagic.ID, "demonicSlate", 1, 0));
         TCHelper.refreshResearchPages("MB_VisAuraProvider");
         TCHelper.refreshResearchPages("MB_EssenceLife");
         TCHelper.refreshResearchPages("MB_EssenceDeath");
