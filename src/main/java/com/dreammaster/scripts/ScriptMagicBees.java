@@ -2,7 +2,19 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.CropsNH;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
@@ -53,6 +65,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 Botania.ID,
                 Forestry.ID,
                 Genetics.ID,
+                GTPlusPlus.ID,
                 IndustrialCraft2.ID,
                 MagicBees.ID,
                 Thaumcraft.ID,
