@@ -941,63 +941,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 15),
-                getModItem(Minecraft.ID, "dye", 1, 15),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 8),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 8),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ExtraBees.ID, "misc", 1, 23),
-                getModItem(ExtraBees.ID, "misc", 1, 23),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 77),
-                getModItem(Botany.ID, "pigment", 1, 77),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_15.get(1L),
-                ItemList.Color_15.get(1L),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0),
+                "dyeWhite",
+                "dyeWhite",
                 null,
                 null,
                 null,
@@ -1007,41 +952,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 14),
-                getModItem(Minecraft.ID, "dye", 1, 14),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_14.get(1L),
-                ItemList.Color_14.get(1L),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 51),
-                getModItem(Botany.ID, "pigment", 1, 51),
+                "dyeOrange",
+                "dyeOrange",
                 null,
                 null,
                 null,
@@ -1051,41 +963,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 13),
-                getModItem(Minecraft.ID, "dye", 1, 13),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 40),
-                getModItem(Botany.ID, "pigment", 1, 40),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_13.get(1L),
-                ItemList.Color_13.get(1L),
+                "dyeMagenta",
+                "dyeMagenta",
                 null,
                 null,
                 null,
@@ -1095,41 +974,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 12),
-                getModItem(Minecraft.ID, "dye", 1, 12),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 22),
-                getModItem(Botany.ID, "pigment", 1, 22),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_12.get(1L),
-                ItemList.Color_12.get(1L),
+                "dyeLightBlue",
+                "dyeLightBlue",
                 null,
                 null,
                 null,
@@ -1139,52 +985,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 11),
-                getModItem(Minecraft.ID, "dye", 1, 11),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ExtraBees.ID, "misc", 1, 20),
-                getModItem(ExtraBees.ID, "misc", 1, 20),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 78),
-                getModItem(Botany.ID, "pigment", 1, 78),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_11.get(1L),
-                ItemList.Color_11.get(1L),
+                "dyeYellow",
+                "dyeYellow",
                 null,
                 null,
                 null,
@@ -1194,41 +996,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 10),
-                getModItem(Minecraft.ID, "dye", 1, 10),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 38),
-                getModItem(Botany.ID, "pigment", 1, 38),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_10.get(1L),
-                ItemList.Color_10.get(1L),
+                "dyeLime",
+                "dyeLime",
                 null,
                 null,
                 null,
@@ -1238,41 +1007,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 9),
-                getModItem(Minecraft.ID, "dye", 1, 9),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 29),
-                getModItem(Botany.ID, "pigment", 1, 29),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_09.get(1L),
-                ItemList.Color_09.get(1L),
+                "dyePink",
+                "dyePink",
                 null,
                 null,
                 null,
@@ -1282,41 +1018,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 8),
-                getModItem(Minecraft.ID, "dye", 1, 8),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 10),
-                getModItem(Botany.ID, "pigment", 1, 10),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_08.get(1L),
-                ItemList.Color_08.get(1L),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7),
+                "dyeGray",
+                "dyeGray",
                 null,
                 null,
                 null,
@@ -1326,41 +1029,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 7),
-                getModItem(Minecraft.ID, "dye", 1, 7),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_07.get(1L),
-                ItemList.Color_07.get(1L),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 35),
-                getModItem(Botany.ID, "pigment", 1, 35),
+                "dyeLightGray",
+                "dyeLightGray",
                 null,
                 null,
                 null,
@@ -1370,41 +1040,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 6),
-                getModItem(Minecraft.ID, "dye", 1, 6),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 8),
-                getModItem(Botany.ID, "pigment", 1, 8),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_06.get(1L),
-                ItemList.Color_06.get(1L),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9),
+                "dyeCyan",
+                "dyeCyan",
                 null,
                 null,
                 null,
@@ -1414,41 +1051,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 5),
-                getModItem(Minecraft.ID, "dye", 1, 5),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 20),
-                getModItem(Botany.ID, "pigment", 1, 20),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_05.get(1L),
-                ItemList.Color_05.get(1L),
+                "dyePurple",
+                "dyePurple",
                 null,
                 null,
                 null,
@@ -1458,74 +1062,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 4),
-                getModItem(Minecraft.ID, "dye", 1, 15),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 5),
-                getModItem(Minecraft.ID, "dye", 1, 5),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ExtraBees.ID, "misc", 1, 21),
-                getModItem(ExtraBees.ID, "misc", 1, 21),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 24),
-                getModItem(Botany.ID, "pigment", 1, 24),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_04.get(1L),
-                ItemList.Color_04.get(1L),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Dye_Indigo.get(1L),
-                ItemList.Dye_Indigo.get(1L),
+                "dyeBlue",
+                "dyeBlue",
                 null,
                 null,
                 null,
@@ -1535,63 +1073,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 6),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 6),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ExtraBees.ID, "misc", 1, 25),
-                getModItem(ExtraBees.ID, "misc", 1, 25),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 3),
-                getModItem(Minecraft.ID, "dye", 1, 3),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 65),
-                getModItem(Botany.ID, "pigment", 1, 65),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_03.get(1L),
-                ItemList.Color_03.get(1L),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12),
+                "dyeBrown",
+                "dyeBrown",
                 null,
                 null,
                 null,
@@ -1601,63 +1084,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 2),
-                getModItem(Minecraft.ID, "dye", 1, 2),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 7),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 7),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ExtraBees.ID, "misc", 1, 22),
-                getModItem(ExtraBees.ID, "misc", 1, 22),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 28),
-                getModItem(Botany.ID, "pigment", 1, 28),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_02.get(1L),
-                ItemList.Color_02.get(1L),
+                "dyeGreen",
+                "dyeGreen",
                 null,
                 null,
                 null,
@@ -1667,52 +1095,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 1),
-                getModItem(Minecraft.ID, "dye", 1, 1),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ExtraBees.ID, "misc", 1, 19),
-                getModItem(ExtraBees.ID, "misc", 1, 19),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 59),
-                getModItem(Botany.ID, "pigment", 1, 59),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_01.get(1L),
-                ItemList.Color_01.get(1L),
+                "dyeRed",
+                "dyeRed",
                 null,
                 null,
                 null,
@@ -1722,63 +1106,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 0),
-                getModItem(Minecraft.ID, "dye", 1, 0),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 9),
-                getModItem(BiomesOPlenty.ID, "misc", 1, 9),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ExtraBees.ID, "misc", 1, 24),
-                getModItem(ExtraBees.ID, "misc", 1, 24),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Botany.ID, "pigment", 1, 1),
-                getModItem(Botany.ID, "pigment", 1, 1),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15),
-                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15),
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                ItemList.Color_00.get(1L),
-                ItemList.Color_00.get(1L),
+                "dyeBlack",
+                "dyeBlack",
                 null,
                 null,
                 null,
@@ -2969,563 +2298,75 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 56))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 15)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeWhite", 1))
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 8))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_15.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 23)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 25))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 14)).circuit(8)
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeOrange", 1)).circuit(8)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 1))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_14.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 24))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 13)).circuit(8)
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeMagenta", 1)).circuit(8)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 2))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Botania)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_13.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 23))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 12)).circuit(8)
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeLightBlue", 1)).circuit(8)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 3))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_12.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 22))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 11)).circuit(8)
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeYellow", 1)).circuit(8)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 4))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.YellowLimonite, 1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_11.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 20)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, ExtraBees)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 21))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 10)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeLime", 1))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
                 .duration(1 * SECONDS + 5 * TICKS).requireMods(ProjectRedCore).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 5))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_10.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 20))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 9)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 6))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyePink", 1))
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_09.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 19))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 8)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 7))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Botania)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_08.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeGray", 1))
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 18))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 7)).circuit(8)
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeLightGray", 1)).circuit(8)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27))
                 .duration(1 * SECONDS + 5 * TICKS).requireMods(ProjectRedCore).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 8))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27))
-                .duration(1 * SECONDS + 5 * TICKS).requireMods(ProjectRedCore, Botania).eut(TierEU.RECIPE_ULV)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_07.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 17))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 6)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeCyan", 1))
+                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
                 .duration(1 * SECONDS + 5 * TICKS).requireMods(ProjectRedCore).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 9))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Lazurite, 1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_06.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 16))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 5)).circuit(8)
+                .itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyePurple", 1)).circuit(8)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 10)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Botania)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_05.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 15))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 4)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 11)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Botania)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Natura.ID, "barleyFood", 1, 8))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Natura)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 5))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, BiomesOPlenty)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 1L))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeBlue", 1))
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sodalite, 1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Dye_Indigo.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_04.get(1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 21)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, ExtraBees)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 14))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 3)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 29))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, GalacticraftAmunRa).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 12)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Botania)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 6))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, BiomesOPlenty)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cocoa, 1))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeBrown", 1))
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coffee, 1))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BrownLimonite, 1L))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 25)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, ExtraBees)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 13))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 2)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 13)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Botania)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 7))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, BiomesOPlenty)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_02.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeGreen", 1))
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 22)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, ExtraBees)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 12))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 1)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 14)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Botania)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_01.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeRed", 1))
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 19)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, ExtraBees)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 11))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Minecraft.ID, "dye", 1, 0)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Botania.ID, "dye", 1, 15)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Botania)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(BiomesOPlenty.ID, "misc", 1, 9))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, BiomesOPlenty)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), ItemList.Color_00.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glowstone_dust, 1), new OreDictItemStack("dyeBlack", 1))
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ForbiddenMagic.ID, "FMResource", 1, 1))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, ForbiddenMagic)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ThaumicHorizons.ID, "inkEgg", 1, 0))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, ThaumicHorizons)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(ExtraBees.ID, "misc", 1, 24)).circuit(8)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, ExtraBees)
-                .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
-                .requireMods(ProjectRedCore, ProjectRedExploration).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Items.glowstone_dust, 1), getModItem(Gendustry.ID, "HoneyDrop", 1, 10))
-                .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
-                .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore, Gendustry)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
                 .circuit(2).itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0))
