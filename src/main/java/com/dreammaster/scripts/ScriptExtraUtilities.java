@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
@@ -33,7 +34,6 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList.MagicFeather;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -57,10 +57,13 @@ import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -85,6 +88,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 BuildCraftFactory.ID,
                 BuildCraftTransport.ID,
                 ExtraUtilities.ID,
+                ForbiddenMagic.ID,
                 HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
@@ -896,6 +900,14 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null,
                 null);
 
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
+                        createItemStack(ExtraUtilities.ID, "divisionSigil", 0, 0, "{stable:1b}"),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2)).nbtSensitive().duration(42 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         // mods.extraUtils.QED.removeRecipe(<*>); // <- scripts
         EnderConstructorRecipesHandler.recipes.clear();
 
@@ -1373,9 +1385,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 30,
-                new AspectList().add(getAspect("praecantatio"), 200).add(getAspect("volatus"), 200)
-                        .add(getAspect("tempestas"), 200).add(getAspect("nebrisum"), 200).add(getAspect("motus"), 200)
-                        .add(getAspect("terminus"), 200),
+                new AspectList().add(Aspect.MAGIC, 200).add(Aspect.FLIGHT, 200).add(Aspect.WEATHER, 200)
+                        .add(TCAspects.NEBRISUM.getAspect(), 200).add(Aspect.MOTION, 200).add(Lucrum.ULTRA_DEATH, 200),
                 createItemStack(
                         TinkerConstruct.ID,
                         "travelWings",
@@ -1400,8 +1411,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1),
                 4,
-                new AspectList().add(Aspect.getAspect("permutatio"), 50).add(Aspect.getAspect("volatus"), 50)
-                        .add(Aspect.getAspect("aer"), 50),
+                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.FLIGHT, 50).add(Aspect.AIR, 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(TinkerConstruct.ID, "fletching", 1, 0),
@@ -1410,8 +1420,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 2),
                 4,
-                new AspectList().add(Aspect.getAspect("permutatio"), 50).add(Aspect.getAspect("volatus"), 50)
-                        .add(Aspect.getAspect("auram"), 50),
+                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.FLIGHT, 50).add(Aspect.AURA, 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(TwilightForest.ID, "item.critter", 1, 0),
@@ -1420,8 +1429,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 3),
                 4,
-                new AspectList().add(Aspect.getAspect("permutatio"), 50).add(Aspect.getAspect("bestia"), 50)
-                        .add(Aspect.getAspect("infernus"), 50),
+                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.BEAST, 50).add(DarkAspects.NETHER, 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Minecraft.ID, "dragon_egg", 1, 0),
@@ -1430,8 +1438,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 4),
                 4,
-                new AspectList().add(Aspect.getAspect("permutatio"), 50).add(Aspect.getAspect("metallum"), 50)
-                        .add(Aspect.getAspect("lucrum"), 50),
+                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.METAL, 50).add(Aspect.GREED, 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 OrePrefixes.foil.get(Materials.RoseGold),
@@ -1439,9 +1446,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
         new ResearchItem(
                 "EXURINGS",
                 "ARTIFICE",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 10).add(Aspect.getAspect("volatus"), 10)
-                        .add(Aspect.getAspect("tempestas"), 100).add(Aspect.getAspect("nebrisum"), 10)
-                        .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("terminus"), 10),
+                new AspectList().add(Aspect.MAGIC, 10).add(Aspect.FLIGHT, 10).add(Aspect.WEATHER, 100)
+                        .add(TCAspects.NEBRISUM.getAspect(), 10).add(Aspect.MOTION, 10).add(Lucrum.ULTRA_DEATH, 10),
                 1,
                 -5,
                 3,
@@ -1458,9 +1464,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
         new ResearchItem(
                 "EXURINGS_CRAFTING",
                 "ARTIFICE",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 10).add(Aspect.getAspect("volatus"), 10)
-                        .add(Aspect.getAspect("tempestas"), 10).add(Aspect.getAspect("nebrisum"), 10)
-                        .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("terminus"), 10),
+                new AspectList().add(Aspect.MAGIC, 10).add(Aspect.FLIGHT, 10).add(Aspect.WEATHER, 10)
+                        .add(TCAspects.NEBRISUM.getAspect(), 10).add(Aspect.MOTION, 10).add(Lucrum.ULTRA_DEATH, 10),
                 -1,
                 -5,
                 3,

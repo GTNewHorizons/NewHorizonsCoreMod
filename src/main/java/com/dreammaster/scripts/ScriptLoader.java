@@ -21,7 +21,6 @@ public class ScriptLoader {
                         new ScriptAdvancedBackpacks(),
                         new ScriptAdvancedSolarPanel(),
                         new ScriptAE2FC(),
-                        new ScriptAE2Stuff(),
                         new ScriptAE2WC(),
                         new ScriptAFSU(),
                         new ScriptAkashicTome(),
