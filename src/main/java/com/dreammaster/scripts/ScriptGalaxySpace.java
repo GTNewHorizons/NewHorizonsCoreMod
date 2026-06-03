@@ -2,9 +2,12 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
+import static gregtech.api.enums.Mods.GTNHIntergalactic;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
@@ -34,6 +37,8 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.system.material.WerkstoffLoader;
+import goodgenerator.items.GGMaterial;
+import goodgenerator.main.GoodGenerator;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -42,6 +47,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.core.material.MaterialsElements;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
@@ -260,6 +266,46 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(4), ItemList.NtNanofibers.get(4))
                 .itemOutputs(ItemList.UHTResistantMesh.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder() // drone case
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TranscendentMetal, 1),
+                        ItemList.Emitter_UEV.get(1),
+                        ItemList.Sensor_UEV.get(1),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(64),
+                        getModItem(OpenComputers.ID, "item", 64, 36),
+                        ItemList.Electric_Motor_UHV.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.CosmicNeutronium, 8),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 32),
+                        ItemList.UHTResistantMesh.get(64))
+                .itemOutputs(getGTItem(7, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .fluidInputs(GGMaterial.metastableOganesson.getMolten(2304)).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder() // femtocontroller
+                .itemInputs(
+                        ItemList.Optically_Perfected_CPU.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
+                        ItemList.Circuit_Chip_FPIC.get(8),
+                        Materials.Silver.getNanite(2),
+                        ItemList.EnergisedTesseract.get(1),
+                        getModItem(GoodGenerator.ID, "huiCircuit", 4, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.SuperconductorUEVBase, 32),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TengamAttuned, 64),
+                        ItemList.UHTResistantMesh.get(64))
+                .itemOutputs(getGTItem(7, 1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
+                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(16000)).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder() // fuel
+                .itemInputs(
+                        ItemList.Large_Fluid_Cell_Neutronium.get(1),
+                        ItemList.RodNaquadah32.get(32),
+                        MaterialsElements.STANDALONE.HYPOGEN.getPlate(24),
+                        ItemList.neutroniumHeatCapacitor.get(1),
+                        ItemList.UIV_Coil.get(16),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(24),
+                        getModItem(GalacticraftAmunRa.ID, "item.baseItem", 16, 27),
+                        getModItem(GoodGenerator.ID, "advancedRadiationProtectionPlate", 48, 0),
+                        ItemList.UHTResistantMesh.get(64))
+                .itemOutputs(getGTItem(8, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(16000)).addTo(assemblerRecipes);
 
         // Chemical Reactor
         GTValues.RA.stdBuilder().itemInputs(Materials.Carbon.getDust(1), GTOreDictUnificator.get("dustHafnia", 1))
@@ -788,6 +834,11 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
     private static ItemStack getGSItem(String name, int amount, int meta) {
         return getModItem(GalaxySpace.ID, name, amount, meta);
+    }
+
+    // remove when the GT5u pr for these is merged
+    private static ItemStack getGTItem(int meta, int amount) {
+        return getModItem(GTNHIntergalactic.ID, "item.DysonSwarmParts", amount, meta);
     }
 
     @Override
