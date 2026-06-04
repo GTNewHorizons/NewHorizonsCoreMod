@@ -886,7 +886,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "blackstone", 1, 0))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "gilded_blackstone", 1, 0))
-                .fluidInputs(Materials.Gold.getMolten(576L)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(Materials.Gold.getMolten(188L)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(chemicalBathRecipes);
 
         GTModHandler.addSmeltingRecipe(
