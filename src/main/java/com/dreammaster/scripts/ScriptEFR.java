@@ -39,6 +39,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -875,6 +876,18 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(EtFuturumRequiem.ID, "soul_torch", 4, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "soul_lantern", 4, 0)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // BlackStone recipes
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.cobblestone, 64, 0))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.graniteblack"), 1152)).circuit(4)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blackstone", 64, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "blackstone", 1, 0))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "gilded_blackstone", 1, 0))
+                .fluidInputs(Materials.Gold.getMolten(576L)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(chemicalBathRecipes);
 
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0),
