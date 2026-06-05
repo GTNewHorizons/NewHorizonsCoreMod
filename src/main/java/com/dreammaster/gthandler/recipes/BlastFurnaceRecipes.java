@@ -502,7 +502,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .circuit(11)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 1L), Materials.Ash.getDust(1))
                 .outputChances(10000, 1111).fluidInputs(Materials.Oxygen.getGas(1000L))
-                .fluidOutputs(Materials.CarbonDioxide.getGas(1000L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
