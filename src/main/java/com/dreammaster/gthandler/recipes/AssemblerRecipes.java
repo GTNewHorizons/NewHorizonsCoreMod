@@ -4761,15 +4761,57 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
-        // Pattern Provider (for LMA)
+        // Pattern Provider (IV) - for Large Molecular Assembler
         GTValues.RA.stdBuilder().itemInputs(
                 ItemList.Hatch_Input_Bus_IV.get(1L),
                 // interface
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
                 // Pattern capacity card
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54)).circuit(4)
-                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting.get(1L)).duration(1 * SECONDS)
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54))
+                .circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_IV.get(1L)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+        // Pattern Provider (LuV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                        ItemList.Hatch_Input_Bus_LuV.get(1L),
+                        // interface
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                        // Pattern capacity card
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 6, 54))
+                .circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_LuV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+        // Pattern Provider (ZPM) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                        ItemList.Hatch_Input_Bus_ZPM.get(1L),
+                        // interface
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                        // Pattern capacity card
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 9, 54))
+                .circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_ZPM.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+        // Pattern Provider (UV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                        ItemList.Hatch_Input_Bus_UV.get(1L),
+                        // interface
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                        // Pattern capacity card
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 12, 54))
+                .circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_UV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+        // Pattern Provider (UHV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                        // why is UHV input bus called MAX??? its several tiers lower >:c
+                        ItemList.Hatch_Input_Bus_MAX.get(1L),
+                        // interface
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                        // Pattern capacity card
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 15, 54))
+                .circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_UHV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
         if (AE2FluidCraft.isModLoaded()) {
             // Dual Interface
