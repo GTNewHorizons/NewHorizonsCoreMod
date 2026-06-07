@@ -9,19 +9,26 @@ import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
+import static gregtech.api.enums.Mods.StevesAddons;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.STACKS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
 import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GTRecipeConstants.SCANNING;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
+import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
+import static kubatech.api.enums.ItemList.ElectrodeDetectorHatch;
+import static tectech.loader.recipe.BaseRecipeLoader.getNHCoreModItem;
 import static tectech.thing.CustomItemList.DATApipe;
 import static tectech.thing.CustomItemList.Machine_Multi_DataBank;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
@@ -46,6 +53,7 @@ import com.dreammaster.item.NHItemList;
 import appeng.api.AEApi;
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
+import ggfab.GGItemList;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTechAPI;
@@ -59,11 +67,14 @@ import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.core.block.ModBlocks;
+import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import gtnhlanth.common.register.LanthItemList;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
 import tectech.recipe.TTRecipeAdder;
+import tectech.thing.CustomItemList;
 
 public class AssemblingLineRecipes implements Runnable {
 
@@ -1161,7 +1172,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
             // Clarifier Purification Unit
-            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Sifter.get(1))
+            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.LargeSifter.get(1))
                     .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             ItemList.ActivatedCarbonFilterMesh.get(16),
@@ -1601,7 +1612,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Antimatter Generator - SLAM
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemRefer.Large_Naquadah_Reactor.get(1),
+                ItemList.LargeNaquadahReactor.get(1),
                 512000,
                 2048,
                 8000000,
@@ -1617,7 +1628,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64),
                         MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64) },
                 new FluidStack[] { Materials.Antimatter.getFluid(1000), Materials.SixPhasedCopper.getMolten(9216),
-                        Materials.TranscendentMetal.getMolten(9216), Materials.SuperconductorUMVBase.getMolten(9216) },
+                        Materials.TranscendentMetal.getMolten(9216), Materials.SuperconductorUIVBase.getMolten(9216) },
                 ItemRefer.AntimatterGenerator.get(1),
                 6 * MINUTES,
                 (int) TierEU.RECIPE_UMV);
@@ -1738,7 +1749,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_EV))
                 .itemInputs(
                         ItemList.IndustrialCentrifuge.get(64),
-                        ItemRefer.SC_Fluid_Turbine.get(4),
+                        ItemList.SCSteamTurbine.get(4),
                         GregtechItemList.Hatch_Turbine_Rotor.get(4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         MaterialsAlloy.PIKYONIUM.getRotor(4),
@@ -1755,6 +1766,203 @@ public class AssemblingLineRecipes implements Runnable {
                         Materials.Lubricant.getFluid(4000))
                 .itemOutputs(ItemList.Machine_Multi_Spinmatron.get(1)).eut(TierEU.RECIPE_ZPM).duration(60 * SECONDS)
                 .addTo(AssemblyLine);
+
+        // BEC Multi Recipes
+
+        // Nanite Detector Hatch
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                ElectrodeDetectorHatch.get(1),
+                24_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { ItemList.Hull_UEV.get(1), ElectrodeDetectorHatch.get(1), ItemList.Sensor_UIV.get(1),
+                        MaterialsElements.STANDALONE.HYPOGEN.getGearSmall(2),
+                        GGMaterial.tairitsu.get(OrePrefixes.gearGt, 1),
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Churitsu, 1),
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Shijima, 1) },
+                new FluidStack[] { Materials.Neutronium.getMolten(16 * INGOTS),
+                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getFluidStack(32 * INGOTS),
+                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(16 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8 * STACKS) },
+                CustomItemList.Hatch_BEC_Nanites.get(1),
+                30 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Bose-Einstein Condensate Hatch
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                LanthItemList.LUV_BEAMLINE_INPUT_HATCH,
+                24_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { ItemList.Hull_UEV.get(1), LanthItemList.LUV_BEAMLINE_INPUT_HATCH,
+                        LanthItemList.LUV_BEAMLINE_OUTPUT_HATCH, ItemList.Electric_Pump_UIV.get(2),
+                        MaterialsElements.STANDALONE.HYPOGEN.getLongRod(1),
+                        GGMaterial.tairitsu.get(OrePrefixes.rotor, 1),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Churitsu, 1),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Shijima, 1) },
+                new FluidStack[] { Materials.Infinity.getMolten(16 * INGOTS),
+                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getFluidStack(32 * INGOTS),
+                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(16 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8 * STACKS) },
+                CustomItemList.Hatch_BEC_Connector.get(1),
+                30 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Condensate Detector Hatch
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                CustomItemList.Hatch_BEC_Connector.get(1),
+                24_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { ItemList.Hull_UEV.get(1), CustomItemList.Hatch_BEC_Connector.get(1),
+                        CustomItemList.Hatch_BEC_Nanites.get(1), GGMaterial.tairitsu.get(OrePrefixes.plate, 3),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Churitsu, 3),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shijima, 3) },
+                new FluidStack[] { Materials.Churitsu.getMolten(16 * INGOTS),
+                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getFluidStack(32 * INGOTS),
+                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(16 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8 * STACKS) },
+                CustomItemList.Hatch_BEC_CondensateDetector.get(1),
+                30 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Teleportation Node Controller Hatch
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                getModItem(Minecraft.ID, "lever", 1, 0),
+                24_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { ItemList.Hull_UEV.get(1),
+                        GTModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0),
+                        GTModHandler.getModItem(StevesAddons.ID, "cable_rf", 1, 0),
+                        GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, WILDCARD),
+                        ItemList.Hatch_DegasifierControl.get(1) },
+                new FluidStack[] { MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getFluidStack(32 * INGOTS),
+                        Materials.Infinity.getMolten(16 * INGOTS),
+                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(16 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8 * STACKS) },
+                CustomItemList.Hatch_BEC_IOController.get(1),
+                30 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Condensate Entanglement Apparatus (BEC Generator multi)
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                GregtechItemList.Controller_IndustrialFluidHeater.get(1),
+                48_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { GregtechItemList.Controller_IndustrialFluidHeater.get(1),
+                        ItemList.ElectromagneticallyIsolatedCasing.get(4), ItemList.Casing_Coil_Hypogen.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 16),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 16L },
+                        GGMaterial.tairitsu.get(OrePrefixes.plateDense, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Churitsu, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Shijima, 8),
+                        ItemList.Emitter_UIV.get(16), ItemList.Electric_Pump_UIV.get(16),
+                        GregtechItemList.Laser_Lens_Special.get(16) },
+                new FluidStack[] { CHRONOMATIC_GLASS.getFluidStack(1024 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(512 * INGOTS),
+                        Materials.ExcitedDTEC.getFluid(1_000_000), Materials.SpaceTime.getMolten(32 * INGOTS) },
+                CustomItemList.Machine_Multi_BECGenerator.get(1),
+                150 * SECONDS,
+                (int) TierEU.RECIPE_UMV);
+
+        // Condensate Containment Field (BEC Storage multi)
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                ItemList.StableEmptyContainmentUnit.get(1),
+                48_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { ItemList.Hull_UIV.get(1), ItemList.FineStructureConstantManipulator.get(4),
+                        new ItemStack(kekztech.common.Blocks.tfftStorageField, 8, 9),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 16),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 32L },
+                        GGMaterial.tairitsu.get(OrePrefixes.plateDense, 16),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Churitsu, 16),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Shijima, 16),
+                        ItemList.StableBaryonContainmentUnit.get(8), ItemList.StableLeptonContainmentUnit.get(8),
+                        ItemList.StableMesonContainmentUnit.get(8), ItemList.StableBosonContainmentUnit.get(8) },
+                new FluidStack[] { CHRONOMATIC_GLASS.getFluidStack(2048 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(1024 * INGOTS),
+                        Materials.ExcitedDTEC.getFluid(2_000_000), Materials.SpaceTime.getMolten(64 * INGOTS) },
+                CustomItemList.Machine_Multi_BECStorage.get(1),
+                300 * SECONDS,
+                (int) TierEU.RECIPE_UMV);
+
+        // Condensate Observation Array (BEC Assembler multi)
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                GGItemList.AdvAssLine.get(1),
+                48_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { GGItemList.AdvAssLine.get(1), ItemList.SuperconductivePlasmaEnergyConduit.get(4),
+                        ItemList.Casing_Dim_Bridge.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 16),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 16L },
+                        GGMaterial.tairitsu.get(OrePrefixes.plateDense, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Churitsu, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Shijima, 8),
+                        ItemList.Sensor_UIV.get(16), ItemList.Robot_Arm_UIV.get(16),
+                        getNHCoreModItem("ChromaticLens", 64),
+                        AEApi.instance().definitions().materials().singularity().maybeStack(8).get() },
+                new FluidStack[] { CHRONOMATIC_GLASS.getFluidStack(1024 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(512 * INGOTS),
+                        Materials.ExcitedDTEC.getFluid(1_000_000), Materials.SpaceTime.getMolten(32 * INGOTS) },
+                CustomItemList.Machine_Multi_BECAssembler.get(1),
+                150 * SECONDS,
+                (int) TierEU.RECIPE_UMV);
+
+        // Observation Array Teleportation Node (BEC IO Node multi)
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                GTModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0),
+                48_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { GTModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0),
+                        ItemList.SuperconductivePlasmaEnergyConduit.get(4), ItemList.Casing_Dim_Bridge.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 16),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 16L },
+                        GGMaterial.tairitsu.get(OrePrefixes.plateDense, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Churitsu, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Shijima, 8),
+                        ItemList.Emitter_UIV.get(8), ItemList.Conveyor_Module_UIV.get(8),
+                        GTModHandler.getModItem(EternalSingularity.ID, "eternal_singularity", 4),
+                        AEApi.instance().definitions().materials().singularity().maybeStack(8).get() },
+                new FluidStack[] { CHRONOMATIC_GLASS.getFluidStack(1024 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(512 * INGOTS),
+                        Materials.ExcitedDTEC.getFluid(1_000_000), Materials.SpaceTime.getMolten(32 * INGOTS) },
+                CustomItemList.Machine_Multi_BECIONode.get(1),
+                150 * SECONDS,
+                (int) TierEU.RECIPE_UMV);
+
+        // Condensate Maxwell Gate (BEC Diode multi)
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220),
+                48_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220),
+                        ItemList.ElectromagneticallyIsolatedCasing.get(4), ItemList.FluidRegulator_UIV.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 16),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 8L },
+                        GGMaterial.tairitsu.get(OrePrefixes.plateDense, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Churitsu, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Shijima, 4) },
+                new FluidStack[] { CHRONOMATIC_GLASS.getFluidStack(512 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(256 * INGOTS),
+                        Materials.ExcitedDTEC.getFluid(500_000), Materials.SpaceTime.getMolten(16 * INGOTS) },
+                CustomItemList.Machine_Multi_BECDiode.get(1),
+                75 * SECONDS,
+                (int) TierEU.RECIPE_UMV);
 
         if (AE2FluidCraft.isModLoaded()) {
             // Super Stock Replenisher

@@ -2491,13 +2491,8 @@ public class ScriptNatura implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
                 getModItem(Natura.ID, "Cloud", 1, 3),
                 getModItem(Natura.ID, "Cloud", 1, 3),
-                null,
                 getModItem(Natura.ID, "Cloud", 1, 3),
-                getModItem(Natura.ID, "Cloud", 1, 3),
-                null,
-                null,
-                null,
-                null);
+                getModItem(Natura.ID, "Cloud", 1, 3));
 
         if (Chisel.isModLoaded()) {
             ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 0));

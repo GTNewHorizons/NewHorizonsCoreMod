@@ -70,7 +70,7 @@ public class ExtruderRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CastIron, 9L),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
@@ -84,7 +84,7 @@ public class ExtruderRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.WroughtIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.CastIron, 1L),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);

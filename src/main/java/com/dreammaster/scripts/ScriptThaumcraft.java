@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GTNHTCWands;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
@@ -59,12 +60,17 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.gtnewhorizons.tcwands.api.TCWandAPI;
+import com.gtnewhorizons.tcwands.api.wrappers.AbstractWandWrapper;
+import com.gtnewhorizons.tcwands.api.wrappers.CapWrapper;
 
+import fox.spiteful.forbidden.DarkAspects;
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
@@ -72,9 +78,11 @@ import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaGeneratedItem98;
 import gregtech.common.items.MetaGeneratedTool01;
+import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.IArcaneRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
@@ -100,6 +108,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 Forestry.ID,
                 GalacticraftCore.ID,
                 GalacticraftMars.ID,
+                GTNHTCWands.ID,
                 IguanaTweaksTinkerConstruct.ID,
                 IndustrialCraft2.ID,
                 MagicBees.ID,
@@ -183,9 +192,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -206,9 +214,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
-                        .add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 10).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -229,9 +236,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -252,9 +258,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.EARTH, 10).add(Aspect.FIRE, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -275,9 +280,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -298,9 +302,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -321,9 +324,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.FIRE, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -373,35 +375,31 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("ORE", new ResearchPage("tc.research_page.ORE.4"));
         TCHelper.setResearchAspects(
                 "RESEARCHER1",
-                new AspectList().add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("sensus"), 6)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("lux"), 3));
+                new AspectList().add(Aspect.MIND, 6).add(Aspect.SENSES, 6).add(Aspect.ORDER, 6).add(Aspect.LIGHT, 3));
         TCHelper.setResearchComplexity("RESEARCHER1", 1);
         TCHelper.setResearchAspects(
                 "RESEARCHER2",
-                new AspectList().add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("sensus"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("lux"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.MIND, 9).add(Aspect.SENSES, 9).add(Aspect.ORDER, 6).add(Aspect.LIGHT, 6)
+                        .add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("RESEARCHER2", 2);
         TCHelper.setResearchAspects(
                 "NODETAPPER1",
-                new AspectList().add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.EXCHANGE, 9).add(Aspect.AURA, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("NODETAPPER1", 2);
         TCHelper.setResearchAspects(
                 "NODETAPPER2",
-                new AspectList().add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("auram"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("motus"), 6)
-                        .add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.EXCHANGE, 12).add(Aspect.AURA, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.MOTION, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("NODETAPPER2", 3);
         TCHelper.setResearchAspects(
                 "NODEPRESERVE",
-                new AspectList().add(Aspect.getAspect("perditio"), 9).add(Aspect.getAspect("cognitio"), 9)
-                        .add(Aspect.getAspect("fabrico"), 6).add(Aspect.getAspect("instrumentum"), 3));
+                new AspectList().add(Aspect.ENTROPY, 9).add(Aspect.MIND, 9).add(Aspect.CRAFT, 6).add(Aspect.TOOL, 3));
         TCHelper.setResearchComplexity("NODEPRESERVE", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DECONSTRUCTOR",
                 getModItem(Thaumcraft.ID, "blockTable", 1, 14),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -425,20 +423,17 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateThaumium");
         TCHelper.setResearchAspects(
                 "DECONSTRUCTOR",
-                new AspectList().add(Aspect.getAspect("sensus"), 9).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("fames"), 3));
+                new AspectList().add(Aspect.SENSES, 9).add(Aspect.AURA, 9).add(Aspect.GREED, 6).add(Aspect.HUNGER, 3));
         TCHelper.setResearchComplexity("DECONSTRUCTOR", 2);
         TCHelper.setResearchAspects(
                 "NODEJAR",
-                new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("motus"), 12)
-                        .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("permutatio"), 6)
-                        .add(Aspect.getAspect("vitreus"), 3));
+                new AspectList().add(Aspect.AURA, 12).add(Aspect.MOTION, 12).add(Aspect.GREED, 9)
+                        .add(Aspect.EXCHANGE, 6).add(Aspect.CRYSTAL, 3));
         TCHelper.setResearchComplexity("NODEJAR", 3);
         TCHelper.setResearchAspects(
                 "RESEARCHDUPE",
-                new AspectList().add(Aspect.getAspect("sensus"), 12).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("lucrum"), 9)
-                        .add(Aspect.getAspect("perditio"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.SENSES, 12).add(Aspect.MIND, 12).add(Aspect.CRAFT, 12).add(Aspect.GREED, 9)
+                        .add(Aspect.ENTROPY, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("RESEARCHDUPE", 3);
         TCHelper.refreshResearchPages("DECONSTRUCTOR");
         new ResearchItem("WARPWARNING", "BASICS", new AspectList(), 1, 1, 1, getModItem(Minecraft.ID, "skull", 1, 1))
@@ -540,8 +535,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_copper",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 3),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("aer"), 15),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.FIRE, 15).add(Aspect.AIR, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -568,17 +562,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 3))));
         TCHelper.setResearchAspects(
                 "CAP_copper",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 3).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("permutatio"), 6));
+                new AspectList().add(Aspect.TOOL, 3).add(Aspect.METAL, 6).add(Aspect.EXCHANGE, 6));
         TCHelper.setResearchComplexity("CAP_copper", 1);
-        TCHelper.addResearchPage("SCEPTRE", new ResearchPage("tc.research_page.RESEARCH.1"));
         TCHelper.clearPages("CAP_gold");
         TCHelper.addResearchPage("CAP_gold", new ResearchPage("tc.research_page.CAP_gold.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_gold",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 1),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("aer"), 20),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.FIRE, 20).add(Aspect.AIR, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -605,16 +596,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 1))));
         TCHelper.setResearchAspects(
                 "CAP_gold",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("lucrum"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.METAL, 6).add(Aspect.GREED, 3));
         TCHelper.setResearchComplexity("CAP_gold", 2);
         TCHelper.clearPages("CAP_silver");
         TCHelper.addResearchPage("CAP_silver", new ResearchPage("tc.research_page.CAP_silver.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_silver",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 5),
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("aer"), 25),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.FIRE, 25).add(Aspect.AIR, 25),
                 "aba",
                 "bcb",
                 "aba",
@@ -631,8 +620,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "CAP_silver",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 4),
                 5,
-                new AspectList().add(Aspect.getAspect("auram"), 18).add(Aspect.getAspect("potentia"), 30)
-                        .add(Aspect.getAspect("praecantatio"), 18),
+                new AspectList().add(Aspect.AURA, 18).add(Aspect.ENERGY, 30).add(Aspect.MAGIC, 18),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 5),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 OrePrefixes.dust.get(Materials.Silver),
@@ -648,8 +636,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_thaumium",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 6),
-                new AspectList().add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("aer"), 30),
+                new AspectList().add(Aspect.ORDER, 30).add(Aspect.FIRE, 30).add(Aspect.AIR, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -678,8 +665,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "CAP_thaumium",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 2),
                 5,
-                new AspectList().add(Aspect.getAspect("auram"), 25).add(Aspect.getAspect("potentia"), 40)
-                        .add(Aspect.getAspect("praecantatio"), 25),
+                new AspectList().add(Aspect.AURA, 25).add(Aspect.ENERGY, 40).add(Aspect.MAGIC, 25),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 OrePrefixes.dust.get(Materials.Thaumium),
@@ -692,25 +678,45 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 2))));
         TCHelper.setResearchAspects(
                 "CAP_thaumium",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TOOL, 6).add(Aspect.AURA, 9).add(Aspect.METAL, 12).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("CAP_thaumium", 3);
         TCHelper.clearPages("SCEPTRE");
         TCHelper.addResearchPage("SCEPTRE", new ResearchPage("tc.research_page.SCEPTRE.1"));
+        AbstractWandWrapper wood_rod = TCWandAPI.getWrapperForRod("wood", true);
+        CapWrapper iron_cap = TCWandAPI.getWrapperForCap("iron");
+        if (wood_rod != null && iron_cap != null) {
+            TCHelper.addResearchPage(
+                    "SCEPTRE",
+                    // Casting (IArcaneRecipe) (Object) is required to avoid a bug where it tries to load IArcaneRecipe
+                    // when it is not present during bytecode verification.
+                    new ResearchPage((IArcaneRecipe) (Object) wood_rod.getRecipe(iron_cap)));
+        }
+        AbstractWandWrapper greatwood_rod = TCWandAPI.getWrapperForRod("greatwood", true);
+        CapWrapper gold_cap = TCWandAPI.getWrapperForCap("gold");
+        if (greatwood_rod != null && gold_cap != null) {
+            TCHelper.addResearchPage(
+                    "SCEPTRE",
+                    new ResearchPage((IArcaneRecipe) (Object) greatwood_rod.getRecipe(gold_cap)));
+        }
+        AbstractWandWrapper silverwood_rod = TCWandAPI.getWrapperForRod("silverwood", true);
+        CapWrapper thaumium_cap = TCWandAPI.getWrapperForCap("thaumium");
+        if (silverwood_rod != null && thaumium_cap != null) {
+            TCHelper.addResearchPage(
+                    "SCEPTRE",
+                    new ResearchPage((IArcaneRecipe) (Object) silverwood_rod.getRecipe(thaumium_cap)));
+        }
         TCHelper.setResearchAspects(
                 "SCEPTRE",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("arbor"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.CRAFT, 12).add(Aspect.TREE, 9).add(Aspect.MAGIC, 6)
+                        .add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("SCEPTRE", 3);
         TCHelper.clearPages("ROD_greatwood");
         TCHelper.addResearchPage("ROD_greatwood", new ResearchPage("tc.research_page.ROD_greatwood.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_greatwood",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.EARTH, 20).add(Aspect.FIRE, 20).add(Aspect.WATER, 20)
+                        .add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -725,15 +731,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 0))));
         TCHelper.setResearchAspects(
                 "ROD_greatwood",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("arbor"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.MAGIC, 6).add(Aspect.TREE, 3));
         TCHelper.setResearchComplexity("ROD_greatwood", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_reed",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 5),
                 2,
-                new AspectList().add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("motus"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitreus"), 6),
+                new AspectList().add(Aspect.AIR, 24).add(Aspect.MOTION, 12).add(Aspect.MAGIC, 12)
+                        .add(Aspect.CRYSTAL, 6),
                 getModItem(TinkerConstruct.ID, "trap.punji", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -741,26 +746,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "ROD_reed",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("herba"), 6)
-                        .add(Aspect.getAspect("arbor"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.MAGIC, 9).add(Aspect.AIR, 6).add(Aspect.PLANT, 6)
+                        .add(Aspect.TREE, 3));
         TCHelper.setResearchComplexity("ROD_reed", 2);
-        TCHelper.addResearchPage(
-                "SCEPTRE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                createItemStack(
-                                        Thaumcraft.ID,
-                                        "WandCasting",
-                                        1,
-                                        45,
-                                        "{cap:\"thaumium\",rod:\"reed\",sceptre:1b}"))));
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_blaze",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 6),
                 2,
-                new AspectList().add(Aspect.getAspect("bestia"), 12).add(Aspect.getAspect("ignis"), 24)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitreus"), 6),
+                new AspectList().add(Aspect.BEAST, 12).add(Aspect.FIRE, 24).add(Aspect.MAGIC, 12)
+                        .add(Aspect.CRYSTAL, 6),
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
@@ -768,16 +762,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1));
         TCHelper.setResearchAspects(
                 "ROD_blaze",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("herba"), 6)
-                        .add(Aspect.getAspect("arbor"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.MAGIC, 9).add(Aspect.AIR, 6).add(Aspect.PLANT, 6)
+                        .add(Aspect.TREE, 3));
         TCHelper.setResearchComplexity("ROD_blaze", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_obsidian",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 1),
                 2,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("terra"), 24).add(Aspect.getAspect("vitreus"), 6),
+                new AspectList().add(Aspect.MAGIC, 12).add(Aspect.DARKNESS, 12).add(Aspect.EARTH, 24)
+                        .add(Aspect.CRYSTAL, 6),
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
@@ -785,16 +778,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.setResearchAspects(
                 "ROD_obsidian",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("arbor"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.MAGIC, 9).add(Aspect.FIRE, 6).add(Aspect.ENERGY, 6)
+                        .add(Aspect.TREE, 3));
         TCHelper.setResearchComplexity("ROD_obsidian", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_ice",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 3),
                 2,
-                new AspectList().add(Aspect.getAspect("aqua"), 24).add(Aspect.getAspect("gelum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitreus"), 6),
+                new AspectList().add(Aspect.WATER, 24).add(Aspect.COLD, 12).add(Aspect.MAGIC, 12)
+                        .add(Aspect.CRYSTAL, 6),
                 getModItem(BiomesOPlenty.ID, "hardIce", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
@@ -802,16 +794,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "ROD_ice",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aqua"), 6).add(Aspect.getAspect("gelum"), 6)
-                        .add(Aspect.getAspect("arbor"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.MAGIC, 9).add(Aspect.WATER, 6).add(Aspect.COLD, 6)
+                        .add(Aspect.TREE, 3));
         TCHelper.setResearchComplexity("ROD_ice", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_quartz",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 4),
                 2,
-                new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("vitreus"), 6),
+                new AspectList().add(Aspect.ORDER, 24).add(Aspect.MAGIC, 12).add(Aspect.ENERGY, 12)
+                        .add(Aspect.CRYSTAL, 6),
                 NHItemList.ChargedCertusQuartzRod.get(1),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
@@ -819,16 +810,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4));
         TCHelper.setResearchAspects(
                 "ROD_quartz",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("arbor"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.MAGIC, 9).add(Aspect.EARTH, 6).add(Aspect.ORDER, 6)
+                        .add(Aspect.TREE, 3));
         TCHelper.setResearchComplexity("ROD_quartz", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_bone",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 7),
                 3,
-                new AspectList().add(Aspect.getAspect("exanimis"), 12).add(Aspect.getAspect("perditio"), 24)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitreus"), 6),
+                new AspectList().add(Aspect.UNDEAD, 12).add(Aspect.ENTROPY, 24).add(Aspect.MAGIC, 12)
+                        .add(Aspect.CRYSTAL, 6),
                 getModItem(TinkerConstruct.ID, "toolRod", 1, 5),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
@@ -836,19 +826,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_bone",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("exanimis"), 6).add(Aspect.getAspect("perditio"), 6)
-                        .add(Aspect.getAspect("arbor"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.MAGIC, 9).add(Aspect.UNDEAD, 6).add(Aspect.ENTROPY, 6)
+                        .add(Aspect.TREE, 3));
         TCHelper.setResearchComplexity("ROD_bone", 2);
         ThaumcraftApi.addWarpToResearch("ROD_bone", 1);
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_silverwood",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                 5,
-                new AspectList().add(Aspect.getAspect("aer"), 48).add(Aspect.getAspect("aqua"), 48)
-                        .add(Aspect.getAspect("ignis"), 48).add(Aspect.getAspect("ordo"), 48)
-                        .add(Aspect.getAspect("perditio"), 48).add(Aspect.getAspect("praecantatio"), 48)
-                        .add(Aspect.getAspect("terra"), 48),
+                new AspectList().add(Aspect.AIR, 48).add(Aspect.WATER, 48).add(Aspect.FIRE, 48).add(Aspect.ORDER, 48)
+                        .add(Aspect.ENTROPY, 48).add(Aspect.MAGIC, 48).add(Aspect.EARTH, 48),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
@@ -859,16 +846,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6));
         TCHelper.setResearchAspects(
                 "ROD_silverwood",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("herba"), 6)
-                        .add(Aspect.getAspect("arbor"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.MAGIC, 12).add(Aspect.MIND, 9).add(Aspect.PLANT, 6)
+                        .add(Aspect.TREE, 3));
         TCHelper.setResearchComplexity("ROD_silverwood", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_greatwood_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 50),
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50)
-                        .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.EARTH, 50).add(Aspect.FIRE, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -892,16 +877,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_greatwood_staff",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("arbor"), 9).add(Aspect.getAspect("ignis"), 6)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.MAGIC, 12).add(Aspect.TREE, 9).add(Aspect.FIRE, 6)
+                        .add(Aspect.AIR, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ROD_greatwood_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_reed_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 55),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.EARTH, 75).add(Aspect.FIRE, 75).add(Aspect.WATER, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -925,16 +908,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_reed_staff",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("herba"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.MAGIC, 12).add(Aspect.PLANT, 9).add(Aspect.AIR, 6)
+                        .add(Aspect.FIRE, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ROD_reed_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_blaze_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 56),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.EARTH, 75).add(Aspect.FIRE, 75).add(Aspect.WATER, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -958,16 +939,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_blaze_staff",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("ignis"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.MAGIC, 12).add(Aspect.FIRE, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.AIR, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ROD_blaze_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_obsidian_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 51),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.EARTH, 75).add(Aspect.FIRE, 75).add(Aspect.WATER, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -991,26 +970,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_obsidian_staff",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("ignis"), 6)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.MAGIC, 12).add(Aspect.EARTH, 9).add(Aspect.FIRE, 6)
+                        .add(Aspect.AIR, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("ROD_obsidian_staff", 3);
-        TCHelper.addResearchPage(
-                "ROD_obsidian_staff",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                createItemStack(
-                                        Thaumcraft.ID,
-                                        "WandCasting",
-                                        1,
-                                        84,
-                                        "{cap:\"thaumium\",rod:\"obsidian_staff\"}"))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_ice_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 53),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.EARTH, 75).add(Aspect.FIRE, 75).add(Aspect.WATER, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -1034,16 +1001,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_ice_staff",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("gelum"), 9).add(Aspect.getAspect("aqua"), 6)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.MAGIC, 12).add(Aspect.COLD, 9).add(Aspect.WATER, 6)
+                        .add(Aspect.AIR, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ROD_ice_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_quartz_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 54),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.EARTH, 75).add(Aspect.FIRE, 75).add(Aspect.WATER, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -1067,16 +1032,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_quartz_staff",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.MAGIC, 12).add(Aspect.CRYSTAL, 9).add(Aspect.ORDER, 6)
+                        .add(Aspect.AIR, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ROD_quartz_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_bone_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 57),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.EARTH, 75).add(Aspect.FIRE, 75).add(Aspect.WATER, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -1100,17 +1063,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_bone_staff",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("exanimis"), 9).add(Aspect.getAspect("perditio"), 6)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.TOOL, 12).add(Aspect.MAGIC, 12).add(Aspect.UNDEAD, 9).add(Aspect.ENTROPY, 6)
+                        .add(Aspect.AIR, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ROD_bone_staff", 3);
         ThaumcraftApi.addWarpToResearch("ROD_bone_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_silverwood_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 52),
-                new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("terra"), 125)
-                        .add(Aspect.getAspect("ignis"), 125).add(Aspect.getAspect("aqua"), 125)
-                        .add(Aspect.getAspect("ordo"), 125).add(Aspect.getAspect("perditio"), 125),
+                new AspectList().add(Aspect.AIR, 125).add(Aspect.EARTH, 125).add(Aspect.FIRE, 125)
+                        .add(Aspect.WATER, 125).add(Aspect.ORDER, 125).add(Aspect.ENTROPY, 125),
                 "abc",
                 "def",
                 "ghi",
@@ -1134,25 +1095,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "ROD_silverwood_staff",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("arbor"), 12).add(Aspect.getAspect("ordo"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.MAGIC, 15).add(Aspect.TREE, 12).add(Aspect.ORDER, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ROD_silverwood_staff", 4);
-        TCHelper.addResearchPage(
-                "SCEPTRE",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                createItemStack(
-                                        Thaumcraft.ID,
-                                        "WandCasting",
-                                        1,
-                                        216,
-                                        "{cap:\"thaumium\",rod:\"silverwood_staff\",sceptre:1b}"))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSFIRE",
                 getModItem(Thaumcraft.ID, "FocusFire", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("perditio"), 20)
-                        .add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.FIRE, 20).add(Aspect.ENTROPY, 20).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -1176,14 +1125,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1));
         TCHelper.setResearchAspects(
                 "FOCUSFIRE",
-                new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.FIRE, 6).add(Aspect.MAGIC, 6).add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("FOCUSFIRE", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSEXCAVATION",
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("perditio"), 20)
-                        .add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.EARTH, 30).add(Aspect.ENTROPY, 20).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -1207,14 +1154,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.setResearchAspects(
                 "FOCUSEXCAVATION",
-                new AspectList().add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("perditio"), 6).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.EARTH, 9).add(Aspect.MAGIC, 9).add(Aspect.ENTROPY, 6)
+                        .add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("FOCUSEXCAVATION", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSFROST",
                 getModItem(Thaumcraft.ID, "FocusFrost", 1, 0),
-                new AspectList().add(Aspect.getAspect("aqua"), 30).add(Aspect.getAspect("perditio"), 20)
-                        .add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.WATER, 30).add(Aspect.ENTROPY, 20).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -1238,14 +1184,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "FOCUSFROST",
-                new AspectList().add(Aspect.getAspect("aqua"), 9).add(Aspect.getAspect("gelum"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.WATER, 9).add(Aspect.COLD, 9).add(Aspect.MAGIC, 6).add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("FOCUSFROST", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSSHOCK",
                 getModItem(Thaumcraft.ID, "FocusShock", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("perditio"), 20)
-                        .add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.ENTROPY, 20).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -1269,14 +1213,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUSSHOCK",
-                new AspectList().add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.AIR, 9).add(Aspect.MAGIC, 6).add(Aspect.ENERGY, 9).add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("FOCUSSHOCK", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSTRADE",
                 getModItem(Thaumcraft.ID, "FocusTrade", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("ordo"), 30),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.EARTH, 20).add(Aspect.ENTROPY, 30)
+                        .add(Aspect.ORDER, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -1300,16 +1243,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6));
         TCHelper.setResearchAspects(
                 "FOCUSTRADE",
-                new AspectList().add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.EXCHANGE, 9).add(Aspect.MAGIC, 9).add(Aspect.EARTH, 6)
+                        .add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("FOCUSTRADE", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUSWARDING",
                 getModItem(Thaumcraft.ID, "FocusWarding", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("ordo"), 25)
-                        .add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("tutamen"), 25)
-                        .add(Aspect.getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.ORDER, 25).add(Aspect.EARTH, 30).add(Aspect.ARMOR, 25)
+                        .add(Aspect.MAGIC, 10),
                 OrePrefixes.lens.get(Materials.NetherStar),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
@@ -1321,17 +1263,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4));
         TCHelper.setResearchAspects(
                 "FOCUSWARDING",
-                new AspectList().add(Aspect.getAspect("terra"), 12).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("tutamen"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.EARTH, 12).add(Aspect.MIND, 12).add(Aspect.ORDER, 9).add(Aspect.ARMOR, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("FOCUSWARDING", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUSPORTABLEHOLE",
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("iter"), 30)
-                        .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("permutatio"), 10)
-                        .add(Aspect.getAspect("praecantatio"), 5),
+                new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.TRAVEL, 30).add(Aspect.ENTROPY, 20)
+                        .add(Aspect.EXCHANGE, 10).add(Aspect.MAGIC, 5),
                 OrePrefixes.lens.get(Materials.EnderPearl),
                 getModItem(Botania.ID, "quartz", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
@@ -1343,18 +1283,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.setResearchAspects(
                 "FOCUSPORTABLEHOLE",
-                new AspectList().add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("alienis"), 9).add(Aspect.getAspect("perditio"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.AIR, 12).add(Aspect.TRAVEL, 12).add(Aspect.ELDRITCH, 9)
+                        .add(Aspect.ENTROPY, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("FOCUSPORTABLEHOLE", 3);
         ThaumcraftApi.addWarpToResearch("NODESTABILIZERADV", 1);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUSHELLBAT",
                 getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0),
                 7,
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ignis"), 40)
-                        .add(Aspect.getAspect("bestia"), 20).add(Aspect.getAspect("perditio"), 10)
-                        .add(Aspect.getAspect("praecantatio"), 5),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.FIRE, 40).add(Aspect.BEAST, 20).add(Aspect.ENTROPY, 10)
+                        .add(Aspect.MAGIC, 5),
                 OrePrefixes.lens.get(Materials.Firestone),
                 getModItem(Botania.ID, "quartz", 1, 4),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -1366,17 +1304,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUSHELLBAT",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("iter"), 9)
-                        .add(Aspect.getAspect("ignis"), 9).add(Aspect.getAspect("bestia"), 6)
-                        .add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.MAGIC, 12).add(Aspect.TRAVEL, 9).add(Aspect.FIRE, 9).add(Aspect.BEAST, 6)
+                        .add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("FOCUSHELLBAT", 3);
         ThaumcraftApi.addWarpToResearch("NODESTABILIZERADV", 2);
         ThaumcraftApi.addWarpToItem(getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0), 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSPOUCH",
                 getModItem(Thaumcraft.ID, "FocusPouch", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("perditio"), 20)
-                        .add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.EARTH, 20).add(Aspect.ENTROPY, 20).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -1400,14 +1336,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUSPOUCH",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("vacuos"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("pannus"), 3));
+                new AspectList().add(Aspect.TOOL, 9).add(Aspect.VOID, 9).add(Aspect.MAGIC, 6).add(Aspect.CLOTH, 3));
         TCHelper.setResearchComplexity("FOCUSPOUCH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NODESTABILIZER",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 9),
-                new AspectList().add(Aspect.getAspect("aqua"), 35).add(Aspect.getAspect("terra"), 35)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.WATER, 35).add(Aspect.EARTH, 35).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -1431,15 +1365,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7));
         TCHelper.setResearchAspects(
                 "NODESTABILIZER",
-                new AspectList().add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("ordo"), 3));
+                new AspectList().add(Aspect.AURA, 9).add(Aspect.ENERGY, 9).add(Aspect.MAGIC, 6).add(Aspect.ORDER, 3));
         TCHelper.setResearchComplexity("NODESTABILIZER", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "NODESTABILIZERADV",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10),
                 10,
-                new AspectList().add(Aspect.getAspect("auram"), 32).add(Aspect.getAspect("ordo"), 32)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 32),
+                new AspectList().add(Aspect.AURA, 32).add(Aspect.ORDER, 32).add(Aspect.ENERGY, 32)
+                        .add(Aspect.MAGIC, 32),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 9),
                 getModItem(Minecraft.ID, "redstone_block", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
@@ -1453,16 +1386,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "glowstone", 1, 0));
         TCHelper.setResearchAspects(
                 "NODESTABILIZERADV",
-                new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.AURA, 12).add(Aspect.ENERGY, 9).add(Aspect.MAGIC, 9).add(Aspect.ORDER, 6)
+                        .add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("NODESTABILIZERADV", 3);
         ThaumcraftApi.addWarpToResearch("NODESTABILIZERADV", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VISPOWER",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11),
-                new AspectList().add(Aspect.getAspect("ignis"), 32).add(Aspect.getAspect("aer"), 32)
-                        .add(Aspect.getAspect("perditio"), 32).add(Aspect.getAspect("ordo"), 32),
+                new AspectList().add(Aspect.FIRE, 32).add(Aspect.AIR, 32).add(Aspect.ENTROPY, 32).add(Aspect.ORDER, 32),
                 "abc",
                 "def",
                 "ghi",
@@ -1487,7 +1418,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VISPOWER",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14),
-                new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.FIRE, 10).add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -1511,15 +1442,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwSteel");
         TCHelper.setResearchAspects(
                 "VISPOWER",
-                new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 3).add(Aspect.getAspect("machina"), 6));
+                new AspectList().add(Aspect.AURA, 12).add(Aspect.ENERGY, 9).add(Aspect.MAGIC, 3)
+                        .add(Aspect.MECHANISM, 6));
         TCHelper.setResearchComplexity("VISPOWER", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "WANDPED",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5),
                 2,
-                new AspectList().add(Aspect.getAspect("auram"), 10).add(Aspect.getAspect("permutatio"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 20).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.AURA, 10).add(Aspect.EXCHANGE, 15).add(Aspect.MAGIC, 20)
+                        .add(Aspect.ORDER, 5),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 1),
                 OrePrefixes.plate.get(Materials.Gold),
                 OrePrefixes.gemFlawless.get(Materials.Diamond),
@@ -1527,16 +1458,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.gemFlawless.get(Materials.Diamond));
         TCHelper.setResearchAspects(
                 "WANDPED",
-                new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 3).add(Aspect.getAspect("permutatio"), 6));
+                new AspectList().add(Aspect.AURA, 12).add(Aspect.ENERGY, 9).add(Aspect.MAGIC, 3)
+                        .add(Aspect.EXCHANGE, 6));
         TCHelper.setResearchComplexity("WANDPED", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "VISAMULET",
                 getModItem(Thaumcraft.ID, "ItemAmuletVis", 1, 1),
                 7,
-                new AspectList().add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("auram"), 48)
-                        .add(Aspect.getAspect("potentia"), 88).add(Aspect.getAspect("praecantatio"), 88)
-                        .add(Aspect.getAspect("vitreus"), 24),
+                new AspectList().add(Aspect.VOID, 48).add(Aspect.AURA, 48).add(Aspect.ENERGY, 88).add(Aspect.MAGIC, 88)
+                        .add(Aspect.CRYSTAL, 24),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
@@ -1548,17 +1478,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6));
         TCHelper.setResearchAspects(
                 "VISAMULET",
-                new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("auram"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("vitreus"), 6).add(Aspect.getAspect("tempus"), 3));
+                new AspectList().add(Aspect.VOID, 15).add(Aspect.AURA, 15).add(Aspect.MAGIC, 9).add(Aspect.ENERGY, 12)
+                        .add(Aspect.CRYSTAL, 6).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 3));
         TCHelper.setResearchComplexity("VISAMULET", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "WANDPEDFOC",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8),
                 5,
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("permutatio"), 25)
-                        .add(Aspect.getAspect("praecantatio"), 30).add(Aspect.getAspect("potentia"), 15)
-                        .add(Aspect.getAspect("cognitio"), 15),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.EXCHANGE, 25).add(Aspect.MAGIC, 30)
+                        .add(Aspect.ENERGY, 15).add(Aspect.MIND, 15),
                 getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
@@ -1570,16 +1498,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8));
         TCHelper.setResearchAspects(
                 "WANDPEDFOC",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("auram"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("cognitio"), 6)
-                        .add(Aspect.getAspect("lucrum"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.AURA, 15).add(Aspect.MAGIC, 12).add(Aspect.ENERGY, 12)
+                        .add(Aspect.EXCHANGE, 9).add(Aspect.MIND, 6).add(Aspect.GREED, 3));
         TCHelper.setResearchComplexity("WANDPEDFOC", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VISCHARGERELAY",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 2),
-                new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("ordo"), 20)
-                        .add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 10),
+                new AspectList().add(Aspect.FIRE, 20).add(Aspect.ORDER, 20).add(Aspect.AIR, 20).add(Aspect.EARTH, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -1603,16 +1528,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "WandRod", 1, 0));
         TCHelper.setResearchAspects(
                 "VISCHARGERELAY",
-                new AspectList().add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("aer"), 3));
+                new AspectList().add(Aspect.ENERGY, 12).add(Aspect.MAGIC, 12).add(Aspect.MECHANISM, 9)
+                        .add(Aspect.AURA, 9).add(Aspect.FIRE, 6).add(Aspect.AIR, 3));
         TCHelper.setResearchComplexity("VISCHARGERELAY", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCALMANIPULATION",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 13),
-                new AspectList().add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("ordo"), 64)
-                        .add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("terra"), 64)
-                        .add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("perditio"), 64),
+                new AspectList().add(Aspect.FIRE, 64).add(Aspect.ORDER, 64).add(Aspect.AIR, 64).add(Aspect.EARTH, 64)
+                        .add(Aspect.WATER, 64).add(Aspect.ENTROPY, 64),
                 "abc",
                 "def",
                 "ghi",
@@ -1636,17 +1559,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateThaumium");
         TCHelper.setResearchAspects(
                 "FOCALMANIPULATION",
-                new AspectList().add(Aspect.getAspect("potentia"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("vitreus"), 9)
-                        .add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("alienis"), 3)
-                        .add(Aspect.getAspect("cognitio"), 5));
+                new AspectList().add(Aspect.ENERGY, 15).add(Aspect.MAGIC, 12).add(Aspect.TOOL, 12)
+                        .add(Aspect.CRYSTAL, 9).add(Aspect.CRAFT, 9).add(Aspect.ELDRITCH, 3).add(Aspect.MIND, 5));
         TCHelper.setResearchComplexity("FOCALMANIPULATION", 4);
         TCHelper.setResearchAspects(
                 "VAMPBAT",
-                new AspectList().add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("victus"), 12).add(Aspect.getAspect("exanimis"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("ira"), 3)
-                        .add(Aspect.getAspect("alienis"), 6));
+                new AspectList().add(Aspect.HUNGER, 15).add(Aspect.MAGIC, 15).add(Aspect.LIFE, 12)
+                        .add(Aspect.UNDEAD, 12).add(Aspect.MIND, 9).add(DarkAspects.WRATH, 3).add(Aspect.ELDRITCH, 6));
         TCHelper.setResearchComplexity("VAMPBAT", 4);
         ThaumcraftApi.addWarpToResearch("VAMPBAT", 4);
         TCHelper.refreshResearchPages("CAP_copper");
@@ -1748,20 +1667,17 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "TALLOW",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 4),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L),
-                new AspectList().add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("corpus"), 4)
-                        .add(Aspect.getAspect("mortuus"), 2));
+                new AspectList().add(Aspect.MAGIC, 2).add(Aspect.FLESH, 4).add(Aspect.DEATH, 2));
         TCHelper.setResearchAspects(
                 "TALLOW",
-                new AspectList().add(Aspect.getAspect("corpus"), 6).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.FLESH, 6).add(Aspect.MAGIC, 6).add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("TALLOW", 1);
         TCHelper.clearPages("TALLOW");
         TCHelper.addResearchPage("TALLOW", new ResearchPage("tc.research_page.TALLOW.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TALLOW",
                 getModItem(Thaumcraft.ID, "blockCandle", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("ordo"), 1)
-                        .add(Aspect.getAspect("perditio"), 1).add(Aspect.getAspect("aer"), 3),
+                new AspectList().add(Aspect.FIRE, 3).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1).add(Aspect.AIR, 3),
                 "abc",
                 "def",
                 "ghi",
@@ -1781,57 +1697,49 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "NITOR",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("lux"), 4)
-                        .add(Aspect.getAspect("potentia"), 4));
+                new AspectList().add(Aspect.FIRE, 4).add(Aspect.LIGHT, 4).add(Aspect.ENERGY, 4));
         TCHelper.setResearchAspects(
                 "NITOR",
-                new AspectList().add(Aspect.getAspect("lux"), 6).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.LIGHT, 6).add(Aspect.FIRE, 3).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("NITOR", 1);
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
-                new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("perditio"), 3)
-                        .add(Aspect.getAspect("potentia"), 6));
+                new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 1L),
-                new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("perditio"), 3)
-                        .add(Aspect.getAspect("potentia"), 6));
+                new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lignite, 1L),
-                new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("perditio"), 3)
-                        .add(Aspect.getAspect("potentia"), 6));
+                new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         TCHelper.setResearchAspects(
                 "ALUMENTUM",
-                new AspectList().add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("praecantatio"), 3)
-                        .add(Aspect.getAspect("perditio"), 6));
+                new AspectList().add(Aspect.FIRE, 3).add(Aspect.MAGIC, 3).add(Aspect.ENTROPY, 6));
         TCHelper.setResearchComplexity("ALUMENTUM", 1);
         TCHelper.addResearchPage("ALUMENTUM", new ResearchPage("tc.research_page.ALUMENTUM.2"));
         TCHelper.setResearchAspects(
                 "ALCHEMICALDUPLICATION",
-                new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.CRAFT, 9).add(Aspect.MAGIC, 6).add(Aspect.GREED, 9)
+                        .add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("ALCHEMICALDUPLICATION", 2);
         TCHelper.setResearchAspects(
                 "ALCHEMICALMANUFACTURE",
-                new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.CRAFT, 9).add(Aspect.MAGIC, 9).add(Aspect.GREED, 6)
+                        .add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("ALCHEMICALMANUFACTURE", 2);
         TCHelper.setResearchAspects(
                 "ENTROPICPROCESSING",
-                new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("perditio"), 3));
+                new AspectList().add(Aspect.CRAFT, 9).add(Aspect.MAGIC, 9).add(Aspect.GREED, 6).add(Aspect.ENTROPY, 3));
         TCHelper.setResearchComplexity("ENTROPICPROCESSING", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILESSENTIA",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aer"), 10)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.AIR, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -1855,13 +1763,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7));
         TCHelper.setResearchAspects(
                 "DISTILESSENTIA",
-                new AspectList().add(Aspect.getAspect("limus"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("aqua"), 9));
+                new AspectList().add(Aspect.SLIME, 9).add(Aspect.MAGIC, 6).add(Aspect.FIRE, 3).add(Aspect.WATER, 9));
         TCHelper.setResearchComplexity("DISTILESSENTIA", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILESSENTIA",
                 getModItem(Thaumcraft.ID, "ItemResource", 3, 8),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aqua"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -1886,8 +1793,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILESSENTIA",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ignis"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 10).add(Aspect.FIRE, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -1912,8 +1818,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILESSENTIA",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ignis"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 5).add(Aspect.FIRE, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -1938,7 +1843,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBES",
                 getModItem(Thaumcraft.ID, "blockTube", 4, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("aqua"), 8),
+                new AspectList().add(Aspect.ORDER, 8).add(Aspect.WATER, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -1962,13 +1867,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwThaumium");
         TCHelper.setResearchAspects(
                 "TUBES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("permutatio"), 6)
-                        .add(Aspect.getAspect("aqua"), 9).add(Aspect.getAspect("ordo"), 3));
+                new AspectList().add(Aspect.MAGIC, 9).add(Aspect.EXCHANGE, 6).add(Aspect.WATER, 9)
+                        .add(Aspect.ORDER, 3));
         TCHelper.setResearchComplexity("TUBES", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBES",
                 getModItem(Thaumcraft.ID, "blockTube", 1, 1),
-                new AspectList().add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("aqua"), 8),
+                new AspectList().add(Aspect.ORDER, 8).add(Aspect.WATER, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -1987,7 +1892,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBES",
                 getModItem(Thaumcraft.ID, "ItemResonator", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("aqua"), 8),
+                new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -2010,7 +1915,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBEFILTER",
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -2030,14 +1935,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8));
         TCHelper.setResearchAspects(
                 "TUBEFILTER",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("limus"), 3));
+                new AspectList().add(Aspect.MAGIC, 12).add(Aspect.EXCHANGE, 9).add(Aspect.WATER, 12)
+                        .add(Aspect.ORDER, 6).add(Aspect.SLIME, 3));
         TCHelper.setResearchComplexity("TUBEFILTER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBEFILTER",
                 getModItem(Thaumcraft.ID, "blockTube", 1, 5),
-                new AspectList().add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.EARTH, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -2050,8 +1954,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBEFILTER",
                 getModItem(Thaumcraft.ID, "blockTube", 1, 6),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("perditio"), 8)
-                        .add(Aspect.getAspect("aqua"), 8),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.ENTROPY, 8).add(Aspect.WATER, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -2064,8 +1967,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CENTRIFUGE",
                 getModItem(Thaumcraft.ID, "blockTube", 1, 2),
-                new AspectList().add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("aqua"), 16),
+                new AspectList().add(Aspect.ORDER, 32).add(Aspect.ENTROPY, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -2089,14 +1991,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwThaumium");
         TCHelper.setResearchAspects(
                 "CENTRIFUGE",
-                new AspectList().add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("machina"), 3));
+                new AspectList().add(Aspect.CRAFT, 12).add(Aspect.ENTROPY, 9).add(Aspect.EXCHANGE, 12)
+                        .add(Aspect.MAGIC, 6).add(Aspect.MECHANISM, 3));
         TCHelper.setResearchComplexity("CENTRIFUGE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CENTRIFUGE",
                 getModItem(Thaumcraft.ID, "blockTube", 4, 4),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("aqua"), 20),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.WATER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -2121,8 +2022,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ESSENTIACRYSTAL",
                 getModItem(Thaumcraft.ID, "blockTube", 1, 7),
-                new AspectList().add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("aqua"), 10),
+                new AspectList().add(Aspect.EARTH, 20).add(Aspect.ORDER, 15).add(Aspect.WATER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -2146,15 +2046,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwThaumium");
         TCHelper.setResearchAspects(
                 "ESSENTIACRYSTAL",
-                new AspectList().add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.WATER, 12).add(Aspect.MAGIC, 9).add(Aspect.EXCHANGE, 12)
+                        .add(Aspect.CRYSTAL, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ESSENTIACRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "THAUMATORIUM",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12),
-                new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("ordo"), 10)
-                        .add(Aspect.getAspect("aqua"), 10),
+                new AspectList().add(Aspect.FIRE, 10).add(Aspect.ORDER, 10).add(Aspect.WATER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -2178,74 +2076,62 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateThaumium");
         TCHelper.setResearchAspects(
                 "THAUMATORIUM",
-                new AspectList().add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("aqua"), 9)
-                        .add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.CRAFT, 12).add(Aspect.WATER, 9).add(Aspect.EXCHANGE, 12)
+                        .add(Aspect.MAGIC, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("THAUMATORIUM", 3);
         TCHelper.setResearchAspects(
                 "TRANSIRON",
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("ordo"), 3)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.ORDER, 3).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("TRANSIRON", 1);
         TCHelper.setResearchAspects(
                 "TRANSGOLD",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.GREED, 6).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("TRANSGOLD", 2);
         TCHelper.setResearchAspects(
                 "TRANSCOPPER",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.ORDER, 6).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("TRANSCOPPER", 2);
         TCHelper.setResearchAspects(
                 "TRANSTIN",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.CRYSTAL, 6).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("TRANSTIN", 2);
         TCHelper.setResearchAspects(
                 "TRANSLEAD",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.ORDER, 6).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("TRANSLEAD", 2);
         TCHelper.setResearchAspects(
                 "TRANSSILVER",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.GREED, 6).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("TRANSSILVER", 2);
         TCHelper.setResearchAspects(
                 "PUREIRON",
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("vitreus"), 3));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.ORDER, 6).add(Aspect.CRYSTAL, 3));
         TCHelper.setResearchComplexity("PUREIRON", 1);
         TCHelper.setResearchAspects(
                 "PUREGOLD",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("lucrum"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.GREED, 9).add(Aspect.ORDER, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("PUREGOLD", 2);
         TCHelper.setResearchAspects(
                 "PURECOPPER",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.ORDER, 15).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("PURECOPPER", 2);
         TCHelper.setResearchAspects(
                 "PURETIN",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("vitreus"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.CRYSTAL, 9).add(Aspect.ORDER, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("PURETIN", 2);
         TCHelper.setResearchAspects(
                 "PURELEAD",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.EXCHANGE, 9).add(Aspect.ORDER, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("PURELEAD", 2);
         TCHelper.setResearchAspects(
                 "PURESILVER",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("lucrum"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.GREED, 9).add(Aspect.ORDER, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("PURESILVER", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JARLABEL",
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
-                new AspectList().add(Aspect.getAspect("aqua"), 2),
+                new AspectList().add(Aspect.WATER, 2),
                 "abc",
                 "def",
                 "ghi",
@@ -2271,8 +2157,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "JARVOID",
                 getModItem(Thaumcraft.ID, "blockJar", 1, 3),
                 2,
-                new AspectList().add(Aspect.getAspect("vacuos"), 7).add(Aspect.getAspect("praecantatio"), 7)
-                        .add(Aspect.getAspect("perditio"), 7).add(Aspect.getAspect("aqua"), 7),
+                new AspectList().add(Aspect.VOID, 7).add(Aspect.MAGIC, 7).add(Aspect.ENTROPY, 7).add(Aspect.WATER, 7),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
                 OrePrefixes.plate.get(Materials.Obsidian),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
@@ -2283,32 +2168,28 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockJar", 1, 3))));
         TCHelper.setResearchAspects(
                 "JARVOID",
-                new AspectList().add(Aspect.getAspect("vacuos"), 6).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6));
+                new AspectList().add(Aspect.VOID, 6).add(Aspect.ENTROPY, 9).add(Aspect.MAGIC, 6));
         TCHelper.setResearchComplexity("JARVOID", 1);
         ThaumcraftApi.addCrucibleRecipe(
                 "BATHSALTS",
                 getModItem(Thaumcraft.ID, "ItemBathSalts", 2, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                new AspectList().add(Aspect.getAspect("sano"), 10).add(Aspect.getAspect("cognitio"), 10)
-                        .add(Aspect.getAspect("auram"), 10).add(Aspect.getAspect("ordo"), 10));
+                new AspectList().add(Aspect.HEAL, 10).add(Aspect.MIND, 10).add(Aspect.AURA, 10).add(Aspect.ORDER, 10));
         TCHelper.setResearchAspects(
                 "BATHSALTS",
-                new AspectList().add(Aspect.getAspect("sano"), 9).add(Aspect.getAspect("cognitio"), 6)
-                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.HEAL, 9).add(Aspect.MIND, 6).add(Aspect.AURA, 9).add(Aspect.ORDER, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("BATHSALTS", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "SANESOAP",
                 getModItem(Thaumcraft.ID, "ItemSanitySoap", 2, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5),
-                new AspectList().add(Aspect.getAspect("alienis"), 20).add(Aspect.getAspect("cognitio"), 20)
-                        .add(Aspect.getAspect("sano"), 20).add(Aspect.getAspect("ordo"), 20));
+                new AspectList().add(Aspect.ELDRITCH, 20).add(Aspect.MIND, 20).add(Aspect.HEAL, 20)
+                        .add(Aspect.ORDER, 20));
         TCHelper.setResearchAspects(
                 "SANESOAP",
-                new AspectList().add(Aspect.getAspect("sano"), 12).add(Aspect.getAspect("alienis"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.HEAL, 12).add(Aspect.ELDRITCH, 12).add(Aspect.MIND, 9).add(Aspect.ORDER, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("SANESOAP", 3);
         TCHelper.clearPages("ARCANESPA");
         TCHelper.addResearchPage("ARCANESPA", new ResearchPage("tc.research_page.ARCANESPA.1"));
@@ -2316,9 +2197,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "ARCANESPA",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12),
                 4,
-                new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("aqua"), 32)
-                        .add(Aspect.getAspect("machina"), 8),
+                new AspectList().add(Aspect.ORDER, 24).add(Aspect.MAGIC, 16).add(Aspect.HEAL, 16).add(Aspect.WATER, 32)
+                        .add(Aspect.MECHANISM, 8),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
                 BlockList.StainlessSteelBars.get(),
                 getModItem(Minecraft.ID, "quartz_block", 1, 0),
@@ -2333,28 +2213,24 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12))));
         TCHelper.setResearchAspects(
                 "ARCANESPA",
-                new AspectList().add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("aqua"), 9)
-                        .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("sano"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ORDER, 9).add(Aspect.WATER, 9).add(Aspect.MECHANISM, 6).add(Aspect.HEAL, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("ARCANESPA", 3);
         TCHelper.setResearchAspects(
                 "LIQUIDDEATH",
-                new AspectList().add(Aspect.getAspect("aqua"), 9).add(Aspect.getAspect("mortuus"), 9)
-                        .add(Aspect.getAspect("perditio"), 6).add(Aspect.getAspect("venenum"), 6)
-                        .add(Aspect.getAspect("tenebrae"), 3));
+                new AspectList().add(Aspect.WATER, 9).add(Aspect.DEATH, 9).add(Aspect.ENTROPY, 6).add(Aspect.POISON, 6)
+                        .add(Aspect.DARKNESS, 3));
         TCHelper.setResearchComplexity("LIQUIDDEATH", 3);
         TCHelper.setResearchAspects(
                 "ETHEREALBLOOM",
-                new AspectList().add(Aspect.getAspect("vitium"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("sano"), 6).add(Aspect.getAspect("herba"), 6)
-                        .add(Aspect.getAspect("lux"), 3).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.TAINT, 9).add(Aspect.MAGIC, 9).add(Aspect.HEAL, 6).add(Aspect.PLANT, 6)
+                        .add(Aspect.LIGHT, 3).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ETHEREALBLOOM", 3);
         TCHelper.setResearchAspects(
                 "BOTTLETAINT",
-                new AspectList().add(Aspect.getAspect("vitium"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("venenum"), 6)
-                        .add(Aspect.getAspect("strontio"), 3));
+                new AspectList().add(Aspect.TAINT, 12).add(Aspect.MAGIC, 12).add(Aspect.WATER, 12)
+                        .add(Aspect.ENTROPY, 9).add(Aspect.DARKNESS, 9).add(Aspect.POISON, 6)
+                        .add(TCAspects.STRONTIO.getAspect(), 3));
         TCHelper.setResearchComplexity("BOTTLETAINT", 3);
         ThaumcraftApi.addWarpToResearch("BOTTLETAINT", 5);
         ThaumcraftApi.addWarpToItem(getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0), 1);
@@ -2362,12 +2238,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "THAUMIUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 2),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0),
-                new AspectList().add(Aspect.getAspect("praecantatio"), 4));
+                new AspectList().add(Aspect.MAGIC, 4));
         ThaumcraftApi.addCrucibleRecipe(
                 "GT_CRYSTALLISATION",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 6),
                 "dustAmber",
-                new AspectList().add(Aspect.getAspect("vitreus"), 4));
+                new AspectList().add(Aspect.CRYSTAL, 4));
         TCHelper.refreshResearchPages("CRUCIBLE");
         TCHelper.refreshResearchPages("TALLOW");
         TCHelper.refreshResearchPages("NITOR");
@@ -2578,9 +2454,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GOGGLES",
                 getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("ignis"), 30).add(Aspect.getAspect("aqua"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.WATER, 30)
+                        .add(Aspect.ORDER, 30).add(Aspect.ENTROPY, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -2604,17 +2479,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0));
         TCHelper.setResearchAspects(
                 "GOGGLES",
-                new AspectList().add(Aspect.getAspect("auram"), 3).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("sensus"), 9).add(Aspect.getAspect("instrumentum"), 6));
+                new AspectList().add(Aspect.AURA, 3).add(Aspect.MAGIC, 9).add(Aspect.SENSES, 9).add(Aspect.TOOL, 6));
         TCHelper.setResearchComplexity("GOGGLES", 2);
         TCHelper.clearPages("BASICARTIFACE");
         TCHelper.addResearchPage("BASICARTIFACE", new ResearchPage("tc.research_page.BASICARTIFACE.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50)
-                        .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.EARTH, 50).add(Aspect.FIRE, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -2642,8 +2515,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.EARTH, 5).add(Aspect.FIRE, 10).add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -2671,8 +2543,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.EARTH, 10).add(Aspect.FIRE, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -2700,8 +2571,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.EARTH, 10).add(Aspect.FIRE, 5).add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -2729,8 +2599,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("ignis"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.EARTH, 30).add(Aspect.FIRE, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -2758,9 +2627,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANESTONE",
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 8, 6),
-                new AspectList().add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("terra"), 8)
-                        .add(Aspect.getAspect("ignis"), 8).add(Aspect.getAspect("aqua"), 8)
-                        .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("perditio"), 8),
+                new AspectList().add(Aspect.AIR, 8).add(Aspect.EARTH, 8).add(Aspect.FIRE, 8).add(Aspect.WATER, 8)
+                        .add(Aspect.ORDER, 8).add(Aspect.ENTROPY, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -2798,9 +2666,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INFUSION",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("terra"), 40)
-                        .add(Aspect.getAspect("ignis"), 40).add(Aspect.getAspect("aqua"), 40)
-                        .add(Aspect.getAspect("ordo"), 40).add(Aspect.getAspect("perditio"), 40),
+                new AspectList().add(Aspect.AIR, 40).add(Aspect.EARTH, 40).add(Aspect.FIRE, 40).add(Aspect.WATER, 40)
+                        .add(Aspect.ORDER, 40).add(Aspect.ENTROPY, 40),
                 "abc",
                 "def",
                 "ghi",
@@ -2825,7 +2692,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INFUSION",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 20),
+                new AspectList().add(Aspect.AIR, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -2845,17 +2712,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6));
         TCHelper.setResearchAspects(
                 "INFUSION",
-                new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("machina"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("cognitio"), 6)
-                        .add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.CRAFT, 9).add(Aspect.MECHANISM, 9).add(Aspect.MAGIC, 6).add(Aspect.MIND, 6)
+                        .add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("INFUSION", 2);
         TCHelper.clearPages("PAVETRAVEL");
         TCHelper.addResearchPage("PAVETRAVEL", new ResearchPage("tc.research_page.PAVETRAVEL.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "PAVETRAVEL",
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("terra"), 12),
+                new AspectList().add(Aspect.AIR, 12).add(Aspect.ORDER, 12).add(Aspect.EARTH, 12),
                 "abc",
                 "def",
                 "ghi",
@@ -2882,16 +2747,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2))));
         TCHelper.setResearchAspects(
                 "PAVETRAVEL",
-                new AspectList().add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("volatus"), 6)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.TRAVEL, 9).add(Aspect.FLIGHT, 6).add(Aspect.EARTH, 6)
+                        .add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("PAVETRAVEL", 2);
         TCHelper.clearPages("PAVEWARD");
         TCHelper.addResearchPage("PAVEWARD", new ResearchPage("tc.research_page.PAVEWARD.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "PAVEWARD",
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4, 3),
-                new AspectList().add(Aspect.getAspect("ignis"), 12).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("terra"), 12),
+                new AspectList().add(Aspect.FIRE, 12).add(Aspect.ORDER, 12).add(Aspect.EARTH, 12),
                 "abc",
                 "def",
                 "ghi",
@@ -2919,16 +2783,14 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("PAVEWARD", new ResearchPage("tc.research_page.PAVEWARD.2"));
         TCHelper.setResearchAspects(
                 "PAVEWARD",
-                new AspectList().add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("bestia"), 9)
-                        .add(Aspect.getAspect("vinculum"), 3).add(Aspect.getAspect("telum"), 6));
+                new AspectList().add(Aspect.MOTION, 6).add(Aspect.BEAST, 9).add(Aspect.TRAP, 3).add(Aspect.WEAPON, 6));
         TCHelper.setResearchComplexity("PAVEWARD", 2);
         TCHelper.clearPages("GRATE");
         TCHelper.addResearchPage("GRATE", new ResearchPage("tc.research_page.GRATE.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GRATE",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 5),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -2958,9 +2820,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
-                        .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -2984,8 +2845,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0));
         TCHelper.setResearchAspects(
                 "ENCHFABRIC",
-                new AspectList().add(Aspect.getAspect("pannus"), 6).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("tutamen"), 3));
+                new AspectList().add(Aspect.CLOTH, 6).add(Aspect.MAGIC, 6).add(Aspect.ARMOR, 3));
         TCHelper.setResearchComplexity("ENCHFABRIC", 1);
         TCHelper.addResearchPage(
                 "ENCHFABRIC",
@@ -2994,8 +2854,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
                 getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("ordo"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.WATER, 15).add(Aspect.ORDER, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -3023,8 +2882,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
                 getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.WATER, 15).add(Aspect.ENTROPY, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -3052,8 +2910,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
                 getModItem(Thaumcraft.ID, "ItemBootsRobe", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aqua"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.EARTH, 15).add(Aspect.FIRE, 15).add(Aspect.WATER, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -3075,8 +2932,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANELAMP",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("perditio"), 5)
-                        .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aqua"), 5),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.ENTROPY, 5).add(Aspect.FIRE, 15).add(Aspect.WATER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -3100,15 +2956,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "paneGlassColorless");
         TCHelper.setResearchAspects(
                 "ARCANELAMP",
-                new AspectList().add(Aspect.getAspect("lux"), 6).add(Aspect.getAspect("tenebrae"), 3)
-                        .add(Aspect.getAspect("sensus"), 6));
+                new AspectList().add(Aspect.LIGHT, 6).add(Aspect.DARKNESS, 3).add(Aspect.SENSES, 6));
         TCHelper.setResearchComplexity("ARCANELAMP", 1);
         TCHelper.addInfusionCraftingRecipe(
                 "LAMPGROWTH",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8),
                 5,
-                new AspectList().add(Aspect.getAspect("herba"), 20).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("victus"), 20).add(Aspect.getAspect("messis"), 10),
+                new AspectList().add(Aspect.PLANT, 20).add(Aspect.LIGHT, 10).add(Aspect.LIFE, 20).add(Aspect.CROP, 10),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7),
                 OrePrefixes.plate.get(Materials.Gold),
                 getModItem(Minecraft.ID, "dye", 1, 15),
@@ -3118,15 +2972,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.setResearchAspects(
                 "LAMPGROWTH",
-                new AspectList().add(Aspect.getAspect("messis"), 9).add(Aspect.getAspect("lux"), 3)
-                        .add(Aspect.getAspect("herba"), 6).add(Aspect.getAspect("victus"), 9));
+                new AspectList().add(Aspect.CROP, 9).add(Aspect.LIGHT, 3).add(Aspect.PLANT, 6).add(Aspect.LIFE, 9));
         TCHelper.setResearchComplexity("LAMPGROWTH", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "LAMPFERTILITY",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 13),
                 5,
-                new AspectList().add(Aspect.getAspect("bestia"), 20).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("victus"), 20).add(Aspect.getAspect("sano"), 10),
+                new AspectList().add(Aspect.BEAST, 20).add(Aspect.LIGHT, 10).add(Aspect.LIFE, 20).add(Aspect.HEAL, 10),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7),
                 OrePrefixes.plate.get(Materials.Gold),
                 getModItem(Minecraft.ID, "wheat", 1, 0),
@@ -3136,14 +2988,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1));
         TCHelper.setResearchAspects(
                 "LAMPFERTILITY",
-                new AspectList().add(Aspect.getAspect("bestia"), 9).add(Aspect.getAspect("lux"), 3)
-                        .add(Aspect.getAspect("victus"), 9).add(Aspect.getAspect("sano"), 6));
+                new AspectList().add(Aspect.BEAST, 9).add(Aspect.LIGHT, 3).add(Aspect.LIFE, 9).add(Aspect.HEAL, 6));
         TCHelper.setResearchComplexity("LAMPFERTILITY", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "LEVITATOR",
                 getModItem(Thaumcraft.ID, "blockLifter", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.EARTH, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -3167,14 +3017,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6));
         TCHelper.setResearchAspects(
                 "LEVITATOR",
-                new AspectList().add(Aspect.getAspect("aer"), 3).add(Aspect.getAspect("volatus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3).add(Aspect.getAspect("motus"), 6));
+                new AspectList().add(Aspect.AIR, 3).add(Aspect.FLIGHT, 6).add(Aspect.MAGIC, 3).add(Aspect.MOTION, 6));
         TCHelper.setResearchComplexity("LEVITATOR", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
                 getModItem(Thaumcraft.ID, "ItemArcaneDoor", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.FIRE, 5).add(Aspect.ORDER, 20)
+                        .add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -3198,14 +3047,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "craftingToolSaw");
         TCHelper.setResearchAspects(
                 "WARDEDARCANA",
-                new AspectList().add(Aspect.getAspect("tutamen"), 6).add(Aspect.getAspect("instrumentum"), 6)
-                        .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.ARMOR, 6).add(Aspect.TOOL, 6).add(Aspect.MECHANISM, 6)
+                        .add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("WARDEDARCANA", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.FIRE, 5).add(Aspect.ORDER, 20)
+                        .add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -3230,9 +3079,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 4, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("ordo"), 10)
-                        .add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("terra"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.WATER, 10).add(Aspect.FIRE, 10).add(Aspect.ORDER, 10)
+                        .add(Aspect.ENTROPY, 10).add(Aspect.EARTH, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -3257,8 +3105,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
                 getModItem(Thaumcraft.ID, "ArcaneDoorKey", 2, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -3281,8 +3128,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
                 getModItem(Thaumcraft.ID, "ArcaneDoorKey", 2, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -3305,8 +3151,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANEEAR",
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -3330,16 +3175,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6));
         TCHelper.setResearchAspects(
                 "ARCANEEAR",
-                new AspectList().add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("sensus"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 3).add(Aspect.getAspect("potentia"), 6));
+                new AspectList().add(Aspect.AIR, 9).add(Aspect.SENSES, 9).add(Aspect.MAGIC, 3).add(Aspect.ENERGY, 6));
         TCHelper.setResearchComplexity("ARCANEEAR", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "SINSTONE",
                 getModItem(Thaumcraft.ID, "ItemCompassStone", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("alienis"), 10).add(Aspect.getAspect("auram"), 10)
-                        .add(Aspect.getAspect("sensus"), 10).add(Aspect.getAspect("tenebrae"), 10)
-                        .add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.ELDRITCH, 10).add(Aspect.AURA, 10).add(Aspect.SENSES, 10)
+                        .add(Aspect.DARKNESS, 10).add(Aspect.ORDER, 10),
                 getModItem(Minecraft.ID, "flint", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4),
@@ -3349,14 +3192,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6));
         TCHelper.setResearchAspects(
                 "SINSTONE",
-                new AspectList().add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("sensus"), 3)
-                        .add(Aspect.getAspect("tenebrae"), 6).add(Aspect.getAspect("alienis"), 6));
+                new AspectList().add(Aspect.AURA, 6).add(Aspect.SENSES, 3).add(Aspect.DARKNESS, 6)
+                        .add(Aspect.ELDRITCH, 6));
         TCHelper.setResearchComplexity("SINSTONE", 2);
         ThaumcraftApi.addWarpToResearch("SINSTONE", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BELLOWS",
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -3380,8 +3223,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0));
         TCHelper.setResearchAspects(
                 "BELLOWS",
-                new AspectList().add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("aer"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 3).add(Aspect.getAspect("machina"), 9));
+                new AspectList().add(Aspect.MOTION, 6).add(Aspect.AIR, 12).add(Aspect.MAGIC, 3)
+                        .add(Aspect.MECHANISM, 9));
         TCHelper.setResearchComplexity("BELLOWS", 2);
         TCHelper.clearPages("FLUXSCRUB");
         TCHelper.addResearchPage("FLUXSCRUB", new ResearchPage("tc.research_page.FLUXSCRUB.1"));
@@ -3389,9 +3232,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "FLUXSCRUB",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14),
                 4,
-                new AspectList().add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("aer"), 20)
-                        .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("vinculum"), 10)
-                        .add(Aspect.getAspect("vitium"), 5),
+                new AspectList().add(Aspect.WATER, 25).add(Aspect.AIR, 20).add(Aspect.MAGIC, 15).add(Aspect.TRAP, 10)
+                        .add(Aspect.TAINT, 5),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 0),
                 BlockList.SteelBars.get(),
@@ -3406,16 +3248,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14))));
         TCHelper.setResearchAspects(
                 "FLUXSCRUB",
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("vinculum"), 6)
-                        .add(Aspect.getAspect("vitium"), 3));
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.MAGIC, 12).add(Aspect.AIR, 9).add(Aspect.TRAP, 6)
+                        .add(Aspect.TAINT, 3));
         TCHelper.setResearchComplexity("FLUXSCRUB", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "BOOTSTRAVELLER",
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0),
                 2,
-                new AspectList().add(Aspect.getAspect("volatus"), 25).add(Aspect.getAspect("aer"), 25)
-                        .add(Aspect.getAspect("iter"), 25).add(Aspect.getAspect("aqua"), 5),
+                new AspectList().add(Aspect.FLIGHT, 25).add(Aspect.AIR, 25).add(Aspect.TRAVEL, 25).add(Aspect.WATER, 5),
                 getModItem(Minecraft.ID, "leather_boots", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
@@ -3427,16 +3267,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.setResearchAspects(
                 "BOOTSTRAVELLER",
-                new AspectList().add(Aspect.getAspect("aqua"), 9).add(Aspect.getAspect("iter"), 15)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("volatus"), 12)
-                        .add(Aspect.getAspect("aer"), 3));
+                new AspectList().add(Aspect.WATER, 9).add(Aspect.TRAVEL, 15).add(Aspect.EARTH, 6).add(Aspect.FLIGHT, 12)
+                        .add(Aspect.AIR, 3));
         TCHelper.setResearchComplexity("BOOTSTRAVELLER", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "RUNICARMOR",
                 getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 1),
                 2,
-                new AspectList().add(Aspect.getAspect("potentia"), 25).add(Aspect.getAspect("tutamen"), 25)
-                        .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("alienis"), 5),
+                new AspectList().add(Aspect.ENERGY, 25).add(Aspect.ARMOR, 25).add(Aspect.MAGIC, 25)
+                        .add(Aspect.ELDRITCH, 5),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 OrePrefixes.gemFlawless.get(Materials.Amber),
@@ -3446,17 +3285,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.gemFlawless.get(Materials.Amber));
         TCHelper.setResearchAspects(
                 "RUNICARMOR",
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("tutamen"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.ARMOR, 12).add(Aspect.AIR, 9).add(Aspect.ENERGY, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("RUNICARMOR", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "RUNICCHARGED",
                 getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 2),
                 6,
-                new AspectList().add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("tutamen"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("alienis"), 16)
-                        .add(Aspect.getAspect("aer"), 8),
+                new AspectList().add(Aspect.ENERGY, 64).add(Aspect.ARMOR, 32).add(Aspect.MAGIC, 32)
+                        .add(Aspect.ELDRITCH, 16).add(Aspect.AIR, 8),
                 getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 1),
                 getModItem(Minecraft.ID, "potion", 1, 8226),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
@@ -3468,18 +3305,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1));
         TCHelper.setResearchAspects(
                 "RUNICCHARGED",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("tutamen"), 9).add(Aspect.getAspect("alienis"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("cognitio"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.ENERGY, 12).add(Aspect.ARMOR, 9)
+                        .add(Aspect.ELDRITCH, 12).add(Aspect.AIR, 9).add(Aspect.MIND, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("RUNICCHARGED", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "RUNICHEALING",
                 getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 3),
                 6,
-                new AspectList().add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("sano"), 32).add(Aspect.getAspect("tutamen"), 32)
-                        .add(Aspect.getAspect("aer"), 8),
+                new AspectList().add(Aspect.WATER, 64).add(Aspect.MAGIC, 32).add(Aspect.HEAL, 32).add(Aspect.ARMOR, 32)
+                        .add(Aspect.AIR, 8),
                 getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 1),
                 getModItem(Minecraft.ID, "potion", 1, 8225),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
@@ -3491,17 +3325,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "RUNICHEALING",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("sano"), 12).add(Aspect.getAspect("tutamen"), 9)
-                        .add(Aspect.getAspect("alienis"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.MAGIC, 18).add(Aspect.WATER, 15).add(Aspect.HEAL, 12).add(Aspect.ARMOR, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.AIR, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("RUNICHEALING", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "RUNICARMOR",
                 getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("potentia"), 40).add(Aspect.getAspect("tutamen"), 40)
-                        .add(Aspect.getAspect("praecantatio"), 40).add(Aspect.getAspect("alienis"), 20),
+                new AspectList().add(Aspect.ENERGY, 40).add(Aspect.ARMOR, 40).add(Aspect.MAGIC, 40)
+                        .add(Aspect.ELDRITCH, 20),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 OrePrefixes.gemFlawless.get(Materials.Amber),
@@ -3515,9 +3347,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "RUNICEMERGENCY",
                 getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 1),
                 8,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("terra"), 64)
-                        .add(Aspect.getAspect("tutamen"), 64).add(Aspect.getAspect("vacuos"), 32)
-                        .add(Aspect.getAspect("sano"), 8),
+                new AspectList().add(Aspect.MAGIC, 64).add(Aspect.EARTH, 64).add(Aspect.ARMOR, 64).add(Aspect.VOID, 32)
+                        .add(Aspect.HEAL, 8),
                 getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 0),
                 getModItem(Minecraft.ID, "potion", 1, 8233),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
@@ -3529,17 +3360,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.setResearchAspects(
                 "RUNICEMERGENCY",
-                new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("tutamen"), 9)
-                        .add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("sano"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.VOID, 15).add(Aspect.MAGIC, 12).add(Aspect.EARTH, 9).add(Aspect.ARMOR, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.HEAL, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("RUNICEMERGENCY", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "RUNICARMOR",
                 getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("potentia"), 55).add(Aspect.getAspect("tutamen"), 55)
-                        .add(Aspect.getAspect("praecantatio"), 55).add(Aspect.getAspect("alienis"), 35),
+                new AspectList().add(Aspect.ENERGY, 55).add(Aspect.ARMOR, 55).add(Aspect.MAGIC, 55)
+                        .add(Aspect.ELDRITCH, 35),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 OrePrefixes.gemFlawless.get(Materials.Amber),
@@ -3555,9 +3384,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "RUNICKINETIC",
                 getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 1),
                 8,
-                new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("tutamen"), 64).add(Aspect.getAspect("bestia"), 32)
-                        .add(Aspect.getAspect("telum"), 8),
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.MAGIC, 64).add(Aspect.ARMOR, 64).add(Aspect.BEAST, 32)
+                        .add(Aspect.WEAPON, 8),
                 getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0),
                 getModItem(Minecraft.ID, "potion", 1, 16428),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -3569,18 +3397,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "RUNICKINETIC",
-                new AspectList().add(Aspect.getAspect("aer"), 18).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("telum"), 9)
-                        .add(Aspect.getAspect("alienis"), 9).add(Aspect.getAspect("bestia"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.AIR, 18).add(Aspect.MAGIC, 15).add(Aspect.ARMOR, 12).add(Aspect.WEAPON, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.BEAST, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("RUNICKINETIC", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ARCANEBORE",
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5),
                 6,
-                new AspectList().add(Aspect.getAspect("machina"), 64).add(Aspect.getAspect("motus"), 32)
-                        .add(Aspect.getAspect("perditio"), 64).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("vacuos"), 32),
+                new AspectList().add(Aspect.MECHANISM, 64).add(Aspect.MOTION, 32).add(Aspect.ENTROPY, 64)
+                        .add(Aspect.ENERGY, 32).add(Aspect.VOID, 32),
                 ItemList.Electric_Piston_MV.get(1L),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 OrePrefixes.plate.get(Materials.Gold),
@@ -3594,15 +3419,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0));
         TCHelper.setResearchAspects(
                 "ARCANEBORE",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("perfodio"), 12)
-                        .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("motus"), 9)
-                        .add(Aspect.getAspect("vacuos"), 3).add(Aspect.getAspect("cognitio"), 6));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.MINE, 12).add(Aspect.MECHANISM, 9)
+                        .add(Aspect.MOTION, 9).add(Aspect.VOID, 3).add(Aspect.MIND, 6));
         TCHelper.setResearchComplexity("ARCANEBORE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANEBORE",
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 4),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ordo"), 30)
-                        .add(Aspect.getAspect("terra"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.ORDER, 30).add(Aspect.EARTH, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -3628,8 +3451,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "ELEMENTALPICK",
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("perfodio"), 20)
-                        .add(Aspect.getAspect("sensus"), 20).add(Aspect.getAspect("lucrum"), 20),
+                new AspectList().add(Aspect.FIRE, 20).add(Aspect.MINE, 20).add(Aspect.SENSES, 20).add(Aspect.GREED, 20),
                 getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.Ruby),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
@@ -3639,16 +3461,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1));
         TCHelper.setResearchAspects(
                 "ELEMENTALPICK",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("perfodio"), 9).add(Aspect.getAspect("lucrum"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.FIRE, 12).add(Aspect.MINE, 9).add(Aspect.GREED, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("ELEMENTALPICK", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ELEMENTALAXE",
                 getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("aqua"), 10).add(Aspect.getAspect("arbor"), 20)
-                        .add(Aspect.getAspect("fabrico"), 20).add(Aspect.getAspect("motus"), 20),
+                new AspectList().add(Aspect.WATER, 10).add(Aspect.TREE, 20).add(Aspect.CRAFT, 20)
+                        .add(Aspect.MOTION, 20),
                 getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.Sapphire),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
@@ -3658,16 +3479,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "ELEMENTALAXE",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("motus"), 12)
-                        .add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("aqua"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.MOTION, 12).add(Aspect.CRAFT, 9).add(Aspect.WATER, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("ELEMENTALAXE", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ELEMENTALSWORD",
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("motus"), 20)
-                        .add(Aspect.getAspect("potentia"), 20).add(Aspect.getAspect("telum"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.MOTION, 20).add(Aspect.ENERGY, 20)
+                        .add(Aspect.WEAPON, 20),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.GarnetYellow),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
@@ -3677,16 +3497,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "ELEMENTALSWORD",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("telum"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.WEAPON, 12).add(Aspect.ENERGY, 9).add(Aspect.AIR, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("ELEMENTALSWORD", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ELEMENTALSHOVEL",
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("fabrico"), 20).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("perfodio"), 10).add(Aspect.getAspect("praecantatio"), 20),
+                new AspectList().add(Aspect.CRAFT, 20).add(Aspect.EARTH, 20).add(Aspect.MINE, 10).add(Aspect.MAGIC, 20),
                 getModItem(Thaumcraft.ID, "ItemShovelThaumium", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.Emerald),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
@@ -3696,16 +3514,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.setResearchAspects(
                 "ELEMENTALSHOVEL",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("perfodio"), 9).add(Aspect.getAspect("fabrico"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.EARTH, 12).add(Aspect.MINE, 9).add(Aspect.CRAFT, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("ELEMENTALSHOVEL", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ELEMENTALHOE",
                 getModItem(Thaumcraft.ID, "ItemHoeElemental", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("meto"), 10).add(Aspect.getAspect("herba"), 20)
-                        .add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("messis"), 20),
+                new AspectList().add(Aspect.HARVEST, 10).add(Aspect.PLANT, 20).add(Aspect.EARTH, 20)
+                        .add(Aspect.CROP, 20),
                 getModItem(Thaumcraft.ID, "ItemHoeThaumium", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.Amber),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
@@ -3715,17 +3532,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4));
         TCHelper.setResearchAspects(
                 "ELEMENTALHOE",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("victus"), 12)
-                        .add(Aspect.getAspect("meto"), 9).add(Aspect.getAspect("messis"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.LIFE, 12).add(Aspect.HARVEST, 9).add(Aspect.CROP, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("ELEMENTALHOE", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "HOVERHARNESS",
                 getModItem(Thaumcraft.ID, "HoverHarness", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("machina"), 64)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("volatus"), 32)
-                        .add(Aspect.getAspect("tutamen"), 16),
+                new AspectList().add(Aspect.TRAVEL, 32).add(Aspect.MECHANISM, 64).add(Aspect.ENERGY, 32)
+                        .add(Aspect.FLIGHT, 32).add(Aspect.ARMOR, 16),
                 getModItem(Minecraft.ID, "leather_chestplate", 1, 0),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
@@ -3739,17 +3554,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6));
         TCHelper.setResearchAspects(
                 "HOVERHARNESS",
-                new AspectList().add(Aspect.getAspect("volatus"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("aer"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("tutamen"), 3));
+                new AspectList().add(Aspect.FLIGHT, 15).add(Aspect.MECHANISM, 12).add(Aspect.TRAVEL, 9)
+                        .add(Aspect.AIR, 9).add(Aspect.MAGIC, 6).add(Aspect.ARMOR, 3));
         TCHelper.setResearchComplexity("HOVERHARNESS", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "HOVERGIRDLE",
                 getModItem(Thaumcraft.ID, "ItemGirdleHover", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("iter"), 32)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("volatus"), 32)
-                        .add(Aspect.getAspect("tutamen"), 16),
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.TRAVEL, 32).add(Aspect.ENERGY, 32)
+                        .add(Aspect.FLIGHT, 32).add(Aspect.ARMOR, 16),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Minecraft.ID, "feather", 1, 0),
@@ -3762,16 +3575,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(TwilightForest.ID, "item.tfFeather", 1, 0));
         TCHelper.setResearchAspects(
                 "HOVERGIRDLE",
-                new AspectList().add(Aspect.getAspect("volatus"), 15).add(Aspect.getAspect("motus"), 12)
-                        .add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("aer"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("tutamen"), 3));
+                new AspectList().add(Aspect.FLIGHT, 15).add(Aspect.MOTION, 12).add(Aspect.TRAVEL, 9).add(Aspect.AIR, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.ARMOR, 3));
         TCHelper.setResearchComplexity("HOVERGIRDLE", 3);
         TCHelper.setResearchAspects(
                 "RUNICARMOR",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("tutamen"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("alienis"), 6)
-                        .add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.GREED, 12).add(Aspect.EXCHANGE, 9)
+                        .add(Aspect.ARMOR, 9).add(Aspect.MIND, 6).add(Aspect.ELDRITCH, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("RUNICARMOR", 3);
 
         TCHelper.clearPages("MIRROR");
@@ -3781,8 +3591,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "MIRROR",
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("permutatio"), 24)
-                        .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("alienis"), 8),
+                new AspectList().add(Aspect.TRAVEL, 32).add(Aspect.EXCHANGE, 24).add(Aspect.DARKNESS, 16)
+                        .add(Aspect.ELDRITCH, 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 OrePrefixes.plate.get(Materials.VibrantAlloy),
                 OrePrefixes.screw.get(Materials.Thaumium),
@@ -3800,18 +3610,16 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("MIRROR", new ResearchPage("tc.research_page.MIRROR.3fixed"));
         TCHelper.setResearchAspects(
                 "MIRROR",
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.CRYSTAL, 15).add(Aspect.TRAVEL, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.MIND, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("MIRROR", 3);
         ThaumcraftApi.addWarpToResearch("MIRROR", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "MIRRORHAND",
                 getModItem(Thaumcraft.ID, "HandMirror", 1, 0),
                 9,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 64).add(Aspect.getAspect("iter"), 32)
-                        .add(Aspect.getAspect("motus"), 24).add(Aspect.getAspect("alienis"), 16)
-                        .add(Aspect.getAspect("potentia"), 8),
+                new AspectList().add(Aspect.TOOL, 64).add(Aspect.TRAVEL, 32).add(Aspect.MOTION, 24)
+                        .add(Aspect.ELDRITCH, 16).add(Aspect.ENERGY, 8),
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 0),
                 getModItem(Minecraft.ID, "compass", 1, 0),
                 OrePrefixes.screw.get(Materials.Thaumium),
@@ -3823,18 +3631,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.screw.get(Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "MIRRORHAND",
-                new AspectList().add(Aspect.getAspect("iter"), 18).add(Aspect.getAspect("instrumentum"), 15)
-                        .add(Aspect.getAspect("vitreus"), 12).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TRAVEL, 18).add(Aspect.TOOL, 15).add(Aspect.CRYSTAL, 12)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.MIND, 6).add(Aspect.ENERGY, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("MIRRORHAND", 3);
         ThaumcraftApi.addWarpToResearch("MIRRORHAND", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "MIRRORESSENTIA",
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 6),
                 2,
-                new AspectList().add(Aspect.getAspect("aqua"), 24).add(Aspect.getAspect("iter"), 32)
-                        .add(Aspect.getAspect("permutatio"), 16).add(Aspect.getAspect("vitreus"), 8),
+                new AspectList().add(Aspect.WATER, 24).add(Aspect.TRAVEL, 32).add(Aspect.EXCHANGE, 16)
+                        .add(Aspect.CRYSTAL, 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 OrePrefixes.plate.get(Materials.Tantalum),
                 OrePrefixes.screw.get(Materials.Thaumium),
@@ -3846,18 +3652,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.screw.get(Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "MIRRORESSENTIA",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.TRAVEL, 12).add(Aspect.CRYSTAL, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.MIND, 6).add(Aspect.ENERGY, 6).add(Aspect.WATER, 3));
         TCHelper.setResearchComplexity("MIRRORESSENTIA", 3);
         ThaumcraftApi.addWarpToResearch("MIRRORESSENTIA", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "JARBRAIN",
                 getModItem(Thaumcraft.ID, "blockJar", 1, 1),
                 5,
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("exanimis"), 30)
-                        .add(Aspect.getAspect("sensus"), 15).add(Aspect.getAspect("alienis"), 10),
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.UNDEAD, 30).add(Aspect.SENSES, 15)
+                        .add(Aspect.ELDRITCH, 10),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(Minecraft.ID, "poisonous_potato", 1, 0),
@@ -3867,23 +3671,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "poisonous_potato", 1, 0));
         TCHelper.setResearchAspects(
                 "JARBRAIN",
-                new AspectList().add(Aspect.getAspect("lucrum"), 15).add(Aspect.getAspect("fames"), 12)
-                        .add(Aspect.getAspect("exanimis"), 9).add(Aspect.getAspect("cognitio"), 9)
-                        .add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.GREED, 15).add(Aspect.HUNGER, 12).add(Aspect.UNDEAD, 9).add(Aspect.MIND, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("JARBRAIN", 3);
         TCHelper.setResearchAspects(
                 "INFUSIONENCHANTMENT",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("telum"), 9).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("alienis"), 6));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.MAGIC, 15).add(Aspect.ARMOR, 12).add(Aspect.MIND, 12)
+                        .add(Aspect.WEAPON, 9).add(Aspect.ENERGY, 12).add(Aspect.ELDRITCH, 6));
         TCHelper.setResearchComplexity("INFUSIONENCHANTMENT", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ARMORFORTRESS",
                 getModItem(Thaumcraft.ID, "ItemHelmetFortress", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("victus"), 16),
+                new AspectList().add(Aspect.METAL, 32).add(Aspect.MAGIC, 32).add(Aspect.ARMOR, 32).add(Aspect.LIFE, 16),
                 getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.Emerald),
                 OrePrefixes.plate.get(Materials.Gold),
@@ -3895,16 +3695,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Gold));
         TCHelper.setResearchAspects(
                 "ARMORFORTRESS",
-                new AspectList().add(Aspect.getAspect("fabrico"), 15).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("tutamen"), 9).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.CRAFT, 15).add(Aspect.METAL, 12).add(Aspect.ARMOR, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.MIND, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("ARMORFORTRESS", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ARMORFORTRESS",
                 getModItem(Thaumcraft.ID, "ItemChestplateFortress", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("tutamen"), 40).add(Aspect.getAspect("cognitio"), 16),
+                new AspectList().add(Aspect.METAL, 32).add(Aspect.MAGIC, 32).add(Aspect.ARMOR, 40).add(Aspect.MIND, 16),
                 getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.plate.get(Materials.Thaumium),
@@ -3920,8 +3718,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "ARMORFORTRESS",
                 getModItem(Thaumcraft.ID, "ItemLeggingsFortress", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("tutamen"), 24).add(Aspect.getAspect("terra"), 16),
+                new AspectList().add(Aspect.METAL, 32).add(Aspect.MAGIC, 32).add(Aspect.ARMOR, 24)
+                        .add(Aspect.EARTH, 16),
                 getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 OrePrefixes.plate.get(Materials.Gold),
@@ -3933,36 +3731,31 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Gold));
         TCHelper.setResearchAspects(
                 "HELMGOGGLES",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("sensus"), 12)
-                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("fabrico"), 3));
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.SENSES, 12).add(Aspect.AURA, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.MAGIC, 6).add(Aspect.CRAFT, 3));
         TCHelper.setResearchComplexity("HELMGOGGLES", 3);
         TCHelper.setResearchAspects(
                 "MASKGRINNINGDEVIL",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("sano"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("fabrico"), 3));
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.HEAL, 12).add(Aspect.MIND, 9).add(Aspect.ELDRITCH, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.CRAFT, 3));
         TCHelper.setResearchComplexity("MASKGRINNINGDEVIL", 3);
         ThaumcraftApi.addWarpToResearch("MASKGRINNINGDEVIL", 1);
         TCHelper.setResearchAspects(
                 "MASKANGRYGHOST",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("perditio"), 12)
-                        .add(Aspect.getAspect("mortuus"), 9).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("fabrico"), 3));
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.ENTROPY, 12).add(Aspect.DEATH, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.MAGIC, 6).add(Aspect.CRAFT, 3));
         TCHelper.setResearchComplexity("MASKANGRYGHOST", 3);
         ThaumcraftApi.addWarpToResearch("MASKANGRYGHOST", 1);
         TCHelper.setResearchAspects(
                 "MASKSIPPINGFIEND",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("exanimis"), 12)
-                        .add(Aspect.getAspect("victus"), 9).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.UNDEAD, 12).add(Aspect.LIFE, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.MIND, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("MASKSIPPINGFIEND", 3);
         ThaumcraftApi.addWarpToResearch("MASKSIPPINGFIEND", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BONEBOW",
                 getModItem(Thaumcraft.ID, "ItemBowBone", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("perditio"), 32)
-                        .add(Aspect.getAspect("terra"), 32),
+                new AspectList().add(Aspect.AIR, 32).add(Aspect.ENTROPY, 32).add(Aspect.EARTH, 32),
                 "abc",
                 "def",
                 "ghi",
@@ -3988,8 +3781,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "THAUMONOMICON",
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
-                        .add(Aspect.getAspect("terra"), 2),
+                new AspectList().add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2).add(Aspect.EARTH, 2),
                 new ItemStack(Items.book),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
@@ -4003,8 +3795,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "blockTable", 1, 15),
-                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
-                        .add(Aspect.getAspect("terra"), 2),
+                new AspectList().add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2).add(Aspect.EARTH, 2),
                 getModItem(Thaumcraft.ID, "blockTable", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
@@ -4018,8 +3809,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "BASICARTIFACE",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
-                        .add(Aspect.getAspect("ignis"), 2),
+                new AspectList().add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2).add(Aspect.FIRE, 2),
                 new ItemStack(Items.cauldron),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
@@ -4032,8 +3822,7 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         TCHelper.setResearchAspects(
                 "BONEBOW",
-                new AspectList().add(Aspect.getAspect("telum"), 12).add(Aspect.getAspect("motus"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("exanimis"), 3));
+                new AspectList().add(Aspect.WEAPON, 12).add(Aspect.MOTION, 9).add(Aspect.AIR, 6).add(Aspect.UNDEAD, 3));
         TCHelper.setResearchComplexity("BONEBOW", 2);
         TCHelper.refreshResearchPages("THAUMOMETER");
         TCHelper.refreshResearchPages("GOGGLES");
@@ -4123,8 +3912,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "HUNGRYCHEST",
                 getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4148,15 +3936,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwThaumium");
         TCHelper.setResearchAspects(
                 "HUNGRYCHEST",
-                new AspectList().add(Aspect.getAspect("fames"), 9).add(Aspect.getAspect("vacuos"), 6)
-                        .add(Aspect.getAspect("iter"), 3));
+                new AspectList().add(Aspect.HUNGER, 9).add(Aspect.VOID, 6).add(Aspect.TRAVEL, 3));
         TCHelper.setResearchComplexity("HUNGRYCHEST", 1);
         TCHelper.addInfusionCraftingRecipe(
                 "TRAVELTRUNK",
                 getModItem(Thaumcraft.ID, "TrunkSpawner", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("iter"), 16).add(Aspect.getAspect("motus"), 16)
-                        .add(Aspect.getAspect("spiritus"), 16).add(Aspect.getAspect("vacuos"), 32),
+                new AspectList().add(Aspect.TRAVEL, 16).add(Aspect.MOTION, 16).add(Aspect.SOUL, 16)
+                        .add(Aspect.VOID, 32),
                 getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0),
                 OrePrefixes.plate.get(Materials.StainlessSteel),
                 OrePrefixes.ring.get(Materials.StainlessSteel),
@@ -4168,14 +3955,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.ring.get(Materials.StainlessSteel));
         TCHelper.setResearchAspects(
                 "TRAVELTRUNK",
-                new AspectList().add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("vacuos"), 12)
-                        .add(Aspect.getAspect("arbor"), 9).add(Aspect.getAspect("iter"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.SOUL, 12).add(Aspect.VOID, 12).add(Aspect.TREE, 9).add(Aspect.TRAVEL, 6)
+                        .add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("TRAVELTRUNK", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GOLEMFETTER",
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 9),
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 15),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.ORDER, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -4199,32 +3985,27 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6));
         TCHelper.setResearchAspects(
                 "GOLEMFETTER",
-                new AspectList().add(Aspect.getAspect("vinculum"), 9).add(Aspect.getAspect("machina"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TRAP, 9).add(Aspect.MECHANISM, 9).add(Aspect.MIND, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("GOLEMFETTER", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMSTRAW",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 0),
                 getModItem(Minecraft.ID, "hay_block", 1, 0),
-                new AspectList().add(Aspect.getAspect("humanus"), 10).add(Aspect.getAspect("motus"), 10)
-                        .add(Aspect.getAspect("spiritus"), 10));
+                new AspectList().add(Aspect.MAN, 10).add(Aspect.MOTION, 10).add(Aspect.SOUL, 10));
         TCHelper.setResearchAspects(
                 "GOLEMSTRAW",
-                new AspectList().add(Aspect.getAspect("messis"), 9).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("spiritus"), 9).add(Aspect.getAspect("motus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.CROP, 9).add(Aspect.EXCHANGE, 9).add(Aspect.SOUL, 9).add(Aspect.MOTION, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("GOLEMSTRAW", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMWOOD",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 1),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
-                new AspectList().add(Aspect.getAspect("humanus"), 14).add(Aspect.getAspect("motus"), 14)
-                        .add(Aspect.getAspect("spiritus"), 14));
+                new AspectList().add(Aspect.MAN, 14).add(Aspect.MOTION, 14).add(Aspect.SOUL, 14));
         TCHelper.setResearchAspects(
                 "GOLEMWOOD",
-                new AspectList().add(Aspect.getAspect("arbor"), 12).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("spiritus"), 9).add(Aspect.getAspect("motus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TREE, 12).add(Aspect.EXCHANGE, 12).add(Aspect.SOUL, 9).add(Aspect.MOTION, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("GOLEMWOOD", 3);
         TCHelper.clearPages("GOLEMTALLOW");
         TCHelper.addResearchPage("GOLEMTALLOW", new ResearchPage("tc.research_page.GOLEMTALLOW.1"));
@@ -4232,28 +4013,24 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "GOLEMTALLOW",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5),
-                new AspectList().add(Aspect.getAspect("humanus"), 26).add(Aspect.getAspect("mortuus"), 26)
-                        .add(Aspect.getAspect("spiritus"), 26));
+                new AspectList().add(Aspect.MAN, 26).add(Aspect.DEATH, 26).add(Aspect.SOUL, 26));
         TCHelper.addResearchPage(
                 "GOLEMTALLOW",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 2))));
         TCHelper.setResearchAspects(
                 "GOLEMTALLOW",
-                new AspectList().add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("corpus"), 15).add(Aspect.getAspect("motus"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6));
+                new AspectList().add(Aspect.SOUL, 12).add(Aspect.EXCHANGE, 12).add(Aspect.FLESH, 15)
+                        .add(Aspect.MOTION, 9).add(Aspect.MAGIC, 6));
         TCHelper.setResearchComplexity("GOLEMTALLOW", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMCLAY",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 3),
                 getModItem(Minecraft.ID, "clay", 1, 0),
-                new AspectList().add(Aspect.getAspect("humanus"), 20).add(Aspect.getAspect("motus"), 20)
-                        .add(Aspect.getAspect("spiritus"), 20));
+                new AspectList().add(Aspect.MAN, 20).add(Aspect.MOTION, 20).add(Aspect.SOUL, 20));
         TCHelper.setResearchAspects(
                 "GOLEMCLAY",
-                new AspectList().add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("terra"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.SOUL, 12).add(Aspect.EXCHANGE, 12).add(Aspect.MOTION, 12)
+                        .add(Aspect.EARTH, 9).add(Aspect.MAGIC, 6).add(Aspect.WATER, 3));
         TCHelper.setResearchComplexity("GOLEMCLAY", 3);
         TCHelper.clearPages("GOLEMFLESH");
         TCHelper.addResearchPage("GOLEMFLESH", new ResearchPage("tc.research_page.GOLEMFLESH.1"));
@@ -4261,41 +4038,34 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "GOLEMFLESH",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 4),
                 getModItem(Thaumcraft.ID, "blockTaint", 1, 2),
-                new AspectList().add(Aspect.getAspect("humanus"), 20).add(Aspect.getAspect("motus"), 20)
-                        .add(Aspect.getAspect("spiritus"), 20));
+                new AspectList().add(Aspect.MAN, 20).add(Aspect.MOTION, 20).add(Aspect.SOUL, 20));
         TCHelper.addResearchPage(
                 "GOLEMFLESH",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 4))));
         TCHelper.setResearchAspects(
                 "GOLEMFLESH",
-                new AspectList().add(Aspect.getAspect("corpus"), 12).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("motus"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("mortuus"), 3));
+                new AspectList().add(Aspect.FLESH, 12).add(Aspect.EXCHANGE, 12).add(Aspect.SOUL, 12)
+                        .add(Aspect.MOTION, 9).add(Aspect.MAGIC, 6).add(Aspect.DEATH, 3));
         TCHelper.setResearchComplexity("GOLEMFLESH", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMSTONE",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 5),
                 getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0),
-                new AspectList().add(Aspect.getAspect("humanus"), 26).add(Aspect.getAspect("mortuus"), 26)
-                        .add(Aspect.getAspect("spiritus"), 26));
+                new AspectList().add(Aspect.MAN, 26).add(Aspect.DEATH, 26).add(Aspect.SOUL, 26));
         TCHelper.setResearchAspects(
                 "GOLEMSTONE",
-                new AspectList().add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("terra"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("perditio"), 3));
+                new AspectList().add(Aspect.SOUL, 12).add(Aspect.EXCHANGE, 12).add(Aspect.MOTION, 12)
+                        .add(Aspect.EARTH, 9).add(Aspect.MAGIC, 6).add(Aspect.ENTROPY, 3));
         TCHelper.setResearchComplexity("GOLEMSTONE", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMIRON",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 6),
                 getModItem(Minecraft.ID, "iron_block", 1, 0),
-                new AspectList().add(Aspect.getAspect("humanus"), 32).add(Aspect.getAspect("mortuus"), 32)
-                        .add(Aspect.getAspect("spiritus"), 32));
+                new AspectList().add(Aspect.MAN, 32).add(Aspect.DEATH, 32).add(Aspect.SOUL, 32));
         TCHelper.setResearchAspects(
                 "GOLEMIRON",
-                new AspectList().add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("spiritus"), 12)
-                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("metallum"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("terra"), 6)
-                        .add(Aspect.getAspect("humanus"), 3));
+                new AspectList().add(Aspect.EXCHANGE, 12).add(Aspect.SOUL, 12).add(Aspect.MOTION, 12)
+                        .add(Aspect.METAL, 9).add(Aspect.MAGIC, 9).add(Aspect.EARTH, 6).add(Aspect.MAN, 3));
         TCHelper.setResearchComplexity("GOLEMIRON", 3);
         TCHelper.clearPages("GOLEMTHAUMIUM");
         TCHelper.addResearchPage("GOLEMTHAUMIUM", new ResearchPage("tc.research_page.GOLEMTHAUMIUM.1"));
@@ -4303,30 +4073,25 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "GOLEMTHAUMIUM",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 7),
                 "blockThaumium",
-                new AspectList().add(Aspect.getAspect("humanus"), 40).add(Aspect.getAspect("mortuus"), 40)
-                        .add(Aspect.getAspect("spiritus"), 40));
+                new AspectList().add(Aspect.MAN, 40).add(Aspect.DEATH, 40).add(Aspect.SOUL, 40));
         TCHelper.addResearchPage(
                 "GOLEMTHAUMIUM",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 7))));
         TCHelper.setResearchAspects(
                 "GOLEMTHAUMIUM",
-                new AspectList().add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("spiritus"), 12)
-                        .add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("motus"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("terra"), 9)
-                        .add(Aspect.getAspect("humanus"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.EXCHANGE, 12).add(Aspect.SOUL, 12).add(Aspect.METAL, 12)
+                        .add(Aspect.MOTION, 9).add(Aspect.MAGIC, 9).add(Aspect.EARTH, 9).add(Aspect.MAN, 6)
+                        .add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("GOLEMTHAUMIUM", 3);
         TCHelper.setResearchAspects(
                 "ADVANCEDGOLEM",
-                new AspectList().add(Aspect.getAspect("sensus"), 15).add(Aspect.getAspect("victus"), 15)
-                        .add(Aspect.getAspect("cognitio"), 12).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.SENSES, 15).add(Aspect.LIFE, 15).add(Aspect.MIND, 12).add(Aspect.ENERGY, 12)
+                        .add(Aspect.MAGIC, 12).add(Aspect.ELDRITCH, 9).add(Aspect.MOTION, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ADVANCEDGOLEM", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "COREGATHER",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100),
-                new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.ORDER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4352,28 +4117,26 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "COREGATHER",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 2),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100),
-                new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("terra"), 10));
+                new AspectList().add(Aspect.GREED, 10).add(Aspect.EARTH, 10));
         ThaumcraftApi.addCrucibleRecipe(
                 "COREEMPTY",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100),
-                new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("vacuos"), 10));
+                new AspectList().add(Aspect.GREED, 10).add(Aspect.VOID, 10));
         TCHelper.setResearchAspects(
                 "COREEMPTY",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("vacuos"), 9)
-                        .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("motus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.VOID, 9).add(Aspect.EXCHANGE, 6).add(Aspect.MOTION, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("COREEMPTY", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "COREFILL",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100),
-                new AspectList().add(Aspect.getAspect("fames"), 10).add(Aspect.getAspect("vacuos"), 10));
+                new AspectList().add(Aspect.HUNGER, 10).add(Aspect.VOID, 10));
         TCHelper.setResearchAspects(
                 "COREFILL",
-                new AspectList().add(Aspect.getAspect("fames"), 9).add(Aspect.getAspect("vacuos"), 9)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("motus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.HUNGER, 9).add(Aspect.VOID, 9).add(Aspect.EXCHANGE, 9).add(Aspect.MOTION, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("COREFILL", 2);
         TCHelper.clearPages("COREHARVEST");
         TCHelper.addResearchPage("COREHARVEST", new ResearchPage("tc.research_page.COREHARVEST.1"));
@@ -4381,8 +4144,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "COREHARVEST",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3),
                 4,
-                new AspectList().add(Aspect.getAspect("messis"), 10).add(Aspect.getAspect("meto"), 10)
-                        .add(Aspect.getAspect("herba"), 20),
+                new AspectList().add(Aspect.CROP, 10).add(Aspect.HARVEST, 10).add(Aspect.PLANT, 20),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Minecraft.ID, "wheat_seeds", 1, 0),
@@ -4394,9 +4156,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("COREHARVEST", new ResearchPage("tc.research_page.COREHARVEST.2"));
         TCHelper.setResearchAspects(
                 "COREHARVEST",
-                new AspectList().add(Aspect.getAspect("meto"), 12).add(Aspect.getAspect("messis"), 12)
-                        .add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.HARVEST, 12).add(Aspect.CROP, 12).add(Aspect.TRAVEL, 9)
+                        .add(Aspect.EXCHANGE, 9).add(Aspect.MOTION, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("COREHARVEST", 3);
         TCHelper.clearPages("COREGUARD");
         TCHelper.addResearchPage("COREGUARD", new ResearchPage("tc.research_page.COREGUARD.1"));
@@ -4404,8 +4165,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "COREGUARD",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4),
                 4,
-                new AspectList().add(Aspect.getAspect("telum"), 20).add(Aspect.getAspect("vinculum"), 20)
-                        .add(Aspect.getAspect("tutamen"), 20),
+                new AspectList().add(Aspect.WEAPON, 20).add(Aspect.TRAP, 20).add(Aspect.ARMOR, 20),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 OrePrefixes.plate.get(Materials.Obsidian),
@@ -4417,16 +4177,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("COREGUARD", new ResearchPage("tc.research_page.COREGUARD.2"));
         TCHelper.setResearchAspects(
                 "COREGUARD",
-                new AspectList().add(Aspect.getAspect("sensus"), 12).add(Aspect.getAspect("telum"), 12)
-                        .add(Aspect.getAspect("vinculum"), 12).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.SENSES, 12).add(Aspect.WEAPON, 12).add(Aspect.TRAP, 12)
+                        .add(Aspect.EXCHANGE, 9).add(Aspect.MOTION, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("COREGUARD", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "COREUSE",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 8),
                 4,
-                new AspectList().add(Aspect.getAspect("humanus"), 20).add(Aspect.getAspect("instrumentum"), 20)
-                        .add(Aspect.getAspect("machina"), 20).add(Aspect.getAspect("lucrum"), 20),
+                new AspectList().add(Aspect.MAN, 20).add(Aspect.TOOL, 20).add(Aspect.MECHANISM, 20)
+                        .add(Aspect.GREED, 20),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 1),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26),
@@ -4436,16 +4195,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "shears", 1, 0));
         TCHelper.setResearchAspects(
                 "COREUSE",
-                new AspectList().add(Aspect.getAspect("humanus"), 12).add(Aspect.getAspect("instrumentum"), 12)
-                        .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.MAN, 12).add(Aspect.TOOL, 12).add(Aspect.MECHANISM, 9)
+                        .add(Aspect.EXCHANGE, 9).add(Aspect.MOTION, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("COREUSE", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "CORESORTING",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 10),
                 4,
-                new AspectList().add(Aspect.getAspect("lucrum"), 20).add(Aspect.getAspect("fames"), 20)
-                        .add(Aspect.getAspect("permutatio"), 20).add(Aspect.getAspect("vacuos"), 20),
+                new AspectList().add(Aspect.GREED, 20).add(Aspect.HUNGER, 20).add(Aspect.EXCHANGE, 20)
+                        .add(Aspect.VOID, 20),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 1),
@@ -4455,9 +4213,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26));
         TCHelper.setResearchAspects(
                 "CORESORTING",
-                new AspectList().add(Aspect.getAspect("fames"), 12).add(Aspect.getAspect("vacuos"), 12)
-                        .add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.HUNGER, 12).add(Aspect.VOID, 12).add(Aspect.GREED, 12)
+                        .add(Aspect.EXCHANGE, 9).add(Aspect.MOTION, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("CORESORTING", 3);
         TCHelper.clearPages("CORELIQUID");
         TCHelper.addResearchPage("CORELIQUID", new ResearchPage("tc.research_page.CORELIQUID.1"));
@@ -4465,8 +4222,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "CORELIQUID",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5),
                 4,
-                new AspectList().add(Aspect.getAspect("aqua"), 20).add(Aspect.getAspect("vacuos"), 20)
-                        .add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("iter"), 20),
+                new AspectList().add(Aspect.WATER, 20).add(Aspect.VOID, 20).add(Aspect.METAL, 20)
+                        .add(Aspect.TRAVEL, 20),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
@@ -4480,16 +4237,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("CORELIQUID", new ResearchPage("tc.research_page.CORELIQUID.2"));
         TCHelper.setResearchAspects(
                 "CORELIQUID",
-                new AspectList().add(Aspect.getAspect("iter"), 12).add(Aspect.getAspect("aqua"), 12)
-                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("permutatio"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TRAVEL, 12).add(Aspect.WATER, 12).add(Aspect.METAL, 9)
+                        .add(Aspect.EXCHANGE, 9).add(Aspect.MOTION, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("CORELIQUID", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "COREALCHEMY",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 6),
                 7,
-                new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("motus"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("permutatio"), 32),
+                new AspectList().add(Aspect.WATER, 32).add(Aspect.MOTION, 32).add(Aspect.MAGIC, 32)
+                        .add(Aspect.EXCHANGE, 32),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Minecraft.ID, "potion", 1, 0),
@@ -4501,9 +4257,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0));
         TCHelper.setResearchAspects(
                 "COREALCHEMY",
-                new AspectList().add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("aqua"), 12)
-                        .add(Aspect.getAspect("iter"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.ENERGY, 12).add(Aspect.WATER, 12).add(Aspect.TRAVEL, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.MOTION, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("COREALCHEMY", 3);
         TCHelper.clearPages("COREBUTCHER");
         TCHelper.addResearchPage("COREBUTCHER", new ResearchPage("tc.research_page.COREBUTCHER.1"));
@@ -4511,8 +4266,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "COREBUTCHER",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 9),
                 7,
-                new AspectList().add(Aspect.getAspect("bestia"), 32).add(Aspect.getAspect("corpus"), 32)
-                        .add(Aspect.getAspect("mortuus"), 32).add(Aspect.getAspect("telum"), 32),
+                new AspectList().add(Aspect.BEAST, 32).add(Aspect.FLESH, 32).add(Aspect.DEATH, 32)
+                        .add(Aspect.WEAPON, 32),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 MetaGeneratedTool01.INSTANCE.getToolWithStats(BUTCHERYKNIFE.ID, 1, null, null, null),
@@ -4525,17 +4280,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 9))));
         TCHelper.setResearchAspects(
                 "COREBUTCHER",
-                new AspectList().add(Aspect.getAspect("meto"), 12).add(Aspect.getAspect("telum"), 12)
-                        .add(Aspect.getAspect("bestia"), 9).add(Aspect.getAspect("sensus"), 12)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.HARVEST, 12).add(Aspect.WEAPON, 12).add(Aspect.BEAST, 9)
+                        .add(Aspect.SENSES, 12).add(Aspect.MOTION, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("COREBUTCHER", 3);
         ThaumcraftApi.addWarpToResearch("COREBUTCHER", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "COREFISHING",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 11),
                 7,
-                new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("meto"), 20)
-                        .add(Aspect.getAspect("bestia"), 32).add(Aspect.getAspect("fames"), 32),
+                new AspectList().add(Aspect.WATER, 32).add(Aspect.HARVEST, 20).add(Aspect.BEAST, 32)
+                        .add(Aspect.HUNGER, 32),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Minecraft.ID, "fish", 1, 0),
@@ -4545,16 +4299,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null));
         TCHelper.setResearchAspects(
                 "COREFISHING",
-                new AspectList().add(Aspect.getAspect("fames"), 12).add(Aspect.getAspect("aqua"), 12)
-                        .add(Aspect.getAspect("bestia"), 12).add(Aspect.getAspect("meto"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.HUNGER, 12).add(Aspect.WATER, 12).add(Aspect.BEAST, 12)
+                        .add(Aspect.HARVEST, 9).add(Aspect.MOTION, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("COREFISHING", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "CORELUMBER",
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 7),
                 7,
-                new AspectList().add(Aspect.getAspect("arbor"), 32).add(Aspect.getAspect("instrumentum"), 32)
-                        .add(Aspect.getAspect("meto"), 20).add(Aspect.getAspect("potentia"), 32),
+                new AspectList().add(Aspect.TREE, 32).add(Aspect.TOOL, 32).add(Aspect.HARVEST, 20)
+                        .add(Aspect.ENERGY, 32),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0),
@@ -4563,9 +4316,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0));
         TCHelper.setResearchAspects(
                 "CORELUMBER",
-                new AspectList().add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("arbor"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("meto"), 12)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ENERGY, 12).add(Aspect.TREE, 12).add(Aspect.TOOL, 9).add(Aspect.HARVEST, 12)
+                        .add(Aspect.MOTION, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("CORELUMBER", 3);
 
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "GolemBell", 1, 0));
@@ -4575,7 +4327,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GOLEMBELL",
                 getModItem(Thaumcraft.ID, "GolemBell", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aer"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.AIR, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4603,7 +4355,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEAIR",
                 getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4627,13 +4379,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "nuggetGold");
         TCHelper.setResearchAspects(
                 "UPGRADEAIR",
-                new AspectList().add(Aspect.getAspect("motus"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.MOTION, 9).add(Aspect.AIR, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("UPGRADEAIR", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEEARTH",
                 getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4657,13 +4408,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "nuggetGold");
         TCHelper.setResearchAspects(
                 "UPGRADEEARTH",
-                new AspectList().add(Aspect.getAspect("victus"), 9).add(Aspect.getAspect("terra"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.LIFE, 9).add(Aspect.EARTH, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("UPGRADEEARTH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEFIRE",
                 getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 2),
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4687,13 +4437,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "nuggetGold");
         TCHelper.setResearchAspects(
                 "UPGRADEFIRE",
-                new AspectList().add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("ignis"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ENERGY, 9).add(Aspect.FIRE, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("UPGRADEFIRE", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEWATER",
                 getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 3),
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4717,13 +4466,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "nuggetGold");
         TCHelper.setResearchAspects(
                 "UPGRADEWATER",
-                new AspectList().add(Aspect.getAspect("sensus"), 9).add(Aspect.getAspect("aqua"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.SENSES, 9).add(Aspect.WATER, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("UPGRADEWATER", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEORDER",
                 getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 4),
-                new AspectList().add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -4747,13 +4495,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "nuggetGold");
         TCHelper.setResearchAspects(
                 "UPGRADEORDER",
-                new AspectList().add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("ordo"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.MIND, 6).add(Aspect.ORDER, 9).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("UPGRADEORDER", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEENTROPY",
                 getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 5),
-                new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.ENTROPY, 15).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4777,14 +4524,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "nuggetGold");
         TCHelper.setResearchAspects(
                 "UPGRADEENTROPY",
-                new AspectList().add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.MIND, 6).add(Aspect.ENTROPY, 9).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("UPGRADEENTROPY", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYHAT",
                 getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4804,14 +4549,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "blockWoolBlack");
         TCHelper.setResearchAspects(
                 "TINYHAT",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("pannus"), 9)
-                        .add(Aspect.getAspect("victus"), 6).add(Aspect.getAspect("sano"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.CLOTH, 9).add(Aspect.LIFE, 6).add(Aspect.HEAL, 3));
         TCHelper.setResearchComplexity("TINYHAT", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYGLASSES",
                 getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4833,14 +4576,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "lensGlass");
         TCHelper.setResearchAspects(
                 "TINYGLASSES",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("pannus"), 6)
-                        .add(Aspect.getAspect("sensus"), 6).add(Aspect.getAspect("ordo"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.CLOTH, 6).add(Aspect.SENSES, 6).add(Aspect.ORDER, 3));
         TCHelper.setResearchComplexity("TINYGLASSES", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYBOWTIE",
                 getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 2),
-                new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("aer"), 5)
-                        .add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.ORDER, 5).add(Aspect.AIR, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4856,14 +4597,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "blockWoolBlack");
         TCHelper.setResearchAspects(
                 "TINYBOWTIE",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("pannus"), 9)
-                        .add(Aspect.getAspect("iter"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.CLOTH, 9).add(Aspect.TRAVEL, 6).add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("TINYBOWTIE", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYFEZ",
                 getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 3),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4887,14 +4626,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0));
         TCHelper.setResearchAspects(
                 "TINYFEZ",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("pannus"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("sano"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.CLOTH, 9).add(Aspect.ENERGY, 6).add(Aspect.HEAL, 3));
         TCHelper.setResearchComplexity("TINYFEZ", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYDART",
                 getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 4),
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4918,14 +4655,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "arrow", 1, 0));
         TCHelper.setResearchAspects(
                 "TINYDART",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("volatus"), 9)
-                        .add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("potentia"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.FLIGHT, 9).add(Aspect.WEAPON, 6)
+                        .add(Aspect.ENERGY, 3));
         TCHelper.setResearchComplexity("TINYDART", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYVISOR",
                 getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 5),
-                new AspectList().add(Aspect.getAspect("aqua"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.WATER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -4943,14 +4679,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateSteel");
         TCHelper.setResearchAspects(
                 "TINYVISOR",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("sensus"), 9)
-                        .add(Aspect.getAspect("tutamen"), 6).add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.SENSES, 9).add(Aspect.ARMOR, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("TINYVISOR", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYARMOR",
                 getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 6),
-                new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 10),
+                new AspectList().add(Aspect.ORDER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -4968,14 +4702,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateSteel");
         TCHelper.setResearchAspects(
                 "TINYARMOR",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("metallum"), 9)
-                        .add(Aspect.getAspect("tutamen"), 6).add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.METAL, 9).add(Aspect.ARMOR, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("TINYARMOR", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYHAMMER",
                 getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 7),
-                new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 10),
+                new AspectList().add(Aspect.ORDER, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -4995,8 +4727,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "stickWood");
         TCHelper.setResearchAspects(
                 "TINYHAMMER",
-                new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("metallum"), 9)
-                        .add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("vinculum"), 3));
+                new AspectList().add(Aspect.GREED, 9).add(Aspect.METAL, 9).add(Aspect.WEAPON, 6).add(Aspect.TRAP, 3));
         TCHelper.setResearchComplexity("TINYHAMMER", 2);
         TCHelper.refreshResearchPages("HUNGRYCHEST");
         TCHelper.refreshResearchPages("TRAVELTRUNK");
@@ -5058,8 +4789,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "ELDRITCHMINOR",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
                 "listAllseed",
-                new AspectList().add(Aspect.getAspect("alienis"), 8).add(Aspect.getAspect("tenebrae"), 8)
-                        .add(Aspect.getAspect("vacuos"), 8));
+                new AspectList().add(Aspect.ELDRITCH, 8).add(Aspect.DARKNESS, 8).add(Aspect.VOID, 8));
         TCHelper.addResearchPage(
                 "ELDRITCHMINOR",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 17))));
@@ -5069,22 +4799,21 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 16),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
-                new AspectList().add(Aspect.getAspect("metallum"), 16));
+                new AspectList().add(Aspect.METAL, 16));
         TCHelper.addResearchPage(
                 "VOIDMETAL",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 16))));
         TCHelper.addResearchPage("VOIDMETAL", new ResearchPage("tc.research_page.VOIDMETAL.2"));
         TCHelper.setResearchAspects(
                 "VOIDMETAL",
-                new AspectList().add(Aspect.getAspect("vacuos"), 12).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("gelum"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.VOID, 12).add(Aspect.METAL, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.COLD, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("VOIDMETAL", 3);
         ThaumcraftApi.addWarpToResearch("VOIDMETAL", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemAxeVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
+                new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -5108,7 +4837,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
+                new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -5128,7 +4857,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
+                new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -5152,7 +4881,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
+                new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -5172,7 +4901,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemHoeVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
+                new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -5194,7 +4923,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.ENTROPY, 40).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -5216,7 +4945,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.ENTROPY, 40).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -5244,7 +4973,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.ENTROPY, 40).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -5270,7 +4999,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(Thaumcraft.ID, "ItemBootsVoid", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.ENTROPY, 40).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -5290,7 +5019,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(ThaumicBases.ID, "voidFAS", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.ENTROPY, 40).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -5306,7 +5035,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
                 getModItem(ThaumicBases.ID, "voidShears", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.ENTROPY, 40).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -5328,8 +5057,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_void",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 8),
-                new AspectList().add(Aspect.getAspect("ordo"), 40).add(Aspect.getAspect("ignis"), 40)
-                        .add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("perditio"), 40),
+                new AspectList().add(Aspect.ORDER, 40).add(Aspect.FIRE, 40).add(Aspect.AIR, 40).add(Aspect.ENTROPY, 40),
                 "abc",
                 "def",
                 "ghi",
@@ -5358,8 +5086,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "CAP_void",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 7),
                 8,
-                new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("auram"), 32)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("vacuos"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.AURA, 32).add(Aspect.ENERGY, 32)
+                        .add(Aspect.VOID, 32),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
@@ -5372,17 +5100,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 7))));
         TCHelper.setResearchAspects(
                 "CAP_void",
-                new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("vacuos"), 12)
-                        .add(Aspect.getAspect("alienis"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("terra"), 6)
-                        .add(Aspect.getAspect("tenebrae"), 3));
+                new AspectList().add(Aspect.AURA, 12).add(Aspect.VOID, 12).add(Aspect.ELDRITCH, 9).add(Aspect.MAGIC, 9)
+                        .add(Aspect.TOOL, 6).add(Aspect.EARTH, 6).add(Aspect.DARKNESS, 3));
         TCHelper.setResearchComplexity("CAP_void", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ESSENTIARESERVOIR",
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("aqua"), 16).add(Aspect.getAspect("permutatio"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("vacuos"), 16),
+                new AspectList().add(Aspect.WATER, 16).add(Aspect.EXCHANGE, 16).add(Aspect.MAGIC, 16)
+                        .add(Aspect.VOID, 16),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 4),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
@@ -5394,16 +5120,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0));
         TCHelper.setResearchAspects(
                 "ESSENTIARESERVOIR",
-                new AspectList().add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("vacuos"), 9)
-                        .add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("tenebrae"), 3));
+                new AspectList().add(Aspect.WATER, 12).add(Aspect.EXCHANGE, 12).add(Aspect.MAGIC, 9).add(Aspect.VOID, 9)
+                        .add(Aspect.ELDRITCH, 6).add(Aspect.DARKNESS, 3));
         TCHelper.setResearchComplexity("ESSENTIARESERVOIR", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSPRIMAL",
                 getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0),
-                new AspectList().add(Aspect.getAspect("aqua"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aer"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                new AspectList().add(Aspect.WATER, 75).add(Aspect.EARTH, 75).add(Aspect.FIRE, 75).add(Aspect.AIR, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -5427,19 +5151,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "gemExquisiteDiamond");
         TCHelper.setResearchAspects(
                 "FOCUSPRIMAL",
-                new AspectList().add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("terra"), 9)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.WATER, 12).add(Aspect.FIRE, 12).add(Aspect.AIR, 12).add(Aspect.EARTH, 9)
+                        .add(Aspect.ORDER, 9).add(Aspect.ENTROPY, 9).add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("FOCUSPRIMAL", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_primal_staff",
                 getModItem(Thaumcraft.ID, "WandRod", 1, 100),
                 10,
-                new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("aqua"), 64)
-                        .add(Aspect.getAspect("terra"), 64).add(Aspect.getAspect("ignis"), 64)
-                        .add(Aspect.getAspect("ordo"), 64).add(Aspect.getAspect("perditio"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 128),
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.WATER, 64).add(Aspect.EARTH, 64).add(Aspect.FIRE, 64)
+                        .add(Aspect.ORDER, 64).add(Aspect.ENTROPY, 64).add(Aspect.MAGIC, 128),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 1),
@@ -5451,20 +5171,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "WandRod", 1, 7));
         TCHelper.setResearchAspects(
                 "ROD_primal_staff",
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("terra"), 12)
-                        .add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("instrumentum"), 6)
-                        .add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.FIRE, 15).add(Aspect.AIR, 12).add(Aspect.EARTH, 12)
+                        .add(Aspect.ORDER, 12).add(Aspect.ENTROPY, 9).add(Aspect.MAGIC, 9).add(Aspect.TOOL, 6)
+                        .add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("ROD_primal_staff", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ARMORVOIDFORTRESS",
                 getModItem(Thaumcraft.ID, "ItemHelmetVoidFortress", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("metallum"), 24)
-                        .add(Aspect.getAspect("pannus"), 24).add(Aspect.getAspect("sensus"), 24)
-                        .add(Aspect.getAspect("tutamen"), 24).add(Aspect.getAspect("vacuos"), 24)
-                        .add(Aspect.getAspect("praecantatio"), 24),
+                new AspectList().add(Aspect.ELDRITCH, 24).add(Aspect.METAL, 24).add(Aspect.CLOTH, 24)
+                        .add(Aspect.SENSES, 24).add(Aspect.ARMOR, 24).add(Aspect.VOID, 24).add(Aspect.MAGIC, 24),
                 getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
@@ -5478,19 +5194,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.setResearchAspects(
                 "ARMORVOIDFORTRESS",
-                new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("tenebrae"), 15)
-                        .add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("pannus"), 12)
-                        .add(Aspect.getAspect("alienis"), 9).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("sensus"), 6).add(Aspect.getAspect("metallum"), 3));
+                new AspectList().add(Aspect.VOID, 15).add(Aspect.DARKNESS, 15).add(Aspect.ARMOR, 12)
+                        .add(Aspect.CLOTH, 12).add(Aspect.ELDRITCH, 9).add(Aspect.MAGIC, 9).add(Aspect.SENSES, 6)
+                        .add(Aspect.METAL, 3));
         TCHelper.setResearchComplexity("ARMORVOIDFORTRESS", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ARMORVOIDFORTRESS",
                 getModItem(Thaumcraft.ID, "ItemChestplateVoidFortress", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("pannus"), 32).add(Aspect.getAspect("sensus"), 32)
-                        .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("vacuos"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.METAL, 32).add(Aspect.CLOTH, 32)
+                        .add(Aspect.SENSES, 32).add(Aspect.ARMOR, 32).add(Aspect.VOID, 32).add(Aspect.MAGIC, 32),
                 getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
@@ -5506,10 +5219,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "ARMORVOIDFORTRESS",
                 getModItem(Thaumcraft.ID, "ItemLeggingsVoidFortress", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("alienis"), 28).add(Aspect.getAspect("metallum"), 28)
-                        .add(Aspect.getAspect("pannus"), 28).add(Aspect.getAspect("sensus"), 28)
-                        .add(Aspect.getAspect("tutamen"), 28).add(Aspect.getAspect("vacuos"), 28)
-                        .add(Aspect.getAspect("praecantatio"), 28),
+                new AspectList().add(Aspect.ELDRITCH, 28).add(Aspect.METAL, 28).add(Aspect.CLOTH, 28)
+                        .add(Aspect.SENSES, 28).add(Aspect.ARMOR, 28).add(Aspect.VOID, 28).add(Aspect.MAGIC, 28),
                 getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
@@ -5525,8 +5236,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "SANITYCHECK",
                 getModItem(Thaumcraft.ID, "ItemSanityChecker", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("cognitio"), 32)
-                        .add(Aspect.getAspect("sensus"), 24).add(Aspect.getAspect("sano"), 16),
+                new AspectList().add(Aspect.ELDRITCH, 16).add(Aspect.MIND, 32).add(Aspect.SENSES, 24)
+                        .add(Aspect.HEAL, 16),
                 getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0),
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 0),
                 OrePrefixes.screw.get(Materials.Thaumium),
@@ -5538,16 +5249,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 OrePrefixes.screw.get(Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "SANITYCHECK",
-                new AspectList().add(Aspect.getAspect("sensus"), 12).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("sano"), 6).add(Aspect.getAspect("victus"), 3));
+                new AspectList().add(Aspect.SENSES, 12).add(Aspect.MIND, 12).add(Aspect.ELDRITCH, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.HEAL, 6).add(Aspect.LIFE, 3));
         TCHelper.setResearchComplexity("SANITYCHECK", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "OCULUS",
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 7,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("iter"), 32)
-                        .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("vacuos"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.TRAVEL, 32).add(Aspect.DARKNESS, 32)
+                        .add(Aspect.VOID, 32),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
@@ -5559,19 +5269,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17));
         TCHelper.setResearchAspects(
                 "OCULUS",
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("cognitio"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("iter"), 9)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("vitium"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.MIND, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.TRAVEL, 9).add(Aspect.EXCHANGE, 9).add(Aspect.TAINT, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("OCULUS", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "PRIMALCRUSHER",
                 getModItem(Thaumcraft.ID, "ItemPrimalCrusher", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("instrumentum"), 24)
-                        .add(Aspect.getAspect("lucrum"), 24).add(Aspect.getAspect("perditio"), 24)
-                        .add(Aspect.getAspect("perfodio"), 24).add(Aspect.getAspect("telum"), 24)
-                        .add(Aspect.getAspect("vacuos"), 24),
+                new AspectList().add(Aspect.ELDRITCH, 24).add(Aspect.TOOL, 24).add(Aspect.GREED, 24)
+                        .add(Aspect.ENTROPY, 24).add(Aspect.MINE, 24).add(Aspect.WEAPON, 24).add(Aspect.VOID, 24),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0),
@@ -5581,16 +5287,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0));
         TCHelper.setResearchAspects(
                 "PRIMALCRUSHER",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("alienis"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("lucrum"), 9)
-                        .add(Aspect.getAspect("perditio"), 9).add(Aspect.getAspect("perfodio"), 9)
-                        .add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("vacuos"), 3));
+                new AspectList().add(Aspect.MAGIC, 12).add(Aspect.ELDRITCH, 12).add(Aspect.TOOL, 12)
+                        .add(Aspect.GREED, 9).add(Aspect.ENTROPY, 9).add(Aspect.MINE, 9).add(Aspect.WEAPON, 6)
+                        .add(Aspect.VOID, 3));
         TCHelper.setResearchComplexity("PRIMALCRUSHER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ADVALCHEMYFURNACE",
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 4, 3),
-                new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("terra"), 32)
-                        .add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("ordo"), 32),
+                new AspectList().add(Aspect.WATER, 32).add(Aspect.EARTH, 32).add(Aspect.AIR, 32).add(Aspect.ORDER, 32),
                 "abc",
                 "def",
                 "ghi",
@@ -5614,17 +5318,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateVoid");
         TCHelper.setResearchAspects(
                 "ADVALCHEMYFURNACE",
-                new AspectList().add(Aspect.getAspect("perditio"), 12).add(Aspect.getAspect("auram"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("ordo"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.ENTROPY, 12).add(Aspect.AURA, 12).add(Aspect.AIR, 9).add(Aspect.ORDER, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("ADVALCHEMYFURNACE", 3);
         new ResearchItem(
                 "CRIMSONRITES",
                 "ELDRITCH",
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("cognitio"), 3).add(Aspect.getAspect("spiritus"), 12)
-                        .add(Aspect.getAspect("vacuos"), 9).add(Aspect.getAspect("infernus"), 2)
-                        .add(Aspect.getAspect("vitium"), 5),
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.MAGIC, 6).add(Aspect.MIND, 3).add(Aspect.SOUL, 12)
+                        .add(Aspect.VOID, 9).add(DarkAspects.NETHER, 2).add(Aspect.TAINT, 5),
                 -3,
                 -3,
                 5,
@@ -5635,8 +5336,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "CRIMSONRITES",
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1),
                 10,
-                new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("infernus"), 16),
+                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.MAGIC, 64).add(DarkAspects.NETHER, 16),
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
@@ -5660,8 +5360,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CRIMSONRITES",
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 8),
-                new AspectList().add(Aspect.getAspect("aqua"), 5).add(Aspect.getAspect("terra"), 5)
-                        .add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5).add(Aspect.ENTROPY, 5),
                 "aba",
                 "bcb",
                 "ada",
@@ -5711,9 +5410,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INFUSION",
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2),
-                new AspectList().add(Aspect.getAspect("aer"), 45).add(Aspect.getAspect("ignis"), 45)
-                        .add(Aspect.getAspect("terra"), 45).add(Aspect.getAspect("aqua"), 45)
-                        .add(Aspect.getAspect("ordo"), 45).add(Aspect.getAspect("perditio"), 45),
+                new AspectList().add(Aspect.AIR, 45).add(Aspect.FIRE, 45).add(Aspect.EARTH, 45).add(Aspect.WATER, 45)
+                        .add(Aspect.ORDER, 45).add(Aspect.ENTROPY, 45),
                 "aba",
                 "bcb",
                 "aba",
@@ -5735,1471 +5433,1251 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         ThaumcraftApi.registerObjectTag(
                 getModItem(BiomesOPlenty.ID, "bones", 1, 0),
-                new AspectList().add(Aspect.getAspect("corpus"), 1).add(Aspect.getAspect("exanimis"), 3)
-                        .add(Aspect.getAspect("mortuus"), 2));
+                new AspectList().add(Aspect.FLESH, 1).add(Aspect.UNDEAD, 3).add(Aspect.DEATH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(BiomesOPlenty.ID, "bones", 1, 1),
-                new AspectList().add(Aspect.getAspect("corpus"), 2).add(Aspect.getAspect("exanimis"), 6)
-                        .add(Aspect.getAspect("mortuus"), 4));
+                new AspectList().add(Aspect.FLESH, 2).add(Aspect.UNDEAD, 6).add(Aspect.DEATH, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(BiomesOPlenty.ID, "bones", 1, 2),
-                new AspectList().add(Aspect.getAspect("corpus"), 3).add(Aspect.getAspect("exanimis"), 9)
-                        .add(Aspect.getAspect("mortuus"), 6));
+                new AspectList().add(Aspect.FLESH, 3).add(Aspect.UNDEAD, 9).add(Aspect.DEATH, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(ForbiddenMagic.ID, "WandCores", 1, 5),
-                new AspectList().add(Aspect.getAspect("terra"), 32).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("vitreus"), 16).add(Aspect.getAspect("infernus"), 8)
-                        .add(Aspect.getAspect("tenebrae"), 4));
+                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 24).add(Aspect.CRYSTAL, 16)
+                        .add(DarkAspects.NETHER, 8).add(Aspect.DARKNESS, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 3),
-                new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("vacuos"), 2)
-                        .add(Aspect.getAspect("tenebrae"), 2));
+                new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.VOID, 2).add(Aspect.DARKNESS, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 4),
-                new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("vacuos"), 3)
-                        .add(Aspect.getAspect("tenebrae"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.VOID, 3).add(Aspect.DARKNESS, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 5),
-                new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("vacuos"), 1)
-                        .add(Aspect.getAspect("tenebrae"), 1));
+                new AspectList().add(Aspect.ELDRITCH, 1).add(Aspect.VOID, 1).add(Aspect.DARKNESS, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 14),
-                new AspectList().add(Aspect.getAspect("alienis"), 4).add(Aspect.getAspect("ira"), 1)
-                        .add(Aspect.getAspect("superbia"), 1));
+                new AspectList().add(Aspect.ELDRITCH, 4).add(DarkAspects.WRATH, 1).add(DarkAspects.PRIDE, 1));
         ThaumcraftApi.registerObjectTag(
                 NHItemList.MoonStoneDust.get(),
-                new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.ELDRITCH, 1).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.mars", 1, 4),
-                new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1)
-                        .add(Aspect.getAspect("ignis"), 1).add(Aspect.getAspect("terra"), 1));
+                new AspectList().add(Aspect.ELDRITCH, 1).add(Aspect.ENTROPY, 1).add(Aspect.FIRE, 1)
+                        .add(Aspect.EARTH, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.mars", 1, 5),
-                new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("metallum"), 1)
-                        .add(Aspect.getAspect("ignis"), 2).add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.ELDRITCH, 1).add(Aspect.METAL, 1).add(Aspect.FIRE, 2).add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.mars", 1, 6),
-                new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("metallum"), 2)
-                        .add(Aspect.getAspect("ignis"), 2).add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.METAL, 2).add(Aspect.FIRE, 2).add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.mars", 1, 7),
-                new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("metallum"), 1)
-                        .add(Aspect.getAspect("ira"), 2).add(Aspect.getAspect("superbia"), 2));
+                new AspectList().add(Aspect.ELDRITCH, 1).add(Aspect.METAL, 1).add(DarkAspects.WRATH, 2)
+                        .add(DarkAspects.PRIDE, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.mars", 1, 9),
-                new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("metallum"), 3)
-                        .add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.METAL, 3).add(Aspect.FIRE, 3).add(Aspect.EARTH, 3));
         ThaumcraftApi.registerObjectTag(
                 NHItemList.MarsStoneDust.get(),
-                new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1)
-                        .add(Aspect.getAspect("terra"), 1));
+                new AspectList().add(Aspect.ELDRITCH, 1).add(Aspect.ENTROPY, 1).add(Aspect.EARTH, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 0),
-                new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("tenebrae"), 1)
-                        .add(Aspect.getAspect("vacuos"), 1).add(Aspect.getAspect("gelum"), 1));
+                new AspectList().add(Aspect.ELDRITCH, 1).add(Aspect.DARKNESS, 1).add(Aspect.VOID, 1)
+                        .add(Aspect.COLD, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 1),
-                new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("tenebrae"), 2)
-                        .add(Aspect.getAspect("vacuos"), 2).add(Aspect.getAspect("gelum"), 2));
+                new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.DARKNESS, 2).add(Aspect.VOID, 2)
+                        .add(Aspect.COLD, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 2),
-                new AspectList().add(Aspect.getAspect("alienis"), 3).add(Aspect.getAspect("tenebrae"), 3)
-                        .add(Aspect.getAspect("vacuos"), 3).add(Aspect.getAspect("gelum"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 3).add(Aspect.DARKNESS, 3).add(Aspect.VOID, 3)
+                        .add(Aspect.COLD, 3));
         ThaumcraftApi.registerObjectTag(
                 NHItemList.AsteroidsStoneDust.get(),
-                new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1)
-                        .add(Aspect.getAspect("gelum"), 1));
+                new AspectList().add(Aspect.ELDRITCH, 1).add(Aspect.ENTROPY, 1).add(Aspect.COLD, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.landingPad", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("ordo"), 5));
+                new AspectList().add(Aspect.METAL, 5).add(Aspect.ORDER, 5));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 6),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("fabrico"), 2)
-                        .add(Aspect.getAspect("permutatio"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.CRAFT, 2).add(Aspect.EXCHANGE, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 7),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("fabrico"), 2)
-                        .add(Aspect.getAspect("vitreus"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.CRAFT, 2).add(Aspect.CRYSTAL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 8),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("volatus"), 2));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.FLIGHT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("ordo"), 2));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 10),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 11),
-                new AspectList().add(Aspect.getAspect("metallum"), 8));
+                new AspectList().add(Aspect.METAL, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("magneto"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(TCAspects.MAGNETO.getAspect(), 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("vacuos"), 2)
-                        .add(Aspect.getAspect("tenebrae"), 1));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.VOID, 2).add(Aspect.DARKNESS, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 6),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("tutamen"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.ARMOR, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 13),
-                new AspectList().add(Aspect.getAspect("fabrico"), 6).add(Aspect.getAspect("ordo"), 5)
-                        .add(Aspect.getAspect("machina"), 4).add(Aspect.getAspect("instrumentum"), 3)
-                        .add(Aspect.getAspect("metallum"), 3));
+                new AspectList().add(Aspect.CRAFT, 6).add(Aspect.ORDER, 5).add(Aspect.MECHANISM, 4).add(Aspect.TOOL, 3)
+                        .add(Aspect.METAL, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 14),
-                new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("ordo"), 7)
-                        .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("instrumentum"), 5)
-                        .add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("lux"), 4));
+                new AspectList().add(Aspect.CRAFT, 9).add(Aspect.ORDER, 7).add(Aspect.MECHANISM, 6).add(Aspect.TOOL, 5)
+                        .add(Aspect.METAL, 5).add(Aspect.LIGHT, 4));
         ThaumcraftApi.registerObjectTag(
                 NHItemList.WaferTier3.get(),
-                new AspectList().add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("ordo"), 10)
-                        .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("instrumentum"), 8)
-                        .add(Aspect.getAspect("metallum"), 7).add(Aspect.getAspect("lux"), 6)
-                        .add(Aspect.getAspect("alienis"), 4));
+                new AspectList().add(Aspect.CRAFT, 12).add(Aspect.ORDER, 10).add(Aspect.MECHANISM, 9)
+                        .add(Aspect.TOOL, 8).add(Aspect.METAL, 7).add(Aspect.LIGHT, 6).add(Aspect.ELDRITCH, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("volatus"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.FLIGHT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1)
-                        .add(Aspect.getAspect("vitreus"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.COLD, 1).add(Aspect.CRYSTAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0),
-                new AspectList().add(Aspect.getAspect("potentia"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("lux"), 1).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.ENERGY, 1).add(Aspect.MECHANISM, 1).add(Aspect.LIGHT, 1)
+                        .add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "tile.arclamp", 1, 0),
-                new AspectList().add(Aspect.getAspect("potentia"), 5).add(Aspect.getAspect("machina"), 2)
-                        .add(Aspect.getAspect("lux"), 5).add(Aspect.getAspect("tenebrae"), 2));
+                new AspectList().add(Aspect.ENERGY, 5).add(Aspect.MECHANISM, 2).add(Aspect.LIGHT, 5)
+                        .add(Aspect.DARKNESS, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0),
-                new AspectList().add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("electrum"), 2)
-                        .add(Aspect.getAspect("tenebrae"), 1));
+                new AspectList().add(Aspect.ENERGY, 2).add(TCAspects.ELECTRUM.getAspect(), 2).add(Aspect.DARKNESS, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.canister", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.CRYSTAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.canister", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("permutatio"), 1)
-                        .add(Aspect.getAspect("fabrico"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.EXCHANGE, 1).add(Aspect.CRAFT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("ordo"), 5));
+                new AspectList().add(Aspect.METAL, 5).add(Aspect.ORDER, 5));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("ordo"), 2)
-                        .add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.ORDER, 2).add(Aspect.FLIGHT, 2).add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 3),
-                new AspectList().add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("ordo"), 2)
-                        .add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("instrumentum"), 1)
-                        .add(Aspect.getAspect("magneto"), 2));
+                new AspectList().add(Aspect.METAL, 8).add(Aspect.ORDER, 2).add(Aspect.FLIGHT, 2).add(Aspect.TOOL, 1)
+                        .add(TCAspects.MAGNETO.getAspect(), 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 10).add(Aspect.getAspect("ordo"), 2)
-                        .add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("instrumentum"), 1)
-                        .add(Aspect.getAspect("magneto"), 2).add(Aspect.getAspect("vacuos"), 2)
-                        .add(Aspect.getAspect("tenebrae"), 2));
+                new AspectList().add(Aspect.METAL, 10).add(Aspect.ORDER, 2).add(Aspect.FLIGHT, 2).add(Aspect.TOOL, 1)
+                        .add(TCAspects.MAGNETO.getAspect(), 2).add(Aspect.VOID, 2).add(Aspect.DARKNESS, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.oxygenMask", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 2).add(Aspect.getAspect("gelum"), 1)
-                        .add(Aspect.getAspect("vitreus"), 1).add(Aspect.getAspect("metallum"), 1));
+                new AspectList().add(Aspect.ARMOR, 2).add(Aspect.COLD, 1).add(Aspect.CRYSTAL, 1).add(Aspect.METAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.battery", 1, 0),
-                new AspectList().add(Aspect.getAspect("electrum"), 6).add(Aspect.getAspect("metallum"), 2)
-                        .add(Aspect.getAspect("vacuos"), 1));
+                new AspectList().add(TCAspects.ELECTRUM.getAspect(), 6).add(Aspect.METAL, 2).add(Aspect.VOID, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 15),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1)
-                        .add(Aspect.getAspect("messis"), 3));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.CRYSTAL, 1).add(Aspect.CROP, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 16),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1)
-                        .add(Aspect.getAspect("messis"), 2));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.CRYSTAL, 1).add(Aspect.CROP, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 17),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1)
-                        .add(Aspect.getAspect("messis"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.CRYSTAL, 1).add(Aspect.CROP, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 18),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1)
-                        .add(Aspect.getAspect("messis"), 2));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.CRYSTAL, 1).add(Aspect.CROP, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0),
-                new AspectList().add(Aspect.getAspect("magneto"), 2).add(Aspect.getAspect("metallum"), 2));
+                new AspectList().add(TCAspects.MAGNETO.getAspect(), 2).add(Aspect.METAL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 12).add(Aspect.getAspect("bestia"), 6)
-                        .add(Aspect.getAspect("fabrico"), 3).add(Aspect.getAspect("aqua"), 2)
-                        .add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2));
+                new AspectList().add(Aspect.CLOTH, 12).add(Aspect.BEAST, 6).add(Aspect.CRAFT, 3).add(Aspect.WATER, 2)
+                        .add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1),
-                new AspectList().add(Aspect.getAspect("pannus"), 18).add(Aspect.getAspect("bestia"), 9)
-                        .add(Aspect.getAspect("fabrico"), 5).add(Aspect.getAspect("aqua"), 3)
-                        .add(Aspect.getAspect("ordo"), 3).add(Aspect.getAspect("perditio"), 3));
+                new AspectList().add(Aspect.CLOTH, 18).add(Aspect.BEAST, 9).add(Aspect.CRAFT, 5).add(Aspect.WATER, 3)
+                        .add(Aspect.ORDER, 3).add(Aspect.ENTROPY, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2),
-                new AspectList().add(Aspect.getAspect("pannus"), 15).add(Aspect.getAspect("bestia"), 7)
-                        .add(Aspect.getAspect("fabrico"), 4).add(Aspect.getAspect("aqua"), 3)
-                        .add(Aspect.getAspect("ordo"), 3).add(Aspect.getAspect("perditio"), 2));
+                new AspectList().add(Aspect.CLOTH, 15).add(Aspect.BEAST, 7).add(Aspect.CRAFT, 4).add(Aspect.WATER, 3)
+                        .add(Aspect.ORDER, 3).add(Aspect.ENTROPY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3),
-                new AspectList().add(Aspect.getAspect("pannus"), 9).add(Aspect.getAspect("bestia"), 5)
-                        .add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("aqua"), 1)
-                        .add(Aspect.getAspect("ordo"), 1).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.CLOTH, 9).add(Aspect.BEAST, 5).add(Aspect.CRAFT, 2).add(Aspect.WATER, 1)
+                        .add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("tenebrae"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.DARKNESS, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.hydrogenPipe", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1)
-                        .add(Aspect.getAspect("vitreus"), 1).add(Aspect.getAspect("permutatio"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.COLD, 1).add(Aspect.CRYSTAL, 1)
+                        .add(Aspect.EXCHANGE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.bucketSludge", 1, 0),
-                new AspectList().add(Aspect.getAspect("venenum"), 4).add(Aspect.getAspect("aqua"), 2)
-                        .add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("metallum"), 3));
+                new AspectList().add(Aspect.POISON, 4).add(Aspect.WATER, 2).add(Aspect.ELDRITCH, 2)
+                        .add(Aspect.METAL, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.methaneCanisterPartial", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.canisterPartialLOX", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "item.canisterPartialLN2", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.creeperEgg", 1, 0),
-                new AspectList().add(Aspect.getAspect("alienis"), 10).add(Aspect.getAspect("perditio"), 5));
+                new AspectList().add(Aspect.ELDRITCH, 10).add(Aspect.ENTROPY, 5));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.denseIce", 1, 0),
-                new AspectList().add(Aspect.getAspect("alienis"), 5).add(Aspect.getAspect("gelum"), 5));
+                new AspectList().add(Aspect.ELDRITCH, 5).add(Aspect.COLD, 5));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMetal", 1, 5),
-                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("ordo"), 5));
+                new AspectList().add(Aspect.METAL, 18).add(Aspect.ORDER, 5));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0),
-                new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("ordo"), 7)
-                        .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("instrumentum"), 5)
-                        .add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("lux"), 4));
+                new AspectList().add(Aspect.CRAFT, 9).add(Aspect.ORDER, 7).add(Aspect.MECHANISM, 6).add(Aspect.TOOL, 5)
+                        .add(Aspect.METAL, 5).add(Aspect.LIGHT, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("vacuos"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.VOID, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4),
-                new AspectList().add(Aspect.getAspect("metallum"), 3));
+                new AspectList().add(Aspect.METAL, 3));
         ThaumcraftApi.registerObjectTag(
                 NHItemList.ReinforcedGlassPlate.get(),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.COLD, 1));
         ThaumcraftApi.registerObjectTag(
                 NHItemList.ReinforcedGlassPlate.get(),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1)
-                        .add(Aspect.getAspect("vitreus"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(Aspect.COLD, 1).add(Aspect.CRYSTAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 3)
-                        .add(Aspect.getAspect("terra"), 2).add(Aspect.getAspect("fabrico"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.ORDER, 3).add(Aspect.EARTH, 2).add(Aspect.CRAFT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMetal", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("permutatio"), 3));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.EXCHANGE, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMetal", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("vitreus"), 3));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.CRYSTAL, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMetal", 1, 2),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 3));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.TOOL, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMetal", 1, 4),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("ordo"), 3));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.ORDER, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMetal", 1, 3),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("venenum"), 2)
-                        .add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("radio"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.POISON, 2).add(Aspect.ENERGY, 2)
+                        .add(TCAspects.RADIO.getAspect(), 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6),
-                new AspectList().add(Aspect.getAspect("metallum"), 40).add(Aspect.getAspect("fabrico"), 30)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("tutamen"), 2));
+                new AspectList().add(Aspect.METAL, 40).add(Aspect.CRAFT, 30).add(Aspect.ORDER, 15)
+                        .add(Aspect.ARMOR, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 2),
-                new AspectList().add(Aspect.getAspect("metallum"), 30).add(Aspect.getAspect("fabrico"), 18)
-                        .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("permutatio"), 2));
+                new AspectList().add(Aspect.METAL, 30).add(Aspect.CRAFT, 18).add(Aspect.ORDER, 8)
+                        .add(Aspect.EXCHANGE, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("fabrico"), 3)
-                        .add(Aspect.getAspect("ordo"), 3).add(Aspect.getAspect("terra"), 1));
+                new AspectList().add(Aspect.METAL, 5).add(Aspect.CRAFT, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockReactorFluidPort", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("fabrico"), 3)
-                        .add(Aspect.getAspect("iter"), 3).add(Aspect.getAspect("aqua"), 2));
+                new AspectList().add(Aspect.METAL, 5).add(Aspect.CRAFT, 3).add(Aspect.TRAVEL, 3).add(Aspect.WATER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockReactorAccessHatch", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("fabrico"), 3)
-                        .add(Aspect.getAspect("iter"), 3).add(Aspect.getAspect("machina"), 2));
+                new AspectList().add(Aspect.METAL, 5).add(Aspect.CRAFT, 3).add(Aspect.TRAVEL, 3)
+                        .add(Aspect.MECHANISM, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockReactorRedstonePort", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("fabrico"), 3)
-                        .add(Aspect.getAspect("sensus"), 2).add(Aspect.getAspect("machina"), 1));
+                new AspectList().add(Aspect.METAL, 5).add(Aspect.CRAFT, 3).add(Aspect.SENSES, 2)
+                        .add(Aspect.MECHANISM, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3),
-                new AspectList().add(Aspect.getAspect("metallum"), 11).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.METAL, 11).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.MOTION, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4),
-                new AspectList().add(Aspect.getAspect("metallum"), 11).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("volatus"), 3));
+                new AspectList().add(Aspect.METAL, 11).add(Aspect.CRAFT, 4).add(Aspect.FLIGHT, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5),
-                new AspectList().add(Aspect.getAspect("fabrico"), 5).add(Aspect.getAspect("machina"), 4)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ignis"), 4));
+                new AspectList().add(Aspect.CRAFT, 5).add(Aspect.MECHANISM, 4).add(Aspect.METAL, 4)
+                        .add(Aspect.FIRE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 6),
-                new AspectList().add(Aspect.getAspect("metallum"), 7).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("tutamen"), 3).add(Aspect.getAspect("motus"), 2));
+                new AspectList().add(Aspect.METAL, 7).add(Aspect.CRAFT, 4).add(Aspect.ARMOR, 3).add(Aspect.MOTION, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 6),
-                new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("fabrico"), 64)
-                        .add(Aspect.getAspect("ordo"), 64).add(Aspect.getAspect("instrumentum"), 50));
+                new AspectList().add(Aspect.METAL, 64).add(Aspect.CRAFT, 64).add(Aspect.ORDER, 64)
+                        .add(Aspect.TOOL, 50));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ignis"), 4)
-                        .add(Aspect.getAspect("vitreus"), 4));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.FIRE, 4).add(Aspect.CRYSTAL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12),
-                new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("fabrico"), 8)
-                        .add(Aspect.getAspect("vacuos"), 4).add(Aspect.getAspect("ignis"), 2));
+                new AspectList().add(Aspect.METAL, 32).add(Aspect.CRAFT, 8).add(Aspect.VOID, 4).add(Aspect.FIRE, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemHarz", 1, 0),
-                new AspectList().add(Aspect.getAspect("limus"), 2).add(Aspect.getAspect("motus"), 2));
+                new AspectList().add(Aspect.SLIME, 2).add(Aspect.MOTION, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 4));
+                new AspectList().add(Aspect.METAL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 1, 0),
-                new AspectList().add(Aspect.getAspect("lux"), 4).add(Aspect.getAspect("ignis"), 2)
-                        .add(Aspect.getAspect("tenebrae"), 2));
+                new AspectList().add(Aspect.LIGHT, 4).add(Aspect.FIRE, 2).add(Aspect.DARKNESS, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("perditio"), 8)
-                        .add(Aspect.getAspect("potentia"), 2));
+                new AspectList().add(Aspect.FIRE, 4).add(Aspect.ENTROPY, 8).add(Aspect.ENERGY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 11),
-                new AspectList().add(Aspect.getAspect("metallum"), 27));
+                new AspectList().add(Aspect.METAL, 27));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12),
-                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("ordo"), 5));
+                new AspectList().add(Aspect.METAL, 18).add(Aspect.ORDER, 5));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 17).add(Aspect.getAspect("fabrico"), 3)
-                        .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("magneto"), 1));
+                new AspectList().add(Aspect.METAL, 17).add(Aspect.CRAFT, 3).add(Aspect.TOOL, 2)
+                        .add(TCAspects.MAGNETO.getAspect(), 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1),
-                new AspectList().add(Aspect.getAspect("machina"), 1).add(Aspect.getAspect("electrum"), 1)
-                        .add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.MECHANISM, 1).add(TCAspects.ELECTRUM.getAspect(), 1).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1),
-                new AspectList().add(Aspect.getAspect("sensus"), 1).add(Aspect.getAspect("fabrico"), 2));
+                new AspectList().add(Aspect.SENSES, 1).add(Aspect.CRAFT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1),
-                new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 1)
-                        .add(Aspect.getAspect("sano"), 1).add(Aspect.getAspect("tenebrae"), 1));
+                new AspectList().add(Aspect.CRAFT, 2).add(Aspect.METAL, 1).add(Aspect.HEAL, 1).add(Aspect.DARKNESS, 1));
         ThaumcraftApi.registerObjectTag(
                 ItemList.IC2_Uranium_Fuel.get(1),
-                new AspectList().add(Aspect.getAspect("vitreus"), 14).add(Aspect.getAspect("gelum"), 6)
-                        .add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("permutatio"), 6));
+                new AspectList().add(Aspect.CRYSTAL, 14).add(Aspect.COLD, 6).add(TCAspects.RADIO.getAspect(), 3)
+                        .add(Aspect.EXCHANGE, 6));
         ThaumcraftApi.registerObjectTag(
                 ItemList.IC2_MOX_Fuel.get(1),
-                new AspectList().add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("metallum"), 3)
-                        .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("vitreus"), 10));
+                new AspectList().add(TCAspects.RADIO.getAspect(), 3).add(Aspect.METAL, 3).add(Aspect.EXCHANGE, 6)
+                        .add(Aspect.CRYSTAL, 10));
         ThaumcraftApi.registerObjectTag(
                 ItemList.IC2_Plutonium.get(1),
-                new AspectList().add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("metallum"), 3));
-        ThaumcraftApi.registerObjectTag(
-                ItemList.IC2_Plutonium_Small.get(1),
-                new AspectList().add(Aspect.getAspect("metallum"), 1));
+                new AspectList().add(TCAspects.RADIO.getAspect(), 3).add(Aspect.METAL, 3));
+        ThaumcraftApi.registerObjectTag(ItemList.IC2_Plutonium_Small.get(1), new AspectList().add(Aspect.METAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2),
-                new AspectList().add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("potentia"), 3)
-                        .add(Aspect.getAspect("machina"), 2).add(Aspect.getAspect("vitreus"), 3));
+                new AspectList().add(Aspect.GREED, 4).add(Aspect.ENERGY, 3).add(Aspect.MECHANISM, 2)
+                        .add(Aspect.CRYSTAL, 3));
         ThaumcraftApi.registerObjectTag(
                 ItemList.IC2_Uranium_235_Small.get(1),
-                new AspectList().add(Aspect.getAspect("metallum"), 3).add(Aspect.getAspect("radio"), 3));
+                new AspectList().add(Aspect.METAL, 3).add(TCAspects.RADIO.getAspect(), 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0),
-                new AspectList().add(Aspect.getAspect("fabrico"), 3).add(Aspect.getAspect("instrumentum"), 3)
-                        .add(Aspect.getAspect("ordo"), 3).add(Aspect.getAspect("metallum"), 3));
+                new AspectList().add(Aspect.CRAFT, 3).add(Aspect.TOOL, 3).add(Aspect.ORDER, 3).add(Aspect.METAL, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 6)
-                        .add(Aspect.getAspect("radio"), 15));
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.CRAFT, 6).add(TCAspects.RADIO.getAspect(), 15));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemFuelRod", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("ordo"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.CRAFT, 4).add(Aspect.TOOL, 2).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCarbonFibre", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("vitreus"), 3));
+                new AspectList().add(Aspect.METAL, 3).add(Aspect.FIRE, 3).add(Aspect.CRYSTAL, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("ignis"), 2)
-                        .add(Aspect.getAspect("vitreus"), 2));
+                new AspectList().add(Aspect.METAL, 2).add(Aspect.FIRE, 2).add(Aspect.CRYSTAL, 2));
         ThaumcraftApi.registerObjectTag(
                 ItemList.ToolBox.get(1L),
-                new AspectList().add(Aspect.getAspect("fabrico"), 3).add(Aspect.getAspect("metallum"), 3)
-                        .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("ordo"), 2));
+                new AspectList().add(Aspect.CRAFT, 3).add(Aspect.METAL, 3).add(Aspect.TOOL, 2).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemShardIridium", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 1));
+                new AspectList().add(Aspect.METAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("machina"), 4).add(Aspect.getAspect("vitreus"), 4));
+                new AspectList().add(Aspect.METAL, 8).add(Aspect.CRAFT, 4).add(Aspect.MECHANISM, 4)
+                        .add(Aspect.CRYSTAL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolMEter", 1, 0),
-                new AspectList().add(Aspect.getAspect("fabrico"), 15).add(Aspect.getAspect("instrumentum"), 6)
-                        .add(Aspect.getAspect("cognitio"), 2).add(Aspect.getAspect("lux"), 2));
+                new AspectList().add(Aspect.CRAFT, 15).add(Aspect.TOOL, 6).add(Aspect.MIND, 2).add(Aspect.LIGHT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemScanner", 1, 0),
-                new AspectList().add(Aspect.getAspect("fabrico"), 18).add(Aspect.getAspect("instrumentum"), 8)
-                        .add(Aspect.getAspect("cognitio"), 4).add(Aspect.getAspect("lux"), 4));
+                new AspectList().add(Aspect.CRAFT, 18).add(Aspect.TOOL, 8).add(Aspect.MIND, 4).add(Aspect.LIGHT, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0),
-                new AspectList().add(Aspect.getAspect("fabrico"), 10).add(Aspect.getAspect("instrumentum"), 10)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("lux"), 6));
+                new AspectList().add(Aspect.CRAFT, 10).add(Aspect.TOOL, 10).add(Aspect.MIND, 6).add(Aspect.LIGHT, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "obscurator", 1, 0),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("lux"), 4)
-                        .add(Aspect.getAspect("machina"), 4).add(Aspect.getAspect("tenebrae"), 2));
+                new AspectList().add(Aspect.TOOL, 6).add(Aspect.LIGHT, 4).add(Aspect.MECHANISM, 4)
+                        .add(Aspect.DARKNESS, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 4)
-                        .add(Aspect.getAspect("sensus"), 4).add(Aspect.getAspect("electrum"), 2));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.TOOL, 4).add(Aspect.SENSES, 4)
+                        .add(TCAspects.ELECTRUM.getAspect(), 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("electrum"), 1)
-                        .add(Aspect.getAspect("vacuos"), 1));
+                new AspectList().add(Aspect.METAL, 1).add(TCAspects.ELECTRUM.getAspect(), 1).add(Aspect.VOID, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 0),
-                new AspectList().add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("vitreus"), 4));
+                new AspectList().add(Aspect.GREED, 6).add(Aspect.ENERGY, 9).add(Aspect.CRYSTAL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 0),
-                new AspectList().add(Aspect.getAspect("lucrum"), 8).add(Aspect.getAspect("potentia"), 11)
-                        .add(Aspect.getAspect("sensus"), 5));
+                new AspectList().add(Aspect.GREED, 8).add(Aspect.ENERGY, 11).add(Aspect.SENSES, 5));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 0),
-                new AspectList().add(Aspect.getAspect("electrum"), 2).add(Aspect.getAspect("metallum"), 2)
-                        .add(Aspect.getAspect("vacuos"), 2).add(Aspect.getAspect("potentia"), 1));
+                new AspectList().add(TCAspects.ELECTRUM.getAspect(), 2).add(Aspect.METAL, 2).add(Aspect.VOID, 2)
+                        .add(Aspect.ENERGY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("electrum"), 2)
-                        .add(Aspect.getAspect("vacuos"), 2));
+                new AspectList().add(Aspect.METAL, 2).add(TCAspects.ELECTRUM.getAspect(), 2).add(Aspect.VOID, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, 0),
-                new AspectList().add(Aspect.getAspect("electrum"), 3).add(Aspect.getAspect("metallum"), 3)
-                        .add(Aspect.getAspect("vacuos"), 3).add(Aspect.getAspect("potentia"), 2));
+                new AspectList().add(TCAspects.ELECTRUM.getAspect(), 3).add(Aspect.METAL, 3).add(Aspect.VOID, 3)
+                        .add(Aspect.ENERGY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBatChargeCrystal", 1, 0),
-                new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("potentia"), 14)
-                        .add(Aspect.getAspect("sensus"), 6));
+                new AspectList().add(Aspect.GREED, 10).add(Aspect.ENERGY, 14).add(Aspect.SENSES, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBatChargeLamaCrystal", 1, 0),
-                new AspectList().add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("potentia"), 16)
-                        .add(Aspect.getAspect("sensus"), 7));
+                new AspectList().add(Aspect.GREED, 12).add(Aspect.ENERGY, 16).add(Aspect.SENSES, 7));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemGrinPowder", 1, 0),
-                new AspectList().add(Aspect.getAspect("venenum"), 3).add(Aspect.getAspect("messis"), 2));
+                new AspectList().add(Aspect.POISON, 3).add(Aspect.CROP, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 4));
+                new AspectList().add(Aspect.PLANT, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 2));
+                new AspectList().add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0),
-                new AspectList().add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("ignis"), 2)
-                        .add(Aspect.getAspect("terra"), 1).add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.ENERGY, 2).add(Aspect.FIRE, 2).add(Aspect.EARTH, 1).add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCoalBlock", 1, 0),
-                new AspectList().add(Aspect.getAspect("potentia"), 4).add(Aspect.getAspect("ignis"), 4)
-                        .add(Aspect.getAspect("terra"), 2).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.ENERGY, 4).add(Aspect.FIRE, 4).add(Aspect.EARTH, 2).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCoalBlock", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 2).add(Aspect.getAspect("terra"), 2)
-                        .add(Aspect.getAspect("tenebrae"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.ENTROPY, 2).add(Aspect.EARTH, 2).add(Aspect.DARKNESS, 1)
+                        .add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemScrap", 1, 0),
-                new AspectList().add(Aspect.getAspect("strontio"), 2));
+                new AspectList().add(TCAspects.STRONTIO.getAspect(), 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemScrapbox", 1, 0),
-                new AspectList().add(Aspect.getAspect("strontio"), 4));
+                new AspectList().add(TCAspects.STRONTIO.getAspect(), 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterBlack", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterCloud", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterMagenta", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterOrange", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterWhite", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterRed", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterGreen", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterBrown", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterBlue", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterLime", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterYellow", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterPink", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterDarkGrey", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterLightGrey", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterCyan", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolPainterPurple", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.CLOTH, 10).add(Aspect.CRAFT, 4).add(Aspect.ORDER, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("volatus"), 4).add(Aspect.getAspect("gelum"), 2));
+                new AspectList().add(Aspect.METAL, 12).add(Aspect.CRAFT, 4).add(Aspect.FLIGHT, 4).add(Aspect.COLD, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorVentCore", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("fabrico"), 8)
-                        .add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("gelum"), 4));
+                new AspectList().add(Aspect.METAL, 20).add(Aspect.CRAFT, 8).add(Aspect.GREED, 4).add(Aspect.COLD, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorVentGold", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("gelum"), 6));
+                new AspectList().add(Aspect.METAL, 24).add(Aspect.CRAFT, 12).add(Aspect.GREED, 9).add(Aspect.COLD, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 26).add(Aspect.getAspect("fabrico"), 14)
-                        .add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("gelum"), 7));
+                new AspectList().add(Aspect.METAL, 26).add(Aspect.CRAFT, 14).add(Aspect.GREED, 10).add(Aspect.COLD, 7));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("gelum"), 2));
+                new AspectList().add(Aspect.METAL, 12).add(Aspect.CRAFT, 4).add(Aspect.EXCHANGE, 4)
+                        .add(Aspect.COLD, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchCore", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("fabrico"), 8)
-                        .add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("gelum"), 4));
+                new AspectList().add(Aspect.METAL, 20).add(Aspect.CRAFT, 8).add(Aspect.EXCHANGE, 4)
+                        .add(Aspect.COLD, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchSpread", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("gelum"), 6));
+                new AspectList().add(Aspect.METAL, 24).add(Aspect.CRAFT, 12).add(Aspect.EXCHANGE, 9)
+                        .add(Aspect.COLD, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 26).add(Aspect.getAspect("fabrico"), 14)
-                        .add(Aspect.getAspect("permutatio"), 10).add(Aspect.getAspect("gelum"), 7));
+                new AspectList().add(Aspect.METAL, 26).add(Aspect.CRAFT, 14).add(Aspect.EXCHANGE, 10)
+                        .add(Aspect.COLD, 7));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemwoodrotor", 1, 1),
-                new AspectList().add(Aspect.getAspect("tempestas"), 2).add(Aspect.getAspect("arbor"), 4)
-                        .add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("permutatio"), 2));
+                new AspectList().add(Aspect.WEATHER, 2).add(Aspect.TREE, 4).add(Aspect.METAL, 2)
+                        .add(Aspect.EXCHANGE, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemironrotor", 1, 1),
-                new AspectList().add(Aspect.getAspect("tempestas"), 4).add(Aspect.getAspect("metallum"), 4)
-                        .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("permutatio"), 4));
+                new AspectList().add(Aspect.WEATHER, 4).add(Aspect.METAL, 4).add(Aspect.TOOL, 2)
+                        .add(Aspect.EXCHANGE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemsteelrotor", 1, 1),
-                new AspectList().add(Aspect.getAspect("tempestas"), 6).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("permutatio"), 6));
+                new AspectList().add(Aspect.WEATHER, 6).add(Aspect.METAL, 6).add(Aspect.TOOL, 4)
+                        .add(Aspect.EXCHANGE, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemwcarbonrotor", 1, 1),
-                new AspectList().add(Aspect.getAspect("tempestas"), 8).add(Aspect.getAspect("metallum"), 8)
-                        .add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("permutatio"), 8));
+                new AspectList().add(Aspect.WEATHER, 8).add(Aspect.METAL, 8).add(Aspect.TOOL, 6)
+                        .add(Aspect.EXCHANGE, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ignis"), 4)
-                        .add(Aspect.getAspect("vitreus"), 2).add(Aspect.getAspect("fabrico"), 2));
+                new AspectList().add(Aspect.METAL, 4).add(Aspect.FIRE, 4).add(Aspect.CRYSTAL, 2).add(Aspect.CRAFT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("ignis"), 4)
-                        .add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("fabrico"), 4));
+                new AspectList().add(Aspect.METAL, 8).add(Aspect.FIRE, 4).add(Aspect.GREED, 4).add(Aspect.CRAFT, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("fabrico"), 16)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("gelum"), 8));
+                new AspectList().add(Aspect.METAL, 24).add(Aspect.CRAFT, 16).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.COLD, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, 1),
-                new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("fabrico"), 16)
-                        .add(Aspect.getAspect("permutatio"), 16).add(Aspect.getAspect("gelum"), 16));
+                new AspectList().add(Aspect.METAL, 24).add(Aspect.CRAFT, 16).add(Aspect.EXCHANGE, 16)
+                        .add(Aspect.COLD, 16));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("motus"), 4));
+                new AspectList().add(Aspect.TOOL, 4).add(Aspect.CRAFT, 4).add(Aspect.METAL, 4).add(Aspect.MOTION, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 1),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("electrum"), 4));
+                new AspectList().add(Aspect.TOOL, 4).add(Aspect.CRAFT, 4).add(Aspect.METAL, 4)
+                        .add(TCAspects.ELECTRUM.getAspect(), 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 2),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("lucrum"), 4));
+                new AspectList().add(Aspect.TOOL, 4).add(Aspect.CRAFT, 4).add(Aspect.METAL, 4).add(Aspect.GREED, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("permutatio"), 4));
+                new AspectList().add(Aspect.TOOL, 4).add(Aspect.CRAFT, 4).add(Aspect.METAL, 4).add(Aspect.EXCHANGE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("aqua"), 4));
+                new AspectList().add(Aspect.TOOL, 4).add(Aspect.CRAFT, 4).add(Aspect.METAL, 4).add(Aspect.WATER, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("cognitio"), 4));
+                new AspectList().add(Aspect.TOOL, 4).add(Aspect.CRAFT, 4).add(Aspect.METAL, 4).add(Aspect.MIND, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ignis"), 4));
+                new AspectList().add(Aspect.TOOL, 4).add(Aspect.CRAFT, 4).add(Aspect.METAL, 4).add(Aspect.FIRE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("ignis"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.METAL, 8).add(Aspect.FIRE, 8).add(Aspect.CRYSTAL, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 2),
-                new AspectList().add(Aspect.getAspect("fabrico"), 1).add(Aspect.getAspect("limus"), 1)
-                        .add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.CRAFT, 1).add(Aspect.SLIME, 1).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 1));
+                new AspectList().add(Aspect.METAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemDynamite", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 8).add(Aspect.getAspect("strontio"), 4));
+                new AspectList().add(Aspect.ENTROPY, 8).add(TCAspects.STRONTIO.getAspect(), 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemDynamiteSticky", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 8).add(Aspect.getAspect("limus"), 2)
-                        .add(Aspect.getAspect("strontio"), 4));
+                new AspectList().add(Aspect.ENTROPY, 8).add(Aspect.SLIME, 2).add(TCAspects.STRONTIO.getAspect(), 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemRemote", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 4)
-                        .add(Aspect.getAspect("sensus"), 4).add(Aspect.getAspect("perditio"), 2));
+                new AspectList().add(Aspect.METAL, 6).add(Aspect.TOOL, 4).add(Aspect.SENSES, 4).add(Aspect.ENTROPY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0),
-                new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 2)
-                        .add(Aspect.getAspect("vitreus"), 2));
+                new AspectList().add(Aspect.CRAFT, 2).add(Aspect.METAL, 2).add(Aspect.CRYSTAL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemTinCan", 1, 0),
-                new AspectList().add(Aspect.getAspect("fabrico"), 1).add(Aspect.getAspect("metallum"), 1)
-                        .add(Aspect.getAspect("vitreus"), 1));
+                new AspectList().add(Aspect.CRAFT, 1).add(Aspect.METAL, 1).add(Aspect.CRYSTAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemTinCanFilled", 1, 0),
-                new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 2)
-                        .add(Aspect.getAspect("vitreus"), 2).add(Aspect.getAspect("victus"), 4));
+                new AspectList().add(Aspect.CRAFT, 2).add(Aspect.METAL, 2).add(Aspect.CRYSTAL, 2).add(Aspect.LIFE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1, 1),
-                new AspectList().add(Aspect.getAspect("aqua"), 8).add(Aspect.getAspect("metallum"), 2));
+                new AspectList().add(Aspect.WATER, 8).add(Aspect.METAL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1),
-                new AspectList().add(Aspect.getAspect("gelum"), 4).add(Aspect.getAspect("metallum"), 2)
-                        .add(Aspect.getAspect("vitreus"), 2));
+                new AspectList().add(Aspect.COLD, 4).add(Aspect.METAL, 2).add(Aspect.CRYSTAL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorCoolantTriple", 1, 1),
-                new AspectList().add(Aspect.getAspect("gelum"), 8).add(Aspect.getAspect("metallum"), 4)
-                        .add(Aspect.getAspect("vitreus"), 4));
+                new AspectList().add(Aspect.COLD, 8).add(Aspect.METAL, 4).add(Aspect.CRYSTAL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1),
-                new AspectList().add(Aspect.getAspect("gelum"), 16).add(Aspect.getAspect("metallum"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8));
+                new AspectList().add(Aspect.COLD, 16).add(Aspect.METAL, 8).add(Aspect.CRYSTAL, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(MalisisDoors.ID, "trapdoor_acacia", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(MalisisDoors.ID, "trapdoor_birch", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(MalisisDoors.ID, "trapdoor_dark_oak", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(MalisisDoors.ID, "trapdoor_jungle", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(MalisisDoors.ID, "trapdoor_spruce", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("praecantatio"), 4)
-                        .add(Aspect.getAspect("instrumentum"), 2));
+                new AspectList().add(Aspect.FIRE, 6).add(Aspect.MAGIC, 4).add(Aspect.TOOL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("praecantatio"), 4));
+                new AspectList().add(Aspect.FIRE, 10).add(Aspect.MAGIC, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "paper", 1, 0),
-                new AspectList().add(Aspect.getAspect("cognitio"), 4).add(Aspect.getAspect("aqua"), 2)
-                        .add(Aspect.getAspect("arbor"), 1));
+                new AspectList().add(Aspect.MIND, 4).add(Aspect.WATER, 2).add(Aspect.TREE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "book", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 1).add(Aspect.getAspect("cognitio"), 1));
+                new AspectList().add(Aspect.CLOTH, 1).add(Aspect.MIND, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "enchanted_book", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 1).add(Aspect.getAspect("cognitio"), 1)
-                        .add(Aspect.getAspect("metallum"), 1));
+                new AspectList().add(Aspect.CLOTH, 1).add(Aspect.MIND, 1).add(Aspect.METAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "hopper", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("arbor"), 4)
-                        .add(Aspect.getAspect("vacuos"), 3).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("permutatio"), 1));
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.TREE, 4).add(Aspect.VOID, 3).add(Aspect.MECHANISM, 1)
+                        .add(Aspect.EXCHANGE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "furnace", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("perditio"), 6)
-                        .add(Aspect.getAspect("ignis"), 1));
+                new AspectList().add(Aspect.EARTH, 6).add(Aspect.ENTROPY, 6).add(Aspect.FIRE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.MECHANISM, 1).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Minecraft.ID, "redstone_torch", 1, 0),
-                new AspectList().add(Aspect.getAspect("potentia"), 1).add(Aspect.getAspect("machina"), 1));
+                new AspectList().add(Aspect.ENERGY, 1).add(Aspect.MECHANISM, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.sakura", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.redwood", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.hopseed", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.maple", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.amaranth", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.silverbell", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.willow", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.darkwood", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Natura.ID, "trapdoor.fusewood", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MOTION, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 4),
-                new AspectList().add(Aspect.getAspect("corpus"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("mortuus"), 2));
+                new AspectList().add(Aspect.FLESH, 4).add(Aspect.MAGIC, 2).add(Aspect.DEATH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Thaumcraft.ID, "blockCandle", 1, 0),
-                new AspectList().add(Aspect.getAspect("lux"), 5).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("pannus"), 1));
+                new AspectList().add(Aspect.LIGHT, 5).add(Aspect.MAGIC, 2).add(Aspect.CLOTH, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFRoots", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2));
+                new AspectList().add(Aspect.TREE, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFRoots", 1, 1),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("praecantatio"), 2));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.MAGIC, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.liveRoot", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("praecantatio"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MAGIC, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFFirefly", 1, 0),
-                new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.LIFE, 1).add(Aspect.FLIGHT, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFCicada", 1, 0),
-                new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("volatus"), 1));
+                new AspectList().add(Aspect.LIFE, 1).add(Aspect.FLIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPortal", 1, 0),
-                new AspectList().add(Aspect.getAspect("tempus"), 4).add(Aspect.getAspect("praecantatio"), 4)
-                        .add(Aspect.getAspect("iter"), 4));
+                new AspectList().add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 4).add(Aspect.MAGIC, 4)
+                        .add(Aspect.TRAVEL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 3),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 4),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 5),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 6),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 7),
-                new AspectList().add(Aspect.getAspect("terra"), 2));
+                new AspectList().add(Aspect.EARTH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFHedge", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFFireflyJar", 1, 0),
-                new AspectList().add(Aspect.getAspect("vitreus"), 2).add(Aspect.getAspect("arbor"), 1));
+                new AspectList().add(Aspect.CRYSTAL, 2).add(Aspect.TREE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 3),
-                new AspectList().add(Aspect.getAspect("herba"), 2).add(Aspect.getAspect("victus"), 1));
+                new AspectList().add(Aspect.PLANT, 2).add(Aspect.LIFE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 4),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 8),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 9),
-                new AspectList().add(Aspect.getAspect("herba"), 2));
+                new AspectList().add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 10),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 11),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 13),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFPlant", 1, 14),
-                new AspectList().add(Aspect.getAspect("arbor"), 1));
+                new AspectList().add(Aspect.TREE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFFireJet", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 2).add(Aspect.getAspect("aer"), 2)
-                        .add(Aspect.getAspect("machina"), 1));
+                new AspectList().add(Aspect.FIRE, 2).add(Aspect.AIR, 2).add(Aspect.MECHANISM, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFFireJet", 1, 8),
-                new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("motus"), 2)
-                        .add(Aspect.getAspect("machina"), 1));
+                new AspectList().add(Aspect.FIRE, 6).add(Aspect.MOTION, 2).add(Aspect.MECHANISM, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFNagastone", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.EARTH, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFNagastone", 1, 13),
-                new AspectList().add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.EARTH, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFSapling", 1, 5),
-                new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
-                        .add(Aspect.getAspect("tempus"), 1));
+                new AspectList().add(Aspect.PLANT, 4).add(Aspect.TREE, 2)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFSapling", 1, 6),
-                new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
-                        .add(Aspect.getAspect("praecantatio"), 1));
+                new AspectList().add(Aspect.PLANT, 4).add(Aspect.TREE, 2).add(Aspect.MAGIC, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFSapling", 1, 7),
-                new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
-                        .add(Aspect.getAspect("perfodio"), 1));
+                new AspectList().add(Aspect.PLANT, 4).add(Aspect.TREE, 2).add(Aspect.MINE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFSapling", 1, 9),
-                new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
-                        .add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.PLANT, 4).add(Aspect.TREE, 2).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMoonworm", 1, 0),
-                new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.LIFE, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("tempus"), 2).add(Aspect.getAspect("herba"), 2)
-                        .add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.MAGIC, 2)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 2).add(Aspect.PLANT, 2)
+                        .add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 1),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("aer"), 2).add(Aspect.getAspect("herba"), 2)
-                        .add(Aspect.getAspect("invidia"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.MAGIC, 2).add(Aspect.AIR, 2).add(Aspect.PLANT, 2)
+                        .add(DarkAspects.ENVY, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 2),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("perfodio"), 2).add(Aspect.getAspect("herba"), 2)
-                        .add(Aspect.getAspect("lucrum"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.MAGIC, 2).add(Aspect.MINE, 2).add(Aspect.PLANT, 2)
+                        .add(Aspect.GREED, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 3),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
-                        .add(Aspect.getAspect("motus"), 2).add(Aspect.getAspect("herba"), 2)
-                        .add(Aspect.getAspect("cognitio"), 1).add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.MAGIC, 2).add(Aspect.MOTION, 2).add(Aspect.PLANT, 2)
+                        .add(Aspect.MIND, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 2),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("potentia"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 4),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("potentia"), 2));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 5),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("potentia"), 2));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 6),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
-                        .add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("iter"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 2)
+                        .add(Aspect.TRAVEL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 9),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 2)
-                        .add(Aspect.getAspect("potentia"), 4).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 2).add(Aspect.ENERGY, 4)
+                        .add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 10),
-                new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 2)
-                        .add(Aspect.getAspect("potentia"), 4).add(Aspect.getAspect("vinculum"), 1));
+                new AspectList().add(Aspect.TREE, 1).add(Aspect.MECHANISM, 2).add(Aspect.ENERGY, 4)
+                        .add(Aspect.TRAP, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFShield", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("machina"), 1));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.MECHANISM, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTrophyPedestal", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 7).add(Aspect.getAspect("ordo"), 4)
-                        .add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("instrumentum"), 4));
+                new AspectList().add(Aspect.EARTH, 7).add(Aspect.ORDER, 4).add(Aspect.GREED, 4).add(Aspect.TOOL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFTrophyPedestal", 1, 15),
-                new AspectList().add(Aspect.getAspect("terra"), 7).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("instrumentum"), 4));
+                new AspectList().add(Aspect.EARTH, 7).add(Aspect.ORDER, 12).add(Aspect.GREED, 12).add(Aspect.TOOL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFThorns", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("fabrico"), 1)
-                        .add(Aspect.getAspect("telum"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.CRAFT, 1).add(Aspect.WEAPON, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFThorns", 1, 1),
-                new AspectList().add(Aspect.getAspect("herba"), 3).add(Aspect.getAspect("fabrico"), 1)
-                        .add(Aspect.getAspect("telum"), 1).add(Aspect.getAspect("aqua"), 1));
+                new AspectList().add(Aspect.PLANT, 3).add(Aspect.CRAFT, 1).add(Aspect.WEAPON, 1).add(Aspect.WATER, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFBurntThorns", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.TREE, 2).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFThornRose", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 2));
+                new AspectList().add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFLeaves3", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFLeaves3", 1, 1),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
+                new AspectList().add(Aspect.EARTH, 8).add(Aspect.FIRE, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
+                new AspectList().add(Aspect.EARTH, 8).add(Aspect.FIRE, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
+                new AspectList().add(Aspect.EARTH, 8).add(Aspect.FIRE, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.DarkLeaves", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1));
+                new AspectList().add(Aspect.PLANT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.AuroraPillar", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.AuroraSlab", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 2).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 2).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.AuroraDoubleSlab", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.SENSES, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TrollSteinn", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("potentia"), 2));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.ENERGY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.WispyCloud", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 1).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("aqua"), 1).add(Aspect.getAspect("tempestas"), 1));
+                new AspectList().add(Aspect.AIR, 1).add(Aspect.FLIGHT, 1).add(Aspect.WATER, 1).add(Aspect.WEATHER, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.FluffyCloud", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 1).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 1).add(Aspect.getAspect("tempestas"), 1));
+                new AspectList().add(Aspect.AIR, 1).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 1).add(Aspect.WEATHER, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeStalk", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 4));
+                new AspectList().add(Aspect.PLANT, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.GiantCobble", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("perditio"), 16));
+                new AspectList().add(Aspect.EARTH, 16).add(Aspect.ENTROPY, 16));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.GiantLog", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 16));
+                new AspectList().add(Aspect.TREE, 16));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.GiantLeaves", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 16));
+                new AspectList().add(Aspect.PLANT, 16));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("ignis"), 16)
-                        .add(Aspect.getAspect("tenebrae"), 8));
+                new AspectList().add(Aspect.EARTH, 16).add(Aspect.FIRE, 16).add(Aspect.DARKNESS, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.UberousSoil", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("aqua"), 4)
-                        .add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("victus"), 10));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.WATER, 4).add(Aspect.PLANT, 4).add(Aspect.LIFE, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeGloomBlock", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("tenebrae"), 2)
-                        .add(Aspect.getAspect("herba"), 2));
+                new AspectList().add(Aspect.EARTH, 4).add(Aspect.DARKNESS, 2).add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("lucrum"), 9));
+                new AspectList().add(Aspect.METAL, 18).add(Aspect.GREED, 9));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.UnripeTrollBer", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("terra"), 1)
-                        .add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.EARTH, 1).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TrollBer", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("terra"), 1)
-                        .add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.EARTH, 1).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeLilyPad", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 8).add(Aspect.getAspect("aqua"), 4));
+                new AspectList().add(Aspect.PLANT, 8).add(Aspect.WATER, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.HugeWaterLily", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 3));
+                new AspectList().add(Aspect.PLANT, 3));
         ThaumcraftApi.registerObjectTag(getModItem(TwilightForest.ID, "tile.Slider", 1, 0), new AspectList());
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("perditio"), 2));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 3),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("tenebrae"), 1));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.DARKNESS, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("praecantatio"), 2));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.MAGIC, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 1),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("praecantatio"), 2));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.MAGIC, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 2),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("praecantatio"), 2));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.MAGIC, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 3),
-                new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
-                        .add(Aspect.getAspect("praecantatio"), 2));
+                new AspectList().add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.MAGIC, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.nagaScale", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 3).add(Aspect.getAspect("tutamen"), 2)
-                        .add(Aspect.getAspect("bestia"), 2));
+                new AspectList().add(Aspect.CLOTH, 3).add(Aspect.ARMOR, 2).add(Aspect.BEAST, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.plateNaga", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 24).add(Aspect.getAspect("tutamen"), 16)
-                        .add(Aspect.getAspect("bestia"), 16).add(Aspect.getAspect("superbia"), 4));
+                new AspectList().add(Aspect.CLOTH, 24).add(Aspect.ARMOR, 16).add(Aspect.BEAST, 16)
+                        .add(DarkAspects.PRIDE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.legsNaga", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 21).add(Aspect.getAspect("tutamen"), 14)
-                        .add(Aspect.getAspect("bestia"), 14).add(Aspect.getAspect("superbia"), 3));
+                new AspectList().add(Aspect.CLOTH, 21).add(Aspect.ARMOR, 14).add(Aspect.BEAST, 14)
+                        .add(DarkAspects.PRIDE, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.scepterTwilight", 1, 0),
-                new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("iter"), 35)
-                        .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
-                        .add(Aspect.getAspect("corpus"), 10));
+                new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.TRAVEL, 35).add(Aspect.MAGIC, 25)
+                        .add(Aspect.DEATH, 20).add(Aspect.FLESH, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.scepterLifeDrain", 1, 0),
-                new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("victus"), 15)
-                        .add(Aspect.getAspect("gula"), 20).add(Aspect.getAspect("praecantatio"), 25)
-                        .add(Aspect.getAspect("mortuus"), 20).add(Aspect.getAspect("corpus"), 10));
+                new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.LIFE, 15).add(DarkAspects.GLUTTONY, 20)
+                        .add(Aspect.MAGIC, 25).add(Aspect.DEATH, 20).add(Aspect.FLESH, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.scepterZombie", 1, 0),
-                new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("exanimis"), 35)
-                        .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
-                        .add(Aspect.getAspect("corpus"), 10));
+                new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.UNDEAD, 35).add(Aspect.MAGIC, 25)
+                        .add(Aspect.DEATH, 20).add(Aspect.FLESH, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.scepterTwilight", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("iter"), 35)
-                        .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
-                        .add(Aspect.getAspect("corpus"), 10));
+                new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.TRAVEL, 35).add(Aspect.MAGIC, 25)
+                        .add(Aspect.DEATH, 20).add(Aspect.FLESH, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.scepterLifeDrain", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("victus"), 15)
-                        .add(Aspect.getAspect("gula"), 20).add(Aspect.getAspect("praecantatio"), 25)
-                        .add(Aspect.getAspect("mortuus"), 20).add(Aspect.getAspect("corpus"), 10));
+                new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.LIFE, 15).add(DarkAspects.GLUTTONY, 20)
+                        .add(Aspect.MAGIC, 25).add(Aspect.DEATH, 20).add(Aspect.FLESH, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.scepterZombie", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("exanimis"), 35)
-                        .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
-                        .add(Aspect.getAspect("corpus"), 10));
+                new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.UNDEAD, 35).add(Aspect.MAGIC, 25)
+                        .add(Aspect.DEATH, 20).add(Aspect.FLESH, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.tfFeather", 1, 0),
-                new AspectList().add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("aer"), 1)
-                        .add(Aspect.getAspect("tenebrae"), 1));
+                new AspectList().add(Aspect.FLIGHT, 2).add(Aspect.AIR, 1).add(Aspect.DARKNESS, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.magicMapFocus", 1, 0),
-                new AspectList().add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("aer"), 1)
-                        .add(Aspect.getAspect("tenebrae"), 1).add(Aspect.getAspect("lux"), 1)
-                        .add(Aspect.getAspect("praecantatio"), 1));
+                new AspectList().add(Aspect.FLIGHT, 2).add(Aspect.AIR, 1).add(Aspect.DARKNESS, 1).add(Aspect.LIGHT, 1)
+                        .add(Aspect.MAGIC, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.venisonRaw", 1, 0),
-                new AspectList().add(Aspect.getAspect("mortuus"), 3).add(Aspect.getAspect("victus"), 2)
-                        .add(Aspect.getAspect("bestia"), 1));
+                new AspectList().add(Aspect.DEATH, 3).add(Aspect.LIFE, 2).add(Aspect.BEAST, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.venisonCooked", 1, 0),
-                new AspectList().add(Aspect.getAspect("mortuus"), 4).add(Aspect.getAspect("fames"), 3)
-                        .add(Aspect.getAspect("fabrico"), 1));
+                new AspectList().add(Aspect.DEATH, 4).add(Aspect.HUNGER, 3).add(Aspect.CRAFT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.hydraChop", 1, 0),
-                new AspectList().add(Aspect.getAspect("mortuus"), 9).add(Aspect.getAspect("victus"), 6)
-                        .add(Aspect.getAspect("bestia"), 2));
+                new AspectList().add(Aspect.DEATH, 9).add(Aspect.LIFE, 6).add(Aspect.BEAST, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.fieryBlood", 1, 0),
-                new AspectList().add(Aspect.getAspect("vacuos"), 1).add(Aspect.getAspect("victus"), 4)
-                        .add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.VOID, 1).add(Aspect.LIFE, 4).add(Aspect.WATER, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.trophy", 1, 0),
-                new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
-                        .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("ignis"), 8));
+                new AspectList().add(Aspect.GREED, 10).add(DarkAspects.LUST, 1).add(DarkAspects.PRIDE, 2)
+                        .add(Aspect.CRAFT, 4).add(Aspect.FIRE, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.trophy", 1, 1),
-                new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
-                        .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("terra"), 8));
+                new AspectList().add(Aspect.GREED, 10).add(DarkAspects.LUST, 1).add(DarkAspects.PRIDE, 2)
+                        .add(Aspect.CRAFT, 4).add(Aspect.EARTH, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.trophy", 1, 2),
-                new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
-                        .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("exanimis"), 8));
+                new AspectList().add(Aspect.GREED, 10).add(DarkAspects.LUST, 1).add(DarkAspects.PRIDE, 2)
+                        .add(Aspect.CRAFT, 4).add(Aspect.UNDEAD, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.trophy", 1, 3),
-                new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
-                        .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("infernus"), 8));
+                new AspectList().add(Aspect.GREED, 10).add(DarkAspects.LUST, 1).add(DarkAspects.PRIDE, 2)
+                        .add(Aspect.CRAFT, 4).add(DarkAspects.NETHER, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.trophy", 1, 4),
-                new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
-                        .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("gelum"), 8));
+                new AspectList().add(Aspect.GREED, 10).add(DarkAspects.LUST, 1).add(DarkAspects.PRIDE, 2)
+                        .add(Aspect.CRAFT, 4).add(Aspect.COLD, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.minotaurAxe", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 10).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("telum"), 8).add(Aspect.getAspect("instrumentum"), 8)
-                        .add(Aspect.getAspect("superbia"), 4));
+                new AspectList().add(Aspect.METAL, 10).add(Aspect.CRAFT, 4).add(Aspect.WEAPON, 8).add(Aspect.TOOL, 8)
+                        .add(DarkAspects.PRIDE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.transformPowder", 1, 0),
-                new AspectList().add(Aspect.getAspect("mortuus"), 4).add(Aspect.getAspect("fames"), 3)
-                        .add(Aspect.getAspect("fabrico"), 1));
+                new AspectList().add(Aspect.DEATH, 4).add(Aspect.HUNGER, 3).add(Aspect.CRAFT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.meefRaw", 1, 0),
-                new AspectList().add(Aspect.getAspect("mortuus"), 3).add(Aspect.getAspect("victus"), 2)
-                        .add(Aspect.getAspect("bestia"), 1));
+                new AspectList().add(Aspect.DEATH, 3).add(Aspect.LIFE, 2).add(Aspect.BEAST, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.meefSteak", 1, 0),
-                new AspectList().add(Aspect.getAspect("mortuus"), 4).add(Aspect.getAspect("fames"), 3)
-                        .add(Aspect.getAspect("fabrico"), 1));
+                new AspectList().add(Aspect.DEATH, 4).add(Aspect.HUNGER, 3).add(Aspect.CRAFT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.meefStroganoff", 1, 0),
-                new AspectList().add(Aspect.getAspect("mortuus"), 4).add(Aspect.getAspect("fames"), 4)
-                        .add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("arbor"), 1));
+                new AspectList().add(Aspect.DEATH, 4).add(Aspect.HUNGER, 4).add(Aspect.CRAFT, 2).add(Aspect.TREE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.mazeWafer", 1, 0),
-                new AspectList().add(Aspect.getAspect("messis"), 4).add(Aspect.getAspect("fames"), 3)
-                        .add(Aspect.getAspect("fabrico"), 1).add(Aspect.getAspect("sano"), 1));
+                new AspectList().add(Aspect.CROP, 4).add(Aspect.HUNGER, 3).add(Aspect.CRAFT, 1).add(Aspect.HEAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.oreMagnet", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("magneto"), 4)
-                        .add(Aspect.getAspect("perfodio"), 1));
+                new AspectList().add(Aspect.METAL, 6).add(TCAspects.MAGNETO.getAspect(), 4).add(Aspect.MINE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.oreMagnet", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("magneto"), 4)
-                        .add(Aspect.getAspect("perfodio"), 1));
+                new AspectList().add(Aspect.METAL, 6).add(TCAspects.MAGNETO.getAspect(), 4).add(Aspect.MINE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.crumbleHorn", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("praecantatio"), 14)
-                        .add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("auram"), 8));
+                new AspectList().add(Aspect.TREE, 18).add(Aspect.MAGIC, 14).add(Aspect.ORDER, 12).add(Aspect.AURA, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.crumbleHorn", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("praecantatio"), 14)
-                        .add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("auram"), 8));
+                new AspectList().add(Aspect.TREE, 18).add(Aspect.MAGIC, 14).add(Aspect.ORDER, 12).add(Aspect.AURA, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.peacockFan", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 18).add(Aspect.getAspect("volatus"), 10)
-                        .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("arbor"), 4));
+                new AspectList().add(Aspect.AIR, 18).add(Aspect.FLIGHT, 10).add(Aspect.MOTION, 10).add(Aspect.MAGIC, 6)
+                        .add(Aspect.TREE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.peacockFan", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("aer"), 18).add(Aspect.getAspect("volatus"), 10)
-                        .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("arbor"), 4));
+                new AspectList().add(Aspect.AIR, 18).add(Aspect.FLIGHT, 10).add(Aspect.MOTION, 10).add(Aspect.MAGIC, 6)
+                        .add(Aspect.TREE, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.moonwormQueen", 1, 0),
-                new AspectList().add(Aspect.getAspect("victus"), 10).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("motus"), 4));
+                new AspectList().add(Aspect.LIFE, 10).add(Aspect.LIGHT, 10).add(Aspect.MOTION, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.moonwormQueen", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("victus"), 10).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("motus"), 4));
+                new AspectList().add(Aspect.LIFE, 10).add(Aspect.LIGHT, 10).add(Aspect.MOTION, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.charmOfLife1", 1, 0),
-                new AspectList().add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("ordo"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8).add(Aspect.getAspect("victus"), 8)
-                        .add(Aspect.getAspect("lucrum"), 1));
+                new AspectList().add(Aspect.HEAL, 16).add(Aspect.ORDER, 16).add(Aspect.MAGIC, 8).add(Aspect.LIFE, 8)
+                        .add(Aspect.GREED, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.charmOfLife2", 1, 0),
-                new AspectList().add(Aspect.getAspect("sano"), 64).add(Aspect.getAspect("ordo"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("victus"), 32)
-                        .add(Aspect.getAspect("lucrum"), 4));
+                new AspectList().add(Aspect.HEAL, 64).add(Aspect.ORDER, 64).add(Aspect.MAGIC, 32).add(Aspect.LIFE, 32)
+                        .add(Aspect.GREED, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.charmOfKeeping1", 1, 0),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("ordo"), 4)
-                        .add(Aspect.getAspect("praecantatio"), 3).add(Aspect.getAspect("tutamen"), 3)
-                        .add(Aspect.getAspect("lucrum"), 1));
+                new AspectList().add(Aspect.TOOL, 4).add(Aspect.ORDER, 4).add(Aspect.MAGIC, 3).add(Aspect.ARMOR, 3)
+                        .add(Aspect.GREED, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.charmOfKeeping2", 1, 0),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 16).add(Aspect.getAspect("ordo"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8).add(Aspect.getAspect("tutamen"), 8)
-                        .add(Aspect.getAspect("lucrum"), 4));
+                new AspectList().add(Aspect.TOOL, 16).add(Aspect.ORDER, 16).add(Aspect.MAGIC, 8).add(Aspect.ARMOR, 8)
+                        .add(Aspect.GREED, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.charmOfKeeping3", 1, 0),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 64).add(Aspect.getAspect("ordo"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("tutamen"), 32)
-                        .add(Aspect.getAspect("lucrum"), 16));
+                new AspectList().add(Aspect.TOOL, 64).add(Aspect.ORDER, 64).add(Aspect.MAGIC, 32).add(Aspect.ARMOR, 32)
+                        .add(Aspect.GREED, 16));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.towerKey", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("lucrum"), 2)
-                        .add(Aspect.getAspect("lux"), 1));
+                new AspectList().add(Aspect.METAL, 2).add(Aspect.GREED, 2).add(Aspect.LIGHT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.borerEssence", 1, 0),
-                new AspectList().add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("lucrum"), 2)
-                        .add(Aspect.getAspect("ordo"), 1));
+                new AspectList().add(Aspect.MAGIC, 2).add(Aspect.GREED, 2).add(Aspect.ORDER, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.experiment115", 1, 0),
-                new AspectList().add(Aspect.getAspect("messis"), 5).add(Aspect.getAspect("fames"), 4)
-                        .add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("alienis"), 1));
+                new AspectList().add(Aspect.CROP, 5).add(Aspect.HUNGER, 4).add(Aspect.CRAFT, 2)
+                        .add(Aspect.ELDRITCH, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.phantomHelm", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 5).add(Aspect.getAspect("fabrico"), 3)
-                        .add(Aspect.getAspect("metallum"), 7).add(Aspect.getAspect("spiritus"), 5)
-                        .add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.ARMOR, 5).add(Aspect.CRAFT, 3).add(Aspect.METAL, 7).add(Aspect.SOUL, 5)
+                        .add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.phantomPlate", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 8).add(Aspect.getAspect("fabrico"), 5)
-                        .add(Aspect.getAspect("metallum"), 11).add(Aspect.getAspect("spiritus"), 8)
-                        .add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.ARMOR, 8).add(Aspect.CRAFT, 5).add(Aspect.METAL, 11).add(Aspect.SOUL, 8)
+                        .add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.lampOfCinders", 1, 0),
-                new AspectList().add(Aspect.getAspect("lucrum"), 16).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("fabrico"), 6).add(Aspect.getAspect("praecantatio"), 8)
-                        .add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("luxuria"), 1));
+                new AspectList().add(Aspect.GREED, 16).add(Aspect.FIRE, 10).add(Aspect.CRAFT, 6).add(Aspect.MAGIC, 8)
+                        .add(Aspect.TOOL, 4).add(DarkAspects.LUST, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.fieryTears", 1, 0),
-                new AspectList().add(Aspect.getAspect("vacuos"), 1).add(Aspect.getAspect("ira"), 4)
-                        .add(Aspect.getAspect("exanimis"), 4).add(Aspect.getAspect("spiritus"), 4)
-                        .add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("aqua"), 1));
+                new AspectList().add(Aspect.VOID, 1).add(DarkAspects.WRATH, 4).add(Aspect.UNDEAD, 4).add(Aspect.SOUL, 4)
+                        .add(Aspect.MAGIC, 2).add(Aspect.WATER, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.alphaFur", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 6).add(Aspect.getAspect("gelum"), 3)
-                        .add(Aspect.getAspect("bestia"), 2));
+                new AspectList().add(Aspect.CLOTH, 6).add(Aspect.COLD, 3).add(Aspect.BEAST, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.arcticFur", 1, 0),
-                new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("gelum"), 1)
-                        .add(Aspect.getAspect("bestia"), 1));
+                new AspectList().add(Aspect.CLOTH, 2).add(Aspect.COLD, 1).add(Aspect.BEAST, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.iceBomb", 1, 0),
-                new AspectList().add(Aspect.getAspect("gelum"), 8).add(Aspect.getAspect("motus"), 8)
-                        .add(Aspect.getAspect("fabrico"), 1));
+                new AspectList().add(Aspect.COLD, 8).add(Aspect.MOTION, 8).add(Aspect.CRAFT, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.arcticHelm", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 3).add(Aspect.getAspect("fabrico"), 2)
-                        .add(Aspect.getAspect("pannus"), 6).add(Aspect.getAspect("gelum"), 2)
-                        .add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.ARMOR, 3).add(Aspect.CRAFT, 2).add(Aspect.CLOTH, 6).add(Aspect.COLD, 2)
+                        .add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.arcticPlate", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 7).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("pannus"), 14).add(Aspect.getAspect("gelum"), 4)
-                        .add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.ARMOR, 7).add(Aspect.CRAFT, 4).add(Aspect.CLOTH, 14).add(Aspect.COLD, 4)
+                        .add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.arcticLegs", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 5).add(Aspect.getAspect("fabrico"), 3)
-                        .add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("gelum"), 3)
-                        .add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.ARMOR, 5).add(Aspect.CRAFT, 3).add(Aspect.CLOTH, 10).add(Aspect.COLD, 3)
+                        .add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.arcticBoots", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 2).add(Aspect.getAspect("fabrico"), 2)
-                        .add(Aspect.getAspect("pannus"), 4).add(Aspect.getAspect("gelum"), 2)
-                        .add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.ARMOR, 2).add(Aspect.CRAFT, 2).add(Aspect.CLOTH, 4).add(Aspect.COLD, 2)
+                        .add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.yetiHelm", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 4).add(Aspect.getAspect("fabrico"), 2)
-                        .add(Aspect.getAspect("pannus"), 12).add(Aspect.getAspect("gelum"), 4)
-                        .add(Aspect.getAspect("instrumentum"), 1).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ARMOR, 4).add(Aspect.CRAFT, 2).add(Aspect.CLOTH, 12).add(Aspect.COLD, 4)
+                        .add(Aspect.TOOL, 1).add(Aspect.MAGIC, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.yetiPlate", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 8).add(Aspect.getAspect("fabrico"), 4)
-                        .add(Aspect.getAspect("pannus"), 24).add(Aspect.getAspect("gelum"), 8)
-                        .add(Aspect.getAspect("instrumentum"), 1).add(Aspect.getAspect("praecantatio"), 4));
+                new AspectList().add(Aspect.ARMOR, 8).add(Aspect.CRAFT, 4).add(Aspect.CLOTH, 24).add(Aspect.COLD, 8)
+                        .add(Aspect.TOOL, 1).add(Aspect.MAGIC, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.yetiLegs", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 6).add(Aspect.getAspect("fabrico"), 3)
-                        .add(Aspect.getAspect("pannus"), 18).add(Aspect.getAspect("gelum"), 6)
-                        .add(Aspect.getAspect("instrumentum"), 1).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ARMOR, 6).add(Aspect.CRAFT, 3).add(Aspect.CLOTH, 18).add(Aspect.COLD, 6)
+                        .add(Aspect.TOOL, 1).add(Aspect.MAGIC, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.yetiBoots", 1, 0),
-                new AspectList().add(Aspect.getAspect("tutamen"), 3).add(Aspect.getAspect("fabrico"), 2)
-                        .add(Aspect.getAspect("pannus"), 9).add(Aspect.getAspect("gelum"), 3)
-                        .add(Aspect.getAspect("instrumentum"), 1).add(Aspect.getAspect("praecantatio"), 2));
+                new AspectList().add(Aspect.ARMOR, 3).add(Aspect.CRAFT, 2).add(Aspect.CLOTH, 9).add(Aspect.COLD, 3)
+                        .add(Aspect.TOOL, 1).add(Aspect.MAGIC, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.magicBeans", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 16).add(Aspect.getAspect("praecantatio"), 8)
-                        .add(Aspect.getAspect("sensus"), 4));
+                new AspectList().add(Aspect.PLANT, 16).add(Aspect.MAGIC, 8).add(Aspect.SENSES, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.giantPick", 1, 0),
-                new AspectList().add(Aspect.getAspect("perfodio"), 32).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
+                new AspectList().add(Aspect.MINE, 32).add(Aspect.EARTH, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.TREE, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.giantSword", 1, 0),
-                new AspectList().add(Aspect.getAspect("telum"), 32).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
+                new AspectList().add(Aspect.WEAPON, 32).add(Aspect.EARTH, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.TREE, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.enderBow", 1, 0),
-                new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
-                        .add(Aspect.getAspect("alienis"), 2));
+                new AspectList().add(Aspect.WEAPON, 3).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 2).add(Aspect.BEAST, 2)
+                        .add(Aspect.ELDRITCH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.iceBow", 1, 0),
-                new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
-                        .add(Aspect.getAspect("gelum"), 2));
+                new AspectList().add(Aspect.WEAPON, 3).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 2).add(Aspect.BEAST, 2)
+                        .add(Aspect.COLD, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.tripleBow", 1, 0),
-                new AspectList().add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
-                        .add(Aspect.getAspect("arbor"), 1));
+                new AspectList().add(Aspect.WEAPON, 6).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 2).add(Aspect.BEAST, 2)
+                        .add(Aspect.TREE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.seekerBow", 1, 0),
-                new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
-                        .add(Aspect.getAspect("iter"), 2));
+                new AspectList().add(Aspect.WEAPON, 3).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 2).add(Aspect.BEAST, 2)
+                        .add(Aspect.TRAVEL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.iceSword", 1, 0),
-                new AspectList().add(Aspect.getAspect("telum"), 4).add(Aspect.getAspect("lucrum"), 2)
-                        .add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("gelum"), 6));
+                new AspectList().add(Aspect.WEAPON, 4).add(Aspect.GREED, 2).add(Aspect.MAGIC, 2).add(Aspect.COLD, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.glassSword", 1, 0),
-                new AspectList().add(Aspect.getAspect("telum"), 14).add(Aspect.getAspect("vitreus"), 20)
-                        .add(Aspect.getAspect("lucrum"), 1));
+                new AspectList().add(Aspect.WEAPON, 14).add(Aspect.CRYSTAL, 20).add(Aspect.GREED, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.giantPick", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("perfodio"), 32).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
+                new AspectList().add(Aspect.MINE, 32).add(Aspect.EARTH, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.TREE, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.giantSword", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("telum"), 32).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
+                new AspectList().add(Aspect.WEAPON, 32).add(Aspect.EARTH, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.TREE, 8));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.enderBow", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
-                        .add(Aspect.getAspect("alienis"), 2));
+                new AspectList().add(Aspect.WEAPON, 3).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 2).add(Aspect.BEAST, 2)
+                        .add(Aspect.ELDRITCH, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.iceBow", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
-                        .add(Aspect.getAspect("gelum"), 2));
+                new AspectList().add(Aspect.WEAPON, 3).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 2).add(Aspect.BEAST, 2)
+                        .add(Aspect.COLD, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.tripleBow", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
-                        .add(Aspect.getAspect("arbor"), 1));
+                new AspectList().add(Aspect.WEAPON, 6).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 2).add(Aspect.BEAST, 2)
+                        .add(Aspect.TREE, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.seekerBow", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
-                        .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
-                        .add(Aspect.getAspect("iter"), 2));
+                new AspectList().add(Aspect.WEAPON, 3).add(Aspect.FLIGHT, 1).add(Aspect.CLOTH, 2).add(Aspect.BEAST, 2)
+                        .add(Aspect.TRAVEL, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.iceSword", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("telum"), 4).add(Aspect.getAspect("lucrum"), 2)
-                        .add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("gelum"), 6));
+                new AspectList().add(Aspect.WEAPON, 4).add(Aspect.GREED, 2).add(Aspect.MAGIC, 2).add(Aspect.COLD, 6));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.glassSword", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("telum"), 14).add(Aspect.getAspect("vitreus"), 20)
-                        .add(Aspect.getAspect("lucrum"), 1));
+                new AspectList().add(Aspect.WEAPON, 14).add(Aspect.CRYSTAL, 20).add(Aspect.GREED, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.knightmetalRing", 1, 0),
-                new AspectList().add(Aspect.getAspect("instrumentum"), 3).add(Aspect.getAspect("ordo"), 3)
-                        .add(Aspect.getAspect("fabrico"), 3));
+                new AspectList().add(Aspect.TOOL, 3).add(Aspect.ORDER, 3).add(Aspect.CRAFT, 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.chainBlock", 1, 0),
-                new AspectList().add(Aspect.getAspect("telum"), 10).add(Aspect.getAspect("metallum"), 20)
-                        .add(Aspect.getAspect("motus"), 4).add(Aspect.getAspect("lucrum"), 8)
-                        .add(Aspect.getAspect("instrumentum"), 10));
+                new AspectList().add(Aspect.WEAPON, 10).add(Aspect.METAL, 20).add(Aspect.MOTION, 4).add(Aspect.GREED, 8)
+                        .add(Aspect.TOOL, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "item.chainBlock", 1, wildcard),
-                new AspectList().add(Aspect.getAspect("telum"), 10).add(Aspect.getAspect("metallum"), 20)
-                        .add(Aspect.getAspect("motus"), 4).add(Aspect.getAspect("lucrum"), 8)
-                        .add(Aspect.getAspect("instrumentum"), 10));
+                new AspectList().add(Aspect.WEAPON, 10).add(Aspect.METAL, 20).add(Aspect.MOTION, 4).add(Aspect.GREED, 8)
+                        .add(Aspect.TOOL, 10));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Forestry.ID, "grafter", 1, 0),
-                new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("arbor"), 1)
-                        .add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.METAL, 2).add(Aspect.TREE, 1).add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(Forestry.ID, "scoop", 1, 0),
-                new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("pannus"), 3)
-                        .add(Aspect.getAspect("instrumentum"), 1));
+                new AspectList().add(Aspect.TREE, 4).add(Aspect.CLOTH, 3).add(Aspect.TOOL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(ThaumicBases.ID, "tobaccoPowder", 1, 0),
-                new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("humanus"), 1)
-                        .add(Aspect.getAspect("perditio"), 1));
+                new AspectList().add(Aspect.PLANT, 1).add(Aspect.MAN, 1).add(Aspect.ENTROPY, 1));
         ThaumcraftApi.registerObjectTag(
                 NHItemList.NANCertificate.get(1),
                 new AspectList().add(Aspect.METAL, 64).add(Aspect.CRAFT, 64).add(Aspect.CRYSTAL, 64));

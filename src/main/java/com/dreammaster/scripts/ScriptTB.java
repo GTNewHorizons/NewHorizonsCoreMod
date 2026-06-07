@@ -38,9 +38,8 @@ public class ScriptTB implements IScriptLoader {
                 "TB_EMT_Tainted_Compat",
                 getModItem(ThaumicBoots.ID, "item.ItemNanoVoid", 1, 27),
                 6,
-                new AspectList().add(Aspect.getAspect("motus"), 48).add(Aspect.getAspect("potentia"), 24)
-                        .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("volatus"), 8).add(Aspect.getAspect("iter"), 16),
+                new AspectList().add(Aspect.MOTION, 48).add(Aspect.ENERGY, 24).add(Aspect.ARMOR, 32)
+                        .add(Aspect.MAGIC, 16).add(Aspect.FLIGHT, 8).add(Aspect.TRAVEL, 16),
                 getModItem(ThaumicBoots.ID, "item.ItemElectricVoid", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, wildcard),
                 OrePrefixes.plate.get(Materials.Thaumium),
@@ -56,10 +55,8 @@ public class ScriptTB implements IScriptLoader {
                 "TB_EMT_Tainted_Compat",
                 getModItem(ThaumicBoots.ID, "item.ItemQuantumVoid", 1, 27),
                 9,
-                new AspectList().add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("tutamen"), 48).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("volatus"), 16).add(Aspect.getAspect("iter"), 24)
-                        .add(Aspect.getAspect("aer"), 8),
+                new AspectList().add(Aspect.MOTION, 64).add(Aspect.ENERGY, 32).add(Aspect.ARMOR, 48)
+                        .add(Aspect.MAGIC, 24).add(Aspect.FLIGHT, 16).add(Aspect.TRAVEL, 24).add(Aspect.AIR, 8),
                 getModItem(ThaumicBoots.ID, "item.ItemNanoVoid", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, wildcard),
                 OrePrefixes.plate.get(Materials.Void),
@@ -79,9 +76,8 @@ public class ScriptTB implements IScriptLoader {
                 "TB_Explorations_EMT_Compat",
                 getModItem(ThaumicBoots.ID, "item.ItemNanoMeteor", 1, 27),
                 6,
-                new AspectList().add(Aspect.getAspect("motus"), 48).add(Aspect.getAspect("potentia"), 24)
-                        .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("volatus"), 8).add(Aspect.getAspect("iter"), 16),
+                new AspectList().add(Aspect.MOTION, 48).add(Aspect.ENERGY, 24).add(Aspect.ARMOR, 32)
+                        .add(Aspect.MAGIC, 16).add(Aspect.FLIGHT, 8).add(Aspect.TRAVEL, 16),
                 getModItem(ThaumicBoots.ID, "item.ItemElectricMeteor", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, wildcard),
                 OrePrefixes.plate.get(Materials.Thaumium),
@@ -97,10 +93,8 @@ public class ScriptTB implements IScriptLoader {
                 "TB_Explorations_EMT_Compat",
                 getModItem(ThaumicBoots.ID, "item.ItemQuantumMeteor", 1, 27),
                 9,
-                new AspectList().add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("tutamen"), 48).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("volatus"), 16).add(Aspect.getAspect("iter"), 24)
-                        .add(Aspect.getAspect("aer"), 8),
+                new AspectList().add(Aspect.MOTION, 64).add(Aspect.ENERGY, 32).add(Aspect.ARMOR, 48)
+                        .add(Aspect.MAGIC, 24).add(Aspect.FLIGHT, 16).add(Aspect.TRAVEL, 24).add(Aspect.AIR, 8),
                 getModItem(ThaumicBoots.ID, "item.ItemNanoMeteor", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, wildcard),
                 OrePrefixes.plate.get(Materials.Void),
@@ -120,9 +114,8 @@ public class ScriptTB implements IScriptLoader {
                 "TB_Explorations_EMT_Compat",
                 getModItem(ThaumicBoots.ID, "item.ItemNanoComet", 1, 27),
                 6,
-                new AspectList().add(Aspect.getAspect("motus"), 48).add(Aspect.getAspect("potentia"), 24)
-                        .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("volatus"), 8).add(Aspect.getAspect("iter"), 16),
+                new AspectList().add(Aspect.MOTION, 48).add(Aspect.ENERGY, 24).add(Aspect.ARMOR, 32)
+                        .add(Aspect.MAGIC, 16).add(Aspect.FLIGHT, 8).add(Aspect.TRAVEL, 16),
                 getModItem(ThaumicBoots.ID, "item.ItemElectricComet", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, wildcard),
                 OrePrefixes.plate.get(Materials.Thaumium),
@@ -138,10 +131,8 @@ public class ScriptTB implements IScriptLoader {
                 "TB_Explorations_EMT_Compat",
                 getModItem(ThaumicBoots.ID, "item.ItemQuantumComet", 1, 27),
                 9,
-                new AspectList().add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("tutamen"), 48).add(Aspect.getAspect("praecantatio"), 24)
-                        .add(Aspect.getAspect("volatus"), 16).add(Aspect.getAspect("iter"), 24)
-                        .add(Aspect.getAspect("aer"), 8),
+                new AspectList().add(Aspect.MOTION, 64).add(Aspect.ENERGY, 32).add(Aspect.ARMOR, 48)
+                        .add(Aspect.MAGIC, 24).add(Aspect.FLIGHT, 16).add(Aspect.TRAVEL, 24).add(Aspect.AIR, 8),
                 getModItem(ThaumicBoots.ID, "item.ItemNanoComet", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, wildcard),
                 OrePrefixes.plate.get(Materials.Void),

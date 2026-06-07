@@ -108,6 +108,15 @@ public class MaceratorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(Materials.Calcium.getIngots(1)).itemOutputs(Materials.Calcium.getDust(1))
                 .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(Materials.Calcium.getNuggets(1))
+                .itemOutputs(Materials.Calcium.getDustTiny(1)).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(Materials.Magnesia.getIngots(1)).itemOutputs(Materials.Magnesia.getDust(1))
+                .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(Materials.Magnesia.getNuggets(1))
+                .itemOutputs(Materials.Magnesia.getDustTiny(1)).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(BlockList.Sulfur.get(1))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 9L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);

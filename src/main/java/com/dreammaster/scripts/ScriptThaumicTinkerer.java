@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
@@ -23,7 +24,6 @@ import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,6 +32,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -40,6 +41,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -65,6 +67,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 PamsHarvestCraft.ID,
                 StevesCarts2.ID,
                 Thaumcraft.ID,
@@ -211,9 +214,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "SHARETOME",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("instrumentum"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.MAGIC, 12).add(Aspect.EXCHANGE, 9).add(Aspect.TOOL, 6)
+                        .add(Aspect.EARTH, 3),
                 0,
                 -1,
                 3,
@@ -223,8 +225,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "SHARETOME",
                 getModItem(ThaumicTinkerer.ID, "shareBook", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("cognitio"), 32).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("pannus"), 16),
+                new AspectList().add(Aspect.MIND, 32).add(Aspect.MAGIC, 16).add(Aspect.EXCHANGE, 32)
+                        .add(Aspect.CLOTH, 16),
                 getModItem(Minecraft.ID, "skull", 1, 3),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Minecraft.ID, "paper", 1, 0),
@@ -248,7 +250,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DARKQUARTZ",
                 getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 8),
+                new AspectList().add(Aspect.ENTROPY, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -273,7 +275,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DARKQUARTZ",
                 getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 8),
+                new AspectList().add(Aspect.ENTROPY, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -314,8 +316,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INTERFACE",
                 getModItem(ThaumicTinkerer.ID, "interface", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("perditio"), 32)
-                        .add(Aspect.getAspect("terra"), 16),
+                new AspectList().add(Aspect.ORDER, 32).add(Aspect.ENTROPY, 32).add(Aspect.EARTH, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -340,7 +341,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INTERFACE",
                 getModItem(ThaumicTinkerer.ID, "connector", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16),
+                new AspectList().add(Aspect.ORDER, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -360,14 +361,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 3));
         TCHelper.setResearchAspects(
                 "INTERFACE",
-                new AspectList().add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("perditio"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.ORDER, 12).add(Aspect.ENTROPY, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.WATER, 3));
         TCHelper.setResearchComplexity("INTERFACE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISLOCATOR",
                 getModItem(ThaumicTinkerer.ID, "dislocator", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 48).add(Aspect.getAspect("perditio"), 48)
-                        .add(Aspect.getAspect("terra"), 24),
+                new AspectList().add(Aspect.ORDER, 48).add(Aspect.ENTROPY, 48).add(Aspect.EARTH, 24),
                 "abc",
                 "def",
                 "ghi",
@@ -391,39 +391,33 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "screwThaumium");
         TCHelper.setResearchAspects(
                 "DISLOCATOR",
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("perditio"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("aqua"), 3));
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.ORDER, 12).add(Aspect.ENTROPY, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.WATER, 3));
         TCHelper.setResearchComplexity("DISLOCATOR", 4);
         ThaumcraftApi.addCrucibleRecipe(
                 "GASEOUS_LIGHT",
                 getModItem(ThaumicTinkerer.ID, "gaseousLightItem", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemEssence", 1, 0),
-                new AspectList().add(Aspect.getAspect("lux"), 16).add(Aspect.getAspect("aer"), 12)
-                        .add(Aspect.getAspect("motus"), 10));
+                new AspectList().add(Aspect.LIGHT, 16).add(Aspect.AIR, 12).add(Aspect.MOTION, 10));
         TCHelper.setResearchAspects(
                 "GASEOUS_LIGHT",
-                new AspectList().add(Aspect.getAspect("lux"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("motus"), 3).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.LIGHT, 9).add(Aspect.AIR, 6).add(Aspect.MOTION, 3).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("GASEOUS_LIGHT", 2);
         ResearchCategories.getResearch("GASEOUS_SHADOW").setConcealed();
         ThaumcraftApi.addCrucibleRecipe(
                 "GASEOUS_SHADOW",
                 getModItem(ThaumicTinkerer.ID, "gaseousShadowItem", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemEssence", 1, 0),
-                new AspectList().add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("aer"), 12)
-                        .add(Aspect.getAspect("motus"), 10));
+                new AspectList().add(Aspect.DARKNESS, 16).add(Aspect.AIR, 12).add(Aspect.MOTION, 10));
         TCHelper.setResearchAspects(
                 "GASEOUS_SHADOW",
-                new AspectList().add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("motus"), 3).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.DARKNESS, 9).add(Aspect.AIR, 6).add(Aspect.MOTION, 3).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("GASEOUS_SHADOW", 2);
         ResearchCategories.getResearch("GAS_REMOVER").setConcealed();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GAS_REMOVER",
                 getModItem(ThaumicTinkerer.ID, "gasRemover", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("aer"), 12)
-                        .add(Aspect.getAspect("perditio"), 8),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.AIR, 12).add(Aspect.ENTROPY, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -447,30 +441,26 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0));
         TCHelper.setResearchAspects(
                 "GASEOUS_SHADOW",
-                new AspectList().add(Aspect.getAspect("ignis"), 12).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("motus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.FIRE, 12).add(Aspect.DARKNESS, 12).add(Aspect.AIR, 9).add(Aspect.MOTION, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("GASEOUS_SHADOW", 3);
         TCHelper.addResearchPrereq("BRIGHT_NITOR", "INFUSION", false);
         ThaumcraftApi.addCrucibleRecipe(
                 "BRIGHT_NITOR",
                 getModItem(ThaumicTinkerer.ID, "brightNitor", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
-                new AspectList().add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("aer"), 16)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("lux"), 32));
+                new AspectList().add(Aspect.FIRE, 16).add(Aspect.AIR, 16).add(Aspect.ENERGY, 32).add(Aspect.LIGHT, 32));
         TCHelper.setResearchAspects(
                 "BRIGHT_NITOR",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("BRIGHT_NITOR", 3);
         TCHelper.orphanResearch("FIRE_IGNIS");
         TCHelper.removeResearch("FIRE_IGNIS");
         new ResearchItem(
                 "FIREIGNIS",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9).add(Aspect.MAGIC, 3),
                 4,
                 -4,
                 3,
@@ -481,8 +471,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "FIREIGNIS",
                 getModItem(ThaumicTinkerer.ID, "fireFire", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.FIRE, 10).add(Aspect.LIGHT, 10).add(Aspect.AIR, 10).add(Aspect.MAGIC, 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"ignis\"}]}"),
                 getModItem(Botania.ID, "manaResource", 1, 23),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
@@ -497,8 +486,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "FIREAQUA",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9).add(Aspect.MAGIC, 3),
                 2,
                 -2,
                 3,
@@ -509,8 +497,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "FIREAQUA",
                 getModItem(ThaumicTinkerer.ID, "fireWater", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("aqua"), 10).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.WATER, 10).add(Aspect.LIGHT, 10).add(Aspect.AIR, 10).add(Aspect.MAGIC, 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"aqua\"}]}"),
                 getModItem(Botania.ID, "manaResource", 1, 23),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
@@ -525,8 +512,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "FIRETERRA",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9).add(Aspect.MAGIC, 3),
                 4,
                 -6,
                 3,
@@ -537,8 +523,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "FIRETERRA",
                 getModItem(ThaumicTinkerer.ID, "fireEarth", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.EARTH, 10).add(Aspect.LIGHT, 10).add(Aspect.AIR, 10).add(Aspect.MAGIC, 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"terra\"}]}"),
                 getModItem(Botania.ID, "manaResource", 1, 23),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
@@ -553,8 +538,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "FIREORDO",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9).add(Aspect.MAGIC, 3),
                 3,
                 -3,
                 3,
@@ -565,8 +549,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "FIREORDO",
                 getModItem(ThaumicTinkerer.ID, "fireOrder", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.LIGHT, 10).add(Aspect.AIR, 10).add(Aspect.MAGIC, 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"ordo\"}]}"),
                 getModItem(Botania.ID, "manaResource", 1, 23),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
@@ -581,8 +564,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "FIREAER",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("motus"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.LIGHT, 12).add(Aspect.MOTION, 9).add(Aspect.MAGIC, 3),
                 3,
                 -7,
                 3,
@@ -592,8 +574,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "FIREAER",
                 getModItem(ThaumicTinkerer.ID, "fireAir", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("lux"), 10)
-                        .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.LIGHT, 10).add(Aspect.MOTION, 10).add(Aspect.MAGIC, 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"aer\"}]}"),
                 getModItem(Botania.ID, "manaResource", 1, 23),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -608,8 +589,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "FIREPERDITIO",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.ENTROPY, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9).add(Aspect.MAGIC, 3),
                 2,
                 -8,
                 3,
@@ -620,8 +600,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "FIREPERDITIO",
                 getModItem(ThaumicTinkerer.ID, "fireChaos", 1, 0),
                 16,
-                new AspectList().add(getAspect("perditio"), 10).add(getAspect("lux"), 10).add(getAspect("aer"), 10)
-                        .add(getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.LIGHT, 10).add(Aspect.AIR, 10)
+                        .add(Aspect.MAGIC, 10),
                 createItemStack(Thaumcraft.ID, "ItemEssence", 1, 1, "{Aspects:[0:{amount:8,key:\"perditio\"}]}"),
                 getModItem(Botania.ID, "manaResource", 1, 23),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
@@ -636,8 +616,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "INFUSEDSEED",
                 "TT_CATEGORY",
-                new AspectList().add(getAspect("perditio"), 15).add(getAspect("lux"), 12).add(getAspect("aer"), 9)
-                        .add(getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.ENTROPY, 15).add(Aspect.LIGHT, 12).add(Aspect.AIR, 9).add(Aspect.MAGIC, 3),
                 7,
                 -5,
                 3,
@@ -671,7 +650,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         0,
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"aer\"}]},aspectTendencies:{Aspects:[]}}"),
                 4,
-                new AspectList().add(getAspect("messis"), 32).add(getAspect("meto"), 32).add(getAspect("aer"), 16),
+                new AspectList().add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.AIR, 16),
                 getModItem(Minecraft.ID, "wheat_seeds", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
@@ -696,7 +675,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         0,
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"ignis\"}]},aspectTendencies:{Aspects:[]}}"),
                 4,
-                new AspectList().add(getAspect("messis"), 32).add(getAspect("meto"), 32).add(getAspect("ignis"), 16),
+                new AspectList().add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.FIRE, 16),
                 getModItem(Minecraft.ID, "wheat_seeds", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
@@ -711,7 +690,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         0,
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"aqua\"}]},aspectTendencies:{Aspects:[]}}"),
                 4,
-                new AspectList().add(getAspect("messis"), 32).add(getAspect("meto"), 32).add(getAspect("aqua"), 16),
+                new AspectList().add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.WATER, 16),
                 getModItem(Minecraft.ID, "wheat_seeds", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
@@ -726,7 +705,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         0,
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"terra\"}]},aspectTendencies:{Aspects:[]}}"),
                 4,
-                new AspectList().add(getAspect("messis"), 32).add(getAspect("meto"), 32).add(getAspect("terra"), 16),
+                new AspectList().add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.EARTH, 16),
                 getModItem(Minecraft.ID, "wheat_seeds", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
@@ -741,7 +720,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         0,
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"ordo\"}]},aspectTendencies:{Aspects:[]}}"),
                 4,
-                new AspectList().add(getAspect("messis"), 32).add(getAspect("meto"), 32).add(getAspect("ordo"), 16),
+                new AspectList().add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.ORDER, 16),
                 getModItem(Minecraft.ID, "wheat_seeds", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
@@ -756,7 +735,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         0,
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"perditio\"}]},aspectTendencies:{Aspects:[]}}"),
                 4,
-                new AspectList().add(getAspect("messis"), 32).add(getAspect("meto"), 32).add(getAspect("perditio"), 16),
+                new AspectList().add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.ENTROPY, 16),
                 getModItem(Minecraft.ID, "wheat_seeds", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
@@ -767,9 +746,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "INFUSEDPOTIONS",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("auram"), 15).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("aqua"), 9)
-                        .add(Aspect.getAspect("terra"), 9),
+                new AspectList().add(Aspect.AURA, 15).add(Aspect.FIRE, 12).add(Aspect.AIR, 9).add(Aspect.WATER, 9)
+                        .add(Aspect.EARTH, 9),
                 9,
                 -5,
                 3,
@@ -783,8 +761,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "INFUSEDPOTIONS",
                 getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 0),
-                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("aer"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8));
+                new AspectList().add(Aspect.AURA, 16).add(Aspect.AIR, 16).add(Aspect.MAGIC, 8));
         TCHelper.addResearchPage(
                 "INFUSEDPOTIONS",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 0))));
@@ -792,8 +769,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "INFUSEDPOTIONS",
                 getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 1),
                 getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 1),
-                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("ignis"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8));
+                new AspectList().add(Aspect.AURA, 16).add(Aspect.FIRE, 16).add(Aspect.MAGIC, 8));
         TCHelper.addResearchPage(
                 "INFUSEDPOTIONS",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 1))));
@@ -801,8 +777,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "INFUSEDPOTIONS",
                 getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 2),
                 getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 2),
-                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8));
+                new AspectList().add(Aspect.AURA, 16).add(Aspect.EARTH, 16).add(Aspect.MAGIC, 8));
         TCHelper.addResearchPage(
                 "INFUSEDPOTIONS",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 2))));
@@ -810,8 +785,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "INFUSEDPOTIONS",
                 getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 3),
                 getModItem(ThaumicTinkerer.ID, "infusedGrain", 1, 3),
-                new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("aqua"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 8));
+                new AspectList().add(Aspect.AURA, 16).add(Aspect.WATER, 16).add(Aspect.MAGIC, 8));
         TCHelper.addResearchPage(
                 "INFUSEDPOTIONS",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(ThaumicTinkerer.ID, "infusedPotion", 1, 3))));
@@ -820,8 +794,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FUNNEL",
                 getModItem(ThaumicTinkerer.ID, "funnel", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("perditio"), 8)
-                        .add(Aspect.getAspect("aqua"), 8),
+                new AspectList().add(Aspect.ORDER, 8).add(Aspect.ENTROPY, 8).add(Aspect.WATER, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -839,18 +812,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "plateThaumium");
         TCHelper.setResearchAspects(
                 "FUNNEL",
-                new AspectList().add(Aspect.getAspect("iter"), 15).add(Aspect.getAspect("instrumentum"), 12)
-                        .add(Aspect.getAspect("aqua"), 9).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TRAVEL, 15).add(Aspect.TOOL, 12).add(Aspect.WATER, 9).add(Aspect.METAL, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("FUNNEL", 3);
         TCHelper.addResearchPrereq("REPAIRER", "INFUSION", false);
         TCHelper.addInfusionCraftingRecipe(
                 "REPAIRER",
                 getModItem(ThaumicTinkerer.ID, "repairer", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("fabrico"), 32).add(Aspect.getAspect("instrumentum"), 32)
-                        .add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("potentia"), 8),
+                new AspectList().add(Aspect.CRAFT, 32).add(Aspect.TOOL, 32).add(Aspect.ORDER, 16).add(Aspect.MAGIC, 16)
+                        .add(Aspect.ENERGY, 8),
                 OrePrefixes.block.get(Materials.Thaumium),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.plate.get(Materials.Iron),
@@ -862,15 +833,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Gold));
         TCHelper.setResearchAspects(
                 "REPAIRER",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.CRAFT, 12).add(Aspect.ORDER, 9).add(Aspect.ENERGY, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("REPAIRER", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MAGNETS",
                 getModItem(ThaumicTinkerer.ID, "magnet", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 25)
-                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.EARTH, 25).add(Aspect.ORDER, 20)
+                        .add(Aspect.ENTROPY, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -894,16 +864,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0));
         TCHelper.setResearchAspects(
                 "MAGNETS",
-                new AspectList().add(Aspect.getAspect("bestia"), 15).add(Aspect.getAspect("machina"), 15)
-                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("sensus"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("spiritus"), 3));
+                new AspectList().add(Aspect.BEAST, 15).add(Aspect.MECHANISM, 15).add(Aspect.MOTION, 12)
+                        .add(Aspect.SENSES, 9).add(Aspect.ORDER, 6).add(Aspect.SOUL, 3));
         TCHelper.setResearchComplexity("MAGNETS", 4);
         ThaumcraftApi.addWarpToResearch("MAGNETS", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MAGNETS",
                 getModItem(ThaumicTinkerer.ID, "magnet", 1, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.AIR, 25).add(Aspect.EARTH, 30).add(Aspect.ORDER, 15)
+                        .add(Aspect.ENTROPY, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -929,14 +898,12 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "MAGNETS",
                 getModItem(ThaumicTinkerer.ID, "soulMould", 1, 0),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
-                new AspectList().add(Aspect.getAspect("bestia"), 8).add(Aspect.getAspect("cognitio"), 8)
-                        .add(Aspect.getAspect("sensus"), 8).add(Aspect.getAspect("spiritus"), 8));
+                new AspectList().add(Aspect.BEAST, 8).add(Aspect.MIND, 8).add(Aspect.SENSES, 8).add(Aspect.SOUL, 8));
         ResearchCategories.getResearch("ANIMATION_TABLET").setConcealed();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ANIMATION_TABLET",
                 getModItem(ThaumicTinkerer.ID, "animationTablet", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 35).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.AIR, 35).add(Aspect.FIRE, 30).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -960,9 +927,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "screwThaumium");
         TCHelper.setResearchAspects(
                 "ANIMATION_TABLET",
-                new AspectList().add(Aspect.getAspect("machina"), 15).add(Aspect.getAspect("metallum"), 15)
-                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("exanimis"), 3));
+                new AspectList().add(Aspect.MECHANISM, 15).add(Aspect.METAL, 15).add(Aspect.MOTION, 12)
+                        .add(Aspect.ENERGY, 9).add(Aspect.ORDER, 6).add(Aspect.UNDEAD, 3));
         TCHelper.setResearchComplexity("ANIMATION_TABLET", 4);
         ThaumcraftApi.addWarpToResearch("ANIMATION_TABLET", 3);
         ResearchCategories.getResearch("LEVITATOR_LOCOMOTIVE").setConcealed();
@@ -970,9 +936,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "LEVITATOR_LOCOMOTIVE",
                 getModItem(ThaumicTinkerer.ID, "Levitational Locomotive", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("motus"), 30).add(Aspect.getAspect("ordo"), 20)
-                        .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("aer"), 25)
-                        .add(Aspect.getAspect("potentia"), 10),
+                new AspectList().add(Aspect.MOTION, 30).add(Aspect.ORDER, 20).add(Aspect.MAGIC, 15).add(Aspect.AIR, 25)
+                        .add(Aspect.ENERGY, 10),
                 getModItem(Thaumcraft.ID, "blockLifter", 1, 0),
                 OrePrefixes.plate.get(Materials.Obsidian),
                 OrePrefixes.screw.get(Materials.Iron),
@@ -984,15 +949,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.screw.get(Materials.Iron));
         TCHelper.setResearchAspects(
                 "LEVITATOR_LOCOMOTIVE",
-                new AspectList().add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("machina"), 12).add(Aspect.getAspect("aer"), 9)
-                        .add(Aspect.getAspect("potentia"), 6).add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.MOTION, 15).add(Aspect.ORDER, 15).add(Aspect.MECHANISM, 12)
+                        .add(Aspect.AIR, 9).add(Aspect.ENERGY, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("LEVITATOR_LOCOMOTIVE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "LEVITATOR_LOCOMOTIVE",
                 getModItem(ThaumicTinkerer.ID, "Levitational Locomotive Relay", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 20)
-                        .add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.EARTH, 20).add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -1022,8 +985,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "CLEANSING_TALISMAN",
                 getModItem(ThaumicTinkerer.ID, "cleansingTalisman", 1, 0),
                 4,
-                new AspectList().add(Aspect.getAspect("humanus"), 32).add(Aspect.getAspect("instrumentum"), 24)
-                        .add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("victus"), 16),
+                new AspectList().add(Aspect.MAN, 32).add(Aspect.TOOL, 24).add(Aspect.HEAL, 16).add(Aspect.LIFE, 16),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
@@ -1035,15 +997,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1));
         TCHelper.setResearchAspects(
                 "CLEANSING_TALISMAN",
-                new AspectList().add(Aspect.getAspect("sano"), 15).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("mortuus"), 9).add(Aspect.getAspect("victus"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.HEAL, 15).add(Aspect.ORDER, 12).add(Aspect.DEATH, 9).add(Aspect.LIFE, 6)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("CLEANSING_TALISMAN", 3);
         ResearchCategories.getResearch("INFUSEDPOTIONS").setConcealed();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "PLATFORM",
                 getModItem(ThaumicTinkerer.ID, "platform", 2, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -1061,18 +1022,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6));
         TCHelper.setResearchAspects(
                 "PLATFORM",
-                new AspectList().add(Aspect.getAspect("sensus"), 12).add(Aspect.getAspect("arbor"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("iter"), 3)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.SENSES, 12).add(Aspect.TREE, 9).add(Aspect.MOTION, 6).add(Aspect.TRAVEL, 3)
+                        .add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("PLATFORM", 3);
         ResearchCategories.getResearch("BLOOD_SWORD").setConcealed();
         TCHelper.addInfusionCraftingRecipe(
                 "BLOOD_SWORD",
                 getModItem(ThaumicTinkerer.ID, "bloodSword", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("fames"), 32).add(Aspect.getAspect("humanus"), 8)
-                        .add(Aspect.getAspect("spiritus"), 16).add(Aspect.getAspect("tenebrae"), 24)
-                        .add(Aspect.getAspect("telum"), 16),
+                new AspectList().add(Aspect.HUNGER, 32).add(Aspect.MAN, 8).add(Aspect.SOUL, 16).add(Aspect.DARKNESS, 24)
+                        .add(Aspect.WEAPON, 16),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.Diamond),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
@@ -1088,17 +1047,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Minecraft.ID, "chicken", 1, 0));
         TCHelper.setResearchAspects(
                 "BLOOD_SWORD",
-                new AspectList().add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("telum"), 12)
-                        .add(Aspect.getAspect("corpus"), 9).add(Aspect.getAspect("spiritus"), 6)
-                        .add(Aspect.getAspect("tenebrae"), 3));
+                new AspectList().add(Aspect.HUNGER, 15).add(Aspect.WEAPON, 12).add(Aspect.FLESH, 9).add(Aspect.SOUL, 6)
+                        .add(Aspect.DARKNESS, 3));
         TCHelper.setResearchComplexity("BLOOD_SWORD", 4);
         ThaumcraftApi.addWarpToResearch("BLOOD_SWORD", 3);
         ResearchCategories.getResearch("SUMMON").setConcealed();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SUMMON",
                 getModItem(ThaumicTinkerer.ID, "spawner", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75)
-                        .add(Aspect.getAspect("terra"), 50),
+                new AspectList().add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75).add(Aspect.EARTH, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -1122,16 +1079,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "screwThaumium");
         TCHelper.setResearchAspects(
                 "SUMMON",
-                new AspectList().add(Aspect.getAspect("telum"), 15).add(Aspect.getAspect("bestia"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("spiritus"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.WEAPON, 15).add(Aspect.BEAST, 12).add(Aspect.MAGIC, 9).add(Aspect.SOUL, 6)
+                        .add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("SUMMON", 4);
         ThaumcraftApi.addWarpToResearch("SUMMON", 5);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUS_SMELT",
                 getModItem(ThaumicTinkerer.ID, "focusSmelt", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("perditio"), 12)
-                        .add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("aer"), 8),
+                new AspectList().add(Aspect.FIRE, 16).add(Aspect.ENTROPY, 12).add(Aspect.ORDER, 12).add(Aspect.AIR, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -1155,17 +1110,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14));
         TCHelper.setResearchAspects(
                 "FOCUS_SMELT",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.ENERGY, 12).add(Aspect.MAGIC, 9).add(Aspect.AIR, 6)
+                        .add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("FOCUS_SMELT", 3);
         TCHelper.addResearchPrereq("FOCUS_FLIGHT", "FOCUSFIRE", false);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUS_FLIGHT",
                 getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("aer"), 48).add(Aspect.getAspect("iter"), 24)
-                        .add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("volatus"), 24),
+                new AspectList().add(Aspect.AIR, 48).add(Aspect.TRAVEL, 24).add(Aspect.MOTION, 32)
+                        .add(Aspect.FLIGHT, 24),
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0),
                 OrePrefixes.rotor.get(Materials.Thaumium),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
@@ -1175,18 +1129,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.dust.get(Materials.EnderPearl));
         TCHelper.setResearchAspects(
                 "FOCUS_FLIGHT",
-                new AspectList().add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("aer"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("volatus"), 6)
-                        .add(Aspect.getAspect("iter"), 3));
+                new AspectList().add(Aspect.MOTION, 15).add(Aspect.AIR, 12).add(Aspect.MAGIC, 9).add(Aspect.FLIGHT, 6)
+                        .add(Aspect.TRAVEL, 3));
         TCHelper.setResearchComplexity("FOCUS_FLIGHT", 4);
         TCHelper.addResearchPrereq("FOCUS_DEFLECT", "FOCUS_FLIGHT", false);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUS_DEFLECT",
                 getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0),
                 6,
-                new AspectList().add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("ordo"), 24)
-                        .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("auram"), 24)
-                        .add(Aspect.getAspect("alienis"), 16),
+                new AspectList().add(Aspect.AIR, 32).add(Aspect.ORDER, 24).add(Aspect.ARMOR, 32).add(Aspect.AURA, 24)
+                        .add(Aspect.ELDRITCH, 16),
                 getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 3),
@@ -1196,15 +1148,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4));
         TCHelper.setResearchAspects(
                 "FOCUS_DEFLECT",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("aer"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.MAGIC, 12).add(Aspect.EXCHANGE, 9)
+                        .add(Aspect.AURA, 6).add(Aspect.AIR, 3));
         TCHelper.setResearchComplexity("FOCUS_DEFLECT", 4);
         TCHelper.addResearchPrereq("FOCUS_ENDER_CHEST", "ENDERCHEST", false);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUS_ENDER_CHEST",
                 getModItem(ThaumicTinkerer.ID, "focusEnderChest", 1, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("ordo"), 50),
+                new AspectList().add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -1228,18 +1179,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14));
         TCHelper.setResearchAspects(
                 "FOCUS_ENDER_CHEST",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("vacuos"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("tenebrae"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.VOID, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.DARKNESS, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("FOCUS_ENDER_CHEST", 4);
         ThaumcraftApi.addWarpToResearch("ANIMATION_TABLET", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUS_TELEKINESIS",
                 getModItem(ThaumicTinkerer.ID, "focusTelekinesis", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("cognitio"), 32)
-                        .add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("perditio"), 24)
-                        .add(Aspect.getAspect("lucrum"), 16),
+                new AspectList().add(Aspect.AIR, 24).add(Aspect.MIND, 32).add(Aspect.MOTION, 32).add(Aspect.ENTROPY, 24)
+                        .add(Aspect.GREED, 16),
                 getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 OrePrefixes.plate.get(Materials.NetherQuartz),
@@ -1251,18 +1200,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.NetherQuartz));
         TCHelper.setResearchAspects(
                 "FOCUS_TELEKINESIS",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("motus"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("cognitio"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6));
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.MOTION, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.MIND, 9).add(Aspect.GREED, 6));
         TCHelper.setResearchComplexity("FOCUS_TELEKINESIS", 4);
         TCHelper.addResearchPrereq("FOCUS_DISLOCATION", "FOCUSTRADE", false);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUS_DISLOCATION",
                 getModItem(ThaumicTinkerer.ID, "focusDislocation", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("vacuos"), 32)
-                        .add(Aspect.getAspect("vitium"), 16).add(Aspect.getAspect("permutatio"), 16),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.MAGIC, 32).add(Aspect.DARKNESS, 32)
+                        .add(Aspect.VOID, 32).add(Aspect.TAINT, 16).add(Aspect.EXCHANGE, 16),
                 getModItem(Thaumcraft.ID, "FocusTrade", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.Diamond),
                 OrePrefixes.plate.get(Materials.NetherQuartz),
@@ -1274,17 +1221,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.NetherQuartz));
         TCHelper.setResearchAspects(
                 "FOCUS_DISLOCATION",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("permutatio"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("tenebrae"), 9)
-                        .add(Aspect.getAspect("vacuos"), 6).add(Aspect.getAspect("vitium"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.EXCHANGE, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.DARKNESS, 9).add(Aspect.VOID, 6).add(Aspect.TAINT, 3));
         TCHelper.setResearchComplexity("FOCUS_DISLOCATION", 4);
         ThaumcraftApi.addWarpToResearch("FOCUS_DISLOCATION", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUS_HEAL",
                 getModItem(ThaumicTinkerer.ID, "focusHeal", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("sano"), 24).add(Aspect.getAspect("spiritus"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("victus"), 24),
+                new AspectList().add(Aspect.HEAL, 24).add(Aspect.SOUL, 32).add(Aspect.MAGIC, 32).add(Aspect.LIFE, 24),
                 getModItem(Thaumcraft.ID, "FocusPech", 1, 0),
                 getModItem(Minecraft.ID, "golden_apple", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
@@ -1296,9 +1241,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14));
         TCHelper.setResearchAspects(
                 "FOCUS_HEAL",
-                new AspectList().add(Aspect.getAspect("sano"), 15).add(Aspect.getAspect("victus"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6));
+                new AspectList().add(Aspect.HEAL, 15).add(Aspect.LIFE, 15).add(Aspect.MAGIC, 12).add(Aspect.SOUL, 9)
+                        .add(Aspect.MIND, 6));
         TCHelper.setResearchComplexity("FOCUS_HEAL", 4);
         TCHelper.addResearchPrereq("ENCHANTER", "ENCHANTINGTABLE", false);
         TCHelper.addResearchPrereq("ENCHANTER", "INFUSION", false);
@@ -1307,9 +1251,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "ENCHANTER",
                 getModItem(ThaumicTinkerer.ID, "enchanter", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("cognitio"), 64)
-                        .add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("vacuos"), 64),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.MIND, 64).add(Aspect.ENERGY, 64)
+                        .add(Aspect.MAGIC, 64).add(Aspect.AURA, 64).add(Aspect.VOID, 64),
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0),
                 OrePrefixes.plate.get(Materials.Thaumium),
@@ -1325,10 +1268,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0));
         TCHelper.setResearchAspects(
                 "ENCHANTER",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("vacuos"), 9).add(Aspect.getAspect("cognitio"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.MAGIC, 15).add(Aspect.AURA, 12)
+                        .add(Aspect.DARKNESS, 12).add(Aspect.VOID, 9).add(Aspect.MIND, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("ENCHANTER", 4);
         ThaumcraftApi.addWarpToResearch("ENCHANTER", 3);
         TCHelper.addResearchPrereq("SPELL_CLOTH", "INFUSION", false);
@@ -1337,20 +1278,19 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "SPELL_CLOTH",
                 getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                new AspectList().add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("praecantatio"), 16)
-                        .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("alienis"), 8));
+                new AspectList().add(Aspect.ENTROPY, 16).add(Aspect.MAGIC, 16).add(Aspect.EXCHANGE, 8)
+                        .add(Aspect.ELDRITCH, 8));
         TCHelper.setResearchAspects(
                 "SPELL_CLOTH",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("pannus"), 9)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.MAGIC, 12).add(Aspect.CLOTH, 9).add(Aspect.AURA, 6)
+                        .add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("SPELL_CLOTH", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "XP_TALISMAN",
                 getModItem(ThaumicTinkerer.ID, "xpTalisman", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("bestia"), 24).add(Aspect.getAspect("lucrum"), 32)
-                        .add(Aspect.getAspect("machina"), 16).add(Aspect.getAspect("permutatio"), 16)
-                        .add(Aspect.getAspect("humanus"), 8),
+                new AspectList().add(Aspect.BEAST, 24).add(Aspect.GREED, 32).add(Aspect.MECHANISM, 16)
+                        .add(Aspect.EXCHANGE, 16).add(Aspect.MAN, 8),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 OrePrefixes.plate.get(Materials.NetherQuartz),
@@ -1362,16 +1302,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Diamond));
         TCHelper.setResearchAspects(
                 "XP_TALISMAN",
-                new AspectList().add(Aspect.getAspect("lucrum"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("humanus"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("machina"), 3));
+                new AspectList().add(Aspect.GREED, 15).add(Aspect.MAGIC, 12).add(Aspect.MAN, 9).add(Aspect.AURA, 6)
+                        .add(Aspect.MECHANISM, 3));
         TCHelper.setResearchComplexity("XP_TALISMAN", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REVEALING_HELM",
                 getModItem(ThaumicTinkerer.ID, "revealingHelm", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 35).add(Aspect.getAspect("aqua"), 35)
-                        .add(Aspect.getAspect("terra"), 35).add(Aspect.getAspect("ignis"), 35)
-                        .add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("perditio"), 35),
+                new AspectList().add(Aspect.AIR, 35).add(Aspect.WATER, 35).add(Aspect.EARTH, 35).add(Aspect.FIRE, 35)
+                        .add(Aspect.ORDER, 35).add(Aspect.ENTROPY, 35),
                 "abc",
                 "def",
                 "ghi",
@@ -1391,108 +1329,92 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0));
         TCHelper.setResearchAspects(
                 "REVEALING_HELM",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("auram"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("metallum"), 6)
-                        .add(Aspect.getAspect("sensus"), 3));
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.AURA, 12).add(Aspect.MAGIC, 9).add(Aspect.METAL, 6)
+                        .add(Aspect.SENSES, 3));
         TCHelper.setResearchComplexity("REVEALING_HELM", 4);
         ResearchCategories.getResearch("TTENCH_ASCENT_BOOST").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_ASCENT_BOOST",
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("motus"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("tempus"), 3));
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.MOTION, 12).add(Aspect.MAGIC, 9).add(Aspect.AURA, 6)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 3));
         TCHelper.setResearchComplexity("TTENCH_ASCENT_BOOST", 3);
         ResearchCategories.getResearch("TTENCH_SLOW_FALL").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_SLOW_FALL",
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("motus"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("tempus"), 3));
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.MOTION, 12).add(Aspect.MAGIC, 9).add(Aspect.AURA, 6)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 3));
         TCHelper.setResearchComplexity("TTENCH_SLOW_FALL", 3);
         ResearchCategories.getResearch("TTENCH_AUTO_SMELT").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_AUTO_SMELT",
-                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("perditio"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("metallum"), 3));
+                new AspectList().add(Aspect.FIRE, 15).add(Aspect.ENTROPY, 12).add(Aspect.MAGIC, 9).add(Aspect.AURA, 6)
+                        .add(Aspect.METAL, 3));
         TCHelper.setResearchComplexity("TTENCH_AUTO_SMELT", 3);
         ResearchCategories.getResearch("TTENCH_DESINTEGRATE").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_DESINTEGRATE",
-                new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("perditio"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("tempus"), 3));
+                new AspectList().add(Aspect.VOID, 15).add(Aspect.ENTROPY, 12).add(Aspect.MAGIC, 9).add(Aspect.AURA, 6)
+                        .add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 3));
         TCHelper.setResearchComplexity("TTENCH_DESINTEGRATE", 3);
         ResearchCategories.getResearch("TTENCH_QUICK_DRAW").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_QUICK_DRAW",
-                new AspectList().add(Aspect.getAspect("telum"), 15).add(Aspect.getAspect("sensus"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.WEAPON, 15).add(Aspect.SENSES, 12).add(Aspect.MAGIC, 9).add(Aspect.AURA, 6)
+                        .add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("TTENCH_QUICK_DRAW", 3);
         ResearchCategories.getResearch("TTENCH_VAMPIRISM").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_VAMPIRISM",
-                new AspectList().add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("telum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("lucrum"), 3));
+                new AspectList().add(Aspect.HUNGER, 15).add(Aspect.WEAPON, 12).add(Aspect.MAGIC, 9).add(Aspect.AURA, 6)
+                        .add(Aspect.GREED, 3));
         TCHelper.setResearchComplexity("TTENCH_VAMPIRISM", 3);
         ResearchCategories.getResearch("TTENCH_POUNCE").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_POUNCE",
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("volatus"), 3));
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.ORDER, 15).add(Aspect.ARMOR, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.AURA, 6).add(Aspect.FLIGHT, 3));
         TCHelper.setResearchComplexity("TTENCH_POUNCE", 4);
         ResearchCategories.getResearch("TTENCH_SHOCKWAVE").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_SHOCKWAVE",
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("volatus"), 3));
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.ENTROPY, 15).add(Aspect.ARMOR, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.AURA, 6).add(Aspect.FLIGHT, 3));
         TCHelper.setResearchComplexity("TTENCH_SHOCKWAVE", 4);
         ResearchCategories.getResearch("TTENCH_TUNNEL").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_TUNNEL",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("perfodio"), 3));
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.ORDER, 15).add(Aspect.TOOL, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.AURA, 6).add(Aspect.MINE, 3));
         TCHelper.setResearchComplexity("TTENCH_TUNNEL", 4);
         ResearchCategories.getResearch("TTENCH_SHATTER").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_SHATTER",
-                new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("perfodio"), 3));
+                new AspectList().add(Aspect.EARTH, 15).add(Aspect.ENTROPY, 15).add(Aspect.TOOL, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.AURA, 6).add(Aspect.MINE, 3));
         TCHelper.setResearchComplexity("TTENCH_SHATTER", 4);
         ResearchCategories.getResearch("TTENCH_FOCUSED").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_FOCUSED",
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("telum"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("bestia"), 3));
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.WEAPON, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.AURA, 6).add(Aspect.BEAST, 3));
         TCHelper.setResearchComplexity("TTENCH_FOCUSED", 4);
         ResearchCategories.getResearch("TTENCH_DISPERSED").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_DISPERSED",
-                new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("telum"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("bestia"), 3));
+                new AspectList().add(Aspect.ENTROPY, 15).add(Aspect.WEAPON, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.AURA, 6).add(Aspect.BEAST, 3));
         TCHelper.setResearchComplexity("TTENCH_DISPERSED", 4);
         ResearchCategories.getResearch("TTENCH_VALIANCE").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_VALIANCE",
-                new AspectList().add(Aspect.getAspect("sano"), 15).add(Aspect.getAspect("telum"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("alienis"), 9)
-                        .add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("bestia"), 3));
+                new AspectList().add(Aspect.HEAL, 15).add(Aspect.WEAPON, 15).add(Aspect.MAGIC, 12)
+                        .add(Aspect.ELDRITCH, 9).add(Aspect.AURA, 6).add(Aspect.BEAST, 3));
         TCHelper.setResearchComplexity("TTENCH_VALIANCE", 4);
         ResearchCategories.getResearch("TTENCH_FINAL").setConcealed();
         TCHelper.setResearchAspects(
                 "TTENCH_FINAL",
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("telum"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("alienis"), 9).add(Aspect.getAspect("auram"), 6)
-                        .add(Aspect.getAspect("superbia"), 3));
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15).add(Aspect.WEAPON, 15)
+                        .add(Aspect.MAGIC, 12).add(Aspect.ELDRITCH, 9).add(Aspect.AURA, 6).add(DarkAspects.PRIDE, 3));
         TCHelper.setResearchComplexity("TTENCH_FINAL", 4);
         TCHelper.refreshResearchPages("INTERFACE");
         TCHelper.refreshResearchPages("DISLOCATOR");
@@ -1572,10 +1494,9 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "DIMENSIONSHARDS",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("luxuria"), 15)
-                        .add(Aspect.getAspect("superbia"), 15).add(Aspect.getAspect("gula"), 12)
-                        .add(Aspect.getAspect("invidia"), 9).add(Aspect.getAspect("desidia"), 6)
-                        .add(Aspect.getAspect("ira"), 3),
+                new AspectList().add(DarkAspects.NETHER, 15).add(DarkAspects.LUST, 15).add(DarkAspects.PRIDE, 15)
+                        .add(DarkAspects.GLUTTONY, 12).add(DarkAspects.ENVY, 9).add(DarkAspects.SLOTH, 6)
+                        .add(DarkAspects.WRATH, 3),
                 7,
                 8,
                 3,
@@ -1585,12 +1506,10 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "DIMENSIONSHARDS",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6),
                 8,
-                new AspectList().add(Aspect.getAspect("infernus"), 8).add(Aspect.getAspect("praecantatio"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8).add(Aspect.getAspect("vitium"), 8)
-                        .add(Aspect.getAspect("luxuria"), 8).add(Aspect.getAspect("superbia"), 8)
-                        .add(Aspect.getAspect("gula"), 8).add(Aspect.getAspect("invidia"), 8)
-                        .add(Aspect.getAspect("desidia"), 8).add(Aspect.getAspect("ira"), 8)
-                        .add(Aspect.getAspect("alienis"), 8),
+                new AspectList().add(DarkAspects.NETHER, 8).add(Aspect.MAGIC, 8).add(Aspect.CRYSTAL, 8)
+                        .add(Aspect.TAINT, 8).add(DarkAspects.LUST, 8).add(DarkAspects.PRIDE, 8)
+                        .add(DarkAspects.GLUTTONY, 8).add(DarkAspects.ENVY, 8).add(DarkAspects.SLOTH, 8)
+                        .add(DarkAspects.WRATH, 8).add(Aspect.ELDRITCH, 8),
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
@@ -1611,12 +1530,10 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "DIMENSIONSHARDS",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7),
                 8,
-                new AspectList().add(Aspect.getAspect("infernus"), 8).add(Aspect.getAspect("praecantatio"), 8)
-                        .add(Aspect.getAspect("vitreus"), 8).add(Aspect.getAspect("vitium"), 8)
-                        .add(Aspect.getAspect("luxuria"), 8).add(Aspect.getAspect("superbia"), 8)
-                        .add(Aspect.getAspect("gula"), 8).add(Aspect.getAspect("invidia"), 8)
-                        .add(Aspect.getAspect("desidia"), 8).add(Aspect.getAspect("ira"), 8)
-                        .add(Aspect.getAspect("alienis"), 8),
+                new AspectList().add(DarkAspects.NETHER, 8).add(Aspect.MAGIC, 8).add(Aspect.CRYSTAL, 8)
+                        .add(Aspect.TAINT, 8).add(DarkAspects.LUST, 8).add(DarkAspects.PRIDE, 8)
+                        .add(DarkAspects.GLUTTONY, 8).add(DarkAspects.ENVY, 8).add(DarkAspects.SLOTH, 8)
+                        .add(DarkAspects.WRATH, 8).add(Aspect.ELDRITCH, 8),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
@@ -1644,9 +1561,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "ICHOR",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 2, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("humanus"), 32).add(Aspect.getAspect("lux"), 32)
-                        .add(Aspect.getAspect("spiritus"), 64).add(Aspect.getAspect("alienis"), 16)
-                        .add(Aspect.getAspect("ordo"), 16),
+                new AspectList().add(Aspect.MAN, 32).add(Aspect.LIGHT, 32).add(Aspect.SOUL, 64).add(Aspect.ELDRITCH, 16)
+                        .add(Aspect.ORDER, 16),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 OrePrefixes.gemFlawless.get(Materials.Diamond),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6),
@@ -1654,18 +1570,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7));
         TCHelper.setResearchAspects(
                 "ICHOR",
-                new AspectList().add(Aspect.getAspect("humanus"), 15).add(Aspect.getAspect("spiritus"), 15)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("vitium"), 12).add(Aspect.getAspect("lux"), 9)
-                        .add(Aspect.getAspect("infernus"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.MAN, 15).add(Aspect.SOUL, 15).add(Aspect.ORDER, 15).add(Aspect.MAGIC, 15)
+                        .add(Aspect.TAINT, 12).add(Aspect.LIGHT, 9).add(DarkAspects.NETHER, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("ICHOR", 4);
         ThaumcraftApi.addWarpToResearch("ICHOR", 5);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHOR_CLOTH",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 2, 1),
-                new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("aqua"), 125)
-                        .add(Aspect.getAspect("ignis"), 125).add(Aspect.getAspect("terra"), 125)
-                        .add(Aspect.getAspect("ordo"), 125).add(Aspect.getAspect("perditio"), 125),
+                new AspectList().add(Aspect.AIR, 125).add(Aspect.WATER, 125).add(Aspect.FIRE, 125)
+                        .add(Aspect.EARTH, 125).add(Aspect.ORDER, 125).add(Aspect.ENTROPY, 125),
                 "aba",
                 "cdc",
                 "ebe",
@@ -1681,9 +1594,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "gemFlawlessDiamond");
         TCHelper.setResearchAspects(
                 "ICHOR_CLOTH",
-                new AspectList().add(Aspect.getAspect("pannus"), 15).add(Aspect.getAspect("fabrico"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("sensus"), 9)
-                        .add(Aspect.getAspect("lux"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.CLOTH, 15).add(Aspect.CRAFT, 15).add(Aspect.MAGIC, 12).add(Aspect.SENSES, 9)
+                        .add(Aspect.LIGHT, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("ICHOR_CLOTH", 4);
         ThaumcraftApi.addWarpToResearch("ICHOR_CLOTH", 1);
         TCHelper.clearPages("ICHORIUM");
@@ -1691,9 +1603,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORIUM",
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
-                new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("aqua"), 125)
-                        .add(Aspect.getAspect("ignis"), 125).add(Aspect.getAspect("terra"), 125)
-                        .add(Aspect.getAspect("ordo"), 125).add(Aspect.getAspect("perditio"), 125),
+                new AspectList().add(Aspect.AIR, 125).add(Aspect.WATER, 125).add(Aspect.FIRE, 125)
+                        .add(Aspect.EARTH, 125).add(Aspect.ORDER, 125).add(Aspect.ENTROPY, 125),
                 "abc",
                 "def",
                 "ghi",
@@ -1721,9 +1632,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         TCHelper.findArcaneRecipe(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L))));
         TCHelper.setResearchAspects(
                 "ICHORIUM",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 15)
-                        .add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("lux"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.CRAFT, 15).add(Aspect.TOOL, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.LIGHT, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("ICHORIUM", 4);
         ThaumcraftApi.addWarpToResearch("ICHORIUM", 2);
         TCHelper.clearPrereq("ICHORIUM");
@@ -1733,9 +1643,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         new ResearchItem(
                 "CAP_ICHOR",
                 "TT_CATEGORY",
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("instrumentum"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.MAGIC, 12).add(Aspect.EXCHANGE, 9).add(Aspect.TOOL, 6)
+                        .add(Aspect.EARTH, 3),
                 11,
                 11,
                 3,
@@ -1744,9 +1653,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_ICHOR",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 2, 4),
-                new AspectList().add(Aspect.getAspect("aer"), 150).add(Aspect.getAspect("aqua"), 150)
-                        .add(Aspect.getAspect("ignis"), 150).add(Aspect.getAspect("terra"), 150)
-                        .add(Aspect.getAspect("ordo"), 150).add(Aspect.getAspect("perditio"), 150),
+                new AspectList().add(Aspect.AIR, 150).add(Aspect.WATER, 150).add(Aspect.FIRE, 150)
+                        .add(Aspect.EARTH, 150).add(Aspect.ORDER, 150).add(Aspect.ENTROPY, 150),
                 "abc",
                 "def",
                 "ghi",
@@ -1773,17 +1681,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4))));
         TCHelper.setResearchAspects(
                 "CAP_ICHOR",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("instrumentum"), 15)
-                        .add(Aspect.getAspect("tenebrae"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("lux"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.TOOL, 15).add(Aspect.DARKNESS, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.LIGHT, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("CAP_ICHOR", 4);
         ThaumcraftApi.addWarpToResearch("CAP_ICHOR", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "CAT_AMULET",
                 getModItem(ThaumicTinkerer.ID, "catAmulet", 1, 0),
                 8,
-                new AspectList().add(Aspect.getAspect("cognitio"), 16).add(Aspect.getAspect("ordo"), 32)
-                        .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("mortuus"), 16),
+                new AspectList().add(Aspect.MIND, 16).add(Aspect.ORDER, 32).add(Aspect.DARKNESS, 16)
+                        .add(Aspect.DEATH, 16),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10),
                 OrePrefixes.ring.get(Materials.Gold),
@@ -1795,17 +1702,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.ring.get(Materials.Gold));
         TCHelper.setResearchAspects(
                 "CAT_AMULET",
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("tenebrae"), 12).add(Aspect.getAspect("mortuus"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.ORDER, 15).add(Aspect.DARKNESS, 12)
+                        .add(Aspect.DEATH, 9).add(Aspect.MOTION, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("CAT_AMULET", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHOR_POUCH",
                 getModItem(ThaumicTinkerer.ID, "ichorPouch", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("humanus"), 48)
-                        .add(Aspect.getAspect("pannus"), 48).add(Aspect.getAspect("alienis"), 48)
-                        .add(Aspect.getAspect("aer"), 64),
+                new AspectList().add(Aspect.VOID, 64).add(Aspect.MAN, 48).add(Aspect.CLOTH, 48).add(Aspect.ELDRITCH, 48)
+                        .add(Aspect.AIR, 64),
                 getModItem(Thaumcraft.ID, "FocusPouch", 1, 0),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 3),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
@@ -1817,16 +1722,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.gemExquisite.get(Materials.Diamond));
         TCHelper.setResearchAspects(
                 "ICHOR_POUCH",
-                new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("pannus"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("humanus"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("aer"), 3));
+                new AspectList().add(Aspect.VOID, 15).add(Aspect.CLOTH, 15).add(Aspect.ELDRITCH, 12).add(Aspect.MAN, 9)
+                        .add(Aspect.MOTION, 6).add(Aspect.AIR, 3));
         TCHelper.setResearchComplexity("ICHOR_POUCH", 4);
         ThaumcraftApi.addWarpToResearch("ICHOR_POUCH", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORCLOTH_ARMOR",
                 getModItem(ThaumicTinkerer.ID, "ichorclothHelm", 1, 0),
-                new AspectList().add(Aspect.getAspect("aqua"), 75).add(Aspect.getAspect("perditio"), 50)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.WATER, 75).add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -1847,8 +1750,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORCLOTH_ARMOR",
                 getModItem(ThaumicTinkerer.ID, "ichorclothChest", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("perditio"), 50)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -1873,8 +1775,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORCLOTH_ARMOR",
                 getModItem(ThaumicTinkerer.ID, "ichorclothLegs", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("perditio"), 50)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.FIRE, 75).add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -1899,8 +1800,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORCLOTH_ARMOR",
                 getModItem(ThaumicTinkerer.ID, "ichorclothBoots", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 75).add(Aspect.getAspect("perditio"), 50)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.EARTH, 75).add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -1918,18 +1818,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1));
         TCHelper.setResearchAspects(
                 "ICHORCLOTH_ARMOR",
-                new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("pannus"), 15)
-                        .add(Aspect.getAspect("lux"), 12).add(Aspect.getAspect("perfodio"), 9)
-                        .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.ARMOR, 15).add(Aspect.CLOTH, 15).add(Aspect.LIGHT, 12).add(Aspect.MINE, 9)
+                        .add(Aspect.MOTION, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("ICHORCLOTH_ARMOR", 4);
         ThaumcraftApi.addWarpToResearch("ICHORCLOTH_ARMOR", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_ICHORCLOTH",
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 5),
                 10,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 150).add(Aspect.getAspect("lux"), 100)
-                        .add(Aspect.getAspect("instrumentum"), 100).add(Aspect.getAspect("arbor"), 75)
-                        .add(Aspect.getAspect("alienis"), 50),
+                new AspectList().add(Aspect.MAGIC, 150).add(Aspect.LIGHT, 100).add(Aspect.TOOL, 100)
+                        .add(Aspect.TREE, 75).add(Aspect.ELDRITCH, 50),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
@@ -1941,18 +1839,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0));
         TCHelper.setResearchAspects(
                 "ROD_ICHORCLOTH",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("pannus"), 15)
-                        .add(Aspect.getAspect("lux"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("arbor"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.CLOTH, 15).add(Aspect.LIGHT, 12).add(Aspect.MAGIC, 9)
+                        .add(Aspect.TREE, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("ROD_ICHORCLOTH", 4);
         ThaumcraftApi.addWarpToResearch("ROD_ICHORCLOTH", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUS_SHADOWBEAM",
                 getModItem(ThaumicTinkerer.ID, "focusShadowbeam", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("telum"), 64).add(Aspect.getAspect("tenebrae"), 64)
-                        .add(Aspect.getAspect("tempestas"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.MAGIC, 64).add(Aspect.WEAPON, 64)
+                        .add(Aspect.DARKNESS, 64).add(Aspect.WEATHER, 32),
                 getModItem(Thaumcraft.ID, "FocusShock", 1, 0),
                 OrePrefixes.ring.get(Materials.Ichorium),
                 getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0),
@@ -1963,17 +1859,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUS_SHADOWBEAM",
-                new AspectList().add(Aspect.getAspect("tenebrae"), 15).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("telum"), 9)
-                        .add(Aspect.getAspect("tempestas"), 6).add(Aspect.getAspect("motus"), 3));
+                new AspectList().add(Aspect.DARKNESS, 15).add(Aspect.MAGIC, 15).add(Aspect.ELDRITCH, 12)
+                        .add(Aspect.WEAPON, 9).add(Aspect.WEATHER, 6).add(Aspect.MOTION, 3));
         TCHelper.setResearchComplexity("FOCUS_SHADOWBEAM", 4);
         ThaumcraftApi.addWarpToResearch("FOCUS_SHADOWBEAM", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUS_XP_DRAIN",
                 getModItem(ThaumicTinkerer.ID, "focusXPDrain", 1, 0),
                 12,
-                new AspectList().add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("cognitio"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("vitium"), 32),
+                new AspectList().add(Aspect.AURA, 64).add(Aspect.MIND, 64).add(Aspect.MAGIC, 64).add(Aspect.TAINT, 32),
                 getModItem(Minecraft.ID, "experience_bottle", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(ThaumicTinkerer.ID, "enchanter", 1, 0),
@@ -1983,19 +1877,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "xpTalisman", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUS_XP_DRAIN",
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("humanus"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.MAGIC, 15).add(Aspect.AURA, 12).add(Aspect.MAN, 9)
+                        .add(Aspect.GREED, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("FOCUS_XP_DRAIN", 4);
         ThaumcraftApi.addWarpToResearch("FOCUS_XP_DRAIN", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHORCLOTH_HELM_GEM",
                 getModItem(ThaumicTinkerer.ID, "ichorclothHelmGem", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("auram"), 64)
-                        .add(Aspect.getAspect("cognitio"), 64).add(Aspect.getAspect("corpus"), 64)
-                        .add(Aspect.getAspect("fames"), 64).add(Aspect.getAspect("lux"), 64)
-                        .add(Aspect.getAspect("tutamen"), 64),
+                new AspectList().add(Aspect.WATER, 64).add(Aspect.AURA, 64).add(Aspect.MIND, 64).add(Aspect.FLESH, 64)
+                        .add(Aspect.HUNGER, 64).add(Aspect.LIGHT, 64).add(Aspect.ARMOR, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothHelm", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0),
@@ -2011,20 +1902,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0));
         TCHelper.setResearchAspects(
                 "ICHORCLOTH_HELM_GEM",
-                new AspectList().add(Aspect.getAspect("aqua"), 24).add(Aspect.getAspect("sano"), 21)
-                        .add(Aspect.getAspect("fames"), 18).add(Aspect.getAspect("auram"), 15)
-                        .add(Aspect.getAspect("cognitio"), 12).add(Aspect.getAspect("corpus"), 9)
-                        .add(Aspect.getAspect("lux"), 6).add(Aspect.getAspect("tutamen"), 3));
+                new AspectList().add(Aspect.WATER, 24).add(Aspect.HEAL, 21).add(Aspect.HUNGER, 18).add(Aspect.AURA, 15)
+                        .add(Aspect.MIND, 12).add(Aspect.FLESH, 9).add(Aspect.LIGHT, 6).add(Aspect.ARMOR, 3));
         TCHelper.setResearchComplexity("ICHORCLOTH_HELM_GEM", 4);
         ThaumcraftApi.addWarpToResearch("ICHORCLOTH_HELM_GEM", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHORCLOTH_CHEST_GEM",
                 getModItem(ThaumicTinkerer.ID, "ichorclothChestGem", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("alienis"), 64)
-                        .add(Aspect.getAspect("lux"), 64).add(Aspect.getAspect("ordo"), 64)
-                        .add(Aspect.getAspect("sensus"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("volatus"), 64),
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.ELDRITCH, 64).add(Aspect.LIGHT, 64)
+                        .add(Aspect.ORDER, 64).add(Aspect.SENSES, 64).add(Aspect.ARMOR, 64).add(Aspect.FLIGHT, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothChest", 1, 0),
                 OrePrefixes.plate.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0),
@@ -2040,20 +1927,17 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "HoverHarness", 1, 0));
         TCHelper.setResearchAspects(
                 "ICHORCLOTH_CHEST_GEM",
-                new AspectList().add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("motus"), 21)
-                        .add(Aspect.getAspect("volatus"), 18).add(Aspect.getAspect("alienis"), 15)
-                        .add(Aspect.getAspect("lux"), 12).add(Aspect.getAspect("sensus"), 9)
-                        .add(Aspect.getAspect("ordo"), 6).add(Aspect.getAspect("tutamen"), 3));
+                new AspectList().add(Aspect.AIR, 24).add(Aspect.MOTION, 21).add(Aspect.FLIGHT, 18)
+                        .add(Aspect.ELDRITCH, 15).add(Aspect.LIGHT, 12).add(Aspect.SENSES, 9).add(Aspect.ORDER, 6)
+                        .add(Aspect.ARMOR, 3));
         TCHelper.setResearchComplexity("ICHORCLOTH_CHEST_GEM", 4);
         ThaumcraftApi.addWarpToResearch("ICHORCLOTH_CHEST_GEM", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHORCLOTH_LEGS_GEM",
                 getModItem(ThaumicTinkerer.ID, "ichorclothLegsGem", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("ignis"), 64)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("lux"), 64)
-                        .add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("sano"), 64)
-                        .add(Aspect.getAspect("tutamen"), 64),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.FIRE, 64).add(Aspect.GREED, 64)
+                        .add(Aspect.LIGHT, 64).add(Aspect.ENERGY, 64).add(Aspect.HEAL, 64).add(Aspect.ARMOR, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothLegs", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0),
@@ -2069,19 +1953,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Minecraft.ID, "lava_bucket", 1, 0));
         TCHelper.setResearchAspects(
                 "ICHORCLOTH_LEGS_GEM",
-                new AspectList().add(Aspect.getAspect("ignis"), 24).add(Aspect.getAspect("sano"), 21)
-                        .add(Aspect.getAspect("lucrum"), 18).add(Aspect.getAspect("potentia"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("aer"), 9)
-                        .add(Aspect.getAspect("lux"), 6).add(Aspect.getAspect("tutamen"), 3));
+                new AspectList().add(Aspect.FIRE, 24).add(Aspect.HEAL, 21).add(Aspect.GREED, 18).add(Aspect.ENERGY, 15)
+                        .add(Aspect.ELDRITCH, 12).add(Aspect.AIR, 9).add(Aspect.LIGHT, 6).add(Aspect.ARMOR, 3));
         TCHelper.setResearchComplexity("ICHORCLOTH_LEGS_GEM", 4);
         ThaumcraftApi.addWarpToResearch("ICHORCLOTH_LEGS_GEM", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHORCLOTH_BOOTS_GEM",
                 getModItem(ThaumicTinkerer.ID, "ichorclothBootsGem", 1, 0),
                 16,
-                new AspectList().add(getAspect("herba"), 64).add(getAspect("iter"), 64).add(getAspect("lux"), 64)
-                        .add(getAspect("motus"), 64).add(getAspect("perfodio"), 64).add(getAspect("terra"), 64)
-                        .add(getAspect("tutamen"), 64),
+                new AspectList().add(Aspect.PLANT, 64).add(Aspect.TRAVEL, 64).add(Aspect.LIGHT, 64)
+                        .add(Aspect.MOTION, 64).add(Aspect.MINE, 64).add(Aspect.EARTH, 64).add(Aspect.ARMOR, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothBoots", 1, 0),
                 ingot.get(Ichorium),
                 getModItem(Thaumcraft.ID, "ItemBootsThaumium", 1, 0),
@@ -2102,19 +1983,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Minecraft.ID, "grass", 1, 0));
         TCHelper.setResearchAspects(
                 "ICHORCLOTH_BOOTS_GEM",
-                new AspectList().add(Aspect.getAspect("terra"), 24).add(Aspect.getAspect("iter"), 21)
-                        .add(Aspect.getAspect("perfodio"), 18).add(Aspect.getAspect("herba"), 15)
-                        .add(Aspect.getAspect("lux"), 12).add(Aspect.getAspect("motus"), 9)
-                        .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("tutamen"), 3));
+                new AspectList().add(Aspect.EARTH, 24).add(Aspect.TRAVEL, 21).add(Aspect.MINE, 18).add(Aspect.PLANT, 15)
+                        .add(Aspect.LIGHT, 12).add(Aspect.MOTION, 9).add(Aspect.MIND, 6).add(Aspect.ARMOR, 3));
         TCHelper.setResearchComplexity("ICHORCLOTH_BOOTS_GEM", 4);
         ThaumcraftApi.addWarpToResearch("ICHORCLOTH_BOOTS_GEM", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "WARP_GATE",
                 getModItem(ThaumicTinkerer.ID, "warpGate", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("iter"), 72)
-                        .add(Aspect.getAspect("volatus"), 64).add(Aspect.getAspect("terra"), 32)
-                        .add(Aspect.getAspect("aer"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.TRAVEL, 72).add(Aspect.FLIGHT, 64)
+                        .add(Aspect.EARTH, 32).add(Aspect.AIR, 32),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2),
                 getModItem(ThaumicTinkerer.ID, "dislocator", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7),
@@ -2127,9 +2005,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "WARP_GATE",
                 getModItem(ThaumicTinkerer.ID, "skyPearl", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("alienis"), 32)
-                        .add(Aspect.getAspect("volatus"), 32).add(Aspect.getAspect("iter"), 32)
-                        .add(Aspect.getAspect("vitreus"), 24),
+                new AspectList().add(Aspect.AIR, 24).add(Aspect.ELDRITCH, 32).add(Aspect.FLIGHT, 32)
+                        .add(Aspect.TRAVEL, 32).add(Aspect.CRYSTAL, 24),
                 getModItem(Minecraft.ID, "ender_pearl", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7),
@@ -2139,18 +2016,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6));
         TCHelper.setResearchAspects(
                 "WARP_GATE",
-                new AspectList().add(Aspect.getAspect("iter"), 18).add(Aspect.getAspect("volatus"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("machina"), 9)
-                        .add(Aspect.getAspect("vitreus"), 6).add(Aspect.getAspect("aer"), 3));
+                new AspectList().add(Aspect.TRAVEL, 18).add(Aspect.FLIGHT, 15).add(Aspect.ELDRITCH, 12)
+                        .add(Aspect.MECHANISM, 9).add(Aspect.CRYSTAL, 6).add(Aspect.AIR, 3));
         TCHelper.setResearchComplexity("WARP_GATE", 4);
         ThaumcraftApi.addWarpToResearch("WARP_GATE", 4);
         TCHelper.addInfusionCraftingRecipe(
                 "FOCUS_RECALL",
                 getModItem(ThaumicTinkerer.ID, "focusRecall", 1, 0),
                 14,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("iter"), 128)
-                        .add(Aspect.getAspect("praecantatio"), 96).add(Aspect.getAspect("volatus"), 48)
-                        .add(Aspect.getAspect("aer"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.TRAVEL, 128).add(Aspect.MAGIC, 96)
+                        .add(Aspect.FLIGHT, 48).add(Aspect.AIR, 32),
                 getModItem(ThaumicTinkerer.ID, "focusEnderChest", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "skyPearl", 1, 0),
@@ -2158,16 +2033,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "skyPearl", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUS_RECALL",
-                new AspectList().add(Aspect.getAspect("iter"), 18).add(Aspect.getAspect("alienis"), 15)
-                        .add(Aspect.getAspect("volatus"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("cognitio"), 3));
+                new AspectList().add(Aspect.TRAVEL, 18).add(Aspect.ELDRITCH, 15).add(Aspect.FLIGHT, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.AIR, 6).add(Aspect.MIND, 3));
         TCHelper.setResearchComplexity("FOCUS_RECALL", 4);
         ThaumcraftApi.addWarpToResearch("FOCUS_RECALL", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHOR_TOOLS",
                 getModItem(ThaumicTinkerer.ID, "ichorPick", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("perditio"), 50)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.FIRE, 75).add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -2192,8 +2065,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHOR_TOOLS",
                 getModItem(ThaumicTinkerer.ID, "ichorShovel", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 75).add(Aspect.getAspect("perditio"), 50)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.EARTH, 75).add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -2214,8 +2086,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHOR_TOOLS",
                 getModItem(ThaumicTinkerer.ID, "ichorAxe", 1, 0),
-                new AspectList().add(Aspect.getAspect("aqua"), 75).add(Aspect.getAspect("perditio"), 50)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.WATER, 75).add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -2240,8 +2111,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHOR_TOOLS",
                 getModItem(ThaumicTinkerer.ID, "ichorSword", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("perditio"), 50)
-                        .add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.ENTROPY, 50).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -2261,19 +2131,17 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "screwOsmiridium");
         TCHelper.setResearchAspects(
                 "ICHOR_TOOLS",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 18).add(Aspect.getAspect("telum"), 15)
-                        .add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("fabrico"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.TOOL, 18).add(Aspect.WEAPON, 15).add(Aspect.METAL, 12).add(Aspect.CRAFT, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("ICHOR_TOOLS", 4);
         ThaumcraftApi.addWarpToResearch("ICHOR_TOOLS", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHOR_PICK_GEM",
                 getModItem(ThaumicTinkerer.ID, "ichorPickGem", 1, 0),
                 18,
-                new AspectList().add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("lucrum"), 64)
-                        .add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("meto"), 64)
-                        .add(Aspect.getAspect("messis"), 64).add(Aspect.getAspect("perfodio"), 64)
-                        .add(Aspect.getAspect("terra"), 64).add(Aspect.getAspect("sensus"), 64),
+                new AspectList().add(Aspect.FIRE, 64).add(Aspect.GREED, 64).add(Aspect.METAL, 64)
+                        .add(Aspect.HARVEST, 64).add(Aspect.CROP, 64).add(Aspect.MINE, 64).add(Aspect.EARTH, 64)
+                        .add(Aspect.SENSES, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorPick", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0),
@@ -2289,20 +2157,17 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0));
         TCHelper.setResearchAspects(
                 "ICHOR_PICK_GEM",
-                new AspectList().add(Aspect.getAspect("ignis"), 24).add(Aspect.getAspect("lucrum"), 21)
-                        .add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("meto"), 15)
-                        .add(Aspect.getAspect("messis"), 12).add(Aspect.getAspect("perfodio"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("sensus"), 3));
+                new AspectList().add(Aspect.FIRE, 24).add(Aspect.GREED, 21).add(Aspect.METAL, 18)
+                        .add(Aspect.HARVEST, 15).add(Aspect.CROP, 12).add(Aspect.MINE, 9).add(Aspect.EARTH, 6)
+                        .add(Aspect.SENSES, 3));
         TCHelper.setResearchComplexity("ICHOR_PICK_GEM", 4);
         ThaumcraftApi.addWarpToResearch("ICHOR_PICK_GEM", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHOR_SHOVEL_GEM",
                 getModItem(ThaumicTinkerer.ID, "ichorShovelGem", 1, 0),
                 18,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 64).add(Aspect.getAspect("meto"), 64)
-                        .add(Aspect.getAspect("perfodio"), 64).add(Aspect.getAspect("sensus"), 64)
-                        .add(Aspect.getAspect("terra"), 64).add(Aspect.getAspect("vinculum"), 64)
-                        .add(Aspect.getAspect("ordo"), 64),
+                new AspectList().add(Aspect.TOOL, 64).add(Aspect.HARVEST, 64).add(Aspect.MINE, 64)
+                        .add(Aspect.SENSES, 64).add(Aspect.EARTH, 64).add(Aspect.TRAP, 64).add(Aspect.ORDER, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorShovel", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0),
@@ -2318,20 +2183,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0));
         TCHelper.setResearchAspects(
                 "ICHOR_SHOVEL_GEM",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 21).add(Aspect.getAspect("meto"), 18)
-                        .add(Aspect.getAspect("perfodio"), 15).add(Aspect.getAspect("sensus"), 12)
-                        .add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("vinculum"), 6)
-                        .add(Aspect.getAspect("ordo"), 3));
+                new AspectList().add(Aspect.TOOL, 21).add(Aspect.HARVEST, 18).add(Aspect.MINE, 15)
+                        .add(Aspect.SENSES, 12).add(Aspect.EARTH, 9).add(Aspect.TRAP, 6).add(Aspect.ORDER, 3));
         TCHelper.setResearchComplexity("ICHOR_SHOVEL_GEM", 4);
         ThaumcraftApi.addWarpToResearch("ICHOR_SHOVEL_GEM", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHOR_AXE_GEM",
                 getModItem(ThaumicTinkerer.ID, "ichorAxeGem", 1, 0),
                 18,
-                new AspectList().add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("arbor"), 64)
-                        .add(Aspect.getAspect("instrumentum"), 64).add(Aspect.getAspect("messis"), 64)
-                        .add(Aspect.getAspect("meto"), 64).add(Aspect.getAspect("perfodio"), 64)
-                        .add(Aspect.getAspect("sensus"), 64),
+                new AspectList().add(Aspect.WATER, 64).add(Aspect.TREE, 64).add(Aspect.TOOL, 64).add(Aspect.CROP, 64)
+                        .add(Aspect.HARVEST, 64).add(Aspect.MINE, 64).add(Aspect.SENSES, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorAxe", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0),
@@ -2347,20 +2208,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0));
         TCHelper.setResearchAspects(
                 "ICHOR_AXE_GEM",
-                new AspectList().add(Aspect.getAspect("aqua"), 21).add(Aspect.getAspect("arbor"), 18)
-                        .add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("messis"), 12)
-                        .add(Aspect.getAspect("meto"), 9).add(Aspect.getAspect("perfodio"), 6)
-                        .add(Aspect.getAspect("sensus"), 3));
+                new AspectList().add(Aspect.WATER, 21).add(Aspect.TREE, 18).add(Aspect.TOOL, 15).add(Aspect.CROP, 12)
+                        .add(Aspect.HARVEST, 9).add(Aspect.MINE, 6).add(Aspect.SENSES, 3));
         TCHelper.setResearchComplexity("ICHOR_AXE_GEM", 4);
         ThaumcraftApi.addWarpToResearch("ICHOR_AXE_GEM", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "ICHOR_SWORD_GEM",
                 getModItem(ThaumicTinkerer.ID, "ichorSwordGem", 1, 0),
                 18,
-                new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("fames"), 64)
-                        .add(Aspect.getAspect("ordo"), 64).add(Aspect.getAspect("potentia"), 64)
-                        .add(Aspect.getAspect("spiritus"), 64).add(Aspect.getAspect("telum"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64),
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.HUNGER, 64).add(Aspect.ORDER, 64).add(Aspect.ENERGY, 64)
+                        .add(Aspect.SOUL, 64).add(Aspect.WEAPON, 64).add(Aspect.CRYSTAL, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorSword", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0),
@@ -2376,18 +2233,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0));
         TCHelper.setResearchAspects(
                 "ICHOR_SWORD_GEM",
-                new AspectList().add(Aspect.getAspect("aer"), 21).add(Aspect.getAspect("fames"), 18)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("spiritus"), 9).add(Aspect.getAspect("telum"), 6)
-                        .add(Aspect.getAspect("vitreus"), 3));
+                new AspectList().add(Aspect.AIR, 21).add(Aspect.HUNGER, 18).add(Aspect.ORDER, 15).add(Aspect.ENERGY, 12)
+                        .add(Aspect.SOUL, 9).add(Aspect.WEAPON, 6).add(Aspect.CRYSTAL, 3));
         TCHelper.setResearchComplexity("ICHOR_SWORD_GEM", 4);
         ThaumcraftApi.addWarpToResearch("ICHOR_SWORD_GEM", 3);
         TCHelper.addInfusionCraftingRecipe(
                 "PROTOCLAY",
                 getModItem(ThaumicTinkerer.ID, "protoclay", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 32).add(Aspect.getAspect("perfodio"), 32)
-                        .add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("aer"), 16),
+                new AspectList().add(Aspect.TOOL, 32).add(Aspect.MINE, 32).add(Aspect.EARTH, 16).add(Aspect.AIR, 16),
                 getModItem(Minecraft.ID, "clay_ball", 1, 0),
                 getModItem(Minecraft.ID, "stone", 1, 0),
                 getModItem(Minecraft.ID, "dirt", 1, 0),
@@ -2399,18 +2253,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Minecraft.ID, "grass", 1, 0));
         TCHelper.setResearchAspects(
                 "PROTOCLAY",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 18).add(Aspect.getAspect("humanus"), 15)
-                        .add(Aspect.getAspect("machina"), 12).add(Aspect.getAspect("perfodio"), 9)
-                        .add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("aer"), 3));
+                new AspectList().add(Aspect.TOOL, 18).add(Aspect.MAN, 15).add(Aspect.MECHANISM, 12).add(Aspect.MINE, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.AIR, 3));
         TCHelper.setResearchComplexity("PROTOCLAY", 4);
         ThaumcraftApi.addWarpToResearch("PROTOCLAY", 1);
         TCHelper.addInfusionCraftingRecipe(
                 "BLOCK_TALISMAN",
                 getModItem(ThaumicTinkerer.ID, "blockTalisman", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("vacuos"), 72).add(Aspect.getAspect("tenebrae"), 48)
-                        .add(Aspect.getAspect("spiritus"), 32),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.MAGIC, 64).add(Aspect.VOID, 72)
+                        .add(Aspect.DARKNESS, 48).add(Aspect.SOUL, 32),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 OrePrefixes.gemExquisite.get(Materials.Diamond),
@@ -2422,18 +2274,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.gemExquisite.get(Materials.Emerald));
         TCHelper.setResearchAspects(
                 "BLOCK_TALISMAN",
-                new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("tenebrae"), 12)
-                        .add(Aspect.getAspect("alienis"), 9).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("spiritus"), 3));
+                new AspectList().add(Aspect.VOID, 15).add(Aspect.DARKNESS, 12).add(Aspect.ELDRITCH, 9)
+                        .add(Aspect.MAGIC, 6).add(Aspect.SOUL, 3));
         TCHelper.setResearchComplexity("BLOCK_TALISMAN", 4);
         ThaumcraftApi.addWarpToResearch("BLOCK_TALISMAN", 6);
         TCHelper.addInfusionCraftingRecipe(
                 "PLACEMENT_MIRROR",
                 getModItem(ThaumicTinkerer.ID, "placementMirror", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("cognitio"), 64).add(Aspect.getAspect("fabrico"), 72)
-                        .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("vitreus"), 48)
-                        .add(Aspect.getAspect("alienis"), 32),
+                new AspectList().add(Aspect.MIND, 64).add(Aspect.CRAFT, 72).add(Aspect.MAGIC, 64)
+                        .add(Aspect.CRYSTAL, 48).add(Aspect.ELDRITCH, 32),
                 getModItem(ThaumicTinkerer.ID, "blockTalisman", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 OrePrefixes.gemExquisite.get(Materials.Diamond),
@@ -2445,9 +2295,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.gemExquisite.get(Materials.Emerald));
         TCHelper.setResearchAspects(
                 "PLACEMENT_MIRROR",
-                new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("alienis"), 3));
+                new AspectList().add(Aspect.MIND, 15).add(Aspect.CRAFT, 12).add(Aspect.MAGIC, 9).add(Aspect.CRYSTAL, 6)
+                        .add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("PLACEMENT_MIRROR", 4);
         ThaumcraftApi.addWarpToResearch("PLACEMENT_MIRROR", 8);
         TCHelper.refreshResearchPages("ICHOR");

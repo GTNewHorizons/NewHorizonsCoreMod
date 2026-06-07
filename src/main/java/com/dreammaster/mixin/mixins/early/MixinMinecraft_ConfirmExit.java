@@ -39,12 +39,15 @@ public abstract class MixinMinecraft_ConfirmExit {
         if (!DreamCoreMod.showConfirmExitWindow || this.dreamcraft$isCloseRequested) {
             return;
         }
+
+        ci.cancel();
+
         if (!this.dreamcraft$waitingDialogQuit) {
             this.dreamcraft$waitingDialogQuit = true;
-            new Thread(() -> {
-                // Do not use Swing when lwjgl3ify 3.x is active
-                if ((Integer) Launch.blackboard.getOrDefault("lwjgl3ify:major-version", Integer.MIN_VALUE) >= 3) {
-                    final int choice = ConfirmExitSdl.showExitDialog();
+
+            // Do not use Swing when lwjgl3ify 3.x is active
+            if ((int) Launch.blackboard.getOrDefault("lwjgl3ify:major-version", Integer.MIN_VALUE) >= 3) {
+                ConfirmExitSdl.showExitDialogFromMainThread((int choice) -> {
                     if (choice == ConfirmExitSdl.BUTTON_YES) {
                         this.dreamcraft$isCloseRequested = true;
                         this.shutdown();
@@ -54,10 +57,12 @@ public abstract class MixinMinecraft_ConfirmExit {
                         this.shutdown();
                     }
                     this.dreamcraft$waitingDialogQuit = false;
+                });
 
-                    return;
-                }
+                return;
+            }
 
+            new Thread(() -> {
                 final JFrame frame = new JFrame();
                 frame.setAlwaysOnTop(true);
                 final URL resource = IconLoader.class.getClassLoader()
@@ -92,7 +97,6 @@ public abstract class MixinMinecraft_ConfirmExit {
                 this.dreamcraft$waitingDialogQuit = false;
             }).start();
         }
-        ci.cancel();
     }
 
     @Unique

@@ -49,7 +49,9 @@ import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.recipe.RecipeMaps.BEAMCRAFTER_METADATA;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.beamcrafterRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.crackingRecipes;
 import static gregtech.api.recipe.RecipeMaps.distillationTowerRecipes;
@@ -63,6 +65,8 @@ import static gregtech.api.util.GTRecipeConstants.FUSION_THRESHOLD;
 import static gregtech.api.util.GTRecipeConstants.GLASS;
 import static gregtech.api.util.GTRecipeConstants.SIEVERT;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.cokeOvenRecipes;
+import static gtnhlanth.common.beamline.Particle.TAU;
+import static gtnhlanth.common.beamline.Particle.TAUNEUTRINO;
 
 import java.awt.Color;
 import java.util.LinkedHashMap;
@@ -89,6 +93,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.recipe.Sievert;
+import gregtech.loaders.postload.recipes.beamcrafter.BeamCrafterMetadata;
 
 public class BacteriaRegistry {
 
@@ -596,9 +601,21 @@ public class BacteriaRegistry {
                 .requiresCleanRoom().addTo(bioLabRecipes);
     }
 
+    private void beamCrafterRecipes() {
+        GTValues.RA.stdBuilder().itemInputs(BioItemList.getPetriDish(CultureSet.get("BarnadaCBac")))
+                .fluidInputs(Materials.Xenoxene.getFluid(250L))
+                .itemOutputs(BioItemList.getPetriDish(CultureSet.get("CombinedBac")))
+                .metadata(
+                        BEAMCRAFTER_METADATA,
+                        BeamCrafterMetadata.builder().particleID_A(TAU.getId()).particleID_B(TAUNEUTRINO.getId())
+                                .amount_A(300).amount_B(200).build())
+                .outputChances(5000).eut(TierEU.RECIPE_UHV).duration(2 * SECONDS).addTo(beamcrafterRecipes);
+    }
+
     private void runBWRecipes() {
         bioLabRecipes();
         bacterialVatRecipes();
+        beamCrafterRecipes();
 
         BioItemLoader.registerRecipes();
     }
