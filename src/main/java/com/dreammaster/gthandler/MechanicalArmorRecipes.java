@@ -11,6 +11,7 @@ import static gregtech.api.enums.Mods.HoloInventory;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
@@ -218,6 +219,19 @@ public class MechanicalArmorRecipes {
                 .itemOutputs(ItemList.Armor_Frame_Bulwark.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .addTo(assemblerRecipes);
 
+        // T4 Frames
+
+        GTValues.RA.stdBuilder().circuit(10)
+                .itemInputs(
+                        ItemList.Armor_Frame_Lightning.get(32),
+                        ItemList.Armor_Frame_Morphic.get(32),
+                        ItemList.Armor_Frame_Bulwark.get(32),
+                        ItemList.Electric_Piston_UHV.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 1),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 64))
+                .fluidInputs(Materials.Ichorium.getMolten(INGOTS * 4)).itemOutputs(ItemList.Armor_Frame_Infinity.get(1))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+
         // Modification Table
 
         if (Forestry.isModLoaded()) {
@@ -262,7 +276,7 @@ public class MechanicalArmorRecipes {
         // T1 Augments
 
         GTModHandler.addCraftingRecipe(
-                ItemList.Augment_Hazmat.get(4),
+                ItemList.Augment_Hazmat.get(1),
                 new Object[] { "HPC", "PRP", "LPB", 'H',
                         getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing), 'C',
                         getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0, missing), 'L',
@@ -272,7 +286,7 @@ public class MechanicalArmorRecipes {
 
         if (GalacticraftMars.isModLoaded() && GalacticraftCore.isModLoaded() && GalaxySpace.isModLoaded()) {
             GTModHandler.addCraftingRecipe(
-                    ItemList.Augment_SpaceSuit.get(4),
+                    ItemList.Augment_SpaceSuit.get(1),
                     new Object[] { "CDC", "URU", "LOL", 'C', OrePrefixes.circuit.get(Materials.EV), 'D',
                             GTModHandler.getModItem(GalacticraftMars.ID, "item.null", 2L, 5), 'U',
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 2), 'L',
@@ -355,6 +369,12 @@ public class MechanicalArmorRecipes {
                         new ItemStack(Item.getItemFromBlock(Blocks.waterlily), 1), 'C',
                         OrePrefixes.circuit.get(Materials.HV), 'R', ItemList.Armor_Chip_T1.get(1) });
 
+        GTModHandler.addCraftingRecipe(
+                ItemList.Augment_FallProtection.get(1),
+                new Object[] { "FWF", "PRP", "FWF", 'P', ItemList.Electric_Piston_HV.get(1), 'W',
+                        new ItemStack(Blocks.wool, 1, WILDCARD), 'F', OrePrefixes.frameGt.get(Materials.Electrum), 'R',
+                        ItemList.Armor_Chip_T1.get(1) });
+
         // T2 Augments
 
         GTModHandler.addCraftingRecipe(
@@ -412,20 +432,31 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
                         ItemList.Armor_Chip_T2.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.HSSG, 4),
-                        ItemList.Electric_Piston_IV.get(2))
-                .fluidInputs(Materials.HSSS.getMolten(INGOTS * 4)).itemOutputs(ItemList.Augment_FallProtection.get(1))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder().circuit(10)
-                .itemInputs(
-                        ItemList.Armor_Chip_T2.get(1),
                         GGMaterial.marM200.get(OrePrefixes.spring, 4),
                         ItemList.Electric_Piston_IV.get(4),
                         ItemList.Sensor_IV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1))
                 .fluidInputs(Materials.Palladium.getMolten(INGOTS * 8)).itemOutputs(ItemList.Augment_StepAssist.get(1))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+
+        if (Thaumcraft.isModLoaded()) {
+            ThaumcraftApi.addArcaneCraftingRecipe(
+                    "CLEANSING_TALISMAN",
+                    ItemList.Augment_MilkInfusion.get(1),
+                    new AspectList().add(Aspect.getAspect("terra"), 150).add(Aspect.getAspect("aqua"), 150)
+                            .add(Aspect.getAspect("ordo"), 150),
+                    "MTM",
+                    "VRV",
+                    "MVM",
+                    'M',
+                    ItemList.Electric_Motor_IV.get(4),
+                    'V',
+                    GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                    'T',
+                    getModItem(ThaumicTinkerer.ID, "cleansingTalisman", 1, 0),
+                    'R',
+                    ItemList.Armor_Chip_T2.get(1));
+        }
 
         // T3 Augments
 
