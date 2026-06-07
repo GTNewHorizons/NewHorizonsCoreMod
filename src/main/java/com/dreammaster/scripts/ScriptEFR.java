@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.MeatCooked;
 import static gregtech.api.enums.Materials.MeatRaw;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -40,6 +39,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -119,7 +119,6 @@ public class ScriptEFR implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                AE2Stuff.ID,
                 AdventureBackpack.ID,
                 AppliedEnergistics2.ID,
                 BiomesOPlenty.ID,
@@ -575,8 +574,8 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Barrel Upgrades
         GTValues.RA.stdBuilder()
@@ -878,6 +877,18 @@ public class ScriptEFR implements IScriptLoader {
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "soul_lantern", 4, 0)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        // BlackStone recipes
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.cobblestone, 64, 0))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.graniteblack"), 1152)).circuit(4)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blackstone", 64, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "blackstone", 1, 0))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "gilded_blackstone", 1, 0))
+                .fluidInputs(Materials.Gold.getMolten(188L)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(chemicalBathRecipes);
+
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0),
                 getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0));
@@ -1001,7 +1012,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "amethyst_block", 64, 0),
-                        getModItem(AE2Stuff.ID, "Grower", 6, 0),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCrystalGrowthChamber", 6, 0),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 6, 0),
                         getModItem(Thaumcraft.ID, "blockCrystal", 6, 7),
                         getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0),

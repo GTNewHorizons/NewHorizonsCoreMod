@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
-import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalArcFurnace;
@@ -32,7 +31,7 @@ public class ArcFurnaceRecipes implements Runnable {
                 .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 0))
-                .itemOutputs(new ItemStack(Blocks.glass, 2)).duration(1 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                .itemOutputs(new ItemStack(Blocks.glass, 2)).duration(1 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(UniversalArcFurnace);
 
         // red sand
@@ -40,7 +39,7 @@ public class ArcFurnaceRecipes implements Runnable {
                 .itemOutputs(
                         new ItemStack(Blocks.glass, 2),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1))
-                .duration(1 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(UniversalArcFurnace);
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_MV).addTo(UniversalArcFurnace);
 
         // Awful dimensionally transcendent residue recipe for mk5 fusion pre-dtpf (mostly a meme)
         GTValues.RA.stdBuilder().itemInputs(ItemRefer.Radioactive_Waste.get(64))
@@ -64,7 +63,7 @@ public class ArcFurnaceRecipes implements Runnable {
                     .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 500, 250)
                     .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144))
                     .fluidOutputs(Materials.Tungsten.getMolten(144)).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
-                    .addTo(plasmaArcFurnaceRecipes);
+                    .addTo(arcFurnaceRecipes);
         }
     }
 }

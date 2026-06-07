@@ -2,7 +2,6 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
@@ -345,27 +344,24 @@ public class SpaceAssemblerRecipes implements Runnable {
                     .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
-            if (AE2Stuff.isModLoaded()) {
-                // Crafting Input Proxy
-                GTValues.RA.stdBuilder().itemInputs(
-                        ItemList.Hatch_CraftingInput_Bus_ME.get(1),
-                        // 64 Core Co-Processing Unit
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingUnit", 1, 0),
-                        // 16384k storage component
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
-                        // 16384k Me Fluid Storage Component
-                        getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
-                        // Wireless Connector
-                        getModItem(AE2Stuff.ID, "Wireless", 2, 0),
-                        ItemList.Sensor_UEV.get(1),
-                        ItemList.EnergisedTesseract.get(1))
-                        .fluidInputs(
-                                new FluidStack(solderUEV, 2304),
-                                Materials.DimensionallyShiftedSuperfluid.getFluid(4000))
-                        .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1))
-                        .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(15 * SECONDS).eut(TierEU.RECIPE_UIV)
-                        .addTo(IGRecipeMaps.spaceAssemblerRecipes);
-            }
+            // Crafting Input Proxy
+            GTValues.RA.stdBuilder().itemInputs(
+                    ItemList.Hatch_CraftingInput_Bus_ME.get(1),
+                    // 64 Core Co-Processing Unit
+                    getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingUnit", 1, 0),
+                    // 16384k storage component
+                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
+                    // 16384k Me Fluid Storage Component
+                    getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                    // Wireless Connector
+                    getModItem(AppliedEnergistics2.ID, "tile.BlockWirelessConnector", 2, 0),
+                    ItemList.Sensor_UEV.get(1),
+                    ItemList.EnergisedTesseract.get(1))
+                    .fluidInputs(
+                            new FluidStack(solderUEV, 2304),
+                            Materials.DimensionallyShiftedSuperfluid.getFluid(4000))
+                    .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2)
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
 
         if (AppliedEnergistics2.isModLoaded()) {

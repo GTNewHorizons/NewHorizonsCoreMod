@@ -8,6 +8,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import tconstruct.library.crafting.Smeltery;
 
 public class MeltingRecipeAdder {
@@ -17,18 +19,24 @@ public class MeltingRecipeAdder {
     private final int renderBlockMeta;
     private final int meltingTemperature;
     private final String fluidName;
+    private String smelteryGroup;
 
     MeltingRecipeAdder(Block renderBlock, int renderBlockMeta, int meltingTemperature, String fluidName, int amount) {
         this.renderBlock = renderBlock;
         this.renderBlockMeta = renderBlockMeta;
         this.meltingTemperature = meltingTemperature;
         this.fluidName = fluidName;
-        addMelting = itemStack -> Smeltery.addMelting(
-                itemStack,
-                renderBlock,
-                renderBlockMeta,
-                meltingTemperature,
-                FluidRegistry.getFluidStack(fluidName, amount));
+        addMelting = itemStack -> {
+            Smeltery.addMelting(
+                    itemStack,
+                    renderBlock,
+                    renderBlockMeta,
+                    meltingTemperature,
+                    FluidRegistry.getFluidStack(fluidName, amount));
+            if (smelteryGroup != null) {
+                Smeltery.addToSmeltingGroup(itemStack, smelteryGroup);
+            }
+        };
 
     }
 
@@ -54,5 +62,14 @@ public class MeltingRecipeAdder {
     public MeltingRecipeAdder add(ItemStack... itemStacks) {
         add(Arrays.stream(itemStacks));
         return this;
+    }
+
+    public MeltingRecipeAdder smelteryGroup(String group) {
+        this.smelteryGroup = group;
+        return this;
+    }
+
+    public MeltingRecipeAdder smelteryGroup(OrePrefixes prefix, Materials material) {
+        return smelteryGroup(prefix.get(material).toString());
     }
 }
