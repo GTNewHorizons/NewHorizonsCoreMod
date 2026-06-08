@@ -885,8 +885,7 @@ public class ScriptEFR implements IScriptLoader {
                             getModItem(Minecraft.ID, "carpet", 2, i),
                             getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
                             plankWood)
-                    .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, bedType, 1, 0)).duration(5 * SECONDS)
-                    .eut(24).addTo(assemblerRecipes);
+                    .circuit(1).itemOutputs(bed).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
         }
 
         // Stripped Logs in Extruder
