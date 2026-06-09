@@ -278,7 +278,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.CosmicNeutronium, 8),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 32),
                         ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(getGTItem(7, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .itemOutputs(getGTItem(6, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .fluidInputs(GGMaterial.metastableOganesson.getMolten(2304)).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // femtocontroller
                 .itemInputs(
