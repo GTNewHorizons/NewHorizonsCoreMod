@@ -439,7 +439,7 @@ public class MechanicalArmorRecipes {
                 .fluidInputs(Materials.Palladium.getMolten(INGOTS * 8)).itemOutputs(ItemList.Augment_StepAssist.get(1))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
-        if (Thaumcraft.isModLoaded()) {
+        if (Thaumcraft.isModLoaded() && ThaumicTinkerer.isModLoaded()) {
             ThaumcraftApi.addArcaneCraftingRecipe(
                     "CLEANSING_TALISMAN",
                     ItemList.Augment_MilkInfusion.get(1),
