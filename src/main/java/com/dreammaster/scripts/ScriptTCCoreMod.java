@@ -34,9 +34,6 @@ import static kubatech.loaders.DEFCRecipes.fusionCraftingRecipes;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -1241,7 +1238,6 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "MECHANICALARMOR_GOGGLES",
                 new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Augment_GogglesOfRevealing.get(1))));
 
-        // TODO: Change icon and both instances of "apple"
         new ResearchItem(
                 "MECHANICALARMOR_BOOTS",
                 "NEWHORIZONS",
@@ -1249,12 +1245,12 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 -8,
                 4,
                 2,
-                ItemList.Mechanical_Chestplate.get(1)).setParents("MECHANICALARMOR_GOGGLES", "BOOTSTRAVELLER")
+                ItemList.Augment_Travelers.get(1)).setParents("MECHANICALARMOR_GOGGLES", "BOOTSTRAVELLER")
                         .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_BOOTS"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "MECHANICALARMOR_BOOTS",
-                new ItemStack(Items.apple, 1),
+                ItemList.Augment_Travelers.get(1),
                 6,
                 new AspectList().add(Aspect.MOTION, 48).add(Aspect.ARMOR, 32).add(Aspect.ENERGY, 24)
                         .add(Aspect.MAGIC, 16).add(Aspect.TRAVEL, 16).add(Aspect.FLIGHT, 8),
@@ -1269,7 +1265,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Thaumium));
         TCHelper.addResearchPage(
                 "MECHANICALARMOR_BOOTS",
-                new ResearchPage(TCHelper.findInfusionRecipe(new ItemStack(Items.apple, 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(ItemList.Augment_Travelers.get(1))));
 
         new ResearchItem(
                 "MECHANICALARMOR_MILK",
