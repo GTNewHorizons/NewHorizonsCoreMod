@@ -1213,11 +1213,10 @@ public class ScriptTCCoreMod implements IScriptLoader {
         new ResearchItem(
                 "MECHANICALARMOR_GOGGLES",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.MAGIC, 12).add(Aspect.EXCHANGE, 9)
-                        .add(Aspect.HEAL, 6).add(Aspect.EARTH, 3),
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.SENSES, 6),
                 -6,
                 2,
-                3,
+                2,
                 ItemList.Augment_GogglesOfRevealing.get(1)).setParents("GOGGLES")
                         .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_GOGGLES"))
                         .registerResearchItem();
@@ -1242,13 +1241,14 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "MECHANICALARMOR_GOGGLES",
                 new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Augment_GogglesOfRevealing.get(1))));
 
+        // TODO: Change icon and both instances of "apple"
         new ResearchItem(
                 "MECHANICALARMOR_BOOTS",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.TRAVEL, 12).add(Aspect.ARMOR, 12).add(Aspect.MAGIC, 9),
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.TRAVEL, 6),
                 -8,
                 4,
-                1,
+                2,
                 ItemList.Mechanical_Chestplate.get(1)).setParents("MECHANICALARMOR_GOGGLES", "BOOTSTRAVELLER")
                         .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_BOOTS"))
                         .registerResearchItem();
@@ -1274,11 +1274,10 @@ public class ScriptTCCoreMod implements IScriptLoader {
         new ResearchItem(
                 "MECHANICALARMOR_MILK",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.MAGIC, 12).add(Aspect.EXCHANGE, 9)
-                        .add(Aspect.HEAL, 6).add(Aspect.EARTH, 3),
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.HEAL, 6),
                 -8,
                 0,
-                3,
+                2,
                 ItemList.Augment_MilkInfusion.get(1)).setParents("MECHANICALARMOR_GOGGLES", "CLEANSING_TALISMAN")
                         .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_MILK"))
                         .registerResearchItem();
