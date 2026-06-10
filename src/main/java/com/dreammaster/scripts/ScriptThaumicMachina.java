@@ -37,10 +37,6 @@ public class ScriptThaumicMachina implements IScriptLoader {
         TCHelper.orphanResearch("@WAND_AUGMENTATION_TAINT_CAPPING");
         TCHelper.removeResearch("@WAND_AUGMENTATION_TAINT_CAPPING");
         TCHelper.setResearchAspects(
-                "@WAND_STABILITY",
-                new AspectList().add(Aspect.ENTROPY, 3).add(Aspect.ORDER, 12).add(Aspect.TOOL, 6).add(Aspect.MAGIC, 9));
-        TCHelper.setResearchComplexity("@WAND_STABILITY", 3);
-        TCHelper.setResearchAspects(
                 "@WAND_STUDIES",
                 new AspectList().add(Aspect.ENTROPY, 3).add(Aspect.AURA, 9).add(Aspect.MIND, 15).add(Aspect.ORDER, 12)
                         .add(Aspect.TOOL, 6));

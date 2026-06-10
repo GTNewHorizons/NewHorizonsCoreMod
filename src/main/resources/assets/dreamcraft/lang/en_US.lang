@@ -1771,6 +1771,7 @@ dreamcraft.gui.quitmessage.no=No
 dreamcraft.gui.quitmessage.never=Don't Show Again!
 
 dreamcraft.welcome.welcome=Welcome to GregTech: New Horizons %s
+dreamcraft.welcome.guide=See what's new in the guide! Bind a hotkey to use it.
 dreamcraft.welcome.questbook=The Quest Book has a shortcut key, check your keybindings.
 dreamcraft.welcome.gtnh_wiki=GTNH Wiki link: %s
 dreamcraft.welcome.click_wiki=Click to open the wiki!
