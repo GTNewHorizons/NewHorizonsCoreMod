@@ -2403,5 +2403,18 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
+        // Cell Reshuffler
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockStorageReshuffle"),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30),
+                "circuitUltimate",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 2),
+                ItemList.Casing_EV.get(1),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 2),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30),
+                "circuitUltimate",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30)
+        );
     }
 }
