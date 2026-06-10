@@ -796,6 +796,10 @@ public class ScriptAE2FC implements IScriptLoader {
         // Dual interface P2P
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE_SMALL);
+
+        // Clear Dual Interface P2P NBT
+        addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2FC_INTERFACE_P2P);
+
         GameRegistry.addShapelessRecipe(AE2FC_ENERGY_CARD, AE2_ADV_CARD, AE2_NEUTRONIUM_ENERGY_CELL);
     }
 }
