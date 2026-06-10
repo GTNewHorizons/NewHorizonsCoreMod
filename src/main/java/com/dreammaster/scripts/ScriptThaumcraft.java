@@ -155,7 +155,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1))
-                .circuit(1).itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Thaumcraft.ID, "ItemShovelThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Thaumium axe
@@ -164,7 +164,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 2),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 1))
-                .circuit(2).itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
+                .circuit(2).itemOutputs(getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         ChiselHelper
