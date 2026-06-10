@@ -1180,6 +1180,17 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 ItemList.Robot_Arm_LuV.get(1L),
                 ItemList.Electric_Motor_LuV.get(1L));
         addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 370),
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
+                ToolDictNames.craftingToolSoftMallet.name(),
+                "screwCertusQuartz",
+                getModItem(Minecraft.ID, "clock", 1, 0),
+                "screwCertusQuartz",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
+        addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480),
                 "craftingToolScrewdriver",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
@@ -2224,6 +2235,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        // todo: rework this recipe at some point, it's too expensive and shortcircuited by the universal wireless terminal
         // ME Processing Pattern Terminal
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2234,6 +2247,18 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         ItemList.Robot_Arm_LuV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        // ME Crafting Diagnostic Terminal
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
+                        getModItem(Minecraft.ID, "clock", 1, 0),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 370)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
         // ME Interface Terminal
         GTValues.RA.stdBuilder()
                 .itemInputs(
