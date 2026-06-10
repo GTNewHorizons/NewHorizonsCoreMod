@@ -117,6 +117,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         ItemStack[] FluixDenseSmartCableColor = new ItemStack[16];
         ItemStack[] FluixGlassCableColor = new ItemStack[16];
         final ItemStack storageBus = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220);
+        final ItemStack P2P_INTERFACE = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 471);
 
         // preconfigurated priorities for storage buses
 
@@ -187,6 +188,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 462)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        // Clear P2P Interface NBT
+        addShapelessRecipe(P2P_INTERFACE, P2P_INTERFACE);
 
         // Hyper-Acceleration Card
         addShapelessRecipe(
