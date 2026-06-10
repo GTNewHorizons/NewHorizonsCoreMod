@@ -2236,7 +2236,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-        // todo: rework this recipe at some point, it's too expensive and shortcircuited by the universal wireless terminal
+        // todo: rework this recipe at some point, it's too expensive and shortcircuited by the universal wireless
+        // terminal
         // ME Processing Pattern Terminal
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2443,7 +2444,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 2),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30),
                 "circuitUltimate",
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30)
-        );
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30));
     }
 }

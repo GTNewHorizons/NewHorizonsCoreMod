@@ -111,8 +111,8 @@ public class ScriptMinecraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 2))
-                .itemOutputs(getModItem(Minecraft.ID, "iron_pickaxe", 1, 0))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "iron_pickaxe", 1, 0)).duration(4 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
 
         // Diamond Pickaxe
         GTValues.RA.stdBuilder()
@@ -120,8 +120,8 @@ public class ScriptMinecraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 2))
-                .itemOutputs(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTModHandler.addSmeltingRecipe(NHItemList.UnfiredClayBrick.get(), getModItem(Minecraft.ID, "brick", 1, 0));
         GTModHandler.addSmeltingRecipe(ItemList.Food_Raw_Bread.get(1L), getModItem(Minecraft.ID, "bread", 1, 0));

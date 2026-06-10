@@ -147,17 +147,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 2))
-                .itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Thaumium Shovel
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1))
-                .circuit(1)
-                .itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Thaumium axe
         GTValues.RA.stdBuilder()
@@ -165,9 +164,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 2),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 1))
-                .circuit(2)
-                .itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .circuit(2).itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         ChiselHelper
                 .addVariationFromStack("thaumium", GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L));
