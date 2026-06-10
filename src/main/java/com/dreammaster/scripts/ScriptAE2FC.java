@@ -402,6 +402,9 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemOutputs(AE2FC_FLUID_STORAGE_BUS).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
+        // Clear fluid storage bus NBT
+        addShapelessRecipe(AE2FC_FLUID_STORAGE_BUS, AE2FC_FLUID_STORAGE_BUS);
+
         // preconfigurated priorities for storage buses
 
         for (int i = 1; i < 25; i++) {
