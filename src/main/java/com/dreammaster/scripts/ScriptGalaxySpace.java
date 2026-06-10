@@ -276,10 +276,10 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         getModItem(OpenComputers.ID, "item", 64, 36),
                         ItemList.Electric_Motor_UHV.get(4),
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.CosmicNeutronium, 8),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 32),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 8),
                         ItemList.UHTResistantMesh.get(64))
                 .itemOutputs(getGTItem(6, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(GGMaterial.metastableOganesson.getMolten(2304)).addTo(assemblerRecipes);
+                .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304)).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // femtocontroller
                 .itemInputs(
                         ItemList.Optically_Perfected_CPU.get(1),
@@ -297,7 +297,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         ItemList.Large_Fluid_Cell_Neutronium.get(1),
                         ItemList.RodNaquadah32.get(32),
-                        MaterialsElements.STANDALONE.HYPOGEN.getPlate(24),
+                        MaterialsElements.STANDALONE.HYPOGEN.getPlate(4),
                         ItemList.neutroniumHeatCapacitor.get(1),
                         ItemList.UIV_Coil.get(16),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(24),
