@@ -490,7 +490,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1))
-                .circuit(1).itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 1)).duration(4 * SECONDS)
+                .circuit(3).itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 1)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -498,7 +498,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1))
-                .fluidInputs(Materials.Water.getFluid(1000))
+                .circuit(5).fluidInputs(Materials.Water.getFluid(1000))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         addShapedRecipe(
