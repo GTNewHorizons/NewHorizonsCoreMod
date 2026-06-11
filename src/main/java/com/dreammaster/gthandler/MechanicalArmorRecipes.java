@@ -10,8 +10,6 @@ import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.HoloInventory;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
@@ -43,13 +41,13 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.aspects.AspectList;
 
 public class MechanicalArmorRecipes {
 
     public static void run() {
+
+        // Magic augments are in ScriptTCCoreMod due to load timing
+
         // Exoskeletons
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -295,26 +293,6 @@ public class MechanicalArmorRecipes {
                             ItemList.Armor_Chip_T1.get(1) });
         }
 
-        if (Thaumcraft.isModLoaded()) {
-            ThaumcraftApi.addArcaneCraftingRecipe(
-                    "GOGGLES",
-                    ItemList.Augment_GogglesOfRevealing.get(1),
-                    new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
-                            .add(Aspect.getAspect("ignis"), 30).add(Aspect.getAspect("aqua"), 30)
-                            .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
-                    "gGg",
-                    "PRP",
-                    "gPg",
-                    'g',
-                    GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.StainlessSteel, 1),
-                    'P',
-                    GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1),
-                    'G',
-                    getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
-                    'R',
-                    ItemList.Armor_Chip_T1.get(1));
-        }
-
         GTModHandler.addCraftingRecipe(
                 ItemList.Augment_WaterBreathing.get(1),
                 new Object[] { "TST", "PRP", "FCF", 'S',
@@ -438,25 +416,6 @@ public class MechanicalArmorRecipes {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1))
                 .fluidInputs(Materials.Palladium.getMolten(INGOTS * 8)).itemOutputs(ItemList.Augment_StepAssist.get(1))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
-
-        if (Thaumcraft.isModLoaded()) {
-            ThaumcraftApi.addArcaneCraftingRecipe(
-                    "CLEANSING_TALISMAN",
-                    ItemList.Augment_MilkInfusion.get(1),
-                    new AspectList().add(Aspect.getAspect("terra"), 150).add(Aspect.getAspect("aqua"), 150)
-                            .add(Aspect.getAspect("ordo"), 150),
-                    "MTM",
-                    "VRV",
-                    "MVM",
-                    'M',
-                    ItemList.Electric_Motor_IV.get(4),
-                    'V',
-                    GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
-                    'T',
-                    getModItem(ThaumicTinkerer.ID, "cleansingTalisman", 1, 0),
-                    'R',
-                    ItemList.Armor_Chip_T2.get(1));
-        }
 
         // T3 Augments
 

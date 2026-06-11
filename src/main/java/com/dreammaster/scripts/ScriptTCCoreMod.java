@@ -45,6 +45,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
 import magicbees.api.MagicBeesAPI;
@@ -1204,5 +1205,96 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 .fluidOutputs(Materials.HellishMetal.getMolten(4 * STACKS)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                 .metadata(DEFC_CASING_TIER, 1).addTo(fusionCraftingRecipes);
 
+        // Mechanical Armor augments
+
+        new ResearchItem(
+                "MECHANICALARMOR_GOGGLES",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.SENSES, 6),
+                -6,
+                2,
+                2,
+                ItemList.Augment_GogglesOfRevealing.get(1)).setParents("GOGGLES")
+                        .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_GOGGLES"))
+                        .registerResearchItem();
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "MECHANICALARMOR_GOGGLES",
+                ItemList.Augment_GogglesOfRevealing.get(1),
+                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
+                        .add(Aspect.getAspect("ignis"), 30).add(Aspect.getAspect("aqua"), 30)
+                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                "gGg",
+                "PRP",
+                "gPg",
+                'g',
+                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.StainlessSteel, 1),
+                'P',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1),
+                'G',
+                GTModHandler.getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
+                'R',
+                ItemList.Armor_Chip_T1.get(1));
+        TCHelper.addResearchPage(
+                "MECHANICALARMOR_GOGGLES",
+                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Augment_GogglesOfRevealing.get(1))));
+
+        new ResearchItem(
+                "MECHANICALARMOR_BOOTS",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.TRAVEL, 6),
+                -8,
+                4,
+                2,
+                ItemList.Augment_Travelers.get(1)).setParents("MECHANICALARMOR_GOGGLES", "BOOTSTRAVELLER")
+                        .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_BOOTS"))
+                        .registerResearchItem();
+        TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_BOOTS",
+                ItemList.Augment_Travelers.get(1),
+                6,
+                new AspectList().add(Aspect.MOTION, 48).add(Aspect.ARMOR, 32).add(Aspect.ENERGY, 24)
+                        .add(Aspect.MAGIC, 16).add(Aspect.TRAVEL, 16).add(Aspect.FLIGHT, 8),
+                ItemList.Armor_Chip_T1.get(1),
+                getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0),
+                OrePrefixes.plate.get(Materials.Thaumium),
+                ItemList.Electric_Motor_HV.get(1),
+                OrePrefixes.wireGt04.get(Materials.Electrum),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 1),
+                OrePrefixes.wireGt04.get(Materials.Electrum),
+                ItemList.Electric_Motor_HV.get(1),
+                OrePrefixes.plate.get(Materials.Thaumium));
+        TCHelper.addResearchPage(
+                "MECHANICALARMOR_BOOTS",
+                new ResearchPage(TCHelper.findInfusionRecipe(ItemList.Augment_Travelers.get(1))));
+
+        new ResearchItem(
+                "MECHANICALARMOR_MILK",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.HEAL, 6),
+                -8,
+                0,
+                2,
+                ItemList.Augment_MilkInfusion.get(1)).setParents("MECHANICALARMOR_GOGGLES", "CLEANSING_TALISMAN")
+                        .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_MILK"))
+                        .registerResearchItem();
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "CLEANSING_TALISMAN",
+                ItemList.Augment_MilkInfusion.get(1),
+                new AspectList().add(Aspect.getAspect("terra"), 150).add(Aspect.getAspect("aqua"), 150)
+                        .add(Aspect.getAspect("ordo"), 150),
+                "MTM",
+                "VRV",
+                "MVM",
+                'M',
+                ItemList.Electric_Motor_IV.get(4),
+                'V',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                'T',
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "cleansingTalisman", 1, 0),
+                'R',
+                ItemList.Armor_Chip_T2.get(1));
+        TCHelper.addResearchPage(
+                "MECHANICALARMOR_MILK",
+                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Augment_MilkInfusion.get(1))));
     }
 }
