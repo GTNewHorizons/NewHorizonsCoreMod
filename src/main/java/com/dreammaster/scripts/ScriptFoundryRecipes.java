@@ -64,7 +64,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
         // Exo Foundry Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(bw_realglas, 8, 14),
+                        new ItemStack(bw_realglas, 8, 6),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(4),
                         getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 13))
                 .fluidInputs(Materials.SuperCoolant.getFluid(64000)).itemOutputs(ItemList.Glass_ExoFoundry.get(8))
