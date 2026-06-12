@@ -103,7 +103,7 @@ public class FluidSolidifierRecipes implements Runnable {
                 .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         // Electron-permeable neutronium-coated glass
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(new ItemStack(ItemRegistry.bw_glasses[0], 1, 13)))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(new ItemStack(ItemRegistry.bw_glasses[0], 1, 6)))
                 .fluidInputs(Materials.Helium.getPlasma(4 * 144)).itemOutputs(ItemList.GlassUVResistant.get(1))
                 .eut(TierEU.RECIPE_UV).duration(5 * SECONDS).addTo(fluidSolidifierRecipes);
 
@@ -424,7 +424,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     .addTo(fluidSolidifierRecipes);
 
             // Hawking Radiation Realignment Focus
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(ItemRegistry.bw_glasses[0], 1, 15))
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(ItemRegistry.bw_glasses[0], 1, 8))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), 1152)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Hawking_Glass.get(1)).addTo(fluidSolidifierRecipes);
 
