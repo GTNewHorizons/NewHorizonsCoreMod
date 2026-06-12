@@ -117,6 +117,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         ItemStack[] FluixDenseSmartCableColor = new ItemStack[16];
         ItemStack[] FluixGlassCableColor = new ItemStack[16];
         final ItemStack storageBus = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220);
+        final ItemStack P2P_INTERFACE = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 471);
 
         // preconfigurated priorities for storage buses
 
@@ -187,6 +188,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 462)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        // Clear P2P Interface NBT
+        addShapelessRecipe(P2P_INTERFACE, P2P_INTERFACE);
 
         // Hyper-Acceleration Card
         addShapelessRecipe(
@@ -1175,6 +1179,17 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 ItemList.Electric_Motor_LuV.get(1L),
                 ItemList.Robot_Arm_LuV.get(1L),
                 ItemList.Electric_Motor_LuV.get(1L));
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 370),
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
+                ToolDictNames.craftingToolSoftMallet.name(),
+                "screwCertusQuartz",
+                getModItem(Minecraft.ID, "clock", 1, 0),
+                "screwCertusQuartz",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480),
                 "craftingToolScrewdriver",
@@ -2220,6 +2235,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        // todo: rework this recipe at some point, it's too expensive and shortcircuited by the universal wireless
+        // terminal
         // ME Processing Pattern Terminal
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2230,6 +2248,18 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         ItemList.Robot_Arm_LuV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        // ME Crafting Diagnostic Terminal
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
+                        getModItem(Minecraft.ID, "clock", 1, 0),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 370)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
         // ME Interface Terminal
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2403,5 +2433,17 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
+        // Cell Reshuffler
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockStorageReshuffle"),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30),
+                "circuitUltimate",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 2),
+                ItemList.Casing_EV.get(1),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 2),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30),
+                "circuitUltimate",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30));
     }
 }
