@@ -836,11 +836,6 @@ public class ScriptGalaxySpace implements IScriptLoader {
         return getModItem(GalaxySpace.ID, name, amount, meta);
     }
 
-    // remove when the GT5u pr for these is merged
-    private static ItemStack getGTItem(int meta, int amount) {
-        return getModItem(GTNHIntergalactic.ID, "item.DysonSwarmParts", amount, meta);
-    }
-
     @Override
     public boolean addShapedRecipe(ItemStack aOutput, Object... inputs) {
         return GTModHandler.addCraftingRecipe(aOutput, GTModHandler.RecipeBits.NOT_REMOVABLE, inputs);
