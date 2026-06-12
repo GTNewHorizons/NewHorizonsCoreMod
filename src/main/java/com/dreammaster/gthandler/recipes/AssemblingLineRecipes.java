@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.EternalSingularity;
-import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -320,11 +319,9 @@ public class AssemblingLineRecipes implements Runnable {
                 512,
                 (int) TierEU.RECIPE_UEV,
                 16,
-                new Object[] { getModItem(GTNHIntergalactic.ID, "item.DysonSwarmParts", 1, 6),
-                        getModItem(GTNHIntergalactic.ID, "item.DysonSwarmParts", 1, 8), GregtechItemList.RTG.get(1),
-                        getModItem(GTNHIntergalactic.ID, "item.DysonSwarmParts", 1, 7),
-                        ItemList.Circuit_Chip_FPIC.get(8), ItemList.Cover_SolarPanel_LuV.get(4),
-                        ItemList.UHTResistantMesh.get(64) },
+                new Object[] { ItemList.DroneCase.get(1), ItemList.FuelPellet.get(1), GregtechItemList.RTG.get(1),
+                        ItemList.Femtocontroller.get(1), ItemList.Circuit_Chip_FPIC.get(8),
+                        ItemList.Cover_SolarPanel_LuV.get(4), ItemList.UHTResistantMesh.get(64) },
                 new FluidStack[] { new FluidStack(solderUEV, 18_432),
                         new FluidStack(FluidRegistry.getFluid("silane-nitrogen plasma mixture"), 16000) },
                 ItemList.DysonSwarmModule.get(64),

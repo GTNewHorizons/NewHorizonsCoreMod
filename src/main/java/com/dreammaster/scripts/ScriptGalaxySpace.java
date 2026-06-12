@@ -37,7 +37,6 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.system.material.WerkstoffLoader;
-import goodgenerator.items.GGMaterial;
 import goodgenerator.main.GoodGenerator;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
@@ -278,8 +277,9 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.CosmicNeutronium, 8),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 8),
                         ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(getGTItem(6, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304)).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.DroneCase.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304))
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // femtocontroller
                 .itemInputs(
                         ItemList.Optically_Perfected_CPU.get(1),
@@ -291,7 +291,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.SuperconductorUEVBase, 32),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TengamAttuned, 64),
                         ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(getGTItem(7, 1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
+                .itemOutputs(ItemList.Femtocontroller.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(16000)).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // fuel
                 .itemInputs(
@@ -304,7 +304,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         getModItem(GalacticraftAmunRa.ID, "item.baseItem", 16, 27),
                         getModItem(GoodGenerator.ID, "advancedRadiationProtectionPlate", 48, 0),
                         ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(getGTItem(8, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .itemOutputs(ItemList.FuelPellet.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(16000)).addTo(assemblerRecipes);
 
         // Chemical Reactor
