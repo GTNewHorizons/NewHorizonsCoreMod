@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -298,7 +299,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         MaterialsElements.STANDALONE.HYPOGEN.getPlate(4),
                         ItemList.neutroniumHeatCapacitor.get(1),
                         ItemList.UIV_Coil.get(16),
-                        ItemList.Naquarite_Universal_Insulator_Foil.get(24),
+                        getModItem(BiomesOPlenty.ID, "misc", 1, 4),
                         getModItem(GalacticraftAmunRa.ID, "item.baseItem", 16, 27),
                         ItemRefer.Advanced_Radiation_Protection_Plate.get(48),
                         ItemList.UHTResistantMesh.get(64))
