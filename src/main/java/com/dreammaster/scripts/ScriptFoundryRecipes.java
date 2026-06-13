@@ -64,7 +64,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
         // Exo Foundry Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(bw_realglas, 8, 14),
+                        new ItemStack(bw_realglas, 8, 6),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(4),
                         getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 13))
                 .fluidInputs(Materials.SuperCoolant.getFluid(64000)).itemOutputs(ItemList.Glass_ExoFoundry.get(8))
@@ -271,9 +271,9 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 (int) TierEU.RECIPE_UEV,
                 8,
                 new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Netherite, 1),
-                        ItemList.Optically_Perfected_CPU.get(8), ItemRefer.Advanced_Radiation_Protection_Plate.get(8),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 6),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUEV, 4) },
+                        ItemList.Optically_Perfected_CPU.get(6), ItemRefer.Advanced_Radiation_Protection_Plate.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 2) },
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 4),
                         new FluidStack(FluidRegistry.getFluid("oganesson"), 500),
                         Materials.CosmicNeutronium.getMolten(INGOTS * 2) },
@@ -289,11 +289,11 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 (int) TierEU.RECIPE_UEV,
                 16,
                 new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 1),
-                        WerkstoffLoader.HDCS.get(OrePrefixes.plate, 32), ItemList.Optically_Compatible_Memory.get(8),
+                        WerkstoffLoader.HDCS.get(OrePrefixes.plate, 32), ItemList.Optically_Compatible_Memory.get(6),
                         ItemRefer.HiC_T4.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UEV), 1 },
                         ItemList.Emitter_UHV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.TengamAttuned, 6),
-                        ItemList.NuclearStar.get(2) },
+                        ItemList.NuclearStar.get(1) },
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 4),
                         Materials.SuperconductorUEVBase.getMolten(INGOTS * 2),
                         MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(INGOTS) },

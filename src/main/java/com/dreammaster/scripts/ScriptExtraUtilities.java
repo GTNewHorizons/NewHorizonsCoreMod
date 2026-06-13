@@ -484,6 +484,23 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateAnyIron",
                 "plateAnyIron",
                 "screwSteel");
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1))
+                .circuit(3).itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 1)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1))
+                .circuit(5).fluidInputs(Materials.Water.getFluid(1000))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 0)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "watering_can", 1, 3),
                 "craftingToolHardHammer",

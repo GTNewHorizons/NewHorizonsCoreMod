@@ -1054,9 +1054,9 @@ public class AssemblerRecipes implements Runnable {
                         Materials.Aluminium.getPlates(4),
                         Materials.Glass.getPlates(1),
                         Materials.Glowstone.getDust(1),
-                        ItemList.DYE_ONLY_ITEMS[1].get(1),
-                        ItemList.DYE_ONLY_ITEMS[10].get(1),
-                        ItemList.DYE_ONLY_ITEMS[4].get(1))
+                        new OreDictItemStack("dyeRed", 1),
+                        new OreDictItemStack("dyeLime", 1),
+                        new OreDictItemStack("dyeBlue", 1))
                 .itemOutputs(ItemList.Cover_Screen.get(1L)).duration(5 * SECONDS).eut(5).addTo(assemblerRecipes);
         // Nukes
 
@@ -4761,15 +4761,52 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
-        // Pattern Provider (for LMA)
+        // Pattern Provider (IV) - for Large Molecular Assembler
         GTValues.RA.stdBuilder().itemInputs(
                 ItemList.Hatch_Input_Bus_IV.get(1L),
                 // interface
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
                 // Pattern capacity card
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54)).circuit(4)
-                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting.get(1L)).duration(1 * SECONDS)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_IV.get(1L)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+        // Pattern Provider (LuV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Hatch_Input_Bus_LuV.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 6, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_LuV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+        // Pattern Provider (ZPM) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Hatch_Input_Bus_ZPM.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 9, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_ZPM.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+        // Pattern Provider (UV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Hatch_Input_Bus_UV.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 12, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_UV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+        // Pattern Provider (UHV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                // why is UHV input bus called MAX??? its several tiers lower >:c
+                ItemList.Hatch_Input_Bus_MAX.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 15, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_UHV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
         if (AE2FluidCraft.isModLoaded()) {
             // Dual Interface
