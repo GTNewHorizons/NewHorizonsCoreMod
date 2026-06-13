@@ -2,12 +2,10 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
-import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
@@ -37,8 +35,7 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.system.material.WerkstoffLoader;
-import goodgenerator.items.GGMaterial;
-import goodgenerator.main.GoodGenerator;
+import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -278,8 +275,9 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.CosmicNeutronium, 8),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 8),
                         ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(getGTItem(6, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304)).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.DroneCase.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304))
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // femtocontroller
                 .itemInputs(
                         ItemList.Optically_Perfected_CPU.get(1),
@@ -287,11 +285,11 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         ItemList.Circuit_Chip_FPIC.get(8),
                         Materials.Silver.getNanite(2),
                         ItemList.EnergisedTesseract.get(1),
-                        getModItem(GoodGenerator.ID, "huiCircuit", 4, 4),
+                        ItemRefer.HiC_T5.get(4),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.SuperconductorUEVBase, 32),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TengamAttuned, 64),
                         ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(getGTItem(7, 1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
+                .itemOutputs(ItemList.Femtocontroller.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(16000)).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // fuel
                 .itemInputs(
@@ -302,9 +300,9 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         ItemList.UIV_Coil.get(16),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(24),
                         getModItem(GalacticraftAmunRa.ID, "item.baseItem", 16, 27),
-                        getModItem(GoodGenerator.ID, "advancedRadiationProtectionPlate", 48, 0),
+                        ItemRefer.Advanced_Radiation_Protection_Plate.get(48),
                         ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(getGTItem(8, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .itemOutputs(ItemList.FuelPellet.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(16000)).addTo(assemblerRecipes);
 
         // Chemical Reactor
@@ -834,11 +832,6 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
     private static ItemStack getGSItem(String name, int amount, int meta) {
         return getModItem(GalaxySpace.ID, name, amount, meta);
-    }
-
-    // remove when the GT5u pr for these is merged
-    private static ItemStack getGTItem(int meta, int amount) {
-        return getModItem(GTNHIntergalactic.ID, "item.DysonSwarmParts", amount, meta);
     }
 
     @Override
