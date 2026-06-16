@@ -141,7 +141,7 @@ public final class CostResolver {
         Map<String, Double> cached = memo.get(item.key);
         if (cached != null) return cached;
         if (visiting.contains(item.key)) {
-            trace.add("cycle broken at " + item.key);
+            trace.add("cycle broken at " + item.displayName());
             return leaf(item, boldFrontier, buckets);
         }
 
@@ -204,7 +204,7 @@ public final class CostResolver {
             if (!index.producersOf(alt.key).isEmpty()) return alt;
         }
         SGItem guess = ing.alts.get(0);
-        trace.add("ore-dict input guessed -> " + guess.key);
+        trace.add("ore-dict input guessed -> " + guess.displayName());
         return guess;
     }
 }

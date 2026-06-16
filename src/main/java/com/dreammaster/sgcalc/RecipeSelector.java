@@ -37,7 +37,7 @@ public final class RecipeSelector {
                 pool = filtered;
                 break;
             }
-            log.accept("override for " + item.key + " -> " + override.sourceId + " matched no candidate");
+            log.accept("override for " + item.displayName() + " -> " + override.sourceId + " matched no candidate");
         }
 
         // Prefer recipes where this item is the main product over recipes that emit it only as a byproduct (e.g. a
@@ -63,7 +63,7 @@ public final class RecipeSelector {
         }
         if (consider.size() > 1) {
             log.accept(
-                    "ambiguous " + item.key
+                    "ambiguous " + item.displayName()
                             + ": "
                             + consider.size()
                             + " candidates, chose "
