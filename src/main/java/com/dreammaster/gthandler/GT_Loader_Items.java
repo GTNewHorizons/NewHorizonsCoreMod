@@ -86,5 +86,33 @@ public class GT_Loader_Items {
                             + " "
                             + StatCollector.translateToLocal("item.Harmonic.version"));
         }
+
+        addItemTooltip(
+                NHItemList.Compressed_Circuit_Array_Empty.get(),
+                () -> StatCollector.translateToLocal("item.CircuitArray.tooltip.empty"));
+
+        List<ItemStack> circuitArrays = Arrays.asList(
+                NHItemList.Compressed_Circuit_Array_ULV.get(),
+                NHItemList.Compressed_Circuit_Array_LV.get(),
+                NHItemList.Compressed_Circuit_Array_MV.get(),
+                NHItemList.Compressed_Circuit_Array_HV.get(),
+                NHItemList.Compressed_Circuit_Array_EV.get(),
+                NHItemList.Compressed_Circuit_Array_IV.get(),
+                NHItemList.Compressed_Circuit_Array_LuV.get(),
+                NHItemList.Compressed_Circuit_Array_ZPM.get(),
+                NHItemList.Compressed_Circuit_Array_UV.get(),
+                NHItemList.Compressed_Circuit_Array_UHV.get(),
+                NHItemList.Compressed_Circuit_Array_UEV.get(),
+                NHItemList.Compressed_Circuit_Array_UIV.get(),
+                NHItemList.Compressed_Circuit_Array_UMV.get(),
+                NHItemList.Compressed_Circuit_Array_UXV.get(),
+                NHItemList.Compressed_Circuit_Array_MAX.get());
+
+        for (int i = 0; i < circuitArrays.size(); i++) {
+            int num = i;
+            addItemTooltip(
+                    circuitArrays.get(i),
+                    () -> StatCollector.translateToLocal("item.CircuitArray.tooltip." + num));
+        }
     }
 }

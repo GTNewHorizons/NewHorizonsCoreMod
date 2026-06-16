@@ -574,7 +574,23 @@ public enum NHItemList {
     FramePartHarmonic("HarmonicFramePart", SPACE),
     StargateDustAncients("StargateDustAncients", SPACE),
     StargateCrystalAncients("StargateCrystalAncients", SPACE),
-    PlanckCircuit("PlanckCircuit", SPACE);
+    PlanckCircuit("PlanckCircuit", SPACE),
+    Compressed_Circuit_Array_Empty("CircuitArrayEmpty", CIRCUITS),
+    Compressed_Circuit_Array_ULV("CircuitArrayULV", CIRCUITS),
+    Compressed_Circuit_Array_LV("CircuitArrayLV", CIRCUITS),
+    Compressed_Circuit_Array_MV("CircuitArrayMV", CIRCUITS),
+    Compressed_Circuit_Array_HV("CircuitArrayHV", CIRCUITS),
+    Compressed_Circuit_Array_EV("CircuitArrayEV", CIRCUITS),
+    Compressed_Circuit_Array_IV("CircuitArrayIV", CIRCUITS),
+    Compressed_Circuit_Array_LuV("CircuitArrayLuV", CIRCUITS),
+    Compressed_Circuit_Array_ZPM("CircuitArrayZPM", CIRCUITS),
+    Compressed_Circuit_Array_UV("CircuitArrayUV", CIRCUITS),
+    Compressed_Circuit_Array_UHV("CircuitArrayUHV", CIRCUITS),
+    Compressed_Circuit_Array_UEV("CircuitArrayUEV", CIRCUITS),
+    Compressed_Circuit_Array_UIV("CircuitArrayUIV", CIRCUITS),
+    Compressed_Circuit_Array_UMV("CircuitArrayUMV", CIRCUITS),
+    Compressed_Circuit_Array_UXV("CircuitArrayUXV", CIRCUITS),
+    Compressed_Circuit_Array_MAX("CircuitArrayMAX", CIRCUITS);
 
     static {
         CoinChunkloaderTierI.item.setMaxStackSize(4);
