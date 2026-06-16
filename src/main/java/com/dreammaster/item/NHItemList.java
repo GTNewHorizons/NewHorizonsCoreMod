@@ -484,6 +484,7 @@ public enum NHItemList {
     SnowQueenBloodDrop("SnowQueenBloodDrop", THAUMCRAFT),
     SteelDualCompressedPlates("SteelDualCompressedPlates", SPACE),
     StonePlate("StonePlate", GENERIC),
+    MultiMaterialMesh("MultiMaterialMesh", SPACE),
     StargateFramePart("StargateFramePart", SPACE),
     StargateChevron("StargateChevron", SPACE),
     StargateShieldingFoil("StargateShieldingFoil", SPACE),

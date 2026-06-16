@@ -5,6 +5,7 @@ import com.dreammaster.gthandler.recipes.ArcFurnaceRecipes;
 import com.dreammaster.gthandler.recipes.AssemblerRecipes;
 import com.dreammaster.gthandler.recipes.AssemblingLineRecipes;
 import com.dreammaster.gthandler.recipes.AutoclaveRecipes;
+import com.dreammaster.gthandler.recipes.BECRecipes;
 import com.dreammaster.gthandler.recipes.BeamcraftingRecipes;
 import com.dreammaster.gthandler.recipes.BendingMachineRecipes;
 import com.dreammaster.gthandler.recipes.BlastFurnaceRecipes;
@@ -54,6 +55,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new AssemblerRecipes().run();
         new AssemblingLineRecipes().run();
         new AutoclaveRecipes().run();
+        new BECRecipes().run();
         new BendingMachineRecipes().run();
         new BlastFurnaceRecipes().run();
         new BrewingMachineRecipes().run();

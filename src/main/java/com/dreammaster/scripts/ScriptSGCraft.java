@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -20,11 +21,13 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import goodgenerator.loader.Loaders;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
+import kekztech.common.Blocks;
+import kekztech.common.TileEntities;
+import tectech.thing.CustomItemList;
 
 public class ScriptSGCraft implements IScriptLoader {
 
@@ -35,7 +38,15 @@ public class ScriptSGCraft implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(SGCraft.ID, BartWorks.ID, EnderIO.ID, GoodGenerator.ID, TecTech.ID);
+        return Arrays.asList(
+                SGCraft.ID,
+                BartWorks.ID,
+                EnderIO.ID,
+                GoodGenerator.ID,
+                TecTech.ID,
+                EternalSingularity.ID,
+                AppliedEnergistics2.ID,
+                OpenComputers.ID);
     }
 
     @Override
@@ -47,7 +58,7 @@ public class ScriptSGCraft implements IScriptLoader {
         ItemStack magmatterBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.MagMatter, 1L);
         ItemStack magmatterSuperdensePlate = GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 1L);
         ItemStack magmatterNanite = GTOreDictUnificator.get(OrePrefixes.nanite, Materials.MagMatter, 1L);
-        ItemStack compact5Coil = new ItemStack(Loaders.compactFusionCoil, 1, 4);
+        ItemStack umvCap = new ItemStack(Blocks.lscLapotronicEnergyUnit, 1, 10);
 
         ItemStack ringBlock = getModItem(SGCraft.ID, "stargateRing", 1, 0);
         ItemStack chevronBlock = getModItem(SGCraft.ID, "stargateRing", 1, 1);
@@ -67,212 +78,237 @@ public class ScriptSGCraft implements IScriptLoader {
         ItemStack singularityStorage = getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1, 0);
         ItemStack chaoticCapacitor = createItemStack(EnderIO.ID, "blockCapBank", 1, 0, "{type:\"CREATIVE\",storedEnergyRF:2500000}");
         ItemStack keyboard = getModItem(OpenComputers.ID, "keyboard", 1, 0);
+        ItemStack arithmeticSing = getModItem(EternalSingularity.ID, "combined_singularity", 1, 10);
 
         // Stargate Ring Block
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ringBlock,
-                "mmmfcffpp",
-                "mmmfffpgg",
-                "mmmffpg--",
-                "dddffpg--",
-                "dddfcpg--",
-                "dddffpg--",
-                "mmmffpg--",
-                "mmmfffpgg",
-                "mmmfcffpp",
+                "aaafcffpp",
+                "addfffpgg",
+                "admfwpg--",
+                "sdmffpg--",
+                "sdmfcpg--",
+                "sdmffpg--",
+                "admfwpg--",
+                "addfffpgg",
+                "aaafcffpp",
                 'm', magmatterBlock,
                 'd', darkMatterBlock,
                 'f', NHItemList.StargateFramePart.get(),
                 'c', NHItemList.StargateChevron.get(),
                 'p', NHItemList.StargateShieldingFoil.get(),
-                'g', ItemList.Field_Generator_UXV.get(1L));
+                'g', ItemList.Field_Generator_UXV.get(1L),
+                'w', ItemList.MetaMaterial_Waveguide3.get(1),
+                'a', ItemList.FieldEnergyAbsorberCasing.get(1),
+                's', ItemList.PrecisionFieldSyncCasing.get(1));
 
         // Stargate Chevron Upgrade
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 chevronUpgrade,
-                "---------",
-                "fpfgfpf--",
-                "-fcpcf---",
-                "--sgs----",
-                "--fpfgfpf",
-                "---fcpcf-",
-                "----ege--",
-                "-----f---",
+                "mmmmmmmmm",
+                "fpfsfpfm-",
+                "mfcgcfmmm",
+                "-mfwfefpf",
+                "--mfcgcfm",
+                "---mfwfm-",
+                "----mfm--",
+                "-----m---",
                 "---------",
                 'f', NHItemList.StargateFramePart.get(),
                 'c', NHItemList.StargateChevron.get(),
                 'p', ItemList.Electric_Piston_UXV.get(1L),
                 'g', ItemList.Field_Generator_UXV.get(1L),
                 's', ItemList.Sensor_UXV.get(1L),
-                'e', ItemList.Emitter_UXV.get(1L));
+                'e', ItemList.Emitter_UXV.get(1L),
+                'w', ItemList.MetaMaterial_Waveguide3.get(1),
+                'm', magmatterSuperdensePlate);
 
         // Stargate Chevron Block
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 chevronBlock,
-                "----m----",
-                "---mdm---",
-                "--mdgdm--",
-                "-mdfufdm-",
-                "mdgusugdm",
-                "-mdfufdm-",
-                "--mdgdm--",
-                "---mdm---",
-                "----m----",
+                "---psp---",
+                "--pamap--",
+                "-pwdgdwp-",
+                "padfufdap",
+                "smgusugms",
+                "padfufdap",
+                "-pwdgdwp-",
+                "--pamap--",
+                "---psp---",
                 'm', magmatterBlock,
                 'd', darkMatterBlock,
                 'u', chevronUpgrade,
                 's', ringBlock,
                 'g', ItemList.Field_Generator_UXV.get(1L),
-                'f', tectech.thing.CustomItemList.Godforge_GravitonFlowModulatorTier3.get(1L));
+                'f', tectech.thing.CustomItemList.Godforge_GravitonFlowModulatorTier3.get(1L),
+                'p', NHItemList.StargateShieldingFoil.get(),
+                'w', ItemList.MetaMaterial_Waveguide3.get(1),
+                'a', ItemList.FieldEnergyAbsorberCasing.get(1),
+                's', ItemList.PrecisionFieldSyncCasing.get(1));
 
         // Stargate Base
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 stargateBase,
-                "abbcdcbba",
-                "befghgfeb",
-                "beigjgieb",
-                "cklmmmlkc",
+                "tppcdcppt",
+                "pesmhmsep",
+                "psimjmisp",
+                "vkummmukv",
                 "dkpmompkd",
-                "cklmmmlkc",
-                "beigngieb",
-                "befghgfeb",
-                "abbcdcbba",
-                'a', ItemList.Transdimensional_Alignment_Matrix.get(1L),
-                'b', ItemList.Field_Generator_UXV.get(1L),
-                'c', ItemList.Emitter_UXV.get(1L),
+                "vkummmukv",
+                "psimjmisp",
+                "pesmhmsep",
+                "tppcdcppt",
+                'a', ItemList.SpaceElevatorModuleAssemblerT3.get(1),
+                'b', chevronBlock,
+                'c', ItemList.MetaMaterial_EnergyConduit3.get(1),
                 'd', magmatterNanite,
                 'e', tectech.thing.CustomItemList.Godforge_GravitonFlowModulatorTier3.get(1L),
-                'f', magmatterSuperdensePlate,
                 'g', NHItemList.StargateShieldingFoil.get(),
                 'h', ItemList.MiningDroneUXV.get(1),
                 'i', ItemList.ZPM6.get(1L),
                 'j', universeCell,
                 'k', tectech.thing.CustomItemList.astralArrayFabricator.get(1L),
-                'l', tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L),
-                'm', chevronBlock,
+                'm', ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1),
                 'n', universeFluidCell,
                 'o', stargateCrystal,
-                'p', ItemList.SpaceElevatorModuleAssemblerT3.get(1));
+                'p', NHItemList.StargateShieldingFoil.get(),
+                's', ItemList.PrecisionFieldSyncCasing.get(1),
+                't', ItemList.Transdimensional_Alignment_Matrix.get(1L),
+                'u', ItemList.Universal_Collapser_ExoFoundry.get(1L),
+                'v', ItemList.MetaMaterial_ElectrograviticValve3.get(1));
 
         // Ridiculously Large Capacitor
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 stargateCapacitor,
-                "---------",
-                "----e----",
-                "--pgpgp--",
-                "-pcscscp-",
-                "-pbcbcbp-",
-                "-pcscscp-",
-                "--pgpgp--",
-                "----e----",
-                "---------",
+                "---sms---",
+                "---sms---",
+                "-ppgpgpp-",
+                "pcbcbcbcp",
+                "pbcblbcbp",
+                "pcbchcbcp",
+                "-ppgpgpp-",
+                "---sms---",
+                "---sms---",
                 'p', NHItemList.StargateShieldingFoil.get(),
                 's', tectech.thing.CustomItemList.Godforge_StellarEnergySiphonCasing.get(1),
                 'g', ItemList.Field_Generator_UXV.get(1L),
                 'e', ItemList.Emitter_UXV.get(1L),
-                'b', ItemList.ZPM6.get(1L),
-                'c', chaoticCapacitor);
+                'b', umvCap,
+                'c', chaoticCapacitor,
+                'l', TileEntities.lsc.getStackForm(1),
+                'h', CustomItemList.eM_energyWirelessTunnel9_UXV.get(1),
+                'm', ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1));
 
         // Stargate Iris Blade
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 irisBlade,
                 "-----wwww",
-                "----wmmw-",
-                "---wmmw--",
-                "--wmmw---",
-                "-wmmmw---",
-                "wpmmmw---",
-                "wpmmmmw--",
-                "wbppmmmw-",
+                "----wmbw-",
+                "---wmbw--",
+                "--wmbw---",
+                "-wmmbw---",
+                "wpmmbw---",
+                "wpmmmbw--",
+                "wbppmmbw-",
                 "cwwwwwwww",
                 'w', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 1L),
+                'b', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackDwarfMatter, 1L),
                 'm', magmatterSuperdensePlate,
                 'p', ItemList.Electric_Piston_UXV.get(1L),
                 'b', ItemList.ZPM6.get(1L),
-                'c', compact5Coil);
+                'c', ItemList.CondensateTransformativeCoil.get(1));
 
         // Stargate Iris Upgrade
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 irisUpgrade,
-                "ddbbbbbdd",
-                "db--n--bd",
+                "aabbbbbaa",
+                "ab--n--ba",
                 "b----n--b",
-                "b-nn-n--b",
-                "bn--s--nb",
-                "b--n-nn-b",
+                "b-nndn--b",
+                "bn-dmd-nb",
+                "b--ndnn-b",
                 "b--n----b",
-                "db--n--bd",
-                "ddbbbbbdd",
+                "ab--n--ba",
+                "aabbbbbaa",
                 'b', irisBlade,
                 'd', darkMatterBlock,
                 'n', magmatterNanite,
-                's', magmatterSuperdensePlate);
+                'm', ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1),
+                'a', ItemList.FieldEnergyAbsorberCasing.get(1));
 
         // RF Stargate Power Unit
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 rfUnit,
-                "mmcdddcmm",
-                "m-c---c-m",
-                "m-c-b-c-m",
-                "d--cpc--d",
-                "d-bprpb-d",
-                "d--cpc--d",
-                "mnn-b-nnm",
-                "mgn---ngm",
-                "mmmdddmmm",
-                'm', magmatterBlock,
+                "aacssscaa",
+                "adcnnncda",
+                "m-cnnnc-m",
+                "m--cpc--m",
+                "m-oprpo-m",
+                "m--cpc--m",
+                "ad--b--da",
+                "agd---dga",
+                "aaammmaaa",
                 'd', darkMatterBlock,
-                'c', compact5Coil,
+                'c', ItemList.CondensateTransformativeCoil.get(1),
                 'b', ItemList.ZPM6.get(1L),
                 'p', stargateCapacitor,
                 'r', ringBlock,
                 'n', magmatterNanite,
-                'g', ItemList.GigaChad.get(1L));
+                'g', ItemList.GigaChad.get(1L),
+                'm', ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1),
+                's', ItemList.PrecisionFieldSyncCasing.get(1),
+                'a', ItemList.FieldEnergyAbsorberCasing.get(1),
+                'o', ItemList.MetaMaterial_ResonanceChamber4.get(1));
 
         // OpenComputers Stargate Interface
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ocInterface,
-                "mmcdddcmm",
-                "m-c---c-m",
-                "m-c-w-c-m",
-                "d--csc--d",
-                "d-wsrsw-d",
-                "d--csc--d",
-                "mnn-w-nnm",
-                "mgn---ngm",
-                "mmmdddmmm",
-                'm', magmatterBlock,
+                "aacssscaa",
+                "adcnnncda",
+                "m-cnnnc-m",
+                "m--cpc--m",
+                "m-oprpo-m",
+                "m--cpc--m",
+                "ad--b--da",
+                "agd---dga",
+                "aaammmaaa",
                 'd', darkMatterBlock,
-                'c', compact5Coil,
-                'w', tectech.thing.CustomItemList.dataIn_Wireless_Hatch.get(1L),
-                's', singularityStorage,
+                'c', ItemList.CondensateTransformativeCoil.get(1),
+                'b', tectech.thing.CustomItemList.dataIn_Wireless_Hatch.get(1L),
+                'p', singularityStorage,
                 'r', ringBlock,
                 'n', magmatterNanite,
-                'g', ItemList.GigaChad.get(1L));
+                'g', ItemList.GigaChad.get(1L),
+                'm', ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1),
+                's', ItemList.PrecisionFieldSyncCasing.get(1),
+                'a', ItemList.FieldEnergyAbsorberCasing.get(1),
+                'o', ItemList.MetaMaterial_EnergyConduit3.get(1));
 
         // Stargate Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 stargateController,
-                "---mmm---",
+                "---sss---",
                 "--dkfkd--",
-                "-mkfsfkm-",
-                "-mfecefm-",
-                "-mkfsfkm-",
+                "-skfcfks-",
+                "-sfmzmfs-",
+                "-skflfks-",
                 "--dkfkd--",
-                "--mpbpm--",
-                "--mpopm--",
-                "--mpupm--",
-                'm', magmatterBlock,
+                "--apbpa--",
+                "--apopa--",
+                "--apupa--",
                 'd', darkMatterBlock,
                 'k', keyboard,
                 'f', NHItemList.StargateFramePart.get(),
-                's', ItemList.Sensor_UXV.get(1L),
-                'e', ItemList.Emitter_UXV.get(1L),
                 'c', stargateControllerCrystal,
                 'p', NHItemList.StargateShieldingFoil.get(),
                 'b', ItemList.ZPM6.get(1L),
                 'o', ocInterface,
-                'u', universeFluidCell);
+                'u', universeFluidCell,
+                's', ItemList.PrecisionFieldSyncCasing.get(1),
+                'a', ItemList.FieldEnergyAbsorberCasing.get(1),
+                'l', GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1),
+                'z', arithmeticSing,
+                'm', ItemList.MetaMaterial_FieldManipulator4.get(1));
 
 
         // spotless:on
