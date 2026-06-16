@@ -142,9 +142,13 @@ public final class SGCalcConfig {
                 "mod:appliedenergistics2:tile.BlockSingularityCraftingStorage|Singularity Crafting Storage",
                 "mod:appliedenergistics2:item.ItemExtremeStorageCell.Universe|Artificial Universe ME Storage Cell",
                 "mod:ae2fc:fluid_storage.Universe|ME Fluid Artificial Universe Storage Cell",
-                "# TODO verify identifiers (tectech/eye-of-harmony/battery): Central Graviton Flow Modulator,"
-                        + " Stellar Energy Siphon Casing, Astral Array Fabricator, Cloud Computation Client Hatch,"
-                        + " Eye of Harmony, Compact Fusion Coil Mk-II Finaltype, Mega Ultimate Battery");
+                "container:tectech.thing.CustomItemList.Godforge_GravitonFlowModulatorTier3|Central Graviton Flow Modulator",
+                "container:tectech.thing.CustomItemList.Godforge_StellarEnergySiphonCasing|Stellar Energy Siphon Casing",
+                "container:tectech.thing.CustomItemList.astralArrayFabricator|Astral Array Fabricator",
+                "container:tectech.thing.CustomItemList.dataIn_Wireless_Hatch|Cloud Computation Client Hatch",
+                "container:tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony|Eye of Harmony",
+                "mod:GoodGenerator:compactFusionCoil:4|Compact Fusion Coil Mk-II Finaltype",
+                "gt:ZPM6|Mega Ultimate Battery");
         c.lowLevelSet = Arrays.asList(
                 "material:Iron|Iron|L",
                 "material:Copper|Copper|L",

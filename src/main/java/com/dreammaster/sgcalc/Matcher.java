@@ -10,6 +10,7 @@ import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -18,11 +19,13 @@ import gregtech.api.util.GTOreDictUnificator;
  * recipe-selection overrides. Spec grammar: `type:value[:meta][|label[|unit]]` where `type` is one of:
  *
  * - `mod:<modid>:<name>[:<meta>]` -- a specific registered item (meta optional, omitted = any meta) - `gt:<ItemList>`
- * -- a GregTech {@link ItemList} entry - `material:<Materials name>` -- any item/fluid associated with that GregTech
- * material; contributes the material amount in litres - `prefixmat:<OrePrefixes>:<Materials name>` -- a specific
- * material form (e.g. `block`, `plateSuperdense`, `nanite`) of a material, counted as items; distinguishes the several
- * Magmatter forms in the high-level table - `fluid:<fluid registry name>` -- a specific fluid - `ore:<ore dictionary
- * name>` -- any item registered under that ore dictionary entry
+ * -- a GregTech {@link ItemList} entry - `container:<fully.qualified.Enum.CONSTANT>` -- any {@link IItemContainer} enum
+ * constant by name (e.g. a TecTech `CustomItemList` entry), resolved reflectively - `material:<Materials name>` -- any
+ * item/fluid associated with that GregTech material; contributes the material amount in litres -
+ * `prefixmat:<OrePrefixes>:<Materials name>` -- a specific material form (e.g. `block`, `plateSuperdense`, `nanite`) of
+ * a material, counted as items; distinguishes the several Magmatter forms in the high-level table - `fluid:<fluid
+ * registry name>` -- a specific fluid - `ore:<ore dictionary name>` -- any item registered under that ore dictionary
+ * entry
  *
  * The optional `label` overrides the displayed name and `unit` (e.g. `L`) is rendered as `(unit)` before the name.
  */
@@ -31,6 +34,7 @@ public final class Matcher {
     public enum Type {
         MOD,
         GT,
+        CONTAINER,
         MATERIAL,
         PREFIXMAT,
         FLUID,
@@ -44,8 +48,8 @@ public final class Matcher {
     private final String label;
     public final String unit;
 
-    private boolean gtResolved;
-    private String gtKey;
+    private boolean containerResolved;
+    private String containerKey;
 
     private Matcher(Type type, String value, String material, int meta, String label, String unit) {
         this.type = type;
@@ -96,10 +100,10 @@ public final class Matcher {
                 if (item.stack == null) return false;
                 return value.equals(registryName(item.stack)) && (meta < 0 || item.stack.getItemDamage() == meta);
             }
-            case GT -> {
+            case GT, CONTAINER -> {
                 if (item.stack == null) return false;
-                String gtKey = resolveGtKey();
-                return gtKey != null && gtKey.equals(item.key);
+                String key = resolveContainerKey();
+                return key != null && key.equals(item.key);
             }
             case MATERIAL -> {
                 if (item.fluid != null) {
@@ -143,32 +147,45 @@ public final class Matcher {
         return matched.displayName();
     }
 
-    private String resolveGtKey() {
-        if (!gtResolved) {
-            gtResolved = true;
-            ItemStack s = resolveItemListStack();
-            if (s != null) gtKey = SGItem.of(s).key;
+    private String resolveContainerKey() {
+        if (!containerResolved) {
+            containerResolved = true;
+            ItemStack s = resolveContainerStack();
+            if (s != null) containerKey = SGItem.of(s).key;
         }
-        return gtKey;
+        return containerKey;
     }
 
     /**
-     * {@link ItemList#get} throws {@link IllegalAccessError} (not an exception) for an enum entry that was never bound
-     * to an item, and {@link ItemList#valueOf} throws for an unknown name; both are likely with hand-edited config, so
-     * a failed lookup is logged and treated as "no such item" rather than aborting the run.
+     * Resolves a `gt:`/`container:` spec to its {@link ItemStack}. `gt:` names a {@link ItemList} entry; `container:`
+     * names any {@link IItemContainer} enum constant by fully-qualified name (e.g.
+     * `tectech.thing.CustomItemList.Godforge_StellarEnergySiphonCasing`), resolved reflectively so no mod has to be a
+     * compile dependency. Lookups can throw {@link IllegalAccessError} for an unbound entry or other errors for a bad
+     * name, so a failure is logged and treated as "no such item" rather than aborting the run.
      */
-    private ItemStack resolveItemListStack() {
+    private ItemStack resolveContainerStack() {
         try {
-            return ItemList.valueOf(value).get(1L);
+            if (type == Type.GT) {
+                return ItemList.valueOf(value).get(1L);
+            }
+            int dot = value.lastIndexOf('.');
+            Class<?> enumClass = Class.forName(value.substring(0, dot));
+            String constant = value.substring(dot + 1);
+            for (Object entry : enumClass.getEnumConstants()) {
+                if (((Enum<?>) entry).name().equals(constant)) {
+                    return ((IItemContainer) entry).get(1L);
+                }
+            }
+            return null;
         } catch (Throwable t) {
-            MainRegistry.LOGGER.warn("sgcalc: could not resolve gt: matcher '" + value + "': " + t);
+            MainRegistry.LOGGER.warn("sgcalc: could not resolve " + type + " matcher '" + value + "': " + t);
             return null;
         }
     }
 
     /**
-     * Resolves a `mod:`/`gt:` spec to a concrete one-count {@link ItemStack}, used for the resolution roots. Other
-     * matcher types cannot be turned into a single stack and return null.
+     * Resolves a `mod:`/`gt:`/`container:` spec to a concrete one-count {@link ItemStack}, used for the resolution
+     * roots. Other matcher types cannot be turned into a single stack and return null.
      */
     public ItemStack toStack() {
         if (type == Type.MOD) {
@@ -177,8 +194,8 @@ public final class Matcher {
             if (item == null) return null;
             return new ItemStack(item, 1, Math.max(0, meta));
         }
-        if (type == Type.GT) {
-            return resolveItemListStack();
+        if (type == Type.GT || type == Type.CONTAINER) {
+            return resolveContainerStack();
         }
         return null;
     }
