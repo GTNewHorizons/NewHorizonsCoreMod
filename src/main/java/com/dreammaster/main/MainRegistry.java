@@ -443,9 +443,7 @@ public class MainRegistry {
         if (CoreModConfig.Modules.CustomDrops) {
             event.registerServerCommand(new CustomDropsCommand());
         }
-        if (CoreModConfig.Modules.SGCalc) {
-            event.registerServerCommand(new SGCalcCommand());
-        }
+        event.registerServerCommand(new SGCalcCommand());
         if (Mods.BetterQuesting.isModLoaded()) {
             if (!bqConfig$ReloadOnStartup() && DreamCoreMod.modpackHasUpdated()) {
                 LOGGER.info("Modpack has been updated, loading default quest database");
