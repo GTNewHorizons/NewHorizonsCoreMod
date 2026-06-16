@@ -175,7 +175,7 @@ public final class CostResolver {
     }
 
     private double perUnitContribution(Matcher matcher, SGItem item) {
-        if (matcher.type == Matcher.Type.MATERIAL && item.fluid == null) {
+        if (matcher.type == Matcher.Type.MATERIAL && !item.isFluid()) {
             ItemData data = GTOreDictUnificator.getAssociation(item.stack);
             if (data != null && data.mMaterial != null) {
                 return (data.mMaterial.mAmount / (double) GTValues.M) * LITRES_PER_UNIT;
@@ -197,6 +197,8 @@ public final class CostResolver {
         for (SGItem alt : ing.alts) {
             if (!index.producersOf(alt.key).isEmpty()) return alt;
         }
-        return ing.alts.get(0);
+        SGItem guess = ing.alts.get(0);
+        trace.add("ore-dict input guessed -> " + guess.key);
+        return guess;
     }
 }

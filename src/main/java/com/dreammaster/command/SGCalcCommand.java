@@ -62,6 +62,9 @@ public class SGCalcCommand extends CommandBase {
 
     private void run(ICommandSender sender, String mode) throws Exception {
         SGCalcConfig config = SGCalcConfig.loadOrCreate(new File("config", "sgcalc.json"));
+        if (config.loadWarning != null) {
+            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.YELLOW + config.loadWarning));
+        }
         RecipeIndex index = RecipeIndex.build();
         CostResolver resolver = new CostResolver(index, config.selector());
 

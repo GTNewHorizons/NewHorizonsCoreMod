@@ -31,6 +31,11 @@ public final class SGCalcConfig {
     public List<String> overrides = new ArrayList<>();
     public String outputDir = "sgcalc";
 
+    /**
+     * Set when the file existed but could not be parsed, so the command can warn the player it fell back to defaults.
+     */
+    public transient String loadWarning;
+
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static SGCalcConfig loadOrCreate(File file) {
@@ -38,9 +43,13 @@ public final class SGCalcConfig {
             try {
                 String json = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
                 SGCalcConfig config = GSON.fromJson(json, SGCalcConfig.class);
-                if (config != null) return config;
+                if (config != null) return config.normalized();
             } catch (Exception e) {
                 MainRegistry.LOGGER.warn("Failed to read sgcalc config, using defaults: " + e.getMessage());
+                SGCalcConfig defaults = defaults();
+                defaults.loadWarning = "config/sgcalc.json could not be read (" + e.getMessage()
+                        + "); using built-in defaults. Fix or delete the file.";
+                return defaults;
             }
         }
         SGCalcConfig defaults = defaults();
@@ -54,15 +63,31 @@ public final class SGCalcConfig {
         return defaults;
     }
 
+    /** Gson skips the constructor, so replace any field a partial hand-edit omitted with an empty default. */
+    private SGCalcConfig normalized() {
+        if (composition == null) composition = new ArrayList<>();
+        if (highLevelSet == null) highLevelSet = new ArrayList<>();
+        if (lowLevelSet == null) lowLevelSet = new ArrayList<>();
+        if (boldSet == null) boldSet = new ArrayList<>();
+        if (sourcePriority == null) sourcePriority = new ArrayList<>();
+        if (overrides == null) overrides = new ArrayList<>();
+        if (outputDir == null || outputDir.trim().isEmpty()) outputDir = "sgcalc";
+        return this;
+    }
+
     public List<CostResolver.Root> roots() {
         List<CostResolver.Root> roots = new ArrayList<>();
         for (String entry : composition) {
             if (entry == null || entry.trim().isEmpty() || entry.startsWith("#")) continue;
-            int eq = entry.lastIndexOf('=');
-            if (eq < 0) continue;
-            ItemStack stack = Matcher.parse(entry.substring(0, eq).trim()).toStack();
-            double qty = Double.parseDouble(entry.substring(eq + 1).trim());
-            roots.add(new CostResolver.Root(stack, qty));
+            try {
+                int eq = entry.lastIndexOf('=');
+                if (eq < 0) continue;
+                ItemStack stack = Matcher.parse(entry.substring(0, eq).trim()).toStack();
+                double qty = Double.parseDouble(entry.substring(eq + 1).trim());
+                roots.add(new CostResolver.Root(stack, qty));
+            } catch (RuntimeException e) {
+                MainRegistry.LOGGER.warn("sgcalc: ignoring malformed composition entry '" + entry + "': " + e);
+            }
         }
         return roots;
     }

@@ -1,19 +1,38 @@
 package com.dreammaster.sgcalc.source;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
+import com.dreammaster.sgcalc.RecipeCandidate.Output;
 import com.dreammaster.sgcalc.SGItem;
 
-/** Shared helpers for the crafting-grid based sources (vanilla and Avaritia). */
+/** Shared helpers for the recipe sources: grid collapsing plus stack/fluid validity and single-element builders. */
 final class GridInputs {
 
     private GridInputs() {}
+
+    static boolean isValid(ItemStack stack) {
+        return stack != null && stack.getItem() != null && stack.stackSize > 0;
+    }
+
+    static boolean isValid(FluidStack fluid) {
+        return fluid != null && fluid.getFluid() != null && fluid.amount > 0;
+    }
+
+    static Ingredient fluidIngredient(FluidStack fluid) {
+        return new Ingredient(Collections.singletonList(SGItem.of(fluid)), fluid.amount);
+    }
+
+    static Output stackOutput(ItemStack stack) {
+        return new Output(SGItem.of(stack), stack.stackSize);
+    }
 
     /**
      * Collapses a crafting grid into per-slot {@link Ingredient}s with consumption counts. Each element may be an

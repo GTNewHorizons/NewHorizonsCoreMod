@@ -5,6 +5,8 @@ import java.util.Locale;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.main.MainRegistry;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -96,7 +98,8 @@ public final class Matcher {
             }
             case GT -> {
                 if (item.stack == null) return false;
-                return resolveGtKey() != null && resolveGtKey().equals(item.key);
+                String gtKey = resolveGtKey();
+                return gtKey != null && gtKey.equals(item.key);
             }
             case MATERIAL -> {
                 if (item.fluid != null) {
@@ -136,19 +139,31 @@ public final class Matcher {
 
     public String label(SGItem matched) {
         if (label != null) return label;
-        if (type == Type.MATERIAL && matched.fluid == null) return value;
+        if (type == Type.MATERIAL && !matched.isFluid()) return value;
         return matched.displayName();
     }
 
     private String resolveGtKey() {
         if (!gtResolved) {
             gtResolved = true;
-            try {
-                ItemStack s = ItemList.valueOf(value).get(1L);
-                if (s != null) gtKey = SGItem.of(s).key;
-            } catch (IllegalArgumentException ignored) {}
+            ItemStack s = resolveItemListStack();
+            if (s != null) gtKey = SGItem.of(s).key;
         }
         return gtKey;
+    }
+
+    /**
+     * {@link ItemList#get} throws {@link IllegalAccessError} (not an exception) for an enum entry that was never bound
+     * to an item, and {@link ItemList#valueOf} throws for an unknown name; both are likely with hand-edited config, so
+     * a failed lookup is logged and treated as "no such item" rather than aborting the run.
+     */
+    private ItemStack resolveItemListStack() {
+        try {
+            return ItemList.valueOf(value).get(1L);
+        } catch (Throwable t) {
+            MainRegistry.LOGGER.warn("sgcalc: could not resolve gt: matcher '" + value + "': " + t);
+            return null;
+        }
     }
 
     /**
@@ -163,11 +178,7 @@ public final class Matcher {
             return new ItemStack(item, 1, Math.max(0, meta));
         }
         if (type == Type.GT) {
-            try {
-                return ItemList.valueOf(value).get(1L);
-            } catch (IllegalArgumentException e) {
-                return null;
-            }
+            return resolveItemListStack();
         }
         return null;
     }

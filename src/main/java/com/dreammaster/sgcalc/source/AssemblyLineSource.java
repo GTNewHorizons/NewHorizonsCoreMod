@@ -8,6 +8,7 @@ import java.util.function.Consumer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.main.MainRegistry;
 import com.dreammaster.sgcalc.RecipeCandidate;
 import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
 import com.dreammaster.sgcalc.RecipeCandidate.Output;
@@ -26,34 +27,39 @@ public final class AssemblyLineSource implements RecipeSource {
     @Override
     public void collect(Consumer<RecipeCandidate> sink) {
         for (RecipeAssemblyLine recipe : RecipeAssemblyLine.sAssemblylineRecipes) {
-            if (recipe.mOutput == null || recipe.mOutput.getItem() == null) continue;
-
-            List<Output> outputs = Collections
-                    .singletonList(new Output(SGItem.of(recipe.mOutput), Math.max(1, recipe.mOutput.stackSize)));
-
-            List<Ingredient> inputs = new ArrayList<>();
-            if (recipe.mInputs != null) {
-                for (int i = 0; i < recipe.mInputs.length; i++) {
-                    ItemStack in = recipe.mInputs[i];
-                    if (in == null || in.getItem() == null || in.stackSize <= 0) continue;
-
-                    List<SGItem> alts = new ArrayList<>();
-                    if (recipe.mOreDictAlt != null && i < recipe.mOreDictAlt.length && recipe.mOreDictAlt[i] != null) {
-                        for (ItemStack alt : recipe.mOreDictAlt[i]) {
-                            if (alt != null && alt.getItem() != null) alts.add(SGItem.of(alt));
-                        }
-                    }
-                    if (alts.isEmpty()) alts.add(SGItem.of(in));
-                    inputs.add(new Ingredient(alts, in.stackSize));
-                }
+            if (!GridInputs.isValid(recipe.mOutput)) continue;
+            try {
+                collect(recipe, sink);
+            } catch (Throwable t) {
+                MainRegistry.LOGGER.warn("sgcalc: skipped an assembly line recipe: " + t);
             }
-            if (recipe.mFluidInputs != null) {
-                for (FluidStack in : recipe.mFluidInputs) {
-                    if (in == null || in.getFluid() == null || in.amount <= 0) continue;
-                    inputs.add(new Ingredient(Collections.singletonList(SGItem.of(in)), in.amount));
-                }
-            }
-            sink.accept(new RecipeCandidate("assemblyline", inputs, outputs));
         }
+    }
+
+    private static void collect(RecipeAssemblyLine recipe, Consumer<RecipeCandidate> sink) {
+        List<Output> outputs = Collections.singletonList(GridInputs.stackOutput(recipe.mOutput));
+
+        List<Ingredient> inputs = new ArrayList<>();
+        if (recipe.mInputs != null) {
+            for (int i = 0; i < recipe.mInputs.length; i++) {
+                ItemStack in = recipe.mInputs[i];
+                if (!GridInputs.isValid(in)) continue;
+
+                List<SGItem> alts = new ArrayList<>();
+                if (recipe.mOreDictAlt != null && i < recipe.mOreDictAlt.length && recipe.mOreDictAlt[i] != null) {
+                    for (ItemStack alt : recipe.mOreDictAlt[i]) {
+                        if (GridInputs.isValid(alt)) alts.add(SGItem.of(alt));
+                    }
+                }
+                if (alts.isEmpty()) alts.add(SGItem.of(in));
+                inputs.add(new Ingredient(alts, in.stackSize));
+            }
+        }
+        if (recipe.mFluidInputs != null) {
+            for (FluidStack in : recipe.mFluidInputs) {
+                if (GridInputs.isValid(in)) inputs.add(GridInputs.fluidIngredient(in));
+            }
+        }
+        sink.accept(new RecipeCandidate("assemblyline", inputs, outputs));
     }
 }

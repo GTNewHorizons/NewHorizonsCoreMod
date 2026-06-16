@@ -44,10 +44,11 @@ public final class SGItem {
     }
 
     public String displayName() {
+        // Some modded items throw from getDisplayName/getLocalizedName; the canonical key is an acceptable fallback.
         try {
             if (fluid != null) return fluid.getLocalizedName();
             return stack.getDisplayName();
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             return key;
         }
     }

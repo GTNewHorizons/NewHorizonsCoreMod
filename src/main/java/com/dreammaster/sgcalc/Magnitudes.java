@@ -30,7 +30,14 @@ public final class Magnitudes {
             scaled = value / 1e3;
         }
 
-        int decimals = scaled >= 100 ? 0 : scaled >= 10 ? 1 : 2;
+        int decimals;
+        if (scaled >= 100) {
+            decimals = 0;
+        } else if (scaled >= 10) {
+            decimals = 1;
+        } else {
+            decimals = 2;
+        }
         return String.format(Locale.US, "%." + decimals + "f", scaled) + suffix;
     }
 }

@@ -8,10 +8,10 @@ import java.util.function.Consumer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 
+import com.dreammaster.main.MainRegistry;
 import com.dreammaster.sgcalc.RecipeCandidate;
-import com.dreammaster.sgcalc.RecipeCandidate.Output;
+import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
 import com.dreammaster.sgcalc.RecipeSource;
-import com.dreammaster.sgcalc.SGItem;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.crafting.ExtremeShapedOreRecipe;
@@ -29,27 +29,31 @@ public final class AvaritiaSource implements RecipeSource {
     public void collect(Consumer<RecipeCandidate> sink) {
         for (Object obj : ExtremeCraftingManager.getInstance().getRecipeList()) {
             if (!(obj instanceof IRecipe recipe)) continue;
-            ItemStack out = recipe.getRecipeOutput();
-            if (out == null || out.getItem() == null || out.stackSize <= 0) continue;
-
-            List<?> elements;
-            if (recipe instanceof ExtremeShapedOreRecipe shapedOre) {
-                elements = Arrays.asList(shapedOre.getInput());
-            } else if (recipe instanceof ExtremeShapedRecipe shaped) {
-                elements = Arrays.asList(shaped.recipeItems);
-            } else if (recipe instanceof ExtremeShapelessRecipe shapeless) {
-                elements = shapeless.recipeItems;
-            } else {
-                continue;
+            try {
+                collect(recipe, sink);
+            } catch (Throwable t) {
+                MainRegistry.LOGGER.warn("sgcalc: skipped an Avaritia recipe: " + t);
             }
-
-            List<RecipeCandidate.Ingredient> inputs = GridInputs.collapse(elements);
-            if (inputs.isEmpty()) continue;
-            sink.accept(
-                    new RecipeCandidate(
-                            "avaritia",
-                            inputs,
-                            Collections.singletonList(new Output(SGItem.of(out), out.stackSize))));
         }
+    }
+
+    private static void collect(IRecipe recipe, Consumer<RecipeCandidate> sink) {
+        ItemStack out = recipe.getRecipeOutput();
+        if (!GridInputs.isValid(out)) return;
+
+        List<?> elements;
+        if (recipe instanceof ExtremeShapedOreRecipe shapedOre) {
+            elements = Arrays.asList(shapedOre.getInput());
+        } else if (recipe instanceof ExtremeShapedRecipe shaped) {
+            elements = Arrays.asList(shaped.recipeItems);
+        } else if (recipe instanceof ExtremeShapelessRecipe shapeless) {
+            elements = shapeless.recipeItems;
+        } else {
+            return;
+        }
+
+        List<Ingredient> inputs = GridInputs.collapse(elements);
+        if (inputs.isEmpty()) return;
+        sink.accept(new RecipeCandidate("avaritia", inputs, Collections.singletonList(GridInputs.stackOutput(out))));
     }
 }

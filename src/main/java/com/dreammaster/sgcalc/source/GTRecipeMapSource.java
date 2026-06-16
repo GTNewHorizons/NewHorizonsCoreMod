@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.main.MainRegistry;
 import com.dreammaster.sgcalc.RecipeCandidate;
 import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
 import com.dreammaster.sgcalc.RecipeCandidate.Output;
@@ -31,40 +32,41 @@ public final class GTRecipeMapSource implements RecipeSource {
             String sourceId = "gt:" + entry.getKey();
             for (GTRecipe recipe : entry.getValue().getAllRecipes()) {
                 if (!recipe.mEnabled || recipe.mFakeRecipe || recipe.mHidden) continue;
-
-                List<Output> outputs = new ArrayList<>();
-                if (recipe.mOutputs != null) {
-                    for (ItemStack out : recipe.mOutputs) {
-                        if (out != null && out.getItem() != null && out.stackSize > 0) {
-                            outputs.add(new Output(SGItem.of(out), out.stackSize));
-                        }
-                    }
+                try {
+                    collect(sourceId, recipe, sink);
+                } catch (Throwable t) {
+                    MainRegistry.LOGGER.warn("sgcalc: skipped a recipe in " + sourceId + ": " + t);
                 }
-                if (recipe.mFluidOutputs != null) {
-                    for (FluidStack out : recipe.mFluidOutputs) {
-                        if (out != null && out.getFluid() != null && out.amount > 0) {
-                            outputs.add(new Output(SGItem.of(out), out.amount));
-                        }
-                    }
-                }
-                if (outputs.isEmpty()) continue;
-
-                List<Ingredient> inputs = new ArrayList<>();
-                if (recipe.mInputs != null) {
-                    for (ItemStack in : recipe.mInputs) {
-                        if (in == null || in.getItem() == null || in.stackSize <= 0) continue;
-                        if (GridInputs.isIgnored(in)) continue;
-                        inputs.add(new Ingredient(Collections.singletonList(SGItem.of(in)), in.stackSize));
-                    }
-                }
-                if (recipe.mFluidInputs != null) {
-                    for (FluidStack in : recipe.mFluidInputs) {
-                        if (in == null || in.getFluid() == null || in.amount <= 0) continue;
-                        inputs.add(new Ingredient(Collections.singletonList(SGItem.of(in)), in.amount));
-                    }
-                }
-                sink.accept(new RecipeCandidate(sourceId, inputs, outputs));
             }
         }
+    }
+
+    private static void collect(String sourceId, GTRecipe recipe, Consumer<RecipeCandidate> sink) {
+        List<Output> outputs = new ArrayList<>();
+        if (recipe.mOutputs != null) {
+            for (ItemStack out : recipe.mOutputs) {
+                if (GridInputs.isValid(out)) outputs.add(GridInputs.stackOutput(out));
+            }
+        }
+        if (recipe.mFluidOutputs != null) {
+            for (FluidStack out : recipe.mFluidOutputs) {
+                if (GridInputs.isValid(out)) outputs.add(new Output(SGItem.of(out), out.amount));
+            }
+        }
+        if (outputs.isEmpty()) return;
+
+        List<Ingredient> inputs = new ArrayList<>();
+        if (recipe.mInputs != null) {
+            for (ItemStack in : recipe.mInputs) {
+                if (!GridInputs.isValid(in) || GridInputs.isIgnored(in)) continue;
+                inputs.add(new Ingredient(Collections.singletonList(SGItem.of(in)), in.stackSize));
+            }
+        }
+        if (recipe.mFluidInputs != null) {
+            for (FluidStack in : recipe.mFluidInputs) {
+                if (GridInputs.isValid(in)) inputs.add(GridInputs.fluidIngredient(in));
+            }
+        }
+        sink.accept(new RecipeCandidate(sourceId, inputs, outputs));
     }
 }
