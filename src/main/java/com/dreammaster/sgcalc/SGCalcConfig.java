@@ -1,0 +1,186 @@
+package com.dreammaster.sgcalc;
+
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import net.minecraft.item.ItemStack;
+
+import com.dreammaster.main.MainRegistry;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+/**
+ * The `/sgcalc` configuration, stored as `config/sgcalc.json` and re-read on every command run so the recipe-selection
+ * policy and frontier allowlists can be tuned against the wiki without a restart. A missing file is created from the
+ * seed defaults below.
+ *
+ * Entries beginning with `#` are treated as comments by {@link Frontier}/{@link RecipeSelector}; they document rows
+ * that still need an in-game identifier. Identifiers use the {@link Matcher} grammar.
+ */
+public final class SGCalcConfig {
+
+    public List<String> composition = new ArrayList<>();
+    public List<String> highLevelSet = new ArrayList<>();
+    public List<String> lowLevelSet = new ArrayList<>();
+    public List<String> boldSet = new ArrayList<>();
+    public List<String> sourcePriority = new ArrayList<>();
+    public List<String> overrides = new ArrayList<>();
+    public String outputDir = "sgcalc";
+
+    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+
+    public static SGCalcConfig loadOrCreate(File file) {
+        if (file.exists()) {
+            try {
+                String json = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
+                SGCalcConfig config = GSON.fromJson(json, SGCalcConfig.class);
+                if (config != null) return config;
+            } catch (Exception e) {
+                MainRegistry.LOGGER.warn("Failed to read sgcalc config, using defaults: " + e.getMessage());
+            }
+        }
+        SGCalcConfig defaults = defaults();
+        try {
+            File parent = file.getParentFile();
+            if (parent != null) parent.mkdirs();
+            Files.write(file.toPath(), GSON.toJson(defaults).getBytes(StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            MainRegistry.LOGGER.warn("Failed to write default sgcalc config: " + e.getMessage());
+        }
+        return defaults;
+    }
+
+    public List<CostResolver.Root> roots() {
+        List<CostResolver.Root> roots = new ArrayList<>();
+        for (String entry : composition) {
+            if (entry == null || entry.trim().isEmpty() || entry.startsWith("#")) continue;
+            int eq = entry.lastIndexOf('=');
+            if (eq < 0) continue;
+            ItemStack stack = Matcher.parse(entry.substring(0, eq).trim()).toStack();
+            double qty = Double.parseDouble(entry.substring(eq + 1).trim());
+            roots.add(new CostResolver.Root(stack, qty));
+        }
+        return roots;
+    }
+
+    public Frontier highLevelFrontier() {
+        return new Frontier(highLevelSet);
+    }
+
+    public Frontier lowLevelFrontier() {
+        return new Frontier(lowLevelSet);
+    }
+
+    public Frontier boldFrontier() {
+        return new Frontier(boldSet);
+    }
+
+    public RecipeSelector selector() {
+        return new RecipeSelector(sourcePriority, overrides);
+    }
+
+    private static SGCalcConfig defaults() {
+        SGCalcConfig c = new SGCalcConfig();
+        c.composition = Arrays.asList(
+                "mod:SGCraft:stargateRing:0=8",
+                "mod:SGCraft:stargateRing:1=7",
+                "mod:SGCraft:stargateBase:0=1",
+                "mod:SGCraft:rfPowerUnit:0=1",
+                "mod:SGCraft:stargateController:0=1",
+                "mod:SGCraft:sgChevronUpgrade:0=1",
+                "mod:SGCraft:sgIrisUpgrade:0=1");
+        c.highLevelSet = Arrays.asList(
+                "mod:dreamcraft:StargateFramePart|Stargate Frame Part",
+                "mod:dreamcraft:StargateChevron|Stargate Chevron",
+                "mod:dreamcraft:StargateShieldingFoil|Stargate-Radiation-Containment-Plate",
+                "prefixmat:block:MagMatter|Block of Magmatter",
+                "prefixmat:plateSuperdense:MagMatter|Superdense Magmatter Plate",
+                "prefixmat:nanite:MagMatter|Magmatter Nanite",
+                "prefixmat:plateSuperdense:WhiteDwarfMatter|Superdense White Dwarf Matter Plate",
+                "mod:GalacticraftAmunRa:tile.baseBlockRock:14|Block of Dark Matter",
+                "gt:Field_Generator_UXV|UXV Field Generator",
+                "gt:Electric_Piston_UXV|Electric Piston (UXV)",
+                "gt:Emitter_UXV|Emitter (UXV)",
+                "gt:Sensor_UXV|Sensor (UXV)",
+                "gt:GigaChad|Gigachad Token",
+                "gt:Transdimensional_Alignment_Matrix|Transdimensional Alignment Matrix",
+                "gt:SpaceElevatorModuleAssemblerT3|Space Assembler Module Mk-III",
+                "gt:MiningDroneUXV|Mining Drone MK-XIII (UXV)",
+                "mod:SGCraft:sgCoreCrystal|Stargate Core Crystal",
+                "mod:SGCraft:sgControllerCrystal|Stargate Controller Crystal",
+                "mod:OpenComputers:keyboard|Keyboard",
+                "mod:EnderIO:blockCapBank|Chaotic Capacitor Bank",
+                "mod:appliedenergistics2:tile.BlockSingularityCraftingStorage|Singularity Crafting Storage",
+                "mod:appliedenergistics2:item.ItemExtremeStorageCell.Universe|Artificial Universe ME Storage Cell",
+                "mod:ae2fc:fluid_storage.Universe|ME Fluid Artificial Universe Storage Cell",
+                "# TODO verify identifiers (tectech/eye-of-harmony/battery): Central Graviton Flow Modulator,"
+                        + " Stellar Energy Siphon Casing, Astral Array Fabricator, Cloud Computation Client Hatch,"
+                        + " Eye of Harmony, Compact Fusion Coil Mk-II Finaltype, Mega Ultimate Battery");
+        c.lowLevelSet = Arrays.asList(
+                "material:Iron|Iron|L",
+                "material:Copper|Copper|L",
+                "material:Tin|Tin|L",
+                "material:Neutronium|Neutronium|L",
+                "material:CosmicNeutronium|Cosmic Neutronium|L",
+                "material:Naquadria|Naquadria|L",
+                "material:Bedrockium|Bedrockium|L",
+                "material:Infinity|Infinity|L",
+                "material:Spacetime|Spacetime|L",
+                "material:Magmatter|Magmatter|L",
+                "material:WhiteDwarfMatter|White Dwarf Matter|L",
+                "material:BlackDwarfMatter|Black Dwarf Matter|L",
+                "material:Eternity|Eternity|L",
+                "material:Universium|Universium|L",
+                "material:Creon|Creon|L",
+                "material:Hypogen|Hypogen|L",
+                "material:Dragonblood|Dragonblood|L",
+                "material:TranscendentMetal|Transcendent Metal|L",
+                "material:Mellion|Mellion|L",
+                "material:Quantum|Quantum|L",
+                "material:Oganesson|Oganesson|L",
+                "material:Titanium|Titanium",
+                "material:Tungsten|Tungsten",
+                "material:Tritanium|Tritanium",
+                "material:Trinium|Trinium",
+                "material:Naquadah|Naquadah",
+                "material:Americium|Americium",
+                "material:Osmium|Osmium",
+                "material:Silver|Silver",
+                "material:Gold|Gold",
+                "ore:circuitMaster|LuV Circuits",
+                "ore:circuitUltimate|ZPM Circuits",
+                "# TODO add remaining low-level rows + MAX circuits; verify material mNames and circuit ore names"
+                        + " in-game (Radon, Super Coolant, Superconductor Base *, Six-Phased Copper, Lapis Dust,"
+                        + " Redstone, Diamonds, Nether Stars, Graviton Shards, Large Chaos Fragment, etc.)");
+        c.boldSet = Arrays.asList(
+                "material:Infinity",
+                "material:Spacetime",
+                "material:Magmatter",
+                "material:WhiteDwarfMatter",
+                "material:BlackDwarfMatter",
+                "material:Eternity",
+                "material:Universium",
+                "material:Creon",
+                "material:Hypogen",
+                "material:Dragonblood",
+                "material:TranscendentMetal",
+                "material:Mellion");
+        c.sourcePriority = Arrays.asList(
+                "assemblyline",
+                "gt:gt.recipe.plasmaforge",
+                "gt:gt.recipe.pcbfactory",
+                "gt:gt.recipe.assembler",
+                "gt:gt.recipe.circuitassembler",
+                "avaritia",
+                "gt:*",
+                "vanilla");
+        c.overrides = Arrays
+                .asList("# format: <itemId> => <sourceId>[ ; key=value ]   e.g. someBoard => gt:gt.recipe.pcbfactory");
+        c.outputDir = "sgcalc";
+        return c;
+    }
+}
