@@ -13,10 +13,12 @@ import java.util.function.Consumer;
 public final class RecipeSelector {
 
     private final List<String> sourcePriority;
+    private final List<String> denySources;
     private final List<Override> overrides = new ArrayList<>();
 
-    public RecipeSelector(List<String> sourcePriority, List<String> overrideSpecs) {
+    public RecipeSelector(List<String> sourcePriority, List<String> denySources, List<String> overrideSpecs) {
         this.sourcePriority = sourcePriority;
+        this.denySources = denySources;
         for (String spec : overrideSpecs) {
             if (spec == null || spec.trim().isEmpty() || spec.startsWith("#")) continue;
             overrides.add(Override.parse(spec));
@@ -24,7 +26,14 @@ public final class RecipeSelector {
     }
 
     public RecipeCandidate select(SGItem item, List<RecipeCandidate> candidates, Consumer<String> log) {
-        if (candidates.isEmpty()) return null;
+        // Drop recipe sources that should never be a production path (e.g. the replicator, which would create spurious
+        // UU-matter demand). If this leaves nothing, the item has no producer and resolves as a raw leaf.
+        List<RecipeCandidate> allowed = new ArrayList<>();
+        for (RecipeCandidate c : candidates) {
+            if (!isDenied(c.sourceId)) allowed.add(c);
+        }
+        if (allowed.isEmpty()) return null;
+        candidates = allowed;
 
         List<RecipeCandidate> pool = candidates;
         for (Override override : overrides) {
@@ -77,6 +86,14 @@ public final class RecipeSelector {
             if (sourceMatches(sourcePriority.get(i), sourceId)) return i;
         }
         return Integer.MAX_VALUE;
+    }
+
+    private boolean isDenied(String sourceId) {
+        for (String pattern : denySources) {
+            if (pattern == null || pattern.trim().isEmpty() || pattern.startsWith("#")) continue;
+            if (sourceMatches(pattern.trim(), sourceId)) return true;
+        }
+        return false;
     }
 
     private static boolean sourceMatches(String pattern, String sourceId) {

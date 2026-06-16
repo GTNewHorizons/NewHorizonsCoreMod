@@ -28,6 +28,7 @@ public final class SGCalcConfig {
     public List<String> lowLevelSet = new ArrayList<>();
     public List<String> boldSet = new ArrayList<>();
     public List<String> sourcePriority = new ArrayList<>();
+    public List<String> denySources = new ArrayList<>();
     public List<String> overrides = new ArrayList<>();
     public String outputDir = "sgcalc";
 
@@ -70,6 +71,7 @@ public final class SGCalcConfig {
         if (lowLevelSet == null) lowLevelSet = new ArrayList<>();
         if (boldSet == null) boldSet = new ArrayList<>();
         if (sourcePriority == null) sourcePriority = new ArrayList<>();
+        if (denySources == null) denySources = new ArrayList<>();
         if (overrides == null) overrides = new ArrayList<>();
         if (outputDir == null || outputDir.trim().isEmpty()) outputDir = "sgcalc";
         return this;
@@ -105,7 +107,7 @@ public final class SGCalcConfig {
     }
 
     public RecipeSelector selector() {
-        return new RecipeSelector(sourcePriority, overrides);
+        return new RecipeSelector(sourcePriority, denySources, overrides);
     }
 
     private static SGCalcConfig defaults() {
@@ -180,8 +182,14 @@ public final class SGCalcConfig {
                 "material:Osmium|Osmium",
                 "material:Silver|Silver",
                 "material:Gold|Gold",
+                "material:UUMatter|UU-Matter|L",
                 "ore:circuitMaster|LuV Circuits",
                 "ore:circuitUltimate|ZPM Circuits",
+                "mod:minecraft:rotten_flesh|Rotten Flesh",
+                "mod:minecraft:bone|Bone",
+                "mod:minecraft:beef|Raw Beef",
+                "mod:minecraft:skull:0|Skeleton Skull",
+                "mod:minecraft:skull:2|Zombie Head",
                 "# TODO add remaining low-level rows + MAX circuits; verify material mNames and circuit ore names"
                         + " in-game (Radon, Super Coolant, Superconductor Base *, Six-Phased Copper, Lapis Dust,"
                         + " Redstone, Diamonds, Nether Stars, Graviton Shards, Large Chaos Fragment, etc.)");
@@ -207,6 +215,9 @@ public final class SGCalcConfig {
                 "avaritia",
                 "gt:*",
                 "vanilla");
+        // Recipe sources never used as a producer. The replicator would replicate elements from UU-matter and the UU
+        // amplifier turns scrap into UU-matter; both create spurious demand. UU-matter is instead a raw (lowLevelSet).
+        c.denySources = Arrays.asList("gt:gt.recipe.replicator", "gt:gt.recipe.uuamplifier");
         c.overrides = Arrays
                 .asList("# format: <itemId> => <sourceId>[ ; key=value ]   e.g. someBoard => gt:gt.recipe.pcbfactory");
         c.outputDir = "sgcalc";
