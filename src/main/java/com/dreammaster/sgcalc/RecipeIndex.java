@@ -18,9 +18,17 @@ public final class RecipeIndex {
 
     private final Map<String, List<RecipeCandidate>> byOutput = new HashMap<>();
     private int recipeCount;
+    private int inputlessCount;
 
     public void add(RecipeCandidate candidate) {
         recipeCount++;
+        // A recipe whose inputs are all non-consumed (zero quantity, so all filtered out -- e.g. the Eye of Harmony
+        // display recipe, whose trigger item and fluids are quantity 0) consumes nothing and is not a real production
+        // path. Never offer it as a producer, otherwise it would make its outputs free.
+        if (candidate.inputs.isEmpty()) {
+            inputlessCount++;
+            return;
+        }
         for (RecipeCandidate.Output output : candidate.outputs) {
             byOutput.computeIfAbsent(output.item.key, k -> new ArrayList<>()).add(candidate);
         }
@@ -32,6 +40,10 @@ public final class RecipeIndex {
 
     public int recipeCount() {
         return recipeCount;
+    }
+
+    public int inputlessCount() {
+        return inputlessCount;
     }
 
     public int indexedOutputs() {

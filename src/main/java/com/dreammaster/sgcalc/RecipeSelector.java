@@ -40,10 +40,19 @@ public final class RecipeSelector {
             log.accept("override for " + item.key + " -> " + override.sourceId + " matched no candidate");
         }
 
+        // Prefer recipes where this item is the main product over recipes that emit it only as a byproduct (e.g. a
+        // centrifuge that yields it alongside many other outputs), falling back to byproduct recipes only if no
+        // primary producer exists.
+        List<RecipeCandidate> primary = new ArrayList<>();
+        for (RecipeCandidate c : pool) {
+            if (c.isPrimaryOutput(item.key)) primary.add(c);
+        }
+        List<RecipeCandidate> consider = primary.isEmpty() ? pool : primary;
+
         RecipeCandidate best = null;
         int bestRank = Integer.MAX_VALUE;
         int bestInputs = Integer.MAX_VALUE;
-        for (RecipeCandidate c : pool) {
+        for (RecipeCandidate c : consider) {
             int rank = priorityRank(c.sourceId);
             int inputs = c.inputs.size();
             if (rank < bestRank || (rank == bestRank && inputs < bestInputs)) {
@@ -52,11 +61,11 @@ public final class RecipeSelector {
                 bestInputs = inputs;
             }
         }
-        if (pool.size() > 1) {
+        if (consider.size() > 1) {
             log.accept(
                     "ambiguous " + item.key
                             + ": "
-                            + pool.size()
+                            + consider.size()
                             + " candidates, chose "
                             + (best != null ? best.sourceId : "none"));
         }

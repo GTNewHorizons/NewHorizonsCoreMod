@@ -89,7 +89,9 @@ public class SGCalcCommand extends CommandBase {
                                 + index.recipeCount()
                                 + " recipes across "
                                 + index.indexedOutputs()
-                                + " outputs. Unresolved leaves: high="
+                                + " outputs ("
+                                + index.inputlessCount()
+                                + " inputless recipes excluded). Unresolved leaves: high="
                                 + high.unresolvedCount
                                 + ", low="
                                 + low.unresolvedCount

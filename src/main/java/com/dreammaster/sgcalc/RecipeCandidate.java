@@ -23,6 +23,11 @@ public final class RecipeCandidate {
         return 1;
     }
 
+    /** Whether {@code key} is this recipe's main product (its first output), rather than a byproduct. */
+    public boolean isPrimaryOutput(String key) {
+        return !outputs.isEmpty() && outputs.get(0).item.key.equals(key);
+    }
+
     /** One input slot: any of {@link #alts} satisfies it, consuming {@link #amount} per craft. */
     public static final class Ingredient {
 
