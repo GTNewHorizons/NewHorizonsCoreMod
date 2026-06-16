@@ -1840,6 +1840,7 @@ dreamcraft.command.hazarditems.potion.header=List of Loaded Potions:
 dreamcraft.command.hazarditems.potion.entry= - %s - ID %s
 dreamcraft.command.reload.success=Reload complete. New config is activated.
 dreamcraft.command.reload.failure=Reload failed. Check your log for syntax errors.
+dreamcraft.command.sgcalc.usage=/sgcalc csv|wiki
 
 dreamcraft.customdrops.log_kill=Killed entity: [%s]
 dreamcraft.customdrops.debug.on=Death-Debug is now enabled

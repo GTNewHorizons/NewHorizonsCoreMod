@@ -47,6 +47,10 @@ public final class CoreModConfig {
         @Config.DefaultBoolean(false)
         public static boolean CustomDrops;
 
+        @Config.Comment("Set to true to enable the /sgcalc command, which resolves the full crafting cost of a Stargate. Uses config/sgcalc.json")
+        @Config.DefaultBoolean(false)
+        public static boolean SGCalc;
+
         @Config.Comment("A complete, full working example for a custom chest, with its own renderer for items and blocks, custom sound and a GUI")
         @Config.DefaultBoolean(true)
         public static boolean BabyChest;

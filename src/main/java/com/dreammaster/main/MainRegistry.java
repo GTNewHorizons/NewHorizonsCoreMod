@@ -30,6 +30,7 @@ import com.dreammaster.command.CustomDropsCommand;
 import com.dreammaster.command.CustomFuelsCommand;
 import com.dreammaster.command.CustomToolTipsCommand;
 import com.dreammaster.command.HazardousItemsCommand;
+import com.dreammaster.command.SGCalcCommand;
 import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.creativetab.ModTabList;
@@ -441,6 +442,9 @@ public class MainRegistry {
         }
         if (CoreModConfig.Modules.CustomDrops) {
             event.registerServerCommand(new CustomDropsCommand());
+        }
+        if (CoreModConfig.Modules.SGCalc) {
+            event.registerServerCommand(new SGCalcCommand());
         }
         if (Mods.BetterQuesting.isModLoaded()) {
             if (!bqConfig$ReloadOnStartup() && DreamCoreMod.modpackHasUpdated()) {
