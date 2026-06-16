@@ -75,6 +75,8 @@ public class SGCalcCommand extends CommandBase {
         File dir = new File(config.outputDir);
         dir.mkdirs();
         writeTrace(dir, resolver.trace());
+        reply(sender, CsvWriter.write(dir, "unresolved-high.csv", high.unresolved));
+        reply(sender, CsvWriter.write(dir, "unresolved-low.csv", low.unresolved));
 
         if (mode.equals("csv")) {
             reply(sender, CsvWriter.write(dir, "high-level.csv", high.entries));
@@ -91,11 +93,11 @@ public class SGCalcCommand extends CommandBase {
                                 + index.indexedOutputs()
                                 + " outputs ("
                                 + index.inputlessCount()
-                                + " inputless recipes excluded). Unresolved leaves: high="
-                                + high.unresolvedCount
+                                + " inputless recipes excluded). Below-frontier leaves: high="
+                                + high.unresolvedCount()
                                 + ", low="
-                                + low.unresolvedCount
-                                + " (see sgcalc-trace.log)."));
+                                + low.unresolvedCount()
+                                + " (see unresolved-*.csv to extend the config)."));
     }
 
     private void reply(ICommandSender sender, File file) {

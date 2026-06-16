@@ -65,30 +65,37 @@ public final class CostResolver {
         public final String label;
         public final String unit;
         public final boolean bold;
+        public final boolean resolved;
         public double amount;
 
-        Bucket(String label, String unit, boolean bold) {
+        Bucket(String label, String unit, boolean bold, boolean resolved) {
             this.label = label;
             this.unit = unit;
             this.bold = bold;
+            this.resolved = resolved;
         }
     }
 
     public static final class PassResult {
 
+        /** Items that matched the frontier allowlist -- the actual table rows. */
         public final List<Bucket> entries;
-        public final int unresolvedCount;
+        /** Items that decomposed past the frontier with no recipe -- below the frontier or a bad path; a tuning aid. */
+        public final List<Bucket> unresolved;
 
-        PassResult(List<Bucket> entries, int unresolvedCount) {
+        PassResult(List<Bucket> entries, List<Bucket> unresolved) {
             this.entries = entries;
-            this.unresolvedCount = unresolvedCount;
+            this.unresolved = unresolved;
+        }
+
+        public int unresolvedCount() {
+            return unresolved.size();
         }
     }
 
     public PassResult resolve(List<Root> roots, Frontier frontier, Frontier boldFrontier) {
         Map<String, Map<String, Double>> memo = new HashMap<>();
         Map<String, Bucket> buckets = new LinkedHashMap<>();
-        Set<String> unresolved = new HashSet<>();
         Set<String> visiting = new HashSet<>();
         Map<String, Double> totals = new HashMap<>();
 
@@ -100,7 +107,6 @@ public final class CostResolver {
                     boldFrontier,
                     memo,
                     buckets,
-                    unresolved,
                     visiting);
             for (Map.Entry<String, Double> e : unit.entrySet()) {
                 totals.merge(e.getKey(), e.getValue() * root.quantity(), Double::sum);
@@ -108,25 +114,27 @@ public final class CostResolver {
         }
 
         List<Bucket> entries = new ArrayList<>();
+        List<Bucket> unresolvedEntries = new ArrayList<>();
         for (Map.Entry<String, Double> e : totals.entrySet()) {
             Bucket bucket = buckets.get(e.getKey());
             if (bucket == null) continue;
             bucket.amount = e.getValue();
-            entries.add(bucket);
+            (bucket.resolved ? entries : unresolvedEntries).add(bucket);
         }
-        entries.sort(Comparator.comparingDouble((Bucket b) -> b.amount).reversed());
-        return new PassResult(entries, unresolved.size());
+        Comparator<Bucket> byAmountDesc = Comparator.comparingDouble((Bucket b) -> b.amount).reversed();
+        entries.sort(byAmountDesc);
+        unresolvedEntries.sort(byAmountDesc);
+        return new PassResult(entries, unresolvedEntries);
     }
 
     private Map<String, Double> unitCost(SGItem item, Frontier frontier, Frontier boldFrontier,
-            Map<String, Map<String, Double>> memo, Map<String, Bucket> buckets, Set<String> unresolved,
-            Set<String> visiting) {
+            Map<String, Map<String, Double>> memo, Map<String, Bucket> buckets, Set<String> visiting) {
         Matcher matcher = frontier.find(item);
         if (matcher != null) {
             String key = matcher.bucketKey();
             buckets.computeIfAbsent(
                     key,
-                    k -> new Bucket(matcher.label(item), unitOf(matcher), isBold(boldFrontier, item)));
+                    k -> new Bucket(matcher.label(item), unitOf(matcher), isBold(boldFrontier, item), true));
             return Collections.singletonMap(key, perUnitContribution(matcher, item));
         }
 
@@ -134,12 +142,12 @@ public final class CostResolver {
         if (cached != null) return cached;
         if (visiting.contains(item.key)) {
             trace.add("cycle broken at " + item.key);
-            return leaf(item, boldFrontier, buckets, unresolved);
+            return leaf(item, boldFrontier, buckets);
         }
 
         RecipeCandidate recipe = selector.select(item, index.producersOf(item.key), trace::add);
         if (recipe == null) {
-            Map<String, Double> result = leaf(item, boldFrontier, buckets, unresolved);
+            Map<String, Double> result = leaf(item, boldFrontier, buckets);
             memo.put(item.key, result);
             return result;
         }
@@ -149,7 +157,7 @@ public final class CostResolver {
         Map<String, Double> result = new HashMap<>();
         for (Ingredient ing : recipe.inputs) {
             SGItem alt = chooseAlt(ing, frontier);
-            Map<String, Double> sub = unitCost(alt, frontier, boldFrontier, memo, buckets, unresolved, visiting);
+            Map<String, Double> sub = unitCost(alt, frontier, boldFrontier, memo, buckets, visiting);
             double factor = (double) ing.amount / produced;
             for (Map.Entry<String, Double> e : sub.entrySet()) {
                 result.merge(e.getKey(), e.getValue() * factor, Double::sum);
@@ -160,13 +168,11 @@ public final class CostResolver {
         return result;
     }
 
-    private Map<String, Double> leaf(SGItem item, Frontier boldFrontier, Map<String, Bucket> buckets,
-            Set<String> unresolved) {
+    private Map<String, Double> leaf(SGItem item, Frontier boldFrontier, Map<String, Bucket> buckets) {
         String key = "unresolved:" + item.key;
-        unresolved.add(item.key);
         buckets.computeIfAbsent(
                 key,
-                k -> new Bucket(item.displayName(), item.isFluid() ? "L" : "", isBold(boldFrontier, item)));
+                k -> new Bucket(item.displayName(), item.isFluid() ? "L" : "", isBold(boldFrontier, item), false));
         return Collections.singletonMap(key, 1.0);
     }
 

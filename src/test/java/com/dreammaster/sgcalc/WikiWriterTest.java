@@ -16,7 +16,7 @@ import com.dreammaster.sgcalc.CostResolver.Bucket;
 class WikiWriterTest {
 
     private static Bucket bucket(String label, String unit, boolean bold, double amount) {
-        Bucket b = new Bucket(label, unit, bold);
+        Bucket b = new Bucket(label, unit, bold, true);
         b.amount = amount;
         return b;
     }
