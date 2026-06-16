@@ -1,7 +1,10 @@
 item.AbsoluteZeroDisc.name=Cosmic Music Disc
 item.record.dreamcraft:absolute_zero.desc="Absolute Zero" by Sol IX
+item.BlankMusicDisc.name=Blank Music Disc
 item.FloraDisc.name=Primal Music Disc
 item.record.dreamcraft:flora.desc="Flora" by Sol IX
+item.LunchBreakDisc.name=Tasty Music Disc
+item.record.dreamcraft:lunch_break.desc="Lunch Break" by Sol IX
 item.SweetDreamsDisc.name=Technological Music Disc
 item.record.dreamcraft:sweet_dreams.desc="Sweet Dreams" by Aviators
 item.TenKCell.name=10K Cell
@@ -903,6 +906,15 @@ tc.research_category.NEWHORIZONS=New Horizons
 tc.research_name.WITHERRING=Wither Protection Ring
 tc.research_text.WITHERRING=[NH] Wither...? It is star farming time
 NewHorizons.research_page.WITHERRING=The Wither Protection Ring is a very special ring. Now you find a way to rid of the nasty withering effect. With this Ring it is time to farm some Netherstars. Good luck!!!
+tc.research_name.MECHANICALARMOR_GOGGLES=Magic and Mechanical Armor
+tc.research_text.MECHANICALARMOR_GOGGLES=[NH] Techno-magical fusion
+NewHorizons.research_page.MECHANICALARMOR_GOGGLES=Mechanical Armor makes for a fine power suit, but with your knowledge of the arcane it could be even more powerful. By carefully extracting a lens from your Goggles of Revealing, you can transfer its properties into an armor augment.
+tc.research_name.MECHANICALARMOR_BOOTS=Mechanical Boots of the Traveler
+tc.research_text.MECHANICALARMOR_BOOTS=[NH] Gotta go faster
+NewHorizons.research_page.MECHANICALARMOR_BOOTS=Your previous success in blending technological and mechanical armor makes you want to try something a little bolder. By infusing the essence of the Boots of the Traveler into an augment, you can make something stronger than the sum of its parts.
+tc.research_name.MECHANICALARMOR_MILK=Milk Infusion
+tc.research_text.MECHANICALARMOR_MILK=[NH] For what ails you
+NewHorizons.research_page.MECHANICALARMOR_MILK=The talisman of remedium is a useful way to cleanse yourself of many ailments, but as a proud techno-mage, you want something a little more automatic.
 tc.research_name.EMINENCESTONE=Carved 'Eminence' Stone
 tc.research_text.EMINENCESTONE=[EU] Portal Stones
 ExtraUtilities.research_page.EMINENCESTONE=A stone with trans-dimensional capacities. Can be used to craft a portal to The Last Millenium, or as expensive decoration block.
@@ -1768,6 +1780,7 @@ dreamcraft.gui.quitmessage.no=No
 dreamcraft.gui.quitmessage.never=Don't Show Again!
 
 dreamcraft.welcome.welcome=Welcome to GregTech: New Horizons %s
+dreamcraft.welcome.guide=See what's new in the guide! Bind a hotkey to use it.
 dreamcraft.welcome.questbook=The Quest Book has a shortcut key, check your keybindings.
 dreamcraft.welcome.gtnh_wiki=GTNH Wiki link: %s
 dreamcraft.welcome.click_wiki=Click to open the wiki!
@@ -1833,3 +1846,22 @@ dreamcraft.customdrops.debug.on=Death-Debug is now enabled
 dreamcraft.customdrops.debug.off=Death-Debug is now disabled
 
 fluid.Concrete=Concrete
+
+# BW Bio Name
+bw.bioname.barnadafis_arboriatoris=Barnadafis Arboriatoris
+bw.bioname.tcetieis_fucus_serratus=TCetiEis Fucus Serratus
+bw.bioname.xenoxene_xenoxsis=Xenoxene Xenoxsis
+bw.bioname.ovumbac=Ova Evolutionis
+bw.bioname.ova_evolutionis=Ova Evolutionis
+bw.bioname.stemcellbac=Derivantur Cellula Evolutionis
+bw.bioname.derivantur_cellula_evolutionis=Derivantur Cellula Evolutionis
+bw.bioname.biocellbac=Cellula Biologicum Evolutione
+bw.bioname.cellula_biologicum_evolutione=Cellula Biologicum Evolutione
+bw.bioname.binnigrowthmedium=Binni Growth Medium
+bw.bioname.binni_growth_medium=Binni Growth Medium
+bw.bioname.binnibacteria=Binni Bacteria
+bw.bioname.binni_bacteria=Binni Bacteria
+bw.bioname.bacterialsludgebac=Corynebacterium Sludge Marsensis
+bw.bioname.corynebacterium_sludge_marsensis=Corynebacterium Sludge Marsensis
+bw.bioname.mutagen=Mutagen Bacteria a Spatio
+bw.bioname.mutagen_bacteria_a_spatio=Mutagen Bacteria a Spatio

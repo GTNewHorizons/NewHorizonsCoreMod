@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.MeatCooked;
 import static gregtech.api.enums.Materials.MeatRaw;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -40,6 +39,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -119,7 +119,6 @@ public class ScriptEFR implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                AE2Stuff.ID,
                 AdventureBackpack.ID,
                 AppliedEnergistics2.ID,
                 BiomesOPlenty.ID,
@@ -330,48 +329,6 @@ public class ScriptEFR implements IScriptLoader {
             }
         }
 
-        // Color Beds
-
-        final String[] colorBeds = { "white_bed", "orange_bed", "magenta_bed", "light_blue_bed", "yellow_bed",
-                "lime_bed", "pink_bed", "gray_bed", "light_gray_bed", "cyan_bed", "purple_bed", "blue_bed", "brown_bed",
-                "green_bed", "black_bed" };
-        final int[] bedCarpetMetas = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15 };
-        OreDictItemStack plankWood = new OreDictItemStack("plankWood", 2);
-
-        for (int i = 0; i < colorBeds.length; i++) {
-            String bedType = colorBeds[i];
-            int carpetType = bedCarpetMetas[i];
-
-            GTModHandler.addCraftingRecipe(
-                    getModItem(EtFuturumRequiem.ID, bedType, 1, 0),
-                    bits,
-                    new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1, carpetType), 'B',
-                            "plankWood", 'C', "fenceWood", 'D', "craftingToolSoftMallet" });
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Minecraft.ID, "carpet", 2, carpetType),
-                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
-                            plankWood)
-                    .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, bedType, 1, 0)).duration(5 * SECONDS)
-                    .eut(24).addTo(assemblerRecipes);
-        }
-
-        // Regular Minecraft Bed
-
-        GTModHandler.addCraftingRecipe(
-                getModItem(Minecraft.ID, "bed", 1, 0),
-                bits,
-                new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1, 14), 'B', "plankWood",
-                        'C', "fenceWood", 'D', "craftingToolSoftMallet" });
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, 14),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
-                        plankWood)
-                .circuit(1).itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-
         // Regular Copper Trapdoors
 
         GTModHandler.addCraftingRecipe(
@@ -575,8 +532,8 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Barrel Upgrades
         GTValues.RA.stdBuilder()
@@ -878,81 +835,117 @@ public class ScriptEFR implements IScriptLoader {
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "soul_lantern", 4, 0)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        // BlackStone recipes
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.cobblestone, 64, 0))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.graniteblack"), 1152)).circuit(4)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blackstone", 64, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "blackstone", 1, 0))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "gilded_blackstone", 1, 0))
+                .fluidInputs(Materials.Gold.getMolten(188L)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(chemicalBathRecipes);
+
+        // Smooth Blocks
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0),
                 getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0));
 
         GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 15),
-                getModItem(EtFuturumRequiem.ID, "black_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 14),
-                getModItem(EtFuturumRequiem.ID, "red_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 13),
-                getModItem(EtFuturumRequiem.ID, "green_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 12),
-                getModItem(EtFuturumRequiem.ID, "brown_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 3),
-                getModItem(EtFuturumRequiem.ID, "light_blue_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 4),
-                getModItem(EtFuturumRequiem.ID, "yellow_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 5),
-                getModItem(EtFuturumRequiem.ID, "lime_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 6),
-                getModItem(EtFuturumRequiem.ID, "pink_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 0),
-                getModItem(EtFuturumRequiem.ID, "white_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 7),
-                getModItem(EtFuturumRequiem.ID, "gray_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 8),
-                getModItem(EtFuturumRequiem.ID, "light_gray_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 9),
-                getModItem(EtFuturumRequiem.ID, "cyan_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 10),
-                getModItem(EtFuturumRequiem.ID, "purple_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 11),
-                getModItem(EtFuturumRequiem.ID, "blue_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 2),
-                getModItem(EtFuturumRequiem.ID, "magenta_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 1),
-                getModItem(EtFuturumRequiem.ID, "orange_glazed_terracotta", 1, 0));
-
-        GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "quartz_block", 1, 0),
                 getModItem(EtFuturumRequiem.ID, "smooth_quartz", 1, 0));
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 0), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 0)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 2), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 2)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log2, 1, 0), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 0)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log2, 1, 1), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 1)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 1), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 1)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
+        String[] colors = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray",
+                "cyan", "purple", "blue", "brown", "green", "red", "black" };
+
+        // Glazed Terracotta
+        for (int i = 0; i < colors.length; i++) {
+            GTModHandler.addSmeltingRecipe(
+                    new ItemStack(Blocks.stained_hardened_clay, 1, i),
+                    getModItem(EtFuturumRequiem.ID, colors[i] + "_glazed_terracotta", 1, 0));
+        }
+
+        // Beds
+        OreDictItemStack plankWood = new OreDictItemStack("plankWood", 2);
+
+        for (int i = 0; i < colors.length; i++) {
+            String bedType = colors[i] + "_bed";
+            ItemStack bed = i == 14 ? getModItem(Minecraft.ID, "bed", 1, 0)
+                    : getModItem(EtFuturumRequiem.ID, bedType, 1, 0);
+
+            GTModHandler.addCraftingRecipe(
+                    bed,
+                    bits,
+                    new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1, i), 'B', "plankWood",
+                            'C', "fenceWood", 'D', "craftingToolSoftMallet" });
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "carpet", 2, i),
+                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
+                            plankWood)
+                    .circuit(1).itemOutputs(bed).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+        }
+
+        // Stripped Logs in Extruder
+        for (int i = 0; i < 4; i++) {
+            for (int j = 1; j < 5; j++) {
+                // Biomes O' Plenty
+                String n = j == 1 ? "" : j + "";
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(BiomesOPlenty.ID, "logs" + j, 1, i),
+                                ItemList.Shape_Extruder_Block.get(0L))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, ("bop_log_stripped" + n), 1, i))
+                        .duration(6 * SECONDS).eut(80).addTo(extruderRecipes);
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(EtFuturumRequiem.ID, "bop_wood" + n, 1, i),
+                                ItemList.Shape_Extruder_Block.get(0L))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, ("bop_wood_stripped" + n), 1, i))
+                        .duration(6 * SECONDS).eut(80).addTo(extruderRecipes);
+            }
+            // Vanilla log
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, i)).duration(6 * SECONDS).eut(80)
+                    .addTo(extruderRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(EtFuturumRequiem.ID, "bark", 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, i)).duration(6 * SECONDS).eut(80)
+                    .addTo(extruderRecipes);
+
+            // Witchery
+            if (i == 3) continue;
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(Witchery.ID, "witchlog", 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "witchery_log_stripped", 1, i)).duration(6 * SECONDS)
+                    .eut(80).addTo(extruderRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(EtFuturumRequiem.ID, "witchery_wood", 1, i),
+                            ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "witchery_wood_stripped", 1, i)).duration(6 * SECONDS)
+                    .eut(80).addTo(extruderRecipes);
+
+            // Vanilla log2
+            if (i == 2) continue;
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log2, 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, i)).duration(6 * SECONDS).eut(80)
+                    .addTo(extruderRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(EtFuturumRequiem.ID, "bark2", 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "wood2_stripped", 1, i)).duration(6 * SECONDS).eut(80)
+                    .addTo(extruderRecipes);
+
+        }
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 0), ItemList.Shape_Extruder_Block.get(0L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2)).duration(6 * SECONDS).eut(80)
+                .addTo(extruderRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 1), ItemList.Shape_Extruder_Block.get(0L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 3)).duration(6 * SECONDS).eut(80)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1001,7 +994,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "amethyst_block", 64, 0),
-                        getModItem(AE2Stuff.ID, "Grower", 6, 0),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCrystalGrowthChamber", 6, 0),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 6, 0),
                         getModItem(Thaumcraft.ID, "blockCrystal", 6, 7),
                         getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0),

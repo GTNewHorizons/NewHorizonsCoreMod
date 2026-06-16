@@ -602,7 +602,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 5L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 2L))
-                .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 9))
+                .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 5))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()

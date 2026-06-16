@@ -18,7 +18,10 @@ import static toxiceverglades.dimension.DimensionEverglades.blockSecondLayer;
 
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.item.NHItemList;
+
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -231,6 +234,66 @@ public class NeutroniumCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputsUnsafe(GTUtility.copyAmountUnsafe(4321, new ItemStack(blockSecondLayer)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.toxic.singularity"))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
+
+            // Computation Singularities
+            GTValues.RA.stdBuilder().itemInputsUnsafe(GTUtility.copyAmountUnsafe(2147483647, ItemList.NandChip.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 0))
+                    .duration(81920 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(1073741824, ItemList.Circuit_Microprocessor.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 1))
+                    .duration(40960 * SECONDS).eut(TierEU.RECIPE_LV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(536870912, ItemList.Circuit_Processor.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 2))
+                    .duration(20480 * SECONDS).eut(TierEU.RECIPE_MV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(268435456, ItemList.Circuit_Nanoprocessor.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 3))
+                    .duration(10240 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(67108864, ItemList.Circuit_Quantumprocessor.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 4))
+                    .duration(5120 * SECONDS).eut(TierEU.RECIPE_EV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(33554432, ItemList.Circuit_Crystalprocessor.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 5))
+                    .duration(2560 * SECONDS).eut(TierEU.RECIPE_IV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(16777216, ItemList.Circuit_Neuroprocessor.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 6))
+                    .duration(1280 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(8388608, ItemList.Circuit_Bioprocessor.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 7))
+                    .duration(640 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(2097152, ItemList.Circuit_Crystalmainframe.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 8))
+                    .duration(320 * SECONDS).eut(TierEU.RECIPE_UV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(1048576, ItemList.Circuit_Wetwaremainframe.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 9))
+                    .duration(160 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(524288, ItemList.Circuit_Biomainframe.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 0))
+                    .duration(80 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(262144, ItemList.Circuit_OpticalMainframe.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 1))
+                    .duration(40 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder().itemInputsUnsafe(GTUtility.copyAmountUnsafe(131072, NHItemList.PikoCircuit.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 2))
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(65536, NHItemList.QuantumCircuit.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 3))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(16384, NHItemList.PlanckCircuit.get(1)))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 4))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MAX).addTo(neutroniumCompressorRecipes);
 
             if (ThaumicBases.isModLoaded()) {
                 GTValues.RA.stdBuilder()
@@ -446,6 +509,16 @@ public class NeutroniumCompressorRecipes implements Runnable {
             // Copper Singularity
             GTValues.RA.stdBuilder().fluidInputs(Materials.Copper.getMolten(3648 * 9 * 144L))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 5)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Tin Singularity
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Tin.getMolten(3648 * 9 * 144L))
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 6)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Leaden Singularity
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Lead.getMolten(3648 * 9 * 144L))
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 7)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
         }
     }

@@ -127,7 +127,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Nanochip Complex Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(ItemRegistry.bw_realglas, 8, 14),
+                        new ItemStack(ItemRegistry.bw_realglas, 8, 6),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RoseGold, 64),
                         GregtechItemList.Laser_Lens_Special.get(0))
                 .fluidInputs(WerkstoffMaterialPool.FluoroformOxygenMix.getFluidOrGas(2000))
@@ -321,7 +321,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Robot_Arm_UEV.get(1),
                         ItemList.Machine_Multi_IndustrialLaserEngraver.get(1),
-                        GregtechItemList.Industrial_CuttingFactoryController.get(1),
+                        ItemList.IndustrialCuttingMachine.get(1),
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1),
                         NHItemList.ChromaticLens.get(1))
                 .fluidInputs(
