@@ -22,7 +22,8 @@ import com.dreammaster.sgcalc.WikiWriter;
 
 /**
  * Resolves the full crafting cost of one Stargate and writes a high-level and low-level breakdown, either as CSV
- * (`/sgcalc csv`) or as MediaWiki tables (`/sgcalc wiki`). Behaviour is driven entirely by `config/sgcalc.json`.
+ * (`/sgcalc csv`) or as MediaWiki tables (`/sgcalc wiki`). `/sgcalc reload` re-reads and validates the config without
+ * resolving. Behaviour is driven entirely by `config/sgcalc.json`.
  */
 public class SGCalcCommand extends CommandBase {
 
@@ -47,8 +48,13 @@ public class SGCalcCommand extends CommandBase {
             throw new WrongUsageException(getCommandUsage(sender));
         }
         String mode = args[0].toLowerCase();
-        if (!mode.equals("csv") && !mode.equals("wiki")) {
+        if (!mode.equals("csv") && !mode.equals("wiki") && !mode.equals("reload")) {
             throw new WrongUsageException(getCommandUsage(sender));
+        }
+
+        if (mode.equals("reload")) {
+            reload(sender);
+            return;
         }
 
         sender.addChatMessage(
@@ -58,6 +64,40 @@ public class SGCalcCommand extends CommandBase {
         } catch (Exception e) {
             MainRegistry.LOGGER.error("sgcalc failed", e);
             sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + "sgcalc failed: " + e.getMessage()));
+        }
+    }
+
+    /**
+     * Re-reads `config/sgcalc.json` and reports whether it parsed, without running the resolver. The config is read
+     * fresh on every {@code csv}/{@code wiki} run anyway, so this is a quick way to validate edits in place.
+     */
+    private void reload(ICommandSender sender) {
+        try {
+            SGCalcConfig config = SGCalcConfig.loadOrCreate(new File("config", "sgcalc.json"));
+            if (config.loadWarning != null) {
+                sender.addChatMessage(new ChatComponentText(EnumChatFormatting.YELLOW + config.loadWarning));
+                return;
+            }
+            sender.addChatMessage(
+                    new ChatComponentText(
+                            EnumChatFormatting.GREEN + "Reloaded config/sgcalc.json: "
+                                    + EnumChatFormatting.WHITE
+                                    + config.composition.size()
+                                    + " composition, "
+                                    + config.highLevelSet.size()
+                                    + " high-level, "
+                                    + config.lowLevelSet.size()
+                                    + " low-level, "
+                                    + config.overrides.size()
+                                    + " overrides, "
+                                    + config.denySources.size()
+                                    + " denied, "
+                                    + config.rawSources.size()
+                                    + " raw sources."));
+        } catch (Exception e) {
+            MainRegistry.LOGGER.error("sgcalc reload failed", e);
+            sender.addChatMessage(
+                    new ChatComponentText(EnumChatFormatting.RED + "sgcalc reload failed: " + e.getMessage()));
         }
     }
 
@@ -122,7 +162,7 @@ public class SGCalcCommand extends CommandBase {
     @Override
     public List<String> addTabCompletionOptions(ICommandSender sender, String[] args) {
         if (args.length == 1) {
-            return getListOfStringsMatchingLastWord(args, "csv", "wiki");
+            return getListOfStringsMatchingLastWord(args, "csv", "wiki", "reload");
         }
         return null;
     }
