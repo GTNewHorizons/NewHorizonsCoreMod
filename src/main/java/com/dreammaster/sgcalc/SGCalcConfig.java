@@ -174,6 +174,7 @@ public final class SGCalcConfig {
                 "material:TranscendentMetal|Transcendent Metal|L",
                 "material:Mellion|Mellion|L",
                 "material:Quantum|Quantum|L",
+                "material:Shirabon|Shirabon|L",
                 "material:Oganesson|Oganesson|L",
                 "material:Titanium|Titanium",
                 "material:Tungsten|Tungsten",
@@ -220,13 +221,15 @@ public final class SGCalcConfig {
                 "material:Mellion");
         // Recipe sources never used as a producer. The replicator and UU amplifier fabricate UU-matter, which is a raw
         // (lowLevelSet) instead; the canner only moves fluids in and out of cells; the extreme heat exchanger is a fuel
-        // converter rather than a crafting step; and vanilla crafting offers reverse/uncraft recipes that short-circuit
-        // real production chains.
+        // converter rather than a crafting step; the packager and unpackager only box and unbox an existing item; and
+        // vanilla crafting offers reverse/uncraft recipes that short-circuit real production chains.
         c.denySources = Arrays.asList(
                 "gt:gt.recipe.replicator",
                 "gt:gt.recipe.uuamplifier",
                 "gt:gt.recipe.canner",
                 "gt:gg.recipe.extreme_heat_exchanger",
+                "gt:gt.recipe.packager",
+                "gt:gt.recipe.unpackager",
                 "vanilla");
         // Recipe sources whose outputs are raw ingredients: they stop recursing and are counted as-is. The Eye of
         // Harmony (rare materials), the Godforge exotic module, the Quantum Force Transformer, and the mass fabricator

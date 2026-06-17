@@ -108,7 +108,12 @@ public final class Matcher {
             case MATERIAL -> {
                 if (item.fluid != null) {
                     Materials m = Materials.getGtMaterialFromFluid(item.fluid.getFluid());
-                    return m != null && value.equals(m.mName);
+                    if (m != null && value.equals(m.mName)) return true;
+                    // GregTech++ and BartWorks materials are not GregTech Materials, so the lookup above misses them;
+                    // their molten fluid is registered as "molten.<MaterialName>", so match that directly. Solid forms
+                    // are solidified from this fluid, so they are counted as it decomposes back through the frontier.
+                    String fluidName = item.fluid.getFluid().getName();
+                    return fluidName != null && fluidName.equalsIgnoreCase("molten." + value);
                 }
                 if (item.stack == null) return false;
                 ItemData d = GTOreDictUnificator.getAssociation(item.stack);
