@@ -60,6 +60,6 @@ public final class AssemblyLineSource implements RecipeSource {
                 if (GridInputs.isValid(in)) inputs.add(GridInputs.fluidIngredient(in));
             }
         }
-        sink.accept(new RecipeCandidate("assemblyline", inputs, outputs));
+        sink.accept(new RecipeCandidate("assemblyline", inputs, outputs, recipe.mEUt, recipe.mDuration));
     }
 }

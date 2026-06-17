@@ -27,7 +27,6 @@ public final class SGCalcConfig {
     public List<String> highLevelSet = new ArrayList<>();
     public List<String> lowLevelSet = new ArrayList<>();
     public List<String> boldSet = new ArrayList<>();
-    public List<String> sourcePriority = new ArrayList<>();
     public List<String> denySources = new ArrayList<>();
     public List<String> rawSources = new ArrayList<>();
     public List<String> rawProviders = new ArrayList<>();
@@ -72,7 +71,6 @@ public final class SGCalcConfig {
         if (highLevelSet == null) highLevelSet = new ArrayList<>();
         if (lowLevelSet == null) lowLevelSet = new ArrayList<>();
         if (boldSet == null) boldSet = new ArrayList<>();
-        if (sourcePriority == null) sourcePriority = new ArrayList<>();
         if (denySources == null) denySources = new ArrayList<>();
         if (rawSources == null) rawSources = new ArrayList<>();
         if (rawProviders == null) rawProviders = new ArrayList<>();
@@ -111,7 +109,7 @@ public final class SGCalcConfig {
     }
 
     public RecipeSelector selector() {
-        return new RecipeSelector(sourcePriority, denySources, overrides);
+        return new RecipeSelector(denySources, overrides);
     }
 
     private static SGCalcConfig defaults() {
@@ -211,19 +209,6 @@ public final class SGCalcConfig {
                 "material:Dragonblood",
                 "material:TranscendentMetal",
                 "material:Mellion");
-        c.sourcePriority = Arrays.asList(
-                "gt:gt.recipe.spaceAssembler",
-                "assemblyline",
-                "gt:gt.recipe.plasmaforge",
-                "gt:gt.recipe.pcbfactory",
-                "gt:gt.recipe.assembler",
-                "gt:gt.recipe.circuitassembler",
-                "gt:gt.recipe.fluidsolidifier",
-                "gt:gt.recipe.fog_plasma",
-                "gt:gt.recipe.fusionreactor",
-                "avaritia",
-                "gt:*",
-                "vanilla");
         // Recipe sources never used as a producer. The replicator would replicate elements from UU-matter and the UU
         // amplifier turns scrap into UU-matter; both create spurious demand. UU-matter is instead a raw (lowLevelSet).
         c.denySources = Arrays.asList("gt:gt.recipe.replicator", "gt:gt.recipe.uuamplifier");

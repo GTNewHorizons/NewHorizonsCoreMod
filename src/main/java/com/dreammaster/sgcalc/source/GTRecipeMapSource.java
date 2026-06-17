@@ -44,8 +44,11 @@ public final class GTRecipeMapSource implements RecipeSource {
     private static void collect(String sourceId, GTRecipe recipe, Consumer<RecipeCandidate> sink) {
         List<Output> outputs = new ArrayList<>();
         if (recipe.mOutputs != null) {
-            for (ItemStack out : recipe.mOutputs) {
-                if (GridInputs.isValid(out)) outputs.add(GridInputs.stackOutput(out));
+            for (int i = 0; i < recipe.mOutputs.length; i++) {
+                ItemStack out = recipe.mOutputs[i];
+                if (GridInputs.isValid(out)) {
+                    outputs.add(new Output(SGItem.of(out), out.stackSize, recipe.getOutputChance(i)));
+                }
             }
         }
         if (recipe.mFluidOutputs != null) {
@@ -67,6 +70,6 @@ public final class GTRecipeMapSource implements RecipeSource {
                 if (GridInputs.isValid(in)) inputs.add(GridInputs.fluidIngredient(in));
             }
         }
-        sink.accept(new RecipeCandidate(sourceId, inputs, outputs));
+        sink.accept(new RecipeCandidate(sourceId, inputs, outputs, recipe.mEUt, recipe.mDuration));
     }
 }
