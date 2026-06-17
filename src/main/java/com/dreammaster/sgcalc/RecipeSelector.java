@@ -2,7 +2,10 @@ package com.dreammaster.sgcalc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
+
+import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
 
 /**
  * Chooses which recipe to follow when several produce the same item. After per-item overrides and denied sources are
@@ -23,7 +26,8 @@ public final class RecipeSelector {
         }
     }
 
-    public RecipeCandidate select(SGItem item, List<RecipeCandidate> candidates, Consumer<String> log) {
+    public RecipeCandidate select(SGItem item, List<RecipeCandidate> candidates, Set<String> visiting,
+            Consumer<String> log) {
         // Drop recipe sources that should never be a production path (e.g. the replicator, which would create spurious
         // UU-matter demand). If this leaves nothing, the item has no producer and resolves as a raw leaf.
         List<RecipeCandidate> allowed = new ArrayList<>();
@@ -45,6 +49,19 @@ public final class RecipeSelector {
             }
             log.accept("override for " + item.displayName() + " -> " + override.sourceId + " matched no candidate");
         }
+
+        // Drop recipes that would consume an item still being resolved further up the stack (including the item
+        // itself); following one would form a production cycle, such as a rod cut from a long rod that is in turn
+        // forged from rods. If every producer is cyclic the item has no acyclic path and resolves as a raw leaf.
+        List<RecipeCandidate> acyclic = new ArrayList<>();
+        for (RecipeCandidate c : pool) {
+            if (!createsCycle(c, visiting)) acyclic.add(c);
+        }
+        if (acyclic.isEmpty()) {
+            log.accept("no acyclic recipe for " + item.displayName() + "; every producer needs an in-progress item");
+            return null;
+        }
+        pool = acyclic;
 
         RecipeCandidate best = null;
         for (RecipeCandidate c : pool) {
@@ -75,6 +92,21 @@ public final class RecipeSelector {
         if (c.euT != best.euT) return c.euT > best.euT;
         if (c.inputs.size() != best.inputs.size()) return c.inputs.size() < best.inputs.size();
         return c.sourceId.compareTo(best.sourceId) < 0;
+    }
+
+    /** A candidate is cyclic when one of its inputs can only be satisfied by an item that is already being resolved. */
+    private static boolean createsCycle(RecipeCandidate candidate, Set<String> visiting) {
+        for (Ingredient ing : candidate.inputs) {
+            boolean satisfiable = false;
+            for (SGItem alt : ing.alts) {
+                if (!visiting.contains(alt.key)) {
+                    satisfiable = true;
+                    break;
+                }
+            }
+            if (!satisfiable) return true;
+        }
+        return false;
     }
 
     private boolean isDenied(String sourceId) {

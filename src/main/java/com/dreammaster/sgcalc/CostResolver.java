@@ -161,18 +161,21 @@ public final class CostResolver {
             return leaf(item, boldFrontier, buckets);
         }
 
-        RecipeCandidate recipe = selector.select(item, index.producersOf(item.key), trace::add);
+        // Add the item to the in-progress set before selecting so the selector can reject any producer that would
+        // consume it (or an ancestor) and form a cycle.
+        visiting.add(item.key);
+        RecipeCandidate recipe = selector.select(item, index.producersOf(item.key), visiting, trace::add);
         if (recipe == null) {
+            visiting.remove(item.key);
             Map<String, Double> result = leaf(item, boldFrontier, buckets);
             memo.put(item.key, result);
             return result;
         }
 
-        visiting.add(item.key);
         long produced = recipe.outputAmount(item.key);
         Map<String, Double> result = new HashMap<>();
         for (Ingredient ing : recipe.inputs) {
-            SGItem alt = chooseAlt(ing, frontier);
+            SGItem alt = chooseAlt(ing, frontier, visiting);
             Map<String, Double> sub = unitCost(
                     alt,
                     frontier,
@@ -219,13 +222,16 @@ public final class CostResolver {
         return matcher.type == Matcher.Type.MATERIAL ? "L" : "";
     }
 
-    private SGItem chooseAlt(Ingredient ing, Frontier frontier) {
+    private SGItem chooseAlt(Ingredient ing, Frontier frontier, Set<String> visiting) {
         if (ing.alts.size() == 1) return ing.alts.get(0);
         for (SGItem alt : ing.alts) {
-            if (frontier.find(alt) != null) return alt;
+            if (!visiting.contains(alt.key) && frontier.find(alt) != null) return alt;
         }
         for (SGItem alt : ing.alts) {
-            if (!index.producersOf(alt.key).isEmpty()) return alt;
+            if (!visiting.contains(alt.key) && !index.producersOf(alt.key).isEmpty()) return alt;
+        }
+        for (SGItem alt : ing.alts) {
+            if (!visiting.contains(alt.key)) return alt;
         }
         SGItem guess = ing.alts.get(0);
         trace.add("ore-dict input guessed -> " + guess.displayName());
