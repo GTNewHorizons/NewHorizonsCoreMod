@@ -1,8 +1,10 @@
 package com.dreammaster.sgcalc;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -31,6 +33,9 @@ public final class CostResolver {
     private final RecipeIndex index;
     private final RecipeSelector selector;
     private final List<String> trace = new ArrayList<>();
+    /** Stack of `item <recipe-source>` frames for the chain currently being resolved, used to report leaf consumers. */
+    private final Deque<String> consumerPath = new ArrayDeque<>();
+    private final Set<String> loggedLeaves = new HashSet<>();
 
     public CostResolver(RecipeIndex index, RecipeSelector selector) {
         this.index = index;
@@ -158,6 +163,7 @@ public final class CostResolver {
         if (cached != null) return cached;
         if (visiting.contains(item.key)) {
             trace.add("cycle broken at " + item.displayName());
+            if (countRawStops) logUnresolved(item, "cycle");
             return leaf(item, boldFrontier, buckets);
         }
 
@@ -167,6 +173,7 @@ public final class CostResolver {
         RecipeCandidate recipe = selector.select(item, index.producersOf(item), visiting, trace::add);
         if (recipe == null) {
             visiting.remove(item.key);
+            if (countRawStops) logUnresolved(item, "no producer");
             Map<String, Double> result = leaf(item, boldFrontier, buckets);
             memo.put(item.key, result);
             return result;
@@ -174,6 +181,7 @@ public final class CostResolver {
 
         long produced = recipe.outputAmount(item.key);
         Map<String, Double> result = new HashMap<>();
+        consumerPath.addLast(item.displayName() + " <" + recipe.sourceId + ">");
         for (Ingredient ing : recipe.inputs) {
             SGItem alt = chooseAlt(ing, frontier, visiting);
             Map<String, Double> sub = unitCost(
@@ -190,9 +198,21 @@ public final class CostResolver {
                 result.merge(e.getKey(), e.getValue() * factor, Double::sum);
             }
         }
+        consumerPath.removeLast();
         visiting.remove(item.key);
         memo.put(item.key, result);
         return result;
+    }
+
+    /**
+     * Records, once per distinct unresolved leaf, the chain of `item <recipe-source>` frames that led to it. The last
+     * frame is the recipe that directly consumes the leaf, which is what identifies a wrong selection (e.g. a finished
+     * tool or machine pulled in as an ingredient instead of the material-level path).
+     */
+    private void logUnresolved(SGItem item, String why) {
+        if (!loggedLeaves.add(item.key)) return;
+        String chain = consumerPath.isEmpty() ? "(root)" : String.join(" > ", consumerPath);
+        trace.add("UNRESOLVED [" + why + "] " + item.displayName() + "  <==  " + chain);
     }
 
     private Map<String, Double> leaf(SGItem item, Frontier boldFrontier, Map<String, Bucket> buckets) {
