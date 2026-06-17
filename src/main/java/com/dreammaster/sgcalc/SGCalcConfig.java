@@ -109,7 +109,7 @@ public final class SGCalcConfig {
     }
 
     public RecipeSelector selector(RecipeIndex index) {
-        return new RecipeSelector(denySources, overrides, index, index.rawOutputs());
+        return new RecipeSelector(denySources, overrides, index, index.rawOutputs(), lowLevelFrontier());
     }
 
     private static SGCalcConfig defaults() {

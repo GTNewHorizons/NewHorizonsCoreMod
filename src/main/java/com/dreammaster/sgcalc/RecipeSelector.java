@@ -23,14 +23,17 @@ public final class RecipeSelector {
     private final List<Override> overrides = new ArrayList<>();
     private final RecipeIndex index;
     private final Set<String> rawStops;
+    /** The low-level frontier, used as the raw boundary when costing a chain: a frontier item ends production at 0. */
+    private final Frontier rawBoundary;
     /** Memoized least total production time per item (in ticks per unit), shared across both passes. */
     private final Map<String, Double> timeMemo = new HashMap<>();
 
-    public RecipeSelector(List<String> denySources, List<String> overrideSpecs, RecipeIndex index,
-            Set<String> rawStops) {
+    public RecipeSelector(List<String> denySources, List<String> overrideSpecs, RecipeIndex index, Set<String> rawStops,
+            Frontier rawBoundary) {
         this.denySources = denySources;
         this.index = index;
         this.rawStops = rawStops;
+        this.rawBoundary = rawBoundary;
         for (String spec : overrideSpecs) {
             if (spec == null || spec.trim().isEmpty() || spec.startsWith("#")) continue;
             overrides.add(Override.parse(spec));
@@ -112,7 +115,7 @@ public final class RecipeSelector {
         for (Ingredient ing : candidate.inputs) {
             double cheapest = Double.POSITIVE_INFINITY;
             for (SGItem alt : ing.alts) {
-                cheapest = Math.min(cheapest, itemTime(alt.key, visiting));
+                cheapest = Math.min(cheapest, itemTime(alt, visiting));
             }
             if (cheapest == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
             time += cheapest * ing.amount / effectiveOutput;
@@ -120,11 +123,14 @@ public final class RecipeSelector {
         return time;
     }
 
-    /** Least total production time of one unit of {@code key}, or 0 when it is a raw material (or has no producer). */
-    private double itemTime(String key, Set<String> visiting) {
-        if (rawStops.contains(key)) return 0.0;
+    /** Least total production time of one unit of {@code item}, or 0 when it is a raw material. */
+    private double itemTime(SGItem item, Set<String> visiting) {
+        String key = item.key;
         Double cached = timeMemo.get(key);
         if (cached != null) return cached;
+        // A raw material ends the chain at no cost: an explicit raw source output, a mined ore, or a low-level frontier
+        // item (the boundary at which the breakdown stops counting).
+        if (rawStops.contains(key) || item.isRawOreForm() || rawBoundary.find(item) != null) return 0.0;
         if (visiting.contains(key)) return Double.POSITIVE_INFINITY;
 
         boolean hasProducer = false;
@@ -137,15 +143,12 @@ public final class RecipeSelector {
         }
         visiting.remove(key);
 
-        if (!hasProducer) {
-            timeMemo.put(key, 0.0);
-            return 0.0;
-        }
-        // Every producer loops back into an item already on the current path, so there is no acyclic way to make this
-        // from raws here. Report it as unmakeable (infinite time) so the caller avoids the cycle instead of treating
-        // the dead-end as a free raw and preferring it. This is relative to the in-progress path, so it is not
-        // memoized.
-        if (best == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
+        // An item that is not a raw and has no acyclic producer is unmakeable here: a finished tool, machine or block,
+        // or a dead-end intermediate. Without this it would cost 0 and a reversal recipe -- one that melts, cuts or
+        // macerates a finished item back into its material -- would look like the cheapest way to make that material
+        // and be preferred over the real forward recipe. Reporting infinity makes the forward recipe win instead. It
+        // is relative to the in-progress path, so it is not memoized.
+        if (!hasProducer || best == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
         timeMemo.put(key, best);
         return best;
     }

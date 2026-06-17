@@ -45,6 +45,22 @@ public final class SGItem {
     }
 
     /**
+     * Whether this is a raw ore form -- an item registered under an `ore<Material>` ore-dictionary name. Ores are
+     * mined, so they have no recipe and are the bottom of their chain; they are treated as raw materials rather than
+     * dead-ends.
+     */
+    public boolean isRawOreForm() {
+        if (stack == null) return false;
+        for (int id : OreDictionary.getOreIDs(stack)) {
+            String name = OreDictionary.getOreName(id);
+            if (name != null && name.length() > 3 && name.startsWith("ore") && Character.isUpperCase(name.charAt(3))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * This item's {@link #key} with a wildcard meta. Producers are also indexed under this key so a wildcard ingredient
      * -- one that accepts any meta, such as a lapotron crystal at any charge -- still finds a concrete-meta producer.
      */

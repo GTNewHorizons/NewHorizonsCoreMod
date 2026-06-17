@@ -147,10 +147,10 @@ public final class CostResolver {
             return Collections.singletonMap(key, perUnitContribution(matcher, item));
         }
 
-        // Raw-source outputs (e.g. anything the Eye of Harmony produces) are raw ingredients: stop recursing in both
-        // passes. The low-level pass counts them as raws; the high-level pass treats them as below-frontier leaves
-        // (unless an explicit frontier entry above already gave them a nicer label).
-        if (rawStops.contains(item.key)) {
+        // Raw-source outputs (e.g. anything the Eye of Harmony produces) and mined ores are raw ingredients: stop
+        // recursing in both passes. The low-level pass counts them as raws; the high-level pass treats them as
+        // below-frontier leaves (unless an explicit frontier entry above already gave them a nicer label).
+        if (rawStops.contains(item.key) || item.isRawOreForm()) {
             if (!countRawStops) return leaf(item, boldFrontier, buckets);
             String key = "raw:" + item.key;
             buckets.computeIfAbsent(
