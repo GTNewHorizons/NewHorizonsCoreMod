@@ -25,6 +25,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
+import static gregtech.api.enums.Mods.GTPlusPlusEverglades;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -8267,6 +8268,15 @@ public class AssemblerRecipes implements Runnable {
 
         // NEI Ore Plugin planets
         // T0 Planets
+        // Toxic Everglades
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                        getModItem(GTPlusPlusEverglades.ID, "blockDarkWorldGround", 64, 0),
+                        getModItem(GTPlusPlusEverglades.ID, "blockDarkWorldGround2", 64, 0))
+                .circuit(17).fluidInputs(Materials.StagnantWasteWater.getFluid(10000L))
+                .itemOutputs(new ItemStack(ModBlocks.blocks.get("Eg"), 1, 0)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Overworld
         GTValues.RA.stdBuilder()
                 .itemInputs(

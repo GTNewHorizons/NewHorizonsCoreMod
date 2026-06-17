@@ -89,7 +89,7 @@ public class MechanicalArmorRecipes {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.IC2_EnergyCrystal.get(1),
+                        ItemList.IC2_EnergyCrystal.getWildcard(1),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.EnergeticAlloy, 64),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
                 .fluidInputs(Materials.RedstoneAlloy.getMolten(INGOTS * 10)).itemOutputs(ItemList.Armor_Core_T1.get(1))
