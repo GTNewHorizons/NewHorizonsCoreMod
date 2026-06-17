@@ -11,6 +11,7 @@ import java.util.function.Consumer;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.sgcalc.RecipeCandidate;
@@ -19,10 +20,7 @@ import com.dreammaster.sgcalc.RecipeCandidate.Output;
 import com.dreammaster.sgcalc.RecipeSource;
 import com.dreammaster.sgcalc.SGItem;
 
-import gregtech.api.enums.Materials;
-import gregtech.api.objects.ItemData;
 import gregtech.api.recipe.RecipeMap;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipe;
 
 /**
@@ -30,26 +28,35 @@ import gregtech.api.util.GTRecipe;
  * unlocalized name and becomes the candidate source id (e.g. `gt:gt.recipe.plasmaforge`). This already covers the
  * Component Assembly Line and Precise Assembler, which register normal recipe maps.
  *
- * In the recycling maps (macerator, arc furnace, fluid extractor) material recycling outputs are dropped: an output
- * that is a base form (dust, ingot, nugget or molten fluid) of a material the recipe consumes as a manufactured
- * component (a plate, gear, wire, rod, tool head, etc.) is a recycling by-product, not a production path, and would
- * otherwise let a material be "made" by melting down a finished part that can never decompose to raws. A recipe left
- * with no other output is skipped entirely. The filter is scoped to those maps so production maps that legitimately
- * turn a material into its molten form (e.g. the plasma forge) are never affected.
+ * In the recycling maps (macerator, arc furnace, fluid extractor) a recipe that consumes a manufactured component -- a
+ * plate, gear, wire, rod, tool head and so on -- and outputs a base material form (dust, ingot, nugget or molten fluid)
+ * is recycling, not production: it would let a material be "made" by melting down a finished part that itself has no
+ * recipe, so the chain dead-ends instead of decomposing through the real recipe. Those base outputs are dropped (a
+ * recipe left with no other output is skipped entirely), so a forming recipe keeps its real product while losing only
+ * its scrap by-product. Components are recognised by ore-dictionary prefix, which works across GregTech, GregTech++ and
+ * BartWorks materials alike. The filter is scoped to those three maps so production maps are never affected.
  */
 public final class GTRecipeMapSource implements RecipeSource {
 
     private static final Set<String> RECYCLING_MAPS = new HashSet<>(
             Arrays.asList("gt:gt.recipe.macerator", "gt:gt.recipe.arcfurnace", "gt:gt.recipe.fluidextractor"));
 
+    /** Ore-dictionary prefixes of manufactured components, i.e. anything past a raw dust/ingot/gem. */
+    private static final String[] COMPONENT_PREFIXES = { "plate", "foil", "stick", "bolt", "screw", "ring", "round",
+            "gear", "rotor", "wire", "cable", "frame", "spring", "pipe", "toolHead", "turbineBlade", "lens" };
+
+    /** Base material forms a component is recycled back into. */
+    private static final String[] BASE_PREFIXES = { "dust", "ingot", "nugget" };
+
     @Override
     public void collect(Consumer<RecipeCandidate> sink) {
         for (Map.Entry<String, RecipeMap<?>> entry : RecipeMap.ALL_RECIPE_MAPS.entrySet()) {
             String sourceId = "gt:" + entry.getKey();
+            boolean recyclingMap = RECYCLING_MAPS.contains(sourceId);
             for (GTRecipe recipe : entry.getValue().getAllRecipes()) {
                 if (!recipe.mEnabled || recipe.mFakeRecipe || recipe.mHidden) continue;
                 try {
-                    collect(sourceId, recipe, sink);
+                    collect(sourceId, recipe, recyclingMap, sink);
                 } catch (Throwable t) {
                     MainRegistry.LOGGER.warn("sgcalc: skipped a recipe in " + sourceId + ": " + t);
                 }
@@ -57,21 +64,23 @@ public final class GTRecipeMapSource implements RecipeSource {
         }
     }
 
-    private static void collect(String sourceId, GTRecipe recipe, Consumer<RecipeCandidate> sink) {
-        Set<String> recycled = RECYCLING_MAPS.contains(sourceId) ? componentInputMaterials(recipe)
-                : Collections.emptySet();
+    private static void collect(String sourceId, GTRecipe recipe, boolean recyclingMap,
+            Consumer<RecipeCandidate> sink) {
+        boolean dropRecycled = recyclingMap && hasComponentInput(recipe);
 
         List<Output> outputs = new ArrayList<>();
         if (recipe.mOutputs != null) {
             for (int i = 0; i < recipe.mOutputs.length; i++) {
                 ItemStack out = recipe.mOutputs[i];
-                if (!GridInputs.isValid(out) || isRecyclingOutput(out, recycled)) continue;
+                if (!GridInputs.isValid(out)) continue;
+                if (dropRecycled && oreNameHasPrefix(out, BASE_PREFIXES)) continue;
                 outputs.add(new Output(SGItem.of(out), out.stackSize, recipe.getOutputChance(i)));
             }
         }
         if (recipe.mFluidOutputs != null) {
             for (FluidStack out : recipe.mFluidOutputs) {
-                if (!GridInputs.isValid(out) || isRecyclingFluid(out, recycled)) continue;
+                if (!GridInputs.isValid(out)) continue;
+                if (dropRecycled && isMolten(out)) continue;
                 outputs.add(new Output(SGItem.of(out), out.amount));
             }
         }
@@ -92,55 +101,34 @@ public final class GTRecipeMapSource implements RecipeSource {
         sink.accept(new RecipeCandidate(sourceId, inputs, outputs, recipe.mEUt, recipe.mDuration));
     }
 
-    /** Names of the materials this recipe consumes as a manufactured component (anything past dust/ingot/gem). */
-    private static Set<String> componentInputMaterials(GTRecipe recipe) {
-        Set<String> materials = new HashSet<>();
-        if (recipe.mInputs == null) return materials;
+    private static boolean hasComponentInput(GTRecipe recipe) {
+        if (recipe.mInputs == null) return false;
         for (ItemStack in : recipe.mInputs) {
-            if (!GridInputs.isValid(in)) continue;
-            ItemData data = GTOreDictUnificator.getAssociation(in);
-            if (data != null && data.mPrefix != null
-                    && data.mMaterial != null
-                    && data.mMaterial.mMaterial != null
-                    && !isRawForm(data.mPrefix.toString())) {
-                materials.add(data.mMaterial.mMaterial.mName);
+            if (GridInputs.isValid(in) && oreNameHasPrefix(in, COMPONENT_PREFIXES)) return true;
+        }
+        return false;
+    }
+
+    private static boolean isMolten(FluidStack fluid) {
+        return fluid.getFluid() != null && fluid.getFluid().getName() != null
+                && fluid.getFluid().getName().startsWith("molten.");
+    }
+
+    /**
+     * Whether any of the stack's ore-dictionary names is one of {@code prefixes} followed by a capitalised material
+     * name (e.g. `plateRuridit`), which both classifies the form and identifies its material across material systems.
+     */
+    private static boolean oreNameHasPrefix(ItemStack stack, String[] prefixes) {
+        for (int id : OreDictionary.getOreIDs(stack)) {
+            String name = OreDictionary.getOreName(id);
+            if (name == null) continue;
+            for (String prefix : prefixes) {
+                if (name.length() > prefix.length() && name.startsWith(prefix)
+                        && Character.isUpperCase(name.charAt(prefix.length()))) {
+                    return true;
+                }
             }
         }
-        return materials;
-    }
-
-    private static boolean isRecyclingOutput(ItemStack out, Set<String> recycled) {
-        if (recycled.isEmpty()) return false;
-        ItemData data = GTOreDictUnificator.getAssociation(out);
-        return data != null && data.mPrefix != null
-                && data.mMaterial != null
-                && data.mMaterial.mMaterial != null
-                && isBaseForm(data.mPrefix.toString())
-                && recycled.contains(data.mMaterial.mMaterial.mName);
-    }
-
-    private static boolean isRecyclingFluid(FluidStack out, Set<String> recycled) {
-        if (recycled.isEmpty()) return false;
-        Materials material = Materials.getGtMaterialFromFluid(out.getFluid());
-        return material != null && recycled.contains(material.mName);
-    }
-
-    /** Ore, crushed, dust, gem, ingot, nugget and block forms are raw material processing stages, not components. */
-    private static boolean isRawForm(String prefix) {
-        return prefix.startsWith("ore") || prefix.startsWith("crushed")
-                || prefix.startsWith("dust")
-                || prefix.startsWith("gem")
-                || prefix.equals("ingot")
-                || prefix.equals("ingotHot")
-                || prefix.equals("nugget")
-                || prefix.equals("block")
-                || prefix.equals("rawOre");
-    }
-
-    /** The base forms a component is recycled back into. */
-    private static boolean isBaseForm(String prefix) {
-        return prefix.startsWith("dust") || prefix.equals("ingot")
-                || prefix.equals("ingotHot")
-                || prefix.equals("nugget");
+        return false;
     }
 }
