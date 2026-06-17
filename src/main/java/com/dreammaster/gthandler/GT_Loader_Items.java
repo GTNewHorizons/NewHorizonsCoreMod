@@ -47,6 +47,13 @@ public class GT_Loader_Items {
                 NHItemList.GatePlateHarmonic.get(),
                 NHItemList.ChevronHarmonic.get(),
                 NHItemList.FramePartHarmonic.get());
+        List<ItemStack> heavenly = Arrays.asList(
+                NHItemList.PikoCircuitHeavenly.get(),
+                NHItemList.QuantumCircuitHeavenly.get(),
+                NHItemList.GatePlateHeavenly.get(),
+                NHItemList.ChevronHeavenly.get(),
+                NHItemList.FramePartHeavenly.get());
+
         for (ItemStack itemStack : origin) {
             addItemTooltip(
                     itemStack,
@@ -85,6 +92,17 @@ public class GT_Loader_Items {
                             + EnumChatFormatting.BLUE
                             + " "
                             + StatCollector.translateToLocal("item.Harmonic.version"));
+        }
+
+
+        for (ItemStack itemStack : heavenly) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.Heavenly.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Heavenly.version"));
         }
 
         addItemTooltip(

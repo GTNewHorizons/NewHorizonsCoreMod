@@ -67,7 +67,7 @@ public class BECRecipes implements Runnable {
         addBec(
                 NHItemList.StargateChevron.get(),
                 new ItemStack[] { CustomItemList.EOH_Reinforced_Spatial_Casing.get(64),
-                        CustomItemList.EOH_Reinforced_Temporal_Casing.get(64), ItemList.MetaMaterial_WaveFocus3.get(64),
+                        CustomItemList.EOH_Reinforced_Temporal_Casing.get(64), ItemList.MetaMaterial_WaveFocus4.get(64),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amalgatite, 64),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MagMatter, 16L),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 8L),
@@ -88,7 +88,7 @@ public class BECRecipes implements Runnable {
 
         // Multi-Material Mesh
         addBec(
-                NHItemList.MultiMaterialMesh.get(),
+                NHItemList.StargateMaterialMesh.get(),
                 new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Infinity, 64L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.ProtoHalkonite, 64L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TranscendentMetal, 64L),
@@ -119,10 +119,10 @@ public class BECRecipes implements Runnable {
                 new ItemStack[] { ItemList.MetaMaterial_Shielding3.get(64),
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64),
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64), ItemList.MetaMaterial_Shielding3.get(64),
-                        ItemList.MetaMaterial_EnergyConduit3.get(64), NHItemList.MultiMaterialMesh.get(),
-                        NHItemList.MultiMaterialMesh.get(), ItemList.MetaMaterial_EnergyConduit3.get(64),
-                        ItemList.MetaMaterial_EnergyConduit3.get(64), NHItemList.MultiMaterialMesh.get(),
-                        NHItemList.MultiMaterialMesh.get(), ItemList.MetaMaterial_EnergyConduit3.get(64),
+                        ItemList.MetaMaterial_EnergyConduit3.get(64), NHItemList.StargateMaterialMesh.get(),
+                        NHItemList.StargateMaterialMesh.get(), ItemList.MetaMaterial_EnergyConduit3.get(64),
+                        ItemList.MetaMaterial_EnergyConduit3.get(64), NHItemList.StargateMaterialMesh.get(),
+                        NHItemList.StargateMaterialMesh.get(), ItemList.MetaMaterial_EnergyConduit3.get(64),
                         ItemList.MetaMaterial_Shielding3.get(64), ItemList.MetaMaterial_ElectrograviticValve3.get(64),
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64), ItemList.MetaMaterial_Shielding3.get(64) },
                 nanites(3, 7, 7, 2, 5, 1, 8, 6, 5, 9, 10, 6, 2, 4, 4, 3),
