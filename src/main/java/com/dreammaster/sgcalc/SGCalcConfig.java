@@ -108,8 +108,8 @@ public final class SGCalcConfig {
         return new Frontier(boldSet);
     }
 
-    public RecipeSelector selector() {
-        return new RecipeSelector(denySources, overrides);
+    public RecipeSelector selector(RecipeIndex index) {
+        return new RecipeSelector(denySources, overrides, index, index.rawOutputs());
     }
 
     private static SGCalcConfig defaults() {

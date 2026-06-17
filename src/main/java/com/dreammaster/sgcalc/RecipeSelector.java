@@ -1,7 +1,10 @@
 package com.dreammaster.sgcalc;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
@@ -9,17 +12,25 @@ import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
 
 /**
  * Chooses which recipe to follow when several produce the same item. After per-item overrides and denied sources are
- * applied, the production path is the fastest output (most produced per second, weighted by output chance), then a
- * recipe that makes this item as a main product rather than a byproduct, then the highest-powered machine (most EU/t).
- * Every decision is logged so the configuration can be tuned against the wiki.
+ * applied, the production path is the one with the highest output per second measured across every step back to raw
+ * materials -- i.e. the least total machine time to make one unit. Ties fall to a recipe that makes this item as a main
+ * product, then the highest-powered machine (most EU/t), then fewest inputs. Every decision is logged so the
+ * configuration can be tuned against the wiki.
  */
 public final class RecipeSelector {
 
     private final List<String> denySources;
     private final List<Override> overrides = new ArrayList<>();
+    private final RecipeIndex index;
+    private final Set<String> rawStops;
+    /** Memoized least total production time per item (in ticks per unit), shared across both passes. */
+    private final Map<String, Double> timeMemo = new HashMap<>();
 
-    public RecipeSelector(List<String> denySources, List<String> overrideSpecs) {
+    public RecipeSelector(List<String> denySources, List<String> overrideSpecs, RecipeIndex index,
+            Set<String> rawStops) {
         this.denySources = denySources;
+        this.index = index;
+        this.rawStops = rawStops;
         for (String spec : overrideSpecs) {
             if (spec == null || spec.trim().isEmpty() || spec.startsWith("#")) continue;
             overrides.add(Override.parse(spec));
@@ -64,8 +75,13 @@ public final class RecipeSelector {
         pool = acyclic;
 
         RecipeCandidate best = null;
+        double bestTime = Double.POSITIVE_INFINITY;
         for (RecipeCandidate c : pool) {
-            if (best == null || isBetter(c, best, item.key)) best = c;
+            double time = totalTime(c, item.key);
+            if (best == null || time < bestTime || (time == bestTime && tiePreferred(c, best, item.key))) {
+                best = c;
+                bestTime = time;
+            }
         }
         if (pool.size() > 1) {
             log.accept(
@@ -79,13 +95,61 @@ public final class RecipeSelector {
     }
 
     /**
-     * Production-path ordering: most produced per second, then where {@code key} is a main product, then most EU/t.
-     * Fewest inputs and the source id break any remaining ties so selection stays deterministic.
+     * Least total production time (ticks per unit of {@code key}) when following this recipe, summing the per-unit
+     * machine time of every step from raw materials. Lower means more output per second across the whole chain.
      */
-    private static boolean isBetter(RecipeCandidate c, RecipeCandidate best, String key) {
-        double cRate = c.ratePerSecond(key);
-        double bestRate = best.ratePerSecond(key);
-        if (cRate != bestRate) return cRate > bestRate;
+    private double totalTime(RecipeCandidate candidate, String key) {
+        Set<String> visiting = new HashSet<>();
+        visiting.add(key);
+        return recipeTime(candidate, key, visiting);
+    }
+
+    private double recipeTime(RecipeCandidate candidate, String key, Set<String> visiting) {
+        double effectiveOutput = Math.max(1, candidate.outputAmount(key)) * (candidate.outputChance(key) / 10000.0);
+        if (effectiveOutput <= 0) return Double.POSITIVE_INFINITY;
+        // An instant (crafting-table) step still costs a notional tick so chains of them stay finite and comparable.
+        double time = Math.max(1, candidate.duration) / effectiveOutput;
+        for (Ingredient ing : candidate.inputs) {
+            double cheapest = Double.POSITIVE_INFINITY;
+            for (SGItem alt : ing.alts) {
+                cheapest = Math.min(cheapest, itemTime(alt.key, visiting));
+            }
+            if (cheapest == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
+            time += cheapest * ing.amount / effectiveOutput;
+        }
+        return time;
+    }
+
+    /** Least total production time of one unit of {@code key}, or 0 when it is a raw material (or has no producer). */
+    private double itemTime(String key, Set<String> visiting) {
+        if (rawStops.contains(key)) return 0.0;
+        Double cached = timeMemo.get(key);
+        if (cached != null) return cached;
+        if (visiting.contains(key)) return Double.POSITIVE_INFINITY;
+
+        boolean hasProducer = false;
+        visiting.add(key);
+        double best = Double.POSITIVE_INFINITY;
+        for (RecipeCandidate c : index.producersOf(key)) {
+            if (isDenied(c.sourceId)) continue;
+            hasProducer = true;
+            best = Math.min(best, recipeTime(c, key, visiting));
+        }
+        visiting.remove(key);
+
+        if (!hasProducer) {
+            timeMemo.put(key, 0.0);
+            return 0.0;
+        }
+        // Every producer cycles back into the current path: treat as raw here, but do not memoize since that is only
+        // true relative to this in-progress path, not globally.
+        if (best == Double.POSITIVE_INFINITY) return 0.0;
+        timeMemo.put(key, best);
+        return best;
+    }
+
+    /** Deterministic tie-break when two recipes have equal total time: main product, then EU/t, then fewest inputs. */
+    private static boolean tiePreferred(RecipeCandidate c, RecipeCandidate best, String key) {
         boolean cPrimary = c.isPrimaryOutput(key);
         boolean bestPrimary = best.isPrimaryOutput(key);
         if (cPrimary != bestPrimary) return cPrimary;

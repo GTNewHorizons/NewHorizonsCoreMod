@@ -67,7 +67,7 @@ public class SGCalcCommand extends CommandBase {
             sender.addChatMessage(new ChatComponentText(EnumChatFormatting.YELLOW + config.loadWarning));
         }
         RecipeIndex index = RecipeIndex.build(config.rawSources, config.rawProviders);
-        CostResolver resolver = new CostResolver(index, config.selector());
+        CostResolver resolver = new CostResolver(index, config.selector(index));
 
         List<CostResolver.Root> roots = config.roots();
         // Raw-source outputs stop recursing in both passes; the low-level pass counts them as raws, while the

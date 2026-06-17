@@ -33,18 +33,12 @@ public final class RecipeCandidate {
         return 1;
     }
 
-    /**
-     * Units of {@code key} produced per second, weighted by output chance (10000 = 100%); 0 if not produced. An instant
-     * (zero-duration) craft is treated as a single tick so crafting-table recipes still compare.
-     */
-    public double ratePerSecond(String key) {
+    /** This recipe's output chance for {@code key}, out of 10000 (10000 = guaranteed); 10000 if it is not an output. */
+    public int outputChance(String key) {
         for (Output o : outputs) {
-            if (o.item.key.equals(key)) {
-                double ticks = duration > 0 ? duration : 1;
-                return Math.max(1, o.amount) * (o.chance / 10000.0) / (ticks / 20.0);
-            }
+            if (o.item.key.equals(key)) return o.chance;
         }
-        return 0.0;
+        return 10000;
     }
 
     /**
