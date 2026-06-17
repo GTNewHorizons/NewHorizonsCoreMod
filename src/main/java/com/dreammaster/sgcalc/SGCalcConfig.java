@@ -162,7 +162,7 @@ public final class SGCalcConfig {
                 "material:Naquadria|Naquadria|L",
                 "material:Bedrockium|Bedrockium|L",
                 "material:Infinity|Infinity|L",
-                "material:Spacetime|Spacetime|L",
+                "material:SpaceTime|Spacetime|L",
                 "material:Magmatter|Magmatter|L",
                 "material:WhiteDwarfMatter|White Dwarf Matter|L",
                 "material:BlackDwarfMatter|Black Dwarf Matter|L",
@@ -198,7 +198,7 @@ public final class SGCalcConfig {
                         + " Redstone, Diamonds, Nether Stars, Graviton Shards, Large Chaos Fragment, etc.)");
         c.boldSet = Arrays.asList(
                 "material:Infinity",
-                "material:Spacetime",
+                "material:SpaceTime",
                 "material:Magmatter",
                 "material:WhiteDwarfMatter",
                 "material:BlackDwarfMatter",
