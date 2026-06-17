@@ -1,5 +1,6 @@
 package com.dreammaster.sgcalc;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -8,6 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
+import com.dreammaster.main.MainRegistry;
 import com.dreammaster.sgcalc.source.AssemblyLineSource;
 import com.dreammaster.sgcalc.source.AvaritiaSource;
 import com.dreammaster.sgcalc.source.GTRecipeMapSource;
@@ -83,7 +88,7 @@ public final class RecipeIndex {
         return byOutput.size();
     }
 
-    public static RecipeIndex build(List<String> rawSources) {
+    public static RecipeIndex build(List<String> rawSources, List<String> rawProviders) {
         RecipeIndex index = new RecipeIndex(rawSources);
         new GTRecipeMapSource().collect(index::add);
         new AssemblyLineSource().collect(index::add);
@@ -91,6 +96,37 @@ public final class RecipeIndex {
         if (Mods.Avaritia.isModLoaded()) {
             new AvaritiaSource().collect(index::add);
         }
+        index.collectRawProviders(rawProviders);
         return index;
+    }
+
+    /**
+     * Reads custom recipe tables that are not {@link gregtech.api.recipe.RecipeMap}s (e.g. the Space Pumping Module's
+     * static map) reflectively from `<class>#<staticField>`, registering every item/fluid found as a raw.
+     */
+    private void collectRawProviders(List<String> rawProviders) {
+        for (String entry : rawProviders) {
+            if (entry == null || entry.trim().isEmpty() || entry.startsWith("#")) continue;
+            int hash = entry.indexOf('#');
+            if (hash < 0) continue;
+            try {
+                Field field = Class.forName(entry.substring(0, hash).trim()).getField(entry.substring(hash + 1).trim());
+                collectRaw(field.get(null));
+            } catch (Throwable t) {
+                MainRegistry.LOGGER.warn("sgcalc: could not read raw provider '" + entry + "': " + t);
+            }
+        }
+    }
+
+    private void collectRaw(Object value) {
+        if (value instanceof ItemStack stack) {
+            if (stack.getItem() != null) rawOutputs.add(SGItem.of(stack).key);
+        } else if (value instanceof FluidStack fluid) {
+            if (fluid.getFluid() != null) rawOutputs.add(SGItem.of(fluid).key);
+        } else if (value instanceof Map<?, ?>map) {
+            for (Object v : map.values()) collectRaw(v);
+        } else if (value instanceof Iterable<?>iterable) {
+            for (Object v : iterable) collectRaw(v);
+        }
     }
 }

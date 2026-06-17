@@ -30,6 +30,7 @@ public final class SGCalcConfig {
     public List<String> sourcePriority = new ArrayList<>();
     public List<String> denySources = new ArrayList<>();
     public List<String> rawSources = new ArrayList<>();
+    public List<String> rawProviders = new ArrayList<>();
     public List<String> overrides = new ArrayList<>();
     public String outputDir = "sgcalc";
 
@@ -74,6 +75,7 @@ public final class SGCalcConfig {
         if (sourcePriority == null) sourcePriority = new ArrayList<>();
         if (denySources == null) denySources = new ArrayList<>();
         if (rawSources == null) rawSources = new ArrayList<>();
+        if (rawProviders == null) rawProviders = new ArrayList<>();
         if (overrides == null) overrides = new ArrayList<>();
         if (outputDir == null || outputDir.trim().isEmpty()) outputDir = "sgcalc";
         return this;
@@ -225,8 +227,16 @@ public final class SGCalcConfig {
         // amplifier turns scrap into UU-matter; both create spurious demand. UU-matter is instead a raw (lowLevelSet).
         c.denySources = Arrays.asList("gt:gt.recipe.replicator", "gt:gt.recipe.uuamplifier");
         // Recipe sources whose outputs are raw ingredients: they stop recursing and are counted as-is. The Eye of
-        // Harmony is the source of many rare materials (White Dwarf Matter, Runite, plasmas, ...).
-        c.rawSources = Arrays.asList("gt:gt.recipe.eyeofharmony");
+        // Harmony (rare materials), the Godforge exotic module, the Quantum Force Transformer, and the mass fabricator
+        // (UU-matter) are all sources of raws rather than crafting steps.
+        c.rawSources = Arrays.asList(
+                "gt:gt.recipe.eyeofharmony",
+                "gt:gt.recipe.fog_exotic",
+                "gt:gtpp.recipe.quantumforcesmelter",
+                "gt:gtpp.recipe.matterfab2");
+        // Raw providers are non-RecipeMap recipe tables read reflectively (<class>#<staticField>); every ItemStack or
+        // FluidStack found in the structure is a raw. The Space Pumping Module is such a table.
+        c.rawProviders = Arrays.asList("gtnhintergalactic.recipe.SpacePumpingRecipes#RECIPES");
         c.overrides = Arrays
                 .asList("# format: <itemId> => <sourceId>[ ; key=value ]   e.g. someBoard => gt:gt.recipe.pcbfactory");
         c.outputDir = "sgcalc";
