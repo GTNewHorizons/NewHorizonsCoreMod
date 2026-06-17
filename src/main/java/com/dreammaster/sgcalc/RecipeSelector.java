@@ -141,9 +141,11 @@ public final class RecipeSelector {
             timeMemo.put(key, 0.0);
             return 0.0;
         }
-        // Every producer cycles back into the current path: treat as raw here, but do not memoize since that is only
-        // true relative to this in-progress path, not globally.
-        if (best == Double.POSITIVE_INFINITY) return 0.0;
+        // Every producer loops back into an item already on the current path, so there is no acyclic way to make this
+        // from raws here. Report it as unmakeable (infinite time) so the caller avoids the cycle instead of treating
+        // the dead-end as a free raw and preferring it. This is relative to the in-progress path, so it is not
+        // memoized.
+        if (best == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
         timeMemo.put(key, best);
         return best;
     }
