@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -13,10 +14,16 @@ import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
 import com.dreammaster.sgcalc.RecipeCandidate.Output;
 import com.dreammaster.sgcalc.SGItem;
 
+import gregtech.api.enums.ItemList;
+
 /** Shared helpers for the recipe sources: grid collapsing plus stack/fluid validity and single-element builders. */
 final class GridInputs {
 
     private GridInputs() {}
+
+    private static boolean emptyCellResolved;
+    private static Item emptyCellItem;
+    private static int emptyCellMeta;
 
     static boolean isValid(ItemStack stack) {
         return stack != null && stack.getItem() != null && stack.stackSize > 0;
@@ -75,10 +82,28 @@ final class GridInputs {
         return ingredients;
     }
 
-    /** GregTech's programmed/integrated circuit is a recipe selector, never consumed -- exclude it from cost. */
+    /**
+     * Items that are never a real material cost: GregTech's programmed/integrated circuit (a recipe selector) and the
+     * empty cell (a reusable container left over when a fluid cell is emptied).
+     */
     static boolean isIgnored(ItemStack stack) {
         if (stack == null || stack.getItem() == null) return true;
-        Object name = net.minecraft.item.Item.itemRegistry.getNameForObject(stack.getItem());
-        return name != null && name.toString().endsWith(":gt.integrated_circuit");
+        Object name = Item.itemRegistry.getNameForObject(stack.getItem());
+        if (name != null && name.toString().endsWith(":gt.integrated_circuit")) return true;
+        return isEmptyCell(stack);
+    }
+
+    private static boolean isEmptyCell(ItemStack stack) {
+        if (!emptyCellResolved) {
+            emptyCellResolved = true;
+            try {
+                ItemStack cell = ItemList.Cell_Empty.get(1L);
+                if (cell != null) {
+                    emptyCellItem = cell.getItem();
+                    emptyCellMeta = cell.getItemDamage();
+                }
+            } catch (Throwable ignored) {}
+        }
+        return emptyCellItem != null && stack.getItem() == emptyCellItem && stack.getItemDamage() == emptyCellMeta;
     }
 }

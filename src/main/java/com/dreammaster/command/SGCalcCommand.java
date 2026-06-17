@@ -3,6 +3,7 @@ package com.dreammaster.command;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -65,12 +66,16 @@ public class SGCalcCommand extends CommandBase {
         if (config.loadWarning != null) {
             sender.addChatMessage(new ChatComponentText(EnumChatFormatting.YELLOW + config.loadWarning));
         }
-        RecipeIndex index = RecipeIndex.build();
+        RecipeIndex index = RecipeIndex.build(config.rawSources);
         CostResolver resolver = new CostResolver(index, config.selector());
 
         List<CostResolver.Root> roots = config.roots();
-        CostResolver.PassResult high = resolver.resolve(roots, config.highLevelFrontier(), config.boldFrontier());
-        CostResolver.PassResult low = resolver.resolve(roots, config.lowLevelFrontier(), config.boldFrontier());
+        // Raw-source outputs count as raws only in the low-level pass; in the high-level pass they sit below the
+        // frontier and are diverted to the unresolved list like any other below-frontier item.
+        CostResolver.PassResult high = resolver
+                .resolve(roots, config.highLevelFrontier(), config.boldFrontier(), Collections.emptySet());
+        CostResolver.PassResult low = resolver
+                .resolve(roots, config.lowLevelFrontier(), config.boldFrontier(), index.rawOutputs());
 
         File dir = new File(config.outputDir);
         dir.mkdirs();

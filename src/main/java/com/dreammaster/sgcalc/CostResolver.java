@@ -93,7 +93,7 @@ public final class CostResolver {
         }
     }
 
-    public PassResult resolve(List<Root> roots, Frontier frontier, Frontier boldFrontier) {
+    public PassResult resolve(List<Root> roots, Frontier frontier, Frontier boldFrontier, Set<String> rawStops) {
         Map<String, Map<String, Double>> memo = new HashMap<>();
         Map<String, Bucket> buckets = new LinkedHashMap<>();
         Set<String> visiting = new HashSet<>();
@@ -105,6 +105,7 @@ public final class CostResolver {
                     SGItem.of(root.stack()),
                     frontier,
                     boldFrontier,
+                    rawStops,
                     memo,
                     buckets,
                     visiting);
@@ -127,7 +128,7 @@ public final class CostResolver {
         return new PassResult(entries, unresolvedEntries);
     }
 
-    private Map<String, Double> unitCost(SGItem item, Frontier frontier, Frontier boldFrontier,
+    private Map<String, Double> unitCost(SGItem item, Frontier frontier, Frontier boldFrontier, Set<String> rawStops,
             Map<String, Map<String, Double>> memo, Map<String, Bucket> buckets, Set<String> visiting) {
         Matcher matcher = frontier.find(item);
         if (matcher != null) {
@@ -136,6 +137,16 @@ public final class CostResolver {
                     key,
                     k -> new Bucket(matcher.label(item), unitOf(matcher), isBold(boldFrontier, item), true));
             return Collections.singletonMap(key, perUnitContribution(matcher, item));
+        }
+
+        // Raw-source outputs (e.g. anything the Eye of Harmony produces) are raw ingredients: stop recursing and count
+        // them, unless an explicit frontier entry above already gave them a nicer label.
+        if (rawStops.contains(item.key)) {
+            String key = "raw:" + item.key;
+            buckets.computeIfAbsent(
+                    key,
+                    k -> new Bucket(item.displayName(), item.isFluid() ? "L" : "", isBold(boldFrontier, item), true));
+            return Collections.singletonMap(key, 1.0);
         }
 
         Map<String, Double> cached = memo.get(item.key);
@@ -157,7 +168,7 @@ public final class CostResolver {
         Map<String, Double> result = new HashMap<>();
         for (Ingredient ing : recipe.inputs) {
             SGItem alt = chooseAlt(ing, frontier);
-            Map<String, Double> sub = unitCost(alt, frontier, boldFrontier, memo, buckets, visiting);
+            Map<String, Double> sub = unitCost(alt, frontier, boldFrontier, rawStops, memo, buckets, visiting);
             double factor = (double) ing.amount / produced;
             for (Map.Entry<String, Double> e : sub.entrySet()) {
                 result.merge(e.getKey(), e.getValue() * factor, Double::sum);

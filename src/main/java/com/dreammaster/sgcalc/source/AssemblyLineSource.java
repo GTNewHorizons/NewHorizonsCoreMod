@@ -43,7 +43,7 @@ public final class AssemblyLineSource implements RecipeSource {
         if (recipe.mInputs != null) {
             for (int i = 0; i < recipe.mInputs.length; i++) {
                 ItemStack in = recipe.mInputs[i];
-                if (!GridInputs.isValid(in)) continue;
+                if (!GridInputs.isValid(in) || GridInputs.isIgnored(in)) continue;
 
                 List<SGItem> alts = new ArrayList<>();
                 if (recipe.mOreDictAlt != null && i < recipe.mOreDictAlt.length && recipe.mOreDictAlt[i] != null) {

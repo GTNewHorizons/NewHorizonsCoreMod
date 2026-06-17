@@ -29,6 +29,7 @@ public final class SGCalcConfig {
     public List<String> boldSet = new ArrayList<>();
     public List<String> sourcePriority = new ArrayList<>();
     public List<String> denySources = new ArrayList<>();
+    public List<String> rawSources = new ArrayList<>();
     public List<String> overrides = new ArrayList<>();
     public String outputDir = "sgcalc";
 
@@ -72,6 +73,7 @@ public final class SGCalcConfig {
         if (boldSet == null) boldSet = new ArrayList<>();
         if (sourcePriority == null) sourcePriority = new ArrayList<>();
         if (denySources == null) denySources = new ArrayList<>();
+        if (rawSources == null) rawSources = new ArrayList<>();
         if (overrides == null) overrides = new ArrayList<>();
         if (outputDir == null || outputDir.trim().isEmpty()) outputDir = "sgcalc";
         return this;
@@ -161,7 +163,7 @@ public final class SGCalcConfig {
                 "material:Bedrockium|Bedrockium|L",
                 "material:Infinity|Infinity|L",
                 "material:Spacetime|Spacetime|L",
-                "material:Magmatter|Magmatter|L",
+                "material:MagMatter|Magmatter|L",
                 "material:WhiteDwarfMatter|White Dwarf Matter|L",
                 "material:BlackDwarfMatter|Black Dwarf Matter|L",
                 "material:Eternity|Eternity|L",
@@ -183,6 +185,7 @@ public final class SGCalcConfig {
                 "material:Silver|Silver",
                 "material:Gold|Gold",
                 "material:UUMatter|UU-Matter|L",
+                "material:Salt|Salt",
                 "ore:circuitMaster|LuV Circuits",
                 "ore:circuitUltimate|ZPM Circuits",
                 "mod:minecraft:rotten_flesh|Rotten Flesh",
@@ -196,7 +199,7 @@ public final class SGCalcConfig {
         c.boldSet = Arrays.asList(
                 "material:Infinity",
                 "material:Spacetime",
-                "material:Magmatter",
+                "material:MagMatter",
                 "material:WhiteDwarfMatter",
                 "material:BlackDwarfMatter",
                 "material:Eternity",
@@ -212,12 +215,18 @@ public final class SGCalcConfig {
                 "gt:gt.recipe.pcbfactory",
                 "gt:gt.recipe.assembler",
                 "gt:gt.recipe.circuitassembler",
+                "gt:gt.recipe.fluidsolidifier",
+                "gt:gt.recipe.fog_plasma",
+                "gt:gt.recipe.fusionreactor",
                 "avaritia",
                 "gt:*",
                 "vanilla");
         // Recipe sources never used as a producer. The replicator would replicate elements from UU-matter and the UU
         // amplifier turns scrap into UU-matter; both create spurious demand. UU-matter is instead a raw (lowLevelSet).
         c.denySources = Arrays.asList("gt:gt.recipe.replicator", "gt:gt.recipe.uuamplifier");
+        // Recipe sources whose outputs are raw ingredients: they stop recursing and are counted as-is. The Eye of
+        // Harmony is the source of many rare materials (White Dwarf Matter, Runite, plasmas, ...).
+        c.rawSources = Arrays.asList("gt:gt.recipe.eyeofharmony");
         c.overrides = Arrays
                 .asList("# format: <itemId> => <sourceId>[ ; key=value ]   e.g. someBoard => gt:gt.recipe.pcbfactory");
         c.outputDir = "sgcalc";
