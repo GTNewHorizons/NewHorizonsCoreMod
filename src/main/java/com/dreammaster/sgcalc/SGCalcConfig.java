@@ -175,6 +175,8 @@ public final class SGCalcConfig {
                 "material:Mellion|Mellion|L",
                 "material:Quantum|Quantum|L",
                 "material:Shirabon|Shirabon|L",
+                "material:QuarkGluonPlasma|Degenerate Quark Gluon Plasma|L",
+                "material:Grade8PurifiedWater|Subatomically Perfect Water (Grade 8)|L",
                 "material:Oganesson|Oganesson|L",
                 "material:Titanium|Titanium",
                 "material:Tungsten|Tungsten",
