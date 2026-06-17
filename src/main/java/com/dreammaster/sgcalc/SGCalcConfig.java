@@ -212,6 +212,7 @@ public final class SGCalcConfig {
                 "material:TranscendentMetal",
                 "material:Mellion");
         c.sourcePriority = Arrays.asList(
+                "gt:gt.recipe.spaceAssembler",
                 "assemblyline",
                 "gt:gt.recipe.plasmaforge",
                 "gt:gt.recipe.pcbfactory",
