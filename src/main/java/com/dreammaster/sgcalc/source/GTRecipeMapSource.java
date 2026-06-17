@@ -28,24 +28,24 @@ import gregtech.api.util.GTRecipe;
  * unlocalized name and becomes the candidate source id (e.g. `gt:gt.recipe.plasmaforge`). This already covers the
  * Component Assembly Line and Precise Assembler, which register normal recipe maps.
  *
- * In the recycling maps (macerator, arc furnace, fluid extractor) a recipe that consumes a manufactured component -- a
- * plate, gear, wire, rod, tool head and so on -- and outputs a base material form (dust, ingot, nugget or molten fluid)
- * is recycling, not production: it would let a material be "made" by melting down a finished part that itself has no
- * recipe, so the chain dead-ends instead of decomposing through the real recipe. Those base outputs are dropped (a
- * recipe left with no other output is skipped entirely), so a forming recipe keeps its real product while losing only
- * its scrap by-product. Components are recognised by ore-dictionary prefix, which works across GregTech, GregTech++ and
- * BartWorks materials alike. The filter is scoped to those three maps so production maps are never affected.
+ * In the recycling maps (macerator, arc furnace, fluid extractor) production starts from a raw material form -- an ore,
+ * crushed ore, dust, gem, ingot or nugget. A recipe that outputs a base material form (dust, ingot, nugget or molten
+ * fluid) without consuming any such raw form is recycling: it melts a finished part, block or machine back down to its
+ * material, which itself has no recipe, so the chain dead-ends instead of decomposing through the real recipe. Those
+ * base outputs are dropped (a recipe left with no other output is skipped entirely), so a forming recipe keeps its real
+ * product while losing only its scrap by-product. Forms are recognised by ore-dictionary prefix, which works across
+ * GregTech, GregTech++ and BartWorks materials alike. The filter is scoped to those three maps so production maps are
+ * never affected; a few natural-block materials (e.g. some stone dusts) may need a frontier entry as a result.
  */
 public final class GTRecipeMapSource implements RecipeSource {
 
     private static final Set<String> RECYCLING_MAPS = new HashSet<>(
             Arrays.asList("gt:gt.recipe.macerator", "gt:gt.recipe.arcfurnace", "gt:gt.recipe.fluidextractor"));
 
-    /** Ore-dictionary prefixes of manufactured components, i.e. anything past a raw dust/ingot/gem. */
-    private static final String[] COMPONENT_PREFIXES = { "plate", "foil", "stick", "bolt", "screw", "ring", "round",
-            "gear", "rotor", "wire", "cable", "frame", "spring", "pipe", "toolHead", "turbineBlade", "lens" };
+    /** Ore-dictionary prefixes of raw material forms -- the legitimate starting point of production in these maps. */
+    private static final String[] RAW_PREFIXES = { "ore", "crushed", "dust", "gem", "ingot", "nugget" };
 
-    /** Base material forms a component is recycled back into. */
+    /** Base material forms a finished item is recycled back into. */
     private static final String[] BASE_PREFIXES = { "dust", "ingot", "nugget" };
 
     @Override
@@ -66,7 +66,7 @@ public final class GTRecipeMapSource implements RecipeSource {
 
     private static void collect(String sourceId, GTRecipe recipe, boolean recyclingMap,
             Consumer<RecipeCandidate> sink) {
-        boolean dropRecycled = recyclingMap && hasComponentInput(recipe);
+        boolean dropRecycled = recyclingMap && !hasRawMaterialInput(recipe);
 
         List<Output> outputs = new ArrayList<>();
         if (recipe.mOutputs != null) {
@@ -101,10 +101,10 @@ public final class GTRecipeMapSource implements RecipeSource {
         sink.accept(new RecipeCandidate(sourceId, inputs, outputs, recipe.mEUt, recipe.mDuration));
     }
 
-    private static boolean hasComponentInput(GTRecipe recipe) {
+    private static boolean hasRawMaterialInput(GTRecipe recipe) {
         if (recipe.mInputs == null) return false;
         for (ItemStack in : recipe.mInputs) {
-            if (GridInputs.isValid(in) && oreNameHasPrefix(in, COMPONENT_PREFIXES)) return true;
+            if (GridInputs.isValid(in) && oreNameHasPrefix(in, RAW_PREFIXES)) return true;
         }
         return false;
     }
