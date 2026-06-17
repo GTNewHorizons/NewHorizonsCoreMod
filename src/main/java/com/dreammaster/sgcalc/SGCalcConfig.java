@@ -186,16 +186,25 @@ public final class SGCalcConfig {
                 "material:Gold|Gold",
                 "material:UUMatter|UU-Matter|L",
                 "material:Salt|Salt",
+                "ore:circuitBasic|LV Circuits",
+                "ore:circuitAdvanced|HV Circuits",
+                "ore:circuitData|EV Circuits",
                 "ore:circuitMaster|LuV Circuits",
                 "ore:circuitUltimate|ZPM Circuits",
+                "ore:circuitNano|UIV Circuits",
+                "ore:circuitOptical|UIV Circuits",
+                "ore:circuitPiko|UMV Circuits",
+                "ore:circuitExotic|UMV Circuits",
+                "ore:circuitQuantum|UXV Circuits",
+                "ore:circuitCosmic|UXV Circuits",
+                "ore:circuitTranscendent|MAX Circuits",
                 "mod:minecraft:rotten_flesh|Rotten Flesh",
                 "mod:minecraft:bone|Bone",
                 "mod:minecraft:beef|Raw Beef",
                 "mod:minecraft:skull:0|Skeleton Skull",
                 "mod:minecraft:skull:2|Zombie Head",
-                "# TODO add remaining low-level rows + MAX circuits; verify material mNames and circuit ore names"
-                        + " in-game (Radon, Super Coolant, Superconductor Base *, Six-Phased Copper, Lapis Dust,"
-                        + " Redstone, Diamonds, Nether Stars, Graviton Shards, Large Chaos Fragment, etc.)");
+                "# TODO add remaining low-level rows; verify material mNames in-game (Superconductor Base *,"
+                        + " Six-Phased Copper, Graviton Shards, Large Chaos Fragment, etc.)");
         c.boldSet = Arrays.asList(
                 "material:Infinity",
                 "material:SpaceTime",
@@ -209,9 +218,16 @@ public final class SGCalcConfig {
                 "material:Dragonblood",
                 "material:TranscendentMetal",
                 "material:Mellion");
-        // Recipe sources never used as a producer. The replicator would replicate elements from UU-matter and the UU
-        // amplifier turns scrap into UU-matter; both create spurious demand. UU-matter is instead a raw (lowLevelSet).
-        c.denySources = Arrays.asList("gt:gt.recipe.replicator", "gt:gt.recipe.uuamplifier");
+        // Recipe sources never used as a producer. The replicator and UU amplifier fabricate UU-matter, which is a raw
+        // (lowLevelSet) instead; the canner only moves fluids in and out of cells; the extreme heat exchanger is a fuel
+        // converter rather than a crafting step; and vanilla crafting offers reverse/uncraft recipes that short-circuit
+        // real production chains.
+        c.denySources = Arrays.asList(
+                "gt:gt.recipe.replicator",
+                "gt:gt.recipe.uuamplifier",
+                "gt:gt.recipe.canner",
+                "gt:gg.recipe.extreme_heat_exchanger",
+                "vanilla");
         // Recipe sources whose outputs are raw ingredients: they stop recursing and are counted as-is. The Eye of
         // Harmony (rare materials), the Godforge exotic module, the Quantum Force Transformer, and the mass fabricator
         // (UU-matter) are all sources of raws rather than crafting steps.
