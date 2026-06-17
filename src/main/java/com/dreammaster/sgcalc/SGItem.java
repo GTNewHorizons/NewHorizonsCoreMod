@@ -3,6 +3,7 @@ package com.dreammaster.sgcalc;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -36,6 +37,21 @@ public final class SGItem {
 
     public boolean isFluid() {
         return fluid != null;
+    }
+
+    /** Whether this item accepts any metadata (a wildcard ingredient, e.g. a charge-agnostic electric item). */
+    public boolean isWildcard() {
+        return stack != null && stack.getItemDamage() == OreDictionary.WILDCARD_VALUE;
+    }
+
+    /**
+     * This item's {@link #key} with a wildcard meta. Producers are also indexed under this key so a wildcard ingredient
+     * -- one that accepts any meta, such as a lapotron crystal at any charge -- still finds a concrete-meta producer.
+     */
+    public String wildcardKey() {
+        if (stack == null) return null;
+        int hash = key.lastIndexOf('#');
+        return (hash < 0 ? key : key.substring(0, hash)) + "#" + OreDictionary.WILDCARD_VALUE;
     }
 
     static String itemKey(ItemStack s) {

@@ -164,7 +164,7 @@ public final class CostResolver {
         // Add the item to the in-progress set before selecting so the selector can reject any producer that would
         // consume it (or an ancestor) and form a cycle.
         visiting.add(item.key);
-        RecipeCandidate recipe = selector.select(item, index.producersOf(item.key), visiting, trace::add);
+        RecipeCandidate recipe = selector.select(item, index.producersOf(item), visiting, trace::add);
         if (recipe == null) {
             visiting.remove(item.key);
             Map<String, Double> result = leaf(item, boldFrontier, buckets);
@@ -228,7 +228,7 @@ public final class CostResolver {
             if (!visiting.contains(alt.key) && frontier.find(alt) != null) return alt;
         }
         for (SGItem alt : ing.alts) {
-            if (!visiting.contains(alt.key) && !index.producersOf(alt.key).isEmpty()) return alt;
+            if (!visiting.contains(alt.key) && !index.producersOf(alt).isEmpty()) return alt;
         }
         for (SGItem alt : ing.alts) {
             if (!visiting.contains(alt.key)) return alt;

@@ -52,11 +52,27 @@ public final class RecipeIndex {
         }
         for (RecipeCandidate.Output output : candidate.outputs) {
             byOutput.computeIfAbsent(output.item.key, k -> new ArrayList<>()).add(candidate);
+            // Also index under a wildcard meta so an ingredient that accepts any meta of this item finds it.
+            String wildcard = output.item.wildcardKey();
+            if (wildcard != null && !wildcard.equals(output.item.key)) {
+                byOutput.computeIfAbsent(wildcard, k -> new ArrayList<>()).add(candidate);
+            }
         }
     }
 
     public List<RecipeCandidate> producersOf(String key) {
         return byOutput.getOrDefault(key, Collections.emptyList());
+    }
+
+    /** Producers of {@code item}, falling back to any-meta producers when the item is a wildcard ingredient. */
+    public List<RecipeCandidate> producersOf(SGItem item) {
+        List<RecipeCandidate> direct = byOutput.get(item.key);
+        if (direct != null) return direct;
+        if (item.isWildcard()) {
+            List<RecipeCandidate> wildcard = byOutput.get(item.wildcardKey());
+            if (wildcard != null) return wildcard;
+        }
+        return Collections.emptyList();
     }
 
     /** Keys of items produced by a raw source; in the low-level pass these stop recursing and count as raws. */
