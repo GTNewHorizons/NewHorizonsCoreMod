@@ -32,7 +32,7 @@ public final class RecipeSelector {
      * game thread indefinitely. Checked only every {@link #STEP_CHECK_MASK}+1 steps to keep the clock read off the hot
      * path.
      */
-    private static final long MAX_MILLIS = 120_000L;
+    private static final long MAX_MILLIS = 180_000L;
     private static final long STEP_CHECK_MASK = 0xFFFFFL;
 
     /** Memoized least total production time per item (in ticks per unit), shared across both passes. */
@@ -164,8 +164,12 @@ public final class RecipeSelector {
         Double cached = timeMemo.get(key);
         if (cached != null) return cached;
         // A raw material ends the chain at no cost: an explicit raw source output, a mined ore, or a low-level frontier
-        // item (the boundary at which the breakdown stops counting).
-        if (rawStops.contains(key) || item.isRawOreForm() || rawBoundary.find(item) != null) return 0.0;
+        // item (the boundary at which the breakdown stops counting). Memoize it -- these are the leaves of every chain,
+        // so the ore-dictionary lookup and frontier scan here would otherwise repeat on every encounter.
+        if (rawStops.contains(key) || item.isRawOreForm() || rawBoundary.find(item) != null) {
+            timeMemo.put(key, 0.0);
+            return 0.0;
+        }
         if (visiting.contains(key)) return Double.POSITIVE_INFINITY;
 
         boolean hasProducer = false;
