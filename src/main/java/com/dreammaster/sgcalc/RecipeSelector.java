@@ -26,8 +26,16 @@ public final class RecipeSelector {
     private final Set<String> rawStops;
     /** The low-level frontier, used as the raw boundary when costing a chain: a frontier item ends production at 0. */
     private final Frontier rawBoundary;
+    /**
+     * Hard ceiling on cost-walk steps across the whole command. A healthy resolve is orders of magnitude below this; if
+     * it is reached, an uncosted recipe cycle is multiplying the work, so the command aborts with a clear error instead
+     * of hanging the game thread indefinitely.
+     */
+    private static final long MAX_COST_STEPS = 500_000_000L;
+
     /** Memoized least total production time per item (in ticks per unit), shared across both passes. */
     private final Map<String, Double> timeMemo = new HashMap<>();
+    private long costSteps;
 
     public RecipeSelector(List<String> denySources, List<String> fallbackSources, List<String> overrideSpecs,
             RecipeIndex index, Set<String> rawStops, Frontier rawBoundary) {
@@ -139,6 +147,12 @@ public final class RecipeSelector {
 
     /** Least total production time of one unit of {@code item}, or 0 when it is a raw material. */
     private double itemTime(SGItem item, Set<String> visiting) {
+        if (++costSteps > MAX_COST_STEPS) {
+            throw new IllegalStateException(
+                    "sgcalc cost walk exceeded " + MAX_COST_STEPS
+                            + " steps; an uncosted recipe cycle is likely multiplying the work. See the last progress"
+                            + " line in sgcalc-trace.log for where it was.");
+        }
         String key = item.key;
         Double cached = timeMemo.get(key);
         if (cached != null) return cached;

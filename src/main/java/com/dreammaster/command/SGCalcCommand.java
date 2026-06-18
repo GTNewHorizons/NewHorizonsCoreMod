@@ -122,12 +122,15 @@ public class SGCalcCommand extends CommandBase {
         // Raw-source outputs stop recursing in both passes; the low-level pass counts them as raws, while the
         // high-level pass treats them as below-frontier leaves diverted to the unresolved list.
         Set<String> rawStops = index.rawOutputs();
-        CostResolver.PassResult high = resolver
-                .resolve(roots, config.highLevelFrontier(), config.boldFrontier(), rawStops, false);
-        CostResolver.PassResult low = resolver
-                .resolve(roots, config.lowLevelFrontier(), config.boldFrontier(), rawStops, true);
-
-        writeTrace(dir, resolver.trace());
+        CostResolver.PassResult high;
+        CostResolver.PassResult low;
+        try {
+            high = resolver.resolve(roots, config.highLevelFrontier(), config.boldFrontier(), rawStops, false);
+            low = resolver.resolve(roots, config.lowLevelFrontier(), config.boldFrontier(), rawStops, true);
+        } finally {
+            // Always persist whatever was traced, including the last progress line if a pass aborted.
+            writeTrace(dir, resolver.trace());
+        }
         reply(sender, CsvWriter.write(dir, "unresolved-high.csv", high.unresolved));
         reply(sender, CsvWriter.write(dir, "unresolved-low.csv", low.unresolved));
 
