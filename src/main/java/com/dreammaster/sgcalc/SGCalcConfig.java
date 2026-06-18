@@ -236,22 +236,21 @@ public final class SGCalcConfig {
                 "material:TranscendentMetal",
                 "material:Mellion");
         // Recipe sources never used as a producer. The replicator and UU amplifier fabricate UU-matter, which is a raw
-        // (lowLevelSet) instead; the extreme heat exchanger is a fuel converter rather than a crafting step; and the
-        // packager and unpackager only box and unbox an existing item.
+        // (lowLevelSet) instead; the extreme heat exchanger is a fuel converter rather than a crafting step; the
+        // packager and unpackager only box and unbox an existing item; and vanilla crafting both short-circuits real
+        // chains with uncraft recipes and, as a fallback, would decompose every machine-less finished item through its
+        // whole crafting tree, which expands the cost walk too far.
         c.denySources = Arrays.asList(
                 "gt:gt.recipe.replicator",
                 "gt:gt.recipe.uuamplifier",
                 "gt:gg.recipe.extreme_heat_exchanger",
                 "gt:gt.recipe.packager",
-                "gt:gt.recipe.unpackager");
-        // Fallback sources are used only when no primary source produces an item. Vanilla crafting offers both real
-        // recipes (for items that have no machine recipe at all) and reverse/uncraft recipes that would short-circuit
-        // real chains; consulting it last means the uncraft recipes never win against a machine recipe. The canner is a
-        // fallback rather than denied so it still fills coolant cells and batteries (which nothing else makes), while
-        // fluids that already have a producer never reach it -- otherwise its fill/empty pairs form a fluid<->cell
-        // cycle
-        // for every fluid and the cost walk blows up.
-        c.fallbackSources = Arrays.asList("vanilla", "gt:gt.recipe.canner");
+                "gt:gt.recipe.unpackager",
+                "vanilla");
+        // Fallback sources are used only when no primary source produces an item. The canner is a fallback rather than
+        // denied so it still fills coolant cells and batteries (which nothing else makes), while fluids that already
+        // have a producer never reach it -- otherwise its fill/empty pairs form a fluid<->cell cycle for every fluid.
+        c.fallbackSources = Arrays.asList("gt:gt.recipe.canner");
         // Recipe sources whose outputs are raw ingredients: they stop recursing and are counted as-is. The Eye of
         // Harmony (rare materials), the Godforge exotic module, the Quantum Force Transformer, and the mass fabricator
         // (UU-matter) are all sources of raws rather than crafting steps.
