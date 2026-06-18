@@ -8890,7 +8890,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer.get(2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
-                        GTModHandler.getIC2Item("reinforcedGlass", 1L),
+                        ItemList.ReinforcedGlass.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         NHItemList.AluminiumIronPlate.get())
