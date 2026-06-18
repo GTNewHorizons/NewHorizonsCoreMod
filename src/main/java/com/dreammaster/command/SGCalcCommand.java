@@ -106,7 +106,7 @@ public class SGCalcCommand extends CommandBase {
         if (config.loadWarning != null) {
             sender.addChatMessage(new ChatComponentText(EnumChatFormatting.YELLOW + config.loadWarning));
         }
-        RecipeIndex index = RecipeIndex.build(config.rawSources, config.rawProviders);
+        RecipeIndex index = RecipeIndex.build(config.rawSources, config.rawProviders, config.denySources);
         CostResolver resolver = new CostResolver(index, config.selector(index));
 
         File dir = new File(config.outputDir);

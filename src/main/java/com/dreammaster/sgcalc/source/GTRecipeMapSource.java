@@ -57,6 +57,18 @@ public final class GTRecipeMapSource implements RecipeSource {
     /** Base material forms a finished item is recycled back into. */
     private static final String[] BASE_PREFIXES = { "dust", "ingot", "nugget" };
 
+    /**
+     * Source patterns that are not real production paths (denied maps, raw sources); see {@link #collectForwardMolten}.
+     */
+    private final List<String> nonProductionSources;
+
+    public GTRecipeMapSource(List<String> denySources, List<String> rawSources) {
+        List<String> combined = new ArrayList<>();
+        if (denySources != null) combined.addAll(denySources);
+        if (rawSources != null) combined.addAll(rawSources);
+        this.nonProductionSources = combined;
+    }
+
     @Override
     public void collect(Consumer<RecipeCandidate> sink) {
         Set<String> forwardMolten = collectForwardMolten();
@@ -76,16 +88,19 @@ public final class GTRecipeMapSource implements RecipeSource {
     }
 
     /**
-     * Fluid keys of every molten fluid produced by a non-recycling recipe. A recycling melt of a finished solid into
+     * Fluid keys of every molten fluid produced by a real forward recipe. A recycling melt of a finished solid into
      * molten metal is only dropped when its fluid is in here -- when nothing else makes that molten, the melt is the
-     * sole source (e.g. Molten Reinforced Glass, cast from solid Reinforced Glass) and is kept. This is scoped to
-     * fluids; recycled item outputs (dusts, ingots) are always dropped, since keeping those re-creates the dust-form
-     * candidate explosions that slow the cost walk.
+     * sole source (e.g. Molten Reinforced Glass, cast from solid Reinforced Glass) and is kept. Recycling maps are
+     * excluded (a melt is not its own forward producer), and so are denied and raw sources: a fabricator like the
+     * replicator can output any material's molten fluid but is never an actual production path, and counting it would
+     * wrongly drop every sole-source melt. This is scoped to fluids; recycled item outputs (dusts, ingots) are always
+     * dropped, since keeping those re-creates the dust-form candidate explosions that slow the cost walk.
      */
-    private static Set<String> collectForwardMolten() {
+    private Set<String> collectForwardMolten() {
         Set<String> keys = new HashSet<>();
         for (Map.Entry<String, RecipeMap<?>> entry : RecipeMap.ALL_RECIPE_MAPS.entrySet()) {
-            if (RECYCLING_MAPS.contains("gt:" + entry.getKey())) continue;
+            String sourceId = "gt:" + entry.getKey();
+            if (RECYCLING_MAPS.contains(sourceId) || isNonProduction(sourceId)) continue;
             for (GTRecipe recipe : entry.getValue().getAllRecipes()) {
                 if (!recipe.mEnabled || recipe.mFakeRecipe || recipe.mFluidOutputs == null) continue;
                 for (FluidStack out : recipe.mFluidOutputs) {
@@ -94,6 +109,18 @@ public final class GTRecipeMapSource implements RecipeSource {
             }
         }
         return keys;
+    }
+
+    private boolean isNonProduction(String sourceId) {
+        for (String pattern : nonProductionSources) {
+            if (pattern == null || pattern.trim().isEmpty() || pattern.startsWith("#")) continue;
+            pattern = pattern.trim();
+            if (pattern.equals("*") || pattern.equals(sourceId)
+                    || (pattern.endsWith(":*") && sourceId.startsWith(pattern.substring(0, pattern.length() - 1)))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void collect(String sourceId, GTRecipe recipe, boolean recyclingMap, Set<String> forwardMolten,

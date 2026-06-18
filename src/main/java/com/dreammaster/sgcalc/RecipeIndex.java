@@ -104,9 +104,9 @@ public final class RecipeIndex {
         return byOutput.size();
     }
 
-    public static RecipeIndex build(List<String> rawSources, List<String> rawProviders) {
+    public static RecipeIndex build(List<String> rawSources, List<String> rawProviders, List<String> denySources) {
         RecipeIndex index = new RecipeIndex(rawSources);
-        new GTRecipeMapSource().collect(index::add);
+        new GTRecipeMapSource(denySources, rawSources).collect(index::add);
         new AssemblyLineSource().collect(index::add);
         new VanillaCraftingSource().collect(index::add);
         if (Mods.Avaritia.isModLoaded()) {
