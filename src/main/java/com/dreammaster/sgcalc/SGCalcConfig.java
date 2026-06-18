@@ -230,6 +230,7 @@ public final class SGCalcConfig {
                 "mod:DraconicEvolution:draconium:2|Charged Draconium Block",
                 "mod:EnderIO:itemMaterial:8|Ender Crystal",
                 "mod:EnderIO:itemMaterial:13|Precient Crystal",
+                "mod:TwilightForest:item.fieryIngot:0|Fiery Steel",
                 "mod:gregtech:gt.metaitem.01:8150|Graviton Shard",
                 "mod:ExtraBees:honeyComb:56|Lime Green Tinted Comb",
                 "# TODO add remaining low-level rows; verify material mNames in-game (Superconductor Base *,"
@@ -284,6 +285,7 @@ public final class SGCalcConfig {
                 "mod:gregtech:gt.1080k_Space_Coolantcell => gt:gt.recipe.canner",
                 "mod:gregtech:gt.metaitem.01:32560 => gt:gt.recipe.canner",
                 "mod:gregtech:gt.metaitem.01:32540 => gt:gt.recipe.canner",
+                "mod:IC2:itemBatREDischarged => gt:gt.recipe.canner",
                 "mod:gregtech:gt.blockmachines:10786 => vanilla",
                 "mod:gregtech:gt.blockmachines:12093 => vanilla",
                 "mod:ProjRed|Illumination:projectred.illumination.lightbutton:14 => vanilla",
