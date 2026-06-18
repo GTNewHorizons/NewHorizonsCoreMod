@@ -212,7 +212,7 @@ public final class CostResolver {
     private void logUnresolved(SGItem item, String why) {
         if (!loggedLeaves.add(item.key)) return;
         String chain = consumerPath.isEmpty() ? "(root)" : String.join(" > ", consumerPath);
-        trace.add("UNRESOLVED [" + why + "] " + item.displayName() + "  <==  " + chain);
+        trace.add("UNRESOLVED [" + why + "] " + item.displayName() + " {" + item.key + "}" + "  <==  " + chain);
     }
 
     private Map<String, Double> leaf(SGItem item, Frontier boldFrontier, Map<String, Bucket> buckets) {
