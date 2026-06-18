@@ -14,6 +14,7 @@ import java.util.Set;
 
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.main.MainRegistry;
 import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
 
 import gregtech.api.enums.GTValues;
@@ -30,16 +31,28 @@ public final class CostResolver {
     /** One unit of molten material is 144 L (one ingot-equivalent). */
     private static final double LITRES_PER_UNIT = 144.0;
 
+    /** How many recipe selections between progress reports; resolution can run for many seconds on a full Stargate. */
+    private static final int PROGRESS_EVERY = 10000;
+
     private final RecipeIndex index;
     private final RecipeSelector selector;
     private final List<String> trace = new ArrayList<>();
     /** Stack of `item <recipe-source>` frames for the chain currently being resolved, used to report leaf consumers. */
     private final Deque<String> consumerPath = new ArrayDeque<>();
     private final Set<String> loggedLeaves = new HashSet<>();
+    private int selectCount;
+    private Runnable progressHook;
 
     public CostResolver(RecipeIndex index, RecipeSelector selector) {
         this.index = index;
         this.selector = selector;
+    }
+
+    /**
+     * Invoked periodically during a resolve so the caller can flush the in-progress trace and show the run advancing.
+     */
+    public void setProgressHook(Runnable progressHook) {
+        this.progressHook = progressHook;
     }
 
     public List<String> trace() {
@@ -170,6 +183,7 @@ public final class CostResolver {
         // Add the item to the in-progress set before selecting so the selector can reject any producer that would
         // consume it (or an ancestor) and form a cycle.
         visiting.add(item.key);
+        reportProgress(item);
         RecipeCandidate recipe = selector.select(item, index.producersOf(item), visiting, trace::add);
         if (recipe == null) {
             visiting.remove(item.key);
@@ -209,6 +223,19 @@ public final class CostResolver {
      * frame is the recipe that directly consumes the leaf, which is what identifies a wrong selection (e.g. a finished
      * tool or machine pulled in as an ingredient instead of the material-level path).
      */
+    /** Every {@link #PROGRESS_EVERY} selections, append a progress line, log it, and flush the trace via the hook. */
+    private void reportProgress(SGItem item) {
+        if (++selectCount % PROGRESS_EVERY != 0) return;
+        String line = "progress: " + selectCount
+                + " selections, depth "
+                + consumerPath.size()
+                + ", at "
+                + item.displayName();
+        trace.add(line);
+        MainRegistry.LOGGER.info("sgcalc " + line);
+        if (progressHook != null) progressHook.run();
+    }
+
     private void logUnresolved(SGItem item, String why) {
         if (!loggedLeaves.add(item.key)) return;
         String chain = consumerPath.isEmpty() ? "(root)" : String.join(" > ", consumerPath);

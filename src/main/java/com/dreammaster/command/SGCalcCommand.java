@@ -109,6 +109,15 @@ public class SGCalcCommand extends CommandBase {
         RecipeIndex index = RecipeIndex.build(config.rawSources, config.rawProviders);
         CostResolver resolver = new CostResolver(index, config.selector(index));
 
+        File dir = new File(config.outputDir);
+        dir.mkdirs();
+        // Flush the trace periodically while resolving so the player can watch progress on a long run.
+        resolver.setProgressHook(() -> {
+            try {
+                writeTrace(dir, resolver.trace());
+            } catch (Exception ignored) {}
+        });
+
         List<CostResolver.Root> roots = config.roots();
         // Raw-source outputs stop recursing in both passes; the low-level pass counts them as raws, while the
         // high-level pass treats them as below-frontier leaves diverted to the unresolved list.
@@ -118,8 +127,6 @@ public class SGCalcCommand extends CommandBase {
         CostResolver.PassResult low = resolver
                 .resolve(roots, config.lowLevelFrontier(), config.boldFrontier(), rawStops, true);
 
-        File dir = new File(config.outputDir);
-        dir.mkdirs();
         writeTrace(dir, resolver.trace());
         reply(sender, CsvWriter.write(dir, "unresolved-high.csv", high.unresolved));
         reply(sender, CsvWriter.write(dir, "unresolved-low.csv", low.unresolved));
