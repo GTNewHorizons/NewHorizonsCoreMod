@@ -220,6 +220,17 @@ public final class SGCalcConfig {
                 "mod:minecraft:beef|Raw Beef",
                 "mod:minecraft:skull:0|Skeleton Skull",
                 "mod:minecraft:skull:2|Zombie Head",
+                "fluid:stablebaryonicmatter|Stabilised Baryonic Matter|L",
+                "fluid:netherair|Nether Air|L",
+                "mod:minecraft:log|Wood Log",
+                "mod:minecraft:log2|Wood Log",
+                "mod:minecraft:stone:0|Stone",
+                "mod:minecraft:red_flower:0|Poppy",
+                "mod:DraconicEvolution:chaosFragment:0|Tiny Chaos Fragment",
+                "mod:DraconicEvolution:draconium:2|Charged Draconium Block",
+                "mod:EnderIO:itemMaterial:8|Ender Crystal",
+                "mod:gregtech:gt.metaitem.01:8150|Graviton Shard",
+                "mod:ExtraBees:honeyComb:56|Lime Green Tinted Comb",
                 "# TODO add remaining low-level rows; verify material mNames in-game (Superconductor Base *,"
                         + " Six-Phased Copper, Graviton Shards, Large Chaos Fragment, etc.)");
         c.boldSet = Arrays.asList(
