@@ -10,6 +10,7 @@ import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
@@ -129,9 +130,12 @@ public final class Matcher {
                 }
                 if (item.stack == null) return false;
                 ItemData d = GTOreDictUnificator.getAssociation(item.stack);
-                return d != null && d.mMaterial != null
-                        && d.mMaterial.mMaterial != null
-                        && value.equals(d.mMaterial.mMaterial.mName);
+                if (d == null || d.mMaterial == null || d.mMaterial.mMaterial == null) return false;
+                // A nanite is forged from many blocks of its material (the nano forge uses 8 blocks per nanite), so its
+                // small face material amount badly understates its real cost. Do not treat it as raw material; let it
+                // decompose through the nano forge so the blocks it actually consumes are what gets counted.
+                if (d.mPrefix == OrePrefixes.nanite) return false;
+                return value.equals(d.mMaterial.mMaterial.mName);
             }
             case PREFIXMAT -> {
                 if (item.stack == null) return false;
