@@ -32,7 +32,7 @@ public final class CostResolver {
     private static final double LITRES_PER_UNIT = 144.0;
 
     /** How many recipe selections between progress reports; resolution can run for many seconds on a full Stargate. */
-    private static final int PROGRESS_EVERY = 10000;
+    private static final int PROGRESS_EVERY = 2000;
 
     private final RecipeIndex index;
     private final RecipeSelector selector;
@@ -225,7 +225,7 @@ public final class CostResolver {
      */
     /** Every {@link #PROGRESS_EVERY} selections, append a progress line, log it, and flush the trace via the hook. */
     private void reportProgress(SGItem item) {
-        if (++selectCount % PROGRESS_EVERY != 0) return;
+        if (++selectCount != 1 && selectCount % PROGRESS_EVERY != 0) return;
         String line = "progress: " + selectCount
                 + " selections, depth "
                 + consumerPath.size()
