@@ -28,12 +28,6 @@ public final class RecipeSelector {
     private final Frontier rawBoundary;
     /** Memoized least total production time per item (in ticks per unit), shared across both passes. */
     private final Map<String, Double> timeMemo = new HashMap<>();
-    /** Depth (distance from the item being costed) at which each in-progress item entered the current cost walk. */
-    private final Map<String, Integer> entryDepth = new HashMap<>();
-    /**
-     * Shallowest in-progress depth re-entered while costing the current subtree; decides whether its cost is cacheable.
-     */
-    private int minCycleDepth = Integer.MAX_VALUE;
 
     public RecipeSelector(List<String> denySources, List<String> fallbackSources, List<String> overrideSpecs,
             RecipeIndex index, Set<String> rawStops, Frontier rawBoundary) {
@@ -124,13 +118,7 @@ public final class RecipeSelector {
     private double totalTime(RecipeCandidate candidate, String key) {
         Set<String> visiting = new HashSet<>();
         visiting.add(key);
-        entryDepth.put(key, 0);
-        int savedMinCycle = minCycleDepth;
-        minCycleDepth = Integer.MAX_VALUE;
-        double result = recipeTime(candidate, key, visiting);
-        minCycleDepth = savedMinCycle;
-        entryDepth.remove(key);
-        return result;
+        return recipeTime(candidate, key, visiting);
     }
 
     private double recipeTime(RecipeCandidate candidate, String key, Set<String> visiting) {
@@ -157,21 +145,10 @@ public final class RecipeSelector {
         // A raw material ends the chain at no cost: an explicit raw source output, a mined ore, or a low-level frontier
         // item (the boundary at which the breakdown stops counting).
         if (rawStops.contains(key) || item.isRawOreForm() || rawBoundary.find(item) != null) return 0.0;
-        if (visiting.contains(key)) {
-            // Re-entering an item already on the path is a cycle. Record how shallow it reaches so that every item
-            // between here and there learns its cost depended on an ancestor still being resolved.
-            Integer d = entryDepth.get(key);
-            if (d != null && d < minCycleDepth) minCycleDepth = d;
-            return Double.POSITIVE_INFINITY;
-        }
-
-        int myDepth = visiting.size();
-        visiting.add(key);
-        entryDepth.put(key, myDepth);
-        int savedMinCycle = minCycleDepth;
-        minCycleDepth = Integer.MAX_VALUE;
+        if (visiting.contains(key)) return Double.POSITIVE_INFINITY;
 
         boolean hasProducer = false;
+        visiting.add(key);
         double best = Double.POSITIVE_INFINITY;
         for (RecipeCandidate c : index.producersOf(key)) {
             if (isDenied(c.sourceId) || isFallback(c.sourceId)) continue;
@@ -187,24 +164,21 @@ public final class RecipeSelector {
                 best = Math.min(best, recipeTime(c, key, visiting));
             }
         }
-
-        int subtreeMinCycle = minCycleDepth;
-        minCycleDepth = Math.min(savedMinCycle, subtreeMinCycle);
-        entryDepth.remove(key);
         visiting.remove(key);
 
-        // An item with no producer is unmakeable (a finished tool, machine or block, or a dead-end intermediate); so is
-        // one whose every producer loops back. Either way its cost is infinity, which keeps a reversal recipe -- one
-        // melting, cutting or macerating a finished item back into its material -- from looking free and beating the
-        // real forward recipe.
-        double result = hasProducer ? best : Double.POSITIVE_INFINITY;
-        // Cache the cost unless it depended on re-entering an ancestor (an in-progress item shallower than this one). A
-        // clean result -- finite, an unproducible dead-end, or a cycle wholly contained at or below this item -- is the
-        // item's true cost regardless of how it was reached, so caching it avoids re-walking the same dead-end subtree
-        // for every reversal candidate that consumes it (the source of the exponential blow-up). A cost tainted by an
-        // ancestor cycle is specific to the current path and is recomputed where the item is reached cleanly.
-        if (subtreeMinCycle >= myDepth) timeMemo.put(key, result);
-        return result;
+        // An item with no producer at all is unmakeable: a finished tool, machine or block, or a dead-end intermediate.
+        // An infinite cost keeps a reversal recipe -- one melting, cutting or macerating a finished item back into its
+        // material -- from looking free and beating the real forward recipe. The producer list never changes, so this
+        // is memoized to avoid re-walking the same dead-end subtree for every reversal candidate that consumes it.
+        if (!hasProducer) {
+            timeMemo.put(key, Double.POSITIVE_INFINITY);
+            return Double.POSITIVE_INFINITY;
+        }
+        // Every producer loops back into an item already on the current path, so there is no acyclic way to make this
+        // here. Report it as unmakeable but do not memoize: it is relative to the in-progress path.
+        if (best == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
+        timeMemo.put(key, best);
+        return best;
     }
 
     /** Deterministic tie-break when two recipes have equal total time: main product, then EU/t, then fewest inputs. */
