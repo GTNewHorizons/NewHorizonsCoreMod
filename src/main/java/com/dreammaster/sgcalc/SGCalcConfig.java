@@ -229,6 +229,7 @@ public final class SGCalcConfig {
                 "mod:DraconicEvolution:chaosFragment:0|Tiny Chaos Fragment",
                 "mod:DraconicEvolution:draconium:2|Charged Draconium Block",
                 "mod:EnderIO:itemMaterial:8|Ender Crystal",
+                "mod:EnderIO:itemMaterial:13|Precient Crystal",
                 "mod:gregtech:gt.metaitem.01:8150|Graviton Shard",
                 "mod:ExtraBees:honeyComb:56|Lime Green Tinted Comb",
                 "# TODO add remaining low-level rows; verify material mNames in-game (Superconductor Base *,"
