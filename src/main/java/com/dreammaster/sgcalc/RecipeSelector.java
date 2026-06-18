@@ -27,15 +27,18 @@ public final class RecipeSelector {
     /** The low-level frontier, used as the raw boundary when costing a chain: a frontier item ends production at 0. */
     private final Frontier rawBoundary;
     /**
-     * Hard ceiling on cost-walk steps across the whole command. A healthy resolve is orders of magnitude below this; if
-     * it is reached, an uncosted recipe cycle is multiplying the work, so the command aborts with a clear error instead
-     * of hanging the game thread indefinitely.
+     * Wall-clock ceiling on the whole cost walk. A healthy resolve finishes in seconds; if it runs past this an
+     * uncosted recipe cycle is multiplying the work, so the command aborts with a clear error instead of hanging the
+     * game thread indefinitely. Checked only every {@link #STEP_CHECK_MASK}+1 steps to keep the clock read off the hot
+     * path.
      */
-    private static final long MAX_COST_STEPS = 500_000_000L;
+    private static final long MAX_MILLIS = 120_000L;
+    private static final long STEP_CHECK_MASK = 0xFFFFFL;
 
     /** Memoized least total production time per item (in ticks per unit), shared across both passes. */
     private final Map<String, Double> timeMemo = new HashMap<>();
     private long costSteps;
+    private long startMillis = -1L;
 
     public RecipeSelector(List<String> denySources, List<String> fallbackSources, List<String> overrideSpecs,
             RecipeIndex index, Set<String> rawStops, Frontier rawBoundary) {
@@ -147,10 +150,14 @@ public final class RecipeSelector {
 
     /** Least total production time of one unit of {@code item}, or 0 when it is a raw material. */
     private double itemTime(SGItem item, Set<String> visiting) {
-        if (++costSteps > MAX_COST_STEPS) {
+        if (++costSteps == 1) {
+            startMillis = System.currentTimeMillis();
+        } else if ((costSteps & STEP_CHECK_MASK) == 0 && System.currentTimeMillis() - startMillis > MAX_MILLIS) {
             throw new IllegalStateException(
-                    "sgcalc cost walk exceeded " + MAX_COST_STEPS
-                            + " steps; an uncosted recipe cycle is likely multiplying the work. See the last progress"
+                    "sgcalc cost walk ran past " + (MAX_MILLIS / 1000)
+                            + "s ("
+                            + costSteps
+                            + " steps); an uncosted recipe cycle is likely multiplying the work. See the last progress"
                             + " line in sgcalc-trace.log for where it was.");
         }
         String key = item.key;
