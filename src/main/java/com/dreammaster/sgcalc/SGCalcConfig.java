@@ -28,6 +28,7 @@ public final class SGCalcConfig {
     public List<String> lowLevelSet = new ArrayList<>();
     public List<String> boldSet = new ArrayList<>();
     public List<String> denySources = new ArrayList<>();
+    public List<String> fallbackSources = new ArrayList<>();
     public List<String> rawSources = new ArrayList<>();
     public List<String> rawProviders = new ArrayList<>();
     public List<String> overrides = new ArrayList<>();
@@ -72,6 +73,7 @@ public final class SGCalcConfig {
         if (lowLevelSet == null) lowLevelSet = new ArrayList<>();
         if (boldSet == null) boldSet = new ArrayList<>();
         if (denySources == null) denySources = new ArrayList<>();
+        if (fallbackSources == null) fallbackSources = new ArrayList<>();
         if (rawSources == null) rawSources = new ArrayList<>();
         if (rawProviders == null) rawProviders = new ArrayList<>();
         if (overrides == null) overrides = new ArrayList<>();
@@ -109,7 +111,13 @@ public final class SGCalcConfig {
     }
 
     public RecipeSelector selector(RecipeIndex index) {
-        return new RecipeSelector(denySources, overrides, index, index.rawOutputs(), lowLevelFrontier());
+        return new RecipeSelector(
+                denySources,
+                fallbackSources,
+                overrides,
+                index,
+                index.rawOutputs(),
+                lowLevelFrontier());
     }
 
     private static SGCalcConfig defaults() {
@@ -228,17 +236,18 @@ public final class SGCalcConfig {
                 "material:TranscendentMetal",
                 "material:Mellion");
         // Recipe sources never used as a producer. The replicator and UU amplifier fabricate UU-matter, which is a raw
-        // (lowLevelSet) instead; the canner only moves fluids in and out of cells; the extreme heat exchanger is a fuel
-        // converter rather than a crafting step; the packager and unpackager only box and unbox an existing item; and
-        // vanilla crafting offers reverse/uncraft recipes that short-circuit real production chains.
+        // (lowLevelSet) instead; the extreme heat exchanger is a fuel converter rather than a crafting step; and the
+        // packager and unpackager only box and unbox an existing item.
         c.denySources = Arrays.asList(
                 "gt:gt.recipe.replicator",
                 "gt:gt.recipe.uuamplifier",
-                "gt:gt.recipe.canner",
                 "gt:gg.recipe.extreme_heat_exchanger",
                 "gt:gt.recipe.packager",
-                "gt:gt.recipe.unpackager",
-                "vanilla");
+                "gt:gt.recipe.unpackager");
+        // Fallback sources are used only when no primary source produces an item. Vanilla crafting offers both real
+        // recipes (for items that have no machine recipe at all) and reverse/uncraft recipes that would short-circuit
+        // real chains; consulting it last means the uncraft recipes never win against a machine recipe.
+        c.fallbackSources = Arrays.asList("vanilla");
         // Recipe sources whose outputs are raw ingredients: they stop recursing and are counted as-is. The Eye of
         // Harmony (rare materials), the Godforge exotic module, the Quantum Force Transformer, and the mass fabricator
         // (UU-matter) are all sources of raws rather than crafting steps.

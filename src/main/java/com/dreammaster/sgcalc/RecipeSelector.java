@@ -20,6 +20,7 @@ import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
 public final class RecipeSelector {
 
     private final List<String> denySources;
+    private final List<String> fallbackSources;
     private final List<Override> overrides = new ArrayList<>();
     private final RecipeIndex index;
     private final Set<String> rawStops;
@@ -28,9 +29,10 @@ public final class RecipeSelector {
     /** Memoized least total production time per item (in ticks per unit), shared across both passes. */
     private final Map<String, Double> timeMemo = new HashMap<>();
 
-    public RecipeSelector(List<String> denySources, List<String> overrideSpecs, RecipeIndex index, Set<String> rawStops,
-            Frontier rawBoundary) {
+    public RecipeSelector(List<String> denySources, List<String> fallbackSources, List<String> overrideSpecs,
+            RecipeIndex index, Set<String> rawStops, Frontier rawBoundary) {
         this.denySources = denySources;
+        this.fallbackSources = fallbackSources;
         this.index = index;
         this.rawStops = rawStops;
         this.rawBoundary = rawBoundary;
@@ -42,19 +44,34 @@ public final class RecipeSelector {
 
     public RecipeCandidate select(SGItem item, List<RecipeCandidate> candidates, Set<String> visiting,
             Consumer<String> log) {
-        // Drop recipe sources that should never be a production path (e.g. the replicator, which would create spurious
-        // UU-matter demand). If this leaves nothing, the item has no producer and resolves as a raw leaf.
-        List<RecipeCandidate> allowed = new ArrayList<>();
+        // Split producers into primary and fallback tiers, dropping denied sources entirely (e.g. the replicator, which
+        // would create spurious UU-matter demand). Fallback sources (vanilla crafting) are only consulted when no
+        // primary producer yields a usable recipe, so an item with a real machine recipe never resolves through a
+        // crafting-table short-circuit, while one that genuinely has only a vanilla recipe still resolves.
+        List<RecipeCandidate> primary = new ArrayList<>();
+        List<RecipeCandidate> fallback = new ArrayList<>();
         for (RecipeCandidate c : candidates) {
-            if (!isDenied(c.sourceId)) allowed.add(c);
+            if (isDenied(c.sourceId)) continue;
+            (isFallback(c.sourceId) ? fallback : primary).add(c);
         }
-        if (allowed.isEmpty()) return null;
 
-        List<RecipeCandidate> pool = allowed;
+        RecipeCandidate chosen = selectFrom(item, primary, visiting, log);
+        if (chosen == null) chosen = selectFrom(item, fallback, visiting, log);
+        if (chosen == null && !(primary.isEmpty() && fallback.isEmpty())) {
+            log.accept("no acyclic recipe for " + item.displayName() + "; every producer needs an in-progress item");
+        }
+        return chosen;
+    }
+
+    /** Applies overrides, drops cyclic producers and ranks the survivors; returns null if {@code pool} yields none. */
+    private RecipeCandidate selectFrom(SGItem item, List<RecipeCandidate> pool, Set<String> visiting,
+            Consumer<String> log) {
+        if (pool.isEmpty()) return null;
+
         for (Override override : overrides) {
             if (!override.matcher.matches(item)) continue;
             List<RecipeCandidate> filtered = new ArrayList<>();
-            for (RecipeCandidate c : allowed) {
+            for (RecipeCandidate c : pool) {
                 if (sourceMatches(override.sourceId, c.sourceId)) filtered.add(c);
             }
             if (!filtered.isEmpty()) {
@@ -71,10 +88,7 @@ public final class RecipeSelector {
         for (RecipeCandidate c : pool) {
             if (!createsCycle(c, visiting)) acyclic.add(c);
         }
-        if (acyclic.isEmpty()) {
-            log.accept("no acyclic recipe for " + item.displayName() + "; every producer needs an in-progress item");
-            return null;
-        }
+        if (acyclic.isEmpty()) return null;
         pool = acyclic;
 
         RecipeCandidate best = null;
@@ -137,9 +151,18 @@ public final class RecipeSelector {
         visiting.add(key);
         double best = Double.POSITIVE_INFINITY;
         for (RecipeCandidate c : index.producersOf(key)) {
-            if (isDenied(c.sourceId)) continue;
+            if (isDenied(c.sourceId) || isFallback(c.sourceId)) continue;
             hasProducer = true;
             best = Math.min(best, recipeTime(c, key, visiting));
+        }
+        // Only price a fallback (vanilla) producer when there is no primary one, mirroring select(), so the 1-tick cost
+        // of a crafting-table recipe never undercuts a real machine recipe that exists for the same item.
+        if (!hasProducer) {
+            for (RecipeCandidate c : index.producersOf(key)) {
+                if (isDenied(c.sourceId) || !isFallback(c.sourceId)) continue;
+                hasProducer = true;
+                best = Math.min(best, recipeTime(c, key, visiting));
+            }
         }
         visiting.remove(key);
 
@@ -179,7 +202,16 @@ public final class RecipeSelector {
     }
 
     private boolean isDenied(String sourceId) {
-        for (String pattern : denySources) {
+        return matchesAny(denySources, sourceId);
+    }
+
+    private boolean isFallback(String sourceId) {
+        return matchesAny(fallbackSources, sourceId);
+    }
+
+    private static boolean matchesAny(List<String> patterns, String sourceId) {
+        if (patterns == null) return false;
+        for (String pattern : patterns) {
             if (pattern == null || pattern.trim().isEmpty() || pattern.startsWith("#")) continue;
             if (sourceMatches(pattern.trim(), sourceId)) return true;
         }
