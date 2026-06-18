@@ -42,8 +42,14 @@ public final class GTRecipeMapSource implements RecipeSource {
     private static final Set<String> RECYCLING_MAPS = new HashSet<>(
             Arrays.asList("gt:gt.recipe.macerator", "gt:gt.recipe.arcfurnace", "gt:gt.recipe.fluidextractor"));
 
-    /** Maps whose recipes are flagged hidden (shown via a custom NEI page) but are still real production steps. */
-    private static final Set<String> INCLUDE_HIDDEN = new HashSet<>(Arrays.asList("gt:gt.recipe.solarfactory"));
+    /**
+     * Maps whose recipes are flagged hidden but are still real production steps -- the solar factory (shown via a
+     * custom NEI page) and the fluid extractor (its melt-to-molten recipes are auto-hidden as recycling). The recycling
+     * filter still drops the fluid extractor reversals that have a forward producer, so only the sole-source melts
+     * survive.
+     */
+    private static final Set<String> INCLUDE_HIDDEN = new HashSet<>(
+            Arrays.asList("gt:gt.recipe.solarfactory", "gt:gt.recipe.fluidextractor"));
 
     /** Ore-dictionary prefixes of raw material forms -- the legitimate starting point of production in these maps. */
     private static final String[] RAW_PREFIXES = { "ore", "crushed", "dust", "gem", "ingot", "nugget" };
