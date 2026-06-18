@@ -371,11 +371,11 @@ public class ScriptWitchery implements IScriptLoader {
                 'f',
                 BlockList.SteelBars.get(),
                 'g',
-                getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0),
+                ItemList.FenceIron.get(1L),
                 'h',
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0),
                 'i',
-                getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0));
+                ItemList.FenceIron.get(1L));
         TCHelper.addResearchPage(
                 "OVEN",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "witchesovenidle", 1, 0))));
