@@ -282,7 +282,7 @@ public final class RecipeSelector {
             String right = spec.substring(arrow + 2).trim();
             int semi = right.indexOf(';');
             String sourceId = (semi >= 0 ? right.substring(0, semi) : right).trim();
-            return new Override(Matcher.parse(left), sourceId);
+            return new Override(Matcher.parseNoLabel(left), sourceId);
         }
     }
 }

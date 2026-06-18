@@ -76,6 +76,18 @@ public final class Matcher {
                 label = rest;
             }
         }
+        return parseBody(body, label, unit);
+    }
+
+    /**
+     * Parses a spec that carries no label or unit, so a `|` in the value (e.g. a mod id like `ProjRed|Illumination`) is
+     * taken literally rather than as the label separator. Used for overrides, whose left side is never labelled.
+     */
+    public static Matcher parseNoLabel(String spec) {
+        return parseBody(spec, null, "");
+    }
+
+    private static Matcher parseBody(String body, String label, String unit) {
         String[] p = body.split(":", -1);
         Type type = Type.valueOf(p[0].trim().toUpperCase(Locale.ROOT));
         if (type == Type.MOD) {
