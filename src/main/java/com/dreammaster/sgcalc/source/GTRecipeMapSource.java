@@ -33,13 +33,17 @@ import gregtech.api.util.GTRecipe;
  * fluid) without consuming any such raw form is recycling: it melts or grinds a finished part, block or machine back
  * into its material. Those base outputs are dropped (a recipe left with no other output is skipped entirely). Dropping
  * the reversals keeps them out of the cost graph, which avoids both the wrong path and the material-form cycles they
- * create -- the cycles otherwise multiply the cost walk badly. Forms are recognised by ore-dictionary prefix, which
- * works across GregTech, GregTech++ and BartWorks materials alike.
+ * create -- the cycles otherwise multiply the cost walk badly. A recycled molten output is the one exception: it is
+ * kept when nothing else produces that molten fluid, since the melt is then the only way to make it. Forms are
+ * recognised by ore-dictionary prefix, which works across GregTech, GregTech++ and BartWorks materials alike.
  */
 public final class GTRecipeMapSource implements RecipeSource {
 
     private static final Set<String> RECYCLING_MAPS = new HashSet<>(
             Arrays.asList("gt:gt.recipe.macerator", "gt:gt.recipe.arcfurnace", "gt:gt.recipe.fluidextractor"));
+
+    /** Maps whose recipes are flagged hidden (shown via a custom NEI page) but are still real production steps. */
+    private static final Set<String> INCLUDE_HIDDEN = new HashSet<>(Arrays.asList("gt:gt.recipe.solarfactory"));
 
     /** Ore-dictionary prefixes of raw material forms -- the legitimate starting point of production in these maps. */
     private static final String[] RAW_PREFIXES = { "ore", "crushed", "dust", "gem", "ingot", "nugget" };
@@ -49,13 +53,15 @@ public final class GTRecipeMapSource implements RecipeSource {
 
     @Override
     public void collect(Consumer<RecipeCandidate> sink) {
+        Set<String> forwardMolten = collectForwardMolten();
         for (Map.Entry<String, RecipeMap<?>> entry : RecipeMap.ALL_RECIPE_MAPS.entrySet()) {
             String sourceId = "gt:" + entry.getKey();
             boolean recyclingMap = RECYCLING_MAPS.contains(sourceId);
+            boolean includeHidden = INCLUDE_HIDDEN.contains(sourceId);
             for (GTRecipe recipe : entry.getValue().getAllRecipes()) {
-                if (!recipe.mEnabled || recipe.mFakeRecipe || recipe.mHidden) continue;
+                if (!recipe.mEnabled || recipe.mFakeRecipe || (recipe.mHidden && !includeHidden)) continue;
                 try {
-                    collect(sourceId, recipe, recyclingMap, sink);
+                    collect(sourceId, recipe, recyclingMap, forwardMolten, sink);
                 } catch (Throwable t) {
                     MainRegistry.LOGGER.warn("sgcalc: skipped a recipe in " + sourceId + ": " + t);
                 }
@@ -63,7 +69,28 @@ public final class GTRecipeMapSource implements RecipeSource {
         }
     }
 
-    private static void collect(String sourceId, GTRecipe recipe, boolean recyclingMap,
+    /**
+     * Fluid keys of every molten fluid produced by a non-recycling recipe. A recycling melt of a finished solid into
+     * molten metal is only dropped when its fluid is in here -- when nothing else makes that molten, the melt is the
+     * sole source (e.g. Molten Reinforced Glass, cast from solid Reinforced Glass) and is kept. This is scoped to
+     * fluids; recycled item outputs (dusts, ingots) are always dropped, since keeping those re-creates the dust-form
+     * candidate explosions that slow the cost walk.
+     */
+    private static Set<String> collectForwardMolten() {
+        Set<String> keys = new HashSet<>();
+        for (Map.Entry<String, RecipeMap<?>> entry : RecipeMap.ALL_RECIPE_MAPS.entrySet()) {
+            if (RECYCLING_MAPS.contains("gt:" + entry.getKey())) continue;
+            for (GTRecipe recipe : entry.getValue().getAllRecipes()) {
+                if (!recipe.mEnabled || recipe.mFakeRecipe || recipe.mFluidOutputs == null) continue;
+                for (FluidStack out : recipe.mFluidOutputs) {
+                    if (GridInputs.isValid(out) && isMolten(out)) keys.add(SGItem.of(out).key);
+                }
+            }
+        }
+        return keys;
+    }
+
+    private static void collect(String sourceId, GTRecipe recipe, boolean recyclingMap, Set<String> forwardMolten,
             Consumer<RecipeCandidate> sink) {
         boolean dropRecycled = recyclingMap && !hasRawMaterialInput(recipe);
 
@@ -79,8 +106,9 @@ public final class GTRecipeMapSource implements RecipeSource {
         if (recipe.mFluidOutputs != null) {
             for (FluidStack out : recipe.mFluidOutputs) {
                 if (!GridInputs.isValid(out)) continue;
-                if (dropRecycled && isMolten(out)) continue;
-                outputs.add(new Output(SGItem.of(out), out.amount));
+                SGItem item = SGItem.of(out);
+                if (dropRecycled && isMolten(out) && forwardMolten.contains(item.key)) continue;
+                outputs.add(new Output(item, out.amount));
             }
         }
         if (outputs.isEmpty()) return;
