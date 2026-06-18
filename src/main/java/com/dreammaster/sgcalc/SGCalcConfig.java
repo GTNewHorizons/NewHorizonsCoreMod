@@ -285,7 +285,8 @@ public final class SGCalcConfig {
                 "mod:gregtech:gt.metaitem.01:32560 => gt:gt.recipe.canner",
                 "mod:gregtech:gt.metaitem.01:32540 => gt:gt.recipe.canner",
                 "mod:gregtech:gt.blockmachines:10786 => vanilla",
-                "mod:gregtech:gt.blockmachines:12093 => vanilla");
+                "mod:gregtech:gt.blockmachines:12093 => vanilla",
+                "mod:ProjRed|Illumination:projectred.illumination.lightbutton:14 => vanilla");
         c.outputDir = "sgcalc";
         return c;
     }
