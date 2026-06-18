@@ -246,8 +246,12 @@ public final class SGCalcConfig {
                 "gt:gt.recipe.unpackager");
         // Fallback sources are used only when no primary source produces an item. Vanilla crafting offers both real
         // recipes (for items that have no machine recipe at all) and reverse/uncraft recipes that would short-circuit
-        // real chains; consulting it last means the uncraft recipes never win against a machine recipe.
-        c.fallbackSources = Arrays.asList("vanilla");
+        // real chains; consulting it last means the uncraft recipes never win against a machine recipe. The canner is a
+        // fallback rather than denied so it still fills coolant cells and batteries (which nothing else makes), while
+        // fluids that already have a producer never reach it -- otherwise its fill/empty pairs form a fluid<->cell
+        // cycle
+        // for every fluid and the cost walk blows up.
+        c.fallbackSources = Arrays.asList("vanilla", "gt:gt.recipe.canner");
         // Recipe sources whose outputs are raw ingredients: they stop recursing and are counted as-is. The Eye of
         // Harmony (rare materials), the Godforge exotic module, the Quantum Force Transformer, and the mass fabricator
         // (UU-matter) are all sources of raws rather than crafting steps.
