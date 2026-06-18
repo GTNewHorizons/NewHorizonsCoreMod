@@ -1814,9 +1814,7 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void extruderRecipes() {
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0),
-                        ItemList.Shape_Extruder_Pipe_Small.get(0L))
+                .itemInputs(ItemList.ReinforcedGlass.get(1L), ItemList.Shape_Extruder_Pipe_Small.get(0L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 2, 0)).duration(6 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()

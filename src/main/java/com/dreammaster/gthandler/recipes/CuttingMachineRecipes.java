@@ -103,7 +103,7 @@ public class CuttingMachineRecipes implements Runnable {
                 .addTo(cutterRecipes);
         if (IndustrialCraft2.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0))
+            GTValues.RA.stdBuilder().itemInputs(ItemList.ReinforcedGlass.get(1L))
                     .itemOutputs(NHItemList.ReinforcedGlassPlate.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
                     .addTo(cutterRecipes);
 
