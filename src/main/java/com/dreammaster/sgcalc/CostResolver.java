@@ -195,7 +195,7 @@ public final class CostResolver {
 
         long produced = recipe.outputAmount(item.key);
         Map<String, Double> result = new HashMap<>();
-        consumerPath.addLast(item.displayName() + " <" + recipe.sourceId + ">");
+        consumerPath.addLast(item.displayName() + " {" + item.key + "} <" + recipe.sourceId + ">");
         for (Ingredient ing : recipe.inputs) {
             SGItem alt = chooseAlt(ing, frontier, visiting);
             Map<String, Double> sub = unitCost(
