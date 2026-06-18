@@ -59,11 +59,15 @@ public final class RecipeSelector {
         // would create spurious UU-matter demand). Fallback sources (vanilla crafting) are only consulted when no
         // primary producer yields a usable recipe, so an item with a real machine recipe never resolves through a
         // crafting-table short-circuit, while one that genuinely has only a vanilla recipe still resolves.
+        // A per-item override naming a source rescues that source past the deny list, so a single item can be pointed
+        // at an otherwise-denied map (e.g. the canner for one coolant cell) without re-enabling it for everything.
+        Override active = matchingOverride(item);
         List<RecipeCandidate> primary = new ArrayList<>();
         List<RecipeCandidate> fallback = new ArrayList<>();
         for (RecipeCandidate c : candidates) {
-            if (isDenied(c.sourceId)) continue;
-            (isFallback(c.sourceId) ? fallback : primary).add(c);
+            boolean overridden = active != null && sourceMatches(active.sourceId, c.sourceId);
+            if (!overridden && isDenied(c.sourceId)) continue;
+            (!overridden && isFallback(c.sourceId) ? fallback : primary).add(c);
         }
 
         RecipeCandidate chosen = selectFrom(item, primary, visiting, log);
@@ -72,6 +76,14 @@ public final class RecipeSelector {
             log.accept("no acyclic recipe for " + item.displayName() + "; every producer needs an in-progress item");
         }
         return chosen;
+    }
+
+    /** The first override whose matcher accepts {@code item}, or null when none applies. */
+    private Override matchingOverride(SGItem item) {
+        for (Override override : overrides) {
+            if (override.matcher.matches(item)) return override;
+        }
+        return null;
     }
 
     /** Applies overrides, drops cyclic producers and ranks the survivors; returns null if {@code pool} yields none. */
