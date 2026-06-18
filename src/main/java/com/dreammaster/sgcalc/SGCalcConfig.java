@@ -243,14 +243,15 @@ public final class SGCalcConfig {
         c.denySources = Arrays.asList(
                 "gt:gt.recipe.replicator",
                 "gt:gt.recipe.uuamplifier",
+                "gt:gt.recipe.canner",
                 "gt:gg.recipe.extreme_heat_exchanger",
                 "gt:gt.recipe.packager",
                 "gt:gt.recipe.unpackager",
                 "vanilla");
-        // Fallback sources are used only when no primary source produces an item. The canner is a fallback rather than
-        // denied so it still fills coolant cells and batteries (which nothing else makes), while fluids that already
-        // have a producer never reach it -- otherwise its fill/empty pairs form a fluid<->cell cycle for every fluid.
-        c.fallbackSources = Arrays.asList("gt:gt.recipe.canner");
+        // Fallback sources are consulted only when no primary source produces an item. None are enabled by default:
+        // vanilla and the canner are denied above because, as fallbacks, they decompose every machine-less item or form
+        // a fluid<->cell cycle for every fluid, both of which expand the cost walk too far.
+        c.fallbackSources = new ArrayList<>();
         // Recipe sources whose outputs are raw ingredients: they stop recursing and are counted as-is. The Eye of
         // Harmony (rare materials), the Godforge exotic module, the Quantum Force Transformer, and the mass fabricator
         // (UU-matter) are all sources of raws rather than crafting steps.

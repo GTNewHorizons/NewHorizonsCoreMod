@@ -31,11 +31,10 @@ import gregtech.api.util.GTRecipe;
  * In the recycling maps (macerator, arc furnace, fluid extractor) production starts from a raw material form -- an ore,
  * crushed ore, dust, gem, ingot or nugget. A recipe that outputs a base material form (dust, ingot, nugget or molten
  * fluid) without consuming any such raw form is recycling: it melts or grinds a finished part, block or machine back
- * into its material. Such an output is dropped (a recipe left with no other output is skipped) only when the material
- * has a real forward producer elsewhere -- otherwise the reversal is the only way to make it (e.g. Molten Reinforced
- * Glass, cast only from solid Reinforced Glass) and is kept. Dropping the redundant reversals keeps them out of the
- * cost graph entirely, which both avoids the wrong path and stops the material-form cycles they create from blowing up
- * the cost walk.
+ * into its material. Those base outputs are dropped (a recipe left with no other output is skipped entirely). Dropping
+ * the reversals keeps them out of the cost graph, which avoids both the wrong path and the material-form cycles they
+ * create -- the cycles otherwise multiply the cost walk badly. Forms are recognised by ore-dictionary prefix, which
+ * works across GregTech, GregTech++ and BartWorks materials alike.
  */
 public final class GTRecipeMapSource implements RecipeSource {
 
@@ -50,14 +49,13 @@ public final class GTRecipeMapSource implements RecipeSource {
 
     @Override
     public void collect(Consumer<RecipeCandidate> sink) {
-        Set<String> forwardOutputs = collectForwardOutputs();
         for (Map.Entry<String, RecipeMap<?>> entry : RecipeMap.ALL_RECIPE_MAPS.entrySet()) {
             String sourceId = "gt:" + entry.getKey();
             boolean recyclingMap = RECYCLING_MAPS.contains(sourceId);
             for (GTRecipe recipe : entry.getValue().getAllRecipes()) {
                 if (!recipe.mEnabled || recipe.mFakeRecipe || recipe.mHidden) continue;
                 try {
-                    collect(sourceId, recipe, recyclingMap, forwardOutputs, sink);
+                    collect(sourceId, recipe, recyclingMap, sink);
                 } catch (Throwable t) {
                     MainRegistry.LOGGER.warn("sgcalc: skipped a recipe in " + sourceId + ": " + t);
                 }
@@ -65,40 +63,7 @@ public final class GTRecipeMapSource implements RecipeSource {
         }
     }
 
-    /**
-     * Output keys produced by a recipe other than a recycling reversal: every non-recycling recipe, plus the recycling
-     * recipes that do start from a raw form. A recycled base output is only dropped when its key is in here, i.e. when
-     * something else already makes it.
-     */
-    private static Set<String> collectForwardOutputs() {
-        Set<String> keys = new HashSet<>();
-        for (Map.Entry<String, RecipeMap<?>> entry : RecipeMap.ALL_RECIPE_MAPS.entrySet()) {
-            boolean recyclingMap = RECYCLING_MAPS.contains("gt:" + entry.getKey());
-            for (GTRecipe recipe : entry.getValue().getAllRecipes()) {
-                if (!recipe.mEnabled || recipe.mFakeRecipe || recipe.mHidden) continue;
-                if (recyclingMap && !hasRawMaterialInput(recipe)) continue;
-                try {
-                    addOutputKeys(recipe, keys);
-                } catch (Throwable ignored) {}
-            }
-        }
-        return keys;
-    }
-
-    private static void addOutputKeys(GTRecipe recipe, Set<String> keys) {
-        if (recipe.mOutputs != null) {
-            for (ItemStack out : recipe.mOutputs) {
-                if (GridInputs.isValid(out)) keys.add(SGItem.of(out).key);
-            }
-        }
-        if (recipe.mFluidOutputs != null) {
-            for (FluidStack out : recipe.mFluidOutputs) {
-                if (GridInputs.isValid(out)) keys.add(SGItem.of(out).key);
-            }
-        }
-    }
-
-    private static void collect(String sourceId, GTRecipe recipe, boolean recyclingMap, Set<String> forwardOutputs,
+    private static void collect(String sourceId, GTRecipe recipe, boolean recyclingMap,
             Consumer<RecipeCandidate> sink) {
         boolean dropRecycled = recyclingMap && !hasRawMaterialInput(recipe);
 
@@ -107,17 +72,15 @@ public final class GTRecipeMapSource implements RecipeSource {
             for (int i = 0; i < recipe.mOutputs.length; i++) {
                 ItemStack out = recipe.mOutputs[i];
                 if (!GridInputs.isValid(out)) continue;
-                SGItem item = SGItem.of(out);
-                if (dropRecycled && oreNameHasPrefix(out, BASE_PREFIXES) && forwardOutputs.contains(item.key)) continue;
-                outputs.add(new Output(item, out.stackSize, recipe.getOutputChance(i)));
+                if (dropRecycled && oreNameHasPrefix(out, BASE_PREFIXES)) continue;
+                outputs.add(new Output(SGItem.of(out), out.stackSize, recipe.getOutputChance(i)));
             }
         }
         if (recipe.mFluidOutputs != null) {
             for (FluidStack out : recipe.mFluidOutputs) {
                 if (!GridInputs.isValid(out)) continue;
-                SGItem item = SGItem.of(out);
-                if (dropRecycled && isMolten(out) && forwardOutputs.contains(item.key)) continue;
-                outputs.add(new Output(item, out.amount));
+                if (dropRecycled && isMolten(out)) continue;
+                outputs.add(new Output(SGItem.of(out), out.amount));
             }
         }
         if (outputs.isEmpty()) return;
