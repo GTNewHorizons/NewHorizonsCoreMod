@@ -275,8 +275,17 @@ public final class SGCalcConfig {
         // Raw providers are non-RecipeMap recipe tables read reflectively (<class>#<staticField>); every ItemStack or
         // FluidStack found in the structure is a raw. The Space Pumping Module is such a table.
         c.rawProviders = Arrays.asList("gtnhintergalactic.recipe.SpacePumpingRecipes#RECIPES");
-        c.overrides = Arrays
-                .asList("# format: <itemId> => <sourceId>[ ; key=value ]   e.g. someBoard => gt:gt.recipe.pcbfactory");
+        // A per-item override points one item at a source even when that source is denied globally, used here to reach
+        // the canner (coolant cells and batteries are filled there; it is denied otherwise to avoid fluid<->cell
+        // cycles) and vanilla crafting (the few items that have only a crafting-table recipe).
+        c.overrides = Arrays.asList(
+                "# format: <itemId> => <sourceId>[ ; key=value ]   e.g. someBoard => gt:gt.recipe.pcbfactory",
+                "mod:gregtech:gt.180k_NaK_Coolantcell => gt:gt.recipe.canner",
+                "mod:gregtech:gt.1080k_Space_Coolantcell => gt:gt.recipe.canner",
+                "mod:gregtech:gt.metaitem.01:32560 => gt:gt.recipe.canner",
+                "mod:gregtech:gt.metaitem.01:32540 => gt:gt.recipe.canner",
+                "mod:gregtech:gt.blockmachines:10786 => vanilla",
+                "mod:gregtech:gt.blockmachines:12093 => vanilla");
         c.outputDir = "sgcalc";
         return c;
     }
