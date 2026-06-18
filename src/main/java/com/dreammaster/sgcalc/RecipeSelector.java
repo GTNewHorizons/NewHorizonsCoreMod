@@ -166,12 +166,18 @@ public final class RecipeSelector {
         }
         visiting.remove(key);
 
-        // An item that is not a raw and has no acyclic producer is unmakeable here: a finished tool, machine or block,
-        // or a dead-end intermediate. Without this it would cost 0 and a reversal recipe -- one that melts, cuts or
-        // macerates a finished item back into its material -- would look like the cheapest way to make that material
-        // and be preferred over the real forward recipe. Reporting infinity makes the forward recipe win instead. It
-        // is relative to the in-progress path, so it is not memoized.
-        if (!hasProducer || best == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
+        // An item with no producer at all is unmakeable: a finished tool, machine or block, or a dead-end intermediate.
+        // Without an infinite cost it would look free and a reversal recipe -- one that melts, cuts or macerates a
+        // finished item back into its material -- would be preferred over the real forward recipe. This is independent
+        // of the path (the producer list never changes), so it is memoized to avoid re-walking the same dead-end
+        // subtree for every reversal candidate that consumes it.
+        if (!hasProducer) {
+            timeMemo.put(key, Double.POSITIVE_INFINITY);
+            return Double.POSITIVE_INFINITY;
+        }
+        // Every producer loops back into an item already on the current path, so there is no acyclic way to make this
+        // here. Report it as unmakeable but do not memoize: it is relative to the in-progress path.
+        if (best == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
         timeMemo.put(key, best);
         return best;
     }
