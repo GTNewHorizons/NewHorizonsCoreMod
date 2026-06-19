@@ -19,5 +19,5 @@ val lwjgl3Version = project.minecraft.lwjgl3Version.get()!!
 dependencies {
     compileOnly("org.lwjgl:lwjgl-sdl:${lwjgl3Version}") { isTransitive = false }
     compileOnly("org.lwjgl:lwjgl:${lwjgl3Version}") { isTransitive = false }
-    compileOnly("com.github.GTNewHorizons:lwjgl3ify:3.0.3:dev") { isTransitive = false }
+    compileOnly("com.github.GTNewHorizons:lwjgl3ify:3.0.25:dev") { isTransitive = false }
 }
