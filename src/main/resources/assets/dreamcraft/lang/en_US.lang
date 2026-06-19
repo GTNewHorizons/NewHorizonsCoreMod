@@ -682,6 +682,7 @@ item.CircuitArray.tooltip.11=Calibrated to: Optical Mainframe
 item.CircuitArray.tooltip.12=Calibrated to: Pico Circuit
 item.CircuitArray.tooltip.13=Calibrated to: Quantum Circuit
 item.CircuitArray.tooltip.14=Calibrated to: Planck Circuit
+item.SingularityComputationCore.name=Compressible Singularity Computation Core
 
 
 achievement.item.HeavyDutyAlloyIngotT4=Rocket Plate Tier 4!

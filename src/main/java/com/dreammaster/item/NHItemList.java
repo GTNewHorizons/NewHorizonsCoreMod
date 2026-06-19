@@ -595,7 +595,8 @@ public enum NHItemList {
     QuantumCircuitHeavenly("HeavenlyQuantumCircuit", SPACE),
     GatePlateHeavenly("HeavenlyGatePlate", SPACE),
     ChevronHeavenly("HeavenlyChevron", SPACE),
-    FramePartHeavenly("HeavenlyFramePart", SPACE);
+    FramePartHeavenly("HeavenlyFramePart", SPACE),
+    SingularityComputationCore("SingularityComputationCore", SPACE);
 
     static {
         CoinChunkloaderTierI.item.setMaxStackSize(4);
