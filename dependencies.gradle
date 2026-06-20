@@ -54,7 +54,7 @@ dependencies {
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Railcraft:9.17.26:dev")
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:ForestryMC:4.11.26:dev")
 
-    // RecEx, for testing purposes
+    // RecEx, for testing purposesF
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:RecEx:1.1.5:dev")
 
     // For building structures faster
