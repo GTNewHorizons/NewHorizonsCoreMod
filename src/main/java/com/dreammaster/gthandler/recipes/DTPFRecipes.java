@@ -489,7 +489,7 @@ public class DTPFRecipes implements Runnable {
                             .itemInputs(
                                     GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 16),
                                     getModItem(Avaritia.ID, "Resource", 16, 8),
-                                    ItemList.StableBosonContainmentUnit.get(1))
+                                    ItemList.StableBosonContainmentUnit.get(0))
                             .fluidInputs(
                                     Materials.ExcitedDTEC.getFluid(1797693L),
                                     Materials.CosmicNeutronium.getMolten(16384 * 144),
