@@ -13,7 +13,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Avaritia:1.97:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Irontanks:1.4.6:dev") { transitive = false }
     compileOnly("secondderivative.irontankminecarts:IronTankMinecarts:1.0.5:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:twilightforest:2.7.33:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:twilightforest:2.7.35:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.5.3:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.91-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.15:dev") { transitive = false }
@@ -57,6 +57,12 @@ dependencies {
 
     // For building structures faster
     // runtimeOnlyNonPublishable('com.github.GTNewHorizons:MatterManipulator:0.1.38-GTNH')
+
+    // For testing thaumcraft
+    // runtimeOnlyNonPublishable("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
+
+    // For testing ctm and animation interpolation
+    // runtimeOnlyNonPublishable('com.github.GTNewHorizons:Angelica:2.1.42:dev') { transitive = false }
 
     // Core unit testing platform
     testImplementation(platform('org.junit:junit-bom:5.9.2'))
