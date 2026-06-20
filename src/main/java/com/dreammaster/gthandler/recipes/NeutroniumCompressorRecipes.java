@@ -520,6 +520,31 @@ public class NeutroniumCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().fluidInputs(Materials.Lead.getMolten(3648 * 9 * 144L))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 7)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Tier Computation Singularities
+            final ItemStack[] compSingularities = new ItemStack[] {
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 0),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 1),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 2),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 3),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 4),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 5),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 6),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 7),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 8),
+                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 9),
+                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 0),
+                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 1),
+                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 2),
+                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 3),
+                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 4), };
+
+            for (int t = 0; t < 15; ++t) {
+                GTValues.RA.stdBuilder().itemInputs(ItemList.COMPRESSIBLE_COMPUTATION_CORES[t].get(1))
+                        .fluidInputs(Materials.BoundlessCosmicSolder.getFluid(1_024_000))
+                        .itemOutputs(compSingularities[t]).duration(6400 * SECONDS).eut(TierEU.RECIPE_UXV)
+                        .metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+            }
         }
     }
 }
