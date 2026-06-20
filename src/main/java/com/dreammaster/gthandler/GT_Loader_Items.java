@@ -94,7 +94,6 @@ public class GT_Loader_Items {
                             + StatCollector.translateToLocal("item.Harmonic.version"));
         }
 
-
         for (ItemStack itemStack : heavenly) {
             addItemTooltip(
                     itemStack,

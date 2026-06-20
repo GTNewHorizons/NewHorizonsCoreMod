@@ -36,6 +36,7 @@ import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.GT_CustomLoader;
+import com.dreammaster.gthandler.recipes.BECRecipes;
 import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.ic2.IC2Converter;
@@ -389,6 +390,7 @@ public class MainRegistry {
         RecipeRemover.run();
         ScriptLoader.run();
         new DTPFRecipes().run();
+        new BECRecipes().runLate();
 
         BW_RadHatchMaterial.runRadHatchAdder();
 

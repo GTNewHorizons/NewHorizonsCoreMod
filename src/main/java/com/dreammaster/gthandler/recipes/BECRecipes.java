@@ -31,7 +31,9 @@ public class BECRecipes implements Runnable {
             NaniteTier.Universium, NaniteTier.Eternity, NaniteTier.MagMatter };
 
     @Override
-    public void run() {
+    public void run() {}
+
+    public void runLate() {
         if (EternalSingularity.isModLoaded()) addSGRecipes();
     }
 
