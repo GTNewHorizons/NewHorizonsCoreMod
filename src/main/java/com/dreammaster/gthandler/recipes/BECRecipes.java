@@ -39,7 +39,7 @@ public class BECRecipes implements Runnable {
 
     private void addSGRecipes() {
 
-        final int baseStargateTime = 8_000_000 * SECONDS;
+        final int baseStargateTime = 16_000_000 * SECONDS;
 
         // Stargate-Radiation-Containment-Plate
         addBec(
