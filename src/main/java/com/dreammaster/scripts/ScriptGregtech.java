@@ -657,15 +657,15 @@ public class ScriptGregtech implements IScriptLoader {
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 NHItemList.SingularityComputationCore.get(),
-                "bbbbbbbbb",
-                "bs-----sb",
-                "b-sgags-b",
+                "eeebbbeee",
+                "es-----se",
+                "e-sgags-e",
                 "b-gsdsg-b",
                 "b-adcda-b",
                 "b-gsdsg-b",
-                "b-sgags-b",
-                "bs-----sb",
-                "bbbbbbbbb",
+                "e-sgags-e",
+                "es-----se",
+                "eeebbbeee",
                 'b',
                 CustomItemList.Godforge_SingularityShieldingCasing.get(1),
                 's',
@@ -677,7 +677,9 @@ public class ScriptGregtech implements IScriptLoader {
                 'd',
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1, 0),
                 'c',
-                getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1, 0));
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1, 0),
+                'e',
+                CustomItemList.SpacetimeCompressionFieldGeneratorTier8.get(1));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L)).duration(15 * SECONDS)

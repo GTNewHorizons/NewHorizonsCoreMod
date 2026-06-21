@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -37,7 +38,7 @@ public class BECRecipes implements Runnable {
 
     @Override
     public void run() {
-        addComputationCoreRecipes();
+        if (UniversalSingularities.isModLoaded()) addComputationCoreRecipes();
     }
 
     public void runLate() {
@@ -55,6 +56,23 @@ public class BECRecipes implements Runnable {
         }
         hulls[14] = CustomItemList.TimeAccelerationFieldGeneratorTier8.get(64);
         energyHatches[14] = CustomItemList.StabilisationFieldGeneratorTier8.get(64);
+
+        final ItemStack[] circuitSingularities = new ItemStack[] {
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 0),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 1),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 2),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 3),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 4),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 5),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 6),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 7),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 8),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 9),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 0),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 1),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 2),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 3),
+                GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 4) };
 
         final ItemStack[] coalCasings = new ItemStack[] { GregtechItemList.GTPP_Casing_ULV.get(64),
                 ItemRefer.Compassline_Casing_LV.get(64), ItemRefer.Compassline_Casing_MV.get(64),
@@ -121,7 +139,7 @@ public class BECRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Tritanium, 64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Draconium, 64),
                 MaterialsElements.STANDALONE.RHUGNOR.getPlateSuperdense(64),
-                MaterialsElements.STANDALONE.DRAGON_METAL.getPlateSuperdense(64),
+                MaterialsElements.STANDALONE.DRAGON_METAL.getPlateDense(64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 64), };
 
@@ -145,11 +163,13 @@ public class BECRecipes implements Runnable {
 
         for (int t = 0; t < 15; ++t) {
             addBec(
-                    ItemList.COMPRESSIBLE_COMPUTATION_CORES[t].get(1),
-                    new ItemStack[] { NHItemList.SingularityComputationCore.get(), hulls[t], coalCasings[t],
-                            material1[t], energyConduits[t / 5], compCircuits[t], compCircuits[t],
-                            energyConduits[t / 5], energyConduits[t / 5], compCircuits[t], compCircuits[t],
-                            energyConduits[t / 5], material2[t], energyHatches[t], batteries[t], material3[t] },
+                    circuitSingularities[t],
+                    new ItemStack[] {
+                            GTModHandler.getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6),
+                            hulls[t], coalCasings[t], material1[t], energyConduits[t / 5], compCircuits[t],
+                            compCircuits[t], energyConduits[t / 5], energyConduits[t / 5], compCircuits[t],
+                            compCircuits[t], energyConduits[t / 5], material2[t], energyHatches[t], batteries[t],
+                            material3[t] },
                     nanites(10, 5, 9, 1, 4, 8, 8, 4, 4, 8, 8, 4, 2, 6, 7, 3),
                     condensates,
                     duration,
