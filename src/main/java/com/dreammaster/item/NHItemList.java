@@ -12,6 +12,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.item.baubles.HealingAmulet;
 import com.dreammaster.item.baubles.OvenGlove;
 import com.dreammaster.item.baubles.WitherProtectionRing;
 import com.dreammaster.item.food.QuantumBread;
@@ -25,6 +26,7 @@ public enum NHItemList {
     // ===== Complex Items =====
     OvenGlove("OvenGlove", new OvenGlove(), GENERIC),
     WitherProtectionRing("WitherProtectionRing", new WitherProtectionRing(), THAUMCRAFT),
+    HealingAmulet("HealingAmulet", new HealingAmulet(), THAUMCRAFT),
     WoodenBrickForm("WoodenBrickForm", new WoodenBrickForm(), GENERIC),
     QuantumBread("QuantumBread", new QuantumBread(), GENERIC),
     BowFletchingCast("BowFletchingCast", new CustomPattern(), MOLDS),

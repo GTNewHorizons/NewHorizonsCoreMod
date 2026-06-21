@@ -118,6 +118,26 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(NHItemList.WitherProtectionRing.get())));
         ThaumcraftApi.addWarpToResearch("WITHERRING", 2);
         new ResearchItem(
+                "HEALINGAMULET",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.HEAL, 4).add(Aspect.HUNGER, 16).add(DarkAspects.GLUTTONY, 8),
+                6,
+                0,
+                3,
+                NHItemList.HealingAmulet.get()).setParents("INFUSION", "RINGFOOD")
+                        .setPages(new ResearchPage("NewHorizons.research_page.HEALINGAMULET")).registerResearchItem();
+        TCHelper.addInfusionCraftingRecipe(
+                "HEALINGAMULET",
+                NHItemList.HealingAmulet.get(),
+                3,
+                new AspectList().add(Aspect.HEAL, 16).add(Aspect.HUNGER, 32).add(DarkAspects.GLUTTONY, 24),
+                getModItem(ExtraUtilities.ID, "defoliageAxe", 1, 0),
+                getModItem(ForbiddenMagic.ID, "RingNutrition", 1, 0),
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0));
+        TCHelper.addResearchPage(
+                "HEALINGAMULET",
+                new ResearchPage(TCHelper.findInfusionRecipe(NHItemList.HealingAmulet.get())));
+        new ResearchItem(
                 "EMINENCESTONE",
                 "NEWHORIZONS",
                 new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.SENSES, 12).add(Aspect.EARTH, 9)
