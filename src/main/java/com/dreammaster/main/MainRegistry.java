@@ -7,7 +7,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.List;
 import java.util.Random;
 
-import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -97,6 +96,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.common.items.MetaGeneratedItem01;
+import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 
 @Mod(
         modid = Refstrings.MODID,
