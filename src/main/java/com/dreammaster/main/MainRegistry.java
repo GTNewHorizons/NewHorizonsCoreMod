@@ -19,6 +19,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
+import com.dreammaster.TwilightForest.TwilightForestMajorFeatureOverride;
 import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
@@ -264,6 +265,7 @@ public class MainRegistry {
 
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
+            TwilightForestMajorFeatureOverride.run();
         }
 
         if (CoreModConfig.Modules.gtnhPauseMenuButtons && event.getSide().isClient()) {

@@ -207,6 +207,18 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1)).fluidInputs(Materials.Redstone.getMolten(72L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        // Vanilla Compass
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 2L),
+                        new OreDictItemStack("paneGlass", 1),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Zinc, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1L))
+                .itemOutputs(new ItemStack(Items.compass, 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 8)).circuit(8)
                 .itemOutputs(ItemList.Hull_Bronze.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
