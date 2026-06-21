@@ -7,6 +7,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.List;
 import java.util.Random;
 
+import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -405,6 +406,8 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(handler);
             handleAchievements = true;
         }
+
+        new FakeCuttingRecipes().run(); // nei cutting recipes display
     }
 
     /**
