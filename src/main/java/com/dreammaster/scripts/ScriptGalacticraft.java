@@ -945,10 +945,10 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggymat", 1, 1),
                 null,
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
                 "compressedSteel",
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
+                ItemList.PadBouncy.get(1L),
                 "compressedSteel",
                 "compressedSteel",
                 "compressedSteel",
@@ -956,7 +956,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggymat", 1, 2),
                 "compressedSteel",
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
                 "compressedSteel",
                 "compressedSteel",
                 getModItem(IronChests.ID, "BlockIronChest", 1, 0),

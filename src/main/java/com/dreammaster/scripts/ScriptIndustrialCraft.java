@@ -160,17 +160,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "batteryData",
                 "circuitData");
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
-                "plateAnyRubber",
-                "plateAnyRubber",
-                "plateAnyRubber",
-                "plateAnyRubber",
-                "plateAnyRubber",
-                "plateAnyRubber",
-                null,
-                null,
-                null);
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockScaffold", 1, 0),
                 "screwIron",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),

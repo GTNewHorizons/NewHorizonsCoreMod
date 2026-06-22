@@ -1514,7 +1514,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             alveary,
                             getModItem(Forestry.ID, "thermionicTubes", 4, 8),
-                            getModItem(IndustrialCraft2.ID, "blockRubber", 4),
+                            ItemList.PadBouncy.get(4L),
                             new ItemStack(Blocks.brick_block, 1, 0))
                     .itemOutputs(getModItem(ExtraBees.ID, "alveary", 1, 2)).fluidInputs(Materials.Honey.getFluid(7500L))
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
