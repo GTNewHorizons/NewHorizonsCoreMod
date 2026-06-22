@@ -13,7 +13,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Avaritia:1.97:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Irontanks:1.4.6:dev") { transitive = false }
     compileOnly("secondderivative.irontankminecarts:IronTankMinecarts:1.0.5:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:twilightforest:2.7.33:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:twilightforest:2.7.35:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.5.3:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.91-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.16:dev") { transitive = false }
