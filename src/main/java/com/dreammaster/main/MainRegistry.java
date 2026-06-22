@@ -96,6 +96,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.common.items.MetaGeneratedItem01;
+import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -405,6 +406,8 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(handler);
             handleAchievements = true;
         }
+
+        new FakeCuttingRecipes().run(); // nei cutting recipes display
     }
 
     /**
