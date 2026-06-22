@@ -243,7 +243,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0),
+                        ItemList.ReinforcedGlass.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4L))
                 .circuit(1).itemOutputs(NHItemList.Empty180SpCell.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
@@ -1097,7 +1097,7 @@ public class AssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 2),
-                            getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 4, 0),
+                            ItemList.ReinforcedGlass.get(4L),
                             Materials.Glowstone.getPlates(1))
                     .circuit(1).itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 5))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -8902,7 +8902,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer.get(2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
-                        GTModHandler.getIC2Item("reinforcedGlass", 1L),
+                        ItemList.ReinforcedGlass.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         NHItemList.AluminiumIronPlate.get())
