@@ -398,9 +398,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Cover_SolarPanel.get(1L, o),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { "SGS", "CPC", "TRT", 'C', OrePrefixes.circuit.get(Materials.LV), 'G',
-                        GTModHandler.getIC2Item("reinforcedGlass", 1L), 'P',
-                        OrePrefixes.plateAlloy.get(Materials.Carbon), 'S', ItemList.Circuit_Silicon_Wafer, 'T',
-                        OrePrefixes.wireGt01.get(Materials.RedAlloy), 'R', NHItemList.AluminiumIronPlate.get() });
+                        ItemList.ReinforcedGlass.get(1L), 'P', OrePrefixes.plateAlloy.get(Materials.Carbon), 'S',
+                        ItemList.Circuit_Silicon_Wafer, 'T', OrePrefixes.wireGt01.get(Materials.RedAlloy), 'R',
+                        NHItemList.AluminiumIronPlate.get() });
         GTModHandler.addCraftingRecipe(
                 ItemList.Cover_SolarPanel_8V.get(1L, o),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
