@@ -521,25 +521,12 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 7)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
-            // Tier Computation Singularities
-            final ItemStack[] compSingularities = new ItemStack[] {
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 0),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 1),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 2),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 3),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 4),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 5),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 6),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 7),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 8),
-                    getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 9),
-                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 0),
-                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 1),
-                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 2),
-                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 3),
-                    getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 4), };
-
-
+            // Base Computation Singularity
+            GTValues.RA.stdBuilder().fluidInputs(Materials.BoundlessCosmicSolder.getFluid(3648 * 9 * 144L))
+                    .itemInputs(NHItemList.SingularityComputationCore.get(1))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6))
+                    .duration(6400 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COMPRESSION_TIER, 2)
+                    .addTo(neutroniumCompressorRecipes);
         }
     }
 }
