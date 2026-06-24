@@ -539,12 +539,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 3),
                     getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 4), };
 
-            for (int t = 0; t < 15; ++t) {
-                GTValues.RA.stdBuilder().itemInputs(ItemList.COMPRESSIBLE_COMPUTATION_CORES[t].get(1))
-                        .fluidInputs(Materials.BoundlessCosmicSolder.getFluid(1_024_000))
-                        .itemOutputs(compSingularities[t]).duration(6400 * SECONDS).eut(TierEU.RECIPE_UXV)
-                        .metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
-            }
+
         }
     }
 }

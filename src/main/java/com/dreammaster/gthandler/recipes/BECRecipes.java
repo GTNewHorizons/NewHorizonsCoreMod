@@ -143,18 +143,7 @@ public class BECRecipes implements Runnable {
                 CondensateType.CosmicNeutronium.getEntangled(1_024_000 * INGOTS),
                 CondensateType.Bedrockium.getEntangled(1_024_000 * INGOTS) };
 
-        for (int t = 0; t < 15; ++t) {
-            addBec(
-                    ItemList.COMPRESSIBLE_COMPUTATION_CORES[t].get(1),
-                    new ItemStack[] { NHItemList.SingularityComputationCore.get(), hulls[t], coalCasings[t],
-                            material1[t], energyConduits[t / 5], compCircuits[t], compCircuits[t],
-                            energyConduits[t / 5], energyConduits[t / 5], compCircuits[t], compCircuits[t],
-                            energyConduits[t / 5], material2[t], energyHatches[t], batteries[t], material3[t] },
-                    nanites(10, 5, 9, 1, 4, 8, 8, 4, 4, 8, 8, 4, 2, 6, 7, 3),
-                    condensates,
-                    duration,
-                    TierEU.RECIPE_UXV);
-        }
+
     }
 
     private void addSGRecipes() {
