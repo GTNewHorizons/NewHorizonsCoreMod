@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
 import static gregtech.api.util.GTRecipeConstants.PRECISE_ASSEMBLER_CASING_TIER;
@@ -183,7 +184,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
 
         // Efficient Overclocker (Scanner)
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemRefer.AntimatterContainmentCasing.get(1))
-                .metadata(SCANNING, new Scanning(500 * SECONDS, TierEU.RECIPE_UMV))
+                .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_UIV))
                 .itemInputs(
                         ItemList.Magnetic_Chassis_T2_ExoFoundry.get(1),
                         ItemRefer.GravityStabilizationCasing.get(1),
