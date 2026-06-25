@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -16,6 +15,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import forestry.api.recipes.IFermenterRecipe;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 
@@ -29,7 +29,7 @@ public class BrewingMachineRecipes implements Runnable {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 16, 0))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Chaff.get(16))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 750)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);
@@ -55,7 +55,7 @@ public class BrewingMachineRecipes implements Runnable {
                 ItemStack resource = recipe.getResource();
 
                 boolean alreadyHasRecipe = brewingRecipes.containsInput(resource);
-                boolean resultsInBiomass = recipe.getOutput().equals(FluidRegistry.getFluid("biomass"));
+                boolean resultsInBiomass = recipe.getOutput().equals(Materials.Biomass.mFluid);
 
                 if (!alreadyHasRecipe && resultsInBiomass) {
                     int amountIn = recipe.getFermentationValue() * 2;
@@ -63,19 +63,19 @@ public class BrewingMachineRecipes implements Runnable {
 
                     GTValues.RA.stdBuilder().itemInputs(resource)
                             .fluidInputs(FluidRegistry.getFluidStack("water", amountIn))
-                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
-                            .eut(3).addTo(brewingRecipes);
+                            .fluidOutputs(Materials.Biomass.getFluid(amountOut)).duration(8 * amountOut).eut(3)
+                            .addTo(brewingRecipes);
 
                     amountOut = (int) (amountOut * 1.5);
 
                     GTValues.RA.stdBuilder().itemInputs(resource)
                             .fluidInputs(FluidRegistry.getFluidStack("juice", amountIn))
-                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
-                            .eut(3).addTo(brewingRecipes);
+                            .fluidOutputs(Materials.Biomass.getFluid(amountOut)).duration(8 * amountOut).eut(3)
+                            .addTo(brewingRecipes);
 
                     GTValues.RA.stdBuilder().itemInputs(resource).fluidInputs(Materials.Honey.getFluid(amountIn))
-                            .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
-                            .eut(3).addTo(brewingRecipes);
+                            .fluidOutputs(Materials.Biomass.getFluid(amountOut)).duration(8 * amountOut).eut(3)
+                            .addTo(brewingRecipes);
 
                 }
             }
