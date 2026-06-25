@@ -48,7 +48,7 @@ public class BECRecipes implements Runnable {
     }
 
     private void addComputationSingularityRecipes() {
-        final int duration = 64_000_000;
+        final int duration = 32_000_000 * SECONDS;
 
         final ItemStack[] hulls = new ItemStack[15];
         final ItemStack[] energyHatches = new ItemStack[15];
@@ -145,14 +145,14 @@ public class BECRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 64), };
 
-        final ItemStack[] compCircuits = new ItemStack[] { NHItemList.Compressed_Circuit_Array_ULV.get(1),
-                NHItemList.Compressed_Circuit_Array_LV.get(1), NHItemList.Compressed_Circuit_Array_MV.get(1),
-                NHItemList.Compressed_Circuit_Array_HV.get(1), NHItemList.Compressed_Circuit_Array_EV.get(1),
-                NHItemList.Compressed_Circuit_Array_IV.get(1), NHItemList.Compressed_Circuit_Array_LuV.get(1),
-                NHItemList.Compressed_Circuit_Array_ZPM.get(1), NHItemList.Compressed_Circuit_Array_UV.get(1),
-                NHItemList.Compressed_Circuit_Array_UHV.get(1), NHItemList.Compressed_Circuit_Array_UEV.get(1),
-                NHItemList.Compressed_Circuit_Array_UIV.get(1), NHItemList.Compressed_Circuit_Array_UMV.get(1),
-                NHItemList.Compressed_Circuit_Array_UXV.get(1), NHItemList.Compressed_Circuit_Array_MAX.get(1), };
+        final ItemStack[] compCircuits = new ItemStack[] { NHItemList.Compressed_Circuit_Array_ULV.get(16),
+                NHItemList.Compressed_Circuit_Array_LV.get(16), NHItemList.Compressed_Circuit_Array_MV.get(16),
+                NHItemList.Compressed_Circuit_Array_HV.get(16), NHItemList.Compressed_Circuit_Array_EV.get(16),
+                NHItemList.Compressed_Circuit_Array_IV.get(16), NHItemList.Compressed_Circuit_Array_LuV.get(16),
+                NHItemList.Compressed_Circuit_Array_ZPM.get(16), NHItemList.Compressed_Circuit_Array_UV.get(16),
+                NHItemList.Compressed_Circuit_Array_UHV.get(16), NHItemList.Compressed_Circuit_Array_UEV.get(16),
+                NHItemList.Compressed_Circuit_Array_UIV.get(16), NHItemList.Compressed_Circuit_Array_UMV.get(16),
+                NHItemList.Compressed_Circuit_Array_UXV.get(16), NHItemList.Compressed_Circuit_Array_MAX.get(16), };
 
         final ItemStack[] energyConduits = new ItemStack[] { ItemList.MetaMaterial_EnergyConduit1.get(64),
                 ItemList.MetaMaterial_EnergyConduit2.get(64), ItemList.MetaMaterial_EnergyConduit3.get(64) };
@@ -181,7 +181,7 @@ public class BECRecipes implements Runnable {
 
     private void addSGRecipes() {
 
-        final int baseStargateTime = 16_000_000 * SECONDS;
+        final int baseStargateTime = 8_000_000 * SECONDS;
 
         // Stargate-Radiation-Containment-Plate
         addBec(
@@ -280,7 +280,7 @@ public class BECRecipes implements Runnable {
 
     private void addCircuitArrayRecipes() {
 
-        final int duration = 100_000;
+        final int duration = 50_000 * SECONDS;
 
         final ItemStack[] dynamoHatch = new ItemStack[15];
         final ItemStack[] energyHatch = new ItemStack[15];
