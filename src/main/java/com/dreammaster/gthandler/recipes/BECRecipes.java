@@ -52,7 +52,7 @@ public class BECRecipes implements Runnable {
 
         final ItemStack[] hulls = new ItemStack[15];
         final ItemStack[] energyHatches = new ItemStack[15];
-        for (int i = 0; i < ItemList.MACHINE_HULLS.length; ++i) {
+        for (int i = 0; i < 14; ++i) {
             hulls[i] = ItemList.MACHINE_HULLS[i].get(64);
             energyHatches[i] = ItemList.WIRELESS_ENERGY_HATCHES[i].get(64);
         }
@@ -285,7 +285,7 @@ public class BECRecipes implements Runnable {
         final ItemStack[] dynamoHatch = new ItemStack[15];
         final ItemStack[] energyHatch = new ItemStack[15];
         final ItemStack[] wetTransformer = new ItemStack[15];
-        for (int i = 0; i < ItemList.MACHINE_HULLS.length; ++i) {
+        for (int i = 0; i < 14; ++i) {
             dynamoHatch[i] = ItemList.HATCHES_DYNAMO[i].get(64);
             energyHatch[i] = ItemList.HATCHES_ENERGY[i].get(64);
             wetTransformer[i] = ItemList.POWER_TRANSFORMERS[i].get(64);
