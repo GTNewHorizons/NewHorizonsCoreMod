@@ -574,13 +574,13 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemDoorAlloy", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
                 ItemList.ReinforcedGlass.get(1L),
                 "craftingToolHardHammer",
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
                 "ringLead",
                 "screwLead",
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
                 "plateDenseLead",
                 "craftingToolScrewdriver");
         addShapedRecipe(
@@ -1158,7 +1158,9 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(IndustrialCraft2.ID, "itemPartAlloy", 3, 0), ItemList.ReinforcedGlass.get(1L))
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.HV, 3),
+                        ItemList.ReinforcedGlass.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDoorAlloy", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 720)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1343,7 +1345,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4L),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 2, 0),
-                        getModItem(IndustrialCraft2.ID, "itemPartAlloy", 2, 0),
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.HV, 2),
                         getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0))
                 .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);

@@ -5674,12 +5674,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.CRAFT, 9).add(Aspect.ORDER, 7).add(Aspect.MECHANISM, 6).add(Aspect.TOOL, 5)
                         .add(Aspect.METAL, 5).add(Aspect.LIGHT, 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
-                new AspectList().add(Aspect.METAL, 4).add(Aspect.VOID, 2));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4),
-                new AspectList().add(Aspect.METAL, 3));
-        ThaumcraftApi.registerObjectTag(
                 NHItemList.ReinforcedGlassPlate.get(),
                 new AspectList().add(Aspect.METAL, 1).add(Aspect.COLD, 1));
         ThaumcraftApi.registerObjectTag(
