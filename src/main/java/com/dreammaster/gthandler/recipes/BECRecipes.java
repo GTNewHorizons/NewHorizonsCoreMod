@@ -38,14 +38,14 @@ public class BECRecipes implements Runnable {
 
     @Override
     public void run() {
-        if (UniversalSingularities.isModLoaded()) addComputationCoreRecipes();
+        if (UniversalSingularities.isModLoaded()) addComputationSingularityRecipes();
     }
 
     public void runLate() {
         if (EternalSingularity.isModLoaded()) addSGRecipes();
     }
 
-    private void addComputationCoreRecipes() {
+    private void addComputationSingularityRecipes() {
         final int duration = 64_000_000;
 
         final ItemStack[] hulls = new ItemStack[15];
@@ -139,7 +139,7 @@ public class BECRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Tritanium, 64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Draconium, 64),
                 MaterialsElements.STANDALONE.RHUGNOR.getPlateSuperdense(64),
-                MaterialsElements.STANDALONE.DRAGON_METAL.getPlateDense(64),
+                MaterialsElements.STANDALONE.DRAGON_METAL.getPlateSuperdense(64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 64), };
 
