@@ -2347,13 +2347,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0),
                 OrePrefixes.plate.get(Materials.ReinforcedGlass),
                 ItemList.Block_TungstenSteelReinforced.get(1L),
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
                 OrePrefixes.plate.get(Materials.Reinforced),
                 ItemList.Block_TungstenSteelReinforced.get(1L),
                 OrePrefixes.plate.get(Materials.ReinforcedGlass),
                 ItemList.Block_TungstenSteelReinforced.get(1L),
                 OrePrefixes.plate.get(Materials.Reinforced),
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
                 ItemList.Block_TungstenSteelReinforced.get(1L));
         TCHelper.addResearchPage(
                 "ShieldFocus",
@@ -2381,7 +2381,7 @@ public class ScriptEMT implements IScriptLoader {
                 'a',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1),
                 'b',
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
                 'c',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1),
                 'd',
@@ -2393,7 +2393,7 @@ public class ScriptEMT implements IScriptLoader {
                 'g',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1),
                 'h',
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
                 'i',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1));
         TCHelper.addResearchPage(
