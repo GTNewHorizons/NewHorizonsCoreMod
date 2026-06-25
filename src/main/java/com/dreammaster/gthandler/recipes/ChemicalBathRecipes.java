@@ -193,7 +193,7 @@ public class ChemicalBathRecipes implements Runnable {
                 .addTo(chemicalBathRecipes);
 
         // Laser Resistant Plate
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockAlloy", 1))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Block_ReinforcedConcrete.get(1L))
                 .itemOutputs(new ItemStack(GregTechAPI.sLaserRender))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.hastelloyx", 1152)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(chemicalBathRecipes);
@@ -205,7 +205,7 @@ public class ChemicalBathRecipes implements Runnable {
 
         // Superplasticizer-treated high strength concrete
         Fluid naphthalene = FluidRegistry.getFluid("fluid.naphthalene");
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getIC2Item("reinforcedStone", 1))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Block_ReinforcedConcrete.get(1L))
                 .fluidInputs(new FluidStack(naphthalene, 1000))
                 .itemOutputs(ItemList.BlockIndustrialStrengthConcrete.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(chemicalBathRecipes);

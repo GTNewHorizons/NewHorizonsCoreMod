@@ -22,6 +22,7 @@ public class LoginHandler {
     @SubscribeEvent
     public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
         final String WELCOME             = "dreamcraft.welcome.welcome";
+        final String GUIDE               = "dreamcraft.welcome.guide";
         final String QUESTBOOK           = "dreamcraft.welcome.questbook";
         final String GTNH_WIKI           = "dreamcraft.welcome.gtnh_wiki";
         final String CLICK_WIKI          = "dreamcraft.welcome.click_wiki";
@@ -54,6 +55,7 @@ public class LoginHandler {
         event.player.addChatMessage(new ChatComponentText("-----------------------------------------------------")
                 .setChatStyle(new ChatStyle().setColor(GOLD).setStrikethrough(true)));
         event.player.addChatMessage(new ChatComponentTranslation(WELCOME, modpackVersion).setChatStyle(new ChatStyle().setBold(true)));
+        event.player.addChatMessage(new ChatComponentTranslation(GUIDE).setChatStyle(new ChatStyle().setColor(YELLOW)));
         event.player.addChatMessage(new ChatComponentTranslation(QUESTBOOK).setChatStyle(new ChatStyle().setColor(BLUE)));
         event.player.addChatMessage(new ChatComponentTranslation(GTNH_WIKI, gtnhWikiLink).setChatStyle(new ChatStyle().setColor(DARK_GREEN)));
         event.player.addChatMessage(new ChatComponentTranslation(REPORT_BUG).setChatStyle(new ChatStyle().setColor(GREEN)));

@@ -25,6 +25,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
+import static gregtech.api.enums.Mods.GTPlusPlusEverglades;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -206,6 +207,18 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1)).fluidInputs(Materials.Redstone.getMolten(72L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        // Vanilla Compass
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 2L),
+                        new OreDictItemStack("paneGlass", 1),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Zinc, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1L))
+                .itemOutputs(new ItemStack(Items.compass, 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 8)).circuit(8)
                 .itemOutputs(ItemList.Hull_Bronze.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
@@ -230,7 +243,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0),
+                        ItemList.ReinforcedGlass.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4L))
                 .circuit(1).itemOutputs(NHItemList.Empty180SpCell.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
@@ -1084,7 +1097,7 @@ public class AssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 2),
-                            getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 4, 0),
+                            ItemList.ReinforcedGlass.get(4L),
                             Materials.Glowstone.getPlates(1))
                     .circuit(1).itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 5))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -1501,7 +1514,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             alveary,
                             getModItem(Forestry.ID, "thermionicTubes", 4, 8),
-                            getModItem(IndustrialCraft2.ID, "blockRubber", 4),
+                            ItemList.PadBouncy.get(4L),
                             new ItemStack(Blocks.brick_block, 1, 0))
                     .itemOutputs(getModItem(ExtraBees.ID, "alveary", 1, 2)).fluidInputs(Materials.Honey.getFluid(7500L))
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -4761,15 +4774,52 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
-        // Pattern Provider (for LMA)
+        // Pattern Provider (IV) - for Large Molecular Assembler
         GTValues.RA.stdBuilder().itemInputs(
                 ItemList.Hatch_Input_Bus_IV.get(1L),
                 // interface
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
                 // Pattern capacity card
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54)).circuit(4)
-                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting.get(1L)).duration(1 * SECONDS)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_IV.get(1L)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+        // Pattern Provider (LuV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Hatch_Input_Bus_LuV.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 6, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_LuV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+        // Pattern Provider (ZPM) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Hatch_Input_Bus_ZPM.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 9, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_ZPM.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+        // Pattern Provider (UV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Hatch_Input_Bus_UV.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 12, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_UV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+        // Pattern Provider (UHV) - for Large Molecular Assembler
+        GTValues.RA.stdBuilder().itemInputs(
+                // why is UHV input bus called MAX??? its several tiers lower >:c
+                ItemList.Hatch_Input_Bus_MAX.get(1L),
+                // interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                // Pattern capacity card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 15, 54)).circuit(4)
+                .itemOutputs(ItemList.Hatch_PatternProvider_Crafting_UHV.get(1L)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
         if (AE2FluidCraft.isModLoaded()) {
             // Dual Interface
@@ -8230,6 +8280,15 @@ public class AssemblerRecipes implements Runnable {
 
         // NEI Ore Plugin planets
         // T0 Planets
+        // Toxic Everglades
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                        getModItem(GTPlusPlusEverglades.ID, "blockDarkWorldGround", 64, 0),
+                        getModItem(GTPlusPlusEverglades.ID, "blockDarkWorldGround2", 64, 0))
+                .circuit(17).fluidInputs(Materials.StagnantWasteWater.getFluid(10000L))
+                .itemOutputs(new ItemStack(ModBlocks.blocks.get("Eg"), 1, 0)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Overworld
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -8843,7 +8902,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer.get(2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
-                        GTModHandler.getIC2Item("reinforcedGlass", 1L),
+                        ItemList.ReinforcedGlass.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         NHItemList.AluminiumIronPlate.get())

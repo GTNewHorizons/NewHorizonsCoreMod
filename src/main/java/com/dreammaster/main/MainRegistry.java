@@ -19,6 +19,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
+import com.dreammaster.TwilightForest.TwilightForestMajorFeatureOverride;
 import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
@@ -95,6 +96,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.common.items.MetaGeneratedItem01;
+import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -264,6 +266,7 @@ public class MainRegistry {
 
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
+            TwilightForestMajorFeatureOverride.run();
         }
 
         if (CoreModConfig.Modules.gtnhPauseMenuButtons && event.getSide().isClient()) {
@@ -403,6 +406,8 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(handler);
             handleAchievements = true;
         }
+
+        new FakeCuttingRecipes().run(); // nei cutting recipes display
     }
 
     /**
