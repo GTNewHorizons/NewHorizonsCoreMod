@@ -13,6 +13,8 @@ import net.minecraft.item.crafting.IRecipe;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import com.dreammaster.main.MainRegistry;
+
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
@@ -100,53 +102,96 @@ public class TCHelper {
     }
 
     public static void clearPages(final String research) {
-        ResearchCategories.getResearch(research).setPages();
+        ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER.warn("Tried to clear pages for null Thaumcraft research \"{}\"", research);
+            return;
+        }
+        ri.setPages();
     }
 
     public static void addResearchPage(final String research, ResearchPage page) {
         ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER.warn("Tried to add research page for null Thaumcraft research \"{}\"", research);
+            return;
+        }
         ri.setPages(ArrayUtils.add(ri.getPages(), page));
     }
 
     public static void clearPrereq(final String research) {
-        ResearchCategories.getResearch(research).setParents().setParentsHidden();
+        ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER.warn("Tried to clear prereqs for null Thaumcraft research \"{}\"", research);
+            return;
+        }
+        ri.setParents().setParentsHidden();
     }
 
     public static void addResearchPrereq(final String research, String prereq, boolean hidden) {
         ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER
+                    .warn("Tried to add prereq \"{}\" for null Thaumcraft research \"{}\"", prereq, research);
+            return;
+        }
         if (hidden) ri.setParentsHidden(ArrayUtils.add(ri.parentsHidden, prereq));
         else ri.setParents(ArrayUtils.add(ri.parents, prereq));
     }
 
     public static void clearSiblings(final String research) {
-        ResearchCategories.getResearch(research).setSiblings();
+        ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER.warn("Tried to clear siblings for null Thaumcraft research \"{}\"", research);
+            return;
+        }
+        ri.setSiblings();
     }
 
     public static void addResearchSibling(final String research, String sibling) {
         ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER
+                    .warn("Tried to add sibling \"{}\" for null Thaumcraft research \"{}\"", sibling, research);
+            return;
+        }
         ri.setSiblings(ArrayUtils.add(ri.siblings, sibling));
     }
 
     private static Field tags = null;
 
     public static void setResearchAspects(final String research, AspectList aspects) {
+        ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER.warn("Tried to set aspects for null Thaumcraft research \"{}\"", research);
+            return;
+        }
         try {
             if (tags == null) {
                 tags = ResearchItem.class.getField("tags");
                 tags.setAccessible(true);
             }
-            tags.set(ResearchCategories.getResearch(research), aspects);
+            tags.set(ri, aspects);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }
 
     public static void setResearchComplexity(final String research, int complexity) {
-        ResearchCategories.getResearch(research).setComplexity(complexity);
+        ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER.warn("Tried to set complexity for null Thaumcraft research \"{}\"", research);
+            return;
+        }
+        ri.setComplexity(complexity);
     }
 
     public static void refreshResearchPages(final String research) {
         ResearchItem target = ResearchCategories.getResearch(research);
+        if (target == null) {
+            MainRegistry.LOGGER.warn("Tried to refresh pages for null Thaumcraft research \"{}\"", research);
+            return;
+        }
         ResearchPage[] pages = target.getPages();
         for (int x = 0; x < pages.length; x++) {
             if (pages[x].recipe != null) {
@@ -205,9 +250,12 @@ public class TCHelper {
 
     public static void moveResearch(final String research, final String destination, final int x, final int y) {
         ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER.warn("Tried to set aspects for null Thaumcraft research \"{}\"", research);
+            return;
+        }
         try {
             if (displayColumnField == null) {
-
                 Class<ResearchItem> RIClass = ResearchItem.class;
                 displayColumnField = RIClass.getField("displayColumn");
                 displayRowField = RIClass.getField("displayRow");
@@ -215,7 +263,6 @@ public class TCHelper {
                 displayColumnField.setAccessible(true);
                 displayRowField.setAccessible(true);
                 category.setAccessible(true);
-
             }
 
             removeResearch(research);
@@ -251,6 +298,10 @@ public class TCHelper {
 
     public static void removeResearch(final String research) {
         ResearchItem ri = ResearchCategories.getResearch(research);
+        if (ri == null) {
+            MainRegistry.LOGGER.warn("Tried to remove null Thaumcraft research \"{}\"", research);
+            return;
+        }
         ResearchCategoryList rcl = ResearchCategories.getResearchList(ri.category);
         rcl.research.remove(research);
     }
@@ -315,6 +366,11 @@ public class TCHelper {
     private static Field infusionRecipeResearchField = null;
 
     public static void setRecipeResearch(final InfusionRecipe recipe, final String researchName) {
+        if (recipe == null) {
+            MainRegistry.LOGGER
+                    .warn("Tried to set recipe research to \"{}\" for null Thaumcraft infusion recipe", researchName);
+            return;
+        }
         try {
             if (infusionRecipeResearchField == null) {
                 infusionRecipeResearchField = InfusionRecipe.class.getDeclaredField("research");
@@ -328,7 +384,6 @@ public class TCHelper {
 
     public static InfusionRecipe addInfusionCraftingRecipe(String research, ItemStack result, int instability,
             AspectList aspects, Object input, Object... recipe) {
-
         if (result == null || result.getItem() == null) {
             return null;
         }
