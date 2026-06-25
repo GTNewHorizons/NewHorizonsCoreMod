@@ -25,6 +25,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import tectech.recipe.TecTechRecipeMaps;
@@ -38,6 +39,7 @@ public class BECRecipes implements Runnable {
 
     @Override
     public void run() {
+        addCircuitArrayRecipes();
         if (UniversalSingularities.isModLoaded()) addComputationSingularityRecipes();
     }
 
@@ -276,9 +278,162 @@ public class BECRecipes implements Runnable {
                 TierEU.RECIPE_UXV);
     }
 
+    private void addCircuitArrayRecipes() {
+
+        final int duration = 100_000;
+
+        final ItemStack[] dynamoHatch = new ItemStack[15];
+        final ItemStack[] energyHatch = new ItemStack[15];
+        final ItemStack[] wetTransformer = new ItemStack[15];
+        for (int i = 0; i < ItemList.MACHINE_HULLS.length; ++i) {
+            dynamoHatch[i] = ItemList.HATCHES_DYNAMO[i].get(64);
+            energyHatch[i] = ItemList.HATCHES_ENERGY[i].get(64);
+            wetTransformer[i] = ItemList.POWER_TRANSFORMERS[i].get(64);
+        }
+        dynamoHatch[14] = CustomItemList.TimeAccelerationFieldGeneratorTier8.get(64);
+        energyHatch[14] = CustomItemList.SpacetimeCompressionFieldGeneratorTier8.get(64);
+        wetTransformer[14] = CustomItemList.StabilisationFieldGeneratorTier8.get(64);
+
+        final ItemStack[] circuits = new ItemStack[] { GTUtility.copyAmountUnsafe(8_388_608, ItemList.NandChip.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 2, ItemList.Circuit_Microprocessor.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 4, ItemList.Circuit_Processor.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 8, ItemList.Circuit_Nanoprocessor.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 16, ItemList.Circuit_Quantumprocessor.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 32, ItemList.Circuit_Crystalprocessor.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 64, ItemList.Circuit_Neuroprocessor.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 128, ItemList.Circuit_Bioprocessor.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 256, ItemList.Circuit_Crystalmainframe.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 512, ItemList.Circuit_Wetwaremainframe.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 1024, ItemList.Circuit_Biomainframe.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 2048, ItemList.Circuit_OpticalMainframe.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 4096, NHItemList.PikoCircuit.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 8192, NHItemList.QuantumCircuit.get(1)),
+                GTUtility.copyAmountUnsafe(8_388_608 / 16384, NHItemList.PlanckCircuit.get(1)), };
+
+        final ItemStack[] circuitArrays = new ItemStack[] { NHItemList.Compressed_Circuit_Array_ULV.get(1),
+                NHItemList.Compressed_Circuit_Array_LV.get(1), NHItemList.Compressed_Circuit_Array_MV.get(1),
+                NHItemList.Compressed_Circuit_Array_HV.get(1), NHItemList.Compressed_Circuit_Array_EV.get(1),
+                NHItemList.Compressed_Circuit_Array_IV.get(1), NHItemList.Compressed_Circuit_Array_LuV.get(1),
+                NHItemList.Compressed_Circuit_Array_ZPM.get(1), NHItemList.Compressed_Circuit_Array_UV.get(1),
+                NHItemList.Compressed_Circuit_Array_UHV.get(1), NHItemList.Compressed_Circuit_Array_UEV.get(1),
+                NHItemList.Compressed_Circuit_Array_UIV.get(1), NHItemList.Compressed_Circuit_Array_UMV.get(1),
+                NHItemList.Compressed_Circuit_Array_UXV.get(1), NHItemList.Compressed_Circuit_Array_MAX.get(1), };
+
+        final ItemStack[] longRod = new ItemStack[] {
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.CastIron, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Titanium, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TungstenSteel, 64),
+                WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.stickLong, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iridium, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmium, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Neutronium, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Bedrockium, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlackPlutonium, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SpaceTime, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MHDCSM, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64), };
+
+        final ItemStack[] boltSD = new ItemStack[] {
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedstoneAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.AnnealedCopper, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.EnergeticAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TungstenSteel, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Iridium, 64),
+                WerkstoffLoader.Ruridit.get(OrePrefixes.plateSuperdense, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Europium, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.ElectrumFlux, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Tritanium, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Draconium, 64),
+                MaterialsElements.STANDALONE.RHUGNOR.getPlateSuperdense(64),
+                MaterialsElements.STANDALONE.DRAGON_METAL.getPlateSuperdense(64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 64), };
+
+        final ItemStack[] wireSD = new ItemStack[] {
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedstoneAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.AnnealedCopper, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.EnergeticAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TungstenSteel, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Iridium, 64),
+                WerkstoffLoader.Ruridit.get(OrePrefixes.plateSuperdense, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Europium, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.ElectrumFlux, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Tritanium, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Draconium, 64),
+                MaterialsElements.STANDALONE.RHUGNOR.getPlateSuperdense(64),
+                MaterialsElements.STANDALONE.DRAGON_METAL.getPlateSuperdense(64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 64),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 64), };
+
+        final ItemStack[] superconductor = new ItemStack[] {
+                GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedstoneAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorMV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorHV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorEV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorIV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorLuV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorZPM, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUMV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Infinity, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SpaceTime, 64), };
+
+        final ItemStack[] hugePipe = new ItemStack[] {
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Lead, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.TungstenSteel, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.NiobiumTitanium, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Enderium, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Naquadah, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Neutronium, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Bedrockium, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Infinity, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.TranscendentMetal, 64),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.SpaceTime, 64),
+                CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(64),
+                ItemList.SuperconductivePlasmaEnergyConduit.get(64), };
+
+        final FluidStack[] condensates = new FluidStack[] {
+                CondensateType.ChromaticGlass.getEntangled(1_024_000 * INGOTS),
+                CondensateType.Neutronium.getEntangled(1_024_000 * INGOTS),
+                CondensateType.CosmicNeutronium.getEntangled(1_024_000 * INGOTS),
+                CondensateType.Bedrockium.getEntangled(1_024_000 * INGOTS) };
+
+        for (int t = 0; t < 15; ++t) {
+            addBecUnsafe(
+                    circuitArrays[t],
+                    new ItemStack[] { NHItemList.Compressed_Circuit_Array_Empty.get(1), boltSD[t], wireSD[t],
+                            dynamoHatch[t], longRod[t], circuits[t], circuits[t], longRod[t], longRod[t], circuits[t],
+                            circuits[t], longRod[t], energyHatch[t], superconductor[t], hugePipe[t],
+                            wetTransformer[t] },
+                    nanites(10, 5, 9, 1, 4, 8, 8, 4, 4, 8, 8, 4, 2, 6, 7, 3),
+                    condensates,
+                    duration,
+                    TierEU.RECIPE_UXV);
+        }
+    }
+
     private void addBec(ItemStack output, ItemStack[] inputs, NaniteTier[] nanites, FluidStack[] condensates,
             int duration, long eut) {
         GTValues.RA.stdBuilder().itemInputs(inputs).fluidInputs(condensates).itemOutputs(output)
+                .metadata(NANITE_TIERS, nanites).duration(duration).eut(eut)
+                .addTo(TecTechRecipeMaps.condensateAssemblingRecipes);
+    }
+
+    private void addBecUnsafe(ItemStack output, ItemStack[] inputs, NaniteTier[] nanites, FluidStack[] condensates,
+            int duration, long eut) {
+        GTValues.RA.stdBuilder().itemInputsUnsafe(inputs).fluidInputs(condensates).itemOutputs(output)
                 .metadata(NANITE_TIERS, nanites).duration(duration).eut(eut)
                 .addTo(TecTechRecipeMaps.condensateAssemblingRecipes);
     }
