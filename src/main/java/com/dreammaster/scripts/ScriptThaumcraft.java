@@ -5738,9 +5738,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.METAL, 64).add(Aspect.CRAFT, 64).add(Aspect.ORDER, 64)
                         .add(Aspect.TOOL, 50));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0),
-                new AspectList().add(Aspect.METAL, 4).add(Aspect.FIRE, 4).add(Aspect.CRYSTAL, 4));
-        ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12),
                 new AspectList().add(Aspect.METAL, 32).add(Aspect.CRAFT, 8).add(Aspect.VOID, 4).add(Aspect.FIRE, 2));
         ThaumcraftApi.registerObjectTag(
@@ -5803,21 +5800,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemFuelRod", 1, 0),
                 new AspectList().add(Aspect.METAL, 4).add(Aspect.CRAFT, 4).add(Aspect.TOOL, 2).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonFibre", 1, 0),
-                new AspectList().add(Aspect.METAL, 3).add(Aspect.FIRE, 3).add(Aspect.CRYSTAL, 3));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 1, 0),
-                new AspectList().add(Aspect.METAL, 2).add(Aspect.FIRE, 2).add(Aspect.CRYSTAL, 2));
-        ThaumcraftApi.registerObjectTag(
                 ItemList.ToolBox.get(1L),
                 new AspectList().add(Aspect.CRAFT, 3).add(Aspect.METAL, 3).add(Aspect.TOOL, 2).add(Aspect.ORDER, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemShardIridium", 1, 0),
                 new AspectList().add(Aspect.METAL, 1));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                new AspectList().add(Aspect.METAL, 8).add(Aspect.CRAFT, 4).add(Aspect.MECHANISM, 4)
-                        .add(Aspect.CRYSTAL, 4));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemToolMEter", 1, 0),
                 new AspectList().add(Aspect.CRAFT, 15).add(Aspect.TOOL, 6).add(Aspect.MIND, 2).add(Aspect.LIGHT, 2));

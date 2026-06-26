@@ -281,7 +281,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 1L),
-                        GTModHandler.getIC2Item("carbonMesh", 1L))
+                        ItemList.Carbon_Mesh.get(1))
                 .circuit(4).itemOutputs(ItemList.Duct_Tape.get(2L)).fluidInputs(Materials.GlueAdvanced.getFluid(200))
                 .duration(6 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -409,20 +409,31 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(3).itemOutputs(BlockList.NeutroniumBars.get(4)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getIC2Item("carbonPlate", 4L), NHItemList.MoldBoots.get(0))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 4),
+                        NHItemList.MoldBoots.get(0))
                 .itemOutputs(NHItemList.CarbonPartBoots.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(GTModHandler.getIC2Item("carbonPlate", 8L), NHItemList.MoldChestplate.get(0))
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 8),
+                        NHItemList.MoldChestplate.get(0))
                 .itemOutputs(NHItemList.CarbonPartChestplate.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getIC2Item("carbonPlate", 5L), NHItemList.MoldHelmet.get(0))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 5),
+                        NHItemList.MoldHelmet.get(0))
                 .itemOutputs(NHItemList.CarbonPartHelmet.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getIC2Item("carbonPlate", 7L), NHItemList.MoldLeggings.get(0))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 7),
+                        NHItemList.MoldLeggings.get(0))
                 .itemOutputs(NHItemList.CarbonPartLeggings.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -6910,7 +6921,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.HV, 4),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 4),
                         NHItemList.AluminiumIronPlate.get())
                 .circuit(3).itemOutputs(NHItemList.ReinforcedAluminiumIronPlate.get()).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -6950,7 +6961,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.HV, 4),
-                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 4),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6))
                 .circuit(3).itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 7))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);

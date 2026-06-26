@@ -33,13 +33,13 @@ public class ScriptGraviSuite implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 "plateAlloyAdvanced",
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 "plateAlloyAdvanced",
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
                 "plateAlloyAdvanced",
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 "plateAlloyAdvanced");
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 1),

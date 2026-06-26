@@ -35,7 +35,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ChemicalBathRecipes implements Runnable {
@@ -123,7 +122,7 @@ public class ChemicalBathRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_GlassFiber.get(1L))
                 .itemOutputs(Materials.EpoxidFiberReinforced.getPlates(1)).fluidInputs(Materials.Epoxid.getMolten(144L))
                 .duration(12 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(chemicalBathRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getIC2Item("carbonFiber", 1))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Carbon_Fibre.get(1))
                 .itemOutputs(Materials.EpoxidFiberReinforced.getPlates(1)).fluidInputs(Materials.Epoxid.getMolten(144L))
                 .duration(12 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(chemicalBathRecipes);
 

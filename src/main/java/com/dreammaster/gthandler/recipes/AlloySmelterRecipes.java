@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -149,7 +148,9 @@ public class AlloySmelterRecipes implements Runnable {
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 2), ItemList.Shape_Mold_Casing.get(0))
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2),
+                        ItemList.Shape_Mold_Casing.get(0))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get().splitStack(3)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(alloySmelterRecipes);
 
@@ -231,7 +232,7 @@ public class AlloySmelterRecipes implements Runnable {
         GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
-                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0))
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 8))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)

@@ -908,19 +908,19 @@ public class ScriptCoreMod implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
                 .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
                 .addTo(brewingRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 1))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 288)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV / 2)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 1))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 160)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 1))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 64)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 1))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(12 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
@@ -1064,7 +1064,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(distilleryRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 1),
                         ItemList.Shape_Extruder_Casing.get(0L))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2)).duration(20 * SECONDS).eut(384)
                 .addTo(extruderRecipes);
