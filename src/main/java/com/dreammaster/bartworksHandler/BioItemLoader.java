@@ -19,7 +19,6 @@ import static gregtech.api.util.GTRecipeConstants.GLASS;
 import static gregtech.api.util.GTRecipeConstants.SIEVERT;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
-import bartworks.API.enums.BioCultureEnum;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -28,9 +27,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import bartworks.API.enums.BioCultureEnum;
 import bartworks.MainMod;
 import bartworks.common.items.SimpleSubItemClass;
-import bartworks.common.loaders.BioItemList;
 import bartworks.util.BWUtil;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.FluidState;
