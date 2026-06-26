@@ -499,13 +499,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoChestplate", 1, wildcard),
                 OrePrefixes.wireFine.get(Materials.Titanium),
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0),
+                "plateAlloyCarbon",
                 OrePrefixes.wireFine.get(Materials.Titanium),
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0),
+                "plateAlloyCarbon",
                 OrePrefixes.wireFine.get(Materials.Titanium),
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0),
+                "plateAlloyCarbon",
                 OrePrefixes.wireFine.get(Materials.Titanium),
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0),
+                "plateAlloyCarbon",
                 OrePrefixes.wireFine.get(Materials.Titanium));
         TCHelper.addResearchPage(
                 "NanosuitWings",
@@ -534,13 +534,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "NanosuitWing", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumChestplate", 1, wildcard),
                 OrePrefixes.wireFine.get(Materials.Osmium),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.wireFine.get(Materials.Osmium),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.wireFine.get(Materials.Osmium),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.wireFine.get(Materials.Osmium),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.wireFine.get(Materials.Osmium));
         TCHelper.addResearchPage(
                 "QuantumWings",
@@ -570,15 +570,15 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumChestplate", 1, wildcard),
                 getModItem(ElectroMagicTools.ID, "ShieldBlock", 1, 0),
                 OrePrefixes.wireFine.get(Materials.Naquadah),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
+                "plateAlloyIridium",
+                "plateAlloyIridium",
                 OrePrefixes.wireFine.get(Materials.Naquadah),
                 getModItem(ElectroMagicTools.ID, "ShieldBlock", 1, 0),
                 OrePrefixes.wireFine.get(Materials.Naquadah),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
+                "plateAlloyIridium",
+                "plateAlloyIridium",
                 OrePrefixes.wireFine.get(Materials.Naquadah));
         TCHelper.addResearchPage(
                 "InfusedQuantumArmor",
@@ -792,9 +792,9 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void),
                 ItemList.Electric_Motor_EV.get(1L),
                 OrePrefixes.wireGt08.get(Materials.Titanium),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.wireGt08.get(Materials.Titanium),
                 ItemList.Electric_Motor_EV.get(1L),
                 OrePrefixes.plate.get(Materials.Void));
@@ -861,7 +861,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.MAGIC, 16).add(Aspect.FIRE, 8),
                 getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, wildcard),
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.circuit.get(Materials.LuV),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
@@ -869,7 +869,7 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.circuit.get(Materials.LuV),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
+                "plateAlloyIridium");
         TCHelper.addResearchPage(
                 "DrilloftheRockbreaker",
                 new ResearchPage(
@@ -929,7 +929,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.GREED, 24).add(Aspect.MAGIC, 16).add(Aspect.AIR, 8),
                 getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, wildcard),
                 getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.circuit.get(Materials.LuV),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
@@ -937,7 +937,7 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.circuit.get(Materials.LuV),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
+                "plateAlloyIridium");
         TCHelper.addResearchPage(
                 "ChainsawoftheStream",
                 new ResearchPage(
@@ -1121,9 +1121,9 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void),
                 OrePrefixes.circuit.get(Materials.IV),
                 ItemList.Sensor_EV.get(1L),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 ItemList.Sensor_EV.get(1L),
                 OrePrefixes.circuit.get(Materials.IV),
                 OrePrefixes.plate.get(Materials.Void),
@@ -1887,7 +1887,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(TCAspects.ELECTRUM.getAspect(), 8),
                 getModItem(Thaumcraft.ID, "ItemHoeElemental", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, wildcard),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.circuit.get(Materials.LuV),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
@@ -1895,7 +1895,7 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.circuit.get(Materials.LuV),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
+                "plateAlloyIridium");
         TCHelper.addResearchPage(
                 "ElectricHoeofGrowth",
                 new ResearchPage(
@@ -2003,17 +2003,17 @@ public class ScriptEMT implements IScriptLoader {
                         .add(DarkAspects.WRATH, 32).add(Aspect.AIR, 24).add(Aspect.FIRE, 24).add(Aspect.BEAST, 16),
                 getModItem(ElectroMagicTools.ID, "Mjolnir", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemNanoSaber", 1, wildcard),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
                 getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
+                "plateAlloyIridium");
         TCHelper.addResearchPage(
                 "SuperchargedMjolnir",
                 new ResearchPage(
@@ -2562,7 +2562,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.EXCHANGE, 48).add(Aspect.MAGIC, 16).add(Aspect.MIND, 8).add(Aspect.AURA, 32),
                 getModItem(ElectroMagicTools.ID, "ChargingFocus", 1, 0),
                 getModItem(ElectroMagicTools.ID, "EMTMachines", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.gearGtSmall.get(Materials.Void),
                 OrePrefixes.plate.get(Materials.Void),
                 OrePrefixes.wireGt01.get(Materials.TungstenSteel),
@@ -2570,7 +2570,7 @@ public class ScriptEMT implements IScriptLoader {
                 OrePrefixes.wireGt01.get(Materials.TungstenSteel),
                 OrePrefixes.plate.get(Materials.Void),
                 OrePrefixes.gearGtSmall.get(Materials.Void),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
+                "plateAlloyIridium");
         TCHelper.addResearchPage(
                 "WandFocusWandCharging",
                 new ResearchPage(
@@ -2764,13 +2764,13 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.MAGIC, 32).add(Aspect.GREED, 64).add(Aspect.MIND, 16),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5),
                 ItemList.Machine_IV_Replicator.get(1L),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
+                "plateAlloyIridium",
                 OrePrefixes.gemExquisite.get(Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 OrePrefixes.gemExquisite.get(Materials.Diamond),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
+                "plateAlloyIridium");
         TCHelper.addResearchPage(
                 "IndustrialWandChargingStation",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ElectroMagicTools.ID, "EMTMachines", 1, 0))));
