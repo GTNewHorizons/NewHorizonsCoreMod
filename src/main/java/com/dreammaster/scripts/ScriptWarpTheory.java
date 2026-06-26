@@ -1,8 +1,11 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.CropsNH;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -11,16 +14,19 @@ import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.WarpTheory;
 import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.ItemList;
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TCAspects;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -40,6 +46,7 @@ public class ScriptWarpTheory implements IScriptLoader {
                 AppliedEnergistics2.ID,
                 BiomesOPlenty.ID,
                 BloodMagic.ID,
+                ForbiddenMagic.ID,
                 OpenBlocks.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
@@ -51,41 +58,57 @@ public class ScriptWarpTheory implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        TCHelper.removeArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.oblivionpotion", 1, 0));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0));
         TCHelper.clearPrereq("warptheory.paper");
         TCHelper.addResearchPrereq("warptheory.paper", "RESEARCHER2", false);
         TCHelper.clearPages("warptheory.paper");
         TCHelper.addResearchPage("warptheory.paper", new ResearchPage("research.warptheory.paper"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "warptheory.paper",
-                getModItem(WarpTheory.ID, "item.warptheory.paper", 2, 0, missing),
-                new AspectList().add(Aspect.getAspect("aqua"), 8).add(Aspect.getAspect("terra"), 8),
+                getModItem(WarpTheory.ID, "item.warptheory.paper", 2, 0),
+                new AspectList().add(Aspect.WATER, 8).add(Aspect.EARTH, 8),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'd',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'e',
-                getModItem(Minecraft.ID, "paper", 1, 0, missing),
+                getModItem(Minecraft.ID, "paper", 1, 0),
                 'f',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'h',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "warptheory.oblivionpotion",
+                getModItem(WarpTheory.ID, "item.warptheory.oblivionpotion", 1, 0),
+                TCHelper.equalPrimalList(25),
+                "eze",
+                "pbp",
+                "gpg",
+                'e',
+                getModItem(OpenBlocks.ID, "epicEraser", 1),
+                'z',
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1),
+                'b',
+                new ItemStack(Items.potionitem), // Water bottle
+                'p',
+                Materials.InfusedEntropy.getDust(1), // Perditio crystal dust
+                'g',
+                new ItemStack(Items.ghast_tear));
         TCHelper.addResearchPage(
                 "warptheory.paper",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0))));
         TCHelper.setResearchAspects(
                 "warptheory.paper",
-                new AspectList().add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("aqua"), 3)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 6).add(Aspect.MAGIC, 6).add(Aspect.ORDER, 9).add(Aspect.WATER, 3)
+                        .add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("warptheory.paper", 2);
         TCHelper.orphanResearch("FAKESOAP");
         TCHelper.removeResearch("FAKESOAP");
@@ -95,9 +118,8 @@ public class ScriptWarpTheory implements IScriptLoader {
         TCHelper.addResearchPrereq("warptheory.something", "warptheory.paper", false);
         TCHelper.setResearchAspects(
                 "warptheory.something",
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("bestia"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("victus"), 6)
-                        .add(Aspect.getAspect("corpus"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.BEAST, 12).add(Aspect.EXCHANGE, 9)
+                        .add(Aspect.LIFE, 6).add(Aspect.FLESH, 3));
         TCHelper.setResearchComplexity("warptheory.something", 2);
         ThaumcraftApi.addWarpToResearch("warptheory.something", 3);
         TCHelper.orphanResearch("warptheory.cleanserminor");
@@ -105,107 +127,99 @@ public class ScriptWarpTheory implements IScriptLoader {
         new ResearchItem(
                 "PURETEARMINOR",
                 "WT_Category",
-                new AspectList().add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("sano"), 3)
-                        .add(Aspect.getAspect("terra"), 2),
+                new AspectList().add(Aspect.ELDRITCH, 6).add(Aspect.MAGIC, 6).add(Aspect.EXCHANGE, 4)
+                        .add(Aspect.HEAL, 3).add(Aspect.EARTH, 2),
                 -1,
                 -2,
                 2,
-                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing))
+                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0))
                         .setParents("ELDRITCHMINOR", "warptheory.paper")
                         .setPages(new ResearchPage("research.warptheory.warpcleanserminor")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "PURETEARMINOR",
-                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("desidia"), 16)
-                        .add(Aspect.getAspect("fames"), 16).add(Aspect.getAspect("gelum"), 16)
-                        .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("praecantatio"), 32)
-                        .add(Aspect.getAspect("venenum"), 32),
-                getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing),
-                getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
-                ItemList.Crop_Drop_MTomato.get(1L),
-                getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
+                new AspectList().add(Aspect.AURA, 64).add(DarkAspects.SLOTH, 16).add(Aspect.HUNGER, 16)
+                        .add(Aspect.COLD, 16).add(Aspect.EXCHANGE, 32).add(Aspect.MAGIC, 32).add(Aspect.POISON, 32),
+                getModItem(BiomesOPlenty.ID, "hardIce", 1, 0),
+                getModItem(ThaumicBases.ID, "resource", 1, 5),
+                getModItem(CropsNH.ID, "berry", 1, 2),
+                getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0),
                 OrePrefixes.cell.get(Materials.LifeEssence),
-                getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                getModItem(Witchery.ID, "ingredient", 1, 36, missing),
-                getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
-                ItemList.Crop_Drop_MTomato.get(1L),
-                getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
+                getModItem(BloodMagic.ID, "magicales", 1, 0),
+                getModItem(Witchery.ID, "ingredient", 1, 36),
+                getModItem(ThaumicBases.ID, "resource", 1, 5),
+                getModItem(CropsNH.ID, "berry", 1, 2),
+                getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0),
                 OrePrefixes.cell.get(Materials.LifeEssence),
-                getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                getModItem(Witchery.ID, "ingredient", 1, 36, missing));
+                getModItem(BloodMagic.ID, "magicales", 1, 0),
+                getModItem(Witchery.ID, "ingredient", 1, 36));
         TCHelper.addResearchPage(
                 "PURETEARMINOR",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0))));
         TCHelper.orphanResearch("warptheory.cleanser");
         TCHelper.removeResearch("warptheory.cleanser");
         new ResearchItem(
                 "PURETEAR",
                 "WT_Category",
-                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("sano"), 6)
-                        .add(Aspect.getAspect("terra"), 3),
+                new AspectList().add(Aspect.ELDRITCH, 12).add(Aspect.MAGIC, 12).add(Aspect.EXCHANGE, 9)
+                        .add(Aspect.HEAL, 6).add(Aspect.EARTH, 3),
                 -4,
                 -1,
                 3,
-                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing))
+                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0))
                         .setParents("ELDRITCHMAJOR", "warptheory.paper", "ICHORIUM")
                         .setPages(new ResearchPage("research.warptheory.warpcleanser")).registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "PURETEAR",
-                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("permutatio"), 32)
-                        .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("sano"), 16),
-                getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.EXCHANGE, 32).add(Aspect.MAGIC, 16)
+                        .add(Aspect.HEAL, 16),
+                getModItem(Minecraft.ID, "nether_star", 1, 0),
                 OrePrefixes.ingot.get(Materials.Ichorium),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10),
                 OrePrefixes.lens.get(Materials.Diamond),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
-                getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
+                getModItem(Minecraft.ID, "ghast_tear", 1, 0),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
+                getModItem(Minecraft.ID, "ghast_tear", 1, 0),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 OrePrefixes.lens.get(Materials.Diamond),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing));
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10));
         TCHelper.addResearchPage(
                 "PURETEAR",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0))));
         TCHelper.orphanResearch("warptheory.amulet");
         TCHelper.clearPrereq("warptheory.amulet");
         TCHelper.addResearchPrereq("warptheory.amulet", "PURETEAR", false);
         TCHelper.addInfusionCraftingRecipe(
                 "warptheory.amulet",
-                getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0),
                 16,
-                new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("auram"), 32)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 64)
-                        .add(Aspect.getAspect("permutatio"), 32),
-                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0, missing),
-                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
+                new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.AURA, 32).add(Aspect.ENERGY, 32)
+                        .add(Aspect.MAGIC, 64).add(Aspect.EXCHANGE, 32),
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
+                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0),
                 OrePrefixes.screw.get(Materials.Thaumium),
                 OrePrefixes.gemFlawless.get(Materials.Diamond),
                 OrePrefixes.ingot.get(Materials.Ichorium),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 OrePrefixes.plate.get(Materials.Gold),
                 OrePrefixes.screw.get(Materials.Thaumium),
-                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0),
                 OrePrefixes.screw.get(Materials.Thaumium),
                 OrePrefixes.gemFlawless.get(Materials.Diamond),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 OrePrefixes.plate.get(Materials.Gold),
                 OrePrefixes.screw.get(Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "warptheory.amulet",
-                new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("auram"), 15)
-                        .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.AURA, 15).add(Aspect.ENERGY, 12)
+                        .add(Aspect.MAGIC, 9).add(Aspect.EXCHANGE, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("warptheory.amulet", 4);
 
         TCHelper.orphanResearch("warptheory.portableshower");
@@ -213,32 +227,36 @@ public class ScriptWarpTheory implements IScriptLoader {
         TCHelper.addResearchPrereq("warptheory.portableshower", "PURETEAR", false);
         TCHelper.addInfusionCraftingRecipe(
                 "warptheory.portableshower",
-                getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0),
                 64,
-                new AspectList().add(Aspect.getAspect("custom1"), 16).add(Aspect.getAspect("custom5"), 16)
-                        .add(Aspect.getAspect("aer"), 1024).add(Aspect.getAspect("aqua"), 1024)
-                        .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("tutamen"), 256)
-                        .add(Aspect.getAspect("cognitio"), 256).add(Aspect.getAspect("tutamen"), 256)
-                        .add(Aspect.getAspect("sano"), 1024),
-                getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing),
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12, missing),
-                getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing),
-                getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
+                new AspectList().add(TCAspects.AEQUALITAS.getAspect(), 16).add(TCAspects.GLORIA.getAspect(), 16)
+                        .add(Aspect.AIR, 1024).add(Aspect.WATER, 1024).add(Aspect.MAGIC, 256).add(Aspect.ARMOR, 512)
+                        .add(Aspect.MIND, 256).add(Aspect.HEAL, 1024),
+                getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12),
+                getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0),
+                getModItem(OpenBlocks.ID, "sprinkler", 1, 0),
                 OrePrefixes.pipeTiny.get(Materials.Neutronium),
-                getModItem(OpenBlocks.ID, "xpshower", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3),
+                getModItem(OpenBlocks.ID, "xpshower", 1, 0),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 OrePrefixes.plateSuperdense.get(Materials.Ichorium));
         TCHelper.setResearchAspects(
                 "warptheory.portableshower",
-                new AspectList().add(Aspect.getAspect("custom1"), 5).add(Aspect.getAspect("custom3"), 5)
-                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 20)
-                        .add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("aer"), 32));
+                new AspectList().add(TCAspects.AEQUALITAS.getAspect(), 5).add(TCAspects.PRIMORDIUM.getAspect(), 5)
+                        .add(Aspect.ENERGY, 32).add(Aspect.MAGIC, 20).add(Aspect.WATER, 32).add(Aspect.AIR, 32));
         TCHelper.setResearchComplexity("warptheory.portableshower", 4);
         TCHelper.refreshResearchPages("warptheory.paper");
         TCHelper.refreshResearchPages("warptheory.something");
         TCHelper.refreshResearchPages("warptheory.amulet");
         TCHelper.refreshResearchPages("warptheory.portableshower");
+        TCHelper.refreshResearchPages("warptheory.oblivionpotion");
+        ThaumcraftApi.registerObjectTag(
+                getModItem(WarpTheory.ID, "item.warptheory.oblivionpotion", 1, 0),
+                new AspectList().add(TCAspects.STRONTIO.getAspect(), 8));
+        ThaumcraftApi.registerObjectTag(
+                getModItem(WarpTheory.ID, "item.warptheory.something", 1, 0),
+                new AspectList().add(TCAspects.VESANIA.getAspect(), 2).add(Aspect.HUNGER, 4).add(Aspect.FLESH, 4));
     }
 }

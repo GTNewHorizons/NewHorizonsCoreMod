@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.ExtraTrees;
@@ -10,7 +11,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -23,6 +23,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptJABBA implements IScriptLoader {
@@ -47,50 +48,18 @@ public class ScriptJABBA implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("plankWood", 8), getModItem(Minecraft.ID, "chest", 1))
+                .circuit(1).itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(BiomesOPlenty.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ExtraTrees.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "planksFireproof", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
-                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "barrel", 1), getModItem(Minecraft.ID, "piston", 1))
-                .circuit(1).itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1)).duration(60 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(JABBA.ID, "barrel", 1), getModItem(Minecraft.ID, "sticky_piston", 1)).circuit(1)
-                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1)).duration(60 * SECONDS).eut(16)
+                .itemInputs(getModItem(JABBA.ID, "barrel", 1), new OreDictItemStack("craftingPiston", 1)).circuit(1)
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "barrel", 1), ItemList.Electric_Piston_LV.get(1L))
-                .circuit(2).itemOutputs(getModItem(JABBA.ID, "upgradeCore", 3)).duration(60 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
+                .circuit(2).itemOutputs(getModItem(JABBA.ID, "upgradeCore", 3)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -162,7 +131,7 @@ public class ScriptJABBA implements IScriptLoader {
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 4)).circuit(3)
-                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 5)).duration(30 * SECONDS).eut(64)
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 5)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 5)).circuit(3)
@@ -170,7 +139,7 @@ public class ScriptJABBA implements IScriptLoader {
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 6)).circuit(3)
-                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 8)).duration(10 * SECONDS).eut(256)
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 8)).circuit(3)
@@ -178,7 +147,7 @@ public class ScriptJABBA implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 9)).circuit(3)
-                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 11)).duration(5 * SECONDS).eut(960)
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 11)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 11)).circuit(3)
@@ -186,8 +155,8 @@ public class ScriptJABBA implements IScriptLoader {
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 12)).circuit(3)
-                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 13)).duration(1 * SECONDS + 5 * TICKS).eut(4096)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 13)).duration(1 * SECONDS + 5 * TICKS)
+                .eut(TierEU.RECIPE_IV / 2).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "barrel", 1),

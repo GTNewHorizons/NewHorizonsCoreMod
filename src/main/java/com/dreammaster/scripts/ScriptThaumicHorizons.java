@@ -1,11 +1,11 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicHorizons;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -34,22 +34,22 @@ public class ScriptThaumicHorizons implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "Golemancy Bell TH", 1, 0));
-        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "transductionAmplifier", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "vortexStabilizer", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "recombinator", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "transductionAmplifier", 1, 0));
+        TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "vortexStabilizer", 1, 0));
+        TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "recombinator", 1, 0));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "greatwoodBoat",
-                getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0, missing),
+                getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0),
                 (new AspectList()).add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10),
                 "GWG",
                 "GGG",
                 "SDS",
                 'G',
-                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
                 'W',
                 "craftingToolSaw",
                 'S',
@@ -58,27 +58,26 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                 "craftingToolScrewdriver");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumiumBoat",
-                getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0, missing),
+                getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0),
                 (new AspectList()).add(Aspect.FIRE, 20).add(Aspect.WATER, 20).add(Aspect.ORDER, 20)
                         .add(Aspect.EARTH, 20),
                 "FTF",
                 "TBT",
                 "WTW",
                 'F', // Fire Cluster
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
                 'T',
                 "plateThaumium",
                 'W', // Water Cluster
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
                 'B',
-                getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0, missing));
+                getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0));
         ThaumcraftApi.addWarpToResearch("thaumiumBoat", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "planarTheory",
-                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("aqua"), 75)
-                        .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.WATER, 75).add(Aspect.FIRE, 75).add(Aspect.EARTH, 75)
+                        .add(Aspect.ORDER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
@@ -91,7 +90,7 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                 'd',
                 "plateEnderEye",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 'f',
                 "plateEnderEye",
                 'g',
@@ -102,53 +101,50 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                 "plateVoid");
         TCHelper.setResearchAspects(
                 "planarTheory",
-                new AspectList().add(Aspect.getAspect("vacuos"), 18).add(Aspect.getAspect("praecantatio"), 15)
-                        .add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("auram"), 9)
-                        .add(Aspect.getAspect("perditio"), 6).add(Aspect.getAspect("tenebrae"), 3));
+                new AspectList().add(Aspect.VOID, 18).add(Aspect.MAGIC, 15).add(Aspect.ELDRITCH, 12).add(Aspect.AURA, 9)
+                        .add(Aspect.ENTROPY, 6).add(Aspect.DARKNESS, 3));
         TCHelper.setResearchComplexity("planarTheory", 4);
         ThaumcraftApi.addWarpToResearch("planarTheory", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "transductionAmplifier",
-                getModItem(ThaumicHorizons.ID, "transductionAmplifier", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("ignis"), 75)
-                        .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("terra"), 75)
-                        .add(Aspect.getAspect("aqua"), 75).add(Aspect.getAspect("perditio"), 75),
+                getModItem(ThaumicHorizons.ID, "transductionAmplifier", 1, 0),
+                new AspectList().add(Aspect.AIR, 75).add(Aspect.FIRE, 75).add(Aspect.ORDER, 75).add(Aspect.EARTH, 75)
+                        .add(Aspect.WATER, 75).add(Aspect.ENTROPY, 75),
                 "abc",
                 "def",
                 "ghi",
                 'a',
                 "screwThaumium",
                 'b',
-                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
                 'c',
                 "screwThaumium",
                 'd',
                 "gemFlawlessAmber",
                 'e',
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11),
                 'f',
                 "gemFlawlessAmber",
                 'g',
                 "plateRedstoneAlloy",
                 'h',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
                 'i',
                 "plateRedstoneAlloy");
         TCHelper.setResearchAspects(
                 "transductionAmplifier",
-                new AspectList().add(Aspect.getAspect("auram"), 18).add(Aspect.getAspect("potentia"), 15)
-                        .add(Aspect.getAspect("vacuos"), 12).add(Aspect.getAspect("alienis"), 9));
+                new AspectList().add(Aspect.AURA, 18).add(Aspect.ENERGY, 15).add(Aspect.VOID, 12)
+                        .add(Aspect.ELDRITCH, 9));
         TCHelper.setResearchComplexity("transductionAmplifier", 4);
         ThaumcraftApi.addWarpToResearch("transductionAmplifier", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "vortexStabilizer",
-                getModItem(ThaumicHorizons.ID, "vortexStabilizer", 1, 0, missing),
+                getModItem(ThaumicHorizons.ID, "vortexStabilizer", 1, 0),
                 7,
-                new AspectList().add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("fames"), 32)
-                        .add(Aspect.getAspect("machina"), 48).add(Aspect.getAspect("ordo"), 32)
-                        .add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("vinculum"), 32),
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
+                new AspectList().add(Aspect.AURA, 64).add(Aspect.HUNGER, 32).add(Aspect.MECHANISM, 48)
+                        .add(Aspect.ORDER, 32).add(Aspect.ENERGY, 48).add(Aspect.TRAP, 32),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10),
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.gemExquisite.get(Materials.Amber),
                 OrePrefixes.lens.get(Materials.Olivine),
@@ -158,36 +154,33 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                 OrePrefixes.plate.get(Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "vortexStabilizer",
-                new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("fames"), 18)
-                        .add(Aspect.getAspect("machina"), 15).add(Aspect.getAspect("ordo"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vinculum"), 6));
+                new AspectList().add(Aspect.AURA, 21).add(Aspect.HUNGER, 18).add(Aspect.MECHANISM, 15)
+                        .add(Aspect.ORDER, 12).add(Aspect.ENERGY, 9).add(Aspect.TRAP, 6));
         TCHelper.setResearchComplexity("vortexStabilizer", 4);
         ThaumcraftApi.addWarpToResearch("vortexStabilizer", 2);
         TCHelper.addInfusionCraftingRecipe(
                 "recombinator",
-                getModItem(ThaumicHorizons.ID, "recombinator", 1, 0, missing),
+                getModItem(ThaumicHorizons.ID, "recombinator", 1, 0),
                 10,
-                new AspectList().add(Aspect.getAspect("permutatio"), 64).add(Aspect.getAspect("auram"), 48)
-                        .add(Aspect.getAspect("fabrico"), 32).add(Aspect.getAspect("potentia"), 32)
-                        .add(Aspect.getAspect("sensus"), 16).add(Aspect.getAspect("praecantatio"), 24),
-                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
+                new AspectList().add(Aspect.EXCHANGE, 64).add(Aspect.AURA, 48).add(Aspect.CRAFT, 32)
+                        .add(Aspect.ENERGY, 32).add(Aspect.SENSES, 16).add(Aspect.MAGIC, 24),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11),
                 OrePrefixes.gemExquisite.get(Materials.Amber),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
                 OrePrefixes.gemExquisite.get(Materials.Amber),
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10),
                 OrePrefixes.gemExquisite.get(Materials.Amber),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
                 OrePrefixes.gemExquisite.get(Materials.Amber));
         TCHelper.setResearchAspects(
                 "recombinator",
-                new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("permutatio"), 18)
-                        .add(Aspect.getAspect("fabrico"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("sensus"), 6));
+                new AspectList().add(Aspect.AURA, 21).add(Aspect.EXCHANGE, 18).add(Aspect.CRAFT, 15)
+                        .add(Aspect.MAGIC, 12).add(Aspect.ENERGY, 9).add(Aspect.SENSES, 6));
         TCHelper.setResearchComplexity("recombinator", 4);
         ThaumcraftApi.addWarpToResearch("recombinator", 3);
         TCHelper.refreshResearchPages("greatwoodBoat");
@@ -196,11 +189,11 @@ public class ScriptThaumicHorizons implements IScriptLoader {
         TCHelper.refreshResearchPages("transductionAmplifier");
         TCHelper.refreshResearchPages("vortexStabilizer");
         TCHelper.refreshResearchPages("recombinator");
-        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flesh", 2, missing))
-                .itemOutputs(getModItem(ThaumicHorizons.ID, "meatTH", 1, missing)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flesh", 2))
+                .itemOutputs(getModItem(ThaumicHorizons.ID, "meatTH", 1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicHorizons.ID, "meatCookedTH", 1, missing))
-                .itemOutputs(getModItem(ThaumicHorizons.ID, "meatNuggetTH", 4, missing)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicHorizons.ID, "meatCookedTH", 1))
+                .itemOutputs(getModItem(ThaumicHorizons.ID, "meatNuggetTH", 4)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
     }
 }

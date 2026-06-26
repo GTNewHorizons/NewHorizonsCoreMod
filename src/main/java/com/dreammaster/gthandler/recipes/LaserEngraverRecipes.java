@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -23,10 +24,10 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class LaserEngraverRecipes implements Runnable {
 
@@ -85,15 +86,15 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Topaz, 1)))
-                .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS).eut(256)
-                .addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amber, 1)))
-                .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS).eut(256)
-                .addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -153,7 +154,8 @@ public class LaserEngraverRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Silicon_Wafer3.get(1L), NHItemList.ReinforcedGlassLense.get(0))
-                .itemOutputs(NHItemList.WaferTier3.get()).duration(10 * SECONDS).eut(1024).addTo(WaferEngravingRecipes);
+                .itemOutputs(NHItemList.WaferTier3.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_EV / 2)
+                .addTo(WaferEngravingRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -179,7 +181,7 @@ public class LaserEngraverRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(
                     ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
                     Materials.Glowstone.getNanite(1),
-                    GTModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 0L, 0) // Solar Light Splitter
+                    getModItem(SuperSolarPanels.ID, "solarsplitter", 0, 0) // Solar Light Splitter
             ).itemOutputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                     .fluidInputs(Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000))
                     .fluidOutputs(Materials.Tin.getMolten(1000L)).duration(10 * SECONDS).eut(7_864_320)
@@ -200,13 +202,13 @@ public class LaserEngraverRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(ItemList.Circuit_Silicon_Wafer.get(1L), NHItemList.ReinforcedGlassLense.get(0))
-                    .itemOutputs(GTModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1L, 13))
-                    .duration(10 * SECONDS).eut(256).addTo(laserEngraverRecipes);
+                    .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 13)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV / 2).addTo(laserEngraverRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(ItemList.Circuit_Silicon_Wafer2.get(1L), NHItemList.ReinforcedGlassLense.get(0))
-                    .itemOutputs(GTModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1L, 14))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                    .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 14)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 
         }
 
@@ -242,26 +244,24 @@ public class LaserEngraverRecipes implements Runnable {
 
         // Bifrost laser recipes
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
-                        GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0))
-                .itemOutputs(GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .itemInputs(getModItem(Botania.ID, "elfGlass", 1, 0), getModItem(Botania.ID, "rainbowRod", 0, 0))
+                .itemOutputs(getModItem(Botania.ID, "bifrostPerm", 1, 0)).duration(2 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTModHandler.getModItem(Botania.ID, "livingrock", 1L, 0),
-                        GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0),
+                        getModItem(Botania.ID, "livingrock", 1, 0),
+                        getModItem(Botania.ID, "bifrostPerm", 1, 0),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dragonstone, 1)))
-                .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerrock", 1L, 0)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
+                .itemOutputs(getModItem(Botania.ID, "shimmerrock", 1, 0)).duration(2 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTModHandler.getModItem(Botania.ID, "dreamwood", 1L, 1),
-                        GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0),
+                        getModItem(Botania.ID, "dreamwood", 1, 1),
+                        getModItem(Botania.ID, "bifrostPerm", 1, 0),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dragonstone, 1)))
-                .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerwoodPlanks", 1L, 0)).duration(2 * SECONDS)
+                .itemOutputs(getModItem(Botania.ID, "shimmerwoodPlanks", 1, 0)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         // Protomatter recipes
@@ -281,6 +281,43 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.HotProtoHalkonite, 1))
                 .fluidInputs(Materials.Protomatter.getFluid(100L)).duration(10000 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .fluidOutputs(Materials.Antimatter.getFluid(1L)).requiresCleanRoom().addTo(laserEngraverRecipes);
+
+        // APIC+ laser cutting recipes
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_APIC.get(1),
+                        ItemList.EnergisedTesseract.get(1),
+                        NHItemList.ChromaticLens.get(0))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(30L)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_UIV)
+                .itemOutputs(
+                        ItemList.Circuit_Chip_APIC.get(1),
+                        WerkstoffMaterialPool.SeaweedAsh.get(OrePrefixes.dust, 2))
+                .outputChances(10000, 6700).requiresCleanRoom().addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_APIC.get(1),
+                        GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(15L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Circuit_Chip_APIC.get(2)).requiresCleanRoom()
+                .addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_ZPIC.get(1),
+                        GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(20L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).itemOutputs(ItemList.Circuit_Chip_ZPIC.get(2)).requiresCleanRoom()
+                .addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_YPIC.get(1),
+                        GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(25L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).itemOutputs(ItemList.Circuit_Chip_YPIC.get(2)).requiresCleanRoom()
+                .addTo(laserEngraverRecipes);
 
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT
@@ -303,7 +340,7 @@ public class LaserEngraverRecipes implements Runnable {
     }
 
     private static final boolean makeFloppy(String displayname, String name, int color, int circuit) {
-        ItemStack floppy = GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 4);
+        ItemStack floppy = getModItem(OpenComputers.ID, "item", 1, 4);
         NBTTagCompound tag = new NBTTagCompound(), subtag = new NBTTagCompound();
         subtag.setString("Name", displayname);
         tag.setTag("display", subtag);
@@ -313,13 +350,13 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setInteger("oc:color", color);
         tag.setString("oc:lootFactory", "OpenComputers:" + name);
         floppy.setTagCompound(tag);
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 4)).circuit(circuit)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenComputers.ID, "item", 1, 4)).circuit(circuit)
                 .itemOutputs(floppy).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         return true;
     }
 
     private static final boolean makeLuaBios() {
-        ItemStack lua = GTModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0);
+        ItemStack lua = getModItem(OpenComputers.ID, "eeprom", 1, 0);
         NBTTagCompound tag = new NBTTagCompound(), subtag = new NBTTagCompound();
         subtag.setString("oc:label", "EEPROM (Lua Bios)");
         subtag.setBoolean("oc:readonly", false);
@@ -400,8 +437,8 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setTag("oc:data", subtag);
         lua.setTagCompound(tag);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0)).circuit(1)
-                .itemOutputs(lua).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenComputers.ID, "eeprom", 1, 0)).circuit(1).itemOutputs(lua)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         return true;
     }

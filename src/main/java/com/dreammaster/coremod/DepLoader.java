@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.net.URLConnection;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
@@ -28,6 +30,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -284,6 +287,13 @@ public class DepLoader implements IFMLCallHook {
         }
     }
 
+    private static InputStream openStream(String url) throws IOException {
+        URL urlObj = new URL(url);
+        URLConnection conn = urlObj.openConnection();
+        conn.setRequestProperty("user-agent", DreamCoreMod.downloadUA);
+        return conn.getInputStream();
+    }
+
     private void download(Dependency dep) throws IOException {
         final Path downloadTemp = new File(mcLocation, ".__gtnh_download_temp__").toPath();
         boolean ok = false;
@@ -294,7 +304,8 @@ public class DepLoader implements IFMLCallHook {
                     StandardOpenOption.WRITE,
                     StandardOpenOption.CREATE,
                     StandardOpenOption.TRUNCATE_EXISTING);
-                    ReadableByteChannel net = Channels.newChannel(new URL(dep.getUrl()).openStream())) {
+                    InputStream urlStream = openStream(dep.getUrl());
+                    ReadableByteChannel net = Channels.newChannel(urlStream)) {
                 fc.transferFrom(net, 0, Long.MAX_VALUE);
             }
             try {
@@ -316,5 +327,18 @@ public class DepLoader implements IFMLCallHook {
         }
         Files.move(downloadTemp, target, StandardCopyOption.REPLACE_EXISTING);
         dialog.progress();
+    }
+
+    public static void main(String[] args) throws Exception {
+        String mcLocation;
+        if (args.length == 0) {
+            mcLocation = ".";
+        } else {
+            mcLocation = args[0];
+        }
+        System.out.println("mcLocation: " + mcLocation);
+        DepLoader depLoader = new DepLoader();
+        depLoader.injectData(ImmutableMap.of("mcLocation", new File(mcLocation)));
+        depLoader.call();
     }
 }

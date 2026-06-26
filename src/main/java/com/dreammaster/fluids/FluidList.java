@@ -1,7 +1,6 @@
 package com.dreammaster.fluids;
 
 import net.minecraft.block.material.Material;
-import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.creativetab.ModTabList;
@@ -13,16 +12,7 @@ import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
 
 public enum FluidList {
 
-    SodiumPotassium(new ModSimpleBaseFluid(ModFluidManager.GetNewFluid("SodiumPotassium"), Material.water),
-            ModTabList.ModFluidsTab),
     Concrete(new ModSimpleBaseFluid(ModFluidManager.GetNewFluid("Concrete"), Material.water), ModTabList.ModFluidsTab),
-    EnrichedBacterialSludge(ExtendedFluidCollection.getEnrichedBacterialSludge(), ModTabList.ModFluidsTab),
-    FermentedBacterialSludge(ExtendedFluidCollection.getFermentedBacterialSludge(), ModTabList.ModFluidsTab),
-    NitricAcid(ExtendedFluidCollection.getNitricAcid(), ModTabList.ModFluidsTab),
-    Ammonia(ExtendedFluidCollection.getAmmonia(), ModTabList.ModFluidsTab),
-    CompressedOxygen(ExtendedFluidCollection.getCompressedOxygen(), ModTabList.ModFluidsTab),
-    CompressedNitrogen(ExtendedFluidCollection.getCompressedNitrogen(), ModTabList.ModFluidsTab),
-    Pollution(ExtendedFluidCollection.getPollution(), ModTabList.ModFluidsTab),
     // Do not delete this
     EndOfList(null, null);
 
@@ -38,12 +28,11 @@ public enum FluidList {
     }
 
     public static boolean AddToItemManager(ModFluidManager pFluidManager) {
-        Fluid t = null;
         boolean tResult = true;
         for (FluidList il : FluidList.values()) {
             if (il.Fluid != null) {
                 if (!pFluidManager.AddItemToManagedRegistry(il.Fluid)) {
-                    MainRegistry.Logger.error(String.format("Fluid [%s] failed to register", il.toString()));
+                    MainRegistry.LOGGER.error("Fluid [{}] failed to register", il.toString());
                     tResult = false;
                 }
             }

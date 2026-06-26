@@ -25,7 +25,6 @@ class DownloadProgressDialog extends JDialog implements IDownloadProgress {
     private static final long serialVersionUID = 6041491111144915139L;
 
     public static final String WINDOW_TITLE = Refstrings.NAME;
-    private Thread netThread;
     private JProgressBar progressBar;
 
     @Override

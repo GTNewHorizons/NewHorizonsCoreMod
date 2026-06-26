@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
@@ -9,7 +10,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -55,38 +55,36 @@ public class ScriptExtraBees implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapelessRecipe(
-                getModItem(ExtraBees.ID, "dictionary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "dictionary", 1, 0, missing));
+        addShapelessRecipe(getModItem(ExtraBees.ID, "dictionary", 1, 0), getModItem(ExtraBees.ID, "dictionary", 1, 0));
 
-        ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "dictionary", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "misc", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "dictionary", 1, 0));
+        ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "misc", 1, 0));
         ForestryHelper.removeSqueezerRecipe(
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(ExtraBees.ID, "honeyDrop", 1, 8, missing));
+                getModItem(ExtraBees.ID, "honeyDrop", 1, 8));
         ForestryHelper.removeSqueezerRecipe(
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(ExtraBees.ID, "honeyDrop", 1, 9, missing));
+                getModItem(ExtraBees.ID, "honeyDrop", 1, 9));
         ForestryHelper.removeSqueezerRecipe(
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(ExtraBees.ID, "honeyDrop", 1, 10, missing));
+                getModItem(ExtraBees.ID, "honeyDrop", 1, 10));
         ForestryHelper.removeSqueezerRecipe(
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(ExtraBees.ID, "honeyDrop", 1, 11, missing));
+                getModItem(ExtraBees.ID, "honeyDrop", 1, 11));
         ForestryHelper.removeSqueezerRecipe(
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(ExtraBees.ID, "honeyDrop", 1, 12, missing));
+                getModItem(ExtraBees.ID, "honeyDrop", 1, 12));
         ForestryHelper.removeSqueezerRecipe(
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(ExtraBees.ID, "honeyDrop", 1, 13, missing));
+                getModItem(ExtraBees.ID, "honeyDrop", 1, 13));
         ForestryHelper.removeSqueezerRecipe(
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(ExtraBees.ID, "honeyDrop", 1, 14, missing));
+                getModItem(ExtraBees.ID, "honeyDrop", 1, 14));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1440),
-                getModItem(Forestry.ID, "beealyzer", 1, wildcard, missing),
-                getModItem(ExtraBees.ID, "dictionary", 1, 0, missing),
+                getModItem(Forestry.ID, "beealyzer", 1, wildcard),
+                getModItem(ExtraBees.ID, "dictionary", 1, 0),
                 "abc",
                 "def",
                 "ghi",
@@ -111,173 +109,173 @@ public class ScriptExtraBees implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
-                getModItem(Forestry.ID, "alveary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "alveary", 1, 0, missing),
+                getModItem(Forestry.ID, "alveary", 1, 0),
+                getModItem(ExtraBees.ID, "alveary", 1, 0),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 12, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'b',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                 'c',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 12, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'd',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                 'e',
-                getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0, missing),
+                getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0),
                 'f',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                 'g',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 12, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'h',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                 'i',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 12, missing));
+                getModItem(Forestry.ID, "thermionicTubes", 1, 12));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
-                getModItem(Forestry.ID, "alveary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "alveary", 1, 1, missing),
+                getModItem(Forestry.ID, "alveary", 1, 0),
+                getModItem(ExtraBees.ID, "alveary", 1, 1),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 10, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 10),
                 'b',
-                getModItem(Forestry.ID, "frameProven", 1, 0, missing),
+                getModItem(Forestry.ID, "frameProven", 1, 0),
                 'c',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 10, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 10),
                 'd',
-                getModItem(Forestry.ID, "frameProven", 1, 0, missing),
+                getModItem(Forestry.ID, "frameProven", 1, 0),
                 'e',
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L),
                 'f',
-                getModItem(Forestry.ID, "frameProven", 1, 0, missing),
+                getModItem(Forestry.ID, "frameProven", 1, 0),
                 'g',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 10, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 10),
                 'h',
-                getModItem(Forestry.ID, "frameProven", 1, 0, missing),
+                getModItem(Forestry.ID, "frameProven", 1, 0),
                 'i',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 10, missing));
+                getModItem(Forestry.ID, "thermionicTubes", 1, 10));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
-                getModItem(Forestry.ID, "alveary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "alveary", 1, 2, missing),
+                getModItem(Forestry.ID, "alveary", 1, 0),
+                getModItem(ExtraBees.ID, "alveary", 1, 2),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'b',
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
+                ItemList.PadBouncy.get(1L),
                 'c',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'd',
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
+                ItemList.PadBouncy.get(1L),
                 'e',
-                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0),
                 'f',
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
+                ItemList.PadBouncy.get(1L),
                 'g',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'h',
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
+                ItemList.PadBouncy.get(1L),
                 'i',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing));
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
-                getModItem(Forestry.ID, "alveary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "alveary", 1, 3, missing),
+                getModItem(Forestry.ID, "alveary", 1, 0),
+                getModItem(ExtraBees.ID, "alveary", 1, 3),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 2),
                 'b',
-                getModItem(Minecraft.ID, "stained_glass", 1, wildcard, missing),
+                getModItem(Minecraft.ID, "stained_glass", 1, wildcard),
                 'c',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 2),
                 'd',
-                getModItem(Minecraft.ID, "stained_glass", 1, wildcard, missing),
+                getModItem(Minecraft.ID, "stained_glass", 1, wildcard),
                 'e',
-                getModItem(Minecraft.ID, "redstone_lamp", 1, 0, missing),
+                getModItem(Minecraft.ID, "redstone_lamp", 1, 0),
                 'f',
-                getModItem(Minecraft.ID, "stained_glass", 1, wildcard, missing),
+                getModItem(Minecraft.ID, "stained_glass", 1, wildcard),
                 'g',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 2),
                 'h',
-                getModItem(Minecraft.ID, "stained_glass", 1, wildcard, missing),
+                getModItem(Minecraft.ID, "stained_glass", 1, wildcard),
                 'i',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing));
+                getModItem(Forestry.ID, "thermionicTubes", 1, 2));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
-                getModItem(Forestry.ID, "alveary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "alveary", 1, 4, missing),
+                getModItem(Forestry.ID, "alveary", 1, 0),
+                getModItem(ExtraBees.ID, "alveary", 1, 4),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'b',
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
                 'c',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'd',
-                getModItem(Forestry.ID, "chipsets", 1, 2, missing),
+                getModItem(Forestry.ID, "chipsets", 1, 2),
                 'e',
                 ItemList.Electric_Motor_HV.get(1L),
                 'f',
-                getModItem(Forestry.ID, "chipsets", 1, 2, missing),
+                getModItem(Forestry.ID, "chipsets", 1, 2),
                 'g',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'h',
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
                 'i',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing));
+                getModItem(Forestry.ID, "thermionicTubes", 1, 1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
-                getModItem(Forestry.ID, "alveary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "alveary", 1, 5, missing),
+                getModItem(Forestry.ID, "alveary", 1, 0),
+                getModItem(ExtraBees.ID, "alveary", 1, 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'b',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
                 'c',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'd',
                 ItemList.Conveyor_Module_MV.get(1L),
                 'e',
-                getModItem(Forestry.ID, "apiculture", 1, 0, missing),
+                getModItem(Forestry.ID, "apiculture", 1, 0),
                 'f',
                 ItemList.Conveyor_Module_MV.get(1L),
                 'g',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'h',
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
                 'i',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing));
+                getModItem(Forestry.ID, "thermionicTubes", 1, 3));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
-                getModItem(Forestry.ID, "alveary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "alveary", 1, 6, missing),
+                getModItem(Forestry.ID, "alveary", 1, 0),
+                getModItem(ExtraBees.ID, "alveary", 1, 6),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'b',
                 "circuitAdvanced",
                 'c',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'd',
                 GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'e',
@@ -285,126 +283,124 @@ public class ScriptExtraBees implements IScriptLoader {
                 'f',
                 GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'g',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'h',
                 GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'i',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing));
+                getModItem(Forestry.ID, "thermionicTubes", 1, 0));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
-                getModItem(Forestry.ID, "alveary", 1, 0, missing),
-                getModItem(ExtraBees.ID, "alveary", 1, 7, missing),
+                getModItem(Forestry.ID, "alveary", 1, 0),
+                getModItem(ExtraBees.ID, "alveary", 1, 7),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'b',
-                getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "curtains", 1, 0),
                 'c',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'd',
-                getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "curtains", 1, 0),
                 'e',
-                getModItem(Minecraft.ID, "wool", 1, 15, missing),
+                getModItem(Minecraft.ID, "wool", 1, 15),
                 'f',
-                getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "curtains", 1, 0),
                 'g',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'h',
-                getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "curtains", 1, 0),
                 'i',
-                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing));
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8));
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("for.honey", 1000),
                 GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.WoodSealed, 1L),
-                getModItem(ExtraBees.ID, "misc", 1, 0, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 0),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Forestry.ID, "beeswax", 1, 0, missing),
+                getModItem(Forestry.ID, "beeswax", 1, 0),
                 'b',
-                getModItem(Forestry.ID, "pollen", 1, 0, missing),
+                getModItem(Forestry.ID, "pollen", 1, 0),
                 'c',
-                getModItem(Forestry.ID, "beeswax", 1, 2, missing),
+                getModItem(Forestry.ID, "beeswax", 1, 2),
                 'd',
-                getModItem(Forestry.ID, "royalJelly", 1, 0, missing),
+                getModItem(Forestry.ID, "royalJelly", 1, 0),
                 'e',
-                getModItem(Forestry.ID, "beeswax", 1, 0, missing),
+                getModItem(Forestry.ID, "beeswax", 1, 0),
                 'f',
-                getModItem(Forestry.ID, "royalJelly", 1, 0, missing),
+                getModItem(Forestry.ID, "royalJelly", 1, 0),
                 'g',
-                getModItem(Forestry.ID, "beeswax", 1, 2, missing),
+                getModItem(Forestry.ID, "beeswax", 1, 2),
                 'h',
-                getModItem(Forestry.ID, "pollen", 1, 0, missing),
+                getModItem(Forestry.ID, "pollen", 1, 0),
                 'i',
-                getModItem(Forestry.ID, "beeswax", 1, 2, missing));
+                getModItem(Forestry.ID, "beeswax", 1, 2));
         RecipeManagers.squeezerManager.addRecipe(
                 20,
-                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 8, missing), },
+                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 8), },
                 FluidRegistry.getFluidStack("for.honey", 200),
                 ItemList.Color_01.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
-                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 9, missing), },
+                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 9), },
                 FluidRegistry.getFluidStack("for.honey", 200),
                 ItemList.Color_11.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
-                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 10, missing), },
+                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 10), },
                 FluidRegistry.getFluidStack("for.honey", 200),
                 ItemList.Color_04.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
-                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 11, missing), },
+                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 11), },
                 FluidRegistry.getFluidStack("for.honey", 200),
                 ItemList.Color_02.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
-                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 13, missing), },
+                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 13), },
                 FluidRegistry.getFluidStack("for.honey", 200),
                 ItemList.Color_15.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
-                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 12, missing), },
+                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 12), },
                 FluidRegistry.getFluidStack("for.honey", 200),
                 ItemList.Color_00.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
-                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 14, missing), },
+                new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 14), },
                 FluidRegistry.getFluidStack("for.honey", 200),
                 ItemList.Color_03.get(1L),
                 100);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 1, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 1))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Diamond, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         new ResearchItem(
                 "HEALINGFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("victus"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.LIFE, 6),
                 7,
                 -2,
                 3,
-                getModItem(ExtraBees.ID, "hiveFrame.clay", 1, 0, missing)).setParents("MB_EssenceLife").setConcealed()
+                getModItem(ExtraBees.ID, "hiveFrame.clay", 1, 0)).setParents("MB_EssenceLife").setConcealed()
                         .setPages(new ResearchPage("ExtraBees.research_page.HEALINGFRAME")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "HEALINGFRAME",
-                getModItem(ExtraBees.ID, "hiveFrame.clay", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("terra"), 4)
-                        .add(Aspect.getAspect("aer"), 4).add(Aspect.getAspect("perditio"), 4)
-                        .add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("aqua"), 4),
+                getModItem(ExtraBees.ID, "hiveFrame.clay", 1, 0),
+                new AspectList().add(Aspect.ORDER, 4).add(Aspect.EARTH, 4).add(Aspect.AIR, 4).add(Aspect.ENTROPY, 4)
+                        .add(Aspect.FIRE, 4).add(Aspect.WATER, 4),
                 "abc",
                 "def",
                 "ghi",
@@ -417,7 +413,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'd',
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 'e',
-                getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
+                getModItem(Forestry.ID, "frameImpregnated", 1, 0),
                 'f',
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 'g',
@@ -428,69 +424,64 @@ public class ScriptExtraBees implements IScriptLoader {
                 "screwIron");
         TCHelper.addResearchPage(
                 "HEALINGFRAME",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.clay", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.clay", 1, 0))));
         new ResearchItem(
                 "CHOCOLATEFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("fames"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.HUNGER, 6),
                 7,
                 2,
                 3,
-                getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0, missing)).setParents("MB_EssenceUnstable")
-                        .setConcealed()
+                getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0))
+                        .setParents("MB_EssenceUnstable").setConcealed()
                         .setPages(
                                 new ResearchPage("ExtraBees.research_page.CHOCOLATEFRAME_1"),
                                 new ResearchPage("ExtraBees.research_page.CHOCOLATEFRAME_2"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CHOCOLATEFRAME",
-                getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("terra"), 4)
-                        .add(Aspect.getAspect("aer"), 4).add(Aspect.getAspect("perditio"), 4)
-                        .add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("aqua"), 4),
+                getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0),
+                new AspectList().add(Aspect.ORDER, 4).add(Aspect.EARTH, 4).add(Aspect.AIR, 4).add(Aspect.ENTROPY, 4)
+                        .add(Aspect.FIRE, 4).add(Aspect.WATER, 4),
                 "abc",
                 "def",
                 "ghi",
                 'a',
                 "screwIron",
                 'b',
-                getModItem(Minecraft.ID, "sugar", 1, 0, missing),
+                getModItem(Minecraft.ID, "sugar", 1, 0),
                 'c',
                 "screwIron",
                 'd',
-                getModItem(PamsHarvestCraft.ID, "cocoapowderItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "cocoapowderItem", 1, 0),
                 'e',
-                getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
+                getModItem(Forestry.ID, "frameImpregnated", 1, 0),
                 'f',
-                getModItem(PamsHarvestCraft.ID, "cocoapowderItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "cocoapowderItem", 1, 0),
                 'g',
                 "screwIron",
                 'h',
-                getModItem(Minecraft.ID, "sugar", 1, 0, missing),
+                getModItem(Minecraft.ID, "sugar", 1, 0),
                 'i',
                 "screwIron");
         TCHelper.addResearchPage(
                 "CHOCOLATEFRAME",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1, 0))));
         new ResearchItem(
                 "RESTRAINTFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("metallum"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.METAL, 6),
                 9,
                 0,
                 3,
-                getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0, missing))
+                getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0))
                         .setParents("PROVENFRAME", "HEALINGFRAME", "CHOCOLATEFRAME").setConcealed()
                         .setPages(new ResearchPage("ExtraBees.research_page.RESTRAINTFRAME")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RESTRAINTFRAME",
-                getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("terra"), 8)
-                        .add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("perditio"), 8)
-                        .add(Aspect.getAspect("ignis"), 8).add(Aspect.getAspect("aqua"), 8),
+                getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0),
+                new AspectList().add(Aspect.ORDER, 8).add(Aspect.EARTH, 8).add(Aspect.AIR, 8).add(Aspect.ENTROPY, 8)
+                        .add(Aspect.FIRE, 8).add(Aspect.WATER, 8),
                 "abc",
                 "def",
                 "ghi",
@@ -503,7 +494,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'd',
                 "barsIron",
                 'e',
-                getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
+                getModItem(Forestry.ID, "frameImpregnated", 1, 0),
                 'f',
                 "barsIron",
                 'g',
@@ -514,47 +505,45 @@ public class ScriptExtraBees implements IScriptLoader {
                 "screwSteel");
         TCHelper.addResearchPage(
                 "RESTRAINTFRAME",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0))));
         new ResearchItem(
                 "SOULFRAME",
                 "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("spiritus"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.MIND, 9).add(Aspect.SOUL, 6),
                 11,
                 0,
                 3,
-                getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0, missing)).setParents("RESTRAINTFRAME").setConcealed()
+                getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0)).setParents("RESTRAINTFRAME").setConcealed()
                         .setPages(new ResearchPage("ExtraBees.research_page.SOULFRAME")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SOULFRAME",
-                getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("terra"), 16)
-                        .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("perditio"), 16)
-                        .add(Aspect.getAspect("ignis"), 16).add(Aspect.getAspect("aqua"), 16),
+                getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0),
+                new AspectList().add(Aspect.ORDER, 16).add(Aspect.EARTH, 16).add(Aspect.AIR, 16).add(Aspect.ENTROPY, 16)
+                        .add(Aspect.FIRE, 16).add(Aspect.WATER, 16),
                 "abc",
                 "def",
                 "ghi",
                 'a',
                 "screwAluminium",
                 'b',
-                getModItem(Minecraft.ID, "soul_sand", 1, 0, missing),
+                getModItem(Minecraft.ID, "soul_sand", 1, 0),
                 'c',
                 "screwAluminium",
                 'd',
-                getModItem(Minecraft.ID, "soul_sand", 1, 0, missing),
+                getModItem(Minecraft.ID, "soul_sand", 1, 0),
                 'e',
-                getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0, missing),
+                getModItem(ExtraBees.ID, "hiveFrame.cage", 1, 0),
                 'f',
-                getModItem(Minecraft.ID, "soul_sand", 1, 0, missing),
+                getModItem(Minecraft.ID, "soul_sand", 1, 0),
                 'g',
                 "screwAluminium",
                 'h',
-                getModItem(Minecraft.ID, "soul_sand", 1, 0, missing),
+                getModItem(Minecraft.ID, "soul_sand", 1, 0),
                 'i',
                 "screwAluminium");
         TCHelper.addResearchPage(
                 "SOULFRAME",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SOULFRAME", 1);
     }
 }

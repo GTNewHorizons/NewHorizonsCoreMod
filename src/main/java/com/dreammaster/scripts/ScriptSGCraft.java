@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.createItemStack;
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
@@ -9,7 +11,6 @@ import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TecTech;
-import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -42,30 +43,30 @@ public class ScriptSGCraft implements IScriptLoader {
 
         // spotless:off
 
-        ItemStack darkMatterBlock = getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14, missing);
+        ItemStack darkMatterBlock = getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14);
         ItemStack magmatterBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.MagMatter, 1L);
         ItemStack magmatterSuperdensePlate = GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 1L);
         ItemStack magmatterNanite = GTOreDictUnificator.get(OrePrefixes.nanite, Materials.MagMatter, 1L);
         ItemStack compact5Coil = new ItemStack(Loaders.compactFusionCoil, 1, 4);
 
-        ItemStack ringBlock = getModItem(SGCraft.ID, "stargateRing", 1, 0, missing);
-        ItemStack chevronBlock = getModItem(SGCraft.ID, "stargateRing", 1, 1, missing);
-        ItemStack chevronUpgrade = getModItem(SGCraft.ID, "sgChevronUpgrade", 1, 0, missing);
-        ItemStack stargateCrystal = getModItem(SGCraft.ID, "sgCoreCrystal", 1, 0, missing);
-        ItemStack stargateControllerCrystal = getModItem(SGCraft.ID, "sgControllerCrystal", 1, 0, missing);
-        ItemStack stargateCapacitor = getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing);
-        ItemStack stargateBase = getModItem(SGCraft.ID, "stargateBase", 1, 0, missing);
-        ItemStack irisBlade = getModItem(SGCraft.ID, "sgIrisBlade", 1, 0, missing);
-        ItemStack irisUpgrade = getModItem(SGCraft.ID, "sgIrisUpgrade", 1, 0, missing);
-        ItemStack rfUnit = getModItem(SGCraft.ID, "rfPowerUnit", 1, 0, missing);
-        ItemStack ocInterface = getModItem(SGCraft.ID, "ocInterface", 1, 0, missing);
-        ItemStack stargateController = getModItem(SGCraft.ID, "stargateController", 1, 0, missing);
+        ItemStack ringBlock = getModItem(SGCraft.ID, "stargateRing", 1, 0);
+        ItemStack chevronBlock = getModItem(SGCraft.ID, "stargateRing", 1, 1);
+        ItemStack chevronUpgrade = getModItem(SGCraft.ID, "sgChevronUpgrade", 1, 0);
+        ItemStack stargateCrystal = getModItem(SGCraft.ID, "sgCoreCrystal", 1, 0);
+        ItemStack stargateControllerCrystal = getModItem(SGCraft.ID, "sgControllerCrystal", 1, 0);
+        ItemStack stargateCapacitor = getModItem(SGCraft.ID, "ic2Capacitor", 1, 0);
+        ItemStack stargateBase = getModItem(SGCraft.ID, "stargateBase", 1, 0);
+        ItemStack irisBlade = getModItem(SGCraft.ID, "sgIrisBlade", 1, 0);
+        ItemStack irisUpgrade = getModItem(SGCraft.ID, "sgIrisUpgrade", 1, 0);
+        ItemStack rfUnit = getModItem(SGCraft.ID, "rfPowerUnit", 1, 0);
+        ItemStack ocInterface = getModItem(SGCraft.ID, "ocInterface", 1, 0);
+        ItemStack stargateController = getModItem(SGCraft.ID, "stargateController", 1, 0);
 
-        ItemStack universeCell = getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1, 0, missing);
-        ItemStack universeFluidCell = getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1, 0, missing);
-        ItemStack singularityStorage = getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1, 0, missing);
-        ItemStack chaoticCapacitor = createItemStack(EnderIO.ID, "blockCapBank", 1, 0, "{type:\"CREATIVE\",storedEnergyRF:2500000}", missing);
-        ItemStack keyboard = getModItem(OpenComputers.ID, "keyboard", 1, 0, missing);
+        ItemStack universeCell = getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1, 0);
+        ItemStack universeFluidCell = getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1, 0);
+        ItemStack singularityStorage = getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1, 0);
+        ItemStack chaoticCapacitor = createItemStack(EnderIO.ID, "blockCapBank", 1, 0, "{type:\"CREATIVE\",storedEnergyRF:2500000}");
+        ItemStack keyboard = getModItem(OpenComputers.ID, "keyboard", 1, 0);
 
         // Stargate Ring Block
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(

@@ -11,6 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 /**
  * Created by Rio on 4/8/2018.
  */
+@SuppressWarnings("deprecation")
 public class MinetweakerFurnaceFix extends ModFixBase {
 
     public MinetweakerFurnaceFix() {

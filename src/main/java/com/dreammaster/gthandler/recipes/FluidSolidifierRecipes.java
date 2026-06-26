@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -23,7 +24,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class FluidSolidifierRecipes implements Runnable {
@@ -40,70 +40,70 @@ public class FluidSolidifierRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_00.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_01.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyered"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_02.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyegreen"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_03.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyebrown"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_04.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblue"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_05.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyepurple"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_06.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyecyan"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_07.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyelightgray"), 72))
-                .duration(20 * TICKS).eut(16).addTo(fluidSolidifierRecipes);
+                .duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_08.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyegray"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_09.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyepink"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_10.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyelime"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_11.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeyellow"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_12.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyelightblue"), 72))
-                .duration(20 * TICKS).eut(16).addTo(fluidSolidifierRecipes);
+                .duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_13.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyemagenta"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_14.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeorange"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_15.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyewhite"), 72)).duration(20 * TICKS)
-                .eut(16).addTo(fluidSolidifierRecipes);
+                .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         // Electron-permeable neutronium-coated glass
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(new ItemStack(ItemRegistry.bw_glasses[0], 1, 13)))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(new ItemStack(ItemRegistry.bw_glasses[0], 1, 6)))
                 .fluidInputs(Materials.Helium.getPlasma(4 * 144)).itemOutputs(ItemList.GlassUVResistant.get(1))
                 .eut(TierEU.RECIPE_UV).duration(5 * SECONDS).addTo(fluidSolidifierRecipes);
 
@@ -118,45 +118,42 @@ public class FluidSolidifierRecipes implements Runnable {
                 .fluidInputs(Materials.ExcitedDTRC.getFluid(1000L)).itemOutputs(ItemList.GlassQuarkContainment.get(1))
                 .eut(TierEU.RECIPE_UEV).duration(5 * SECONDS).addTo(fluidSolidifierRecipes);
         if (Botania.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L))
-                    .itemOutputs(BlockList.Gaia.getIS(1)).fluidInputs(Materials.GaiaSpirit.getMolten(1296L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "bifrostPerm", 1))
+                    .itemOutputs(BlockList.Gaia.get(1)).fluidInputs(Materials.GaiaSpirit.getMolten(1296L))
                     .duration(2 * SECONDS).eut(TierEU.RECIPE_IV).addTo(fluidSolidifierRecipes);
         }
 
         if (TinkerConstruct.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 36))
-                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(20 * TICKS).eut(8)
-                    .addTo(fluidSolidifierRecipes);
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 36))
+                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(20 * TICKS)
+                    .eut(TierEU.RECIPE_ULV).addTo(fluidSolidifierRecipes);
             // maybe Materials.Glue.getFluid(144L) instead
 
-            GTValues.RA.stdBuilder().circuit(1)
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "blankPattern", 1L, 1))
+            GTValues.RA.stdBuilder().circuit(1).itemOutputs(getModItem(TinkerConstruct.ID, "blankPattern", 1, 1))
                     .fluidInputs(FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144))
                     .duration(20 * TICKS).eut(48).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.gravel, 1, 0))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0))
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0))
                     .fluidInputs(Materials.Tin.getMolten(16L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                     .addTo(fluidSolidifierRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1, 43))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6))
+                    .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 43))
                     .fluidInputs(Materials.Steel.getMolten(288L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                     .addTo(fluidSolidifierRecipes);
 
             if (ExtraUtilities.isModLoaded()) {
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
-                        .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
+                        .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
                         .fluidInputs(Materials.Tin.getMolten(144L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                         .addTo(fluidSolidifierRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
-                        .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
+                        .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
                         .fluidInputs(Materials.Electrum.getMolten(48L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                         .addTo(fluidSolidifierRecipes);
 
@@ -427,9 +424,15 @@ public class FluidSolidifierRecipes implements Runnable {
                     .addTo(fluidSolidifierRecipes);
 
             // Hawking Radiation Realignment Focus
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(ItemRegistry.bw_glasses[0], 1, 15))
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(ItemRegistry.bw_glasses[0], 1, 8))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), 1152)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Hawking_Glass.get(1)).addTo(fluidSolidifierRecipes);
+
+            // TODO: move into exo-foundry when special uiv+ module is finished
+            GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer8.get(1))
+                    .fluidInputs(Materials.QuarkGluonPlasma.getFluid(1500L))
+                    .itemOutputs(ItemList.Circuit_Wafer_YPIC.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MAX)
+                    .addTo(fluidSolidifierRecipes);
         }
     }
 

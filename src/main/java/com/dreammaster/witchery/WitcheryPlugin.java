@@ -1,5 +1,6 @@
 package com.dreammaster.witchery;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static com.dreammaster.witchery.WitcheryBrewRegistryAccessor.*;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -28,7 +29,6 @@ import alkalus.main.api.RecipeManager.SpinningWheel;
 import alkalus.main.api.plugin.base.BasePluginWitchery;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class WitcheryPlugin extends BasePluginWitchery {
@@ -145,8 +145,9 @@ public class WitcheryPlugin extends BasePluginWitchery {
             }
         }
         log.warn(
-                "There is no cauldron recipe matching these items: last: {}, rest: " + Arrays.toString(items),
-                lastItem);
+                "There is no cauldron recipe matching these items: last: {}, rest: {}",
+                lastItem,
+                Arrays.toString(items));
     }
 
     private static void removeAllKettleRecipe(ItemStack output) {
@@ -190,7 +191,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack[] { new ItemStack(Witchery.Blocks.WISPY_COTTON, 4),
                         Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1) });
         SpinningWheel.addRecipe(
-                GTModHandler.getModItem(BloodArsenal.ID, "blood_burned_string", 1L),
+                getModItem(BloodArsenal.ID, "blood_burned_string", 1),
                 Witchery.Items.GENERIC.itemTormentedTwine.createStack(1),
                 new ItemStack[] { Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4),
                         Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1) });
@@ -213,8 +214,8 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 true,
                 Witchery.Items.GENERIC.itemRedstoneSoup.createStack(),
                 Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(),
-                GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45),
-                GTModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
+                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45),
+                getModItem(HardcoreEnderExpansion.ID, "end_powder", 1),
                 Witchery.Items.GENERIC.itemDropOfLuck.createStack(),
                 Witchery.Items.GENERIC.itemBatWool.createStack());
 
@@ -242,7 +243,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     new ItemStack(Witchery.Items.CHALK_OTHERWHERE),
                     new ItemStack(Witchery.Items.CHALK_RITUAL),
                     GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
-                    GTModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
+                    getModItem(HardcoreEnderExpansion.ID, "end_powder", 1),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
                     NHItemList.ManyullynCrystal.get(1));
         }

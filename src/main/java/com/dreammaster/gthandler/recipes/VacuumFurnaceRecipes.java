@@ -11,7 +11,6 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
@@ -42,7 +41,7 @@ public class VacuumFurnaceRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 64L),
                             MaterialsElements.getInstance().GERMANIUM.getDust(15))
                     .fluidInputs(new FluidStack(GTPPFluids.SphaleriteFlotationFroth, 4000))
-                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), GTModHandler.getWater(2000))
+                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), Materials.Water.getFluid(2000))
                     .eut((int) TierEU.RECIPE_LuV).metadata(COIL_HEAT, 5500).duration(2 * MINUTES)
                     .addTo(vacuumFurnaceRecipes);
 
@@ -56,7 +55,7 @@ public class VacuumFurnaceRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cadmium, 50L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 30L))
                     .fluidInputs(new FluidStack(GTPPFluids.ChalcopyriteFlotationFroth, 4000))
-                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), GTModHandler.getWater(2000))
+                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), Materials.Water.getFluid(2000))
                     .eut((int) TierEU.RECIPE_IV).metadata(COIL_HEAT, 4500).duration(2 * MINUTES)
                     .addTo(vacuumFurnaceRecipes);
         }

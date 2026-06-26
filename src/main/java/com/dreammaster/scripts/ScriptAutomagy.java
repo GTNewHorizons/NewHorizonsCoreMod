@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -10,7 +11,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -53,81 +53,80 @@ public class ScriptAutomagy implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockBoiler", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockTorchInversion", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalAmp", 2, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalDense", 2, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalDim", 2, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockHourglassMagic", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 4, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 5, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockBoiler", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockTorchInversion", 1, 0));
+        TCHelper.removeCrucibleRecipe(getModItem(Automagy.ID, "blockRedcrystal", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalAmp", 2, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalDense", 2, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalDim", 2, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockHourglassMagic", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 1));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 2));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 3));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 4));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 4, 5));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 1));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 2));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 3));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 4));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 5));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 1));
         TCHelper.removeInfusionEnchantmentRecipe(61);
         TCHelper.removeInfusionEnchantmentRecipe(62);
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRemoteComparator", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem(Automagy.ID, "crystalEye", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalRes", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalMerc", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "focusCrafting", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRemoteComparator", 1, 0));
+        TCHelper.removeCrucibleRecipe(getModItem(Automagy.ID, "crystalEye", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalRes", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalMerc", 1, 0));
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "focusCrafting", 1, 0));
         TCHelper.clearPages("REDSTONETHEORY");
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.1"));
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.2"));
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.3"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALCHEMYBOILER",
-                getModItem(Automagy.ID, "blockBoiler", 1, 0, missing),
+                getModItem(Automagy.ID, "blockBoiler", 1, 0),
                 new AspectList().add(Aspect.WATER, 25).add(Aspect.FIRE, 20).add(Aspect.ORDER, 20),
                 "SAS",
                 "TFT",
                 "SBS",
                 'A',
-                getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
+                getModItem(Railcraft.ID, "machine.beta", 1, 4),
                 'F',
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0),
                 'B',
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 'S',
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
                 'T',
                 "plateThaumium");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDSTONETHEORY",
-                getModItem(Automagy.ID, "blockTorchInversion", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 10),
+                getModItem(Automagy.ID, "blockTorchInversion", 1, 0),
+                new AspectList().add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 4),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 4),
                 'e',
-                getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing),
+                getModItem(Minecraft.ID, "redstone_torch", 1, 0),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 4),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 4));
         TCHelper.addResearchPage(
                 "REDSTONETHEORY",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTorchInversion", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTorchInversion", 1, 0))));
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.4"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDSTONETHEORY",
-                getModItem(Automagy.ID, "blockHourglass", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 10),
+                getModItem(Automagy.ID, "blockHourglass", 1, 0),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -138,11 +137,11 @@ public class ScriptAutomagy implements IScriptLoader {
                 'c',
                 "screwGold",
                 'd',
-                getModItem(Genetics.ID, "misc", 1, 8, missing),
+                getModItem(Genetics.ID, "misc", 1, 8),
                 'e',
                 "dustQuartzSand",
                 'f',
-                getModItem(Genetics.ID, "misc", 1, 8, missing),
+                getModItem(Genetics.ID, "misc", 1, 8),
                 'g',
                 "screwGold",
                 'h',
@@ -151,453 +150,439 @@ public class ScriptAutomagy implements IScriptLoader {
                 "ringGold");
         TCHelper.addResearchPage(
                 "REDSTONETHEORY",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockHourglass", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockHourglass", 1, 0))));
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.5"));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("machina"), 2).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("vitreus"), 12));
+                new AspectList().add(Aspect.MECHANISM, 2).add(Aspect.MAGIC, 6).add(Aspect.CRYSTAL, 12));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "REDCRYSTAL",
-                getModItem(Automagy.ID, "blockRedcrystal", 9, 0, missing),
-                getModItem(Minecraft.ID, "redstone_block", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("machina"), 3).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("vitreus"), 18));
+                getModItem(Automagy.ID, "blockRedcrystal", 9, 0),
+                getModItem(Minecraft.ID, "redstone_block", 1, 0),
+                new AspectList().add(Aspect.MECHANISM, 3).add(Aspect.MAGIC, 9).add(Aspect.CRYSTAL, 18));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("ignis"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.MECHANISM, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.CRYSTAL, 6).add(Aspect.FIRE, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_AMP",
-                getModItem(Automagy.ID, "blockRedcrystalAmp", 2, 0, missing),
-                new AspectList().add(Aspect.getAspect("ignis"), 10),
+                getModItem(Automagy.ID, "blockRedcrystalAmp", 2, 0),
+                new AspectList().add(Aspect.FIRE, 10),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'c',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'e',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'g',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'i',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 1));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.MECHANISM, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.CRYSTAL, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_AMP",
-                getModItem(Automagy.ID, "blockRedcrystalDense", 2, 0, missing),
-                new AspectList().add(Aspect.getAspect("terra"), 10),
+                getModItem(Automagy.ID, "blockRedcrystalDense", 2, 0),
+                new AspectList().add(Aspect.EARTH, 10),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'c',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 3, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 3),
                 'e',
                 "stickInfusedEarth",
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 3, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 3),
                 'g',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'i',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing));
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("perditio"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.MECHANISM, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.CRYSTAL, 6).add(Aspect.ENTROPY, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_AMP",
-                getModItem(Automagy.ID, "blockRedcrystalDim", 2, 0, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 10),
+                getModItem(Automagy.ID, "blockRedcrystalDim", 2, 0),
+                new AspectList().add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'c',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'e',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'g',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'i',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 5));
         TCHelper.clearPages("SLIVERS");
         TCHelper.addResearchPage("SLIVERS", new ResearchPage("Automagy.research_page.SLIVERS.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Automagy.ID, "shardSliver", 4, 0, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("aer"), 5),
+                getModItem(Automagy.ID, "shardSliver", 4, 0),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.AIR, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
                 "craftingToolHardHammer",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Automagy.ID, "shardSliver", 4, 1, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("ignis"), 5),
+                getModItem(Automagy.ID, "shardSliver", 4, 1),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.FIRE, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
                 "craftingToolHardHammer",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 1, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 1))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Automagy.ID, "shardSliver", 4, 2, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("aqua"), 5),
+                getModItem(Automagy.ID, "shardSliver", 4, 2),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.WATER, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
                 "craftingToolHardHammer",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 2, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 2))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Automagy.ID, "shardSliver", 4, 3, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("terra"), 5),
+                getModItem(Automagy.ID, "shardSliver", 4, 3),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
                 "craftingToolHardHammer",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 3, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 3))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Automagy.ID, "shardSliver", 4, 4, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("ordo"), 5),
+                getModItem(Automagy.ID, "shardSliver", 4, 4),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
                 "craftingToolHardHammer",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 4, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 4))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Automagy.ID, "shardSliver", 4, 5, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 5),
+                getModItem(Automagy.ID, "shardSliver", 4, 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
                 "craftingToolHardHammer",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 5, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "shardSliver", 1, 5))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aer"), 5),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.AIR, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 0),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 0),
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 0),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 0));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 0))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 5),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.FIRE, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 1),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 1, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 1));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 1))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aqua"), 5),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 2, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 2),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 2, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 2),
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 2, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 2),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 2, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 2));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 2))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("terra"), 5),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 3, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 3),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 3, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 3),
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 3, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 3),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 3, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 3));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 3))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("ordo"), 5),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 4),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 4),
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 4),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 4));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 4))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 5),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 5),
                 'h',
-                getModItem(Automagy.ID, "shardSliver", 1, 5, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 5));
         TCHelper.addResearchPage(
                 "SLIVERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShard", 1, 5))));
         TCHelper.orphanResearch("SLIVERS_TRAVEL");
         TCHelper.removeResearch("SLIVERS_TRAVEL");
         TCHelper.orphanResearch("SLIVERS_WARDING");
         TCHelper.removeResearch("SLIVERS_WARDING");
         TCHelper.setResearchAspects(
                 "REMOTECOMPARATOR",
-                new AspectList().add(Aspect.getAspect("potentia"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("sensus"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ENERGY, 15).add(Aspect.MECHANISM, 12).add(Aspect.SENSES, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("REMOTECOMPARATOR", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REMOTECOMPARATOR",
-                getModItem(Automagy.ID, "blockRemoteComparator", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("perditio"), 15),
+                getModItem(Automagy.ID, "blockRemoteComparator", 1, 0),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 'd',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'e',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'f',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'g',
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
                 'h',
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26),
                 'i',
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "REMOTECOMPARATOR",
-                getModItem(Automagy.ID, "crystalEye", 1, 0, missing),
-                getModItem(Minecraft.ID, "spider_eye", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("sensus"), 10)
-                        .add(Aspect.getAspect("praecantatio"), 5));
+                getModItem(Automagy.ID, "crystalEye", 1, 0),
+                getModItem(Minecraft.ID, "spider_eye", 1, 0),
+                new AspectList().add(Aspect.CRYSTAL, 15).add(Aspect.SENSES, 10).add(Aspect.MAGIC, 5));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL_RES",
-                new AspectList().add(Aspect.getAspect("potentia"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ENERGY, 15).add(Aspect.MECHANISM, 12).add(Aspect.CRYSTAL, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL_RES", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_RES",
-                getModItem(Automagy.ID, "blockRedcrystalRes", 2, 0, missing),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ordo"), 5),
+                getModItem(Automagy.ID, "blockRedcrystalRes", 2, 0),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 0),
                 'b',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 'c',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 0),
                 'd',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 'e',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'f',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 'g',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 0),
                 'h',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 'i',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing));
+                getModItem(Automagy.ID, "shardSliver", 1, 0));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL_MIRRORBOUND",
-                new AspectList().add(Aspect.getAspect("iter"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("terra"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TRAVEL, 15).add(Aspect.ENERGY, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL_MIRRORBOUND", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_MIRRORBOUND",
-                getModItem(Automagy.ID, "blockRedcrystalMerc", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("aer"), 20)
-                        .add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("terra"), 15),
+                getModItem(Automagy.ID, "blockRedcrystalMerc", 1, 0),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.AIR, 20).add(Aspect.ENTROPY, 10).add(Aspect.FIRE, 20)
+                        .add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'b',
-                getModItem(Automagy.ID, "blockRedcrystalRes", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystalRes", 1, 0),
                 'c',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'd',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 'f',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 'g',
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
                 'h',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 'i',
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6));
         TCHelper.setResearchAspects(
                 "FOCUSCRAFTING",
-                new AspectList().add(Aspect.getAspect("fabrico"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("terra"), 6));
+                new AspectList().add(Aspect.CRAFT, 15).add(Aspect.MAGIC, 12).add(Aspect.TOOL, 9).add(Aspect.EARTH, 6));
         TCHelper.setResearchComplexity("FOCUSCRAFTING", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSCRAFTING",
-                getModItem(Automagy.ID, "focusCrafting", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("terra"), 40)
-                        .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aer"), 20)
-                        .add(Aspect.getAspect("aqua"), 10),
+                getModItem(Automagy.ID, "focusCrafting", 1, 0),
+                new AspectList().add(Aspect.ORDER, 50).add(Aspect.EARTH, 40).add(Aspect.ENTROPY, 30).add(Aspect.AIR, 20)
+                        .add(Aspect.WATER, 10),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
                 'b',
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
                 'c',
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
                 'd',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 'e',
-                getModItem(Thaumcraft.ID, "blockTable", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "blockTable", 1, 15),
                 'f',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 'g',
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 'h',
-                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6),
                 'i',
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         new ResearchItem(
                 "InfusedGoldGTNH",
                 "AUTOMAGY",
-                new AspectList().add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.GREED, 12).add(Aspect.MAGIC, 9).add(Aspect.AIR, 6).add(Aspect.METAL, 3),
                 -5,
                 -2,
                 3,
@@ -608,10 +593,9 @@ public class ScriptAutomagy implements IScriptLoader {
                 "InfusedGoldGTNH",
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L),
                 2,
-                new AspectList().add(Aspect.getAspect("lucrum"), 16).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("praecantatio"), 4)
-                        .add(Aspect.getAspect("aer"), 4),
-                getModItem(Minecraft.ID, "gold_ingot", 1, 0, missing),
+                new AspectList().add(Aspect.GREED, 16).add(Aspect.METAL, 12).add(Aspect.ORDER, 8).add(Aspect.MAGIC, 4)
+                        .add(Aspect.AIR, 4),
+                getModItem(Minecraft.ID, "gold_ingot", 1, 0),
                 OrePrefixes.dust.get(Materials.Thaumium),
                 OrePrefixes.dust.get(Materials.Thaumium),
                 OrePrefixes.dust.get(Materials.Thaumium),
@@ -627,48 +611,44 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.addResearchPrereq("MAGICHOURGLASS", "REDCRYSTAL", false);
         TCHelper.setResearchAspects(
                 "MAGICHOURGLASS",
-                new AspectList().add(Aspect.getAspect("machina"), 15).add(Aspect.getAspect("motus"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.MECHANISM, 15).add(Aspect.MOTION, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("MAGICHOURGLASS", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MAGICHOURGLASS",
-                getModItem(Automagy.ID, "blockHourglassMagic", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 5),
+                getModItem(Automagy.ID, "blockHourglassMagic", 1, 0),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 15).add(Aspect.AIR, 10).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
                 "screwInfusedGold",
                 'b',
-                getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing),
+                getModItem(Automagy.ID, "blockRedcrystal", 1, 0),
                 'c',
                 "screwInfusedGold",
                 'd',
-                getModItem(Automagy.ID, "shardSliver", 1, 0, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 0),
                 'e',
-                getModItem(Automagy.ID, "blockHourglass", 1, 0, missing),
+                getModItem(Automagy.ID, "blockHourglass", 1, 0),
                 'f',
-                getModItem(Automagy.ID, "shardSliver", 1, 4, missing),
+                getModItem(Automagy.ID, "shardSliver", 1, 4),
                 'g',
                 "plateInfusedGold",
                 'h',
-                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
+                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0),
                 'i',
                 "plateInfusedGold");
         TCHelper.clearPages("NITORLIGHT");
         TCHelper.addResearchPage("NITORLIGHT", new ResearchPage("Automagy.research_page.NITORLIGHT.1"));
         TCHelper.setResearchAspects(
                 "NITORLIGHT",
-                new AspectList().add(Aspect.getAspect("lux"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("aer"), 6));
+                new AspectList().add(Aspect.LIGHT, 12).add(Aspect.FIRE, 9).add(Aspect.AIR, 6));
         TCHelper.setResearchComplexity("NITORLIGHT", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NITORLIGHT",
-                getModItem(Automagy.ID, "blockTranslucent", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("terra"), 5),
+                getModItem(Automagy.ID, "blockTranslucent", 1, 0),
+                new AspectList().add(Aspect.FIRE, 10).add(Aspect.WATER, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -677,39 +657,35 @@ public class ScriptAutomagy implements IScriptLoader {
                 'd',
                 "plateAmber",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
                 'f',
                 "plateAmber",
                 'h',
                 "plateAmber");
         TCHelper.addResearchPage(
                 "NITORLIGHT",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 0))));
         TCHelper.clearPages("ENCHANT_FISHING");
         TCHelper.addResearchPage("ENCHANT_FISHING", new ResearchPage("Automagy.research_page.ENCHANT_FISHING.1"));
         ThaumcraftApi.addInfusionEnchantmentRecipe(
                 "ENCHANT_FISHING",
                 Enchantment.enchantmentsList[61],
                 3,
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("bestia"), 15)
-                        .add(Aspect.getAspect("fames"), 10).add(Aspect.getAspect("meto"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 10),
-                new ItemStack[] { getModItem(Minecraft.ID, "carrot_on_a_stick", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(Minecraft.ID, "sugar", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing), });
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.BEAST, 15).add(Aspect.HUNGER, 10)
+                        .add(Aspect.HARVEST, 15).add(Aspect.MAGIC, 10),
+                new ItemStack[] { getModItem(Minecraft.ID, "carrot_on_a_stick", 1, 0),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14), getModItem(Minecraft.ID, "sugar", 1, 0),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14), });
         ThaumcraftApi.addInfusionEnchantmentRecipe(
                 "ENCHANT_FISHING",
                 Enchantment.enchantmentsList[62],
                 4,
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("bestia"), 15)
-                        .add(Aspect.getAspect("meto"), 15).add(Aspect.getAspect("lucrum"), 10)
-                        .add(Aspect.getAspect("praecantatio"), 10),
-                new ItemStack[] { getModItem(Minecraft.ID, "golden_carrot", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(Minecraft.ID, "tripwire_hook", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing), });
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.BEAST, 15).add(Aspect.HARVEST, 15)
+                        .add(Aspect.GREED, 10).add(Aspect.MAGIC, 10),
+                new ItemStack[] { getModItem(Minecraft.ID, "golden_carrot", 1, 0),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
+                        getModItem(Minecraft.ID, "tripwire_hook", 1, 0),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14), });
         TCHelper.addResearchPage("ENCHANT_FISHING", new ResearchPage(TCHelper.findInfusionEnchantRecipe(61)));
         TCHelper.addResearchPage("ENCHANT_FISHING", new ResearchPage(TCHelper.findInfusionEnchantRecipe(62)));
         TCHelper.refreshResearchPages("ALCHEMYBOILER");

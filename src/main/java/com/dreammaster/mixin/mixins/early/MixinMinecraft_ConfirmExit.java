@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.launchwrapper.Launch;
 import net.minecraft.util.StatCollector;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import com.dreammaster.client.util.IconLoader;
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.lib.Refstrings;
+import com.dreammaster.lwjgl3ify.ConfirmExitSdl;
 
 @Mixin(Minecraft.class)
 public abstract class MixinMinecraft_ConfirmExit {
@@ -37,8 +39,29 @@ public abstract class MixinMinecraft_ConfirmExit {
         if (!DreamCoreMod.showConfirmExitWindow || this.dreamcraft$isCloseRequested) {
             return;
         }
+
+        ci.cancel();
+
         if (!this.dreamcraft$waitingDialogQuit) {
             this.dreamcraft$waitingDialogQuit = true;
+
+            // Do not use Swing when lwjgl3ify 3.x is active
+            if ((int) Launch.blackboard.getOrDefault("lwjgl3ify:major-version", Integer.MIN_VALUE) >= 3) {
+                ConfirmExitSdl.showExitDialogFromMainThread((int choice) -> {
+                    if (choice == ConfirmExitSdl.BUTTON_YES) {
+                        this.dreamcraft$isCloseRequested = true;
+                        this.shutdown();
+                    } else if (choice == ConfirmExitSdl.BUTTON_NEVER) {
+                        this.dreamcraft$isCloseRequested = true;
+                        DreamCoreMod.disableShowConfirmExitWindow();
+                        this.shutdown();
+                    }
+                    this.dreamcraft$waitingDialogQuit = false;
+                });
+
+                return;
+            }
+
             new Thread(() -> {
                 final JFrame frame = new JFrame();
                 frame.setAlwaysOnTop(true);
@@ -74,7 +97,6 @@ public abstract class MixinMinecraft_ConfirmExit {
                 this.dreamcraft$waitingDialogQuit = false;
             }).start();
         }
-        ci.cancel();
     }
 
     @Unique

@@ -1,10 +1,10 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.VendingMachine;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -14,8 +14,11 @@ import net.minecraft.item.ItemStack;
 
 import com.cubefury.vendingmachine.items.VMItems;
 
-import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.TierEU;
+import gregtech.api.objects.ItemData;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptVendingMachine implements IScriptLoader {
 
@@ -31,21 +34,34 @@ public class ScriptVendingMachine implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        ItemStack ironPlate = Materials.Iron.getPlates(1);
         addShapedRecipe(
                 VMItems.vendingMachine,
                 getModItem(Minecraft.ID, "stone_button", 1, 0),
                 "craftingToolWrench",
                 getModItem(Minecraft.ID, "stone_button", 1, 0),
-                "plateIron",
-                new ItemStack(GregTechAPI.sBlockCasings11, 1, 0),
-                "plateIron",
+                ironPlate,
+                VMItems.casing,
+                ironPlate,
                 null,
                 getModItem(Minecraft.ID, "hopper", 1),
                 null);
+        addShapedRecipe(
+                VMItems.casing,
+                ironPlate,
+                "foilIron",
+                ironPlate,
+                "foilIron",
+                "frameGtIron",
+                "foilIron",
+                ironPlate,
+                "foilIron",
+                ironPlate);
+        GTOreDictUnificator.addItemData(VMItems.casing, new ItemData(Materials.Iron, 7 * GTValues.M));
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
                         getModItem(Minecraft.ID, "dispenser", 1, 0))
-                .duration(5 * SECONDS).itemOutputs(VMItems.uplinkHatch).eut(120).addTo(assemblerRecipes);
+                .duration(5 * SECONDS).itemOutputs(VMItems.uplinkHatch).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
     }
 }

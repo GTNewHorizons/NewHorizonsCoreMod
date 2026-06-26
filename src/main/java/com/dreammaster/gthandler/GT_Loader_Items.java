@@ -22,8 +22,8 @@ public class GT_Loader_Items {
     private void registerTooltips() {
         registerTieredTooltip(NHItemList.PikoCircuit.get(), UMV);
         registerTieredTooltip(NHItemList.QuantumCircuit.get(), UXV);
+        registerTieredTooltip(NHItemList.PlanckCircuit.get(), MAX);
 
-        // FIXME: Implement these tooltips in a way that will be correctly translated if the language changes mid-game.
         List<ItemStack> origin = Arrays.asList(
                 NHItemList.ChevronOrigin.get(),
                 NHItemList.FramePartOrigin.get(),

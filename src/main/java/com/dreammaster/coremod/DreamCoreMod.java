@@ -35,6 +35,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     public static boolean showConfirmExitWindow;
     public static boolean patchItemFocusWarding;
     static boolean downloadOnlyOnce;
+    static String downloadUA;
 
     @Override
     public String[] getASMTransformerClass() {
@@ -86,6 +87,9 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         showConfirmExitWindow = "true".equalsIgnoreCase(coremodConfig.getProperty("showConfirmExitWindow"));
         patchItemFocusWarding = "true".equalsIgnoreCase(coremodConfig.getProperty("patchItemFocusWarding"));
         downloadOnlyOnce = "true".equalsIgnoreCase(coremodConfig.getProperty("downloadOnlyOnce"));
+        downloadUA = coremodConfig.getProperty(
+                "downloadUA",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0");
     }
 
     @Override

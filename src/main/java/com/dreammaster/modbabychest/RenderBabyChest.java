@@ -30,7 +30,6 @@ public class RenderBabyChest extends TileEntitySpecialRenderer {
                     .getBlock(tTileEntityBabyChest.xCoord, tTileEntityBabyChest.yCoord, tTileEntityBabyChest.zCoord);
 
             if (tBlock instanceof BlockBabyChest) {
-                BlockBabyChest blockBabyChest = (BlockBabyChest) tBlock;
                 bindTexture(new ResourceLocation("minecraft:textures/entity/chest/normal.png"));
             }
 

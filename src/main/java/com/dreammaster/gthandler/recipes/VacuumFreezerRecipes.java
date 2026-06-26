@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.recipe.RecipeMaps.vacuumFreezerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -12,7 +13,6 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class VacuumFreezerRecipes implements Runnable {
@@ -143,8 +143,8 @@ public class VacuumFreezerRecipes implements Runnable {
         if (Avaritia.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Infinity, 1L))
-                    .itemOutputs(GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 6))
-                    .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_UHV).addTo(vacuumFreezerRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 6)).duration(14 * SECONDS + 14 * TICKS)
+                    .eut(TierEU.RECIPE_UHV).addTo(vacuumFreezerRecipes);
 
         }
 

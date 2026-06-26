@@ -5,6 +5,7 @@ import com.dreammaster.gthandler.recipes.ArcFurnaceRecipes;
 import com.dreammaster.gthandler.recipes.AssemblerRecipes;
 import com.dreammaster.gthandler.recipes.AssemblingLineRecipes;
 import com.dreammaster.gthandler.recipes.AutoclaveRecipes;
+import com.dreammaster.gthandler.recipes.BeamcraftingRecipes;
 import com.dreammaster.gthandler.recipes.BendingMachineRecipes;
 import com.dreammaster.gthandler.recipes.BlastFurnaceRecipes;
 import com.dreammaster.gthandler.recipes.BrewingMachineRecipes;
@@ -21,7 +22,6 @@ import com.dreammaster.gthandler.recipes.ElectrolyzerRecipes;
 import com.dreammaster.gthandler.recipes.ExtractorRecipes;
 import com.dreammaster.gthandler.recipes.ExtruderRecipes;
 import com.dreammaster.gthandler.recipes.FermenterRecipes;
-import com.dreammaster.gthandler.recipes.FluidCannerRecipes;
 import com.dreammaster.gthandler.recipes.FluidExtractorRecipes;
 import com.dreammaster.gthandler.recipes.FluidHeaterRecipes;
 import com.dreammaster.gthandler.recipes.FluidSolidifierRecipes;
@@ -69,7 +69,6 @@ public class GT_MachineRecipeLoader implements Runnable {
         new ExtractorRecipes().run();
         new ExtruderRecipes().run();
         new FermenterRecipes().run();
-        new FluidCannerRecipes().run();
         new FluidExtractorRecipes().run();
         new FluidHeaterRecipes().run();
         new FluidSolidifierRecipes().run();
@@ -90,6 +89,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new VacuumFurnaceRecipes().run();
         new PolarizerRecipes().run();
         new PreciseAssemblerRecipes().run();
+        new BeamcraftingRecipes().run();
     }
 
 }

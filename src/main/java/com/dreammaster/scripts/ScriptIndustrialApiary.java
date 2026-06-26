@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.ExtraBees;
@@ -10,7 +11,6 @@ import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -22,7 +22,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.item.NHItemList;
+import com.dreammaster.block.BlockList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -81,7 +81,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemStack LVRobotArm = ItemList.Robot_Arm_LV.get(1);
         final Block Cactus = Blocks.cactus;
         final Item WaterBucket = Items.water_bucket;
-        final ItemStack SteelBars = NHItemList.SteelBars.get();
+        final ItemStack SteelBars = BlockList.SteelBars.get();
         final ItemData TitaniumRotor = (ItemData) OrePrefixes.rotor.get(Materials.Titanium);
         final Block Snow = Blocks.snow;
         final Item FermentedSpiderEye = Items.fermented_spider_eye;
