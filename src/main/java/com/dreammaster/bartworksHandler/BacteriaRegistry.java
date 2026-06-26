@@ -109,48 +109,18 @@ public class BacteriaRegistry {
     }
 
     private void runLateBioOBJs() {
-        BioCulture bioCulture = BioCultureEnum.BarnadafisArboriatoris.bioCulture;
-
-        CultureSet.put("BarnadaCBac", bioCulture); // save it in a Map to get it later
-
-        // TCetiE culture, same as above
-        bioCulture = BioCultureEnum.TcetieisFucusSerratus.bioCulture;
-
-
-        CultureSet.put("TcetiEBac", bioCulture);
+        CultureSet.put("BarnadaCBac", BioCultureEnum.BarnadafisArboriatoris.bioCulture); // save it in a Map to get it later
+        CultureSet.put("TcetiEBac", BioCultureEnum.TcetieisFucusSerratus.bioCulture);
 
         // combined Culture
-        bioCulture = BioCultureEnum.XenoxeneXenoxsis.bioCulture;
-
-        CultureSet.put("CombinedBac", bioCulture);
-
-        bioCulture = BioCultureEnum.OvaEvolutionis.bioCulture;
-
-        CultureSet.put("OvumBac", bioCulture);
-
-        bioCulture = BioCultureEnum.DerivanturCellulaEvolutionis.bioCulture;
-
-        CultureSet.put("StemCellBac", bioCulture);
-
-        bioCulture = BioCultureEnum.CellulaBiologicumEvolutione.bioCulture;
-
-        CultureSet.put("BioCellBac", bioCulture);
-
-        bioCulture = BioCultureEnum.BinniGrowthMedium.bioCulture;
-
-        CultureSet.put("BinniGrowthMedium", bioCulture);
-
-        bioCulture = BioCultureEnum.BinniBacteria.bioCulture;
-
-        CultureSet.put("BinniBacteria", bioCulture);
-
-        bioCulture = BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture;
-
-        CultureSet.put("BacterialSludgeBac", bioCulture);
-
-        bioCulture = BioCultureEnum.MutagenBacteriaASpatio.bioCulture;
-
-        CultureSet.put("Mutagen", bioCulture);
+        CultureSet.put("CombinedBac", BioCultureEnum.XenoxeneXenoxsis.bioCulture);
+        CultureSet.put("OvumBac", BioCultureEnum.OvaEvolutionis.bioCulture);
+        CultureSet.put("StemCellBac", BioCultureEnum.DerivanturCellulaEvolutionis.bioCulture);
+        CultureSet.put("BioCellBac", BioCultureEnum.CellulaBiologicumEvolutione.bioCulture);
+        CultureSet.put("BinniGrowthMedium", BioCultureEnum.BinniGrowthMedium.bioCulture);
+        CultureSet.put("BinniBacteria", BioCultureEnum.BinniBacteria.bioCulture);
+        CultureSet.put("BacterialSludgeBac", BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture);
+        CultureSet.put("Mutagen", BioCultureEnum.MutagenBacteriaASpatio.bioCulture);
 
         regenerateBioFluids(); // this will generate bacteria fluids. needs to be called AFTER ALL breedable bacterias
         // have been registered.
