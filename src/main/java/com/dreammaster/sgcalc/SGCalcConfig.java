@@ -180,6 +180,7 @@ public final class SGCalcConfig {
                 "material:Hypogen|Hypogen|L",
                 "material:Dragonblood|Dragonblood|L",
                 "material:TranscendentMetal|Transcendent Metal|L",
+                "material:MagnetohydrodynamicallyConstrainedStarMatter|Magnetohydrodynamically Constrained Star Matter|L",
                 "material:Mellion|Mellion|L",
                 "material:Quantum|Quantum|L",
                 "material:Shirabon|Shirabon|L",
