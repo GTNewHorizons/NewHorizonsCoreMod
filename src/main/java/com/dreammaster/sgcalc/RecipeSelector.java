@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import com.dreammaster.sgcalc.RecipeCandidate.Ingredient;
+import com.dreammaster.sgcalc.RecipeCandidate.Output;
 
 /**
  * Chooses which recipe to follow when several produce the same item. After per-item overrides and denied sources are
@@ -123,15 +124,35 @@ public final class RecipeSelector {
                 bestTime = time;
             }
         }
-        if (pool.size() > 1) {
-            log.accept(
-                    "ambiguous " + item.displayName()
-                            + ": "
-                            + pool.size()
-                            + " candidates, chose "
-                            + (best != null ? best.sourceId : "none"));
+        if (pool.size() > 1 && best != null) {
+            log.accept("ambiguous " + item.displayName() + " (" + pool.size() + " candidates) chose " + describe(best));
         }
         return best;
+    }
+
+    /** A one-line summary of a chosen recipe: source machine, inputs, outputs, duration and power draw. */
+    private static String describe(RecipeCandidate c) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(c.sourceId).append(" in[");
+        for (int i = 0; i < c.inputs.size(); i++) {
+            if (i > 0) sb.append(", ");
+            Ingredient ing = c.inputs.get(i);
+            sb.append(stack(ing.alts.get(0), ing.amount));
+            if (ing.alts.size() > 1) sb.append(" (+").append(ing.alts.size() - 1).append(" alt)");
+        }
+        sb.append("] out[");
+        for (int i = 0; i < c.outputs.size(); i++) {
+            if (i > 0) sb.append(", ");
+            Output o = c.outputs.get(i);
+            sb.append(stack(o.item, o.amount));
+            if (o.chance < 10000) sb.append(" @").append(o.chance / 100.0).append('%');
+        }
+        sb.append("] ").append(c.duration).append("t @ ").append(c.euT).append(" EU/t");
+        return sb.toString();
+    }
+
+    private static String stack(SGItem item, long amount) {
+        return amount + (item.isFluid() ? "L " : "x ") + item.displayName();
     }
 
     /**
