@@ -14,6 +14,7 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 
 import com.dreammaster.main.MainRegistry;
+import com.dreammaster.sgcalc.ContributorsWriter;
 import com.dreammaster.sgcalc.CostResolver;
 import com.dreammaster.sgcalc.CsvWriter;
 import com.dreammaster.sgcalc.RecipeIndex;
@@ -133,6 +134,8 @@ public class SGCalcCommand extends CommandBase {
         }
         reply(sender, CsvWriter.write(dir, "unresolved-high.csv", high.unresolved));
         reply(sender, CsvWriter.write(dir, "unresolved-low.csv", low.unresolved));
+        reply(sender, ContributorsWriter.write(dir, "contributors-high.csv", high.contributions));
+        reply(sender, ContributorsWriter.write(dir, "contributors-low.csv", low.contributions));
 
         if (mode.equals("csv")) {
             reply(sender, CsvWriter.write(dir, "high-level.csv", high.entries));
