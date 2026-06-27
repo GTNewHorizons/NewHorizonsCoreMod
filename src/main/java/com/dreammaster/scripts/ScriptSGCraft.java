@@ -215,7 +215,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'b', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackDwarfMatter, 1L),
                 'm', magmatterSuperdensePlate,
                 'p', ItemList.Electric_Piston_UXV.get(1L),
-                'b', ItemList.ZPM6.get(1L),
+                'u', ItemList.ZPM6.get(1L),
                 'c', ItemList.CondensateTransformativeCoil.get(1));
 
         // Stargate Iris Upgrade
