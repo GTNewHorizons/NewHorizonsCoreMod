@@ -327,16 +327,16 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Dyson Swarm Module
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                getModItem(OpenComputers.ID, "item", 1, 91),
+                ItemList.DroneCase.get(1),
                 192_000,
                 512,
                 (int) TierEU.RECIPE_UEV,
                 16,
-                new Object[] { ItemList.Cover_SolarPanel_LuV.get(4), ItemList.UHTResistantMesh.get(8),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2L }, ItemList.Circuit_Chip_QPIC.get(2),
-                        ItemList.Emitter_UEV.get(1), ItemList.Sensor_UEV.get(1),
-                        getModItem(OpenComputers.ID, "item", 4, 91) },
-                new FluidStack[] { new FluidStack(solderUEV, 18_432) },
+                new Object[] { ItemList.DroneCase.get(1), ItemList.FuelPellet.get(1), GregtechItemList.RTG.get(1),
+                        ItemList.Femtocontroller.get(1), ItemList.Circuit_Chip_FPIC.get(8),
+                        ItemList.Cover_SolarPanel_LuV.get(4), ItemList.UHTResistantMesh.get(64) },
+                new FluidStack[] { new FluidStack(solderUEV, 18_432),
+                        new FluidStack(FluidRegistry.getFluid("silane-nitrogen plasma mixture"), 16000) },
                 ItemList.DysonSwarmModule.get(64),
                 5 * SECONDS,
                 (int) TierEU.RECIPE_UHV);

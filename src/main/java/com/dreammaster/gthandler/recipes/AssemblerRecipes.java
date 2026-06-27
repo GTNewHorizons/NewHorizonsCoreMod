@@ -207,6 +207,18 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(1).itemOutputs(new ItemStack(Blocks.piston, 1)).fluidInputs(Materials.Redstone.getMolten(72L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        // Vanilla Compass
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 2L),
+                        new OreDictItemStack("paneGlass", 1),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Zinc, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1L))
+                .itemOutputs(new ItemStack(Items.compass, 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 8)).circuit(8)
                 .itemOutputs(ItemList.Hull_Bronze.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
@@ -231,7 +243,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0),
+                        ItemList.ReinforcedGlass.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4L))
                 .circuit(1).itemOutputs(NHItemList.Empty180SpCell.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
@@ -1085,7 +1097,7 @@ public class AssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 2),
-                            getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 4, 0),
+                            ItemList.ReinforcedGlass.get(4L),
                             Materials.Glowstone.getPlates(1))
                     .circuit(1).itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 5))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -1502,7 +1514,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             alveary,
                             getModItem(Forestry.ID, "thermionicTubes", 4, 8),
-                            getModItem(IndustrialCraft2.ID, "blockRubber", 4),
+                            ItemList.PadBouncy.get(4L),
                             new ItemStack(Blocks.brick_block, 1, 0))
                     .itemOutputs(getModItem(ExtraBees.ID, "alveary", 1, 2)).fluidInputs(Materials.Honey.getFluid(7500L))
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -8890,7 +8902,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer.get(2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
-                        GTModHandler.getIC2Item("reinforcedGlass", 1L),
+                        ItemList.ReinforcedGlass.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         NHItemList.AluminiumIronPlate.get())

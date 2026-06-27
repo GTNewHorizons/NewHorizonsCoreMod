@@ -614,6 +614,28 @@ public class ScriptGregtech implements IScriptLoader {
                 "platePaper",
                 "dyeBlue",
                 "dyeWhite");
+        addShapedRecipe(
+                ItemList.PadBouncy.get(1L),
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                ItemList.PadSticky.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                null,
+                null,
+                null);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Spray_Color_Infinite.get(1L),
