@@ -221,7 +221,7 @@ public class BECRecipes implements Runnable {
         addBec(
                 NHItemList.StargateShieldingFoil.get(),
                 new ItemStack[] { CustomItemList.StabilisationFieldGeneratorTier8.get(64),
-                        CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(32),
+                        CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(64),
                         ItemList.SuperconductivePlasmaEnergyConduit.get(64),
                         ItemList.FineStructureConstantManipulator.get(64),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 32L),

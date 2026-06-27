@@ -7,6 +7,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.List;
 import java.util.Random;
 
+import com.dreammaster.gthandler.recipes.AssemblingLineRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -393,6 +394,7 @@ public class MainRegistry {
         RecipeRemover.run();
         ScriptLoader.run();
         new DTPFRecipes().run();
+        new AssemblingLineRecipes().runLate();
         new BECRecipes().runLate();
 
         BW_RadHatchMaterial.runRadHatchAdder();
