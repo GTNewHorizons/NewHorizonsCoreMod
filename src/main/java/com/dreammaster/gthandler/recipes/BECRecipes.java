@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.UniversalSingularities;
@@ -8,6 +9,8 @@ import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.NANITE_TIERS;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.HYPOGEN;
+import static kekztech.common.Blocks.lscLapotronicEnergyUnit;
+import static tectech.thing.CustomItemList.Godforge_SingularityShieldingCasing;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -47,7 +50,9 @@ public class BECRecipes implements Runnable {
     }
 
     public void runLate() {
-        if (EternalSingularity.isModLoaded()) addSGRecipes();
+        if (EternalSingularity.isModLoaded()) {
+            addSGRecipes();
+        }
     }
 
     private void addComputationSingularityRecipes() {
@@ -193,18 +198,18 @@ public class BECRecipes implements Runnable {
                         CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(32),
                         ItemList.SuperconductivePlasmaEnergyConduit.get(64),
                         ItemList.FineStructureConstantManipulator.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 16L),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 32L),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 32L),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 16), ItemList.Sensor_UXV.get(32L),
                         ItemList.Emitter_UXV.get(32L),
                         getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
                         Materials.WhiteDwarfMatter.getNanite(16), Materials.BlackDwarfMatter.getNanite(16),
                         Materials.Universium.getNanite(16), Materials.MagMatter.getNanite(16) },
                 nanites(7, 6, 5, 5, 3, 3, 2, 2, 9, 4, 4, 1, 6, 7, 8, 10),
-                new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000 * INGOTS),
-                        CondensateType.PhononMedium.getEntangled(256_000 * INGOTS),
+                new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
+                        CondensateType.PhononMedium.getEntangled(256_000),
                         CondensateType.MagMatter.getEntangled(4_096 * INGOTS),
                         CondensateType.MHDCSM.getEntangled(1_024 * INGOTS) },
                 baseStargateTime,
@@ -216,18 +221,18 @@ public class BECRecipes implements Runnable {
                 new ItemStack[] { CustomItemList.EOH_Reinforced_Spatial_Casing.get(64),
                         CustomItemList.EOH_Reinforced_Temporal_Casing.get(64), ItemList.MetaMaterial_WaveFocus4.get(64),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amalgatite, 64),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MagMatter, 16L),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MHDCSM, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MagMatter, 32L),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MHDCSM, 32L),
                         ItemList.MetaMaterial_Shielding3.get(64), ItemList.MetaMaterial_Waveguide3.get(64),
                         ItemList.MetaMaterial_EnergyConduit3.get(64),
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64), ItemList.Electric_Piston_UXV.get(64L),
                         ItemList.Robot_Arm_UXV.get(64L), ItemList.Field_Generator_UXV.get(32),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 32), },
                 nanites(2, 2, 4, 10, 1, 3, 4, 3, 6, 6, 7, 7, 5, 5, 8, 9),
-                new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000 * INGOTS),
-                        CondensateType.PhononMedium.getEntangled(256_000 * INGOTS),
+                new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
+                        CondensateType.PhononMedium.getEntangled(256_000),
                         CondensateType.MagMatter.getEntangled(4_096 * INGOTS),
                         CondensateType.Eternity.getEntangled(2_048 * INGOTS) },
                 baseStargateTime,
@@ -253,8 +258,8 @@ public class BECRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Eternity, 64L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64L) },
                 nanites(1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 10),
-                new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(128_000 * INGOTS),
-                        CondensateType.PhononMedium.getEntangled(32_000 * INGOTS),
+                new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(128_000),
+                        CondensateType.PhononMedium.getEntangled(32_00),
                         CondensateType.MagMatter.getEntangled(512 * INGOTS),
                         CondensateType.Universium.getEntangled(128 * INGOTS) },
                 baseStargateTime / 8,
@@ -273,8 +278,8 @@ public class BECRecipes implements Runnable {
                         ItemList.MetaMaterial_Shielding3.get(64), ItemList.MetaMaterial_ElectrograviticValve3.get(64),
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64), ItemList.MetaMaterial_Shielding3.get(64) },
                 nanites(3, 7, 7, 2, 5, 1, 8, 6, 5, 9, 10, 6, 2, 4, 4, 3),
-                new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(512_000 * INGOTS),
-                        CondensateType.PhononMedium.getEntangled(128_000 * INGOTS),
+                new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(512_000),
+                        CondensateType.PhononMedium.getEntangled(128_000),
                         CondensateType.MagMatter.getEntangled(2_048 * INGOTS),
                         CondensateType.Eternity.getEntangled(1_024 * INGOTS) },
                 baseStargateTime / 2,
@@ -431,11 +436,11 @@ public class BECRecipes implements Runnable {
                         CustomItemList.SpacetimeCompressionFieldGeneratorTier8.get(8L),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 64),
                         NHItemList.Display.get(64), new ItemStack(ItemRegistry.bw_glasses[0], 8, 10),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackDwarfMatter, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 64),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackDwarfMatter, 64),
                         IngredientFactory.getModItem(OpenComputers.ID, "case3", 64, 0),
                         IngredientFactory.getModItem(OpenComputers.ID, "screen3", 64, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 64),
                         CustomItemList.TimeAccelerationFieldGeneratorTier8.get(8L),
                         CustomItemList.dataOut_Wireless_Hatch.get(64L), CustomItemList.dataIn_Wireless_Hatch.get(64L),
                         ItemList.Machine_Multi_BlackHoleCompressor.get(64), },
