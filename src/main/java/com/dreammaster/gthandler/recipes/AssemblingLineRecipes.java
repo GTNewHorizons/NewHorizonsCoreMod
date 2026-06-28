@@ -1851,6 +1851,26 @@ public class AssemblingLineRecipes implements Runnable {
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
 
+        // Line-of-Sight Connector Hatch
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                getModItem(Minecraft.ID, "beacon", 1, 0),
+                24_000_000,
+                8_192,
+                (int) TierEU.RECIPE_UMV,
+                64,
+                new Object[] { ItemList.Hull_UEV.get(1), GTModHandler.getModItem(Minecraft.ID, "beacon", 1, 0),
+                        ItemList.Casing_Dim_Bridge.get(2), ItemList.Conveyor_Module_UIV.get(1),
+                        GGMaterial.tairitsu.get(OrePrefixes.wireFine, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Churitsu, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Shijima, 8) },
+                new FluidStack[] { MaterialsElements.STANDALONE.HYPOGEN.getFluidStack(16 * INGOTS),
+                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getFluidStack(32 * INGOTS),
+                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(16 * INGOTS),
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8 * STACKS) },
+                CustomItemList.Hatch_BEC_Connector.get(1),
+                30 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
         // Condensate Entanglement Apparatus (BEC Generator multi)
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 GregtechItemList.Controller_IndustrialFluidHeater.get(1),
