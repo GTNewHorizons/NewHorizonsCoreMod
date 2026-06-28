@@ -266,7 +266,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         new FluidStack(solderUEV, 2880),
                         Materials.MagMatter.getMolten(576),
                         Materials.Eternity.getMolten(576))
-                .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3).duration(50 * SECONDS)
+                .itemOutputs(ItemList.ZPM3.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
         if (OpenComputers.isModLoaded() && SuperSolarPanels.isModLoaded()) {
