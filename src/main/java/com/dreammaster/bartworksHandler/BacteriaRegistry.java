@@ -164,7 +164,7 @@ public class BacteriaRegistry {
 
         GTValues.RA.stdBuilder().circuit(2)
                 .fluidInputs(RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L))
-                .fluidOutputs(Materials.RadoxPolymer.getMolten(720L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
+                .fluidOutputs(Materials.RadoxPolymer.getMolten(1152L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(multiblockChemicalReactorRecipes);
 
         runAdditionalFuelRecipes();
