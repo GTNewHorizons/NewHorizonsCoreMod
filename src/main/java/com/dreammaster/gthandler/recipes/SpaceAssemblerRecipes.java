@@ -246,9 +246,9 @@ public class SpaceAssemblerRecipes implements Runnable {
         // Alternate Really Ultimate Battery Recipe
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Circuit_Board_Optical.get(1),
-                        GTOreDictUnificator.get("foilShirabon", 64),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L),
+                        ItemList.Circuit_Board_Optical.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Hexanite, 64),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4L),
                         ItemList.Wrap_EngravedLapotrionChips.get(8),
                         ItemList.Wrap_EngravedLapotrionChips.get(8),
                         ItemList.Wrap_EngravedLapotrionChips.get(8),
