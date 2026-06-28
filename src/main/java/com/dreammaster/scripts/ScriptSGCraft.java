@@ -306,7 +306,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'u', universeFluidCell,
                 's', ItemList.PrecisionFieldSyncCasing.get(1),
                 'a', ItemList.FieldEnergyAbsorberCasing.get(1),
-                'l', GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1),
+                'l', ItemList.Field_Generator_UXV.get(1),
                 'z', arithmeticSing,
                 'm', ItemList.MetaMaterial_FieldManipulator4.get(1));
 
