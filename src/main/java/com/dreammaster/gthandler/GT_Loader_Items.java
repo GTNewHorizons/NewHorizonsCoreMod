@@ -47,6 +47,13 @@ public class GT_Loader_Items {
                 NHItemList.GatePlateHarmonic.get(),
                 NHItemList.ChevronHarmonic.get(),
                 NHItemList.FramePartHarmonic.get());
+        List<ItemStack> heavenly = Arrays.asList(
+                NHItemList.PikoCircuitHeavenly.get(),
+                NHItemList.QuantumCircuitHeavenly.get(),
+                NHItemList.GatePlateHeavenly.get(),
+                NHItemList.ChevronHeavenly.get(),
+                NHItemList.FramePartHeavenly.get());
+
         for (ItemStack itemStack : origin) {
             addItemTooltip(
                     itemStack,
@@ -85,6 +92,44 @@ public class GT_Loader_Items {
                             + EnumChatFormatting.BLUE
                             + " "
                             + StatCollector.translateToLocal("item.Harmonic.version"));
+        }
+
+        for (ItemStack itemStack : heavenly) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.Heavenly.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Heavenly.version"));
+        }
+
+        addItemTooltip(
+                NHItemList.Compressed_Circuit_Array_Empty.get(),
+                () -> StatCollector.translateToLocal("item.CircuitArray.tooltip.empty"));
+
+        List<ItemStack> circuitArrays = Arrays.asList(
+                NHItemList.Compressed_Circuit_Array_ULV.get(),
+                NHItemList.Compressed_Circuit_Array_LV.get(),
+                NHItemList.Compressed_Circuit_Array_MV.get(),
+                NHItemList.Compressed_Circuit_Array_HV.get(),
+                NHItemList.Compressed_Circuit_Array_EV.get(),
+                NHItemList.Compressed_Circuit_Array_IV.get(),
+                NHItemList.Compressed_Circuit_Array_LuV.get(),
+                NHItemList.Compressed_Circuit_Array_ZPM.get(),
+                NHItemList.Compressed_Circuit_Array_UV.get(),
+                NHItemList.Compressed_Circuit_Array_UHV.get(),
+                NHItemList.Compressed_Circuit_Array_UEV.get(),
+                NHItemList.Compressed_Circuit_Array_UIV.get(),
+                NHItemList.Compressed_Circuit_Array_UMV.get(),
+                NHItemList.Compressed_Circuit_Array_UXV.get(),
+                NHItemList.Compressed_Circuit_Array_MAX.get());
+
+        for (int i = 0; i < circuitArrays.size(); i++) {
+            int num = i;
+            addItemTooltip(
+                    circuitArrays.get(i),
+                    () -> StatCollector.translateToLocal("item.CircuitArray.tooltip." + num));
         }
     }
 }
