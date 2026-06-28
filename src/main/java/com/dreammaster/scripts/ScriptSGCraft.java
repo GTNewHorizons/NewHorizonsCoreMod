@@ -153,7 +153,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "pesmhmsep",
                 "psimjmisp",
                 "vkummmukv",
-                "dkpmompkd",
+                "dkamomakd",
                 "vkummmukv",
                 "psimnmisp",
                 "pesmhmsep",
