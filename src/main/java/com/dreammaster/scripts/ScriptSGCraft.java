@@ -155,7 +155,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "vkummmukv",
                 "dkpmompkd",
                 "vkummmukv",
-                "psimjmisp",
+                "psimnmisp",
                 "pesmhmsep",
                 "tppcdcppt",
                 'a', ItemList.SpaceElevatorModuleAssemblerT3.get(1),
