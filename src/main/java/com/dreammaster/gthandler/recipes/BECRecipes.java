@@ -53,31 +53,34 @@ public class BECRecipes implements Runnable {
         if (EternalSingularity.isModLoaded()) {
             addSGRecipes();
 
-            // Exo-Foundry Chassis Tier 3
-            addBec(
-                    ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1),
-                    new ItemStack[] { ItemRefer.Field_Restriction_Coil_T4.get(1),
-                            Godforge_SingularityShieldingCasing.get(4), new ItemStack(lscLapotronicEnergyUnit, 1, 5),
-                            ItemList.SpaceElevatorMotorT5.get(2),
-                            IngredientFactory.getModItem(DraconicEvolution.ID, "chaoticCore", 2),
-                            IngredientFactory.getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 16),
-                            ItemList.Field_Generator_UMV.get(8),
-                            GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SpaceTime, 64),
-                            GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64),
-                            GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Eternity, 64),
-                            GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 16),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUMVBase, 16),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 16) },
-                    nanites(4, 2, 3, 5, 9, 8, 10, 6, 2, 2, 3, 3, 4, 4, 5, 5),
-                    new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
-                            CondensateType.PhononMedium.getEntangled(256_000),
-                            CondensateType.MagMatter.getEntangled(4_096 * INGOTS),
-                            CondensateType.MHDCSM.getEntangled(1_024 * INGOTS) },
-                    600 * SECONDS,
-                    TierEU.RECIPE_UXV);
+            if (DraconicEvolution.isModLoaded()) {
+                // Exo-Foundry Chassis Tier 3
+                addBec(
+                        ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1),
+                        new ItemStack[] { ItemRefer.Field_Restriction_Coil_T4.get(1),
+                                Godforge_SingularityShieldingCasing.get(4),
+                                new ItemStack(lscLapotronicEnergyUnit, 1, 5), ItemList.SpaceElevatorMotorT5.get(2),
+                                IngredientFactory.getModItem(DraconicEvolution.ID, "chaoticCore", 2),
+                                IngredientFactory.getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
+                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 16),
+                                ItemList.Field_Generator_UMV.get(8),
+                                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SpaceTime, 64),
+                                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64),
+                                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Eternity, 64),
+                                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64),
+                                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 16),
+                                GTOreDictUnificator
+                                        .get(OrePrefixes.plateSuperdense, Materials.SuperconductorUMVBase, 16),
+                                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16),
+                                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 16) },
+                        nanites(4, 2, 3, 5, 9, 8, 10, 6, 2, 2, 3, 3, 4, 4, 5, 5),
+                        new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
+                                CondensateType.PhononMedium.getEntangled(256_000),
+                                CondensateType.MagMatter.getEntangled(4_096 * INGOTS),
+                                CondensateType.MHDCSM.getEntangled(1_024 * INGOTS) },
+                        600 * SECONDS,
+                        TierEU.RECIPE_UXV);
+            }
         }
     }
 
@@ -285,7 +288,7 @@ public class BECRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64L) },
                 nanites(1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 10),
                 new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(128_000),
-                        CondensateType.PhononMedium.getEntangled(32_00),
+                        CondensateType.PhononMedium.getEntangled(32_000),
                         CondensateType.MagMatter.getEntangled(512 * INGOTS),
                         CondensateType.Universium.getEntangled(128 * INGOTS) },
                 baseStargateTime / 8,
