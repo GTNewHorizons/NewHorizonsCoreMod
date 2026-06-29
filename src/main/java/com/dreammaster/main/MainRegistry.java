@@ -37,8 +37,11 @@ import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.GT_CustomLoader;
+import com.dreammaster.gthandler.recipes.AssemblingLineRecipes;
+import com.dreammaster.gthandler.recipes.BECRecipes;
 import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
+import com.dreammaster.gthandler.recipes.SpaceAssemblerRecipes;
 import com.dreammaster.ic2.IC2Converter;
 import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.ItemBucketList;
@@ -151,6 +154,7 @@ public class MainRegistry {
         if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
 
         GregTechAPI.sGTCompleteLoad.add(new CircuitAssemblyLineRecipes());
+        GregTechAPI.sGTCompleteLoad.add(new SpaceAssemblerRecipes());
     }
 
     @Mod.EventHandler
@@ -392,6 +396,8 @@ public class MainRegistry {
         RecipeRemover.run();
         ScriptLoader.run();
         new DTPFRecipes().run();
+        new AssemblingLineRecipes().runLate();
+        new BECRecipes().runLate();
 
         BW_RadHatchMaterial.runRadHatchAdder();
 

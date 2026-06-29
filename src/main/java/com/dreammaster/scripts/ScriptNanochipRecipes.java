@@ -1582,7 +1582,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UIV);
 
-        // Planck manifold
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.ProcessedFrameboxHypogen, 2),
@@ -1624,7 +1623,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 1000 * SECONDS,
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UMV);
-
     }
     // spotless:on
 }

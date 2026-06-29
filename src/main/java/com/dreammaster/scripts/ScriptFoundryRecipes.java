@@ -17,8 +17,6 @@ import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GTRecipeConstants.SCANNING;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.RHUGNOR;
-import static kekztech.common.Blocks.lscLapotronicEnergyUnit;
-import static tectech.thing.CustomItemList.Godforge_SingularityShieldingCasing;
 
 import java.util.Arrays;
 import java.util.List;
@@ -327,35 +325,5 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 ItemList.Magnetic_Chassis_T2_ExoFoundry.get(1),
                 45 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
-
-        // Exo-Foundry Chassis Tier 3
-        TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Magnetic_Chassis_T2_ExoFoundry.get(1),
-                4_000_000,
-                8_192,
-                (int) TierEU.RECIPE_UXV,
-                256,
-                new Object[] { ItemRefer.Field_Restriction_Coil_T4.get(1), Godforge_SingularityShieldingCasing.get(4),
-                        new ItemStack(lscLapotronicEnergyUnit, 1, 5),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Universium, 4),
-                        getModItem(DraconicEvolution.ID, "chaoticCore", 2),
-                        getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UXV), 16L },
-                        ItemList.Field_Generator_UMV.get(8),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SpaceTime, 64),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Eternity, 64),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUMVBase, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 16) },
-                // todo replace proto-halkonite with exo-halkonite
-                new FluidStack[] { Materials.MoltenProtoHalkoniteBase.getFluid(INGOTS * 4096),
-                        Materials.QuarkGluonPlasma.getFluid(100_000), Materials.MagMatter.getMolten(INGOTS * 40) },
-                ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1),
-                60 * SECONDS,
-                (int) TierEU.RECIPE_UXV);
-
     }
 }

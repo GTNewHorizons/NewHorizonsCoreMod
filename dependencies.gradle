@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.53.16:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.54.00:dev")
     api("com.github.GTNewHorizons:Yamcl:0.7.5:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.21-GTNH:dev")
 
@@ -47,7 +47,11 @@ dependencies {
 
     // For testing singularities
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Eternal-Singularity:1.4.3:dev")
-    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Universal-Singularities:8.15.2:dev")
+    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Universal-Singularities:8.15.3:dev")
+
+    // For testing Stargate Recipes
+    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:SGCraft:1.4.13-GTNH:dev")
+
     // For testing RC and Forestry recipes
 
     //uncomment to test RC and Forestry recipes
