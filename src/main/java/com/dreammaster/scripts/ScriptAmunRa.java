@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import gregtech.api.enums.*;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -44,12 +45,6 @@ import de.katzenpapst.amunra.block.ARBlocks;
 import de.katzenpapst.amunra.crafting.RecipeHelper;
 import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
-import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
@@ -78,7 +73,9 @@ public class ScriptAmunRa implements IScriptLoader {
     }
 
     private static ItemStack[] createOreVariants(Materials material, int amount) {
-        List<ItemStack> variants = new ArrayList<>();
+        List<ItemStack> variants = Arrays.asList(OreMixes.getOreVariants(material, amount));
+        // still add the following variants, in case the ores got obtained by meteor / void miner / space miner
+
         addOrePrefixVariants(variants, OrePrefixes.ore, material, amount);
         addOrePrefixVariants(variants, OrePrefixes.oreNetherrack, material, amount);
         addOrePrefixVariants(variants, OrePrefixes.oreEndstone, material, amount);
