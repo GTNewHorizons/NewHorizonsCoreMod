@@ -164,7 +164,7 @@ public class BacteriaRegistry {
 
         GTValues.RA.stdBuilder().circuit(2)
                 .fluidInputs(RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L))
-                .fluidOutputs(Materials.RadoxPolymer.getMolten(1152L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
+                .fluidOutputs(Materials.RadoxPolymer.getMolten(720L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(multiblockChemicalReactorRecipes);
 
         runAdditionalFuelRecipes();
@@ -173,7 +173,7 @@ public class BacteriaRegistry {
     private void bacterialVatRecipes() {
         GTValues.RA.stdBuilder().itemInputs(AntimonyTrioxide.getDust(16), Osmium.getDust(16))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.XenoxeneXenoxsis.bioCulture))
-                .fluidInputs(Oil.getFluid(20)).fluidOutputs(Xenoxene.getFluid(20)).duration(3 * MINUTES)
+                .fluidInputs(Oil.getFluid(20)).fluidOutputs(Xenoxene.getFluid(30)).duration(2 * MINUTES)
                 .eut(TierEU.RECIPE_UEV).metadata(GLASS, 8)
                 .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), false)).addTo(bacterialVatRecipes);
 
