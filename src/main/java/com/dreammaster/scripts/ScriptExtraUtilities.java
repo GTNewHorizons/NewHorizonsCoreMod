@@ -894,18 +894,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null);
 
         addShapedRecipe(
-                getModItem(ExtraUtilities.ID, "unstableingot", 1, 0),
-                getModItem(Minecraft.ID, "iron_ingot", 1, 0),
-                null,
-                null,
-                new CustomItem.NBTItem(getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0)).setNBT("{damage:256}")
-                        .noValues(),
-                null,
-                null,
-                getModItem(Minecraft.ID, "diamond", 1, 0),
-                null,
-                null);
-        addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 2),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0),
                 null,
