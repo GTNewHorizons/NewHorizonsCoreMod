@@ -100,7 +100,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.common.items.MetaGeneratedItem01;
 import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
-import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.MTEHatchSolidifier;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -367,13 +366,6 @@ public class MainRegistry {
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
-
-        LOGGER.debug("Registering Armor Molds to Solidifier Hatch");
-        MTEHatchSolidifier.solidifierMolds.add(NHItemList.MoldHelmet.get());
-        MTEHatchSolidifier.solidifierMolds.add(NHItemList.MoldChestplate.get());
-        MTEHatchSolidifier.solidifierMolds.add(NHItemList.MoldLeggings.get());
-        MTEHatchSolidifier.solidifierMolds.add(NHItemList.MoldBoots.get());
-
         LOGGER.debug("Add Bacteria Stuff to BartWorks");
         BacteriaRegistry.runAllPostinit();
 
