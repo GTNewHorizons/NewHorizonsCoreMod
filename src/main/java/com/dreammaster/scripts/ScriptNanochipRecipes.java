@@ -1582,7 +1582,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UIV);
 
-        // Planck manifold
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.ProcessedFrameboxHypogen, 2),
@@ -1592,7 +1591,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.CasingEternity, 4),
                         new CircuitComponentStack(CircuitComponent.ProcessedFoilShirabon, 64)),
                 Arrays.asList(
-                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(16 * INGOTS),
+                        Materials.BoundlessCosmicSolder.getFluid(8 * INGOTS),
                         Materials.RadoxPolymer.getMolten(16 * INGOTS),
                         Materials.PrimordialMatter.getFluid(1000),
                         Materials.ExcitedDTSC.getFluid(4000)),
@@ -1616,7 +1615,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltWhiteDwarfMatter, 32),
                         new CircuitComponentStack(CircuitComponent.ProcessedCoiledThermalSuperconductor, 8)),
                 Arrays.asList(
-                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(64 * INGOTS),
+                        Materials.BoundlessCosmicSolder.getFluid(32 * INGOTS),
                         Materials.PrimordialMatter.getFluid(4000),
                         Materials.Space.getMolten(4000),
                         Materials.PhononMedium.getFluid(1000)),
@@ -1624,7 +1623,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 1000 * SECONDS,
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UMV);
-
     }
     // spotless:on
 }

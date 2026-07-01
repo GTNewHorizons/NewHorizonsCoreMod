@@ -1391,9 +1391,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelPressurePlate", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "blockDarkSteelPressurePlate", 1, 0),
-                        getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0))
+                .itemInputs(getModItem(EnderIO.ID, "blockDarkSteelPressurePlate", 1, 0), ItemList.PadBouncy.get(1L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelPressurePlate", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0)).circuit(2)

@@ -19,6 +19,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
+import com.dreammaster.TwilightForest.TwilightForestMajorFeatureOverride;
 import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
@@ -36,8 +37,11 @@ import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.GT_CustomLoader;
+import com.dreammaster.gthandler.recipes.AssemblingLineRecipes;
+import com.dreammaster.gthandler.recipes.BECRecipes;
 import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
+import com.dreammaster.gthandler.recipes.SpaceAssemblerRecipes;
 import com.dreammaster.ic2.IC2Converter;
 import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.ItemBucketList;
@@ -95,6 +99,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.common.items.MetaGeneratedItem01;
+import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -149,6 +154,7 @@ public class MainRegistry {
         if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
 
         GregTechAPI.sGTCompleteLoad.add(new CircuitAssemblyLineRecipes());
+        GregTechAPI.sGTCompleteLoad.add(new SpaceAssemblerRecipes());
     }
 
     @Mod.EventHandler
@@ -264,6 +270,7 @@ public class MainRegistry {
 
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
+            TwilightForestMajorFeatureOverride.run();
         }
 
         if (CoreModConfig.Modules.gtnhPauseMenuButtons && event.getSide().isClient()) {
@@ -389,6 +396,8 @@ public class MainRegistry {
         RecipeRemover.run();
         ScriptLoader.run();
         new DTPFRecipes().run();
+        new AssemblingLineRecipes().runLate();
+        new BECRecipes().runLate();
 
         BW_RadHatchMaterial.runRadHatchAdder();
 
@@ -403,6 +412,8 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(handler);
             handleAchievements = true;
         }
+
+        new FakeCuttingRecipes().run(); // nei cutting recipes display
     }
 
     /**
