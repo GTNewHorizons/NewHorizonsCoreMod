@@ -1691,7 +1691,9 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "Cast", 1, 0),
                 getModItem(TinkerConstruct.ID, "Cast", 1, 1),
                 getModItem(TinkerConstruct.ID, "Cast", 1, 2),
-                getModItem(TinkerConstruct.ID, "Cast", 1, 3));
+                getModItem(TinkerConstruct.ID, "Cast", 1, 3),
+                NHItemList.BowFletchingCast.get(0),
+                NHItemList.BowStringCast.get(0));
 
         // Iron
         List<ItemStack> melterStacksIron = new ArrayList<>();
