@@ -442,7 +442,7 @@ public class BECRecipes implements Runnable {
                 ItemList.SuperconductivePlasmaEnergyConduit.get(64), };
 
         final FluidStack[] condensates = new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(10_000),
-                CondensateType.Space.getEntangled(10_000), CondensateType.Time.getEntangled(10_000),
+                CondensateType.Space.getEntangled(72 * INGOTS), CondensateType.Time.getEntangled(72 * INGOTS),
                 CondensateType.SpaceTime.getEntangled(10_240 * INGOTS) };
 
         for (int t = 0; t < 15; ++t) {
