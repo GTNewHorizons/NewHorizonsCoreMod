@@ -19,6 +19,8 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.CropsNH;
+
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -106,8 +108,8 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(56, getModItem(Witchery.ID, "leonardsurn", 1, 3));
         metaExtraItemMap.put(57, getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0));
         metaExtraItemMap.put(58, getModItem(HardcoreEnderExpansion.ID, "rune", 1, 5));
-        metaExtraItemMap.put(59, getModItem(CropsNH.ID, "PlantLens", 1, 5));
-        metaExtraItemMap.put(60, getModItem(CropsNH.ID, "Spade", 1, 5));
+        metaExtraItemMap.put(59, getModItem(CropsNH.ID, "plant_lens", 1, 5));
+        metaExtraItemMap.put(60, getModItem(CropsNH.ID, "basic_spade", 1, 5));
 
 
         for (Map.Entry<Integer, ItemStack> entry : metaExtraItemMap.entrySet()) {
