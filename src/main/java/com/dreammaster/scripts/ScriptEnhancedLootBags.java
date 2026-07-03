@@ -58,7 +58,8 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
                 Railcraft.ID,
                 Thaumcraft.ID,
                 ThaumicTinkerer.ID,
-                Witchery.ID);
+                Witchery.ID,
+                CropsNH.ID);
     }
 
     @Override
@@ -105,6 +106,9 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(56, getModItem(Witchery.ID, "leonardsurn", 1, 3));
         metaExtraItemMap.put(57, getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0));
         metaExtraItemMap.put(58, getModItem(HardcoreEnderExpansion.ID, "rune", 1, 5));
+        metaExtraItemMap.put(59, getModItem(CropsNH.ID, "PlantLens", 1, 5));
+        metaExtraItemMap.put(60, getModItem(CropsNH.ID, "Spade", 1, 5));
+
 
         for (Map.Entry<Integer, ItemStack> entry : metaExtraItemMap.entrySet()) {
             GameRegistry.addRecipe(
