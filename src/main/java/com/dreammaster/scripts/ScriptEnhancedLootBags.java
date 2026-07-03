@@ -108,8 +108,8 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(56, getModItem(Witchery.ID, "leonardsurn", 1, 3));
         metaExtraItemMap.put(57, getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0));
         metaExtraItemMap.put(58, getModItem(HardcoreEnderExpansion.ID, "rune", 1, 5));
-        metaExtraItemMap.put(59, getModItem(CropsNH.ID, "plant_lens", 1, 5));
-        metaExtraItemMap.put(60, getModItem(CropsNH.ID, "basic_spade", 1, 5));
+        metaExtraItemMap.put(59, getModItem(CropsNH.ID, "plantLens", 1, 5));
+        metaExtraItemMap.put(60, getModItem(CropsNH.ID, "spade", 1, 5));
 
 
         for (Map.Entry<Integer, ItemStack> entry : metaExtraItemMap.entrySet()) {
