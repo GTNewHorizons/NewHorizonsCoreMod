@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import com.dreammaster.recipes.ShapedUniversalRecipe;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -2415,6 +2416,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
                     getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2));
         }
+
+        GameRegistry.addRecipe(new ShapedUniversalRecipe(ItemList.NetworkAnalyzer.get(1),
+                ItemList.Sensor_LV.get(1), "paneGlassColorless", ItemList.Emitter_LV.get(1),
+                "wireFineAnyCopper", "plateSteel", "wireFineAnyCopper",
+                "componentCircuitDiode", "circuitBasic" ,"componentCircuitDiode"));
     }
 
     private Consumer<Recipe> shapelessUnremovableGtRecipes() {
