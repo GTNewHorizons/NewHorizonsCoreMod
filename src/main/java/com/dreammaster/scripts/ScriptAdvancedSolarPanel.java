@@ -9,6 +9,7 @@ import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -144,12 +145,12 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 2))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3))
-                .fluidInputs(Materials.Sunnarium.getMolten(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Sunnarium.getMolten(144L)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2))
-                .fluidInputs(Materials.Sunnarium.getMolten(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .fluidInputs(Materials.Sunnarium.getMolten(144L)).duration(38 * TICKS).eut(TierEU.RECIPE_ZPM)
                 .addTo(autoclaveRecipes);
 
     }
