@@ -464,7 +464,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().fluidInputs(Materials.ComputationBase.getMolten(Integer.MAX_VALUE))
                     .itemInputs(NHItemList.SingularityComputationCore.get(1))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6))
-                    .duration(6400 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COMPRESSION_TIER, 2)
+                    .duration(4500 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COMPRESSION_TIER, 2)
                     .addTo(neutroniumCompressorRecipes);
         }
     }
