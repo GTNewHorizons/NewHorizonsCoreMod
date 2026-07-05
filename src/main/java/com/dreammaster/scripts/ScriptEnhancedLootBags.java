@@ -4,6 +4,7 @@ import static com.dreammaster.recipes.CustomItem.EnchantedBookMatcher;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.CropsNH;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnhancedLootBags;
 import static gregtech.api.enums.Mods.Forestry;
@@ -58,7 +59,8 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
                 Railcraft.ID,
                 Thaumcraft.ID,
                 ThaumicTinkerer.ID,
-                Witchery.ID);
+                Witchery.ID,
+                CropsNH.ID);
     }
 
     @Override
@@ -97,7 +99,7 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(43, ItemList.Electric_Motor_UV.get(1L));
         metaExtraItemMap.put(44, ItemList.ZPM3.get(1L));
         metaExtraItemMap.put(46, getModItem(OpenComputers.ID, "item", 1, 1));
-        metaExtraItemMap.put(51, ItemList.Machine_LV_Scanner.get(1L));
+        metaExtraItemMap.put(51, getModItem(CropsNH.ID, "plantLens", 1, 0));
         metaExtraItemMap.put(52, getModItem(Witchery.ID, "witchleaves", 1, 0));
         metaExtraItemMap.put(53, getModItem(Witchery.ID, "ingredient", 1, 95));
         metaExtraItemMap.put(54, getModItem(Witchery.ID, "ingredient", 1, 11));
@@ -105,6 +107,7 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(56, getModItem(Witchery.ID, "leonardsurn", 1, 3));
         metaExtraItemMap.put(57, getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0));
         metaExtraItemMap.put(58, getModItem(HardcoreEnderExpansion.ID, "rune", 1, 5));
+        metaExtraItemMap.put(59, getModItem(CropsNH.ID, "plantCure", 1, 0));
 
         for (Map.Entry<Integer, ItemStack> entry : metaExtraItemMap.entrySet()) {
             GameRegistry.addRecipe(
