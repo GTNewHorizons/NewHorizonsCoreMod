@@ -495,18 +495,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
          * Materials.Steel, 1L), ItemList.Electric_Pump_LV.get(1L), GTOreDictUnificator.get(OrePrefixes.pipeMedium,
          * Materials.Steel, 1L));
          */
-        // Item Trash Can
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0),
-                "plateIron",
-                "craftingToolHardHammer",
-                "plateIron",
-                "plateIron",
-                "gemEnderPearl",
-                "plateIron",
-                "plateIron",
-                "plateIron",
-                "plateIron");
         // Smooth Glass
         addShapelessRecipe(
                 getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
@@ -1035,23 +1023,37 @@ public class ScriptExtraUtilities implements IScriptLoader {
          * Materials.EV, 1)) .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes.1", 1, 0)).duration(10 * SECONDS)
          * .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
          */
+        // Item Trash Can
+        addShapedRecipe(
+                getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0),
+                "plateIron",
+                "craftingToolHardHammer",
+                "plateIron",
+                "plateIron",
+                "gemEnderPearl",
+                "plateIron",
+                "plateIron",
+                "plateIron",
+                "plateIron");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "trashcan", 1, 0)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        // Fluid Trash Can
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "trashcan", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0),
                         getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "trashcan", 1, 1)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "trash_can_fluid", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        // Energy Trash Can
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "trashcan", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0),
                         getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "trashcan", 1, 2)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "trash_can_energy", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
