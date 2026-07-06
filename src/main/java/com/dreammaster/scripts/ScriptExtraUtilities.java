@@ -142,17 +142,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "stickRedAlloy",
                 "plateRedAlloy");
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1),
-                "plateStainlessSteel",
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1),
-                "plateStainlessSteel",
-                "gemEnderEye",
-                "plateStainlessSteel",
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1),
-                "plateStainlessSteel",
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1));
-        addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 1),
                 getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 4),
