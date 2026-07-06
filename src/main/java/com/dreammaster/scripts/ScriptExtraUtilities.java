@@ -807,7 +807,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         // Compressed Block Extraction (Downtier)
         for (int i = 0; i < 7; i++) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, i + 1))
-                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, i))
+                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 9, i))
                     .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, i + 1))
                     .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 9, i)).duration(15 * SECONDS)
@@ -815,10 +815,24 @@ public class ScriptExtraUtilities implements IScriptLoader {
             GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, i + 1))
                     .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 9, i)).duration(15 * SECONDS)
                     .eut(2).addTo(extractorRecipes);
-            GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, i + 1))
-                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 9, i)).duration(15 * SECONDS)
+            GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 1, i + 1))
+                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 9, i)).duration(15 * SECONDS)
                     .eut(2).addTo(extractorRecipes);
         }
+
+        // Compressed Block Assembly (From vanilla block)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 9, 0)).circuit(9)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0)).circuit(9)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, 8)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 9, 0)).circuit(9)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, 14)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0)).circuit(9)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 1, 12)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         // Burnt Quartz
         GTValues.RA.stdBuilder()
@@ -1090,18 +1104,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "block_analyzer", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 0)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 8)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 12)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 14)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         for (int i = 0; i < 16; i++) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "color_lightgem", 1, i))
