@@ -549,7 +549,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2),
                 "blockEnderObsidian",
                 "plateTitanium",
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 12),
+                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 0),
                 "plateTitanium");
         // Wood Spike
         addShapedRecipe(
