@@ -45,7 +45,6 @@ import net.minecraft.nbt.NBTBase;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import com.dreammaster.extraUtilities.ExtraUtilitiesHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.fouristhenumber.utilitiesinexcess.api.EnderLocusRegistry;
@@ -1219,8 +1218,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "heavenly_ring_metal", 1, 0))));
-
-        ExtraUtilitiesHelper.fixColorBlockOreDictionary();
     }
 
     private static class FilterRecipe extends ShapelessOreRecipe {
