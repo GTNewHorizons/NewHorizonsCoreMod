@@ -1086,8 +1086,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "mob_jar", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        // Block Analyzer
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "scanner", 1, 0)).duration(30 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "block_analyzer", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 9, 0)).circuit(9)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 0)).duration(5 * SECONDS)
