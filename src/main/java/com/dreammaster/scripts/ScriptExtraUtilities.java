@@ -714,9 +714,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "inverted_ingot", 1, 1)).nbtSensitive()
                 .duration(42 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        // mods.extraUtils.QED.removeRecipe(<*>); // <- scripts
-        EnderConstructorRecipesHandler.recipes.clear();
-
         TConstructHelper.removeTableRecipe(getModItem(UtilitiesInExcess.ID, "bedrockium_ingot", 1, 0));
         TConstructHelper.removeBasinRecipe(getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0));
         EnderConstructorRecipesHandler.registerRecipe(
