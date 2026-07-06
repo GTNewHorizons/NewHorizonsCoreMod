@@ -834,6 +834,14 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(alloySmelterRecipes);
 
+        // Bedrockium Ingot (Assembler)
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 4, 3),
+                        getModItem(Minecraft.ID, "diamond_block", 1, 0))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "bedrockium_ingot", 1, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
+
         // Obsidian Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -841,7 +849,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 5)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
-
         // Gilded Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -849,7 +856,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
-
         // Creepy Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -857,7 +863,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Minecraft.ID, "gunpowder", 1, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
-
         // Glowing Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -865,7 +870,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 7)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
-
         // Beloved Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -873,12 +877,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Minecraft.ID, "dye", 1, 9))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 4, 3),
-                        getModItem(Minecraft.ID, "diamond_block", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "bedrockiumIngot", 1, 0)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // Rimmed Glass
         GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 1)).duration(5 * SECONDS)
