@@ -914,18 +914,20 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 11)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // TODO: Latticed Glass
+        // Ender-Infused Obsidian
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 4, 2),
+                        getModItem(UtilitiesInExcess.ID, "decorative_block", 4, 2),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 4, 7))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 500)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
+        // Convergence Crystal
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 4, 1),
+                        getModItem(UtilitiesInExcess.ID, "decorative_block", 4, 5),
                         getModItem(Minecraft.ID, "ender_eye", 3, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "endConstructor", 1, 2))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "convergence_crystal", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
