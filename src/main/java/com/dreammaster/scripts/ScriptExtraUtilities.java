@@ -765,80 +765,32 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 'c');
         // TODO: Tranfer nodes
         /*
-        EnderConstructorRecipesHandler.registerRecipe(
-                new ShapedOreRecipe(
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'a',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0),
-                        'b',
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerdiamond", 1, 0),
-                        'c',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0),
-                        'd',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
-                        'e',
-                        getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 8),
-                        'f',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
-                        'g',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0),
-                        'h',
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerdiamond", 1, 0),
-                        'i',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0)));
-        EnderConstructorRecipesHandler.registerRecipe(
-                new ShapedOreRecipe(
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 13),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'a',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12),
-                        'b',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
-                        'c',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12),
-                        'd',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
-                        'e',
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 1L),
-                        'f',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
-                        'g',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12),
-                        'h',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12),
-                        'i',
-                        getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12)));
-                        
+         * EnderConstructorRecipesHandler.registerRecipe( new ShapedOreRecipe( getModItem(UtilitiesInExcess.ID,
+         * "extractor_base", 1, 12), "abc", "def", "ghi", 'a', getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0),
+         * 'b', getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerdiamond", 1, 0), 'c',
+         * getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0), 'd', GTOreDictUnificator.get(OrePrefixes.plate,
+         * Materials.EnderEye, 1L), 'e', getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 8), 'f',
+         * GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L), 'g', getModItem(UtilitiesInExcess.ID,
+         * "extractor_base", 1, 0), 'h', getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerdiamond", 1,
+         * 0), 'i', getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0)));
+         * EnderConstructorRecipesHandler.registerRecipe( new ShapedOreRecipe( getModItem(UtilitiesInExcess.ID,
+         * "extractor_base", 1, 13), "abc", "def", "ghi", 'a', getModItem(UtilitiesInExcess.ID, "extractor_base", 1,
+         * 12), 'b', GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L), 'c',
+         * getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12), 'd', GTOreDictUnificator.get(OrePrefixes.plate,
+         * Materials.EnderEye, 1L), 'e', GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 1L), 'f',
+         * GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L), 'g', getModItem(UtilitiesInExcess.ID,
+         * "extractor_base", 1, 12), 'h', getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12), 'i',
+         * getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12)));
          */
-        EnderConstructorRecipesHandler.registerRecipe(
-                new ShapedOreRecipe(
-                        GregtechItemList.InvertedObsidian.get(1),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'a',
-                        "dustRedstone",
-                        'b',
-                        "dustGlowstone",
-                        'c',
-                        "dustRedstone",
-                        'd',
-                        "dustGlowstone",
-                        'e',
-                        "blockObsidian",
-                        'f',
-                        "dustGlowstone",
-                        'g',
-                        "dustRedstone",
-                        'h',
-                        "dustGlowstone",
-                        'i',
-                        "dustRedstone"));
+        // Inverted Obsidian
+        EnderLocusRegistry.instance().addRecipe(
+                GregtechItemList.InvertedObsidian.get(1),
+                new String[] { "rgr", "gog", "rgr" },
+                'r',
+                "dustRedstone",
+                'g',
+                "dustGlowstone",
+                'o');
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
                         getModItem(UtilitiesInExcess.ID, "endMarker", 1, 0),
