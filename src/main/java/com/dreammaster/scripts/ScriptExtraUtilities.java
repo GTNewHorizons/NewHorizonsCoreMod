@@ -826,36 +826,47 @@ public class ScriptExtraUtilities implements IScriptLoader {
                     .eut(2).addTo(extractorRecipes);
         }
 
+        // Burnt Quartz
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "quartz_block", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 2)).duration(4 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(alloySmelterRecipes);
+
+        // Obsidian Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 5)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
+
+        // Gilded Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
+
+        // Creepy Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
+
+        // Glowing Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 7)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
+
+        // Beloved Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
@@ -868,30 +879,37 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Minecraft.ID, "diamond_block", 1, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "bedrockiumIngot", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
+        // Rimmed Glass
         GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+        // Bricked Glass
         GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(4)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 2)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+        // Vortex Glass
         GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(5)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 6)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+        // Tiled Glass
         GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(2)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 9)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+        // Dark Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
-                        getModItem(UtilitiesInExcess.ID, "curtains", 1, 0))
+                        getModItem(UtilitiesInExcess.ID, "blackout_curtains", 1, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+        // Reinforced Dark Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 10),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 11)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        // TODO: Latticed Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint", 1, 0),
