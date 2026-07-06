@@ -625,19 +625,19 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "shears", 1, 0),
-                "ingotUnstable",
+                "ingotInverted",
                 null,
-                "ingotUnstable",
+                "ingotInverted",
                 getModItem(UtilitiesInExcess.ID, "angelBlock", 1, 0),
                 getModItem(Minecraft.ID, "shears", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "angelBlock", 1, 0));
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "ethericsword", 1, 0),
                 null,
-                "ingotUnstable",
+                "ingotInverted",
                 null,
                 null,
-                "ingotUnstable",
+                "ingotInverted",
                 null,
                 null,
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
@@ -648,7 +648,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "largeSwordBlade", 1, 314),
                 null,
                 null,
-                "ingotUnstable",
+                "ingotInverted",
                 null,
                 null,
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
@@ -656,7 +656,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "erosionShovel", 1, 0),
                 null,
-                "ingotUnstable",
+                "ingotInverted",
                 null,
                 null,
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
@@ -666,9 +666,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "destructionpickaxe", 1, 0),
-                "ingotUnstable",
-                "ingotUnstable",
-                "ingotUnstable",
+                "ingotInverted",
+                "ingotInverted",
+                "ingotInverted",
                 null,
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
                 null,
@@ -677,10 +677,10 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "defoliageAxe", 1, 0),
-                "ingotUnstable",
-                "ingotUnstable",
+                "ingotInverted",
+                "ingotInverted",
                 null,
-                "ingotUnstable",
+                "ingotInverted",
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
                 null,
                 null,
@@ -688,8 +688,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "temporalHoe", 1, 0),
-                "ingotUnstable",
-                "ingotUnstable",
+                "ingotInverted",
+                "ingotInverted",
                 null,
                 null,
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
