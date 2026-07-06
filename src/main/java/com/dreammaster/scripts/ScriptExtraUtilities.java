@@ -48,7 +48,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.extraUtilities.ExtraUtilitiesHelper;
-import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
@@ -705,12 +704,14 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
                 null);
 
+        // TODO: change to mobius if we implement it
+        // Assembler inverted ingot
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
-                        createItemStack(UtilitiesInExcess.ID, "divisionSigil", 0, 0, "{stable:1b}"),
+                        getModItem(UtilitiesInExcess.ID, "pseudo_reversion_sigil", 0, 0),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "unstableingot", 1, 2)).nbtSensitive()
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "inverted_ingot", 1, 1)).nbtSensitive()
                 .duration(42 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // mods.extraUtils.QED.removeRecipe(<*>); // <- scripts
