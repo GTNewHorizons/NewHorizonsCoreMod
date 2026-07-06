@@ -168,7 +168,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
         // Void Quarry Upgrade: Fortune 1
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 6),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 6),
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTitanium",
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
@@ -178,57 +178,62 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTitanium",
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
+        // Void Quarry Upgrade: Fortune 2
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 4),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 7),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTungstenSteel",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTungstenSteel",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 3),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 6),
                 "plateTungstenSteel",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTungstenSteel",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
+        // Void Quarry Upgrade: Fortune 3
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 5),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 8),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateChrome",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateChrome",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 4),
+                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 7),
                 "plateChrome",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateChrome",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
+        // TODO: Void Quarry Upgrade: Speed 1 - Waiting on Transfer Node merge (Replace decorative block with speed upgrade)
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 6),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 3),
                 ItemList.AcceleratorHV.get(1),
                 "gearTitanium",
                 ItemList.AcceleratorHV.get(1),
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 0),
                 "gearDiamond",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 0),
                 ItemList.AcceleratorHV.get(1),
                 "gearTitanium",
                 ItemList.AcceleratorHV.get(1));
+        // Void Quarry Upgrade: Speed 2
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 7),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 4),
                 ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
                 ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 6),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 3),
                 "gearTungstenSteel",
                 ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
                 ItemList.AcceleratorEV.get(1));
+        // Void Quarry Upgrade: Speed 3
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 8),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 5),
                 ItemList.AcceleratorIV.get(1),
                 "gearChrome",
                 ItemList.AcceleratorIV.get(1),
                 "gearChrome",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 7),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 4),
                 "gearChrome",
                 ItemList.AcceleratorIV.get(1),
                 "gearChrome",
