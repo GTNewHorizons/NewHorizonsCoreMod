@@ -436,6 +436,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateBedrockium",
                 "ringTungstenSteel",
                 "plateBedrockium");
+        // Conveyor
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "conveyor", 1, 0),
                 "craftingToolHardHammer",
@@ -447,8 +448,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "gearGtSmallSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
+        // Filing Cabinet
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "filing", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "filing_cabinet", 1, 0),
                 "plateSteel",
                 "chestWood",
                 "plateSteel",
@@ -458,17 +460,18 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateSteel",
                 "chestWood",
                 "plateSteel");
+        // Advanced Filing Cabinet
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "filing", 1, 1),
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 8),
-                getModItem(UtilitiesInExcess.ID, "filing", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 8),
+                getModItem(UtilitiesInExcess.ID, "filing_cabinet", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "filing_cabinet", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0),
                 "screwSteel",
-                getModItem(UtilitiesInExcess.ID, "filing", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "filing_cabinet", 1, 0),
                 "screwSteel",
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 8),
-                getModItem(UtilitiesInExcess.ID, "filing", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 8));
+                getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "filing_cabinet", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0));
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "watering_can", 1, 1),
                 "craftingToolHardHammer",
