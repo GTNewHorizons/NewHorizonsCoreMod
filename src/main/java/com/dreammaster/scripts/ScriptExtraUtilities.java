@@ -717,8 +717,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
         // mods.extraUtils.QED.removeRecipe(<*>); // <- scripts
         EnderConstructorRecipesHandler.recipes.clear();
 
-        TConstructHelper.removeTableRecipe(getModItem(UtilitiesInExcess.ID, "bedrockiumIngot", 1, 0));
-        TConstructHelper.removeBasinRecipe(getModItem(UtilitiesInExcess.ID, "block_bedrockium", 1, 0));
+        TConstructHelper.removeTableRecipe(getModItem(UtilitiesInExcess.ID, "bedrockium_ingot", 1, 0));
+        TConstructHelper.removeBasinRecipe(getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0));
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
                         getModItem(UtilitiesInExcess.ID, "enderQuarry", 1, 0),
