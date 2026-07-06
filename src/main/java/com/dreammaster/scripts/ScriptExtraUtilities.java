@@ -473,8 +473,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "filing_cabinet", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0));
         // TODO: recipe for elite cabinet and upgrade
+        // Watering Can
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "watering_can", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "watering_can_basic", 1, 0),
                 "craftingToolHardHammer",
                 "ringSteel",
                 "craftingToolScrewdriver",
@@ -485,7 +486,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateAnyIron",
                 "screwSteel");
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "watering_can", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "watering_can_basic", 1, 0),
                 "craftingToolScrewdriver",
                 "ringSteel",
                 "craftingToolHardHammer",
@@ -495,14 +496,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateAnyIron",
                 "plateAnyIron",
                 "screwSteel");
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1))
-                .circuit(3).itemOutputs(getModItem(UtilitiesInExcess.ID, "watering_can", 1, 1)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
@@ -510,10 +503,12 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1))
                 .circuit(5).fluidInputs(Materials.Water.getFluid(1000))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "watering_can", 1, 0)).duration(4 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "watering_can_basic", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        // TODO: figure out advanced
+        // Elite Watering Can
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "watering_can", 1, 3),
+                getModItem(UtilitiesInExcess.ID, "watering_can_elite", 1, 0),
                 "craftingToolHardHammer",
                 "ringNeutronium",
                 "craftingToolScrewdriver",
@@ -524,7 +519,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateBedrockium",
                 "screwNeutronium");
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "watering_can", 1, 3),
+                getModItem(UtilitiesInExcess.ID, "watering_can_elite", 1, 0),
                 "craftingToolScrewdriver",
                 "ringNeutronium",
                 "craftingToolHardHammer",
