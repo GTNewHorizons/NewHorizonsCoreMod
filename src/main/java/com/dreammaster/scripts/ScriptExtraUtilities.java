@@ -36,7 +36,6 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList.MagicFeather;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -44,19 +43,16 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagByte;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import com.dreammaster.block.BlockList;
 import com.dreammaster.extraUtilities.ExtraUtilitiesHelper;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
@@ -202,7 +198,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateChrome",
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
-        // TODO: Void Quarry Upgrade: Speed 1 - Waiting on Transfer Node merge (Replace decorative block with speed upgrade)
+        // TODO: Void Quarry Upgrade: Speed 1 - Waiting on Transfer Node merge (Replace decorative block with speed
+        // upgrade)
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 3),
                 ItemList.AcceleratorHV.get(1),
@@ -252,153 +249,50 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
         // TODO: transfer node upgrades - Waiting on transfer node merge
         /*
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy",
-                "plateDiamond",
-                "plateRedAlloy",
-                "plateDiamond",
-                "gearStainlessSteel",
-                "plateDiamond",
-                "plateRedAlloy",
-                "plateDiamond",
-                "plateRedAlloy");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1),
-                "plateRedAlloy",
-                getModItem(Minecraft.ID, "iron_bars", 1, 0),
-                "plateRedAlloy",
-                getModItem(Minecraft.ID, "iron_bars", 1, 0),
-                "gearStainlessSteel",
-                getModItem(Minecraft.ID, "iron_bars", 1, 0),
-                "plateRedAlloy",
-                getModItem(Minecraft.ID, "iron_bars", 1, 0),
-                "plateRedAlloy");
-        addShapelessRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1),
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1));
-        GameRegistry.addRecipe(
-                new FilterRecipe(
-                        getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1),
-                        Collections.singletonMap("Inverted", new NBTTagByte((byte) 1)),
-                        "craftingRedstoneTorch"));
-        GameRegistry.addRecipe(
-                new FilterRecipe(
-                        getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1),
-                        Collections.singletonMap("FuzzyNBT", new NBTTagByte((byte) 1)),
-                        "blockWool"));
-        GameRegistry.addRecipe(
-                new FilterRecipe(
-                        getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1),
-                        Collections.singletonMap("FuzzyMeta", new NBTTagByte((byte) 1)),
-                        "stickWood"));
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 10),
-                "plateLapis",
-                BlockList.SteelBars.get(),
-                "plateLapis",
-                BlockList.SteelBars.get(),
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1),
-                BlockList.SteelBars.get(),
-                "plateLapis",
-                BlockList.SteelBars.get(),
-                "plateLapis");
-        addShapelessRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 10),
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 10));
-        GameRegistry.addRecipe(
-                new FilterRecipe(
-                        getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 10),
-                        Collections.singletonMap("Inverted", new NBTTagByte((byte) 1)),
-                        "craftingRedstoneTorch"));
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 2),
-                "plateLapis",
-                getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0),
-                "plateLapis",
-                getModItem(Minecraft.ID, "iron_pickaxe", 1, 0),
-                "gearDiamond",
-                getModItem(Minecraft.ID, "iron_pickaxe", 1, 0),
-                "plateLapis",
-                getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0),
-                "plateLapis");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 5),
-                "plateEnderEye",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 2),
-                "plateEnderEye",
-                "gearIridium",
-                getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 0),
-                "gearIridium",
-                "plateEnderEye",
-                "plateNetherStar",
-                "plateEnderEye");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 6),
-                "plateEnderEye",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 2),
-                "plateEnderEye",
-                "gearIridium",
-                getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0),
-                "gearIridium",
-                "plateEnderEye",
-                "plateNetherStar",
-                "plateEnderEye");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 7),
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy",
-                "craftingToolWrench",
-                "gearDiamond",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 8),
-                "plateRedAlloy",
-                "craftingToolWrench",
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "gearDiamond",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy",
-                null,
-                "plateRedAlloy");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 8),
-                "plateRedAlloy",
-                null,
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "gearDiamond",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy",
-                "craftingToolWrench",
-                "plateRedAlloy");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 9),
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "gearDiamond",
-                "craftingToolWrench",
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 3),
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy",
-                "craftingToolWrench",
-                "gearDiamond",
-                ItemList.Electric_Piston_MV.get(1L),
-                "plateRedAlloy",
-                getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
-                "plateRedAlloy");
+         * addShapedRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "plateRedAlloy", "plateDiamond",
+         * "plateRedAlloy", "plateDiamond", "gearStainlessSteel", "plateDiamond", "plateRedAlloy", "plateDiamond",
+         * "plateRedAlloy"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1), "plateRedAlloy",
+         * getModItem(Minecraft.ID, "iron_bars", 1, 0), "plateRedAlloy", getModItem(Minecraft.ID, "iron_bars", 1, 0),
+         * "gearStainlessSteel", getModItem(Minecraft.ID, "iron_bars", 1, 0), "plateRedAlloy", getModItem(Minecraft.ID,
+         * "iron_bars", 1, 0), "plateRedAlloy"); addShapelessRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1,
+         * 1), getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1)); GameRegistry.addRecipe( new FilterRecipe(
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1), Collections.singletonMap("Inverted", new
+         * NBTTagByte((byte) 1)), "craftingRedstoneTorch")); GameRegistry.addRecipe( new FilterRecipe(
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1), Collections.singletonMap("FuzzyNBT", new
+         * NBTTagByte((byte) 1)), "blockWool")); GameRegistry.addRecipe( new FilterRecipe(
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1), Collections.singletonMap("FuzzyMeta", new
+         * NBTTagByte((byte) 1)), "stickWood")); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1,
+         * 10), "plateLapis", BlockList.SteelBars.get(), "plateLapis", BlockList.SteelBars.get(),
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 1), BlockList.SteelBars.get(), "plateLapis",
+         * BlockList.SteelBars.get(), "plateLapis"); addShapelessRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade",
+         * 1, 10), getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 10)); GameRegistry.addRecipe( new FilterRecipe(
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 10), Collections.singletonMap("Inverted", new
+         * NBTTagByte((byte) 1)), "craftingRedstoneTorch")); addShapedRecipe( getModItem(UtilitiesInExcess.ID,
+         * "nodeUpgrade", 1, 2), "plateLapis", getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0), "plateLapis",
+         * getModItem(Minecraft.ID, "iron_pickaxe", 1, 0), "gearDiamond", getModItem(Minecraft.ID, "iron_pickaxe", 1,
+         * 0), "plateLapis", getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0), "plateLapis"); addShapedRecipe(
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 5), "plateEnderEye", getModItem(UtilitiesInExcess.ID,
+         * "nodeUpgrade", 1, 2), "plateEnderEye", "gearIridium", getModItem(WirelessRedstoneCBELogic.ID,
+         * "wirelessLogic", 1, 0), "gearIridium", "plateEnderEye", "plateNetherStar", "plateEnderEye"); addShapedRecipe(
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 6), "plateEnderEye", getModItem(UtilitiesInExcess.ID,
+         * "nodeUpgrade", 1, 2), "plateEnderEye", "gearIridium", getModItem(WirelessRedstoneCBECore.ID, "recieverDish",
+         * 1, 0), "gearIridium", "plateEnderEye", "plateNetherStar", "plateEnderEye"); addShapedRecipe(
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 7), "plateRedAlloy", getModItem(UtilitiesInExcess.ID,
+         * "nodeUpgrade", 1, 0), "plateRedAlloy", "craftingToolWrench", "gearDiamond", getModItem(UtilitiesInExcess.ID,
+         * "nodeUpgrade", 1, 0), "plateRedAlloy", getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
+         * "plateRedAlloy"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 8), "plateRedAlloy",
+         * "craftingToolWrench", "plateRedAlloy", getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "gearDiamond",
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "plateRedAlloy", null, "plateRedAlloy");
+         * addShapedRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 8), "plateRedAlloy", null,
+         * "plateRedAlloy", getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "gearDiamond",
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "plateRedAlloy", "craftingToolWrench",
+         * "plateRedAlloy"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 9), "plateRedAlloy",
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "plateRedAlloy", getModItem(UtilitiesInExcess.ID,
+         * "nodeUpgrade", 1, 0), "gearDiamond", "craftingToolWrench", "plateRedAlloy", getModItem(UtilitiesInExcess.ID,
+         * "nodeUpgrade", 1, 0), "plateRedAlloy"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1,
+         * 3), "plateRedAlloy", getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "plateRedAlloy",
+         * "craftingToolWrench", "gearDiamond", ItemList.Electric_Piston_MV.get(1L), "plateRedAlloy",
+         * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "plateRedAlloy");
          */
         // Paintbrush
         addShapedRecipe(
@@ -555,161 +449,52 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0));
         // TODO: transfer nodes and pipes
         /*
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "foilSteel",
-                "plateSteel",
-                "foilSteel",
-                "craftingToolWrench",
-                "stickRedAlloy",
-                "craftingToolHardHammer",
-                "foilSteel",
-                "plateSteel",
-                "foilSteel");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 8),
-                "foilSteel",
-                "circuitBasic",
-                "foilSteel",
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "craftingToolHardHammer",
-                "foilSteel",
-                "circuitBasic",
-                "foilSteel");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 9),
-                "foilSteel",
-                "circuitGood",
-                "foilSteel",
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "craftingToolHardHammer",
-                "foilSteel",
-                "circuitGood",
-                "foilSteel");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 10),
-                "foilSteel",
-                "circuitAdvanced",
-                "foilSteel",
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 8),
-                "craftingToolHardHammer",
-                "foilSteel",
-                "circuitAdvanced",
-                "foilSteel");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes.1", 1, 0),
-                "foilSteel",
-                "circuitData",
-                "foilSteel",
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 10),
-                "craftingToolHardHammer",
-                "foilSteel",
-                "circuitData",
-                "foilSteel");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 11),
-                "foilRedAlloy",
-                "plateRedAlloy",
-                "foilRedAlloy",
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "craftingToolHardHammer",
-                "foilRedAlloy",
-                "plateRedAlloy",
-                "foilRedAlloy");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 12),
-                "craftingToolHardHammer",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "screwSteel",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "screwSteel",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "craftingToolScrewdriver");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 12),
-                "craftingToolScrewdriver",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "screwSteel",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "screwSteel",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                "craftingToolHardHammer");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 13),
-                "foilSteel",
-                "circuitBasic",
-                "foilSteel",
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 8),
-                "craftingToolHardHammer",
-                "foilSteel",
-                "circuitBasic",
-                "foilSteel");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 14),
-                "foilElectrum",
-                "plateElectrum",
-                "foilElectrum",
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, 11),
-                "craftingToolHardHammer",
-                "foilElectrum",
-                "plateElectrum",
-                "foilElectrum");
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "extractor_base_remote", 1, 0),
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, wildcard),
-                "craftingToolHardHammer",
-                "screwEnderPearl",
-                ItemList.Conveyor_Module_LV.get(1L),
-                "screwEnderPearl",
-                getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0));
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "extractor_base_remote", 1, 6),
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, wildcard),
-                "craftingToolHardHammer",
-                "screwEnderPearl",
-                ItemList.Electric_Pump_LV.get(1L),
-                "screwEnderPearl",
-                getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 6),
-                getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 6),
-                getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 6));
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0),
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, wildcard),
-                "craftingToolHardHammer",
-                "screwEnderPearl",
-                ItemList.Conveyor_Module_LV.get(1L),
-                "screwEnderPearl",
-                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L),
-                "pipeMediumBrass",
-                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L));
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 6),
-                "craftingToolWrench",
-                getModItem(UtilitiesInExcess.ID, "pipes", 1, wildcard),
-                "craftingToolHardHammer",
-                "screwEnderPearl",
-                ItemList.Electric_Pump_LV.get(1L),
-                "screwEnderPearl",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                ItemList.Electric_Pump_LV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L));
-
+         * addShapedRecipe( getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), "foilSteel", "plateSteel", "foilSteel",
+         * "craftingToolWrench", "stickRedAlloy", "craftingToolHardHammer", "foilSteel", "plateSteel", "foilSteel");
+         * addShapedRecipe( getModItem(UtilitiesInExcess.ID, "pipes", 1, 8), "foilSteel", "circuitBasic", "foilSteel",
+         * "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), "craftingToolHardHammer", "foilSteel",
+         * "circuitBasic", "foilSteel"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "pipes", 1, 9), "foilSteel",
+         * "circuitGood", "foilSteel", "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
+         * "craftingToolHardHammer", "foilSteel", "circuitGood", "foilSteel"); addShapedRecipe(
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, 10), "foilSteel", "circuitAdvanced", "foilSteel",
+         * "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1, 8), "craftingToolHardHammer", "foilSteel",
+         * "circuitAdvanced", "foilSteel"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "pipes.1", 1, 0),
+         * "foilSteel", "circuitData", "foilSteel", "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1,
+         * 10), "craftingToolHardHammer", "foilSteel", "circuitData", "foilSteel"); addShapedRecipe(
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, 11), "foilRedAlloy", "plateRedAlloy", "foilRedAlloy",
+         * "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), "craftingToolHardHammer",
+         * "foilRedAlloy", "plateRedAlloy", "foilRedAlloy"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "pipes",
+         * 1, 12), "craftingToolHardHammer", getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), "screwSteel",
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), "screwSteel", getModItem(UtilitiesInExcess.ID, "pipes", 1,
+         * 0), "craftingToolScrewdriver"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "pipes", 1, 12),
+         * "craftingToolScrewdriver", getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), "screwSteel",
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, 0), "screwSteel", getModItem(UtilitiesInExcess.ID, "pipes", 1,
+         * 0), "craftingToolHardHammer"); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "pipes", 1, 13),
+         * "foilSteel", "circuitBasic", "foilSteel", "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1,
+         * 8), "craftingToolHardHammer", "foilSteel", "circuitBasic", "foilSteel"); addShapedRecipe(
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, 14), "foilElectrum", "plateElectrum", "foilElectrum",
+         * "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1, 11), "craftingToolHardHammer",
+         * "foilElectrum", "plateElectrum", "foilElectrum"); addShapedRecipe( getModItem(UtilitiesInExcess.ID,
+         * "extractor_base_remote", 1, 0), "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1, wildcard),
+         * "craftingToolHardHammer", "screwEnderPearl", ItemList.Conveyor_Module_LV.get(1L), "screwEnderPearl",
+         * getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0), getModItem(UtilitiesInExcess.ID, "extractor_base",
+         * 1, 0), getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0)); addShapedRecipe(
+         * getModItem(UtilitiesInExcess.ID, "extractor_base_remote", 1, 6), "craftingToolWrench",
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, wildcard), "craftingToolHardHammer", "screwEnderPearl",
+         * ItemList.Electric_Pump_LV.get(1L), "screwEnderPearl", getModItem(UtilitiesInExcess.ID, "extractor_base", 1,
+         * 6), getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 6), getModItem(UtilitiesInExcess.ID,
+         * "extractor_base", 1, 6)); addShapedRecipe( getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 0),
+         * "craftingToolWrench", getModItem(UtilitiesInExcess.ID, "pipes", 1, wildcard), "craftingToolHardHammer",
+         * "screwEnderPearl", ItemList.Conveyor_Module_LV.get(1L), "screwEnderPearl",
+         * GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L), "pipeMediumBrass",
+         * GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L)); addShapedRecipe(
+         * getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 6), "craftingToolWrench",
+         * getModItem(UtilitiesInExcess.ID, "pipes", 1, wildcard), "craftingToolHardHammer", "screwEnderPearl",
+         * ItemList.Electric_Pump_LV.get(1L), "screwEnderPearl", GTOreDictUnificator.get(OrePrefixes.pipeMedium,
+         * Materials.Steel, 1L), ItemList.Electric_Pump_LV.get(1L), GTOreDictUnificator.get(OrePrefixes.pipeMedium,
+         * Materials.Steel, 1L));
          */
         // Item Trash Can
         addShapedRecipe(
@@ -724,7 +509,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateIron",
                 "plateIron");
         addShapelessRecipe(
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(UtilitiesInExcess.ID, "unstableingot", 1, 0),
@@ -1145,33 +930,33 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 5)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 5)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 4)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 3)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 4L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 7)).duration(20 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 7)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         getModItem(Minecraft.ID, "dye", 1, 9))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 8)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1179,29 +964,29 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Minecraft.ID, "diamond_block", 1, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "bedrockiumIngot", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0)).circuit(1)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 1)).duration(5 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(1)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0)).circuit(4)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 2)).duration(5 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 2)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0)).circuit(5)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 6)).duration(5 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(5)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 6)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0)).circuit(2)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 9)).duration(5 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0)).circuit(2)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 9)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                         getModItem(UtilitiesInExcess.ID, "curtains", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 10)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 10),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 10),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock2", 1, 11)).duration(20 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 11)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
