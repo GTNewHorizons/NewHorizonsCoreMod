@@ -1103,9 +1103,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "block_analyzer", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
+        // TODO: figure out what we want to do with the many exu recipe pages...
+        // Heavenly Rings
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_magic", 1, 0),
                 30,
                 new AspectList().add(Aspect.MAGIC, 200).add(Aspect.FLIGHT, 200).add(Aspect.WEATHER, 200)
                         .add(TCAspects.NEBRISUM.getAspect(), 200).add(Aspect.MOTION, 200).add(Lucrum.ULTRA_DEATH, 200),
@@ -1131,40 +1133,41 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 screw.get(Tritanium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_feather", 1, 0),
                 4,
                 new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.FLIGHT, 50).add(Aspect.AIR, 50),
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_magic", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(TinkerConstruct.ID, "fletching", 1, 0),
                 getModItem(TinkerConstruct.ID, "fletching", 1, 0));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 2),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_fairy", 1, 0),
                 4,
                 new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.FLIGHT, 50).add(Aspect.AURA, 50),
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_magic", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(TwilightForest.ID, "item.critter", 1, 0),
                 getModItem(TwilightForest.ID, "item.critter", 1, 1));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 3),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_dragon", 1, 0),
                 4,
                 new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.BEAST, 50).add(DarkAspects.NETHER, 50),
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_magic", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Minecraft.ID, "dragon_egg", 1, 0),
                 getModItem(Botania.ID, "manaResource", 1, 9));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 4),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_metal", 1, 0),
                 4,
                 new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.METAL, 50).add(Aspect.GREED, 50),
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_magic", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 OrePrefixes.foil.get(Materials.RoseGold),
                 OrePrefixes.foil.get(Materials.RoseGold));
+        // Weird pointless inbetween research
         new ResearchItem(
                 "EXURINGS",
                 "ARTIFICE",
