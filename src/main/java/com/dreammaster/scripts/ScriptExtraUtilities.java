@@ -705,18 +705,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
                 null);
 
-        addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "unstableingot", 1, 2),
-                getModItem(Minecraft.ID, "iron_ingot", 1, 0),
-                null,
-                null,
-                new CustomItem.NBTItem(getModItem(UtilitiesInExcess.ID, "divisionSigil", 1, 0)).setNBT("{stable:1b}"),
-                null,
-                null,
-                getModItem(Minecraft.ID, "diamond", 1, 0),
-                null,
-                null);
-
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
