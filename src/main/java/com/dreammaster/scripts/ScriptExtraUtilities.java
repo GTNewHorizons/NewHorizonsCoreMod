@@ -930,15 +930,17 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "convergence_crystal", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
+        // Block Update Detector
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Railcraft.ID, "detector", 1, 2), getModItem(Minecraft.ID, "sticky_piston", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "budoff", 1, 0)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        // Advanced Block Update Detector
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "budoff", 1, 0),
+                        getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0),
                         getModItem(Minecraft.ID, "redstone_block", 4, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "budoff", 1, 3)).duration(10 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "advanced_block_update_detector", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
