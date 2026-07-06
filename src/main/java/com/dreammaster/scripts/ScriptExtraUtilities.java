@@ -539,8 +539,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(UtilitiesInExcess.ID, "collector", 1, 0),
                 getModItem(RandomThings.ID, "advancedItemCollector", 1, 0));
+        // Ender Locus
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "endConstructor", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "ender_locus", 1, 0),
                 "plateEnderEye",
                 getModItem(HardcoreEnderExpansion.ID, "altar_nexus", 1, 0),
                 "plateEnderEye",
@@ -550,6 +551,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateTitanium",
                 getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 12),
                 "plateTitanium");
+        // Wood Spike
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "spike_base_wood", 2, 0),
                 "craftingToolSaw",
@@ -561,6 +563,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateWood",
                 "logWood",
                 "plateWood");
+        // Iron Spike
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "spike_base", 2, 0),
                 "craftingToolSaw",
@@ -572,6 +575,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateAnyIron",
                 "blockIron",
                 "plateAnyIron");
+        // Gold Spike
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "spike_base_gold", 2, 0),
                 "craftingToolSaw",
@@ -583,6 +587,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateGold",
                 "blockGold",
                 "plateGold");
+        // Diamond Spike
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "spike_base_diamond", 2, 0),
                 "craftingToolSaw",
