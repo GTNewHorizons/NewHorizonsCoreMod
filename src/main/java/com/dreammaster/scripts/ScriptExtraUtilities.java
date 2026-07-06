@@ -130,6 +130,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Minecraft.ID, "carpet", 1, 15),
                 getModItem(Minecraft.ID, "carpet", 1, 15),
                 null);
+        // Redstone Clock
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "redstone_clock", 1, 0),
                 "plateRedAlloy",
@@ -141,6 +142,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateRedAlloy",
                 "stickRedAlloy",
                 "plateRedAlloy");
+        // Void Quarry Upgrade: World Hole
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
@@ -152,28 +154,30 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 4),
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
+        // Void Quarry Upgrade: Silk Touch
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 2),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 getModItem(TinkerConstruct.ID, "materials", 1, 26),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTitanium",
                 "gearDiamond",
                 "plateTitanium",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 getModItem(TinkerConstruct.ID, "materials", 1, 26),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
+        // Void Quarry Upgrade: Fortune 1
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 3),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 6),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTitanium",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTitanium",
                 "gearDiamond",
                 "plateTitanium",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "plateTitanium",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 4),
                 getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
