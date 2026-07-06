@@ -29,7 +29,6 @@ import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
-import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -40,7 +39,6 @@ import java.util.List;
 import java.util.Map;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
@@ -1104,12 +1102,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "block_analyzer", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-        for (int i = 0; i < 16; i++) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "color_lightgem", 1, i))
-                    .itemOutputs(new ItemStack(Items.glowstone_dust, 4)).duration(392 * TICKS).eut(4)
-                    .addTo(maceratorRecipes);
-        }
 
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
