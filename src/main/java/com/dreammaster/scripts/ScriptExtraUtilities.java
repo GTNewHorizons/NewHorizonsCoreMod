@@ -537,7 +537,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "stoneObsidian",
                 "stoneObsidian");
         addShapelessRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderCollector", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "collector", 1, 0),
                 getModItem(RandomThings.ID, "advancedItemCollector", 1, 0));
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "endConstructor", 1, 0),
