@@ -106,17 +106,18 @@ public class ScriptExtraUtilities implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
+        // Diamond-Etched Computational Matrix
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 12),
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 11),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "endspark", 1, 11),
                 "plateDiamond",
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 11),
+                getModItem(UtilitiesInExcess.ID, "endspark", 1, 11),
                 "plateTitanium",
                 "circuitData",
                 "plateTitanium",
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 11),
+                getModItem(UtilitiesInExcess.ID, "endspark", 1, 11),
                 "plateDiamond",
-                getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 11));
+                getModItem(UtilitiesInExcess.ID, "endspark", 1, 11));
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "curtains", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 15),
