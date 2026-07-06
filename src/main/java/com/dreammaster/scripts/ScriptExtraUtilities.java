@@ -553,6 +553,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0));
+        // TODO: transfer nodes and pipes
+        /*
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
                 "foilSteel",
@@ -707,8 +709,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 ItemList.Electric_Pump_LV.get(1L),
                 GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L));
+
+         */
+        // Item Trash Can
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "trashcan", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0),
                 "plateIron",
                 "craftingToolHardHammer",
                 "plateIron",
