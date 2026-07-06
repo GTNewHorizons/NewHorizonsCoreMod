@@ -39,6 +39,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
@@ -798,54 +799,32 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 'o',
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "cobblestone", 9, 0)).duration(15 * SECONDS).eut(2)
+        // Compressed Block Extraction (To vanilla block)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 0))
+                .itemOutputs(new ItemStack(Blocks.cobblestone, 9)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 1))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 0)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 2))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 1)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 3))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 2)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 4))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 3)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 5))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 4)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 6))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 5)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 7))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 6)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 8))
-                .itemOutputs(getModItem(Minecraft.ID, "dirt", 9, 0)).duration(15 * SECONDS).eut(2)
-                .addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 9))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 8)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 10))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 9)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 11))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 10)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 12))
-                .itemOutputs(getModItem(Minecraft.ID, "gravel", 9, 0)).duration(15 * SECONDS).eut(2)
-                .addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 13))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 12)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 14))
-                .itemOutputs(getModItem(Minecraft.ID, "sand", 9, 0)).duration(15 * SECONDS).eut(2)
-                .addTo(extractorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 15))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, 14)).duration(15 * SECONDS)
-                .eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, 0))
+                .itemOutputs(new ItemStack(Blocks.dirt, 9)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, 0))
+                .itemOutputs(new ItemStack(Blocks.sand, 9)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 1, 0))
+                .itemOutputs(new ItemStack(Blocks.gravel, 9)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+
+        // Compressed Block Extraction (Downtier)
+        for (int i = 0; i < 7; i++) {
+            GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, i + 1))
+                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 9, i))
+                    .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, i + 1))
+                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 9, i)).duration(15 * SECONDS)
+                    .eut(2).addTo(extractorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, i + 1))
+                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 9, i)).duration(15 * SECONDS)
+                    .eut(2).addTo(extractorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, i + 1))
+                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 9, i)).duration(15 * SECONDS)
+                    .eut(2).addTo(extractorRecipes);
+        }
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
