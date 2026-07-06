@@ -50,6 +50,7 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import com.dreammaster.extraUtilities.ExtraUtilitiesHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
+import com.fouristhenumber.utilitiesinexcess.api.EnderLocusRegistry;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
 import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
@@ -716,30 +717,23 @@ public class ScriptExtraUtilities implements IScriptLoader {
 
         TConstructHelper.removeTableRecipe(getModItem(UtilitiesInExcess.ID, "bedrockium_ingot", 1, 0));
         TConstructHelper.removeBasinRecipe(getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0));
-        EnderConstructorRecipesHandler.registerRecipe(
-                new ShapedOreRecipe(
-                        getModItem(UtilitiesInExcess.ID, "enderQuarry", 1, 0),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'a',
-                        "plateEuropium",
-                        'b',
-                        ItemList.Field_Generator_LuV.get(1L),
-                        'c',
-                        "plateEuropium",
-                        'd',
-                        getModItem(UtilitiesInExcess.ID, "enderThermicPump", 1, 0),
-                        'e',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 12),
-                        'f',
-                        getModItem(UtilitiesInExcess.ID, "enderThermicPump", 1, 0),
-                        'g',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 11),
-                        'h',
-                        ItemList.OreDrill2.get(1L),
-                        'i',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 11)));
+        // Void Quarry
+        EnderLocusRegistry.instance().addRecipe(
+                getModItem(UtilitiesInExcess.ID, "void_quarry", 1, 0),
+                new String[] { "ege", "pcp", "sds" },
+                'e',
+                "plateEuropium",
+                'g',
+                ItemList.Field_Generator_LuV.get(1L),
+                'p',
+                getModItem(UtilitiesInExcess.ID, "smart_pump", 1, 0),
+                'c',
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 0),
+                's',
+                getModItem(UtilitiesInExcess.ID, "endspark", 1, 0),
+                'd',
+                ItemList.OreDrill2.get(1L));
+
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
                         getModItem(UtilitiesInExcess.ID, "enderThermicPump", 1, 0),
