@@ -998,6 +998,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "endspark", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
+        // Trading Post
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6), ItemList.Plank_Oak.get(4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "trading_post", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
