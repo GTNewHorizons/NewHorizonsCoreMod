@@ -748,30 +748,21 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 'p',
                 ItemList.Pump_HV.get(1L));
-        EnderConstructorRecipesHandler.registerRecipe(
-                new ShapedOreRecipe(
-                        getModItem(UtilitiesInExcess.ID, "magnumTorch", 1, 0),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'a',
-                        getModItem(Minecraft.ID, "potion", 1, 8225),
-                        'b',
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
-                        'c',
-                        getModItem(Minecraft.ID, "potion", 1, 8229),
-                        'd',
-                        getModItem(UtilitiesInExcess.ID, "chandelier", 1, 0),
-                        'e',
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 1L),
-                        'f',
-                        getModItem(UtilitiesInExcess.ID, "chandelier", 1, 0),
-                        'g',
-                        getModItem(UtilitiesInExcess.ID, "chandelier", 1, 0),
-                        'h',
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 1L),
-                        'i',
-                        getModItem(UtilitiesInExcess.ID, "chandelier", 1, 0)));
+        // Giga Torch
+        EnderLocusRegistry.instance().addRecipe(
+                getModItem(UtilitiesInExcess.ID, "giga_torch", 1, 0),
+                new String[] { "rnh", "csc", "csc" },
+                'r',
+                getModItem(Minecraft.ID, "potion", 1, 8225),
+                'n',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
+                'h',
+                getModItem(Minecraft.ID, "potion", 1, 8229),
+                'd',
+                getModItem(UtilitiesInExcess.ID, "chandelier", 1, 0),
+                's',
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 1L),
+                'c');
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
                         getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12),
