@@ -44,14 +44,12 @@ import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.extraUtilities.ExtraUtilitiesHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.fouristhenumber.utilitiesinexcess.api.EnderLocusRegistry;
-import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
 import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.forbidden.DarkAspects;
@@ -791,18 +789,14 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 'g',
                 "dustGlowstone",
                 'o');
-        EnderConstructorRecipesHandler.registerRecipe(
-                new ShapedOreRecipe(
-                        getModItem(UtilitiesInExcess.ID, "endMarker", 1, 0),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'b',
-                        getModItem(Minecraft.ID, "ender_eye", 1, 0),
-                        'e',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1),
-                        'h',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1)));
+        // Void Marker
+        EnderLocusRegistry.instance().addRecipe(
+                getModItem(UtilitiesInExcess.ID, "void_marker", 1, 0),
+                new String[] { " e ", " o ", " o " },
+                'e',
+                getModItem(Minecraft.ID, "ender_eye", 1, 0),
+                'o',
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "cobblestone", 9, 0)).duration(15 * SECONDS).eut(2)
