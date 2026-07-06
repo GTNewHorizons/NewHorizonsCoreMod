@@ -131,7 +131,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Minecraft.ID, "carpet", 1, 15),
                 null);
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "timer", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "redstone_clock", 1, 0),
                 "plateRedAlloy",
                 "gearWood",
                 "plateRedAlloy",
