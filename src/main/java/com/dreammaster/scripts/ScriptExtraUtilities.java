@@ -553,7 +553,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateTitanium");
         // Wood Spike
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "spike_base_wood", 2, 0),
+                getModItem(UtilitiesInExcess.ID, "wood_spike", 2, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "wooden_sword", 1, 0),
                 "craftingToolScrewdriver",
@@ -565,7 +565,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateWood");
         // Iron Spike
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "spike_base", 2, 0),
+                getModItem(UtilitiesInExcess.ID, "iron_spike", 2, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "iron_sword", 1, 0),
                 "craftingToolScrewdriver",
@@ -577,7 +577,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateAnyIron");
         // Gold Spike
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "spike_base_gold", 2, 0),
+                getModItem(UtilitiesInExcess.ID, "gold_spike", 2, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "golden_sword", 1, 0),
                 "craftingToolScrewdriver",
@@ -589,7 +589,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateGold");
         // Diamond Spike
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "spike_base_diamond", 2, 0),
+                getModItem(UtilitiesInExcess.ID, "diamond_spike", 2, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "diamond_sword", 1, 0),
                 "craftingToolScrewdriver",
