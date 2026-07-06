@@ -942,6 +942,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Minecraft.ID, "redstone_block", 4, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "advanced_block_update_detector", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        // Chandelier
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 5, 0),
@@ -949,6 +950,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "chandelier", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        // TODO: Alternate chandeliers
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "stone", 4, 0), getModItem(Minecraft.ID, "stonebrick", 5, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 9, 0)).duration(9 * SECONDS).eut(4)
