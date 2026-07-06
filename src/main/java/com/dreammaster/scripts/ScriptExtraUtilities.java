@@ -250,6 +250,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 getModItem(UtilitiesInExcess.ID, "smart_pump", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
+        // TODO: transfer node upgrades - Waiting on transfer node merge
+        /*
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
                 "plateRedAlloy",
@@ -397,6 +399,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateRedAlloy",
                 getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
                 "plateRedAlloy");
+         */
+        // Paintbrush
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "paintbrush", 1, 0),
                 null,
@@ -408,6 +412,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "stickWood",
                 null,
                 null);
+        // Drum
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "drum", 1, 0),
                 "plateSteel",
@@ -419,8 +424,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateSteel",
                 "ringMeteoricSteel",
                 "plateSteel");
+        // Bedrockium Drum
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "drum", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "bedrockium_drum", 1, 0),
                 "plateBedrockium",
                 "ringTungstenSteel",
                 "plateBedrockium",
