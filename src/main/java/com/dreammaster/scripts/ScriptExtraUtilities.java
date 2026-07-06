@@ -763,6 +763,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 's',
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 1L),
                 'c');
+        // TODO: Tranfer nodes
+        /*
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
                         getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12),
@@ -811,6 +813,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12),
                         'i',
                         getModItem(UtilitiesInExcess.ID, "extractor_base", 1, 12)));
+                        
+         */
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
                         GregtechItemList.InvertedObsidian.get(1),
