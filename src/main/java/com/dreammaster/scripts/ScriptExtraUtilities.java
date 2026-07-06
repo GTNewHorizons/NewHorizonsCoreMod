@@ -472,6 +472,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "filing_cabinet", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0));
+        // TODO: recipe for elite cabinet and upgrade
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "watering_can", 1, 1),
                 "craftingToolHardHammer",
