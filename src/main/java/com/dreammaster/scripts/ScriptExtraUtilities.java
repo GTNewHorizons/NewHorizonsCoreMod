@@ -1002,57 +1002,39 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6), ItemList.Plank_Oak.get(4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "trading_post", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L)).circuit(2)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 8)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 0)).circuit(1)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 11))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 216)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "pipes", 4, 0)).circuit(4)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 12)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "pipes", 1, 8),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 13)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 9)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "pipes", 1, 8),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 10)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 2L),
-                        getModItem(UtilitiesInExcess.ID, "pipes", 1, 11))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 14)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 10), ItemList.Tool_DataStick.get(1L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes.1", 1, 0)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "pipes", 1, 10),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes.1", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+        // TODO: Transfer node
+        /*
+         * GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel,
+         * 2L)).circuit(2) .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 0))
+         * .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).duration(5 * SECONDS) .eut(TierEU.RECIPE_MV
+         * / 2).addTo(assemblerRecipes); GTValues.RA.stdBuilder() .itemInputs( getModItem(UtilitiesInExcess.ID, "pipes",
+         * 1, 0), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
+         * .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 8)).duration(10 * SECONDS) .eut(TierEU.RECIPE_MV /
+         * 2).addTo(assemblerRecipes); GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "pipes", 1,
+         * 0)).circuit(1) .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 11))
+         * .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 216)).duration(10 * SECONDS)
+         * .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+         * GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "pipes", 4, 0)).circuit(4)
+         * .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 12)).duration(10 * SECONDS) .eut(TierEU.RECIPE_MV /
+         * 2).addTo(assemblerRecipes); GTValues.RA.stdBuilder() .itemInputs( getModItem(UtilitiesInExcess.ID, "pipes",
+         * 1, 8), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
+         * .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 13)).duration(15 * SECONDS) .eut(TierEU.RECIPE_MV /
+         * 2).addTo(assemblerRecipes); GTValues.RA.stdBuilder() .itemInputs( getModItem(UtilitiesInExcess.ID, "pipes",
+         * 1, 0), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
+         * .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 9)).duration(10 * SECONDS) .eut(TierEU.RECIPE_MV /
+         * 2).addTo(assemblerRecipes); GTValues.RA.stdBuilder() .itemInputs( getModItem(UtilitiesInExcess.ID, "pipes",
+         * 1, 8), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
+         * .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 10)).duration(15 * SECONDS) .eut(TierEU.RECIPE_MV /
+         * 2).addTo(assemblerRecipes); GTValues.RA.stdBuilder() .itemInputs( GTOreDictUnificator.get(OrePrefixes.plate,
+         * Materials.Electrum, 2L), getModItem(UtilitiesInExcess.ID, "pipes", 1, 11))
+         * .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes", 1, 14)).duration(15 * SECONDS) .eut(TierEU.RECIPE_MV /
+         * 2).addTo(assemblerRecipes); GTValues.RA.stdBuilder() .itemInputs(getModItem(UtilitiesInExcess.ID, "pipes", 1,
+         * 10), ItemList.Tool_DataStick.get(1L)) .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes.1", 1,
+         * 0)).duration(20 * SECONDS) .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes); GTValues.RA.stdBuilder()
+         * .itemInputs( getModItem(UtilitiesInExcess.ID, "pipes", 1, 10), GTOreDictUnificator.get(OrePrefixes.circuit,
+         * Materials.EV, 1)) .itemOutputs(getModItem(UtilitiesInExcess.ID, "pipes.1", 1, 0)).duration(10 * SECONDS)
+         * .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+         */
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
