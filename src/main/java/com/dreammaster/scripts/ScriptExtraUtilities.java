@@ -524,8 +524,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null,
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null);
+        // Collector
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderCollector", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "collector", 1, 0),
                 "lensEnderPearl",
                 "blockEnderObsidian",
                 "lensEnderPearl",
