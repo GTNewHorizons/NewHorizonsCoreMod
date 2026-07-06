@@ -523,6 +523,12 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null,
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "flint", 1, 0),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "significantly_shrunk_chest", 1, 0))
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Collector
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "collector", 1, 0),
@@ -908,12 +914,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 11)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // TODO: Latticed Glass
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "flint", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "chestMini", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 4, 2),
