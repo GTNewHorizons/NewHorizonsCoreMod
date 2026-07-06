@@ -238,17 +238,18 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 ItemList.AcceleratorIV.get(1),
                 "gearChrome",
                 ItemList.AcceleratorIV.get(1));
+        // Void Quarry Upgrade: Fluid Pump
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 9),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "enderThermicPump", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 2),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
+                getModItem(UtilitiesInExcess.ID, "smart_pump", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
                 "pipeLargeTungstenSteel",
                 "pipeSmallStainlessSteel",
                 "pipeLargeTungstenSteel",
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "enderThermicPump", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
+                getModItem(UtilitiesInExcess.ID, "smart_pump", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0),
                 "plateRedAlloy",
