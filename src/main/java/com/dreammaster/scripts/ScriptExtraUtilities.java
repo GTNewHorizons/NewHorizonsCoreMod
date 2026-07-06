@@ -825,13 +825,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, 8)).duration(5 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, 14)).duration(5 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0)).circuit(9)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 1, 12)).duration(5 * SECONDS)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         // Burnt Quartz
