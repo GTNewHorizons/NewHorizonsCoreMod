@@ -60,7 +60,7 @@ public class ScriptLoader {
                         new ScriptEnhancedLootBags(),
                         new ScriptExtraBees(),
                         new ScriptExtraTrees(),
-                        new ScriptExtraUtilities(),
+                        new ScriptUtilitiesInExcess(),
                         new ScriptFloodLight(),
                         new ScriptForbiddenMagic(),
                         new ScriptForestry(),

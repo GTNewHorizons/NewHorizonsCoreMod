@@ -65,11 +65,11 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
-public class ScriptExtraUtilities implements IScriptLoader {
+public class ScriptUtilitiesInExcess implements IScriptLoader {
 
     @Override
     public String getScriptName() {
-        return "ExtraUtilities";
+        return "Utilities In Excess";
     }
 
     @Override
