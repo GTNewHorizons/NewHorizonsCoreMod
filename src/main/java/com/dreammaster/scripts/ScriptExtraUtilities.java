@@ -599,25 +599,27 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateDiamond",
                 "blockDiamond",
                 "plateDiamond");
+        // Architect's Wand
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "builderswand", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "architects_wand", 1, 0),
                 null,
                 null,
-                "ingotUnstable",
+                "ingotInverted",
                 null,
-                "ingotUnstable",
+                "ingotInverted",
                 null,
                 "stickObsidian",
                 null,
                 null);
+        // Super Architect's Wand
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "creativebuilderswand", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "super_architects_wand", 1, 0),
                 null,
-                "ingotUnstable",
-                "ingotUnstable",
+                "ingotInverted",
+                "ingotInverted",
                 null,
-                "ingotUnstable",
-                "ingotUnstable",
+                "ingotInverted",
+                "ingotInverted",
                 "stickObsidian",
                 null,
                 null);
