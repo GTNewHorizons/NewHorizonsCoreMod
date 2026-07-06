@@ -1055,25 +1055,27 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "trash_can_energy", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        // Fire Battery
+        // TODO: we reflavored this item, maybe should redo recipe as well
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "heatingElement", 1, 0))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "fire_battery", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "heatingElement", 1, 0))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "fire_battery", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "heatingElement", 1, 0))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "fire_battery", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
