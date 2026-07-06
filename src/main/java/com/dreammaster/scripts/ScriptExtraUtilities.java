@@ -529,6 +529,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateBedrockium",
                 "plateBedrockium",
                 "screwNeutronium");
+        // Sound Muffler
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
                 "blockWool",
@@ -538,10 +539,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Minecraft.ID, "noteblock", 1, 0),
                 "blockWool",
                 "blockWool",
-                getModItem(UtilitiesInExcess.ID, "budoff", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0),
                 "blockWool");
+        // Rain Muffler
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "rain_muffler", 1, 1),
                 "blockWool",
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
                 "blockWool",
@@ -549,7 +551,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "budoff", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0));
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "pipes", 1, 0),
