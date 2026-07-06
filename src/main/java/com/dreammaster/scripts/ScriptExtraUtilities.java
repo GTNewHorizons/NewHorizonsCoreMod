@@ -142,16 +142,16 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "stickRedAlloy",
                 "plateRedAlloy");
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 1),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 4),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 11),
+                getModItem(UtilitiesInExcess.ID, "void_quarry_upgrade", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
+                getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 4),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
+                getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, 5),
                 "gearDiamond",
-                getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 11),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "cobblestone_compressed", 1, 4),
-                getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, 5),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
+                getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 4),
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 2),
                 getModItem(UtilitiesInExcess.ID, "enderQuarryUpgrade", 1, 0),
