@@ -940,8 +940,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0),
                         getModItem(Minecraft.ID, "redstone_block", 4, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "advanced_block_update_detector", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "advanced_block_update_detector", 1, 0))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Chandelier
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -951,42 +951,51 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // TODO: Alternate chandeliers
+        // Edged Stone Bricks
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "stone", 4, 0), getModItem(Minecraft.ID, "stonebrick", 5, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 9, 0)).duration(9 * SECONDS).eut(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 9, 7)).duration(9 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 0)).circuit(4)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 4)).duration(20).eut(4)
+        // Border Stone
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 7)).circuit(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 8)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 4)).circuit(4)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 7)).duration(20).eut(4)
+        // Border Stone (Alternate)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 8)).circuit(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 9)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
+        // Gravel Bricks
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 1, 0)).circuit(2)
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 6)).duration(20).eut(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 6)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
+        // Frosted Stone
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "stone", 1, 0), getModItem(Minecraft.ID, "ice", 4, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 4, 3)).duration(4 * SECONDS).eut(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 4, 4)).duration(4 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
+        // Sandy Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "sand", 1, 0), getModItem(Minecraft.ID, "glass", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 2, 9)).duration(2 * SECONDS).eut(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 2, 3)).duration(2 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
+        // Sand-Infused Endstone
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "sandstone", 1, 0), getModItem(Minecraft.ID, "end_stone", 1, 0))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 2, 13)).duration(2 * SECONDS).eut(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 2, 1)).duration(2 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
+        // Gravel Road
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 5, 6),
+                        getModItem(UtilitiesInExcess.ID, "decorative_block", 5, 6),
                         getModItem(Minecraft.ID, "stone_slab", 5, 5))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 5, 10)).duration(5 * SECONDS).eut(4)
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 5, 10)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
+        // Endspark
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 4, 1),
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 4, 8))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 11))
+                        getModItem(UtilitiesInExcess.ID, "decorative_block", 4, 5),
+                        getModItem(UtilitiesInExcess.ID, "magic_wood", 4, 0))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "endspark", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6), ItemList.Plank_Oak.get(4L))
