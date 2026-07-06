@@ -118,8 +118,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "endspark", 1, 11),
                 "plateDiamond",
                 getModItem(UtilitiesInExcess.ID, "endspark", 1, 11));
+        // Blackout Curtains
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "curtains", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "blackout_curtains", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 15),
                 getModItem(Minecraft.ID, "carpet", 1, 15),
                 null,
