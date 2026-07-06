@@ -734,30 +734,20 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 'd',
                 ItemList.OreDrill2.get(1L));
 
-        EnderConstructorRecipesHandler.registerRecipe(
-                new ShapedOreRecipe(
-                        getModItem(UtilitiesInExcess.ID, "enderThermicPump", 1, 0),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'a',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1),
-                        'b',
-                        "circuitData",
-                        'c',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1),
-                        'd',
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                        'e',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 11),
-                        'f',
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                        'g',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1),
-                        'h',
-                        ItemList.Pump_HV.get(1L),
-                        'i',
-                        getModItem(UtilitiesInExcess.ID, "decorativeBlock1", 1, 1)));
+        // Smart Pump
+        EnderLocusRegistry.instance().addRecipe(
+                getModItem(UtilitiesInExcess.ID, "smart_pump", 1, 0),
+                new String[] { "oco", "tst", "opo" },
+                'o',
+                getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5),
+                'c',
+                "circuitData",
+                's',
+                getModItem(UtilitiesInExcess.ID, "endspark", 1, 0),
+                't',
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
+                'p',
+                ItemList.Pump_HV.get(1L));
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
                         getModItem(UtilitiesInExcess.ID, "magnumTorch", 1, 0),
