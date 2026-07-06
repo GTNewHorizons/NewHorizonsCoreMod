@@ -508,14 +508,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateIron",
                 "plateIron",
                 "plateIron");
+        // Smooth Glass
         addShapelessRecipe(
                 getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
-        addShapelessRecipe(
-                getModItem(UtilitiesInExcess.ID, "unstableingot", 1, 0),
-                getModItem(UtilitiesInExcess.ID, "unstableingot", 1, 2));
+        // Significantly Shrunk Chest
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "chestMini", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "significantly_shrunk_chest", 1, 0),
                 "craftingToolHardHammer",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "craftingToolSaw",
