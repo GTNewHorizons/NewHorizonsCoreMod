@@ -2017,6 +2017,64 @@ public class ScriptEFR implements IScriptLoader {
         // getSmeltingResult for mince meat is null here for some reason, so adding explicitly
         SmokerRecipes.smelting().addRecipe(MeatRaw.getDust(1), MeatCooked.getDust(1), 0);
 
+        // Boat Assembler Recipes
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Oak.get(5)).circuit(5).itemOutputs(new ItemStack(Items.boat))
+                .duration(10 * SECONDS).eut(15).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Spruce.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "spruce_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Birch.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "birch_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Jungle.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "jungle_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Acacia.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "acacia_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_DarkOak.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "dark_oak_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        // BoP bamboo matches manual crafting recipe
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bamboo", 5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "bamboo_raft", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Cherry_EFR.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+
+        // Chest Boat Assembler Recipes
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.chest), new ItemStack(Items.boat))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "oak_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "spruce_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "spruce_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "birch_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "birch_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "jungle_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "jungle_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "acacia_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "acacia_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "dark_oak_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "dark_oak_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "bamboo_raft", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "bamboo_chest_raft", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "cherry_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
     }
 
     // Oxidation Functions
