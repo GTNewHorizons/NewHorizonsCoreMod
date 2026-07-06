@@ -1200,20 +1200,25 @@ public class ScriptExtraUtilities implements IScriptLoader {
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.1"));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "angelRing", 1, 0))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "heavenly_ring_magic", 1, 0))));
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.2"));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "angelRing", 1, 1))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "heavenly_ring_feather", 1, 0))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "angelRing", 1, 2))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "heavenly_ring_fairy", 1, 0))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "angelRing", 1, 3))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "heavenly_ring_dragon", 1, 0))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "angelRing", 1, 4))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(UtilitiesInExcess.ID, "heavenly_ring_metal", 1, 0))));
 
         ExtraUtilitiesHelper.fixColorBlockOreDictionary();
     }
