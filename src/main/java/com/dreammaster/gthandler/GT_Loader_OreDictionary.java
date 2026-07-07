@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -23,6 +22,7 @@ import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -172,11 +172,13 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         GTOreDictUnificator.registerOre("cropBarley", getModItem(Natura.ID, "barleyFood", 1, 0));
 
-        GTOreDictUnificator.registerOre("craftingToolShears", getModItem(ExtraUtilities.ID, "shears", 1, 32767));
+        GTOreDictUnificator
+                .registerOre("craftingToolShears", getModItem(UtilitiesInExcess.ID, "precision_shears", 1, 32767));
+        // TODO: change materials to inverted after gt5u pr
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.Unstable,
-                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5));
+                getModItem(UtilitiesInExcess.ID, "inverted_block", 1, 0));
 
         GTOreDictUnificator.registerOre("logWood", getModItem(ForbiddenMagic.ID, "TaintLog", 1, 32767));
         GTOreDictUnificator.registerOre("plankWood", getModItem(ForbiddenMagic.ID, "TaintPlank", 1, 32767));
@@ -238,7 +240,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator.registerOre(
                 OrePrefixes.ingot,
                 Materials.Bedrockium,
-                getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "bedrockium_ingot", 1, 0));
 
         GTOreDictUnificator.registerOre(
                 OrePrefixes.block,
