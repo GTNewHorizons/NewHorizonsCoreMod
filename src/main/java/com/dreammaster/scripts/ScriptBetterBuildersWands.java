@@ -3,9 +3,9 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BetterBuildersWands;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -24,7 +24,7 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(BetterBuildersWands.ID, ExtraUtilities.ID, TinkerConstruct.ID, TinkersGregworks.ID);
+        return Arrays.asList(BetterBuildersWands.ID, UtilitiesInExcess.ID, TinkerConstruct.ID, TinkersGregworks.ID);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "toughRod", 1, 314),
-                        getModItem(ExtraUtilities.ID, "builderswand", 1, 0))
+                        getModItem(UtilitiesInExcess.ID, "architects_wand", 1, 0))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 4)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -84,7 +84,7 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 6),
-                        getModItem(ExtraUtilities.ID, "creativebuilderswand", 1, 0))
+                        getModItem(UtilitiesInExcess.ID, "super_architects_wand", 1, 0))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 12)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
