@@ -8974,7 +8974,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                             GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L),
-                            getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0),
+                            getModItem(UtilitiesInExcess.ID, "heavenly_block", 1, 0),
                             getModItem(OpenComputers.ID, "item", 1, 25))
                     .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 49))
                     .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)

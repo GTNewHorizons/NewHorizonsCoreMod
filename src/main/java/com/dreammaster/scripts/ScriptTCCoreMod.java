@@ -267,12 +267,12 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 -2,
                 8,
                 3,
-                getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0)).setParents("MAGICALWOOD").setConcealed()
+                getModItem(UtilitiesInExcess.ID, "heavenly_block", 1, 0)).setParents("MAGICALWOOD").setConcealed()
                         .setPages(new ResearchPage("UtilitiesInExcess.research_page.ANGELBLOCK"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ANGELBLOCK",
-                getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "heavenly_block", 1, 0),
                 new AspectList().add(Aspect.AIR, 50),
                 "abc",
                 "def",
@@ -297,7 +297,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L));
         TCHelper.addResearchPage(
                 "ANGELBLOCK",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(UtilitiesInExcess.ID, "heavenly_block", 1, 0))));
         new ResearchItem(
                 "DEZILSMARSHMALLOW",
                 "NEWHORIZONS",

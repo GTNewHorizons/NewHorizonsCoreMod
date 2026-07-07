@@ -617,9 +617,9 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 "ingotInverted",
                 null,
                 "ingotInverted",
-                getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "heavenly_block", 1, 0),
                 new ItemStack(Items.shears),
-                getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "heavenly_block", 1, 0));
         // Etheric Sword
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "etheric_sword", 1, 0),
