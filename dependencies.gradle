@@ -44,9 +44,10 @@ dependencies {
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.3.6-GTNH:dev")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:Galacticraft:3.4.31-GTNH:dev")
 
-    // For testing singularities
+    // For testing singularities and foundry
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Eternal-Singularity:1.4.3:dev")
-    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Universal-Singularities:8.15.3:dev")
+    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Universal-Singularities:8.15.4:dev")
+    //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Draconic-Evolution:1.5.28-GTNH:dev")
 
     // For testing Stargate Recipes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:SGCraft:1.4.13-GTNH:dev")

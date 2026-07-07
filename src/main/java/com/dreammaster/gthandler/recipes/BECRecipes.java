@@ -74,10 +74,10 @@ public class BECRecipes implements Runnable {
                                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16),
                                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 16) },
                         nanites(4, 2, 3, 5, 9, 8, 10, 6, 2, 2, 3, 3, 4, 4, 5, 5),
-                        new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
-                                CondensateType.PhononMedium.getEntangled(256_000),
-                                CondensateType.MagMatter.getEntangled(4_096 * INGOTS),
-                                CondensateType.MHDCSM.getEntangled(1_024 * INGOTS) },
+                        new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(36000),
+                        CondensateType.QuarkGluonPlasma.getEntangled(100_000),
+                        CondensateType.MagMatter.getEntangled(48 * INGOTS),
+                        CondensateType.Universium.getEntangled(72)},
                         600 * SECONDS,
                         TierEU.RECIPE_UXV);
             }
