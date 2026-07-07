@@ -1339,7 +1339,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
-                getModItem(UtilitiesInExcess.ID, "trash_can_fluid", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "trash_can_fluid", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
