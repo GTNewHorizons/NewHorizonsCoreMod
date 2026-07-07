@@ -14,7 +14,6 @@ import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.EnderZoo;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -31,6 +30,7 @@ import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -94,7 +94,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 EnderIO.ID,
                 EnderStorage.ID,
                 EnderZoo.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 ForbiddenMagic.ID,
                 Genetics.ID,
                 IndustrialCraft2.ID,
@@ -460,11 +460,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'c',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
                 'd',
-                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 1),
                 'e',
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0),
                 'f',
-                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 1),
                 'g',
                 getModItem(EnderIO.ID, "itemMaterial", 1, 5),
                 'h',
