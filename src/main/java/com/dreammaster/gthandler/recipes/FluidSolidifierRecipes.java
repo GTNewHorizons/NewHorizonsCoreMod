@@ -3,8 +3,8 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -145,14 +145,14 @@ public class FluidSolidifierRecipes implements Runnable {
                     .fluidInputs(Materials.Steel.getMolten(288L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                     .addTo(fluidSolidifierRecipes);
 
-            if (ExtraUtilities.isModLoaded()) {
+            if (UtilitiesInExcess.isModLoaded()) {
 
-                GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 1, 0))
                         .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
                         .fluidInputs(Materials.Tin.getMolten(144L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                         .addTo(fluidSolidifierRecipes);
 
-                GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
+                GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 1, 0))
                         .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
                         .fluidInputs(Materials.Electrum.getMolten(48L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                         .addTo(fluidSolidifierRecipes);
