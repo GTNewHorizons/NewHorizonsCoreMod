@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.BuildCraftRobotics;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -22,6 +21,7 @@ import static gregtech.api.enums.Mods.ProjectRedTransportation;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
@@ -63,7 +63,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                 BuildCraftSilicon.ID,
                 BuildCraftTransport.ID,
                 ExtraBees.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 ForgeMicroblocks.ID,
                 IndustrialCraft2.ID,
@@ -221,7 +221,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "ringIron",
                 "screwIron",
                 "craftingToolWrench",
-                getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5),
+                getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 5),
                 "craftingToolScrewdriver",
                 "screwIron",
                 "ringIron",
@@ -464,7 +464,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 5),
                         GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
