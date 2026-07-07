@@ -2,13 +2,13 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -44,7 +44,7 @@ public class ScriptExtraBees implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 ExtraBees.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
                 MagicBees.ID,
@@ -299,19 +299,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'b',
-                getModItem(ExtraUtilities.ID, "curtains", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "blackout_curtains", 1, 0),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'd',
-                getModItem(ExtraUtilities.ID, "curtains", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "blackout_curtains", 1, 0),
                 'e',
                 getModItem(Minecraft.ID, "wool", 1, 15),
                 'f',
-                getModItem(ExtraUtilities.ID, "curtains", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "blackout_curtains", 1, 0),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'h',
-                getModItem(ExtraUtilities.ID, "curtains", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "blackout_curtains", 1, 0),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 8));
         RecipeManagers.carpenterManager.addRecipe(
