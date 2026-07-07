@@ -290,9 +290,9 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
          * "craftingToolWrench", "gearDiamond", ItemList.Electric_Piston_MV.get(1L), "plateRedAlloy",
          * getModItem(UtilitiesInExcess.ID, "nodeUpgrade", 1, 0), "plateRedAlloy");
          */
-        // Paintbrush
+        // Paint Roller
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, 0),
                 null,
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0),
