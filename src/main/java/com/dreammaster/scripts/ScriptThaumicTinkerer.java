@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderStorage;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -18,6 +17,7 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.OrePrefixes.gemExquisite;
 import static gregtech.api.enums.OrePrefixes.ingot;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -63,7 +63,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 Botania.ID,
                 ElectroMagicTools.ID,
                 EnderStorage.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
@@ -2222,13 +2222,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "FocusFrost", 1, 0),
-                getModItem(ExtraUtilities.ID, "spike_base_diamond", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "diamond_spike", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 OrePrefixes.gemExquisite.get(Materials.Emerald),
                 OrePrefixes.ingot.get(Materials.Ichorium),
                 OrePrefixes.gemExquisite.get(Materials.Diamond),
                 getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0),
-                getModItem(ExtraUtilities.ID, "spike_base_diamond", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "diamond_spike", 1, 0),
                 getModItem(Thaumcraft.ID, "FocusFrost", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0));
         TCHelper.setResearchAspects(
