@@ -8,13 +8,13 @@ import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EternalSingularity;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
@@ -71,7 +71,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 DraconicEvolution.ID,
                 EnderIO.ID,
                 EternalSingularity.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
                 OpenComputers.ID,
@@ -184,7 +184,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ExtraUtilities.ID, "chestMini", 1),
+                        getModItem(UtilitiesInExcess.ID, "significantly_shrunk_chest", 1),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 462)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -2090,7 +2090,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 7),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzLamp", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
