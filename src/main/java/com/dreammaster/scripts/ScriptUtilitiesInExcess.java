@@ -1182,7 +1182,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 -1,
                 -5,
                 3,
-                getModItem(UtilitiesInExcess.ID, "angelRing", 1, 0)).setParents("EXURINGS").setConcealed()
+                getModItem(UtilitiesInExcess.ID, "heavenly_ring_feather", 1, 0)).setParents("EXURINGS").setConcealed()
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("EXURINGS_CRAFTING", 16);
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.1"));
