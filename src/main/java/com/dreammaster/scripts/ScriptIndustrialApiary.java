@@ -4,12 +4,12 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -43,7 +43,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
                 BiomesOPlenty.ID,
                 Botany.ID,
                 ExtraBees.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 Gendustry.ID,
                 Genetics.ID,
@@ -70,8 +70,8 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemStack ClimateControlModule = getModItem(Gendustry.ID, "ClimateModule", 1);
         final ItemStack EnvironmentalProcessor = getModItem(Gendustry.ID, "EnvProcessor", 1);
         final Block Grass = Blocks.grass;
-        final ItemStack GlowstoneGlass = getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7);
-        final ItemStack ReinforcedDarkGlass = getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11);
+        final ItemStack GlowstoneGlass = getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 7);
+        final ItemStack ReinforcedDarkGlass = getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 11);
         final ItemStack BotanyPollen = getModItem(Botany.ID, "pollen", 1, wildcard);
         final ItemStack HardenedIce = getModItem(BiomesOPlenty.ID, "hardIce", 1);
         final ItemStack Sand = new ItemStack(Blocks.sand, 1, wildcard);
