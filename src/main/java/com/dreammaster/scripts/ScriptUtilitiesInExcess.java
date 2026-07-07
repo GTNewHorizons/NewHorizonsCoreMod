@@ -13,7 +13,6 @@ import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
-import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -39,6 +38,7 @@ import java.util.List;
 import java.util.Map;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
@@ -113,14 +113,14 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         // Blackout Curtains
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "blackout_curtains", 1, 0),
-                getModItem(Minecraft.ID, "carpet", 1, 15),
-                getModItem(Minecraft.ID, "carpet", 1, 15),
+                new ItemStack(Blocks.carpet, 1, 15),
+                new ItemStack(Blocks.carpet, 1, 15),
                 null,
-                getModItem(Minecraft.ID, "carpet", 1, 15),
-                getModItem(Minecraft.ID, "carpet", 1, 15),
+                new ItemStack(Blocks.carpet, 1, 15),
+                new ItemStack(Blocks.carpet, 1, 15),
                 null,
-                getModItem(Minecraft.ID, "carpet", 1, 15),
-                getModItem(Minecraft.ID, "carpet", 1, 15),
+                new ItemStack(Blocks.carpet, 1, 15),
+                new ItemStack(Blocks.carpet, 1, 15),
                 null);
         // Redstone Clock
         addShapedRecipe(
@@ -129,7 +129,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 "gearWood",
                 "plateRedAlloy",
                 "gearWood",
-                getModItem(Minecraft.ID, "clock", 1, 0),
+                new ItemStack(Items.clock),
                 "gearWood",
                 "plateRedAlloy",
                 "stickRedAlloy",
@@ -330,7 +330,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "conveyor", 1, 0),
                 "craftingToolHardHammer",
-                getModItem(Minecraft.ID, "rail", 1, 0),
+                new ItemStack(Blocks.rail),
                 "craftingToolWrench",
                 ItemList.Conveyor_Module_LV.get(1L),
                 "frameGtSteel",
@@ -426,7 +426,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 "blockWool",
                 "blockWool",
                 "blockWool",
-                getModItem(Minecraft.ID, "noteblock", 1, 0),
+                new ItemStack(Blocks.noteblock),
                 "blockWool",
                 "blockWool",
                 getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0),
@@ -438,7 +438,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
                 "blockWool",
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
-                getModItem(Minecraft.ID, "water_bucket", 1, 0),
+                new ItemStack(Items.water_bucket),
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "sound_muffler", 1, 0),
                 getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0),
@@ -509,9 +509,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "flint", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
+                .itemInputs(new ItemStack(Items.flint), GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "significantly_shrunk_chest", 1, 0))
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Collector
@@ -545,7 +543,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "wood_spike", 2, 0),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "wooden_sword", 1, 0),
+                new ItemStack(Items.wooden_sword),
                 "craftingToolScrewdriver",
                 "screwWood",
                 "plateWood",
@@ -557,7 +555,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "iron_spike", 2, 0),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "iron_sword", 1, 0),
+                new ItemStack(Items.iron_sword),
                 "craftingToolScrewdriver",
                 "screwIron",
                 "plateAnyIron",
@@ -569,7 +567,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "gold_spike", 2, 0),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "golden_sword", 1, 0),
+                new ItemStack(Items.golden_sword),
                 "craftingToolScrewdriver",
                 "screwGold",
                 "plateGold",
@@ -581,7 +579,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         addShapedRecipe(
                 getModItem(UtilitiesInExcess.ID, "diamond_spike", 2, 0),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "diamond_sword", 1, 0),
+                new ItemStack(Items.diamond_sword),
                 "craftingToolScrewdriver",
                 "screwDiamond",
                 "plateDiamond",
@@ -620,7 +618,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 null,
                 "ingotInverted",
                 getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0),
-                getModItem(Minecraft.ID, "shears", 1, 0),
+                new ItemStack(Items.shears),
                 getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0));
         // Etheric Sword
         addShapedRecipe(
@@ -742,11 +740,11 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "giga_torch", 1, 0),
                 new String[] { "rnh", "csc", "csc" },
                 'r',
-                getModItem(Minecraft.ID, "potion", 1, 8225),
+                new ItemStack(Items.potionitem, 1, 8225),
                 'n',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
                 'h',
-                getModItem(Minecraft.ID, "potion", 1, 8229),
+                new ItemStack(Items.potionitem, 1, 8229),
                 'd',
                 getModItem(UtilitiesInExcess.ID, "chandelier", 1, 0),
                 's',
@@ -785,7 +783,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "void_marker", 1, 0),
                 new String[] { " e ", " o ", " o " },
                 'e',
-                getModItem(Minecraft.ID, "ender_eye", 1, 0),
+                new ItemStack(Items.ender_eye),
                 'o',
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 5));
 
@@ -817,23 +815,23 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         }
 
         // Compressed Block Assembly (From vanilla block)
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 9, 0)).circuit(9)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.cobblestone, 9)).circuit(9)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0)).circuit(9)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.dirt, 9)).circuit(9)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_dirt", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 9, 0)).circuit(9)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 9)).circuit(9)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0)).circuit(9)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.gravel, 9)).circuit(9)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "compressed_gravel", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         // Burnt Quartz
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "quartz_block", 1, 0),
+                        new ItemStack(Blocks.quartz_block),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(alloySmelterRecipes);
@@ -842,7 +840,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 4, 3),
-                        getModItem(Minecraft.ID, "diamond_block", 1, 0))
+                        new ItemStack(Blocks.diamond_block))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "bedrockium_ingot", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
 
@@ -862,9 +860,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         // Creepy Glass
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
-                        getModItem(Minecraft.ID, "gunpowder", 1, 0))
+                .itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0), new ItemStack(Items.gunpowder))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         // Glowing Glass
@@ -876,9 +872,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         // Beloved Glass
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0),
-                        getModItem(Minecraft.ID, "dye", 1, 9))
+                .itemInputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0), new ItemStack(Items.dye, 1, 9))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         // Rimmed Glass
@@ -924,34 +918,33 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_block", 4, 5),
-                        getModItem(Minecraft.ID, "ender_eye", 3, 0))
+                        new ItemStack(Items.ender_eye, 3))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "convergence_crystal", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Block Update Detector
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Railcraft.ID, "detector", 1, 2), getModItem(Minecraft.ID, "sticky_piston", 1, 0))
+                .itemInputs(getModItem(Railcraft.ID, "detector", 1, 2), new ItemStack(Blocks.sticky_piston))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Advanced Block Update Detector
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0),
-                        getModItem(Minecraft.ID, "redstone_block", 4, 0))
+                        new ItemStack(Blocks.redstone_block, 4))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "advanced_block_update_detector", 1, 0))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Chandelier
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "torch", 5, 0),
+                        new ItemStack(Blocks.torch, 5),
                         GTOreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "chandelier", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // TODO: Alternate chandeliers
         // Edged Stone Bricks
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "stone", 4, 0), getModItem(Minecraft.ID, "stonebrick", 5, 0))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone, 4), new ItemStack(Blocks.stonebrick, 5))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 9, 7)).duration(9 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         // Border Stone
@@ -963,29 +956,26 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 9)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
         // Gravel Bricks
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "gravel", 1, 0)).circuit(2)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.gravel)).circuit(2)
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 6)).duration(20).eut(4)
                 .addTo(assemblerRecipes);
         // Frosted Stone
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "stone", 1, 0), getModItem(Minecraft.ID, "ice", 4, 0))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone), new ItemStack(Blocks.ice, 4))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 4, 4)).duration(4 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         // Sandy Glass
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "sand", 1, 0), getModItem(Minecraft.ID, "glass", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand), new ItemStack(Blocks.glass))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 2, 3)).duration(2 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         // Sand-Infused Endstone
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "sandstone", 1, 0), getModItem(Minecraft.ID, "end_stone", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sandstone), new ItemStack(Blocks.end_stone))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 2, 1)).duration(2 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         // Gravel Road
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(UtilitiesInExcess.ID, "decorative_block", 5, 6),
-                        getModItem(Minecraft.ID, "stone_slab", 5, 5))
+                        new ItemStack(Blocks.stone_slab, 5, 5))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "decorative_block", 5, 10)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         // Endspark
@@ -1048,7 +1038,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0))
+                        new ItemStack(Items.ender_pearl))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Fluid Trash Can
@@ -1092,12 +1082,12 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
         // TODO: also reflavored maybe should change slightly. Just add a bottle probably
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0),
+                        new ItemStack(Items.ender_pearl),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4L))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "mob_jar", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Block Analyzer
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), new ItemStack(Items.ender_eye))
                 .itemOutputs(getModItem(UtilitiesInExcess.ID, "block_analyzer", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -1121,9 +1111,9 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 getModItem(UtilitiesInExcess.ID, "angelBlock", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 MagicFeather.get(1),
-                getModItem(Minecraft.ID, "nether_star", 1, 0),
+                new ItemStack(Items.nether_star),
                 getModItem(Avaritia.ID, "big_pearl", 1, 0),
-                getModItem(Minecraft.ID, "nether_star", 1, 0),
+                new ItemStack(Items.nether_star),
                 MagicFeather.get(1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(UtilitiesInExcess.ID, "angelBlock", 1, 0),
@@ -1154,7 +1144,7 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.BEAST, 50).add(DarkAspects.NETHER, 50),
                 getModItem(UtilitiesInExcess.ID, "heavenly_ring_magic", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                getModItem(Minecraft.ID, "dragon_egg", 1, 0),
+                new ItemStack(Blocks.dragon_egg),
                 getModItem(Botania.ID, "manaResource", 1, 9));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
