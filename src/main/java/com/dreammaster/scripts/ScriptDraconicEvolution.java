@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -21,6 +20,7 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
@@ -69,7 +69,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 DraconicEvolution.ID,
                 EnderIO.ID,
                 EtFuturumRequiem.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 IndustrialCraft2.ID,
                 OpenBlocks.ID,
@@ -1240,16 +1240,16 @@ public class ScriptDraconicEvolution implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(ExtraUtilities.ID, "greenscreen", 64, 3),
-                            getModItem(ExtraUtilities.ID, "greenscreen", 64, 11),
-                            getModItem(ExtraUtilities.ID, "greenscreen", 64, 13),
+                            getModItem(UtilitiesInExcess.ID, "lapis_aetherius", 64, 3),
+                            getModItem(UtilitiesInExcess.ID, "lapis_aetherius", 64, 11),
+                            getModItem(UtilitiesInExcess.ID, "lapis_aetherius", 64, 13),
                             getModItem(OpenComputers.ID, "hologram2", 1, 0),
                             createItemStack(
-                                    ExtraUtilities.ID,
-                                    "microblocks",
+                                    UtilitiesInExcess.ID,
+                                    "multi_part_item",
                                     1,
-                                    3,
-                                    "{mat:\"tile.extrautils:decorativeBlock1_5\"}"))
+                                    2,
+                                    "{mat:\"tile.utilitiesinexcess:inverted_block\"}"))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 10000))
                     .itemOutputs(getModItem(DraconicEvolution.ID, "earth", 1, 0)).duration(6 * SECONDS).eut(200)
                     .addTo(assemblerRecipes);
