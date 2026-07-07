@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ExtraTrees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
@@ -18,6 +17,7 @@ import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -45,7 +45,7 @@ public class ScriptIronChests implements IScriptLoader {
         return Arrays.asList(
                 BiomesOPlenty.ID,
                 ExtraTrees.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
