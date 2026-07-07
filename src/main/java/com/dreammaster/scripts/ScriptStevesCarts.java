@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.GregTech;
@@ -26,6 +25,7 @@ import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -75,7 +75,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 EnderIO.ID,
                 EtFuturumRequiem.ID,
                 ExtraBees.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 Gendustry.ID,
                 IndustrialCraft2.ID,
@@ -676,9 +676,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateReinforced");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "upgrade", 1, 3),
-                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8),
+                getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45),
-                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8),
+                getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45),
                 "plateReinforced",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45),
@@ -1115,7 +1115,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Brass, 1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
-                getModItem(ExtraUtilities.ID, "trashcan", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 "plateIron",
                 GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Brass, 1L),
