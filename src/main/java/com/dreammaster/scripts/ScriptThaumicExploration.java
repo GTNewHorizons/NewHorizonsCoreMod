@@ -4,13 +4,13 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 
 import java.util.Arrays;
 import java.util.List;
@@ -42,7 +42,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 BiomesOPlenty.ID,
                 Botania.ID,
                 EnderIO.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 ForbiddenMagic.ID,
                 Natura.ID,
                 PamsHarvestCraft.ID,
@@ -1339,7 +1339,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
-                getModItem(ExtraUtilities.ID, "trashcan", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "trash_can_fluid", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
