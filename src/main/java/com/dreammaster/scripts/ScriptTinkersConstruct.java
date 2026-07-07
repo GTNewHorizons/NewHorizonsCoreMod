@@ -13,7 +13,6 @@ import static gregtech.api.enums.Mods.BuildCraftCore;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.ExtraTrees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -28,6 +27,7 @@ import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersMechworks;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -94,7 +94,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 Chisel.ID,
                 ElectroMagicTools.ID,
                 ExtraTrees.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 ForgeMicroblocks.ID,
                 GalaxySpace.ID,
@@ -1035,7 +1035,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeWhite",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 0),
@@ -1050,7 +1050,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeOrange",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 1),
@@ -1065,7 +1065,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeMagenta",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 2),
@@ -1080,7 +1080,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeLightBlue",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 3),
@@ -1095,7 +1095,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeYellow",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 4),
@@ -1110,7 +1110,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeLime",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 5),
@@ -1125,7 +1125,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyePink",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 6),
@@ -1140,7 +1140,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeGray",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 7),
@@ -1155,7 +1155,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeLightGray",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 8),
@@ -1170,7 +1170,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeCyan",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 9),
@@ -1185,7 +1185,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyePurple",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 10),
@@ -1200,7 +1200,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeBlue",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 11),
@@ -1215,7 +1215,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeBrown",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 12),
@@ -1230,7 +1230,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeGreen",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 13),
@@ -1245,7 +1245,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeRed",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 14),
@@ -1260,7 +1260,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dyeBlack",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 15),
@@ -1358,7 +1358,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0),
-                getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "decorative_glass", 1, 0));
         addShapedRecipe(
                 createItemStack(
                         TinkerConstruct.ID,
@@ -1589,8 +1589,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 11));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 22));
         TConstructHelper.removeMeltingRecipe(getModItem(Minecraft.ID, "snowball", 1, 0));
-        TConstructHelper.removeMeltingRecipe(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14));
-        TConstructHelper.removeMeltingRecipe(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15));
+        TConstructHelper.removeMeltingRecipe(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, 0));
+        TConstructHelper.removeMeltingRecipe(getModItem(UtilitiesInExcess.ID, "compressed_sand", 1, 1));
         TConstructHelper.removeBasinRecipe(getModItem(IndustrialCraft2.ID, "blockMetal", 1, 5));
         TConstructHelper.removeMeltingRecipe(getModItem(Thaumcraft.ID, "ItemNugget", 1, 19));
         TConstructHelper
