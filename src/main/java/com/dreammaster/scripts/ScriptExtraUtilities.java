@@ -47,6 +47,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagByte;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -58,7 +59,6 @@ import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -1410,42 +1410,60 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
                 screw.get(ElvenElementium));
-        TCHelper.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1),
-                4,
-                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.FLIGHT, 50).add(Aspect.AIR, 50),
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.ORDER, 100),
+                " s ",
+                "frf",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                getModItem(TinkerConstruct.ID, "fletching", 1, 0),
-                getModItem(TinkerConstruct.ID, "fletching", 1, 0));
-        TCHelper.addInfusionCraftingRecipe(
+                'f',
+                getModItem(TwilightForest.ID, "item.tfFeather", 1, 0));
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 2),
-                4,
-                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.FLIGHT, 50).add(Aspect.AURA, 50),
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.WATER, 100),
+                " s ",
+                "frp",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                getModItem(TwilightForest.ID, "item.critter", 1, 0),
-                getModItem(TwilightForest.ID, "item.critter", 1, 1));
-        TCHelper.addInfusionCraftingRecipe(
+                'f',
+                getModItem(Botania.ID, "flower", 1, 6),
+                'p',
+                getModItem(Botania.ID, "flower", 1, 10));
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 3),
-                4,
-                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.BEAST, 50).add(DarkAspects.NETHER, 50),
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.FIRE, 100),
+                " s ",
+                "frf",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                getModItem(Minecraft.ID, "dragon_egg", 1, 0),
+                'f',
                 getModItem(Botania.ID, "manaResource", 1, 9));
-        TCHelper.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 4),
-                4,
-                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.METAL, 50).add(Aspect.GREED, 50),
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.EARTH, 100),
+                " s ",
+                "frf",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.foil.get(Materials.RoseGold),
-                OrePrefixes.foil.get(Materials.RoseGold));
+                'f',
+                "plateThaumium");
         new ResearchItem(
                 "EXURINGS_CRAFTING",
                 "NEWHORIZONS",
@@ -1466,16 +1484,16 @@ public class ScriptExtraUtilities implements IScriptLoader {
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.2"));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 1))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 2))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 3))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 3))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4))));
 
         ExtraUtilitiesHelper.fixColorBlockOreDictionary();
     }
