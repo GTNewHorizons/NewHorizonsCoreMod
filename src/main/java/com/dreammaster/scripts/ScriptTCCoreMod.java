@@ -127,7 +127,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 4,
                 3,
                 getModItem(UtilitiesInExcess.ID, "decorative_block", 1, 11)).setParents("INFUSION")
-                        .setPages(new ResearchPage("ExtraUtilities.research_page.EMINENCESTONE"))
+                        .setPages(new ResearchPage("UtilitiesInExcess.research_page.EMINENCESTONE"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "EMINENCESTONE",
@@ -167,7 +167,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 6,
                 3,
                 getModItem(UtilitiesInExcess.ID, "temporal_gate", 1, 0)).setParents("EMINENCESTONE", "OCULUS")
-                        .setConcealed().setPages(new ResearchPage("ExtraUtilities.research_page.PORTALMILLENIUM"))
+                        .setConcealed().setPages(new ResearchPage("UtilitiesInExcess.research_page.PORTALMILLENIUM"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "PORTALMILLENIUM",
@@ -197,7 +197,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 8,
                 3,
                 getModItem(UtilitiesInExcess.ID, "underworld_portal", 1, 0)).setParents("PORTALMILLENIUM", "ICHOR")
-                        .setConcealed().setPages(new ResearchPage("ExtraUtilities.research_page.PORTALDEEPDARK"))
+                        .setConcealed().setPages(new ResearchPage("UtilitiesInExcess.research_page.PORTALDEEPDARK"))
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "PORTALDEEPDARK",
@@ -229,7 +229,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 6,
                 3,
                 getModItem(UtilitiesInExcess.ID, "magic_wood", 1, 0)).setParents("EMINENCESTONE").setConcealed()
-                        .setPages(new ResearchPage("ExtraUtilities.research_page.MAGICALWOOD")).registerResearchItem();
+                        .setPages(new ResearchPage("UtilitiesInExcess.research_page.MAGICALWOOD"))
+                        .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MAGICALWOOD",
                 getModItem(UtilitiesInExcess.ID, "magic_wood", 4, 0),
@@ -267,7 +268,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 8,
                 3,
                 getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0)).setParents("MAGICALWOOD").setConcealed()
-                        .setPages(new ResearchPage("ExtraUtilities.research_page.ANGELBLOCK")).registerResearchItem();
+                        .setPages(new ResearchPage("UtilitiesInExcess.research_page.ANGELBLOCK"))
+                        .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ANGELBLOCK",
                 getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0),
