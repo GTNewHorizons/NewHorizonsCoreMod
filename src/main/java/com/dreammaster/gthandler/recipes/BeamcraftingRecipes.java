@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.BEAMCRAFTER_METADATA;
 import static gregtech.api.recipe.RecipeMaps.beamcrafterRecipes;
@@ -37,7 +36,7 @@ public class BeamcraftingRecipes implements Runnable {
                                 .amount_A(20).amount_B(20).build())
                 .eut(TierEU.RECIPE_UIV).duration(2 * SECONDS).addTo(beamcrafterRecipes);
 
-        if (ExtraUtilities.isModLoaded()) {
+        if (UtilitiesInExcess.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
