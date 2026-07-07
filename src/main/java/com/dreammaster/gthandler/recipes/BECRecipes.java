@@ -58,8 +58,8 @@ public class BECRecipes implements Runnable {
                 addBec(
                         ItemList.Magnetic_Chassis_T3_ExoFoundry.get(1),
                         new ItemStack[] { ItemRefer.Field_Restriction_Coil_T4.get(1),
+                                ItemList.SpaceElevatorMotorT5.get(1), new ItemStack(lscLapotronicEnergyUnit, 1, 5),
                                 Godforge_SingularityShieldingCasing.get(4),
-                                new ItemStack(lscLapotronicEnergyUnit, 1, 5), ItemList.SpaceElevatorMotorT5.get(2),
                                 IngredientFactory.getModItem(DraconicEvolution.ID, "chaoticCore", 2),
                                 IngredientFactory.getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 16),
@@ -76,8 +76,8 @@ public class BECRecipes implements Runnable {
                         nanites(4, 2, 3, 5, 9, 8, 10, 6, 2, 2, 3, 3, 4, 4, 5, 5),
                         new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(36000),
                                 CondensateType.QuarkGluonPlasma.getEntangled(100_000),
-                                CondensateType.MagMatter.getEntangled(48 * INGOTS),
-                                CondensateType.Universium.getEntangled(72) },
+                                CondensateType.DimensionallyShiftedSuperfluid.getEntangled(50_000),
+                                CondensateType.MagMatter.getEntangled(48 * INGOTS) },
                         600 * SECONDS,
                         TierEU.RECIPE_UXV);
             }
