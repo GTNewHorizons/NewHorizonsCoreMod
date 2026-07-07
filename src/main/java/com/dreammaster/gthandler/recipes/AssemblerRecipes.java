@@ -21,7 +21,6 @@ import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EnhancedLootBags;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
@@ -55,6 +54,7 @@ import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.VisualProspecting;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
@@ -1567,7 +1567,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             alveary,
                             getModItem(Forestry.ID, "thermionicTubes", 4, 8),
-                            getModItem(ExtraUtilities.ID, "curtains", 4, 0),
+                            getModItem(UtilitiesInExcess.ID, "blackout_curtains", 4, 0),
                             new ItemStack(Blocks.wool, 1, 15))
                     .itemOutputs(getModItem(ExtraBees.ID, "alveary", 1, 7)).fluidInputs(Materials.Honey.getFluid(7500L))
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -1586,24 +1586,24 @@ public class AssemblerRecipes implements Runnable {
 
         }
 
-        if (ExtraUtilities.isModLoaded()) {
+        if (UtilitiesInExcess.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L))
-                    .circuit(1).itemOutputs(getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0)).duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                    .circuit(1).itemOutputs(getModItem(UtilitiesInExcess.ID, "bedrockium_ingot", 1, 0))
+                    .duration(1 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 9L))
-                    .circuit(1).itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2)).duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                    .circuit(1).itemOutputs(getModItem(UtilitiesInExcess.ID, "inverted_ingot", 1, 2))
+                    .duration(1 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
 
         }
 
-        if (ExtraUtilities.isModLoaded() && IronChests.isModLoaded()) {
+        if (UtilitiesInExcess.isModLoaded() && IronChests.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(IronChests.ID, "BlockIronChest", 1, 0),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4L))
-                    .circuit(1).itemOutputs(getModItem(ExtraUtilities.ID, "filing", 1, 0))
+                    .circuit(1).itemOutputs(getModItem(UtilitiesInExcess.ID, "filing_cabinet", 1, 0))
                     .fluidInputs(Materials.Polyethylene.getMolten(144L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(assemblerRecipes);
         }
@@ -8974,7 +8974,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                             GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L),
-                            getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
+                            getModItem(UtilitiesInExcess.ID, "floating_block", 1, 0),
                             getModItem(OpenComputers.ID, "item", 1, 25))
                     .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 49))
                     .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
