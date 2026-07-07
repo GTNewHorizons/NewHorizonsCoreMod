@@ -1468,11 +1468,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         .registerResearchItem();
         new ResearchItem(
                 "EXURINGS_CRAFTING",
-                "ARTIFICE",
-                new AspectList().add(Aspect.MAGIC, 10).add(Aspect.FLIGHT, 10).add(Aspect.WEATHER, 10)
-                        .add(TCAspects.NEBRISUM.getAspect(), 10).add(Aspect.MOTION, 10).add(Lucrum.ULTRA_DEATH, 10),
-                -1,
-                -5,
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.MAGIC, 20).add(Aspect.FLIGHT, 20).add(Aspect.TOOL, 10)
+                        .add(Aspect.GREED, 5).add(Aspect.AIR, 5),
+                0,
+                8,
                 3,
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0)).setParents("EXURINGS").setConcealed()
                         .registerResearchItem();
