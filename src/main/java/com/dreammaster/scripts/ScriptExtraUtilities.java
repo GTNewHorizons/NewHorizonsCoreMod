@@ -1464,6 +1464,21 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'f',
                 "plateThaumium");
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "EXURINGS_CRAFTING",
+                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.ENTROPY, 100),
+                " s ",
+                "arn",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
+                'n',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 0));
         new ResearchItem(
                 "EXURINGS_CRAFTING",
                 "NEWHORIZONS",
@@ -1494,6 +1509,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4))));
+        TCHelper.addResearchPage(
+                "EXURINGS_CRAFTING",
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 0))));
 
         ExtraUtilitiesHelper.fixColorBlockOreDictionary();
     }
