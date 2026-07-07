@@ -58,13 +58,11 @@ import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -1449,34 +1447,18 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 OrePrefixes.foil.get(Materials.RoseGold),
                 OrePrefixes.foil.get(Materials.RoseGold));
         new ResearchItem(
-                "EXURINGS",
-                "ARTIFICE",
-                new AspectList().add(Aspect.MAGIC, 10).add(Aspect.FLIGHT, 10).add(Aspect.WEATHER, 100)
-                        .add(TCAspects.NEBRISUM.getAspect(), 10).add(Aspect.MOTION, 10).add(Lucrum.ULTRA_DEATH, 10),
-                1,
-                -5,
-                3,
-                getModItem(TinkerConstruct.ID, "travelWings", 1, 0)).setRound().setConcealed()
-                        .setParentsHidden("INFUSION")
-                        .setPages(
-                                new ResearchPage("tc.research_page.EXURINGS.1"),
-                                new ResearchPage("tc.research_page.EXURINGS.2"),
-                                new ResearchPage("tc.research_page.EXURINGS.3"),
-                                new ResearchPage("tc.research_page.EXURINGS.4"),
-                                new ResearchPage("tc.research_page.EXURINGS.5"),
-                                new ResearchPage("tc.research_page.EXURINGS.6"))
-                        .registerResearchItem();
-        new ResearchItem(
                 "EXURINGS_CRAFTING",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.MAGIC, 20).add(Aspect.FLIGHT, 20).add(Aspect.TOOL, 10)
-                        .add(Aspect.GREED, 5).add(Aspect.AIR, 5),
+                new AspectList().add(Aspect.MAGIC, 20).add(Aspect.FLIGHT, 20).add(Aspect.TOOL, 10).add(Aspect.GREED, 5)
+                        .add(Aspect.AIR, 5),
                 0,
                 8,
                 3,
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0)).setParents("EXURINGS").setConcealed()
+                getModItem(ExtraUtilities.ID, "angelRing", 1, 0))
+                        .setParents("ICHORIUM", "BH_ALFHEIM", "ANGELBLOCK", "ALCHEMICCHEMSTRYSET").setConcealed()
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("EXURINGS_CRAFTING", 16);
+
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.1"));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
