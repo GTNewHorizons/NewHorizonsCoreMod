@@ -5,6 +5,7 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.ElvenElementium;
 import static gregtech.api.enums.Materials.Ichorium;
 import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
@@ -84,6 +85,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 Avaritia.ID,
+                BloodMagic.ID,
                 Botania.ID,
                 BuildCraftFactory.ID,
                 BuildCraftTransport.ID,
@@ -97,6 +99,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 Railcraft.ID,
                 RandomThings.ID,
                 Thaumcraft.ID,
+                ThaumicTinkerer.ID,
                 TinkerConstruct.ID,
                 TwilightForest.ID,
                 WirelessRedstoneCBECore.ID,
@@ -1390,11 +1393,12 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 30,
-                new AspectList().add(Aspect.MAGIC, 200).add(Aspect.FLIGHT, 200).add(Aspect.WEATHER, 200)
-                        .add(TCAspects.NEBRISUM.getAspect(), 200).add(Aspect.MOTION, 200).add(Lucrum.ULTRA_DEATH, 200),
-                getModItem(ElectroMagicTools.ID, "ThaumiumWing"),
+                new AspectList().add(Aspect.MAGIC, 256).add(Aspect.FLIGHT, 256).add(Aspect.TOOL, 128)
+                        .add(Aspect.GREED, 64).add(Aspect.AIR, 64),
                 ring.get(Ichorium),
+                getModItem(ElectroMagicTools.ID, "ThaumiumWing"),
                 screw.get(ElvenElementium),
+                getModItem(BloodMagic.ID, "aether", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
@@ -1406,6 +1410,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                getModItem(BloodMagic.ID, "aether", 1, 0),
                 screw.get(ElvenElementium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
