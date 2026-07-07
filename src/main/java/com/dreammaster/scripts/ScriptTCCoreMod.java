@@ -25,6 +25,7 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBoots;
+import static gregtech.api.enums.Mods.ThaumicHorizons;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
@@ -1289,6 +1290,32 @@ public class ScriptTCCoreMod implements IScriptLoader {
                                 new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_APPRENTICE_STRIDERS.1"),
                                 new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_APPRENTICE_STRIDERS.2"))
                         .registerResearchItem();
+
+        TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_APPRENTICE_STRIDERS",
+                ItemList.Augment_ApprenticeStriders.get(1),
+                9,
+                new AspectList().add(Aspect.MOTION, 64).add(Aspect.CRAFT, 64).add(Aspect.FLIGHT, 48).add(Aspect.AIR, 48)
+                        .add(Aspect.MAGIC, 32).add(Aspect.TRAVEL, 32).add(Aspect.ARMOR, 24),
+
+                ItemList.Armor_Chip_T1.get(1),
+                NHItemList.QuantumCrystal.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StainlessSteel, 1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1),
+                ItemList.Field_Generator_LV.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                ItemList.Electric_Piston_HV.get(1),
+                GTModHandler.getModItem(Thaumcraft.ID, "BootsTraveller", 1),
+                ItemList.Electric_Piston_HV.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                ItemList.Field_Generator_LV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StainlessSteel, 1));
+
+        TCHelper.addResearchPage(
+                "MECHANICALARMOR_APPRENTICE_STRIDERS",
+                new ResearchPage(TCHelper.findInfusionRecipe(ItemList.Augment_ApprenticeStriders.get(1))));
+
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MECHANICALARMOR_APPRENTICE_STRIDERS",
                 ItemList.Augment_ApprenticeStriders.get(1),
@@ -1309,26 +1336,6 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'T',
                 GTModHandler.getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1));
 
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "MECHANICALARMOR_APPRENTICE_STRIDERS",
-                GTModHandler.getModItem(ElectroMagicTools.ID, "NanoBootsTraveller"),
-                new AspectList().add(Aspect.getAspect("perditio"), 100),
-                "   ",
-                " T ",
-                "   ",
-                'T',
-                ItemList.Augment_ApprenticeStriders.get(1));
-
-        TCHelper.addResearchPage(
-                "MECHANICALARMOR_APPRENTICE_STRIDERS",
-                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Augment_ApprenticeStriders.get(1))));
-
-        TCHelper.addResearchPage(
-                "MECHANICALARMOR_APPRENTICE_STRIDERS",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                GTModHandler.getModItem(ElectroMagicTools.ID, "NanoBootsTraveller"))));
-
         new ResearchItem(
                 "MECHANICALARMOR_ARCHMAGE_STRIDERS",
                 "NEWHORIZONS",
@@ -1344,7 +1351,31 @@ public class ScriptTCCoreMod implements IScriptLoader {
                                 "QuantumBootsoftheTraveller")
                         .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_ARCHMAGE_STRIDERS"))
                         .registerResearchItem();
+
         ThaumcraftApi.addWarpToResearch("MECHANICALARMOR_ARCHMAGE_STRIDERS", 3);
+
+        TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_ARCHMAGE_STRIDERS",
+                ItemList.Augment_ArchmageStriders.get(1),
+                9,
+                new AspectList().add(Aspect.MOTION, 128).add(Aspect.CRAFT, 96).add(Aspect.FLIGHT, 64)
+                        .add(Aspect.AIR, 64).add(Aspect.MAGIC, 64).add(Aspect.TRAVEL, 48).add(Aspect.ARMOR, 32),
+
+                ItemList.Augment_ApprenticeStriders.get(1),
+                ItemList.Armor_Chip_T2.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                ItemList.Electric_Piston_IV.get(1),
+                NHItemList.QuantumCrystal.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                getModItem(IndustrialCraft2.ID, "itemPartIridium"),
+                ItemList.Field_Generator_EV.get(1),
+                getModItem(IndustrialCraft2.ID, "itemPartIridium"),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5),
+                NHItemList.QuantumCrystal.get(1),
+                ItemList.Electric_Piston_IV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3));
 
         TCHelper.addInfusionCraftingRecipe(
                 "MECHANICALARMOR_ARCHMAGE_STRIDERS",
@@ -1365,25 +1396,9 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
         );
 
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "MECHANICALARMOR_ARCHMAGE_STRIDERS",
-                GTModHandler.getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller"),
-                new AspectList().add(Aspect.getAspect("perditio"), 150),
-                "   ",
-                " T ",
-                "   ",
-                'T',
-                ItemList.Augment_ArchmageStriders.get(1));
-
         TCHelper.addResearchPage(
                 "MECHANICALARMOR_ARCHMAGE_STRIDERS",
                 new ResearchPage(TCHelper.findInfusionRecipe(ItemList.Augment_ArchmageStriders.get(1))));
-
-        TCHelper.addResearchPage(
-                "MECHANICALARMOR_ARCHMAGE_STRIDERS",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                GTModHandler.getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller"))));
 
         new ResearchItem(
                 "MECHANICALARMOR_ELDRITCH_STRIDERS",
@@ -1410,6 +1425,28 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "MECHANICALARMOR_ELDRITCH_STRIDERS",
                 ItemList.Augment_EldritchStriders.get(1),
                 12,
+                new AspectList().add(Aspect.ELDRITCH, 256).add(Aspect.TAINT, 64).add(Aspect.SOUL, 128)
+                        .add(Aspect.MAGIC, 64).add(Aspect.TRAVEL, 48).add(Aspect.FLIGHT, 48).add(Aspect.AURA, 48)
+                        .add(Aspect.AIR, 16),
+
+                ItemList.Augment_ArchmageStriders.get(1),
+                ItemList.Armor_Chip_T3.get(1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
+                GTModHandler.getModItem(ThaumicHorizons.ID, "planarConduit", 1),
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                GTModHandler.getModItem(ThaumicHorizons.ID, "planarConduit", 1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3));
+
+        TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_ELDRITCH_STRIDERS",
+                ItemList.Augment_EldritchStriders.get(1),
+                12,
                 new AspectList().add(Aspect.ELDRITCH, 128).add(Aspect.TAINT, 64).add(Aspect.SOUL, 64)
                         .add(Aspect.MAGIC, 48).add(Aspect.ARMOR, 48).add(Aspect.CRAFT, 32).add(Aspect.CRAFT, 32)
                         .add(Aspect.ENERGY, 32),
@@ -1417,32 +1454,17 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTModHandler.getModItem(ThaumicBoots.ID, "item.ItemQuantumVoid", 1),
                 GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
                 GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
                 ItemList.Armor_Chip_T3.get(1),
                 GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
                 GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1)
 
         );
 
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "MECHANICALARMOR_ELDRITCH_STRIDERS",
-                GTModHandler.getModItem(ThaumicBoots.ID, "item.ItemQuantumVoid"),
-                new AspectList().add(Aspect.getAspect("perditio"), 250),
-                "   ",
-                " T ",
-                "   ",
-                'T',
-                ItemList.Augment_EldritchStriders.get(1));
-
         TCHelper.addResearchPage(
                 "MECHANICALARMOR_ELDRITCH_STRIDERS",
                 new ResearchPage(TCHelper.findInfusionRecipe(ItemList.Augment_EldritchStriders.get(1))));
-
-        TCHelper.addResearchPage(
-                "MECHANICALARMOR_ELDRITCH_STRIDERS",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(GTModHandler.getModItem(ThaumicBoots.ID, "item.ItemQuantumVoid"))));
     }
 }
