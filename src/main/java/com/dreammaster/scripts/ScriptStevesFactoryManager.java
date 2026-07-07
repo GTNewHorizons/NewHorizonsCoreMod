@@ -4,13 +4,13 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedTransmission;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesAddons;
 import static gregtech.api.enums.Mods.StevesFactoryManager;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -42,7 +42,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 AppliedEnergistics2.ID,
                 Computronics.ID,
                 EnderIO.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 IndustrialCraft2.ID,
                 OpenBlocks.ID,
                 ProjectRedTransmission.ID,
@@ -124,7 +124,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0),
-                        getModItem(ExtraUtilities.ID, "budoff", 1, 3))
+                        getModItem(UtilitiesInExcess.ID, "advanced_block_update_detector", 1, 0))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableBUDName", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
