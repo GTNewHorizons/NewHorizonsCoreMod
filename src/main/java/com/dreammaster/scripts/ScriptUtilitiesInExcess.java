@@ -695,14 +695,13 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
                 null);
 
-        // TODO: change to mobius if we implement it
-        // Assembler inverted ingot
+        // Assembler Quasi-Normalized Inverted Ingot
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
                         getModItem(UtilitiesInExcess.ID, "pseudo_reversion_sigil", 0, 0),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
-                .itemOutputs(getModItem(UtilitiesInExcess.ID, "inverted_ingot", 1, 1)).nbtSensitive()
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "inverted_ingot", 1, 2)).nbtSensitive()
                 .duration(42 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         TConstructHelper.removeTableRecipe(getModItem(UtilitiesInExcess.ID, "bedrockium_ingot", 1, 0));
