@@ -45,9 +45,9 @@ dependencies {
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:Galacticraft:3.4.31-GTNH:dev")
 
     // For testing singularities and foundry
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Eternal-Singularity:1.4.3:dev")
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Universal-Singularities:8.15.4:dev")
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Draconic-Evolution:1.5.18-GTNH:dev")
+    // runtimeOnlyNonPublishable("com.github.GTNewHorizons:Eternal-Singularity:1.4.3:dev")
+    // runtimeOnlyNonPublishable("com.github.GTNewHorizons:Universal-Singularities:8.15.4:dev")
+    // runtimeOnlyNonPublishable("com.github.GTNewHorizons:Draconic-Evolution:1.5.18-GTNH:dev")
 
     // For testing Stargate Recipes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:SGCraft:1.4.13-GTNH:dev")
