@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -25,6 +24,7 @@ import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
@@ -75,7 +75,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 BuildCraftFactory.ID,
                 DraconicEvolution.ID,
                 EnderIO.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 FloodLights.ID,
                 GraviSuite.ID,
                 HardcoreEnderExpansion.ID,
@@ -1310,7 +1310,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Automation_ChestBuffer_LV.get(1L),
-                        getModItem(ExtraUtilities.ID, "enderCollector", 1, 0))
+                        getModItem(UtilitiesInExcess.ID, "collector", 1, 0))
                 .itemOutputs(getModItem(EnderIO.ID, "blockVacuumChest", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
