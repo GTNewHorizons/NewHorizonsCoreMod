@@ -1,14 +1,14 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.item.NHItemList.EngravedGoldChip;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Materials.Iridium;
-import static gregtech.api.enums.Materials.Tritanium;
+import static gregtech.api.enums.Materials.ElvenElementium;
+import static gregtech.api.enums.Materials.Ichorium;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
+import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -20,6 +20,7 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
@@ -33,7 +34,6 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList.MagicFeather;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -1392,26 +1392,21 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 30,
                 new AspectList().add(Aspect.MAGIC, 200).add(Aspect.FLIGHT, 200).add(Aspect.WEATHER, 200)
                         .add(TCAspects.NEBRISUM.getAspect(), 200).add(Aspect.MOTION, 200).add(Lucrum.ULTRA_DEATH, 200),
-                createItemStack(
-                        TinkerConstruct.ID,
-                        "travelWings",
-                        1,
-                        0,
-                        "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
-                ring.get(Iridium),
-                screw.get(Tritanium),
-                EngravedGoldChip.get(1),
+                getModItem(ElectroMagicTools.ID, "ThaumiumWing"),
+                ring.get(Ichorium),
+                screw.get(ElvenElementium),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                MagicFeather.get(1),
-                getModItem(Minecraft.ID, "nether_star", 1, 0),
-                getModItem(Avaritia.ID, "big_pearl", 1, 0),
-                getModItem(Minecraft.ID, "nether_star", 1, 0),
-                MagicFeather.get(1),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                getModItem(ExtraUtilities.ID, "unstableingot", 1, 2),
+                ItemList.QuantumStar.get(1),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
+                ItemList.QuantumStar.get(1),
+                getModItem(ExtraUtilities.ID, "unstableingot", 1, 2),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
-                EngravedGoldChip.get(1),
-                screw.get(Tritanium));
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                screw.get(ElvenElementium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1),
