@@ -2496,16 +2496,6 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
                 .itemOutputs(ItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-
-        // UV Compressor
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Hull_UV.get(1),
-                // UV circuit, but internal naming is SuperconductorUHV?
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
-                ItemList.Electric_Piston_UV.get(2),
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.ElectrumFlux, 4))
-                .itemOutputs(ItemList.CompressorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(assemblerRecipes);
         
         // EV Compressor
         GTValues.RA.stdBuilder()
@@ -2516,6 +2506,16 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4))
                 .itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+
+        // UV Compressor
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Hull_UV.get(1),
+                // UV circuit, but internal naming is SuperconductorUHV?
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
+                ItemList.Electric_Piston_UV.get(2),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.ElectrumFlux, 4))
+                .itemOutputs(ItemList.CompressorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UV)
+                .addTo(assemblerRecipes);
 
         // UIV Compressor
         GTValues.RA.stdBuilder()
