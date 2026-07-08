@@ -2532,7 +2532,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Machine_EV_Compressor.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
-                        ItemList.Electric_Piston_IV.get(2),
+                        ItemList.Electric_Piston_EV.get(2),
                         GGMaterial.incoloy903.get(OrePrefixes.plate, 4))
                 .itemOutputs(ItemList.Machine_Multi_IndustrialCompressor.get(1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
