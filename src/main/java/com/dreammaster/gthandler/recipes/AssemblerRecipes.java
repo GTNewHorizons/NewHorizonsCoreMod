@@ -1278,7 +1278,17 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(IndustrialCraft2.ID, "reactorPlating", 1))
                 .circuit(23).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorPlatingExplosive", 1))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
-        // LV and MV Energy Hatches
+        // ULV and LV and MV Energy Hatches
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Lead, 2),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Lead, 1),
+                        ItemList.Hull_ULV.get(1),
+                        ItemList.ULV_Coil.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1))
+                .circuit(4).itemOutputs(ItemList.Hatch_Energy_ULV.get(1)).fluidInputs(Materials.Lubricant.getFluid(2000))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1298,6 +1308,38 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.MV_Coil.get(2),
                         ItemList.Circuit_Chip_ULPIC.get(2))
                 .circuit(4).itemOutputs(ItemList.Hatch_Energy_MV.get(1)).fluidInputs(Materials.Lubricant.getFluid(2000))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        
+        // ULV and LV and MV Dynamo Hatches
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Lead, 1),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Lead, 1),
+                        ItemList.Hull_ULV.get(1),
+                        ItemList.ULV_Coil.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2))
+                .circuit(4).itemOutputs(ItemList.Hatch_Dynamo_ULV.get(1)).fluidInputs(Materials.Lubricant.getFluid(2000))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Tin, 1),
+                        ItemList.Electric_Pump_LV.get(1),
+                        ItemList.Hull_LV.get(1),
+                        ItemList.LV_Coil.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2))
+                .circuit(4).itemOutputs(ItemList.Hatch_Dynamo_LV.get(1)).fluidInputs(Materials.Lubricant.getFluid(2000))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Copper, 1),
+                        ItemList.Electric_Pump_MV.get(1),
+                        ItemList.Hull_MV.get(1),
+                        ItemList.MV_Coil.get(2),
+                        ItemList.Circuit_Chip_ULPIC.get(2))
+                .circuit(4).itemOutputs(ItemList.Hatch_Dynamo_MV.get(1)).fluidInputs(Materials.Lubricant.getFluid(2000))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Neutron reflector recipes
