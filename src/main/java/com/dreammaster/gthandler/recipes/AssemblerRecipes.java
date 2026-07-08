@@ -2544,7 +2544,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Block_ReinforcedConcrete.get(3L),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 3),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 2))
-                .itemOutputs(ItemList.ImplosionCompressor.get(1)).duration(5 * SECONDS)
+                .itemOutputs(ItemList.Machine_Multi_ImplosionCompressor.get(1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Advanced Implosion Compressor
