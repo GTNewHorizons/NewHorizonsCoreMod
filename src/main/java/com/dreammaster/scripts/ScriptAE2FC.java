@@ -804,5 +804,18 @@ public class ScriptAE2FC implements IScriptLoader {
         addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2FC_INTERFACE_P2P);
 
         GameRegistry.addShapelessRecipe(AE2FC_ENERGY_CARD, AE2_ADV_CARD, AE2_NEUTRONIUM_ENERGY_CELL);
+
+        // Super ME Replenisher
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSuperMEReplenisher"),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 67),
+                getModItem(AE2FluidCraft.ID, "fluid_part", 7),
+                "circuitInfinite",
+                getModItem(AE2FluidCraft.ID, "super_stock_replenisher"),
+                "circuitInfinite",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 67),
+                getModItem(AE2FluidCraft.ID, "fluid_part", 7));
     }
 }
