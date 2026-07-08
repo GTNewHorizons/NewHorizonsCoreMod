@@ -1287,8 +1287,9 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Hull_ULV.get(1),
                         ItemList.ULV_Coil.get(2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1))
-                .circuit(4).itemOutputs(ItemList.Hatch_Energy_ULV.get(1)).fluidInputs(Materials.Lubricant.getFluid(2000))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+                .circuit(4).itemOutputs(ItemList.Hatch_Energy_ULV.get(1))
+                .fluidInputs(Materials.Lubricant.getFluid(2000)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1309,7 +1310,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_ULPIC.get(2))
                 .circuit(4).itemOutputs(ItemList.Hatch_Energy_MV.get(1)).fluidInputs(Materials.Lubricant.getFluid(2000))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        
+
         // ULV and LV and MV Dynamo Hatches
 
         GTValues.RA.stdBuilder()
@@ -1319,8 +1320,9 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Hull_ULV.get(1),
                         ItemList.ULV_Coil.get(2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2))
-                .circuit(4).itemOutputs(ItemList.Hatch_Dynamo_ULV.get(1)).fluidInputs(Materials.Lubricant.getFluid(2000))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+                .circuit(4).itemOutputs(ItemList.Hatch_Dynamo_ULV.get(1))
+                .fluidInputs(Materials.Lubricant.getFluid(2000)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
