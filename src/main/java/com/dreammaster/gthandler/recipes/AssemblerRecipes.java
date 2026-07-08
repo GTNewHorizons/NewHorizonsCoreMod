@@ -2514,7 +2514,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
                         ItemList.Hull_EV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4))
-                .itemOutputs(ItemList.CompressorEV.get(1)).duration(5 * SECONDS)
+                .itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         // UIV Compressor
@@ -2530,7 +2530,7 @@ public class AssemblerRecipes implements Runnable {
         // Industrial Compressor
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.CompressorEV.get(1),
+                        ItemList.Machine_EV_Compressor.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
                         ItemList.Electric_Piston_IV.get(2),
                         GGMaterial.incoloy903.get(OrePrefixes.plate, 4))
