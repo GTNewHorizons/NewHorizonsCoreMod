@@ -2524,7 +2524,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 2),
                         ItemList.Hull_UIV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.NetherStar, 4))
-                .itemOutputs(ItemList.CompressorUIV.get(1)).duration(10 * TICKS)
+                .itemOutputs(ItemList.CompressorUIV.get(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
 
         // Industrial Compressor
