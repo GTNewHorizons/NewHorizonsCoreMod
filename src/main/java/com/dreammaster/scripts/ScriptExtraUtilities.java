@@ -21,6 +21,7 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBoots;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
@@ -71,6 +72,7 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import thaumicboots.api.TB_Aspect;
 
 public class ScriptExtraUtilities implements IScriptLoader {
 
@@ -97,6 +99,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 Railcraft.ID,
                 RandomThings.ID,
                 Thaumcraft.ID,
+                ThaumicBoots.ID,
                 ThaumicTinkerer.ID,
                 TinkerConstruct.ID,
                 TwilightForest.ID,
@@ -1392,7 +1395,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 30,
                 new AspectList().add(Aspect.MAGIC, 256).add(Aspect.FLIGHT, 256).add(Aspect.TOOL, 128)
-                        .add(Aspect.GREED, 64).add(Aspect.AIR, 64),
+                        .add(TB_Aspect.SPACE, 128).add(Aspect.GREED, 64).add(Aspect.AIR, 64),
                 ring.get(Ichorium),
                 getModItem(ElectroMagicTools.ID, "ThaumiumWing"),
                 screw.get(ElvenElementium),
