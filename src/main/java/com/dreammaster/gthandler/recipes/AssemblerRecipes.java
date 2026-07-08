@@ -2496,6 +2496,16 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
                 .itemOutputs(ItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
+        
+        // EV Compressor
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Electric_Piston_EV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
+                        ItemList.Hull_EV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4))
+                .itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         // UV Compressor
         GTValues.RA.stdBuilder().itemInputs(
@@ -2506,6 +2516,49 @@ public class AssemblerRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.ElectrumFlux, 4))
                 .itemOutputs(ItemList.CompressorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(assemblerRecipes);
+
+        // UIV Compressor
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Electric_Piston_UIV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 2),
+                        ItemList.Hull_UIV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.NetherStar, 4))
+                .itemOutputs(ItemList.CompressorUIV.get(1)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+
+        // Industrial Compressor
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Machine_EV_Compressor.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
+                        ItemList.Electric_Piston_EV.get(2),
+                        GGMaterial.incoloy903.get(OrePrefixes.plate, 4))
+                .itemOutputs(ItemList.Machine_Multi_IndustrialCompressor.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+        
+        // Implosion Compressor
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_SolidSteel.get(1L),
+                        ItemList.Block_ReinforcedConcrete.get(3L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 3),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 2))
+                .itemOutputs(ItemList.Machine_Multi_ImplosionCompressor.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Advanced Implosion Compressor
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialsAlloy.LEAGRISIUM.getGear(2),
+                        ItemList.Hull_IV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
+                        GregtechItemList.Gregtech_Computer_Cube.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
+                        ItemList.Robot_Arm_IV.get(1),
+                        ItemList.Field_Generator_IV.get(1))
+                .itemOutputs(ItemList.AdvancedImplosionCompressor.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
         // UV Microwave Transmitter
         GTValues.RA.stdBuilder().itemInputs(
