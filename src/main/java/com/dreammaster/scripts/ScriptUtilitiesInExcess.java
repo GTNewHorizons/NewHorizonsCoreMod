@@ -644,9 +644,9 @@ public class ScriptUtilitiesInExcess implements IScriptLoader {
                 null,
                 getModItem(RandomThings.ID, "ingredient", 1, 1),
                 null);
-        // Anti-Particulate Shovel
+        // Anti-Gravity Shovel
         addShapedRecipe(
-                getModItem(UtilitiesInExcess.ID, "anti_particulate_shovel", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "anti_gravity_shovel", 1, 0),
                 null,
                 "ingotInverted",
                 null,
