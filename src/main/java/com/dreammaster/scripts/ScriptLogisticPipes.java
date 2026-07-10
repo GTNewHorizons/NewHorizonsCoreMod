@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -15,6 +14,7 @@ import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -50,7 +50,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         return Arrays.asList(
                 AppliedEnergistics2.ID,
                 BuildCraftSilicon.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 GalacticraftCore.ID,
                 IndustrialCraft2.ID,
@@ -247,7 +247,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0),
-                        getModItem(ExtraUtilities.ID, "trashcan", 1, 0))
+                        getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 6)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
@@ -331,7 +331,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9),
-                        getModItem(ExtraUtilities.ID, "trashcan", 1, 0))
+                        getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 11)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
 
@@ -1076,7 +1076,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
-                        getModItem(ExtraUtilities.ID, "decorativeBlock2", 4, 5),
+                        getModItem(UtilitiesInExcess.ID, "decorative_glass", 4, 5),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);

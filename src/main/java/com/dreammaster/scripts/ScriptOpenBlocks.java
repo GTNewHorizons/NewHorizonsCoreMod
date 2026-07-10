@@ -5,7 +5,6 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiblioCraft;
 import static gregtech.api.enums.Mods.BuildCraftCore;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -18,6 +17,7 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
@@ -60,7 +60,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 Backpack.ID,
                 BiblioCraft.ID,
                 BuildCraftCore.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 GalacticraftCore.ID,
                 IndustrialCraft2.ID,
@@ -78,7 +78,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
     public void loadRecipes() {
         ItemStack devNull = getModItem(OpenBlocks.ID, "devnull", 1);
         ItemStack voidDropFilter = getModItem(RandomThings.ID, "dropFilter", 1, 1);
-        ItemStack trashCan = getModItem(ExtraUtilities.ID, "trashcan", 1);
+        ItemStack trashCan = getModItem(UtilitiesInExcess.ID, "trash_can_item", 1);
 
         FluidStack ender250 = FluidRegistry.getFluidStack("ender", 250);
 

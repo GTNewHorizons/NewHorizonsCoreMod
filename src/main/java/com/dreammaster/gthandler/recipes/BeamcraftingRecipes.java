@@ -1,7 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.BEAMCRAFTER_METADATA;
 import static gregtech.api.recipe.RecipeMaps.beamcrafterRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -36,12 +36,12 @@ public class BeamcraftingRecipes implements Runnable {
                                 .amount_A(20).amount_B(20).build())
                 .eut(TierEU.RECIPE_UIV).duration(2 * SECONDS).addTo(beamcrafterRecipes);
 
-        if (ExtraUtilities.isModLoaded()) {
+        if (UtilitiesInExcess.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
                             GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
-                    .itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2))
+                    .itemOutputs(getModItem(UtilitiesInExcess.ID, "inverted_ingot", 1, 2))
                     .metadata(
                             BEAMCRAFTER_METADATA,
                             BeamCrafterMetadata.builder().particleID_A(ZBOSON.getId()).particleID_B(WBOSON.getId())

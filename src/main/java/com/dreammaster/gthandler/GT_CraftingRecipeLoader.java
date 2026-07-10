@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -23,6 +22,7 @@ import static gregtech.api.enums.Mods.OpenPrinters;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.pipeMedium;
 import static gregtech.api.enums.OrePrefixes.screw;
@@ -1542,7 +1542,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "SPS", "PRP", "SPS", 'S', OrePrefixes.screw.get(Materials.Steel), 'P',
                             OrePrefixes.plate.get(Materials.Obsidian), 'R',
-                            getModItem(ExtraUtilities.ID, "trashcan", 1, 0) });
+                            getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 2, 13),
                     GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,

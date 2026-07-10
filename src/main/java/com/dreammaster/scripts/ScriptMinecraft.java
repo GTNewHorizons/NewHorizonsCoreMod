@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.CarpentersBlocks;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraTrees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
@@ -30,6 +29,7 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -47,6 +47,7 @@ import java.util.List;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
@@ -79,7 +80,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 EnderStorage.ID,
                 EtFuturumRequiem.ID,
                 ExtraTrees.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
@@ -1003,7 +1004,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeWhite",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 0), "blockWool", "dyeWhite");
         addShapedRecipe(
@@ -1037,7 +1038,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeOrange",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 1), "blockWool", "dyeOrange");
         addShapedRecipe(
@@ -1049,7 +1050,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeMagenta",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 2), "blockWool", "dyeMagenta");
         addShapedRecipe(
@@ -1061,7 +1062,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightBlue",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 3), "blockWool", "dyeLightBlue");
         addShapedRecipe(
@@ -1073,7 +1074,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeYellow",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 4), "blockWool", "dyeYellow");
         addShapedRecipe(
@@ -1085,7 +1086,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLime",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 5), "blockWool", "dyeLime");
         addShapedRecipe(
@@ -1097,7 +1098,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePink",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 6), "blockWool", "dyePink");
         addShapedRecipe(
@@ -1109,7 +1110,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGray",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 7), "blockWool", "dyeGray");
         addShapedRecipe(
@@ -1121,7 +1122,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightGray",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 8), "blockWool", "dyeLightGray");
         addShapedRecipe(
@@ -1133,7 +1134,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeCyan",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 9), "blockWool", "dyeCyan");
         addShapedRecipe(
@@ -1145,7 +1146,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePurple",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 10), "blockWool", "dyePurple");
         addShapedRecipe(
@@ -1157,7 +1158,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlue",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 11), "blockWool", "dyeBlue");
         addShapedRecipe(
@@ -1169,7 +1170,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBrown",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 12), "blockWool", "dyeBrown");
         addShapedRecipe(
@@ -1181,7 +1182,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGreen",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 13), "blockWool", "dyeGreen");
         addShapedRecipe(
@@ -1193,7 +1194,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeRed",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 14), "blockWool", "dyeRed");
         addShapedRecipe(
@@ -1205,7 +1206,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlack",
                 "blockWool",
                 "blockWool",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "blockWool");
         addShapelessRecipe(getModItem(Minecraft.ID, "wool", 1, 15), "blockWool", "dyeBlack");
         addShapedRecipe(
@@ -1217,7 +1218,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeWhite",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 0), "glass", "dyeWhite");
         addShapedRecipe(
@@ -1229,7 +1230,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeOrange",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 1), "glass", "dyeOrange");
         addShapedRecipe(
@@ -1241,7 +1242,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeMagenta",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 2), "glass", "dyeMagenta");
         addShapedRecipe(
@@ -1253,7 +1254,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightBlue",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 3), "glass", "dyeLightBlue");
         addShapedRecipe(
@@ -1265,7 +1266,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeYellow",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 4), "glass", "dyeYellow");
         addShapedRecipe(
@@ -1277,7 +1278,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLime",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 5), "glass", "dyeLime");
         addShapedRecipe(
@@ -1289,7 +1290,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePink",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 6), "glass", "dyePink");
         addShapedRecipe(
@@ -1301,7 +1302,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGray",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 7), "glass", "dyeGray");
         addShapedRecipe(
@@ -1313,7 +1314,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightGray",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 8), "glass", "dyeLightGray");
         addShapedRecipe(
@@ -1325,7 +1326,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeCyan",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 9), "glass", "dyeCyan");
         addShapedRecipe(
@@ -1337,7 +1338,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePurple",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 10), "glass", "dyePurple");
         addShapedRecipe(
@@ -1349,7 +1350,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlue",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 11), "glass", "dyeBlue");
         addShapedRecipe(
@@ -1361,7 +1362,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBrown",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 12), "glass", "dyeBrown");
         addShapedRecipe(
@@ -1373,7 +1374,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGreen",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 13), "glass", "dyeGreen");
         addShapedRecipe(
@@ -1385,7 +1386,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeRed",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 14), "glass", "dyeRed");
         addShapedRecipe(
@@ -1397,7 +1398,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlack",
                 "glass",
                 "glass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "glass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass", 1, 15), "glass", "dyeBlack");
         addShapedRecipe(
@@ -1409,7 +1410,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeWhite",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 0), "paneGlass", "dyeWhite");
         addShapedRecipe(
@@ -1421,7 +1422,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeOrange",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 1), "paneGlass", "dyeOrange");
         addShapedRecipe(
@@ -1433,7 +1434,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeMagenta",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 2), "paneGlass", "dyeMagenta");
         addShapedRecipe(
@@ -1445,7 +1446,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightBlue",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 3), "paneGlass", "dyeLightBlue");
         addShapedRecipe(
@@ -1457,7 +1458,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeYellow",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 4), "paneGlass", "dyeYellow");
         addShapedRecipe(
@@ -1469,7 +1470,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLime",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 5), "paneGlass", "dyeLime");
         addShapedRecipe(
@@ -1481,7 +1482,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePink",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 6), "paneGlass", "dyePink");
         addShapedRecipe(
@@ -1493,7 +1494,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGray",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 7), "paneGlass", "dyeGray");
         addShapedRecipe(
@@ -1505,7 +1506,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightGray",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 8), "paneGlass", "dyeLightGray");
         addShapedRecipe(
@@ -1517,7 +1518,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeCyan",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 9), "paneGlass", "dyeCyan");
         addShapedRecipe(
@@ -1529,7 +1530,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePurple",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 10), "paneGlass", "dyePurple");
         addShapedRecipe(
@@ -1541,7 +1542,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlue",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 11), "paneGlass", "dyeBlue");
         addShapedRecipe(
@@ -1553,7 +1554,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBrown",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 12), "paneGlass", "dyeBrown");
         addShapedRecipe(
@@ -1565,7 +1566,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGreen",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 13), "paneGlass", "dyeGreen");
         addShapedRecipe(
@@ -1577,7 +1578,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeRed",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 14), "paneGlass", "dyeRed");
         addShapedRecipe(
@@ -1589,7 +1590,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlack",
                 "paneGlass",
                 "paneGlass",
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 "paneGlass");
         addShapelessRecipe(getModItem(Minecraft.ID, "stained_glass_pane", 1, 15), "paneGlass", "dyeBlack");
         addShapedRecipe(
@@ -1618,7 +1619,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeOrange",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 1),
@@ -1650,7 +1651,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeMagenta",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 2),
@@ -1682,7 +1683,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightBlue",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 3),
@@ -1714,7 +1715,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeYellow",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 4),
@@ -1746,7 +1747,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLime",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 5),
@@ -1778,7 +1779,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePink",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 6),
@@ -1810,7 +1811,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGray",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 7),
@@ -1842,7 +1843,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightGray",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 8),
@@ -1874,7 +1875,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeCyan",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 9),
@@ -1906,7 +1907,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePurple",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 10),
@@ -1938,7 +1939,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlue",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 11),
@@ -1970,7 +1971,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBrown",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 12),
@@ -2002,7 +2003,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGreen",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 13),
@@ -2034,7 +2035,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeRed",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 14),
@@ -2066,7 +2067,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlack",
                 getModItem(Minecraft.ID, "carpet", 1, 0),
                 getModItem(Minecraft.ID, "carpet", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "carpet", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "carpet", 1, 15),
@@ -2098,7 +2099,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeWhite",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 0),
@@ -2113,7 +2114,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeOrange",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 1),
@@ -2128,7 +2129,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeMagenta",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 2),
@@ -2143,7 +2144,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightBlue",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 3),
@@ -2158,7 +2159,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeYellow",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 4),
@@ -2173,7 +2174,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLime",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 5),
@@ -2188,7 +2189,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePink",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 6),
@@ -2203,7 +2204,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGray",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 7),
@@ -2218,7 +2219,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeLightGray",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 8),
@@ -2233,7 +2234,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeCyan",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 9),
@@ -2248,7 +2249,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyePurple",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 10),
@@ -2263,7 +2264,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlue",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 11),
@@ -2278,7 +2279,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBrown",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 12),
@@ -2293,7 +2294,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeGreen",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 13),
@@ -2308,7 +2309,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeRed",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 14),
@@ -2323,7 +2324,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dyeBlack",
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0),
-                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE),
                 getModItem(Minecraft.ID, "hardened_clay", 1, 0));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "stained_hardened_clay", 1, 15),
@@ -2792,12 +2793,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 mossyCobbleOutputSlab,
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "mossy_cobblestone", 1, 0));
-        for (int meta = 0; meta < 16; meta++) {
-            addShapelessRecipe(
-                    cobblestoneSlab,
-                    "craftingToolSaw",
-                    getModItem(ExtraUtilities.ID, "color_stonebrick", 1, meta));
-        }
 
         // Stone brick slabs
         ItemStack stoneBrickSlab = getModItem(Minecraft.ID, "stone_slab", 1, 5);

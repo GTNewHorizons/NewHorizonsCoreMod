@@ -2,10 +2,10 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ public class ScriptBackpack implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Backpack.ID, ExtraUtilities.ID, PamsHarvestCraft.ID, TinkerConstruct.ID);
+        return Arrays.asList(Backpack.ID, UtilitiesInExcess.ID, PamsHarvestCraft.ID, TinkerConstruct.ID);
     }
 
     @Override
@@ -210,7 +210,11 @@ public class ScriptBackpack implements IScriptLoader {
         private final int backpackMatch;
 
         public ColoredBackpackRecipe(ItemStack result, String backpack, String dye) {
-            super(result, backpack, dye, getModItem(ExtraUtilities.ID, "paintbrush", 1, 0));
+            super(
+                    result,
+                    backpack,
+                    dye,
+                    getModItem(UtilitiesInExcess.ID, "paint_roller", 1, OreDictionary.WILDCARD_VALUE));
             backpackMatch = OreDictionary.getOreID(backpack);
         }
 

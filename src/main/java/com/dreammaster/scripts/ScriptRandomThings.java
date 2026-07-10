@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -16,6 +15,7 @@ import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -47,7 +47,7 @@ public class ScriptRandomThings implements IScriptLoader {
         return Arrays.asList(
                 Chisel.ID,
                 EnderIO.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Forestry.ID,
                 HardcoreEnderExpansion.ID,
                 IndustrialCraft2.ID,
@@ -154,7 +154,7 @@ public class ScriptRandomThings implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(RandomThings.ID, "advancedItemCollector", 1, 0),
-                getModItem(ExtraUtilities.ID, "enderCollector", 1, 0));
+                getModItem(UtilitiesInExcess.ID, "collector", 1, 0));
         addShapedRecipe(
                 getModItem(RandomThings.ID, "dyeingMachine", 1, 0),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
@@ -172,7 +172,7 @@ public class ScriptRandomThings implements IScriptLoader {
                 getModItem(RandomThings.ID, "ingredient", 1, 0));
         addShapelessRecipe(
                 getModItem(RandomThings.ID, "voidStone", 1, 0),
-                getModItem(ExtraUtilities.ID, "trashcan", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0),
                 getModItem(Minecraft.ID, "ender_pearl", 1, 0));
 
         GTValues.RA.stdBuilder()
@@ -219,7 +219,7 @@ public class ScriptRandomThings implements IScriptLoader {
                 .itemOutputs(getModItem(RandomThings.ID, "whitestone", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 4000)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0)).circuit(1)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "trash_can_item", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(RandomThings.ID, "dropFilter", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);

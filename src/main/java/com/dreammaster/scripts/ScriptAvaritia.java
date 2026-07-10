@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EternalSingularity;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Gadomancy;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -25,6 +24,7 @@ import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.UniversalSingularities;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -51,7 +51,9 @@ import org.apache.commons.lang3.tuple.Pair;
 import com.dreammaster.avaritia.AvaritiaHelper;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.thaumcraft.TCHelper;
-import com.rwtema.extrautils.ExtraUtils;
+import com.fouristhenumber.utilitiesinexcess.ModBlocks;
+import com.fouristhenumber.utilitiesinexcess.ModItems;
+import com.fouristhenumber.utilitiesinexcess.config.OtherConfig;
 
 import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
@@ -94,7 +96,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 DraconicEvolution.ID,
                 ElectroMagicTools.ID,
                 EternalSingularity.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 ForbiddenMagic.ID,
                 Gadomancy.ID,
                 GalaxySpace.ID,
@@ -171,7 +173,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(Avaritia.ID, "Singularity", 1, 1),
                 'd',
-                getModItem(ExtraUtilities.ID, "block_bedrockium", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0),
                 'e',
                 getModItem(Avaritia.ID, "Singularity", 1, 8),
                 'f',
@@ -204,7 +206,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(Avaritia.ID, "Singularity", 1, 10),
                 'd',
-                getModItem(ExtraUtilities.ID, "block_bedrockium", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0),
                 'e',
                 getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 0),
                 'f',
@@ -237,7 +239,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 5),
                 'd',
-                getModItem(ExtraUtilities.ID, "block_bedrockium", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0),
                 'e',
                 getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 6),
                 'f',
@@ -270,7 +272,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 14),
                 'd',
-                getModItem(ExtraUtilities.ID, "block_bedrockium", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0),
                 'e',
                 getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 15),
                 'f',
@@ -303,7 +305,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 23),
                 'd',
-                getModItem(ExtraUtilities.ID, "block_bedrockium", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0),
                 'e',
                 getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24),
                 'f',
@@ -336,7 +338,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(UniversalSingularities.ID, "universal.draconicEvolution.singularity", 1, 1),
                 'd',
-                getModItem(ExtraUtilities.ID, "block_bedrockium", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0),
                 'e',
                 getModItem(UniversalSingularities.ID, "universal.enderIO.singularity", 1, 0),
                 'f',
@@ -367,9 +369,10 @@ public class ScriptAvaritia implements IScriptLoader {
                 'b',
                 getModItem(UniversalSingularities.ID, "universal.enderIO.singularity", 1, 7),
                 'c',
+                // TODO: figure out what we're doing with universal singularities
                 getModItem(UniversalSingularities.ID, "universal.extraUtilities.singularity", 1, 0),
                 'd',
-                getModItem(ExtraUtilities.ID, "block_bedrockium", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "bedrockium_block", 1, 0),
                 'e',
                 getModItem(UniversalSingularities.ID, "universal.projectRed.singularity", 1, 0),
                 'f',
@@ -808,7 +811,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'b',
                 getModItem(Avaritia.ID, "Resource_Block", 1, 0),
                 'c',
-                new ItemStack(TinkerTools.largePlate, 1, ExtraUtils.tcon_bedrock_material_id),
+                new ItemStack(TinkerTools.largePlate, 1, OtherConfig.bedrockiumTinkersID),
                 'd',
                 new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId),
                 'e',
@@ -1059,23 +1062,23 @@ public class ScriptAvaritia implements IScriptLoader {
                         5 * MINUTES + 20 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        new ItemStack(ExtraUtils.unstableIngot, 1, 0),
-                        ExtraUtils.tcon_unstable_material_id,
+                        ModItems.INVERTED_INGOT.newItemStack(1, 0),
+                        OtherConfig.invertedTinkersID,
                         1 * MINUTES + 20 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        new ItemStack(ExtraUtils.unstableIngot, 1, 2),
-                        ExtraUtils.tcon_unstable_material_id,
+                        ModItems.INVERTED_INGOT.newItemStack(1, 1),
+                        OtherConfig.invertedTinkersID,
                         1 * MINUTES + 20 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
                         Materials.Bedrockium.getIngots(1),
-                        ExtraUtils.tcon_bedrock_material_id,
+                        OtherConfig.bedrockiumTinkersID,
                         1 * HOURS + 40 * MINUTES,
                         TierEU.RECIPE_MV),
                 new TinkerMaterialWrapper(
-                        new ItemStack(ExtraUtils.decorative1, 1, 8),
-                        ExtraUtils.tcon_magical_wood_id,
+                        ModBlocks.MAGIC_WOOD.newItemStack(1, 0),
+                        OtherConfig.magicalWoodTinkersID,
                         1 * MINUTES + 18 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(

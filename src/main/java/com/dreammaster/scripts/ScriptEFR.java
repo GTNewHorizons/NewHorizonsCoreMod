@@ -14,7 +14,6 @@ import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
@@ -30,6 +29,7 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicHorizons;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.enums.Mods.ZTones;
@@ -129,7 +129,7 @@ public class ScriptEFR implements IScriptLoader {
                 ElectroMagicTools.ID,
                 EnderIO.ID,
                 EtFuturumRequiem.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
@@ -157,7 +157,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "observer", 1),
                 bits,
                 new Object[] { "AEA", "BCD", "AAA", 'A', "cobblestone", 'B', "dustRedstone", 'C',
-                        getModItem(ExtraUtilities.ID, "budoff", 1, 0), 'D',
+                        getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0), 'D',
                         getModItem(Minecraft.ID, "comparator", 1, 0), 'E', "gearGtSmallAnyIron" });
 
         // Copper Grate
@@ -1018,7 +1018,7 @@ public class ScriptEFR implements IScriptLoader {
                 new Object[] { "WTR", "CHD", "RTW", 'W', "blockWoolWhite", 'R', "blockWoolRed", 'T', "dustRedstone",
                         'C', getModItem(Minecraft.ID, "comparator", 1, 0), 'H',
                         getModItem(Minecraft.ID, "hay_block", 1, 0), 'D',
-                        getModItem(ExtraUtilities.ID, "budoff", 1, 0) });
+                        getModItem(UtilitiesInExcess.ID, "block_update_detector", 1, 0) });
 
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "smoker", 1, 0),

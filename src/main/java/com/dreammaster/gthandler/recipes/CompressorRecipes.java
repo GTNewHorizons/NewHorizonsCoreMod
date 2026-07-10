@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -23,6 +22,7 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersDefence;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -54,7 +54,7 @@ public class CompressorRecipes implements Runnable {
         makeAvaritiaRecipes();
         makeBiomesOPlentyRecipes();
         makeBloodMagicRecipes();
-        makeExtraUtilitiesRecipes();
+        makeUtilitiesInExcessRecipes();
         makeHardcoreEnderExpansionRecipes();
         makePamsHarvestCraftRecipes();
         makeRailcraftRecipes();
@@ -303,15 +303,15 @@ public class CompressorRecipes implements Runnable {
                 .addTo(compressorRecipes);
     }
 
-    private void makeExtraUtilitiesRecipes() {
-        if (!ExtraUtilities.isModLoaded()) {
+    private void makeUtilitiesInExcessRecipes() {
+        if (!UtilitiesInExcess.isModLoaded()) {
             return;
         }
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "unstableingot", 9, 2))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "inverted_ingot", 9, 2))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "inverted_block", 1, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "unstableingot", 9, 0))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(UtilitiesInExcess.ID, "inverted_ingot", 9, 1))
+                .itemOutputs(getModItem(UtilitiesInExcess.ID, "inverted_block", 1, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
     }
 

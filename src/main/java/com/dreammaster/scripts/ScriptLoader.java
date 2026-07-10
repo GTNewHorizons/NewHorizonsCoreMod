@@ -1,7 +1,7 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,7 +60,7 @@ public class ScriptLoader {
                         new ScriptEnhancedLootBags(),
                         new ScriptExtraBees(),
                         new ScriptExtraTrees(),
-                        new ScriptExtraUtilities(),
+                        new ScriptUtilitiesInExcess(),
                         new ScriptFloodLight(),
                         new ScriptForbiddenMagic(),
                         new ScriptForestry(),
@@ -129,9 +129,9 @@ public class ScriptLoader {
                         new ScriptTB(),
                         ScriptZZClientOnly.instance));
 
-        // Java somehow tries to load XU / TiC class when instantiating this class
+        // Java somehow tries to load UiE / TiC class when instantiating this class
         // but @Optional.Method cannot have multiple mod ids
-        if (TinkerConstruct.isModLoaded() && ExtraUtilities.isModLoaded()) {
+        if (TinkerConstruct.isModLoaded() && UtilitiesInExcess.isModLoaded()) {
             scripts.add(new ScriptAvaritia());
         }
 

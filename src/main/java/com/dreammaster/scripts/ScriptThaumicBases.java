@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Void;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
@@ -15,6 +14,7 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.OrePrefixes.plate;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -58,7 +58,7 @@ public class ScriptThaumicBases implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 CarpentersBlocks.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 ForbiddenMagic.ID,
                 IndustrialCraft2.ID,
                 IronTanks.ID,
@@ -495,7 +495,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
                 getModItem(IronTanks.ID, "ironTank", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
-                getModItem(ExtraUtilities.ID, "trashcan", 1, 1),
+                getModItem(UtilitiesInExcess.ID, "trash_can_fluid", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.Foci.Flux",

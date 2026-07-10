@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Fether;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
@@ -32,6 +31,7 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
@@ -101,7 +101,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 Botania.ID,
                 BuildCraftFactory.ID,
                 Chisel.ID,
-                ExtraUtilities.ID,
+                UtilitiesInExcess.ID,
                 Fether.ID,
                 ForbiddenMagic.ID,
                 Forestry.ID,
@@ -4074,7 +4074,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMSTONE",
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 5),
-                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0),
+                getModItem(UtilitiesInExcess.ID, "compressed_cobblestone", 1, 0),
                 new AspectList().add(Aspect.MAN, 26).add(Aspect.DEATH, 26).add(Aspect.SOUL, 26));
         TCHelper.setResearchAspects(
                 "GOLEMSTONE",

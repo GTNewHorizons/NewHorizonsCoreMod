@@ -5,11 +5,11 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EternalSingularity;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
+import static gregtech.api.enums.Mods.UtilitiesInExcess;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -364,10 +364,10 @@ public class NeutroniumCompressorRecipes implements Runnable {
                         .itemOutputs(getModItem(UniversalSingularities.ID, "universal.enderIO.singularity", 1, 7))
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             }
-            if (ExtraUtilities.isModLoaded()) {
-                GTValues.RA.stdBuilder()
-                        .itemInputsUnsafe(
-                                GTUtility.copyAmountUnsafe(66, getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5)))
+            // TODO: figure out what we're doing with singularity
+            if (UtilitiesInExcess.isModLoaded()) {
+                GTValues.RA.stdBuilder().itemInputsUnsafe(
+                        GTUtility.copyAmountUnsafe(66, getModItem(UtilitiesInExcess.ID, "inverted_block", 1, 0)))
                         .itemOutputs(
                                 getModItem(UniversalSingularities.ID, "universal.extraUtilities.singularity", 1, 0))
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
