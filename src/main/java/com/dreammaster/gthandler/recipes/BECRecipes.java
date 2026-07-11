@@ -17,6 +17,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.scripts.IngredientFactory;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -29,6 +30,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.NaniteTier;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -64,14 +67,29 @@ public class BECRecipes implements Runnable {
                                 IngredientFactory.getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 16),
                                 ItemList.Field_Generator_UMV.get(8),
-                                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SpaceTime, 64),
-                                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64),
-                                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Eternity, 64),
+                                MaterialLibAPI.getStack(
+                                        Materials2Materials.SpaceTime,
+                                        Materials2Shapes.shapeStickLong,
+                                        (int) (64)),
+                                MaterialLibAPI.getStack(
+                                        Materials2Materials.SuperconductorUMVBase,
+                                        Materials2Shapes.shapeStickLong,
+                                        (int) (64)),
+                                MaterialLibAPI.getStack(
+                                        Materials2Materials.Eternity,
+                                        Materials2Shapes.shapeStickLong,
+                                        (int) (64)),
                                 GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64),
-                                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 16),
+                                MaterialLibAPI.getStack(
+                                        Materials2Materials.SpaceTime,
+                                        Materials2Shapes.shapePlateSuperdense,
+                                        (int) (16)),
                                 GTOreDictUnificator
                                         .get(OrePrefixes.plateSuperdense, Materials.SuperconductorUMVBase, 16),
-                                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16),
+                                MaterialLibAPI.getStack(
+                                        Materials2Materials.Eternity,
+                                        Materials2Shapes.shapePlateSuperdense,
+                                        (int) (16)),
                                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 16) },
                         nanites(4, 2, 3, 5, 9, 8, 10, 6, 2, 2, 3, 3, 4, 4, 5, 5),
                         new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(36000),
@@ -132,55 +150,95 @@ public class BECRecipes implements Runnable {
                 ItemList.ZPM4.get(64), ItemList.ZPM5.get(64) };
 
         final ItemStack[] material1 = new ItemStack[] {
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Lead, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Tin, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Copper, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Gold, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Aluminium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Tungsten, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.VanadiumGallium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadah, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.NaquadahAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Samarium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TengamPurified, 64),
+                MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Aluminium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Tungsten, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.VanadiumGallium,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Naquadah, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Samarium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.TengamPurified,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
                 MaterialsElements.STANDALONE.HYPOGEN.getPlateSuperdense(64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Quantium, 64),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Quantium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 64),
                 MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlateSuperdense(64), };
 
         final ItemStack[] material2 = new ItemStack[] {
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CastIron, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Steel, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Aluminium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.StainlessSteel, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Titanium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TungstenSteel, 64),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.CastIron, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Aluminium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.StainlessSteel,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Titanium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.shapePlateSuperdense, (int) (64)),
                 WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.plateSuperdense, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Iridium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Osmium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Neutronium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TranscendentMetal, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 64), };
+                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Neutronium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.TranscendentMetal,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.SpaceTime, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 64), MaterialLibAPI
+                        .getStack(Materials2Materials.Eternity, Materials2Shapes.shapePlateSuperdense, (int) (64)), };
 
         final ItemStack[] material3 = new ItemStack[] {
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedstoneAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.AnnealedCopper, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.EnergeticAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TungstenSteel, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Iridium, 64),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.AnnealedCopper,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.EnergeticAlloy,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
                 WerkstoffLoader.Ruridit.get(OrePrefixes.plateSuperdense, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Europium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.ElectrumFlux, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Tritanium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Draconium, 64),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Europium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Tritanium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Draconium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
                 MaterialsElements.STANDALONE.RHUGNOR.getPlateSuperdense(64),
                 MaterialsElements.STANDALONE.DRAGON_METAL.getPlateSuperdense(64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 64), };
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Universium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Infinity, Materials2Shapes.shapePlateSuperdense, (int) (64)), };
 
         final ItemStack[] compCircuits = new ItemStack[] { NHItemList.Compressed_Circuit_Array_ULV.get(16),
                 NHItemList.Compressed_Circuit_Array_LV.get(16), NHItemList.Compressed_Circuit_Array_MV.get(16),
@@ -227,10 +285,19 @@ public class BECRecipes implements Runnable {
                         CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(64),
                         ItemList.SuperconductivePlasmaEnergyConduit.get(64),
                         ItemList.FineStructureConstantManipulator.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 8),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.Eternity,
+                                Materials2Shapes.shapePlateSuperdense,
+                                (int) (16)),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.Universium,
+                                Materials2Shapes.shapePlateSuperdense,
+                                (int) (8)),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 8),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 16),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.SpaceTime,
+                                Materials2Shapes.shapePlateSuperdense,
+                                (int) (16)),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 16), ItemList.Sensor_UXV.get(32L),
                         ItemList.Emitter_UXV.get(32L),
                         getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
@@ -249,7 +316,10 @@ public class BECRecipes implements Runnable {
                 NHItemList.StargateChevron.get(),
                 new ItemStack[] { CustomItemList.EOH_Reinforced_Spatial_Casing.get(64),
                         CustomItemList.EOH_Reinforced_Temporal_Casing.get(64), ItemList.MetaMaterial_WaveFocus4.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amalgatite, 64),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.Amalgatite,
+                                Materials2Shapes.shapeGemExquisite,
+                                (int) (64)),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MagMatter, 16),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 8),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 8),
@@ -270,21 +340,41 @@ public class BECRecipes implements Runnable {
         // Multi-Material Mesh
         addBec(
                 NHItemList.StargateMaterialMesh.get(),
-                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Infinity, 64L),
+                new ItemStack[] {
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Infinity, Materials2Shapes.shapeStickLong, (int) (64L)),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.ProtoHalkonite, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TranscendentMetal, 64L),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.TranscendentMetal,
+                                Materials2Shapes.shapeStickLong,
+                                (int) (64L)),
                         HYPOGEN.getLongRod(64),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Creon, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Mellion, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Hexanite, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SpaceTime, 64L),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.SuperconductorUMVBase,
+                                Materials2Shapes.shapeStickLong,
+                                (int) (64L)),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Creon, Materials2Shapes.shapeStickLong, (int) (64L)),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Mellion, Materials2Shapes.shapeStickLong, (int) (64L)),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Hexanite, Materials2Shapes.shapeStickLong, (int) (64L)),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.SpaceTime, Materials2Shapes.shapeStickLong, (int) (64L)),
                         GGMaterial.shirabon.get(OrePrefixes.stickLong, 64),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WhiteDwarfMatter, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlackDwarfMatter, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Universium, 64L),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.WhiteDwarfMatter,
+                                Materials2Shapes.shapeStickLong,
+                                (int) (64L)),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.BlackDwarfMatter,
+                                Materials2Shapes.shapeStickLong,
+                                (int) (64L)),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Universium, Materials2Shapes.shapeStickLong, (int) (64L)),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MHDCSM, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Eternity, 64L),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Eternity, Materials2Shapes.shapeStickLong, (int) (64L)),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64L) },
                 nanites(1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 10),
                 new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(128_000),
@@ -357,55 +447,101 @@ public class BECRecipes implements Runnable {
                 NHItemList.Compressed_Circuit_Array_UXV.get(1), NHItemList.Compressed_Circuit_Array_MAX.get(1), };
 
         final ItemStack[] longRod = new ItemStack[] {
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.CastIron, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Titanium, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TungstenSteel, 64),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.shapeStickLong, (int) (64)),
                 WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.stickLong, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Iridium, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmium, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Neutronium, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Bedrockium, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlackPlutonium, 64),
-                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SpaceTime, 64),
+                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapeStickLong, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.shapeStickLong, (int) (64)),
                 GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MHDCSM, 64),
                 GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MagMatter, 64), };
 
         final ItemStack[] boltSD = new ItemStack[] {
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Copper, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Platinum, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.NiobiumTitanium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.YttriumBariumCuprate, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 64),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Platinum, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.NiobiumTitanium,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.YttriumBariumCuprate,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.CosmicNeutronium,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
                 MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlateSuperdense(64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorLuVBase, 64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorZPMBase, 64),
                 GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUHVBase, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUEVBase, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TranscendentMetal, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUMVBase, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 64), };
+                MaterialLibAPI.getStack(
+                        Materials2Materials.SuperconductorUEVBase,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.TranscendentMetal,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.SuperconductorUMVBase,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.WhiteDwarfMatter,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)), };
 
-        final ItemStack[] wireSD = new ItemStack[] {
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.AnnealedCopper, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Copper, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.AnnealedCopper, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Electrum, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Platinum, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.NiobiumTitanium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.YttriumBariumCuprate, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.NiobiumTitanium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Aluminium, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.NaquadahEnriched, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.ElectrumFlux, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Tritanium, 64),
+        final ItemStack[] wireSD = new ItemStack[] { MaterialLibAPI
+                .getStack(Materials2Materials.AnnealedCopper, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.AnnealedCopper,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Electrum, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Platinum, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.NiobiumTitanium,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.YttriumBariumCuprate,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.NiobiumTitanium,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Aluminium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.NaquadahEnriched,
+                        Materials2Shapes.shapePlateSuperdense,
+                        (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.shapePlateSuperdense, (int) (64)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.Tritanium, Materials2Shapes.shapePlateSuperdense, (int) (64)),
                 MaterialsElements.STANDALONE.RHUGNOR.getPlateSuperdense(64),
-                GGMaterial.metastableOganesson.get(OrePrefixes.plateSuperdense, 64),
-                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Hexanite, 64), };
+                GGMaterial.metastableOganesson.get(OrePrefixes.plateSuperdense, 64), MaterialLibAPI
+                        .getStack(Materials2Materials.Hexanite, Materials2Shapes.shapePlateSuperdense, (int) (64)), };
 
         final ItemStack[] superconductor = new ItemStack[] {
                 GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedAlloy, 64),
@@ -463,13 +599,25 @@ public class BECRecipes implements Runnable {
                         ItemList.FirewallProjectionNanochipCasing.get(64),
                         ItemList.ComputationalMatrixNanochipCasing.get(64),
                         CustomItemList.SpacetimeCompressionFieldGeneratorTier8.get(8L),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SpaceTime, 64),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.SpaceTime,
+                                Materials2Shapes.shapePlateSuperdense,
+                                (int) (64)),
                         NHItemList.Display.get(64), new ItemStack(ItemRegistry.bw_glasses[0], 8, 10),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackDwarfMatter, 8),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.WhiteDwarfMatter,
+                                Materials2Shapes.shapePlateSuperdense,
+                                (int) (16)),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.BlackDwarfMatter,
+                                Materials2Shapes.shapePlateSuperdense,
+                                (int) (8)),
                         IngredientFactory.getModItem(OpenComputers.ID, "case3", 64, 0),
                         IngredientFactory.getModItem(OpenComputers.ID, "screen3", 64, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 4),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.Universium,
+                                Materials2Shapes.shapePlateSuperdense,
+                                (int) (4)),
                         CustomItemList.TimeAccelerationFieldGeneratorTier8.get(8L),
                         CustomItemList.dataOut_Wireless_Hatch.get(64L), CustomItemList.dataIn_Wireless_Hatch.get(64L),
                         ItemList.Machine_Multi_BlackHoleCompressor.get(64), },
