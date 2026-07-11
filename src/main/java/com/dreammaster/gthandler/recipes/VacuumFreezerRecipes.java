@@ -8,11 +8,14 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class VacuumFreezerRecipes implements Runnable {
@@ -24,199 +27,328 @@ public class VacuumFreezerRecipes implements Runnable {
                 .itemOutputs(NHItemList.Marshmallow.get()).duration(40 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Neutronium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Neutronium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Neutronium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(1 * MINUTES + 2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Bedrockium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.CosmicNeutronium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CosmicNeutronium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.CosmicNeutronium,
+                                Materials2Shapes.shapeIngot,
+                                (int) (1L)))
                 .duration(55 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.StellarAlloy, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StellarAlloy, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StellarAlloy, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tritanium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Tritanium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(48 * SECONDS + 9 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Oriharukon, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Oriharukon, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Oriharukon, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Oriharukon, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(30 * SECONDS + 3 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.MelodicAlloy, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MelodicAlloy, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(36 * SECONDS + 19 * TICKS).eut(TierEU.RECIPE_IV / 2).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.CrystallinePinkSlime, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CrystallinePinkSlime, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.CrystallinePinkSlime,
+                                Materials2Shapes.shapeIngot,
+                                (int) (1L)))
                 .duration(29 * SECONDS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Iridium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iridium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(28 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Osmiridium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Osmiridium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(28 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.CrystallineAlloy, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CrystallineAlloy, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.CrystallineAlloy,
+                                Materials2Shapes.shapeIngot,
+                                (int) (1L)))
                 .duration(28 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Osmium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Osmium, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(28 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tungsten, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Tungsten, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(27 * SECONDS + 9 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tantalum, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Tantalum, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Tantalum, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Tantalum, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.EnderiumBase, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.EnderiumBase, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.EnderiumBase, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.EnderiumBase, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(20 * SECONDS + 2 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.HSSS, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.HSSS, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(19 * SECONDS + 7 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Enderium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Enderium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.TungstenSteel, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.TungstenSteel, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(17 * SECONDS + 17 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.TPV, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.TPV, 1L))
                 .duration(16 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.VibrantAlloy, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.VibrantAlloy, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(16 * SECONDS + 1 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.VividAlloy, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.VividAlloy, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.VividAlloy, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(16 * SECONDS + 1 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Palladium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Palladium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(15 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Draconium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Draconium, 1L))
-                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.HSSG, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.HSSG, 1L))
-                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Quantium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Quantium, 1L))
-                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.NaquadahAlloy, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.NaquadahAlloy, 1L))
-                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Naquadria, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Naquadria, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.NaquadahEnriched, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.NaquadahEnriched, 1L))
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.HSSG, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.HSSG, Materials2Shapes.shapeIngot, (int) (1L)))
+                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.shapeIngot, (int) (1L)))
+                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.shapeIngot, (int) (1L)))
+                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.shapeIngot, (int) (1L)))
+                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.NaquadahEnriched,
+                                Materials2Shapes.shapeIngot,
+                                (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
         if (Avaritia.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Infinity, 1L))
+            GTValues.RA.stdBuilder().itemInputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.shapeIngotHot, (int) (1L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 6)).duration(14 * SECONDS + 14 * TICKS)
                     .eut(TierEU.RECIPE_UHV).addTo(vacuumFreezerRecipes);
 
         }
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.InfinityCatalyst, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfinityCatalyst, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.InfinityCatalyst,
+                                Materials2Shapes.shapeIngot,
+                                (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_UV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Adamantium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Adamantium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Adamantium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Adamantium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.DeepIron, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.DeepIron, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.DeepIron, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.DeepIron, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.BlackPlutonium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.BlackPlutonium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.DraconiumAwakened, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.DraconiumAwakened, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.DraconiumAwakened,
+                                Materials2Shapes.shapeIngot,
+                                (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_LuV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.MysteriousCrystal, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.MysteriousCrystal, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.MysteriousCrystal,
+                                Materials2Shapes.shapeIngot,
+                                (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.ElectrumFlux, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.ElectrumFlux, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Trinium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Trinium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.TungstenCarbide, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.TungstenCarbide, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.TungstenCarbide, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.TungstenCarbide, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(14 * SECONDS + 11 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.HSSE, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.HSSE, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.HSSE, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.HSSE, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(12 * SECONDS + 3 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.NiobiumTitanium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.NiobiumTitanium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(10 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Nichrome, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Nichrome, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Nichrome, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Nichrome, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(8 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.VanadiumGallium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.VanadiumGallium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.VanadiumGallium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.VanadiumGallium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(8 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.YttriumBariumCuprate, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.YttriumBariumCuprate, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.YttriumBariumCuprate, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.YttriumBariumCuprate,
+                                Materials2Shapes.shapeIngot,
+                                (int) (1L)))
                 .duration(7 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Desh, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Desh, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Desh, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Desh, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(7 * SECONDS + 7 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Titanium, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapeIngotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapeIngot, (int) (1L)))
                 .duration(7 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HotNetherrackBrick.get())
