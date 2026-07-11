@@ -1,10 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
-import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.UniversalSingularities;
@@ -16,17 +14,19 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.objects.OreDictItemStack;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
@@ -44,13 +44,13 @@ public class FormingPressRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedPulp.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.Asbestos, Materials2Shapes.shapeDust, (int) (1L)))
                 .circuit(1).itemOutputs(NHItemList.MicaBasedSheet.get(4)).duration(20 * SECONDS).eut(28)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedPulp.get(16),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Asbestos, Materials2Shapes.shapeDust, (int) (1L)),
                         ItemList.Shape_Mold_Plate.get(0L))
                 .circuit(2).itemOutputs(NHItemList.MicaBasedSheet.get(16)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
@@ -309,21 +309,21 @@ public class FormingPressRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(ItemList.Circuit_Parts_Glass_Tube.get(1L)).duration(6 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)),
                         ItemList.Shape_Mold_Bottle.get(0L))
                 .itemOutputs(ItemList.Bottle_Empty.get(1L)).duration(1 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_ULV)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)),
                         ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(new ItemStack(Blocks.glass, 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
@@ -406,161 +406,60 @@ public class FormingPressRecipes implements Runnable {
         }
 
         // Optical CPU Containment Housing
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Board_Optical.get(1L),
-                        MaterialsAlloy.BOTMIUM.getFoil(1),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Bedrockium, 8L))
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Circuit_Board_Optical.get(1L),
+                MaterialsAlloy.BOTMIUM.getFoil(1),
+                MaterialLibAPI.getStack(Materials2Materials.NickelZincFerrite, Materials2Shapes.shapeFoil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.shapeFoil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapeFoil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapeBolt, (int) (8L)))
                 .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
 
         // Music Discs
 
-        if (Avaritia.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(Avaritia.ID, "Resource", 9, 7), ItemList.Shape_Mold_Cylinder.get(0L))
-                    .fluidInputs(Materials.PolyvinylChloride.getMolten(1 * INGOTS))
-                    .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
-                    .addTo(formingPressRecipes);
+        // Blank Music Disc
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.shapePlate, (int) (1)),
+                ItemList.Shape_Mold_Cylinder.get(0L)).itemOutputs(NHItemList.BlankMusicDisc.get(1))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(formingPressRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeYellow", 1),
-                            new OreDictItemStack("dyeWhite", 1),
-                            new ItemStack(Blocks.stone, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_13, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeLime", 1),
-                            new OreDictItemStack("dyeGreen", 1),
-                            new ItemStack(Items.fish, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_cat, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeRed", 1),
-                            new OreDictItemStack("dyePink", 1),
-                            new ItemStack(Blocks.dirt, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_blocks, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeRed", 1),
-                            new OreDictItemStack("dyeGray", 1),
-                            new ItemStack(Items.feather, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_chirp, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeYellow", 1),
-                            new OreDictItemStack("dyeLime", 1),
-                            new ItemStack(Items.arrow, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_far, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyePurple", 1),
-                            new OreDictItemStack("dyeBlue", 1),
-                            new ItemStack(Items.gold_ingot, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_mall, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeMagenta", 1),
-                            new OreDictItemStack("dyeWhite", 1),
-                            new ItemStack(Blocks.noteblock, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_mellohi, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeBlack", 1),
-                            new OreDictItemStack("dyeGray", 1),
-                            new ItemStack(Items.string, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_stal, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeWhite", 1),
-                            new OreDictItemStack("dyeLightGray", 1),
-                            new ItemStack(Items.iron_ingot, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_strad, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeCyan", 1),
-                            new OreDictItemStack("dyeGreen", 1),
-                            new ItemStack(Items.redstone, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_ward, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeGray", 1),
-                            new OreDictItemStack("dyeLightGray", 1),
-                            new ItemStack(Items.ender_pearl, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_11, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
-                            new OreDictItemStack("dyeLightBlue", 1),
-                            new OreDictItemStack("dyeBlue", 1),
-                            new ItemStack(Items.clock, 1, 0))
-                    .itemOutputs(new ItemStack(Items.record_wait, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(formingPressRecipes);
-        }
+        // Vanilla discs
 
         // Flora
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BlankMusicDisc.get(1), new ItemStack(Blocks.red_flower, 9, 1))
-                .fluidInputs(Materials.Ice.getFluid(1 * BUCKETS)).itemOutputs(NHItemList.FloraDisc.get(1))
+                .fluidInputs(Materials.Ice.getFluid(BUCKETS)).itemOutputs(NHItemList.FloraDisc.get(1))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         // Absolute Zero
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.BlankMusicDisc.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 9L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.CallistoIce, Materials2Shapes.shapeDust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ledox, Materials2Shapes.shapeDust, (int) (9L)))
                 .fluidInputs(Materials.Ice.getSolid(256_000)).itemOutputs(NHItemList.AbsoluteZeroDisc.get(1))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(formingPressRecipes);
 
         // Sweet Dreams
-        if (UniversalSingularities.isModLoaded() && Natura.isModLoaded()) {
+        if (UniversalSingularities.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            NHItemList.BlankMusicDisc.get(1),
+                            MaterialLibAPI.getStack(
+                                    Materials2Materials.PolyvinylChloride,
+                                    Materials2Shapes.shapePlateDense,
+                                    (int) (1L)),
                             GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Gold, 64L),
                             new ItemStack(Blocks.grass, 64),
                             new ItemStack(Blocks.sand, 64),
-                            getModItem(Natura.ID, "Cloud", 64, 0),
-                            getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 64, 3))
-                    .fluidInputs(Materials.Universium.getMolten(INGOTS * 1))
-                    .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UMV / 2)
+                            getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 64, 3),
+                            ItemList.Shape_Mold_Cylinder.get(0L))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Universium,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (INGOTS * 16)))
+                    .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(100 * SECONDS).eut(TierEU.RECIPE_MAX / 2)
                     .addTo(formingPressRecipes);
         }
 
@@ -570,8 +469,13 @@ public class FormingPressRecipes implements Runnable {
                     .itemInputs(
                             NHItemList.BlankMusicDisc.get(1),
                             getModItem(PamsHarvestCraft.ID, "frosteddonutItem", 1))
-                    .fluidInputs(Materials.Milk.getFluid(BUCKETS)).itemOutputs(NHItemList.LunchBreakDisc.get(1))
-                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Milk,
+                                    Materials2FluidShapes.shapeFluidLiquid,
+                                    (int) (BUCKETS)))
+                    .itemOutputs(NHItemList.LunchBreakDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
         }
 
     }
