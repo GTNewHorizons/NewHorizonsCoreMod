@@ -18,12 +18,15 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ExtractorRecipes implements Runnable {
@@ -102,20 +105,20 @@ public class ExtractorRecipes implements Runnable {
 
         if (Natura.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 1, 5))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 1, 5)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "floraleavesnocolor", 4, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "floraleavesnocolor", 4, 2)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 0)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 15))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 15)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 2, 7))

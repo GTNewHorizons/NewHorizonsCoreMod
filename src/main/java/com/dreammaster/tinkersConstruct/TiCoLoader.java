@@ -15,9 +15,12 @@ import com.dreammaster.mantle.BookLoader;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelWorldgen;
 import com.gtnewhorizons.postea.api.ItemStackReplacementManager;
 import com.gtnewhorizons.postea.api.TileEntityReplacementManager;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class TiCoLoader {
@@ -63,9 +66,12 @@ public class TiCoLoader {
     }
 
     private static void convertAluminumBrassItems() {
-        ItemStack brassIngot = GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Brass, 1L);
-        ItemStack brassNugget = GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Brass, 1L);
-        ItemStack brassDust = GTOreDictUnificator.get(OrePrefixes.dust, Materials.Brass, 1L);
+        ItemStack brassIngot = MaterialLibAPI
+                .getStack(Materials2Materials.Brass, Materials2Shapes.shapeIngot, (int) (1L));
+        ItemStack brassNugget = MaterialLibAPI
+                .getStack(Materials2Materials.Brass, Materials2Shapes.shapeNugget, (int) (1L));
+        ItemStack brassDust = MaterialLibAPI
+                .getStack(Materials2Materials.Brass, Materials2Shapes.shapeDust, (int) (1L));
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 14, brassIngot);
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 24, brassNugget);
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 42, brassDust);
