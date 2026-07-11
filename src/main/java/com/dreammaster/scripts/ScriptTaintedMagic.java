@@ -16,11 +16,13 @@ import java.util.List;
 
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -130,9 +132,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapePlate, (int) (1L)),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeIngot, (int) (1L)),
                 'c',
                 "craftingToolHardHammer",
                 'd',
@@ -152,11 +154,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapePlate, (int) (1L)),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeIngot, (int) (1L)),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeIngot, (int) (1L)),
                 'd',
                 "craftingToolFile",
                 'e',
@@ -176,13 +178,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapePlate, (int) (1L)),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeIngot, (int) (1L)),
                 'c',
                 "craftingToolHardHammer",
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapePlate, (int) (1L)),
                 'e',
                 "stickWood",
                 'g',
@@ -202,7 +204,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'a',
                 "craftingToolFile",
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeIngot, (int) (1L)),
                 'c',
                 "craftingToolHardHammer",
                 'e',
@@ -220,11 +222,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapePlate, (int) (1L)),
                 'd',
                 "craftingToolFile",
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapePlate, (int) (1L)),
                 'f',
                 "craftingToolHardHammer",
                 'h',
@@ -474,19 +476,19 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeWireFine, (int) (1L)),
                 'c',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeFoil, (int) (1L)),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeFoil, (int) (1L)),
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeFoil, (int) (1L)),
                 'g',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Shadow, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Shadow, Materials2Shapes.shapeWireFine, (int) (1L)),
                 'i',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.addResearchPage(

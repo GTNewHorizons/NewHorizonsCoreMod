@@ -19,11 +19,13 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -586,12 +588,12 @@ public class ScriptAutomagy implements IScriptLoader {
                 -5,
                 -2,
                 3,
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L))
+                MaterialLibAPI.getStack(Materials2Materials.InfusedGold, Materials2Shapes.shapeIngot, (int) (1L)))
                         .setPages(new ResearchPage("tc.research_page.InfusedGoldGTNH.1"))
                         .setParents("INFUSION", "THAUMIUM").registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "InfusedGoldGTNH",
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedGold, Materials2Shapes.shapeIngot, (int) (1L)),
                 2,
                 new AspectList().add(Aspect.GREED, 16).add(Aspect.METAL, 12).add(Aspect.ORDER, 8).add(Aspect.MAGIC, 4)
                         .add(Aspect.AIR, 4),
@@ -604,7 +606,10 @@ public class ScriptAutomagy implements IScriptLoader {
                 "InfusedGoldGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L))));
+                                MaterialLibAPI.getStack(
+                                        Materials2Materials.InfusedGold,
+                                        Materials2Shapes.shapeIngot,
+                                        (int) (1L)))));
         TCHelper.clearPrereq("MAGICHOURGLASS");
         TCHelper.addResearchPrereq("MAGICHOURGLASS", "INFUSION", false);
         TCHelper.addResearchPrereq("MAGICHOURGLASS", "InfusedGoldGTNH", false);
