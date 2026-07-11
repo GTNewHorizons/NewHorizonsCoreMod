@@ -17,12 +17,15 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptMalisDoors implements IScriptLoader {
@@ -42,9 +45,9 @@ public class ScriptMalisDoors implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateAnyIron",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateAnyIron",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 "plateAnyIron",
@@ -53,9 +56,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "sliding_trapdoor", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 null,
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateSteel",
                 getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0),
                 "plateSteel",
@@ -72,9 +75,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "vanishing_block", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateRedstone",
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                 "plateRedstone",
@@ -83,9 +86,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "vanishing_block", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateRedstone",
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
                 "plateRedstone",
@@ -94,9 +97,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "vanishing_block", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateRedstone",
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
                 "plateRedstone",
@@ -105,9 +108,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "vanishing_block", 1, 3),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)),
                 "plateRedstone",
                 BlockList.DiamondFrameBox.get(),
                 "plateRedstone",
@@ -119,23 +122,23 @@ public class ScriptMalisDoors implements IScriptLoader {
                 ItemList.Conveyor_Module_LV.get(1L),
                 ItemList.Electric_Motor_LV.get(1L),
                 ItemList.Conveyor_Module_LV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeSpringSmall, (int) (1L)),
                 ItemList.Casing_SolidSteel.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeSpringSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeGearGtSmall, (int) (1L)),
                 getModItem(Minecraft.ID, "sticky_piston", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L));
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeGearGtSmall, (int) (1L)));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "door_factory", 1, 0),
                 ItemList.Conveyor_Module_LV.get(1L),
                 ItemList.Electric_Motor_LV.get(1L),
                 ItemList.Conveyor_Module_LV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeSpringSmall, (int) (1L)),
                 ItemList.Casing_SolidSteel.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeSpringSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeGearGtSmall, (int) (1L)),
                 getModItem(Minecraft.ID, "sticky_piston", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L));
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeGearGtSmall, (int) (1L)));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "rustyHatch", 1, 0),
                 "plateAnyIron",
@@ -150,33 +153,33 @@ public class ScriptMalisDoors implements IScriptLoader {
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "garage_door", 5, 0),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeRing, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeRing, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeRing, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeRing, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 "craftingToolWrench",
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "rustyLadder", 4, 0),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolWrench",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L));
@@ -196,8 +199,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 4),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 4),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 4),
@@ -218,8 +221,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 4),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 4),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 4),
@@ -240,8 +243,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 2),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 2),
@@ -262,8 +265,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 2),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 2),
@@ -284,8 +287,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 5),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 5),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 5),
@@ -306,8 +309,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 5),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 5),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 5),
@@ -328,8 +331,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 3),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 3),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 3),
@@ -350,8 +353,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 3),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 3),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 3),
@@ -372,8 +375,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 1),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 1),
@@ -394,8 +397,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 1),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 1),
@@ -417,7 +420,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 4),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 4),
                 "stickWood",
@@ -428,7 +431,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 4),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 4),
                 "stickWood",
@@ -450,7 +453,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1),
                 "stickWood",
@@ -461,7 +464,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1),
                 "stickWood",
@@ -483,7 +486,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 2),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 2),
                 "stickWood",
@@ -494,7 +497,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 2),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 2),
                 "stickWood",
@@ -516,7 +519,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3),
                 "stickWood",
@@ -527,7 +530,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3),
                 "stickWood",
@@ -549,7 +552,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 5),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 5),
                 "stickWood",
@@ -560,7 +563,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 5),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 5),
                 "stickWood",
@@ -648,8 +651,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "paper", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "paper", 1, 0),
                 "stickWood",
                 "craftingToolSaw");
@@ -659,8 +662,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "paper", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "paper", 1, 0),
                 "stickWood",
                 "craftingToolScrewdriver");
@@ -671,7 +674,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "paper", 1, 0),
                 "ringCopper",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "paper", 1, 0),
                 "stickWood",
                 "craftingToolSaw");
@@ -682,7 +685,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "paper", 1, 0),
                 "ringCopper",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "paper", 1, 0),
                 "stickWood",
                 "craftingToolScrewdriver");
@@ -864,9 +867,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "carpet", 1, 15));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.saloon", 2, 0),
-                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeSpringSmall, (int) (1L)),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeSpringSmall, (int) (1L)),
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 "stickWood",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
@@ -897,9 +900,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 4));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "acaciaFenceGate", 2, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 4),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 4),
@@ -908,9 +911,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 4));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "acaciaFenceGate", 4, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 4),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 4),
@@ -930,9 +933,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 2));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "birchFenceGate", 2, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 2),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 2),
@@ -941,9 +944,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 2));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "birchFenceGate", 4, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 2),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 2),
@@ -963,9 +966,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 5));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "darkOakFenceGate", 2, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 5),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 5),
@@ -974,9 +977,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 5));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "darkOakFenceGate", 4, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 5),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 5),
@@ -996,9 +999,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 3));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "jungleFenceGate", 2, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 3),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 3),
@@ -1007,9 +1010,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 3));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "jungleFenceGate", 4, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 3),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 3),
@@ -1029,9 +1032,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 1));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "spruceFenceGate", 2, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 1),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 1),
@@ -1040,9 +1043,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 1));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "spruceFenceGate", 4, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (1L)),
                 getModItem(Minecraft.ID, "planks", 1, 1),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 1),
@@ -1053,13 +1056,13 @@ public class ScriptMalisDoors implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "trapdoor", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapePlate, (int) (2L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "sliding_trapdoor", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1071,41 +1074,45 @@ public class ScriptMalisDoors implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapePlate, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapePlate, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapePlate, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         BlockList.DiamondFrameBox.get(),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapePlate, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)),
                         getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0))
                 .itemOutputs(getModItem(MalisisDoors.ID, "rustyHatch", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeRing, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L))
@@ -1187,13 +1194,13 @@ public class ScriptMalisDoors implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapePlate, (int) (2L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.laboratory_door", 1, 0)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (2L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.factory_door", 1, 0)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1273,7 +1280,8 @@ public class ScriptMalisDoors implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "trapdoor", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 2L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Iron, Materials2Shapes.shapeSpringSmall, (int) (2L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.saloon", 1, 0)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
