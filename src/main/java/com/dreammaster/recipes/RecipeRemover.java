@@ -3,7 +3,6 @@ package com.dreammaster.recipes;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.GregTechAPI.sBlockOres1;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AkashicTome;
 import static gregtech.api.enums.Mods.Automagy;
@@ -479,12 +478,6 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1));
         GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6));
         GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "item.ironwoodRaw", 1, wildcard));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Encoder", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Grower", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Inscriber", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Wireless", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "WirelessKit", 1, 0));
-        removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Visualiser", 1, 0));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "BlockMolecularTransformer", 1, 0));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0));
         removeRecipeByOutputDelayed(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1));
@@ -3102,11 +3095,6 @@ public class RecipeRemover {
                         getModItem(EnderZoo.ID, "enderFragment", 1, 0),
                         getModItem(EnderZoo.ID, "enderFragment", 1, 0) },
                 new Object[] { null, getModItem(EnderZoo.ID, "enderFragment", 1, 0), null });
-        removeRecipeShapedDelayed(
-                getModItem(ExtraUtilities.ID, "unstableingot", 1, 0),
-                new Object[] { getModItem(Minecraft.ID, "iron_ingot", 1, 0) },
-                new Object[] { getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0) },
-                new Object[] { getModItem(Minecraft.ID, "diamond", 1, 0) });
         removeRecipeShapedDelayed(
                 getModItem(ForbiddenMagic.ID, "FMResource", 9, 0),
                 new Object[] { getModItem(Minecraft.ID, "emerald", 1, 0) },

@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.MeatCooked;
 import static gregtech.api.enums.Materials.MeatRaw;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -40,6 +39,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -58,7 +58,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
-import static thaumcraft.api.aspects.Aspect.getAspect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -91,6 +90,7 @@ import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import forestry.core.fluids.Fluids;
+import fox.spiteful.forbidden.DarkAspects;
 import ganymedes01.etfuturum.recipes.SmokerRecipes;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -119,7 +119,6 @@ public class ScriptEFR implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                AE2Stuff.ID,
                 AdventureBackpack.ID,
                 AppliedEnergistics2.ID,
                 BiomesOPlenty.ID,
@@ -330,48 +329,6 @@ public class ScriptEFR implements IScriptLoader {
             }
         }
 
-        // Color Beds
-
-        final String[] colorBeds = { "white_bed", "orange_bed", "magenta_bed", "light_blue_bed", "yellow_bed",
-                "lime_bed", "pink_bed", "gray_bed", "light_gray_bed", "cyan_bed", "purple_bed", "blue_bed", "brown_bed",
-                "green_bed", "black_bed" };
-        final int[] bedCarpetMetas = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15 };
-        OreDictItemStack plankWood = new OreDictItemStack("plankWood", 2);
-
-        for (int i = 0; i < colorBeds.length; i++) {
-            String bedType = colorBeds[i];
-            int carpetType = bedCarpetMetas[i];
-
-            GTModHandler.addCraftingRecipe(
-                    getModItem(EtFuturumRequiem.ID, bedType, 1, 0),
-                    bits,
-                    new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1, carpetType), 'B',
-                            "plankWood", 'C', "fenceWood", 'D', "craftingToolSoftMallet" });
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Minecraft.ID, "carpet", 2, carpetType),
-                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
-                            plankWood)
-                    .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, bedType, 1, 0)).duration(5 * SECONDS)
-                    .eut(24).addTo(assemblerRecipes);
-        }
-
-        // Regular Minecraft Bed
-
-        GTModHandler.addCraftingRecipe(
-                getModItem(Minecraft.ID, "bed", 1, 0),
-                bits,
-                new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1, 14), 'B', "plankWood",
-                        'C', "fenceWood", 'D', "craftingToolSoftMallet" });
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "carpet", 2, 14),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
-                        plankWood)
-                .circuit(1).itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
-
         // Regular Copper Trapdoors
 
         GTModHandler.addCraftingRecipe(
@@ -575,8 +532,8 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Barrel Upgrades
         GTValues.RA.stdBuilder()
@@ -878,81 +835,117 @@ public class ScriptEFR implements IScriptLoader {
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "soul_lantern", 4, 0)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        // BlackStone recipes
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.cobblestone, 64, 0))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.graniteblack"), 1152)).circuit(4)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blackstone", 64, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "blackstone", 1, 0))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "gilded_blackstone", 1, 0))
+                .fluidInputs(Materials.Gold.getMolten(188L)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(chemicalBathRecipes);
+
+        // Smooth Blocks
         GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "stone", 1, 0),
                 getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0));
 
         GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 15),
-                getModItem(EtFuturumRequiem.ID, "black_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 14),
-                getModItem(EtFuturumRequiem.ID, "red_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 13),
-                getModItem(EtFuturumRequiem.ID, "green_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 12),
-                getModItem(EtFuturumRequiem.ID, "brown_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 3),
-                getModItem(EtFuturumRequiem.ID, "light_blue_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 4),
-                getModItem(EtFuturumRequiem.ID, "yellow_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 5),
-                getModItem(EtFuturumRequiem.ID, "lime_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 6),
-                getModItem(EtFuturumRequiem.ID, "pink_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 0),
-                getModItem(EtFuturumRequiem.ID, "white_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 7),
-                getModItem(EtFuturumRequiem.ID, "gray_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 8),
-                getModItem(EtFuturumRequiem.ID, "light_gray_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 9),
-                getModItem(EtFuturumRequiem.ID, "cyan_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 10),
-                getModItem(EtFuturumRequiem.ID, "purple_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 11),
-                getModItem(EtFuturumRequiem.ID, "blue_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 2),
-                getModItem(EtFuturumRequiem.ID, "magenta_glazed_terracotta", 1, 0));
-        GTModHandler.addSmeltingRecipe(
-                new ItemStack(Blocks.stained_hardened_clay, 1, 1),
-                getModItem(EtFuturumRequiem.ID, "orange_glazed_terracotta", 1, 0));
-
-        GTModHandler.addSmeltingRecipe(
                 getModItem(Minecraft.ID, "quartz_block", 1, 0),
                 getModItem(EtFuturumRequiem.ID, "smooth_quartz", 1, 0));
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 0), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 0)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 2), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 2)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log2, 1, 0), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 0)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log2, 1, 1), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 1)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 1), ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 1)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
+        String[] colors = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray",
+                "cyan", "purple", "blue", "brown", "green", "red", "black" };
+
+        // Glazed Terracotta
+        for (int i = 0; i < colors.length; i++) {
+            GTModHandler.addSmeltingRecipe(
+                    new ItemStack(Blocks.stained_hardened_clay, 1, i),
+                    getModItem(EtFuturumRequiem.ID, colors[i] + "_glazed_terracotta", 1, 0));
+        }
+
+        // Beds
+        OreDictItemStack plankWood = new OreDictItemStack("plankWood", 2);
+
+        for (int i = 0; i < colors.length; i++) {
+            String bedType = colors[i] + "_bed";
+            ItemStack bed = i == 14 ? getModItem(Minecraft.ID, "bed", 1, 0)
+                    : getModItem(EtFuturumRequiem.ID, bedType, 1, 0);
+
+            GTModHandler.addCraftingRecipe(
+                    bed,
+                    bits,
+                    new Object[] { "AAA", "BBB", "CDC", 'A', getModItem(Minecraft.ID, "carpet", 1, i), 'B', "plankWood",
+                            'C', "fenceWood", 'D', "craftingToolSoftMallet" });
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "carpet", 2, i),
+                            getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
+                            plankWood)
+                    .circuit(1).itemOutputs(bed).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+        }
+
+        // Stripped Logs in Extruder
+        for (int i = 0; i < 4; i++) {
+            for (int j = 1; j < 5; j++) {
+                // Biomes O' Plenty
+                String n = j == 1 ? "" : j + "";
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(BiomesOPlenty.ID, "logs" + j, 1, i),
+                                ItemList.Shape_Extruder_Block.get(0L))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, ("bop_log_stripped" + n), 1, i))
+                        .duration(6 * SECONDS).eut(80).addTo(extruderRecipes);
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(EtFuturumRequiem.ID, "bop_wood" + n, 1, i),
+                                ItemList.Shape_Extruder_Block.get(0L))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, ("bop_wood_stripped" + n), 1, i))
+                        .duration(6 * SECONDS).eut(80).addTo(extruderRecipes);
+            }
+            // Vanilla log
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, i)).duration(6 * SECONDS).eut(80)
+                    .addTo(extruderRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(EtFuturumRequiem.ID, "bark", 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, i)).duration(6 * SECONDS).eut(80)
+                    .addTo(extruderRecipes);
+
+            // Witchery
+            if (i == 3) continue;
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(Witchery.ID, "witchlog", 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "witchery_log_stripped", 1, i)).duration(6 * SECONDS)
+                    .eut(80).addTo(extruderRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(EtFuturumRequiem.ID, "witchery_wood", 1, i),
+                            ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "witchery_wood_stripped", 1, i)).duration(6 * SECONDS)
+                    .eut(80).addTo(extruderRecipes);
+
+            // Vanilla log2
+            if (i == 2) continue;
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log2, 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, i)).duration(6 * SECONDS).eut(80)
+                    .addTo(extruderRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(EtFuturumRequiem.ID, "bark2", 1, i), ItemList.Shape_Extruder_Block.get(0L))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "wood2_stripped", 1, i)).duration(6 * SECONDS).eut(80)
+                    .addTo(extruderRecipes);
+
+        }
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 0), ItemList.Shape_Extruder_Block.get(0L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2)).duration(6 * SECONDS).eut(80)
+                .addTo(extruderRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 1), ItemList.Shape_Extruder_Block.get(0L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 3)).duration(6 * SECONDS).eut(80)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1001,7 +994,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "amethyst_block", 64, 0),
-                        getModItem(AE2Stuff.ID, "Grower", 6, 0),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCrystalGrowthChamber", 6, 0),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 6, 0),
                         getModItem(Thaumcraft.ID, "blockCrystal", 6, 7),
                         getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0),
@@ -1288,9 +1281,8 @@ public class ScriptEFR implements IScriptLoader {
         new ResearchItem(
                 "UNDYINGTOTEM",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("corpus"), 3),
+                new AspectList().add(DarkAspects.NETHER, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 12)
+                        .add(Aspect.SOUL, 9).add(Aspect.HUNGER, 6).add(Aspect.FLESH, 3),
                 -6,
                 -7,
                 3,
@@ -1301,9 +1293,8 @@ public class ScriptEFR implements IScriptLoader {
                 "UNDYINGTOTEM",
                 getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("exanimis"), 100).add(Aspect.getAspect("ignis"), 150)
-                        .add(Aspect.getAspect("lucrum"), 150).add(Aspect.getAspect("sano"), 200)
-                        .add(Aspect.getAspect("praecantatio"), 200),
+                new AspectList().add(Aspect.UNDEAD, 100).add(Aspect.FIRE, 150).add(Aspect.GREED, 150)
+                        .add(Aspect.HEAL, 200).add(Aspect.MAGIC, 200),
                 getModItem(TinkerConstruct.ID, "heartCanister", 1, 1),
                 OrePrefixes.plate.get(Materials.InfusedGold),
                 OrePrefixes.gemExquisite.get(Materials.Emerald),
@@ -1348,9 +1339,8 @@ public class ScriptEFR implements IScriptLoader {
         new ResearchItem(
                 "SHULKER",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("corpus"), 3),
+                new AspectList().add(DarkAspects.NETHER, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 12)
+                        .add(Aspect.SOUL, 9).add(Aspect.HUNGER, 6).add(Aspect.FLESH, 3),
                 -6,
                 6,
                 3,
@@ -1361,9 +1351,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 0), // Regular
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 "aba",
                 "cdc",
                 "aba",
@@ -1378,9 +1367,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 1), // Iron
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "abe",
                 "cdc",
                 "eba",
@@ -1397,9 +1385,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 2), // Gold
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("aqua"), 25)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.AIR, 25).add(Aspect.FIRE, 25).add(Aspect.EARTH, 25).add(Aspect.WATER, 25)
+                        .add(Aspect.ORDER, 25).add(Aspect.ENTROPY, 25),
                 "abe",
                 "cdc",
                 "eba",
@@ -1416,9 +1403,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 3), // Diamond
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abe",
                 "cdc",
                 "eba",
@@ -1435,9 +1421,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 4), // Copper
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 "abe",
                 "cdc",
                 "eba",
@@ -1454,9 +1439,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 5), // Silver
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("aqua"), 20)
-                        .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.FIRE, 20).add(Aspect.EARTH, 20).add(Aspect.WATER, 20)
+                        .add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 20),
                 "abe",
                 "cdc",
                 "eba",
@@ -1473,9 +1457,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 6), // Crystal
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abe",
                 "cdc",
                 "eba",
@@ -1492,9 +1475,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 7), // Obsidian
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 "abe",
                 "cdc",
                 "eba",
@@ -1514,9 +1496,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 1), // Vanilla to Copper
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bab",
                 " a ",
@@ -1527,9 +1508,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 0), // Vanilla to Iron
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 " a ",
                 "bab",
                 " a ",
@@ -1540,9 +1520,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 6), // Copper to Iron
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bcb",
                 " a ",
@@ -1555,9 +1534,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 7), // Copper to Silver
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 " a ",
                 "bcb",
                 " a ",
@@ -1570,9 +1548,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 2), // Iron to Gold
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("aqua"), 10)
-                        .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10)
+                        .add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 " a ",
                 "bcb",
                 " a ",
@@ -1585,9 +1562,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 8), // Silver to Gold
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bcb",
                 " a ",
@@ -1600,9 +1576,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 3), // Gold to Diamond
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("ignis"), 50)
-                        .add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("aqua"), 50)
-                        .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50).add(Aspect.EARTH, 50).add(Aspect.WATER, 50)
+                        .add(Aspect.ORDER, 50).add(Aspect.ENTROPY, 50),
                 " a ",
                 "bcb",
                 " a ",
@@ -1615,9 +1590,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 5), // Diamond to Crystal
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bcb",
                 " a ",
@@ -1630,9 +1604,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 4), // Diamond to Obsidian
-                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
-                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.EARTH, 5).add(Aspect.WATER, 5)
+                        .add(Aspect.ORDER, 5).add(Aspect.ENTROPY, 5),
                 " a ",
                 "bcb",
                 " a ",
@@ -1691,9 +1664,8 @@ public class ScriptEFR implements IScriptLoader {
         new ResearchItem(
                 "NetheriteArmour",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("ignis"), 3),
+                new AspectList().add(DarkAspects.NETHER, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 12)
+                        .add(Aspect.SOUL, 9).add(Aspect.HUNGER, 6).add(Aspect.FIRE, 3),
                 6,
                 6,
                 3,
@@ -1704,8 +1676,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_helmet", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1723,8 +1695,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_chestplate", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1742,8 +1714,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_leggings", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1761,8 +1733,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_boots", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1780,8 +1752,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_pickaxe", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1799,8 +1771,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_hoe", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1818,8 +1790,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_spade", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1837,8 +1809,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_sword", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1856,8 +1828,8 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_axe", 1, 0),
-                new AspectList().add(getAspect("aer"), 15).add(getAspect("ignis"), 15).add(getAspect("terra"), 15)
-                        .add(getAspect("aqua"), 15).add(getAspect("ordo"), 15).add(getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.FIRE, 15).add(Aspect.EARTH, 15).add(Aspect.WATER, 15)
+                        .add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "aba",
                 "cdc",
                 "aea",
@@ -1924,9 +1896,8 @@ public class ScriptEFR implements IScriptLoader {
         new ResearchItem(
                 "ELYTRA",
                 "NEWHORIZONS",
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
-                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("tempestas"), 3),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.GREED, 12).add(Aspect.MAGIC, 12).add(Aspect.SOUL, 9)
+                        .add(Aspect.MOTION, 12).add(Aspect.WEATHER, 3),
                 -4,
                 6,
                 3,
@@ -1936,9 +1907,8 @@ public class ScriptEFR implements IScriptLoader {
                 "ELYTRA",
                 getModItem(EtFuturumRequiem.ID, "elytra", 1, 0),
                 15,
-                new AspectList().add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("praecantatio"), 150)
-                        .add(Aspect.getAspect("motus"), 150).add(Aspect.getAspect("tempestas"), 200)
-                        .add(Aspect.getAspect("praecantatio"), 200),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.MAGIC, 150).add(Aspect.MOTION, 150)
+                        .add(Aspect.WEATHER, 200).add(Aspect.MAGIC, 200),
                 getModItem(WitchingGadgets.ID, "item.WG_Kama", 1, 4),
                 getModItem(EnderIO.ID, "itemGliderWing", 1, 1),
                 GregtechItemList.MagicFeather.get(1),
@@ -2047,6 +2017,64 @@ public class ScriptEFR implements IScriptLoader {
         // getSmeltingResult for mince meat is null here for some reason, so adding explicitly
         SmokerRecipes.smelting().addRecipe(MeatRaw.getDust(1), MeatCooked.getDust(1), 0);
 
+        // Boat Assembler Recipes
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Oak.get(5)).circuit(5).itemOutputs(new ItemStack(Items.boat))
+                .duration(10 * SECONDS).eut(15).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Spruce.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "spruce_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Birch.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "birch_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Jungle.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "jungle_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Acacia.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "acacia_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_DarkOak.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "dark_oak_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        // BoP bamboo matches manual crafting recipe
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bamboo", 5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "bamboo_raft", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Cherry_EFR.get(5)).circuit(5)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+
+        // Chest Boat Assembler Recipes
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.chest), new ItemStack(Items.boat))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "oak_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "spruce_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "spruce_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "birch_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "birch_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "jungle_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "jungle_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "acacia_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "acacia_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "dark_oak_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "dark_oak_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "bamboo_raft", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "bamboo_chest_raft", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "cherry_boat", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_chest_boat", 1)).duration(10 * SECONDS).eut(15)
+                .addTo(assemblerRecipes);
     }
 
     // Oxidation Functions

@@ -16,6 +16,7 @@ import static gregtech.api.enums.Mods.Gadomancy;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -52,9 +53,11 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.rwtema.extrautils.ExtraUtils;
 
+import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.CompressorManager;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -62,6 +65,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTOreDictUnificator;
+import magicbees.api.MagicBeesAPI;
 import tconstruct.smeltery.TinkerSmeltery;
 import tconstruct.tools.TinkerTools;
 import tconstruct.tools.items.Pattern;
@@ -96,6 +100,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 GalaxySpace.ID,
                 GraviSuite.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 TaintedMagic.ID,
                 Thaumcraft.ID,
                 ThaumicBases.ID,
@@ -849,6 +854,58 @@ public class ScriptAvaritia implements IScriptLoader {
                 "platePolyvinylChloride",
                 'i',
                 "platePolyphenyleneSulfide");
+        // Arithmetic Singularity
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(EternalSingularity.ID, "combined_singularity", 1, 10),
+                "-----p---",
+                "--yx--z--",
+                "-z--d--y-",
+                "o--ebc-x-",
+                "--ijukl--",
+                "-x-fah--m",
+                "-y--g--z-",
+                "--z--xy--",
+                "---n-----",
+                'a',
+                getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6),
+                'b',
+                getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 4),
+                'c',
+                getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 3),
+                'd',
+                getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 2),
+                'e',
+                getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 1),
+                'f',
+                getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 0),
+                'g',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 9),
+                'h',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 8),
+                'i',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 7),
+                'j',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 6),
+                'k',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 5),
+                'l',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 4),
+                'm',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 3),
+                'n',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 2),
+                'o',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 1),
+                'p',
+                getModItem(UniversalSingularities.ID, "universal.circuit.singularity", 1, 0),
+                'u',
+                ItemList.Universal_Collapser_ExoFoundry.get(1L),
+                'x',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 1),
+                'y',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackDwarfMatter, 1),
+                'z',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 1));
         // Neutronium Compressor Multi Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),
@@ -929,9 +986,9 @@ public class ScriptAvaritia implements IScriptLoader {
                 "AKASHIC",
                 getModItem(Avaritia.ID, "Akashic_Record", 1, 0),
                 24,
-                new AspectList().add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("cognitio"), 128)
-                        .add(Aspect.getAspect("sensus"), 96).add(Aspect.getAspect("luxuria"), 96)
-                        .add(Aspect.getAspect("tempus"), 64).add(Aspect.getAspect("terminus"), 128),
+                new AspectList().add(Aspect.MAGIC, 512).add(Aspect.MIND, 128).add(Aspect.SENSES, 96)
+                        .add(DarkAspects.LUST, 96).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 64)
+                        .add(Lucrum.ULTRA_DEATH, 128),
                 OrePrefixes.plate.get(Materials.Infinity),
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 6),

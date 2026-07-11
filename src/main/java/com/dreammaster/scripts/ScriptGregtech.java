@@ -58,6 +58,7 @@ import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.library.TConstructRegistry;
+import tectech.thing.CustomItemList;
 import vexatos.tgregworks.reference.PartTypes;
 import vexatos.tgregworks.util.TGregUtils;
 
@@ -613,6 +614,28 @@ public class ScriptGregtech implements IScriptLoader {
                 "platePaper",
                 "dyeBlue",
                 "dyeWhite");
+        addShapedRecipe(
+                ItemList.PadBouncy.get(1L),
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                ItemList.PadSticky.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                null,
+                null,
+                null);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Spray_Color_Infinite.get(1L),
@@ -653,6 +676,32 @@ public class ScriptGregtech implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320),
                 'b',
                 ItemList.Battery_Buffer_3by3_IV.get(1L));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                NHItemList.SingularityComputationCore.get(),
+                "eeebbbeee",
+                "es-----se",
+                "e-sgags-e",
+                "b-gsdsg-b",
+                "b-adcda-b",
+                "b-gsdsg-b",
+                "e-sgags-e",
+                "es-----se",
+                "eeebbbeee",
+                'b',
+                CustomItemList.Godforge_SingularityShieldingCasing.get(1),
+                's',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47),
+                'g',
+                CustomItemList.StabilisationFieldGeneratorTier8.get(1),
+                'a',
+                CustomItemList.astralArrayFabricator.get(1),
+                'd',
+                getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1, 0),
+                'c',
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1, 0),
+                'e',
+                CustomItemList.SpacetimeCompressionFieldGeneratorTier8.get(1));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L)).duration(15 * SECONDS)

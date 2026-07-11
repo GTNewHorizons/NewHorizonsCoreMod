@@ -50,6 +50,7 @@ import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.recipes.Recipe;
+import com.dreammaster.recipes.ShapedUniversalRecipe;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -398,9 +399,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Cover_SolarPanel.get(1L, o),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { "SGS", "CPC", "TRT", 'C', OrePrefixes.circuit.get(Materials.LV), 'G',
-                        GTModHandler.getIC2Item("reinforcedGlass", 1L), 'P',
-                        OrePrefixes.plateAlloy.get(Materials.Carbon), 'S', ItemList.Circuit_Silicon_Wafer, 'T',
-                        OrePrefixes.wireGt01.get(Materials.RedAlloy), 'R', NHItemList.AluminiumIronPlate.get() });
+                        ItemList.ReinforcedGlass.get(1L), 'P', OrePrefixes.plateAlloy.get(Materials.Carbon), 'S',
+                        ItemList.Circuit_Silicon_Wafer, 'T', OrePrefixes.wireGt01.get(Materials.RedAlloy), 'R',
+                        NHItemList.AluminiumIronPlate.get() });
         GTModHandler.addCraftingRecipe(
                 ItemList.Cover_SolarPanel_8V.get(1L, o),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
@@ -906,7 +907,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier5.get(),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.LuVTierMaterial.get(screw), 'P',
+                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.RhodiumPlatedPalladium.get(screw), 'P',
                         OrePrefixes.plate.get(Materials.FierySteel), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier6.get(),
@@ -929,9 +930,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 GTModHandler.RecipeBits.BITS,
                 new Object[] {
                         // spotless:off
-                        "BB ",
-                        "BB ",
-                        "   ",
+                        "BB",
+                        "BB",
                         'B', NHItemList.CokeOvenBrick.get().splitStack(1)
                         // spotless:on
                 });
@@ -1257,8 +1257,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(Forestry.ID, "engine", 1, 4),
                     GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES,
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Gold), 'L',
-                            OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.WroughtIron),
-                            'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.WroughtIron), 'C',
+                            OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.CastIron),
+                            'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.CastIron), 'C',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
         }
 
@@ -2416,6 +2416,19 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
                     getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2));
         }
+
+        GameRegistry.addRecipe(
+                new ShapedUniversalRecipe(
+                        ItemList.NetworkAnalyzer.get(1),
+                        ItemList.Sensor_LV.get(1),
+                        "paneGlassColorless",
+                        ItemList.Emitter_LV.get(1),
+                        "wireFineAnyCopper",
+                        "plateSteel",
+                        "wireFineAnyCopper",
+                        "componentCircuitDiode",
+                        "circuitBasic",
+                        "componentCircuitDiode"));
     }
 
     private Consumer<Recipe> shapelessUnremovableGtRecipes() {

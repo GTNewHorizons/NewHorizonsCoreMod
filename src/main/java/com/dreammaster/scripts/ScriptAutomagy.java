@@ -105,7 +105,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDSTONETHEORY",
                 getModItem(Automagy.ID, "blockTorchInversion", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -126,7 +126,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDSTONETHEORY",
                 getModItem(Automagy.ID, "blockHourglass", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -154,25 +154,22 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.5"));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("machina"), 2).add(Aspect.getAspect("praecantatio"), 6)
-                        .add(Aspect.getAspect("vitreus"), 12));
+                new AspectList().add(Aspect.MECHANISM, 2).add(Aspect.MAGIC, 6).add(Aspect.CRYSTAL, 12));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "REDCRYSTAL",
                 getModItem(Automagy.ID, "blockRedcrystal", 9, 0),
                 getModItem(Minecraft.ID, "redstone_block", 1, 0),
-                new AspectList().add(Aspect.getAspect("machina"), 3).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("vitreus"), 18));
+                new AspectList().add(Aspect.MECHANISM, 3).add(Aspect.MAGIC, 9).add(Aspect.CRYSTAL, 18));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("ignis"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.MECHANISM, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.CRYSTAL, 6).add(Aspect.FIRE, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_AMP",
                 getModItem(Automagy.ID, "blockRedcrystalAmp", 2, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 10),
+                new AspectList().add(Aspect.FIRE, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -196,14 +193,13 @@ public class ScriptAutomagy implements IScriptLoader {
                 getModItem(Automagy.ID, "shardSliver", 1, 1));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("terra"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.MECHANISM, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.CRYSTAL, 6).add(Aspect.EARTH, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_AMP",
                 getModItem(Automagy.ID, "blockRedcrystalDense", 2, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 10),
+                new AspectList().add(Aspect.EARTH, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -223,14 +219,13 @@ public class ScriptAutomagy implements IScriptLoader {
                 getModItem(Automagy.ID, "blockRedcrystal", 1, 0));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("perditio"), 3));
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.MECHANISM, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.CRYSTAL, 6).add(Aspect.ENTROPY, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_AMP",
                 getModItem(Automagy.ID, "blockRedcrystalDim", 2, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 10),
+                new AspectList().add(Aspect.ENTROPY, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -257,7 +252,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Automagy.ID, "shardSliver", 4, 0),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("aer"), 5),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.AIR, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -271,7 +266,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Automagy.ID, "shardSliver", 4, 1),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("ignis"), 5),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.FIRE, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -285,7 +280,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Automagy.ID, "shardSliver", 4, 2),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("aqua"), 5),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.WATER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -299,7 +294,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Automagy.ID, "shardSliver", 4, 3),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -313,7 +308,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Automagy.ID, "shardSliver", 4, 4),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -327,7 +322,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Automagy.ID, "shardSliver", 4, 5),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -341,7 +336,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aer"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.AIR, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -361,7 +356,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 1),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.FIRE, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -381,7 +376,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 2),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aqua"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -401,7 +396,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 3),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -421,7 +416,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4),
-                new AspectList().add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -441,7 +436,7 @@ public class ScriptAutomagy implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SLIVERS",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 5),
-                new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 5),
+                new AspectList().add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -464,15 +459,13 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.removeResearch("SLIVERS_WARDING");
         TCHelper.setResearchAspects(
                 "REMOTECOMPARATOR",
-                new AspectList().add(Aspect.getAspect("potentia"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("sensus"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ENERGY, 15).add(Aspect.MECHANISM, 12).add(Aspect.SENSES, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("REMOTECOMPARATOR", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REMOTECOMPARATOR",
                 getModItem(Automagy.ID, "blockRemoteComparator", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ordo"), 15)
-                        .add(Aspect.getAspect("perditio"), 15),
+                new AspectList().add(Aspect.AIR, 15).add(Aspect.ORDER, 15).add(Aspect.ENTROPY, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -494,18 +487,16 @@ public class ScriptAutomagy implements IScriptLoader {
                 "REMOTECOMPARATOR",
                 getModItem(Automagy.ID, "crystalEye", 1, 0),
                 getModItem(Minecraft.ID, "spider_eye", 1, 0),
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("sensus"), 10)
-                        .add(Aspect.getAspect("praecantatio"), 5));
+                new AspectList().add(Aspect.CRYSTAL, 15).add(Aspect.SENSES, 10).add(Aspect.MAGIC, 5));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL_RES",
-                new AspectList().add(Aspect.getAspect("potentia"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.ENERGY, 15).add(Aspect.MECHANISM, 12).add(Aspect.CRYSTAL, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL_RES", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_RES",
                 getModItem(Automagy.ID, "blockRedcrystalRes", 2, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.AIR, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -529,16 +520,14 @@ public class ScriptAutomagy implements IScriptLoader {
                 getModItem(Automagy.ID, "shardSliver", 1, 0));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL_MIRRORBOUND",
-                new AspectList().add(Aspect.getAspect("iter"), 15).add(Aspect.getAspect("potentia"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("terra"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.TRAVEL, 15).add(Aspect.ENERGY, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.EARTH, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("REDCRYSTAL_MIRRORBOUND", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_MIRRORBOUND",
                 getModItem(Automagy.ID, "blockRedcrystalMerc", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("aer"), 20)
-                        .add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("terra"), 15),
+                new AspectList().add(Aspect.ORDER, 25).add(Aspect.AIR, 20).add(Aspect.ENTROPY, 10).add(Aspect.FIRE, 20)
+                        .add(Aspect.EARTH, 15),
                 "abc",
                 "def",
                 "ghi",
@@ -562,15 +551,13 @@ public class ScriptAutomagy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6));
         TCHelper.setResearchAspects(
                 "FOCUSCRAFTING",
-                new AspectList().add(Aspect.getAspect("fabrico"), 15).add(Aspect.getAspect("praecantatio"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("terra"), 6));
+                new AspectList().add(Aspect.CRAFT, 15).add(Aspect.MAGIC, 12).add(Aspect.TOOL, 9).add(Aspect.EARTH, 6));
         TCHelper.setResearchComplexity("FOCUSCRAFTING", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSCRAFTING",
                 getModItem(Automagy.ID, "focusCrafting", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("terra"), 40)
-                        .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aer"), 20)
-                        .add(Aspect.getAspect("aqua"), 10),
+                new AspectList().add(Aspect.ORDER, 50).add(Aspect.EARTH, 40).add(Aspect.ENTROPY, 30).add(Aspect.AIR, 20)
+                        .add(Aspect.WATER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -595,8 +582,7 @@ public class ScriptAutomagy implements IScriptLoader {
         new ResearchItem(
                 "InfusedGoldGTNH",
                 "AUTOMAGY",
-                new AspectList().add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.GREED, 12).add(Aspect.MAGIC, 9).add(Aspect.AIR, 6).add(Aspect.METAL, 3),
                 -5,
                 -2,
                 3,
@@ -607,9 +593,8 @@ public class ScriptAutomagy implements IScriptLoader {
                 "InfusedGoldGTNH",
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L),
                 2,
-                new AspectList().add(Aspect.getAspect("lucrum"), 16).add(Aspect.getAspect("metallum"), 12)
-                        .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("praecantatio"), 4)
-                        .add(Aspect.getAspect("aer"), 4),
+                new AspectList().add(Aspect.GREED, 16).add(Aspect.METAL, 12).add(Aspect.ORDER, 8).add(Aspect.MAGIC, 4)
+                        .add(Aspect.AIR, 4),
                 getModItem(Minecraft.ID, "gold_ingot", 1, 0),
                 OrePrefixes.dust.get(Materials.Thaumium),
                 OrePrefixes.dust.get(Materials.Thaumium),
@@ -626,15 +611,13 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.addResearchPrereq("MAGICHOURGLASS", "REDCRYSTAL", false);
         TCHelper.setResearchAspects(
                 "MAGICHOURGLASS",
-                new AspectList().add(Aspect.getAspect("machina"), 15).add(Aspect.getAspect("motus"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("aer"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3));
+                new AspectList().add(Aspect.MECHANISM, 15).add(Aspect.MOTION, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.MAGIC, 3));
         TCHelper.setResearchComplexity("MAGICHOURGLASS", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MAGICHOURGLASS",
                 getModItem(Automagy.ID, "blockHourglassMagic", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 15).add(Aspect.AIR, 10).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -660,14 +643,12 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.addResearchPage("NITORLIGHT", new ResearchPage("Automagy.research_page.NITORLIGHT.1"));
         TCHelper.setResearchAspects(
                 "NITORLIGHT",
-                new AspectList().add(Aspect.getAspect("lux"), 12).add(Aspect.getAspect("ignis"), 9)
-                        .add(Aspect.getAspect("aer"), 6));
+                new AspectList().add(Aspect.LIGHT, 12).add(Aspect.FIRE, 9).add(Aspect.AIR, 6));
         TCHelper.setResearchComplexity("NITORLIGHT", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NITORLIGHT",
                 getModItem(Automagy.ID, "blockTranslucent", 1, 0),
-                new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("aqua"), 5)
-                        .add(Aspect.getAspect("terra"), 5),
+                new AspectList().add(Aspect.FIRE, 10).add(Aspect.WATER, 5).add(Aspect.EARTH, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -690,9 +671,8 @@ public class ScriptAutomagy implements IScriptLoader {
                 "ENCHANT_FISHING",
                 Enchantment.enchantmentsList[61],
                 3,
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("bestia"), 15)
-                        .add(Aspect.getAspect("fames"), 10).add(Aspect.getAspect("meto"), 15)
-                        .add(Aspect.getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.BEAST, 15).add(Aspect.HUNGER, 10)
+                        .add(Aspect.HARVEST, 15).add(Aspect.MAGIC, 10),
                 new ItemStack[] { getModItem(Minecraft.ID, "carrot_on_a_stick", 1, 0),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14), getModItem(Minecraft.ID, "sugar", 1, 0),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14), });
@@ -700,9 +680,8 @@ public class ScriptAutomagy implements IScriptLoader {
                 "ENCHANT_FISHING",
                 Enchantment.enchantmentsList[62],
                 4,
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("bestia"), 15)
-                        .add(Aspect.getAspect("meto"), 15).add(Aspect.getAspect("lucrum"), 10)
-                        .add(Aspect.getAspect("praecantatio"), 10),
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.BEAST, 15).add(Aspect.HARVEST, 15)
+                        .add(Aspect.GREED, 10).add(Aspect.MAGIC, 10),
                 new ItemStack[] { getModItem(Minecraft.ID, "golden_carrot", 1, 0),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                         getModItem(Minecraft.ID, "tripwire_hook", 1, 0),

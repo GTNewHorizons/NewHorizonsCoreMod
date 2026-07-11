@@ -18,6 +18,8 @@ import static toxiceverglades.dimension.DimensionEverglades.blockSecondLayer;
 
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.item.NHItemList;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -447,6 +449,23 @@ public class NeutroniumCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().fluidInputs(Materials.Copper.getMolten(3648 * 9 * 144L))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 5)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Tin Singularity
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Tin.getMolten(3648 * 9 * 144L))
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 6)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Leaden Singularity
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Lead.getMolten(3648 * 9 * 144L))
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 7)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Base Computation Singularity
+            GTValues.RA.stdBuilder().fluidInputs(Materials.ComputationBase.getMolten(Integer.MAX_VALUE))
+                    .itemInputs(NHItemList.SingularityComputationCore.get(1))
+                    .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6))
+                    .duration(4500 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COMPRESSION_TIER, 2)
+                    .addTo(neutroniumCompressorRecipes);
         }
     }
 }

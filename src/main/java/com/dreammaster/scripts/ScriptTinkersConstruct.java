@@ -1526,6 +1526,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "GravelOre", 1, 5));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 39));
         TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L));
+        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 2));
         TConstructHelper.removeMeltingRecipe(new ItemStack(GregTechAPI.sBlockOres1, 1, 382));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 38));
@@ -1691,7 +1692,9 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "Cast", 1, 0),
                 getModItem(TinkerConstruct.ID, "Cast", 1, 1),
                 getModItem(TinkerConstruct.ID, "Cast", 1, 2),
-                getModItem(TinkerConstruct.ID, "Cast", 1, 3));
+                getModItem(TinkerConstruct.ID, "Cast", 1, 3),
+                NHItemList.BowFletchingCast.get(0),
+                NHItemList.BowStringCast.get(0));
 
         // Iron
         List<ItemStack> melterStacksIron = new ArrayList<>();
@@ -1702,7 +1705,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         addOresForMaterial(Materials.GraniticMineralSand, melterStacksIron);
         addOresForMaterial(Materials.Magnetite, melterStacksIron);
         addOresForMaterial(Materials.Pyrite, melterStacksIron);
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Iron"), 100, 144).add(melterStacksIron);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Iron"), 100, 144)
+                .smelteryGroup(OrePrefixes.ore, Materials.Iron).add(melterStacksIron);
 
         // Copper
         List<ItemStack> melterStacksCopper = new ArrayList<>();
@@ -1710,33 +1714,39 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         addOresForMaterial(Materials.Malachite, melterStacksCopper);
         addOresForMaterial(Materials.Tetrahedrite, melterStacksCopper);
         addOresForMaterial(Materials.Chalcopyrite, melterStacksCopper);
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Copper"), 50, 144).add(melterStacksCopper);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Copper"), 50, 144)
+                .smelteryGroup(OrePrefixes.ore, Materials.Copper).add(melterStacksCopper);
 
         // Tin
         List<ItemStack> melterStacksTin = new ArrayList<>();
         addOresForMaterial(Materials.Tin, melterStacksTin);
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 0, 144).add(melterStacksTin);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 0, 144)
+                .smelteryGroup(OrePrefixes.ore, Materials.Tin).add(melterStacksTin);
 
         // Cassiterite
         List<ItemStack> melterStacksCassiterite = new ArrayList<>();
         addOresForMaterial(Materials.Cassiterite, melterStacksCassiterite);
         addOresForMaterial(Materials.CassiteriteSand, melterStacksCassiterite);
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 200, 288).add(melterStacksCassiterite);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 200, 288)
+                .smelteryGroup(OrePrefixes.ore, Materials.Cassiterite).add(melterStacksCassiterite);
 
         // Gold
         List<ItemStack> melterStacksGold = new ArrayList<>();
         addOresForMaterial(Materials.Gold, melterStacksGold);
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Gold"), 200, 144).add(melterStacksGold);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Gold"), 200, 144)
+                .smelteryGroup(OrePrefixes.ore, Materials.Gold).add(melterStacksGold);
 
         // Aluminum
         List<ItemStack> melterStacksAluminum = new ArrayList<>();
         addOresForMaterial(Materials.Aluminium, melterStacksAluminum);
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Aluminum"), 50, 144).add(melterStacksAluminum);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Aluminum"), 50, 144)
+                .smelteryGroup(OrePrefixes.ore, Materials.Aluminium).add(melterStacksAluminum);
 
         // Emerald
         List<ItemStack> melterStacksEmerald = new ArrayList<>();
         addOresForMaterial(Materials.Emerald, melterStacksEmerald);
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Emerald"), 225, 640).add(melterStacksEmerald);
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Emerald"), 225, 640)
+                .smelteryGroup(OrePrefixes.ore, Materials.Emerald).add(melterStacksEmerald);
 
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Steel"), 100, 576).add(
                 ItemList.Shape_Empty.get(1L),
@@ -1963,7 +1973,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 false,
                 400);
         Smeltery.addAlloyMixing(
-                FluidRegistry.getFluidStack("alumite.molten", TConstruct.nuggetLiquidValue * 2),
+                FluidRegistry.getFluidStack("alumite.molten", TConstruct.nuggetLiquidValue * 3),
                 FluidRegistry.getFluidStack("molten.zinc", TConstruct.nuggetLiquidValue * 5),
                 FluidRegistry.getFluidStack("steel.molten", TConstruct.nuggetLiquidValue * 2),
                 FluidRegistry.getFluidStack("obsidian.molten", TConstruct.nuggetLiquidValue * 2));

@@ -317,8 +317,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "ANOINTINGPASTE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("aqua"), 9)
-                        .add(Aspect.getAspect("praecantatio"), 6),
+                new AspectList().add(Aspect.CRAFT, 12).add(Aspect.WATER, 9).add(Aspect.MAGIC, 6),
                 0,
                 -4,
                 2,
@@ -327,8 +326,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ANOINTINGPASTE",
                 getModItem(Witchery.ID, "cauldron", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("ignis"), 2)
-                        .add(Aspect.getAspect("terra"), 2),
+                new AspectList().add(Aspect.ORDER, 2).add(Aspect.FIRE, 2).add(Aspect.EARTH, 2),
                 "aba",
                 "aca",
                 "aaa",
@@ -343,8 +341,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "OVEN",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("machina"), 6),
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.CRAFT, 12).add(Aspect.TOOL, 9)
+                        .add(Aspect.MECHANISM, 6),
                 -2,
                 2,
                 3,
@@ -356,8 +354,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "OVEN",
                 getModItem(Witchery.ID, "witchesovenidle", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("terra"), 20),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.FIRE, 20).add(Aspect.EARTH, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -374,11 +371,11 @@ public class ScriptWitchery implements IScriptLoader {
                 'f',
                 BlockList.SteelBars.get(),
                 'g',
-                getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0),
+                ItemList.FenceIron.get(1L),
                 'h',
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0),
                 'i',
-                getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0));
+                ItemList.FenceIron.get(1L));
         TCHelper.addResearchPage(
                 "OVEN",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "witchesovenidle", 1, 0))));
@@ -386,8 +383,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "ATTUNEDSTONE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("vitreus"), 12)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("praecantatio"), 6),
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.CRYSTAL, 12).add(Aspect.ORDER, 9).add(Aspect.MAGIC, 6),
                 2,
                 0,
                 3,
@@ -396,8 +392,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ATTUNEDSTONE",
                 getModItem(Witchery.ID, "ingredient", 1, 10),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ordo"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.FIRE, 30).add(Aspect.EARTH, 30).add(Aspect.ORDER, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -413,9 +408,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "QUARTZSPHERE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("instrumentum"), 12)
-                        .add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("ordo"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.CRYSTAL, 15).add(Aspect.TOOL, 12).add(Aspect.AURA, 9).add(Aspect.ORDER, 6)
+                        .add(Aspect.MAGIC, 3),
                 2,
                 -2,
                 3,
@@ -424,8 +418,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "QUARTZSPHERE",
                 getModItem(Witchery.ID, "ingredient", 1, 92),
-                new AspectList().add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("ignis"), 25)
-                        .add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("ordo"), 25),
+                new AspectList().add(Aspect.AIR, 25).add(Aspect.FIRE, 25).add(Aspect.EARTH, 25).add(Aspect.ORDER, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -453,8 +446,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "CANDELABRA",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lux"), 12)
-                        .add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("ignis"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.LIGHT, 12).add(Aspect.ORDER, 9).add(Aspect.FIRE, 6),
                 0,
                 -2,
                 3,
@@ -464,8 +456,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CANDELABRA",
                 getModItem(Witchery.ID, "ingredient", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("ignis"), 10)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.EARTH, 5).add(Aspect.FIRE, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -493,8 +484,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "KETTLE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("ignis"), 6),
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.CRAFT, 12).add(Aspect.TOOL, 9).add(Aspect.FIRE, 6),
                 4,
                 0,
                 3,
@@ -508,8 +498,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KETTLE",
                 getModItem(Witchery.ID, "kettle", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("ignis"), 40)
-                        .add(Aspect.getAspect("aqua"), 40).add(Aspect.getAspect("perditio"), 40),
+                new AspectList().add(Aspect.AIR, 40).add(Aspect.FIRE, 40).add(Aspect.WATER, 40).add(Aspect.ENTROPY, 40),
                 "abc",
                 "def",
                 "ghi",
@@ -538,9 +527,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "SPINNINGWHEELW",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("motus"), 15)
-                        .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("instrumentum"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.TREE, 18).add(Aspect.MOTION, 15).add(Aspect.CRAFT, 12).add(Aspect.TOOL, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.MAGIC, 3),
                 6,
                 0,
                 3,
@@ -549,8 +537,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SPINNINGWHEELW",
                 getModItem(Witchery.ID, "spinningwheel", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 60).add(Aspect.getAspect("ignis"), 60)
-                        .add(Aspect.getAspect("ordo"), 60).add(Aspect.getAspect("perditio"), 60),
+                new AspectList().add(Aspect.AIR, 60).add(Aspect.FIRE, 60).add(Aspect.ORDER, 60).add(Aspect.ENTROPY, 60),
                 "abc",
                 "def",
                 "ghi",
@@ -578,10 +565,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "RUBYSLIPPERS",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("aer"), 18)
-                        .add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("vitreus"), 9).add(Aspect.getAspect("potentia"), 6)
-                        .add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.AURA, 21).add(Aspect.AIR, 18).add(Aspect.HUNGER, 15).add(Aspect.GREED, 12)
+                        .add(Aspect.CRYSTAL, 9).add(Aspect.ENERGY, 6).add(Aspect.MAGIC, 3),
                 6,
                 -2,
                 3,
@@ -595,9 +580,8 @@ public class ScriptWitchery implements IScriptLoader {
                 "RUBYSLIPPERS",
                 getModItem(Witchery.ID, "rubyslippers", 1, 0),
                 5,
-                new AspectList().add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("aer"), 64)
-                        .add(Aspect.getAspect("lucrum"), 32).add(Aspect.getAspect("potentia"), 16)
-                        .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("fames"), 32),
+                new AspectList().add(Aspect.AURA, 64).add(Aspect.AIR, 64).add(Aspect.GREED, 32).add(Aspect.ENERGY, 16)
+                        .add(Aspect.MAGIC, 16).add(Aspect.HUNGER, 32),
                 getModItem(Witchery.ID, "seepingshoes", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 80),
                 NHItemList.ManyullynCrystal.get(),
@@ -616,9 +600,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "DISTILLERY",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("motus"), 15)
-                        .add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("instrumentum"), 9)
-                        .add(Aspect.getAspect("aqua"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.METAL, 18).add(Aspect.MOTION, 15).add(Aspect.CRAFT, 12).add(Aspect.TOOL, 9)
+                        .add(Aspect.WATER, 6).add(Aspect.MAGIC, 3),
                 8,
                 0,
                 3,
@@ -627,9 +610,8 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILLERY",
                 getModItem(Witchery.ID, "distilleryidle", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 80).add(Aspect.getAspect("ignis"), 80)
-                        .add(Aspect.getAspect("ordo"), 80).add(Aspect.getAspect("perditio"), 80)
-                        .add(Aspect.getAspect("aqua"), 80),
+                new AspectList().add(Aspect.AIR, 80).add(Aspect.FIRE, 80).add(Aspect.ORDER, 80).add(Aspect.ENTROPY, 80)
+                        .add(Aspect.WATER, 80),
                 "abc",
                 "def",
                 "ghi",
@@ -658,9 +640,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "RITUALCHALK",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("sensus"), 18).add(Aspect.getAspect("motus"), 15)
-                        .add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("iter"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.SENSES, 18).add(Aspect.MOTION, 15).add(Aspect.AURA, 12)
+                        .add(Aspect.ENERGY, 9).add(Aspect.TRAVEL, 6).add(Aspect.MAGIC, 3),
                 8,
                 -2,
                 3,
@@ -673,8 +654,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RITUALCHALK",
                 getModItem(Witchery.ID, "chalkritual", 2, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("ignis"), 25),
+                new AspectList().add(Aspect.AIR, 50).add(Aspect.EARTH, 50).add(Aspect.ORDER, 25).add(Aspect.FIRE, 25),
                 "abc",
                 "def",
                 "ghi",
@@ -702,9 +682,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "CIRCLETALISMAN",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("lucrum"), 18).add(Aspect.getAspect("motus"), 15)
-                        .add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.GREED, 18).add(Aspect.MOTION, 15).add(Aspect.AURA, 12).add(Aspect.ENERGY, 9)
+                        .add(Aspect.AIR, 6).add(Aspect.MAGIC, 3),
                 10,
                 -2,
                 3,
@@ -717,8 +696,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CIRCLETALISMAN",
                 getModItem(Witchery.ID, "circletalisman", 1, 0),
-                new AspectList().add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("terra"), 50)
-                        .add(Aspect.getAspect("ignis"), 50),
+                new AspectList().add(Aspect.ORDER, 50).add(Aspect.EARTH, 50).add(Aspect.FIRE, 50),
                 "abc",
                 "def",
                 "ghi",
@@ -747,8 +725,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "ALTAR",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("arbor"), 9).add(Aspect.getAspect("terra"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.CRAFT, 12).add(Aspect.TREE, 9).add(Aspect.EARTH, 6),
                 -2,
                 0,
                 3,
@@ -762,8 +739,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ALTAR",
                 getModItem(Witchery.ID, "altar", 2, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("ignis"), 20)
-                        .add(Aspect.getAspect("ordo"), 20),
+                new AspectList().add(Aspect.EARTH, 20).add(Aspect.FIRE, 20).add(Aspect.ORDER, 20),
                 "abc",
                 "def",
                 "ghi",
@@ -792,8 +768,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "CHALICE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("terra"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.GREED, 12).add(Aspect.METAL, 9).add(Aspect.EARTH, 6),
                 0,
                 0,
                 3,
@@ -802,8 +777,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CHALICE",
                 getModItem(Witchery.ID, "ingredient", 1, 1),
-                new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("terra"), 10)
-                        .add(Aspect.getAspect("ordo"), 5),
+                new AspectList().add(Aspect.WATER, 15).add(Aspect.EARTH, 10).add(Aspect.ORDER, 5),
                 "abc",
                 "def",
                 "ghi",
@@ -831,8 +805,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "ARTHANA",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("mortuus"), 6),
+                new AspectList().add(Aspect.MAGIC, 15).add(Aspect.GREED, 12).add(Aspect.TOOL, 9).add(Aspect.DEATH, 6),
                 -4,
                 -2,
                 3,
@@ -845,8 +818,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARTHANA",
                 getModItem(Witchery.ID, "arthana", 1, 0),
-                new AspectList().add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("ordo"), 10),
+                new AspectList().add(Aspect.EARTH, 20).add(Aspect.ENTROPY, 15).add(Aspect.ORDER, 10),
                 "abc",
                 "def",
                 "ghi",
@@ -875,8 +847,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "WARMBLOOD",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("fames"), 15).add(Aspect.getAspect("lucrum"), 12)
-                        .add(Aspect.getAspect("aqua"), 9).add(Aspect.getAspect("exanimis"), 6),
+                new AspectList().add(Aspect.HUNGER, 15).add(Aspect.GREED, 12).add(Aspect.WATER, 9)
+                        .add(Aspect.UNDEAD, 6),
                 -2,
                 -2,
                 3,
@@ -886,8 +858,7 @@ public class ScriptWitchery implements IScriptLoader {
                 "WARMBLOOD",
                 getModItem(Witchery.ID, "ingredient", 1, 163),
                 getModItem(TinkerConstruct.ID, "jerky", 1, 7),
-                new AspectList().add(Aspect.getAspect("exanimis"), 4).add(Aspect.getAspect("fames"), 4)
-                        .add(Aspect.getAspect("lucrum"), 4));
+                new AspectList().add(Aspect.UNDEAD, 4).add(Aspect.HUNGER, 4).add(Aspect.GREED, 4));
         TCHelper.addResearchPage(
                 "WARMBLOOD",
                 new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(Witchery.ID, "ingredient", 1, 163))));
@@ -895,8 +866,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "FUMEFUNNEL",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("ignis"), 12)
-                        .add(Aspect.getAspect("lux"), 9).add(Aspect.getAspect("sensus"), 6),
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.FIRE, 12).add(Aspect.LIGHT, 9).add(Aspect.SENSES, 6),
                 0,
                 2,
                 3,
@@ -905,8 +875,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FUMEFUNNEL",
                 getModItem(Witchery.ID, "fumefunnel", 1, 0),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ignis"), 30)
-                        .add(Aspect.getAspect("terra"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.FIRE, 30).add(Aspect.EARTH, 30),
                 "abc",
                 "def",
                 "ghi",
@@ -935,8 +904,7 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "FUMEFILTER",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("vitreus"), 9)
-                        .add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("praecantatio"), 3),
+                new AspectList().add(Aspect.METAL, 9).add(Aspect.CRYSTAL, 9).add(Aspect.GREED, 6).add(Aspect.MAGIC, 3),
                 2,
                 2,
                 3,
@@ -946,8 +914,7 @@ public class ScriptWitchery implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FUMEFILTER",
                 getModItem(Witchery.ID, "ingredient", 1, 73),
-                new AspectList().add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("ordo"), 16)
-                        .add(Aspect.getAspect("terra"), 16),
+                new AspectList().add(Aspect.AIR, 16).add(Aspect.ORDER, 16).add(Aspect.EARTH, 16),
                 "abc",
                 "def",
                 "ghi",
@@ -975,8 +942,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "FILTEREDFUMEFUNNEL",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("vitreus"), 12)
-                        .add(Aspect.getAspect("lux"), 9).add(Aspect.getAspect("praecantatio"), 6),
+                new AspectList().add(Aspect.METAL, 15).add(Aspect.CRYSTAL, 12).add(Aspect.LIGHT, 9)
+                        .add(Aspect.MAGIC, 6),
                 2,
                 4,
                 3,
@@ -986,8 +953,8 @@ public class ScriptWitchery implements IScriptLoader {
                 "FILTEREDFUMEFUNNEL",
                 getModItem(Witchery.ID, "filteredfumefunnel", 1, 0),
                 3,
-                new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("vitreus"), 8)
-                        .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("lux"), 16),
+                new AspectList().add(Aspect.METAL, 32).add(Aspect.CRYSTAL, 8).add(Aspect.MAGIC, 24)
+                        .add(Aspect.LIGHT, 16),
                 getModItem(Witchery.ID, "fumefunnel", 1, 0),
                 BlockList.SteelBars.get(),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
@@ -1002,8 +969,8 @@ public class ScriptWitchery implements IScriptLoader {
         new ResearchItem(
                 "WAYSTONE",
                 "WITCHERY",
-                new AspectList().add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("iter"), 12)
-                        .add(Aspect.getAspect("tenebrae"), 9).add(Aspect.getAspect("praecantatio"), 6),
+                new AspectList().add(Aspect.MOTION, 15).add(Aspect.TRAVEL, 12).add(Aspect.DARKNESS, 9)
+                        .add(Aspect.MAGIC, 6),
                 8,
                 -4,
                 3,
@@ -1013,9 +980,8 @@ public class ScriptWitchery implements IScriptLoader {
                 "WAYSTONE",
                 getModItem(Witchery.ID, "ingredient", 1, 12),
                 5,
-                new AspectList().add(Aspect.getAspect("motus"), 48).add(Aspect.getAspect("iter"), 64)
-                        .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("tenebrae"), 32)
-                        .add(Aspect.getAspect("aer"), 64),
+                new AspectList().add(Aspect.MOTION, 48).add(Aspect.TRAVEL, 64).add(Aspect.MAGIC, 24)
+                        .add(Aspect.DARKNESS, 32).add(Aspect.AIR, 64),
                 getModItem(Minecraft.ID, "flint", 1, 0),
                 getModItem(Witchery.ID, "chalkritual", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 7),

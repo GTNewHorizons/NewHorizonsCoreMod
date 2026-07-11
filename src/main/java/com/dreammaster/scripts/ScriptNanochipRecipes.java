@@ -127,7 +127,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Nanochip Complex Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(ItemRegistry.bw_realglas, 8, 14),
+                        new ItemStack(ItemRegistry.bw_realglas, 8, 6),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RoseGold, 64),
                         GregtechItemList.Laser_Lens_Special.get(0))
                 .fluidInputs(WerkstoffMaterialPool.FluoroformOxygenMix.getFluidOrGas(2000))
@@ -148,7 +148,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iridium, 8),
-                        WerkstoffLoader.LuVTierMaterial.get(OrePrefixes.foil, 48),
+                        WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.foil, 48),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Adamantium, 4),
                         ItemList.VacuumConveyorPipe.get(8))
                 .fluidInputs(
@@ -321,7 +321,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Robot_Arm_UEV.get(1),
                         ItemList.Machine_Multi_IndustrialLaserEngraver.get(1),
-                        GregtechItemList.Industrial_CuttingFactoryController.get(1),
+                        ItemList.IndustrialCuttingMachine.get(1),
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1),
                         NHItemList.ChromaticLens.get(1))
                 .fluidInputs(
@@ -372,7 +372,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Emitter_UEV.get(1),
                         ItemList.Machine_Multi_IndustrialElectromagneticSeparator.get(1),
-                        GregtechItemList.Industrial_Cryogenic_Freezer.get(1),
+                        ItemList.CryogenicFreezer.get(1),
                         ItemList.Electromagnet_Tengam.get(1),
                         ItemList.Reactor_Coolant_Sp_6.get(1))
                 .fluidInputs(
@@ -1582,7 +1582,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UIV);
 
-        // Planck manifold
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.ProcessedFrameboxHypogen, 2),
@@ -1592,7 +1591,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.CasingEternity, 4),
                         new CircuitComponentStack(CircuitComponent.ProcessedFoilShirabon, 64)),
                 Arrays.asList(
-                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(16 * INGOTS),
+                        Materials.BoundlessCosmicSolder.getFluid(1000),
                         Materials.RadoxPolymer.getMolten(16 * INGOTS),
                         Materials.PrimordialMatter.getFluid(1000),
                         Materials.ExcitedDTSC.getFluid(4000)),
@@ -1616,7 +1615,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltWhiteDwarfMatter, 32),
                         new CircuitComponentStack(CircuitComponent.ProcessedCoiledThermalSuperconductor, 8)),
                 Arrays.asList(
-                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(64 * INGOTS),
+                        Materials.BoundlessCosmicSolder.getFluid(4000),
                         Materials.PrimordialMatter.getFluid(4000),
                         Materials.Space.getMolten(4000),
                         Materials.PhononMedium.getFluid(1000)),
@@ -1624,7 +1623,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 1000 * SECONDS,
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UMV);
-
     }
     // spotless:on
 }
