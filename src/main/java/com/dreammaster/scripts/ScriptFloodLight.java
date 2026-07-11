@@ -12,12 +12,13 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 
 public class ScriptFloodLight implements IScriptLoader {
 
@@ -102,7 +103,8 @@ public class ScriptFloodLight implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Tungsten, 1L),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeWireFine, (int) (1L)),
                         getModItem(Minecraft.ID, "glass_pane", 2, 0))
                 .itemOutputs(getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("argon", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -110,14 +112,14 @@ public class ScriptFloodLight implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 3, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapePlate, (int) (2L)))
                 .itemOutputs(getModItem(FloodLights.ID, "carbonDissolver", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (2L)))
                 .itemOutputs(getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);

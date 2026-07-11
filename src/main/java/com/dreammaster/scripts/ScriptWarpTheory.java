@@ -22,12 +22,15 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -100,7 +103,9 @@ public class ScriptWarpTheory implements IScriptLoader {
                 'b',
                 new ItemStack(Items.potionitem), // Water bottle
                 'p',
-                Materials.InfusedEntropy.getDust(1), // Perditio crystal dust
+                MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.shapeDust, (int) (1)), // Perditio
+                                                                                                                    // crystal
+                                                                                                                    // dust
                 'g',
                 new ItemStack(Items.ghast_tear));
         TCHelper.addResearchPage(

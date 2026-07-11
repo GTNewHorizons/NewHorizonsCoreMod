@@ -29,19 +29,18 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.util.GTOreDictUnificator;
-import magicbees.item.types.NuggetType;
-import magicbees.main.Config;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -58,21 +57,21 @@ public class ScriptForbiddenMagic implements IScriptLoader {
     }
 
     @Override
-    public List<Mods> getDependencies() {
+    public List<String> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2,
-                Backpack,
-                BiomesOPlenty,
-                BloodArsenal,
-                BloodMagic,
-                Botania,
-                EnderIO,
-                ForbiddenMagic,
-                IndustrialCraft2,
-                Thaumcraft,
-                ThaumicTinkerer,
-                TinkerConstruct,
-                Witchery);
+                AppliedEnergistics2.ID,
+                Backpack.ID,
+                BiomesOPlenty.ID,
+                BloodArsenal.ID,
+                BloodMagic.ID,
+                Botania.ID,
+                EnderIO.ID,
+                ForbiddenMagic.ID,
+                IndustrialCraft2.ID,
+                Thaumcraft.ID,
+                ThaumicTinkerer.ID,
+                TinkerConstruct.ID,
+                Witchery.ID);
     }
 
     @Override
@@ -94,7 +93,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ChiselHelper.registerOredict("blockNetherStar", "blockNetherStar");
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
-                .itemOutputs(Config.nuggets.getStackForType(NuggetType.EMERALD, 9)).duration(1 * MINUTES).eut(5)
+                .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0)).duration(1 * MINUTES).eut(5)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0))
                 .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
@@ -175,7 +174,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         ThaumcraftApi.addCrucibleRecipe(
                 "VINTEUM",
-                GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Vinteum, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Vinteum, Materials2Shapes.shapeNugget, (int) (1L)),
                 "nuggetThaumium",
                 new AspectList().add(Aspect.EXCHANGE, 4).add(Aspect.ORDER, 2).add(Aspect.CRYSTAL, 2));
         TCHelper.addInfusionCraftingRecipe(
@@ -484,12 +483,15 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -4,
                 2,
                 3,
-                GTOreDictUnificator.get(OrePrefixes.gem, Materials.Vinteum, 1))
+                MaterialLibAPI.getStack(Materials2Materials.Vinteum, Materials2Shapes.shapeGem, (int) (1)))
                         .setPages(
                                 new ResearchPage("derp.research_page.VINTEUM"),
                                 new ResearchPage(
                                         TCHelper.findCrucibleRecipe(
-                                                GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Vinteum, 1L))))
+                                                MaterialLibAPI.getStack(
+                                                        Materials2Materials.Vinteum,
+                                                        Materials2Shapes.shapeNugget,
+                                                        (int) (1L)))))
                         .setConcealed().setParents("JOURNEY", "THAUMIUM", "GT_ADVANCEDMETALLURGY")
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("VINTEUM", 1);

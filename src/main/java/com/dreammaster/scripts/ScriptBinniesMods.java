@@ -9,11 +9,11 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 
 public class ScriptBinniesMods implements IScriptLoader {
 
@@ -23,24 +23,26 @@ public class ScriptBinniesMods implements IScriptLoader {
     }
 
     @Override
-    public List<Mods> getDependencies() {
-        return Arrays.asList(Avaritia, ExtraBees);
+    public List<String> getDependencies() {
+        return Arrays.asList(Avaritia.ID, ExtraBees.ID);
     }
 
     @Override
     public void loadRecipes() {
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Emerald, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2)).itemOutputs(
+                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.shapeDustTiny, (int) (1L)))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 3))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ruby, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sapphire, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Ruby, Materials2Shapes.shapeDustTiny, (int) (1L)))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4)).itemOutputs(
+                MaterialLibAPI.getStack(Materials2Materials.Sapphire, Materials2Shapes.shapeDustTiny, (int) (1L)))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 5))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Lapis, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeDustTiny, (int) (1L)))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
     }
 }

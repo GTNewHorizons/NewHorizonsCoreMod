@@ -19,15 +19,15 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.forestry.ForestryHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 
 public class ScriptExtraTrees implements IScriptLoader {
 
@@ -67,9 +67,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "misc", 1, 3));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapePlate, (int) (1L)),
                 "plankWood",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapePlate, (int) (1L)),
                 getModItem(Forestry.ID, "factory2", 1, 2),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
                 getModItem(Forestry.ID, "factory2", 1, 2),
@@ -78,9 +78,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "misc", 1, 3));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapePlate, (int) (1L)),
                 "slabWood",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapePlate, (int) (1L)),
                 getModItem(Forestry.ID, "factory2", 1, 2),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
                 getModItem(Forestry.ID, "factory2", 1, 2),
@@ -4081,23 +4081,23 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)),
                 'b',
                 "itemCasingGold",
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)),
                 'e',
                 "circuitAdvanced",
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.shapePlate, (int) (1L)),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)),
                 'h',
                 "itemCasingGold",
                 'i',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1440),
@@ -4107,23 +4107,23 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)),
                 'b',
                 "itemCasingGold",
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.shapePlate, (int) (1L)),
                 'e',
                 "circuitAdvanced",
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)),
                 'h',
                 "itemCasingGold",
                 'i',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeScrew, (int) (1L)));
 
     }
 

@@ -13,11 +13,14 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import com.cubefury.vendingmachine.items.VMItems;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -35,7 +38,7 @@ public class ScriptVendingMachine implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack ironPlate = Materials.Iron.getPlates(1);
+        ItemStack ironPlate = MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (1));
         addShapedRecipe(
                 VMItems.vendingMachine,
                 getModItem(Minecraft.ID, "stone_button", 1, 0),
