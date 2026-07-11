@@ -25,14 +25,14 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.recipe.RecipeCategories;
-import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
 
 public class MaceratorRecipes implements Runnable {
@@ -40,8 +40,8 @@ public class MaceratorRecipes implements Runnable {
     @Override
     public void run() {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1, 0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)).outputChances(10000)
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)))
+                .outputChances(10000).duration(4 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
 
         if (IndustrialCraft2.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 2, 0))
@@ -54,14 +54,15 @@ public class MaceratorRecipes implements Runnable {
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L)).outputChances(10000)
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(maceratorRecipes);
 
         }
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.flint, 2, 0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L)).duration(10 * SECONDS)
-                .eut(2).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDust, (int) (1L)))
+                .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CokeOvenBrick.get())
                 .itemOutputs(NHItemList.CokeOvenBrickDust.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -76,20 +77,21 @@ public class MaceratorRecipes implements Runnable {
                 .outputChances(10000, 2500, 750, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(maceratorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystal.get(1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 2))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystal.get(1L)).itemOutputs(
+                MaterialLibAPI.getStack(Materials2Materials.GalliumArsenide, Materials2Shapes.shapeDust, (int) (2)))
                 .outputChances(10000).duration(5 * SECONDS).eut(4).addTo(maceratorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystalSmallPart.get(1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystalSmallPart.get(1L)).itemOutputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.GalliumArsenide, Materials2Shapes.shapeDustSmall, (int) (1)))
                 .outputChances(10000).duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (1L)))
                 .outputChances(10000, 2500, 2000, 1500).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(maceratorRecipes);
 
@@ -105,29 +107,48 @@ public class MaceratorRecipes implements Runnable {
                 .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.Calcium.getIngots(1)).itemOutputs(Materials.Calcium.getDust(1))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Calcium, Materials2Shapes.shapeIngot, (int) (1)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Calcium, Materials2Shapes.shapeDust, (int) (1)))
                 .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.Calcium.getNuggets(1))
-                .itemOutputs(Materials.Calcium.getDustTiny(1)).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(Materials.Magnesia.getIngots(1)).itemOutputs(Materials.Magnesia.getDust(1))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Calcium, Materials2Shapes.shapeNugget, (int) (1)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Calcium, Materials2Shapes.shapeDustTiny, (int) (1)))
                 .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.Magnesia.getNuggets(1))
-                .itemOutputs(Materials.Magnesia.getDustTiny(1)).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Magnesia, Materials2Shapes.shapeIngot, (int) (1)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Magnesia, Materials2Shapes.shapeDust, (int) (1)))
+                .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Magnesia, Materials2Shapes.shapeNugget, (int) (1)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Magnesia, Materials2Shapes.shapeDustTiny, (int) (1)))
+                .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(BlockList.Sulfur.get(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 9L)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.shapeDust, (int) (9L)))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
 
         if (OpenPrinters.isModLoaded()) {
 
             // Open Printers
             // Paper shreds
             GTValues.RA.stdBuilder().itemInputs(getModItem(OpenPrinters.ID, "openprinter.paperShreds", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Paper, 1L)).outputChances(10000)
-                    .duration(20 * TICKS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Paper, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(20 * TICKS).eut(2).addTo(maceratorRecipes);
 
         }
 
@@ -142,15 +163,17 @@ public class MaceratorRecipes implements Runnable {
         if (TinkerConstruct.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 4))
-                    .itemOutputs(Materials.Ardite.getDust(1)).outputChances(10000).duration(15 * SECONDS).eut(2)
-                    .addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeDust, (int) (1)))
+                    .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 1))
-                    .itemOutputs(Materials.Ardite.getDust(9)).outputChances(10000).duration(15 * SECONDS).eut(2)
-                    .addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeDust, (int) (9)))
+                    .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 12))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 12)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeDust, (int) (1L)))
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 14))
@@ -162,48 +185,55 @@ public class MaceratorRecipes implements Runnable {
                     .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 9L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 5))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 1L))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.shapeDust, (int) (9L)))
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 9L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 5)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.shapeDust, (int) (1L)))
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 9L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 2)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.shapeDust, (int) (9L)))
+                    .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeDust, (int) (9L)))
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "woodPattern", 1, WILDCARD))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)).outputChances(10000)
-                    .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "Pattern", 1, WILDCARD))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)).outputChances(10000)
-                    .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
             // Oreberries
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "oreBerries", 9, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "oreBerries", 9, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "oreBerries", 9, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "oreBerries", 9, 3))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "oreBerries", 9, 4))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "oreBerries", 9, 4)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeDust, (int) (1L)))
                     .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
         }
@@ -263,41 +293,44 @@ public class MaceratorRecipes implements Runnable {
         if (AdvancedSolarPanel.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L))
+                    .itemOutputs(
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Sunnarium, Materials2Shapes.shapeDust, (int) (1L)))
                     .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 9))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sunnarium, 1L))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(
+                                    Materials2Materials.Sunnarium,
+                                    Materials2Shapes.shapeDustTiny,
+                                    (int) (1L)))
                     .outputChances(10000).duration(1 * SECONDS + 10 * TICKS).eut(2).addTo(maceratorRecipes);
 
         }
 
         if (Fether.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Fether.ID, "flesh_root", 9, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
-                    .duration(5 * SECONDS).eut(2).addTo(maceratorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Fether.ID, "flesh_root", 9, 0)).itemOutputs(
+                    MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)))
+                    .outputChances(10000).duration(5 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         }
 
         if (GalacticraftCore.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 3))
-                    .itemOutputs(
-                            NHItemList.MoonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 3)).itemOutputs(
+                    NHItemList.MoonStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 4))
-                    .itemOutputs(
-                            NHItemList.MoonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 4)).itemOutputs(
+                    NHItemList.MoonStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 5))
-                    .itemOutputs(
-                            NHItemList.MoonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 5)).itemOutputs(
+                    NHItemList.MoonStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(maceratorRecipes);
 
         }
@@ -307,52 +340,56 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.mars", 1, 4))
                     .itemOutputs(
                             NHItemList.MarsStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.BandedIron, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.mars", 1, 5))
                     .itemOutputs(
                             NHItemList.MarsStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.BandedIron, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.mars", 1, 6))
                     .itemOutputs(
                             NHItemList.MarsStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.BandedIron, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.mars", 1, 9))
                     .itemOutputs(
                             NHItemList.MarsStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.BandedIron, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1000).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 0))
                     .itemOutputs(
                             NHItemList.AsteroidsStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lead, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1000, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 1))
                     .itemOutputs(
                             NHItemList.AsteroidsStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lead, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1000, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 2))
                     .itemOutputs(
                             NHItemList.AsteroidsStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lead, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1000, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
@@ -363,529 +400,526 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "phobosblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.PhobosStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.BandedIron, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "phobosblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.PhobosStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.BandedIron, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "phobosblocks", 1, 2))
                     .itemOutputs(
                             NHItemList.PhobosStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.BandedIron, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "deimosblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.DeimosStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesite, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Magnesite, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "deimosblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.DeimosStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesite, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Magnesite, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ceresblocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.CeresStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeteoricIron, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Beryllium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ceresblocks", 1, 0)).itemOutputs(
+                    NHItemList.CeresStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.MeteoricIron, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Beryllium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ceresblocks", 1, 1))
-                    .itemOutputs(
-                            NHItemList.CeresStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeteoricIron, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Beryllium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ceresblocks", 1, 1)).itemOutputs(
+                    NHItemList.CeresStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.MeteoricIron, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Beryllium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "europagrunt", 1, 1))
                     .itemOutputs(
                             NHItemList.EuropaIceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Ledox, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "europaunderwatergeyser", 1, 0))
                     .itemOutputs(
                             NHItemList.EuropaIceDust.get(2),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 2),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 2))
+                            MaterialLibAPI.getStack(Materials2Materials.Ledox, Materials2Shapes.shapeDust, (int) (2)),
+                            MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeDust, (int) (2)))
                     .outputChances(10000, 1250, 625).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "europagrunt", 1, 0))
-                    .itemOutputs(
-                            NHItemList.EuropaStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "europagrunt", 1, 0)).itemOutputs(
+                    NHItemList.EuropaStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "europageyser", 1, 0))
-                    .itemOutputs(
-                            NHItemList.EuropaStoneDust.get(2),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 2),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 2))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "europageyser", 1, 0)).itemOutputs(
+                    NHItemList.EuropaStoneDust.get(2),
+                    MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.shapeDust, (int) (2)),
+                    MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (2)))
                     .outputChances(10000, 1250, 875).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ganymedeblocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.GanymedeStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chromite, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ganymedeblocks", 1, 0)).itemOutputs(
+                    NHItemList.GanymedeStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Chromite, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 875, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ganymedeblocks", 1, 1))
-                    .itemOutputs(
-                            NHItemList.GanymedeStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chromite, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ganymedeblocks", 1, 1)).itemOutputs(
+                    NHItemList.GanymedeStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Chromite, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 875, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "callistoblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.CallistoStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Galena, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.CallistoIce, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Galena, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "callistoblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.CallistoStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Galena, 1))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.CallistoIce, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Galena, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ioblocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.IoStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tantalite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ioblocks", 1, 0)).itemOutputs(
+                    NHItemList.IoStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Tantalite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ioblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.IoStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tantalite, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Tantalite, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ioblocks", 1, 2))
-                    .itemOutputs(
-                            NHItemList.IoStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tantalite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "ioblocks", 1, 2)).itemOutputs(
+                    NHItemList.IoStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Tantalite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "venusblocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.VenusStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quantium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mytryl, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "venusblocks", 1, 0)).itemOutputs(
+                    NHItemList.VenusStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Tetrahedrite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Mytryl, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1125, 625, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "venusblocks", 1, 1))
-                    .itemOutputs(
-                            NHItemList.VenusStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quantium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mytryl, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "venusblocks", 1, 1)).itemOutputs(
+                    NHItemList.VenusStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Tetrahedrite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Mytryl, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1125, 625, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mercuryblocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.MercuryStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mercuryblocks", 1, 0)).itemOutputs(
+                    NHItemList.MercuryStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Ilmenite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mercuryblocks", 1, 1))
-                    .itemOutputs(
-                            NHItemList.MercuryStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mercuryblocks", 1, 1)).itemOutputs(
+                    NHItemList.MercuryStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Ilmenite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mercuryblocks", 1, 2))
-                    .itemOutputs(
-                            NHItemList.MercuryCoreDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mercuryblocks", 1, 2)).itemOutputs(
+                    NHItemList.MercuryCoreDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Ilmenite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 750, 500, 300).duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "enceladusblocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.EnceladusIceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "enceladusblocks", 1, 0)).itemOutputs(
+                    NHItemList.EnceladusIceDust.get(),
+                    MaterialLibAPI
+                            .getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.shapeDust, (int) (1L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1500, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "enceladusblocks", 1, 1))
-                    .itemOutputs(
-                            NHItemList.EnceladusStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "enceladusblocks", 1, 1)).itemOutputs(
+                    NHItemList.EnceladusStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI
+                            .getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 750, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "enceladusblocks", 1, 3))
-                    .itemOutputs(
-                            NHItemList.EnceladusIceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "enceladusblocks", 1, 3)).itemOutputs(
+                    NHItemList.EnceladusIceDust.get(),
+                    MaterialLibAPI
+                            .getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.shapeDust, (int) (1L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1500, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "titanblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "titanblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "titanblocks", 1, 2))
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 2))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mirandablocks", 1, 0))
                     .itemOutputs(
                             NHItemList.MirandaStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Tetrahedrite, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mirandablocks", 1, 1))
                     .itemOutputs(
                             NHItemList.MirandaStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Tetrahedrite, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "mirandablocks", 1, 2))
                     .itemOutputs(
                             NHItemList.MirandaStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Tetrahedrite, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "proteusblocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.ProteusStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uraninite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Adamantium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "proteusblocks", 1, 0)).itemOutputs(
+                    NHItemList.ProteusStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Uraninite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Adamantium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "proteusblocks", 1, 1))
-                    .itemOutputs(
-                            NHItemList.ProteusStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uraninite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Adamantium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "proteusblocks", 1, 1)).itemOutputs(
+                    NHItemList.ProteusStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Uraninite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Adamantium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "proteusblocks", 1, 2))
-                    .itemOutputs(
-                            NHItemList.ProteusStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uraninite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Adamantium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "proteusblocks", 1, 2)).itemOutputs(
+                    NHItemList.ProteusStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Uraninite, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Adamantium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tritonblocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.TritonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neodymium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.RareEarth, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tritonblocks", 1, 0)).itemOutputs(
+                    NHItemList.TritonStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Neodymium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.RareEarth, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tritonblocks", 1, 1))
-                    .itemOutputs(
-                            NHItemList.TritonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neodymium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.RareEarth, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tritonblocks", 1, 1)).itemOutputs(
+                    NHItemList.TritonStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Neodymium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.RareEarth, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tritonblocks", 1, 2))
-                    .itemOutputs(
-                            NHItemList.TritonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neodymium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.RareEarth, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tritonblocks", 1, 2)).itemOutputs(
+                    NHItemList.TritonStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Neodymium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.RareEarth, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.PlutoIceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thorium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Thorium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Plutonium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 312).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.PlutoIceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thorium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Thorium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Plutonium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 312).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 2))
                     .itemOutputs(
                             NHItemList.PlutoIceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thorium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Thorium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Plutonium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 312).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 3))
                     .itemOutputs(
                             NHItemList.PlutoIceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thorium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Thorium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Plutonium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 312).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 4))
                     .itemOutputs(
                             NHItemList.PlutoIceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thorium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Thorium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Plutonium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 312).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 5))
-                    .itemOutputs(
-                            NHItemList.PlutoStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 5)).itemOutputs(
+                    NHItemList.PlutoStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Plutonium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "makemakegrunt", 1, 0))
-                    .itemOutputs(
-                            NHItemList.MakeMakeStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetYellow, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "makemakegrunt", 1, 0)).itemOutputs(
+                    NHItemList.MakeMakeStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.GarnetRed, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.GarnetYellow, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "makemakegrunt", 1, 1))
-                    .itemOutputs(
-                            NHItemList.MakeMakeStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetYellow, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "makemakegrunt", 1, 1)).itemOutputs(
+                    NHItemList.MakeMakeStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.GarnetRed, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.GarnetYellow, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 625, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "haumeablocks", 1, 0))
-                    .itemOutputs(
-                            NHItemList.HaumeaStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedGold, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "haumeablocks", 1, 0)).itemOutputs(
+                    NHItemList.HaumeaStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.InfusedGold, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 625, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "acentauribbgrunt", 1, 0))
-                    .itemOutputs(
-                            NHItemList.CentauriASurfaceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "acentauribbgrunt", 1, 0)).itemOutputs(
+                    NHItemList.CentauriASurfaceDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI
+                            .getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 750, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1, 0))
-                    .itemOutputs(
-                            NHItemList.CentauriAStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1, 0)).itemOutputs(
+                    NHItemList.CentauriAStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI
+                            .getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 750, 125).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "vegabsubgrunt", 1, 0))
-                    .itemOutputs(
-                            NHItemList.VegaBStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "vegabsubgrunt", 1, 0)).itemOutputs(
+                    NHItemList.VegaBStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Europium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 750, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "vegabgrunt", 1, 0))
-                    .itemOutputs(
-                            NHItemList.VegaBStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 1))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "vegabgrunt", 1, 0)).itemOutputs(
+                    NHItemList.VegaBStoneDust.get(),
+                    MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeDust, (int) (1)),
+                    MaterialLibAPI.getStack(Materials2Materials.Europium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 1250, 750, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaEgrunt", 1, 0))
                     .itemOutputs(
                             NHItemList.BarnardaEStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Niobium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Yttrium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Gallium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaEsubgrunt", 1, 0))
                     .itemOutputs(
                             NHItemList.BarnardaEStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Niobium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Yttrium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Gallium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaFgrunt", 1, 0))
                     .itemOutputs(
                             NHItemList.BarnardaFStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Gallium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Yttrium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Niobium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 1, 0))
                     .itemOutputs(
                             NHItemList.BarnardaFStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Gallium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Yttrium, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Niobium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tcetieblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.TCetiEStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tcetieblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.TCetiEStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "tcetieblocks", 1, 2))
                     .itemOutputs(
                             NHItemList.TCetiEStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 1))
+                            MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeDust, (int) (1)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapeDust, (int) (1)))
                     .outputChances(10000, 625, 500, 375).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
 
@@ -901,13 +935,13 @@ public class MaceratorRecipes implements Runnable {
         }
 
         if (DraconicEvolution.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaoticCore", 1, 0))
-                    .itemOutputs(
-                            Materials.DraconiumAwakened.getDust(64),
-                            Materials.SpaceTime.getDust(10),
-                            Materials.BlackPlutonium.getDust(4),
-                            NHItemList.ChaoticDust.get(1))
-                    .duration(50 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(maceratorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaoticCore", 1, 0)).itemOutputs(
+                    MaterialLibAPI
+                            .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.shapeDust, (int) (64)),
+                    MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.shapeDust, (int) (10)),
+                    MaterialLibAPI.getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapeDust, (int) (4)),
+                    NHItemList.ChaoticDust.get(1)).duration(50 * SECONDS).eut(TierEU.RECIPE_UMV)
+                    .addTo(maceratorRecipes);
         }
     }
 }
