@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.util.GTRecipeBuilder.PANIC_MODE_NULL;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
@@ -31,6 +32,13 @@ public final class IngredientFactory {
         } else {
             throw new RuntimeException("Could not find ItemStack: " + modId + ":" + name);
         }
+    }
+
+    /**
+     * Whether the stack is the missing-item placeholder produced by {@link #invalidItem} when a mod item lookup fails.
+     */
+    public static boolean isMissingItem(ItemStack stack) {
+        return stack != null && stack.getItem() == Item.getItemFromBlock(Blocks.fire);
     }
 
     /**
