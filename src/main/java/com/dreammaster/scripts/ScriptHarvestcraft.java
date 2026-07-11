@@ -28,6 +28,7 @@ import java.util.List;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.Material;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -63,17 +64,17 @@ public class ScriptHarvestcraft implements IScriptLoader {
     public void loadRecipes() {
         OreDictionary.registerOre(
                 "toolMortarandpestle",
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(MORTAR.ID, 1, null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(MORTAR.ID, 1, (Material) null, null, null));
         OreDictionary.registerOre(
                 "toolCuttingboard",
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, (Material) null, null, null));
         OreDictionary.registerOre("toolMixingbowl", getModItem(Minecraft.ID, "bowl", 1, 0));
         OreDictionary.registerOre(
                 "toolBakeware",
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(ROLLING_PIN.ID, 1, null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(ROLLING_PIN.ID, 1, (Material) null, null, null));
         OreDictionary.registerOre(
                 "toolJuicer",
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SOFTMALLET.ID, 1, null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(SOFTMALLET.ID, 1, (Material) null, null, null));
 
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0),
