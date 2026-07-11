@@ -14,10 +14,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.recipe.RecipeCategories;
 
 public class FluidExtractorRecipes implements Runnable {
@@ -25,13 +29,18 @@ public class FluidExtractorRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1, 0))
-                .fluidOutputs(Materials.Glass.getMolten(144L)).duration(1 * SECONDS + 4 * TICKS).eut(54)
-                .addTo(fluidExtractionRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1, 0)).fluidOutputs(
+                MaterialLibAPI
+                        .getFluidStack(Materials2Materials.Glass, Materials2FluidShapes.shapeFluidMolten, (int) (144L)))
+                .duration(1 * SECONDS + 4 * TICKS).eut(54).addTo(fluidExtractionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystal.get(1L))
-                .fluidOutputs(Materials.GalliumArsenide.getMolten(288L)).duration(2 * SECONDS + 8 * TICKS).eut(37)
-                .addTo(fluidExtractionRecipes);
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.GalliumArsenide,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (288L)))
+                .duration(2 * SECONDS + 8 * TICKS).eut(37).addTo(fluidExtractionRecipes);
 
         if (OpenBlocks.isModLoaded() && TinkerConstruct.isModLoaded()) {
 
@@ -76,12 +85,22 @@ public class FluidExtractorRecipes implements Runnable {
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0))
-                    .fluidOutputs(Materials.Glass.getMolten(144L)).duration(24 * TICKS).eut(54)
-                    .recipeCategory(RecipeCategories.fluidExtractorRecycling).addTo(fluidExtractionRecipes);
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Glass,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (144L)))
+                    .duration(24 * TICKS).eut(54).recipeCategory(RecipeCategories.fluidExtractorRecycling)
+                    .addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
-                    .fluidOutputs(Materials.Glass.getMolten(54L)).duration(9 * TICKS).eut(54)
-                    .recipeCategory(RecipeCategories.fluidExtractorRecycling).addTo(fluidExtractionRecipes);
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Glass,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (54L)))
+                    .duration(9 * TICKS).eut(54).recipeCategory(RecipeCategories.fluidExtractorRecycling)
+                    .addTo(fluidExtractionRecipes);
 
         }
 
