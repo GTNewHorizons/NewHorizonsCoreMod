@@ -368,8 +368,15 @@ def rewrite_file(path: Path, apply: bool):
     for start, end, replacement in sorted(edits, key=lambda e: -e[0]):
         new_text = new_text[:start] + replacement + new_text[end:]
 
-    remaining_materials = re.search(r"\bMaterials\.", new_text)
-    remaining_oreprefixes = re.search(r"\bOrePrefixes\.", new_text)
+    # Word-boundary (not just dotted-call) scan, and blind to the legacy import lines themselves,
+    # so a bare type reference (e.g. a `Materials material` parameter) still pins the import.
+    body_without_legacy_imports = "\n".join(
+        l
+        for l in new_text.split("\n")
+        if l.strip() not in (IMPORT_LEGACY_MATERIALS, IMPORT_LEGACY_OREPREFIXES)
+    )
+    remaining_materials = re.search(r"\bMaterials\b", body_without_legacy_imports)
+    remaining_oreprefixes = re.search(r"\bOrePrefixes\b", body_without_legacy_imports)
 
     import_lines = []
     if "materiallibapi" in uses and IMPORT_MATERIALLIBAPI not in new_text:
