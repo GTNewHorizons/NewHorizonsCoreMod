@@ -34,12 +34,15 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -459,13 +462,13 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "glass", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (2L)))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (2L)))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "paper", 8, 0)).circuit(8)
@@ -475,7 +478,8 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -527,21 +531,22 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeGearGtSmall, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeItemCasing, (int) (2)),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.shapePlate, (int) (1L)),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 4L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 

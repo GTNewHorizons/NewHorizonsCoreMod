@@ -31,6 +31,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
@@ -38,6 +39,8 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -84,7 +87,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
         GTModHandler.addSmeltingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 2L));
+                MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.shapeIngot, (int) (2L)));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0))
@@ -102,27 +105,34 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(20 * TICKS)
                 .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)),
-                        getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.shapeLens, (int) (1))),
+                getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
+                .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Dilithium, Materials2Shapes.shapeLens, (int) (1))),
+                getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
+                .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.InfusedOrder, Materials2Shapes.shapeLens, (int) (1))),
+                getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1)),
-                        getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
-                .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1)),
-                        getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
-                .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Glass, Materials2Shapes.shapeLens, (int) (1))),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
@@ -1602,7 +1612,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.addResearchPage("ICHORIUM", new ResearchPage("ttresearch.page.ICHORIUM.0"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORIUM",
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.shapeIngot, (int) (1L)),
                 new AspectList().add(Aspect.AIR, 125).add(Aspect.WATER, 125).add(Aspect.FIRE, 125)
                         .add(Aspect.EARTH, 125).add(Aspect.ORDER, 125).add(Aspect.ENTROPY, 125),
                 "abc",
@@ -1629,7 +1639,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ICHORIUM",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L))));
+                        TCHelper.findArcaneRecipe(
+                                MaterialLibAPI.getStack(
+                                        Materials2Materials.Ichorium,
+                                        Materials2Shapes.shapeIngot,
+                                        (int) (1L)))));
         TCHelper.setResearchAspects(
                 "ICHORIUM",
                 new AspectList().add(Aspect.METAL, 15).add(Aspect.CRAFT, 15).add(Aspect.TOOL, 12).add(Aspect.MAGIC, 9)

@@ -32,14 +32,15 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -113,7 +114,7 @@ public class ScriptWitchery implements IScriptLoader {
                         getModItem(Witchery.ID, "ingredient", 9, 130),
                         new ItemStack(Items.magma_cream, 9),
                         new ItemStack(Items.blaze_powder, 9),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.shapeDust, (int) (1L)))
                 .circuit(4).itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
@@ -121,7 +122,7 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 16),
                 null,
                 null,
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.shapeDust, (int) (1L)),
                 null,
                 null,
                 null,
@@ -129,7 +130,7 @@ public class ScriptWitchery implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.shapeDust, (int) (1L)),
                 null,
                 null,
                 getModItem(Witchery.ID, "ingredient", 1, 16),

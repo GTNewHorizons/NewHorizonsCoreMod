@@ -64,6 +64,7 @@ import com.gtnewhorizons.tcwands.api.TCWandAPI;
 import com.gtnewhorizons.tcwands.api.wrappers.AbstractWandWrapper;
 import com.gtnewhorizons.tcwands.api.wrappers.CapWrapper;
 import com.ruling_0.materiallib.api.Material;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
 import goodgenerator.items.GGMaterial;
@@ -73,6 +74,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -146,8 +150,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1),
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 2))
+                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapePlate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeIngot, (int) (2)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -155,7 +159,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1))
+                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapePlate, (int) (1)))
                 .circuit(1).itemOutputs(getModItem(Thaumcraft.ID, "ItemShovelThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -163,29 +167,37 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 1))
+                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapePlate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeIngot, (int) (1)))
                 .circuit(2).itemOutputs(getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         ChiselHelper
                 .addVariationFromStack("thaumium", GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L));
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Amber, Materials2Shapes.shapeDust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(7000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS).eut(24)
                 .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Amber, Materials2Shapes.shapeDust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(24).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Amber, Materials2Shapes.shapeDust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(10000)
-                .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(24).addTo(autoclaveRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Void,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (36)))
+                .duration(50 * SECONDS).eut(24).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Fether.ID, "glow_flower_seeds", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Blaze, 8L))
+                        MaterialLibAPI.getStack(Materials2Materials.Blaze, Materials2Shapes.shapeDustTiny, (int) (8L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1646,8 +1658,12 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         // Quicksilver Drop Fixes
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 1, 5))
-                .fluidOutputs(Materials.Mercury.getFluid(100)).duration(13 * TICKS).eut(4)
-                .addTo(fluidExtractionRecipes);
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Mercury,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (100)))
+                .duration(13 * TICKS).eut(4).addTo(fluidExtractionRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 9, 5))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 3)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
@@ -1691,7 +1707,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "TALLOW",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 4),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Soapstone, Materials2Shapes.shapeDust, (int) (1L)),
                 new AspectList().add(Aspect.MAGIC, 2).add(Aspect.FLESH, 4).add(Aspect.DEATH, 2));
         TCHelper.setResearchAspects(
                 "TALLOW",
@@ -1730,17 +1746,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
                 new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Charcoal, Materials2Shapes.shapeDust, (int) (1L)),
                 new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lignite, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Lignite, Materials2Shapes.shapeDust, (int) (1L)),
                 new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         TCHelper.setResearchAspects(
                 "ALUMENTUM",
@@ -2350,16 +2366,18 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Ruby, Materials2Shapes.shapeLens, (int) (1L))))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Jasper, Materials2Shapes.shapeLens, (int) (1L))))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
@@ -2368,16 +2386,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.GarnetRed, Materials2Shapes.shapeLens, (int) (1L))))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.InfusedFire, Materials2Shapes.shapeLens, (int) (1L))))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
@@ -2523,11 +2544,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'c',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.RoseGold, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.RoseGold, Materials2Shapes.shapeRing, (int) (1L)),
                 'e',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.RoseGold, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.RoseGold, Materials2Shapes.shapeRing, (int) (1L)),
                 'g',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 'h',
