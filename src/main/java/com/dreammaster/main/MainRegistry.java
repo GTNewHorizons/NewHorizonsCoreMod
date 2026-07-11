@@ -20,7 +20,6 @@ import org.apache.logging.log4j.Logger;
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
-import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.berriespp.BPPConverter;
@@ -389,8 +388,6 @@ public class MainRegistry {
         RecipeRemover.run();
         ScriptLoader.run();
         new DTPFRecipes().run();
-
-        BW_RadHatchMaterial.runRadHatchAdder();
 
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
         if (AmazingTrophies.isModLoaded() && BloodMagic.isModLoaded()
