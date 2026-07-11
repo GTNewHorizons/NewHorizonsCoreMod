@@ -57,6 +57,7 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
@@ -65,6 +66,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -290,7 +294,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)),
                 null,
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -312,7 +316,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.shapeDust, (int) (1L)),
                 null,
                 null,
                 null,
@@ -323,7 +327,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.shapeDust, (int) (1L)),
                 null,
                 null,
                 null,
@@ -334,7 +338,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDustSmall, (int) (1L)),
                 null,
                 null,
                 null,
@@ -345,12 +349,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Gypsum, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Calcite, Materials2Shapes.shapeDust, (int) (1L)),
                 null,
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -358,17 +362,17 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (1L)),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null,
                 null,
@@ -376,7 +380,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null,
@@ -384,12 +388,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (1L)),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -408,7 +412,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -416,7 +420,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Brick, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Brick, Materials2Shapes.shapeDustSmall, (int) (1L)),
                 null,
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -424,7 +428,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.CastIron, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -443,7 +447,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Arsenic, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Arsenic, Materials2Shapes.shapeDustTiny, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -454,7 +458,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -465,7 +469,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDustSmall, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -476,7 +480,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -487,7 +491,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Gallium, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Gallium, Materials2Shapes.shapeDustTiny, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -509,7 +513,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.CobaltBrass, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.CobaltBrass, Materials2Shapes.shapeDustSmall, (int) (1L)),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0),
@@ -668,7 +672,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapePlate, (int) (1L)),
                 'e',
                 getModItem(Minecraft.ID, "piston", 1, 0));
         TConstructRegistry.getTableCasting().addCastingRecipe(
@@ -723,42 +727,44 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Block_ReinforcedConcrete.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 6L))
+                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapePlate, (int) (6L)))
                 .itemOutputs(BlockList.BronzePlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 144)).duration(10 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Block_ReinforcedConcrete.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 6L))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapePlate, (int) (6L)))
                 .itemOutputs(BlockList.SteelPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Block_ReinforcedConcrete.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 6L))
+                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapePlate, (int) (6L)))
                 .itemOutputs(BlockList.TitaniumPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.platinum", 144)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Block_ReinforcedConcrete.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.shapePlate, (int) (6L)))
                 .itemOutputs(BlockList.TungstensteelPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iridium", 144)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Block_ReinforcedConcrete.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 6L))
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.shapePlate, (int) (6L)))
                 .itemOutputs(BlockList.NaquadahPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.osmium", 144)).duration(22 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Block_ReinforcedConcrete.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 6L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Neutronium, Materials2Shapes.shapePlate, (int) (6L)))
                 .itemOutputs(BlockList.NeutroniumPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -817,13 +823,15 @@ public class ScriptCoreMod implements IScriptLoader {
                         NHItemList.CompressedBioBall.get(8))
                 .itemOutputs(NHItemList.BioChunk.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_MV / 2)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeStick, (int) (4L)))
                 .circuit(4).itemOutputs(BlockList.DiamondFrameBox.get()).duration(3 * SECONDS + 4 * TICKS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.Graphite, Materials2Shapes.shapeDust, (int) (1L)))
                 .itemOutputs(BlockList.CompressedGraphite.get(2)).duration(5 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -881,10 +889,15 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.LeadNickelPlate.get(2))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 2000)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.shapeDust, (int) (1L)))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0)).outputChances(10000)
-                .fluidInputs(Materials.Void.getMolten(288)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Void,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (288)))
+                .duration(1 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16, 0))
                 .itemOutputs(NHItemList.RawBioFiber.get()).outputChances(3300)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2biomass", 8)).duration(10 * SECONDS).eut(20)
@@ -901,14 +914,25 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.RawBioFiber.get()).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("nitrofuel", 8)).duration(2 * SECONDS + 10 * TICKS).eut(20)
                 .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeDust, (int) (1L)))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
-                .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
-                .addTo(brewingRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Uranium235, 1L))
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.EnrichedBacterialSludge,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (750)))
+                .duration(6 * SECONDS + 8 * TICKS).eut(4).addTo(brewingRecipes);
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.shapeDustTiny, (int) (1L)))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
-                .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
-                .addTo(brewingRecipes);
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.EnrichedBacterialSludge,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (750)))
+                .duration(6 * SECONDS + 8 * TICKS).eut(4).addTo(brewingRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 288)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV / 2)
@@ -925,24 +949,42 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(12 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().fluidInputs(Materials.EnrichedBacterialSludge.getFluid(750))
-                .fluidOutputs(Materials.FermentedBacterialSludge.getFluid(75)).duration(2 * MINUTES).eut(2)
-                .addTo(fermentingRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.EnrichedBacterialSludge,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (750)))
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.FermentedBacterialSludge,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (75)))
+                .duration(2 * MINUTES).eut(2).addTo(fermentingRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Diamond, Materials2Shapes.shapeLens, (int) (1L))),
+                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.EngravedDiamondCrystalChip.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Ruby, Materials2Shapes.shapeLens, (int) (1L))),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Jasper, Materials2Shapes.shapeLens, (int) (1L))),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
@@ -952,115 +994,150 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.GarnetRed, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.InfusedFire, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.InfusedAir, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.GarnetYellow, Materials2Shapes.shapeGemExquisite, (int) (1L)))
                 .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Force, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Force, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.GarnetYellow, Materials2Shapes.shapeGemExquisite, (int) (1L)))
                 .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetYellow, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.GarnetYellow, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.GarnetYellow, Materials2Shapes.shapeGemExquisite, (int) (1L)))
                 .itemOutputs(NHItemList.EngravedQuantumChip.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.NanoCrystal.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.QuantumCrystal.get()).duration(40 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.QuantumCrystal.get()).duration(40 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 4))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Tanzanite, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.shapePlate, (int) (4)))
                 .itemOutputs(NHItemList.ManyullynCrystal.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 4))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Amethyst, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.shapePlate, (int) (4)))
                 .itemOutputs(NHItemList.ManyullynCrystal.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
-                        NHItemList.ManyullynCrystal.get())
-                .itemOutputs(NHItemList.EngravedManyullynCrystalChip.get()).duration(45 * SECONDS).eut(TierEU.RECIPE_IV)
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Tanzanite, Materials2Shapes.shapeLens, (int) (1L))),
+                NHItemList.ManyullynCrystal.get()).itemOutputs(NHItemList.EngravedManyullynCrystalChip.get())
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Amethyst, Materials2Shapes.shapeLens, (int) (1L))),
+                NHItemList.ManyullynCrystal.get()).itemOutputs(NHItemList.EngravedManyullynCrystalChip.get())
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.NetherStar, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlate, (int) (1L)))
+                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
-                        NHItemList.ManyullynCrystal.get())
-                .itemOutputs(NHItemList.EngravedManyullynCrystalChip.get()).duration(45 * SECONDS).eut(TierEU.RECIPE_IV)
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Dilithium, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlate, (int) (1L)))
+                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.InfusedOrder, Materials2Shapes.shapeLens, (int) (1L))),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlate, (int) (1L)))
                 .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Glass, Materials2Shapes.shapeLens, (int) (1L))),
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlate, (int) (1L)))
                 .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Diamond, Materials2Shapes.shapeLens, (int) (1L))),
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlate, (int) (1L)))
                 .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
-                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
-                .itemOutputs(NHItemList.EngravedGoldChip.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder().circuit(3).fluidInputs(Materials.FermentedBacterialSludge.getFluid(10))
+        GTValues.RA.stdBuilder().circuit(3)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.FermentedBacterialSludge,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (10)))
                 .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1)).duration(3 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(distilleryRecipes);
         GTValues.RA.stdBuilder()
@@ -1079,8 +1156,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 5), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(extruderRecipes);
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.shapePlate, (int) (1)))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "feather", 1, 0), NHItemList.BowFletchingCast.get(0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fletching", 1, 0)).duration(10 * SECONDS)
@@ -1167,56 +1245,59 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.AluminiumIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.TitaniumIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.TungstenIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.TungstenSteelIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.ChromeIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_ZPM).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.NaquadriaIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Neutronium, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.NeutroniumIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (4L)))
                 .itemOutputs(NHItemList.BedrockiumIronPlate.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone", 1, 0))
@@ -1228,7 +1309,7 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Stone, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.shapeDustSmall, (int) (2L)))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, wildcard))
                 .itemOutputs(NHItemList.MushroomPowder.get(2)).outputChances(10000).duration(15 * SECONDS).eut(2)
@@ -1242,18 +1323,18 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "whitemushroomItem", 1, 0))
                 .itemOutputs(NHItemList.MushroomPowder.get(2)).outputChances(10000).duration(15 * SECONDS).eut(2)
                 .addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.IridiumAlloyItemCasing.get())
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Iridium, 8L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.IridiumAlloyItemCasing.get()).itemOutputs(
+                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeDustSmall, (int) (8L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.MysteriousCrystal.get())
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0)).itemOutputs(
+                MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.shapeDust, (int) (1L)))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.MysteriousCrystal.get()).itemOutputs(
+                MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.shapeDust, (int) (9L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.RawMytryl.get())
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mytryl, 1)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Mytryl, Materials2Shapes.shapeDust, (int) (1)))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 55))
                 .itemOutputs(NHItemList.ElectrotineWire.get(2)).duration(5 * SECONDS).eut(4).addTo(wiremillRecipes);
 
@@ -1262,55 +1343,76 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.LongObsidianRod.get(2)).duration(32 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapePlate, (int) (2)))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
-                .fluidInputs(Materials.Lubricant.getFluid(5)).duration(11 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(cutterRecipes);
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapePlate, (int) (2)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Lubricant,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (5)))
+                .duration(11 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapePlate, (int) (2)))
                 .fluidInputs(Materials.Water.getFluid(20)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapePlate, (int) (2)))
                 .fluidInputs(GTModHandler.getDistilledWater(15)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .fluidOutputs(Materials.Obsidian.getMolten(288)).duration(10 * SECONDS + 16 * TICKS).eut(35)
-                .addTo(fluidExtractionRecipes);
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Obsidian,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (288)))
+                .duration(10 * SECONDS + 16 * TICKS).eut(35).addTo(fluidExtractionRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 2))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (2)))
                 .duration(9 * SECONDS + 18 * TICKS).eut(4).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian), ItemList.Shape_Mold_Ingot.get(0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeIngot, (int) (2)))
                 .duration(6 * SECONDS + 10 * TICKS).eut(3).recipeCategory(alloySmelterMolding)
                 .addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeIngot, (int) (2)))
                 .itemOutputs(new ItemStack(Blocks.obsidian)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().fluidInputs(Materials.Obsidian.getMolten(288))
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Obsidian,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (288)))
                 .itemInputs(ItemList.Shape_Mold_Block.get(0)).itemOutputs(new ItemStack(Blocks.obsidian))
                 .duration(14 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_ULV).addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (2)),
                         ItemList.Shape_Extruder_Block.get(0))
                 .itemOutputs(new ItemStack(Blocks.obsidian)).duration(10 * TICKS).eut(24).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeIngot, (int) (2)),
                         ItemList.Shape_Extruder_Block.get(0))
                 .itemOutputs(new ItemStack(Blocks.obsidian)).duration(10 * TICKS).eut(24).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (2)),
                         ItemList.Shape_Mold_Block.get(0))
                 .itemOutputs(new ItemStack(Blocks.obsidian)).duration(5 * TICKS).eut(12)
                 .recipeCategory(alloySmelterMolding).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeIngot, (int) (2)),
                         ItemList.Shape_Mold_Block.get(0))
                 .itemOutputs(new ItemStack(Blocks.obsidian)).duration(5 * TICKS).eut(12)
                 .recipeCategory(alloySmelterMolding).addTo(alloySmelterRecipes);
