@@ -19,11 +19,15 @@ import static toxiceverglades.dimension.DimensionEverglades.blockSecondLayer;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -202,13 +206,20 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemInputsUnsafe(
                             GTUtility.copyAmountUnsafe(
                                     12345,
-                                    GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Rubber, 1)))
+                                    MaterialLibAPI.getStack(
+                                            Materials2Materials.Rubber,
+                                            Materials2Shapes.shapePlateSuperdense,
+                                            (int) (1))))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 0))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder().itemInputsUnsafe(
-                    GTUtility.copyAmountUnsafe(
-                            12345,
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.StyreneButadieneRubber, 1)))
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(
+                            GTUtility.copyAmountUnsafe(
+                                    12345,
+                                    MaterialLibAPI.getStack(
+                                            Materials2Materials.StyreneButadieneRubber,
+                                            Materials2Shapes.shapePlateSuperdense,
+                                            (int) (1))))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 1))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
@@ -218,16 +229,24 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RubberSilicone, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 2))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder().itemInputsUnsafe(
-                    GTUtility.copyAmountUnsafe(
-                            12345,
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.PolyphenyleneSulfide, 1)))
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(
+                            GTUtility.copyAmountUnsafe(
+                                    12345,
+                                    MaterialLibAPI.getStack(
+                                            Materials2Materials.PolyphenyleneSulfide,
+                                            Materials2Shapes.shapePlateSuperdense,
+                                            (int) (1))))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 3))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder().itemInputsUnsafe(
-                    GTUtility.copyAmountUnsafe(
-                            12345,
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.PolyvinylChloride, 1)))
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(
+                            GTUtility.copyAmountUnsafe(
+                                    12345,
+                                    MaterialLibAPI.getStack(
+                                            Materials2Materials.PolyvinylChloride,
+                                            Materials2Shapes.shapePlateSuperdense,
+                                            (int) (1))))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 4))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputsUnsafe(GTUtility.copyAmountUnsafe(4321, new ItemStack(blockSecondLayer)))
@@ -421,20 +440,31 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                 getModItem(UniversalSingularities.ID, "universal.tinkersConstruct.singularity", 1, 6))
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             }
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 64))
+            GTValues.RA.stdBuilder().itemInputs(
+                    MaterialLibAPI
+                            .getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.shapeDust, (int) (64)))
                     .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 5)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(neutroniumCompressorRecipes);
 
             // Recipes which require stabilized black hole - not from original neutronium compressor
 
             // Eternal Singularity
-            GTValues.RA.stdBuilder().fluidInputs(Materials.SpaceTime.getMolten(72L))
+            GTValues.RA.stdBuilder()
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.SpaceTime,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (72L)))
                     .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(100 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Iron Singularity
-            GTValues.RA.stdBuilder().fluidInputs(Materials.Iron.getMolten(9455616L))
+            GTValues.RA.stdBuilder()
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Iron,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (9455616L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 0)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
@@ -446,22 +476,42 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .addTo(neutroniumCompressorRecipes);
 
             // Copper Singularity
-            GTValues.RA.stdBuilder().fluidInputs(Materials.Copper.getMolten(3648 * 9 * 144L))
+            GTValues.RA.stdBuilder()
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Copper,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (3648 * 9 * 144L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 5)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Tin Singularity
-            GTValues.RA.stdBuilder().fluidInputs(Materials.Tin.getMolten(3648 * 9 * 144L))
+            GTValues.RA.stdBuilder()
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Tin,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (3648 * 9 * 144L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 6)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Leaden Singularity
-            GTValues.RA.stdBuilder().fluidInputs(Materials.Lead.getMolten(3648 * 9 * 144L))
+            GTValues.RA.stdBuilder()
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Lead,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (3648 * 9 * 144L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 7)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Base Computation Singularity
-            GTValues.RA.stdBuilder().fluidInputs(Materials.ComputationBase.getMolten(Integer.MAX_VALUE))
+            GTValues.RA.stdBuilder()
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.ComputationBase,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (Integer.MAX_VALUE)))
                     .itemInputs(NHItemList.SingularityComputationCore.get(1))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6))
                     .duration(4500 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COMPRESSION_TIER, 2)
