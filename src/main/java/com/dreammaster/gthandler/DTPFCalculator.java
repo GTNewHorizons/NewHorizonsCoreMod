@@ -8,8 +8,12 @@ import java.util.Collection;
 
 import net.minecraft.item.ItemStack;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
@@ -92,11 +96,15 @@ public class DTPFCalculator {
             if (recipe.mFluidInputs.length == 0) {
                 ebfDuration = (long) Math.max(1, recipe.mDuration * 0.3);
                 ebfEUpertick = recipe.mEUt;
-            } else if (recipe.mFluidInputs[0].isFluidEqual(Materials.Radon.getGas(1000L))) {
-                ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
-                ebfEUpertick = recipe.mEUt;
-                break;
-            }
+            } else if (recipe.mFluidInputs[0].isFluidEqual(
+                    MaterialLibAPI.getFluidStack(
+                            Materials2Materials.Radon,
+                            Materials2FluidShapes.shapeFluidGas,
+                            (int) (1000L)))) {
+                                ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
+                                ebfEUpertick = recipe.mEUt;
+                                break;
+                            }
         }
         recipeDuration = ebfDuration;
     }

@@ -23,13 +23,13 @@ import com.emoniph.witchery.brewing.action.BrewActionModifier;
 import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
 import com.emoniph.witchery.crafting.KettleRecipes;
 import com.emoniph.witchery.crafting.SpinningRecipes;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import alkalus.main.api.RecipeManager.Kettle;
 import alkalus.main.api.RecipeManager.SpinningWheel;
 import alkalus.main.api.plugin.base.BasePluginWitchery;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 
 public class WitcheryPlugin extends BasePluginWitchery {
 
@@ -181,7 +181,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
 
         // add a Spinning Wheel recipes
         SpinningWheel.addRecipe(
-                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeWireFine, (int) (8L)),
                 Witchery.Items.GENERIC.itemGoldenThread.createStack(1),
                 new ItemStack[] { new ItemStack(Items.string, 8, 0),
                         Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1) });
@@ -228,7 +228,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack(Witchery.Items.CHALK_GOLDEN),
                 new ItemStack(Witchery.Items.CHALK_RITUAL),
                 Witchery.Items.GENERIC.itemMandrakeRoot.createStack(),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1L)),
                 Witchery.Items.GENERIC.itemDiamondVapour.createStack());
         addBrewRecipe(
                 2000,
@@ -242,7 +242,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     4000,
                     new ItemStack(Witchery.Items.CHALK_OTHERWHERE),
                     new ItemStack(Witchery.Items.CHALK_RITUAL),
-                    GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
+                    MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (1L)),
                     getModItem(HardcoreEnderExpansion.ID, "end_powder", 1),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
                     NHItemList.ManyullynCrystal.get(1));
