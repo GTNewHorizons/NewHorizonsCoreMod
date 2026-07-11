@@ -26,6 +26,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
@@ -33,10 +34,9 @@ import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 
 public class ScriptBloodArsenal implements IScriptLoader {
 
@@ -46,8 +46,15 @@ public class ScriptBloodArsenal implements IScriptLoader {
     }
 
     @Override
-    public List<Mods> getDependencies() {
-        return Arrays.asList(BloodArsenal, BloodMagic, EnderIO, Natura, Thaumcraft, TinkerConstruct, Witchery);
+    public List<String> getDependencies() {
+        return Arrays.asList(
+                BloodArsenal.ID,
+                BloodMagic.ID,
+                EnderIO.ID,
+                Natura.ID,
+                Thaumcraft.ID,
+                TinkerConstruct.ID,
+                Witchery.ID);
     }
 
     @Override
@@ -617,7 +624,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodArsenal.ID, "blood_diamond", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeGemExquisite, (int) (1L)),
                 4,
                 12000,
                 20,

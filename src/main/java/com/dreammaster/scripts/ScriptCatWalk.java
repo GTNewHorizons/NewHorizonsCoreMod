@@ -10,11 +10,15 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Collections;
 import java.util.List;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -99,20 +103,20 @@ public class ScriptCatWalk implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 5L),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 3L))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeStick, (int) (5L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (3L)))
                 .itemOutputs(getModItem(CatWalks.ID, "steelgrate", 10, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 6L),
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeStick, (int) (6L)),
                         getModItem(CatWalks.ID, "steelgrate", 4, 0))
                 .itemOutputs(getModItem(CatWalks.ID, "support_column", 4, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CatWalks.ID, "steelgrate", 3, 0),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeScrew, (int) (2L)))
                 .itemOutputs(getModItem(CatWalks.ID, "catwalk_unlit", 6, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -147,7 +151,7 @@ public class ScriptCatWalk implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Steel, 2L),
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeWireFine, (int) (2L)),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0))
                 .itemOutputs(getModItem(CatWalks.ID, "ropeLight", 8, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);

@@ -23,6 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.chisel.ChiselHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -30,6 +31,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -2487,7 +2490,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "redwood", 1, 0),
                 getModItem(Natura.ID, "redwood", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
+                MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.shapeDust, (int) (1)),
                 getModItem(Natura.ID, "Cloud", 1, 3),
                 getModItem(Natura.ID, "Cloud", 1, 3),
                 getModItem(Natura.ID, "Cloud", 1, 3),
@@ -3186,31 +3189,31 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (2L)))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(20 * SECONDS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (2L)))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(20 * SECONDS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (1L)))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(10 * SECONDS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 3),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (1L)))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(4 * SECONDS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, wildcard))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (1L)))
                 .outputChances(10000, 8000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.snow, 4)).circuit(4)
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 0))
@@ -3223,7 +3226,7 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "Cloud", 4, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.shapeDust, (int) (1L)))
                 .circuit(4).itemOutputs(getModItem(Natura.ID, "Cloud", 4, 2)).duration(20 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1)).circuit(4)

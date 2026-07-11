@@ -22,6 +22,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
@@ -30,6 +31,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
@@ -327,11 +330,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapePlate, (int) (1L)),
                 'b',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapePlate, (int) (1L)),
                 'd',
                 EngProcessor,
                 'e',
@@ -339,11 +342,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'f',
                 CalcProcessor,
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapePlate, (int) (1L)),
                 'h',
                 LogicProcessor,
                 'i',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L));
+                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapePlate, (int) (1L)));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANETERM",
                 new AspectList().add(Aspect.TOOL, 15).add(Aspect.CRAFT, 12).add(Aspect.ENERGY, 9)

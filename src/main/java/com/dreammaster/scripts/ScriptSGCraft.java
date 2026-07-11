@@ -19,12 +19,15 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 import kekztech.common.Blocks;
 import kekztech.common.TileEntities;
@@ -209,8 +212,8 @@ public class ScriptSGCraft implements IScriptLoader {
                 "wpmmmbw--",
                 "wuppmmbw-",
                 "cwwwwwwww",
-                'w', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 1L),
-                'b', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackDwarfMatter, 1L),
+                'w', MaterialLibAPI.getStack(Materials2Materials.WhiteDwarfMatter, Materials2Shapes.shapePlateSuperdense, (int) (1L)),
+                'b', MaterialLibAPI.getStack(Materials2Materials.BlackDwarfMatter, Materials2Shapes.shapePlateSuperdense, (int) (1L)),
                 'm', magmatterSuperdensePlate,
                 'p', ItemList.Electric_Piston_UXV.get(1L),
                 'u', ItemList.ZPM6.get(1L),

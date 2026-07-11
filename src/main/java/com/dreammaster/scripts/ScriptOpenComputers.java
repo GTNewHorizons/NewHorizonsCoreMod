@@ -13,6 +13,8 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -20,6 +22,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -57,15 +61,30 @@ public class ScriptOpenComputers implements IScriptLoader {
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_HV.get(1L))
-                .itemOutputs(getTransposer(1, 10_240)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .itemOutputs(getTransposer(1, 10_240))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.SolderingAlloy,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (72L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_EV.get(1L))
-                .itemOutputs(getTransposer(1, 40_960)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .itemOutputs(getTransposer(1, 40_960))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.SolderingAlloy,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (72L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_IV.get(1L))
-                .itemOutputs(getTransposer(1, 163_840)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .itemOutputs(getTransposer(1, 163_840))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.SolderingAlloy,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (72L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_LuV.get(1L))

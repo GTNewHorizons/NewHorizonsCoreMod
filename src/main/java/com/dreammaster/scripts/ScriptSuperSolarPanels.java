@@ -9,12 +9,16 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -89,61 +93,82 @@ public class ScriptSuperSolarPanels implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1L)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Emerald, Materials2Shapes.shapeLens, (int) (1L))),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
+                .itemOutputs(getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0)).duration(50 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.GreenSapphire, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GreenSapphire, 1L)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Olivine, Materials2Shapes.shapeLens, (int) (1L))),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Olivine, 1L)),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEarth, 1L)),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
-                .itemOutputs(getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1L)),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Sapphire, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Opal, 1L)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Opal, Materials2Shapes.shapeLens, (int) (1L))),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.BlueTopaz, 1L)),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.BlueTopaz, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L)),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.InfusedWater, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Jasper, Materials2Shapes.shapeLens, (int) (1L))),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
@@ -155,20 +180,26 @@ public class ScriptSuperSolarPanels implements IScriptLoader {
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Ruby, Materials2Shapes.shapeLens, (int) (1L))),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.GarnetRed, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.InfusedFire, Materials2Shapes.shapeLens, (int) (1L))),
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
 

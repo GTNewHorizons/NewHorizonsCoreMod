@@ -21,6 +21,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
@@ -29,6 +30,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptGenetics implements IScriptLoader {
@@ -178,23 +181,23 @@ public class ScriptGenetics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeScrew, (int) (1L)),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeScrew, (int) (1L)),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)),
                 'e',
                 "circuitData",
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeScrew, (int) (1L)),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)),
                 'i',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L));
+                MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeScrew, (int) (1L)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 4320),
@@ -218,7 +221,7 @@ public class ScriptGenetics implements IScriptLoader {
                 'g',
                 getModItem(Genetics.ID, "misc", 1, 9),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)),
                 'i',
                 getModItem(Genetics.ID, "misc", 1, 9));
         RecipeManagers.carpenterManager.addRecipe(
@@ -251,7 +254,8 @@ public class ScriptGenetics implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 8))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeItemCasing, (int) (8)))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 

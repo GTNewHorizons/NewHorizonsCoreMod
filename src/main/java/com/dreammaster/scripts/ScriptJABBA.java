@@ -18,12 +18,16 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -215,13 +219,13 @@ public class ScriptJABBA implements IScriptLoader {
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
                 getModItem(JABBA.ID, "barrel", 1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
                 "stickWood",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
                 "stickWood");
 
         addShapedRecipe(

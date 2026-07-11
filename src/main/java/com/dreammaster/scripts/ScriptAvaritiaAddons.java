@@ -23,6 +23,8 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.Config;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
@@ -34,6 +36,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import vazkii.botania.common.item.ModItems;
@@ -80,7 +85,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                         ItemList.Electric_Piston_HV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Nichrome, 1))
+                        MaterialLibAPI.getStack(Materials2Materials.Nichrome, Materials2Shapes.shapeStick, (int) (1)))
                 .circuit(1).itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -240,27 +245,58 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                             getModItem(EternalSingularity.ID, "eternal_singularity", 8, 0),
                             ItemList.Timepiece.get(1))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15))
-                    .fluidInputs(Materials.MHDCSM.getMolten(288), Materials.ExcitedDTSC.getFluid(10000))
-                    .fluidOutputs(Materials.Hydrogen.getPlasma(576), Materials.Helium.getPlasma(576))
+                    .fluidInputs(
+                            Materials.MHDCSM.getMolten(288),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.ExcitedDTSC,
+                                    Materials2FluidShapes.shapeFluidLiquid,
+                                    (int) (10000)))
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Hydrogen,
+                                    Materials2FluidShapes.shapeFluidPlasma,
+                                    (int) (576)),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Helium,
+                                    Materials2FluidShapes.shapeFluidPlasma,
+                                    (int) (576)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(hammerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15))
-                    .fluidInputs(Materials.Eternity.getMolten(144)).fluidOutputs(Materials.Infinity.getMolten(576))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Eternity,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (144)))
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Infinity,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (576)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(arcFurnaceRecipes);
 
             // Spaghettic Singularity
             GTValues.RA.stdBuilder().itemInputs(
                     // fluxed electrum singularity
                     getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 20))
-                    .fluidInputs(Materials.Mellion.getMolten(4 * 144L))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Mellion,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (4 * 144L)))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 2)).duration(1 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
 
             // Cryptic Singularity
             GTValues.RA.stdBuilder().itemInputs(
                     // iron singularity
-                    getModItem(Avaritia.ID, "Singularity", 1, 0)).fluidInputs(Materials.Creon.getMolten(4 * 144L))
+                    getModItem(Avaritia.ID, "Singularity", 1, 0))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Creon,
+                                    Materials2FluidShapes.shapeFluidMolten,
+                                    (int) (4 * 144L)))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 4)).duration(1 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
         }

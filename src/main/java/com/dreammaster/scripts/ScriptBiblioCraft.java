@@ -19,14 +19,16 @@ import java.util.List;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptBiblioCraft implements IScriptLoader {
 
@@ -36,9 +38,14 @@ public class ScriptBiblioCraft implements IScriptLoader {
     }
 
     @Override
-    public List<Mods> getDependencies() {
-        return Arrays
-                .asList(BiblioCraft, EtFuturumRequiem, FloodLights, IndustrialCraft2, OpenComputers, PamsHarvestCraft);
+    public List<String> getDependencies() {
+        return Arrays.asList(
+                BiblioCraft.ID,
+                EtFuturumRequiem.ID,
+                FloodLights.ID,
+                IndustrialCraft2.ID,
+                OpenComputers.ID,
+                PamsHarvestCraft.ID);
     }
 
     @Override
@@ -489,7 +496,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "screwGold");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1),
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlate, (int) (1)),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioLantern", 4)).duration(3 * SECONDS)
@@ -509,7 +516,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (1)),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioIronLantern", 4)).duration(3 * SECONDS)
@@ -900,7 +907,12 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Lubricant,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (1)))
+                .duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
@@ -920,7 +932,12 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Lubricant,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (1)))
+                .duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
