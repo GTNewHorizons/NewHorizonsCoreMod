@@ -1,9 +1,12 @@
 package com.dreammaster.gthandler;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class GT_Loader_Materials {
 
@@ -13,7 +16,7 @@ public class GT_Loader_Materials {
 
     private void registerMaterialRecipes() {
         GTModHandler.addShapelessCraftingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 3),
+                MaterialLibAPI.getStack(Materials2Materials.Alumite, Materials2Shapes.shapeDust, (int) (3)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Zinc),
                         OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Zinc),
@@ -22,14 +25,14 @@ public class GT_Loader_Materials {
                         OrePrefixes.dust.get(Materials.Obsidian) });
 
         GTModHandler.addShapelessCraftingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.FerriteMixture, 5L),
+                MaterialLibAPI.getStack(Materials2Materials.FerriteMixture, Materials2Shapes.shapeDust, (int) (5L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Nickel), OrePrefixes.dust.get(Materials.Zinc),
                         OrePrefixes.dust.get(Materials.Iron), OrePrefixes.dust.get(Materials.Iron),
                         OrePrefixes.dust.get(Materials.Iron), OrePrefixes.dust.get(Materials.Iron) });
 
         GTModHandler.addShapelessCraftingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.BorosilicateGlass, 7L),
+                MaterialLibAPI.getStack(Materials2Materials.BorosilicateGlass, Materials2Shapes.shapeDust, (int) (7L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Boron), OrePrefixes.dust.get(Materials.Glass),
                         OrePrefixes.dust.get(Materials.Glass), OrePrefixes.dust.get(Materials.Glass),

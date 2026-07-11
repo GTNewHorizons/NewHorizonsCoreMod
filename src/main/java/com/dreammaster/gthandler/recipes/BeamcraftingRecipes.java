@@ -9,11 +9,16 @@ import static gtnhlanth.common.beamline.Particle.GRAVITON;
 import static gtnhlanth.common.beamline.Particle.WBOSON;
 import static gtnhlanth.common.beamline.Particle.ZBOSON;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.loaders.postload.recipes.beamcrafter.BeamCrafterMetadata;
 
@@ -27,8 +32,16 @@ public class BeamcraftingRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Wafer_APIC.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SpaceTime, 1))
-                .fluidInputs(Materials.Creon.getMolten(576L), Materials.Mellion.getMolten(576L))
+                        MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.shapeDust, (int) (1)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Creon,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (576L)),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Mellion,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (576L)))
                 .itemOutputs(ItemList.Circuit_Wafer_ZPIC.get(1))
                 .metadata(
                         BEAMCRAFTER_METADATA,
