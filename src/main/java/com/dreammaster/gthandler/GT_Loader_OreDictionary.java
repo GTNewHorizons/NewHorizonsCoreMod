@@ -31,10 +31,13 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.scripts.IngredientFactory;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTLog;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -159,15 +162,33 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         registerOre("itemBeeswax", getModItem(PamsHarvestCraft.ID, "beeswaxItem", 1, 0));
         registerOre("foodFlour", getModItem(PamsHarvestCraft.ID, "flourItem", 1, 0));
-        registerOre("listAllmeatcooked", GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
-        registerOre("listAllporkcooked", GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
-        registerOre("listAllchickencooked", GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
-        registerOre("listAllbeefcooked", GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
-        registerOre("listAllmeatraw", GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L));
-        registerOre("listAllporkraw", GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L));
-        registerOre("listAllchickenraw", GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L));
-        registerOre("listAllbeefraw", GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L));
-        registerOre("foodSalt", GTOreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L));
+        registerOre(
+                "listAllmeatcooked",
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+        registerOre(
+                "listAllporkcooked",
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+        registerOre(
+                "listAllchickencooked",
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+        registerOre(
+                "listAllbeefcooked",
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+        registerOre(
+                "listAllmeatraw",
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)));
+        registerOre(
+                "listAllporkraw",
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)));
+        registerOre(
+                "listAllchickenraw",
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)));
+        registerOre(
+                "listAllbeefraw",
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)));
+        registerOre(
+                "foodSalt",
+                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.shapeDust, (int) (1L)));
         registerOre(
                 OrePrefixes.block,
                 Materials.Salt,
@@ -201,7 +222,9 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         registerOre(OrePrefixes.ingot, "Firebrick", ItemList.Firebrick.get(1));
 
-        registerOre("dyeLime", GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L));
+        registerOre(
+                "dyeLime",
+                MaterialLibAPI.getStack(Materials2Materials.Soapstone, Materials2Shapes.shapeDust, (int) (1L)));
 
         registerOre(OrePrefixes.log, Materials.Wood, getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
 
