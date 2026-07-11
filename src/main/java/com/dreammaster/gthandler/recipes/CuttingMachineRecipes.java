@@ -14,11 +14,14 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.util.GTModHandler;
 
 public class CuttingMachineRecipes implements Runnable {
@@ -114,7 +117,12 @@ public class CuttingMachineRecipes implements Runnable {
                 .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_FPIC.get(1))
-                .itemOutputs(ItemList.Circuit_Chip_FPIC.get(2)).fluidInputs(Materials.Lubricant.getFluid(250L))
+                .itemOutputs(ItemList.Circuit_Chip_FPIC.get(2))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Lubricant,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (250L)))
                 .requiresCleanRoom().duration(45 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_FPIC.get(1))
@@ -136,7 +144,12 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
-                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0)).fluidInputs(Materials.Lubricant.getFluid(25L))
+                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Lubricant,
+                                    Materials2FluidShapes.shapeFluidLiquid,
+                                    (int) (25L)))
                     .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
@@ -157,7 +170,12 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
-                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0)).fluidInputs(Materials.Lubricant.getFluid(25L))
+                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Lubricant,
+                                    Materials2FluidShapes.shapeFluidLiquid,
+                                    (int) (25L)))
                     .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
@@ -178,7 +196,12 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
-                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0)).fluidInputs(Materials.Lubricant.getFluid(25L))
+                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Lubricant,
+                                    Materials2FluidShapes.shapeFluidLiquid,
+                                    (int) (25L)))
                     .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
@@ -206,12 +229,20 @@ public class CuttingMachineRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
                 .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(16))
-                .fluidInputs(Materials.Grade7PurifiedWater.getFluid(1000L)).duration(wafer_duration_ticks)
-                .eut(wafer_eu_per_tick).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Grade7PurifiedWater,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (1000L)))
+                .duration(wafer_duration_ticks).eut(wafer_eu_per_tick).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
                 .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(24))
-                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1000L)).duration(wafer_duration_ticks / 2)
-                .eut(wafer_eu_per_tick).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Grade8PurifiedWater,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (1000L)))
+                .duration(wafer_duration_ticks / 2).eut(wafer_eu_per_tick).addTo(cutterRecipes);
 
         if (Chisel.isModLoaded()) {
             // Floor Carpet
@@ -224,7 +255,11 @@ public class CuttingMachineRecipes implements Runnable {
                         .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS).eut(7)
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
-                        .fluidInputs(Materials.Lubricant.getFluid(1L))
+                        .fluidInputs(
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Lubricant,
+                                        Materials2FluidShapes.shapeFluidLiquid,
+                                        (int) (1L)))
                         .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(50).eut(7).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1L))
