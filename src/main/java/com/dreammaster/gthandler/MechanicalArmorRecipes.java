@@ -28,6 +28,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
@@ -38,6 +39,9 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -52,7 +56,8 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MoldHelmet.get(0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 20),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapePlate, (int) (20)),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 5, 0, missing))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .itemOutputs(ItemList.Mechanical_Helmet.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -61,7 +66,8 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MoldChestplate.get(0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 32),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapePlate, (int) (32)),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 8, 0, missing))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .itemOutputs(ItemList.Mechanical_Chestplate.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -70,7 +76,8 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MoldLeggings.get(0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 28),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapePlate, (int) (28)),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 7, 0, missing))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .itemOutputs(ItemList.Mechanical_Leggings.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -79,7 +86,8 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MoldBoots.get(0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 16),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapePlate, (int) (16)),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 4, 0, missing))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .itemOutputs(ItemList.Mechanical_Boots.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -87,20 +95,28 @@ public class MechanicalArmorRecipes {
 
         // Power cores
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.IC2_EnergyCrystal.getWildcard(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.EnergeticAlloy, 64),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
-                .fluidInputs(Materials.RedstoneAlloy.getMolten(INGOTS * 10)).itemOutputs(ItemList.Armor_Core_T1.get(1))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.IC2_EnergyCrystal.getWildcard(1),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapeWireFine, (int) (64)),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.RedstoneAlloy,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 10)))
+                .itemOutputs(ItemList.Armor_Core_T1.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Energy_LapotronicOrb.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.HSSG, 64),
+                        MaterialLibAPI.getStack(Materials2Materials.HSSG, Materials2Shapes.shapeWireFine, (int) (64)),
                         ItemList.Field_Generator_EV.get(2))
-                .fluidInputs(Materials.VanadiumGallium.getMolten(INGOTS * 10))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.VanadiumGallium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 10)))
                 .itemOutputs(ItemList.Armor_Core_T2.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 
@@ -109,8 +125,13 @@ public class MechanicalArmorRecipes {
                         ItemList.Energy_Module.get(1),
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorLuV, 16),
                         ItemList.Field_Generator_ZPM.get(2))
-                .fluidInputs(Materials.Tritanium.getMolten(INGOTS * 10)).itemOutputs(ItemList.Armor_Core_T3.get(1))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Tritanium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 10)))
+                .itemOutputs(ItemList.Armor_Core_T3.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -118,60 +139,87 @@ public class MechanicalArmorRecipes {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Infinity, 16),
                         ItemList.Field_Generator_UHV.get(2),
                         GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Neutronium, 1))
-                .fluidInputs(Materials.Silver.getPlasma(INGOTS * 10)).itemOutputs(ItemList.Armor_Core_T4.get(1))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Silver,
+                                Materials2FluidShapes.shapeFluidPlasma,
+                                (int) (INGOTS * 10)))
+                .itemOutputs(ItemList.Armor_Core_T4.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .addTo(assemblerRecipes);
 
         // T1 Frames
 
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 2),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapeStick, (int) (2)),
                         ItemList.Electric_Piston_HV.get(1),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 8, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 16))
-                .fluidInputs(Materials.StainlessSteel.getMolten(INGOTS * 2))
+                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeFoil, (int) (16)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.StainlessSteel,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 2)))
                 .itemOutputs(ItemList.Armor_Frame_Light.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 2),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapeStick, (int) (2)),
                         ItemList.Electric_Piston_HV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 8),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 16))
-                .fluidInputs(Materials.StainlessSteel.getMolten(INGOTS * 2))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapePlate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeFoil, (int) (16)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.StainlessSteel,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 2)))
                 .itemOutputs(ItemList.Armor_Frame_Medium.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 2),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapeStick, (int) (2)),
                         ItemList.Electric_Piston_HV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 8),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.EnergeticAlloy, 16))
-                .fluidInputs(Materials.StainlessSteel.getMolten(INGOTS * 2))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapePlate, (int) (8)),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapeFoil, (int) (16)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.StainlessSteel,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 2)))
                 .itemOutputs(ItemList.Armor_Frame_Heavy.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         // T2 Frames
 
-        GTValues.RA.stdBuilder().circuit(10)
-                .itemInputs(
-                        ItemList.Armor_Frame_Light.get(1),
-                        ItemList.Electric_Piston_IV.get(1),
-                        WerkstoffLoader.Rhodium.get(OrePrefixes.plate, 8),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polybenzimidazole, 32))
-                .fluidInputs(Materials.TungstenSteel.getMolten(INGOTS * 4))
+        GTValues.RA.stdBuilder().circuit(10).itemInputs(
+                ItemList.Armor_Frame_Light.get(1),
+                ItemList.Electric_Piston_IV.get(1),
+                WerkstoffLoader.Rhodium.get(OrePrefixes.plate, 8),
+                MaterialLibAPI.getStack(Materials2Materials.Polybenzimidazole, Materials2Shapes.shapeFoil, (int) (32)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.TungstenSteel,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 4)))
                 .itemOutputs(ItemList.Armor_Frame_Nimble.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().circuit(10)
-                .itemInputs(
-                        ItemList.Armor_Frame_Medium.get(1),
-                        ItemList.Electric_Piston_IV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 8),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polybenzimidazole, 32))
-                .fluidInputs(Materials.TungstenSteel.getMolten(INGOTS * 4))
+        GTValues.RA.stdBuilder().circuit(10).itemInputs(
+                ItemList.Armor_Frame_Medium.get(1),
+                ItemList.Electric_Piston_IV.get(1),
+                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapePlate, (int) (8)),
+                MaterialLibAPI.getStack(Materials2Materials.Polybenzimidazole, Materials2Shapes.shapeFoil, (int) (32)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.TungstenSteel,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 4)))
                 .itemOutputs(ItemList.Armor_Frame_Adaptive.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 
@@ -179,9 +227,14 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         ItemList.Armor_Frame_Heavy.get(1),
                         ItemList.Electric_Piston_IV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 8),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.TungstenCarbide, 32))
-                .fluidInputs(Materials.TungstenSteel.getMolten(INGOTS * 4))
+                        MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapePlate, (int) (8)),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.TungstenCarbide, Materials2Shapes.shapeFoil, (int) (32)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.TungstenSteel,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 4)))
                 .itemOutputs(ItemList.Armor_Frame_Tough.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 
@@ -192,8 +245,12 @@ public class MechanicalArmorRecipes {
                         ItemList.Armor_Frame_Nimble.get(1),
                         ItemList.Electric_Piston_ZPM.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.PrismaticNaquadah, 8),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Americium, 64))
-                .fluidInputs(Materials.Osmiridium.getMolten(INGOTS * 8))
+                        MaterialLibAPI.getStack(Materials2Materials.Americium, Materials2Shapes.shapeFoil, (int) (64)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Osmiridium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 8)))
                 .itemOutputs(ItemList.Armor_Frame_Lightning.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .addTo(assemblerRecipes);
 
@@ -201,9 +258,13 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         ItemList.Armor_Frame_Adaptive.get(1),
                         ItemList.Electric_Piston_ZPM.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 8),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Americium, 64))
-                .fluidInputs(Materials.Osmiridium.getMolten(INGOTS * 8))
+                        MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.shapePlate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials2Materials.Americium, Materials2Shapes.shapeFoil, (int) (64)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Osmiridium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 8)))
                 .itemOutputs(ItemList.Armor_Frame_Morphic.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .addTo(assemblerRecipes);
 
@@ -211,24 +272,32 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         ItemList.Armor_Frame_Tough.get(1),
                         ItemList.Electric_Piston_ZPM.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 8),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Bedrockium, 64))
-                .fluidInputs(Materials.Osmiridium.getMolten(INGOTS * 8))
+                        MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.shapePlate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapeFoil, (int) (64)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Osmiridium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 8)))
                 .itemOutputs(ItemList.Armor_Frame_Bulwark.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .addTo(assemblerRecipes);
 
         // T4 Frames
 
-        GTValues.RA.stdBuilder().circuit(10)
-                .itemInputs(
-                        ItemList.Armor_Frame_Lightning.get(32),
-                        ItemList.Armor_Frame_Morphic.get(32),
-                        ItemList.Armor_Frame_Bulwark.get(32),
-                        ItemList.Electric_Piston_UHV.get(16),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 1),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 64))
-                .fluidInputs(Materials.Ichorium.getMolten(INGOTS * 4)).itemOutputs(ItemList.Armor_Frame_Infinity.get(1))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().circuit(10).itemInputs(
+                ItemList.Armor_Frame_Lightning.get(32),
+                ItemList.Armor_Frame_Morphic.get(32),
+                ItemList.Armor_Frame_Bulwark.get(32),
+                ItemList.Electric_Piston_UHV.get(16),
+                MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.shapePlateSuperdense, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.shapeFoil, (int) (64)))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Ichorium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 4)))
+                .itemOutputs(ItemList.Armor_Frame_Infinity.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .addTo(assemblerRecipes);
 
         // Modification Table
 
@@ -244,29 +313,47 @@ public class MechanicalArmorRecipes {
 
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapePlate, (int) (4)),
                         GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Electrum, 2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
-                .fluidInputs(Materials.Gold.getMolten(INGOTS * 4)).itemOutputs(ItemList.Armor_Chip_T1.get(1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Gold,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 4)))
+                .itemOutputs(ItemList.Armor_Chip_T1.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 8),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.shapePlate, (int) (8)),
                         ItemList.Electric_Motor_IV.get(2),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2))
-                .fluidInputs(Materials.Tungsten.getMolten(INGOTS * 8)).itemOutputs(ItemList.Armor_Chip_T2.get(1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Tungsten,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 8)))
+                .itemOutputs(ItemList.Armor_Chip_T2.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.shapePlate, (int) (2)),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 8),
                         ItemRefer.HiC_T2.get(8),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(4))
                 .fluidInputs(
-                        Materials.NaquadahEnriched.getMolten(INGOTS * 4),
-                        Materials.Sunnarium.getMolten(INGOTS * 4),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.NaquadahEnriched,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 4)),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Sunnarium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 4)),
                         WerkstoffLoader.Krypton.getFluidOrGas(BUCKETS * 2))
                 .itemOutputs(ItemList.Armor_Chip_T3.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .metadata(PRECISE_ASSEMBLER_CASING_TIER, 1).addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
@@ -380,8 +467,8 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
                         ItemList.Armor_Chip_T2.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.HSSS, 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 4),
+                        MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.shapeRotor, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapePlate, (int) (4)),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 8),
                         ItemList.Field_Generator_IV.get(1),
                         ItemList.Sensor_IV.get(1))
@@ -398,12 +485,16 @@ public class MechanicalArmorRecipes {
                 .itemOutputs(ItemList.Augment_FireImmunity.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().circuit(10)
-                .itemInputs(
-                        ItemList.Armor_Chip_T2.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.TungstenCarbide, 4),
-                        ItemList.Sensor_IV.get(1))
-                .fluidInputs(Materials.HSSS.getMolten(INGOTS * 4))
+        GTValues.RA.stdBuilder().circuit(10).itemInputs(
+                ItemList.Armor_Chip_T2.get(1),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.TungstenCarbide, Materials2Shapes.shapePlateDense, (int) (4)),
+                ItemList.Sensor_IV.get(1))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.HSSS,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 4)))
                 .itemOutputs(ItemList.Augment_KnockbackResistance.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 
@@ -414,8 +505,13 @@ public class MechanicalArmorRecipes {
                         ItemList.Electric_Piston_IV.get(4),
                         ItemList.Sensor_IV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1))
-                .fluidInputs(Materials.Palladium.getMolten(INGOTS * 8)).itemOutputs(ItemList.Augment_StepAssist.get(1))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Palladium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 8)))
+                .itemOutputs(ItemList.Augment_StepAssist.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(assemblerRecipes);
 
         // T3 Augments
 
@@ -425,7 +521,15 @@ public class MechanicalArmorRecipes {
                         ItemRefer.HiC_T2.get(4),
                         getModItem(GraviSuite.ID, "itemSimpleItem", 4, 3), // Gravitation Engine
                         ItemList.Field_Generator_LuV.get(2))
-                .fluidInputs(Materials.Neutronium.getMolten(INGOTS * 20), Materials.Tritanium.getMolten(INGOTS * 10))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Neutronium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 20)),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Tritanium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 10)))
                 .itemOutputs(ItemList.Augment_CreativeFlight.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .metadata(PRECISE_ASSEMBLER_CASING_TIER, 2).addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
 
@@ -435,7 +539,15 @@ public class MechanicalArmorRecipes {
                         ItemRefer.HiC_T2.get(4),
                         ItemList.Sensor_ZPM.get(4), // Gravitation Engine
                         ItemList.Field_Generator_LuV.get(2))
-                .fluidInputs(Materials.Neutronium.getMolten(INGOTS * 20), Materials.Tritanium.getMolten(INGOTS * 10))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Neutronium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 20)),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Tritanium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 10)))
                 .itemOutputs(ItemList.Augment_InertiaCanceling.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .metadata(PRECISE_ASSEMBLER_CASING_TIER, 2).addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
 
@@ -447,8 +559,14 @@ public class MechanicalArmorRecipes {
                         ItemList.Field_Generator_ZPM.get(2))
                 .fluidInputs(
                         GGMaterial.artheriumSn.getMolten(INGOTS * 20),
-                        Materials.Neutronium.getMolten(INGOTS * 20),
-                        Materials.CosmicNeutronium.getMolten(INGOTS * 20))
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Neutronium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 20)),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.CosmicNeutronium,
+                                Materials2FluidShapes.shapeFluidMolten,
+                                (int) (INGOTS * 20)))
                 .itemOutputs(ItemList.Augment_ForceField.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .metadata(PRECISE_ASSEMBLER_CASING_TIER, 3).addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
     }
