@@ -18,11 +18,14 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
 
 public class ForgeHammerRecipes implements Runnable {
 
@@ -145,12 +148,20 @@ public class ForgeHammerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(8))
-                .fluidInputs(Materials.Grade7PurifiedWater.getFluid(100L)).duration(chip_duration_ticks)
-                .eut(chip_eu_per_tick).addTo(hammerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Grade7PurifiedWater,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (100L)))
+                .duration(chip_duration_ticks).eut(chip_eu_per_tick).addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(12))
-                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(100L)).duration(chip_duration_ticks / 2)
-                .eut(chip_eu_per_tick).addTo(hammerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Grade8PurifiedWater,
+                                Materials2FluidShapes.shapeFluidLiquid,
+                                (int) (100L)))
+                .duration(chip_duration_ticks / 2).eut(chip_eu_per_tick).addTo(hammerRecipes);
     }
 }

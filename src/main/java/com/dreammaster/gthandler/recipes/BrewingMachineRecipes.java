@@ -13,11 +13,14 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import forestry.api.recipes.IFermenterRecipe;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
 
 public class BrewingMachineRecipes implements Runnable {
 
@@ -73,7 +76,12 @@ public class BrewingMachineRecipes implements Runnable {
                             .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
                             .eut(3).addTo(brewingRecipes);
 
-                    GTValues.RA.stdBuilder().itemInputs(resource).fluidInputs(Materials.Honey.getFluid(amountIn))
+                    GTValues.RA.stdBuilder().itemInputs(resource)
+                            .fluidInputs(
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.Honey,
+                                            Materials2FluidShapes.shapeFluidLiquid,
+                                            (int) (amountIn)))
                             .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
                             .eut(3).addTo(brewingRecipes);
 
