@@ -63,6 +63,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import com.gtnewhorizons.tcwands.api.TCWandAPI;
 import com.gtnewhorizons.tcwands.api.wrappers.AbstractWandWrapper;
 import com.gtnewhorizons.tcwands.api.wrappers.CapWrapper;
+import com.ruling_0.materiallib.api.Material;
 
 import fox.spiteful.forbidden.DarkAspects;
 import goodgenerator.items.GGMaterial;
@@ -4295,7 +4296,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.WEAPON, 32),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(BUTCHERYKNIFE.ID, 1, null, null, null),
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(BUTCHERYKNIFE.ID, 1, (Material) null, null, null),
                 getModItem(Minecraft.ID, "iron_sword", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(Minecraft.ID, "bow", 1, 0),
@@ -4321,7 +4322,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "fish", 1, 2),
                 getModItem(Minecraft.ID, "fish", 1, 3),
                 getModItem(Minecraft.ID, "fishing_rod", 1, 0),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, (Material) null, null, null));
         TCHelper.setResearchAspects(
                 "COREFISHING",
                 new AspectList().add(Aspect.HUNGER, 12).add(Aspect.WATER, 12).add(Aspect.BEAST, 12)
