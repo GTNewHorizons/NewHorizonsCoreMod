@@ -281,7 +281,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 1L),
-                        ItemList.Carbon_Mesh.get(1))
+                        ItemList.Carbon_Fiber_Mesh.get(1))
                 .circuit(4).itemOutputs(ItemList.Duct_Tape.get(2L)).fluidInputs(Materials.GlueAdvanced.getFluid(200))
                 .duration(6 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 

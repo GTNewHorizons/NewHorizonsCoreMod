@@ -122,7 +122,7 @@ public class ChemicalBathRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_GlassFiber.get(1L))
                 .itemOutputs(Materials.EpoxidFiberReinforced.getPlates(1)).fluidInputs(Materials.Epoxid.getMolten(144L))
                 .duration(12 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(chemicalBathRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Carbon_Fibre.get(1))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Carbon_Fiber_Bundle.get(1))
                 .itemOutputs(Materials.EpoxidFiberReinforced.getPlates(1)).fluidInputs(Materials.Epoxid.getMolten(144L))
                 .duration(12 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(chemicalBathRecipes);
 
