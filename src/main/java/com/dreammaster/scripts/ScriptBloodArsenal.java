@@ -624,7 +624,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodArsenal.ID, "blood_diamond", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeGemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.gemExquisite, (int) (1L)),
                 4,
                 12000,
                 20,

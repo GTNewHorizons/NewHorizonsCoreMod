@@ -100,54 +100,53 @@ public class ScriptGregtech implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeRing, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.ring, (int) (1L)),
                 "craftingToolKnife",
                 null,
                 null,
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
                 null);
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (1L)),
                 "craftingToolMortar",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dustSmall, (int) (1L)),
                 "craftingToolMortar",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0));
         List<ItemStack> meatItems = new ArrayList<>(OreDictionary.getOres("listAllmeatraw")).stream().filter(
                 itemStack -> !ItemStack.areItemStacksEqual(
                         itemStack,
-                        MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L))))
+                        MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (1L))))
                 .collect(Collectors.toList());
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (1L)),
                 "craftingToolMortar",
                 meatItems);
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (1L)),
                 "craftingToolMortar",
                 "listAllfishraw");
         List<ItemStack> cookedMeatItems = new ArrayList<>(OreDictionary.getOres("listAllmeatcooked")).stream().filter(
                 itemStack -> !ItemStack.areItemStacksEqual(
                         itemStack,
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L))))
+                        MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.dust, (int) (1L))))
                 .collect(Collectors.toList());
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.dust, (int) (1L)),
                 "craftingToolMortar",
                 cookedMeatItems);
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.dust, (int) (1L)),
                 "craftingToolMortar",
                 "listAllfishcooked");
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeDust, (int) (2L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.dust, (int) (2L)),
                 "craftingToolMortar",
                 "logWood");
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Brick, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Brick, Materials2Shapes.dustSmall, (int) (1L)),
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "brick", 1, 0));
         addShapedRecipe(
@@ -156,7 +155,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolHardHammer",
                 "stickPlastic");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)),
                 "cropBarley",
                 null,
                 null,
@@ -164,7 +163,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)),
                 "cropWheat",
                 null,
                 null,
@@ -172,7 +171,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)),
                 "cropRye",
                 null,
                 null,
@@ -180,7 +179,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)),
                 "cropOats",
                 null,
                 null,
@@ -188,7 +187,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.dust, (int) (1L)),
                 new ItemStack(sBlockOres1, 1, 817),
                 null,
                 null,
@@ -196,7 +195,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.dust, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Salt, 1L),
                 null,
                 null,
@@ -204,7 +203,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.dust, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Salt, 1L),
                 null,
                 null,
@@ -212,7 +211,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.dust, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Salt, 1L),
                 null,
                 null,
@@ -220,7 +219,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.dust, (int) (1L)),
                 GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Salt, 1L),
                 null,
                 null,
@@ -228,11 +227,11 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dustSmall, (int) (1L)),
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "clay_ball", 1, 0));
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dustTiny, (int) (1L)),
                 "nuggetIron",
                 null,
                 null,
@@ -240,7 +239,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.dustTiny, (int) (1L)),
                 "nuggetGold",
                 null,
                 null,
@@ -248,7 +247,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dustTiny, (int) (1L)),
                 "nuggetCopper",
                 null,
                 null,
@@ -256,7 +255,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dustTiny, (int) (1L)),
                 "nuggetTin",
                 null,
                 null,
@@ -264,7 +263,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dustTiny, (int) (1L)),
                 "nuggetSilver",
                 null,
                 null,
@@ -272,7 +271,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.dustTiny, (int) (1L)),
                 "nuggetLead",
                 null,
                 null,
@@ -280,7 +279,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.dustTiny, (int) (1L)),
                 "nuggetZinc",
                 null,
                 null,
@@ -288,7 +287,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.dustTiny, (int) (1L)),
                 "nuggetNickel",
                 null,
                 null,
@@ -325,37 +324,37 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0));
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapeStickLong, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.stickLong, (int) (1)),
                 "stickRubber",
                 "craftingToolHardHammer",
                 "stickRubber");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.stickLong, (int) (1L)),
                 "stickApatite",
                 "craftingToolHardHammer",
                 "stickApatite");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.stickLong, (int) (1L)),
                 "stickLapis",
                 "craftingToolHardHammer",
                 "stickLapis");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.stickLong, (int) (1L)),
                 "stickLazurite",
                 "craftingToolHardHammer",
                 "stickLazurite");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.stickLong, (int) (1L)),
                 "stickSodalite",
                 "craftingToolHardHammer",
                 "stickSodalite");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.stickLong, (int) (1L)),
                 "stickEnderPearl",
                 "craftingToolHardHammer",
                 "stickEnderPearl");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.stickLong, (int) (1L)),
                 "stickEnderEye",
                 "craftingToolHardHammer",
                 "stickEnderEye");
@@ -366,7 +365,7 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                 getModItem(OpenBlocks.ID, "scaffolding", 1, 0));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dustSmall, (int) (1L)),
                 "craftingToolMortar",
                 getModItem(BloodArsenal.ID, "glass_shard", 1, 0));
         addShapedRecipe(
@@ -381,8 +380,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "circuitAdvanced",
                 "itemCasingStainlessSteel");
         addShapedRecipe(
-                MaterialLibAPI
-                        .getStack(Materials2Materials.GraniteBlack, Materials2Shapes.shapeGearGtSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.GraniteBlack, Materials2Shapes.gearGtSmall, (int) (1L)),
                 "stoneGraniteBlack",
                 null,
                 null,
@@ -390,7 +388,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolFile",
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.GraniteRed, Materials2Shapes.shapeGearGtSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.GraniteRed, Materials2Shapes.gearGtSmall, (int) (1L)),
                 "stoneGraniteRed",
                 null,
                 null,
@@ -409,7 +407,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "circuitElite",
                 "itemCasingStainlessSteel");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.plate, (int) (1L)),
                 "craftingToolHardHammer",
                 null,
                 null,
@@ -1067,8 +1065,8 @@ public class ScriptGregtech implements IScriptLoader {
                 100);
 
         GTModHandler.addSmeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.dust, (int) (1L)));
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3),
@@ -1095,7 +1093,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlateDense, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plateDense, (int) (6L)),
                         ItemList.IC2_Plutonium.get(3))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(1 * MINUTES)
@@ -1111,38 +1109,33 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeNugget, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeNugget, (int) (27L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.nugget, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.nugget, (int) (27L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (4L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeNugget, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (3L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.nugget, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (3L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (4L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeNugget, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeIngot, (int) (3L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.nugget, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.ingot, (int) (3L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (4L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeNugget, (int) (27L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.nugget, (int) (27L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (4L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeNugget, (int) (27L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeIngot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.nugget, (int) (27L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.ingot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (4L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(ThaumicBases.ID, "resource", 9, 0), ItemList.Shape_Mold_Ingot.get(0L))
@@ -1154,330 +1147,324 @@ public class ScriptGregtech implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (1L)),
                         ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDustSmall, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dustSmall, (int) (4L)),
                         ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDustTiny, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dustTiny, (int) (9L)),
                         ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.InfusedAir, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.InfusedAir, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.InfusedAir, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.InfusedAir, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0)).outputChances(9000)
                 .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.InfusedAir, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.InfusedAir, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0)).outputChances(10000)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Void,
-                                Materials2FluidShapes.shapeFluidMolten,
-                                (int) (36)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials2Materials.Void, Materials2FluidShapes.fluidMolten, (int) (36)))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1)).outputChances(9000)
                 .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1)).outputChances(10000)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Void,
-                                Materials2FluidShapes.shapeFluidMolten,
-                                (int) (36)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials2Materials.Void, Materials2FluidShapes.fluidMolten, (int) (36)))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedWater, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedWater, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedWater, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedWater, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2)).outputChances(9000)
                 .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedWater, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedWater, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2)).outputChances(10000)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Void,
-                                Materials2FluidShapes.shapeFluidMolten,
-                                (int) (36)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials2Materials.Void, Materials2FluidShapes.fluidMolten, (int) (36)))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3)).outputChances(9000)
                 .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3)).outputChances(10000)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Void,
-                                Materials2FluidShapes.shapeFluidMolten,
-                                (int) (36)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials2Materials.Void, Materials2FluidShapes.fluidMolten, (int) (36)))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedOrder, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedOrder, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedOrder, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedOrder, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4)).outputChances(9000)
                 .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedOrder, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedOrder, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4)).outputChances(10000)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Void,
-                                Materials2FluidShapes.shapeFluidMolten,
-                                (int) (36)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials2Materials.Void, Materials2FluidShapes.fluidMolten, (int) (36)))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(9000)
                 .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(10000)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Void,
-                                Materials2FluidShapes.shapeFluidMolten,
-                                (int) (36)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials2Materials.Void, Materials2FluidShapes.fluidMolten, (int) (36)))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(Materials.PotassiumHydroxide.getDust(3)).circuit(1)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.shapeDust, (int) (5L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (5L)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.NitricAcid,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (5000)))
                 .fluidOutputs(Materials.Steam.getGas(16000)).duration(10).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 1))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toolRod", 1, 11)).duration(30 * SECONDS + 6 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 2))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "pickaxeHead", 1, 11)).duration(1 * MINUTES + 13 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 3))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "shovelHead", 1, 11)).duration(1 * MINUTES + 13 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 4))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "hatchetHead", 1, 11)).duration(1 * MINUTES + 13 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 5))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "swordBlade", 1, 11)).duration(1 * MINUTES + 13 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 6))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "wideGuard", 1, 11)).duration(30 * SECONDS + 6 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 7))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "handGuard", 1, 11)).duration(30 * SECONDS + 6 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 8))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "crossbar", 1, 11)).duration(30 * SECONDS + 6 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 9))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "binding", 1, 11)).duration(30 * SECONDS + 6 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 10))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "frypanHead", 1, 11)).duration(1 * MINUTES + 13 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 11))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "signHead", 1, 11)).duration(1 * MINUTES + 13 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 12))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "knifeBlade", 1, 11)).duration(30 * SECONDS + 6 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 13))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "chiselHead", 1, 11)).duration(30 * SECONDS + 6 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (3L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 14))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toughRod", 1, 11))
                 .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (3L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 15))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toughBinding", 1, 11))
                 .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (8L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 16))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "heavyPlate", 1, 11))
                 .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (8L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 17))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "broadAxeHead", 1, 11))
                 .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (8L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 18))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "scytheBlade", 1, 11))
                 .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (8L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 19))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "excavatorHead", 1, 11))
                 .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (8L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 20))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "largeSwordBlade", 1, 11))
                 .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (8L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 21))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "hammerHead", 1, 11))
                 .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (3L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 22))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fullGuard", 1, 11))
                 .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 11)).duration(1 * MINUTES + 13 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "ShurikenPart", 1, 11)).duration(30 * SECONDS + 6 * TICKS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (4L)),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 1))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "CrossbowLimbPart", 1, 11))
                 .duration(4 * MINUTES + 2 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_MV)
                 .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (5L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (5L)),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 2))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "CrossbowBodyPart", 1, 11))
                 .duration(5 * MINUTES + 3 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_MV)
                 .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeIngot, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.ingot, (int) (2L)),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 3))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "BowLimbPart", 1, 11)).duration(1 * MINUTES + 31 * SECONDS)
                 .eut(TierEU.RECIPE_MV).recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 18), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapePlate, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.plate, (int) (1L)))
                 .duration(20).eut(TierEU.RECIPE_MV / 2).addTo(extruderRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 18)).circuit(1)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapePlate, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.plate, (int) (1L)))
                 .duration(20).eut(24).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 18)).circuit(9)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1)).duration(180)
@@ -1486,96 +1473,80 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L)).duration(20)
                 .eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapeStick, (int) (2L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapeStickLong, (int) (1)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.stick, (int) (2L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.stickLong, (int) (1)))
                 .duration(20).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeStick, (int) (2L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.stick, (int) (2L)))
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Apatite, Materials2Shapes.shapeStickLong, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.stickLong, (int) (1L)))
                 .duration(20).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeStick, (int) (2L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeStickLong, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.stick, (int) (2L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.stickLong, (int) (1L)))
                 .duration(20).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.shapeStick, (int) (2L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.stick, (int) (2L)))
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Lazurite, Materials2Shapes.shapeStickLong, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.stickLong, (int) (1L)))
                 .duration(20).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.shapeStick, (int) (2L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.stick, (int) (2L)))
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Sodalite, Materials2Shapes.shapeStickLong, (int) (1L)))
-                .duration(20).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeStick, (int) (2L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeStickLong, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.stickLong, (int) (1L)))
                 .duration(20).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeStick, (int) (2L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.stick, (int) (2L)))
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeStickLong, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.stickLong, (int) (1L)))
+                .duration(20).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.stick, (int) (2L)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.stickLong, (int) (1L)))
                 .duration(20).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "flint", 1, 0))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDustTiny, (int) (2L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dustTiny, (int) (2L)))
                 .duration(1 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeGem, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.gem, (int) (1L)))
                 .duration(10).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeGemChipped, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDustSmall, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.gemChipped, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dustSmall, (int) (1L)))
                 .duration(10).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.plate, (int) (1L)),
                         ItemList.Shape_Mold_Credit.get(0L))
                 .itemOutputs(NHItemList.CoinBlank.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "barleyItem", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "plants", 1, 6))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "ryeItem", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "oatsItem", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (9L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (9L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDustSmall, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dustSmall, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "glass_shard", 2, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTModHandler.addSmeltingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.ore, Materials.Magnetite, 1L),
@@ -1605,18 +1576,15 @@ public class ScriptGregtech implements IScriptLoader {
                 "-aabbbaa-",
                 "a-------a",
                 'a',
-                MaterialLibAPI.getStack(
-                        Materials2Materials.CosmicNeutronium,
-                        Materials2Shapes.shapePlateSuperdense,
-                        (int) (1)),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.plateSuperdense, (int) (1)),
                 'b',
                 MaterialLibAPI
-                        .getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapePlateSuperdense, (int) (1)),
+                        .getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.plateSuperdense, (int) (1)),
                 'c',
                 getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0),
                 'd',
-                MaterialLibAPI
-                        .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.shapePlateDense, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.plateDense, (int) (1)),
                 'e',
                 NHItemList.ChaoticDust.get(1),
                 'f',

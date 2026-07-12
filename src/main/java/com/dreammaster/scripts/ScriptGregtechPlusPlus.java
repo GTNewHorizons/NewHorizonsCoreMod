@@ -90,12 +90,12 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.PrimordialMatter,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (1152)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Eternity,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (9216)),
                         Materials.Time.getMolten(18432))
                 .metadata(QFT_CATALYST, GregtechItemList.TemporalHarmonyCatalyst.get(0)).metadata(QFT_FOCUS_TIER, 4)
@@ -110,15 +110,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Arborist Frame
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStickLong, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStick, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stickLong, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stick, (int) (4)),
                         getModItem(Minecraft.ID, "paper", 1, 0),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Redstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576)))
                 .itemOutputs(GregtechItemList.HiveFrameArborist.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
@@ -126,15 +125,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Stabilization Frame
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStickLong, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStick, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeFoil, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stickLong, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stick, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.foil, (int) (1)),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Redstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576)))
                 .itemOutputs(GregtechItemList.HiveFrameStabilize.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
@@ -144,12 +142,12 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .itemInputs(
                         MaterialsAlloy.TUMBAGA.getLongRod(4),
                         MaterialsAlloy.TUMBAGA.getRod(4),
-                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeFoil, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.foil, (int) (1)),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Redstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576)))
                 .itemOutputs(GregtechItemList.HiveFrameSlow.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
@@ -157,15 +155,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Decaying Frame
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStickLong, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStick, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeFoil, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stickLong, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.foil, (int) (1)),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Redstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576)))
                 .itemOutputs(GregtechItemList.HiveFrameDecay.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
@@ -173,29 +170,29 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Working Frame
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStickLong, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStick, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stickLong, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stick, (int) (4)),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Redstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576)))
                 .itemOutputs(GregtechItemList.HiveFrameBusy.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         // Mutagenic Frame
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.shapeStickLong, (int) (4)),
-                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeStick, (int) (4)),
-                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeFoil, (int) (1)),
-                getModItem(Forestry.ID, "frameImpregnated", 1, 0))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.stickLong, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.stick, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.foil, (int) (1)),
+                        getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Redstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576)))
                 .itemOutputs(GregtechItemList.HiveFrameMutagenic.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
@@ -203,15 +200,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Accelerated Frame
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStickLong, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStick, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeFoil, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stickLong, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stick, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.foil, (int) (1)),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Redstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576)))
                 .itemOutputs(GregtechItemList.HiveFrameAccelerated.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
@@ -226,23 +222,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stickLong, (int) (1L)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stick, (int) (1L)),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stickLong, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stick, (int) (1L)),
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeFoil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.foil, (int) (1L)),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stick, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stickLong, (int) (1L)),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stick, (int) (1L)),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeStickLong, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.stickLong, (int) (1L)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -252,23 +248,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.stickLong, (int) (1L)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.stick, (int) (1L)),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.stickLong, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.stick, (int) (1L)),
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeFoil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.foil, (int) (1L)),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.stick, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.stickLong, (int) (1L)),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Plutonium241, Materials2Shapes.stick, (int) (1L)),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.shapeStickLong, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Uranium235, Materials2Shapes.stickLong, (int) (1L)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -278,23 +274,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stickLong, (int) (1L)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stick, (int) (1L)),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stickLong, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stick, (int) (1L)),
                 'e',
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stick, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stickLong, (int) (1L)),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stick, (int) (1L)),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeStickLong, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stickLong, (int) (1L)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -304,23 +300,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStickLong, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stickLong, (int) (1)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStick, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (1)),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStickLong, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stickLong, (int) (1)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStick, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (1)),
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeFoil, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.foil, (int) (1)),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStick, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (1)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStickLong, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stickLong, (int) (1)),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStick, (int) (1)),
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (1)),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.shapeStickLong, (int) (1)));
+                MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stickLong, (int) (1)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -338,7 +334,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 'd',
                 MaterialsAlloy.TUMBAGA.getRod(1),
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapeFoil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.foil, (int) (1L)),
                 'f',
                 MaterialsAlloy.TUMBAGA.getRod(1),
                 'g',
@@ -356,23 +352,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stickLong, (int) (1L)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stick, (int) (1L)),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stickLong, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stick, (int) (1L)),
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeFoil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.foil, (int) (1L)),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stick, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stickLong, (int) (1L)),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stick, (int) (1L)),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeStickLong, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.stickLong, (int) (1L)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -382,23 +378,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stickLong, (int) (1L)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stick, (int) (1L)),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stickLong, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stick, (int) (1L)),
                 'e',
                 getModItem(Minecraft.ID, "paper", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stick, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stickLong, (int) (1L)),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stick, (int) (1L)),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.shapeStickLong, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.stickLong, (int) (1L)));
     }
 
     private void addThaumcraftAspects() {

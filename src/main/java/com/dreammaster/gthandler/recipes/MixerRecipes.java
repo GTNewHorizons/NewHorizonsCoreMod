@@ -58,568 +58,498 @@ public class MixerRecipes implements Runnable {
     public void run() {
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CallistoIce, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Ledox, Materials2Shapes.shapeDust, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Ice, Materials2Shapes.shapeDust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.CallistoIce, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ledox, Materials2Shapes.dust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Ice, Materials2Shapes.dust, (int) (2L)))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SuperCoolant,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (2000)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bauxite, Materials2Shapes.shapeDust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Bauxite, Materials2Shapes.dust, (int) (4L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L))
                 .circuit(5)
                 .itemOutputs(
                         MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (16L)))
+                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (16L)))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Bauxite, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Bauxite, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(18 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Bauxite, Materials2Shapes.shapeDustPure, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Bauxite, Materials2Shapes.dustPure, (int) (2L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 6L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (8L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (8L)))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(15 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(10 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Sodalite, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Sodalite, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Alunite, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Alunite, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Alunite, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Alunite, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Alunite, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Alunite, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Lepidolite, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lepidolite, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI
-                                .getStack(Materials2Materials.Lepidolite, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                                .getStack(Materials2Materials.Lepidolite, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 15 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Lepidolite, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lepidolite, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(2 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tanzanite, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tanzanite, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Tanzanite, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tanzanite, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Tanzanite, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tanzanite, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Biotite, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Biotite, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Lazurite, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Lazurite, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glauconite, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Glauconite, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI
-                                .getStack(Materials2Materials.Glauconite, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                                .getStack(Materials2Materials.Glauconite, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 15 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Glauconite, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Glauconite, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(2 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.GlauconiteSand, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.GlauconiteSand, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI
-                        .getStack(Materials2Materials.GlauconiteSand, Materials2Shapes.shapeDustImpure, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L)).circuit(5)
-                .itemOutputs(
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                                .getStack(Materials2Materials.GlauconiteSand, Materials2Shapes.dustImpure, (int) (1L)),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
+                .circuit(5)
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 15 * TICKS).eut(48).addTo(mixerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.GlauconiteSand, Materials2Shapes.shapeDustPure, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L)).circuit(5)
-                .itemOutputs(
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                                .getStack(Materials2Materials.GlauconiteSand, Materials2Shapes.dustPure, (int) (1L)),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
+                .circuit(5)
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(2 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Vermiculite, Materials2Shapes.shapeDust, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Vermiculite, Materials2Shapes.dust, (int) (1)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.Vermiculite, Materials2Shapes.shapeDustImpure, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L)).circuit(5)
-                .itemOutputs(
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                                .getStack(Materials2Materials.Vermiculite, Materials2Shapes.dustImpure, (int) (1L)),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
+                .circuit(5)
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(3 * SECONDS + 15 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Vermiculite, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Vermiculite, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(2 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Zeolite, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Zeolite, Materials2Shapes.dust, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Zeolite, Materials2Shapes.shapeDustImpure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Zeolite, Materials2Shapes.dustImpure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Zeolite, Materials2Shapes.shapeDustPure, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Zeolite, Materials2Shapes.dustPure, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L))
                 .circuit(5)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4L)))
                 .duration(1 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ClayCompound, 3L))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.ConductiveIron, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.ConductiveIron, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.ConductiveIron, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.ConductiveIron, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.ConductiveIron, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.ConductiveIron, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.dust, (int) (1L)))
                 .circuit(3)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.shapeDust, (int) (3L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Oriharukon, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Oriharukon, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.StellarAlloy, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Blocks.soul_sand, 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeDust, (int) (3L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeDust, (int) (3L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Endstone, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Endstone, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeDust, (int) (3L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Platinum, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Platinum, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnderiumBase, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnderiumBase, Materials2Shapes.dust, (int) (4L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnderiumBase, Materials2Shapes.shapeDust, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnderiumBase, Materials2Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.shapeDust, (int) (4L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.dust, (int) (4L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         // Superconductor dust recipes in mixer.
@@ -628,157 +558,162 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Cadmium, Materials2Shapes.shapeDust, (int) (5L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Cadmium, Materials2Shapes.dust, (int) (5L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorMVBase, 12L))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Oxygen,
-                                Materials2FluidShapes.shapeFluidGas,
+                                Materials2FluidShapes.fluidGas,
                                 (int) (6000)))
                 .duration(10 * 20).eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
         // HV Superconductor dust recipe.
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Barium, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (10L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Barium, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (10L)))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorHVBase, 40L))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Oxygen,
-                                Materials2FluidShapes.shapeFluidGas,
+                                Materials2FluidShapes.fluidGas,
                                 (int) (20000)))
                 .duration(10 * 20).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         // EV Superconductor dust recipe.
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Platinum, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Platinum, Materials2Shapes.dust, (int) (3L)))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorEVBase, 4L))
                 .duration(10 * 20).eut(TierEU.RECIPE_EV).addTo(mixerRecipes);
         // IV Superconductor dust recipe.
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Vanadium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Vanadium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (3L)))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorIVBase, 4L))
                 .duration(10 * 20).eut(TierEU.RECIPE_IV).addTo(mixerRecipes);
         // LuV Superconductor dust recipe.
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Barium, Materials2Shapes.shapeDust, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (7L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Barium, Materials2Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (7L)))
                 .circuit(3).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorLuVBase, 30L))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Oxygen,
-                                Materials2FluidShapes.shapeFluidGas,
+                                Materials2FluidShapes.fluidGas,
                                 (int) (14000)))
                 .duration(10 * 20).eut(TierEU.RECIPE_LuV).addTo(mixerRecipes);
         // ZPM Superconductor dust recipe.
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.shapeDust, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.shapeDust, (int) (6L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.dust, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorZPMBase, 13L))
                 .duration(10 * 20).eut(TierEU.RECIPE_ZPM).addTo(mixerRecipes);
         // UV Superconductor dust recipe.
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Europium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Samarium, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Europium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Samarium, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUVBase, 9L))
                 .duration(10 * 20).eut(TierEU.RECIPE_UV).addTo(mixerRecipes);
         // UHV Superconductor Recipe.
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.shapeDust, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.dust, (int) (6L)),
                         MaterialLibAPI
-                                .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.shapeDust, (int) (7L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.shapeDust, (int) (5L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Americium, Materials2Shapes.shapeDust, (int) (6L)))
+                                .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.dust, (int) (7L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.dust, (int) (5L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Americium, Materials2Shapes.dust, (int) (6L)))
                 .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUHVBase, 24L))
                 .duration(10 * 20).eut(TierEU.RECIPE_UHV).addTo(mixerRecipes);
         // UEV Superconductor dust recipe.
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.shapeDust, (int) (5L)),
-                MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.shapeDust, (int) (5L)),
-                MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getDust(1),
-                MaterialsElements.STANDALONE.ADVANCED_NITINOL.getDust(1)).circuit(2)
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.dust, (int) (5L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.dust, (int) (5L)),
+                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getDust(1),
+                        MaterialsElements.STANDALONE.ADVANCED_NITINOL.getDust(1))
+                .circuit(2)
                 .itemOutputs(
                         MaterialLibAPI.getStack(
                                 Materials2Materials.SuperconductorUEVBase,
-                                Materials2Shapes.shapeDust,
+                                Materials2Shapes.dust,
                                 (int) (12L)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Iron,
-                                Materials2FluidShapes.shapeFluidPlasma,
+                                Materials2FluidShapes.fluidPlasma,
                                 (int) (144L)))
                 .duration(10 * 20).eut(TierEU.RECIPE_UEV).addTo(mixerRecipes);
         // UIV Superconductor dust recipe.
 
-        GTValues.RA.stdBuilder().itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 4L),
-                MaterialLibAPI.getStack(Materials2Materials.TranscendentMetal, Materials2Shapes.shapeDust, (int) (10L)),
-                MaterialsElements.STANDALONE.RHUGNOR.getDust(6),
-                CHRONOMATIC_GLASS.getDust(5)).circuit(2)
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 4L),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.TranscendentMetal, Materials2Shapes.dust, (int) (10L)),
+                        MaterialsElements.STANDALONE.RHUGNOR.getDust(6),
+                        CHRONOMATIC_GLASS.getDust(5))
+                .circuit(2)
                 .itemOutputs(
                         MaterialLibAPI.getStack(
                                 Materials2Materials.SuperconductorUIVBase,
-                                Materials2Shapes.shapeDust,
+                                Materials2Shapes.dust,
                                 (int) (25L)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Bismuth,
-                                Materials2FluidShapes.shapeFluidPlasma,
+                                Materials2FluidShapes.fluidPlasma,
                                 (int) (144L)))
                 .duration(10 * 20).eut(TierEU.RECIPE_UIV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.shapeDust, (int) (2L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.dust, (int) (2L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.shapeDust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.dust, (int) (3L)),
                         ItemList.IC2_Resin.get(1L))
                 .circuit(2).itemOutputs(NHItemList.MicaBasedPulp.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.shapeDust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.dust, (int) (3L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
                 .circuit(2).itemOutputs(NHItemList.MicaBasedPulp.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
                         GTOreDictUnificator.getDust(Materials.NaquadahAlloy, 4L * OrePrefixes.dust.getMaterialAmount()))
@@ -787,8 +722,8 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Yttrium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Barium, Materials2Shapes.shapeDust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Yttrium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Barium, Materials2Shapes.dust, (int) (2L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AnyCopper, 3L))
                 .circuit(2)
                 .itemOutputs(
@@ -797,17 +732,17 @@ public class MixerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Oxygen,
-                                Materials2FluidShapes.shapeFluidGas,
+                                Materials2FluidShapes.fluidGas,
                                 (int) (7000)))
                 .duration((int) (600L * OrePrefixes.dust.getMaterialAmount() / 3628800L)).eut(TierEU.RECIPE_EV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeDust, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dust, (int) (6L)),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.AnyCopper, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (1L)))
                 .circuit(3)
                 .itemOutputs(
                         GTOreDictUnificator.getDust(Materials.Duralumin, 9L * OrePrefixes.dust.getMaterialAmount()))
@@ -816,204 +751,189 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.shapeDust, (int) (5L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.dust, (int) (5L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (2L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Alumite, Materials2Shapes.shapeDust, (int) (5)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Alumite, Materials2Shapes.dust, (int) (5)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.IC2_Energium_Dust.get(9L),
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeDust, (int) (6L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.dust, (int) (6L)))
                 .circuit(2).itemOutputs(NHItemList.LapotronDust.get(15)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDustSmall, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dustSmall, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.dust, (int) (4L)))
                 .circuit(2)
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (4L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (4L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (16L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.dust, (int) (16L)))
                 .circuit(4)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (16L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (16L)))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDustSmall, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Quartzite, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dustSmall, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Quartzite, Materials2Shapes.dust, (int) (4L)))
                 .circuit(2)
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (5L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (5L)))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Quartzite, Materials2Shapes.shapeDust, (int) (16L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Quartzite, Materials2Shapes.dust, (int) (16L)))
                 .circuit(4)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (20L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (20L)))
                 .duration(32 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Vanadium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (7L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Vanadium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (7L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VanadiumSteel, Materials2Shapes.shapeDust, (int) (9L)))
+                        MaterialLibAPI.getStack(Materials2Materials.VanadiumSteel, Materials2Shapes.dust, (int) (9L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.dust, (int) (4L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.RoseGold, Materials2Shapes.shapeDust, (int) (5L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.RoseGold, Materials2Shapes.dust, (int) (5L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (6L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapeDust, (int) (9L)))
+                        MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.dust, (int) (9L)))
                 .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.RoseGold, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.InfusedGold, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.AstralSilver, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.SterlingSilver, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.SolderingAlloy, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.RedSteel, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.RoseGold, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.InfusedGold, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.AstralSilver, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.SterlingSilver, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.SolderingAlloy, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.RedSteel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.dust, (int) (1L)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Redstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (20 * INGOTS)))
                 .circuit(4)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.dust, (int) (4L)))
                 .duration(2 * SECONDS + 10 * TICKS).eut(900).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.shapeDust, (int) (6L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Molybdenum, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.dust, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Molybdenum, Materials2Shapes.dust, (int) (1L)))
                 .circuit(18)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.DamascusSteel, Materials2Shapes.shapeDust, (int) (18L)))
+                        MaterialLibAPI.getStack(Materials2Materials.DamascusSteel, Materials2Shapes.dust, (int) (18L)))
                 .duration(11 * SECONDS + 5 * TICKS).eut(900).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Vanadium, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Vanadium, Materials2Shapes.dust, (int) (1L)))
                 .circuit(9)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.DamascusSteel, Materials2Shapes.shapeDust, (int) (18L)))
+                        MaterialLibAPI.getStack(Materials2Materials.DamascusSteel, Materials2Shapes.dust, (int) (18L)))
                 .duration(11 * SECONDS + 5 * TICKS).eut(900).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Calcite, Materials2Shapes.shapeDust, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Calcite, Materials2Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.dust, (int) (1L)))
                 .circuit(2).fluidInputs(Materials.Water.getFluid(2000L))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Concrete,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (2304L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.shapeDustSmall, (int) (2L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dustSmall, (int) (2L)))
                 .circuit(2).itemOutputs(new ItemStack(Items.clay_ball, 1, 0))
                 .fluidInputs(Materials.Water.getFluid(250L)).duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV)
                 .addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (4L)))
                 .circuit(2)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.dust, (int) (1L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Antimony, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Antimony, Materials2Shapes.dust, (int) (1L)))
                 .circuit(1)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.BatteryAlloy, Materials2Shapes.shapeDust, (int) (5L)))
+                        MaterialLibAPI.getStack(Materials2Materials.BatteryAlloy, Materials2Shapes.dust, (int) (5L)))
                 .duration(5 * SECONDS).eut(4).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Antimony, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Antimony, Materials2Shapes.dust, (int) (1L)))
                 .circuit(1)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SolderingAlloy, Materials2Shapes.shapeDust, (int) (10L)))
+                        MaterialLibAPI.getStack(Materials2Materials.SolderingAlloy, Materials2Shapes.dust, (int) (10L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapeDust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dust, (int) (2L)))
                 .circuit(1)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Magnalium, Materials2Shapes.shapeDust, (int) (3L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Magnalium, Materials2Shapes.dust, (int) (3L)))
                 .duration(5 * SECONDS).eut(4).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.dust, (int) (1L)))
                 .circuit(1).itemOutputs(NHItemList.RawNeutronium.get())
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Helium,
-                                Materials2FluidShapes.shapeFluidPlasma,
+                                Materials2FluidShapes.fluidPlasma,
                                 (int) (144L)))
                 .duration(11 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(mixerRecipes);
 
@@ -1021,129 +941,118 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (3L)))
                 .circuit(15)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.ConductiveIron, Materials2Shapes.shapeDust, (int) (9L)))
+                        MaterialLibAPI.getStack(Materials2Materials.ConductiveIron, Materials2Shapes.dust, (int) (9L)))
                 .duration(6 * SECONDS).eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.shapeDust, (int) (9L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.dust, (int) (9L)))
                 .circuit(17)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapeDust, (int) (27L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.dust, (int) (27L)))
                 .duration(12 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (12L)),
-                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.shapeDust, (int) (9L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (12L)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.dust, (int) (9L)))
                 .circuit(16)
                 .itemOutputs(
                         MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.shapeDust, (int) (27L)))
+                                .getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.dust, (int) (27L)))
                 .duration(12 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (12L)),
-                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (27L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (27L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (12L)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (27L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (27L)))
                 .circuit(18)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VividAlloy, Materials2Shapes.shapeDust, (int) (64L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VividAlloy, Materials2Shapes.shapeDust, (int) (17L)))
+                        MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.dust, (int) (64L)),
+                        MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.dust, (int) (17L)))
                 .duration(24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (27L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.shapeDust, (int) (27L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (9L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.BlackSteel, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (27L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (27L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.dust, (int) (9L)))
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapeDust, (int) (64L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapeDust, (int) (17L)))
+                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.dust, (int) (64L)),
+                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.dust, (int) (17L)))
                 .duration(24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (3L)))
                 .circuit(14)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeDust, (int) (9L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.dust, (int) (9L)))
                 .duration(6 * SECONDS).eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Endstone, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeDust, (int) (9L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Endstone, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.dust, (int) (9L)))
                 .circuit(16)
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeDust, (int) (27L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.dust, (int) (27L)))
                 .duration(12 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.shapeDust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Endstone, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeDust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (27L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Oriharukon, Materials2Shapes.shapeDust, (int) (27L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Endstone, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.dust, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (27L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Oriharukon, Materials2Shapes.dust, (int) (27L)))
                 .circuit(18)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapeDust, (int) (64L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapeDust, (int) (17L)))
+                        MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.dust, (int) (64L)),
+                        MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.dust, (int) (17L)))
                 .duration(24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 16, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dust, (int) (2L)))
                 .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
 
@@ -1158,12 +1067,11 @@ public class MixerRecipes implements Runnable {
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.ETA_MESON)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.LAMBDA)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.GravitonShard, Materials2Shapes.shapeGem, (int) (4)))
+                        MaterialLibAPI.getStack(Materials2Materials.GravitonShard, Materials2Shapes.gem, (int) (4)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Grade8PurifiedWater,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (1_000_000_000L)))
                 .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
                 .addTo(mixerRecipes);
@@ -1178,24 +1086,25 @@ public class MixerRecipes implements Runnable {
                         ItemList.StableLeptonContainmentUnit.get(8),
                         ItemList.StableMesonContainmentUnit.get(8),
                         ItemList.StableBosonContainmentUnit.get(8),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.GravitonShard, Materials2Shapes.shapeGem, (int) (4)))
+                        MaterialLibAPI.getStack(Materials2Materials.GravitonShard, Materials2Shapes.gem, (int) (4)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Grade8PurifiedWater,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (1_000_000_000L)))
                 .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
                 .addTo(mixerRecipes);
 
         // Legacy Stargate Crystal Dust
-        GTValues.RA.stdBuilder().itemInputs(
-                NHItemList.TCetiESeaweedExtract.get().splitStack(64),
-                MaterialLibAPI.getStack(Materials2Materials.Dolomite, Materials2Shapes.shapeDust, (int) (64)),
-                MaterialLibAPI.getStack(Materials2Materials.SamariumMagnetic, Materials2Shapes.shapeDust, (int) (21)),
-                MaterialLibAPI.getStack(Materials2Materials.ChromiumDioxide, Materials2Shapes.shapeDust, (int) (64)),
-                MaterialLibAPI.getStack(Materials2Materials.Jasper, Materials2Shapes.shapeGemExquisite, (int) (54L)),
-                MaterialLibAPI.getStack(Materials2Materials.Opal, Materials2Shapes.shapeGemExquisite, (int) (47L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.TCetiESeaweedExtract.get().splitStack(64),
+                        MaterialLibAPI.getStack(Materials2Materials.Dolomite, Materials2Shapes.dust, (int) (64)),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.SamariumMagnetic, Materials2Shapes.dust, (int) (21)),
+                        MaterialLibAPI.getStack(Materials2Materials.ChromiumDioxide, Materials2Shapes.dust, (int) (64)),
+                        MaterialLibAPI.getStack(Materials2Materials.Jasper, Materials2Shapes.gemExquisite, (int) (54L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Opal, Materials2Shapes.gemExquisite, (int) (47L)))
                 .itemOutputs(NHItemList.StargateDustAncients.get()).duration(3 * MINUTES).eut(262144)
                 .addTo(mixerRecipes);
 
@@ -1203,25 +1112,23 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeDust, (int) (2)),
-                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeDust, (int) (1)))
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.dust, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.dust, (int) (1)))
                 .circuit(1)
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.AstralSilver, Materials2Shapes.shapeDust, (int) (3)))
+                        MaterialLibAPI.getStack(Materials2Materials.AstralSilver, Materials2Shapes.dust, (int) (3)))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         // Spinmatron Tier2 Fluid
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.shapeDust, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.dust, (int) (4)),
                         Materials.Glowstone.getNanite(2))
                 .fluidInputs(new FluidStack(GTPPFluids.Kerosene, 4000), Materials.LumipodExtract.getFluid(1000))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.BiocatalyzedPropulsionFluid,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (5000)))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(mixerNonCellRecipes);
 
@@ -1239,12 +1146,10 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.Terrasteel, Materials2Shapes.shapeDust, (int) (1L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Terrasteel, Materials2Shapes.dust, (int) (1L)),
                             getModItem(Botania.ID, "manaResource", 4, 5))
                     .itemOutputs(
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.GaiaSpirit, Materials2Shapes.shapeDust, (int) (1L)))
+                            MaterialLibAPI.getStack(Materials2Materials.GaiaSpirit, Materials2Shapes.dust, (int) (1L)))
                     .duration(30 * SECONDS).eut(200).addTo(mixerRecipes);
 
         }
@@ -1253,10 +1158,9 @@ public class MixerRecipes implements Runnable {
             // Chamelium
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (4L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.shapeDust, (int) (1L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDust, (int) (4L)))
+                            MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (4L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dust, (int) (4L)))
                     .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 9, 96))
                     .fluidInputs(Materials.Water.getFluid(1000L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                     .addTo(mixerRecipes);
@@ -1276,15 +1180,12 @@ public class MixerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(EnderIO.ID, "itemMaterial", 1, 14),
-                            MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeDust, (int) (1L)),
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.Emerald, Materials2Shapes.shapeDust, (int) (1L)))
+                            MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.dust, (int) (1L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.dust, (int) (1L)))
                     .circuit(2)
                     .itemOutputs(
-                            MaterialLibAPI.getStack(
-                                    Materials2Materials.CrystallineAlloy,
-                                    Materials2Shapes.shapeDust,
-                                    (int) (3L)))
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.dust, (int) (3L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         }
@@ -1299,16 +1200,17 @@ public class MixerRecipes implements Runnable {
 
         if (TinkerConstruct.isModLoaded() && Natura.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(TinkerConstruct.ID, "slime.gel", 1, 2),
-                    MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeDust, (int) (1L)),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.shapeDust, (int) (1L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(TinkerConstruct.ID, "slime.gel", 1, 2),
+                            MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.dust, (int) (1L)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.dust, (int) (1L)))
                     .circuit(2)
                     .itemOutputs(
                             MaterialLibAPI.getStack(
                                     Materials2Materials.CrystallinePinkSlime,
-                                    Materials2Shapes.shapeDust,
+                                    Materials2Shapes.dust,
                                     (int) (3L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
@@ -1380,7 +1282,7 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.shapeDust, (int) (1L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Wheat, Materials2Shapes.dust, (int) (1L)),
                             getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                             new ItemStack(Items.sugar, 1, 0),
                             getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0))
@@ -1392,18 +1294,22 @@ public class MixerRecipes implements Runnable {
 
         if (AppliedEnergistics2.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
-                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.shapeDust, (int) (1L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
+                            MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.NetherQuartz, Materials2Shapes.dust, (int) (1L)))
                     .circuit(4).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
                     .fluidInputs(Materials.Water.getFluid(500L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
-                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.shapeDust, (int) (1L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
+                            MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.NetherQuartz, Materials2Shapes.dust, (int) (1L)))
                     .circuit(4).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
                     .fluidInputs(GTModHandler.getDistilledWater(500L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV / 2)
                     .addTo(mixerRecipes);
@@ -1432,7 +1338,7 @@ public class MixerRecipes implements Runnable {
                             GGMaterial.naquadahBasedFuelMkV.getFluidOrGas(1000),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.ExcitedDTEC,
-                                    Materials2FluidShapes.shapeFluidLiquid,
+                                    Materials2FluidShapes.fluidLiquid,
                                     (int) (128000)))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerNonCellRecipes);
         }

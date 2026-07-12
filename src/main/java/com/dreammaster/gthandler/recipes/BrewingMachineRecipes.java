@@ -80,7 +80,7 @@ public class BrewingMachineRecipes implements Runnable {
                             .fluidInputs(
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.Honey,
-                                            Materials2FluidShapes.shapeFluidLiquid,
+                                            Materials2FluidShapes.fluidLiquid,
                                             (int) (amountIn)))
                             .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
                             .eut(3).addTo(brewingRecipes);

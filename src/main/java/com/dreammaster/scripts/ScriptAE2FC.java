@@ -85,15 +85,15 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack BUCKET = new ItemStack(Items.bucket, 1);
         final ItemStack IRON_BAR = new ItemStack(Blocks.iron_bars, 1);
         final ItemStack IRON_PLATE = MaterialLibAPI
-                .getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (1L));
+                .getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1L));
         final ItemStack LAPIS_PLATE = MaterialLibAPI
-                .getStack(Materials2Materials.Lapis, Materials2Shapes.shapePlate, (int) (1L));
+                .getStack(Materials2Materials.Lapis, Materials2Shapes.plate, (int) (1L));
         final ItemStack NIOBIUM_PLATE = MaterialLibAPI
-                .getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.shapePlate, (int) (1L));
+                .getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.plate, (int) (1L));
         final ItemStack NETHER_QUARTZ_PLATE = MaterialLibAPI
-                .getStack(Materials2Materials.NetherQuartz, Materials2Shapes.shapePlate, (int) (1L));
+                .getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L));
         final ItemStack LAPIS_SCREW = MaterialLibAPI
-                .getStack(Materials2Materials.Lapis, Materials2Shapes.shapeScrew, (int) (1L));
+                .getStack(Materials2Materials.Lapis, Materials2Shapes.screw, (int) (1L));
         final ItemStack FLUID_CORE_1 = NHItemList.EngineeringProcessorFluidDiamondCore.get();
         final ItemStack FLUID_CORE_2 = NHItemList.EngineeringProcessorFluidEmeraldCore.get();
         final ItemStack FISH = getModItem(Minecraft.ID, "fish", 1, 0);
@@ -410,7 +410,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         AE2_STORAGE_BUS,
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapePlate, (int) (3)))
+                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.plate, (int) (3)))
                 .itemOutputs(AE2FC_FLUID_STORAGE_BUS).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -755,7 +755,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CELL_1,
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeScrew, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.screw, (int) (2)),
                         AE2_ME_CHEST,
                         AE2_ENERGY_CELL)
                 .itemOutputs(AE2FC_PORTABLE_CELL).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -777,22 +777,23 @@ public class ScriptAE2FC implements IScriptLoader {
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // DEFECTIVE SINGULARITY CELL
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.shapeScrew, (int) (2L)),
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.shapePlate, (int) (2L)),
-                MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapePlate, (int) (1L)),
-                AE2_SINGULARITY).circuit(2).itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.plate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.plate, (int) (1L)),
+                        AE2_SINGULARITY)
+                .circuit(2).itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         // ME FLUID EXPORT BUS
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (2)),
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapePlate, (int) (1)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.NetherQuartz, Materials2Shapes.shapePlate, (int) (2)),
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeScrew, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.screw, (int) (2)),
                         AE2_CORE_FOM,
                         ItemList.Electric_Piston_LV.get(1))
                 .circuit(2).itemOutputs(AE2FC_EXPORTBUS).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -801,11 +802,10 @@ public class ScriptAE2FC implements IScriptLoader {
         // ME FLUID IMPORT BUS
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (2)),
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapePlate, (int) (1)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.NetherQuartz, Materials2Shapes.shapePlate, (int) (2)),
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeScrew, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.screw, (int) (2)),
                         AE2_CORE_ANN,
                         ItemList.Electric_Piston_LV.get(1))
                 .circuit(2).itemOutputs(AE2FC_IMPORTBUS).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)

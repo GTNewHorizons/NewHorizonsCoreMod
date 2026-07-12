@@ -16,7 +16,7 @@ public class GT_Loader_Materials {
 
     private void registerMaterialRecipes() {
         GTModHandler.addShapelessCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Alumite, Materials2Shapes.shapeDust, (int) (3)),
+                MaterialLibAPI.getStack(Materials2Materials.Alumite, Materials2Shapes.dust, (int) (3)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Zinc),
                         OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Zinc),
@@ -25,14 +25,14 @@ public class GT_Loader_Materials {
                         OrePrefixes.dust.get(Materials.Obsidian) });
 
         GTModHandler.addShapelessCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.FerriteMixture, Materials2Shapes.shapeDust, (int) (5L)),
+                MaterialLibAPI.getStack(Materials2Materials.FerriteMixture, Materials2Shapes.dust, (int) (5L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Nickel), OrePrefixes.dust.get(Materials.Zinc),
                         OrePrefixes.dust.get(Materials.Iron), OrePrefixes.dust.get(Materials.Iron),
                         OrePrefixes.dust.get(Materials.Iron), OrePrefixes.dust.get(Materials.Iron) });
 
         GTModHandler.addShapelessCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.BorosilicateGlass, Materials2Shapes.shapeDust, (int) (7L)),
+                MaterialLibAPI.getStack(Materials2Materials.BorosilicateGlass, Materials2Shapes.dust, (int) (7L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Boron), OrePrefixes.dust.get(Materials.Glass),
                         OrePrefixes.dust.get(Materials.Glass), OrePrefixes.dust.get(Materials.Glass),

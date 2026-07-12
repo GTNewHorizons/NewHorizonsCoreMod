@@ -167,7 +167,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockScaffold", 1, 0),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
                 "screwIron",
                 "craftingToolWrench",
                 "frameGtWood",
@@ -226,15 +226,15 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateDenseLead");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
                 "ringStainlessSteel",
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemwoodrotor", 1, 1),
                 "screwSteel",
@@ -507,15 +507,15 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "itemCasingAnyCopper");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBarrel", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
                 "ringIron",
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
                 "ringIron",
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 3),
                 "screwSteel",
@@ -605,7 +605,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "cableGt01Tin",
                 "batteryBasic",
                 "circuitBasic",
-                MaterialLibAPI.getStack(Materials2Materials.BatteryAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.BatteryAlloy, Materials2Shapes.plate, (int) (1L)),
                 "circuitBasic",
                 "batteryBasic",
                 "cableGt01Tin",
@@ -838,7 +838,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "rotorStainlessSteel",
                 "circuitAdvanced");
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.plate, (int) (1L)),
                 "craftingToolHardHammer",
                 null,
                 null,
@@ -850,7 +850,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null);
 
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapeToolHeadSaw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.toolHeadSaw, (int) (1L)),
                 "plateIridium",
                 "plateIridium",
                 null,
@@ -1047,37 +1047,37 @@ public class ScriptIndustrialCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapeDust, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.dust, (int) (6L)),
                         NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapePlate, (int) (6)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (6)),
                         NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (4L)),
                         NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeBoots", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (8L)),
                         NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeChestplate", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (5L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (5L)),
                         NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeHelmet", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.shapeIngot, (int) (7L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (7L)),
                         NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
@@ -1121,8 +1121,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.SteelMagnetic, Materials2Shapes.shapeStick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.SteelMagnetic, Materials2Shapes.stick, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 16L))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1135,25 +1134,25 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Wood, 3L),
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapeScrew, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.screw, (int) (1L)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemTreetap", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockScaffold", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockIronScaffold", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemBoat", 1, 2),
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapePlate, (int) (1)))
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (1)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1)).duration(20).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1217,7 +1216,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
-                        MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -1230,42 +1229,42 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapePlate, (int) (5)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (5)),
                         NHItemList.ReinforcedGlassLense.get(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(25 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapePlate, (int) (5)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (5)),
                         NHItemList.ReinforcedGlassLense.get(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapePlate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (8)),
                         getModItem(Minecraft.ID, "wool", 4, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(25 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapePlate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (8)),
                         getModItem(Minecraft.ID, "wool", 4, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapePlate, (int) (7)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (7)),
                         getModItem(Minecraft.ID, "carpet", 4, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(25 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapePlate, (int) (7)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (7)),
                         getModItem(Minecraft.ID, "carpet", 4, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(25 * SECONDS)
@@ -1294,7 +1293,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Block_ReinforcedConcrete.get(1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.shapePlate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.plate, (int) (2L)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTOreDictUnificator.addItemData(
@@ -1322,15 +1321,14 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Mercury, Materials2CellShapes.shapeCell, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Mercury, Materials2CellShapes.cell, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 8L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 8, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Helium, Materials2CellShapes.shapeCell, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Helium, Materials2CellShapes.cell, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 16L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 16, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(20 * SECONDS)
@@ -1338,8 +1336,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Steel, Materials2Shapes.shapeItemCasing, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.itemCasing, (int) (2L)),
                         getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 3, 0),
                         ItemList.Hull_MV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
@@ -1349,7 +1346,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapePlate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.plate, (int) (4L)),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 2, 0),
                         getModItem(IndustrialCraft2.ID, "itemPartAlloy", 2, 0),
                         getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0))
@@ -1393,7 +1390,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapeIngot, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.ingot, (int) (4L)),
                         NHItemList.ExtruderShapeBoat.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(extruderRecipes);
@@ -1492,13 +1489,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0))
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapeStick, (int) (1L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Diamond, Materials2Shapes.shapeDustSmall, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.stick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.dustSmall, (int) (2L)))
                 .duration(3 * MINUTES + 11 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockBasalt", 1, 0))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Basalt, Materials2Shapes.shapeDust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Basalt, Materials2Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.LapotronDust.get(30)).outputChances(10000).duration(15 * SECONDS).eut(2)
@@ -1506,7 +1501,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemDust", 8, 2),
-                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dust, (int) (1L)))
                 .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "iron_boots", 1, 0))

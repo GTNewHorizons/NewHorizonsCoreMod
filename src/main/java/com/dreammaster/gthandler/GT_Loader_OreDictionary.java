@@ -164,31 +164,29 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre("foodFlour", getModItem(PamsHarvestCraft.ID, "flourItem", 1, 0));
         registerOre(
                 "listAllmeatcooked",
-                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 "listAllporkcooked",
-                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 "listAllchickencooked",
-                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 "listAllbeefcooked",
-                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatCooked, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 "listAllmeatraw",
-                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 "listAllporkraw",
-                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 "listAllchickenraw",
-                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 "listAllbeefraw",
-                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.shapeDust, (int) (1L)));
-        registerOre(
-                "foodSalt",
-                MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.MeatRaw, Materials2Shapes.dust, (int) (1L)));
+        registerOre("foodSalt", MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 OrePrefixes.block,
                 Materials.Salt,
@@ -224,7 +222,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         registerOre(
                 "dyeLime",
-                MaterialLibAPI.getStack(Materials2Materials.Soapstone, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Soapstone, Materials2Shapes.dust, (int) (1L)));
 
         registerOre(OrePrefixes.log, Materials.Wood, getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
 

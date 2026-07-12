@@ -29,19 +29,19 @@ public class ScriptBinniesMods implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2)).itemOutputs(
-                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.shapeDustTiny, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.dustTiny, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 3))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ruby, Materials2Shapes.shapeDustTiny, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Ruby, Materials2Shapes.dustTiny, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4)).itemOutputs(
-                MaterialLibAPI.getStack(Materials2Materials.Sapphire, Materials2Shapes.shapeDustTiny, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Sapphire, Materials2Shapes.dustTiny, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 5))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeDustTiny, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.dustTiny, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
     }

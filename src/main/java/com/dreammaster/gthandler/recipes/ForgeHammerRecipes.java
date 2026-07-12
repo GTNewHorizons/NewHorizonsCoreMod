@@ -151,7 +151,7 @@ public class ForgeHammerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Grade7PurifiedWater,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (100L)))
                 .duration(chip_duration_ticks).eut(chip_eu_per_tick).addTo(hammerRecipes);
 
@@ -160,7 +160,7 @@ public class ForgeHammerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Grade8PurifiedWater,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (100L)))
                 .duration(chip_duration_ticks / 2).eut(chip_eu_per_tick).addTo(hammerRecipes);
     }

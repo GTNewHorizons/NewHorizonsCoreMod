@@ -85,7 +85,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                         ItemList.Electric_Piston_HV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
-                        MaterialLibAPI.getStack(Materials2Materials.Nichrome, Materials2Shapes.shapeStick, (int) (1)))
+                        MaterialLibAPI.getStack(Materials2Materials.Nichrome, Materials2Shapes.stick, (int) (1)))
                 .circuit(1).itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -249,16 +249,16 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                             Materials.MHDCSM.getMolten(288),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.ExcitedDTSC,
-                                    Materials2FluidShapes.shapeFluidLiquid,
+                                    Materials2FluidShapes.fluidLiquid,
                                     (int) (10000)))
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Hydrogen,
-                                    Materials2FluidShapes.shapeFluidPlasma,
+                                    Materials2FluidShapes.fluidPlasma,
                                     (int) (576)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Helium,
-                                    Materials2FluidShapes.shapeFluidPlasma,
+                                    Materials2FluidShapes.fluidPlasma,
                                     (int) (576)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(hammerRecipes);
 
@@ -267,12 +267,12 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Eternity,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (144)))
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Infinity,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (576)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(arcFurnaceRecipes);
 
@@ -283,7 +283,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Mellion,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144L)))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 2)).duration(1 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
@@ -295,7 +295,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Creon,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144L)))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 4)).duration(1 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);

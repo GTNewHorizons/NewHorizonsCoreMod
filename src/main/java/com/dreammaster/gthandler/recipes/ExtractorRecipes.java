@@ -105,20 +105,24 @@ public class ExtractorRecipes implements Runnable {
 
         if (Natura.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 1, 5)).itemOutputs(
-                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 1, 5))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "floraleavesnocolor", 4, 2)).itemOutputs(
-                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "floraleavesnocolor", 4, 2))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 0)).itemOutputs(
-                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 0))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 15)).itemOutputs(
-                    MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeDust, (int) (1L)))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 15))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1L)))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 2, 7))

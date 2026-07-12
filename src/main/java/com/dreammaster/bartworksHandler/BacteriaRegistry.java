@@ -107,11 +107,9 @@ public class BacteriaRegistry {
 
         // LightRadox + Nq -> Enriched Naquadah condensation
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.shapeDust, (int) (1)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Naquadah, Materials2Shapes.dust, (int) (1)))
                 .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.shapeDust, (int) (3)))
+                        MaterialLibAPI.getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.dust, (int) (3)))
                 .outputChances(10000).fluidInputs(RadoxLight.getGas(2000)).requiresLowGravity()
                 .duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
 
@@ -121,10 +119,10 @@ public class BacteriaRegistry {
                 .addTo(centrifugeRecipes);
 
         // heavy radox + Nq+ -> Nq*
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.shapeDust, (int) (1)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.shapeDust, (int) (3)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.dust, (int) (1)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.dust, (int) (3)))
                 .outputChances(10000).fluidInputs(RadoxHeavy.getFluid(4000)).requiresLowGravity()
                 .duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
 
@@ -136,7 +134,7 @@ public class BacteriaRegistry {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Xenoxene,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (1000)))
                 .fluidOutputs(Materials.RadoxRaw.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
                 .addTo(pyrolyseRecipes, industrialCokeOvenRecipes);
@@ -423,7 +421,7 @@ public class BacteriaRegistry {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.BioMediumRaw,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (1000)))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).requiresCleanRoom().addTo(bioLabRecipes);
 
@@ -495,7 +493,7 @@ public class BacteriaRegistry {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Xenoxene,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (250L)))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.XenoxeneXenoxsis.bioCulture))
                 .metadata(

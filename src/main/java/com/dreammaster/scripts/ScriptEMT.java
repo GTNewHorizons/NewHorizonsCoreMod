@@ -95,7 +95,7 @@ public class ScriptEMT implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapeDust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.dust, (int) (4L)),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
@@ -126,13 +126,12 @@ public class ScriptEMT implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapeDust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.dust, (int) (4L)),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.shapeDust, (int) (4L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.dust, (int) (4L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14));
@@ -340,9 +339,9 @@ public class ScriptEMT implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Paper, Materials2Shapes.shapePlateQuintuple, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Paper, Materials2Shapes.plateQuintuple, (int) (1L)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Paper, Materials2Shapes.shapePlateQuintuple, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Paper, Materials2Shapes.plateQuintuple, (int) (1L)),
                 'd',
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8),
                 'e',
@@ -2122,7 +2121,7 @@ public class ScriptEMT implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Minecraft.ID, "glowstone", 1, 0))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeCrushed, (int) (32L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.crushed, (int) (32L)),
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
@@ -2133,13 +2132,11 @@ public class ScriptEMT implements IScriptLoader {
                 "UUMatterInfusion",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(
-                                        Materials2Materials.Iron,
-                                        Materials2Shapes.shapeCrushed,
-                                        (int) (1L)))));
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Iron, Materials2Shapes.crushed, (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapeCrushed, (int) (32L)),
+                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.crushed, (int) (32L)),
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
@@ -2150,13 +2147,11 @@ public class ScriptEMT implements IScriptLoader {
                 "UUMatterInfusion",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(
-                                        Materials2Materials.Copper,
-                                        Materials2Shapes.shapeCrushed,
-                                        (int) (1L)))));
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Copper, Materials2Shapes.crushed, (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapeCrushed, (int) (32L)),
+                MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.crushed, (int) (32L)),
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
@@ -2167,13 +2162,11 @@ public class ScriptEMT implements IScriptLoader {
                 "UUMatterInfusion",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(
-                                        Materials2Materials.Tin,
-                                        Materials2Shapes.shapeCrushed,
-                                        (int) (1L)))));
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Tin, Materials2Shapes.crushed, (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeCrushed, (int) (32L)),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.crushed, (int) (32L)),
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
@@ -2184,13 +2177,11 @@ public class ScriptEMT implements IScriptLoader {
                 "UUMatterInfusion",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(
-                                        Materials2Materials.Gold,
-                                        Materials2Shapes.shapeCrushed,
-                                        (int) (1L)))));
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Gold, Materials2Shapes.crushed, (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeCrushed, (int) (32L)),
+                MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.crushed, (int) (32L)),
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
@@ -2201,13 +2192,11 @@ public class ScriptEMT implements IScriptLoader {
                 "UUMatterInfusion",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(
-                                        Materials2Materials.Uranium,
-                                        Materials2Shapes.shapeCrushed,
-                                        (int) (1L)))));
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Uranium, Materials2Shapes.crushed, (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapeCrushed, (int) (32L)),
+                MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.crushed, (int) (32L)),
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
@@ -2218,13 +2207,11 @@ public class ScriptEMT implements IScriptLoader {
                 "UUMatterInfusion",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(
-                                        Materials2Materials.Silver,
-                                        Materials2Shapes.shapeCrushed,
-                                        (int) (1L)))));
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Silver, Materials2Shapes.crushed, (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.shapeCrushed, (int) (32L)),
+                MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.crushed, (int) (32L)),
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
@@ -2235,13 +2222,11 @@ public class ScriptEMT implements IScriptLoader {
                 "UUMatterInfusion",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(
-                                        Materials2Materials.Lead,
-                                        Materials2Shapes.shapeCrushed,
-                                        (int) (1L)))));
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Lead, Materials2Shapes.crushed, (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.shapeCrushed, (int) (24L)),
+                MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.crushed, (int) (24L)),
                 9,
                 new AspectList().add(Aspect.AIR, 12).add(Aspect.WATER, 12).add(Aspect.EARTH, 24).add(Aspect.FIRE, 12)
                         .add(Aspect.ENTROPY, 12).add(Aspect.ORDER, 24),
@@ -2255,11 +2240,11 @@ public class ScriptEMT implements IScriptLoader {
                         TCHelper.findInfusionRecipe(
                                 MaterialLibAPI.getStack(
                                         Materials2Materials.Redstone,
-                                        Materials2Shapes.shapeCrushed,
+                                        Materials2Shapes.crushed,
                                         (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapeCrushed, (int) (24L)),
+                MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.crushed, (int) (24L)),
                 9,
                 new AspectList().add(Aspect.AIR, 12).add(Aspect.WATER, 12).add(Aspect.EARTH, 24).add(Aspect.FIRE, 12)
                         .add(Aspect.ENTROPY, 12).add(Aspect.ORDER, 24),
@@ -2271,10 +2256,8 @@ public class ScriptEMT implements IScriptLoader {
                 "UUMatterInfusion",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(
-                                        Materials2Materials.Lapis,
-                                        Materials2Shapes.shapeCrushed,
-                                        (int) (1L)))));
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Lapis, Materials2Shapes.crushed, (int) (1L)))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 getModItem(Minecraft.ID, "gold_ingot", 2, 0),
@@ -2457,19 +2440,19 @@ public class ScriptEMT implements IScriptLoader {
                 'a',
                 getModItem(Minecraft.ID, "pumpkin", 1, 0),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Snow, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Snow, Materials2Shapes.dust, (int) (1L)),
                 'c',
                 getModItem(Minecraft.ID, "pumpkin", 1, 0),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Ice, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Ice, Materials2Shapes.dust, (int) (1L)),
                 'e',
                 getModItem(Thaumcraft.ID, "FocusFrost", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Ice, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Ice, Materials2Shapes.dust, (int) (1L)),
                 'g',
                 getModItem(Minecraft.ID, "pumpkin", 1, 0),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Snow, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Snow, Materials2Shapes.dust, (int) (1L)),
                 'i',
                 getModItem(Minecraft.ID, "pumpkin", 1, 0));
         TCHelper.addResearchPage(

@@ -90,7 +90,7 @@ public class ScriptArchitectureCraft implements IScriptLoader {
         addShapelessRecipe(getModItem(ArchitectureCraft.ID, "sawblade", 1), "toolHeadBuzzSawAnyIron");
 
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeToolHeadBuzzSaw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.toolHeadBuzzSaw, (int) (1L)),
                 getModItem(ArchitectureCraft.ID, "sawblade", 1));
     }
 }

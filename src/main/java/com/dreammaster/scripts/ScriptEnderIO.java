@@ -135,7 +135,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.ConductiveIron,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (144L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
 
@@ -148,7 +148,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.EnergeticAlloy,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (144L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -268,45 +268,45 @@ public class ScriptEnderIO implements IScriptLoader {
                 ItemList.Electric_Motor_EV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 ItemList.Cover_SolarPanel.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 ItemList.Cover_SolarPanel.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 1),
-                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 1),
-                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapePlate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8));
@@ -315,9 +315,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "plateEndSteel",
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2),
                 "plateEndSteel",
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 1),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2));
@@ -326,9 +326,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "plateEndSteel",
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2),
                 "plateEndSteel",
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 1),
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9));
@@ -381,9 +381,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1),
                 "circuitGood",
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1),
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1),
                 ItemList.Battery_RE_HV_Cadmium.get(1L),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1));
@@ -392,9 +392,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8),
                 "circuitGood",
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8),
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8),
                 ItemList.Battery_RE_HV_Cadmium.get(1L),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8));
@@ -903,9 +903,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 null,
                 getModItem(EnderIO.ID, "itemMaterial", 1, 9),
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 "plateSoularium",
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 "plateSoularium",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                 "plateSoularium");
@@ -914,9 +914,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 null,
                 getModItem(EnderIO.ID, "blockEndermanSkull", 1, 2),
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 "plateSoularium",
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 "plateSoularium",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                 "plateSoularium");
@@ -925,9 +925,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 null,
                 getModItem(EnderIO.ID, "itemXpTransfer", 1, 0),
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 "plateSoularium",
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)),
                 "plateSoularium",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                 "plateSoularium");
@@ -958,34 +958,34 @@ public class ScriptEnderIO implements IScriptLoader {
                 null,
                 "craftingToolHardHammer",
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeStick, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.stick, (int) (1L)));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSoulariumBars", 3, 0),
                 null,
                 "craftingToolHardHammer",
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeStick, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.stick, (int) (1L)));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockEndSteelBars", 3, 0),
                 null,
                 "craftingToolHardHammer",
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeStick, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeStick, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.stick, (int) (1L)));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockDarkSteelLadder", 1, 0),
                 getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0),
@@ -1046,9 +1046,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "plateElectricalSteel",
                 "gemEnderEye",
                 "plateElectricalSteel",
-                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)),
                 getModItem(Minecraft.ID, "compass", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)),
                 "plateElectricalSteel",
                 "gemEnderEye",
                 "plateElectricalSteel");
@@ -1333,94 +1333,95 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "diamond", 1, 0),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapeNugget, (int) (8L)))
+                        MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.nugget, (int) (8L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 5)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "emerald", 1, 0),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapeNugget, (int) (8L)))
+                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.nugget, (int) (8L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 6)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.shapePlate, (int) (1L)))
+                MaterialLibAPI.getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 2)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.ConductiveIron, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.ConductiveIron, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 5)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapePlate, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 6)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapePlate, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 7)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapePlate, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.ClayCompound, 1L))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                MaterialLibAPI.getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 2)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI
-                        .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.shapePlate, (int) (1L)))
+                MaterialLibAPI.getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.shapePlate, (int) (1L)))
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 5)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 6)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.ManyullynCrystal.get(),
-                        MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.shapeNugget, (int) (8L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.nugget, (int) (8L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapePlate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.plate, (int) (2L)))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelPressurePlate", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1431,13 +1432,11 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelLadder", 2, 0)).duration(5 * SECONDS).eut(96)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapeStick, (int) (3L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.stick, (int) (3L)))
                 .circuit(3).itemOutputs(getModItem(EnderIO.ID, "blockDarkIronBars", 4, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.shapeStick, (int) (3L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.stick, (int) (3L)))
                 .circuit(3).itemOutputs(getModItem(EnderIO.ID, "blockEndSteelBars", 4, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1488,31 +1487,27 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.ConductiveIron, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.ConductiveIron, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Aluminium, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Osmium, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -1526,42 +1521,42 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Zinc, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SolderingAlloy, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Nickel, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 1),
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).duration(5 * SECONDS).eut(96)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Electrum, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(160)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackSteel, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(192)
                 .addTo(assemblerRecipes);
@@ -1569,36 +1564,37 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.TungstenSteel, 1L),
                         MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.shapePlate, (int) (1L)))
+                                .getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS).eut(320)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.HSSG, 1L),
-                MaterialLibAPI.getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.HSSG, 1L),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 8))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.NiobiumTitanium, 1L),
-                MaterialLibAPI
-                        .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.NiobiumTitanium, 1L),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Naquadah, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 10))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackPlutonium, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.StellarAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 11))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
@@ -1606,67 +1602,65 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Copper, 1L),
                         MaterialLibAPI
-                                .getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.shapePlate, (int) (1L)))
+                                .getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polytetrafluoroethylene, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
-                MaterialLibAPI.getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
-                MaterialLibAPI
-                        .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.shapePlate, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polybenzimidazole, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polybenzimidazole, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.StellarAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Electrum, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.PulsatingIron, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemItemConduit", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemOCConduit", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -1733,13 +1727,13 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.StyreneButadieneRubber,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (144)))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockFusedQuartz", 3, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeRound, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.round, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemSoulVessel", 1, 0)).duration(10 * SECONDS).eut(48)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1748,20 +1742,21 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Steel, Materials2Shapes.shapeItemCasing, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.itemCasing, (int) (2L)))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                new OreDictItemStack("capacitorBasic", 1),
-                MaterialLibAPI.getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.shapePlate, (int) (2L)),
-                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeItemCasing, (int) (2L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new OreDictItemStack("capacitorBasic", 1),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.plate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.itemCasing, (int) (2L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "obsidian", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.shapePlate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.plate, (int) (2L)),
                         getModItem(EnderIO.ID, "blockDarkIronBars", 2, 0))
                 .circuit(17).itemOutputs(getModItem(EnderIO.ID, "blockReinforcedObsidian", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -1823,10 +1818,10 @@ public class ScriptEnderIO implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Calcite, Materials2Shapes.shapeDust, (int) (14)),
-                        MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.shapeDust, (int) (7)),
-                        MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.shapeDust, (int) (7)),
-                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (7)))
+                        MaterialLibAPI.getStack(Materials2Materials.Calcite, Materials2Shapes.dust, (int) (14)),
+                        MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.dust, (int) (7)),
+                        MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (7)),
+                        MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.dust, (int) (7)))
                 .circuit(3).itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 63, 2)).duration(7 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         // Bulk crystals
@@ -1836,7 +1831,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.PulsatingIron,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (8192)))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
 
@@ -1845,7 +1840,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.VibrantAlloy,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (8192)))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
 
@@ -1854,7 +1849,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Enderium,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (2048)))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_IV / 2).addTo(autoclaveRecipes);
 
@@ -1862,8 +1857,8 @@ public class ScriptEnderIO implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.shapeDust, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.shapeDust, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Soularium, Materials2Shapes.dust, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.dust, (int) (1)),
                         getModItem(EnderIO.ID, "blockEndermanSkull", 1, 0),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                         getModItem(Witchery.ID, "witchhand", 1, 0))
@@ -1877,7 +1872,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SoulInfusedMedium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (2880)))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(multiblockChemicalReactorRecipes);
 
@@ -1887,31 +1882,31 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SoulInfusedMedium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (144 * 20)))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.shapeDust, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.dust, (int) (1)),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 6))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 8))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SoulInfusedMedium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (144 * 20)))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (1)),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 13))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SoulInfusedMedium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (144 * 10)))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
@@ -1921,7 +1916,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SoulInfusedMedium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (144 * 10)))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
@@ -1933,19 +1928,19 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SoulInfusedMedium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (144 * 10)))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (1)),
                         new ItemStack(Blocks.detector_rail, 1))
                 .itemOutputs(getModItem(EnderIO.ID, "blockEnderRail", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SoulInfusedMedium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (144 * 15)))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
@@ -1961,7 +1956,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SoulInfusedMedium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (144 * 40)))
                 .requiresCleanRoom().duration(40 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(circuitAssemblerRecipes);
 

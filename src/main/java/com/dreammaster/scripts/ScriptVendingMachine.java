@@ -38,7 +38,7 @@ public class ScriptVendingMachine implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack ironPlate = MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapePlate, (int) (1));
+        ItemStack ironPlate = MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1));
         addShapedRecipe(
                 VMItems.vendingMachine,
                 getModItem(Minecraft.ID, "stone_button", 1, 0),

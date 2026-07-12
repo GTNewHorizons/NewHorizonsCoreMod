@@ -463,13 +463,13 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "glass", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.ring, (int) (2L)))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeRing, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.ring, (int) (2L)))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "paper", 8, 0)).circuit(8)
@@ -479,8 +479,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.shapePlate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.plate, (int) (4L)))
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -532,22 +531,24 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeGearGtSmall, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.shapeItemCasing, (int) (2)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.gearGtSmall, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.itemCasing, (int) (2)),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.shapePlate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.plate, (int) (1L)),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.shapeLens, (int) (1L))),
-                MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.shapePlate, (int) (4L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Firestone, Materials2Shapes.lens, (int) (1L))),
+                        MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.plate, (int) (4L)))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 

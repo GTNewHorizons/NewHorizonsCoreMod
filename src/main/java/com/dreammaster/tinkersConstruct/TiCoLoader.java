@@ -66,12 +66,9 @@ public class TiCoLoader {
     }
 
     private static void convertAluminumBrassItems() {
-        ItemStack brassIngot = MaterialLibAPI
-                .getStack(Materials2Materials.Brass, Materials2Shapes.shapeIngot, (int) (1L));
-        ItemStack brassNugget = MaterialLibAPI
-                .getStack(Materials2Materials.Brass, Materials2Shapes.shapeNugget, (int) (1L));
-        ItemStack brassDust = MaterialLibAPI
-                .getStack(Materials2Materials.Brass, Materials2Shapes.shapeDust, (int) (1L));
+        ItemStack brassIngot = MaterialLibAPI.getStack(Materials2Materials.Brass, Materials2Shapes.ingot, (int) (1L));
+        ItemStack brassNugget = MaterialLibAPI.getStack(Materials2Materials.Brass, Materials2Shapes.nugget, (int) (1L));
+        ItemStack brassDust = MaterialLibAPI.getStack(Materials2Materials.Brass, Materials2Shapes.dust, (int) (1L));
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 14, brassIngot);
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 24, brassNugget);
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 42, brassDust);

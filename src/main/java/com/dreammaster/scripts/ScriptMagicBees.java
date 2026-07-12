@@ -76,23 +76,22 @@ public class ScriptMagicBees implements IScriptLoader {
     public void loadRecipes() {
 
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedAir, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedAir, Materials2Shapes.dustSmall, (int) (1L)),
                 getModItem(MagicBees.ID, "miscResources", 1, 18));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedWater, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedWater, Materials2Shapes.dustSmall, (int) (1L)),
                 getModItem(MagicBees.ID, "miscResources", 1, 19));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.dustSmall, (int) (1L)),
                 getModItem(MagicBees.ID, "miscResources", 1, 20));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.dustSmall, (int) (1L)),
                 getModItem(MagicBees.ID, "miscResources", 1, 21));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.InfusedOrder, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedOrder, Materials2Shapes.dustSmall, (int) (1L)),
                 getModItem(MagicBees.ID, "miscResources", 1, 22));
         addShapelessRecipe(
-                MaterialLibAPI
-                        .getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.dustSmall, (int) (1L)),
                 getModItem(MagicBees.ID, "miscResources", 1, 23));
         addShapedRecipe(
                 getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0),
@@ -236,7 +235,7 @@ public class ScriptMagicBees implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clock", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Jade, Materials2Shapes.shapeGem, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Jade, Materials2Shapes.gem, (int) (4L)))
                 .itemOutputs(getModItem(MagicBees.ID, "moonDial", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 576)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -335,7 +334,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.shapeDust, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dust, (int) (8L)),
                         getModItem(MagicBees.ID, "miscResources", 1, 2))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 12, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
@@ -343,14 +342,14 @@ public class ScriptMagicBees implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 2, wildcard),
-                        MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 5, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.shapeDust, (int) (8L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dust, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 10, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
@@ -362,7 +361,7 @@ public class ScriptMagicBees implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CropsNH.ID, "fertilizer", 8, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 30, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
@@ -442,11 +441,11 @@ public class ScriptMagicBees implements IScriptLoader {
                 'f',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeSpringSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.springSmall, (int) (1L)),
                 'h',
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.shapeSpringSmall, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.springSmall, (int) (1L)));
         TCHelper.addResearchPage(
                 "MB_VisAuraProvider",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "visAuraProvider", 1, 0))));
@@ -464,7 +463,7 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "CONCENTRATEDCOMPOUND",
                 getModItem(MagicBees.ID, "miscResources", 1, 2),
-                MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeGem, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.gem, (int) (1L)),
                 new AspectList().add(Aspect.CROP, 6).add(Aspect.CRYSTAL, 3));
         TCHelper.addResearchPage(
                 "CONCENTRATEDCOMPOUND",
@@ -892,21 +891,21 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
                 'g',
                 "craftingToolWireCutter",
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
                 'i',
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
@@ -926,21 +925,21 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.stick, (int) (1L)),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.stick, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.stick, (int) (1L)),
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.stick, (int) (1L)),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.stick, (int) (1L)),
                 'g',
                 "craftingToolWireCutter",
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.stick, (int) (1L)),
                 'i',
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
@@ -961,13 +960,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
                 'd',
                 "craftingToolFile",
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.plate, (int) (1L)),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 2),
                 'i',
@@ -989,13 +988,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.stick, (int) (1L)),
                 'd',
                 "craftingToolFile",
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapeStick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.stick, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.shapePlate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Void, Materials2Shapes.plate, (int) (1L)),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 16),
                 'i',
