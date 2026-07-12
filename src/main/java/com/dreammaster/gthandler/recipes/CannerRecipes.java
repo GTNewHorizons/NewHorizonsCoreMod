@@ -25,7 +25,7 @@ public class CannerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.AdsorptionFilterCasing.get(),
-                        MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.shapeDust, (int) (32)))
+                        MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.dust, (int) (32)))
                 .itemOutputs(NHItemList.AdsorptionFilter.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(cannerRecipes);
 
@@ -35,7 +35,7 @@ public class CannerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SodiumPotassium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (1000)))
                 .duration(16 * TICKS).eut(1).addTo(cannerRecipes);
 
@@ -44,7 +44,7 @@ public class CannerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SodiumPotassium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (3000)))
                 .duration(2 * SECONDS + 8 * TICKS).eut(1).addTo(cannerRecipes);
 
@@ -53,7 +53,7 @@ public class CannerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SodiumPotassium,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (6000)))
                 .duration(4 * SECONDS + 16 * TICKS).eut(1).addTo(cannerRecipes);
 
@@ -63,7 +63,7 @@ public class CannerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SuperCoolant,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (1000L)))
                 .duration(16 * TICKS).eut(1).addTo(cannerRecipes);
 
@@ -72,7 +72,7 @@ public class CannerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SuperCoolant,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (2000L)))
                 .duration(1 * SECONDS + 12 * TICKS).eut(1).addTo(cannerRecipes);
 
@@ -81,7 +81,7 @@ public class CannerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SuperCoolant,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (3000L)))
                 .duration(2 * SECONDS + 8 * TICKS).eut(1).addTo(cannerRecipes);
 
@@ -90,7 +90,7 @@ public class CannerRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SuperCoolant,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (6000L)))
                 .duration(4 * SECONDS + 16 * TICKS).eut(1).addTo(cannerRecipes);
 

@@ -32,15 +32,15 @@ public class BeamcraftingRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Wafer_APIC.get(1),
-                        MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.shapeDust, (int) (1)))
+                        MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.dust, (int) (1)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Creon,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576L)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Mellion,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (576L)))
                 .itemOutputs(ItemList.Circuit_Wafer_ZPIC.get(1))
                 .metadata(

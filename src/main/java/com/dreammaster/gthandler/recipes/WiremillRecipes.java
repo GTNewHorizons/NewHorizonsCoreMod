@@ -24,17 +24,18 @@ public class WiremillRecipes implements Runnable {
     @Override
     public void run() {
         GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.MeteoricIron, Materials2Shapes.shapeStickLong, (int) (1L)))
+                MaterialLibAPI.getStack(Materials2Materials.MeteoricIron, Materials2Shapes.stickLong, (int) (1L)))
                 .itemOutputs(NHItemList.MeteoricIronString.get(4)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(wiremillRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.shapeStickLong, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.stickLong, (int) (1L)))
                 .itemOutputs(NHItemList.TungstenString.get(4)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(wiremillRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.BorosilicateGlass, Materials2Shapes.shapeIngot, (int) (1)))
+                MaterialLibAPI.getStack(Materials2Materials.BorosilicateGlass, Materials2Shapes.ingot, (int) (1)))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
 

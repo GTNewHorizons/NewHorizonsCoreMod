@@ -102,9 +102,9 @@ public class ScriptWarpTheory implements IScriptLoader {
                 'b',
                 new ItemStack(Items.potionitem), // Water bottle
                 'p',
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.shapeDust, (int) (1)), // Perditio
-                                                                                                                    // crystal
-                                                                                                                    // dust
+                MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.dust, (int) (1)), // Perditio
+                                                                                                               // crystal
+                                                                                                               // dust
                 'g',
                 new ItemStack(Items.ghast_tear));
         TCHelper.addResearchPage(

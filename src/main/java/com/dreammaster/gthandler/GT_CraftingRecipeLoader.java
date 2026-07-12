@@ -416,58 +416,53 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // LV+1st MV circuit/parts
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Circuit_Board_Coated.get(1, o),
-                new Object[] {
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)),
+                new Object[] { MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)),
                         ItemList.IC2_Resin.get(1, o), ItemList.IC2_Resin.get(1, o) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Coated.get(3, o),
                 new Object[] { "RRR", "PPP", "RRR", 'P',
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)), 'R',
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)), 'R',
                         ItemList.IC2_Resin.get(1, o) });
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Circuit_Board_Coated.get(1, o),
-                new Object[] {
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)),
+                new Object[] { MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)),
                         new ItemStack(Items.slime_ball, 1), new ItemStack(Items.slime_ball, 1) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Coated.get(3, o),
                 new Object[] { "RRR", "PPP", "RRR", 'P',
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)), 'R',
+                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)), 'R',
                         new ItemStack(Items.slime_ball, 1) });
         if (TinkerConstruct.isModLoaded()) {
             GTModHandler.addShapelessCraftingRecipe(
                     ItemList.Circuit_Board_Coated.get(1, o),
-                    new Object[] {
-                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)),
+                    new Object[] { MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)),
                             getModItem(TinkerConstruct.ID, "materials", 1, 36),
                             getModItem(TinkerConstruct.ID, "materials", 1, 36) });
             GTModHandler.addCraftingRecipe(
                     ItemList.Circuit_Board_Coated.get(3, o),
                     new Object[] { "RRR", "PPP", "RRR", 'P',
-                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)),
-                            'R', getModItem(TinkerConstruct.ID, "materials", 1, 36) });
+                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)), 'R',
+                            getModItem(TinkerConstruct.ID, "materials", 1, 36) });
             GTModHandler.addShapelessCraftingRecipe(
                     ItemList.Circuit_Board_Coated.get(1, o),
-                    new Object[] {
-                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)),
+                    new Object[] { MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)),
                             getModItem(TinkerConstruct.ID, "strangeFood", 1, 0),
                             getModItem(TinkerConstruct.ID, "strangeFood", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     ItemList.Circuit_Board_Coated.get(3, o),
                     new Object[] { "RRR", "PPP", "RRR", 'P',
-                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)),
-                            'R', getModItem(TinkerConstruct.ID, "strangeFood", 1, 0) });
+                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)), 'R',
+                            getModItem(TinkerConstruct.ID, "strangeFood", 1, 0) });
             GTModHandler.addShapelessCraftingRecipe(
                     ItemList.Circuit_Board_Coated.get(1, o),
-                    new Object[] {
-                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)),
+                    new Object[] { MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)),
                             getModItem(TinkerConstruct.ID, "strangeFood", 1, 1),
                             getModItem(TinkerConstruct.ID, "strangeFood", 1, 1) });
             GTModHandler.addCraftingRecipe(
                     ItemList.Circuit_Board_Coated.get(3, o),
                     new Object[] { "RRR", "PPP", "RRR", 'P',
-                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (1)),
-                            'R', getModItem(TinkerConstruct.ID, "strangeFood", 1, 1) });
+                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)), 'R',
+                            getModItem(TinkerConstruct.ID, "strangeFood", 1, 1) });
             GTModHandler.addCraftingRecipe(
                     ItemList.Circuit_Parts_Resistor.get(1, o),
                     new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
@@ -537,8 +532,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Circuit_Good.get(1, o),
                 new Object[] { "PAP", "CBC", "DCD", 'D', ItemList.Circuit_Parts_Diode.get(1, o), 'C',
                         Ic2Items.electronicCircuit, 'A',
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeItemCasing, (int) (1)),
-                        'P', GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 1), 'B',
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.itemCasing, (int) (1)), 'P',
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 1), 'B',
                         ItemList.Circuit_Board_Phenolic_Good.get(1, o) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Phenolic_Good.get(1, o),
@@ -811,11 +806,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.LATEX.get(1),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "SPS", "CMC", "SPS", 'S',
-                        MaterialLibAPI.getStack(
-                                Materials2Materials.StyreneButadieneRubber,
-                                Materials2Shapes.shapePlateDense,
-                                (int) (1L)),
+                new Object[] { "SPS", "CMC", "SPS", 'S', MaterialLibAPI
+                        .getStack(Materials2Materials.StyreneButadieneRubber, Materials2Shapes.plateDense, (int) (1L)),
                         'P', ItemList.Electric_Pump_HV.get(1L), 'C', OrePrefixes.circuit.get(Materials.EV), 'M',
                         ItemList.Machine_HV_Assembler.get(1) });
 
@@ -1001,34 +993,32 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 switch (i) {
                     case 9: // UHV
                         hull = MaterialLibAPI
-                                .getStack(Materials2Materials.Neutronium, Materials2Shapes.shapePlate, (int) (1L));
+                                .getStack(Materials2Materials.Neutronium, Materials2Shapes.plate, (int) (1L));
                         machinehull = ItemList.Hull_MAX.get(1L);
                         break;
                     case 10: // UEV
                         hull = MaterialLibAPI
-                                .getStack(Materials2Materials.Bedrockium, Materials2Shapes.shapePlate, (int) (1L));
+                                .getStack(Materials2Materials.Bedrockium, Materials2Shapes.plate, (int) (1L));
                         machinehull = ItemList.Hull_UEV.get(1L);
                         break;
                     case 11: // UIV
                         hull = MaterialLibAPI
-                                .getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.shapePlate, (int) (1L));
+                                .getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.plate, (int) (1L));
                         machinehull = ItemList.Hull_UIV.get(1L);
                         break;
                     case 12: // UMV
                         hull = MaterialLibAPI
-                                .getStack(Materials2Materials.Infinity, Materials2Shapes.shapePlate, (int) (1L));
+                                .getStack(Materials2Materials.Infinity, Materials2Shapes.plate, (int) (1L));
                         machinehull = ItemList.Hull_UMV.get(1L);
                         break;
                     case 13: // UXV
-                        hull = MaterialLibAPI.getStack(
-                                Materials2Materials.TranscendentMetal,
-                                Materials2Shapes.shapePlate,
-                                (int) (1L));
+                        hull = MaterialLibAPI
+                                .getStack(Materials2Materials.TranscendentMetal, Materials2Shapes.plate, (int) (1L));
                         machinehull = ItemList.Hull_UXV.get(1L);
                         break;
                     default: // MAX
                         hull = MaterialLibAPI
-                                .getStack(Materials2Materials.SpaceTime, Materials2Shapes.shapePlate, (int) (1L));
+                                .getStack(Materials2Materials.SpaceTime, Materials2Shapes.plate, (int) (1L));
                         machinehull = ItemList.Hull_MAXV.get(1L);
                         break;
                 }
@@ -1127,20 +1117,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
 
         GTModHandler.addCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.QuartzSand, Materials2Shapes.dust, (int) (1L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "S", "m", 'S', new ItemStack(Blocks.sand, 1, 32767) });
         GTModHandler.addCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Flint, Materials2Shapes.dustTiny, (int) (1L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "F", "m", 'F', new ItemStack(Items.flint, 1, 0) });
 
         GTModHandler.addShapelessCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (1L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { OrePrefixes.dust.get(Materials.QuartzSand), OrePrefixes.dustTiny.get(Materials.Flint) });
         GTModHandler.addShapelessCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.shapeDust, (int) (8L)),
+                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (8L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { OrePrefixes.dust.get(Materials.QuartzSand), OrePrefixes.dust.get(Materials.QuartzSand),
                         OrePrefixes.dust.get(Materials.QuartzSand), OrePrefixes.dust.get(Materials.QuartzSand),
@@ -1157,15 +1147,15 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 BlockList.SteelBars.get(3),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { " h ", "SSS", "SSS", 'S',
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeStick, (int) (1)) });
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.stick, (int) (1)) });
 
         GTModHandler.addShapelessCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (1L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { ToolDictNames.craftingToolMortar,
                         new ItemStack(Blocks.stained_hardened_clay, 1, WILDCARD) });
         GTModHandler.addShapelessCraftingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (1L)),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { ToolDictNames.craftingToolMortar, new ItemStack(Blocks.hardened_clay, 1) });
 

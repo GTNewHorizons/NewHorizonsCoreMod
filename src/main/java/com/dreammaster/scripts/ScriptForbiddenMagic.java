@@ -174,7 +174,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         ThaumcraftApi.addCrucibleRecipe(
                 "VINTEUM",
-                MaterialLibAPI.getStack(Materials2Materials.Vinteum, Materials2Shapes.shapeNugget, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Vinteum, Materials2Shapes.nugget, (int) (1L)),
                 "nuggetThaumium",
                 new AspectList().add(Aspect.EXCHANGE, 4).add(Aspect.ORDER, 2).add(Aspect.CRYSTAL, 2));
         TCHelper.addInfusionCraftingRecipe(
@@ -483,14 +483,14 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -4,
                 2,
                 3,
-                MaterialLibAPI.getStack(Materials2Materials.Vinteum, Materials2Shapes.shapeGem, (int) (1)))
+                MaterialLibAPI.getStack(Materials2Materials.Vinteum, Materials2Shapes.gem, (int) (1)))
                         .setPages(
                                 new ResearchPage("derp.research_page.VINTEUM"),
                                 new ResearchPage(
                                         TCHelper.findCrucibleRecipe(
                                                 MaterialLibAPI.getStack(
                                                         Materials2Materials.Vinteum,
-                                                        Materials2Shapes.shapeNugget,
+                                                        Materials2Shapes.nugget,
                                                         (int) (1L)))))
                         .setConcealed().setParents("JOURNEY", "THAUMIUM", "GT_ADVANCEDMETALLURGY")
                         .registerResearchItem();

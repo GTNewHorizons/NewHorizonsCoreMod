@@ -177,24 +177,24 @@ public class ScriptTwilightForest implements IScriptLoader {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (4L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (4L)),
                             getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0))
                     .itemOutputs(getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Iron,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (16)))
                     .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.shapePlate, (int) (4L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (4L)),
                             getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0))
                     .itemOutputs(getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Copper,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (16)))
                     .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
@@ -205,7 +205,7 @@ public class ScriptTwilightForest implements IScriptLoader {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Iron,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (16)))
                     .duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
@@ -216,7 +216,7 @@ public class ScriptTwilightForest implements IScriptLoader {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Steel,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (16)))
                     .duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
         }
@@ -324,7 +324,7 @@ public class ScriptTwilightForest implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steeleaf, Materials2Shapes.shapeDust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Steeleaf, Materials2Shapes.dust, (int) (1L)),
                         ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.steeleafIngot", 1, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(alloySmelterRecipes);
@@ -359,7 +359,7 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Glowstone,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (144)))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.magicMapFocus", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -370,7 +370,7 @@ public class ScriptTwilightForest implements IScriptLoader {
                         Materials.Helium3.getGas(1600),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Helium,
-                                Materials2FluidShapes.shapeFluidGas,
+                                Materials2FluidShapes.fluidGas,
                                 (int) (16000)))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
 

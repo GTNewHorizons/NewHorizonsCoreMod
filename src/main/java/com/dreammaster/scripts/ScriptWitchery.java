@@ -114,7 +114,7 @@ public class ScriptWitchery implements IScriptLoader {
                         getModItem(Witchery.ID, "ingredient", 9, 130),
                         new ItemStack(Items.magma_cream, 9),
                         new ItemStack(Items.blaze_powder, 9),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.dust, (int) (1L)))
                 .circuit(4).itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
@@ -122,7 +122,7 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 16),
                 null,
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.dust, (int) (1L)),
                 null,
                 null,
                 null,
@@ -130,7 +130,7 @@ public class ScriptWitchery implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.shapeDust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.dust, (int) (1L)),
                 null,
                 null,
                 getModItem(Witchery.ID, "ingredient", 1, 16),

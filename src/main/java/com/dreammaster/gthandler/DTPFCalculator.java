@@ -97,10 +97,8 @@ public class DTPFCalculator {
                 ebfDuration = (long) Math.max(1, recipe.mDuration * 0.3);
                 ebfEUpertick = recipe.mEUt;
             } else if (recipe.mFluidInputs[0].isFluidEqual(
-                    MaterialLibAPI.getFluidStack(
-                            Materials2Materials.Radon,
-                            Materials2FluidShapes.shapeFluidGas,
-                            (int) (1000L)))) {
+                    MaterialLibAPI
+                            .getFluidStack(Materials2Materials.Radon, Materials2FluidShapes.fluidGas, (int) (1000L)))) {
                                 ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
                                 ebfEUpertick = recipe.mEUt;
                                 break;

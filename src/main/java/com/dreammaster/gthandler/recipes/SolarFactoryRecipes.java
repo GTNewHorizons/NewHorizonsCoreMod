@@ -45,43 +45,46 @@ public class SolarFactoryRecipes implements Runnable {
 
     public GTRecipeBuilder[] SolarFactoryRawRecipes = {
             // Irradiant Reinforced Plates
-            GTValues.RA.stdBuilder().itemInputs(
-                    NHItemList.ReinforcedAluminiumIronPlate.get(1),
-                    getModItem(EnderIO.ID, "itemMaterial", 1, 6),
-                    getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedAluminiumIronPlate.get(1),
+                            getModItem(EnderIO.ID, "itemMaterial", 1, 6),
+                            getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0),
+                            MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.plate, (int) (2L)),
+                            MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(NHItemList.IrradiantReinforcedAluminiumPlate.get(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_MV),
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    NHItemList.ReinforcedTitaniumIronPlate.get(1),
-                    getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0),
-                    MaterialLibAPI.getStack(Materials2Materials.MeteoricSteel, Materials2Shapes.shapePlate, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedTitaniumIronPlate.get(1),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.MeteoricSteel, Materials2Shapes.plate, (int) (1L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.plate, (int) (2L)),
+                            MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(NHItemList.IrradiantReinforcedTitaniumPlate.get(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_HV),
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    NHItemList.ReinforcedTungstenIronPlate.get(1),
-                    getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3),
-                    MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapePlate, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Steeleaf, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedTungstenIronPlate.get(1),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3),
+                            MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.plate, (int) (1L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Steeleaf, Materials2Shapes.plate, (int) (2L)),
+                            MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(NHItemList.IrradiantReinforcedTungstenPlate.get(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 576)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_EV),
 
             GTValues.RA.stdBuilder().itemInputs(
                     NHItemList.ReinforcedTungstenSteelIronPlate.get(1),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.Sunnarium, Materials2Shapes.shapePlateQuadruple, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Plutonium, Materials2Shapes.shapePlate, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Knightmetal, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+                    MaterialLibAPI.getStack(Materials2Materials.Sunnarium, Materials2Shapes.plateQuadruple, (int) (1L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Plutonium, Materials2Shapes.plate, (int) (1L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Knightmetal, Materials2Shapes.plate, (int) (2L)),
+                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(NHItemList.IrradiantReinforcedTungstenSteelPlate.get(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 1152)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_IV),
@@ -89,32 +92,32 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(
                     NHItemList.ReinforcedChromeIronPlate.get(1),
                     getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1),
-                    MaterialLibAPI.getStack(
-                            Materials2Materials.YttriumBariumCuprate,
-                            Materials2Shapes.shapePlate,
-                            (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.FierySteel, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+                    MaterialLibAPI
+                            .getStack(Materials2Materials.YttriumBariumCuprate, Materials2Shapes.plate, (int) (1L)),
+                    MaterialLibAPI.getStack(Materials2Materials.FierySteel, Materials2Shapes.plate, (int) (2L)),
+                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(NHItemList.IrradiantReinforcedChromePlate.get(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 2304))
                     .metadata(data, new SolarFactoryRecipeData(0, 0, 2)).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV),
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 7),
-                    getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4),
-                    MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.shapePlate, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 7),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4),
+                            MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.plate, (int) (1L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.plate, (int) (2L)),
+                            MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 8))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 4608))
                     .metadata(data, new SolarFactoryRecipeData(0, 0, 2)).duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM),
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    NHItemList.ReinforcedNaquadriaIronPlate.get(1),
-                    NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1),
-                    MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.shapePlate, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedNaquadriaIronPlate.get(1),
+                            NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1),
+                            MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.plate, (int) (1L)),
+                            MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.plate, (int) (2L)),
+                            MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(NHItemList.IrradiantReinforcedNaquadriaPlate.get(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216))
                     .metadata(data, new SolarFactoryRecipeData(0, 0, 2)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV),
@@ -122,10 +125,9 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(
                     NHItemList.ReinforcedNeutroniumIronPlate.get(1),
                     NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.get(1),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.shapePlate, (int) (1L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+                    MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.plate, (int) (1L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.plate, (int) (2L)),
+                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(NHItemList.IrradiantReinforcedNeutroniumPlate.get(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 18432))
                     .metadata(data, new SolarFactoryRecipeData(0, 0, 3)).duration(30 * SECONDS).eut(TierEU.RECIPE_UHV),
@@ -133,11 +135,9 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(
                     NHItemList.ReinforcedBedrockiumIronPlate.get(1),
                     NHItemList.EnrichedXSunnariumAlloy.get(1),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.shapePlate, (int) (1L)),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.shapePlate, (int) (2L)),
-                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeScrew, (int) (4L)))
+                    MaterialLibAPI.getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.plate, (int) (1L)),
+                    MaterialLibAPI.getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.plate, (int) (2L)),
+                    MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.screw, (int) (4L)))
                     .itemOutputs(NHItemList.IrradiantReinforcedBedrockiumPlate.get(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36864))
                     .metadata(data, new SolarFactoryRecipeData(0, 0, 3)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV),
@@ -154,7 +154,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Polytetrafluoroethylene,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(2, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV),
 
@@ -170,7 +170,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Epoxid,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(2, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV),
 
@@ -186,7 +186,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.IndiumGalliumPhosphide,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(2, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV),
 
@@ -203,7 +203,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Polybenzimidazole,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(3, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV),
 
@@ -220,7 +220,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Polybenzimidazole,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(3, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM),
 
@@ -240,7 +240,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Polybenzimidazole,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (6 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(4, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV),
 
@@ -259,7 +259,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Kevlar,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (1 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(5, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
 
@@ -278,7 +278,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Kevlar,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(5, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV),
 
@@ -294,11 +294,11 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.VibrantAlloy,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.IndiumGalliumPhosphide,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(2, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV),
 
@@ -314,11 +314,11 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Barium,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.MeteoricSteel,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(3, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV),
 
@@ -334,11 +334,11 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Uranium,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Sunnarium,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (8 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(3, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV),
 
@@ -355,15 +355,15 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Plutonium,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Knightmetal,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Ultimet,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (8 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(4, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV),
 
@@ -380,15 +380,15 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Chrome,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (8 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.NaquadahAlloy,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.FierySteel,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM),
 
@@ -408,11 +408,11 @@ public class SolarFactoryRecipes implements Runnable {
                             new FluidStack(FluidRegistry.getFluid("molten.indalloy140"), 8 * 144),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.FierySteel,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Knightmetal,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV),
 
@@ -430,11 +430,11 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Infinity,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Kevlar,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
 
@@ -462,15 +462,15 @@ public class SolarFactoryRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Infinity,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (4 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Kevlar,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (8 * 144)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Knightmetal,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (2 * 144)))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UEV) };

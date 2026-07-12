@@ -176,7 +176,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(Minecraft.ID, "egg", 1, 0),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dust, (int) (1L)));
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "energy_wand", 1, 0),
                 "craftingToolScrewdriver",
@@ -194,8 +194,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(Minecraft.ID, "deadbush", 1, 0),
                 getModItem(Minecraft.ID, "sand", 1, 0),
                 getModItem(Minecraft.ID, "dye", 1, 15),
-                MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.shapeDust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.shapeDust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Apatite, Materials2Shapes.dust, (int) (1L)));
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "charm_pouch", 1, 0),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
@@ -452,7 +452,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
 
         GTModHandler.addSmeltingRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.shapeIngot, (int) (1L)));
+                MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.ingot, (int) (1L)));
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 4, 13)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
@@ -507,22 +507,18 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_powder", 4, 0))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDustTiny, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dustTiny, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDustTiny, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dustTiny, (int) (1L)))
                 .outputChances(9000, 8000, 7500, 5000).fluidOutputs(FluidRegistry.getFluidStack("ender", 100))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder()
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDust, (int) (1L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Tungstate, Materials2Shapes.shapeDustSmall, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tungstate, Materials2Shapes.dustSmall, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnderEye, Materials2Shapes.shapeDustSmall, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.dustSmall, (int) (1L)))
                 .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(centrifugeRecipes);
@@ -554,8 +550,9 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Endium, 9L))
                 .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(36 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0)).itemOutputs(
-                MaterialLibAPI.getStack(Materials2Materials.Sphalerite, Materials2Shapes.shapeCrushed, (int) (2L)))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Sphalerite, Materials2Shapes.crushed, (int) (2L)))
                 .duration(4).eut(10).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "instability_orb_ore", 1, 0))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "instability_orb", 6, 0))
@@ -572,8 +569,9 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 9L)).outputChances(10000)
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0)).itemOutputs(
-                MaterialLibAPI.getStack(Materials2Materials.Sphalerite, Materials2Shapes.shapeCrushed, (int) (4L)))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.Sphalerite, Materials2Shapes.crushed, (int) (4L)))
                 .outputChances(10000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         addDecorativeBlocks();
@@ -838,7 +836,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "stardust_ore", 1, 0))
                 .itemOutputs(
                         getModItem(HardcoreEnderExpansion.ID, "stardust", 3, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Endstone, Materials2Shapes.shapeDust, (int) (1)))
+                        MaterialLibAPI.getStack(Materials2Materials.Endstone, Materials2Shapes.dust, (int) (1)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
 
     }

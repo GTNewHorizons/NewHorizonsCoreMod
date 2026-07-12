@@ -202,14 +202,11 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     GTOreDictUnificator.get(OrePrefixes.block, Materials.ElectrumFlux, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 20))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputsUnsafe(
-                            GTUtility.copyAmountUnsafe(
-                                    12345,
-                                    MaterialLibAPI.getStack(
-                                            Materials2Materials.Rubber,
-                                            Materials2Shapes.shapePlateSuperdense,
-                                            (int) (1))))
+            GTValues.RA.stdBuilder().itemInputsUnsafe(
+                    GTUtility.copyAmountUnsafe(
+                            12345,
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Rubber, Materials2Shapes.plateSuperdense, (int) (1))))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 0))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
@@ -218,7 +215,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     12345,
                                     MaterialLibAPI.getStack(
                                             Materials2Materials.StyreneButadieneRubber,
-                                            Materials2Shapes.shapePlateSuperdense,
+                                            Materials2Shapes.plateSuperdense,
                                             (int) (1))))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 1))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
@@ -235,7 +232,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     12345,
                                     MaterialLibAPI.getStack(
                                             Materials2Materials.PolyphenyleneSulfide,
-                                            Materials2Shapes.shapePlateSuperdense,
+                                            Materials2Shapes.plateSuperdense,
                                             (int) (1))))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 3))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
@@ -245,7 +242,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     12345,
                                     MaterialLibAPI.getStack(
                                             Materials2Materials.PolyvinylChloride,
-                                            Materials2Shapes.shapePlateSuperdense,
+                                            Materials2Shapes.plateSuperdense,
                                             (int) (1))))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 4))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
@@ -441,8 +438,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             }
             GTValues.RA.stdBuilder().itemInputs(
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.shapeDust, (int) (64)))
+                    MaterialLibAPI.getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.dust, (int) (64)))
                     .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 5)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(neutroniumCompressorRecipes);
 
@@ -453,7 +449,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.SpaceTime,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (72L)))
                     .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(100 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
@@ -463,7 +459,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Iron,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (9455616L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 0)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
@@ -480,7 +476,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Copper,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (3648 * 9 * 144L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 5)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
@@ -490,7 +486,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Tin,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (3648 * 9 * 144L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 6)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
@@ -500,7 +496,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Lead,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (3648 * 9 * 144L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 7)).duration(1 * TICKS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
@@ -510,7 +506,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.ComputationBase,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (Integer.MAX_VALUE)))
                     .itemInputs(NHItemList.SingularityComputationCore.get(1))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6))

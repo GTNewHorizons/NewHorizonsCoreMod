@@ -242,12 +242,11 @@ public class ScriptGendustry implements IScriptLoader {
                 "-aaaaaaa-",
                 "---------",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Europium, Materials2Shapes.shapePlateQuintuple, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Europium, Materials2Shapes.plateQuintuple, (int) (1L)),
                 'b',
                 getModItem(Gendustry.ID, "Replicator", 1, 0),
                 'c',
-                MaterialLibAPI
-                        .getStack(Materials2Materials.Naquadria, Materials2Shapes.shapePlateQuintuple, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.plateQuintuple, (int) (1L)),
                 'd',
                 getModItem(Gendustry.ID, "Liquifier", 1, 0),
                 'e',
@@ -277,22 +276,22 @@ public class ScriptGendustry implements IScriptLoader {
                 getModItem(Gendustry.ID, "GeneTemplate", 1, 0));
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeRing, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1L)))
                 .itemOutputs(getModItem(Gendustry.ID, "Labware", 2, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 576)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.shapePlate, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.shapeDust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials2Materials.RedAlloy, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 144)).duration(20).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Gendustry.ID, "GeneSampleBlank", 4, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.shapePlate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneTemplate", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
@@ -300,7 +299,7 @@ public class ScriptGendustry implements IScriptLoader {
                 .itemInputs(
                         getModItem(IronTanks.ID, "diamondTank", 1, 0),
                         MaterialLibAPI
-                                .getStack(Materials2Materials.Palladium, Materials2Shapes.shapePlateDouble, (int) (1L)))
+                                .getStack(Materials2Materials.Palladium, Materials2Shapes.plateDouble, (int) (1L)))
                 .itemOutputs(getModItem(Gendustry.ID, "MutagenTank", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plutonium", 576)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
@@ -319,19 +318,19 @@ public class ScriptGendustry implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.shapePlate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.plate, (int) (1L)),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3))
                 .itemOutputs(getModItem(Gendustry.ID, "EjectCover", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.shapePlate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.plate, (int) (1L)),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6))
                 .itemOutputs(getModItem(Gendustry.ID, "ImportCover", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.shapePlate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.plate, (int) (1L)),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5))
                 .itemOutputs(getModItem(Gendustry.ID, "ErrorSensorCover", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);

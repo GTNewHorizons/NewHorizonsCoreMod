@@ -29,8 +29,7 @@ public class ArcFurnaceRecipes implements Runnable {
     @Override
     public void run() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.shapeNugget, (int) (2L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.nugget, (int) (2L)))
                 .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 0))
@@ -41,7 +40,7 @@ public class ArcFurnaceRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1))
                 .itemOutputs(
                         new ItemStack(Blocks.glass, 2),
-                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.shapeDustTiny, (int) (1)))
+                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dustTiny, (int) (1)))
                 .duration(1 * SECONDS).eut(TierEU.RECIPE_MV).addTo(UniversalArcFurnace);
 
         // Awful dimensionally transcendent residue recipe for mk5 fusion pre-dtpf (mostly a meme)
@@ -49,7 +48,7 @@ public class ArcFurnaceRecipes implements Runnable {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.ExcitedDTEC,
-                                Materials2FluidShapes.shapeFluidLiquid,
+                                Materials2FluidShapes.fluidLiquid,
                                 (int) (1000L)))
                 .fluidOutputs(Materials.DTR.getFluid(50L)).duration(15 * SECONDS).eut(TierEU.RECIPE_UEV / 2)
                 .addTo(arcFurnaceRecipes);
@@ -58,14 +57,12 @@ public class ArcFurnaceRecipes implements Runnable {
             // Zero Point Module recycling
 
             GTValues.RA.stdBuilder().itemInputs(ItemList.ZPM.get(1)).itemOutputs(
-                    MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.shapeDust, (int) (8L)),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.shapeDust, (int) (32L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.shapePlate, (int) (32L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Dilithium, Materials2Shapes.shapeDust, (int) (32L)),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.Ichorium, Materials2Shapes.shapeItemCasing, (int) (16L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.shapePlateDense, (int) (64L)),
+                    MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.dust, (int) (8L)),
+                    MaterialLibAPI.getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.dust, (int) (32L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.plate, (int) (32L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Dilithium, Materials2Shapes.dust, (int) (32L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.itemCasing, (int) (16L)),
+                    MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.plateDense, (int) (64L)),
                     getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4, 3),
                     NHItemList.ChaoticDust.get(2),
                     getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 26))
@@ -74,7 +71,7 @@ public class ArcFurnaceRecipes implements Runnable {
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Tungsten,
-                                    Materials2FluidShapes.shapeFluidMolten,
+                                    Materials2FluidShapes.fluidMolten,
                                     (int) (144)))
                     .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(arcFurnaceRecipes);
         }

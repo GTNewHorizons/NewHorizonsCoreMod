@@ -130,7 +130,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeIngot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.ingot, (int) (1L)),
                         getModItem(Minecraft.ID, "glowstone", 4, 0))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
@@ -150,18 +150,17 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Sunnarium,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (144L)))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.shapeIngot, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Uranium, Materials2Shapes.ingot, (int) (1L)))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Sunnarium,
-                                Materials2FluidShapes.shapeFluidMolten,
+                                Materials2FluidShapes.fluidMolten,
                                 (int) (144L)))
                 .duration(38 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
 
