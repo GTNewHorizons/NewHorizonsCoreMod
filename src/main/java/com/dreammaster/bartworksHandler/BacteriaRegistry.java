@@ -51,10 +51,10 @@ import static gregtech.api.recipe.RecipeMaps.BEAMCRAFTER_METADATA;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.beamcrafterRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
-import static gregtech.api.recipe.RecipeMaps.cokeOvenRecipes;
 import static gregtech.api.recipe.RecipeMaps.crackingRecipes;
 import static gregtech.api.recipe.RecipeMaps.distillationTowerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fusionRecipes;
+import static gregtech.api.recipe.RecipeMaps.industrialCokeOvenRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.pyrolyseRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -124,7 +124,7 @@ public class BacteriaRegistry {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaClog", 64)).circuit(24)
                 .itemOutputs(Ash.getDust(8)).fluidInputs(Materials.Xenoxene.getFluid(1000))
                 .fluidOutputs(Materials.RadoxRaw.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
-                .addTo(pyrolyseRecipes, cokeOvenRecipes);
+                .addTo(pyrolyseRecipes, industrialCokeOvenRecipes);
 
         GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(5)).fluidInputs(Materials.RadoxRaw.getFluid(5000))
                 .fluidOutputs(
