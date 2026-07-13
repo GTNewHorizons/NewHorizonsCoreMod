@@ -78,11 +78,11 @@ public class MaceratorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystal.get(1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 2))
-                .outputChances(10000).duration(5 * SECONDS).eut(4).addTo(maceratorRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystalSmallPart.get(1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1))
-                .outputChances(10000).duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(maceratorRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 2))
+                .duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard))
                 .itemOutputs(
