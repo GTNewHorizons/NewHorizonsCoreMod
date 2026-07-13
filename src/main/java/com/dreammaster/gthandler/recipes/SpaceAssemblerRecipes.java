@@ -409,8 +409,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            Materials.MagMatter.getNanite(1),
+                            Materials.Eternity.getNanite(1))
                     .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
@@ -441,8 +441,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            Materials.MagMatter.getNanite(1),
+                            Materials.Eternity.getNanite(1))
                     .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
