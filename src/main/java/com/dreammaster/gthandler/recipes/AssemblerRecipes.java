@@ -2618,14 +2618,32 @@ public class AssemblerRecipes implements Runnable {
         ItemStack[] dyes = new ItemStack[] { ItemList.Color_15.get(1), // white
                 ItemList.Color_07.get(1), // light gray
                 ItemList.Color_08.get(1), // gray
-                ItemList.Color_00.get(1) // black
+                ItemList.Color_00.get(1), // black
+                ItemList.Color_03.get(1), // brown
+                ItemList.Color_01.get(1), // red
+                ItemList.Color_14.get(1), // orange
+                ItemList.Color_11.get(1), // yellow
+                ItemList.Color_10.get(1), // lime
+                ItemList.Color_02.get(1), // green
+                ItemList.Color_06.get(1), // cyan
+                ItemList.Color_12.get(1), // light blue
+                ItemList.Color_04.get(1), // blue
+                ItemList.Color_05.get(1), // purple
+                ItemList.Color_13.get(1), // magenta
+                ItemList.Color_09.get(1) // pink
         };
 
         ItemStack[] glasses = new ItemStack[] { ItemList.GlassTintedIndustrialWhite.get(1),
                 ItemList.GlassTintedIndustrialLightGray.get(1), ItemList.GlassTintedIndustrialGray.get(1),
-                ItemList.GlassTintedIndustrialBlack.get(1), };
+                ItemList.GlassTintedIndustrialBlack.get(1), ItemList.GlassTintedIndustrialBrown.get(1),
+                ItemList.GlassTintedIndustrialRed.get(1), ItemList.GlassTintedIndustrialOrange.get(1),
+                ItemList.GlassTintedIndustrialYellow.get(1), ItemList.GlassTintedIndustrialLime.get(1),
+                ItemList.GlassTintedIndustrialGreen.get(1), ItemList.GlassTintedIndustrialCyan.get(1),
+                ItemList.GlassTintedIndustrialLightBlue.get(1), ItemList.GlassTintedIndustrialBlue.get(1),
+                ItemList.GlassTintedIndustrialPurple.get(1), ItemList.GlassTintedIndustrialMagenta.get(1),
+                ItemList.GlassTintedIndustrialPink.get(1), };
 
-        for (int meta = 0; meta < 4; ++meta) {
+        for (int meta = 0; meta < 16; ++meta) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),

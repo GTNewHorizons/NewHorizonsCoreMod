@@ -1370,7 +1370,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedLivingBioChip, 1),
                         new CircuitComponentStack(CircuitComponent.ProcessedWireNiobiumTitanium, 16),
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltChromaticGlass, 4)),
-                Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(9)),
+                Arrays.asList(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(9)),
                 CircuitComponent.BiowareProcessor,
                 3 * SECONDS,
                 2_457_600, // UEV
