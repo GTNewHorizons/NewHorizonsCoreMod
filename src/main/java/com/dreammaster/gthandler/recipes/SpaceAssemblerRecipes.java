@@ -238,8 +238,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Hexanite, 4L))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        Materials.WhiteDwarfMatter.getMolten(576),
-                        Materials.BlackDwarfMatter.getMolten(576))
+                        Materials.WhiteDwarfMatter.getMolten(144),
+                        Materials.RawStarMatter.getFluid(500))
                 .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
