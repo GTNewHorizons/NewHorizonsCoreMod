@@ -234,7 +234,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.Timepiece.get(64),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 64),
                         ItemList.Black_Hole_Closer.get(64), ItemList.Field_Generator_UXV.get(16),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.MagMatter, 4), ItemList.ZPM6.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.MagMatter, 1), ItemList.ZPM6.get(1),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 1) },
                 new FluidStack[] { Materials.RawStarMatter.getFluid(4_000_000), Materials.Time.getMolten(4_000_000),
                         Materials.Space.getMolten(4_000_000), Materials.PhononMedium.getFluid(1_000_000) },
