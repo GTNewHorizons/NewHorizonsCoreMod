@@ -216,7 +216,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Sensor_UEV.get(4), ItemList.Emitter_UEV.get(4),
                         getModItem(OpenComputers.ID, "screen3", 1, 0), getModItem(OpenComputers.ID, "keyboard", 1, 0) },
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(256 * INGOTS),
-                        new FluidStack(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getPlasma(), 64 * INGOTS),
+                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(64 * INGOTS),
                         Materials.Americium.getPlasma(64 * INGOTS),
                         new FluidStack(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getPlasma(), 64 * INGOTS) },
                 ItemList.Machine_Multi_NanochipAssemblyComplex.get(1),
