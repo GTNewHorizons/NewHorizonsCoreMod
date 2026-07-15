@@ -381,7 +381,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 4L),
                         getModItem(Avaritia.ID, "Resource", 36, 2),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tartarite, 1L))
                 .outputChances(5000, 2000, 500, 2500, 150, 80).fluidOutputs(Materials.Mercury.getFluid(7200L))
                 .duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
