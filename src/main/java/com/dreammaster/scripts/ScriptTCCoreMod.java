@@ -75,6 +75,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 Backpack.ID,
                 BiomesOPlenty.ID,
                 DraconicEvolution.ID,
+                ElectroMagicTools.ID,
                 EnderStorage.ID,
                 EternalSingularity.ID,
                 ExtraUtilities.ID,
@@ -88,10 +89,14 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 OpenBlocks.ID,
                 PamsHarvestCraft.ID,
                 ProjectRedIllumination.ID,
+                TaintedMagic.ID,
                 Thaumcraft.ID,
+                ThaumicBoots.ID,
+                ThaumicHorizons.ID,
                 ThaumicTinkerer.ID,
                 TinkerConstruct.ID,
-                TwilightForest.ID);
+                TwilightForest.ID,
+                WitchingGadgets.ID);
     }
 
     @Override
