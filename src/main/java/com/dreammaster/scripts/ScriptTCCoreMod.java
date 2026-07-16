@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -21,10 +22,14 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
+import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBoots;
+import static gregtech.api.enums.Mods.ThaumicHorizons;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.electrolyzerNonCellRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.STACKS;
@@ -52,6 +57,8 @@ import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.InfusionRecipe;
+import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
@@ -70,6 +77,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 Backpack.ID,
                 BiomesOPlenty.ID,
                 DraconicEvolution.ID,
+                ElectroMagicTools.ID,
                 EnderStorage.ID,
                 EternalSingularity.ID,
                 ExtraUtilities.ID,
@@ -83,10 +91,14 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 OpenBlocks.ID,
                 PamsHarvestCraft.ID,
                 ProjectRedIllumination.ID,
+                TaintedMagic.ID,
                 Thaumcraft.ID,
+                ThaumicBoots.ID,
+                ThaumicHorizons.ID,
                 ThaumicTinkerer.ID,
                 TinkerConstruct.ID,
-                TwilightForest.ID);
+                TwilightForest.ID,
+                WitchingGadgets.ID);
     }
 
     @Override
@@ -1217,12 +1229,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 ItemList.Augment_GogglesOfRevealing.get(1)).setParents("GOGGLES")
                         .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_GOGGLES"))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        ShapedArcaneRecipe gogglesRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "MECHANICALARMOR_GOGGLES",
                 ItemList.Augment_GogglesOfRevealing.get(1),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("ignis"), 30).add(Aspect.getAspect("aqua"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.WATER, 30)
+                        .add(Aspect.ORDER, 30).add(Aspect.ENTROPY, 30),
                 "gGg",
                 "PRP",
                 "gPg",
@@ -1234,38 +1245,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTModHandler.getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
                 'R',
                 ItemList.Armor_Chip_T1.get(1));
-        TCHelper.addResearchPage(
-                "MECHANICALARMOR_GOGGLES",
-                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Augment_GogglesOfRevealing.get(1))));
-
-        new ResearchItem(
-                "MECHANICALARMOR_BOOTS",
-                "NEWHORIZONS",
-                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.TRAVEL, 6),
-                -8,
-                4,
-                2,
-                ItemList.Augment_Travelers.get(1)).setParents("MECHANICALARMOR_GOGGLES", "BOOTSTRAVELLER")
-                        .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_BOOTS"))
-                        .registerResearchItem();
-        TCHelper.addInfusionCraftingRecipe(
-                "MECHANICALARMOR_BOOTS",
-                ItemList.Augment_Travelers.get(1),
-                6,
-                new AspectList().add(Aspect.MOTION, 48).add(Aspect.ARMOR, 32).add(Aspect.ENERGY, 24)
-                        .add(Aspect.MAGIC, 16).add(Aspect.TRAVEL, 16).add(Aspect.FLIGHT, 8),
-                ItemList.Armor_Chip_T1.get(1),
-                getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                ItemList.Electric_Motor_HV.get(1),
-                OrePrefixes.wireGt04.get(Materials.Electrum),
-                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 1),
-                OrePrefixes.wireGt04.get(Materials.Electrum),
-                ItemList.Electric_Motor_HV.get(1),
-                OrePrefixes.plate.get(Materials.Thaumium));
-        TCHelper.addResearchPage(
-                "MECHANICALARMOR_BOOTS",
-                new ResearchPage(TCHelper.findInfusionRecipe(ItemList.Augment_Travelers.get(1))));
+        TCHelper.addResearchPage("MECHANICALARMOR_GOGGLES", new ResearchPage(gogglesRecipe));
 
         new ResearchItem(
                 "MECHANICALARMOR_MILK",
@@ -1277,11 +1257,10 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 ItemList.Augment_MilkInfusion.get(1)).setParents("MECHANICALARMOR_GOGGLES", "CLEANSING_TALISMAN")
                         .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_MILK"))
                         .registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
+        ShapedArcaneRecipe milkRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "CLEANSING_TALISMAN",
                 ItemList.Augment_MilkInfusion.get(1),
-                new AspectList().add(Aspect.getAspect("terra"), 150).add(Aspect.getAspect("aqua"), 150)
-                        .add(Aspect.getAspect("ordo"), 150),
+                new AspectList().add(Aspect.EARTH, 150).add(Aspect.WATER, 150).add(Aspect.ORDER, 150),
                 "MTM",
                 "VRV",
                 "MVM",
@@ -1293,8 +1272,196 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTModHandler.getModItem(ThaumicTinkerer.ID, "cleansingTalisman", 1, 0),
                 'R',
                 ItemList.Armor_Chip_T2.get(1));
-        TCHelper.addResearchPage(
-                "MECHANICALARMOR_MILK",
-                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Augment_MilkInfusion.get(1))));
+        TCHelper.addResearchPage("MECHANICALARMOR_MILK", new ResearchPage(milkRecipe));
+
+        new ResearchItem(
+                "MECHANICALARMOR_APPRENTICE_STRIDERS",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.CRAFT, 8),
+                -8,
+                4,
+                2,
+                ItemList.Augment_ApprenticeStriders.get(1))
+                        .setParents(
+                                "MECHANICALARMOR_GOGGLES",
+                                "SPINNINGWHEEL",
+                                "SPELL_CLOTH",
+                                "NanoBootsoftheTraveller")
+                        .setPages(
+                                new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_APPRENTICE_STRIDERS.1"),
+                                new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_APPRENTICE_STRIDERS.2"))
+                        .registerResearchItem();
+
+        InfusionRecipe apprenticeStridersRecipe1 = TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_APPRENTICE_STRIDERS",
+                ItemList.Augment_ApprenticeStriders.get(1),
+                9,
+                new AspectList().add(Aspect.MOTION, 64).add(Aspect.CRAFT, 64).add(Aspect.FLIGHT, 48).add(Aspect.AIR, 48)
+                        .add(Aspect.MAGIC, 32).add(Aspect.TRAVEL, 32).add(Aspect.ARMOR, 24),
+
+                ItemList.Armor_Chip_T1.get(1),
+                NHItemList.QuantumCrystal.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StainlessSteel, 1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1),
+                ItemList.Field_Generator_LV.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                ItemList.Electric_Piston_HV.get(1),
+                GTModHandler.getModItem(Thaumcraft.ID, "BootsTraveller", 1),
+                ItemList.Electric_Piston_HV.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                ItemList.Field_Generator_LV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StainlessSteel, 1));
+
+        ShapedArcaneRecipe apprenticeStridersRecipe2 = ThaumcraftApi.addArcaneCraftingRecipe(
+                "MECHANICALARMOR_APPRENTICE_STRIDERS",
+                ItemList.Augment_ApprenticeStriders.get(1),
+                new AspectList().add(Aspect.EARTH, 100).add(Aspect.WATER, 100).add(Aspect.ORDER, 100)
+                        .add(Aspect.AIR, 100).add(Aspect.FIRE, 100).add(Aspect.ENTROPY, 100),
+                "FAC",
+                "MTM",
+                "CAF",
+                'F',
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                'A',
+                ItemList.Armor_Chip_T1.get(1),
+                'C',
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "spellCloth", 1),
+                'M',
+                ItemList.Electric_Motor_HV.get(1),
+                'T',
+                GTModHandler.getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1));
+
+        TCHelper.addResearchPage("MECHANICALARMOR_APPRENTICE_STRIDERS", new ResearchPage(apprenticeStridersRecipe1));
+        TCHelper.addResearchPage("MECHANICALARMOR_APPRENTICE_STRIDERS", new ResearchPage(apprenticeStridersRecipe2));
+
+        new ResearchItem(
+                "MECHANICALARMOR_ARCHMAGE_STRIDERS",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.ARMOR, 32).add(Aspect.MAGIC, 16).add(Aspect.CRAFT, 8),
+                -8,
+                6,
+                2,
+                ItemList.Augment_ArchmageStriders.get(1))
+                        .setParents(
+                                "MECHANICALARMOR_APPRENTICE_STRIDERS",
+                                "OCULUS",
+                                "ADVANCEDROBES",
+                                "QuantumBootsoftheTraveller")
+                        .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_ARCHMAGE_STRIDERS"))
+                        .registerResearchItem();
+
+        ThaumcraftApi.addWarpToResearch("MECHANICALARMOR_ARCHMAGE_STRIDERS", 3);
+
+        InfusionRecipe archmageStridersRecipe1 = TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_ARCHMAGE_STRIDERS",
+                ItemList.Augment_ArchmageStriders.get(1),
+                9,
+                new AspectList().add(Aspect.MOTION, 128).add(Aspect.CRAFT, 96).add(Aspect.FLIGHT, 64)
+                        .add(Aspect.AIR, 64).add(Aspect.MAGIC, 64).add(Aspect.TRAVEL, 48).add(Aspect.ARMOR, 32),
+
+                ItemList.Augment_ApprenticeStriders.get(1),
+                ItemList.Armor_Chip_T2.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                ItemList.Electric_Piston_IV.get(1),
+                NHItemList.QuantumCrystal.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                getModItem(IndustrialCraft2.ID, "itemPartIridium"),
+                ItemList.Field_Generator_EV.get(1),
+                getModItem(IndustrialCraft2.ID, "itemPartIridium"),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5),
+                NHItemList.QuantumCrystal.get(1),
+                ItemList.Electric_Piston_IV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3));
+
+        InfusionRecipe archmageStridersRecipe2 = TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_ARCHMAGE_STRIDERS",
+                ItemList.Augment_ArchmageStriders.get(1),
+                9,
+                new AspectList().add(Aspect.MOTION, 64).add(Aspect.ARMOR, 48).add(Aspect.MAGIC, 48).add(Aspect.AIR, 32)
+                        .add(Aspect.CRAFT, 32).add(Aspect.ENERGY, 32),
+
+                GTModHandler.getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller", 1),
+                GTModHandler.getModItem(Thaumcraft.ID, "ItemEldritchObject", 1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5),
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "spellCloth", 1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                ItemList.Armor_Chip_T2.get(1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "spellCloth", 1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5)
+
+        );
+
+        TCHelper.addResearchPage("MECHANICALARMOR_ARCHMAGE_STRIDERS", new ResearchPage(archmageStridersRecipe1));
+        TCHelper.addResearchPage("MECHANICALARMOR_ARCHMAGE_STRIDERS", new ResearchPage(archmageStridersRecipe2));
+
+        new ResearchItem(
+                "MECHANICALARMOR_ELDRITCH_STRIDERS",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.ELDRITCH, 48).add(Aspect.ARMOR, 32).add(Aspect.MAGIC, 16)
+                        .add(Aspect.CRAFT, 12).add(Aspect.AIR, 6),
+                -8,
+                8,
+                3,
+                ItemList.Augment_EldritchStriders.get(1))
+                        .setParents(
+                                "MECHANICALARMOR_ARCHMAGE_STRIDERS",
+                                "ShadowClothGTNH",
+                                "ICHOR_CLOTH",
+                                "KnightRobesGTNH",
+                                "TB_EMT_Tainted_Compat")
+                        .setPages(
+                                new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_ELDRITCH_STRIDERS.1"),
+                                new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_ELDRITCH_STRIDERS.2"))
+                        .registerResearchItem();
+        ThaumcraftApi.addWarpToResearch("MECHANICALARMOR_ELDRITCH_STRIDERS", 10);
+
+        InfusionRecipe eldritchStridersRecipe1 = TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_ELDRITCH_STRIDERS",
+                ItemList.Augment_EldritchStriders.get(1),
+                12,
+                new AspectList().add(Aspect.ELDRITCH, 256).add(Aspect.TAINT, 64).add(Aspect.SOUL, 128)
+                        .add(Aspect.MAGIC, 64).add(Aspect.TRAVEL, 48).add(Aspect.FLIGHT, 48).add(Aspect.AURA, 48)
+                        .add(Aspect.AIR, 16),
+
+                ItemList.Augment_ArchmageStriders.get(1),
+                ItemList.Armor_Chip_T3.get(1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
+                GTModHandler.getModItem(ThaumicHorizons.ID, "planarConduit", 1),
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                GTModHandler.getModItem(ThaumicHorizons.ID, "planarConduit", 1),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3));
+
+        InfusionRecipe eldritchStridersRecipe2 = TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_ELDRITCH_STRIDERS",
+                ItemList.Augment_EldritchStriders.get(1),
+                12,
+                new AspectList().add(Aspect.ELDRITCH, 128).add(Aspect.TAINT, 64).add(Aspect.SOUL, 64)
+                        .add(Aspect.MAGIC, 48).add(Aspect.ARMOR, 48).add(Aspect.CRAFT, 32).add(Aspect.CRAFT, 32)
+                        .add(Aspect.ENERGY, 32),
+
+                GTModHandler.getModItem(ThaumicBoots.ID, "item.ItemQuantumVoid", 1),
+                GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
+                ItemList.Armor_Chip_T3.get(1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1)
+
+        );
+
+        TCHelper.addResearchPage("MECHANICALARMOR_ELDRITCH_STRIDERS", new ResearchPage(eldritchStridersRecipe1));
+        TCHelper.addResearchPage("MECHANICALARMOR_ELDRITCH_STRIDERS", new ResearchPage(eldritchStridersRecipe2));
     }
 }
