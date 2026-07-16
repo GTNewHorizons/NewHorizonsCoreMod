@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 
 import java.util.ArrayList;
@@ -110,7 +111,6 @@ public class ScriptLoader {
                         new ScriptStevesFactoryManager(),
                         new ScriptSuperSolarPanels(),
                         new ScriptTaintedMagic(),
-                        new ScriptTCCoreMod(),
                         new ScriptThaumcraft(),
                         new ScriptThaumicEnergistics(),
                         new ScriptThaumicBases(),
@@ -133,6 +133,9 @@ public class ScriptLoader {
         // but @Optional.Method cannot have multiple mod ids
         if (TinkerConstruct.isModLoaded() && ExtraUtilities.isModLoaded()) {
             scripts.add(new ScriptAvaritia());
+        }
+        if (Thaumcraft.isModLoaded()) {
+            scripts.add(new ScriptTCCoreMod());
         }
 
         ArrayList<String> errored = new ArrayList<>();
