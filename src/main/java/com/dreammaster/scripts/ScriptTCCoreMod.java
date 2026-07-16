@@ -1230,9 +1230,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MECHANICALARMOR_GOGGLES",
                 ItemList.Augment_GogglesOfRevealing.get(1),
-                new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
-                        .add(Aspect.getAspect("ignis"), 30).add(Aspect.getAspect("aqua"), 30)
-                        .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
+                new AspectList().add(Aspect.AIR, 30).add(Aspect.EARTH, 30).add(Aspect.FIRE, 30).add(Aspect.WATER, 30)
+                        .add(Aspect.ORDER, 30).add(Aspect.ENTROPY, 30),
                 "gGg",
                 "PRP",
                 "gPg",
@@ -1261,8 +1260,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CLEANSING_TALISMAN",
                 ItemList.Augment_MilkInfusion.get(1),
-                new AspectList().add(Aspect.getAspect("terra"), 150).add(Aspect.getAspect("aqua"), 150)
-                        .add(Aspect.getAspect("ordo"), 150),
+                new AspectList().add(Aspect.EARTH, 150).add(Aspect.WATER, 150).add(Aspect.ORDER, 150),
                 "MTM",
                 "VRV",
                 "MVM",
@@ -1324,9 +1322,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MECHANICALARMOR_APPRENTICE_STRIDERS",
                 ItemList.Augment_ApprenticeStriders.get(1),
-                new AspectList().add(Aspect.getAspect("terra"), 100).add(Aspect.getAspect("aqua"), 100)
-                        .add(Aspect.getAspect("ordo"), 100).add(Aspect.getAspect("aer"), 100)
-                        .add(Aspect.getAspect("fire"), 100).add(Aspect.getAspect("perditio"), 100),
+                new AspectList().add(Aspect.EARTH, 100).add(Aspect.WATER, 100).add(Aspect.ORDER, 100)
+                        .add(Aspect.AIR, 100).add(Aspect.FIRE, 100).add(Aspect.ENTROPY, 100),
                 "FAC",
                 "MTM",
                 "CAF",
