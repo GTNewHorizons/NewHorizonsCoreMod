@@ -24,6 +24,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -180,8 +181,8 @@ public class ScriptRemoteIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new OreDictItemStack(OrePrefixes.circuit.get(Materials.EV).toString(), 2),
-                        new OreDictItemStack(OrePrefixes.circuit.get(Materials.IV).toString(), 2))
+                        new OreDictItemStack(Circuits.EV.getIngredient().toString(), 2),
+                        new OreDictItemStack(Circuits.IV.getIngredient().toString(), 2))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);

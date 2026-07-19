@@ -30,10 +30,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
@@ -109,7 +111,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUVBase, 1),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(2),
                         ItemList.Electric_Pump_UV.get(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 },
+                        new Object[] { Circuits.UV.getIngredient(), 4 },
                         ItemList.Reactor_Coolant_Sp_6.get(1),
                         ItemList.Emitter_UV.get(1))
                 .itemOutputs(ItemList.Secondary_Casing_ExoFoundry.get(1))
@@ -128,7 +130,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 (int) TierEU.RECIPE_UEV,
                 64,
                 new Object[] { ItemList.Magnetic_Chassis_T1_ExoFoundry.get(1), ItemList.UHTResistantMesh.get(16),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 1 },
+                        new Object[] { Circuits.UEV.getIngredient(), 1 },
                         MaterialLibAPI.getStack(
                                 Materials2Materials.SuperconductorUEVBase,
                                 Materials2Shapes.stickLong,
@@ -164,26 +166,26 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 (int) TierEU.RECIPE_UEV);
 
         // Streamlined Casters
-        TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Secondary_Casing_ExoFoundry.get(1),
-                1_000_000,
-                2_048,
-                (int) TierEU.RECIPE_UEV,
-                64,
-                new Object[] { ItemList.Magnetic_Chassis_T1_ExoFoundry.get(1),
-                        MaterialLibAPI
+        TTRecipeAdder
+                .addResearchableAssemblylineRecipe(
+                        ItemList.Secondary_Casing_ExoFoundry.get(1),
+                        1_000_000,
+                        2_048,
+                        (int) TierEU.RECIPE_UEV,
+                        64,
+                        new Object[] { ItemList.Magnetic_Chassis_T1_ExoFoundry.get(1), MaterialLibAPI
                                 .getStack(Materials2Materials.Tritanium, Materials2Shapes.plateSuperdense, (int) (16)),
-                        ItemList.AcceleratorUV.get(8), CELESTIAL_TUNGSTEN.getRotor(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 2 }, ItemList.Electric_Pump_UHV.get(1) },
-                new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 20),
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Holmium,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (INGOTS * 40)),
-                        GGMaterial.enrichedNaquadahAlloy.getMolten(INGOTS * 10) },
-                ItemList.Streamlined_Casters_ExoFoundry.get(1),
-                30 * SECONDS,
-                (int) TierEU.RECIPE_UEV);
+                                ItemList.AcceleratorUV.get(8), CELESTIAL_TUNGSTEN.getRotor(4),
+                                new Object[] { Circuits.UEV.getIngredient(), 2 }, ItemList.Electric_Pump_UHV.get(1) },
+                        new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 20),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Holmium,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (INGOTS * 40)),
+                                GGMaterial.enrichedNaquadahAlloy.getMolten(INGOTS * 10) },
+                        ItemList.Streamlined_Casters_ExoFoundry.get(1),
+                        30 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
 
         // Power Efficient Subsystems
         TTRecipeAdder.addResearchableAssemblylineRecipe(
@@ -195,8 +197,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 new Object[] { ItemList.Magnetic_Chassis_T1_ExoFoundry.get(1),
                         MaterialLibAPI.getStack(Materials2Materials.TengamAttuned, Materials2Shapes.plate, (int) (6)),
                         ItemList.Electromagnet_Samarium.get(1), ItemList.Cover_SolarPanel_UV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 2),
-                        ItemList.Energy_Cluster.get(1), },
+                        Superconductors.UEV.getWireGt01(2), ItemList.Energy_Cluster.get(1), },
                 // 4 : 2 : 1 magnet ratio
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 20),
                         MaterialLibAPI.getFluidStack(
@@ -233,8 +234,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                                 Materials2Shapes.plateSuperdense,
                                 (int) (16)),
                         ItemList.AcceleratorUV.get(8), ItemList.Electric_Pump_UIV.get(4),
-                        ItemList.FluidRegulator_UIV.get(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2L }, },
+                        ItemList.FluidRegulator_UIV.get(4), new Object[] { Circuits.UIV.getIngredient(), 2L }, },
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 1024),
                         Materials.DimensionallyShiftedSuperfluid.getFluid(90000),
                         Materials.MoltenProtoHalkoniteBase.getFluid(INGOTS * 8),
@@ -259,7 +259,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                                 (int) (16)),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.ProtoHalkonite, 8),
 
-                        new Object[] { OrePrefixes.circuit.get(Materials.UXV), 2 },
+                        new Object[] { Circuits.UXV.getIngredient(), 2 },
                         ItemList.Electric_Pump_UMV.get(4),
                         ItemList.Field_Generator_UMV.get(1))
                 .fluidInputs(
@@ -282,7 +282,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                                 .getStack(Materials2Materials.SixPhasedCopper, Materials2Shapes.stickLong, (int) (6)),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.TranscendentMetal, Materials2Shapes.stickLong, (int) (6)),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 8 }, ItemList.Sensor_UIV.get(4),
+                        new Object[] { Circuits.UIV.getIngredient(), 8 }, ItemList.Sensor_UIV.get(4),
                         ItemList.Emitter_UIV.get(4), RHUGNOR.getGear(4) },
                 new FluidStack[] { GGMaterial.metastableOganesson.getMolten(INGOTS * 40),
                         MaterialLibAPI.getFluidStack(
@@ -341,9 +341,9 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 64,
                 new Object[] { ItemList.Machine_Mass_Solidifier.get(64), ItemList.Primary_Casing_ExoFoundry.get(16),
                         GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Infinity, 8),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 8),
-                        ItemList.Field_Generator_UEV.get(4), ItemList.Electric_Pump_UEV.get(8),
-                        ItemList.FluidRegulator_UEV.get(8), new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
+                        Superconductors.UEV.getWireGt16(8), ItemList.Field_Generator_UEV.get(4),
+                        ItemList.Electric_Pump_UEV.get(8), ItemList.FluidRegulator_UEV.get(8),
+                        new Object[] { Circuits.UIV.getIngredient(), 2 },
                         MaterialLibAPI
                                 .getStack(Materials2Materials.Netherite, Materials2Shapes.plateSuperdense, (int) (4)),
                         MaterialLibAPI
@@ -368,7 +368,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Netherite, 1),
                         ItemList.Optically_Perfected_CPU.get(6), ItemRefer.Advanced_Radiation_Protection_Plate.get(8),
                         MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.screw, (int) (4)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 2) },
+                        Superconductors.UEV.getWireGt01(2) },
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 4),
                         new FluidStack(FluidRegistry.getFluid("oganesson"), 500),
                         MaterialLibAPI.getFluidStack(
@@ -388,7 +388,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 16,
                 new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 1),
                         WerkstoffLoader.HDCS.get(OrePrefixes.plate, 32), ItemList.Optically_Compatible_Memory.get(6),
-                        ItemRefer.HiC_T4.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UEV), 1 },
+                        ItemRefer.HiC_T4.get(4), new Object[] { Circuits.UEV.getIngredient(), 1 },
                         ItemList.Emitter_UHV.get(1),
                         MaterialLibAPI.getStack(Materials2Materials.TengamAttuned, Materials2Shapes.screw, (int) (6)),
                         ItemList.NuclearStar.get(1) },
@@ -413,7 +413,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.screw, (int) (64)),
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 2),
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 4L },
+                        new Object[] { Circuits.UIV.getIngredient(), 4L },
                         GTOreDictUnificator.get(OrePrefixes.nanite, Materials.TranscendentMetal, 2),
                         MaterialLibAPI.getStack(
                                 Materials2Materials.SixPhasedCopper,

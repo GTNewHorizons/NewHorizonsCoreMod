@@ -39,6 +39,7 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -300,7 +301,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case1", 1, 0),
                         new ItemStack(GCItems.basicItem, 1, 14),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                        Circuits.EV.get(1),
                         ItemList.Emitter_HV.get(1),
                         ItemList.Sensor_HV.get(1),
                         new ItemStack(GCItems.heavyPlatingTier1))
@@ -315,7 +316,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case1", 1, 0),
                         new ItemStack(GCItems.basicItem, 1, 14),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
+                        Circuits.IV.get(1),
                         ItemList.Emitter_EV.get(1),
                         ItemList.Sensor_EV.get(1),
                         new ItemStack(MarsItems.marsItemBasic, 1, 3))
@@ -330,7 +331,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case1", 1, 0),
                         new ItemStack(GCItems.basicItem, 1, 14),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
+                        Circuits.LuV.get(1),
                         ItemList.Emitter_IV.get(1),
                         ItemList.Sensor_IV.get(1),
                         new ItemStack(AsteroidsItems.basicItem))
@@ -372,7 +373,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder() // femtocontroller
                 .itemInputs(
                         ItemList.Optically_Perfected_CPU.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
+                        Circuits.UHV.get(4),
                         ItemList.Circuit_Chip_FPIC.get(8),
                         Materials.Silver.getNanite(2),
                         ItemList.EnergisedTesseract.get(1),
@@ -913,7 +914,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'P',
                 ItemList.Electric_Piston_HV.get(1),
                 'C',
-                OrePrefixes.circuit.get(Materials.EV));
+                Circuits.EV.getIngredient());
 
         if (OpenModularTurrets.isModLoaded()) {
             addShapedRecipe(
@@ -924,7 +925,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                     'R',
                     getGSItem("item.RobotArm", 1, 0),
                     'C',
-                    OrePrefixes.circuit.get(Materials.IV),
+                    Circuits.IV.getIngredient(),
                     'D',
                     NHItemList.Display.get(),
                     'W',

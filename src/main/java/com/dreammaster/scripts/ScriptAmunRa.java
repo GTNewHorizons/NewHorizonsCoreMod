@@ -46,12 +46,14 @@ import de.katzenpapst.amunra.block.ARBlocks;
 import de.katzenpapst.amunra.crafting.RecipeHelper;
 import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OreMixes;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
@@ -353,7 +355,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ItemList.Hull_UV.get(1),
                         new ItemStack(simpleItem, 32, 3),
                         ItemList.Field_Generator_UV.get(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 2 },
+                        new Object[] { Circuits.UV.getIngredient(), 2 },
                         new Object[] { OrePrefixes.gearGt.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(machines3, 1, 1)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
@@ -387,7 +389,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.plate, (int) (16)),
                         new Object[] { OrePrefixes.gearGt.get("EnrichedNaquadahAlloy"), 4 },
                         new ItemStack(baseItem, 4, 27),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2 },
+                        new Object[] { Circuits.UHV.getIngredient(), 2 },
                         ItemList.Sensor_UHV.get(1),
                         ItemList.Emitter_UHV.get(1))
                 .fluidInputs(new FluidStack(mutatedLivingSolder, 4 * INGOTS))
@@ -397,7 +399,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 .itemInputs(
                         new ItemStack(simpleItem, 16, 3),
                         GameRegistry.findItemStack(GoodGenerator.ID, "radiationProtectionPlate", 4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 1 },
+                        new Object[] { Circuits.UV.getIngredient(), 1 },
                         new Object[] { OrePrefixes.gearGtSmall.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(baseItem, 1, 30)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
@@ -441,7 +443,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new Object[] { ItemList.Hull_MAX.get(1), new ItemStack(baseItem, 32, 28),
                         NHItemList.IrradiantReinforcedNeutroniumPlate.get(64),
                         new ItemStack(GameRegistry.findItem(GalaxySpace.ID, "item.RocketControlComputer"), 4, 8),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 16 }, ItemList.Sensor_UHV.get(8),
+                        new Object[] { Circuits.UHV.getIngredient(), 16 }, ItemList.Sensor_UHV.get(8),
                         ItemList.Emitter_UHV.get(8) },
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(
@@ -464,7 +466,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
                         NHItemList.HeavyDutyRocketEngineTier4.get(64),
                         new Object[] { OrePrefixes.pipeHuge.get(Materials.Infinity), 8 },
-                        ItemList.Electric_Pump_UHV.get(16), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 8 },
+                        ItemList.Electric_Pump_UHV.get(16), new Object[] { Circuits.UHV.getIngredient(), 8 },
                         new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(
@@ -488,9 +490,8 @@ public class ScriptAmunRa implements IScriptLoader {
                 10,
                 new Object[] { new ItemStack(advancedRadiationProtectionPlate, 64),
                         GameRegistry.findItemStack(GoodGenerator.ID, "FRF_Coil_2", 8),
-                        new Object[] { OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 8 },
-                        ItemList.Emitter_UHV.get(16), ItemList.Field_Generator_UHV.get(8),
-                        new ItemStack(baseItem, 4, 27) },
+                        new Object[] { Superconductors.UHV.getWireGt16Ingredient(), 8 }, ItemList.Emitter_UHV.get(16),
+                        ItemList.Field_Generator_UHV.get(8), new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Infinity,
@@ -512,7 +513,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 (int) TierEU.RECIPE_UHV,
                 8,
                 new Object[] { ItemList.UHTResistantMesh.get(64), ItemList.Quantum_Tank_EV.get(2),
-                        ItemList.Electric_Pump_UHV.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2 },
+                        ItemList.Electric_Pump_UHV.get(4), new Object[] { Circuits.UHV.getIngredient(), 2 },
                         new ItemStack(baseItem, 1, 27) },
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(

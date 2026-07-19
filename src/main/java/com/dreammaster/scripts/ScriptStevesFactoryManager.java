@@ -22,12 +22,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptStevesFactoryManager implements IScriptLoader {
 
@@ -144,9 +142,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
+                .itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0), Circuits.IV.get(1))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -156,9 +152,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
+                .itemInputs(getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 0), Circuits.HV.get(2))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -180,8 +174,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .itemOutputs(getModItem(StevesAddons.ID, "duplicator", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(NHItemList.Display.get(), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.Display.get(), Circuits.HV.get(2))
                 .itemOutputs(getModItem(StevesAddons.ID, "labeler", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

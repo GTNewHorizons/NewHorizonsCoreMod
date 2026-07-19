@@ -30,6 +30,7 @@ import bartworks.system.material.WerkstoffLoader;
 import ggfab.GGItemList;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -244,9 +245,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.MeshInterfaceNanochipCasing.get(16), ItemList.ReinforcementNanochipCasing.get(16),
                         ItemList.ComputationalMatrixNanochipCasing.get(8),
                         ItemList.FirewallProjectionNanochipCasing.get(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 8 },
-                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 16 },
-                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 32 }, ItemList.ZPM2.get(1),
+                        new Object[] { Circuits.UEV.getIngredient(), 8 },
+                        new Object[] { Circuits.UHV.getIngredient(), 16 },
+                        new Object[] { Circuits.UV.getIngredient(), 32 }, ItemList.ZPM2.get(1),
                         ItemList.Sensor_UEV.get(4), ItemList.Emitter_UEV.get(4),
                         getModItem(OpenComputers.ID, "screen3", 1, 0), getModItem(OpenComputers.ID, "keyboard", 1, 0) },
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(256 * INGOTS),
@@ -264,7 +265,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Robot_Arm_UEV.get(1),
                         ItemList.SpaceElevatorModuleAssemblerT1.get(1),
@@ -293,7 +294,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Sensor_UEV.get(1),
                         GTUtility.copyAmount(1, LanthItemList.TARGET_CHAMBER),
@@ -313,7 +314,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Conveyor_Module_UEV.get(1),
                         ItemRefer.Precise_Assembler.get(1),
@@ -330,7 +331,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.FluidRegulator_UEV.get(1),
                         ItemList.PCBFactory.get(1),
@@ -347,7 +348,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Pump_UEV.get(1),
                         ItemList.PCBBioChamber.get(1),
@@ -367,7 +368,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Robot_Arm_UEV.get(1),
                         ItemList.Machine_Multi_IndustrialLaserEngraver.get(1),
@@ -387,7 +388,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Motor_UEV.get(1),
                         ItemList.IndustrialWireFactory.get(1),
@@ -404,7 +405,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Robot_Arm_UEV.get(1),
                         ItemList.Hatch_VacuumConveyor_Input.get(1),
@@ -424,7 +425,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Emitter_UEV.get(1),
                         ItemList.Machine_Multi_IndustrialElectromagneticSeparator.get(1),
@@ -444,7 +445,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Pump_UEV.get(1),
                         ItemList.SpaceElevatorModuleAssemblerT1.get(1),
@@ -464,7 +465,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
+                        new Object[] { Circuits.UEV.getIngredient(), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Piston_UEV.get(1),
                         ItemList.IndustrialPackager.get(1),

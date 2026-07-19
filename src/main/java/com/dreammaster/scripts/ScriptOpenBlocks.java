@@ -36,6 +36,7 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -427,17 +428,11 @@ public class ScriptOpenBlocks implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 0, "{Uses:10.0f}")).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Board_Plastic_Advanced.get(1L), Circuits.LV.get(1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(OpenBlocks.ID, "generic", 1, 6),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "generic", 1, 6), Circuits.LV.get(1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -446,30 +441,22 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:0b}")).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:0b}"),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
+                .itemInputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:0b}"), Circuits.LV.get(1))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:1b}"))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:1b}"),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2))
+                .itemInputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:1b}"), Circuits.LV.get(2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}"))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}"),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2))
+                .itemInputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}"), Circuits.MV.get(2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}"))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 144)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}"),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
+                .itemInputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}"), Circuits.HV.get(2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:4b}"))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -478,10 +465,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(OpenBlocks.ID, "cartographer", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "clock", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "clock", 1, 0), Circuits.LV.get(2))
                 .itemOutputs(getModItem(OpenBlocks.ID, "pedometer", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);

@@ -60,6 +60,7 @@ import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipes
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.forbidden.DarkAspects;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -1276,10 +1277,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .circuit(2).itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0), Circuits.LV.get(1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0)).circuit(1)
@@ -1289,22 +1287,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 4, 0)).circuit(4)
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 12)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 8),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8), Circuits.LV.get(1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 13)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0), Circuits.MV.get(1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 8),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8), Circuits.HV.get(1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1317,10 +1306,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10), ItemList.Tool_DataStick.get(1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 10),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10), Circuits.EV.get(1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
