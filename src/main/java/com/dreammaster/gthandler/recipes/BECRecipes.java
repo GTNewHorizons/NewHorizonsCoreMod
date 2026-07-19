@@ -23,12 +23,14 @@ import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.CondensateType;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.NaniteTier;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
@@ -65,8 +67,7 @@ public class BECRecipes implements Runnable {
                                 Godforge_SingularityShieldingCasing.get(4),
                                 IngredientFactory.getModItem(DraconicEvolution.ID, "chaoticCore", 2),
                                 IngredientFactory.getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 16),
-                                ItemList.Field_Generator_UMV.get(8),
+                                Circuits.UXV.get(16), ItemList.Field_Generator_UMV.get(8),
                                 MaterialLibAPI.getStack(
                                         Materials2Materials.SpaceTime,
                                         Materials2Shapes.stickLong,
@@ -260,8 +261,7 @@ public class BECRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 8),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SpaceTime, Materials2Shapes.plateSuperdense, (int) (16)),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 16), ItemList.Sensor_UXV.get(32L),
-                        ItemList.Emitter_UXV.get(32L),
+                        Circuits.MAX.get(16), ItemList.Sensor_UXV.get(32L), ItemList.Emitter_UXV.get(32L),
                         getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
                         Materials.WhiteDwarfMatter.getNanite(32), Materials.BlackDwarfMatter.getNanite(16),
                         Materials.Universium.getNanite(8), Materials.MagMatter.getNanite(4) },
@@ -287,8 +287,7 @@ public class BECRecipes implements Runnable {
                         ItemList.MetaMaterial_Shielding3.get(64), ItemList.MetaMaterial_Waveguide3.get(64),
                         ItemList.MetaMaterial_EnergyConduit3.get(64),
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64), ItemList.Electric_Piston_UXV.get(64L),
-                        ItemList.Robot_Arm_UXV.get(64L), ItemList.Field_Generator_UXV.get(32),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 32), },
+                        ItemList.Robot_Arm_UXV.get(64L), ItemList.Field_Generator_UXV.get(32), Circuits.MAX.get(32), },
                 nanites(2, 2, 4, 10, 1, 3, 4, 3, 6, 6, 7, 7, 5, 5, 8, 9),
                 new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
                         CondensateType.PhononMedium.getEntangled(256_000),
@@ -477,17 +476,12 @@ public class BECRecipes implements Runnable {
         final ItemStack[] superconductor = new ItemStack[] {
                 GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedAlloy, 64),
                 GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedstoneAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorMV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorHV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorEV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorIV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorLuV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorZPM, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUMV, 64),
+                Superconductors.MV.getWireGt16(64), Superconductors.HV.getWireGt16(64),
+                Superconductors.EV.getWireGt16(64), Superconductors.IV.getWireGt16(64),
+                Superconductors.LuV.getWireGt16(64), Superconductors.ZPM.getWireGt16(64),
+                Superconductors.UV.getWireGt16(64), Superconductors.UHV.getWireGt16(64),
+                Superconductors.UEV.getWireGt16(64), Superconductors.UIV.getWireGt16(64),
+                Superconductors.UMV.getWireGt16(64),
                 GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Infinity, 64),
                 GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SpaceTime, 64), };
 

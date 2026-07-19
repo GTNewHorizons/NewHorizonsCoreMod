@@ -19,9 +19,11 @@ import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
@@ -92,7 +94,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_CircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 32),
+                            Circuits.ULV.get(32),
                             MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.foil, (int) (32)),
                             MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.screw, (int) (64)),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Iron, 1))
@@ -109,7 +111,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_CircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 32),
+                            Circuits.LV.get(32),
                             MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.foil, (int) (32)),
                             MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.screw, (int) (64)),
                             MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.wireFine, (int) (16)))
@@ -126,7 +128,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_GoodCircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 32),
+                            Circuits.MV.get(32),
                             MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.foil, (int) (32)),
                             MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.screw, (int) (64)),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Steel, 1))
@@ -143,7 +145,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_GoodCircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 32),
+                            Circuits.HV.get(32),
                             MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.foil, (int) (32)),
                             MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.screw, (int) (64)),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1))
@@ -165,7 +167,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_CircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                            Circuits.LV.get(16),
                             ItemList.Cover_Controller.get(16))
                     .itemOutputs(getModItem(Railcraft.ID, "part.circuit", 64, 0))
                     .fluidInputs(
@@ -178,10 +180,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
 
             // Receiver Circuit
             RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Wrap_CircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
-                            ItemList.Sensor_LV.get(16))
+                    .itemInputs(ItemList.Wrap_CircuitBoards.get(1), Circuits.LV.get(16), ItemList.Sensor_LV.get(16))
                     .itemOutputs(getModItem(Railcraft.ID, "part.circuit", 64, 1))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
@@ -195,7 +194,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_CircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                            Circuits.LV.get(16),
                             getModItem(Railcraft.ID, "part.signal.lamp", 16))
                     .itemOutputs(getModItem(Railcraft.ID, "part.circuit", 64, 2))
                     .fluidInputs(
@@ -210,7 +209,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_GoodCircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                            Circuits.MV.get(16),
                             ItemList.Cover_Controller.get(16))
                     .itemOutputs(GTUtility.copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 0)))
                     .fluidInputs(
@@ -223,10 +222,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
 
             // Receiver Circuit
             RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Wrap_GoodCircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
-                            ItemList.Sensor_LV.get(16))
+                    .itemInputs(ItemList.Wrap_GoodCircuitBoards.get(1), Circuits.MV.get(16), ItemList.Sensor_LV.get(16))
                     .itemOutputs(GTUtility.copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 1)))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
@@ -240,7 +236,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_GoodCircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                            Circuits.MV.get(16),
                             getModItem(Railcraft.ID, "part.signal.lamp", 16))
                     .itemOutputs(GTUtility.copyAmountUnsafe(128, getModItem(Railcraft.ID, "part.circuit", 1, 2)))
                     .fluidInputs(
@@ -255,7 +251,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_AdvancedCircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                            Circuits.HV.get(16),
                             ItemList.Cover_Controller.get(16))
                     .itemOutputs(GTUtility.copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 0)))
                     .fluidInputs(
@@ -270,7 +266,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_AdvancedCircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                            Circuits.HV.get(16),
                             ItemList.Sensor_LV.get(16))
                     .itemOutputs(GTUtility.copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 1)))
                     .fluidInputs(
@@ -285,7 +281,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
             RA.stdBuilder()
                     .itemInputs(
                             ItemList.Wrap_AdvancedCircuitBoards.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                            Circuits.HV.get(16),
                             getModItem(Railcraft.ID, "part.signal.lamp", 16))
                     .itemOutputs(GTUtility.copyAmountUnsafe(256, getModItem(Railcraft.ID, "part.circuit", 1, 2)))
                     .fluidInputs(
@@ -895,11 +891,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
         RA.stdBuilder()
                 .itemInputs(
                         ItemList.Wrap_EliteCircuitBoards.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 32),
+                        Circuits.ZPM.get(32),
                         ItemList.Wrap_UltraHighPowerICs.get(4),
                         ItemList.Wrap_QBitProcessingUnits.get(2),
                         ItemList.Wrap_NanocomponentCentralProcessingUnits.get(2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorZPM, 64))
+                        Superconductors.ZPM.getWireGt16(64))
                 .itemOutputs(NHItemList.HighEnergyFlowCircuit.get(16))
                 .fluidInputs(INDALLOY_140.getFluidStack(2 * INGOTS))
                 .special(ItemList.CircuitImprint_HighEnergyFlowCircuit.get(0)).eut(TierEU.RECIPE_IV)
@@ -969,7 +965,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_AdvancedSMDInductors.get(8),
                         ItemList.Wrap_AdvancedSMDCapacitors.get(16),
                         ItemList.Wrap_RandomAccessMemoryChips.get(32),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorLuV, 16))
+                        Superconductors.LuV.getWireGt16(16))
                 .itemOutputs(ItemList.Circuit_Crystalmainframe.get(16))
                 .fluidInputs(INDALLOY_140.getFluidStack(2 * INGOTS))
                 .special(ItemList.CircuitImprint_CrystalMainframe.get(0)).eut(TierEU.RECIPE_LuV).duration(8 * MINUTES)
