@@ -18,6 +18,7 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -698,8 +699,7 @@ public class DTPFRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.Sunnarium, Materials2Shapes.stick, (int) (8L)),
                         MaterialsAlloy.ABYSSAL.getPlate(24),
                         MaterialsAlloy.BOTMIUM.getScrew(16),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1L))
-                        .itemOutputs(ItemList.Tesseract.get(4))
+                        Circuits.ZPM.get(1)).itemOutputs(ItemList.Tesseract.get(4))
                         .fluidInputs(
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.ExcitedDTRC,

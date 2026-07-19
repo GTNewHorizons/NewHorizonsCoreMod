@@ -19,6 +19,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -329,51 +330,36 @@ public class FormingPressRecipes implements Runnable {
                 .addTo(formingPressRecipes);
 
         // Recipes for Any circuits
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitULV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitLV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitMV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitHV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitEV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitIV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitLuV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitZPM.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUHV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUEV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUIV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUMV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitUXV.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 1)).circuit(24)
-                .itemOutputs(NHItemList.CircuitMAX.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.ULV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitULV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.LV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitLV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.MV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitMV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.HV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitHV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.EV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitEV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.IV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitIV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.LuV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitLuV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.ZPM.get(1)).circuit(24).itemOutputs(NHItemList.CircuitZPM.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.UV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitUV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.UHV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitUHV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.UEV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitUEV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.UIV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitUIV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.UMV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitUMV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.UXV.get(1)).circuit(24).itemOutputs(NHItemList.CircuitUXV.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(Circuits.MAX.get(1)).circuit(24).itemOutputs(NHItemList.CircuitMAX.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         if (BloodArsenal.isModLoaded()) {
 
