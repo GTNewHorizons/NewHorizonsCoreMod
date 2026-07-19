@@ -3,6 +3,7 @@ package com.dreammaster.detrav;
 import net.minecraft.item.ItemStack;
 
 import detrav.items.DetravMetaGeneratedTool01;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -27,7 +28,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                 GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_LuV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.LuV), 'P', OrePrefixes.plate.get(Materials.Iridium), 'B',
+                        Circuits.LuV.getIngredient(), 'P', OrePrefixes.plate.get(Materials.Iridium), 'B',
                         ItemList.BatteryHull_LuV_Full.get(1L) });
         GTModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
@@ -39,7 +40,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                 GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_ZPM, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.ZPM), 'P', OrePrefixes.plate.get(Materials.Osmium), 'B',
+                        Circuits.ZPM.getIngredient(), 'P', OrePrefixes.plate.get(Materials.Osmium), 'B',
                         ItemList.BatteryHull_ZPM_Full.get(1L) });
         GTModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
@@ -51,7 +52,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                 GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_UV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.UV), 'P', OrePrefixes.plate.get(Materials.Neutronium), 'B',
+                        Circuits.UV.getIngredient(), 'P', OrePrefixes.plate.get(Materials.Neutronium), 'B',
                         ItemList.BatteryHull_UV_Full.get(1L) });
         GTModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
@@ -63,7 +64,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                 GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_UHV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_UHV, 'C',
-                        OrePrefixes.circuit.get(Materials.UHV), 'P', OrePrefixes.plate.get(Materials.Infinity), 'B',
+                        Circuits.UHV.getIngredient(), 'P', OrePrefixes.plate.get(Materials.Infinity), 'B',
                         ItemList.BatteryHull_UHV_Full.get(1L) });
     }
 }
