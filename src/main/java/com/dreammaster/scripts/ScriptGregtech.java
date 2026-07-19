@@ -50,6 +50,7 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -1101,7 +1102,7 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Piston_EV.get(2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
+                        Circuits.EV.get(2),
                         ItemList.Electric_Motor_EV.get(2, missing),
                         ItemList.Hull_EV.get(1, missing),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, missing, 1L))

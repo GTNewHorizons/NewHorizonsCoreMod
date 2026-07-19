@@ -36,6 +36,7 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -525,7 +526,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
+                        Circuits.HV.get(1))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsemerald", 8, 0))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

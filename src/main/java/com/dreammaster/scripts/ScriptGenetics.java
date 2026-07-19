@@ -24,15 +24,13 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import forestry.api.recipes.RecipeManagers;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptGenetics implements IScriptLoader {
 
@@ -273,10 +271,7 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 576)).duration(10 * SECONDS).eut(96)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "chipsets", 1, 1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "chipsets", 1, 1), Circuits.HV.get(2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);

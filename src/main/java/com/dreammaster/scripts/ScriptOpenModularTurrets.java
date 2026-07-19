@@ -23,6 +23,7 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -535,7 +536,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2),
+                        Circuits.LV.get(2),
                         MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "ioBus", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 72)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)

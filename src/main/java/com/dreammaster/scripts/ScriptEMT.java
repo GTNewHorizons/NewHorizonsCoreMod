@@ -42,6 +42,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -690,13 +691,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, wildcard),
                 getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, wildcard),
                 OrePrefixes.plate.get(Materials.TungstenSteel),
-                OrePrefixes.circuit.get(Materials.IV),
+                Circuits.IV.getIngredient(),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.screw.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.screw.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.circuit.get(Materials.IV),
+                Circuits.IV.getIngredient(),
                 OrePrefixes.plate.get(Materials.TungstenSteel));
         TCHelper.addResearchPage(
                 "ThaumiumOmnitool",
@@ -865,13 +866,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, wildcard),
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                OrePrefixes.circuit.get(Materials.LuV),
+                Circuits.LuV.getIngredient(),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
-                OrePrefixes.circuit.get(Materials.LuV),
+                Circuits.LuV.getIngredient(),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
         TCHelper.addResearchPage(
                 "DrilloftheRockbreaker",
@@ -900,11 +901,11 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard),
                 OrePrefixes.screw.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.circuit.get(Materials.IV),
+                Circuits.IV.getIngredient(),
                 OrePrefixes.plate.get(Materials.TungstenSteel),
                 OrePrefixes.screw.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.circuit.get(Materials.IV),
+                Circuits.IV.getIngredient(),
                 OrePrefixes.plate.get(Materials.TungstenSteel));
         TCHelper.addResearchPage(
                 "ThaumiumChainsaw",
@@ -933,13 +934,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, wildcard),
                 getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                OrePrefixes.circuit.get(Materials.LuV),
+                Circuits.LuV.getIngredient(),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(Railcraft.ID, "tool.steel.shears", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
-                OrePrefixes.circuit.get(Materials.LuV),
+                Circuits.LuV.getIngredient(),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
         TCHelper.addResearchPage(
                 "ChainsawoftheStream",
@@ -1085,11 +1086,11 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, wildcard),
                 OrePrefixes.wireGt04.get(Materials.Electrum),
                 OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.circuit.get(Materials.HV),
+                Circuits.HV.getIngredient(),
                 ItemList.Sensor_HV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard),
                 ItemList.Sensor_HV.get(1L),
-                OrePrefixes.circuit.get(Materials.HV),
+                Circuits.HV.getIngredient(),
                 OrePrefixes.plate.get(Materials.Thaumium),
                 OrePrefixes.wireGt04.get(Materials.Electrum));
         TCHelper.addResearchPage(
@@ -1122,13 +1123,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, wildcard),
                 OrePrefixes.wireGt08.get(Materials.Titanium),
                 OrePrefixes.plate.get(Materials.Void),
-                OrePrefixes.circuit.get(Materials.IV),
+                Circuits.IV.getIngredient(),
                 ItemList.Sensor_EV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 ItemList.Sensor_EV.get(1L),
-                OrePrefixes.circuit.get(Materials.IV),
+                Circuits.IV.getIngredient(),
                 OrePrefixes.plate.get(Materials.Void),
                 OrePrefixes.wireGt08.get(Materials.Titanium));
         TCHelper.addResearchPage(
@@ -1891,13 +1892,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemHoeElemental", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                OrePrefixes.circuit.get(Materials.LuV),
+                Circuits.LuV.getIngredient(),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
                 OrePrefixes.plate.get(Materials.Void),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),
-                OrePrefixes.circuit.get(Materials.LuV),
+                Circuits.LuV.getIngredient(),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0));
         TCHelper.addResearchPage(
                 "ElectricHoeofGrowth",

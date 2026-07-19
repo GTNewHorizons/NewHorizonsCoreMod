@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -51,7 +52,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                 .itemInputs(
                         NC2_REMOTE_SENSOR_KIT,
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2))
+                        Circuits.LV.get(2))
                 .itemOutputs(NC2_PANEL_MEMORY_CARD).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
 
@@ -294,9 +295,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTextCard", 1, 0)).duration(80 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // Vanillia Kit
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
-                        getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0))
+                .itemInputs(Circuits.LV.get(1), getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0)).duration(80 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
 
@@ -305,7 +304,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         new OreDictItemStack("dyeRed", 1),
                         new OreDictItemStack("dyeGreen", 1),
                         new OreDictItemStack("dyeBlue", 1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L))
+                        Circuits.HV.get(1))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // Range upgrade
@@ -317,7 +316,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                 .itemInputs(
                         ItemList.Cover_Screen.get(1L),
                         new ItemStack(Blocks.stained_glass_pane, 1, 5),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
+                        Circuits.LV.get(2),
                         getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -344,7 +343,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4),
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1),
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L))
+                        Circuits.HV.get(1))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 9)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // Advanced Panel Extender

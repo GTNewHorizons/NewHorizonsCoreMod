@@ -19,16 +19,14 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.material.MaterialsElements;
@@ -304,16 +302,10 @@ public class ScriptGendustry implements IScriptLoader {
                 .itemOutputs(getModItem(Gendustry.ID, "MutagenTank", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plutonium", 576)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.GeneticCircuit.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.GeneticCircuit.get(1), Circuits.IV.get(1))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        NHItemList.EnvironmentalCircuit.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.EnvironmentalCircuit.get(1), Circuits.IV.get(1))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);

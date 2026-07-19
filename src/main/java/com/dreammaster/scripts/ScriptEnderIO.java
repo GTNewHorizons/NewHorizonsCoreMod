@@ -50,6 +50,7 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -128,9 +129,7 @@ public class ScriptEnderIO implements IScriptLoader {
 
         // ME Conduit
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L))
+                .itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16), Circuits.MV.get(1))
                 .circuit(2).itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -140,11 +139,8 @@ public class ScriptEnderIO implements IScriptLoader {
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
 
         // ME Dense Conduit
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemMEConduit", 16),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L))
-                .circuit(2).itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 1))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMEConduit", 16), Circuits.HV.get(1)).circuit(2)
+                .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 1))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.EnergeticAlloy,
@@ -1741,7 +1737,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0),
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
+                        Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.itemCasing, (int) (2L)))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
@@ -1799,7 +1795,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                         getModItem(EnderIO.ID, "itemMaterial", 2, 6),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                        Circuits.HV.get(1),
                         new OreDictItemStack("capacitorEnder", 4),
                         ItemList.BatteryHull_EV_Full.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -1809,7 +1805,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0),
                         getModItem(EnderIO.ID, "itemMaterial", 2, 6),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                        Circuits.HV.get(1),
                         new OreDictItemStack("capacitorEnder", 4),
                         GregtechItemList.Battery_RE_EV_Lithium.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)

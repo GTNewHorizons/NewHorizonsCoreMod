@@ -31,11 +31,13 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import appeng.api.AEApi;
 import appeng.api.util.AEColor;
 import bartworks.system.material.WerkstoffLoader;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
@@ -85,8 +87,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI
                                 .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.itemCasing, (int) (8)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, WILDCARD), // energy crystal
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 12),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2),
+                        Superconductors.HV.getWireGt01(12),
+                        Circuits.HV.get(2),
                         MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.screw, (int) (16)))
                 .circuit(5)
                 .fluidInputs(
@@ -102,9 +104,9 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .itemInputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.StainlessSteel, Materials2Shapes.itemCasing, (int) (8)),
-                        new Object[] { OrePrefixes.circuit.get(Materials.IV), 2 },
+                        new Object[] { Circuits.IV.getIngredient(), 2 },
                         getModItem(EnderIO.ID, "blockEndermanSkull", 1, 2), // tormented enderman skull
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 12),
+                        Superconductors.HV.getWireGt01(12),
                         MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.screw, (int) (16)))
                 .circuit(5)
                 .fluidInputs(
@@ -179,8 +181,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
                                 .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.itemCasing, (int) (8)),
                         ItemList.Energy_LapotronicOrb.get(1),
                         ItemList.Circuit_Chip_PIC.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorIV, 6),
-                        new Object[] { OrePrefixes.circuit.get(Materials.IV), 2 },
+                        Superconductors.IV.getWireGt02(6),
+                        new Object[] { Circuits.IV.getIngredient(), 2 },
                         MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.screw, (int) (16)))
                 .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8))
                 .itemOutputs(MMItemList.PowerCore1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
@@ -190,8 +192,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.ZPM), 2 },
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 12),
+                        new Object[] { Circuits.ZPM.getIngredient(), 2 },
+                        Superconductors.IV.getWireGt01(12),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.screw, (int) (16)))
@@ -253,8 +255,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.itemCasing, (int) (8)),
                         ItemList.Energy_LapotronicOrb2.get(1),
                         ItemList.Circuit_Chip_HPIC.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 6),
-                        new Object[] { OrePrefixes.circuit.get(Materials.LuV), 2 },
+                        Superconductors.LuV.getWireGt02(6),
+                        new Object[] { Circuits.LuV.getIngredient(), 2 },
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
                         MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8),
@@ -268,8 +270,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_LuV))
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.HSSS, 1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 2 },
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 18),
+                        new Object[] { Circuits.UV.getIngredient(), 2 },
+                        Superconductors.LuV.getWireGt01(18),
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
@@ -345,8 +347,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
                                 .getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.itemCasing, (int) (8)),
                         ItemList.Energy_Module.get(1),
                         ItemList.Circuit_Chip_UHPIC.get(8),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 12),
-                        new Object[] { OrePrefixes.circuit.get(Materials.ZPM), 2 },
+                        Superconductors.ZPM.getWireGt02(12),
+                        new Object[] { Circuits.ZPM.getIngredient(), 2 },
                         MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
                         MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16),
@@ -363,8 +365,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_ZPM))
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 2 },
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 30),
+                        new Object[] { Circuits.UV.getIngredient(), 2 },
+                        Superconductors.ZPM.getWireGt01(30),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.screw, (int) (16)))
@@ -437,7 +439,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         getModItem(AE2FluidCraft.ID, "fluid_interface", 1),
                         ItemList.Conveyor_Module_IV.get(2),
                         ItemList.Electric_Pump_IV.get(2),
-                        new Object[] { OrePrefixes.circuit.get(Materials.IV), 1 })
+                        new Object[] { Circuits.IV.getIngredient(), 1 })
                 .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8))
                 .itemOutputs(MMItemList.AEDownlink.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
@@ -455,7 +457,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         getModItem(AE2FluidCraft.ID, "fluid_interface", 1),
                         ItemList.Conveyor_Module_ZPM.get(2),
                         ItemList.Electric_Pump_ZPM.get(2),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 })
+                        new Object[] { Circuits.UV.getIngredient(), 4 })
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 32))
                 .itemOutputs(MMItemList.QuantumDownlink.get(1)).duration(1 * MINUTES).eut((int) TierEU.RECIPE_ZPM)
                 .addTo(AssemblyLine);
@@ -489,7 +491,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         AEApi.instance().definitions().parts().patternTerminal().maybeStack(1).get(),
                         ItemList.Robot_Arm_UV.get(1),
                         AEApi.instance().definitions().materials().blankPattern().maybeStack(64).get(),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 } },
+                        new Object[] { Circuits.UV.getIngredient(), 4 } },
                 new FluidStack[] { MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 32),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Naquadria,
@@ -513,7 +515,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         AEApi.instance().definitions().blocks().iOPort().maybeStack(1).get(),
                         AEApi.instance().definitions().materials().cardSuperSpeed().maybeStack(2).get(),
                         CustomItemList.dataOut_Hatch.get(1), CustomItemList.DATApipe.get(32),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2 } },
+                        new Object[] { Circuits.UHV.getIngredient(), 2 } },
                 new FluidStack[] { MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 64),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Naquadria,
@@ -531,7 +533,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.foil, (int) (16)),
                         MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.plate, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.foil, (int) (16)),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2))
+                        Circuits.EV.get(2))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SolderingAlloy,
@@ -566,7 +568,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .itemInputs(
                         MMItemList.UpgradeBlank.get(1),
                         ItemList.Field_Generator_HV.get(2),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
+                        Circuits.IV.get(2),
                         getModItem(ThaumicTinkerer.ID, "focusDislocation"), // dislocation focus
                         getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                         jarredNode,
@@ -587,7 +589,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         getModItem(Mods.Automagy.ID, "crystalBrain", 1, 4), // crystalline brain: order
                         getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100), // blank golem animation core
                         MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.itemCasing, (int) (8)),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2),
+                        Circuits.IV.get(2),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Mercury, 32),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.SuperconductorHVBase, 64))
                 .fluidInputs(
@@ -605,8 +607,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 2048,
                 (int) TierEU.RECIPE_UV,
                 8,
-                new Object[] { MMItemList.UpgradeBlank.get(1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4L },
+                new Object[] { MMItemList.UpgradeBlank.get(1), new Object[] { Circuits.UEV.getIngredient(), 4L },
                         AEApi.instance().definitions().parts().cableDense().stack(AEColor.Transparent, 16),
                         AEApi.instance().definitions().parts().p2PTunnelGregtech().maybeStack(4).get(),
                         CustomItemList.Machine_Multi_Transformer.get(1),
