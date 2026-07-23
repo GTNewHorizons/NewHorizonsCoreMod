@@ -6,6 +6,7 @@ import static gregtech.api.enums.Materials.Bronze;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
@@ -963,6 +964,23 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         'P', pipeMedium.get(Bronze)
                         // spotless:on
                 });
+
+        // Windmill
+        GTModHandler.addCraftingRecipe(
+                ItemList.WindmillBaseCasing.get(2),
+                GTModHandler.RecipeBits.BITS,
+                new Object[] { "SBS", "BTB", "SBS", 'S', NHItemList.StonePlate.get().splitStack(1), 'B',
+                        getModItem(Minecraft.ID, "brick", 1), 'T', getModItem(Minecraft.ID, "hardened_clay", 1) });
+        GTModHandler.addCraftingRecipe(
+                ItemList.WindmillShaftCasing.get(4),
+                GTModHandler.RecipeBits.BITS,
+                new Object[] { "STS", "hTf", "STS", 'S', NHItemList.StonePlate.get().splitStack(1), 'T',
+                        getModItem(Minecraft.ID, "hardened_clay", 1) });
+        GTModHandler.addCraftingRecipe(
+                ItemList.WindmillMillstoneHousing.get(1),
+                GTModHandler.RecipeBits.BITS,
+                new Object[] { "BBB", "wGh", "BBB", 'B', ItemList.WindmillBaseCasing.get(1), 'G',
+                        getModItem(BartWorks.ID, "craftingParts", 1, 2) });
 
         // ===================================================================================================
         // Diodes
