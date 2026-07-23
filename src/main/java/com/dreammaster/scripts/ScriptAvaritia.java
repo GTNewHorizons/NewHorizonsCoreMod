@@ -415,6 +415,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(EternalSingularity.ID, "combined_singularity", 1, 6));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Orb_Armok", 1, 0),
+                "---------",
                 "---aia---",
                 "--ababa--",
                 "--jacaj--",
@@ -422,7 +423,6 @@ public class ScriptAvaritia implements IScriptLoader {
                 "ddeafagdd",
                 "-dddhddd-",
                 "---ddd---",
-                "---------",
                 "---------",
                 'a',
                 "plateInfinity",
