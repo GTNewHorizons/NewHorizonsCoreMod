@@ -38,8 +38,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import com.google.common.collect.ImmutableList;
-import gregtech.common.items.ItemGTToolbox;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -53,6 +51,7 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.recipes.Recipe;
 import com.dreammaster.recipes.ShapedUniversalRecipe;
+import com.google.common.collect.ImmutableList;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -70,6 +69,7 @@ import gregtech.api.util.GTLog;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gregtech.common.items.ItemGTToolbox;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
 import gtneioreplugin.util.DimensionHelper;
@@ -2165,8 +2165,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addShapelessCraftingRecipe(
                     GregtechItemList.Hatch_Input_Bus_Steam.get(1),
                     GTModHandler.RecipeBits.BITS,
-                    new Object[] { GregtechItemList.Hatch_Output_Bus_Steam.get(1),
-                            tool, });
+                    new Object[] { GregtechItemList.Hatch_Output_Bus_Steam.get(1), tool, });
 
             GTModHandler.addShapelessCraftingRecipe(
                     ItemList.Hatch_Input_Bus_ULV.get(1),
