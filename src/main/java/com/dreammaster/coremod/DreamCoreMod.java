@@ -33,7 +33,6 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     private static boolean modpackHasUpdated;
 
     public static boolean showConfirmExitWindow;
-    public static boolean patchItemFocusWarding;
     static boolean downloadOnlyOnce;
     static String downloadUA;
 
@@ -56,7 +55,6 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     public void injectData(Map<String, Object> data) {
         isObf = (boolean) data.get("runtimeDeobfuscationEnabled");
         coremodConfig.setProperty("showConfirmExitWindow", "true");
-        coremodConfig.setProperty("patchItemFocusWarding", "true");
         coremodConfig.setProperty("downloadOnlyOnce", "true");
         File mcLocation = (File) data.get("mcLocation");
         File configDir = new File(mcLocation, "config");
@@ -85,7 +83,6 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
             logger.warn("Can't write coremod config. Changes may not have been saved!", e);
         }
         showConfirmExitWindow = "true".equalsIgnoreCase(coremodConfig.getProperty("showConfirmExitWindow"));
-        patchItemFocusWarding = "true".equalsIgnoreCase(coremodConfig.getProperty("patchItemFocusWarding"));
         downloadOnlyOnce = "true".equalsIgnoreCase(coremodConfig.getProperty("downloadOnlyOnce"));
         downloadUA = coremodConfig.getProperty(
                 "downloadUA",
