@@ -2173,6 +2173,12 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 281)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 80)).duration(10 * SECONDS)
