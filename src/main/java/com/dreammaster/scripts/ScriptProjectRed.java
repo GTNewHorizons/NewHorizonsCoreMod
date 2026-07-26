@@ -52,7 +52,6 @@ import java.util.List;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
@@ -63,7 +62,6 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.objects.SubstituteFluidStack;
@@ -106,24 +104,6 @@ public class ScriptProjectRed implements IScriptLoader {
                 StevesCarts2.ID,
                 ThaumicHorizons.ID,
                 TinkerConstruct.ID);
-    }
-
-    // This should ideally be shared somewhere; pending more cleanup/rewrite.
-    private static final Materials[] solderingMaterials = new Materials[] { Materials.SolderingAlloy, Materials.Tin,
-            Materials.Lead };
-
-    /**
-     * Gives a FluidStack of soldering material of appropriate size.
-     *
-     * @param material   Material to use. Must be one of {@link #solderingMaterials}.
-     * @param baseAmount Amount of soldering alloy to use. Tin is 2x, Lead is 4x this amount.
-     * @return FluidStack of the appropriate material and amount.
-     */
-    private static FluidStack getSolderingFluid(Materials material, long baseAmount) {
-        if (material.contains(SubTag.SOLDERING_MATERIAL_GOOD)) return material.getMolten(baseAmount);
-        if (material.contains(SubTag.SOLDERING_MATERIAL_BAD)) return material.getMolten(baseAmount * 4);
-        if (material.contains(SubTag.SOLDERING_MATERIAL)) return material.getMolten(baseAmount * 2);
-        return null;
     }
 
     @Override
