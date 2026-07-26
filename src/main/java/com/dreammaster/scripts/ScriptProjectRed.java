@@ -24,6 +24,7 @@ import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.ProjectRedExploration;
 import static gregtech.api.enums.Mods.ProjectRedFabrication;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.ProjectRedTransmission;
 import static gregtech.api.enums.Mods.ProjectRedTransportation;
@@ -52,6 +53,7 @@ import java.util.List;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
@@ -2162,11 +2164,15 @@ public class ScriptProjectRed implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
                 .addTo(circuitAssemblerRecipes);
         // Bus Input Panel
+        for (int i = 0; i < 16; i++) {
+            OreDictionary.registerOre(
+                    "illumarButton",
+                    getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, i));
+        }
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 3),
-                        getModItem(Minecraft.ID, "stone_button", 16),
-                        new OreDictItemStack("projredIllumar", 32))
+                        new OreDictItemStack("illumarButton", 16))
                 .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
