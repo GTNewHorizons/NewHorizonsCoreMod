@@ -68,6 +68,7 @@ import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
+@SuppressWarnings("PointlessArithmeticExpression")
 public class ScriptProjectRed implements IScriptLoader {
 
     @Override
