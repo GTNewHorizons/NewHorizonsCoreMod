@@ -85,7 +85,6 @@ import thaumcraft.api.crafting.IArcaneRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumcraft.common.config.ConfigItems;
 
 public class ScriptThaumcraft implements IScriptLoader {
 
@@ -1286,7 +1285,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 getModItem(Botania.ID, "quartz", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4));
-        ConfigItems.itemFocusWarding.setContainerItem(ConfigItems.itemFocusWarding);
         TCHelper.setResearchAspects(
                 "FOCUSWARDING",
                 new AspectList().add(Aspect.EARTH, 12).add(Aspect.MIND, 12).add(Aspect.ORDER, 9).add(Aspect.ARMOR, 6)

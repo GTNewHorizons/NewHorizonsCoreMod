@@ -14,4 +14,14 @@ public class MixinFocusWarding extends ItemFocusBasic {
     public boolean doesContainerItemLeaveCraftingGrid(ItemStack p_77630_1_) {
         return false;
     }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack stack) {
+        return stack;
+    }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack) {
+        return true;
+    }
 }
