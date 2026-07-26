@@ -55,7 +55,6 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     public void injectData(Map<String, Object> data) {
         isObf = (boolean) data.get("runtimeDeobfuscationEnabled");
         coremodConfig.setProperty("showConfirmExitWindow", "true");
-        coremodConfig.setProperty("patchItemFocusWarding", "true");
         coremodConfig.setProperty("downloadOnlyOnce", "true");
         File mcLocation = (File) data.get("mcLocation");
         File configDir = new File(mcLocation, "config");
