@@ -100,7 +100,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
-import com.dreammaster.scripts.IngredientFactory;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -110,7 +109,6 @@ import gregtech.GTMod;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -8696,11 +8694,9 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             }
             // Pluto
-            ItemStack[] plutoSurfaceIce = new ItemStack[] {
-                    IngredientFactory.getModItem(Mods.GalaxySpace.ID, "plutoblocks", 64, 0),
-                    IngredientFactory.getModItem(Mods.GalaxySpace.ID, "plutoblocks", 64, 1),
-                    IngredientFactory.getModItem(Mods.GalaxySpace.ID, "plutoblocks", 64, 2),
-                    IngredientFactory.getModItem(Mods.GalaxySpace.ID, "plutoblocks", 64, 3) };
+            ItemStack[] plutoSurfaceIce = new ItemStack[] { getModItem(GalaxySpace.ID, "plutoblocks", 64, 0),
+                    getModItem(GalaxySpace.ID, "plutoblocks", 64, 1), getModItem(GalaxySpace.ID, "plutoblocks", 64, 2),
+                    getModItem(GalaxySpace.ID, "plutoblocks", 64, 3) };
             for (int meta = 0; meta < 4; meta++) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
