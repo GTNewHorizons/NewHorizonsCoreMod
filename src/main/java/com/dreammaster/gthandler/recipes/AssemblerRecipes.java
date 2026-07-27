@@ -100,6 +100,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
+import com.dreammaster.scripts.IngredientFactory;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -109,6 +110,7 @@ import gregtech.GTMod;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -8694,15 +8696,22 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             }
             // Pluto
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 0),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 4),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 6))
-                    .circuit(17).fluidInputs(Materials.Fluorine.getGas(10000))
-                    .itemOutputs(new ItemStack(ModBlocks.blocks.get("Pl"), 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            ItemStack[] plutoSurfaceIce = new ItemStack[] {
+                    IngredientFactory.getModItem(Mods.GalaxySpace.ID, "plutoblocks", 64, 0),
+                    IngredientFactory.getModItem(Mods.GalaxySpace.ID, "plutoblocks", 64, 1),
+                    IngredientFactory.getModItem(Mods.GalaxySpace.ID, "plutoblocks", 64, 2),
+                    IngredientFactory.getModItem(Mods.GalaxySpace.ID, "plutoblocks", 64, 3) };
+            for (int meta = 0; meta < 4; meta++) {
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                plutoSurfaceIce[meta],
+                                getModItem(GalaxySpace.ID, "plutoblocks", 64, 4),
+                                getModItem(GalaxySpace.ID, "plutoblocks", 64, 6))
+                        .circuit(17).fluidInputs(Materials.Fluorine.getGas(10000))
+                        .itemOutputs(new ItemStack(ModBlocks.blocks.get("Pl"), 1, 0)).duration(15 * SECONDS)
+                        .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            }
             // Makemake
             for (OrePrefixes orePrefix : allOrePrefixes) {
                 GTValues.RA.stdBuilder()
