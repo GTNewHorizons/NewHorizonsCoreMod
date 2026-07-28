@@ -35,6 +35,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     public static boolean showConfirmExitWindow;
     static boolean downloadOnlyOnce;
     static String downloadUA;
+    public static String displayedModpackVersion;
 
     @Override
     public String[] getASMTransformerClass() {
@@ -56,6 +57,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         isObf = (boolean) data.get("runtimeDeobfuscationEnabled");
         coremodConfig.setProperty("showConfirmExitWindow", "true");
         coremodConfig.setProperty("downloadOnlyOnce", "true");
+        coremodConfig.setProperty("displayedModpackVersion", Refstrings.MODPACKPACK_VERSION);
         File mcLocation = (File) data.get("mcLocation");
         File configDir = new File(mcLocation, "config");
         // noinspection ResultOfMethodCallIgnored
@@ -87,6 +89,8 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         downloadUA = coremodConfig.getProperty(
                 "downloadUA",
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0");
+        displayedModpackVersion = coremodConfig.getProperty("displayedModpackVersion", Refstrings.MODPACKPACK_VERSION);
+
     }
 
     @Override
