@@ -8694,15 +8694,20 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             }
             // Pluto
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 0),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 4),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 6))
-                    .circuit(17).fluidInputs(Materials.Fluorine.getGas(10000))
-                    .itemOutputs(new ItemStack(ModBlocks.blocks.get("Pl"), 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            ItemStack[] plutoSurfaceIce = new ItemStack[] { getModItem(GalaxySpace.ID, "plutoblocks", 64, 0),
+                    getModItem(GalaxySpace.ID, "plutoblocks", 64, 1), getModItem(GalaxySpace.ID, "plutoblocks", 64, 2),
+                    getModItem(GalaxySpace.ID, "plutoblocks", 64, 3) };
+            for (int meta = 0; meta < 4; meta++) {
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                plutoSurfaceIce[meta],
+                                getModItem(GalaxySpace.ID, "plutoblocks", 64, 4),
+                                getModItem(GalaxySpace.ID, "plutoblocks", 64, 6))
+                        .circuit(17).fluidInputs(Materials.Fluorine.getGas(10000))
+                        .itemOutputs(new ItemStack(ModBlocks.blocks.get("Pl"), 1, 0)).duration(15 * SECONDS)
+                        .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            }
             // Makemake
             for (OrePrefixes orePrefix : allOrePrefixes) {
                 GTValues.RA.stdBuilder()
