@@ -32,8 +32,6 @@ public class ClientProxy extends CommonProxy implements IResourceManagerReloadLi
         MinecraftForgeClient
                 .registerItemRenderer(Item.getItemFromBlock(MainRegistry.blockBabyChest), new RenderItemBabyChest());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBabyChest.class, render);
-
-        MinecraftForge.EVENT_BUS.register(new DebugHandler());
     }
 
     @Override
