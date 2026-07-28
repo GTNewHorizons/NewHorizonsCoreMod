@@ -7,7 +7,6 @@ import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
-import net.minecraftforge.common.MinecraftForge;
 
 import com.dreammaster.modbabychest.BlockBabyChest;
 import com.dreammaster.modbabychest.RenderBabyChest;
