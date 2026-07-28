@@ -1,5 +1,6 @@
 package com.dreammaster.mixin.mixins.early;
 
+import com.dreammaster.coremod.DreamCoreMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;
 
@@ -26,7 +27,7 @@ public class MixinMinecraft_PackIcon {
                     remap = false))
     private String dreamcraft$changeWindowTitle(String original) {
         this.dreamcraft$loadedGTNHIcon = IconLoader.setCustomIcon("assets/dreamcraft/textures/icon/GTNH_42x42.png");
-        return Refstrings.NAME + " " + Refstrings.MODPACKPACK_VERSION;
+        return Refstrings.NAME + " " + DreamCoreMod.displayedModpackVersion;
     }
 
     @ModifyExpressionValue(
