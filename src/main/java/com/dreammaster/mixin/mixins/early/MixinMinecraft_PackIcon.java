@@ -1,6 +1,5 @@
 package com.dreammaster.mixin.mixins.early;
 
-import com.dreammaster.coremod.DreamCoreMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;
 
@@ -10,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import com.dreammaster.client.util.IconLoader;
+import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.lib.Refstrings;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 
