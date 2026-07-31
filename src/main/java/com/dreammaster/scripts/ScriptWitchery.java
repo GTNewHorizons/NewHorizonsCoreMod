@@ -37,9 +37,9 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -114,7 +114,7 @@ public class ScriptWitchery implements IScriptLoader {
                         getModItem(Witchery.ID, "ingredient", 9, 130),
                         new ItemStack(Items.magma_cream, 9),
                         new ItemStack(Items.blaze_powder, 9),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dust, (int) (1L)))
                 .circuit(4).itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
@@ -122,7 +122,7 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 16),
                 null,
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, (int) (1L)),
                 null,
                 null,
                 null,
@@ -130,7 +130,7 @@ public class ScriptWitchery implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, (int) (1L)),
                 null,
                 null,
                 getModItem(Witchery.ID, "ingredient", 1, 16),
@@ -297,8 +297,8 @@ public class ScriptWitchery implements IScriptLoader {
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(12 * TICKS).eut(24).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()

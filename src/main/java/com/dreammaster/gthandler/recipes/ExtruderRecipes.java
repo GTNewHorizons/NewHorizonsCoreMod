@@ -13,9 +13,8 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
@@ -26,110 +25,99 @@ public class ExtruderRecipes implements Runnable {
     public void run() {
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.BorosilicateGlass, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.ingot, (int) (1)),
                         ItemList.Shape_Extruder_Wire.get(0))
                 .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(8 * SECONDS).eut(96)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (1L)),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.pipeTiny, MU.materialOf(Materials2Materials.NetherStar), 2L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.NetherStar, 2L))
                 .duration(4 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (1L)),
                         ItemList.Shape_Extruder_Pipe_Small.get(0L))
-                .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.NetherStar), 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.NetherStar, 1L))
                 .duration(8 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.plate, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (3L)),
                         ItemList.Shape_Extruder_Pipe_Medium.get(0L))
-                .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.NetherStar), 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.NetherStar, 1L))
                 .duration(1 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.plate, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (6L)),
                         ItemList.Shape_Extruder_Pipe_Large.get(0L))
-                .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.NetherStar), 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.NetherStar, 1L))
                 .duration(2 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.plate, (int) (12L)),
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (12L)),
                         ItemList.Shape_Extruder_Pipe_Huge.get(0L))
-                .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.pipeHuge, MU.materialOf(Materials2Materials.NetherStar), 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.NetherStar, 1L))
                 .duration(4 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 9L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 9L),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.ingot, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.ingot, (int) (9L)),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Iron), 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1L),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.CastIron), 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.CastIron, 1L),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ingot, (int) (9L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (9L)),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Steel), 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Steel, 1L),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.ingot, (int) (4)),
+                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.ingot, (int) (4)),
                         ItemList.Shape_Extruder_Gear.get(0L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gear, MU.materialOf(Materials2Materials.Carbon), 1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gear, Materials.Carbon, 1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Neutronium), 64),
-                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Neutronium), 64))
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64))
                 .itemOutputs(NHItemList.NANCertificate.get(1))
                 .duration(29826 * HOURS + 9 * MINUTES + 7 * SECONDS + 7 * TICKS)
                 // not using recipe EUt on purpose

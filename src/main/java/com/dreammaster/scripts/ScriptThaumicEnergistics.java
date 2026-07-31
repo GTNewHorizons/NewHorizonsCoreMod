@@ -30,9 +30,9 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.objects.SubstituteFluidStack;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -252,13 +252,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
                 DiffusionCore,
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 CoalescenceCore,
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",
@@ -329,11 +329,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, (int) (1L)),
                 'b',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, (int) (1L)),
                 'd',
                 EngProcessor,
                 'e',
@@ -341,11 +341,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'f',
                 CalcProcessor,
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, (int) (1L)),
                 'h',
                 LogicProcessor,
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEarth, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, (int) (1L)));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANETERM",
                 new AspectList().add(Aspect.TOOL, 15).add(Aspect.CRAFT, 12).add(Aspect.ENERGY, 9)

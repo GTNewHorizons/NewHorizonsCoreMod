@@ -11,7 +11,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.ruling_0.materiallib.api.Material;
 
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.material.MU;
+import gregtech.api.material.MaterialParts;
 import tconstruct.library.crafting.Smeltery;
 
 public class MeltingRecipeAdder {
@@ -72,6 +72,6 @@ public class MeltingRecipeAdder {
     }
 
     public MeltingRecipeAdder smelteryGroup(OrePrefixes prefix, Material material) {
-        return smelteryGroup(MU.craftIngredient(prefix, material).toString());
+        return smelteryGroup(MaterialParts.craftIngredient(prefix, material).toString());
     }
 }

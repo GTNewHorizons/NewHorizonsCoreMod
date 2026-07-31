@@ -54,10 +54,9 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -237,12 +236,12 @@ public class ScriptStevesCarts implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 37),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 ToolDictNames.craftingToolSoftMallet.name(),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0),
                 "craftingToolWrench",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0));
@@ -430,7 +429,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 ItemList.Electric_Piston_MV.get(1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 2, 30),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 null,
                 null,
                 "craftingToolSaw",
@@ -575,9 +574,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "CartModule", 1, 66));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Steel), 1L));
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 7),
@@ -983,15 +982,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 31),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6),
                 getModItem(Minecraft.ID, "flint_and_steel", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 59),
                 "fenceWood",
@@ -1039,13 +1038,13 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Bronze), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
                 "screwIron",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Bronze), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
                 "screwIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 57),
@@ -1116,13 +1115,13 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 68),
                 "plateIron",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Brass), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Brass, 1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 "plateIron",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Brass), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Brass, 1L),
                 "plateIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 32),
@@ -1140,12 +1139,12 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Steel), 1L));
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 95),
                 "plateEmerald",
@@ -1155,13 +1154,13 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(Minecraft.ID, "cauldron", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 18),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Tin), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Tin, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Tin), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Tin, 1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
@@ -1262,10 +1261,10 @@ public class ScriptStevesCarts implements IScriptLoader {
                 ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Minecraft.ID, "hay_block", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 89),
@@ -1320,7 +1319,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "gearSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, MU.materialOf(Materials2Materials.Tin), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Tin, 1L),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 118),
@@ -1328,10 +1327,10 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16),
                 "plateAluminium",
                 ItemList.Electric_Motor_MV.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.Reinforced, Materials2Shapes.gearGt, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Reinforced, Shapes.gearGt, (int) (1L)),
                 ItemList.Electric_Motor_MV.get(1L),
                 "plateAluminium",
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, MU.materialOf(Materials2Materials.Copper), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Copper, 1L),
                 "plateAluminium");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 119),
@@ -1339,28 +1338,28 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "circuitAdvanced",
                 "plateStainlessSteel",
                 ItemList.Electric_Motor_HV.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.Galgadorian, Materials2Shapes.gearGt, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.gearGt, (int) (1L)),
                 ItemList.Electric_Motor_HV.get(1L),
                 "plateStainlessSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, MU.materialOf(Materials2Materials.Gold), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 1L),
                 "plateStainlessSteel");
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22),
-                MaterialLibAPI.getStack(Materials2Materials.Reinforced, Materials2Shapes.ingot, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Reinforced, Shapes.ingot, (int) (1L)));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Reinforced, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Reinforced, Shapes.ingot, (int) (1L)),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 47),
-                MaterialLibAPI.getStack(Materials2Materials.Galgadorian, Materials2Shapes.ingot, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.ingot, (int) (1L)));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Galgadorian, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.ingot, (int) (1L)),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 47));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 49),
-                MaterialLibAPI.getStack(Materials2Materials.EnhancedGalgadorian, Materials2Shapes.ingot, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.EnhancedGalgadorian, Shapes.ingot, (int) (1L)));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.EnhancedGalgadorian, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnhancedGalgadorian, Shapes.ingot, (int) (1L)),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 49));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1415,48 +1414,48 @@ public class ScriptStevesCarts implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(Railcraft.ID, "track", 1, 0, "{track:\"railcraft:track.junction\"}"),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.RedAlloy), 4L))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "BlockJunction", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.ring, (int) (2L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0)).duration(10 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Reinforced, Materials2Shapes.stick, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Reinforced, Materials2Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Reinforced, Shapes.stick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Reinforced, Shapes.ring, (int) (2L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 23)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Galgadorian, Materials2Shapes.stick, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Galgadorian, Materials2Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.stick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.ring, (int) (2L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 82)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (4L)),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 37)).duration(20 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (4L)),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 1))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 38)).duration(20 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Reinforced, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Reinforced, Shapes.plate, (int) (4L)),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 23))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 39)).duration(20 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Galgadorian, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.plate, (int) (4L)),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 82))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 81)).duration(20 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
@@ -1466,23 +1465,22 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.CobaltBrass, Materials2Shapes.gearGt, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Reinforced, Materials2Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.CobaltBrass, Shapes.gearGt, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Reinforced, Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 80))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.CobaltBrass, Materials2Shapes.gearGt, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Galgadorian, Materials2Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.CobaltBrass, Shapes.gearGt, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 81))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.toolHeadSaw, (int) (2L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Iron, Shapes.toolHeadSaw, (int) (2L)))
                 .circuit(1).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.gearGt, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.gearGt, (int) (1L)),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 83))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -1593,31 +1591,31 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.stickLong, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.stickLong, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stickLong, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.stickLong, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.ring, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.bolt, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.bolt, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 33)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glowstone, Materials2Shapes.plate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials.Glowstone, Shapes.plate, (int) (2L)),
                         new OreDictItemStack("dyeRed", 4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2)).duration(5 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glowstone, Materials2Shapes.plate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials.Glowstone, Shapes.plate, (int) (2L)),
                         new OreDictItemStack("dyeGreen", 4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3)).duration(5 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glowstone, Materials2Shapes.plate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials.Glowstone, Shapes.plate, (int) (2L)),
                         new OreDictItemStack("dyeBlue", 4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4)).duration(5 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
@@ -1707,7 +1705,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Bronze), 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
                         getModItem(Minecraft.ID, "iron_bars", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -1727,22 +1725,14 @@ public class ScriptStevesCarts implements IScriptLoader {
                         new ItemStack(Blocks.diamond_block, 10),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 30, 45))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 20, 46))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Reinforced,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (2880)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Reinforced, FluidShapes.fluidMolten, (int) (2880)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 20),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 12, 19))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 20, 21))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Iron,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (2880)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Iron, FluidShapes.fluidMolten, (int) (2880)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1757,12 +1747,11 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_MV).specialValue(1700).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Galgadorian, Materials2Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.ingotHot, (int) (1L)))
                 .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).duration(1 * MINUTES + 40 * SECONDS)
                 .eut(TierEU.RECIPE_MV).specialValue(2200).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48)).itemOutputs(
-                MaterialLibAPI.getStack(Materials2Materials.EnhancedGalgadorian, Materials2Shapes.ingotHot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.EnhancedGalgadorian, Shapes.ingotHot, (int) (1L)))
                 .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).duration(2 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).specialValue(3500).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11))
@@ -1770,34 +1759,26 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).specialValue(1000).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "diamond", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 18))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Obsidian,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (1152)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Obsidian, FluidShapes.fluidMolten, (int) (1152)))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.itemCasing, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Wood, Shapes.itemCasing, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.itemCasing, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Wood, Shapes.itemCasing, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.itemCasing, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Wood, Shapes.itemCasing, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.itemCasing, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Wood, Shapes.itemCasing, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(12 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31))
@@ -1816,8 +1797,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(12 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32))
@@ -1836,32 +1817,28 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(12 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.itemCasing, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.itemCasing, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.itemCasing, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.itemCasing, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, (int) (1L)))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35))
@@ -1880,8 +1857,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36))
@@ -1900,8 +1877,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38))
@@ -1920,8 +1897,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (2)))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39))
@@ -1940,8 +1917,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (3)))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63))
@@ -1960,8 +1937,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
@@ -1980,8 +1957,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0))
@@ -2000,8 +1977,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62))
@@ -2020,12 +1997,12 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Reinforced, Materials2Shapes.dust, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Reinforced, Shapes.dust, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
     }

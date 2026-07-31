@@ -47,9 +47,8 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.tools.TinkerTools;
@@ -115,13 +114,13 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         addShapedRecipe(
                 getModItem(DraconicEvolution.ID, "xRayBlock", 8, 0),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.gemFlawless, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemFlawless, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1205,7 +1204,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 4),
                         getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infoTablet", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -1236,7 +1235,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16),
-                        MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.plate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Draconium, Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "rainSensor", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         if (GameRegistry.findItem(DraconicEvolution.ID, "earth") != null) {
@@ -1274,7 +1273,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "safetyMatch", 16, 1000),
-                        MaterialLibAPI.getStack(Materials2Materials.Paper, Materials2Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Paper, Shapes.plateDouble, (int) (1L)))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0)).duration(3 * SECONDS + 4 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(packagerRecipes);
 

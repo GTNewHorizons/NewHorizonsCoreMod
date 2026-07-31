@@ -50,10 +50,9 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTModHandler;
@@ -104,8 +103,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 3);
         final ItemStack SuperSpeedCard = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 56);
         final ItemStack GLASS_PANE = getModItem(TinkerConstruct.ID, "GlassPane", 1);
-        final ItemStack CERTUS_PLATE = MaterialLibAPI
-                .getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L));
+        final ItemStack CERTUS_PLATE = MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L));
         final ItemStack AE2_ADVANCED_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 61);
         final ItemStack AE2_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39);
         final ItemStack AE2_BLOCK_CONTAINER = getModItem(
@@ -162,22 +160,21 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.RedstoneAlloy), 1L),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.RedstoneAlloy, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 470)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Redstone, Shapes.plate, (int) (1L)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 461)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Glowstone, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Glowstone, Shapes.plate, (int) (1L)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 467)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -255,23 +252,21 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GLASS_PANE,
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.plate, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Chrome, Shapes.plate, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2L)))
                 .circuit(3).itemOutputs(AE2_ADVANCED_HOUSING).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
         GTModHandler.addCraftingRecipe(
                 AE2_ADVANCED_HOUSING,
                 new Object[] { "hPS", "CGC", "SCd", 'P', CERTUS_PLATE, 'S',
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (1L)),
-                        'C', MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.plate, (int) (1L)),
-                        'G', GLASS_PANE });
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (1L)), 'C',
+                        MaterialLibAPI.getStack(Materials.Chrome, Shapes.plate, (int) (1L)), 'G', GLASS_PANE });
         GTModHandler.addCraftingRecipe(
                 AE2_ADVANCED_HOUSING,
                 new Object[] { "dPS", "CGC", "SCh", 'P', CERTUS_PLATE, 'S',
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (1L)),
-                        'C', MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.plate, (int) (1L)),
-                        'G', GLASS_PANE });
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (1L)), 'C',
+                        MaterialLibAPI.getStack(Materials.Chrome, Shapes.plate, (int) (1L)), 'G', GLASS_PANE });
 
         // Advanced Storage Cells
         final ItemStack[] components = new ItemStack[] {
@@ -291,19 +286,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             GTModHandler.addCraftingRecipe(
                     cells[i],
                     new Object[] { "hPS", "CGC", "SCd", 'P', CERTUS_PLATE, 'S',
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (1L)),
-                            'C',
-                            MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.plate, (int) (1L)),
-                            'G', components[i] });
+                            MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (1L)), 'C',
+                            MaterialLibAPI.getStack(Materials.Chrome, Shapes.plate, (int) (1L)), 'G', components[i] });
             GTModHandler.addCraftingRecipe(
                     cells[i],
                     new Object[] { "dPS", "CGC", "SCh", 'P', CERTUS_PLATE, 'S',
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (1L)),
-                            'C',
-                            MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.plate, (int) (1L)),
-                            'G', components[i] });
+                            MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (1L)), 'C',
+                            MaterialLibAPI.getStack(Materials.Chrome, Shapes.plate, (int) (1L)), 'G', components[i] });
             addShapelessRecipe(cells[i], AE2_ADVANCED_HOUSING, components[i]);
         }
         GTModHandler.addCraftingRecipe(
@@ -379,12 +368,12 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 AE2_BLOCK_CONTAINER,
                 new Object[] { " K ", "SMS", "dHw", 'K',
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35), 'S',
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.screw, (int) (1)), 'M',
-                        AE2_ME_CHEST, 'H', AE2_HOUSING });
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, (int) (1)), 'M', AE2_ME_CHEST, 'H',
+                        AE2_HOUSING });
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35),
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, (int) (2)),
                         AE2_ME_CHEST,
                         AE2_HOUSING)
                 .circuit(4).itemOutputs(AE2_BLOCK_CONTAINER).duration(2 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -408,113 +397,91 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         for (RecipeMap<?> aeCables : new RecipeMap<?>[] { assemblerRecipes, cableRecipes }) {
             // Covered Cable
             GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable).circuit(24).itemOutputs(AE2_ME_Covered_Cable)
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Rubber,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (144L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Rubber, FluidShapes.fluidMolten, (int) (144L)))
                     .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable).circuit(24).itemOutputs(AE2_ME_Covered_Cable)
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
                                     (int) (108L)))
                     .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable).circuit(24).itemOutputs(AE2_ME_Covered_Cable)
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (72L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (72L)))
                     .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    AE2_ME_Glass_Cable,
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.dustSmall, (int) (1)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            AE2_ME_Glass_Cable,
+                            MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dustSmall, (int) (1)))
                     .itemOutputs(AE2_ME_Covered_Cable)
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (36L)))
-                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    AE2_ME_Glass_Cable,
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.dustSmall, (int) (1)))
-                    .itemOutputs(AE2_ME_Covered_Cable)
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (36L)))
-                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    AE2_ME_Glass_Cable,
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.Polydimethylsiloxane, Materials2Shapes.dustSmall, (int) (1)))
-                    .itemOutputs(AE2_ME_Covered_Cable)
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (36L)))
-                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    AE2_ME_Glass_Cable,
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.Polydimethylsiloxane, Materials2Shapes.dustSmall, (int) (1)))
-                    .itemOutputs(AE2_ME_Covered_Cable)
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
                                     (int) (36L)))
                     .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            AE2_ME_Glass_Cable,
+                            MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dustSmall, (int) (1)))
+                    .itemOutputs(AE2_ME_Covered_Cable)
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (36L)))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            AE2_ME_Glass_Cable,
+                            MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dustSmall, (int) (1)))
+                    .itemOutputs(AE2_ME_Covered_Cable)
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
+                                    (int) (36L)))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            AE2_ME_Glass_Cable,
+                            MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dustSmall, (int) (1)))
+                    .itemOutputs(AE2_ME_Covered_Cable)
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (36L)))
+                    .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dust, (int) (1)))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
                                     (int) (144L)))
                     .duration(25 * SECONDS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dust, (int) (1)))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (144L)))
+                    .duration(25 * SECONDS).eut(TierEU.RECIPE_MV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
+                            MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dust, (int) (1)))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
                                     (int) (144L)))
                     .duration(25 * SECONDS).eut(TierEU.RECIPE_MV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                    MaterialLibAPI.getStack(Materials2Materials.Polydimethylsiloxane, Materials2Shapes.dust, (int) (1)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
+                            MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dust, (int) (1)))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (144L)))
-                    .duration(25 * SECONDS).eut(TierEU.RECIPE_MV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                    MaterialLibAPI.getStack(Materials2Materials.Polydimethylsiloxane, Materials2Shapes.dust, (int) (1)))
-                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (144L)))
+                            MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (144L)))
                     .duration(25 * SECONDS).eut(TierEU.RECIPE_MV).addTo(aeCables);
 
             // Dense Covered Cable
@@ -522,105 +489,88 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     .circuit(24).itemOutputs(AE2_ME_Dense_Covered_Cable)
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
                                     (int) (216L)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
             GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                     .circuit(24).itemOutputs(AE2_ME_Dense_Covered_Cable)
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (144L)))
+                            MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (144L)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.dustSmall, (int) (1)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dustSmall, (int) (1)))
                     .itemOutputs(AE2_ME_Dense_Covered_Cable)
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (72L)))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.dustSmall, (int) (1)))
-                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (72L)))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.Polydimethylsiloxane, Materials2Shapes.dustSmall, (int) (1)))
-                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (72L)))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                    MaterialLibAPI
-                            .getStack(Materials2Materials.Polydimethylsiloxane, Materials2Shapes.dustSmall, (int) (1)))
-                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
                                     (int) (72L)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dustSmall, (int) (1)))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (72L)))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dustSmall, (int) (1)))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
+                                    (int) (72L)))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
+                            MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dustSmall, (int) (1)))
+                    .itemOutputs(AE2_ME_Dense_Covered_Cable)
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (72L)))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dust, (int) (1)))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
                                     (int) (288L)))
                     .duration(35 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
-                            MaterialLibAPI
-                                    .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dust, (int) (1)))
+                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (288L)))
+                    .duration(35 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
+                            MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dust, (int) (1)))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
+                                    Materials.StyreneButadieneRubber,
+                                    FluidShapes.fluidMolten,
                                     (int) (288L)))
                     .duration(35 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
-                    MaterialLibAPI.getStack(Materials2Materials.Polydimethylsiloxane, Materials2Shapes.dust, (int) (1)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
+                            MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dust, (int) (1)))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.StyreneButadieneRubber,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (288L)))
-                    .duration(35 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
-            GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
-                    MaterialLibAPI.getStack(Materials2Materials.Polydimethylsiloxane, Materials2Shapes.dust, (int) (1)))
-                    .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Silicone,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (288L)))
+                            MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, (int) (288L)))
                     .duration(35 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
         }
 
@@ -645,19 +595,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16), Circuits.MV.get(1))
                 .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 56))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.ConductiveIron,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (144L)))
+                        MaterialLibAPI.getFluidStack(Materials.ConductiveIron, FluidShapes.fluidMolten, (int) (144L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36), Circuits.MV.get(1))
                 .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 56))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.ConductiveIron,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (144L)))
+                        MaterialLibAPI.getFluidStack(Materials.ConductiveIron, FluidShapes.fluidMolten, (int) (144L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // --- ME Smart Dense Cable Fluix
@@ -671,19 +615,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 56), Circuits.HV.get(1))
                 .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 76))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.EnergeticAlloy,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (144L)))
+                        MaterialLibAPI.getFluidStack(Materials.EnergeticAlloy, FluidShapes.fluidMolten, (int) (144L)))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536), Circuits.HV.get(1))
                 .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 76))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.EnergeticAlloy,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (144L)))
+                        MaterialLibAPI.getFluidStack(Materials.EnergeticAlloy, FluidShapes.fluidMolten, (int) (144L)))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // ME Quantum Storage
@@ -730,13 +668,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 'd',
                 getModItem(DraconicEvolution.ID, "reactorStabilizer", 1),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.TranscendentMetal), 1L),
+                GTOreDictUnificator.get(OrePrefixes.nanite, Materials.TranscendentMetal, 1L),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.plateDense, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Infinity, Shapes.plateDense, (int) (1L)),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.SpaceTime), 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SpaceTime, 1L),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.SpaceTime), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SpaceTime, 1L),
                 'i',
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1),
                 'j',
@@ -790,15 +728,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8),
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "circuitAdvanced",
                 getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0),
                 "circuitAdvanced",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "cableGt08Aluminium",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0),
@@ -1186,14 +1124,14 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 12),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (4L)),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0))
                 .circuit(3).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 7),
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (4L)),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0))
                 .circuit(3).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1206,9 +1144,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 "stickEnderEye",
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "circuitAdvanced",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSkyCompass", 1, 0),
                 "craftingToolScrewdriver",
@@ -1249,7 +1187,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "stickNetherQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180),
                 "circuitGood",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "stickNetherQuartz",
                 "craftingToolScrewdriver",
                 "stickNetherQuartz");
@@ -1260,7 +1198,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "stickNetherQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180),
                 "circuitGood",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "stickNetherQuartz",
                 "screwQuartzite",
                 "stickNetherQuartz");
@@ -1272,9 +1210,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500),
                 "craftingToolScrewdriver",
@@ -1294,9 +1232,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(Minecraft.ID, "clock", 1, 0),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480),
                 "craftingToolScrewdriver",
@@ -1305,9 +1243,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 420),
                 "craftingToolScrewdriver",
@@ -1316,9 +1254,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 340),
                 "craftingToolScrewdriver",
@@ -1327,20 +1265,20 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 52),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, 0),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
                 "platePlatinum",
@@ -1542,9 +1480,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 ItemList.Electric_Piston_LV.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         // ME formation plane
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320),
@@ -1566,9 +1504,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 ItemList.Electric_Piston_LV.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         // p2p tunnel - ME
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460),
@@ -1709,9 +1647,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         // ME storage bus
         addShapedRecipe(
                 storageBus,
@@ -1721,16 +1659,16 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
                 "screwCertusQuartz",
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
                 ItemList.Electric_Piston_LV.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
         // Clear storage bus NBT
         addShapelessRecipe(storageBus, storageBus);
         // 1k storage cell
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35),
@@ -1741,7 +1679,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35),
@@ -1753,7 +1691,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36),
@@ -1764,7 +1702,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36),
@@ -1776,7 +1714,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37),
@@ -1787,7 +1725,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37),
@@ -1799,7 +1737,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38),
@@ -1810,7 +1748,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38),
@@ -1822,7 +1760,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 "gemCertusQuartz",
@@ -1833,7 +1771,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 "gemCertusQuartz",
@@ -1864,7 +1802,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32),
@@ -1875,7 +1813,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32),
@@ -1890,7 +1828,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33),
@@ -1901,7 +1839,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33),
@@ -1916,7 +1854,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34),
@@ -1927,7 +1865,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34),
@@ -1942,7 +1880,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 AE2_HOUSING,
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
@@ -1953,7 +1891,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 AE2_HOUSING,
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1L)),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
@@ -1964,13 +1902,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35),
                 "circuitPrimitive",
-                GTOreDictUnificator.get(OrePrefixes.dust, MU.materialOf(Materials2Materials.ChargedCertusQuartz), 1),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 1),
                 "circuitPrimitive",
-                GTOreDictUnificator.get(OrePrefixes.dust, MU.materialOf(Materials2Materials.ChargedCertusQuartz), 1),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 1),
                 NHItemList.LogicProcessorItemGoldCore.get(),
-                GTOreDictUnificator.get(OrePrefixes.dust, MU.materialOf(Materials2Materials.ChargedCertusQuartz), 1),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 1),
                 "circuitPrimitive",
-                GTOreDictUnificator.get(OrePrefixes.dust, MU.materialOf(Materials2Materials.ChargedCertusQuartz), 1),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 1),
                 "circuitPrimitive");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36),
@@ -2172,7 +2110,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 67),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28), // Advanced Card
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24), // Engineering Proc.
-                MaterialLibAPI.getStack(Materials2Materials.Dilithium, Materials2Shapes.gem, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Dilithium, Shapes.gem, (int) (1)),
                 ItemList.AcceleratorUV.get(1));
         // Overflow Void Card
         addShapedRecipe(
@@ -2251,13 +2189,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1),
-                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.stick, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.stick, (int) (1)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzTorch", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.gem, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.stick, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.gem, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.stick, (int) (1)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockLightDetector", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180)).circuit(2)
@@ -2299,46 +2237,46 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (2)),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(storageBus).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.plate, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (2)),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 240)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.plate, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (2)),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 260)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Terminal
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.stick, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.Quartzite, Materials2Shapes.screw, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.stick, (int) (4)),
+                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.screw, (int) (1)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180),
                         GTOreDictUnificator.get(Circuits.MV.getIngredient(), 1),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.plate, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, (int) (1)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Crafting Terminal
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -2360,9 +2298,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(Minecraft.ID, "clock", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 370)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -2371,9 +2309,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -2381,9 +2319,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 420)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -2391,9 +2329,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 52),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 340)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -2401,7 +2339,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "hopper", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 7))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320)).duration(10 * SECONDS)
@@ -2410,7 +2348,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 7))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 300)).duration(10 * SECONDS)
@@ -2418,8 +2356,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         // P2P Tunnel - ME
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.plate, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 7))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460)).duration(18 * SECONDS)
@@ -2428,41 +2366,41 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (3)))
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (3)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Throughput Monitor
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (3)))
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (3)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 410)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 160),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (3)))
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (3)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 200),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.plate, (int) (3)))
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (3)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Portable Cell
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.screw, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, (int) (2)),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolPortableCell", 1, 0)).duration(10 * SECONDS)
@@ -2480,13 +2418,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass", 4, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.dust, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (4)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).specialValue(1000).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass", 4, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.dust, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (4)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0))
@@ -2496,25 +2434,21 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .duration(30 * SECONDS).eut(5).addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.dust, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.dust, (int) (1)))
-                .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.ChargedCertusQuartz), 1))
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, (int) (1)))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 1))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.ChargedCertusQuartz), 3),
-                        MaterialLibAPI.getStack(Materials2Materials.Sodium, Materials2Shapes.dust, (int) (1)))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 3),
+                        MaterialLibAPI.getStack(Materials.Sodium, Shapes.dust, (int) (1)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.ChargedCertusQuartz), 3),
-                        MaterialLibAPI.getStack(Materials2Materials.Sodium, Materials2Shapes.dust, (int) (1)))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 3),
+                        MaterialLibAPI.getStack(Materials.Sodium, Shapes.dust, (int) (1)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 1000)).duration(35 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
@@ -2522,22 +2456,17 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 8)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         // Quartz Fiber
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.stick, (int) (2)))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.ChargedCertusQuartz), 1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.stick, (int) (2)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.stick, (int) (8)))
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.ChargedCertusQuartz, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Quartzite, Materials2Shapes.stick, (int) (4)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.stick, (int) (8)))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Quartzite, Shapes.stick, (int) (4)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
 
@@ -2545,7 +2474,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2),
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.gem, (int) (3)))
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.gem, (int) (3)))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 

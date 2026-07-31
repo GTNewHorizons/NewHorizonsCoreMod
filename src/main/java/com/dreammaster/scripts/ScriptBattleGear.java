@@ -14,8 +14,8 @@ import java.util.List;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptBattleGear implements IScriptLoader {
 
@@ -88,7 +88,7 @@ public class ScriptBattleGear implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(MineAndBladeBattleGear2.ID, "dagger.wood", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 "craftingToolFile",
                 null,
                 "stickWood",

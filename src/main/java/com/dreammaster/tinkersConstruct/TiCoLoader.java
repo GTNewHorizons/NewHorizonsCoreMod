@@ -18,9 +18,8 @@ import com.gtnewhorizons.postea.api.TileEntityReplacementManager;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class TiCoLoader {
@@ -60,15 +59,15 @@ public class TiCoLoader {
     }
 
     private static void convertAluminumBrassBlock() {
-        ItemStack brassBlock = GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Brass), 1L);
+        ItemStack brassBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.Brass, 1L);
         // also applies a corresponding block transform.
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:MetalBlock", 7, brassBlock, false);
     }
 
     private static void convertAluminumBrassItems() {
-        ItemStack brassIngot = MaterialLibAPI.getStack(Materials2Materials.Brass, Materials2Shapes.ingot, (int) (1L));
-        ItemStack brassNugget = MaterialLibAPI.getStack(Materials2Materials.Brass, Materials2Shapes.nugget, (int) (1L));
-        ItemStack brassDust = MaterialLibAPI.getStack(Materials2Materials.Brass, Materials2Shapes.dust, (int) (1L));
+        ItemStack brassIngot = MaterialLibAPI.getStack(Materials.Brass, Shapes.ingot, (int) (1L));
+        ItemStack brassNugget = MaterialLibAPI.getStack(Materials.Brass, Shapes.nugget, (int) (1L));
+        ItemStack brassDust = MaterialLibAPI.getStack(Materials.Brass, Shapes.dust, (int) (1L));
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 14, brassIngot);
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 24, brassNugget);
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:materials", 42, brassDust);

@@ -49,11 +49,11 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.enums.materials2.Materials2CellShapes;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.CellShapes;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
@@ -903,7 +903,7 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 4),
                 "paneGlass",
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
                 "paneGlass",
                 ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Railcraft.ID, "detector", 1, 8),
@@ -920,12 +920,12 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 8),
                 ItemList.Electric_Pump_LV.get(1L),
                 "paneGlass",
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
                 "paneGlass");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 6),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Gold), 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
@@ -942,7 +942,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 10),
                 "plateRedAlloy",
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Gold), 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 1, 8),
@@ -966,18 +966,18 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 0),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Copper), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
                 "plateRedAlloy",
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Copper), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 4),
                 "plateBronze",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Gold), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
                 "plateBronze",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
@@ -1637,8 +1637,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 'i',
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3));
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Creosote, Materials2CellShapes.cell, (int) (1)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Creosote, CellShapes.cell, (int) (1)))
                 .metadata(FUEL_VALUE, 8).metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GTRecipeConstants.Fuel);
 
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.rail", 8, 0));
@@ -1891,61 +1890,61 @@ public class ScriptRailcraft implements IScriptLoader {
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0),
                 new Object[] { "abc", "def", "ghi", 'a',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'b',
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (1L)), 'c',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'd',
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dust, (int) (1L)), 'e',
-                        MaterialLibAPI.getStack(Materials2Materials.NetherQuartz, Materials2Shapes.dust, (int) (1L)),
-                        'f', MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (1L)), 'g',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'h',
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (1L)), 'i',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)) });
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'b',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (1L)), 'c',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'd',
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, (int) (1L)), 'e',
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, (int) (1L)), 'f',
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (1L)), 'g',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'h',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (1L)), 'i',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)) });
         RecipeManagers.fabricatorManager.addRecipe(
                 getModItem(Forestry.ID, "waxCast", 1, wildcard),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0),
                 new Object[] { "abc", "def", "ghi", 'a',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'b',
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (1L)), 'c',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'd',
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dust, (int) (1L)), 'e',
-                        MaterialLibAPI.getStack(Materials2Materials.CertusQuartz, Materials2Shapes.dust, (int) (1L)),
-                        'f', MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (1L)), 'g',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'h',
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (1L)), 'i',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)) });
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'b',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (1L)), 'c',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'd',
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, (int) (1L)), 'e',
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (1L)), 'f',
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (1L)), 'g',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'h',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (1L)), 'i',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)) });
         RecipeManagers.fabricatorManager.addRecipe(
                 getModItem(Forestry.ID, "waxCast", 1, wildcard),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0),
                 new Object[] { "abc", "def", "ghi", 'a',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'b',
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (1L)), 'c',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'd',
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dust, (int) (1L)), 'e',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'b',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (1L)), 'c',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'd',
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, (int) (1L)), 'e',
                         NHItemList.ChargedCertusQuartzDust.get(), 'f',
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (1L)), 'g',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'h',
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (1L)), 'i',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)) });
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (1L)), 'g',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'h',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (1L)), 'i',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)) });
         RecipeManagers.fabricatorManager.addRecipe(
                 getModItem(Forestry.ID, "waxCast", 1, wildcard),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0),
                 new Object[] { "abc", "def", "ghi", 'a',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'b',
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (1L)), 'c',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'd',
-                        MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.dust, (int) (1L)), 'e',
-                        MaterialLibAPI.getStack(Materials2Materials.Quartzite, Materials2Shapes.dust, (int) (1L)), 'f',
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (1L)), 'g',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)), 'h',
-                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (1L)), 'i',
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (1L)) });
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'b',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (1L)), 'c',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'd',
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, (int) (1L)), 'e',
+                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, (int) (1L)), 'f',
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (1L)), 'g',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)), 'h',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (1L)), 'i',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)) });
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 7))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Marble, Materials2Shapes.dust, (int) (1)))
-                .duration(8 * SECONDS).eut(4).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Marble, Shapes.dust, (int) (1))).duration(8 * SECONDS)
+                .eut(4).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "torch", 1, 0), getModItem(Railcraft.ID, "slab", 2, 28))
                 .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 0)).duration(10 * SECONDS).eut(2)
@@ -1992,25 +1991,25 @@ public class ScriptRailcraft implements IScriptLoader {
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ingot, (int) (5L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (5L)),
                         NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ingot, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (8L)),
                         NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.plate", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ingot, (int) (7L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (7L)),
                         NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.legs", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ingot, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (4L)),
                         NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.boots", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
@@ -2076,70 +2075,58 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "machine.alpha", 1, 14),
 
                 new Object[] { "PPP", "IhI", "PSP", 'P',
-                        MU.craftIngredient(OrePrefixes.plank, Materials2Materials.Wood), 'I',
-                        MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Iron), 'S',
+                        MaterialParts.craftIngredient(OrePrefixes.plank, Materials.Wood), 'I',
+                        MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Iron), 'S',
                         ItemList.IC2_Resin.get(1L) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 2, 14),
 
                 new Object[] { "PPP", "IhI", "PSP", 'P',
-                        MU.craftIngredient(OrePrefixes.plank, Materials2Materials.Wood), 'I',
-                        MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Iron), 'S',
-                        MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Rubber) });
+                        MaterialParts.craftIngredient(OrePrefixes.plank, Materials.Wood), 'I',
+                        MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Iron), 'S',
+                        MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Rubber) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 4, 14),
 
                 new Object[] { "PPP", "IhI", "PSP", 'P',
-                        MU.craftIngredient(OrePrefixes.plank, Materials2Materials.Wood), 'I',
-                        MU.craftIngredient(OrePrefixes.stick, Materials2Materials.CastIron), 'S',
-                        MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Rubber) });
+                        MaterialParts.craftIngredient(OrePrefixes.plank, Materials.Wood), 'I',
+                        MaterialParts.craftIngredient(OrePrefixes.stick, Materials.CastIron), 'S',
+                        MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Rubber) });
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.stick, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 1))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, (int) (1)),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 1L, 14))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Glue,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1 * HALF_INGOTS)))
+                        MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, (int) (1 * HALF_INGOTS)))
                 .duration(10 * SECONDS).eut(8).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 2))
+                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, (int) (1)),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 2L, 14))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Glue,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1 * HALF_INGOTS)))
+                        MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, (int) (1 * HALF_INGOTS)))
                 .duration(10 * SECONDS).eut(8).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.stick, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 4))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, (int) (1)),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 4))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 4L, 14))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Rubber,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (1 * INGOTS)))
+                        MaterialLibAPI.getFluidStack(Materials.Rubber, FluidShapes.fluidMolten, (int) (1 * INGOTS)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 8))
+                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, (int) (1)),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 8))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 8L, 14))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Rubber,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (1 * INGOTS)))
+                        MaterialLibAPI.getFluidStack(Materials.Rubber, FluidShapes.fluidMolten, (int) (1 * INGOTS)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -2173,8 +2160,8 @@ public class ScriptRailcraft implements IScriptLoader {
                 .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0))
@@ -2190,20 +2177,14 @@ public class ScriptRailcraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI
-                                        .getStack(Materials2Materials.Diamond, Materials2Shapes.lens, (int) (1L))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Diamond, Shapes.lens, (int) (1L))),
                         getModItem(Railcraft.ID, "firestone.raw", 1, 0))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.cut", 1, 0)).duration(8 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI
-                                        .getStack(Materials2Materials.Firestone, Materials2Shapes.lens, (int) (1L))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Firestone, Shapes.lens, (int) (1L))),
                         getModItem(Railcraft.ID, "firestone.raw", 1, 0))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.cut", 1, 0)).duration(2 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
@@ -2227,15 +2208,15 @@ public class ScriptRailcraft implements IScriptLoader {
                 'b',
                 "dyeRed",
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, (int) (1L)),
                 'd',
                 "dyeRed",
                 'e',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, (int) (1L)),
                 'f',
                 "dyeRed",
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, (int) (1L)),
                 'h',
                 "dyeRed",
                 'i',

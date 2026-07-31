@@ -24,10 +24,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
 
 public class ScriptBiblioCraft implements IScriptLoader {
@@ -496,7 +496,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "screwGold");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1)),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioLantern", 4)).duration(3 * SECONDS)
@@ -516,7 +516,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1)),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioIronLantern", 4)).duration(3 * SECONDS)
@@ -897,8 +897,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(MaterialUtils.fluid(Materials.Water, 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
@@ -907,27 +907,23 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Lubricant,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (1)))
                 .duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         // --- Frame Board
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(cutterRecipes);
+                .fluidInputs(MaterialUtils.fluid(Materials.Water, 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
@@ -936,19 +932,15 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Lubricant,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (1)))
                 .duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
 

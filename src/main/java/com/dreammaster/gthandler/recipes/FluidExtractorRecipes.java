@@ -19,8 +19,8 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
 import gregtech.api.recipe.RecipeCategories;
 
 public class FluidExtractorRecipes implements Runnable {
@@ -28,17 +28,13 @@ public class FluidExtractorRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1, 0)).fluidOutputs(
-                MaterialLibAPI
-                        .getFluidStack(Materials2Materials.Glass, Materials2FluidShapes.fluidMolten, (int) (144L)))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1, 0))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, (int) (144L)))
                 .duration(1 * SECONDS + 4 * TICKS).eut(54).addTo(fluidExtractionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystal.get(1L))
                 .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.GalliumArsenide,
-                                Materials2FluidShapes.fluidMolten,
-                                (int) (288L)))
+                        MaterialLibAPI.getFluidStack(Materials.GalliumArsenide, FluidShapes.fluidMolten, (int) (288L)))
                 .duration(2 * SECONDS + 8 * TICKS).eut(37).addTo(fluidExtractionRecipes);
 
         if (OpenBlocks.isModLoaded() && TinkerConstruct.isModLoaded()) {
@@ -83,27 +79,21 @@ public class FluidExtractorRecipes implements Runnable {
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0)).fluidOutputs(
-                    MaterialLibAPI
-                            .getFluidStack(Materials2Materials.Glass, Materials2FluidShapes.fluidMolten, (int) (144L)))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, (int) (144L)))
                     .duration(24 * TICKS).eut(54).recipeCategory(RecipeCategories.fluidExtractorRecycling)
                     .addTo(fluidExtractionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0)).fluidOutputs(
-                    MaterialLibAPI
-                            .getFluidStack(Materials2Materials.Glass, Materials2FluidShapes.fluidMolten, (int) (54L)))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, (int) (54L)))
                     .duration(9 * TICKS).eut(54).recipeCategory(RecipeCategories.fluidExtractorRecycling)
                     .addTo(fluidExtractionRecipes);
 
         }
 
         if (GalacticraftAmunRa.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.wood1", 8, 1))
-                    .fluidOutputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.BrightLumipodExtract,
-                                    Materials2FluidShapes.fluidLiquid,
-                                    (int) (250)))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.wood1", 8, 1)).fluidOutputs(
+                    MaterialLibAPI.getFluidStack(Materials.BrightLumipodExtract, FluidShapes.fluidLiquid, (int) (250)))
 
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(fluidExtractionRecipes);
         }

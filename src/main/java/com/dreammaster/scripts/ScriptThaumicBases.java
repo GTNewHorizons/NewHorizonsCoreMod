@@ -36,9 +36,9 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
@@ -222,12 +222,12 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.METAL, 16).add(Aspect.MAGIC, 24),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 0),
                 getModItem(Railcraft.ID, "machine.beta", 1, 4),
-                MU.craftIngredient(OrePrefixes.plateDense, Materials2Materials.Steel),
-                MU.craftIngredient(OrePrefixes.block, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Steel),
+                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 1),
-                MU.craftIngredient(OrePrefixes.block, Materials2Materials.Thaumium),
-                MU.craftIngredient(OrePrefixes.plateDense, Materials2Materials.Steel));
+                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Steel));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.ThaumicAnvil",
                 getModItem(ThaumicBases.ID, "thaumicAnvil", 1, 0),
@@ -260,19 +260,19 @@ public class ScriptThaumicBases implements IScriptLoader {
                 6,
                 new AspectList().add(Aspect.MAGIC, 32).add(Aspect.AURA, 16).add(Aspect.METAL, 16)
                         .add(Aspect.CRYSTAL, 16).add(Aspect.TOOL, 32),
-                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium));
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.BloodyRobes",
                 getModItem(ThaumicBases.ID, "bloodyChest", 1, 0),
@@ -395,15 +395,15 @@ public class ScriptThaumicBases implements IScriptLoader {
                 new AspectList().add(Aspect.WEAPON, 32).add(Aspect.TOOL, 32).add(Aspect.DARKNESS, 16)
                         .add(Aspect.ELDRITCH, 16).add(Aspect.METAL, 16).add(Aspect.DEATH, 16),
                 getModItem(ThaumicBases.ID, "spike", 1, 2),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}"),
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
                 getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
                 createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1583, "{material:\"Void\"}"),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void));
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.VoidAnvil",
                 getModItem(ThaumicBases.ID, "voidAnvil", 1, 0),
@@ -412,15 +412,15 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.ELDRITCH, 32).add(Aspect.DARKNESS, 16).add(Aspect.VOID, 16).add(Aspect.METAL, 16)
                         .add(Aspect.MAGIC, 16),
                 getModItem(ThaumicBases.ID, "thaumicAnvil", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void));
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.VoidSeed",
                 getModItem(ThaumicBases.ID, "voidSeed", 1, 0),
@@ -463,13 +463,13 @@ public class ScriptThaumicBases implements IScriptLoader {
                 6,
                 new AspectList().add(Aspect.GREED, 32).add(Aspect.CRYSTAL, 32).add(Aspect.MIND, 16)
                         .add(Aspect.EXCHANGE, 16),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.Emerald),
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Emerald),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Emerald),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.Foci.Activation",
@@ -477,7 +477,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 4,
                 new AspectList().add(Aspect.MOTION, 32).add(Aspect.CRYSTAL, 32).add(Aspect.TRAVEL, 16)
                         .add(Aspect.SENSES, 16),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.InfusedOrder),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedOrder),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
                 ItemList.Emitter_LV.get(1L),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
@@ -489,7 +489,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "fociDrain", 1, 0),
                 5,
                 new AspectList().add(Aspect.VOID, 32).add(Aspect.ENTROPY, 32).add(Aspect.WATER, 16),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.InfusedWater),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedWater),
                 getModItem(Minecraft.ID, "bucket", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 3),
@@ -504,7 +504,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 7,
                 new AspectList().add(Aspect.TAINT, 32).add(Aspect.ENTROPY, 32).add(Aspect.ORDER, 16)
                         .add(Aspect.MAGIC, 16).add(Aspect.HEAL, 16),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.EnderEye),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.EnderEye),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 4),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
@@ -521,8 +521,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 GregtechItemList.DoubleCompressedObsidian.get(1),
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8),
                 getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.plateDense, Materials2Materials.Thaumium));
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Thaumium));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.TaintFlask",
                 getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0),
@@ -541,13 +541,13 @@ public class ScriptThaumicBases implements IScriptLoader {
                 new AspectList().add(Aspect.MIND, 32).add(Aspect.SOUL, 24).add(Aspect.DEATH, 16).add(Aspect.MAGIC, 16),
                 getModItem(Thaumcraft.ID, "blockTable", 1, 14),
                 getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.InfusedAir),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.InfusedFire),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.InfusedWater),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedAir),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedFire),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedWater),
                 getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.InfusedEarth),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.InfusedEntropy),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.InfusedOrder));
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedEarth),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedEntropy),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedOrder));
         TCHelper.addInfusionCraftingRecipe(
                 "ROD_tbvoid",
                 getModItem(ThaumicBases.ID, "resource", 1, 4),
@@ -559,11 +559,11 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 7),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 7),
                 getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 7),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 7),
                 getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void));
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeMan",
                 getModItem(ThaumicBases.ID, "nodeManipulator", 1, 0),
@@ -573,7 +573,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11),
                 getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0),
                 ItemList.Emitter_EV.get(1L),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Knightmetal),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Knightmetal),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 ItemList.Sensor_EV.get(1L),
@@ -581,7 +581,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 ItemList.Sensor_EV.get(1L),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Knightmetal),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Knightmetal),
                 ItemList.Emitter_EV.get(1L));
         TCHelper.addInfusionCraftingRecipe(
                 "TB.NodeLinker",
@@ -616,8 +616,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 6),
                 getModItem(ThaumicBases.ID, "crystalBlock", 1, 6),
                 getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0),
-                MU.craftIngredient(OrePrefixes.block, Materials2Materials.Thaumium),
-                MU.craftIngredient(OrePrefixes.block, Materials2Materials.Thaumium));
+                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Thaumium));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Iron",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 0),
@@ -942,9 +942,9 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 5),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 6),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 7),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Iridium),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Iridium),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Iridium),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Iridium),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 8),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 9),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 10),
@@ -1296,8 +1296,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (2)))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
     }

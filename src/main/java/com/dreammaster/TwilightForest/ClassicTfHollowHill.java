@@ -4,22 +4,18 @@ import static twilightforest.world.TFGenCaveStalactite.glowstone;
 
 import java.util.Random;
 
-import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials.Materials;
 import twilightforest.world.TFGenCaveStalactite;
 
 public class ClassicTfHollowHill {
 
-    private static final TFGenCaveStalactite diamond = new GregtechStalactite(Materials2Materials.Diamond, 0.5F, 4, 16);
-    private static final TFGenCaveStalactite lapis = new GregtechStalactite(Materials2Materials.Lapis, 0.8F, 8, 1);
-    private static final TFGenCaveStalactite emerald = new GregtechStalactite(Materials2Materials.Emerald, 0.5F, 3, 12);
-    private static final TFGenCaveStalactite gold = new GregtechStalactite(Materials2Materials.Gold, 0.6F, 6, 1);
-    private static final TFGenCaveStalactite redstone = new GregtechStalactite(
-            Materials2Materials.Redstone,
-            0.8F,
-            8,
-            1);
-    private static final TFGenCaveStalactite iron = new GregtechStalactite(Materials2Materials.Iron, 0.7F, 8, 1);
-    private static final TFGenCaveStalactite coal = new GregtechStalactite(Materials2Materials.Coal, 0.8F, 12, 1);
+    private static final TFGenCaveStalactite diamond = new GregtechStalactite(Materials.Diamond, 0.5F, 4, 16);
+    private static final TFGenCaveStalactite lapis = new GregtechStalactite(Materials.Lapis, 0.8F, 8, 1);
+    private static final TFGenCaveStalactite emerald = new GregtechStalactite(Materials.Emerald, 0.5F, 3, 12);
+    private static final TFGenCaveStalactite gold = new GregtechStalactite(Materials.Gold, 0.6F, 6, 1);
+    private static final TFGenCaveStalactite redstone = new GregtechStalactite(Materials.Redstone, 0.8F, 8, 1);
+    private static final TFGenCaveStalactite iron = new GregtechStalactite(Materials.Iron, 0.7F, 8, 1);
+    private static final TFGenCaveStalactite coal = new GregtechStalactite(Materials.Coal, 0.8F, 12, 1);
 
     // Copied from Twilight Forest's implementation, but returns our own stalactites most of the time
     static TFGenCaveStalactite makeStalactite(Random rand, int hillSize) {

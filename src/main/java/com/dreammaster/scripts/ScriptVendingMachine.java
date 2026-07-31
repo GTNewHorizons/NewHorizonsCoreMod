@@ -17,9 +17,8 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -37,7 +36,7 @@ public class ScriptVendingMachine implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack ironPlate = MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1));
+        ItemStack ironPlate = MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1));
         addShapedRecipe(
                 VMItems.vendingMachine,
                 getModItem(Minecraft.ID, "stone_button", 1, 0),
@@ -60,8 +59,7 @@ public class ScriptVendingMachine implements IScriptLoader {
                 ironPlate,
                 "foilIron",
                 ironPlate);
-        GTOreDictUnificator
-                .addItemData(VMItems.casing, new ItemData(MU.materialOf(Materials2Materials.Iron), 7 * GTValues.M));
+        GTOreDictUnificator.addItemData(VMItems.casing, new ItemData(Materials.Iron, 7 * GTValues.M));
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),

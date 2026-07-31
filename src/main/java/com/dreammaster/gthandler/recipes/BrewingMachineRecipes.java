@@ -19,8 +19,8 @@ import forestry.api.recipes.IFermenterRecipe;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
 
 public class BrewingMachineRecipes implements Runnable {
 
@@ -76,12 +76,8 @@ public class BrewingMachineRecipes implements Runnable {
                             .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
                             .eut(3).addTo(brewingRecipes);
 
-                    GTValues.RA.stdBuilder().itemInputs(resource)
-                            .fluidInputs(
-                                    MaterialLibAPI.getFluidStack(
-                                            Materials2Materials.Honey,
-                                            Materials2FluidShapes.fluidLiquid,
-                                            (int) (amountIn)))
+                    GTValues.RA.stdBuilder().itemInputs(resource).fluidInputs(
+                            MaterialLibAPI.getFluidStack(Materials.Honey, FluidShapes.fluidLiquid, (int) (amountIn)))
                             .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
                             .eut(3).addTo(brewingRecipes);
 

@@ -14,32 +14,29 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTRecipeRegistrator;
 
 public class WiremillRecipes implements Runnable {
 
     @Override
     public void run() {
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.MeteoricIron, Materials2Shapes.stickLong, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.stickLong, (int) (1L)))
                 .itemOutputs(NHItemList.MeteoricIronString.get(4)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(wiremillRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.stickLong, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Tungsten, Shapes.stickLong, (int) (1L)))
                 .itemOutputs(NHItemList.TungstenString.get(4)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(wiremillRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.BorosilicateGlass, Materials2Shapes.ingot, (int) (1)))
-                .circuit(3).itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.ingot, (int) (1))).circuit(3)
+                .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(wiremillRecipes);
 
-        GTRecipeRegistrator.registerWiremillRecipes(MU.materialOf(Materials2Materials.NetherStar), 200, 4);
+        GTRecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
 
         if (Natura.isModLoaded()) {
 
