@@ -62,6 +62,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
@@ -155,7 +156,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 Materials2Materials.NaquadahEnriched,
                                 Materials2Shapes.itemCasing,
                                 (int) (4L)),
-                        new Object[] { "foilAnySyntheticRubber", 64L },
+                        new Object[] { OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L },
                         MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.bolt, (int) (32L)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -178,7 +179,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 .get(OrePrefixes.pipeTiny, MU.materialOf(Materials2Materials.Polybenzimidazole), 16),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.itemCasing, (int) (16L)),
-                        new Object[] { "foilAnySyntheticRubber", 64L },
+                        new Object[] { OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L },
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.bolt, (int) (32L)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -665,7 +666,8 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Circuit_Chip_Ram.get(64L), ItemList.Circuit_Chip_NPIC.get(64L),
                             GTOreDictUnificator
                                     .get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Draconium), 64),
-                            Superconductors.UHV.getWireGt02(64), new Object[] { "foilAnySyntheticRubber", 64L },
+                            Superconductors.UHV.getWireGt02(64),
+                            new Object[] { OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L },
                             MaterialLibAPI.getStack(
                                     Materials2Materials.Polybenzimidazole,
                                     Materials2Shapes.foil,
@@ -1014,7 +1016,8 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Circuit_Chip_Ram.get(64L), ItemList.Circuit_Chip_NPIC.get(64L),
                             GTOreDictUnificator
                                     .get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Draconium), 64),
-                            Superconductors.UHV.getWireGt02(64), new Object[] { "foilAnySyntheticRubber", 64L },
+                            Superconductors.UHV.getWireGt02(64),
+                            new Object[] { OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L },
                             MaterialLibAPI.getStack(
                                     Materials2Materials.Polybenzimidazole,
                                     Materials2Shapes.foil,

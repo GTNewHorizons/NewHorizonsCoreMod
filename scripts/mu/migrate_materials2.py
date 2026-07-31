@@ -54,6 +54,7 @@ from pathlib import Path
 
 GT5U_ROOT = Path("C:/Users/alexw/Documents/GitHub/gtnh/GT5-Unofficial")
 ML_MATERIALS_JSON = GT5U_ROOT / "scripts/mu/dumps/ml-materials.json"
+WERKSTOFF_FIELDS_JSON = GT5U_ROOT / "scripts/mu/dumps/werkstoff-fields.json"
 MATERIALS_DIR = GT5U_ROOT / "src/main/java/gregtech/api/enums/materials"
 MATERIALS_INIT_REF = "origin/master:src/main/java/gregtech/loaders/materials/MaterialsInit.java"
 
