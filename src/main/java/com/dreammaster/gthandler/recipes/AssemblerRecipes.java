@@ -127,7 +127,6 @@ import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
 import gtnhlanth.common.register.LanthItemList;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
 import kekztech.common.TileEntities;
 
 public class AssemblerRecipes implements Runnable {
@@ -3754,7 +3753,7 @@ public class AssemblerRecipes implements Runnable {
                 Superconductors.EV.getWireGt02(8),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, MU.materialOf(Materials2Materials.Aluminium), 2L),
                 GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Titanium), 1L),
-                WerkstoffMaterialPool.Permalloy.get(OrePrefixes.stickLong, 8),
+                MaterialLibAPI.getStack(Materials2Materials.Permalloy, Materials2Shapes.stickLong, (int) (8)),
                 MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.plateDouble, (int) (2L)),
                 ItemList.Reactor_Coolant_He_6.get(1),
                 ItemList.Electric_Pump_EV.get(1)).circuit(6)
@@ -3769,7 +3768,7 @@ public class AssemblerRecipes implements Runnable {
                 Superconductors.EV.getWireGt02(8),
                 GTOreDictUnificator.get(OrePrefixes.cableGt04, MU.materialOf(Materials2Materials.Aluminium), 2L),
                 GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Titanium), 1L),
-                WerkstoffMaterialPool.Permalloy.get(OrePrefixes.stickLong, 8),
+                MaterialLibAPI.getStack(Materials2Materials.Permalloy, Materials2Shapes.stickLong, (int) (8)),
                 MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.plateDouble, (int) (2L)),
                 ItemList.Reactor_Coolant_NaK_6.get(1),
                 ItemList.Electric_Pump_EV.get(1)).circuit(6)
@@ -3788,7 +3787,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Tungsten), 2L),
                         GTOreDictUnificator
                                 .get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.TungstenSteel), 1L),
-                        WerkstoffMaterialPool.Permalloy.get(OrePrefixes.stickLong, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.Permalloy, Materials2Shapes.stickLong, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.HSSG, Materials2Shapes.plateDouble, (int) (2L)),
                         ItemList.Reactor_Coolant_Sp_3.get(1),
                         ItemList.Electric_Pump_IV.get(1))

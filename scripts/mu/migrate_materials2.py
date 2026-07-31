@@ -637,7 +637,7 @@ def apply_foreign_static_import_pass(text: str):
     pattern = re.compile(r"(?<![\w.])(" + "|".join(sorted(qualify, key=len, reverse=True)) + r")\b")
     out = []
     for line in kept:
-        if line.lstrip().startswith("import "):
+        if line.lstrip().startswith(("import ", "//", "*", "/*")):
             out.append(line)
             continue
         out.append(

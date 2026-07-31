@@ -30,7 +30,6 @@ import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class LaserEngraverRecipes implements Runnable {
 
@@ -387,7 +386,7 @@ public class LaserEngraverRecipes implements Runnable {
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .itemOutputs(
                         ItemList.Circuit_Chip_APIC.get(1),
-                        WerkstoffMaterialPool.SeaweedAsh.get(OrePrefixes.dust, 2))
+                        MaterialLibAPI.getStack(Materials2Materials.SeaweedAsh, Materials2Shapes.dust, (int) (2)))
                 .outputChances(10000, 6700).requiresCleanRoom().addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()

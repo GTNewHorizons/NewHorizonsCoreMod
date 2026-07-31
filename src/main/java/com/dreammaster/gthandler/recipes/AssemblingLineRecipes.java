@@ -79,7 +79,6 @@ import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtnhlanth.common.register.LanthItemList;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
 import tectech.recipe.TTRecipeAdder;
 import tectech.thing.CustomItemList;
 import tectech.thing.block.BlockGodforgeGlass;
@@ -2173,7 +2172,7 @@ public class AssemblingLineRecipes implements Runnable {
                                     OrePrefixes.pipeMedium,
                                     MU.materialOf(Materials2Materials.NiobiumTitanium),
                                     1L),
-                            WerkstoffMaterialPool.MuMetal.get(OrePrefixes.stickLong, 8),
+                            MaterialLibAPI.getStack(Materials2Materials.Mumetal, Materials2Shapes.stickLong, (int) (8)),
                             MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.plateDouble, (int) (2L)),
                             ItemList.Reactor_Coolant_Sp_3.get(1),
                             ItemList.Reactor_Coolant_Sp_3.get(1),
@@ -2191,7 +2190,7 @@ public class AssemblingLineRecipes implements Runnable {
                                     .get(OrePrefixes.cableGt04, MU.materialOf(Materials2Materials.Naquadah), 2L),
                             GTOreDictUnificator
                                     .get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Enderium), 1L),
-                            WerkstoffMaterialPool.MuMetal.get(OrePrefixes.stickLong, 8),
+                            MaterialLibAPI.getStack(Materials2Materials.Mumetal, Materials2Shapes.stickLong, (int) (8)),
                             MaterialLibAPI.getStack(
                                     Materials2Materials.NaquadahAlloy,
                                     Materials2Shapes.plateDouble,

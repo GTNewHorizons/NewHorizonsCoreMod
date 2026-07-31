@@ -55,7 +55,6 @@ import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtnhintergalactic.recipe.IGRecipeMaps;
 import gtnhlanth.common.register.LanthItemList;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
 import tectech.recipe.TTRecipeAdder;
 import tectech.thing.CustomItemList;
 
@@ -153,7 +152,11 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new ItemStack(ItemRegistry.bw_realglas, 8, 6),
                         MaterialLibAPI.getStack(Materials2Materials.RoseGold, Materials2Shapes.wireFine, (int) (64)),
                         GregtechItemList.Laser_Lens_Special.get(0))
-                .fluidInputs(WerkstoffMaterialPool.FluoroformOxygenMix.getFluidOrGas(2000))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.ReactiveIonEtchingMixture,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (2000)))
                 .itemOutputs(ItemList.ComplexNanochipGlass.get(8)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(laserEngraverRecipes);
 
