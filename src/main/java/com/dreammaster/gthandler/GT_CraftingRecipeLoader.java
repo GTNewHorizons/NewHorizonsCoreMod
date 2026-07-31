@@ -2,7 +2,6 @@ package com.dreammaster.gthandler;
 
 import static com.dreammaster.item.NHItemList.CokeOvenBrick;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Materials.Bronze;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
@@ -51,6 +50,7 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.recipes.Recipe;
 import com.dreammaster.recipes.ShapedUniversalRecipe;
+import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
@@ -70,6 +70,7 @@ import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTLog;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -529,18 +530,18 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Coated_Basic.get(1, o),
                 new Object[] { "FFF", "FCF", "FFF", 'C', ItemList.Circuit_Board_Coated.get(1, o), 'F',
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 1) });
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Copper), 1) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Good.get(1, o),
                 new Object[] { "PAP", "CBC", "DCD", 'D', ItemList.Circuit_Parts_Diode.get(1, o), 'C',
                         Ic2Items.electronicCircuit, 'A',
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.itemCasing, (int) (1)), 'P',
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 1), 'B',
-                        ItemList.Circuit_Board_Phenolic_Good.get(1, o) });
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Copper), 1),
+                        'B', ItemList.Circuit_Board_Phenolic_Good.get(1, o) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Phenolic_Good.get(1, o),
                 new Object[] { "FFF", "FCF", "FFF", 'C', ItemList.Circuit_Board_Phenolic.get(1, o), 'F',
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 1) });
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Gold), 1) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Parts_Resistor.get(1, o),
                 new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
@@ -813,8 +814,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.LATEX.get(1),
                 GTModHandler.RecipeBits.BITS,
                 new Object[] { "SPS", "CMC", "SPS", 'S',
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.RubberSilicone, 1L), 'P',
-                        ItemList.Electric_Pump_HV.get(1L), 'C', Circuits.EV.getIngredient(), 'M',
+                        MaterialLibAPI.getStack(Materials2Materials.Silicone, Materials2Shapes.plateDense, (int) (1L)),
+                        'P', ItemList.Electric_Pump_HV.get(1L), 'C', Circuits.EV.getIngredient(), 'M',
                         ItemList.Machine_HV_Assembler.get(1) });
 
         // Reinforced Wooden Casing
@@ -963,7 +964,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         'B', CokeOvenBrick.get().splitStack(1),
                         'H', getModItem(Minecraft.ID, "hopper", 1, 0),
                         'C', getModItem(Minecraft.ID, "chest", 1, 0),
-                        'P', pipeMedium.get(Bronze)
+                        'P', pipeMedium.get(Materials.Bronze)
                         // spotless:on
                 });
 
@@ -971,20 +972,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Diodes
         // ===================================================================================================
 
-        Materials[] cables = { // Cable material used in the acid gen, diode and energy distributor below
-                Materials.Bedrockium, // UHV
-                Materials.Draconium, // UEV
-                Materials.NetherStar, // UIV
-                Materials.Quantium, // UMV
-                Materials.BlackPlutonium, // UXV
-                Materials.DraconiumAwakened, // MAX
+        Material[] cables = { // Cable material used in the acid gen, diode and energy distributor below
+                Materials2Materials.Bedrockium, // UHV
+                Materials2Materials.Draconium, // UEV
+                Materials2Materials.NetherStar, // UIV
+                Materials2Materials.Quantium, // UMV
+                Materials2Materials.BlackPlutonium, // UXV
+                Materials2Materials.DraconiumAwakened, // MAX
         };
 
         final long BITSD = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE;
 
         for (int i = 9; i < GTValues.VN.length - 1; i++) {
             try {
-                Materials cable = cables[i - 9];
+                Material cable = cables[i - 9];
                 ItemStack hull;
 
                 ItemStack machinehull;
@@ -1025,43 +1026,53 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         ItemRegistry.energyDistributor[i],
                         BITSD,
                         new Object[] { "PWP", "WCW", "PWP", 'W',
-                                GTOreDictUnificator.get(OrePrefixes.wireGt16, cable, 1L), 'P', hull, 'C',
+                                GTOreDictUnificator.get(OrePrefixes.wireGt16, MU.materialOf(cable), 1L), 'P', hull, 'C',
                                 machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode12A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt12 : OrePrefixes.wireGt12, cable, 1L),
+                                GTOreDictUnificator.get(
+                                        i < 13 ? OrePrefixes.cableGt12 : OrePrefixes.wireGt12,
+                                        MU.materialOf(cable),
+                                        1L),
                                 'P', hull, 'C', machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode8A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt08 : OrePrefixes.wireGt08, cable, 1L),
+                                GTOreDictUnificator.get(
+                                        i < 13 ? OrePrefixes.cableGt08 : OrePrefixes.wireGt08,
+                                        MU.materialOf(cable),
+                                        1L),
                                 'P', hull, 'C', machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode4A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt04 : OrePrefixes.wireGt04, cable, 1L),
+                                GTOreDictUnificator.get(
+                                        i < 13 ? OrePrefixes.cableGt04 : OrePrefixes.wireGt04,
+                                        MU.materialOf(cable),
+                                        1L),
                                 'P', hull, 'C', machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode2A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt02 : OrePrefixes.wireGt02, cable, 1L),
+                                GTOreDictUnificator.get(
+                                        i < 13 ? OrePrefixes.cableGt02 : OrePrefixes.wireGt02,
+                                        MU.materialOf(cable),
+                                        1L),
                                 'P', hull, 'C', machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode16A[i],
                         BITSD,
                         new Object[] { "WHW", "DCD", "PDP", 'H', CircuitComponents.INDUCTOR.getIngredient(), 'D',
                                 CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt16 : OrePrefixes.wireGt16, cable, 1L),
+                                GTOreDictUnificator.get(
+                                        i < 13 ? OrePrefixes.cableGt16 : OrePrefixes.wireGt16,
+                                        MU.materialOf(cable),
+                                        1L),
                                 'P', hull, 'C', machinehull });
 
             } catch (ArrayIndexOutOfBoundsException e) {
@@ -1139,8 +1150,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 new ItemStack(Blocks.iron_bars, 3, 0),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
-                new Object[] { " h ", "SSS", "SSS", 'S',
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1) });
+                new Object[] { " h ", "SSS", "SSS", 'S', GTOreDictUnificator.get("stickAnyIron", 1) });
         GTModHandler.addCraftingRecipe(
                 BlockList.SteelBars.get(3),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
