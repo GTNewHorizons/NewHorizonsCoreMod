@@ -18,7 +18,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
-import static gtnhlanth.common.register.WerkstoffMaterialPool.Iodine;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -388,7 +387,10 @@ public class ChemicalReactorRecipes implements Runnable {
                                 (int) (1440L)))
                 .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(UniversalChemical);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_QPIC.get(1L), Iodine.get(OrePrefixes.dust, 64))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_QPIC.get(1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Iodine, Materials2Shapes.dust, (int) (64)))
                 .itemOutputs(ItemList.Circuit_Wafer_FPIC.get(1L))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(

@@ -13,7 +13,6 @@ import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
 import static toxiceverglades.dimension.DimensionEverglades.blockSecondLayer;
 
 import net.minecraft.item.ItemStack;
@@ -565,8 +564,10 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Gangue Singularity
-            GTValues.RA.stdBuilder()
-                    .itemInputsUnsafe(GTUtility.copyAmountUnsafe(444444, Gangue.get(OrePrefixes.block, 1)))
+            GTValues.RA.stdBuilder().itemInputsUnsafe(
+                    GTUtility.copyAmountUnsafe(
+                            444444,
+                            GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Gangue), 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 31))
                     .duration(120 * SECONDS).eut(TierEU.RECIPE_UEV).metadata(COMPRESSION_TIER, 2)
                     .addTo(neutroniumCompressorRecipes);

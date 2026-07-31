@@ -46,7 +46,6 @@ import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
 import tectech.thing.block.BlockGodforgeGlass;
 
 public class CompressorRecipes implements Runnable {
@@ -113,9 +112,10 @@ public class CompressorRecipes implements Runnable {
                 .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.ingot, (int) (1L)))
                 .duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(WerkstoffMaterialPool.Gangue.get(OrePrefixes.dust, 9))
-                .itemOutputs((WerkstoffMaterialPool.Gangue.get(OrePrefixes.block, 1))).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Gangue, Materials2Shapes.dust, (int) (9)))
+                .itemOutputs((GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Gangue), 1)))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.ingot, (int) (9L)))
