@@ -42,12 +42,12 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
@@ -355,7 +355,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
         GTValues.RA.stdBuilder() // drone case
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TranscendentMetal, 1),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.TranscendentMetal), 1),
                         ItemList.Emitter_UEV.get(1),
                         ItemList.Sensor_UEV.get(1),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(64),
@@ -365,7 +366,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                                 Materials2Materials.CosmicNeutronium,
                                 Materials2Shapes.turbineBlade,
                                 (int) (8)),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.RadoxPoly, Materials2Shapes.itemCasing, (int) (8)),
                         ItemList.UHTResistantMesh.get(64))
                 .itemOutputs(ItemList.DroneCase.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304))
@@ -375,7 +376,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         ItemList.Optically_Perfected_CPU.get(1),
                         Circuits.UHV.get(4),
                         ItemList.Circuit_Chip_FPIC.get(8),
-                        Materials.Silver.getNanite(2),
+                        GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Silver), 2),
                         ItemList.EnergisedTesseract.get(1),
                         ItemRefer.HiC_T5.get(4),
                         MaterialLibAPI.getStack(
@@ -404,7 +405,12 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         ItemRefer.Advanced_Radiation_Protection_Plate.get(48),
                         ItemList.UHTResistantMesh.get(64))
                 .itemOutputs(ItemList.FuelPellet.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(16000)).addTo(assemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (16000)))
+                .addTo(assemblerRecipes);
 
         // Chemical Reactor
         GTValues.RA.stdBuilder()
@@ -450,8 +456,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(
                 MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.dust, (int) (1)))
                 .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0)).outputChances(90_00)
-                .fluidInputs(Materials.Water.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_HV)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(1000)).duration(3 * MINUTES)
+                .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(
                 MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.dust, (int) (1)))
                 .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0))

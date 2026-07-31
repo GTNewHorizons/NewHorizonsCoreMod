@@ -34,7 +34,6 @@ import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.Superconductors;
@@ -42,6 +41,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.recipe.Scanning;
@@ -120,7 +120,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
         // Teleporter core MK0
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.StainlessSteel), 1),
                         ItemList.Emitter_HV.get(2),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15), // primal charm
                         ItemList.QuantumEye.get(2),
@@ -191,7 +192,8 @@ public class ScriptMatterManipulator implements IScriptLoader {
         // Computer core MK1
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.TungstenSteel), 1),
                         new Object[] { Circuits.ZPM.getIngredient(), 2 },
                         Superconductors.IV.getWireGt01(12),
                         MaterialLibAPI
@@ -204,7 +206,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
         // Teleporter core MK1
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Enderium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Enderium), 1),
                         getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0), // teleporter
                         ItemList.Emitter_IV.get(2),
                         MaterialLibAPI
@@ -266,10 +268,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
 
         // Computer core MK2
         GTValues.RA.stdBuilder()
-                .metadata(RESEARCH_ITEM, GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.HSSS, 1))
+                .metadata(
+                        RESEARCH_ITEM,
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.HSSS), 1))
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_LuV))
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.HSSS, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.HSSS), 1),
                         new Object[] { Circuits.UV.getIngredient(), 2 },
                         Superconductors.LuV.getWireGt01(18),
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.itemCasing, (int) (8)),
@@ -282,10 +286,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
 
         // Teleporter core MK2
         GTValues.RA.stdBuilder()
-                .metadata(RESEARCH_ITEM, GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Quantium, 1))
+                .metadata(
+                        RESEARCH_ITEM,
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Quantium), 1))
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_LuV))
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Quantium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Quantium), 1),
                         ItemList.Emitter_LuV.get(2),
                         ItemList.Field_Generator_LuV.get(1),
                         ItemList.QuantumStar.get(4),
@@ -361,10 +367,14 @@ public class ScriptMatterManipulator implements IScriptLoader {
 
         // Computer core MK3
         GTValues.RA.stdBuilder()
-                .metadata(RESEARCH_ITEM, GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1))
+                .metadata(
+                        RESEARCH_ITEM,
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.NaquadahAlloy), 1))
                 .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_ZPM))
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.NaquadahAlloy), 1),
                         new Object[] { Circuits.UV.getIngredient(), 2 },
                         Superconductors.ZPM.getWireGt01(30),
                         MaterialLibAPI
@@ -381,10 +391,14 @@ public class ScriptMatterManipulator implements IScriptLoader {
 
         // Teleporter core MK3
         GTValues.RA.stdBuilder()
-                .metadata(RESEARCH_ITEM, GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MysteriousCrystal, 1))
+                .metadata(
+                        RESEARCH_ITEM,
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.MysteriousCrystal), 1))
                 .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_ZPM))
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MysteriousCrystal, 1),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.MysteriousCrystal), 1),
                         ItemList.Emitter_ZPM.get(2),
                         ItemList.Field_Generator_ZPM.get(1),
                         ItemList.Gravistar.get(4),
@@ -590,8 +604,11 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100), // blank golem animation core
                         MaterialLibAPI.getStack(Materials2Materials.Thaumium, Materials2Shapes.itemCasing, (int) (8)),
                         Circuits.IV.get(2),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Mercury, 32),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.SuperconductorHVBase, 64))
+                        GTOreDictUnificator.get(OrePrefixes.gem, MU.materialOf(Materials2Materials.Mercury), 32),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.Titaniumonabariumdecacoppereikosaoxid,
+                                Materials2Shapes.wireFine,
+                                (int) (64)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Void,

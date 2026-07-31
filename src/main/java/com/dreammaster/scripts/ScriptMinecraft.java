@@ -54,13 +54,13 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -114,7 +114,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 2))
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 2))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_pickaxe", 1, 0)).duration(4 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -123,7 +123,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
                         MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 2))
+                        GTOreDictUnificator.get(OrePrefixes.gem, MU.materialOf(Materials2Materials.Diamond), 2))
                 .itemOutputs(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -157,46 +157,50 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 5L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 5L),
                         NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 8L),
                         NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_chestplate", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 7L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 7L),
                         NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_leggings", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 4L), NHItemList.MoldBoots.get(0))
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 4L),
+                        NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_boots", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 5L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Gold), 5L),
                         NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_helmet", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Gold), 8L),
                         NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_chestplate", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 7L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Gold), 7L),
                         NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_leggings", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 4L), NHItemList.MoldBoots.get(0))
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Gold), 4L),
+                        NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_boots", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 2, 3)).circuit(1)
@@ -208,8 +212,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "heatsand", 1, 0), getModItem(Natura.ID, "soil.tainted", 4, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 1, 0)).fluidInputs(Materials.Water.getFluid(1000))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 1, 0))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(1000)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "miscResources", 6, 4)).circuit(6)
                 .itemOutputs(getModItem(Minecraft.ID, "skull", 1, 1))
                 .fluidInputs(
@@ -220,13 +225,13 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(10 * SECONDS).eut(96).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Charcoal, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 4, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Coal, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 6, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
@@ -264,7 +269,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 4L))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 4, 0))
                 .fluidInputs(
                         MaterialLibAPI
@@ -273,7 +278,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 4L))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -290,7 +295,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 2L),
                         getModItem(Minecraft.ID, "planks", 2, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0)).duration(15 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(assemblerRecipes);
@@ -299,160 +304,167 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         getModItem(Minecraft.ID, "stone_button", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 2L),
                         MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.screw, (int) (1L)))
                 .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 2, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 2L),
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.screw, (int) (1L)))
                 .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 2L),
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.screw, (int) (1L)))
                 .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 8, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 2L),
                         MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.screw, (int) (1L)))
                 .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 32, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "brick", 8, 0)).circuit(1)
-                .itemOutputs(getModItem(Minecraft.ID, "brick_block", 2, 0)).fluidInputs(Materials.Water.getFluid(500))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "brick_block", 2, 0))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(500)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L), ItemList.Plank_Oak.get(1L))
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
+                        ItemList.Plank_Oak.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Spruce.get(1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_spruce", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Birch.get(1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_birch", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Jungle.get(1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_jungle", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Acacia.get(1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_acacia", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_DarkOak.get(1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "item_sign_dark_oak", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Cherry_EFR.get(1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Larch.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L), ItemList.Plank_Teak.get(1L))
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
+                        ItemList.Plank_Teak.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Acacia_Green.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L), ItemList.Plank_Lime.get(1L))
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
+                        ItemList.Plank_Lime.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Chestnut.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Wenge.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Baobab.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Sequoia.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Kapok.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Ebony.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Mahagony.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Balsa.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Willow.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Walnut.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                         ItemList.Plank_Greenheart.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
@@ -502,8 +514,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 .circuit(1).itemOutputs(new ItemStack(Blocks.mycelium, 16)).duration(5 * SECONDS).eut(24)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0)).fluidInputs(Materials.Water.getFluid(4))
-                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0))
                 .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
@@ -513,11 +526,16 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(6 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1)))
+                .duration(6 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0)).fluidInputs(Materials.Water.getFluid(4))
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0))
                 .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
@@ -527,8 +545,12 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(6 * TICKS)
-                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1)))
+                .duration(6 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, wildcard)).fluidOutputs(
                 MaterialLibAPI.getFluidStack(Materials2Materials.Glass, Materials2FluidShapes.fluidMolten, (int) (144)))
                 .duration(10 * SECONDS).eut(48).addTo(fluidExtractionRecipes);
@@ -537,8 +559,9 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "sand", 4, wildcard),
                         getModItem(Minecraft.ID, "dirt", 1, wildcard),
                         getModItem(MagicBees.ID, "wax", 4, 1))
-                .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 4, 0)).fluidInputs(Materials.Water.getFluid(1000))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 4, 0))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(1000)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "blaze_powder", 3, 0),
@@ -2368,57 +2391,57 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_sword", 1, 0),
                 null,
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
                 null,
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
                 "craftingToolHardHammer",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_shovel", 1, 0),
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
                 "craftingToolHardHammer",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null,
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_pickaxe", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 "craftingToolHardHammer",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_axe", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null,
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_hoe", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 1L),
                 "craftingToolHardHammer",
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null,
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_sword", 1, 0),
@@ -2429,7 +2452,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)),
                 "craftingToolHardHammer",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_shovel", 1, 0),
@@ -2437,10 +2460,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)),
                 "craftingToolHardHammer",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null,
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0),
@@ -2448,10 +2471,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "diamond", 1, 0),
                 getModItem(Minecraft.ID, "diamond", 1, 0),
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 "craftingToolHardHammer",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_axe", 1, 0),
@@ -2459,10 +2482,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "diamond", 1, 0),
                 "craftingToolHardHammer",
                 MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null,
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_hoe", 1, 0),
@@ -2470,10 +2493,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "diamond", 1, 0),
                 "craftingToolHardHammer",
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null,
                 null,
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 1L),
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_helmet", 1, 0),

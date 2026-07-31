@@ -53,13 +53,13 @@ import cpw.mods.fml.common.Optional;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2CellShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
@@ -206,7 +206,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 ItemList.Sensor_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0),
                 "compressedAluminium",
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.RedAlloy), 1L),
                 "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.fuelLoader", 1, 0),
@@ -1024,13 +1024,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 6),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, MU.materialOf(Materials2Materials.Steel), 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, MU.materialOf(Materials2Materials.Steel), 1L),
                 ItemList.Large_Fluid_Cell_Steel.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, MU.materialOf(Materials2Materials.Steel), 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, MU.materialOf(Materials2Materials.Steel), 1L),
                 ItemList.Electric_Pump_HV.get(1L));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.beamReflector", 1, 0),
@@ -1748,7 +1748,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
+                        MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.stick, (int) (2L)))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.canvas", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

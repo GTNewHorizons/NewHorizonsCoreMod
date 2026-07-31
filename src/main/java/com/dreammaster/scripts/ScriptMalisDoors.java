@@ -21,11 +21,11 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptMalisDoors implements IScriptLoader {
@@ -79,7 +79,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.screw, (int) (1L)),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 1L),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -90,7 +90,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.screw, (int) (1L)),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Iron), 1L),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -101,7 +101,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.screw, (int) (1L)),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Gold), 1L),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -152,37 +152,37 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateAnyIron");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "garage_door", 5, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.plate, (int) (1L)),
                 MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.plate, (int) (1L)),
                 MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.plate, (int) (1L)),
                 MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.plate, (int) (1L)),
                 MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L));
+                MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.plate, (int) (1L)));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GTOreDictUnificator.get("stickAnyIron", 1L),
                 MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.ring, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GTOreDictUnificator.get("stickAnyIron", 1L),
                 MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.ring, (int) (1L)),
                 "craftingToolWrench",
                 MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.ring, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GTOreDictUnificator.get("stickAnyIron", 1L),
                 MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.ring, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L));
+                GTOreDictUnificator.get("stickAnyIron", 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "rustyLadder", 4, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GTOreDictUnificator.get("stickAnyIron", 1L),
+                GTOreDictUnificator.get("stickAnyIron", 1L),
+                GTOreDictUnificator.get("stickAnyIron", 1L),
                 MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.screw, (int) (1L)),
                 "craftingToolWrench",
                 MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.screw, (int) (1L)),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L));
+                GTOreDictUnificator.get("stickAnyIron", 1L),
+                GTOreDictUnificator.get("stickAnyIron", 1L),
+                GTOreDictUnificator.get("stickAnyIron", 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.door_acacia", 1, 0),
                 "craftingToolScrewdriver",
@@ -1073,21 +1073,21 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Iron), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Gold), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(25 * SECONDS)
@@ -1107,12 +1107,12 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.plate, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1L)))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L))
-                .circuit(5).itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0)).duration(3 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get("stickAnyIron", 3L)).circuit(5)
+                .itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "planks", 4, 4), getModItem(Minecraft.ID, "trapdoor", 1, 0))

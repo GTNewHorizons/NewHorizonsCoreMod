@@ -45,12 +45,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2CellShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gtPlusPlus.xmod.bop.blocks.BOPBlockRegistrator;
@@ -180,7 +180,7 @@ public class ScriptForestry implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 6L))
+                        MaterialLibAPI.getStack(Materials2Materials.RawRubber, Materials2Shapes.dust, (int) (6L)))
                 .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
@@ -2856,7 +2856,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.StainlessSteel), 1L),
                 'f',
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 'g',
@@ -4162,7 +4162,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4188,7 +4188,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4214,7 +4214,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4240,7 +4240,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4266,7 +4266,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4292,7 +4292,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4318,7 +4318,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4344,7 +4344,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4370,7 +4370,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4396,7 +4396,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4422,7 +4422,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
     }
@@ -4949,7 +4949,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnyBronze, 1L),
+                GTOreDictUnificator.get("wireFineAnyBronze", 1L),
                 'f',
                 "circuitBasic",
                 'g',

@@ -35,11 +35,11 @@ import forestry.api.recipes.RecipeManagers;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
@@ -442,7 +442,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 'g',
                 MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.springSmall, (int) (1L)),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Gold), 1L),
                 'i',
                 MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.springSmall, (int) (1L)));
         TCHelper.addResearchPage(
