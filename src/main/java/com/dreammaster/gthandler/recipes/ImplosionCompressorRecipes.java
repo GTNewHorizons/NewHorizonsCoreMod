@@ -18,11 +18,11 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ImplosionCompressorRecipes implements Runnable {
@@ -31,14 +31,15 @@ public class ImplosionCompressorRecipes implements Runnable {
     public void run() {
         if (GalaxySpace.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.compressed, Materials.Aluminium, 2L))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTOreDictUnificator.get(OrePrefixes.compressed, MU.materialOf(Materials2Materials.Aluminium), 2L))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1, 0),
                             MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dustTiny, (int) (1L)))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.compressed, Materials.Bronze, 2L))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTOreDictUnificator.get(OrePrefixes.compressed, MU.materialOf(Materials2Materials.Bronze), 2L))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1, 0),
                             MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dustTiny, (int) (1L)))
@@ -49,7 +50,8 @@ public class ImplosionCompressorRecipes implements Runnable {
                     MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.dustTiny, (int) (1L)))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 5).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Coal, 1L))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Coal), 1L))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedCoal", 1, 0),
                             MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dustTiny, (int) (1L)))
@@ -329,7 +331,7 @@ public class ImplosionCompressorRecipes implements Runnable {
                     MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.dustSmall, (int) (1L)))
                     .itemOutputs(
                             getModItem(Translocator.ID, "diamondNugget", 2, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.AshDark, 1L))
+                            MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dustTiny, (int) (1L)))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }
@@ -353,7 +355,7 @@ public class ImplosionCompressorRecipes implements Runnable {
         // Nether Star Dust -> Gem EIC recipe
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.dust, (int) (4)))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 3)).duration(25)
-                .eut(TierEU.RECIPE_UEV).addTo(electricImplosionCompressorRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, MU.materialOf(Materials2Materials.NetherStar), 3))
+                .duration(25).eut(TierEU.RECIPE_UEV).addTo(electricImplosionCompressorRecipes);
     }
 }
